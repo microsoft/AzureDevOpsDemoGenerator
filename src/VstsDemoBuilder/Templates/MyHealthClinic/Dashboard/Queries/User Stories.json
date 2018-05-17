@@ -1,0 +1,5 @@
+{
+ "name": "User Stories",
+  "wiql": "SELECT [System.id],[System.WorkItemtype],[System.Title],[System.AssignedTo],[System.State],[System.Tags] FROM workitems WHERE [System.TeamProject]=@project AND [System.WorkItemType]<>'' AND [System.State]<>''"
+  
+}

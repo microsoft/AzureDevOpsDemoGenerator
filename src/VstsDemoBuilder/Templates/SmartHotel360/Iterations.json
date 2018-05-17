@@ -1,0 +1,32 @@
+{
+  
+  "name": "SmartHotel360",
+  "structureType": "iteration",
+  "hasChildren": true,
+  "children": [
+    {
+    
+      "name": "Iteration 1",
+      "structureType": "iteration",
+      "hasChildren": false,
+     
+      "children": null
+    },
+    {
+      
+      "name": "Iteration 2",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      
+      "name": "Iteration 3",
+      "structureType": "iteration",
+      "hasChildren": false,
+     
+      "children": null
+    }
+  ]
+}

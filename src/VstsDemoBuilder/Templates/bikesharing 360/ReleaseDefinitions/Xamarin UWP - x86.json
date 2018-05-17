@@ -1,0 +1,158 @@
+﻿{
+  "name": "Xamarin UWP - x86",
+  "description": null,
+  
+  "path": "\\",
+  "variables": {},
+  "variableGroups": [],
+  "environments": [
+    {
+      
+      "name": "HockeyApp PUBLIC",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+        
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "53bb2e90-4b6e-11e5-89d9-2903d3f04d3f",
+              "version": "1.*",
+              "name": "Deploy $(System.DefaultWorkingDirectory)/BikeRider UWP (x86)/drop/*.zip to HockeyApp",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "connectedServiceName": "$HockeyApp$",
+                "appID": "bbf690905bef4598ab32855d21338233",
+                "binaryPath": "$(System.DefaultWorkingDirectory)/BikeRider UWP (x86)/drop/*.zip",
+                "symbolsPath": "",
+                "nativeLibraryPath": "",
+                "notesPath": "",
+                "notes": "",
+                "publish": "true",
+                "mandatory": "false",
+                "notify": "false",
+                "strategy": "add",
+                "tags": "",
+                "teams": "",
+                "users": ""
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "properties": {}
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$BikeRider UWP (x86)-id$",
+      "type": "Build",
+      "alias": "BikeRider UWP (x86)",
+      "definitionReference": {
+        
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$BikeRider UWP (x86)-id$",
+          "name": "BikeRider UWP (x86)"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "retentionPolicy": {
+    "daysToKeep": 30
+  },
+  "tags": [],
+  "properties": {}
+}

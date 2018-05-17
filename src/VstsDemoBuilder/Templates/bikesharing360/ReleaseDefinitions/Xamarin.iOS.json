@@ -1,0 +1,261 @@
+{
+  "name": "Xamarin.iOS",
+  "lastRelease": null,
+  "path": "\\",
+  "variables": {},
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Test in HockeyApp",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployStep": {
+    
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$macBuilder$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "53bb2e90-4b6e-11e5-89d9-2903d3f04d3f",
+              "version": "1.*",
+              "name": "Deploy $(System.DefaultWorkingDirectory)/Xamarin.iOS/drop/ipa/BikeSharingClientsiOS.ipa to HockeyApp",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "connectedServiceName": "$HockeyApp$",
+                "appID": "",
+                "binaryPath": "$(System.DefaultWorkingDirectory)/Xamarin.iOS/drop/ipa/BikeSharingClientsiOS.ipa",
+                "symbolsPath": "",
+                "nativeLibraryPath": "",
+                "notesPath": "",
+                "notes": "",
+                "publish": "true",
+                "mandatory": "false",
+                "notify": "false",
+                "strategy": "add",
+                "tags": "",
+                "teams": "",
+                "users": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$macBuilder$",
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    },
+    {
+      "name": "Publish to store",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+               "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ]
+      },
+      "deployStep": {
+    
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$macBuilder$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "2e371150-da5e-11e5-83da-0943b1acc572",
+              "version": "1.*",
+              "name": "Publish to the App Store TestFlight track",
+              "enabled": false,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "authType": "ServiceEndpoint",
+                "serviceEndpoint": "$AppleStore$",
+                "username": "",
+                "password": "",
+                "appIdentifier": "",
+                "ipaPath": "**/*.ipa",
+                "releaseTrack": "TestFlight",
+                "skipBinaryUpload": "false",
+                "uploadMetadata": "false",
+                "metadataPath": "",
+                "uploadScreenshots": "false",
+                "screenshotsPath": "",
+                "shouldSubmitForReview": "false",
+                "shouldAutoRelease": "false",
+                "releaseNotes": "",
+                "shouldSkipWaitingForProcessing": "false",
+                "shouldSkipSubmission": "false",
+                "teamId": "",
+                "teamName": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$macBuilder$",
+      "conditions": [
+        {
+          "name": "Test in HockeyApp",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$Xamarin.iOS-id$",
+      "type": "Build",
+      "alias": "Xamarin.iOS",
+      "definitionReference": {
+        "definition": {
+          "id": "$Xamarin.iOS-id$",
+          "name": "Xamarin.iOS"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+  {
+"artifactAlias": "Xamarin.iOS",
+"triggerConditions": [
+  {
+"sourceBranch": "master",
+"tags": []
+}
+],
+"triggerType": "artifactSource"
+}
+],
+  "releaseNameFormat": "Release-$(rev:r)"
+}

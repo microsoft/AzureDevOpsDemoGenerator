@@ -1,0 +1,322 @@
+{
+    "name": "Overview",
+    "refreshInterval": 5,
+    "position": 1,
+    "eTag": "45",
+    "widgets": [
+        {
+            "name": "Features",
+            "position": {
+                "row": 4,
+                "column": 7
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#5c197b\",\"queryId\":\"$Feature$\",\"queryName\":\"Features\",\"colorRules\":[],\"lastArtifactName\":\"Features\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "GitHub",
+        "position": {
+          "row": 3,
+          "column": 6
+        },
+        "size": {
+          "rowSpan": 1,
+          "columnSpan": 2
+        },
+        "settings": "{\"name\":\"GitHub\",\"id\":$buildGitHub$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$buildGitHub$\",\"projectId\":\"$Projectid$\",\"lastArtifactName\":\"GitHub\"}",
+        "settingsVersion": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
+        "isNameConfigurable": true
+      },
+       {
+
+            "name": "Deployment status",
+            "position": {
+                "row": 3,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"buildDefinitionId\":$buildGitHub$,\"projectId\":\"$Projectid$\",\"useDefaultBranch\":true,\"branchName\":\"\",\"buildSourceType\":\"Build\",\"environments\":[{\"definitionEnvironmentId\":1,\"definitionEnvironmentName\":\"\",\"releaseDefinitionId\":$releaseGitHub$,\"releaseDefinitionName\":\"\"}],\"lastColumnType\":0,\"viewType\":\"Deployment Status\",\"ruleOperators\":[\"\",\"\",\"\"],\"ruleBoundaries\":[\"\",\"\",\"\"],\"ruleBoundariesErrors\":[false,false,false],\"metricsView\":\"testPassRate\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget",
+            "typeId": "rm-deployment-status-widget",
+            "configurationContributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget.configuration",
+            "configurationContributionRelativeId": "rm-deployment-status-widget.configuration",
+            "isNameConfigurable": true
+          
+        },
+        {
+            "name": "Product Backlog Items",
+            "position": {
+                "row": 5,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#007acc\",\"queryId\":\"$PBI$\",\"queryName\":\"Product Backlog Items\",\"colorRules\":[],\"lastArtifactName\":\"Product Backlog Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Test Results Trend",
+            "position": {
+                "row": 1,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"width\":500,\"height\":500,\"title\":\"Test Results Trend\",\"buildDefinition\":{\"_links\":{\"self\":{\"href\":\"https://vstsdemodata.visualstudio.com/$Projectid$/_apis/build/Definitions/$buildGitHub$\"},\"web\":{\"href\":\"https://vstsdemodata.visualstudio.com/_permalink/_build/index?collectionId=517f5b8d-735f-4ce6-811c-c7cf9fcd209e&projectId=$Projectid$&definitionId=$buildGitHub$\"},\"editor\":{\"href\":\"https://vstsdemodata.visualstudio.com/_permalink/_build/definitionEditor?collectionId=517f5b8d-735f-4ce6-811c-c7cf9fcd209e&projectId=$Projectid$&definitionId=$buildGitHub$\"}},\"drafts\":[],\"queue\":{\"id\":$Hosted$,\"name\":\"Hosted\",\"pool\":{\"id\":2,\"name\":\"Hosted\",\"isHosted\":true}},\"id\":$buildGitHub$,\"name\":\"GitHub\",\"url\":\"https://vstsdemodata.visualstudio.com/$Projectid$/_apis/build/Definitions/$buildGitHub$\",\"uri\":\"vstfs:///Build/Definition/$buildGitHub$\",\"project\":{\"id\":\"$Projectid$\",\"name\":\"GitHub\",\"description\":\"This project demonstrates the integration of GitHub with VSTS\",\"url\":\"https://vstsdemodata.visualstudio.com/_apis/projects/$Projectid$\",\"state\":\"wellFormed\",\"revision\":161,\"visibility\":0}},\"releaseDefinition\":null,\"releaseEnvironment\":null,\"chartType\":\"StackedColumn\",\"secondaryChartType\":\"Line\",\"yAxisOptions\":{\"seriesType\":\"StackedColumn\",\"allowDecimals\":false},\"secondaryYAxisOptions\":{\"seriesType\":\"PassPercentage\",\"allowDecimals\":true},\"context\":1}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-test-web.Microsoft.VisualStudioTeamServices.Dashboards.TestResultsTrendWidget",
+            "typeId": "Microsoft.VisualStudioTeamServices.Dashboards.TestResultsTrendWidget",
+            "configurationContributionId": "ms.vss-test-web.Microsoft.VisualStudioTeamServices.Dashboards.TestResults.TrendWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioTeamServices.Dashboards.TestResults.TrendWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "All Work Items by Work Item Type",
+            "position": {
+                "row": 3,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$AllWorkItems$\",\"title\":\"All Work Items by Work Item Type\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$AllWorkItems$\",\"groupBy\":\"System.WorkItemType\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[{\"value\":\"Task\",\"backgroundColor\":\"#fbfd52\"},{\"value\":\"Product Backlog Item\",\"backgroundColor\":\"#0d60ab\"},{\"value\":\"Feature\",\"backgroundColor\":\"#5c197b\"}],\"lastArtifactName\":\"All Work Items by Work Item Type\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Tasks",
+            "position": {
+                "row": 5,
+                "column": 5
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbfd52\",\"queryId\":\"$Task$\",\"queryName\":\"Tasks\",\"colorRules\":[],\"lastArtifactName\":\"Tasks\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "All Work Items",
+            "position": {
+                "row": 5,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#292e6b\",\"queryId\":\"$AllWorkItems$\",\"queryName\":\"All Work Items\",\"colorRules\":[],\"lastArtifactName\":\"All Work Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Release Definition Overview",
+            "position": {
+                "row": 5,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"releaseDefinitionId\":1}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-releaseManagement-web.release-definition-summary-widget",
+            "typeId": "release-definition-summary-widget",
+            "configurationContributionId": "ms.vss-releaseManagement-web.release-definition-summary-widget-configuration",
+            "configurationContributionRelativeId": "release-definition-summary-widget-configuration",
+            "isNameConfigurable": true,
+            "loadingImageUrl": null
+        },
+        {
+            "name": "Epic",
+            "position": {
+                "row": 4,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbbc3d\",\"queryId\":\"$Epic$\",\"queryName\":\"Epic\",\"colorRules\":[],\"lastArtifactName\":\"Epic\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "Markdown",
+        "position": {
+          "row": 1,
+          "column": 1
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "## Overview\n\nGitHub is a development platform inspired by the way you work.\nFrom open source to business, you can host and review code, manage projects, and build software alongside millions of other developers.\n\nGitHub brings teams-\n\n- Together to work through problems\n- move ideas forward and\n- learn from each other along the way\n\n",
+        "settingsVersion": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget.Configuration",
+        "isNameConfigurable": false,
+        "lightboxOptions": {
+          "width": 600,
+          "height": 500,
+          "resizable": true
+        }
+      },
+        {
+            "name": "All Work Items",
+            "position": {
+                "row": 1,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"query\":{\"queryId\":\"$AllWorkItems$\",\"queryName\":\"All Work Items\"},\"selectedColumns\":[{\"name\":\"ID\",\"referenceName\":\"System.Id\"},{\"name\":\"Work Item Type\",\"referenceName\":\"System.WorkItemType\"},{\"name\":\"Title\",\"referenceName\":\"System.Title\"}],\"lastArtifactName\":\"All Work Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-mywork-web.Microsoft.VisualStudioOnline.MyWork.WitViewWidget",
+            "typeId": "Microsoft.VisualStudioOnline.MyWork.WitViewWidget",
+            "configurationContributionId": "ms.vss-mywork-web.Microsoft.VisualStudioOnline.MyWork.WitViewWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.MyWork.WitViewWidget.Configuration",
+            "isNameConfigurable": true
+        }
+    ]
+}

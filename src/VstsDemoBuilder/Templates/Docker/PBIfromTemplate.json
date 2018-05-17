@@ -1,0 +1,282 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 719,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-11-09T10:51:12.417Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T05:54:38.253Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Create Endpoint for Azure Resource Manager",
+        "Microsoft.VSTS.Scheduling.Effort": 1.0,
+        "System.Description": "Create Endpoint for Azure Resource Manager such that it points to your active Azure subscription",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure; VSTS",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/720",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/719"
+    },
+    {
+      "id": 721,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-11-09T10:54:20.75Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:29:16.197Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create Endpoint for Azure Container Registry",
+        "Microsoft.VSTS.Scheduling.Effort": 1.0,
+        "System.Description": "Create Endpoint for Azure Container Registry in VSTS",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure; VSTS",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/722",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/721"
+    },
+    {
+      "id": 728,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-11-14T06:21:14.4Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:29:29.107Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Identify Azure components required",
+        "Microsoft.VSTS.Scheduling.Effort": 2.0,
+        "System.Description": "Identify Azure components required",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/728"
+    },
+    {
+      "id": 729,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-11-14T06:25:22.63Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:29:41.247Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Add Dockercompose.yml files",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<div>Add below files:</div><div><br></div><div>1. docker-compose.ci.build.yml<br>2. docker-compose.yml </div><div>3. Under (2) add docker-compose.override.yml</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Docker",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/725",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/730",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/729"
+    },
+    {
+      "id": 712,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2017-11-09T09:53:07.097Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T05:55:37.253Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Develop ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 2.0,
+        "System.Description": "<div>Develop ARM template with below components:</div><div><br></div><div>1. azuredeploy.json</div><div>2. azuredeploy.parameters.json</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Templates",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/717",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/713",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/712"
+    },
+    {
+      "id": 726,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2017-11-13T07:20:01.253Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:28:37.13Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Add Dockerfile to .web project",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<div>Add Dockerfile to .web project</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Docker",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/724",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/727",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/726"
+    }
+  ],
+  "HttpStatusCode": 0
+}

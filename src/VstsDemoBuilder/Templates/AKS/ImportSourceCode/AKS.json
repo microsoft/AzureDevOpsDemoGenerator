@@ -1,0 +1,11 @@
+{
+  "parameters":
+    {
+      "gitSource":
+        {
+          "url": "https://vstsdemodata.visualstudio.com/_git/AKS"
+        },
+      "serviceEndpointId": "$AKS-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

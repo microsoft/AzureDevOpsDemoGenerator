@@ -1,0 +1,11 @@
+﻿{
+  "type": "Scrum",
+  "users": [ ],
+  "tags": [ "Login Module", "DashBoard", "User Grrelease", "LogOut" ],
+  "queues": [ "macBuilder","MacPool " ],
+  "renameIterations": {
+    "Iteration 1": "Sprint 1",
+    "Iteration 2": "Sprint 2",
+    "Iteration 3": "Sprint 3"
+  }
+}

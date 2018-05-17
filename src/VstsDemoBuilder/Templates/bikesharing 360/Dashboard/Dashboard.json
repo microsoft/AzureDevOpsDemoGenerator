@@ -1,0 +1,298 @@
+﻿{
+  "name": "Overview",
+  "refreshInterval": 0,
+  "position": 1,
+  "widgets": [
+    {
+      "name": "Team Members",
+      "position": {
+        "row": 1,
+        "column": 9
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget"
+    },
+    {
+      "name": "New Work Item",
+      "position": {
+        "row": 3,
+        "column": 9
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget"
+    },
+    {
+      "name": "Assigned to Me",
+      "position": {
+        "row": 1,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "Welcome",
+      "position": {
+        "row": 1,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget"
+    },
+    {
+      "name": "BikeSharing360-PublicWeb",
+      "position": {
+        "row": 3,
+        "column": 6
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": "{\"name\":\"BikeSharing360-PublicWeb\",\"id\":$BikeSharing360-PublicWeb$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$BikeSharing360-PublicWeb$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"BikeSharing360-PublicWeb\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget"
+    },
+    {
+
+      "name": "All Items by Assigned To",
+      "position": {
+        "row": 4,
+        "column": 6
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"chartType\":\"PieChart\",\"groupKey\":\"$All Items$\",\"scope\":\"WorkitemTracking.Queries\",\"title\":\"All Items by Assigned To\",\"transformOptions\":{\"filter\":\"$All Items$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"All Items by Assigned To\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "Work Links",
+      "position": {
+        "row": 5,
+        "column": 9
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WorkLinksWidget"
+    },
+    {
+      "name": "All Items",
+      "position": {
+        "row": 3,
+        "column": 2
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#292e6b\",\"queryId\":\"$All Items$\",\"queryName\":\"All Items\",\"colorRules\":[],\"lastArtifactName\":\"All Items\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+    },
+    {
+      "name": "Sprint Burndown",
+      "position": {
+        "row": 2,
+        "column": 9
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget"
+    },
+    {
+      "name": "Cumulative Flow Diagram",
+      "position": {
+        "row": 1,
+        "column": 6
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CumulativeFlowDiagramWidget",
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "All Items by Work Item Type",
+      "position": {
+        "row": 4,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All Items$\",\"title\":\"All Items by Work Item Type\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All Items$\",\"groupBy\":\"System.WorkItemType\",\"orderBy\":{\"propertyName\":\"value\",\"direction\":\"ascending\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"All Items by Work Item Type\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "BikeSharing360",
+      "position": {
+        "row": 3,
+        "column": 8
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"repositoryId\":\"$repositoryId$\",\"version\":\"GBmaster\",\"path\":\"/\",\"lastArtifactName\":\"BikeSharing360\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CodeScalarWidget"
+    },
+    {
+      "name": "Other Links",
+      "position": {
+        "row": 4,
+        "column": 9
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.OtherLinksWidget"
+    },
+    {
+      "name": "Unfinished Work",
+      "position": {
+        "row": 3,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#339947\",\"queryId\":\"$Unfinished Work$\",\"queryName\":\"Unfinished Work\",\"colorRules\":[],\"lastArtifactName\":\"Unfinished Work\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+    },
+    {
+      "name": "All Items",
+      "position": {
+        "row": 3,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 3,
+        "columnSpan": 3
+      },
+      "settings": "{\"query\":{\"queryId\":\"$All Items$\",\"queryName\":\"All Items\"},\"selectedColumns\":[{\"name\":\"ID\",\"referenceName\":\"System.Id\"},{\"name\":\"Work Item Type\",\"referenceName\":\"System.WorkItemType\"},{\"name\":\"Title\",\"referenceName\":\"System.Title\"},{\"name\":\"Assigned To\",\"referenceName\":\"System.AssignedTo\"},{\"name\":\"State\",\"referenceName\":\"System.State\"}],\"lastArtifactName\":\"All Items\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-mywork-web.Microsoft.VisualStudioOnline.MyWork.WitViewWidget"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "MyShuttle-code",
+  "type": "git",
+  "url": "https://vstsdemodata.visualstudio.com/MyShuttle2/_git/MyShuttleCalc",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+     "username": "Nagaraj.Bhairaji@hotmail.com",
+      "password": "7kpg6xsuz67socsenhnur3ntcmjiqdxwxmxzz4xwjtj4mrh72mfq"
+    }
+  },
+  "isReady": true
+}

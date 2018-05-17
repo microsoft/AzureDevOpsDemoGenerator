@@ -1,0 +1,112 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 813,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-12-29T05:35:58.863Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:35:59.753Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Octopus Integration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/816",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/843",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/815",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/813"
+    },
+    {
+      "id": 814,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-12-29T05:36:11.333Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:36:12.003Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Configuring CI-CD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/817",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/844",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/818",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/814"
+    }
+  ],
+  "HttpStatusCode": 0
+}

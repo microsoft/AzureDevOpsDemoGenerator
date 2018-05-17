@@ -1,0 +1,254 @@
+﻿@model VstsDemoBuilder.Models.Project
+@{
+    ViewBag.Title = "Visual Studio Team Services Demo Generator";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/content/assets/css/custom.min.css">
+    <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <title>Create Project</title>
+</head>
+<body class="pb-3">
+    <input type="hidden" id="hidnUID" />
+    @Html.HiddenFor(model => model.IsAuthenticated, new { id = "hidIsAuthenticated" })
+    @Html.HiddenFor(model => model.accessToken, new { id = "hiddenAccessToken" })
+    @Html.HiddenFor(model => model.MemberID, new { id = "hiddenMemberID" })
+    <!--TEMPLATE GROUPING-->
+    <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
+        <div class="template-holder bg-white ">
+            <div class="template-dialog-title text-primary p-3 text-center">
+                <span>Choose a template</span>
+                <div class="template-close">X</div>
+            </div>
+            <div class="template-group bg-primary d-flex align-items-center p-3">
+                <ul class="nav nav-pills w-100 justify-content-center" role="tablist" id="modtemplateGroup"></ul>
+            </div>
+            <div class="template-body bg-light p-3">
+                <div class="tab-content" id="pills-tabContent">
+                </div>
+            </div>
+            <div class="template-footer p-3 bg-white text-right">
+                <button class="btn btn-primary" id="selecttmplate">Select Template</button>
+            </div>
+        </div>
+    </div>
+    <!--/TEMPLATEgROUPING-->
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Copy Diagnostic Log</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @*<div class="form-group row">
+                        <label for="toEmail" class="col-lg-4 col-form-label" style="font-weight: 400;">Your Email ID :</label>
+                        <div class="col-lg-8">
+                            <input type="email" id="toEmail" class="form-control rmverror" placeholder="Email ID" />
+                            <div class="alert alert-danger d-none" role="alert" id="toEmail_Error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="toAccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">VSTS Account Name :</label>
+                        <div class="col-lg-8">
+                            <input type="text" id="toAccountName" class="form-control rmverror" placeholder="VSTS Account Name" />
+                            <div class="alert alert-danger d-none" role="alert" id="toAccountName_Error">
+                            </div>
+                        </div>
+                    </div>*@
+                    <div id="errorMail" style="text-align:justify;word-wrap: break-word;height: 150px;overflow: auto;">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    @*<button type="button" class="btn btn-primary" id="sendEmail">Send Email</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /MODAL -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
+        <a class="navbar-brand p-0 mr-auto" href="#">
+            <img src="~/content/assets/images/VS_logo.png" alt="">
+            <span class="navbar-brand-text ml-1">
+                Visual Studio Team Services Demo Generator
+            </span>
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="VSTS Demogenerator">
+                    @if (Session["User"] != null)
+                    {
+                        <span class="VSTS-username ml-1" style="font-size:16px">@Session["User"].ToString()</span>
+                    }
+                    <span class="sr-only">(current)</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="jumbotron mb-0" style="padding-bottom: 25px; padding-top: 25px;">
+        <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
+            Create New Project
+        </div>
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="row VSTS-mh-100">
+            <!--
+                  COL 1
+                  Image and Feedback section
+            -->
+            <div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
+                <div class="d-flex flex-column VSTS-mh-100">
+                    <img class="img-fluid" src="~/content/assets/images/VSTS-demoGen-image.png" alt="">
+                    <div class="demo-generator-feedback VSTS-create-page-feedback mt-auto text-center text-sm-left">
+                        <h6>Feedback&colon;</h6>
+                        <p class="mb-0">
+                            To provide feedback, you can email us -
+                            <a class="text-primary" href="mailto:devopsdemos@microsoft.com">devopsdemos@microsoft.com</a>. We would appreciate your feedback
+                        </p>
+                        <p>
+                            <script>function fbs_click() { u = "https://vstsdemogenerator.azurewebsites.net/"; t = +Visual + Studio + Team + Services + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+                            <a href="http://www.facebook.com/sharer.php?u=https://vstsdemogenerator.azurewebsites.net/&t=Visual+Studio+Team+Services+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vstsdemogenerator.azurewebsites.net/&t=Visual+Studio+Team+Services+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://twitter.com/intent/tweet?url=https://vstsdemogenerator.azurewebsites.net/&amp;text=Visual+Studio+Team+Services+Demo+Generator&amp;via=visualstudio&amp;hashtags=vstsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--
+                COL 2
+                Create section
+            -->
+            <div class="col-md-6 order-1 order-md-2">
+                <div class="form-group row">
+                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Account Name :</label>
+                    <div class="col-lg-8">
+                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Account", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName" })
+                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-lg-4 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                    <div class="col-lg-8">
+                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength="64" })
+                        <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row" id="">
+                    <label for="Template" class="col-lg-4 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
+                    <div class="col-lg-6  mb-3 mt-1">
+                        <input type="text" class="form-control" id="ddlTemplates" disabled />
+                        <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
+
+                        </div>
+                    </div>
+                    <div class="template-invoke mb-3 mt-1 col-lg-2">
+                        <button class="btn btn-primary btn-block" id="templateselection">
+                            ...
+                        </button>
+                    </div>
+                </div>
+                <!--SELECT TEMPLATE BUTTON-->
+                <!--/SELECT TEMPLATE BUTTON-->
+                <!-- PROJECT PARAMETERS -->
+                <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
+                    <label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">SonarQube URL:</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control project-parameters rmverror" id="txtSonarServerDNSName" placeholder="SonarQube URL">
+                        <div class="alert alert-danger d-none" role="alert" id="txtSonarServerDNSName_Error">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="projectParameters" style="display:none">
+                </div>
+                <!-- PROJECT PARAMETERS -->
+                <!--EXTENSIONS -->
+                <div class="mt-4 border border-primary p-3 d-none" id="lblextensionError">
+                    <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
+                    <div class="extensionError boldText">
+                        <p style="display:none;" id="extensionError"></p>
+                    </div>
+                </div>
+                <!--/EXTENSIONS -->
+                <div class="text-right mt-3">
+                    <button class="btn btn-primary submitBtn btnUpdate" id="btnSubmit">
+                        Create Project
+                    </button>
+                </div>
+                <div class="card mt-3 d-none" id="finalLink" style="border-color: #0074d0;">
+                    <div class="card-body" id="accountLink" style="color: green;font-weight: 300;">
+                    </div>
+                </div>
+                <!-- PROGRESS BAR -->
+                <div class="progress mt-3 d-none" id="dvProgress">
+                    <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
+
+                <!-- PROGRESS BAR -->
+                <div id="status-messages" class="bg-primary text-white p-3 mt-3" style="display:none;">
+                </div>
+            </div>
+            <!--
+               COL 3
+               Notification section
+            -->
+            <div class="col-md-3 order-3 order-md-3">
+                <!-- Description card -->
+                <div class="card text-white bg-primary mb-3 d-none" id="lblDescription" style="max-height:250px;overflow-y:auto;">
+                    <div class="card-header">About this Template</div>
+                    <div class="card-body" style="background-color:white; color:black">
+                        <p class="card-text" id="descContainer">
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-white bg-primary mb-3" id="lblDefaultDescription" style="max-height:250px;overflow-y:scroll;">
+                    <div class="card-header">About this Template</div>
+                    <div class="card-body" style="background-color:white; color:black">
+                        <p class="card-text" id="descContainer">
+                         This template contains work items and code for SmartHotel360, an end-to-end reference application for the entire business, including a suite of mobile and desktop apps for business travelers (iOS, Android, and Windows), a website for booking a stay, and even an app for hotel employees to track and resolve maintenance issues. SmartHotel360 has many other reference applications, including a microservice oriented architecture implemented using Docker containers that power the client experience, a website powered by ASP.NET Core 2 for booking trips, and a sentiment analysis app for tracking customer experiences.For more details, please see the project page on GitHub at
+                        <p>For more information refer <a style='color:blue;' href='https://github.com/Microsoft/SmartHotel360' target='_blank'>SmartHotel360</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-primary mb-3 mt-auto" id="errorNotify" style="display:none;">
+                    <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
+                    <div class="card-body" style="background-color:white">
+                        <p class="card-text" id="errorDescription">
+                        </p>
+                    </div>
+                    <div class="card-footer" style="background-color:white">
+                        <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
+                            View Diagnostics
+                        </button>
+                    </div>
+                </div>
+                <!-- /Description card -->
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="~/Scripts/AppScripts/create.js"></script>
+    <script src="~/Scripts/tooltip.js"></script>
+</body>
+</html>

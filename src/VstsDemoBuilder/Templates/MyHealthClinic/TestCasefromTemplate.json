@@ -1,0 +1,1615 @@
+{
+  "count": 45,
+  "value": [
+    {
+      "id": 43738,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Ready",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-06-16T07:14:44.573Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:44.573Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "View doctor info",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType></xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43738"
+    },
+    {
+      "id": 43739,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Ready",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-06-16T07:14:44.683Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:44.683Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "View patient info",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType></xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43739"
+    },
+    {
+      "id": 43740,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Ready",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-06-16T07:14:44.777Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:44.777Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "List existing patients",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"2\"><step id=\"1\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Go to the private area&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\"></parameterizedString><description /></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click on Patients&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;The patient list must be shown&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description /></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType></xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43740"
+    },
+    {
+      "id": 43741,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:44.87Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:44.87Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify Branding",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"2\"><step id=\"1\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt; Go to Home Page&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\"></parameterizedString><description /></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Check the brand at the top left corner&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt; Brand is represented correctly&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description /></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType></xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43741"
+    },
+    {
+      "id": 43742,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:44.963Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:44.963Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify Branding",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType></xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43742"
+    },
+    {
+      "id": 43743,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.183Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.183Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Login in the backoffice",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"1\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Go to the Home Page&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\"></parameterizedString><description /></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click on login&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\"></parameterizedString><description /></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Fill the username and password&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt; @Credentials&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description /></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click on login&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;You can access the private area&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description /></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": "<parameters><param name=\"Credentials\" bind=\"default\" /></parameters>",
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType>\n              <xs:sequence>\n                <xs:element name=\"Credentials\" type=\"xs:string\" minOccurs=\"0\" />\n              </xs:sequence>\n            </xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43743"
+    },
+    {
+      "id": 43744,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.29Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.29Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "List existing doctors",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"2\"><step id=\"1\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Login in the private area&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\"></parameterizedString><description /></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click on doctors&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;The doctor list must be shown&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description /></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\n<NewDataSet>\n  <xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:Locale=\"\">\n      <xs:complexType>\n        <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n          <xs:element name=\"Table1\">\n            <xs:complexType></xs:complexType>\n          </xs:element>\n        </xs:choice>\n      </xs:complexType>\n    </xs:element>\n  </xs:schema>\n</NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43744"
+    },
+    {
+      "id": 43745,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.417Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.417Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Check Appointment Notification",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43693",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43745"
+    },
+    {
+      "id": 43746,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.497Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.497Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Use case oublié encore",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43693",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43746"
+    },
+    {
+      "id": 43747,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.573Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.573Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "May18-TestPlans",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43747"
+    },
+    {
+      "id": 43748,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.667Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.667Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user is able to login into the application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the browser</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login into the browser and should be able to navigate to the respective Dashboard screen of the logged in user.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter the url</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on \"Private Area\" link on the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter valid user name and password in the respective username and password fields</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Login button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43748"
+    },
+    {
+      "id": 43749,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:45.98Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:45.98Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user is able to login into the application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the browser</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login into the browser and should be able to navigate to the respective Dashboard screen of the logged in user.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter the url</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on \"Private Area\" link on the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter valid user name and password in the respective username and password fields</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Login button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43749"
+    },
+    {
+      "id": 43750,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.09Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.09Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user should not be allowed login into the application with invalid credentials",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\"> Launch the browser</parameterizedString><parameterizedString isformatted=\"true\">An alert should be displayed with a message \"Incorrect username or password \nPlease try again.\" \nUser should not be allowed to navigate to the dashboard screen.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter the url</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on \"Private Area\" link on the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">. Enter invalid user name and password in the respective username and password fields</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Login button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43750"
+    },
+    {
+      "id": 43751,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.15Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.15Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user should not be allowed login into the application with invalid credentials",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\"> Launch the browser</parameterizedString><parameterizedString isformatted=\"true\">An alert should be displayed with a message \"Incorrect username or password \nPlease try again.\" \nUser should not be allowed to navigate to the dashboard screen.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter the url</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on \"Private Area\" link on the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">. Enter invalid user name and password in the respective username and password fields</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Login button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43751"
+    },
+    {
+      "id": 43752,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.23Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.23Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user should not be allowed login into the application with invalid credentials",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\"> Launch the browser</parameterizedString><parameterizedString isformatted=\"true\">An alert should be displayed with a message \"Incorrect username or password \nPlease try again.\" \nUser should not be allowed to navigate to the dashboard screen.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter the url</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on \"Private Area\" link on the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">. Enter invalid user name and password in the respective username and password fields</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Login button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43752"
+    },
+    {
+      "id": 43753,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.307Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.307Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify that user is navigated to the doctors screen",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the browser </parameterizedString><parameterizedString isformatted=\"true\">Drawer menu should be opened and Doctors link should be present on the menu.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\"> Enter the url</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\"> Click on \"Private Area\" link on the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\"> Enter valid user name and password in the respective username and password fields</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\"> Click on Login button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">. On navigating to the dashboard screen, click on \"Menu\"</parameterizedString><parameterizedString isformatted=\"true\">User should get navigated to the DOCTORS screen.</parameterizedString><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Doctor Link on the menu</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43753"
+    },
+    {
+      "id": 43754,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.387Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.387Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user is able to add a doctor",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"2\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1.Launch the browser and enter the URL\n2. Click on the \"Private Area\" link on the home page\n3. Enter valid username and password and click on Login button</parameterizedString><parameterizedString isformatted=\"true\">On saving, user should get navigated to the \"Doctors\" screen and user should be see the updated doctors details.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">1. Tap on the menu icon\n2. Click on the \"Doctors\" link\n3. Tap on the \"Edit\" icon against the doctor who details needs to be edited.\n4.Modify/Edit the doctor details and click on the Save button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43754"
+    },
+    {
+      "id": 43755,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.463Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.463Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user is able to delete the doctors from the list",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"3\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. Launch the browser and enter the URL\n2. Click on the \"Private Area\" link on the home page\n3. Enter valid username and password and click on Login button</parameterizedString><parameterizedString isformatted=\"true\">An confirmation pop up should be displayed which should users confirmation for deletion.</parameterizedString><description/></step><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">1. Tap on the menu icon\n2. Click on the \"Doctors\" link\n3. Click on the delete icon against the doctor whose record has to be deleted.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. Click on the yes, Remove button on the confirmation pop up</parameterizedString><parameterizedString isformatted=\"true\">On confirmation, doctor record should be remvoed from the list.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43755"
+    },
+    {
+      "id": 43756,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.87Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.87Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify navigation to the Patients screen.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"2\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. Launch the browser\n2. Enter the url\n3. Click on \"Private Area\" link on the home page.\n3. Enter valid user name and password in the respective username and password fields\n4. Click on Login button\n&lt;DIV&gt;&lt;BR/&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">Drawer menu should be opened and Patient link should be present on the menu.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. On navigating to the dashboard screen, click on \"Menu\"\n2. Click on Patient Link on the menu</parameterizedString><parameterizedString isformatted=\"true\">User should get navigated to the Patients screen.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43756"
+    },
+    {
+      "id": 43757,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:46.963Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:46.963Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verify user is able to delete the patient from the list",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"3\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the browser and enter the URL\n2. Click on the \"Private Area\" link on the home page\n3. Enter valid username and password and click on Login button</parameterizedString><parameterizedString isformatted=\"true\">User should able login into the application succeessfull</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. Tap on the menu icon\n2. Click on the \"Patient\" link\n3. Click on the delete icon against the patinet whose record has to be deleted.</parameterizedString><parameterizedString isformatted=\"true\">An confirmation pop up should be displayed which should users confirmation for deletion.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. Click on the yes, Remove button on the confirmation pop up</parameterizedString><parameterizedString isformatted=\"true\">On confirmation, patient record should be remvoed from the list.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43757"
+    },
+    {
+      "id": 43758,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-16T07:14:47.073Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:47.073Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Verirfy graphs are displayed for \"IncomeandExpense\" and \"Patients Visits\" graphs are displayed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"1\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">1. Launch the browser and enter the URL\n2. Click on the \"Private Area\" link on the home page\n3. Enter valid username and password and click on Login button\n4. Tap on the \"Previous Year\"/\"back icon\"/\"&amp;lt;\" icon in the \"INCOMES AND EXPENSES\" grid\n5. Tap on the \"Previous Year\"/\"back icon\"/\"&amp;lt;\" icon in the \"Patient Visits\" grid</parameterizedString><parameterizedString isformatted=\"true\">Repsective graphs should be displayed.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43758"
+    },
+    {
+      "id": 43983,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:06:43.223Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:06:43.223Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send Invoice fax number.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Invoices page from  Financial section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Invoice page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the Invoice number to send as fax.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the invoice/s.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on fax icon.</parameterizedString><parameterizedString isformatted=\"true\">Fax icon should be enabled to perform the click action.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Enter the valid fax number and click on send button</parameterizedString><parameterizedString isformatted=\"true\">User should be able to send selected invoice to fax number.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43679",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43983"
+    },
+    {
+      "id": 43982,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:06:43.223Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:06:43.223Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send Invoice as an Email attachment.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Invoices page from  Financial section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Invoice page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the Invoice number to send as email.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the invoice/s.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on Email icon.</parameterizedString><parameterizedString isformatted=\"true\">Email icon should be enabled to perform the click action.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Input Email id to send and click on send button.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to send selected invoice as email attachment.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43679",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43982"
+    },
+    {
+      "id": 43981,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:06:43.223Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:06:43.223Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to print the invoice.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Invoices page from  Financial section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Invoice page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the Invoice number to print.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the invoice/s.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on print icon.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to print the selected invoice.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43679",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43981"
+    },
+    {
+      "id": 43986,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:07:58.467Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:07:58.467Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send prescription via fax number.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Clinical page from patient management section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to patients Clinical page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the current diagnosis for patient.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the diagnosis for the patient.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto prescription section.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to access the prescription section.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on fax icon</parameterizedString><parameterizedString isformatted=\"true\">Fax icon should be enabled to perform the click action.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43680",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43986"
+    },
+    {
+      "id": 43985,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:07:58.467Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:07:58.467Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to print the prescription.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Clinical page from patient management section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to patients Clinical page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the current diagnosis for patient.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the diagnosis for the patient.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto prescription section.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to access the prescription section.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on print icon.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to print the prescription.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43680",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43985"
+    },
+    {
+      "id": 43988,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:08:36.86Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:08:36.86Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send prescription as an Email attachment.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Clinical page from patient management section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to patients Clinical page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the current diagnosis for patient.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the diagnosis for the patient.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto prescription section.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to access the prescription section.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on email icon.</parameterizedString><parameterizedString isformatted=\"true\">Email icon should be enabled to perform the click action.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Input email id and Click on send button.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to send the prescription via email by entering the email id.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43686",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43988"
+    },
+    {
+      "id": 43992,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:11:42.113Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:11:42.113Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether able to view patient visit history for random period.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on History section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient history screen.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the dates: From Date, To Date </parameterizedString><parameterizedString isformatted=\"true\">User should be able to select/type in the dates.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on view history button.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to view the patient visit history for the selected dates.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43681",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43992"
+    },
+    {
+      "id": 43991,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:11:42.113Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:11:42.113Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether able to view patient visit history for previous year.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on History section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient history screen.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the dates: From Date, To Date &lt;BR/&gt;(Input previous year date)</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select/type in the dates.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on view history button.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to view the patient visit history for the selected dates.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43681",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43991"
+    },
+    {
+      "id": 43990,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:11:42.113Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:11:42.113Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether able to view patient visit history for current year.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on History section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient history screen.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the dates: From Date, To Date &lt;BR/&gt;(Input current year date)</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select/type in the dates.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on view history button.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to view the patient visit history for the selected dates.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43681",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43990"
+    },
+    {
+      "id": 43996,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:12:49.27Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:12:49.27Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send payment reminder via Fax.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Payments section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Payments section.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the Payment date for outstanding payment.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to outstanding payment details page.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on mail icon respective to the payment date.</parameterizedString><parameterizedString isformatted=\"true\">Mail icon should be enabled to perform the click action.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select Fax as mode of reminder.</parameterizedString><parameterizedString isformatted=\"true\">Fax should get highlighted/selected as mode of reminder.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Enter the valid fax number.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to input the Fax number</parameterizedString><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button button.</parameterizedString><parameterizedString isformatted=\"true\">Should be able to send payment reminder to fax number.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43684",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43996"
+    },
+    {
+      "id": 43995,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:12:49.27Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:12:49.27Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send payment reminder via Email.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Payments section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Payments section.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the Payment date for outstanding payment.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to outstanding payment details page.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on mail icon respective to the payment date.</parameterizedString><parameterizedString isformatted=\"true\">Mail icon should be enabled to perform the click action.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select Email as mode of reminder.</parameterizedString><parameterizedString isformatted=\"true\">Email should get highlighted/selected as mode of reminder.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Enter valid email id</parameterizedString><parameterizedString isformatted=\"true\">User should be able to input the email id.</parameterizedString><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button button.</parameterizedString><parameterizedString isformatted=\"true\">Should be able to send payment reminder to Email id provided.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43684",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43995"
+    },
+    {
+      "id": 43994,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:12:49.27Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:12:49.27Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send payment reminder via mobile phone.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Payments section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Payments section.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the Payment date for outstanding payment.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to outstanding payment details page.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on mail icon respective to the payment date.</parameterizedString><parameterizedString isformatted=\"true\">Mail icon should be enabled to perform the click action.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select the mobile phone as mode of reminder.</parameterizedString><parameterizedString isformatted=\"true\">Mobile phone should get highlighted/selected as mode of reminder.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button button.</parameterizedString><parameterizedString isformatted=\"true\">Sould be able to send payment reminder to mobile phone number.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43684",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43994"
+    },
+    {
+      "id": 44000,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:13:58.033Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:13:58.033Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send appointment reminder via fax number.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Calendar page from appointment section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Calendar page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select upcoming appointment date from the calendar.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the selected appointment date.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on appointment to redirect to appointment screen.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to appointment screen.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button appointment details.</parameterizedString><parameterizedString isformatted=\"true\">Send button should be enabled to perform click action.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select Fax as reminder mode to send appointment details.</parameterizedString><parameterizedString isformatted=\"true\">Fax should get highlighted/selected as mode to send appointment details..</parameterizedString><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button.</parameterizedString><parameterizedString isformatted=\"true\">Should be able to send appointment reminder to patient&amp;#39;s fax number.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43688",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/44000"
+    },
+    {
+      "id": 43999,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:13:58.033Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:13:58.033Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to send e-appointment reminder.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Calendar page from appointment section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Calendar page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select upcoming appointment date from the calendar.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the selected appointment date.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on appointment redirects to appointment screen.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to appointment screen.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button appointment details.</parameterizedString><parameterizedString isformatted=\"true\">Send button should be enabled to perform click action.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select Email as reminder mode to send appointment details.</parameterizedString><parameterizedString isformatted=\"true\">Email should get highlighted/selected as mode to send appointment details..</parameterizedString><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button.</parameterizedString><parameterizedString isformatted=\"true\">Should be able to send appointment reminder to patient&amp;#39;s Email id.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43688",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43999"
+    },
+    {
+      "id": 43998,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:13:58.033Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:13:58.033Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to Send appointment reminder via mobile phone number.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Calendar page from appointment section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Calendar page.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select upcoming appointment date from the calendar.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to select the selected appointment date.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on appointment redirects to appointment screen.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to appointment screen.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button appointment details.</parameterizedString><parameterizedString isformatted=\"true\">Send button should be enabled to perform click action.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select mobile phone number as reminder mode to send appointment details.</parameterizedString><parameterizedString isformatted=\"true\">Mobile phone number should get highlighted/selected as mode to send appointment details..</parameterizedString><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on send button.</parameterizedString><parameterizedString isformatted=\"true\">Should be able to send appointment reminder to patient&amp;#39;s mobile phone number.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43688",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43998"
+    },
+    {
+      "id": 44003,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:15:19.643Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:15:19.643Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to update visit status to Completed.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Visits section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Visits screen.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select any of the visit date and click on visit.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to visit details page when clicked on selected visit.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">From the visit page change visit status to Completed.</parameterizedString><parameterizedString isformatted=\"true\">The selected visit status should get highlighted.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on Save button.</parameterizedString><parameterizedString isformatted=\"true\">Visit status should change to Completed status. </parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43694",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/44003"
+    },
+    {
+      "id": 44002,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:15:19.643Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:15:19.643Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to update visit status to Pending.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select patient link.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Patient search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the patient.</parameterizedString><parameterizedString isformatted=\"true\">Patient(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired patient name from search results and goto patient&amp;#39;s profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected patient profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Visits section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Visits screen.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Select any of the visit date and click on visit.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to visit details page when clicked on selected visit.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">From the visit page change visit status to Pending.</parameterizedString><parameterizedString isformatted=\"true\">The selected visit status should get highlighted.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on Save button.</parameterizedString><parameterizedString isformatted=\"true\">Visit status should change to Pending status. </parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43694",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/44002"
+    },
+    {
+      "id": 44007,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:16:22.52Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:16:22.52Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to Delete schedules.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select doctors.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Doctors search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the Doctor.</parameterizedString><parameterizedString isformatted=\"true\">Doctor(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired doctors name from search results and goto doctors profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected doctors profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Calendar section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to calendar section.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">View calendar for the month to which schedule to be deleted.</parameterizedString><parameterizedString isformatted=\"true\">User should be navigated to selected calendar month.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Hover on the schedule found in calendar cell.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to view the options/actions associated to schedule.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">From the list of options, click on Delete schedule</parameterizedString><parameterizedString isformatted=\"true\">User should be able to click on delete schedule and see the confirmation popup screen to delete the schedule.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Confirm the delete option by clicking on OK button found in confirmation popup.</parameterizedString><parameterizedString isformatted=\"true\">Selected schedule should be deleted from doctors calendar.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43696",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/44007"
+    },
+    {
+      "id": 44006,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:16:22.52Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-06-21T07:16:22.52Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to update/edit schedule",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application.</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login to application.</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on menu and select doctors.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to Doctors search screen.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Search for the Doctor.</parameterizedString><parameterizedString isformatted=\"true\">Doctor(s) should be displayed based on the search criteria.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on desired doctors name from search results and goto doctors profile.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to selected doctors profile screen.</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Goto Calendar section.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to calendar section.</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">View calendar for the month to which schedule to be update/edit.</parameterizedString><parameterizedString isformatted=\"true\">User should be navigated to selected calendar month.</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on the schedule found in calendar cell.</parameterizedString><parameterizedString isformatted=\"true\">User should navigate to schedule details page.</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Edit schedule options (time / date / patient details).</parameterizedString><parameterizedString isformatted=\"true\">User should be able to update/edit the changes in schedule page.</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on save button.</parameterizedString><parameterizedString isformatted=\"true\">Selected schedule should be updated as per the modifications.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43696",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/44006"
+    },
+    {
+      "id": 44005,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM\\Sprint 2",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-06-21T07:16:22.52Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2017-07-12T05:41:13.543Z",
+        "System.ChangedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.Title": "Verify whether user is able to add schedule in doctor screen",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Launch the application and login into the application.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should be able to login to application.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click on menu and select doctors.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should navigate to Doctors search screen.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Search for the Doctor.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;Doctor(s) name should be displayed based on the search criteria.&lt;/P&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;Click on desired doctor's name from search results and go to doctor's profile.&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should navigate to selected doctors profile screen.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Goto Calendar section.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should navigate to calendar section.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;View calendar for the month to which schedule to be created.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should be navigated to selected calander month.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Hover on the date.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should be able to see the option on Hover of date.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"8\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;From the option, select Schedule&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should navigate to schedule creation page.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Input schedule details (time, patient details) in schedule screen.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;User should be able to input all the details to create schedule.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click on save button.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Schedule for the selected should be created for the doctor.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43696",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/44005"
+    },
+    {
+      "id": 43759,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Closed",
+        "System.Reason": "Obsolete",
+        "System.CreatedDate": "2017-06-16T07:14:47.15Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:47.15Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Use case oublié",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43693",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43759"
+    },
+    {
+      "id": 43760,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Closed",
+        "System.Reason": "Obsolete",
+        "System.CreatedDate": "2017-06-16T07:14:47.23Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:47.23Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Cas de test à ajouter",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43693",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43760"
+    },
+    {
+      "id": 43761,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Closed",
+        "System.Reason": "Obsolete",
+        "System.CreatedDate": "2017-06-16T07:14:47.293Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:47.293Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Nouveau cas de test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43693",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43761"
+    },
+    {
+      "id": 43762,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MHC_TM",
+        "System.TeamProject": "MHC_TM",
+        "System.IterationPath": "MHC_TM",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Closed",
+        "System.Reason": "Obsolete",
+        "System.CreatedDate": "2017-06-16T07:14:47.497Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-06-16T07:14:47.497Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Check appointment details",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43693",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/43762"
+    }
+  ],
+  "HttpStatusCode": 0
+}

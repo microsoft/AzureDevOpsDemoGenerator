@@ -1,0 +1,24 @@
+{
+  "Name": "Selenium",
+  "Description": "This template contains code of Parts Unlimited, a fictional eCommerce application which will be provisioned along with build & release definitions and customized to deploy and test the application on an Azure VM using Selenium. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Selenium/' target='_blank'>Driving continuous testing with Selenium</a></p> ",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+  "TeamArea": "TeamArea.json"
+
+}

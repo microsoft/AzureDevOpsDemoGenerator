@@ -1,0 +1,325 @@
+{
+  "name": "BikeRider iOS",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Install an Apple provisioning profile (iOS)",
+      "timeoutInMinutes": 0,
+      "refName": "InstallAppleProvisioningProfile_1",
+      "task": {
+        "id": "0f9f66ca-250e-40fd-9678-309bcd439d5e",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "provProfileSecureFile": "cf0b9857-159a-467e-9c68-1b8a70997435",
+        "removeProfile": "true"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Install an Apple provisioning profile (watchOS)",
+      "timeoutInMinutes": 0,
+      "refName": "InstallAppleProvisioningProfile_2",
+      "task": {
+        "id": "0f9f66ca-250e-40fd-9678-309bcd439d5e",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "provProfileSecureFile": "df0bd4a2-7d8f-4403-a047-af5e3af2406f",
+        "removeProfile": "true"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download p12",
+      "timeoutInMinutes": 0,
+      "refName": "ProcessRunner_3",
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "filename": "curl",
+        "arguments": "-k \"$(p12.url)\" --output $(Build.SourcesDirectory)/$(p12.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": false,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download mobileprovision",
+      "timeoutInMinutes": 0,
+      "refName": "ProcessRunner_4",
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "filename": "curl",
+        "arguments": "-k \"$(provisioningProfile.url)\" --output $(Build.SourcesDirectory)/$(provisioningProfile.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": false,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download mobileprovision watchOS",
+      "timeoutInMinutes": 0,
+      "refName": "ProcessRunner_5",
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "filename": "curl",
+        "arguments": "-k \"$(provisioningProfileWatch.url)\" --output $(Build.SourcesDirectory)/$(provisioningProfileWatch.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "NuGet restore BikeSharing.Xamarin.sln",
+      "timeoutInMinutes": 0,
+      "refName": "NuGetInstaller_6",
+      "task": {
+        "id": "333b11bd-d341-40d9-afcf-b32d5ce6f23b",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "BikeSharing.Xamarin.sln",
+        "nugetConfigPath": "",
+        "restoreMode": "restore",
+        "noCache": "false",
+        "nuGetRestoreArgs": "",
+        "verbosity": "Detailed",
+        "nuGetVersion": "4.0.0.2283",
+        "nuGetPath": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.iOS solution 07b_BikeSharing.Xamarin-iOS.sln",
+      "timeoutInMinutes": 0,
+      "refName": "XamariniOS_7",
+      "task": {
+        "id": "0f077e3a-af59-496d-81bc-ad971b7464e0",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "07b_BikeSharing.Xamarin-iOS.sln",
+        "configuration": "$(BuildConfiguration)",
+        "clean": "false",
+        "packageApp": "true",
+        "forSimulator": "false",
+        "runNugetRestore": "true",
+        "args": "",
+        "cwd": "",
+        "buildTool": "msbuild",
+        "mdtoolLocation": "",
+        "signMethod": "file",
+        "iosSigningIdentity": "",
+        "unlockDefaultKeychain": "false",
+        "defaultKeychainPassword": "",
+        "provProfileUuid": "",
+        "p12": "$(Build.SourcesDirectory)/$(p12.name)",
+        "p12pwd": "$(p12.password)",
+        "provProfile": "",
+        "removeProfile": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Copy Files to: $(Build.ArtifactStagingDirectory)",
+      "timeoutInMinutes": 0,
+      "refName": "CopyFiles_8",
+      "task": {
+        "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "src/BikeSharing.Clients.iOS/bin/iPhone/$(BuildConfiguration)",
+        "Contents": "**/*.ipa",
+        "TargetFolder": "$(Build.ArtifactStagingDirectory)",
+        "CleanTargetFolder": "false",
+        "OverWrite": "false",
+        "flattenFolders": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Publish Artifact: drop",
+      "timeoutInMinutes": 0,
+      "refName": "PublishBuildArtifacts_9",
+      "task": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "812111",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": { }
+    }
+  ],
+  "triggers": [
+    {
+      "branchFilters": [
+        "+refs/heads/master"
+      ],
+      "pathFilters": [ ],
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "pollingInterval": 0,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "p12.url": {
+      "value": "https://bikesharingpublicbuild.blob.core.windows.net/build-ios/BitStadium.p12"
+    },
+    "provisioningProfile.url": {
+      "value": "https://bikesharingpublicbuild.blob.core.windows.net/build-ios/01be54d7-7e4d-4cc4-998a-31dea4f57cbe.mobileprovision"
+    },
+    "p12.name": {
+      "value": "BitStadium.p12"
+    },
+    "provisioningProfile.name": {
+      "value": "01be54d7-7e4d-4cc4-998a-31dea4f57cbe.mobileprovision"
+    },
+    "p12.password": {
+      "value": "x79nc2c7xy6"
+    },
+    "BuildConfiguration": {
+      "value": "Release"
+    },
+    "provisioningProfileWatch.url": {
+      "value": "https://bikesharingpublicbuild.blob.core.windows.net/build-ios/8260e85f-4462-4dac-8586-45ccfc1d5b77.mobileprovision"
+    },
+    "provisioningProfileWatch.name": {
+      "value": "8260e85f-4462-4dac-8586-45ccfc1d5b77.mobileprovision"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [ ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+ 
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "$BikeSharing360$",
+    "type": "TfsGit",
+    "name": "BikeSharing360",
+    "url": "",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": { },
+  "quality": "definition",
+  
+  "queue": {
+    "name": "MacPool",
+    "pool": {
+      "name": "MacPool"
+    }
+  }
+}

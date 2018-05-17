@@ -1,0 +1,25 @@
+{
+  "Name": "Template Name",
+  "Description": "BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence.",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "",
+   
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "BoardRowsFromTemplate.json",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+   "TeamArea": "TeamArea.json"
+  
+}

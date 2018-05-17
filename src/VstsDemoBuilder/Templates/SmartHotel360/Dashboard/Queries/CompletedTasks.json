@@ -1,0 +1,5 @@
+﻿{
+  "name": "Completed Tasks",
+  "wiql": "select [System.Id], [System.Title], [System.AssignedTo],[Microsoft.VSTS.Common.Priority], [Microsoft.VSTS.Scheduling.RemainingWork], [Microsoft.VSTS.Scheduling.CompletedWork], [Microsoft.VSTS.Scheduling.OriginalEstimate] from WorkItems where [System.TeamProject] = @project and [System.IterationPath] under '$projectId$\\Iteration 1' and [System.WorkItemType] = 'Task' and [System.State] = 'Closed' order by [Microsoft.VSTS.Common.StackRank], [Microsoft.VSTS.Common.Priority], [Microsoft.VSTS.Common.Severity], [System.Id]"
+
+}

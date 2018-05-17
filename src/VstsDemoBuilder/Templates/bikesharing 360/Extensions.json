@@ -1,0 +1,15 @@
+﻿{
+  "Extensions": [
+
+    {
+      "name": "HockeyApp",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp&targetId=45e04ca2-6849-4a3e-aef4-3aa10f48b405' target='_blank'><b>HockeyApp</b></a>",
+      "PublisherId": "ms",
+      "ExtensionId": "hockeyapp",
+      "publisher": "microsoft",
+      "License": ""
+    }
+   
+   
+  ]
+}

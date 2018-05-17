@@ -1,0 +1,24 @@
+{
+  "Name": "WhiteSource Bolt",
+  "Description": "This template provisions WebGoat code, a deliberately insecure web application from OWASP along with CI and CD definitions. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/WhiteSource/' target='_blank'>OSS governance with WhiteSource</a></p>",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "",
+  "BoardColumns": "",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "",
+  "CardField": "",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "UerStoriesfromTemplate.json",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "",
+  "Chart": "",
+  "TeamArea": "TeamArea.json"
+
+}

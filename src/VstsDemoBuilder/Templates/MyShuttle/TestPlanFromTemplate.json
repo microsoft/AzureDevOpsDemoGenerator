@@ -1,0 +1,68 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 1123,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttle",
+        "System.TeamProject": "MyShuttle",
+        "System.IterationPath": "MyShuttle",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2018-01-19T12:19:06.617Z",
+        "System.CreatedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2018-01-19T12:19:06.617Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "MyShuttle2 Team_Stories_Sprint 3",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1123"
+    },
+    {
+      "id": 1105,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttle",
+        "System.TeamProject": "MyShuttle",
+        "System.IterationPath": "MyShuttle",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2018-01-19T12:19:06.617Z",
+        "System.CreatedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2018-01-19T12:19:06.617Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "Release 1.0",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1105"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,0 +1,41 @@
+﻿{
+  "count": 1,
+  "value": [
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "The “CONTACT US” tab doesn’t re-direct to the contact us section. Please check.",
+          "commentType": 1
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": "System.Int32",
+          "value": 1
+
+        }
+      },
+      "status": 1,
+      "pullRequestThreadContext": null,
+      "threadContext": null,
+      "Replies": [
+         {
+          "content": "Ohh. Let me fix it.",
+          "parentCommentId": 1,
+          "commentType": 1
+        },
+        {
+          "content": "Please check. I have fixed.",
+          "parentCommentId": 1,
+          "commentType": 1
+        },
+         {
+          "content": "Thanks. Looks great now 😃",
+          "parentCommentId": 1,
+          "commentType": 1
+        }
+      ]
+    }
+  ]
+}

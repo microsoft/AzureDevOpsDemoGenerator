@@ -1,0 +1,897 @@
+{
+
+  "name": "BikeShare Public Web",
+  "path": "\\",
+  "variables": { },
+  "variableGroups": [ ],
+  "environments": [
+    {
+
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "ReleaseConfiguration": {
+          "value": "Debug"
+        },
+        "ReleasePlatform": {
+          "value": "Any CPU"
+        },
+        "Token.Browser": {
+          "value": "chrome"
+        },
+        "Token.URL": {
+          "value": "http://dev.readybikeshare.azurewebsites.net/"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+      
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "queueId": "$Hosted$",
+            "demands": [ ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "AzureRM",
+                "WebAppName": "ReadyBikeShare",
+                "ServerfarmId": "/subscriptions/56fc2374-b7e8-4c14-b15c-a191b635762a/resourceGroups/Ready2017RG/providers/Microsoft.Web/serverfarms/ReayBikeShareSP",
+                "WebAppKind": "app",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "StartupCommand": "",
+                "DeployToSlotFlag": "true",
+                "ResourceGroupName": "Ready2017RG",
+                "SlotName": "Dev",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            },
+            {
+              "taskId": "ce85a08b-a538-4d2b-8589-1d37a9ab970f",
+              "version": "1.*",
+              "name": "Execute Azure SQL : DacpacTask",
+              "refName": "SqlAzureDacpacDeployment_3",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
+                "ConnectedServiceName": "",
+                "ConnectedServiceNameARM": "AzureRM",
+                "ServerName": "$(DatabaseServer)",
+                "DatabaseName": "$(DatabaseName)",
+                "SqlUsername": "abel",
+                "SqlPassword": "$(DBPassword)",
+                "TaskNameSelector": "DacpacTask",
+                "DacpacFile": "$(System.DefaultWorkingDirectory)/BikeSharing360-PublicWeb/drop/MyBikes.Web.dacpac",
+                "SqlFile": "",
+                "SqlInline": "",
+                "PublishProfile": "",
+                "AdditionalArguments": "",
+                "SqlAdditionalArguments": "",
+                "InlineAdditionalArguments": "",
+                "IpDetectionMethod": "AutoDetect",
+                "StartIpAddress": "",
+                "EndIpAddress": "",
+                "DeleteFirewallRule": "true"
+              }
+            },
+            //{
+            //  "taskId": "44a52840-75ab-11e5-adb2-ab51c176c121",
+            //  "version": "0.*",
+            //  "name": "ConfigTokenizer ",
+            //  "refName": "ConfigTokenizer_1",
+            //  "enabled": true,
+            //  "alwaysRun": false,
+            //  "continueOnError": false,
+            //  "timeoutInMinutes": 0,
+            //  "definitionType": "task",
+            //  "overrideInputs": {},
+            //  "condition": "succeeded()",
+            //  "inputs": {
+            //    "cwd": "$(Agent.HomeDirectory)",
+            //    "tokens": "__AppUrl__ = $(Token.URL)\n__BrowserType__ = $(Token.Browser)"
+            //  }
+            //},
+            {
+              "taskId": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+              "version": "2.*",
+              "name": "Selenium Smoke Tests",
+              "refName": "VSTest_2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "testSelector": "testAssemblies",
+                "testAssemblyVer2": "**\\*test*.dll\n!**\\obj\\**",
+                "testPlan": "",
+                "testSuite": "",
+                "testConfiguration": "",
+                "tcmTestRun": "$(test.RunId)",
+                "searchFolder": "$(System.DefaultWorkingDirectory)",
+                "testFiltercriteria": "TestCategory=UITests",
+                "runOnlyImpactedTests": "False",
+                "runAllTestsAfterXBuilds": "50",
+                "uiTests": "false",
+                "vstestLocationMethod": "version",
+                "vsTestVersion": "latest",
+                "vstestLocation": "",
+                "runSettingsFile": "",
+                "overrideTestrunParameters": "",
+                "runInParallel": "False",
+                "runTestsInIsolation": "False",
+                "pathtoCustomTestAdapters": "",
+                "codeCoverageEnabled": "False",
+                "otherConsoleOptions": "",
+                "testRunTitle": "",
+                "platform": "",
+                "configuration": "",
+                "publishRunAttachments": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [ ],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [ ],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": { },
+      "properties": { }
+    },
+    {
+
+      "name": "QA",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "ReleaseConfiguration": {
+          "value": "Release"
+        },
+        "ReleasePlatform": {
+          "value": "Any CPU"
+        },
+        "Token.Browser": {
+          "value": "phantomjs"
+        },
+        "Token.URL": {
+          "value": "http://qa.readybikeshare.azurewebsites.net/"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+              "id": "$OwnerId$",
+              "displayName": "$OwnerDisplayName$",
+              "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": 0,
+          "releaseCreatorCanBeApprover": true,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 43200
+        }
+      },
+      "deployStep": {
+      
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "queueId": "$Hosted$",
+            "demands": [ ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$Hosted$",
+                "WebAppName": "ReadyBikeShare",
+                "ServerfarmId": "/subscriptions/56fc2374-b7e8-4c14-b15c-a191b635762a/resourceGroups/Ready2017RG/providers/Microsoft.Web/serverfarms/ReayBikeShareSP",
+                "WebAppKind": "app",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "StartupCommand": "",
+                "DeployToSlotFlag": "true",
+                "ResourceGroupName": "Ready2017RG",
+                "SlotName": "QA",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            },
+            {
+              "taskId": "ce85a08b-a538-4d2b-8589-1d37a9ab970f",
+              "version": "1.*",
+              "name": "Execute Azure SQL : DacpacTask",
+              "refName": "SqlAzureDacpacDeployment_1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
+                "ConnectedServiceName": "",
+                "ConnectedServiceNameARM": "$Hosted$",
+                "ServerName": "$(DatabaseServer)",
+                "DatabaseName": "$(DatabaseName)",
+                "SqlUsername": "$(DBAdmin)",
+                "SqlPassword": "$(DBPassword)",
+                "TaskNameSelector": "DacpacTask",
+                "DacpacFile": "$(System.DefaultWorkingDirectory)/BikeSharing360-PublicWeb/drop/MyBikes.Web.dacpac",
+                "SqlFile": "",
+                "SqlInline": "",
+                "PublishProfile": "",
+                "AdditionalArguments": "",
+                "SqlAdditionalArguments": "",
+                "InlineAdditionalArguments": "",
+                "IpDetectionMethod": "AutoDetect",
+                "StartIpAddress": "",
+                "EndIpAddress": "",
+                "DeleteFirewallRule": "true"
+              }
+            },
+            //{
+            //  "taskId": "44a52840-75ab-11e5-adb2-ab51c176c121",
+            //  "version": "0.*",
+            //  "name": "ConfigTokenizer ",
+            //  "enabled": true,
+            //  "alwaysRun": false,
+            //  "continueOnError": false,
+            //  "timeoutInMinutes": 0,
+            //  "definitionType": "task",
+            //  "overrideInputs": {},
+            //  "condition": "succeeded()",
+            //  "inputs": {
+            //    "cwd": "$(Agent.HomeDirectory)",
+            //    "tokens": "__AppUrl__=$(Token.URL)\n__BrowserType__=$(Token.Browser)"
+            //  }
+            //},
+            {
+              "taskId": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+              "version": "2.*",
+              "name": "VsTest - testAssemblies",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "testSelector": "testAssemblies",
+                "testAssemblyVer2": "**\\*test*.dll\n!**\\obj\\**",
+                "testPlan": "",
+                "testSuite": "",
+                "testConfiguration": "",
+                "tcmTestRun": "$(test.RunId)",
+                "searchFolder": "$(System.DefaultWorkingDirectory)",
+                "testFiltercriteria": "TestCategory=UITests",
+                "runOnlyImpactedTests": "false",
+                "runAllTestsAfterXBuilds": "50",
+                "uiTests": "false",
+                "vstestLocationMethod": "version",
+                "vsTestVersion": "latest",
+                "vstestLocation": "",
+                "runSettingsFile": "",
+                "overrideTestrunParameters": "",
+                "runInParallel": "false",
+                "runTestsInIsolation": "false",
+                "pathtoCustomTestAdapters": "",
+                "codeCoverageEnabled": "false",
+                "otherConsoleOptions": "",
+                "testRunTitle": "",
+                "platform": "",
+                "configuration": "",
+                "publishRunAttachments": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [ ],
+      "conditions": [
+        {
+          "name": "Dev",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [ ],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": { },
+      "properties": { }
+    },
+    {
+
+      "name": "BlueGreen",
+      "rank": 3,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "ReleaseConfiguration": {
+          "value": "Release"
+        },
+        "ReleasePlatform": {
+          "value": "Any CPU"
+        },
+        "Token.Browser": {
+          "value": "phantomjs"
+        },
+        "Token.URL": {
+          "value": "http://bluegreen.readybikeshare.azurewebsites.net/"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+              "id": "$OwnerId$",
+              "displayName": "$OwnerDisplayName$",
+              "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": 0,
+          "releaseCreatorCanBeApprover": true,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 43200
+        }
+      },
+      "deployStep": {
+       
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "queueId": "Hosted",
+            "demands": [ ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "AzureRM",
+                "WebAppName": "ReadyBikeShare",
+                "ServerfarmId": "/subscriptions/56fc2374-b7e8-4c14-b15c-a191b635762a/resourceGroups/Ready2017RG/providers/Microsoft.Web/serverfarms/ReayBikeShareSP",
+                "WebAppKind": "app",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "StartupCommand": "",
+                "DeployToSlotFlag": "true",
+                "ResourceGroupName": "Ready2017RG",
+                "SlotName": "BlueGreen",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            },
+            {
+              "taskId": "ce85a08b-a538-4d2b-8589-1d37a9ab970f",
+              "version": "1.*",
+              "name": "Execute Azure SQL : DacpacTask",
+              "refName": "SqlAzureDacpacDeployment_1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
+                "ConnectedServiceName": "",
+                "ConnectedServiceNameARM": "AzureRM",
+                "ServerName": "$(DatabaseServer)",
+                "DatabaseName": "$(DatabaseName)",
+                "SqlUsername": "$(DatabaseAdmin)",
+                "SqlPassword": "$(DatabasePassword)",
+                "TaskNameSelector": "DacpacTask",
+                "DacpacFile": "$(System.DefaultWorkingDirectory)/BikeSharing360-PublicWeb/drop/MyBikes..dacpac",
+                "SqlFile": "",
+                "SqlInline": "",
+                "PublishProfile": "",
+                "AdditionalArguments": "",
+                "SqlAdditionalArguments": "",
+                "InlineAdditionalArguments": "",
+                "IpDetectionMethod": "AutoDetect",
+                "StartIpAddress": "",
+                "EndIpAddress": "",
+                "DeleteFirewallRule": "true"
+              }
+            },
+            //{
+            //  "taskId": "44a52840-75ab-11e5-adb2-ab51c176c121",
+            //  "version": "0.*",
+            //  "name": "ConfigTokenizer ",
+            //  "enabled": true,
+            //  "alwaysRun": false,
+            //  "continueOnError": false,
+            //  "timeoutInMinutes": 0,
+            //  "definitionType": "task",
+            //  "overrideInputs": {},
+            //  "condition": "succeeded()",
+            //  "inputs": {
+            //    "cwd": "$(Agent.HomeDirectory)",
+            //    "tokens": "__AppUrl__=$(Token.URL)\n__BrowserType__=$(Token.Browser)"
+            //  }
+            //},
+            {
+              "taskId": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+              "version": "2.*",
+              "name": "VsTest - testAssemblies",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "testSelector": "testAssemblies",
+                "testAssemblyVer2": "**\\*test*.dll\n!**\\obj\\**",
+                "testPlan": "",
+                "testSuite": "",
+                "testConfiguration": "",
+                "tcmTestRun": "$(test.RunId)",
+                "searchFolder": "$(System.DefaultWorkingDirectory)",
+                "testFiltercriteria": "TestCategory=UITests",
+                "runOnlyImpactedTests": "false",
+                "runAllTestsAfterXBuilds": "50",
+                "uiTests": "false",
+                "vstestLocationMethod": "version",
+                "vsTestVersion": "latest",
+                "vstestLocation": "",
+                "runSettingsFile": "",
+                "overrideTestrunParameters": "",
+                "runInParallel": "false",
+                "runTestsInIsolation": "false",
+                "pathtoCustomTestAdapters": "",
+                "codeCoverageEnabled": "false",
+                "otherConsoleOptions": "",
+                "testRunTitle": "",
+                "platform": "",
+                "configuration": "",
+                "publishRunAttachments": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [ ],
+      "conditions": [
+        {
+          "name": "QA",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [ ],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": { },
+      "properties": { }
+    },
+    {
+
+      "name": "Prod",
+      "rank": 4,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "ReleaseConfiguration": {
+          "value": "Release"
+        },
+        "ReleasePlatform": {
+          "value": "Any CPU"
+        },
+        "Token.Browser": {
+          "value": "phantomjs"
+        },
+        "Token.URL": {
+          "value": "http://readybikeshare.azurewebsites.net/"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+              "id": "$OwnerId$",
+              "displayName": "$OwnerDisplayName$",
+              "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": 0,
+          "releaseCreatorCanBeApprover": true,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 43200
+        }
+      },
+      "deployStep": {
+      
+		},
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "queueId": "$Hosted$",
+            "demands": [ ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "f045e430-8704-11e6-968f-e717e6411619",
+              "version": "0.*",
+              "name": "Swap Slots: ReadyBikeShare",
+              "refName": "AzureAppServiceManage_1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": { },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "AzureRM",
+                "Action": "Swap Slots",
+                "WebAppName": "ReadyBikeShare",
+                "SpecifySlot": "",
+                "ResourceGroupName": "Ready2017RG",
+                "SourceSlot": "BlueGreen",
+                "SwapWithProduction": "true",
+                "TargetSlot": "",
+                "PreserveVnet": "false",
+                "Slot": "",
+                "ExtensionsList": "",
+                "OutputVariable": ""
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [ ],
+      "conditions": [
+        {
+          "name": "BlueGreen",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [ ],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": { },
+      "properties": { }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$BikeSharing360-PublicWeb-id$",
+      "type": "Build",
+      "alias": "BikeSharing360-PublicWeb",
+      "definitionReference": {
+
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$BikeSharing360-PublicWeb-id$",
+          "name": "BikeSharing360-PublicWeb"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "BikeSharing360-PublicWeb",
+      "triggerConditions": [ ],
+      "triggerType": "artifactSource"
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "retentionPolicy": {
+    "daysToKeep": 30
+  },
+  "tags": [ ],
+  "properties": { }
+}

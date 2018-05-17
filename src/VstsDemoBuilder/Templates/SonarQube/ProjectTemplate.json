@@ -1,0 +1,24 @@
+{
+  "Name": "SonarQube",
+  "Description": "This template contains code of MyShuttle, a sample application which will be provisioned and customized to analyze the code during the build and improve code quality.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/sonarqube/' target='_blank'>Technical Debt Management with SonarQube</a></p>",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+  "TeamArea": "TeamArea.json"
+
+}

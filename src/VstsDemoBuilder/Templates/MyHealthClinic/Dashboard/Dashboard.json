@@ -1,0 +1,354 @@
+﻿{
+    "name": "Overview",
+    "refreshInterval": 0,
+    "position": 1,
+    "widgets": [
+        {
+            "name": "Active Bugs",
+            "position": {
+                "row": 2,
+                "column": 7
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$ActiveBugs$\",\"queryName\":\"Active Bugs\",\"colorRules\":[{\"isEnabled\":true,\"backgroundColor\":\"#e60017\",\"thresholdCount\":1,\"operator\":\">=\"}],\"lastArtifactName\":\"Active Bugs\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Assigned to Me",
+            "position": {
+                "row": 1,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget.Configuration",
+            "isNameConfigurable": false,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Work Links",
+            "position": {
+                "row": 4,
+                "column": 8
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+           
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WorkLinksWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WorkLinksWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+      {
+        "name": "MyHealthClinicE2E",
+        "position": {
+          "row": 3,
+          "column": 6
+        },
+        "size": {
+          "rowSpan": 1,
+          "columnSpan": 2
+        },
+        "settings": "{\"name\":\"MyHealthClinicE2E\",\"id\":$MyHealthClinicE2E$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$MyHealthClinicE2E$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"MHC.Web.CI\"}",
+        "settingsVersion": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
+        "isNameConfigurable": true
+      },
+        {
+            "name": "Release Definition Overview",
+            "position": {
+                "row": 4,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"releaseDefinitionId\":1}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-releaseManagement-web.release-definition-summary-widget",
+            "typeId": "release-definition-summary-widget",
+            "configurationContributionId": "ms.vss-releaseManagement-web.release-definition-summary-widget-configuration",
+            "configurationContributionRelativeId": "release-definition-summary-widget-configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "User Stories by State",
+            "position": {
+                "row": 4,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$UserStories$\",\"title\":\"User Stories by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$UserStories$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"User Stories by State\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Other Links",
+            "position": {
+                "row": 5,
+                "column": 8
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.OtherLinksWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.OtherLinksWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Unfinished Work",
+            "position": {
+                "row": 1,
+                "column": 7
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$Unfinished Work$\",\"queryName\":\"Unfinished Work\",\"colorRules\":[],\"lastArtifactName\":\"Unfinished Work\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "New Work Item",
+            "position": {
+                "row": 3,
+                "column": 8
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget.Configuration",
+            "isNameConfigurable": false
+        },
+      {
+        "name": "User Stories by Assigned To",
+        "position": {
+          "row": 4,
+          "column": 6
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$UserStories$\",\"title\":\"User Stories by Assigned To\",\"chartType\":\"BarChart\",\"transformOptions\":{\"filter\":\"$UserStories$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"User Stories by Assigned To\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "Sprint Burndown",
+            "position": {
+                "row": 3,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Welcome",
+            "position": {
+                "row": 1,
+                "column": 8
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Markdown",
+            "position": {
+                "row": 1,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 3,
+                "columnSpan": 3
+            },
+            "settings": "{\"repositoryId\":\"$RepositoryId$\",\"version\":\"GBmaster\",\"path\":\"/readme.md\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget.Configuration",
+            "isNameConfigurable": false,
+            "lightboxOptions": {
+                "width": 600,
+                "height": 500,
+                "resizable": true
+            }
+        }
+    ]
+   
+}

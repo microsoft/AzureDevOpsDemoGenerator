@@ -1,0 +1,105 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 807,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:30:44.597Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Make sure each checkin is validated",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/808",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/811",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/806",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/807"
+    },
+    {
+      "id": 801,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:30:44.597Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Make sure the code is secure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/805",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/802",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/801"
+    }
+  ],
+  "HttpStatusCode": 0
+}

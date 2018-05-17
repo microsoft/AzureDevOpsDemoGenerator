@@ -1,0 +1,19 @@
+
+{
+  "data": {
+    "subscriptionId": "SubscriptionId",
+    "subscriptionName": "Visual Studio Enterprise",
+    "creationMode": "Automatic"
+  },
+  "name": "AzureRM",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "serviceprincipalid": "ServiceprincipalId",
+      "tenantid": "tenantid"
+    },
+    "scheme": "ServicePrincipal"
+  },
+  "isReady": true
+}

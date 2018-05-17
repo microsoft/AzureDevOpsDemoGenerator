@@ -1,0 +1,59 @@
+{
+    "rules": {
+        "fill": [
+            {
+                "name": "Rule Name",
+                "isEnabled": "True",
+                "filter": "[System.Tags] contains 'Azure'",
+                "clauses": [
+                    {
+                        "fieldName": "System.Tags",
+                        "index": 1,
+                        "logicalOperator": "",
+                        "operator": "CONTAINS",
+                        "value": "Azure"
+                    }
+                ],
+                "settings": {
+                    "background-color": "#ffebd7",
+                    "title-color": "#000000"
+                }
+            }
+        ],
+        "tagStyle": [
+            {
+                "name": "Templates",
+                "isEnabled": "True",
+                "settings": {
+                    "background-color": "#ec001d",
+                    "color": "#ffffff"
+                }
+            },
+            {
+                "name": "VSTS",
+                "isEnabled": "True",
+                "settings": {
+                    "background-color": "#602f70",
+                    "color": "#ffffff"
+                }
+            },
+            {
+                "name": "Docker",
+                "isEnabled": "True",
+                "settings": {
+                    "background-color": "#2cbdd9",
+                    "color": "#000000"
+                }
+            },
+            {
+                "name": "Azure",
+                "isEnabled": "True",
+                "settings": {
+                    "background-color": "#245cac",
+                    "color": "#ffffff"
+                }
+            }
+        ]
+    }
+    
+}

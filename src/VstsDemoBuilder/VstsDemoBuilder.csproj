@@ -1,0 +1,966 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1796A5C-DA7B-4077-86F3-B2C8626257B7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VstsDemoBuilder</RootNamespace>
+    <AssemblyName>VstsDemoBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <ApplicationInsightsResourceId>/subscriptions/f74e6a4f-08cd-4e93-968f-6618f41c4531/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/VstsDemoBuilder</ApplicationInsightsResourceId>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PublishDatabases>true</PublishDatabases>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.13.5.907, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.5\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.13.5.907, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.5\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.ServiceBus.3.3.2\lib\net45-full\Microsoft.ServiceBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.15.112.1\lib\net45\Microsoft.TeamFoundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Client.Interactive, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.InteractiveClient.15.112.1\lib\net45\Microsoft.VisualStudio.Services.Client.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.15.112.1\lib\net45\Microsoft.VisualStudio.Services.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.ExtensionManagement.WebApi, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.ExtensionManagement.WebApi.15.112.1-preview\lib\net45\Microsoft.VisualStudio.Services.ExtensionManagement.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Gallery.WebApi, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Gallery.WebApi.15.112.1-preview\lib\net45\Microsoft.VisualStudio.Services.Gallery.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.WebApi, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.15.112.1\lib\net45\Microsoft.VisualStudio.Services.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EnvironmentController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
+    <Compile Include="Extensions\Extension.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccessDetails.cs" />
+    <Compile Include="Models\Accounts.cs" />
+    <Compile Include="Models\Dashboard.cs" />
+    <Compile Include="Models\Default.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ProfileDetails.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectList.cs" />
+    <Compile Include="Models\Query.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\custom.min.css" />
+    <Content Include="assets\images\VSTS_cover_image.png" />
+    <Content Include="assets\images\VSTS_full_logo.png" />
+    <Content Include="assets\images\VS_logo.png" />
+    <Content Include="assets\templategrouping\templategroup.custom.min.css" />
+    <Content Include="assets\templategrouping\templategroup.script.js" />
+    <Content Include="Content\assets\css\custom.min.css" />
+    <Content Include="Content\assets\images\VSTS-demoGen-image.png" />
+    <Content Include="Content\assets\images\VSTS-menu.svg" />
+    <Content Include="Content\assets\images\VSTS-user-image.svg" />
+    <Content Include="Content\assets\images\VSTS_cover_image.png" />
+    <Content Include="Content\assets\images\VSTS_full_logo.png" />
+    <Content Include="Content\assets\images\vsts_header_image.png" />
+    <Content Include="Content\assets\images\VS_logo.png" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custome-style.css" />
+    <Content Include="Content\ddlStyle.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="EmailTemplates\ErrorDetail.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Images\background-verify.png" />
+    <Content Include="Images\check-10.png" />
+    <Content Include="Images\check-10_new.png" />
+    <Content Include="Images\create_img_final1.png" />
+    <Content Include="Images\cross-10.png" />
+    <Content Include="Images\cross10_new.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\image2.png" />
+    <Content Include="Images\img_verify2.jpg" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\MSimgae.png" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\outlook.png" />
+    <Content Include="Images\tfs.png" />
+    <Content Include="Images\Thinking_Face_Emoji.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\user-clear.png" />
+    <Content Include="Images\Verify_image.jpg" />
+    <Content Include="Images\vs-logo.png" />
+    <Content Include="Scripts\AppScripts\create.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\tooltip.js" />
+    <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\PartsUnlimitedWiki\Development Environment.json" />
+    <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\PartsUnlimitedWiki\Getting Started.json" />
+    <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\PartsUnlimitedWiki\Key Features.json" />
+    <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\AboutPartsUnlimited.json" />
+    <Content Include="Templates\PartsUnlimited\WorkItemAttachments\217227appInsights.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="assets\css\custom.min.css.map" />
+    <Content Include="assets\css\custom.scss" />
+    <Content Include="Content\assets\css\custom.min.css.map" />
+    <Content Include="Content\assets\css\custom.scss" />
+    <Content Include="Templates\bikesharing 360\BoardColumns.json" />
+    <Content Include="Templates\bikesharing 360\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\BugfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider Android.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider iOS.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider UWP %28ARM%29.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider UWP %28x86%29.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeSharing360-ASP.NET %28PREVIEW%29-CI.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeSharing360-PublicWeb.json" />
+    <Content Include="Templates\bikesharing 360\CreateServiceEndPoint.json" />
+    <Content Include="Templates\bikesharing 360\Dashboard\Dashboard.json" />
+    <Content Include="Templates\bikesharing 360\Dashboard\Queries\All Items.json" />
+    <Content Include="Templates\bikesharing 360\Dashboard\Queries\New query.json" />
+    <Content Include="Templates\bikesharing 360\EpicfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\Extensions.json" />
+    <Content Include="Templates\bikesharing 360\FeaturefromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\ImportSourceCode\BikeSharing360.json" />
+    <Content Include="Templates\bikesharing 360\Iterations.json" />
+    <Content Include="Templates\bikesharing 360\PBIfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\ProjectSettings.json" />
+    <Content Include="Templates\bikesharing 360\ProjectTemplate.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\BikeShare Public Web.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin Android.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin iOS.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin UWP - ARM.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin UWP - x86.json" />
+    <Content Include="Templates\bikesharing 360\ServiceEndpoints\bikesharing360-code.json" />
+    <Content Include="Templates\bikesharing 360\ServiceEndpoints\HockeyApp.json" />
+    <Content Include="Templates\bikesharing 360\TaskfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\TeamArea.json" />
+    <Content Include="Templates\bikesharing 360\Teams.json" />
+    <Content Include="Templates\bikesharing 360\TestCasefromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\UpdateCardFields.json" />
+    <Content Include="Templates\bikesharing360\BoardColumns.json" />
+    <Content Include="Templates\bikesharing360\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\bikesharing360\BugfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\EventApi.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\PrivateWeb.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\ProfilesApi.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\PublicWeb.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\RidesApi.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\Xamarin.Droid.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\Xamarin.iOS.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\Xamarin.UWP.json" />
+    <Content Include="Templates\bikesharing360\Dashboard\Dashboard.json" />
+    <Content Include="Templates\bikesharing360\EnableEpic.json" />
+    <Content Include="Templates\bikesharing360\EpicfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\Extensions.json" />
+    <Content Include="Templates\bikesharing360\FeaturefromTemplate.json" />
+    <Content Include="Templates\bikesharing360\ImportSourceCode\bikesharing360.json" />
+    <Content Include="Templates\bikesharing360\ImportSourceCode\CodeAutomation.json" />
+    <Content Include="Templates\bikesharing360\ImportSourceCode\ToolsAndEnvironment.json" />
+    <Content Include="Templates\bikesharing360\Iterations.json" />
+    <Content Include="Templates\bikesharing360\PBIfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\ProjectSettings.json" />
+    <Content Include="Templates\bikesharing360\ProjectTemplate.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\EventApi.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\PrivateWeb.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\ProfilesApi.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\PublicWeb.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\RidesApi.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\Xamarin.Android.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\Xamarin.iOS.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\Xamarin.UWP.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\AppleStore.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\Automation-code.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\bikesharing360-code.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\DevTest Labs Demo %283f184cb0-363b-4924-b866-18c2ff541f98%29.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\GooglePlay.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\HockeyApp.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\ToolsAndEnvironments-code.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\WindowsStore.json" />
+    <Content Include="Templates\bikesharing360\TaskfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\TeamArea.json" />
+    <Content Include="Templates\bikesharing360\Teams.json" />
+    <Content Include="Templates\bikesharing360\TestCasefromTemplate.json" />
+    <Content Include="Templates\CreateProject.json" />
+    <Content Include="Templates\DeploymentGroups\BoardColumns.json" />
+    <Content Include="Templates\DeploymentGroups\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\DeploymentGroups\BuildDefinitions\DeploymentGroups.json" />
+    <Content Include="Templates\DeploymentGroups\Dashboard\Dashboard.json" />
+    <Content Include="Templates\DeploymentGroups\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\DeploymentGroups\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\DeploymentGroups\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\DeploymentGroups\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\DeploymentGroups\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\DeploymentGroups\EnableEpic.json" />
+    <Content Include="Templates\DeploymentGroups\ImportSourceCode\DeploymentGroup.json" />
+    <Content Include="Templates\DeploymentGroups\Iterations.json" />
+    <Content Include="Templates\DeploymentGroups\ProjectSettings.json" />
+    <Content Include="Templates\DeploymentGroups\ProjectTemplate.json" />
+    <Content Include="Templates\DeploymentGroups\QueueBuild.json" />
+    <Content Include="Templates\DeploymentGroups\ReleaseDefinitions\DeploymentGroups.json" />
+    <Content Include="Templates\DeploymentGroups\ServiceEndPoints\DeploymentGroup - code.json" />
+    <Content Include="Templates\DeploymentGroups\TeamArea.json" />
+    <Content Include="Templates\DeploymentGroups\Teams.json" />
+    <Content Include="Templates\DeploymentGroups\UpdateCardFields.json" />
+    <Content Include="Templates\DeploymentGroups\UpdateCardStyles.json" />
+    <Content Include="Templates\devops-mobile\BoardColumns.json" />
+    <Content Include="Templates\devops-mobile\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\devops-mobile\BugfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.Native.Droid-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.Native.iOS-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.XForms.Droid-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.XForms.iOS-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.XForms.UWP-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.Native.Droid-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.Native.iOS-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.XForms.Droid-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.XForms.iOS-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.XForms.UWP-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.Native.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.Native.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.XForms.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.XForms.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.Native.Droid-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.Native.iOS-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.XForms.Droid-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.XForms.iOS-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\CreateServiceEndPoint.json" />
+    <Content Include="Templates\devops-mobile\EnableEpic.json" />
+    <Content Include="Templates\devops-mobile\EpicfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\Extensions.json" />
+    <Content Include="Templates\devops-mobile\FeaturefromTemplate.json" />
+    <Content Include="Templates\devops-mobile\ImportSourceCode.json" />
+    <Content Include="Templates\devops-mobile\ImportSourceCode\Acquaint.json" />
+    <Content Include="Templates\devops-mobile\PBIfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\ProjectSettings.json" />
+    <Content Include="Templates\devops-mobile\ProjectTemplate.json" />
+    <Content Include="Templates\devops-mobile\Query.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\-Acquaint.XForms.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\Acquaint.Native.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\Acquaint.Native.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\Acquaint.XForms.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ServiceEndpoints\devops-code.json" />
+    <Content Include="Templates\devops-mobile\ServiceEndpoints\hockeyapp.json" />
+    <Content Include="Templates\devops-mobile\TaskfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\TeamArea.json" />
+    <Content Include="Templates\devops-mobile\Teams.json" />
+    <Content Include="Templates\devops-mobile\TestCasefromTemplate.json" />
+    <Content Include="Templates\devops-mobile\UerStoriesfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\UpdateCardFields.json" />
+    <Content Include="Templates\devops-mobile\UpdateCardStyles.json" />
+    <Content Include="Templates\devops-mobile\Widget.json" />
+    <Content Include="Templates\devops-mobile\WidgetChart.json" />
+    <Content Include="Templates\devops-mobile\WidgetQuery.json" />
+    <Content Include="Templates\devops-mobile\WorkItems.json" />
+    <Content Include="Templates\Events.json" />
+    <Content Include="Templates\GitHub\BoardColumns.json" />
+    <Content Include="Templates\GitHub\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\GitHub\BugfromTemplate.json" />
+    <Content Include="Templates\GitHub\BuildDefinitions\GitHub.json" />
+    <Content Include="Templates\GitHub\Dashboard\Dashboard.json" />
+    <Content Include="Templates\GitHub\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\GitHub\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\GitHub\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\GitHub\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\GitHub\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\GitHub\EnableEpic.json" />
+    <Content Include="Templates\GitHub\EpicfromTemplate.json" />
+    <Content Include="Templates\GitHub\Extensions.json" />
+    <Content Include="Templates\GitHub\FeaturefromTemplate.json" />
+    <Content Include="Templates\GitHub\ImportSourceCode\GitHub.json" />
+    <Content Include="Templates\GitHub\PBIfromTemplate.json" />
+    <Content Include="Templates\GitHub\ProjectSettings.json" />
+    <Content Include="Templates\GitHub\ProjectTemplate.json" />
+    <Content Include="Templates\GitHub\ReleaseDefinitions\GitHub.json" />
+    <Content Include="Templates\GitHub\ServiceEndpoints\GitHub-code.json" />
+    <Content Include="Templates\GitHub\TaskfromTemplate.json" />
+    <Content Include="Templates\GitHub\TeamArea.json" />
+    <Content Include="Templates\GitHub\Teams.json" />
+    <Content Include="Templates\MyHealthClinic\BoardColumns.json" />
+    <Content Include="Templates\MyHealthClinic\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\BugfromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\BuildDefinitions\MyHealthClinic.Web.json" />
+    <Content Include="Templates\MyHealthClinic\Dashboard\Dashboard.json" />
+    <Content Include="Templates\MyHealthClinic\Dashboard\Queries\Active Bugs.json" />
+    <Content Include="Templates\MyHealthClinic\Dashboard\Queries\All Items.json" />
+    <Content Include="Templates\MyHealthClinic\Dashboard\Queries\Test Case-Readiness.json" />
+    <Content Include="Templates\MyHealthClinic\Dashboard\Queries\User Stories.json" />
+    <Content Include="Templates\MyHealthClinic\Dashboard\WidgetQuery.json" />
+    <Content Include="Templates\MyHealthClinic\EnableEpic.json" />
+    <Content Include="Templates\MyHealthClinic\EpicfromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\Extensions.json" />
+    <Content Include="Templates\MyHealthClinic\FeaturefromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\ImportSourceCode\MyHealthClinic.json" />
+    <Content Include="Templates\MyHealthClinic\PBIfromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\ProjectSettings.json" />
+    <Content Include="Templates\MyHealthClinic\ProjectTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\PullRequests\Comments\PullRequest1.json" />
+    <Content Include="Templates\MyHealthClinic\PullRequests\Comments\PullRequest2.json" />
+    <Content Include="Templates\MyHealthClinic\PullRequests\PullRequest1.json" />
+    <Content Include="Templates\MyHealthClinic\PullRequests\PullRequest2.json" />
+    <Content Include="Templates\MyHealthClinic\ReleaseDefinitions\HealthClinic.json" />
+    <Content Include="Templates\MyHealthClinic\ServiceEndpoints\myHealthClinic-code.json" />
+    <Content Include="Templates\MyHealthClinic\TaskfromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\TeamArea.json" />
+    <Content Include="Templates\MyHealthClinic\Teams.json" />
+    <Content Include="Templates\MyHealthClinic\TestCasefromTemplate.json" />
+    <Content Include="Templates\MyHealthClinic\UpdateCardFields.json" />
+    <Content Include="Templates\MyHealthClinic\UpdateCardStyles.json" />
+    <Content Include="Templates\MyShuttle2\BoardColumns.json" />
+    <Content Include="Templates\MyShuttle2\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\BugfromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\BuildDef1.json" />
+    <Content Include="Templates\MyShuttle2\BuildDefinitions\BuildDef1.json" />
+    <Content Include="Templates\MyShuttle2\BuildDefinitions\BuildDef2.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Dashboard.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\Bugs.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\Test Cases.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\Test Plan.json" />
+    <Content Include="Templates\MyShuttle2\Dashboard\Queries\User Stories.json" />
+    <Content Include="Templates\MyShuttle2\EpicfromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\Extensions.json" />
+    <Content Include="Templates\MyShuttle2\FeaturefromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\ImportSourceCode\MyShuttle2.json" />
+    <Content Include="Templates\MyShuttle2\ImportSourceCode\MyShuttleCalc.json" />
+    <Content Include="Templates\MyShuttle2\Iterations.json" />
+    <Content Include="Templates\MyShuttle2\PBIfromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\ProjectSettings.json" />
+    <Content Include="Templates\MyShuttle2\ProjectTemplate.json" />
+    <Content Include="Templates\MyShuttle2\ReleaseDefinitions\ReleaseDef1.json" />
+    <Content Include="Templates\MyShuttle2\ServiceEndpoints\MyShuttle-code.json" />
+    <Content Include="Templates\MyShuttle2\ServiceEndpoints\MyShuttleCalc-code.json" />
+    <Content Include="Templates\MyShuttle2\TaskfromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\Teams.json" />
+    <Content Include="Templates\MyShuttle2\TestCasefromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\TestPlanFromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\TestSuitesFromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\UerStoriesfromTemplate.json" />
+    <Content Include="Templates\MyShuttle2\UpdateCardFields.json" />
+    <Content Include="Templates\MyShuttle2\UpdateCardStyles.json" />
+    <Content Include="Templates\MyShuttleDocker\BoardColumns.json" />
+    <Content Include="Templates\MyShuttleDocker\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\MyShuttleDocker\Bug.json" />
+    <Content Include="Templates\MyShuttleDocker\BuildDefinitions\MyShuttleDocker-Maven-CI.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Dashboard.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\Bugs.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\Feature.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\Test Cases.json" />
+    <Content Include="Templates\MyShuttleDocker\Dashboard\Queries\Test Plans.json" />
+    <Content Include="Templates\MyShuttleDocker\EnableEpic.json" />
+    <Content Include="Templates\MyShuttleDocker\Extensions.json" />
+    <Content Include="Templates\MyShuttleDocker\Feature.json" />
+    <Content Include="Templates\MyShuttleDocker\ImportSourceCode\MyShuttleDocker.json" />
+    <Content Include="Templates\MyShuttleDocker\PBI.json" />
+    <Content Include="Templates\MyShuttleDocker\Product Backlog Item.json" />
+    <Content Include="Templates\MyShuttleDocker\ProjectSettings.json" />
+    <Content Include="Templates\MyShuttleDocker\ProjectTemplate.json" />
+    <Content Include="Templates\MyShuttleDocker\ReleaseDefinitions\MyShuttleDocker-Deploy.json" />
+    <Content Include="Templates\MyShuttleDocker\ServiceEndpoints\MyShuttleDocker-code.json" />
+    <Content Include="Templates\MyShuttleDocker\Task.json" />
+    <Content Include="Templates\MyShuttleDocker\TeamArea.json" />
+    <Content Include="Templates\MyShuttleDocker\Teams.json" />
+    <Content Include="Templates\MyShuttleDocker\Test Case.json" />
+    <Content Include="Templates\MyShuttleDocker\Test Plan.json" />
+    <Content Include="Templates\MyShuttleDocker\Test Suite.json" />
+    <Content Include="Templates\MyShuttleDocker\UpdateCardFields.json" />
+    <Content Include="Templates\MyShuttleDocker\UpdateCardStyles.json" />
+    <Content Include="Templates\MyShuttle\BoardColumns.json" />
+    <Content Include="Templates\MyShuttle\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\MyShuttle\BugfromTemplate.json" />
+    <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleBuild.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Dashboard.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Bugs.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Feature.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Test Cases.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Test Plans.json" />
+    <Content Include="Templates\MyShuttle\Dashboard\Queries\Test Suites.json" />
+    <Content Include="Templates\MyShuttle\EnableEpic.json" />
+    <Content Include="Templates\MyShuttle\EpicfromTemplate.json" />
+    <Content Include="Templates\MyShuttle\Extensions.json" />
+    <Content Include="Templates\MyShuttle\FeaturefromTemplate.json" />
+    <Content Include="Templates\MyShuttle\ImportSourceCode\MyShuttle.json" />
+    <Content Include="Templates\MyShuttle\PBIfromTemplate.json" />
+    <Content Include="Templates\MyShuttle\ProjectSettings.json" />
+    <Content Include="Templates\MyShuttle\ProjectTemplate.json" />
+    <Content Include="Templates\MyShuttle\ReleaseDefinitions\MyShuttle.json" />
+    <Content Include="Templates\MyShuttle\ServiceEndpoints\MyShuttle-code.json" />
+    <Content Include="Templates\MyShuttle\TaskfromTemplate.json" />
+    <Content Include="Templates\MyShuttle\TeamArea.json" />
+    <Content Include="Templates\MyShuttle\Teams.json" />
+    <Content Include="Templates\MyShuttle\TestCasefromTemplate.json" />
+    <Content Include="Templates\MyShuttle\TestPlanFromTemplate.json" />
+    <Content Include="Templates\MyShuttle\TestSuitesFromTemplate.json" />
+    <Content Include="Templates\MyShuttle\UpdateCardFields.json" />
+    <Content Include="Templates\Octopus\BoardColumns.json" />
+    <Content Include="Templates\Octopus\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\Octopus\BuildDefinitions\Octopus.json" />
+    <Content Include="Templates\Octopus\Dashboard\Dashboard.json" />
+    <Content Include="Templates\Octopus\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\Octopus\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\Octopus\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\Octopus\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\Octopus\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\Octopus\EnableEpic.json" />
+    <Content Include="Templates\Octopus\EpicfromTemplate.json" />
+    <Content Include="Templates\Octopus\Extensions.json" />
+    <Content Include="Templates\Octopus\FeaturefromTemplate.json" />
+    <Content Include="Templates\Octopus\ImportSourceCode\Octopus.json" />
+    <Content Include="Templates\Octopus\PBIfromTemplate.json" />
+    <Content Include="Templates\Octopus\ProjectSettings.json" />
+    <Content Include="Templates\Octopus\ProjectTemplate.json" />
+    <Content Include="Templates\Octopus\ServiceEndpoints\Octopus-code.json" />
+    <Content Include="Templates\Octopus\ServiceEndpoints\Octopus.json" />
+    <Content Include="Templates\Octopus\TaskfromTemplate.json" />
+    <Content Include="Templates\Octopus\TeamArea.json" />
+    <Content Include="Templates\Octopus\Teams.json" />
+    <Content Include="Templates\Octopus\UpdateCardFields.json" />
+    <Content Include="Templates\Octopus\UpdateCardStyles.json" />
+    <Content Include="Templates\PartsUnlimited\BoardColumns.json" />
+    <Content Include="Templates\PartsUnlimited\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\BugfromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\BuildDefinitions\PartsUnlimitedE2E.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\Dashboard.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\Queries\All Items.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\Queries\Critical Bugs.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\Queries\Test Case-Readiness.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\Queries\User Stories.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\WidgetQuery.json" />
+    <Content Include="Templates\PartsUnlimited\EnableEpic.json" />
+    <Content Include="Templates\PartsUnlimited\EpicfromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\Extensions.json" />
+    <Content Include="Templates\PartsUnlimited\FeaturefromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\ImportSourceCode.json" />
+    <Content Include="Templates\PartsUnlimited\ImportSourceCode\PartsUnlimited.json" />
+    <Content Include="Templates\PartsUnlimited\PBIfromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\ProjectSettings.json" />
+    <Content Include="Templates\PartsUnlimited\ProjectTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\PullRequests\Comments\PullRequest1.json" />
+    <Content Include="Templates\PartsUnlimited\PullRequests\Comments\PullRequest2.json" />
+    <Content Include="Templates\PartsUnlimited\PullRequests\PullRequest1.json" />
+    <Content Include="Templates\PartsUnlimited\PullRequests\PullRequest2.json" />
+    <Content Include="Templates\PartsUnlimited\Query.json" />
+    <Content Include="Templates\PartsUnlimited\ReleaseDefinitions\PartsUnlimitedE2E.json" />
+    <Content Include="Templates\PartsUnlimited\ServiceEndpoints\partsUnlimited-code.json" />
+    <Content Include="Templates\PartsUnlimited\TaskfromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\TeamArea.json" />
+    <Content Include="Templates\PartsUnlimited\Teams.json" />
+    <Content Include="Templates\PartsUnlimited\TestCasefromTemplate.json" />
+    <Content Include="Templates\PartsUnlimited\TestPlans\TestPlan1.json" />
+    <Content Include="Templates\PartsUnlimited\TestPlans\TestSuites\TestPlan1.json" />
+    <Content Include="Templates\PartsUnlimited\UpdateCardFields.json" />
+    <Content Include="Templates\PartsUnlimited\UpdateCardStyles.json" />
+    <Content Include="Templates\PHP\BoardColumns.json" />
+    <Content Include="Templates\PHP\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\PHP\BuildDefinitions\PHP.json" />
+    <Content Include="Templates\PHP\Dashboard\Dashboard.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\PHP\EnableEpic.json" />
+    <Content Include="Templates\PHP\EpicfromTemplate.json" />
+    <Content Include="Templates\PHP\Extensions.json" />
+    <Content Include="Templates\PHP\FeaturefromTemplate.json" />
+    <Content Include="Templates\PHP\ImportSourceCode\PHP.json" />
+    <Content Include="Templates\PHP\PBIfromTemplate.json" />
+    <Content Include="Templates\PHP\ProjectSettings.json" />
+    <Content Include="Templates\PHP\ProjectTemplate.json" />
+    <Content Include="Templates\PHP\ReleaseDefinitions\PHP.json" />
+    <Content Include="Templates\PHP\ServiceEndpoints\PHP-code.json" />
+    <Content Include="Templates\PHP\TaskfromTemplate.json" />
+    <Content Include="Templates\PHP\TeamArea.json" />
+    <Content Include="Templates\PHP\Teams.json" />
+    <Content Include="Templates\PHP\UpdateCardFields.json" />
+    <Content Include="Templates\PHP\UpdateCardStyles.json" />
+    <Content Include="Templates\Python\BoardColumns.json" />
+    <Content Include="Templates\Python\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\Python\BuildDefinitions\Python.json" />
+    <Content Include="Templates\Python\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\Python\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\Python\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\Python\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\Python\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\Python\EnableEpic.json" />
+    <Content Include="Templates\Python\Extensions.json" />
+    <Content Include="Templates\Python\ImportSourceCode\Python.json" />
+    <Content Include="Templates\Python\ProjectSettings.json" />
+    <Content Include="Templates\Python\ProjectTemplate.json" />
+    <Content Include="Templates\Python\ReleaseDefinitions\Python.json" />
+    <Content Include="Templates\Python\ServiceEndpoints\Python-code.json" />
+    <Content Include="Templates\Python\TeamArea.json" />
+    <Content Include="Templates\Python\Teams.json" />
+    <Content Include="Templates\Python\UpdateCardFields.json" />
+    <Content Include="Templates\Selenium\BoardColumns.json" />
+    <Content Include="Templates\Selenium\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\Selenium\BuildDefinitions\Selenium.json" />
+    <Content Include="Templates\Selenium\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\Selenium\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\Selenium\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\Selenium\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\Selenium\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\Selenium\EnableEpic.json" />
+    <Content Include="Templates\Selenium\Extensions.json" />
+    <Content Include="Templates\Selenium\ImportSourceCode\Selenium.json" />
+    <Content Include="Templates\Selenium\ProjectSettings.json" />
+    <Content Include="Templates\Selenium\ProjectTemplate.json" />
+    <Content Include="Templates\Selenium\ReleaseDefinitions\Selenium.json" />
+    <Content Include="Templates\Selenium\ServiceEndpoints\Selenium-code.json" />
+    <Content Include="Templates\Selenium\TeamArea.json" />
+    <Content Include="Templates\Selenium\Teams.json" />
+    <Content Include="Templates\Selenium\UpdateCardFields.json" />
+    <Content Include="Templates\SonarQube\BoardColumns.json" />
+    <Content Include="Templates\SonarQube\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\SonarQube\BuildDefinitions\SonarQube.json" />
+    <Content Include="Templates\SonarQube\Dashboard\Dashboard.json" />
+    <Content Include="Templates\SonarQube\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\SonarQube\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\SonarQube\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\SonarQube\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\SonarQube\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\SonarQube\EnableEpic.json" />
+    <Content Include="Templates\SonarQube\EpicfromTemplate.json" />
+    <Content Include="Templates\SonarQube\Extensions.json" />
+    <Content Include="Templates\SonarQube\FeaturefromTemplate.json" />
+    <Content Include="Templates\SonarQube\ImportSourceCode\MyShuttle.json" />
+    <Content Include="Templates\SonarQube\Iterations.json" />
+    <Content Include="Templates\SonarQube\PBIfromTemplate.json" />
+    <Content Include="Templates\SonarQube\ProjectSettings.json" />
+    <Content Include="Templates\SonarQube\ProjectTemplate.json" />
+    <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube-code.json" />
+    <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube.json" />
+    <Content Include="Templates\SonarQube\TaskfromTemplate.json" />
+    <Content Include="Templates\SonarQube\Teams.json" />
+    <Content Include="Templates\SonarQube\UpdateCardFields.json" />
+    <Content Include="Templates\SonarQube\UpdateCardStyles.json" />
+    <Content Include="Templates\TemplateSetting.json" />
+    <Content Include="Templates\WhiteSource-Bolt\BugfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\BuildDefinitions\WhiteSourceBolt.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Dashboard\Dashboard.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\WhiteSource-Bolt\EnableEpic.json" />
+    <Content Include="Templates\WhiteSource-Bolt\EpicfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Extensions.json" />
+    <Content Include="Templates\WhiteSource-Bolt\FeaturefromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\ImportSourceCode\WebGoat.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Iterations.json" />
+    <Content Include="Templates\WhiteSource-Bolt\PBIfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\ProjectSettings.json" />
+    <Content Include="Templates\WhiteSource-Bolt\ProjectTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\ServiceEndpoints\WebGoat-code.json" />
+    <Content Include="Templates\WhiteSource-Bolt\TaskfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\TeamArea.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams.json" />
+    <Content Include="Templates\WhiteSource-Bolt\UerStoriesfromTemplate.json" />
+    <Content Include="Templates\GroupSettings.json" />
+    <Content Include="Templates\AKS\BoardColumns.json" />
+    <Content Include="Templates\AKS\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\AKS\BuildDefinitions\AKS.json" />
+    <Content Include="Templates\AKS\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\AKS\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\AKS\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\AKS\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\AKS\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\AKS\EnableEpic.json" />
+    <Content Include="Templates\AKS\Extensions.json" />
+    <Content Include="Templates\AKS\ImportSourceCode\AKS.json" />
+    <Content Include="Templates\AKS\ProjectSettings.json" />
+    <Content Include="Templates\AKS\ProjectTemplate.json" />
+    <Content Include="Templates\AKS\ReleaseDefinitions\AKS.json" />
+    <Content Include="Templates\AKS\ServiceEndpoints\AKS-code.json" />
+    <Content Include="Templates\AKS\TeamArea.json" />
+    <Content Include="Templates\AKS\Teams.json" />
+    <Content Include="Templates\AKS\UpdateCardFields.json" />
+    <Content Include="Templates\Docker\BoardColumns.json" />
+    <Content Include="Templates\Docker\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\Docker\BugfromTemplate.json" />
+    <Content Include="Templates\Docker\BuildDefinitions\Docker.json" />
+    <Content Include="Templates\Docker\Dashboard\Dashboard.json" />
+    <Content Include="Templates\Docker\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\Docker\Dashboard\Queries\Epic.json" />
+    <Content Include="Templates\Docker\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\Docker\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\Docker\Dashboard\Queries\Tasks.json" />
+    <Content Include="Templates\Docker\EnableEpic.json" />
+    <Content Include="Templates\Docker\EpicfromTemplate.json" />
+    <Content Include="Templates\Docker\Extensions.json" />
+    <Content Include="Templates\Docker\FeaturefromTemplate.json" />
+    <Content Include="Templates\Docker\ImportSourceCode\Docker.json" />
+    <Content Include="Templates\Docker\PBIfromTemplate.json" />
+    <Content Include="Templates\Docker\ProjectSettings.json" />
+    <Content Include="Templates\Docker\ProjectTemplate.json" />
+    <Content Include="Templates\Docker\ReleaseDefinitions\Docker.json" />
+    <Content Include="Templates\Docker\ServiceEndpoints\Docker-code.json" />
+    <Content Include="Templates\Docker\TaskfromTemplate.json" />
+    <Content Include="Templates\Docker\TeamArea.json" />
+    <Content Include="Templates\Docker\Teams.json" />
+    <Content Include="Templates\Docker\UpdateCardFields.json" />
+    <Content Include="Templates\Docker\UpdateCardStyles.json" />
+    <Content Include="Templates\SmartHotel360\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\SmartHotel360\BugfromTemplate.json" />
+    <Content Include="Templates\SmartHotel360\BuildDefinitions\PublicWebCI.json" />
+    <Content Include="Templates\SmartHotel360\Dashboard\Dashboard.json" />
+    <Content Include="Templates\SmartHotel360\Dashboard\Queries\CompletedTasks.json" />
+    <Content Include="Templates\SmartHotel360\EnableEpic.json" />
+    <Content Include="Templates\SmartHotel360\Extensions.json" />
+    <Content Include="Templates\SmartHotel360\FeaturefromTemplate.json" />
+    <Content Include="Templates\SmartHotel360\ImportSourceCode\SmartHotel360.json" />
+    <Content Include="Templates\SmartHotel360\Iterations.json" />
+    <Content Include="Templates\SmartHotel360\ProjectSettings.json" />
+    <Content Include="Templates\SmartHotel360\ProjectTemplate.json" />
+    <Content Include="Templates\SmartHotel360\ReleaseDefinitions\PublicWebCD.json" />
+    <Content Include="Templates\SmartHotel360\ServiceEndpoints\SmartHotel360-code.json" />
+    <Content Include="Templates\SmartHotel360\TaskfromTemplate.json" />
+    <Content Include="Templates\SmartHotel360\TeamArea.json" />
+    <Content Include="Templates\SmartHotel360\Teams.json" />
+    <Content Include="Templates\SmartHotel360\UerStoriesfromTemplate.json" />
+    <Content Include="Templates\ReleaseGates\BugfromTemplate.json" />
+    <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI.json" />
+    <Content Include="Templates\ReleaseGates\Dashboard\Queries\Bugs.json" />
+    <Content Include="Templates\ReleaseGates\EnableEpic.json" />
+    <Content Include="Templates\ReleaseGates\ImportSourceCode\PartsUnlimited.json" />
+    <Content Include="Templates\ReleaseGates\ProjectSettings.json" />
+    <Content Include="Templates\ReleaseGates\ProjectTemplate.json" />
+    <Content Include="Templates\ReleaseGates\ReleaseDefinitions\PartsUnlimited-CD.json" />
+    <Content Include="Templates\ReleaseGates\ServiceEndpoints\PartsUnlimited-code.json" />
+    <Content Include="Templates\ReleaseGates\TeamArea.json" />
+    <Content Include="Templates\ReleaseGates\Teams.json" />
+    <Content Include="Templates\SmartHotel360\ServiceEndpoints\GitHubSmartHotel360-public-web.json" />
+    <Content Include="Templates\AzureFunctions\BuildDefinitions\AzureFunctions-Build.json" />
+    <Content Include="Templates\AzureFunctions\EnableEpic.json" />
+    <Content Include="Templates\AzureFunctions\ImportSourceCode\AzureFunctions.json" />
+    <Content Include="Templates\AzureFunctions\ProjectSettings.json" />
+    <Content Include="Templates\AzureFunctions\ProjectTemplate.json" />
+    <Content Include="Templates\AzureFunctions\ReleaseDefinitions\AzureFunctions_Deploy.json" />
+    <Content Include="Templates\AzureFunctions\ServiceEndpoints\AzureFunctions-code.json" />
+    <Content Include="Templates\AzureFunctions\TeamArea.json" />
+    <Content Include="Templates\AzureFunctions\Teams.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\BuildDefinitions\AzureFunctions_CI.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\EnableEpic.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ImportSourceCode\AzureFunctions_BuildWorkshop.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ProjectSettings.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ProjectTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ReleaseDefinitions\AzureFunctions_CD.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ServiceEndpoints\AzureFunctions_BuildWorkshop-code.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\TeamArea.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\Teams.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\EpicfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\FeaturefromTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\PBIfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\EnableEpic.json" />
+    <Content Include="Templates\ContosoShuttle\EpicfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ImportSourceCode\ContosoShuttle.json" />
+    <Content Include="Templates\ContosoShuttle\PBIfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectSettings.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ServiceEndpoints\ContosoShuttle-code.json" />
+    <Content Include="Templates\ContosoShuttle\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\TeamArea.json" />
+    <Content Include="Templates\ContosoShuttle\Teams.json" />
+    <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\CreateWiki.json" />
+    <Content Include="Templates\MyHealthClinic\Wiki\CodeWiki\CreateWiki.json" />
+    <Content Include="Views\Account\Unsupported_browser.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Verify.cshtml" />
+    <Content Include="Views\Environment\Create.cshtml" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\script\" />
+    <Folder Include="Content\assets\script\" />
+    <Folder Include="Log\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Templates\GitHub\Dashboard\Charts\" />
+    <Folder Include="Templates\GitHub\Dashboard\Widgets\" />
+    <Folder Include="Templates\PartsUnlimited\Dashboard\Charts\" />
+    <Folder Include="Templates\PartsUnlimited\Dashboard\Widgets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VstsRestAPI\VstsRestAPI.csproj">
+      <Project>{720825c0-f4f3-44f3-9492-3bc4c967034d}</Project>
+      <Name>VstsRestAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>28910</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49474/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

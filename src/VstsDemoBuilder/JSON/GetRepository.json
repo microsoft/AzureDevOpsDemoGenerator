@@ -1,0 +1,11 @@
+{
+  "parameters":
+    {
+      "gitSource":
+        {
+          "url": "https://github.com/srinudhulipalla/NotepadPlus.git"
+        },
+      "serviceEndpointId": "",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

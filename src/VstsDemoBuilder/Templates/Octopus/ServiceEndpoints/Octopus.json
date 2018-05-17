@@ -1,0 +1,11 @@
+﻿{
+  "name": "Octopus",
+  "type": "OctopusEndpoint",
+  "url": "$URL$",
+  "authorization": {
+    "parameters": {
+      "apitoken": "$Apikey$"
+    },
+    "scheme": "Token"
+  }
+}

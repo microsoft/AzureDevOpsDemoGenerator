@@ -1,0 +1,76 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 709,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-11-09T09:50:10.187Z",
+        "System.CreatedBy": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "System.ChangedDate": "2017-11-13T05:31:51.48Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Deployments to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/714",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/709"
+    },
+    {
+      "id": 686,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Feature",
+        "System.State": "In Progress",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2017-11-06T06:57:51.573Z",
+        "System.CreatedBy": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "System.ChangedDate": "2017-11-13T05:30:49.81Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Set up CI-CD pipeline for PHP Application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/686"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "op": "add",
+    "path": "/fields/System.Title",
+    "value": "New Work Item"
+  },
+  {
+    "op": "add",
+    "path": "/fields/System.CreatedDate",
+    "value": "6/1/2016"
+  },
+  {
+    "op": "add",
+    "path": "/fields/System.CreatedBy",
+    "value": "Bharath ym"
+  },
+  {
+    "op": "add",
+    "path": "/fields/System.History",
+    "value": "Jim has the most context around this."
+  }
+]

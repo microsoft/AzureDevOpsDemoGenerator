@@ -1,0 +1,11 @@
+{
+  "parameters":
+    {
+      "gitSource":
+        {
+          "url": "https://vstsdemodata.visualstudio.com/_git/PHP"
+        },
+      "serviceEndpointId": "$PHP-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

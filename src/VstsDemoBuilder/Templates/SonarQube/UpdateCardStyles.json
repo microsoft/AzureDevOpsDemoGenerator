@@ -1,0 +1,35 @@
+{
+	"rules": {
+		"tagStyle": [
+			{
+				"name": "Security Vulnerability",
+				"isEnabled": "True",
+				"settings": {
+					"background-color": "#ec001d",
+					"color": "#ffffff"
+				}
+			},
+			{
+				"name": "Insecurities",
+				"isEnabled": "True",
+				"settings": {
+					"background-color": "#ff00ff",
+					"color": "#ffffff"
+				}
+			},
+			{
+				"name": "Code smells",
+				"isEnabled": "True",
+				"settings": {
+					"background-color": "#fbfd52",
+					"color": "#000000"
+				}
+			}
+		],
+		"fill": [
+
+
+		]
+
+	}
+}

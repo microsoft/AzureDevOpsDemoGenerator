@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "GitHubSmartHotel360-public-web",
+  "type": "git",
+  "url": "https://github.com/Microsoft/SmartHotel360-public-web.git",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "DemoGeneratorUser",
+      "password": "Canarys@12345"
+    }
+  },
+  "isReady": true
+}

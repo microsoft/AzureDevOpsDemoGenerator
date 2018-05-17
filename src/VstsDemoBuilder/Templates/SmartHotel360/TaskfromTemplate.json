@@ -1,0 +1,1605 @@
+{
+  "count": 41,
+  "value": [
+    {
+      "id": 1095,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-26T08:30:09.073Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-26T08:30:09.073Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "env variables",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1009",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1095"
+    },
+    {
+      "id": 1093,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-26T08:16:33.487Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-10-02T07:41:28.783Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "Add styles",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/987",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1093"
+    },
+    {
+      "id": 1092,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-26T08:16:29.89Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-10-02T07:41:28.783Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "Securize the component",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/987",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1092"
+    },
+    {
+      "id": 1098,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-09-26T10:26:55.687Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-26T10:27:04.733Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "Footer Mark Up",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Alex Kryzhanovskyy <alex@kryzh.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/986",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1098"
+    },
+    {
+      "id": 1099,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-09-26T11:03:30.66Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-26T16:56:20.203Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "Mark Up",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Alex Kryzhanovskyy <alex@kryzh.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/992",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1099"
+    },
+    {
+      "id": 1097,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-09-26T08:30:39.23Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-10-02T10:15:36.89Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "get name, id, email, image",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1011",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1097"
+    },
+    {
+      "id": 1123,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-02T10:15:42.703Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-10-02T10:29:51.977Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "Fix email",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1011",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1123"
+    },
+    {
+      "id": 1153,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:17:01.63Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create stored procedures",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1148",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1153"
+    },
+    {
+      "id": 1152,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:16:43.69Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create evaluation scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1148",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1152"
+    },
+    {
+      "id": 1151,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:16:33.08Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create training script",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1148",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1151"
+    },
+    {
+      "id": 1147,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:14:37.213Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create console program that generate booking data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1146",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1147"
+    },
+    {
+      "id": 1145,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:14:10.073Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create entity framework classes and configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1143",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1145"
+    },
+    {
+      "id": 1144,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:13:48.977Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create tables",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1143",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1144"
+    },
+    {
+      "id": 1142,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:08:44.917Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create ARM Template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1140",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1142"
+    },
+    {
+      "id": 1141,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:08:35.04Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-13T11:20:54.31Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create Azure DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1140",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1141"
+    },
+    {
+      "id": 1154,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:17:22.19Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-16T08:41:09.547Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create external tables to access Hotels DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1149",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1154"
+    },
+    {
+      "id": 1157,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:18:27.43Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-17T08:33:21.887Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Update R scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1149",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1157"
+    },
+    {
+      "id": 1156,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:18:05.35Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-17T08:33:21.887Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Update generator to adapt to new DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1149",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1156"
+    },
+    {
+      "id": 1155,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:17:52.723Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-17T08:33:21.887Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Add necessary changes to new DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1149",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1155"
+    },
+    {
+      "id": 1163,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-17T08:43:46.027Z",
+        "System.CreatedBy": "Daniel <daesgar90@outlook.com>",
+        "System.ChangedDate": "2017-10-17T09:29:46.357Z",
+        "System.ChangedBy": "Daniel <daesgar90@outlook.com>",
+        "System.Title": "Create Cosmos DB account",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Daniel <daesgar90@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1162",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1163"
+    },
+    {
+      "id": 1164,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-17T08:43:54.107Z",
+        "System.CreatedBy": "Daniel <daesgar90@outlook.com>",
+        "System.ChangedDate": "2017-10-17T09:29:51.75Z",
+        "System.ChangedBy": "Daniel <daesgar90@outlook.com>",
+        "System.Title": "Create ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Daniel <daesgar90@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1162",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1164"
+    },
+    {
+      "id": 1158,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-13T11:18:51.743Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-17T11:40:44.493Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create document",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1150",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1158"
+    },
+    {
+      "id": 1170,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-24T08:25:59.5Z",
+        "System.CreatedBy": "Daniel <daesgar90@outlook.com>",
+        "System.ChangedDate": "2017-10-24T08:26:08.833Z",
+        "System.ChangedBy": "Daniel <daesgar90@outlook.com>",
+        "System.Title": "Generate graph relations through Cosmos API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Daniel <daesgar90@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1167",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1170"
+    },
+    {
+      "id": 1168,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-19T07:24:27.727Z",
+        "System.CreatedBy": "Daniel <daesgar90@outlook.com>",
+        "System.ChangedDate": "2017-10-24T08:26:21.337Z",
+        "System.ChangedBy": "Daniel <daesgar90@outlook.com>",
+        "System.Title": "Create POCOs for the Graph to be generated",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Daniel <daesgar90@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1165",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1168"
+    },
+    {
+      "id": 1169,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-19T07:25:27.917Z",
+        "System.CreatedBy": "Daniel <daesgar90@outlook.com>",
+        "System.ChangedDate": "2017-10-24T17:46:40.27Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Generate data about hotels, people, locations and sentiments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Daniel <daesgar90@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1166",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1169"
+    },
+    {
+      "id": 1172,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-24T17:49:39.243Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-25T08:34:36.2Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Generate Tweets, Sentiments, hashtags and TagPhrases",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1171",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1172"
+    },
+    {
+      "id": 1173,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-24T17:50:53.487Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-25T08:57:39.27Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Adapt to Azure Functions model",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1171",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1173"
+    },
+    {
+      "id": 1176,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-25T08:57:19.113Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-25T18:08:43.51Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Generate Hotel Conference rooms Tweets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1171",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1176"
+    },
+    {
+      "id": 1184,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:13:27.66Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-30T15:33:51.9Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create ePCR collection",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1183",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1184"
+    },
+    {
+      "id": 1185,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:13:42.617Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-30T15:33:57.887Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Insert ePCR data in Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1183",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1185"
+    },
+    {
+      "id": 1186,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:14:03.84Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-10-31T10:22:39.83Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Add required methods to API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1183",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1186"
+    },
+    {
+      "id": 1187,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-31T10:22:31.5Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T09:55:19.203Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Deploy webApp",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1183",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1187"
+    },
+    {
+      "id": 1182,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:11:49.953Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T10:04:43.5Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create stored procedure for productionization",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1178",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1182"
+    },
+    {
+      "id": 1181,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:11:02.647Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T10:04:43.5Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Recreate AzureML experiment in R",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1178",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1181"
+    },
+    {
+      "id": 1180,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:10:43.69Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T10:04:43.5Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create Schema and insert data into Azure SQL Db",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1178",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1180"
+    },
+    {
+      "id": 1179,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-10-30T09:10:27.467Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T10:04:43.5Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Create Azure SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1178",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1179"
+    },
+    {
+      "id": 1190,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-11-02T09:56:20.873Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T12:50:17.38Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Document Demo script",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1178",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1190"
+    },
+    {
+      "id": 1189,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2017-11-02T09:55:47.787Z",
+        "System.CreatedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.ChangedDate": "2017-11-02T12:50:17.38Z",
+        "System.ChangedBy": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "System.Title": "Integrate in FirstResponse repository",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Rafael Gómez García <rafgomgar@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1178",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1189"
+    },
+    {
+      "id": 1096,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Active",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2017-09-26T08:30:11.09Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-26T08:38:55.773Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "adal library",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1009",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1096"
+    },
+    {
+      "id": 1094,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "Active",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2017-09-26T08:16:55.94Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-10-02T07:41:28.783Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "ADd env variables",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/987",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1094"
+    },
+    {
+      "id": 1091,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "Active",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2017-09-26T08:16:22.627Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-10-02T07:41:28.783Z",
+        "System.ChangedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.Title": "React component",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/987",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1091"
+    }
+  ],
+  "HttpStatusCode": 0
+}

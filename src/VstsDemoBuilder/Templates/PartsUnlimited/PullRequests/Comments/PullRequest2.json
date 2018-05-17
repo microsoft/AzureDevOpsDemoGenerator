@@ -1,0 +1,54 @@
+﻿{
+  "count": 2,
+  "value": [
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "The Terms and conditions for Sales looks perfect. You will have to include support clause as well.",
+          "commentType": 1
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": "System.Int32",
+          "value": 1
+
+        }
+      },
+      "status": 1,
+      "pullRequestThreadContext": null,
+      "threadContext": null,
+      "Replies": [
+       
+      ]
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "Updated Terms and Conditions with support clause. Please review.",
+          "commentType": 1
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": "System.Int32",
+          "value": 1
+
+        }
+      },
+      "status": 1,
+      "pullRequestThreadContext": null,
+      "threadContext": null,
+      "Replies": [
+        {
+          "content": "Awesome! Good to go 👍 👍",
+          "parentCommentId": 1,
+          "commentType": 1
+        }
+
+      ]
+    }
+  ]
+}
