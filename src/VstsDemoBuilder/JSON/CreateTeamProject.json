@@ -1,0 +1,11 @@
+{
+  "name": "$projectName$",
+  "description": "$projectDescription$",
+  "capabilities": {
+    "versioncontrol": {
+      "sourceControlType": "Git"
+    },
+    "processTemplate": {
+      "templateTypeId": "$templateId$"
+    }
+  }

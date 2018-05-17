@@ -1,0 +1,4 @@
+{
+  "name": "Test Cases",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from workitems where [System.TeamProject] = @project and [System.WorkItemType] = 'Test Case' and [System.State] <> ''"
+}

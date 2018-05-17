@@ -1,0 +1,37 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 309,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "ContosoShuttle",
+        "System.TeamProject": "ContosoShuttle",
+        "System.IterationPath": "ContosoShuttle\\Sprint 2",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2018-04-16T22:59:49.967Z",
+        "System.CreatedBy": "Jason M <jsmcbr@outlook.com>",
+        "System.ChangedDate": "2018-04-16T22:59:49.967Z",
+        "System.ChangedBy": "Jason M <jsmcbr@outlook.com>",
+        "System.Title": "Connector Shuttle Schedule Site",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Connector Shuttle Schedule Site",
+        "System.AssignedTo": "romsak@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://jsmcbr.visualstudio.com/9829f9d8-eac6-427d-9501-5c87af847b02/_apis/wit/workItems/309"
+    }
+  ],
+  "HttpStatusCode": 0
+}

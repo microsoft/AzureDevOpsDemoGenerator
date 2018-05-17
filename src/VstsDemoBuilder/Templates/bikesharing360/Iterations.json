@@ -1,0 +1,30 @@
+{
+  
+  "name": "bikesharing3601",
+  "structureType": "iteration",
+  "hasChildren": true,
+  "children": [
+    {
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false,
+     
+      "children": null
+    },
+    {
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    }
+  ]
+ 
+}

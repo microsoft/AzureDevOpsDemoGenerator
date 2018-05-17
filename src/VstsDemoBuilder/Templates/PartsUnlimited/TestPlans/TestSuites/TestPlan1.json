@@ -1,0 +1,137 @@
+{
+  "value": [
+    {
+      "name": "$45771$ : Provide tentative duration for shipping.",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45771$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45897" ]
+    },
+    {
+      "name": "$45758$ : Provide related items or frequently bought together section when people browse or search",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45758$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45898" ]
+    },
+    {
+      "name": "$45772$ : Notify the user about any changes made to the order",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45772$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45899" ]
+    },
+    {
+      "name": "$45768$ : As a customer, I would like to store my credit card details securely",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45768$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45900","45903","45904" ]
+    },
+	{
+      "name": "$45762$ : As a customer, I would like to have a sort capabaility by price and customer ratings",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45762$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45901" ]
+    },
+	{
+      "name": "$45761$ : As a customer, I should be able to print my purchase order",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45761$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45902" ]
+    },
+	{
+      "name": "$45764$ : As a customer, I would like to save my addresses so that I can easily select the address for delivery",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45764$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45864" ]
+    },
+	{
+      "name": "$45775$ : As a customer, I would like to have a wishlist where I can add items for future purchase",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45775$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45863" ]
+    },
+	{
+      "name": "$45774$ : As a customer, I would like to provide my feedback on items that I have purchased",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45774$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45865" ]
+    },
+	{
+      "name": "$45773$ : As a admin, I should be able to update prices on ad-hoc condition",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45773$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45862" ]
+    },
+	{
+      "name": "$45760$ : As a customer, I should be able to put items to shopping cart",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": ["$45760$"],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "45861","45905","45906" ]
+    }
+  ],
+  "count": 11
+}

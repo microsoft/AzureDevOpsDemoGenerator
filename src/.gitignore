@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ExportWorkitemsTool/bin/Debug
+/ExportWorkitemsTool/obj
+/packages
+/VstsDemoBuilder/bin
+/VstsDemoBuilder/Log
+/VstsDemoBuilder/obj
+/VstsDemoBuilder/Properties/PublishProfiles
+/VstsRestAPI/bin
+/VstsRestAPI/obj
+/VstsDemoBuilder/Templates/BasicBot
+/VstsDemoBuilder/Templates/PartsUnlimited-agile
+/.vs/DemoGenerator/v15
+/.vs/VstsDemoBuilder/v15/Server/sqlite3
+/.vs
+/VstsRestAPI/obj
+

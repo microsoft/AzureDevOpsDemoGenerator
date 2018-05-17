@@ -1,0 +1,158 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 811,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:44:39.81Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Report the vulnerabilities details to development team to fix",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/807",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/810",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/812",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/811"
+    },
+    {
+      "id": 808,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:44:39.81Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Set up a CI Build definition to validate the checkin",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/809",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/804",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/807",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/808"
+    },
+    {
+      "id": 802,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:44:39.81Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Detect the vulnerable code components",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/801",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/803",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/802"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "MyShuttleDocker",
+  "Description": "This template provisions team project which contains code of Docker based Java web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using VSTS.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/eclipse/' target='_blank'>Developing with Eclipse for Java projects</a></p>",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBI.json",
+  "BugfromTemplate": "Bug.json",
+  "EpicfromTemplate": "Epic.json",
+  "TaskfromTemplate": "Task.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "Feature.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "BoardRowsFromTemplate.json",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+  "TeamArea": "TeamArea.json"
+
+}

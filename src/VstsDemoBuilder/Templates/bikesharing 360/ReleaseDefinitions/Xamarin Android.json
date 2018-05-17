@@ -1,0 +1,145 @@
+{
+  "name": "Xamarin Android",
+  "description": null,
+  "path": "\\",
+  "variables": {},
+  "variableGroups": [],
+  "environments": [
+    {
+      
+      "name": "HockeyApp PUBLIC",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+     
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "53bb2e90-4b6e-11e5-89d9-2903d3f04d3f",
+              "version": "1.*",
+              "name": "Deploy $(System.DefaultWorkingDirectory)/BikeRider Android/drop/com.bikesharing.app.apk to HockeyApp",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "connectedServiceName": "$HockeyApp$",
+                "appID": "9d2ce7e21bd54e9ab837849efe7a0bde",
+                "binaryPath": "$(System.DefaultWorkingDirectory)/BikeRider Android/drop/com.bikesharing.app.apk",
+                "symbolsPath": "",
+                "nativeLibraryPath": "",
+                "notesPath": "",
+                "notes": "",
+                "publish": "true",
+                "mandatory": "false",
+                "notify": "false",
+                "strategy": "add",
+                "tags": "",
+                "teams": "",
+                "users": ""
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "properties": {}
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:BikeRider Android-id$",
+      "type": "Build",
+      "alias": "BikeRider Android",
+      "definitionReference": {
+        
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$BikeRider Android-id$",
+          "name": "BikeRider Android"
+        },
+        "project": {
+           "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "retentionPolicy": {
+    "daysToKeep": 30
+  },
+  "tags": [],
+  "properties": {}
+}

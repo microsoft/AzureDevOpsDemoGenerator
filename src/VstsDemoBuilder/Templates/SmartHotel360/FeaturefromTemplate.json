@@ -1,0 +1,1018 @@
+{
+  "count": 16,
+  "value": [
+    {
+      "id": 1019,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T07:40:16.44Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-09-21T10:43:44.593Z",
+        "System.ChangedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.Title": "[Xamarin Apps] Home",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1024",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1043",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1025",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1020",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1032",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1022",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1040",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1026",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1023",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1027",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1019"
+    },
+    {
+      "id": 1058,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T08:04:44.397Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-09-21T10:44:06.36Z",
+        "System.ChangedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.Title": "[Maintenance App] General",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1061",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1065",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1059",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1063",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1060",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1062",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1058"
+    },
+    {
+      "id": 1031,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T07:46:34.87Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-09-21T10:44:06.36Z",
+        "System.ChangedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.Title": "[Xamarin Apps] Concierge",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1130",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1031"
+    },
+    {
+      "id": 1029,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T07:45:55.32Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-09-21T10:44:06.36Z",
+        "System.ChangedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.Title": "[Xamarin Apps] My Room",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1038",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1037",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1039",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1033",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1036",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1034",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1035",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1029"
+    },
+    {
+      "id": 1014,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T07:38:04.57Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-09-21T10:45:17.017Z",
+        "System.ChangedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.Title": "[Xamarin Apps] General",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1064",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1017",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1018",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1066",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1015",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1016",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1014"
+    },
+    {
+      "id": 980,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-19T16:05:50.59Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-27T09:53:47.097Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Public Web] General",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/987",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/986",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/985",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/981",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/980"
+    },
+    {
+      "id": 983,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-19T16:22:45.19Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-27T09:53:55.58Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Public Web] Home [The smart experience]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/993",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/992",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/990",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/991",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/988",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/989",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/984",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/983"
+    },
+    {
+      "id": 994,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-19T16:34:51.143Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-27T09:54:02.393Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Public Web] Rooms [List]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/996",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1000",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/999",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/997",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/995",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/998",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/994"
+    },
+    {
+      "id": 1001,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-19T16:39:26.49Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-27T09:54:06.863Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Public Web] Rooms [Detail]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1006",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1005",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1002",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1004",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1003",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1007",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1001"
+    },
+    {
+      "id": 1008,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Public web",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-19T16:41:11.903Z",
+        "System.CreatedBy": "Enrique Fernández Guerra <enriquefegu@outlook.com>",
+        "System.ChangedDate": "2017-09-27T09:54:12.113Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Public Web] Authorization",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1009",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1011",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1010",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1008"
+    },
+    {
+      "id": 1108,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-27T09:43:22.293Z",
+        "System.CreatedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.ChangedDate": "2017-09-27T14:26:17.943Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Kiosk]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1108"
+    },
+    {
+      "id": 1107,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-27T09:42:26.37Z",
+        "System.CreatedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.ChangedDate": "2017-09-27T14:26:21.303Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Private Web]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1107"
+    },
+    {
+      "id": 1109,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-27T09:47:13.59Z",
+        "System.CreatedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.ChangedDate": "2017-09-27T14:26:23.617Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Node.js Website]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1109"
+    },
+    {
+      "id": 1110,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-27T14:26:05.24Z",
+        "System.CreatedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.ChangedDate": "2017-09-27T14:26:27.93Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Build]",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1110"
+    },
+    {
+      "id": 1028,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T07:45:22.507Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-09-28T08:17:31.217Z",
+        "System.ChangedBy": "Francisco Pelaez <fpelaez@plainconcepts.com>",
+        "System.Title": "[Xamarin Apps] Book a room",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Fake; Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1050",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1048",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1053",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1049",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1056",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1055",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1047",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1057",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1051",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1045",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1046",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1052",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1044",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1054",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1028"
+    },
+    {
+      "id": 1030,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-09-21T07:46:12.76Z",
+        "System.CreatedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.ChangedDate": "2017-10-02T17:59:31.653Z",
+        "System.ChangedBy": "Sergio Escalada <sescalada.plain@outlook.com>",
+        "System.Title": "[Xamarin Apps] Suggestions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1042",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1041",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1030"
+    }
+  ],
+  "HttpStatusCode": 0
+}

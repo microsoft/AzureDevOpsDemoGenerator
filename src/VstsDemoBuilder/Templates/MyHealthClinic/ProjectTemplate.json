@@ -1,0 +1,24 @@
+{
+  "Name": "Template Name",
+  "Description": "This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using VSTS.",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+  "TeamArea": "TeamArea.json"
+
+}

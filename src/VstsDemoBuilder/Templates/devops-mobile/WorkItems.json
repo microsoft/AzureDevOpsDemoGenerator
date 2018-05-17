@@ -1,0 +1,390 @@
+﻿[
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Feature to Implement Dashboard"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is A New Feature to be implemented for Dashboard"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-1"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Feature?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Create the dashboard with following Requirements"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "Description of the Dashboard Page"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-2"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-1"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Product Backlog Item?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Create a menu in a dashboard"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "Task description for menu"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-3"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-2"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Test case for dashboard"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of Test Case for dashboard"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-4"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-2"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Feature to implement Logout"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of Feature Logout"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-5"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Feature?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Bug in Logout process"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of the bug"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-6"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-5"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Bug?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task related to bug Logout"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of Task related to bug"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-7"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-6"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Feature to Implement Login Page"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is A New Feature to be implemented for the Login Page"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-8"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Feature?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Create a Login Page"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "Create the login page with all validations"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-9"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-8"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Product Backlog Item?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Create a Username and password fields"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "Task description based on priority for login"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-10"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-9"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is the Test Case for login"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of Test Case"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-11"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-9"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Feature to implement Grid functionality"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of Feature"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-12"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Feature?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Bug in displaying grisd"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of the bug"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-13"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-12"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Bug?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Fix the bug in Grid"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of Task related to bug"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-14"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-13"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  }
+]

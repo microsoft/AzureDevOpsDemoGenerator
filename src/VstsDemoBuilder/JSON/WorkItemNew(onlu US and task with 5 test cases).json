@@ -1,0 +1,237 @@
+﻿[
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-1"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$User Story?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task 1 gonna get implemented for parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-2"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-1"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-3"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$User Story?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task 1 gonna get implemented for parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-4"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-3"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-5"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$User Story?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task 1 gonna get implemented for parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-6"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-5"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-7"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$User Story?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task 1 gonna get implemented for parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-8"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-7"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-9"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$User Story?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task 1 gonna get implemented for parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-10"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-9"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  }
+]

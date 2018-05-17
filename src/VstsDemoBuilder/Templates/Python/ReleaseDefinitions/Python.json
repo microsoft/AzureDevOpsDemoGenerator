@@ -1,0 +1,285 @@
+{
+  "source": "userInterface",
+  "revision": 7,
+  "name": "Python",
+  "description": null,
+  "isDeleted": false,
+  "path": "\\",
+  "variables": {
+    "hostingPlanName": {
+      "value": "PythonPlan"
+    },
+    "ReleaseConfiguration": {
+      "value": "Release"
+    },
+    "ReleasePlatform": {
+      "value": "Any CPU"
+    },
+    "ResourceGroupName": {
+      "value": "Python"
+    },
+    "siteName": {
+      "value": "pythone2e$UUID$"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted VS2017$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Agent phase",
+          "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Azure Deployment",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(ResourceGroupName)",
+                "location": "South Central US",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/Python/drop/Environment/azuredeploy.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/Python/drop/Environment/azuredeploy.parameter.json",
+                "overrideParameters": "-siteName $(siteName) -hostingPlanName $(hostingPlanName)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
+            {
+              "taskId": "f045e430-8704-11e6-968f-e717e6411619",
+              "version": "0.*",
+              "name": "Install Python Extension",
+              "refName": "AzureAppServiceManage2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "Action": "Install Extensions",
+                "WebAppName": "$(siteName)",
+                "SpecifySlot": "false",
+                "ResourceGroupName": "",
+                "SourceSlot": "",
+                "SwapWithProduction": "true",
+                "TargetSlot": "",
+                "PreserveVnet": "false",
+                "Slot": "",
+                "ExtensionsList": "python361x86",
+                "OutputVariable": "PYTHON_EXT",
+                "AppInsightsResourceGroupName": "",
+                "ApplicationInsightsResourceName": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Azure App Service Deploy",
+              "refName": "AzureRmWebAppDeployment3",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppKind": "app",
+                "WebAppName": "$(siteName)",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "ImageSource": "Registry",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/Python/drop/*.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "Inline Script",
+                "InlineScript": "@echo off\nif NOT exist requirements.txt (\n echo No Requirements.txt found.\n EXIT /b 0\n)\nif NOT exist \"$(PYTHON_EXT)/python.exe\" (\n echo Python extension not available >&2\n EXIT /b 1\n)\necho Installing dependencies\ncall \"$(PYTHON_EXT)/python.exe\" -m pip install -U setuptools\nif %errorlevel% NEQ 0 (\n echo Failed to install setuptools >&2\n EXIT /b 1\n)\ncall \"$(PYTHON_EXT)/python.exe\" -m pip install -r requirements.txt\nif %errorlevel% NEQ 0 (\n echo Failed to install dependencies>&2\n EXIT /b 1\n)",
+                "ScriptPath": "",
+                "GenerateWebConfig": "true",
+                "WebConfigParameters": "-WSGI_HANDLER \"django.core.wsgi.get_wsgi_application()\" -DJANGO_SETTINGS_MODULE \"python_webapp_django.settings\" -PYTHON_PATH \"$(PYTHON_EXT)\\python.exe\"  -PYTHON_WFASTCGI_PATH \"$(PYTHON_EXT)\\wfastcgi.py\"  -appType python_Django",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$Python-id$",
+      "type": "Build",
+      "alias": "Python",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$Python-id$",
+          "name": "$Python$"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "Python",
+      "triggerConditions": [],
+      "triggerType": "artifactSource"
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "ReleaseNew"
+    }
+  }
+}

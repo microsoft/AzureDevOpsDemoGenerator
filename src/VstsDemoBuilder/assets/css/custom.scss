@@ -1,0 +1,44 @@
+// MAIN SCSS
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// MAIN PAGE CONTAINER
+html,body{
+    height:100%;
+}
+.section-1
+{
+    min-height: 100%;
+    main
+    {
+        flex:1;
+        .VSTS-hero-image
+        {
+            flex:1;
+            .VSTS-hero
+            {
+                flex:1;
+                background:url('../images/VSTS_cover_image.png') center center / cover;
+                img{
+                    width:60px;
+                }
+            }
+        }
+        .VSTS-details
+        {
+            @media (min-width: 768px)
+            {
+                max-width: 550px;
+            }
+            .demo-generator-details-logo
+            {
+                width:210px;
+            }
+            p
+            {
+                font-size: $spacer/1.142;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "MyShuttleDocker-code",
+  "type": "Git",
+  "url": "https://Vstsdemodata.visualstudio.com/DefaultCollection/MyShuttleDocker/_git/MyShuttleDocker",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "nagaraj.bhairaji@hotmail.com",
+      "password": "7kpg6xsuz67socsenhnur3ntcmjiqdxwxmxzz4xwjtj4mrh72mfq"
+    }
+  },
+  "isReady": true
+}

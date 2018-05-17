@@ -1,0 +1,247 @@
+{
+   "count":7,
+   "value":[
+      {
+         "id":8,
+         "rev":3,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"New",
+            "System.Reason":"New",
+            "System.CreatedDate":"2017-01-31T02:04:41.68Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:20:32.8Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"As a user, I want an About screen that provides version details, etc.",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":null,
+            "System.AssignedTo":null,
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":null,
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/8"
+      },
+      {
+         "id":3,
+         "rev":5,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"New",
+            "System.Reason":"New",
+            "System.CreatedDate":"2017-01-31T02:01:58.3Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:28:48.663Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"As a user, I want to sort and filter Acquaintances",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":null,
+            "System.AssignedTo":"Joseph Sauve <josau@microsoft.com>",
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":[
+            {
+               "rel":"System.LinkTypes.Hierarchy-Forward",
+               "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/4",
+               "attributes":{
+                  "isLocked":"False"
+               }
+            },
+            {
+               "rel":"System.LinkTypes.Hierarchy-Forward",
+               "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/5",
+               "attributes":{
+                  "isLocked":"False"
+               }
+            }
+         ],
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/3"
+      },
+      {
+         "id":9,
+         "rev":5,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"Resolved",
+            "System.Reason":"Acceptance tests pass",
+            "System.CreatedDate":"2017-01-31T02:05:43.217Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:19:46.157Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"As a user, I want to be able to edit the details of an Acquaintance",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":null,
+            "System.AssignedTo":"Joseph Sauve <josau@microsoft.com>",
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":null,
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/9"
+      },
+      {
+         "id":7,
+         "rev":6,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"Resolved",
+            "System.Reason":"Acceptance tests pass",
+            "System.CreatedDate":"2017-01-31T02:04:26.26Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:28:41.367Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"As a user, I want to clear the local image cache",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":null,
+            "System.AssignedTo":"Joseph Sauve <josau@microsoft.com>",
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":null,
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/7"
+      },
+      {
+         "id":6,
+         "rev":6,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"Active",
+            "System.Reason":"Acceptance tests pass",
+            "System.CreatedDate":"2017-01-31T02:04:04.79Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:28:43.307Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"As a user, I want to edit the backend URL in the app",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":null,
+            "System.AssignedTo":"Joseph Sauve <josau@microsoft.com>",
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":null,
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/6"
+      },
+      {
+         "id":1,
+         "rev":5,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"Active",
+            "System.Reason":"Implementation started",
+            "System.CreatedDate":"2017-01-31T00:41:35.747Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:25:42.08Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"As a user, I want the brand colors of the app to be familiar to me",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":"We're experimenting with some different colors throughout the app to maintain brand consistency.",
+            "System.AssignedTo":"Joseph Sauve <josau@microsoft.com>",
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":[
+            {
+               "rel":"System.LinkTypes.Hierarchy-Forward",
+               "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/2",
+               "attributes":{
+                  "isLocked":"False"
+               }
+            }
+         ],
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/1"
+      },
+      {
+         "id":11,
+         "rev":4,
+         "fields":{
+            "System.AreaPath":"Acquaint",
+            "System.TeamProject":"Acquaint",
+            "System.IterationPath":"Acquaint\\Iteration 1",
+            "System.WorkItemType":"User Story",
+            "System.State":"Active",
+            "System.Reason":"Implementation started",
+            "System.CreatedDate":"2017-01-31T02:25:24.123Z",
+            "System.CreatedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.ChangedDate":"2017-01-31T02:27:52.57Z",
+            "System.ChangedBy":"Joseph Sauve <josau@microsoft.com>",
+            "System.Title":"Bug Triage",
+            "Microsoft.VSTS.Scheduling.Effort":0.0,
+            "System.Description":null,
+            "System.AssignedTo":"Joseph Sauve <josau@microsoft.com>",
+            "Microsoft.VSTS.Scheduling.RemainingWork":0.0,
+            "Microsoft.VSTS.Common.Priority":2.0,
+            "System.BoardLane":null,
+            "System.Tags":null,
+            "Microsoft.VSTS.TCM.Steps":null,
+            "Microsoft.VSTS.TCM.Parameters":null,
+            "Microsoft.VSTS.TCM.LocalDataSource":null,
+            "Microsoft.VSTS.TCM.AutomationStatus":null
+         },
+         "relations":[
+            {
+               "rel":"System.LinkTypes.Hierarchy-Forward",
+               "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/12",
+               "attributes":{
+                  "isLocked":"False"
+               }
+            }
+         ],
+         "url":"https://devops-mobile.visualstudio.com/_apis/wit/workItems/11"
+      }
+   ],
+   "HttpStatusCode":0
+}

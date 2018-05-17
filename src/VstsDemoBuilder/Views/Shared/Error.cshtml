@@ -1,0 +1,38 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <div class="list-header clearfix">
+        <h1>Error</h1>
+    </div>
+    <div class="list-sfs-holder">
+        <div class="alert alert-error">
+            <h2>An unexpected error has occurred. Please contact the system administrator.</h2>
+        </div>
+        @if (Model != null && HttpContext.Current.IsDebuggingEnabled)
+        {
+            <div>
+                <p>
+                    <b>Exception:</b> @Model.Exception.Message<br />
+                    <b>Controller:</b> @Model.ControllerName<br />
+                    <b>Action:</b> @Model.ActionName
+                </p>
+                <div style="overflow:scroll">
+                    <pre>
+@Model.Exception.StackTrace
+                </pre>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

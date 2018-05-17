@@ -1,0 +1,204 @@
+{
+  "count": 4,
+  "value": [
+    {
+      "id": 708,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-11-09T09:48:59.437Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-09T09:48:59.437Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create Azure components through ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 3.0,
+        "System.Description": "<div>Create Azure components through ARM template, such as:</div><div><br></div><div>1. Azure Container Registry</div><div>2. Azure Web App which uses Linux OS</div>",
+        "System.AssignedTo": "Karthik N <ecanarys7@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/712",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/728",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/707",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/708"
+    },
+    {
+      "id": 718,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-11-09T10:49:38.603Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-09T10:49:38.603Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create Endpoints in VSTS",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Create Endpoints in VSTS so that VSTS is connected to Azure components",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/707",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/719",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/721",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/718"
+    },
+    {
+      "id": 724,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-11-13T06:44:06.307Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-13T07:21:52.067Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create Dockerfile for .web project",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<div>Create Dockerfile for .web project</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/723",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/726",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/724"
+    },
+    {
+      "id": 725,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2017-11-13T07:14:29.75Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-13T07:22:17.16Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create DockerCompose.yml files",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "Create DockerCompose.yml files",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/729",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/723",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/725"
+    }
+  ],
+  "HttpStatusCode": 0
+}

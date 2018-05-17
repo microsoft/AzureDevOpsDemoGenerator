@@ -1,0 +1,33 @@
+{
+  "Name": "Octopus",
+  "Description": "This template contains code for a sample PHP application which will be compiled using VSTS Build and deployed using Octopus Deploy on to an Azure App service. <p>PleaseFor more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a></p> ",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+  "TeamArea": "TeamArea.json",
+  "Parameters": [
+    {
+      "label": "Octopus URL",
+      "fieldName": "OctopusURL"
+    },
+    {
+      "label": "API Key",
+      "fieldName": "APIkey"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+﻿[
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "This is parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/fields/System.Description",
+        "value": "This is the description of parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-1"
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$User Story?api-version=2.2"
+  },
+  {
+    "body": [
+      {
+        "op": "add",
+        "path": "/fields/System.Title",
+        "value": "Task 1 for implemeting parent requirement 4"
+      },
+      {
+        "op": "add",
+        "path": "/id",
+        "value": "-2"
+      },
+      {
+        "op": "add",
+        "path": "/relations/-",
+        "value": {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "/_apis/wit/workitems/-1"
+        }
+      }
+    ],
+    "headers": { "Content-Type": "application/json-patch+json" },
+    "method": "PATCH",
+    "uri": "/_apis/wit/workitems/$Task?api-version=2.2"
+  }
+]

@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "myHealthClinic-code",
+  "type": "git",
+  "url": "https://vstsdemodata.visualstudio.com/MyHealthClinic/_git/MyHealthClinic2",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "Nagaraj.bhairaji@ecanarys.com",
+      "password": "7kpg6xsuz67socsenhnur3ntcmjiqdxwxmxzz4xwjtj4mrh72mfq"
+    }
+  },
+  "isReady": true
+}

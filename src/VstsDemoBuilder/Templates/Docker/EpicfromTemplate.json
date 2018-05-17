@@ -1,0 +1,98 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 723,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-11-13T06:33:03.967Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:27:35.367Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Add docker support for .NETCORE project",
+        "Microsoft.VSTS.Scheduling.Effort": 30.0,
+        "System.Description": "<div>Add docker support for .NETCORE project by adding below files:</div><div><br></div><div>1. Dockerfile</div><div>2. DockerCompose.yml</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/724",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/725",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/723"
+    },
+    {
+      "id": 707,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-11-09T09:42:35.223Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:27:35.367Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create CI-CD pipeline",
+        "Microsoft.VSTS.Scheduling.Effort": 40.0,
+        "System.Description": "Create CI-CD pipeline using VSTS and Azure",
+        "System.AssignedTo": "Karthik N <ecanarys7@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/707"
+    }
+  ],
+  "HttpStatusCode": 0
+}

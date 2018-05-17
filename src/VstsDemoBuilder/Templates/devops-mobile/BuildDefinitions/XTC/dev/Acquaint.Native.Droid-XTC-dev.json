@@ -1,0 +1,353 @@
+{
+  "name": "Acquaint.Native.Droid-XTC-dev",
+  "path": "\\XTC\\dev",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "NuGet restore App/Acquaint.Native.sln",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "333b11bd-d341-40d9-afcf-b32d5ce6f23b",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.Native.sln",
+        "nugetConfigPath": "",
+        "restoreMode": "restore",
+        "noCache": "false",
+        "nuGetRestoreArgs": "",
+        "verbosity": "-",
+        "nuGetVersion": "custom",
+        "nuGetPath": "/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/nuget/NuGet.exe"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Shell Script $(AndroidProjectPath)/Scripts/injectGoogleMapsApiKey.sh",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "scriptPath": "$(AndroidProjectPath)/Scripts/injectGoogleMapsApiKey.sh",
+        "args": "$(Build.SourcesDirectory)/$(AndroidProjectPath) $(GoogleMapsApiKey)",
+        "disableAutoCwd": "false",
+        "cwd": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Shell Script $(AndroidProjectPath)/Scripts/injectHockeyAppAppId.sh",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "scriptPath": "$(AndroidProjectPath)/Scripts/injectHockeyAppAppId.sh",
+        "args": "$(Build.SourcesDirectory)/App/Common/Acquaint.Util/Settings.cs 22a32eb5e4294bdca848f0fa639d1d70",
+        "disableAutoCwd": "false",
+        "cwd": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.Android Project App/Acquaint.Native/Acquaint.Native.Droid/Acquaint.Native.Droid.csproj",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "27edd013-36fd-43aa-96a3-7d73e1e35285",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "project": "App/Acquaint.Native/Acquaint.Native.Droid/Acquaint.Native.Droid.csproj",
+        "target": "",
+        "outputDir": "$(Build.BinariesDirectory)/bin/$(BuildConfiguration)",
+        "configuration": "$(BuildConfiguration)",
+        "createAppPackage": "true",
+        "clean": "false",
+        "msbuildLocationMethod": "version",
+        "msbuildVersion": "latest",
+        "msbuildLocation": "",
+        "msbuildArchitecture": "x86",
+        "msbuildArguments": "",
+        "jdkSelection": "JDKVersion",
+        "jdkVersion": "default",
+        "jdkUserInputPath": "",
+        "jdkArchitecture": "x86"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Signing and aligning APK file(s) $(Build.BinariesDirectory)/bin/$(BuildConfiguration)/*.apk",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "files": "$(Build.BinariesDirectory)/bin/$(BuildConfiguration)/*.apk",
+        "jarsign": "true",
+        "keystoreFile": "$(Build.SourcesDirectory)/App/Keystores/XamarinMarketing.keystore",
+        "keystorePass": "$(AndroidKeystorePassword)",
+        "keystoreAlias": "XamarinMarketing",
+        "keyPass": "$(AndroidKeyPassword)",
+        "jarsignerArguments": "-verbose -sigalg MD5withRSA -digestalg SHA1",
+        "zipalign": "true",
+        "zipalignLocation": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Build solution App/Acquaint.Native/Acquaint.Native.UITest/Acquaint.Native.UITest.Android/Acquaint.Native.UITest.Android.csproj",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "c6c4c611-aa2e-4a33-b606-5eaba2196824",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.Native/Acquaint.Native.UITest/Acquaint.Native.UITest.Android/Acquaint.Native.UITest.Android.csproj",
+        "platform": "",
+        "configuration": "$(BuildConfiguration)",
+        "msbuildArguments": "",
+        "clean": "false",
+        "maximumCpuCount": "false",
+        "restoreNugetPackages": "false",
+        "logProjectEvents": "false",
+        "createLogFile": "false",
+        "msbuildLocationMethod": "version",
+        "msbuildVersion": "14.0",
+        "msbuildArchitecture": "x86",
+        "msbuildLocation": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Test $(Build.BinariesDirectory)/bin/$(BuildConfiguration)/*.apk with Xamarin.UITest in Xamarin Test Cloud",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "049918cb-1488-48eb-85e8-c318eccaaa74",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "app": "$(Build.BinariesDirectory)/bin/$(BuildConfiguration)/*.apk",
+        "dsym": "",
+        "teamApiKey": "4b4935ee6a6d61fdc54dd294ef7048c5",
+        "user": "josau@microsoft.com",
+        "devices": "7d4261da",
+        "series": "17 Lollipop and Marshmallow devices",
+        "testDir": "App/Acquaint.Native/Acquaint.Native.UITest/Acquaint.Native.UITest.Android/bin/$(BuildConfiguration)",
+        "parallelization": "--test-chunk",
+        "locale": "en_US",
+        "userDefinedLocale": "",
+        "testCloudLocation": "**/packages/**/tools/test-cloud.exe",
+        "optionalArgs": "",
+        "publishNUnitResults": "true"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": true,
+      "displayName": "Copy Files to: $(build.artifactstagingdirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(build.sourcesdirectory)",
+        "Contents": "**/*.apk",
+        "TargetFolder": "$(build.artifactstagingdirectory)",
+        "CleanTargetFolder": "false",
+        "OverWrite": "false",
+        "flattenFolders": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": true,
+      "displayName": "Publish Artifact: drop",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "PathtoPublish": "$(build.artifactstagingdirectory)",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": true,
+      "displayName": "Delete files from $(Build.SourcesDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Build.SourcesDirectory)",
+        "Contents": "**"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": true,
+      "displayName": "Delete files from $(Agent.BuildDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Agent.BuildDirectory)",
+        "Contents": "**"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "689173",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+   
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "GoogleMapsApiKey": {
+      "value": "AIzaSyDztnQpn6jQ6jYupo-6_MDpZ8YeqwOYXks"
+    },
+    "BuildConfiguration": {
+      "value": "Release",
+      "allowOverride": true
+    },
+    "AndroidKeyPassword": {
+      "value": null,
+      "isSecret": true
+    },
+    "AndroidKeystorePassword": {
+      "value": null,
+      "isSecret": true
+    },
+    "Build.Clean": {
+      "value": "all"
+    },
+    "AndroidProjectPath": {
+      "value": "App/Acquaint.Native/Acquaint.Native.Droid"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [
+
+      ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 300,
+  "repository": {
+    "properties": {
+      "labelSources": "0",
+      "reportBuildStatus": "true",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "cleanOptions": "0"
+    },
+    "id": "$Acquaint$",
+    "type": "TfsGit",
+    "name": "Acquaint",
+    "url": "https://devops-mobile.visualstudio.com/_git/Acquaint",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+
+  "queue": {
+    "pool": {
+      "name": "Xamarin-XTC"
+    },
+    "name": "Xamarin-XTC"
+  }
+
+}

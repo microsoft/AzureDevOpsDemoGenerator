@@ -1,0 +1,14 @@
+{
+  "Extensions": [
+    {
+      "name": "Docker Integration",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.docker' target='_blank'><b>Docker Integration</b></a>",
+      "PublisherId": "ms-vscs-rm",
+      "ExtensionId": "docker",
+      "publisher": "microsoft",
+      "License": ""
+
+    }
+  ]
+}
+

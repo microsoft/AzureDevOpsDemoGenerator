@@ -1,0 +1,37 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 1188,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "Release Gates",
+        "System.TeamProject": "Release Gates",
+        "System.IterationPath": "Release Gates\\Iteration 1",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "Not fixed",
+        "System.CreatedDate": "2018-02-23T05:11:11.96Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2018-02-23T06:00:38.78Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "Disk out of space in Canary Environment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1188"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,0 +1,11 @@
+﻿{
+  "Extensions": [
+    {
+      "name": "Kubernetes extension",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=tsuyoshiushio.k8s-endpoint' target='_blank'>Kubernetes extension</a>",
+      "PublisherId": "tsuyoshiushio",
+      "ExtensionId": "k8s-endpoint",
+      "License": ""
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+﻿{
+  "name": "New query",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags], [Microsoft.VSTS.CodeReview.ContextType] from WorkItems where [System.TeamProject] = @project and [System.WorkItemType] = 'Task' and [System.State] <> '' order by [System.Title]"
+}

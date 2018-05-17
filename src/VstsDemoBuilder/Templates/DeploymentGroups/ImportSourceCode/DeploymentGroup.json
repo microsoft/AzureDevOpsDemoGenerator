@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/Deployment%20Groups/_git/DeploymentGroup"
+    },
+    "serviceEndpointId": "$DeploymentGroup-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

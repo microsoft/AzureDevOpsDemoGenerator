@@ -1,0 +1,184 @@
+{
+  "name": "Acquaint.XForms.Droid-CI-dev",
+  "path": "\\CI\\dev",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "NuGet restore App/Acquaint.XForms.sln",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "333b11bd-d341-40d9-afcf-b32d5ce6f23b",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.XForms.sln",
+        "nugetConfigPath": "",
+        "restoreMode": "restore",
+        "noCache": "false",
+        "nuGetRestoreArgs": "",
+        "verbosity": "-",
+        "nuGetVersion": "custom",
+        "nuGetPath": "/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/nuget/NuGet.exe"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.Android Project App/Acquaint.XForms/Acquaint.XForms.Droid/Acquaint.XForms.Droid.csproj",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "27edd013-36fd-43aa-96a3-7d73e1e35285",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "project": "App/Acquaint.XForms/Acquaint.XForms.Droid/Acquaint.XForms.Droid.csproj",
+        "target": "",
+        "outputDir": "$(Build.BinariesDirectory)/bin/$(BuildConfiguration)",
+        "configuration": "$(BuildConfiguration)",
+        "clean": "false",
+        "msbuildLocationMethod": "version",
+        "msbuildVersion": "latest",
+        "msbuildLocation": "",
+        "msbuildArchitecture": "x86",
+        "msbuildArguments": "",
+        "jdkSelection": "JDKVersion",
+        "jdkVersion": "default",
+        "jdkUserInputPath": "",
+        "jdkArchitecture": "x86"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Build.SourcesDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Build.SourcesDirectory)",
+        "Contents": "**"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Agent.BuildDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Agent.BuildDirectory)",
+        "Contents": "**"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "689173",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+  
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "Build.Clean": {
+      "value": "all"
+    },
+    "BuildConfiguration": {
+      "value": "Release"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [
+
+      ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "repository": {
+    "properties": {
+      "labelSources": "0",
+      "reportBuildStatus": "true",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "cleanOptions": "0"
+    },
+    "id": "$Acquaint$",
+    "type": "TfsGit",
+    "name": "Acquaint",
+    "url": "https://devops-mobile.visualstudio.com/_git/Acquaint",
+    "defaultBranch": "refs/heads/dev",
+    "clean": "true",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+
+  "queue": {
+    "pool": {
+      "name": "Xamarin-CI"
+    },
+    "name": "Xamarin-CI"
+  }
+
+}

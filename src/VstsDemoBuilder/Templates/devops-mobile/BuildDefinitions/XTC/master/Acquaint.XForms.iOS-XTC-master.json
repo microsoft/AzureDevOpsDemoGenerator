@@ -1,0 +1,243 @@
+{
+  "name": "Acquaint.XForms.iOS-XTC-master",
+  "path": "\\XTC\\master",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Shell Script $(iOSProjectPath)/Scripts/injectHockeyAppAppId.sh",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "scriptPath": "$(iOSProjectPath)/Scripts/injectHockeyAppAppId.sh",
+        "args": "$(Build.SourcesDirectory)/App/Common/Acquaint.Util/Settings.cs fea444377ff443ccb1d14b19b20836c6",
+        "disableAutoCwd": "false",
+        "cwd": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.iOS solution App/Acquaint.XForms.sln",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "0f077e3a-af59-496d-81bc-ad971b7464e0",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.XForms.sln",
+        "configuration": "$(BuildConfiguration)",
+        "packageApp": "true",
+        "forSimulator": "false",
+        "args": "",
+        "cwd": "",
+        "mdtoolLocation": "",
+        "signMethod": "file",
+        "iosSigningIdentity": "",
+        "unlockDefaultKeychain": "false",
+        "defaultKeychainPassword": "",
+        "provProfileUuid": "",
+        "p12": "",
+        "p12pwd": "",
+        "provProfile": "",
+        "removeProfile": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Build solution App/Acquaint.XForms/Acquaint.XForms.UITest/Acquaint.XForms.UITest.iOS/Acquaint.XForms.UITest.iOS.csproj",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "c6c4c611-aa2e-4a33-b606-5eaba2196824",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.XForms/Acquaint.XForms.UITest/Acquaint.XForms.UITest.iOS/Acquaint.XForms.UITest.iOS.csproj",
+        "platform": "",
+        "configuration": "$(BuildConfiguration)",
+        "msbuildArguments": "",
+        "clean": "false",
+        "maximumCpuCount": "false",
+        "restoreNugetPackages": "false",
+        "logProjectEvents": "false",
+        "createLogFile": "false",
+        "msbuildLocationMethod": "version",
+        "msbuildVersion": "14.0",
+        "msbuildArchitecture": "x86",
+        "msbuildLocation": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Test $(iOSProjectPath)/bin/iPhone/$(BuildConfiguration)/**/*.ipa with Xamarin.UITest in Xamarin Test Cloud",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "049918cb-1488-48eb-85e8-c318eccaaa74",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "app": "$(iOSProjectPath)/bin/iPhone/$(BuildConfiguration)/**/*.ipa",
+        "dsym": "",
+        "teamApiKey": "34c27a940339a06851b5a9eb0b4b87ed",
+        "user": "josau@microsoft.com",
+        "devices": "9828a998",
+        "series": "Optimal devices",
+        "testDir": "App/Acquaint.XForms/Acquaint.XForms.UITest/Acquaint.XForms.UITest.iOS/bin/$(BuildConfiguration)",
+        "parallelization": "--test-chunk",
+        "locale": "en_US",
+        "userDefinedLocale": "",
+        "testCloudLocation": "**/packages/**/tools/test-cloud.exe",
+        "optionalArgs": "",
+        "publishNUnitResults": "true"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Build.SourcesDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Build.SourcesDirectory)",
+        "Contents": "**"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Agent.BuildDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Agent.BuildDirectory)",
+        "Contents": "**"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "689173",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "KeyChainPassword": {
+      "value": null,
+      "isSecret": true
+    },
+    "BuildConfiguration": {
+      "value": "Debug",
+      "allowOverride": true
+    },
+    "Build.Clean": {
+      "value": "all"
+    },
+    "iOSProjectPath": {
+      "value": "App/Acquaint.XForms/Acquaint.XForms.iOS"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [
+
+      ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 300,
+  "repository": {
+    "properties": {
+      "labelSources": "0",
+      "reportBuildStatus": "true",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "cleanOptions": "0"
+    },
+    "id": "$Acquaint$",
+    "type": "TfsGit",
+    "name": "Acquaint",
+    "url": "https://devops-mobile.visualstudio.com/_git/Acquaint",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+
+  "queue": {
+    "pool": {
+      "name": "Xamarin-XTC"
+    },
+    "name": "Xamarin-XTC"
+  }
+}

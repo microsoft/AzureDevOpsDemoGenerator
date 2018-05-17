@@ -1,0 +1,197 @@
+﻿{
+   
+   "name":"Overview",
+   "refreshInterval":0,
+   "position":1,
+   
+   "widgets":[
+      {
+         "name":"All Work Items",
+         "position":{
+            "row":3,
+            "column":2
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":1
+         },
+         "settings":"{\"defaultBackgroundColor\":\"#292e6b\",\"queryId\":\"$AllWorkItems$\",\"queryName\":\"All Work Items\",\"colorRules\":[],\"lastArtifactName\":\"All Work Items\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+      },
+      {
+        
+         "name":"Product Backlog Items",
+         "position":{
+            "row":3,
+            "column":3
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":1
+         },
+         "settings":"{\"defaultBackgroundColor\":\"#007acc\",\"queryId\":\"$PBI$\",\"queryName\":\"Product Backlog Items\",\"colorRules\":[],\"lastArtifactName\":\"Product Backlog Items\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+         
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+      },
+      {
+         
+         "name":"Epic",
+         "position":{
+            "row":1,
+            "column":6
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":1
+         },
+         "settings":"{\"defaultBackgroundColor\":\"#f7a24b\",\"queryId\":\"$Epic$\",\"queryName\":\"Epic\",\"colorRules\":[],\"lastArtifactName\":\"Epic\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+        
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+      },
+      {
+         
+         "name":"All Work Items by Work Item Type",
+         "position":{
+            "row":1,
+            "column":4
+         },
+         "size":{
+            "rowSpan":2,
+            "columnSpan":2
+         },
+         "settings":"{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$AllWorkItems$\",\"title\":\"All Work Items by Work Item Type\",\"chartType\":\"ColumnChart\",\"transformOptions\":{\"filter\":\"$AllWorkItems$\",\"groupBy\":\"System.WorkItemType\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[{\"value\":\"Task\",\"backgroundColor\":\"#fbfd52\"},{\"value\":\"Product Backlog Item\",\"backgroundColor\":\"#007acc\"},{\"value\":\"Feature\",\"backgroundColor\":\"#71338d\"}],\"lastArtifactName\":\"All Work Items by Work Item Type\"}",
+         "settingsVersion":{
+            "major":3,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+         
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        
+         "lightboxOptions":{
+            "width":900,
+            "height":700,
+            "resizable":true
+         }
+      },
+      {
+         
+         "name":"All Work Items",
+         "position":{
+            "row":1,
+            "column":1
+         },
+         "size":{
+            "rowSpan":2,
+            "columnSpan":3
+         },
+         "settings":"{\"query\":{\"queryId\":\"$AllWorkItems$\",\"queryName\":\"All Work Items\"},\"selectedColumns\":[{\"name\":\"ID\",\"referenceName\":\"System.Id\"},{\"name\":\"Work Item Type\",\"referenceName\":\"System.WorkItemType\"},{\"name\":\"Title\",\"referenceName\":\"System.Title\"}],\"lastArtifactName\":\"All Work Items\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+         
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-mywork-web.Microsoft.VisualStudioOnline.MyWork.WitViewWidget"
+      },
+      {
+         
+         "name":"Feature",
+         "position":{
+            "row":2,
+            "column":6
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":1
+         },
+         "settings":"{\"defaultBackgroundColor\":\"#5c197b\",\"queryId\":\"$Feature$\",\"queryName\":\"Feature\",\"colorRules\":[],\"lastArtifactName\":\"Feature\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+        
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+      },
+      {
+         
+         "name":"Task",
+         "position":{
+            "row":3,
+            "column":1
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":1
+         },
+         "settings":"{\"defaultBackgroundColor\":\"#fbfd52\",\"queryId\":\"$Task$\",\"queryName\":\"Task\",\"colorRules\":[],\"lastArtifactName\":\"Task\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+        
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+      },
+      {
+         
+         "name":"Octopus",
+         "position":{
+            "row":3,
+            "column":4
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":2
+         },
+         "settings":"{\"name\":\"Octopus\",\"id\":50,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$BuildDefId$\",\"projectId\":\"$Projectid$\",\"lastArtifactName\":\"Octopus\"}",
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+        
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget"
+      }
+   ]
+}

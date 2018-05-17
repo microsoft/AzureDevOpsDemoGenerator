@@ -1,0 +1,68 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 581,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleJava",
+        "System.TeamProject": "MyShuttleJava",
+        "System.IterationPath": "MyShuttleJava",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2017-09-27T07:09:26.127Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-09-27T07:09:26.127Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "MyShuttle2 Team_Stories_Sprint 3",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://mydockerdemo.visualstudio.com/_apis/wit/workItems/581"
+    },
+    {
+      "id": 554,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleJava",
+        "System.TeamProject": "MyShuttleJava",
+        "System.IterationPath": "MyShuttleJava",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2017-09-27T07:09:26.127Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-09-27T07:09:26.127Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Release 1.0",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://mydockerdemo.visualstudio.com/_apis/wit/workItems/554"
+    }
+  ],
+  "HttpStatusCode": 0
+}

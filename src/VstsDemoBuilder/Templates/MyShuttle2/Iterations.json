@@ -1,0 +1,64 @@
+{
+  "id": 142,
+  "name": "MyShuttleJava",
+  "structureType": "iteration",
+  "hasChildren": true,
+  "children": [
+    {
+      "id": 144,
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations/Sprint%201",
+      "children": null
+    },
+    {
+      "id": 145,
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations/Sprint%202",
+      "children": null
+    },
+    {
+      "id": 146,
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations/Sprint%203",
+      "children": null
+    },
+    {
+      "id": 147,
+      "name": "Sprint 4",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations/Sprint%204",
+      "children": null
+    },
+    {
+      "id": 148,
+      "name": "Sprint 5",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations/Sprint%205",
+      "children": null
+    },
+    {
+      "id": 149,
+      "name": "Sprint 6",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations/Sprint%206",
+      "children": null
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations"
+    }
+  },
+  "url": "https://mydockerdemo.visualstudio.com/603fca56-0271-4f08-a999-dc68074fe3ff/_apis/wit/classificationNodes/Iterations",
+  "HttpStatusCode": 200,
+  "Message": null
+}

@@ -1,0 +1,245 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 750,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-11-16T08:56:37.467Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-11-16T09:02:31.407Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Identify Azure components required",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/750"
+    },
+    {
+      "id": 714,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2017-11-09T10:13:06.017Z",
+        "System.CreatedBy": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "System.ChangedDate": "2017-11-16T09:03:28.797Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Deploy PHP Application to Azure App Service",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/716",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/715",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/714"
+    },
+    {
+      "id": 752,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2017-11-16T08:57:50.763Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-11-16T09:04:21.33Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Use ARM templates in the CD pipeline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "ARM; Azure; VSTS",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/753",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/752"
+    },
+    {
+      "id": 688,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2017-11-06T07:01:39.67Z",
+        "System.CreatedBy": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "System.ChangedDate": "2017-11-16T09:04:27.347Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "User Interface changes",
+        "Microsoft.VSTS.Scheduling.Effort": 6.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "VSTS; WebApp",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/710",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/711",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/688"
+    },
+    {
+      "id": 754,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2017-11-16T09:01:00.64Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-11-16T09:04:14.11Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Develop ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "ARM; Azure",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/754"
+    },
+    {
+      "id": 749,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2017-11-16T08:56:26.593Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-11-16T09:04:24.143Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Create Endpoint for Azure Resource Manager",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "ARM; VSTS",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/751",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/749"
+    }
+  ],
+  "HttpStatusCode": 0
+}

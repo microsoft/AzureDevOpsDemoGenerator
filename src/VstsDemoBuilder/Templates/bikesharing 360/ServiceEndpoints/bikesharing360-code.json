@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+			
+        },		
+		"name": "bikesharing360-code",
+		"type": "git",
+		"url": "https://vstsdemos.visualstudio.com/_git/BikeSharing360",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "ecanarys1@outlook.com",
+      "password": "wflc5l6ixhr2ozmdefqd2l2zlcuhjjhu53ykpf27kykbfg6gomhq"
+    }
+  },
+		"isReady": true
+}  

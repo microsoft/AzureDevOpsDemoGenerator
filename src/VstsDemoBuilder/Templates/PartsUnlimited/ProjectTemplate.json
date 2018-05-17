@@ -1,0 +1,24 @@
+{
+  "Name": "Template Name",
+  "Description": "This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using VSTS.",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "UerStoriesfromTemplate.json",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "BoardRowsFromTemplate.json",
+  "Widget": "WidgetQuery.json",
+  "Chart": "WidgetChart.json",
+  "TeamArea": "TeamArea.json"
+
+}

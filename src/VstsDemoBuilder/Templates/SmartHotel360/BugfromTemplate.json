@@ -1,0 +1,68 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 1174,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2017-10-24T18:45:10.313Z",
+        "System.CreatedBy": "Steve Lasker <stevelas@microsoft.com>",
+        "System.ChangedDate": "2017-10-24T18:45:10.313Z",
+        "System.ChangedBy": "Steve Lasker <stevelas@microsoft.com>",
+        "System.Title": "Services has a bug",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Scott Hanselman <scottha@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1174"
+    },
+    {
+      "id": 1236,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-03-07T18:08:05.653Z",
+        "System.CreatedBy": "Brady Gaster <bradyg@microsoft.com>",
+        "System.ChangedDate": "2018-03-07T18:08:05.653Z",
+        "System.ChangedBy": "Brady Gaster <bradyg@microsoft.com>",
+        "System.Title": "Cats should be allowed!!",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Damian Brady <dabrady@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://cadddemos.visualstudio.com/190bd768-6516-4d88-b715-0d3ccef5638b/_apis/wit/workItems/1236"
+    }
+  ],
+  "HttpStatusCode": 0
+}

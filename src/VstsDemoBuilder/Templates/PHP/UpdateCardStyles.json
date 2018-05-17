@@ -1,0 +1,49 @@
+{
+  "rules": {
+    "fill": [
+      {
+        "name": "ARM",
+        "isEnabled": "True",
+        "filter": "[System.Tags] contains 'ARM'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#ffe660"
+        }
+      }
+    ],
+    "tagStyle": [
+      {
+        "name": "ARM",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "",
+          "background-color": "#ec001d"
+        }
+      },
+      {
+        "name": "Azure",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "",
+          "background-color": "#245cac"
+        }
+      },
+      {
+        "name": "VSTS",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "",
+          "background-color": "#602f70"
+        }
+      },
+      {
+        "name": "WebApp",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "",
+          "background-color": "#fbbc3d"
+        }
+      }
+    ]
+  }
+}

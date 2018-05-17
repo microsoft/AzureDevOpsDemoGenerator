@@ -1,0 +1,43 @@
+﻿{
+  "rules": {
+    "fill": [
+      {
+        "name": "Compliance",
+        "isEnabled": "True",
+        "filter": "[System.Tags] contains 'Compliance'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#EFFFDC"
+        }
+      },
+      {
+        "name": "Blocked",
+        "isEnabled": "True",
+        "filter": "[System.Tags] contains 'Blocked'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#EBDDF2"
+        }
+      },
+      {
+        "name": "High Priorities",
+        "isEnabled": "True",
+        "filter": "[Microsoft.VSTS.Common.Priority] = '1'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#FFE0C1"
+        }
+      }
+    ],
+    "tagStyle": [
+      {
+        "name": "Mobile",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "",
+          "background-color": "#245cac"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+﻿{
+  "Groups": [
+    "General",
+    "DevOps Labs",
+    "Others"
+  ],
+  "PrivateGroups": [
+    "Private"
+  ],
+  "GroupwiseTemplates": [
+    {
+      "Groups": "General",
+      "Template": [
+        {
+          "Name": "SmartHotel360",
+          "Description": "<p><i >aspdotnet</i>&nbsp;&nbsp;<i >mobiledevops</i></p>This template contains work items and code for SmartHotel360, an end-to-end reference application for the entire business, including a suite of mobile and desktop apps for business travelers (iOS, Android, and Windows), a website for booking a stay, and even an app for hotel employees to track and resolve maintenance issues. SmartHotel360 has many other reference applications, including a microservice oriented architecture implemented using Docker containers that power the client experience, a website powered by ASP.NET Core 2 for booking trips, and a sentiment analysis app for tracking customer experiences.For more details, please see the project page on GitHub at <p>For more information refer <a style='color:blue;' href='https://github.com/Microsoft/SmartHotel360' target='_blank'>SmartHotel360</a></p>"
+        },
+        {
+          "Name": "MyHealthClinic",
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using VSTS. "
+        },
+        {
+          "Name": "PartsUnlimited",
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using VSTS. "
+        },
+        {
+          "Name": "MyShuttle",
+          "Description": "<p><i >java</i>&nbsp;&nbsp;<i >azureappservice</i></p>This template contains code for a sample Java application which will be provisioned along with build & release definitions configured and customized to deploy the application to an Azure App service. <p> For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/jenkins/' target='_blank'> Deploying a Java application on Tomcat</a></p> "
+        }
+
+      ]
+    },
+    {
+      "Groups": "DevOps Labs",
+      "Template": [
+        {
+          "Name": "Docker",
+          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >azureappservice</i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >containers</i></p>This template provisions team project which contains code of Docker based ASP.NET Core web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using VSTS.  <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a></p>"
+        },
+        {
+          "Name": "AKS",
+          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >kubernetes </i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >azurecontainerservice</i></p>Provision the team project using this template to build a Docker based ASP.NET Core web application and deploy to a Kubernetes cluster running in Azure Container Service (AKS) by using Visual Studio Team Services (VSTS). <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a></p>"
+        },
+        {
+          "Name": "GitHub",
+          "Description": "<p><i >aspdotnet  </i>&nbsp;&nbsp;<i >azureappservice </i></p>Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Visual Studio Team Services with code repository in GitHub. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with VSTS</a></p>"
+        },
+        {
+          "Name": "Octopus",
+          "Description": "<p><i >php   </i>&nbsp;&nbsp;<i >octopus </i></p>This template contains code for a sample PHP application which will be compiled using VSTS Build and deployed using Octopus Deploy on to an Azure App service. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a></p>"
+        },
+        {
+          "Name": "Selenium",
+          "Description": "<p><i >aspdotnet</i>&nbsp;&nbsp;<i >selenium</i></p>This template contains code of Parts Unlimited, a fictional eCommerce application which will be provisioned along with build & release definitions and customized to deploy and test the application on an Azure VM using Selenium. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Selenium/' target='_blank'>Driving continuous testing with Selenium</a></p>"
+        },
+        {
+          "Name": "MyShuttle2",
+          "Description": "<p><i >java</i>&nbsp;&nbsp;<i >agiletool</i></p>Build, and deploy Java projects along with using Agile tools to keep our development lifecycle on track"
+        },
+        {
+          "Name": "MyShuttleDocker",
+          "Description": "<p><iv>java</i>&nbsp;&nbsp;<i >dockercontainerservice</i></p>This template provisions team project which contains code of Docker based Java web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using VSTS. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/eclipse/' target='_blank'> Developing with Eclipse for Java projects</a></p>"
+        },
+        {
+          "Name": "DeploymentGroups",
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >deploymentgroup</i></p>Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using VSTS Deployment Groups. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p>"
+        },
+        {
+          "Name": "SonarQube",
+          "Description": "<p><i >sonarqube </i>&nbsp;&nbsp;</p>This template contains code of MyShuttle, a sample application which will be provisioned and customized to analyze the code during the build and improve code quality. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/sonarqube/' target='_blank'>Technical Debt Management with SonarQube</a></p>"
+        }
+      ]
+    },
+    {
+      "Groups": "Others",
+      "Template": [
+        {
+          "Name": "PHP",
+          "Description": "<p><i >php</i>&nbsp;&nbsp;<i >azureappservice</i></p>This template contains code for a sample PHP application which will be provisioned along with build & release definitions configured and customized to deploy the application to an Azure App service. <p>For more information refer  <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/PHP/' target='_blank'> Developing with Eclipse for Java projects</a></p>"
+        },
+        {
+          "Name": "Python",
+          "Description": "<p><i >python</i>&nbsp;&nbsp;<i >azureappservice</i></p>This template contains code for a sample Python application which will be provisioned along with build and release definitions to deploy to an Azure App service using Django framework.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/python/' target='_blank'>How to deploy a Python application to Azure from VSTS</a></p>"
+        },
+        {
+          "Name": "WhiteSource-Bolt",
+          "Description": "<p><i >whitesourcebolt </i></p>This template provisions WebGoat code, a deliberately insecure web application from OWASP along with CI and CD definitions. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/WhiteSource/' target='_blank'>OSS governance with WhiteSource</a></p>"
+        }
+      ]
+    },
+    {
+      "Groups": "Private",
+      "Template": [
+        {
+          "Name": "PartsUnlimited-agile",
+          "Description": "Generated by VSTS Demo Generator"
+        },
+        {
+          "Name": "Fabrikam",
+          "Description": "Generated by VSTS Demo Generator"
+        },
+        {
+          "Name": "devops-mobile",
+          "Description": "A simple Xamarin app named Acquaint. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen. It runs on iOS 9+, Android 4.2+, and UWP (mobile and desktop)."
+        },
+        {
+          "Name": "BasicBot",
+          "Description": "Generated by VSTS Demo Generator"
+        },
+        {
+          "Name": "bikesharing 360",
+          "Description": "BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence."
+        },
+        {
+          "Name": "bikesharing360",
+          "Description": "BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence."
+        }
+      ]
+    }
+  ]
+}

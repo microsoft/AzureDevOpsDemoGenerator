@@ -1,0 +1,227 @@
+{
+  "name": "BikeRider UWP (ARM)",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "NuGet restore BikeSharing.Xamarin.sln",
+      "timeoutInMinutes": 0,
+      "refName": "NuGetInstaller_1",
+      "task": {
+        "id": "333b11bd-d341-40d9-afcf-b32d5ce6f23b",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "BikeSharing.Xamarin.sln",
+        "nugetConfigPath": "",
+        "restoreMode": "restore",
+        "noCache": "false",
+        "nuGetRestoreArgs": "",
+        "verbosity": "Detailed",
+        "nuGetVersion": "3.5.0.1829",
+        "nuGetPath": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download pfx",
+      "timeoutInMinutes": 0,
+      "refName": "ProcessRunner_2",
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "filename": "curl",
+        "arguments": "-k \"$(pfx.url)\" --output $(Build.SourcesDirectory)\\src\\BikeSharing.Clients.Windows\\$(pfx.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build solution 07c_BikeSharing.Xamarin-UWP.sln",
+      "timeoutInMinutes": 0,
+      "refName": "VSBuild_3",
+      "task": {
+        "id": "71a9a2d3-a98a-4caa-96ab-affca411ecda",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "07c_BikeSharing.Xamarin-UWP.sln",
+        "vsVersion": "14.0",
+        "msbuildArgs": "/p:AppxBundlePlatforms=\"$(BuildPlatform)\" /p:AppxPackageDir=\"$(Build.BinariesDirectory)\\$(Build.BuildId)\\AppxPackages\\\\\" /p:AppxBundle=Always",
+        "platform": "$(BuildPlatform)",
+        "configuration": "$(BuildConfiguration)",
+        "clean": "false",
+        "maximumCpuCount": "false",
+        "restoreNugetPackages": "false",
+        "msbuildArchitecture": "x86",
+        "logProjectEvents": "true",
+        "createLogFile": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Publish symbols path: ",
+      "timeoutInMinutes": 0,
+      "refName": "PublishSymbols_4",
+      "task": {
+        "id": "0675668a-7bba-4ccb-901d-5ad6554ca653",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SymbolsPath": "",
+        "SearchPattern": "**\\bin\\**\\*.pdb",
+        "SymbolsFolder": "",
+        "SkipIndexing": "false",
+        "TreatNotIndexedAsWarning": "false",
+        "SymbolsMaximumWaitTime": "",
+        "SymbolsProduct": "",
+        "SymbolsVersion": "",
+        "SymbolsArtifactName": "Symbols_$(BuildConfiguration)"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Copy Publish Artifact: drop",
+      "timeoutInMinutes": 0,
+      "refName": "PublishBuildArtifacts_5",
+      "task": {
+        "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "CopyRoot": "$(Build.BinariesDirectory)/$(Build.BuildId)",
+        "Contents": "**\\*arm*.appxBundle",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "812111",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": { }
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "BuildConfiguration": {
+      "value": "release"
+    },
+    "BuildPlatform": {
+      "value": "ARM"
+    },
+    "pfx.url": {
+      "value": "https://bikesharingpublicbuild.blob.core.windows.net/build-uwp/BikeSharing.Clients.Windows_TemporaryKey.pfx"
+    },
+    "pfx.name": {
+      "value": "BikeSharing.Clients.Windows_TemporaryKey.pfx"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [ ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "$BikeSharing360$",
+    "type": "TfsGit",
+    "name": "BikeSharing360",
+    "url": "",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": { },
+  "quality": "definition",
+  
+  "queue": {
+   
+    "name": "Hosted",
+    "pool": {
+   
+      "name": "Hosted",
+      "isHosted": true
+    }
+  }
+}
