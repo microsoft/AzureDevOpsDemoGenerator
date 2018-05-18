@@ -237,7 +237,6 @@
     <Content Include="assets\images\VSTS_full_logo.png" />
     <Content Include="assets\images\VS_logo.png" />
     <Content Include="assets\templategrouping\templategroup.custom.min.css" />
-    <Content Include="assets\templategrouping\templategroup.script.js" />
     <Content Include="Content\assets\css\custom.min.css" />
     <Content Include="Content\assets\images\VSTS-demoGen-image.png" />
     <Content Include="Content\assets\images\VSTS-menu.svg" />
@@ -875,6 +874,8 @@
     <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\CreateWiki.json" />
     <Content Include="Templates\MyHealthClinic\Wiki\CodeWiki\CreateWiki.json" />
     <Content Include="Views\Account\Unsupported_browser.cshtml" />
+    <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -904,7 +905,6 @@
     <Folder Include="assets\script\" />
     <Folder Include="Content\assets\script\" />
     <Folder Include="Log\" />
-    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />
     <Folder Include="Templates\GitHub\Dashboard\Widgets\" />
     <Folder Include="Templates\PartsUnlimited\Dashboard\Charts\" />
