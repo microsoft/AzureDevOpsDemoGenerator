@@ -1,0 +1,179 @@
+\hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items}{}\section{Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items Class Reference}
+\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items}\index{Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a2ee1fe393b4ce2879cf0ad53feef7be2}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a2ee1fe393b4ce2879cf0ad53feef7be2}} 
+{\bfseries Import\+Work\+Items} (\mbox{\hyperlink{interface_vsts_rest_a_p_i_1_1_i_configuration}{I\+Configuration}} configuration, string row\+Field\+Name)
+\item 
+List$<$ \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_w_i_map_data}{W\+I\+Map\+Data}} $>$ \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a314f15de4c9b09b3911af9d079abe306}{Import\+Workitems}} (Dictionary$<$ string, string $>$ dic\+W\+I\+Types, string project\+Name, string unique\+User, string project\+Settings\+Json, string attachment\+Folder\+Path, string repository\+ID, string project\+ID, Dictionary$<$ string, string $>$ dict\+Pull\+Requests, string user\+Method, List$<$ string $>$ account\+Users)
+\begin{DoxyCompactList}\small\item\em Import Work items form the files \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a4e9b291e9e8e0c84200d2fa06f0bc068}{Prepare\+And\+Update\+Target}} (string work\+Item\+Type, string work\+Import, string Project\+Name)
+\begin{DoxyCompactList}\small\item\em Update the work items in Target with all required field values \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a0287a32144b543656c69fd06131ee7f3}{Update\+Work\+Itemin\+Target}} (string work\+Item\+Type, string old\+\_\+wi\+\_\+\+ID, string Project\+Name, Dictionary$<$ string, object $>$ dic\+W\+I\+Fields)
+\begin{DoxyCompactList}\small\item\em Update work ietm with all required field values \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_ad85453d724d643b50b25b2d7f39ba95d}{Update\+Work\+Item\+Links}} (string work\+Item\+Template\+Json)
+\begin{DoxyCompactList}\small\item\em Update work items links -\/ parent child-\/ Hyperlinks-\/artifact links-\/attachments \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a70dc11cc49f3584702b7269d3ed821b2}{Update\+Link}} (string work\+Item\+Type, string W\+Ito\+Update, object\mbox{[}$\,$\mbox{]} patch\+Work\+Item)
+\begin{DoxyCompactList}\small\item\em Udpate Links to work items \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a5845172621eec8d4991f3633077dc498}{Upload\+Attchment}} (string file\+Path, string file\+Name)
+\begin{DoxyCompactList}\small\item\em Upload attachments to V\+S\+TS server \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a3c49805a2d5db76c5e891bb58d55b7ff}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a3c49805a2d5db76c5e891bb58d55b7ff}} 
+string {\bfseries board\+Row\+Field\+Name}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a69a6c66655b4eacd36b981b3a140540a}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a69a6c66655b4eacd36b981b3a140540a}} 
+string {\bfseries last\+Failure\+Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a314f15de4c9b09b3911af9d079abe306}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a314f15de4c9b09b3911af9d079abe306}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}!Import\+Workitems@{Import\+Workitems}}
+\index{Import\+Workitems@{Import\+Workitems}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}}
+\subsubsection{\texorpdfstring{Import\+Workitems()}{ImportWorkitems()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_w_i_map_data}{W\+I\+Map\+Data}}$>$ Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items.\+Import\+Workitems (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, string $>$}]{dic\+W\+I\+Types,  }\item[{string}]{project\+Name,  }\item[{string}]{unique\+User,  }\item[{string}]{project\+Settings\+Json,  }\item[{string}]{attachment\+Folder\+Path,  }\item[{string}]{repository\+ID,  }\item[{string}]{project\+ID,  }\item[{Dictionary$<$ string, string $>$}]{dict\+Pull\+Requests,  }\item[{string}]{user\+Method,  }\item[{List$<$ string $>$}]{account\+Users }\end{DoxyParamCaption})}
+
+
+
+Import Work items form the files 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dic\+W\+I\+Types} & \\
+\hline
+{\em project\+Name} & \\
+\hline
+{\em unique\+User} & \\
+\hline
+{\em project\+Settings\+Json} & \\
+\hline
+{\em attachment\+Folder\+Path} & \\
+\hline
+{\em repository\+ID} & \\
+\hline
+{\em project\+ID} & \\
+\hline
+{\em dict\+Pull\+Requests} & \\
+\hline
+{\em user\+Method} & \\
+\hline
+{\em account\+Users} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a4e9b291e9e8e0c84200d2fa06f0bc068}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a4e9b291e9e8e0c84200d2fa06f0bc068}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}!Prepare\+And\+Update\+Target@{Prepare\+And\+Update\+Target}}
+\index{Prepare\+And\+Update\+Target@{Prepare\+And\+Update\+Target}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}}
+\subsubsection{\texorpdfstring{Prepare\+And\+Update\+Target()}{PrepareAndUpdateTarget()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items.\+Prepare\+And\+Update\+Target (\begin{DoxyParamCaption}\item[{string}]{work\+Item\+Type,  }\item[{string}]{work\+Import,  }\item[{string}]{Project\+Name }\end{DoxyParamCaption})}
+
+
+
+Update the work items in Target with all required field values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em work\+Item\+Type} & \\
+\hline
+{\em work\+Import} & \\
+\hline
+{\em Project\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a70dc11cc49f3584702b7269d3ed821b2}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a70dc11cc49f3584702b7269d3ed821b2}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}!Update\+Link@{Update\+Link}}
+\index{Update\+Link@{Update\+Link}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}}
+\subsubsection{\texorpdfstring{Update\+Link()}{UpdateLink()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items.\+Update\+Link (\begin{DoxyParamCaption}\item[{string}]{work\+Item\+Type,  }\item[{string}]{W\+Ito\+Update,  }\item[{object \mbox{[}$\,$\mbox{]}}]{patch\+Work\+Item }\end{DoxyParamCaption})}
+
+
+
+Udpate Links to work items 
+
+
+\begin{DoxyParams}{Parameters}
+{\em work\+Item\+Type} & \\
+\hline
+{\em W\+Ito\+Update} & \\
+\hline
+{\em patch\+Work\+Item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a0287a32144b543656c69fd06131ee7f3}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a0287a32144b543656c69fd06131ee7f3}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}!Update\+Work\+Itemin\+Target@{Update\+Work\+Itemin\+Target}}
+\index{Update\+Work\+Itemin\+Target@{Update\+Work\+Itemin\+Target}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}}
+\subsubsection{\texorpdfstring{Update\+Work\+Itemin\+Target()}{UpdateWorkIteminTarget()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items.\+Update\+Work\+Itemin\+Target (\begin{DoxyParamCaption}\item[{string}]{work\+Item\+Type,  }\item[{string}]{old\+\_\+wi\+\_\+\+ID,  }\item[{string}]{Project\+Name,  }\item[{Dictionary$<$ string, object $>$}]{dic\+W\+I\+Fields }\end{DoxyParamCaption})}
+
+
+
+Update work ietm with all required field values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em work\+Item\+Type} & \\
+\hline
+{\em old\+\_\+wi\+\_\+\+ID} & \\
+\hline
+{\em Project\+Name} & \\
+\hline
+{\em dic\+W\+I\+Fields} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_ad85453d724d643b50b25b2d7f39ba95d}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_ad85453d724d643b50b25b2d7f39ba95d}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}!Update\+Work\+Item\+Links@{Update\+Work\+Item\+Links}}
+\index{Update\+Work\+Item\+Links@{Update\+Work\+Item\+Links}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}}
+\subsubsection{\texorpdfstring{Update\+Work\+Item\+Links()}{UpdateWorkItemLinks()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items.\+Update\+Work\+Item\+Links (\begin{DoxyParamCaption}\item[{string}]{work\+Item\+Template\+Json }\end{DoxyParamCaption})}
+
+
+
+Update work items links -\/ parent child-\/ Hyperlinks-\/artifact links-\/attachments 
+
+
+\begin{DoxyParams}{Parameters}
+{\em work\+Item\+Template\+Json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a5845172621eec8d4991f3633077dc498}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_import_work_items_a5845172621eec8d4991f3633077dc498}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}!Upload\+Attchment@{Upload\+Attchment}}
+\index{Upload\+Attchment@{Upload\+Attchment}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Import\+Work\+Items}}
+\subsubsection{\texorpdfstring{Upload\+Attchment()}{UploadAttchment()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Import\+Work\+Items.\+Upload\+Attchment (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Upload attachments to V\+S\+TS server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Canarys/\+Projects/\+Demo\+Generator\+Oauth/\+Vsts\+Rest\+A\+P\+I/\+Work\+Item\+And\+Tracking/Import\+Work\+Items.\+cs\end{DoxyCompactItemize}

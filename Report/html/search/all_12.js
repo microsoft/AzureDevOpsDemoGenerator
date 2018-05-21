@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['generators',['Generators',['../namespace_templates_generator_tool_1_1_generators.html',1,'TemplatesGeneratorTool']]],
+  ['tagstyle',['TagStyle',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_card_styles_patch_1_1_tag_style.html',1,'VstsRestAPI.Viewmodel.WorkItem.CardStylesPatch.TagStyle'],['../class_templates_generator_tool_1_1_view_model_1_1_card_style_response_1_1_tag_style.html',1,'TemplatesGeneratorTool.ViewModel.CardStyleResponse.TagStyle']]],
+  ['task',['Task',['../class_templates_generator_tool_1_1_view_model_1_1_build_definitions_1_1_task.html',1,'TemplatesGeneratorTool.ViewModel.BuildDefinitions.Task'],['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_release_definition_1_1_release_definitions_1_1_task.html',1,'VstsRestAPI.Viewmodel.ReleaseDefinition.ReleaseDefinitions.Task'],['../class_templates_generator_tool_1_1_view_model_1_1_release_definitions_1_1_task.html',1,'TemplatesGeneratorTool.ViewModel.ReleaseDefinitions.Task']]],
+  ['team',['Team',['../class_templates_generator_tool_1_1_view_model_1_1_teams_response_1_1_team.html',1,'TemplatesGeneratorTool.ViewModel.TeamsResponse.Team'],['../class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_team.html',1,'VstsRestAPI.ProjectsAndTeams.Team'],['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_get_team_response_1_1_team.html',1,'VstsRestAPI.Viewmodel.ProjectAndTeams.GetTeamResponse.Team']]],
+  ['teambacklogmapping',['TeamBacklogMapping',['../class_templates_generator_tool_1_1_view_model_1_1_plan_view_model_1_1_team_backlog_mapping.html',1,'TemplatesGeneratorTool::ViewModel::PlanViewModel']]],
+  ['teamiterationsresponse',['TeamIterationsResponse',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_team_iterations_response.html',1,'VstsRestAPI::Viewmodel::ProjectAndTeams']]],
+  ['teammemberresponse',['TeamMemberResponse',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_team_member_response.html',1,'VstsRestAPI::Viewmodel::ProjectAndTeams']]],
+  ['teammembers',['TeamMembers',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_team_member_response_1_1_team_members.html',1,'VstsRestAPI::Viewmodel::ProjectAndTeams::TeamMemberResponse']]],
+  ['teamresponse',['TeamResponse',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_team_response.html',1,'VstsRestAPI::Viewmodel::ProjectAndTeams']]],
+  ['teams',['Teams',['../class_templates_generator_tool_1_1_generators_1_1_teams.html',1,'TemplatesGeneratorTool::Generators']]],
+  ['teamsetting',['TeamSetting',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_team_setting_response_1_1_team_setting.html',1,'VstsRestAPI::Viewmodel::ProjectAndTeams::TeamSettingResponse']]],
+  ['teamsettingresponse',['TeamSettingResponse',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_team_setting_response.html',1,'VstsRestAPI::Viewmodel::ProjectAndTeams']]],
+  ['teamsresponse',['TeamsResponse',['../class_templates_generator_tool_1_1_view_model_1_1_teams_response.html',1,'TemplatesGeneratorTool::ViewModel']]],
+  ['template',['Template',['../class_vsts_demo_builder_1_1_models_1_1_template.html',1,'VstsDemoBuilder::Models']]],
+  ['templatekeyvalue',['templateKeyValue',['../class_vsts_demo_builder_1_1_models_1_1template_key_value.html',1,'VstsDemoBuilder::Models']]],
+  ['templatesetting',['TemplateSetting',['../class_vsts_demo_builder_1_1_models_1_1_template_setting.html',1,'VstsDemoBuilder::Models']]],
+  ['templatesgeneratortool',['TemplatesGeneratorTool',['../namespace_templates_generator_tool.html',1,'']]],
+  ['testcase',['TestCase',['../class_vsts_demo_builder_1_1_models_1_1_test_case.html',1,'VstsDemoBuilder::Models']]],
+  ['testmanagement',['TestManagement',['../class_vsts_rest_a_p_i_1_1_test_management_1_1_test_management.html',1,'VstsRestAPI::TestManagement']]],
+  ['testsuite',['TestSuite',['../class_vsts_demo_builder_1_1_models_1_1_test_suite.html',1,'VstsDemoBuilder::Models']]],
+  ['testsuites',['TestSuites',['../class_vsts_demo_builder_1_1_models_1_1_test_suite_1_1_test_suites.html',1,'VstsDemoBuilder::Models::TestSuite']]],
+  ['threadcontext',['ThreadContext',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_repository_1_1_pull_request_comments_1_1_thread_context.html',1,'VstsRestAPI.Viewmodel.Repository.PullRequestComments.ThreadContext'],['../class_templates_generator_tool_1_1_view_model_1_1_pull_request_comment_response_1_1_thread_context.html',1,'TemplatesGeneratorTool.ViewModel.PullRequestCommentResponse.ThreadContext']]],
+  ['trigger',['Trigger',['../class_vsts_rest_a_p_i_1_1_viewmodel_1_1_release_definition_1_1_release_definitions_1_1_trigger.html',1,'VstsRestAPI.Viewmodel.ReleaseDefinition.ReleaseDefinitions.Trigger'],['../class_templates_generator_tool_1_1_view_model_1_1_release_definitions_1_1_trigger.html',1,'TemplatesGeneratorTool.ViewModel.ReleaseDefinitions.Trigger']]],
+  ['viewmodel',['ViewModel',['../namespace_templates_generator_tool_1_1_view_model.html',1,'TemplatesGeneratorTool']]]
+];

@@ -1,0 +1,202 @@
+\hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys}{}\section{Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys Class Reference}
+\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys}\index{Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys@{Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a63c737d81f8ff1a145f88aee77345cae}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a63c737d81f8ff1a145f88aee77345cae}} 
+{\bfseries Querys} (\mbox{\hyperlink{interface_vsts_rest_a_p_i_1_1_i_configuration}{I\+Configuration}} configuration)
+\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_aef10c7b2cf6ce84aece4df4fc87a9fd6}{Get\+Dash\+Board\+Id}} (string project\+Name)
+\begin{DoxyCompactList}\small\item\em Get Dashboard by ID \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a367ee3271ff58e50273a73e2bb5da282}{Get\+Dashboarde\+Tag}} (string dashboard\+Id, string project\+Name)
+\begin{DoxyCompactList}\small\item\em Get Dashboard e\+Tag \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_querys_and_widgets_1_1_query_response}{Query\+Response}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_aefe4b14dbc3475676cfcc8f3a007546e}{Create\+Query}} (string project, string json)
+\begin{DoxyCompactList}\small\item\em Create Query \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_ad50ab1e6c58ac12bd8d39ee52a514e0d}{Update\+Query}} (string query, string project, string json)
+\begin{DoxyCompactList}\small\item\em Update existing query \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a6e8876d7b58b992e3cde03d1c13e3d5a}{Create\+Widget}} (string project, string dash\+Board\+Id, string json)
+\begin{DoxyCompactList}\small\item\em Create widget for dashboard \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_querys_and_widgets_1_1_query_response}{Query\+Response}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a8cf2beece89d16eb8b96e0c3c34142b2}{Get\+Query\+By\+Path\+And\+Name}} (string project, string query\+Name, string path)
+\begin{DoxyCompactList}\small\item\em Get Query by path \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_adc1b3bd0066fd1340db2fbf49b56934f}{Delete\+Default\+Dashboard}} (string project, string dash\+Board\+Id)
+\begin{DoxyCompactList}\small\item\em Delete default dashboard \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a819bd19bb1d6657c86418a3f3ef3c86b}{Create\+New\+Dash\+Board}} (string project, string json)
+\begin{DoxyCompactList}\small\item\em Create new dashboard \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a2409c19fabbee091d0252ab43a9f20a7}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a2409c19fabbee091d0252ab43a9f20a7}} 
+string {\bfseries last\+Failure\+Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a819bd19bb1d6657c86418a3f3ef3c86b}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a819bd19bb1d6657c86418a3f3ef3c86b}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Create\+New\+Dash\+Board@{Create\+New\+Dash\+Board}}
+\index{Create\+New\+Dash\+Board@{Create\+New\+Dash\+Board}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Create\+New\+Dash\+Board()}{CreateNewDashBoard()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Create\+New\+Dash\+Board (\begin{DoxyParamCaption}\item[{string}]{project,  }\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Create new dashboard 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_aefe4b14dbc3475676cfcc8f3a007546e}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_aefe4b14dbc3475676cfcc8f3a007546e}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Create\+Query@{Create\+Query}}
+\index{Create\+Query@{Create\+Query}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Create\+Query()}{CreateQuery()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_querys_and_widgets_1_1_query_response}{Query\+Response}} Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Create\+Query (\begin{DoxyParamCaption}\item[{string}]{project,  }\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Create Query 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a6e8876d7b58b992e3cde03d1c13e3d5a}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a6e8876d7b58b992e3cde03d1c13e3d5a}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Create\+Widget@{Create\+Widget}}
+\index{Create\+Widget@{Create\+Widget}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Create\+Widget()}{CreateWidget()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Create\+Widget (\begin{DoxyParamCaption}\item[{string}]{project,  }\item[{string}]{dash\+Board\+Id,  }\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Create widget for dashboard 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+{\em dash\+Board\+Id} & \\
+\hline
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_adc1b3bd0066fd1340db2fbf49b56934f}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_adc1b3bd0066fd1340db2fbf49b56934f}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Delete\+Default\+Dashboard@{Delete\+Default\+Dashboard}}
+\index{Delete\+Default\+Dashboard@{Delete\+Default\+Dashboard}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Delete\+Default\+Dashboard()}{DeleteDefaultDashboard()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Delete\+Default\+Dashboard (\begin{DoxyParamCaption}\item[{string}]{project,  }\item[{string}]{dash\+Board\+Id }\end{DoxyParamCaption})}
+
+
+
+Delete default dashboard 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+{\em dash\+Board\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a367ee3271ff58e50273a73e2bb5da282}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a367ee3271ff58e50273a73e2bb5da282}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Get\+Dashboarde\+Tag@{Get\+Dashboarde\+Tag}}
+\index{Get\+Dashboarde\+Tag@{Get\+Dashboarde\+Tag}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Get\+Dashboarde\+Tag()}{GetDashboardeTag()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Get\+Dashboarde\+Tag (\begin{DoxyParamCaption}\item[{string}]{dashboard\+Id,  }\item[{string}]{project\+Name }\end{DoxyParamCaption})}
+
+
+
+Get Dashboard e\+Tag 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dashboard\+Id} & \\
+\hline
+{\em project\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_aef10c7b2cf6ce84aece4df4fc87a9fd6}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_aef10c7b2cf6ce84aece4df4fc87a9fd6}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Get\+Dash\+Board\+Id@{Get\+Dash\+Board\+Id}}
+\index{Get\+Dash\+Board\+Id@{Get\+Dash\+Board\+Id}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Get\+Dash\+Board\+Id()}{GetDashBoardId()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Get\+Dash\+Board\+Id (\begin{DoxyParamCaption}\item[{string}]{project\+Name }\end{DoxyParamCaption})}
+
+
+
+Get Dashboard by ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a8cf2beece89d16eb8b96e0c3c34142b2}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_a8cf2beece89d16eb8b96e0c3c34142b2}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Get\+Query\+By\+Path\+And\+Name@{Get\+Query\+By\+Path\+And\+Name}}
+\index{Get\+Query\+By\+Path\+And\+Name@{Get\+Query\+By\+Path\+And\+Name}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Get\+Query\+By\+Path\+And\+Name()}{GetQueryByPathAndName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_querys_and_widgets_1_1_query_response}{Query\+Response}} Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Get\+Query\+By\+Path\+And\+Name (\begin{DoxyParamCaption}\item[{string}]{project,  }\item[{string}]{query\+Name,  }\item[{string}]{path }\end{DoxyParamCaption})}
+
+
+
+Get Query by path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+{\em query\+Name} & \\
+\hline
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_ad50ab1e6c58ac12bd8d39ee52a514e0d}\label{class_vsts_rest_a_p_i_1_1_querys_and_widgets_1_1_querys_ad50ab1e6c58ac12bd8d39ee52a514e0d}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}!Update\+Query@{Update\+Query}}
+\index{Update\+Query@{Update\+Query}!Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys@{Vsts\+Rest\+A\+P\+I\+::\+Querys\+And\+Widgets\+::\+Querys}}
+\subsubsection{\texorpdfstring{Update\+Query()}{UpdateQuery()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Querys\+And\+Widgets.\+Querys.\+Update\+Query (\begin{DoxyParamCaption}\item[{string}]{query,  }\item[{string}]{project,  }\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Update existing query 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & \\
+\hline
+{\em project} & \\
+\hline
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Canarys/\+Projects/\+Demo\+Generator\+Oauth/\+Vsts\+Rest\+A\+P\+I/\+Querys\+And\+Widgets/Querys.\+cs\end{DoxyCompactItemize}
