@@ -1,0 +1,448 @@
+\hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller}{}\section{Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller Class Reference}
+\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller}\index{Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller@{Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller}}
+Inheritance diagram for Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a2f78966d13ebfc59cdc8e09014229705}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a2f78966d13ebfc59cdc8e09014229705}} 
+void {\bfseries Add\+Message} (string id, string message)
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8bc07279221b8cf2476ab015e6a0a38e}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8bc07279221b8cf2476ab015e6a0a38e}} 
+void {\bfseries Remove\+Key} (string id)
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_aba5b74b6978113f797e33255ed69ce5e}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_aba5b74b6978113f797e33255ed69ce5e}} 
+Content\+Result {\bfseries Get\+Current\+Progress} (string id)
+\item 
+string \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ae36d3258bea98714970d2fdc5fec6bf3}{Get\+Status\+Message}} (string id)
+\begin{DoxyCompactList}\small\item\em Get status message to resplay \end{DoxyCompactList}\item 
+Content\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a386641d021e2872eb8a614db7d3b1a6e}{Get\+Template}} (string Template\+Name)
+\begin{DoxyCompactList}\small\item\em Get Template Name to display \end{DoxyCompactList}\item 
+Json\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a3b9b20acff06038e1aed58b3bfaaebd4}{Get\+Groups}} ()
+\begin{DoxyCompactList}\small\item\em Get groups. based on group selection get template \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a05d657b039fcb027c054e24cf53e5941}{Create}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model)
+\begin{DoxyCompactList}\small\item\em Call to Create View() \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ac983d0c1775718689aff6f7a17c0b929}{Generate\+Request\+Post\+Data}} (string app\+Secret, string auth\+Code, string callback\+Url)
+\begin{DoxyCompactList}\small\item\em Formatting the request for O\+Auth \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}} \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a9726501c86319171adf04dedab87a6a0}{Get\+Access\+Token}} (string body)
+\begin{DoxyCompactList}\small\item\em Generate Access Token \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_profile_details}{Profile\+Details}} \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8d6dfbb168d7d87651c361e953feb9d9}{Get\+Profile}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}} access\+Details)
+\begin{DoxyCompactList}\small\item\em Get Profile details \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}} \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8c1a9720f499884448fa692a6fc8b514}{Refresh\+\_\+\+Access\+Token}} (string refresh\+Token)
+\begin{DoxyCompactList}\small\item\em Refresh access token \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_accounts_1_1_account_list}{Accounts.\+Account\+List}} \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_af9d72d23dec7248e6a8b5106209e6e6d}{Get\+Accounts}} (string Member\+ID, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}} Details)
+\begin{DoxyCompactList}\small\item\em Get list of accounts \end{DoxyCompactList}\item 
+Json\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a1a7a16aa8a18f17e1fafb079e5ec5de4}{Get\+Members}} (string account\+Name, string Access\+Token)
+\begin{DoxyCompactList}\small\item\em Get members of the account-\/ Not using now \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ad6b69ff448fc483cb517729d55c55dcc}{Start\+Environment\+Setup\+Process}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model)
+\begin{DoxyCompactList}\small\item\em Start the process \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ada15b3cbf0e3c37b0c9e0036b45671c2}{End\+Environment\+Setup\+Process}} (I\+Async\+Result result)
+\begin{DoxyCompactList}\small\item\em End the process \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a78d06b5fc70004a4b23a10a22670b04e}{Create\+Project\+Environment}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model, string P\+AT, string account\+Name)
+\begin{DoxyCompactList}\small\item\em start provisioning project -\/ calls required \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a990cb5c0fd92cee0d4926b92a5951436}{Rename\+Iterations}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}} \+\_\+default\+Configuration, Dictionary$<$ string, string $>$ rename\+Iterations)
+\begin{DoxyCompactList}\small\item\em Rename Iterations \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_affdad07d90ffee27284c3215d538d673}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_affdad07d90ffee27284c3215d538d673}} 
+void {\bfseries Create\+Release} (string templates\+Folder, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model, string json, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}} \+\_\+configuration, string id, int release\+Definition\+Id)
+\item 
+void \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ab1802a3d21c416002c2c7ff57019b6f8}{Create\+Query\+And\+Widgets}} (string templates\+Folder, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model, List$<$ string $>$ lst\+Queries, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}} \+\_\+default\+Configuration, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}} \+\_\+configuration2, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}} \+\_\+configuration3, \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}} release\+Config)
+\begin{DoxyCompactList}\small\item\em Dashboard set up operations \end{DoxyCompactList}\item 
+Json\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a4ea213c905f5eb8d420e09d7a919a55d}{Check\+For\+Installed\+Extensions}} (string selected\+Template, string token, string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_account}{Account}})
+\begin{DoxyCompactList}\small\item\em Checking for Extenison in the account \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8c6be4b2363680d958e6fdee4e74b91a}{Install\+Extensions}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}} model, string account\+Name, string P\+AT)
+\begin{DoxyCompactList}\small\item\em Installing \mbox{\hyperlink{namespace_vsts_demo_builder_1_1_extensions}{Extensions}} \end{DoxyCompactList}\item 
+Json\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a69d4ebc71322d09e96bab8cd604ebb46}{Send\+Email}} (\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_email}{Email}} model)
+\begin{DoxyCompactList}\small\item\em Mail Configuration \end{DoxyCompactList}\item 
+Json\+Result \mbox{\hyperlink{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ac7c3e39375100aa8c8c3597d5c95c7a1}{Check\+Session}} ()
+\begin{DoxyCompactList}\small\item\em Get Session data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_af94f136b0440248a4048ff67e1ca68b2}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_af94f136b0440248a4048ff67e1ca68b2}} 
+bool {\bfseries is\+Default\+Repo\+Todetele} = true
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a84d9d22a1ae3761fd179efca7282ed22}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a84d9d22a1ae3761fd179efca7282ed22}} 
+string {\bfseries website\+Url} = string.\+Empty
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_aaa5b31ea5984e96e2074aa83a18da16c}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_aaa5b31ea5984e96e2074aa83a18da16c}} 
+string {\bfseries template\+Used} = string.\+Empty
+\item 
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a34b9e8b110384be7a22653ab3203d407}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a34b9e8b110384be7a22653ab3203d407}} 
+string {\bfseries project\+Name} = string.\+Empty
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a4ea213c905f5eb8d420e09d7a919a55d}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a4ea213c905f5eb8d420e09d7a919a55d}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Check\+For\+Installed\+Extensions@{Check\+For\+Installed\+Extensions}}
+\index{Check\+For\+Installed\+Extensions@{Check\+For\+Installed\+Extensions}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Check\+For\+Installed\+Extensions()}{CheckForInstalledExtensions()}}
+{\footnotesize\ttfamily Json\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Check\+For\+Installed\+Extensions (\begin{DoxyParamCaption}\item[{string}]{selected\+Template,  }\item[{string}]{token,  }\item[{string}]{Account }\end{DoxyParamCaption})}
+
+
+
+Checking for Extenison in the account 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Template} & \\
+\hline
+{\em token} & \\
+\hline
+{\em Account} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ac7c3e39375100aa8c8c3597d5c95c7a1}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ac7c3e39375100aa8c8c3597d5c95c7a1}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Check\+Session@{Check\+Session}}
+\index{Check\+Session@{Check\+Session}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Check\+Session()}{CheckSession()}}
+{\footnotesize\ttfamily Json\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Check\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get Session data 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a05d657b039fcb027c054e24cf53e5941}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a05d657b039fcb027c054e24cf53e5941}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Create@{Create}}
+\index{Create@{Create}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily Action\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Call to Create View() 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+View()
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a78d06b5fc70004a4b23a10a22670b04e}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a78d06b5fc70004a4b23a10a22670b04e}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Create\+Project\+Environment@{Create\+Project\+Environment}}
+\index{Create\+Project\+Environment@{Create\+Project\+Environment}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Create\+Project\+Environment()}{CreateProjectEnvironment()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Create\+Project\+Environment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}}}]{model,  }\item[{string}]{P\+AT,  }\item[{string}]{account\+Name }\end{DoxyParamCaption})}
+
+
+
+start provisioning project -\/ calls required 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+{\em P\+AT} & \\
+\hline
+{\em account\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ab1802a3d21c416002c2c7ff57019b6f8}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ab1802a3d21c416002c2c7ff57019b6f8}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Create\+Query\+And\+Widgets@{Create\+Query\+And\+Widgets}}
+\index{Create\+Query\+And\+Widgets@{Create\+Query\+And\+Widgets}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Create\+Query\+And\+Widgets()}{CreateQueryAndWidgets()}}
+{\footnotesize\ttfamily void Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Create\+Query\+And\+Widgets (\begin{DoxyParamCaption}\item[{string}]{templates\+Folder,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}}}]{model,  }\item[{List$<$ string $>$}]{lst\+Queries,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}}}]{\+\_\+default\+Configuration,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}}}]{\+\_\+configuration2,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}}}]{\+\_\+configuration3,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}}}]{release\+Config }\end{DoxyParamCaption})}
+
+
+
+Dashboard set up operations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em templates\+Folder} & \\
+\hline
+{\em model} & \\
+\hline
+{\em lst\+Queries} & \\
+\hline
+{\em \+\_\+default\+Configuration} & \\
+\hline
+{\em \+\_\+configuration2} & \\
+\hline
+{\em \+\_\+configuration3} & \\
+\hline
+{\em release\+Config} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ada15b3cbf0e3c37b0c9e0036b45671c2}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ada15b3cbf0e3c37b0c9e0036b45671c2}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!End\+Environment\+Setup\+Process@{End\+Environment\+Setup\+Process}}
+\index{End\+Environment\+Setup\+Process@{End\+Environment\+Setup\+Process}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{End\+Environment\+Setup\+Process()}{EndEnvironmentSetupProcess()}}
+{\footnotesize\ttfamily void Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+End\+Environment\+Setup\+Process (\begin{DoxyParamCaption}\item[{I\+Async\+Result}]{result }\end{DoxyParamCaption})}
+
+
+
+End the process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ac983d0c1775718689aff6f7a17c0b929}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ac983d0c1775718689aff6f7a17c0b929}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Generate\+Request\+Post\+Data@{Generate\+Request\+Post\+Data}}
+\index{Generate\+Request\+Post\+Data@{Generate\+Request\+Post\+Data}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Generate\+Request\+Post\+Data()}{GenerateRequestPostData()}}
+{\footnotesize\ttfamily string Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Generate\+Request\+Post\+Data (\begin{DoxyParamCaption}\item[{string}]{app\+Secret,  }\item[{string}]{auth\+Code,  }\item[{string}]{callback\+Url }\end{DoxyParamCaption})}
+
+
+
+Formatting the request for O\+Auth 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Secret} & \\
+\hline
+{\em auth\+Code} & \\
+\hline
+{\em callback\+Url} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a9726501c86319171adf04dedab87a6a0}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a9726501c86319171adf04dedab87a6a0}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Access\+Token@{Get\+Access\+Token}}
+\index{Get\+Access\+Token@{Get\+Access\+Token}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Access\+Token()}{GetAccessToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}} Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Access\+Token (\begin{DoxyParamCaption}\item[{string}]{body }\end{DoxyParamCaption})}
+
+
+
+Generate Access Token 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_af9d72d23dec7248e6a8b5106209e6e6d}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_af9d72d23dec7248e6a8b5106209e6e6d}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Accounts@{Get\+Accounts}}
+\index{Get\+Accounts@{Get\+Accounts}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Accounts()}{GetAccounts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_accounts_1_1_account_list}{Accounts.\+Account\+List}} Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Accounts (\begin{DoxyParamCaption}\item[{string}]{Member\+ID,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}}}]{Details }\end{DoxyParamCaption})}
+
+
+
+Get list of accounts 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Member\+ID} & \\
+\hline
+{\em Details} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a3b9b20acff06038e1aed58b3bfaaebd4}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a3b9b20acff06038e1aed58b3bfaaebd4}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Groups@{Get\+Groups}}
+\index{Get\+Groups@{Get\+Groups}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Groups()}{GetGroups()}}
+{\footnotesize\ttfamily Json\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get groups. based on group selection get template 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a1a7a16aa8a18f17e1fafb079e5ec5de4}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a1a7a16aa8a18f17e1fafb079e5ec5de4}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Members@{Get\+Members}}
+\index{Get\+Members@{Get\+Members}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Members()}{GetMembers()}}
+{\footnotesize\ttfamily Json\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Members (\begin{DoxyParamCaption}\item[{string}]{account\+Name,  }\item[{string}]{Access\+Token }\end{DoxyParamCaption})}
+
+
+
+Get members of the account-\/ Not using now 
+
+
+\begin{DoxyParams}{Parameters}
+{\em account\+Name} & \\
+\hline
+{\em Access\+Token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8d6dfbb168d7d87651c361e953feb9d9}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8d6dfbb168d7d87651c361e953feb9d9}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Profile@{Get\+Profile}}
+\index{Get\+Profile@{Get\+Profile}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Profile()}{GetProfile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_profile_details}{Profile\+Details}} Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Profile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}}}]{access\+Details }\end{DoxyParamCaption})}
+
+
+
+Get Profile details 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access\+Details} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ae36d3258bea98714970d2fdc5fec6bf3}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ae36d3258bea98714970d2fdc5fec6bf3}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Status\+Message@{Get\+Status\+Message}}
+\index{Get\+Status\+Message@{Get\+Status\+Message}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Status\+Message()}{GetStatusMessage()}}
+{\footnotesize\ttfamily string Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Status\+Message (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Get status message to resplay 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a386641d021e2872eb8a614db7d3b1a6e}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a386641d021e2872eb8a614db7d3b1a6e}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Get\+Template@{Get\+Template}}
+\index{Get\+Template@{Get\+Template}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Template()}{GetTemplate()}}
+{\footnotesize\ttfamily Content\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Get\+Template (\begin{DoxyParamCaption}\item[{string}]{Template\+Name }\end{DoxyParamCaption})}
+
+
+
+Get Template Name to display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Template\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8c6be4b2363680d958e6fdee4e74b91a}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8c6be4b2363680d958e6fdee4e74b91a}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Install\+Extensions@{Install\+Extensions}}
+\index{Install\+Extensions@{Install\+Extensions}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Install\+Extensions()}{InstallExtensions()}}
+{\footnotesize\ttfamily bool Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Install\+Extensions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}}}]{model,  }\item[{string}]{account\+Name,  }\item[{string}]{P\+AT }\end{DoxyParamCaption})}
+
+
+
+Installing \mbox{\hyperlink{namespace_vsts_demo_builder_1_1_extensions}{Extensions}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+{\em account\+Name} & \\
+\hline
+{\em P\+AT} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8c1a9720f499884448fa692a6fc8b514}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a8c1a9720f499884448fa692a6fc8b514}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Refresh\+\_\+\+Access\+Token@{Refresh\+\_\+\+Access\+Token}}
+\index{Refresh\+\_\+\+Access\+Token@{Refresh\+\_\+\+Access\+Token}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Refresh\+\_\+\+Access\+Token()}{Refresh\_AccessToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_access_details}{Access\+Details}} Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Refresh\+\_\+\+Access\+Token (\begin{DoxyParamCaption}\item[{string}]{refresh\+Token }\end{DoxyParamCaption})}
+
+
+
+Refresh access token 
+
+
+\begin{DoxyParams}{Parameters}
+{\em refresh\+Token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a990cb5c0fd92cee0d4926b92a5951436}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a990cb5c0fd92cee0d4926b92a5951436}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Rename\+Iterations@{Rename\+Iterations}}
+\index{Rename\+Iterations@{Rename\+Iterations}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Rename\+Iterations()}{RenameIterations()}}
+{\footnotesize\ttfamily void Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Rename\+Iterations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}}}]{model,  }\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_configuration}{Configuration}}}]{\+\_\+default\+Configuration,  }\item[{Dictionary$<$ string, string $>$}]{rename\+Iterations }\end{DoxyParamCaption})}
+
+
+
+Rename Iterations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+{\em \+\_\+default\+Configuration} & \\
+\hline
+{\em rename\+Iterations} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a69d4ebc71322d09e96bab8cd604ebb46}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_a69d4ebc71322d09e96bab8cd604ebb46}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Send\+Email@{Send\+Email}}
+\index{Send\+Email@{Send\+Email}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Send\+Email()}{SendEmail()}}
+{\footnotesize\ttfamily Json\+Result Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Send\+Email (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_email}{Email}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Mail Configuration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ad6b69ff448fc483cb517729d55c55dcc}\label{class_vsts_demo_builder_1_1_controllers_1_1_environment_controller_ad6b69ff448fc483cb517729d55c55dcc}} 
+\index{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}!Start\+Environment\+Setup\+Process@{Start\+Environment\+Setup\+Process}}
+\index{Start\+Environment\+Setup\+Process@{Start\+Environment\+Setup\+Process}!Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller@{Vsts\+Demo\+Builder\+::\+Controllers\+::\+Environment\+Controller}}
+\subsubsection{\texorpdfstring{Start\+Environment\+Setup\+Process()}{StartEnvironmentSetupProcess()}}
+{\footnotesize\ttfamily bool Vsts\+Demo\+Builder.\+Controllers.\+Environment\+Controller.\+Start\+Environment\+Setup\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vsts_demo_builder_1_1_models_1_1_project}{Project}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Start the process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Canarys/\+Projects/\+Demo\+Generator\+Oauth/\+Vsts\+Demo\+Builder/\+Controllers/Environment\+Controller.\+cs\end{DoxyCompactItemize}
