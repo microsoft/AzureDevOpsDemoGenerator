@@ -1,16 +1,16 @@
 ﻿{
   "data": {
-			
-		},		
-		"name": "devops-code",
-		"type": "git",
-		"url": "https://devops-mobile.visualstudio.com/_git/Acquaint",
+
+  },
+  "name": "devops-code",
+  "type": "git",
+  "url": "https://vstsdemodata.visualstudio.com/Devops-mobile/_git/Acquaint",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "Nagaraj.bhairaji@ecanarys.com",
-      "password": "gwm3fbmrp4ixwq34fewany7i3ptlydp5uunrgy572gizcmfwenuq"
+      "username": "$username$",
+      "password": "$password$"
     }
   },
-		"isReady": true
+  "isReady": true
 }
