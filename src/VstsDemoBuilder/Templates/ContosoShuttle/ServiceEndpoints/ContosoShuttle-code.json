@@ -8,8 +8,8 @@
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "Nagaraj.bhairaji@hotmail.com",
-      "password": "rdtwbkwulqpjuobu35mzpjtzuy4refqhzlg24kbgufwt6y4bc45q"
+      "username": "$ContosoUserID$",
+      "password": "$ContosoPassword$"
     }
   },
 		"isReady": true
