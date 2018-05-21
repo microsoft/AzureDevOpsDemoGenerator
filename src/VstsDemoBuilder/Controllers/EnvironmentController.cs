@@ -277,7 +277,7 @@ namespace VstsDemoBuilder.Controllers
                         Session["User"] = Profile.displayName;
 
                         Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
-                        
+
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
@@ -1587,11 +1587,20 @@ namespace VstsDemoBuilder.Controllers
                     string jsonCreateService = jsonPath;
                     if (System.IO.File.Exists(jsonCreateService))
                     {
+                        string username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
+                        string password = System.Configuration.ConfigurationManager.AppSettings["Password"];
 
                         ServiceEndPoint objService = new ServiceEndPoint(_defaultConfiguration);
                         jsonCreateService = model.ReadJsonFile(jsonCreateService);
                         jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
-                        if (model.SelectedTemplate.ToLower() == "sonarqube")
+                        jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password);
+                        if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                        {
+                            string Contosousername = System.Configuration.ConfigurationManager.AppSettings["ContosoUserID"];
+                            string Contosopassword = System.Configuration.ConfigurationManager.AppSettings["ContosoPassword"];
+                            jsonCreateService = jsonCreateService.Replace("$ContosoUserID$", Contosousername).Replace("$ContosoPassword$", Contosopassword);
+                        }
+                        else if(model.SelectedTemplate.ToLower() == "sonarqube")
                         {
                             if (!string.IsNullOrEmpty(model.SonarQubeDNS))
                             {
