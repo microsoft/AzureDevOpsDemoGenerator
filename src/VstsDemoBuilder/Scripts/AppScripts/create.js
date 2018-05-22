@@ -841,13 +841,13 @@ $(document).ready(function () {
                             var MatchedGroup = groups.GroupwiseTemplates[g];
                             for (var i = 0; i < MatchedGroup.Template.length; i++) {
                                 if (i == 0) {
-                                    grp += '<div class="template selected" data-template=' + MatchedGroup.Template[i].Name + '>';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
                                     grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
                                     grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
                                     grp += '</div>';
                                 }
                                 else {
-                                    grp += '<div class="template" data-template=' + MatchedGroup.Template[i].Name + '>';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
                                     grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
                                     grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
                                     grp += '</div>';
@@ -932,13 +932,13 @@ function createTemplates() {
                         var MatchedGroup = groups.GroupwiseTemplates[g];
                         for (var i = 0; i < MatchedGroup.Template.length; i++) {
                             if (i == 0) {
-                                grp += '<div class="template selected" data-template=' + MatchedGroup.Template[i].Name + '>';
+                                grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
                                 grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
                                 grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
                             }
                             else {
-                                grp += '<div class="template" data-template=' + MatchedGroup.Template[i].Name + '>';
+                                grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
                                 grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
                                 grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
