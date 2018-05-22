@@ -1598,7 +1598,7 @@ namespace VstsDemoBuilder.Controllers
                         {
                             string BikeSharing360username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
                             string BikeSharing360password = System.Configuration.ConfigurationManager.AppSettings["BikeSharing360Password"];
-                            jsonCreateService = jsonCreateService.Replace("$ContosoUserID$", BikeSharing360username).Replace("$ContosoPassword$", BikeSharing360password);
+                            jsonCreateService = jsonCreateService.Replace("$BikeSharing360username$", BikeSharing360username).Replace("$BikeSharing360password$", BikeSharing360password);
                         }
                         else if (model.SelectedTemplate.ToLower() == "contososhuttle")
                         {
