@@ -8,8 +8,8 @@
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "Nagaraj.bhairaji@ecanarys.com",
-      "password": "jej2vkt2fxmkclamf3tklrctcw65enoikyslx3qubzxq7wqiunaq"
+      "username": "$BikeSharing360username$",
+      "password": "$BikeSharing360password$"
     }
   },
 		"isReady": true

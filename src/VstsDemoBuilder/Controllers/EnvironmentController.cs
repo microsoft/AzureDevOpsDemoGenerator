@@ -1594,13 +1594,19 @@ namespace VstsDemoBuilder.Controllers
                         jsonCreateService = model.ReadJsonFile(jsonCreateService);
                         jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                         jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password);
-                        if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                        if (model.SelectedTemplate.ToLower() == "bikesharing360")
+                        {
+                            string BikeSharing360username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
+                            string BikeSharing360password = System.Configuration.ConfigurationManager.AppSettings["BikeSharing360Password"];
+                            jsonCreateService = jsonCreateService.Replace("$ContosoUserID$", BikeSharing360username).Replace("$ContosoPassword$", BikeSharing360password);
+                        }
+                        else if (model.SelectedTemplate.ToLower() == "contososhuttle")
                         {
                             string Contosousername = System.Configuration.ConfigurationManager.AppSettings["ContosoUserID"];
                             string Contosopassword = System.Configuration.ConfigurationManager.AppSettings["ContosoPassword"];
                             jsonCreateService = jsonCreateService.Replace("$ContosoUserID$", Contosousername).Replace("$ContosoPassword$", Contosopassword);
                         }
-                        else if(model.SelectedTemplate.ToLower() == "sonarqube")
+                        else if (model.SelectedTemplate.ToLower() == "sonarqube")
                         {
                             if (!string.IsNullOrEmpty(model.SonarQubeDNS))
                             {
