@@ -1,0 +1,563 @@
+﻿{
+  "source": "userInterface",
+  "revision": 4,
+  "name": "MyHealthClinicE2E",
+  "description": null,
+  "isDeleted": false,
+  "path": "\\",
+  "variables": {
+    "HostingPlan": {
+      "value": "mhce2e"
+    },
+    "ResourceGroupName": {
+      "value": "dotnetcore"
+    },
+    "ServerName": {
+      "value": "mhce2e$UUID$"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "WebsiteName": {
+          "value": "mhce2e$UUID$"
+        }
+      },
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Azure Deployment",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(ResourceGroupName)",
+                "location": "Central US",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/MyHealthClinicE2E/drop/ARM templates/azuredeploy.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/MyHealthClinicE2E/drop/ARM templates/azuredeploy.parameters.json",
+                "overrideParameters": "-WebsiteName $(WebsiteName) -MHC_ServerName $(ServerName)  -MHC_HostingPlanName $(HostingPlan)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "refName": "AzureRmWebAppDeployment_1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppName": "$(WebsiteName)",
+                "WebAppKind": "app",
+                "DeployToSlotFlag": "true",
+                "ImageSource": "Registry",
+                "ResourceGroupName": "$(ResourceGroupName)",
+                "SlotName": "Dev",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/MyHealthClinicE2E/drop/MyHealth.Web.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "true",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": "appsettings.json"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      }
+    },
+    {
+      "name": "QA",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "WebsiteName": {
+          "value": "mhce2e$UUID$"
+        }
+      },
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "refName": "AzureRmWebAppDeployment_1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppName": "$(WebsiteName)",
+                "WebAppKind": "app",
+                "DeployToSlotFlag": "true",
+                "ImageSource": "Registry",
+                "ResourceGroupName": "$(ResourceGroupName)",
+                "SlotName": "Staging",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/MyHealthClinicE2E/drop/MyHealth.Web.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "true",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": "appsettings.json"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "Dev",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      }
+    },
+    {
+      "name": "Production",
+      "rank": 3,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "WebsiteName": {
+          "value": "mhce2e$UUID$"
+        }
+      },
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "refName": "AzureRmWebAppDeployment_1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppName": "$(WebsiteName)",
+                "WebAppKind": "app",
+                "DeployToSlotFlag": "false",
+                "ImageSource": "Registry",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/MyHealthClinicE2E/drop/MyHealth.Web.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "true",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": "appsettings.json"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "QA",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$MyHealthClinicE2E-id$",
+      "type": "Build",
+      "alias": "MyHealthClinicE2E",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$MyHealthClinicE2E-id$",
+          "name": "MyHealthClinicE2E"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "MyHealthClinic"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "MyHealthClinicE2E",
+      "triggerConditions": [
+        {
+          "sourceBranch": "master"
+        }
+      ],
+      "triggerType": "artifactSource"
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "ReleaseClone"
+    }
+  }
+}

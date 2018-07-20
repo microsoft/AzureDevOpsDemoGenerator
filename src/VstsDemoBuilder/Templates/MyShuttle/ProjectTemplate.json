@@ -1,0 +1,25 @@
+{
+  "Name": "MyShuttle",
+  "Description": "This template contains code for a sample Java application which will be provisioned along with build & release definitions configured and customized to deploy the application to an Azure App service. <p> For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/jenkins/' target='_blank'>Deploying a Java application on Tomcat</a></p>",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "CreateServiceEndPoint.json",
+  "BoardColumns": "BoardColumns.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "TestCasefromTemplate.json",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "TestPlanfromTemplate": "TestPlanFromTemplate.json",
+  "TestSuitefromTemplate": "TestSuitesFromTemplate.json",
+  "UserStoriesFromTemplate": "",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+
+  "TeamArea": "TeamArea.json"
+
+}

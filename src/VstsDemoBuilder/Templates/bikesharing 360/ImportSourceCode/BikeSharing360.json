@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/_git/BikeSharing360"
+    },
+    "serviceEndpointId": "$bikesharing360-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

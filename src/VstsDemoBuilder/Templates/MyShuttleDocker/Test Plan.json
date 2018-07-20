@@ -1,0 +1,67 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 1077,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleDocker",
+        "System.TeamProject": "MyShuttleDocker",
+        "System.IterationPath": "MyShuttleDocker",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2018-01-18T23:32:38.173Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2018-01-18T23:32:38.173Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "MyShuttle2 Team_Stories_Sprint 3",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "MyShuttle2 Team_Stories_Sprint 3",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1077"
+    },
+    {
+      "id": 1078,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleDocker",
+        "System.TeamProject": "MyShuttleDocker",
+        "System.IterationPath": "MyShuttleDocker",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2018-01-18T23:32:38.393Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2018-01-18T23:32:38.393Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Release 1.0",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Release 1.0",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1078"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+﻿[
+  {
+    "description": "",
+    "name": "New",
+    "itemLimit": 0,
+    "stateMappings": {
+      "Product Backlog Item": "New",
+      "Bug": "New"
+    },
+    "columnType": "incoming",
+    "isSplit": null
+  },
+  {
+    "description": "",
+    "name": "Develop",
+    "itemLimit": 7,
+    "stateMappings": {
+      "Product Backlog Item": "Approved",
+      "Bug": "Approved"
+    },
+    "columnType": "inProgress",
+    "isSplit": true
+  },
+  {
+    "description": "",
+    "name": "Build and test",
+    "itemLimit": 5,
+    "stateMappings": {
+      "Product Backlog Item": "Committed",
+      "Bug": "Committed"
+    },
+    "columnType": "inProgress",
+    "isSplit": true
+  },
+  {
+    "description": "",
+    "name": "Done",
+    "itemLimit": 0,
+    "stateMappings": {
+      "Product Backlog Item": "Done",
+      "Bug": "Done"
+    },
+    "columnType": "outgoing",
+    "isSplit": null
+  }
+]

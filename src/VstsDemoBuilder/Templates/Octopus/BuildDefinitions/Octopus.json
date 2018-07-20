@@ -1,0 +1,253 @@
+{
+"name":"Octopus",
+  
+   "path":"\\",
+   "type":"build",
+   "queueStatus":"enabled",
+   "revision":7,
+   "build":[
+      {
+         "environment":{
+
+         },
+         "enabled":true,
+         "continueOnError":false,
+         "alwaysRun":false,
+         "displayName":"Package Application",
+         "timeoutInMinutes":0,
+         "refName":"OctopusPack1",
+         "task":{
+            "id":"179fac12-2402-486e-80cf-5a6a8571f7c0",
+            "versionSpec":"2.*",
+            "definitionType":"task"
+         },
+         "inputs":{
+            "PackageId":"PHP",
+            "PackageFormat":"Zip",
+            "PackageVersion":"$(Build.BuildNumber)",
+            "SourcePath":"$(Build.SourcesDirectory)",
+            "OutputPath":"$(build.artifactstagingdirectory)",
+            "NuGetAuthor":"",
+            "NuGetTitle":"",
+            "NuGetDescription":"",
+            "NuGetReleaseNotes":"",
+            "NuGetReleaseNotesFile":"",
+            "Include":"",
+            "Overwrite":"false",
+            "ListFiles":"false"
+         }
+      },
+      {
+         "environment":{
+
+         },
+         "enabled":true,
+         "continueOnError":false,
+         "alwaysRun":false,
+         "displayName":"Copy Files",
+         "timeoutInMinutes":0,
+         "refName":"CopyFiles2",
+         "task":{
+            "id":"5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+            "versionSpec":"2.*",
+            "definitionType":"task"
+         },
+         "inputs":{
+            "SourceFolder":"$(Build.SourcesDirectory)",
+            "Contents":"**\\Environment\\**",
+            "TargetFolder":"$(build.artifactstagingdirectory)",
+            "CleanTargetFolder":"false",
+            "OverWrite":"false",
+            "flattenFolders":"false"
+         }
+      },
+      {
+         "environment":{
+
+         },
+         "enabled":true,
+         "continueOnError":false,
+         "alwaysRun":false,
+         "displayName":"Push Packages to Octopus",
+         "timeoutInMinutes":0,
+         "refName":"OctopusPush2",
+         "task":{
+            "id":"d05ad9a2-5d9e-4a1c-a887-14034334d6f2",
+            "versionSpec":"2.*",
+            "definitionType":"task"
+         },
+        "inputs": {
+          "OctoConnectedServiceName": "",
+          "Package": "$(build.artifactstagingdirectory)/**/*.zip",
+          "Replace": "False",
+          "AdditionalArguments": ""
+        }
+      },
+      {
+         "environment":{
+
+         },
+         "enabled":true,
+         "continueOnError":false,
+         "alwaysRun":false,
+         "displayName":"Create Octopus Release",
+         "timeoutInMinutes":0,
+         "refName":"OctopusCreateRelease1",
+         "task":{
+            "id":"4e131b60-5532-4362-95b6-7c67d9841b4f",
+            "versionSpec":"2.*",
+            "definitionType":"task"
+         },
+        "inputs": {
+          "OctoConnectedServiceName": "",
+          "ProjectName": "Projects-2",
+          "ReleaseNumber": "",
+          "Channel": "",
+          "ChangesetCommentReleaseNotes": "false",
+          "WorkItemReleaseNotes": "false",
+          "CustomReleaseNotes": "",
+          "DeployToEnvironment": "",
+          "DeployForTenants": "",
+          "DeployForTenantTags": "",
+          "DeploymentProgress": "false",
+          "AdditionalArguments": ""
+        }
+      },
+      {
+         "environment":{
+
+         },
+         "enabled":true,
+         "continueOnError":false,
+         "alwaysRun":false,
+         "displayName":"Deploy Octopus Release",
+         "timeoutInMinutes":0,
+         "refName":"OctopusDeployRelease2",
+         "task":{
+            "id":"8ca1d96a-151d-44b7-bc4f-9251e2ea6971",
+            "versionSpec":"2.*",
+            "definitionType":"task"
+         },
+        "inputs": {
+          "OctoConnectedServiceName": "",
+          "Project": "PHP",
+          "ReleaseNumber": "latest",
+          "Environments": "Dev",
+          "ShowProgress": "False",
+          "DeployForTenants": "",
+          "DeployForTenantTags": "",
+          "AdditionalArguments": ""
+        }
+      }
+   ],
+   "options":[
+      {
+         "enabled":false,
+         "definition":{
+            "id":"5d58cc01-7c75-450c-be18-a388ddb129ec"
+         },
+         "inputs":{
+            "branchFilters":"[\"+refs/heads/*\"]",
+            "additionalFields":"{}"
+         }
+      },
+      {
+         "enabled":false,
+         "definition":{
+            "id":"a9db38f9-9fdc-478c-b0f9-464221e58316"
+         },
+         "inputs":{
+            "workItemType":"730697",
+            "assignToRequestor":"true",
+            "additionalFields":"{}"
+         }
+      },
+      {
+         "enabled":false,
+         "definition":{
+            "id":"57578776-4c22-4526-aeb0-86b6da17ee9c"
+         },
+         "inputs":{
+
+         }
+      }
+   ],
+   "triggers":[
+      {
+         "branchFilters":[
+            "+refs/heads/master"
+         ],
+         "pathFilters":[
+
+         ],
+         "batchChanges":false,
+         "maxConcurrentBuildsPerBranch":1,
+         "pollingInterval":0,
+         "triggerType":"continuousIntegration"
+      }
+   ],
+   "variables":{
+      "system.debug":{
+         "value":"false",
+         "allowOverride":true
+      }
+   },
+   "retentionRules":[
+      {
+         "branches":[
+            "+refs/heads/*"
+         ],
+         "artifacts":[
+
+         ],
+         "artifactTypesToDelete":[
+            "FilePath",
+            "SymbolStore"
+         ],
+         "daysToKeep":10,
+         "minimumToKeep":1,
+         "deleteBuildRecord":true,
+         "deleteTestResults":true
+      }
+   ],
+   
+   "jobAuthorizationScope":"projectCollection",
+   "jobTimeoutInMinutes":60,
+   "jobCancelTimeoutInMinutes":5,
+   "repository":{
+      "properties":{
+         "cleanOptions":"0",
+         "labelSources":"0",
+         "labelSourcesFormat":"$(build.buildNumber)",
+         "reportBuildStatus":"true",
+         "gitLfsSupport":"false",
+         "skipSyncSource":"false",
+         "checkoutNestedSubmodules":"false",
+         "fetchDepth":"0"
+      },
+     
+      "type":"TfsGit",
+      "name":"Octopus",
+     
+      "defaultBranch":"refs/heads/master",
+      "clean":"false",
+      "checkoutSubmodules":false
+   },
+   "processParameters":{
+
+   },
+   "quality":"definition",
+  
+   "drafts":[
+
+   ],
+   "queue":{
+      
+      "name":"Hosted VS2017",
+      "pool":{
+        
+         "name":"Hosted VS2017",
+         "isHosted":true
+      }
+   }
+}

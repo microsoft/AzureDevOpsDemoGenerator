@@ -1,0 +1,112 @@
+\hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects}{}\section{Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects Class Reference}
+\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects}\index{Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects@{Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_ab4361982eb517567e884317df447132f}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_ab4361982eb517567e884317df447132f}} 
+{\bfseries Projects} (\mbox{\hyperlink{interface_vsts_rest_a_p_i_1_1_i_configuration}{I\+Configuration}} configuration)
+\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a5972180d08f6a32c0a22c03f94622904}{Is\+Account\+Has\+Projects}} ()
+\begin{DoxyCompactList}\small\item\em Check for the existance of project \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_listof_projects_response_1_1_projects}{Listof\+Projects\+Response.\+Projects}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_afd4729308614a2d4f4124c7eedafecfc}{List\+Of\+Projects}} ()
+\begin{DoxyCompactList}\small\item\em Get List of project \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a2dc9bc6f325831b4f86c91cdfbd2bcc9}{Create\+Team\+Project}} (string json)
+\begin{DoxyCompactList}\small\item\em Create team project \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a488712df438d066911a1065f15556cbc}{Get\+Project\+Id\+By\+Name}} (string project\+Name)
+\begin{DoxyCompactList}\small\item\em Get Project id \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_abd2b8fa4ffdb672a1975b61964f9d72f}{Get\+Project\+State\+By\+Name}} (string project)
+\begin{DoxyCompactList}\small\item\em Get project to know the status of the project \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a498b140ca253c7976fb8129793c2650e}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a498b140ca253c7976fb8129793c2650e}} 
+string {\bfseries last\+Failure\+Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a2dc9bc6f325831b4f86c91cdfbd2bcc9}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a2dc9bc6f325831b4f86c91cdfbd2bcc9}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}!Create\+Team\+Project@{Create\+Team\+Project}}
+\index{Create\+Team\+Project@{Create\+Team\+Project}!Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}}
+\subsubsection{\texorpdfstring{Create\+Team\+Project()}{CreateTeamProject()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects.\+Create\+Team\+Project (\begin{DoxyParamCaption}\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Create team project 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a488712df438d066911a1065f15556cbc}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a488712df438d066911a1065f15556cbc}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}!Get\+Project\+Id\+By\+Name@{Get\+Project\+Id\+By\+Name}}
+\index{Get\+Project\+Id\+By\+Name@{Get\+Project\+Id\+By\+Name}!Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}}
+\subsubsection{\texorpdfstring{Get\+Project\+Id\+By\+Name()}{GetProjectIdByName()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects.\+Get\+Project\+Id\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{project\+Name }\end{DoxyParamCaption})}
+
+
+
+Get Project id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_abd2b8fa4ffdb672a1975b61964f9d72f}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_abd2b8fa4ffdb672a1975b61964f9d72f}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}!Get\+Project\+State\+By\+Name@{Get\+Project\+State\+By\+Name}}
+\index{Get\+Project\+State\+By\+Name@{Get\+Project\+State\+By\+Name}!Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}}
+\subsubsection{\texorpdfstring{Get\+Project\+State\+By\+Name()}{GetProjectStateByName()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects.\+Get\+Project\+State\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{project }\end{DoxyParamCaption})}
+
+
+
+Get project to know the status of the project 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a5972180d08f6a32c0a22c03f94622904}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_a5972180d08f6a32c0a22c03f94622904}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}!Is\+Account\+Has\+Projects@{Is\+Account\+Has\+Projects}}
+\index{Is\+Account\+Has\+Projects@{Is\+Account\+Has\+Projects}!Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}}
+\subsubsection{\texorpdfstring{Is\+Account\+Has\+Projects()}{IsAccountHasProjects()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects.\+Is\+Account\+Has\+Projects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check for the existance of project 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_afd4729308614a2d4f4124c7eedafecfc}\label{class_vsts_rest_a_p_i_1_1_projects_and_teams_1_1_projects_afd4729308614a2d4f4124c7eedafecfc}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}!List\+Of\+Projects@{List\+Of\+Projects}}
+\index{List\+Of\+Projects@{List\+Of\+Projects}!Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects@{Vsts\+Rest\+A\+P\+I\+::\+Projects\+And\+Teams\+::\+Projects}}
+\subsubsection{\texorpdfstring{List\+Of\+Projects()}{ListOfProjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams_1_1_listof_projects_response_1_1_projects}{Listof\+Projects\+Response.\+Projects}} Vsts\+Rest\+A\+P\+I.\+Projects\+And\+Teams.\+Projects.\+List\+Of\+Projects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get List of project 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Canarys/\+Projects/\+Demo\+Generator\+Oauth/\+Vsts\+Rest\+A\+P\+I/\+Projects\+And\+Teams/Projects.\+cs\end{DoxyCompactItemize}

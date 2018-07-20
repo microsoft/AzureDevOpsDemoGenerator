@@ -1,0 +1,175 @@
+{   
+	"name": "PHP",
+    "path": "\\",
+    "type": "build",
+    "queueStatus": "enabled",
+    "revision": 15,
+    "build": [
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Archive files ",
+            "timeoutInMinutes": 0,
+            "refName": "ArchiveFiles2",
+            "task": {
+                "id": "d8b84976-e99a-4b86-b885-4849694435b0",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "rootFolder": "$(Build.sourcesDirectory)",
+                "includeRootFolder": "false",
+                "archiveType": "default",
+                "tarCompression": "gz",
+                "archiveFile": "$(Build.ArtifactStagingDirectory)/$(Build.DefinitionName).$(Build.BuildId).zip",
+                "replaceExistingArchive": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy Files to",
+            "timeoutInMinutes": 0,
+            "refName": "CopyFiles1",
+            "task": {
+                "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+                "versionSpec": "2.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "SourceFolder": "",
+                "Contents": "**\\Environment\\**",
+                "TargetFolder": "$(build.artifactstagingdirectory)",
+                "CleanTargetFolder": "false",
+                "OverWrite": "false",
+                "flattenFolders": "false"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact",
+            "timeoutInMinutes": 0,
+            "refName": "PublishBuildArtifacts5",
+            "task": {
+                "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+                "ArtifactName": "drop",
+                "ArtifactType": "Container",
+                "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+                "Parallel": "false",
+                "ParallelCount": "8"
+            }
+        }
+    ],
+    "options": [
+        {
+            "enabled": false,
+            "definition": {
+                "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+            },
+            "inputs": {
+                "branchFilters": "[\"+refs/heads/*\"]",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+            },
+            "inputs": {
+                "workItemType": "708917",
+                "assignToRequestor": "true",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+            },
+            "inputs": {}
+        }
+    ],
+    "triggers": [
+        {
+            "branchFilters": [
+                "+refs/heads/master"
+            ],
+            "pathFilters": [],
+            "batchChanges": true,
+            "maxConcurrentBuildsPerBranch": 1,
+            "pollingInterval": 0,
+            "triggerType": "continuousIntegration"
+        }
+    ],
+    "variables": {
+        "system.debug": {
+            "value": "false",
+            "allowOverride": true
+        }
+    },
+    "retentionRules": [
+        {
+            "branches": [
+                "+refs/heads/*"
+            ],
+            "artifacts": [],
+            "artifactTypesToDelete": [
+                "FilePath",
+                "SymbolStore"
+            ],
+            "daysToKeep": 10,
+            "minimumToKeep": 1,
+            "deleteBuildRecord": true,
+            "deleteTestResults": true
+        }
+    ],
+    
+    "jobAuthorizationScope": "projectCollection",
+    "jobTimeoutInMinutes": 60,
+    "jobCancelTimeoutInMinutes": 5,
+    "repository": {
+        "properties": {
+            "cleanOptions": "0",
+            "labelSources": "0",
+            "labelSourcesFormat": "$(build.buildNumber)",
+            "reportBuildStatus": "true",
+            "gitLfsSupport": "false",
+            "skipSyncSource": "false",
+            "checkoutNestedSubmodules": "false",
+            "fetchDepth": "0"
+        },
+        "id": "$PHP$",
+        "type": "TfsGit",
+        "name": "PHP",
+        
+        "defaultBranch": "refs/heads/master",
+        "clean": "false",
+        "checkoutSubmodules": false
+    },
+    "processParameters": {},
+    "quality": "definition",
+   
+    "drafts": [],
+    "queue": {
+    
+        "name": "Hosted",
+        "pool": {
+          
+            "name": "Hosted",
+            "isHosted": true
+        }
+    }
+}

@@ -1,0 +1,6 @@
+﻿{
+  "definition": {
+    "id": "$buildId$"
+  },
+  "sourceBranch": "refs/heads/master"  
+}

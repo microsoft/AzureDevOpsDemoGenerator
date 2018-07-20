@@ -1,0 +1,80 @@
+{
+  "cards": {
+    "Bug": [
+      {
+        "fieldIdentifier": "System.Title",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.AssignedTo",
+        "displayFormat": "AvatarAndFullName",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort",
+        "displayFormat": "",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.Tags",
+        "displayFormat": "",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": "false"
+      }
+    ],
+    "Product Backlog Item": [
+      {
+        "fieldIdentifier": "System.Title",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.State",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.Id",
+        "displayFormat": "",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.AssignedTo",
+        "displayFormat": "AvatarAndFullName",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort",
+        "displayFormat": "",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.Tags",
+        "displayFormat": "",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": "true"
+      }
+    ]
+  }
+}

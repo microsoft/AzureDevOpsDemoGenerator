@@ -1,0 +1,14 @@
+{
+  "data": {},
+  "name": "SonarQube",
+  "type": "generic",
+  "url": "$URL$",
+  "authorization": {
+    "parameters": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isReady": true
+}

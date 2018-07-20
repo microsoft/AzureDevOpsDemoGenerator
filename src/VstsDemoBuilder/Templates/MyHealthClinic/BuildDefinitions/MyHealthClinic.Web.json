@@ -1,0 +1,339 @@
+﻿{
+    "name": "MyHealthClinicE2E",
+    "path": "\\",
+    "type": "build",
+    "build": [
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Restore",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI_1",
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "restore",
+                "publishWebProjects": "true",
+                "projects": "**/*.csproj",
+                "arguments": "",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "npm install",
+            "timeoutInMinutes": 0,
+            "refName": "Npm_2",
+            "task": {
+                "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "install",
+                "workingDir": "src/MyHealth.Web",
+                "verbose": "false",
+                "customCommand": "",
+                "customRegistry": "useNpmrc",
+                "customFeed": "",
+                "customEndpoint": "",
+                "publishRegistry": "useExternalRegistry",
+                "publishFeed": "",
+                "publishEndpoint": ""
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "bower install",
+            "timeoutInMinutes": 0,
+            "refName": "Bower_3",
+            "task": {
+                "id": "4fa3aac0-0020-4832-9089-9979c9dd3e69",
+                "versionSpec": "0.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "install",
+                "bowerjson": "src/MyHealth.Web/bower.json",
+                "arguments": "",
+                "bowerRuntime": "node_modules/bower/bin/bower"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "gulp ",
+            "timeoutInMinutes": 0,
+            "refName": "Gulp_4",
+            "task": {
+                "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+                "versionSpec": "0.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "gulpFile": "src/MyHealth.Web/gulpfile.js",
+                "targets": "",
+                "arguments": "",
+                "cwd": "",
+                "gulpjs": "node_modules/gulp/bin/gulp.js",
+                "publishJUnitResults": "false",
+                "testResultsFiles": "**/TEST-*.xml",
+                "testRunTitle": "",
+                "enableCodeCoverage": "false",
+                "testFramework": "Mocha",
+                "srcFiles": "",
+                "testFiles": "test/*.js"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI_5",
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "build",
+                "publishWebProjects": "true",
+                "projects": "**/*.csproj",
+                "arguments": "--configuration $(BuildConfiguration)",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Test",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI_6",
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "test",
+                "publishWebProjects": "true",
+                "projects": "**/*Tests/*.csproj",
+                "arguments": "--logger:trx;logfilename=TEST.xml",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI_7",
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "publish",
+                "publishWebProjects": "true",
+                "projects": "",
+                "arguments": "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Test Results",
+            "timeoutInMinutes": 0,
+            "refName": "PublishTestResults2",
+            "task": {
+                "id": "0b0f01ed-7dde-43ff-9cbb-e48954daf9b1",
+                "versionSpec": "2.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "testRunner": "VSTest",
+                "testResultsFiles": "**/TEST.xml",
+                "searchFolder": "$(System.DefaultWorkingDirectory)",
+                "mergeTestResults": "true",
+                "testRunTitle": "MyHealthClinic",
+                "platform": "",
+                "configuration": "",
+                "publishRunAttachments": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy Files",
+            "timeoutInMinutes": 0,
+            "refName": "CopyFiles1",
+            "task": {
+                "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+                "versionSpec": "2.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "SourceFolder": "$(build.sourcesdirectory)",
+                "Contents": "**/*.json",
+                "TargetFolder": "$(build.artifactstagingdirectory)",
+                "CleanTargetFolder": "false",
+                "OverWrite": "false",
+                "flattenFolders": "false"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact",
+            "timeoutInMinutes": 0,
+            "refName": "PublishBuildArtifacts_8",
+            "task": {
+                "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "PathtoPublish": "$(build.artifactstagingdirectory)",
+                "ArtifactName": "drop",
+                "ArtifactType": "Container",
+                "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+                "Parallel": "false",
+                "ParallelCount": "8"
+            }
+        }
+    ],
+    "options": [
+        {
+            "enabled": false,
+            "definition": {
+                "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+            },
+            "inputs": {
+                "workItemType": "181267",
+                "assignToRequestor": "true",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+            },
+            "inputs": {
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+            },
+            "inputs": {
+                "branchFilters": "[\"+refs/heads/*\"]",
+                "additionalFields": "{}"
+            }
+        }
+    ],
+    "triggers": [
+        {
+          "branchFilters": [
+            "+refs/heads/master"
+          ],
+            "pathFilters": [],
+            "batchChanges": false,
+            "maxConcurrentBuildsPerBranch": 1,
+            "pollingInterval": 0,
+            "triggerType": "continuousIntegration"
+        }
+    ],
+    "variables": {
+        "BuildConfiguration": {
+            "value": "release",
+            "allowOverride": true
+        },
+        "BuildPlatform": {
+            "value": "any cpu",
+            "allowOverride": true
+        },
+        "system.debug": {
+            "value": "false",
+            "allowOverride": true
+        }
+    },
+    "retentionRules": [
+        {
+            "branches": [
+                "+refs/heads/*"
+            ],
+            "artifacts": [],
+            "artifactTypesToDelete": [
+                "FilePath",
+                "SymbolStore"
+            ],
+            "daysToKeep": 10,
+            "minimumToKeep": 1,
+            "deleteBuildRecord": true,
+            "deleteTestResults": true
+        }
+    ],
+    "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+    "jobAuthorizationScope": "projectCollection",
+    "jobTimeoutInMinutes": 60,
+    "jobCancelTimeoutInMinutes": 5,
+    "repository": {
+        "properties": {
+            "labelSources": "0",
+            "reportBuildStatus": "true",
+            "fetchDepth": "0",
+            "gitLfsSupport": "false",
+            "skipSyncSource": "false",
+            "cleanOptions": "0",
+            "labelSourcesFormat": "$(build.buildNumber)",
+            "checkoutNestedSubmodules": "false"
+        },
+        "id": "$MyHealthClinic$",
+        "type": "TfsGit",
+        "name": "MyHealthClinic",
+        "defaultBranch": "refs/heads/master",
+        "clean": "false",
+        "checkoutSubmodules": false
+    },
+    "processParameters": {},
+    "quality": "definition",
+    "drafts": [],
+    "queue": {
+        "name": "Hosted VS2017",
+        "pool": {
+            "name": "Hosted VS2017",
+            "isHosted": true
+        }
+    }
+}

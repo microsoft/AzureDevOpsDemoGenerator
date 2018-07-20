@@ -1,0 +1,17 @@
+{
+   "data": {
+
+  },
+  "name": "AppleStore",
+  "type": "apple-app-store",
+  "url": "https://itunesconnect.apple.com/",
+  "authorization": {
+ "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "nagaraj.bhairaji@ecanarys.com",
+      "password": "jej2vkt2fxmkclamf3tklrctcw65enoikyslx3qubzxq7wqiunaq"
+    }
+   
+  },
+  "isReady": true
+}

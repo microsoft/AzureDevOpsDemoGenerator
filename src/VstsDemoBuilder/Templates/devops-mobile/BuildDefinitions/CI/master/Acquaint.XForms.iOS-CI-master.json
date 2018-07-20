@@ -1,0 +1,166 @@
+{
+  "name": "Acquaint.XForms.iOS-CI-master",
+  "path": "\\CI\\master",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.iOS solution App/Acquaint.XForms.sln",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "0f077e3a-af59-496d-81bc-ad971b7464e0",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.XForms.sln",
+        "configuration": "Release",
+        "packageApp": "true",
+        "forSimulator": "false",
+        "runNugetRestore": "true",
+        "args": "",
+        "cwd": "",
+        "mdtoolLocation": "",
+        "signMethod": "id",
+        "iosSigningIdentity": "iPhone Developer: Joe Sauve (NA778H95WK)",
+        "unlockDefaultKeychain": "true",
+        "defaultKeychainPassword": "$(KeyChainPassword)",
+        "provProfileUuid": "f403be54-7f3e-4581-a851-745d81fba4b3",
+        "p12": "",
+        "p12pwd": "",
+        "provProfile": "",
+        "removeProfile": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Build.SourcesDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Build.SourcesDirectory)",
+        "Contents": "**"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": true,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Agent.BuildDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Agent.BuildDirectory)",
+        "Contents": "**"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "689173",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+  
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "Build.Clean": {
+      "value": "all"
+    },
+    "KeyChainPassword": {
+      "value": null,
+      "isSecret": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [
+
+      ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "badgeEnabled": true,
+  "repository": {
+    "properties": {
+      "labelSources": "0",
+      "reportBuildStatus": "true",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "cleanOptions": "0"
+    },
+    "id": "$Acquaint$",
+    "type": "TfsGit",
+    "name": "Acquaint",
+    "url": "https://devops-mobile.visualstudio.com/_git/Acquaint",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+
+  "queue": {
+    "pool": {
+      "name": "Xamarin-CI"
+    },
+    "name": "Xamarin-CI"
+  }
+}

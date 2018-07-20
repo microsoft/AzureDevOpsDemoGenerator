@@ -1,0 +1,24 @@
+{
+  "Name": "DeploymentGroups",
+  "Description": "Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using VSTS Deployment Groups.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p> ",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "",
+  "BoardColumns": "",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "",
+  "CardField": "",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "UerStoriesfromTemplate.json",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "",
+  "Chart": "",
+  "TeamArea": "TeamArea.json"
+
+}

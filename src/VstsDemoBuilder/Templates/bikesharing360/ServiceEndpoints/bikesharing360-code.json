@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+			
+        },		
+		"name": "bikesharing360-code",
+		"type": "git",
+		"url": "https://bikesharing360dtl.visualstudio.com/_git/bikesharing360",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$BikeSharing360username$",
+      "password": "$BikeSharing360password$"
+    }
+  },
+		"isReady": true
+}  

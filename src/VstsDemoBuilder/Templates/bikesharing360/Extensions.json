@@ -1,0 +1,57 @@
+﻿{
+  "Extensions": [
+    {
+      "name": "Windows Store",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=MS-RDX-MRO.windows-store-publish' target='_blank'><b>Windows store</b></a>",
+      "PublisherId": "MS-RDX-MRO",
+      "ExtensionId": "windows-store-publish",
+      "publisher": "microsoft",
+      "License": ""
+
+    },
+    {
+      "name": "Google Play",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play&targetId=45e04ca2-6849-4a3e-aef4-3aa10f48b405' target='_blank'><b>Google Play</b></a>",
+      "PublisherId": "ms-vsclient",
+      "ExtensionId": "google-play",
+      "publisher": "microsoft",
+      "License": ""
+
+    },
+    {
+      "name": "HockeyApp",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp&targetId=45e04ca2-6849-4a3e-aef4-3aa10f48b405' target='_blank'><b>HockeyApp</b></a>",
+      "PublisherId": "ms",
+      "ExtensionId": "hockeyapp",
+      "publisher": "microsoft",
+      "License": ""
+
+    },
+    {
+      "name": "Apple App Store",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store&targetId=45e04ca2-6849-4a3e-aef4-3aa10f48b405' target='_blank'><b>Apple App Store</b></a>",
+      "PublisherId": "ms-vsclient",
+      "ExtensionId": "app-store",
+      "publisher": "microsoft",
+      "License": ""
+
+    },
+    {
+      "name": "Xamarin Test Cloud Results Extension",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=Xamarin.vso-xtc-results' target='_blank'><b>Xamarin Test Cloud Results</b></a>",
+      "PublisherId": "Xamarin",
+      "ExtensionId": "vso-xtc-results",
+      "publisher": "microsoft",
+      "License": ""
+    },
+    {
+      "name": "Azure DevTest Labs Tasks",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks' target='_blank'><b>Azure DevTest Labs Tasks</b></a>",
+      "PublisherId": "ms-azuredevtestlabs",
+      "ExtensionId": "tasks",
+      "publisher": "microsoft",
+      "License": ""
+
+    }
+  ]
+}

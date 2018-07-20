@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://devops-mobile.visualstudio.com/_git/Acquaint"
+    },
+    "serviceEndpointId": "$devops-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

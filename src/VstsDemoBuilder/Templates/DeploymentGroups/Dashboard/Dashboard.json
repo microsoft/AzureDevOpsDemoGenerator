@@ -1,0 +1,214 @@
+{
+    "name": "Overview",
+    "refreshInterval": 0,
+    "position": 1,
+    "widgets": [
+        {
+            "name": "New Work Item",
+            "position": {
+                "row": 3,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget.Configuration",
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Work Links",
+            "position": {
+                "row": 2,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WorkLinksWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WorkLinksWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Team Members",
+            "position": {
+                "row": 1,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            
+            "name": "Sprint Burndown",
+            "position": {
+                "row": 3,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+           
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Welcome",
+            "position": {
+                "row": 1,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        },
+        {
+            "name": "Assigned to Me",
+            "position": {
+                "row": 1,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget.Configuration",
+            "isNameConfigurable": false,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Work in Progress",
+            "position": {
+                "row": 3,
+                "column": 5
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"queryId\":\"$WorkinProgress$\", \"queryName\": \"Work in Progress\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Visual Studio Shortcuts",
+            "position": {
+                "row": 3,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": "",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VSLinksWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.VSLinksWidget",
+            "configurationContributionId": null,
+            "configurationContributionRelativeId": null,
+            "isNameConfigurable": false
+        }
+    ]    
+}

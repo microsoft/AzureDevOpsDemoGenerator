@@ -1,0 +1,29 @@
+﻿{
+  "Extensions": [
+    {
+      "name": "Package Management",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.feed' target='_blank'><b>Package Management</b></a>",
+      "PublisherId": "ms",
+      "ExtensionId": "feed",
+      "publisher": "microsoft",
+      "License": ""
+
+    },
+    {
+      "name": "Colin's ALM Corner Build & Release Tools",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=colinsalmcorner.colinsalmcorner-buildtasks' target='_blank'><b>Colin's ALM Corner Build & Release Tools</b></a>",
+      "PublisherId": "colinsalmcorner",
+      "ExtensionId": "colinsalmcorner-buildtasks",
+      "License": "<a href='https://marketplace.visualstudio.com/items/colinsalmcorner.colinsalmcorner-buildtasks/license' target='_blank'>License Terms</a>"
+    },
+    {
+      "name": "Docker Integration",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.docker' target='_blank'><b>Docker Integration</b></a>",
+      "PublisherId": "ms-vscs-rm",
+      "ExtensionId": "docker",
+      "publisher": "microsoft",
+      "License": ""
+
+    }
+  ]
+}

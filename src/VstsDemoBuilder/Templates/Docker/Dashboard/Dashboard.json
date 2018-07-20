@@ -1,0 +1,240 @@
+{
+    "name": "Overview",
+    "position": 1,
+    "widgets": [
+        {
+            "name": "Task",
+            "position": {
+                "row": 3,
+                "column": 8
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbfd52\",\"queryId\":\"$Task$\",\"queryName\":\"Task\",\"colorRules\":[],\"lastArtifactName\":\"Task\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            
+            "isEnabled": true,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+        },
+        {
+            
+            "name": "All Work Items",
+            "position": {
+                "row": 3,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#292e6b\",\"queryId\":\"$AllWorkItems$\",\"queryName\":\"All Work Items\",\"colorRules\":[],\"lastArtifactName\":\"All Work Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+        },
+        {
+            
+            "name": "Feature",
+            "position": {
+                "row": 4,
+                "column": 7
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#5c197b\",\"queryId\":\"$Feature$\",\"queryName\":\"Feature\",\"colorRules\":[],\"lastArtifactName\":\"Feature\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+        },
+        {
+            
+            
+            "name": "Docker",
+            "position": {
+                "row": 5,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": "{\"name\":\"Docker\",\"id\":$BuildDocker$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$BuildDocker$\",\"projectId\":\"$Projectid$\",\"lastArtifactName\":\"Docker\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget"
+        },
+        {
+           
+         
+            "name": "All Work Items by Work Item Type",
+            "position": {
+                "row": 3,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$AllWorkItems$\",\"title\":\"All Work Items by Work Item Type\",\"chartType\":\"ColumnChart\",\"transformOptions\":{\"filter\":\"$AllWorkItems$\",\"groupBy\":\"System.WorkItemType\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[{\"value\":\"Task\",\"backgroundColor\":\"#fbe74b\"},{\"value\":\"Product Backlog Item\",\"backgroundColor\":\"#0d60ab\"},{\"value\":\"Feature\",\"backgroundColor\":\"#5c197b\"},{\"value\":\"Epic\",\"backgroundColor\":\"#f58b1f\"}],\"lastArtifactName\":\"All Work Items by Work Item Type\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            
+            "name": "Product Backlog Items",
+            "position": {
+                "row": 4,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#007acc\",\"queryId\":\"$PBI$\",\"queryName\":\"Product Backlog Items\",\"colorRules\":[],\"lastArtifactName\":\"Product Backlog Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+        },
+        {
+            "name": "Release Definition Overview",
+            "position": {
+                "row": 3,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"releaseDefinitionId\":$ReleaseDocker$}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+           
+            "contributionId": "ms.vss-releaseManagement-web.release-definition-summary-widget"
+        },
+        {
+           
+         
+            "name": "Markdown",
+            "position": {
+                "row": 1,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "## Overview\n\n![](https://peterjausovec.gallerycdn.vsassets.io/extensions/peterjausovec/vscode-docker/0.0.21/1510186490362/Microsoft.VisualStudio.Services.Icons.Default)\n\nDocker is the company driving the container movement and the only container platform provider to address every application across the hybrid cloud.\n",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.MarkdownWidget",
+            "lightboxOptions": {
+                "width": 600,
+                "height": 500,
+                "resizable": true
+            }
+        },
+        {
+           
+            "name": "All Work Items",
+            "position": {
+                "row": 1,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"query\":{\"queryId\":\"$AllWorkItems$\",\"queryName\":\"All Work Items\"},\"selectedColumns\":[{\"name\":\"ID\",\"referenceName\":\"System.Id\"},{\"name\":\"Work Item Type\",\"referenceName\":\"System.WorkItemType\"},{\"name\":\"Title\",\"referenceName\":\"System.Title\"}],\"lastArtifactName\":\"All Work Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "contributionId": "ms.vss-mywork-web.Microsoft.VisualStudioOnline.MyWork.WitViewWidget"
+        },
+        {
+      
+            "name": "Deployment status",
+            "position": {
+                "row": 1,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"buildDefinitionId\":$BuildDocker$,\"projectId\":\"$Projectid$\",\"useDefaultBranch\":true,\"branchName\":\"\",\"buildSourceType\":\"Build\",\"environments\":[{\"definitionEnvironmentId\":1,\"definitionEnvironmentName\":\"\",\"releaseDefinitionId\":1,\"releaseDefinitionName\":\"\"}],\"lastColumnType\":0,\"viewType\":\"Deployment Status\",\"ruleOperators\":[\"\",\"\",\"\"],\"ruleBoundaries\":[\"\",\"\",\"\"],\"ruleBoundariesErrors\":[false,false,false],\"metricsView\":\"testPassRate\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+           
+            "contributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget",
+            "typeId": "rm-deployment-status-widget",
+            "configurationContributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget.configuration",
+            "configurationContributionRelativeId": "rm-deployment-status-widget.configuration",
+            "isNameConfigurable": true
+        },
+        {
+           
+            "name": "Epic",
+            "position": {
+                "row": 3,
+                "column": 7
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#f7a24b\",\"queryId\":\"$Epic$\",\"queryName\":\"Epic\",\"colorRules\":[],\"lastArtifactName\":\"Epic\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+         
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        }
+    ]  
+}

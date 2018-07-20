@@ -1,0 +1,13 @@
+﻿{
+  "name": "dwhathaway hockeyapp",
+	"type": "hockeyapp",
+	"url": "https://rink.hockeyapp.net/api/2/apps/",  
+	"authorization": {
+    "parameters": {
+      "username": "dwhathaway",
+      "password": "303c92e960234665a1a22ba895c63fa1"
+    },
+		"scheme": "UsernamePassword"
+	},
+	"isReady": true
+}

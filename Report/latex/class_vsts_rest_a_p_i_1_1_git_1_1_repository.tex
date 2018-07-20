@@ -1,0 +1,212 @@
+\hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository}{}\section{Vsts\+Rest\+A\+P\+I.\+Git.\+Repository Class Reference}
+\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository}\index{Vsts\+Rest\+A\+P\+I.\+Git.\+Repository@{Vsts\+Rest\+A\+P\+I.\+Git.\+Repository}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a3eaf35b7d85a3b7a1d736eaf25e5338f}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a3eaf35b7d85a3b7a1d736eaf25e5338f}} 
+{\bfseries Repository} (\mbox{\hyperlink{interface_vsts_rest_a_p_i_1_1_i_configuration}{I\+Configuration}} configuration)
+\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a46daa5b9a35a6efb4267c6ee4494df31}{get\+Source\+Code\+From\+Git\+Hub}} (string json, string Project, string Repository\+ID)
+\begin{DoxyCompactList}\small\item\em Get Source Code from \mbox{\hyperlink{namespace_vsts_rest_a_p_i_1_1_git}{Git}} Hub \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_adb713f76b948694752aff2d111a3ed85}{Get\+Repository\+To\+Delete}} (string Project)
+\begin{DoxyCompactList}\small\item\em Delete the default repository \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a0188a1509a001dc7bafc7ca6829daa8e}{Get\+Default\+Repository}} (string Repo\+Name)
+\begin{DoxyCompactList}\small\item\em Get Default repository to delete \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_repository_1_1_get_all_repositories_response_1_1_repositories}{Get\+All\+Repositories\+Response.\+Repositories}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a6cf8983ffb2539bb9d3d5eb2a1657c28}{Get\+All\+Repositories}} ()
+\begin{DoxyCompactList}\small\item\em Get list of Repositories \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a2623c37a03e528aa6e0dd4f7bcac3a04}{Create\+Repositorie}} (string name, string project\+Id)
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository}{Repository}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_ae9bdfeecb8846a51d3900752166d6d74}{Delete\+Repository}} (string repository\+Id)
+\begin{DoxyCompactList}\small\item\em Delete repository \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_af74451a9ec41478f8a16fdb498ea96a0}{Create\+Pull\+Request}} (string json, string repository\+Id)
+\begin{DoxyCompactList}\small\item\em Create Pull Request \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a9284efc83831e33d74892b68ff58b276}{Create\+Comment\+Thread}} (string repositor\+Id, string pull\+Request\+Id, string json)
+\begin{DoxyCompactList}\small\item\em Create Comment thread for pull request \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a5c50b0035797a2b59071162bff47135c}{Add\+Comment\+To\+Thread}} (string repositor\+Id, string pull\+Request\+Id, string thread\+Id, string json)
+\begin{DoxyCompactList}\small\item\em Add Comment thread \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_ad6665ada35d88c15727b7b9b1c21e687}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_ad6665ada35d88c15727b7b9b1c21e687}} 
+string {\bfseries last\+Failure\+Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a5c50b0035797a2b59071162bff47135c}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a5c50b0035797a2b59071162bff47135c}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Add\+Comment\+To\+Thread@{Add\+Comment\+To\+Thread}}
+\index{Add\+Comment\+To\+Thread@{Add\+Comment\+To\+Thread}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Add\+Comment\+To\+Thread()}{AddCommentToThread()}}
+{\footnotesize\ttfamily void Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Add\+Comment\+To\+Thread (\begin{DoxyParamCaption}\item[{string}]{repositor\+Id,  }\item[{string}]{pull\+Request\+Id,  }\item[{string}]{thread\+Id,  }\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Add Comment thread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repositor\+Id} & \\
+\hline
+{\em pull\+Request\+Id} & \\
+\hline
+{\em thread\+Id} & \\
+\hline
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a9284efc83831e33d74892b68ff58b276}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a9284efc83831e33d74892b68ff58b276}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Create\+Comment\+Thread@{Create\+Comment\+Thread}}
+\index{Create\+Comment\+Thread@{Create\+Comment\+Thread}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Create\+Comment\+Thread()}{CreateCommentThread()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Create\+Comment\+Thread (\begin{DoxyParamCaption}\item[{string}]{repositor\+Id,  }\item[{string}]{pull\+Request\+Id,  }\item[{string}]{json }\end{DoxyParamCaption})}
+
+
+
+Create Comment thread for pull request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repositor\+Id} & \\
+\hline
+{\em pull\+Request\+Id} & \\
+\hline
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_af74451a9ec41478f8a16fdb498ea96a0}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_af74451a9ec41478f8a16fdb498ea96a0}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Create\+Pull\+Request@{Create\+Pull\+Request}}
+\index{Create\+Pull\+Request@{Create\+Pull\+Request}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Create\+Pull\+Request()}{CreatePullRequest()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Create\+Pull\+Request (\begin{DoxyParamCaption}\item[{string}]{json,  }\item[{string}]{repository\+Id }\end{DoxyParamCaption})}
+
+
+
+Create Pull Request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+{\em repository\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a2623c37a03e528aa6e0dd4f7bcac3a04}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a2623c37a03e528aa6e0dd4f7bcac3a04}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Create\+Repositorie@{Create\+Repositorie}}
+\index{Create\+Repositorie@{Create\+Repositorie}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Create\+Repositorie()}{CreateRepositorie()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Create\+Repositorie (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{project\+Id }\end{DoxyParamCaption})}
+
+
+
+Creates \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_git_1_1_repository}{Repository}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em project\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_ae9bdfeecb8846a51d3900752166d6d74}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_ae9bdfeecb8846a51d3900752166d6d74}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Delete\+Repository@{Delete\+Repository}}
+\index{Delete\+Repository@{Delete\+Repository}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Delete\+Repository()}{DeleteRepository()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Delete\+Repository (\begin{DoxyParamCaption}\item[{string}]{repository\+Id }\end{DoxyParamCaption})}
+
+
+
+Delete repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repository\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a6cf8983ffb2539bb9d3d5eb2a1657c28}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a6cf8983ffb2539bb9d3d5eb2a1657c28}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Get\+All\+Repositories@{Get\+All\+Repositories}}
+\index{Get\+All\+Repositories@{Get\+All\+Repositories}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Get\+All\+Repositories()}{GetAllRepositories()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_repository_1_1_get_all_repositories_response_1_1_repositories}{Get\+All\+Repositories\+Response.\+Repositories}} Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Get\+All\+Repositories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get list of Repositories 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a0188a1509a001dc7bafc7ca6829daa8e}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a0188a1509a001dc7bafc7ca6829daa8e}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Get\+Default\+Repository@{Get\+Default\+Repository}}
+\index{Get\+Default\+Repository@{Get\+Default\+Repository}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Get\+Default\+Repository()}{GetDefaultRepository()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Get\+Default\+Repository (\begin{DoxyParamCaption}\item[{string}]{Repo\+Name }\end{DoxyParamCaption})}
+
+
+
+Get Default repository to delete 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Repo\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_adb713f76b948694752aff2d111a3ed85}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_adb713f76b948694752aff2d111a3ed85}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!Get\+Repository\+To\+Delete@{Get\+Repository\+To\+Delete}}
+\index{Get\+Repository\+To\+Delete@{Get\+Repository\+To\+Delete}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{Get\+Repository\+To\+Delete()}{GetRepositoryToDelete()}}
+{\footnotesize\ttfamily string Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+Get\+Repository\+To\+Delete (\begin{DoxyParamCaption}\item[{string}]{Project }\end{DoxyParamCaption})}
+
+
+
+Delete the default repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Project} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a46daa5b9a35a6efb4267c6ee4494df31}\label{class_vsts_rest_a_p_i_1_1_git_1_1_repository_a46daa5b9a35a6efb4267c6ee4494df31}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}!get\+Source\+Code\+From\+Git\+Hub@{get\+Source\+Code\+From\+Git\+Hub}}
+\index{get\+Source\+Code\+From\+Git\+Hub@{get\+Source\+Code\+From\+Git\+Hub}!Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository@{Vsts\+Rest\+A\+P\+I\+::\+Git\+::\+Repository}}
+\subsubsection{\texorpdfstring{get\+Source\+Code\+From\+Git\+Hub()}{getSourceCodeFromGitHub()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Git.\+Repository.\+get\+Source\+Code\+From\+Git\+Hub (\begin{DoxyParamCaption}\item[{string}]{json,  }\item[{string}]{Project,  }\item[{string}]{Repository\+ID }\end{DoxyParamCaption})}
+
+
+
+Get Source Code from \mbox{\hyperlink{namespace_vsts_rest_a_p_i_1_1_git}{Git}} Hub 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+{\em Project} & \\
+\hline
+{\em Repository\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Canarys/\+Projects/\+Demo\+Generator\+Oauth/\+Vsts\+Rest\+A\+P\+I/\+Git/Repository.\+cs\end{DoxyCompactItemize}

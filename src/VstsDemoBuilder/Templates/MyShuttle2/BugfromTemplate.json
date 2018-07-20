@@ -1,0 +1,138 @@
+{
+  "count": 4,
+  "value": [
+    {
+      "id": 666,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "MyShuttle2",
+        "System.TeamProject": "MyShuttle2",
+        "System.IterationPath": "MyShuttle2",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-09-14T10:24:49.407Z",
+        "System.CreatedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-10-27T09:39:02.71Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "FireFox crashes when Admin profile screen is opened",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/606",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/666"
+    },
+    {
+      "id": 665,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "MyShuttle2",
+        "System.TeamProject": "MyShuttle2",
+        "System.IterationPath": "MyShuttle2",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-09-14T10:24:49.407Z",
+        "System.CreatedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-10-27T09:39:02.71Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "Fare History Filter Date option needs to be fixed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Admin; Fares",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/665"
+    },
+    {
+      "id": 613,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "MyShuttle2",
+        "System.TeamProject": "MyShuttle2",
+        "System.IterationPath": "MyShuttle2\\Sprint 1",
+        "System.WorkItemType": "Bug",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2017-09-14T10:20:44.627Z",
+        "System.CreatedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-10-27T10:00:56.19Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "mail notification must include links to view on web portal",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": "Expedite",
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/613"
+    },
+    {
+      "id": 630,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "MyShuttle2",
+        "System.TeamProject": "MyShuttle2",
+        "System.IterationPath": "MyShuttle2\\Sprint 1",
+        "System.WorkItemType": "Bug",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2017-09-14T10:20:44.627Z",
+        "System.CreatedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-10-27T10:00:56.19Z",
+        "System.ChangedBy": "Srivatsa Marichi 😎 <ecanarys1@outlook.com>",
+        "System.Title": "There is a lag in the refresh of the map on the driver client application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": "Expedite",
+        "System.Tags": "Driver; shuttle",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/630"
+    }
+  ],
+  "HttpStatusCode": 0
+}

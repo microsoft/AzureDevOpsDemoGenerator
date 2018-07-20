@@ -1,0 +1,366 @@
+{
+  "name": "PrivateWeb",
+  "lastRelease": null,
+  "path": "\\",
+  "variables": {},
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployStep": {
+     
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "2.*",
+              "name": "Deploy Azure App Service",
+              "enabled": false,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "inputs": {
+                "ConnectedServiceName": "DevTest Labs Demo (3f184cb0-363b-4924-b866-18c2ff541f98)",
+                "WebAppName": "bikesharing-webs-privatesite",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)\\**\\*.zip",
+                "WebAppUri": "",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "-enableRule:AppOffline",
+                "TakeAppOfflineFlag": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    },
+    {
+      "name": "Test",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+               "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ]
+      },
+      "deployStep": {
+     
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "2.*",
+              "name": "Deploy Azure App Service",
+              "enabled": false,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "inputs": {
+                "ConnectedServiceName": "DevTest Labs Demo (3f184cb0-363b-4924-b866-18c2ff541f98)",
+                "WebAppName": "bikesharing-webs-privatesite",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)\\**\\*.zip",
+                "WebAppUri": "",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "-enableRule:AppOffline",
+                "TakeAppOfflineFlag": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "Dev",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    },
+    {
+      "name": "Release",
+      "rank": 3,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+               "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ]
+      },
+      "deployStep": {
+     
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "2.*",
+              "name": "Deploy Azure App Service",
+              "enabled": false,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "inputs": {
+                "ConnectedServiceName": "DevTest Labs Demo (3f184cb0-363b-4924-b866-18c2ff541f98)",
+                "WebAppName": "bikesharing-webs-privatesite",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)\\**\\*.zip",
+                "WebAppUri": "",
+                "UseWebDeploy": "true",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "-enableRule:AppOffline",
+                "TakeAppOfflineFlag": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "Test",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$PrivateWeb-id$",
+      "type": "Build",
+      "alias": "PrivateWeb",
+      "definitionReference": {
+        "definition": {
+          "id": "$PrivateWeb-id$",
+          "name": "PrivateWeb"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+  {
+"artifactAlias": "PrivateWeb",
+"triggerConditions": [
+  {
+"sourceBranch": "master",
+"tags": []
+}
+],
+"triggerType": "artifactSource"
+}
+],
+  "releaseNameFormat": "Release-$(rev:r)"
+}

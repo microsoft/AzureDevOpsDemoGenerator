@@ -1,0 +1,68 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 748,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-11-16T08:55:25.31Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-11-16T08:55:26.733Z",
+        "System.ChangedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.Title": "Azure Deployments for PHP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/748"
+    },
+    {
+      "id": 681,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "PHP",
+        "System.TeamProject": "PHP",
+        "System.IterationPath": "PHP",
+        "System.WorkItemType": "Epic",
+        "System.State": "In Progress",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2017-11-06T05:51:43.72Z",
+        "System.CreatedBy": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "System.ChangedDate": "2017-11-07T05:12:09.47Z",
+        "System.ChangedBy": "Aniruddha Jere <ecanarys8@outlook.com>",
+        "System.Title": "Setting Up DevOps pipeline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/681"
+    }
+  ],
+  "HttpStatusCode": 0
+}

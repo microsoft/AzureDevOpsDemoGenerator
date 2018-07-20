@@ -1,0 +1,405 @@
+{
+    "source": "userInterface",
+    "revision": 17,
+    "name": "Selenium",
+    "description": null,
+    "isDeleted": false,
+    "path": "\\",
+    "variables": {
+        "DefaultConnectionString": {
+            "value": "Server=localhost;Database=PartsUnlimited-Prod;User ID=vmadmin;Password=P2ssw0rd@123;"
+        },
+        "username": {
+            "value": "vmadmin",
+            "isSecret": true
+        },
+        "password": {
+            "value": "P2ssw0rd@123",
+            "isSecret": true
+        }
+    },
+    "variableGroups": [],
+    "environments": [
+        {
+            "name": "Dev",
+            "rank": 1,
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+            },
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ]
+            },
+            "deployStep": {
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ]
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "healthPercent": 0,
+                        "deploymentHealthOption": "Custom",
+                        "tags": [
+                            "web"
+                        ],
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": "machineGroupBasedDeployment",
+                    "name": "IIS Deployment",
+                    "workflowTasks": [
+                        {
+                            "taskId": "1b2aec60-dc49-11e6-9b76-63056e018cac",
+                            "version": "0.*",
+                            "name": "IIS Web App Manage",
+                            "refName": "IISWebAppManagementOnMachineGroup1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "EnableIIS": "false",
+                                "IISDeploymentType": "IISWebsite",
+                                "ActionIISWebsite": "CreateOrUpdateWebsite",
+                                "ActionIISApplicationPool": "CreateOrUpdateAppPool",
+                                "StartStopWebsiteName": "PartsUnlimited",
+                                "WebsiteName": "PartsUnlimited",
+                                "WebsitePhysicalPath": "%SystemDrive%\\inetpub\\PartsUnlimited",
+                                "WebsitePhysicalPathAuth": "WebsiteWindowsAuth",
+                                "WebsiteAuthUserName": "$(username)",
+                                "WebsiteAuthUserPassword": "$(password)",
+                                "AddBinding": "true",
+                                "Protocol": "http",
+                                "IPAddress": "All Unassigned",
+                                "Port": "",
+                                "ServerNameIndication": "false",
+                                "HostNameWithOutSNI": "",
+                                "HostNameWithHttp": "",
+                                "HostNameWithSNI": "",
+                                "SSLCertThumbPrint": "",
+                                "Bindings": "{\"bindings\":[{\"protocol\":\"http\",\"ipAddress\":\"All Unassigned\",\"port\":\"82\",\"hostname\":\"\",\"sslThumbprint\":\"\",\"sniFlag\":false}]}",
+                                "CreateOrUpdateAppPoolForWebsite": "true",
+                                "ConfigureAuthenticationForWebsite": "true",
+                                "AppPoolNameForWebsite": "PartsUnlimited",
+                                "DotNetVersionForWebsite": "v4.0",
+                                "PipeLineModeForWebsite": "Integrated",
+                                "AppPoolIdentityForWebsite": "ApplicationPoolIdentity",
+                                "AppPoolUsernameForWebsite": "",
+                                "AppPoolPasswordForWebsite": "",
+                                "AnonymousAuthenticationForWebsite": "true",
+                                "BasicAuthenticationForWebsite": "false",
+                                "WindowsAuthenticationForWebsite": "true",
+                                "ParentWebsiteNameForVD": "PartsUnlimited",
+                                "VirtualPathForVD": "",
+                                "PhysicalPathForVD": "%SystemDrive%\\inetpub\\wwwroot",
+                                "VDPhysicalPathAuth": "VDUserPassThrough",
+                                "VDAuthUserName": "",
+                                "VDAuthUserPassword": "",
+                                "ParentWebsiteNameForApplication": "PartsUnlimited",
+                                "VirtualPathForApplication": "",
+                                "PhysicalPathForApplication": "%SystemDrive%\\inetpub\\wwwroot",
+                                "ApplicationPhysicalPathAuth": "ApplicationUserPassThrough",
+                                "ApplicationAuthUserName": "",
+                                "ApplicationAuthUserPassword": "",
+                                "CreateOrUpdateAppPoolForApplication": "false",
+                                "AppPoolNameForApplication": "",
+                                "DotNetVersionForApplication": "v4.0",
+                                "PipeLineModeForApplication": "Integrated",
+                                "AppPoolIdentityForApplication": "ApplicationPoolIdentity",
+                                "AppPoolUsernameForApplication": "",
+                                "AppPoolPasswordForApplication": "",
+                                "AppPoolName": "",
+                                "DotNetVersion": "v4.0",
+                                "PipeLineMode": "Integrated",
+                                "AppPoolIdentity": "ApplicationPoolIdentity",
+                                "AppPoolUsername": "",
+                                "AppPoolPassword": "",
+                                "StartStopRecycleAppPoolName": "",
+                                "AppCmdCommands": ""
+                            }
+                        },
+                        {
+                            "taskId": "1b467810-6725-4b6d-accd-886174c09bba",
+                            "version": "0.*",
+                            "name": "IIS Web App Deploy",
+                            "refName": "IISWebAppDeploymentOnMachineGroup2",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "WebSiteName": "PartsUnlimited",
+                                "VirtualApplication": "",
+                                "Package": "$(System.DefaultWorkingDirectory)\\**\\*.zip",
+                                "SetParametersFile": "",
+                                "RemoveAdditionalFilesFlag": "false",
+                                "ExcludeFilesFromAppDataFlag": "false",
+                                "TakeAppOfflineFlag": "false",
+                                "AdditionalArguments": "",
+                                "XmlTransformation": "true",
+                                "XmlVariableSubstitution": "True",
+                                "JSONFiles": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "deploymentInput": {
+                        "healthPercent": 0,
+                        "deploymentHealthOption": "Custom",
+                        "tags": [
+                            "db"
+                        ],
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 2,
+                    "phaseType": "machineGroupBasedDeployment",
+                    "name": "SQL Deployment",
+                    "workflowTasks": [
+                        {
+                            "taskId": "4b506f7f-720f-47bb-bf21-029bac6a690d",
+                            "version": "0.*",
+                            "name": "SQL DB Deploy",
+                            "refName": "SqlDacpacDeploymentOnMachineGroup1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "TaskType": "dacpac",
+                                "DacpacFile": "$(System.DefaultWorkingDirectory)\\**\\*.dacpac",
+                                "SqlFile": "",
+                                "ExecuteInTransaction": "false",
+                                "ExclusiveLock": "false",
+                                "AppLockName": "",
+                                "InlineSql": "",
+                                "TargetMethod": "server",
+                                "ServerName": "localhost",
+                                "DatabaseName": "PartsUnlimited-Prod",
+                                "AuthScheme": "sqlServerAuthentication",
+                                "SqlUsername": "$(username)",
+                                "SqlPassword": "$(password)",
+                                "ConnectionString": "",
+                                "PublishProfile": "",
+                                "AdditionalArguments": "",
+                                "AdditionalArgumentsSql": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId":  "$Default$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 3,
+                    "phaseType": "agentBasedDeployment",
+                    "name": "Selenium tests execution",
+                    "workflowTasks": [
+                        {
+                            "taskId": "52a38a6a-1517-41d7-96cc-73ee0c60d2b6",
+                            "version": "2.*",
+                            "name": "Deploy TestAgent on ",
+                            "refName": "DeployVisualStudioTestAgent1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "testMachines": "localhost",
+                                "adminUserName": "$(username)",
+                                "adminPassword": "$(password)",
+                                "winRmProtocol": "Http",
+                                "testCertificate": "true",
+                                "machineUserName": "$(username)",
+                                "machinePassword": "$(password)",
+                                "runAsProcess": "true",
+                                "isDataCollectionOnly": "false",
+                                "testPlatform": "15.0",
+                                "agentLocation": "",
+                                "updateTestAgent": "false"
+                            }
+                        },
+                        {
+                            "taskId": "d353d6a2-e361-4a8f-8d8c-123bebb71028",
+                            "version": "1.*",
+                            "name": "Run Tests * on localhost",
+                            "refName": "RunVisualStudioTestsusingTestAgent2",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "testMachineGroup": "localhost",
+                                "dropLocation": "$(System.DefaultWorkingDirectory)/Selenium/drop/TestAssemblies",
+                                "testSelection": "testAssembly",
+                                "testPlan": "",
+                                "testSuite": "",
+                                "testConfiguration": "",
+                                "sourcefilters": "*",
+                                "testFilterCriteria": "",
+                                "runSettingsFile": "",
+                                "overrideRunParams": "",
+                                "codeCoverageEnabled": "false",
+                                "customSlicingEnabled": "false",
+                                "testRunTitle": "",
+                                "platform": "",
+                                "configuration": "",
+                                "testConfigurations": "",
+                                "autMachineGroup": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "ReleaseStarted",
+                    "conditionType": "event",
+                    "value": ""
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 0,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {},
+            "preDeploymentGates": {
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "gatesOptions": null,
+                "gates": []
+            }
+        }
+    ],
+    "artifacts": [
+        {
+            "sourceId": "$ProjectId$:$Selenium-id$",
+            "type": "Build",
+            "alias": "Selenium",
+            "definitionReference": {
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "latestType",
+                    "name": "Latest"
+                },
+                "definition": {
+                    "id": "$Selenium-id$",
+                    "name": "$Selenium$"
+                },
+                "project": {
+                    "id": "$ProjectId$",
+                    "name": "$ProjectName$"
+                  }
+            },
+            "isPrimary": true
+        }
+    ],
+    "triggers": [
+        {
+            "artifactAlias": "Selenium",
+            "triggerConditions": [],
+            "triggerType": "artifactSource"
+        }
+    ],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "ReleaseNew"
+        }
+    }
+}

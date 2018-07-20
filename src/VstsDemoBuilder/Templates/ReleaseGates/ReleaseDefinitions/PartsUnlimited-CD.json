@@ -1,0 +1,771 @@
+{
+    "name": "PartsUnlimited-CD",
+    "path": "\\",
+    "projectReference": null,
+    "source": 2,
+    "revision": 2,
+    "description": null,
+    "isDeleted": false,
+    "variables": {},
+    "variableGroups": [],
+    "environments": [
+        {
+            "name": "Canary Environment",
+            "rank": 1,
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+              },
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false                        
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 1
+                }
+            },
+            "deployStep": {
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false                       
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 2
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": 1,
+                    "name": "Agent phase",
+                    "workflowTasks": [
+                        {
+                            "taskId": "f045e430-8704-11e6-968f-e717e6411619",
+                            "version": "0.*",
+                            "name": "Enable Continuous Monitoring",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                                "Action": "Enable Continuous Monitoring",
+                                "WebAppName": "$(Parameters.WebAppName)",
+                                "SpecifySlot": "false",
+                                "ResourceGroupName": "",
+                                "SourceSlot": "",
+                                "SwapWithProduction": "true",
+                                "TargetSlot": "",
+                                "PreserveVnet": "false",
+                                "Slot": "production",
+                                "ExtensionsList": "",
+                                "OutputVariable": "",
+                                "AppInsightsResourceGroupName": "$(Parameters.AppInsightsResourceGroupName)",
+                                "ApplicationInsightsResourceName": "$(Parameters.ApplicationInsightsResourceName)"
+                            }
+                        },
+                        {
+                            "taskId": "1d876d40-9aa7-11e7-905d-f541cc882994",
+                            "version": "0.*",
+                            "name": "Configure Application Insights Alerts",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                                "ResourceGroupName": "$(Parameters.AppInsightsResourceGroupName)",
+                                "ResourceType": "Microsoft.Insights/components",
+                                "ResourceName": "$(Parameters.ApplicationInsightsResourceName)",
+                                "AlertRules": "{\"resourceId\":\"/subscriptions/73815547-622d-4307-9796-4ec16a79cfbc/resourceGroups/RGCanary/providers/microsoft.insights/components/CanaryRelease\",\"rules\":[{\"alertName\":\"Availability_$(Release.DefinitionName)\",\"metric\":{\"value\":\"availability.availabilityMetric.value\",\"displayValue\":\"Availability\",\"unit\":\"Percent\"},\"thresholdCondition\":\"<\",\"thresholdValue\":\"99\",\"timePeriod\":\"over the last 5 minutes\"},{\"alertName\":\"FailedRequests_$(Release.DefinitionName)\",\"metric\":{\"value\":\"requestFailed.count\",\"displayValue\":\"Failed requests\",\"unit\":\"Count\"},\"thresholdCondition\":\">\",\"thresholdValue\":\"0\",\"timePeriod\":\"over the last 30 minutes\"},{\"alertName\":\"ServerResponseTime_$(Release.DefinitionName)\",\"metric\":{\"value\":\"request.duration\",\"displayValue\":\"Server response time\",\"unit\":\"Seconds\"},\"thresholdCondition\":\">\",\"thresholdValue\":\"5\",\"timePeriod\":\"over the last 5 minutes\"},{\"alertName\":\"ServerExceptions_$(Release.DefinitionName)\",\"metric\":{\"value\":\"basicExceptionServer.count\",\"displayValue\":\"Server exceptions\",\"unit\":\"Count\"},\"thresholdCondition\":\">\",\"thresholdValue\":\"0\",\"timePeriod\":\"over the last 30 minutes\"}]}",
+                                "NotifyServiceOwners": "false",
+                                "NotifyEmails": ""
+                            }
+                        },
+                        {
+                            "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+                            "version": "3.*",
+                            "name": "Azure App Service Deploy",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                                "WebAppKind": "$(Parameters.WebAppKind)",
+                                "WebAppName": "$(Parameters.WebAppName)",
+                                "DeployToSlotFlag": "false",
+                                "ResourceGroupName": "",
+                                "SlotName": "",
+                                "ImageSource": "$(Parameters.ImageSource)",
+                                "AzureContainerRegistry": "",
+                                "AzureContainerRegistryLoginServer": "",
+                                "AzureContainerRegistryImage": "",
+                                "AzureContainerRegistryTag": "",
+                                "DockerRepositoryAccess": "public",
+                                "RegistryConnectedServiceName": "",
+                                "PrivateRegistryImage": "",
+                                "PrivateRegistryTag": "",
+                                "DockerNamespace": "$(Parameters.DockerNamespace)",
+                                "DockerRepository": "$(Parameters.DockerRepository)",
+                                "DockerImageTag": "$(Build.BuildId)",
+                                "VirtualApplication": "",
+                                "Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "RuntimeStack": "$(Parameters.RuntimeStack)",
+                                "StartupCommand": "",
+                                "WebAppUri": "",
+                                "ScriptType": "",
+                                "InlineScript": "",
+                                "ScriptPath": "",
+                                "GenerateWebConfig": "false",
+                                "WebConfigParameters": "",
+                                "AppSettings": "",
+                                "ConfigurationSettings": "",
+                                "TakeAppOfflineFlag": "true",
+                                "UseWebDeploy": "false",
+                                "SetParametersFile": "",
+                                "RemoveAdditionalFilesFlag": "false",
+                                "ExcludeFilesFromAppDataFlag": "true",
+                                "AdditionalArguments": "",
+                                "RenameFilesFlag": "true",
+                                "XmlTransformation": "false",
+                                "XmlVariableSubstitution": "false",
+                                "JSONFiles": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "ReleaseStarted",
+                    "conditionType": 1,
+                    "value": ""
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 1,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {
+                "id": 1,
+                "_links": {}
+            },
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {
+                "inputs": [
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {},
+                        "name": "ConnectedServiceName",
+                        "label": "Azure subscription",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "connectedService:AzureRM",
+                        "helpMarkDown": "Select the Azure Resource Manager subscription",
+                        "visibleRule": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {
+                            "app": "Web App",
+                            "applinux": "Linux App",
+                            "functionapp": "Function App",
+                            "api": "API App",
+                            "mobileapp": "Mobile App"
+                        },
+                        "properties": {
+                            "EditableOptions": "false"
+                        },
+                        "name": "WebAppKind",
+                        "label": "App type",
+                        "defaultValue": "app",
+                        "type": "pickList",
+                        "helpMarkDown": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {
+                            "EditableOptions": "True"
+                        },
+                        "name": "WebAppName",
+                        "label": "App Service name",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "Enter or select the name of an existing Azure App Service",
+                        "visibleRule": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {
+                            "Registry": "Container Registry",
+                            "Builtin": "Built-in Image"
+                        },
+                        "properties": {},
+                        "name": "ImageSource",
+                        "label": "Image Source",
+                        "defaultValue": "Registry",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "App Service on Linux offers two different options to publish your application <br/> Custom image deployment or App deployment with a built-in platform image. [Learn More](https://go.microsoft.com/fwlink/?linkid=862490)",
+                        "visibleRule": "WebAppKind = applinux",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {},
+                        "name": "DockerNamespace",
+                        "label": "Registry or Namespace",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "string",
+                        "helpMarkDown": "A globally unique top-level domain name for your specific registry or namespace.<br/> Note: Fully qualified image name will be of the format: '<b>`<registry or namespace`></b>/`<repository`>:`<tag`>'. For example, '<b>myregistry.azurecr.io</b>/nginx:latest'.",
+                        "visibleRule": "WebAppKind = applinux && ImageSource = Registry",
+                        "groupName": ""
+                    },
+                  {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "DockerRepository",
+                    "label": "Repository",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "Name of the repository where the container images are stored.<br/> Note: Fully qualified image name will be of the format: '`<registry or namespace`>/<b>`<repository`></b>:`<tag`>'. For example, 'myregistry.azurecr.io/<b>nginx</b>:latest'.",
+                    "visibleRule": "WebAppKind = applinux && ImageSource = Registry",
+                    "groupName": ""
+                  },
+                    {
+                        "aliases": [],
+                        "options": {
+                            "node|4.4": "Node.js 4.4",
+                            "node|4.5": "Node.js 4.5",
+                            "node|6.2": "Node.js 6.2",
+                            "node|6.6": "Node.js 6.6",
+                            "node|6.9": "Node.js 6.9",
+                            "node|6.10": "Node.js 6.10",
+                            "node|6.11": "Node.js 6.11",
+                            "node|8.0": "Node.js 8.0",
+                            "node|8.1": "Node.js 8.1",
+                            "php|5.6": "PHP 5.6",
+                            "php|7.0": "PHP 7.0",
+                            "dotnetcore|1.0": ".NET Core 1.0",
+                            "dotnetcore|1.1": ".NET Core 1.1",
+                            "dotnetcore|2.0": ".NET Core 2.0",
+                            "ruby|2.3": "Ruby 2.3"
+                        },
+                        "properties": {},
+                        "name": "RuntimeStack",
+                        "label": "Runtime Stack",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "Select the framework and version.",
+                        "visibleRule": "WebAppKind = applinux && ImageSource = Builtin"
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {
+                            "EditableOptions": "True"
+                        },
+                        "name": "AppInsightsResourceGroupName",
+                        "label": "Resource Group name for Application Insights",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "Enter or Select resource group where your application insights resource is available.",
+                        "visibleRule": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {
+                            "EditableOptions": "False",
+                            "EnableManage": "True",
+                            "ManageLink": "https://ms.portal.azure.com/#create/Microsoft.AppInsights",
+                            "ManageIcon": "Add",
+                            "ManageButtonName": "New"
+                        },
+                        "name": "ApplicationInsightsResourceName",
+                        "label": "Application Insights resource name",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "Select Application Insights resource where continuous monitoring data will be recorded. <br/>If your application insights resource is not listed here and you want to create a new resource, click on [+New] button. Once the resource is created on Azure Portal, come back here and click on refresh button.",
+                        "visibleRule": "",
+                        "groupName": ""
+                    }
+                ],
+                "dataSourceBindings": [
+                    {
+                        "dataSourceName": "AzureRMWebAppNamesByType",
+                        "parameters": {
+                            "WebAppKind": "$(WebAppKind)"
+                        },
+                        "endpointId": "$(ConnectedServiceName)",
+                        "target": "WebAppName"
+                    },
+                    {
+                        "dataSourceName": "AzureResourceGroups",
+                        "parameters": {},
+                        "endpointId": "$(ConnectedServiceName)",
+                        "target": "AppInsightsResourceGroupName"
+                    },
+                    {
+                        "dataSourceName": "AzureRMApplicationInsightsResources",
+                        "parameters": {
+                            "AppInsightsResourceGroupName": "$(AppInsightsResourceGroupName)"
+                        },
+                        "endpointId": "$(ConnectedServiceName)",
+                        "target": "ApplicationInsightsResourceName"
+                    }
+                ]
+            },
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        },
+        {
+            "id": 4,
+            "name": "Production",
+            "rank": 2,
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+              },
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 1
+                }
+            },
+            "deployStep": {
+                
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false                        
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 2
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": 1,
+                    "name": "Run on agent",
+                    "workflowTasks": [
+                        {
+                            "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+                            "version": "3.*",
+                            "name": "Deploy Azure App Service",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": null,
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                                "WebAppKind": "$(Parameters.WebAppKind)",
+                                "WebAppName": "$(Parameters.WebAppName)",
+                                "DeployToSlotFlag": "false",
+                                "ResourceGroupName": "",
+                                "SlotName": "",
+                                "ImageSource": "$(Parameters.ImageSource)",
+                                "AzureContainerRegistry": "",
+                                "AzureContainerRegistryLoginServer": "",
+                                "AzureContainerRegistryImage": "",
+                                "AzureContainerRegistryTag": "",
+                                "DockerRepositoryAccess": "public",
+                                "RegistryConnectedServiceName": "",
+                                "PrivateRegistryImage": "",
+                                "PrivateRegistryTag": "",
+                                "DockerNamespace": "$(Parameters.DockerNamespace)",
+                                "DockerRepository": "$(Parameters.DockerRepository)",
+                                "DockerImageTag": "$(Build.BuildId)",
+                                "VirtualApplication": "",
+                                "Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "RuntimeStack": "$(Parameters.RuntimeStack)",
+                                "StartupCommand": "",
+                                "WebAppUri": "",
+                                "ScriptType": "",
+                                "InlineScript": "",
+                                "ScriptPath": "",
+                                "GenerateWebConfig": "false",
+                                "WebConfigParameters": "",
+                                "AppSettings": "",
+                                "ConfigurationSettings": "",
+                                "TakeAppOfflineFlag": "true",
+                                "UseWebDeploy": "false",
+                                "SetParametersFile": "",
+                                "RemoveAdditionalFilesFlag": "false",
+                                "ExcludeFilesFromAppDataFlag": "false",
+                                "AdditionalArguments": "",
+                                "RenameFilesFlag": "true",
+                                "XmlTransformation": "false",
+                                "XmlVariableSubstitution": "false",
+                                "JSONFiles": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "Canary Environment",
+                    "conditionType": 2,
+                    "value": "4"
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 1,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {
+                "id": 1,
+                "_links": {}
+            },
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {
+                "inputs": [
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {},
+                        "name": "ConnectedServiceName",
+                        "label": "Azure subscription",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "connectedService:AzureRM",
+                        "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+                        "visibleRule": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {
+                            "app": "Web App",
+                            "applinux": "Linux App",
+                            "functionapp": "Function App",
+                            "api": "API App",
+                            "mobileapp": "Mobile App"
+                        },
+                        "properties": {
+                            "EditableOptions": "false"
+                        },
+                        "name": "WebAppKind",
+                        "label": "App type",
+                        "defaultValue": "app",
+                        "type": "pickList",
+                        "helpMarkDown": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {
+                            "EditableOptions": "True"
+                        },
+                        "name": "WebAppName",
+                        "label": "App service name",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+                        "visibleRule": "",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {
+                            "Registry": "Container Registry",
+                            "Builtin": "Built-in Image"
+                        },
+                        "properties": {},
+                        "name": "ImageSource",
+                        "label": "Image Source",
+                        "defaultValue": "Registry",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "App Service on Linux offers two different options to publish your application <br/> Custom image deployment or App deployment with a built-in platform image. [Learn More](https://go.microsoft.com/fwlink/?linkid=862490)",
+                        "visibleRule": "WebAppKind = applinux",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {},
+                        "name": "DockerNamespace",
+                        "label": "Registry or Namespace",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "string",
+                        "helpMarkDown": "A globally unique top-level domain name for your specific registry or namespace.<br/> Note: Fully qualified image name will be of the format: '<b>`<registry or namespace`></b>/`<repository`>:`<tag`>'. For example, '<b>myregistry.azurecr.io</b>/nginx:latest'.",
+                        "visibleRule": "WebAppKind = applinux && ImageSource = Registry",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {},
+                        "properties": {},
+                        "name": "DockerRepository",
+                        "label": "Repository",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "string",
+                        "helpMarkDown": "Name of the repository where the container images are stored.<br/> Note: Fully qualified image name will be of the format: '`<registry or namespace`>/<b>`<repository`></b>:`<tag`>'. For example, 'myregistry.azurecr.io/<b>nginx</b>:latest'.",
+                        "visibleRule": "WebAppKind = applinux && ImageSource = Registry",
+                        "groupName": ""
+                    },
+                    {
+                        "aliases": [],
+                        "options": {
+                            "node|4.4": "Node.js 4.4",
+                            "node|4.5": "Node.js 4.5",
+                            "node|6.2": "Node.js 6.2",
+                            "node|6.6": "Node.js 6.6",
+                            "node|6.9": "Node.js 6.9",
+                            "node|6.10": "Node.js 6.10",
+                            "node|6.11": "Node.js 6.11",
+                            "node|8.0": "Node.js 8.0",
+                            "node|8.1": "Node.js 8.1",
+                            "php|5.6": "PHP 5.6",
+                            "php|7.0": "PHP 7.0",
+                            "dotnetcore|1.0": ".NET Core 1.0",
+                            "dotnetcore|1.1": ".NET Core 1.1",
+                            "dotnetcore|2.0": ".NET Core 2.0",
+                            "ruby|2.3": "Ruby 2.3"
+                        },
+                        "properties": {},
+                        "name": "RuntimeStack",
+                        "label": "Runtime Stack",
+                        "defaultValue": "",
+                        "required": true,
+                        "type": "pickList",
+                        "helpMarkDown": "Select the framework and version.",
+                        "visibleRule": "WebAppKind = applinux && ImageSource = Builtin"
+                    }
+                ],
+                "dataSourceBindings": [
+                    {
+                        "dataSourceName": "AzureRMWebAppNamesByType",
+                        "parameters": {
+                            "WebAppKind": "$(WebAppKind)"
+                        },
+                        "endpointId": "$(ConnectedServiceName)",
+                        "target": "WebAppName"
+                    }
+                ]
+            },
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        }
+    ],
+    "artifacts": [
+        {
+            "sourceId": "$ProjectId$:$PartsUnlimited-CI-id$",
+            "type": "Build",
+            "alias": "PartsUnlimited-CI",
+            "definitionReference": {
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "latestType",
+                    "name": "Latest"
+                },
+                "definition": {
+                    "id": "$PartsUnlimited-CI-id$",
+                    "name": "PartsUnlimited-CI"
+                  },
+                  "project": {
+                    "id": "$ProjectId$",
+                    "name": "$ProjectName$"
+                  }
+            },
+            "isPrimary": true
+        }
+    ],
+    "triggers": [
+        {
+            "artifactAlias": "PartsUnlimited-CI",
+            "triggerConditions": [],
+            "triggerType": 1
+        }
+    ],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "ReleaseNew"
+        }
+    }
+}

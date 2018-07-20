@@ -1,0 +1,64 @@
+{
+  "id": 145,
+  "name": "SonarQube",
+  "structureType": "iteration",
+  "hasChildren": true,
+  "children": [
+    {
+      "id": 147,
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations/Sprint%201",
+      "children": null
+    },
+    {
+      "id": 148,
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations/Sprint%202",
+      "children": null
+    },
+    {
+      "id": 149,
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations/Sprint%203",
+      "children": null
+    },
+    {
+      "id": 150,
+      "name": "Sprint 4",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations/Sprint%204",
+      "children": null
+    },
+    {
+      "id": 151,
+      "name": "Sprint 5",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations/Sprint%205",
+      "children": null
+    },
+    {
+      "id": 152,
+      "name": "Sprint 6",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations/Sprint%206",
+      "children": null
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations"
+    }
+  },
+  "url": "https://vstsdemodata.visualstudio.com/4ad3d7da-9eb7-4585-86a8-f296edc1ccf2/_apis/wit/classificationNodes/Iterations",
+  "HttpStatusCode": 200,
+  "Message": null
+}

@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+			
+		},		
+		"name": "Selenium-code",
+		"type": "git",
+		"url": "https://vstsdemodata.visualstudio.com/_git/Selenium",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+		"isReady": true
+}

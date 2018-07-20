@@ -1,0 +1,12 @@
+﻿{
+  "title": "Copyright Information is updated to latest",
+  "description": "I have changed the Index.cshtml file Copyright Information",
+  "sourceRefName": "refs/heads/CopyrightUpdate",
+  "targetRefName": "refs/heads/master",
+  
+  "reviewers": [
+    {
+      "id": "$reviewer$"
+    }
+  ]
+}

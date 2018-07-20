@@ -1,0 +1,341 @@
+﻿{
+  "name": "Overview",
+  "position": 5,
+  "widgets": [
+  {
+     
+      "name": "Sprint Capacity",
+      "position": {
+        "row": 2,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintCapacityWidget"
+    },
+    {
+    
+      "name": "HockeyApp iOS App",
+      "position": {
+        "row": 4,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": "{\"appId\":\"4159ed74815f487894272a8e2b63b5a2\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+     
+      "contributionId": "ms.hockeyapp.HockeyAppWidget"
+    },
+    {
+     
+      "name": "HockeyApp Android App",
+      "position": {
+        "row": 2,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": "{\"appId\":\"1b52c64ce8c54b8c9790ed4cd75088e4\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+     
+      "contributionId": "ms.hockeyapp.HockeyAppWidget"
+      
+      
+    },
+    {
+      "name": "RidesAPI Release Overview",
+      "position": {
+        "row": 1,
+        "column": 10
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"releaseDefinitionId\":$RidesAPIReleaseId$}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-releaseManagement-web.release-definition-summary-widget"
+    },
+    {
+      "name": "Assigned to Me",
+      "position": {
+        "row": 1,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+      
+      
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+  
+      "name": "Rides API Build History",
+      "position": {
+        "row": 3,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": "{\"name\":\"RidesApi\",\"id\":$RidesAPIBuildId$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$RidesAPIBuildId$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"RidesApi\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+     
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget"
+    },
+    {
+     
+      "name": "Sprint Overview",
+      "position": {
+        "row": 3,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintOverviewWidget"
+      
+    },
+    {
+    
+      "name": "bikesharing360 (master)",
+      "position": {
+        "row": 4,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"repositoryId\":\"$repositoryId$\",\"version\":\"GBmaster\",\"path\":\"/\",\"lastArtifactName\":\"bikesharing360 (master)\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CodeScalarWidget"
+    },
+    {
+    
+      "name": "iOS Deployment status",
+      "position": {
+        "row": 3,
+        "column": 7
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"useDefaultBranch\":true,\"branchName\":\"<default build definition branch>\",\"metricsView\":\"testPassRate\",\"buildDefinitionId\":$IOSBuildId$,\"projectId\":\"$projectId$\",\"environments\":[{\"definitionEnvironmentId\":$IOSEnv1$,\"releaseDefinitionId\":$IOSReleaseId$},{\"definitionEnvironmentId\":$IOSEnv2$,\"releaseDefinitionId\":$IOSReleaseId$}]}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget"
+    },
+    {
+
+      "name": "iOS Build History",
+      "position": {
+        "row": 3,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": "{\"name\":\"Xamarin.iOS\",\"id\":$Xamarin.iOS$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$Xamarin.iOS$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"Xamarin.iOS\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget"
+    },
+    {
+     
+      "name": "Android Build History",
+      "position": {
+        "row": 1,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": "{\"name\":\"Xamarin.Droid\",\"id\":$Xamarin.Droid$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$Xamarin.Droid$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"Xamarin.Droid\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget"
+      
+    },
+    {
+     
+      "name": "Android Deployment status",
+      "position": {
+        "row": 1,
+        "column": 7
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"useDefaultBranch\":true,\"branchName\":\"<default build definition branch>\",\"metricsView\":\"testPassRate\",\"buildDefinitionId\":$AndroidBuildId$,\"projectId\":\"$projectId$\",\"environments\":[{\"definitionEnvironmentId\":$AndroidEnv1$,\"releaseDefinitionId\":$AndroidreleaseDefId$},{\"definitionEnvironmentId\":$AndroidEnv2$,\"releaseDefinitionId\":$AndroidreleaseDefId$}]}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "contributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget"
+      
+    },
+    {
+     
+      "name": "Open User Stories",
+      "position": {
+        "row": 4,
+        "column": 2
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"queryId\":\"$OpenUserStoriesId$\", \"queryName\": \"Open User Stories\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+    },
+    {
+   
+      "name": "Sprint Burndown",
+      "position": {
+        "row": 1,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+     
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget"
+    },
+    {
+   
+      "name": "Welcome",
+      "position": {
+        "row": 3,
+        "column": 10
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+    
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget"
+    },
+    {
+
+      "name": "Team Members",
+      "position": {
+        "row": 4,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget"
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "source": "restApi",
+  "revision": 7,
+  "name": "PartsUnlimitedE2E",
+  "description": null,
+
+  "isDeleted": false,
+  "path": "\\",
+  "variables": {
+   "HostingPlan": {
+            "value": "pule2e"
+        },
+        "ResourceGroupName": {
+            "value": "ASPDOTNET"
+        },
+        "ServerName": {
+            "value": "pule2e$UUID$"
+        }
+  },
+  "variableGroups": [], 
+  "environments": [
+    {
+
+      "name": "QA",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "WebsiteName": {
+          "value": "pule2e$UUID$"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+       
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "QA",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Azure App Service Deploy",
+              "refName": "AzureRmWebAppDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppName": "$(WebsiteName)",
+                "WebAppKind": "app",
+                "DeployToSlotFlag": "true",
+                "ImageSource": "Registry",
+                "ResourceGroupName": "$(ResourceGroupName)",
+                "SlotName": "Staging",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/PartsUnlimitedE2E/drop/PartsUnlimitedWebsite.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "Dev",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {}
+    },
+    {
+
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "WebsiteName": {
+          "value": "pule2e$UUID$"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 2
+          }
+        ]
+      },
+      "deployStep": {
+        
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Dev",
+          "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Azure Deployment",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(ResourceGroupName)",
+                "location": "Central US",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/PartsUnlimitedE2E/drop/PartsUnlimited-aspnet45/env/PartsUnlimitedEnv/Templates/FullEnvironmentSetupMerged.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PartsUnlimitedE2E/drop/PartsUnlimited-aspnet45/env/PartsUnlimitedEnv/Templates/FullEnvironmentSetupMerged.param.json",
+                "overrideParameters": "-WebsiteName $(WebsiteName) -PUL_ServerName $(ServerName)  -PUL_HostingPlanName $(HostingPlan)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Azure App Service Deploy",
+              "refName": "AzureRmWebAppDeployment2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppName": "$(WebsiteName)",
+                "WebAppKind": "app",
+                "DeployToSlotFlag": "true",
+                "ImageSource": "Registry",
+                "ResourceGroupName": "$(ResourceGroupName)",
+                "SlotName": "Dev",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/PartsUnlimitedE2E/drop/PartsUnlimitedWebsite.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {}
+    },
+    {
+
+      "name": "Production",
+      "rank": 3,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+        "WebsiteName": {
+          "value": "pule2e$UUID$"
+        }
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 7
+          }
+        ]
+      },
+      "deployStep": {
+       
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Production",
+          "workflowTasks": [
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Azure App Service Deploy",
+              "refName": "AzureRmWebAppDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppName": "$(WebsiteName)",
+                "WebAppKind": "app",
+                "DeployToSlotFlag": "false",
+                "ImageSource": "Registry",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/PartsUnlimitedE2E/drop/PartsUnlimitedWebsite.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "queueId": "$Hosted$",
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "QA",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {}
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$PartsUnlimitedE2E-id$",
+      "type": "Build",
+      "alias": "PartsUnlimitedE2E",
+      "definitionReference": {
+        "definition": {
+          "id": "$PartsUnlimitedE2E-id$",
+          "name": "PartsUnlimitedE2E"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "PartsUnlimitedE2E",
+      "triggerConditions": [],
+      "triggerType": "artifactSource"
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "retentionPolicy": {
+    "daysToKeep": 30
+  },
+  "tags": [],
+  "properties": {}
+}

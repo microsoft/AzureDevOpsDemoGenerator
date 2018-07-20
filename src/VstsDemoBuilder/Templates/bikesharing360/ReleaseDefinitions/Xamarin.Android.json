@@ -1,0 +1,252 @@
+{
+  "name": "Xamarin.Android",
+  "lastRelease": null,
+  "path": "\\",
+  "variables": {},
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Test in HockeyApp",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployStep": {
+       
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "53bb2e90-4b6e-11e5-89d9-2903d3f04d3f",
+              "version": "1.*",
+              "name": "Deploy to HockeyApp",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "connectedServiceName": "$HockeyApp",
+                "appID": "",
+                "binaryPath": "$(System.DefaultWorkingDirectory)/Xamarin.Droid/drop/com.bikesharing.app.apk",
+                "symbolsPath": "",
+                "nativeLibraryPath": "",
+                "notesPath": "",
+                "notes": "",
+                "publish": "true",
+                "mandatory": "false",
+                "notify": "false",
+                "strategy": "add",
+                "tags": "",
+                "teams": "",
+                "users": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    },
+    {
+      "name": "Publish to store",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+               "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ]
+      },
+      "deployStep": {
+      
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "8cf7cac0-620b-11e5-b4cf-8565e60f4d27",
+              "version": "1.*",
+              "name": "Release to Alpha",
+              "enabled": false,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "authType": "ServiceEndpoint",
+                "serviceEndpoint": "$GooglePlay$",
+                "serviceAccountKey": "",
+                "apkFile": "$(System.DefaultWorkingDirectory)/Xamarin.Droid/drop/CardIOSampleAndroid.CardIOSampleAndroid.apk",
+                "track": "alpha",
+                "userFraction": "",
+                "changeLogFile": "",
+                "shouldAttachMetadata": "false",
+                "metadataRootPath": "",
+                "additionalApks": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "Test in HockeyApp",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$Xamarin.Droid-id$",
+      "type": "Build",
+      "alias": "Xamarin.Droid",
+      "definitionReference": {
+        "definition": {
+          "id": "$Xamarin.Droid-id$",
+          "name": "Xamarin.Droid"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+  {
+"artifactAlias": "Xamarin.Droid",
+"triggerConditions": [
+  {
+"sourceBranch": "master",
+"tags": []
+}
+],
+"triggerType": "artifactSource"
+}
+],
+  "releaseNameFormat": "Release-$(rev:r)"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "TestRelease",
+  "environments": [
+    {
+      "name": "Dev",
+      "queueId": 2,
+      "rank": 1,
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true
+          }
+        ]
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "testService",
+  "type": "chef",
+  "url": "https://github.com/srinudhulipalla/",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "abc",
+      "password": "xyz"
+    }
+  }
+}

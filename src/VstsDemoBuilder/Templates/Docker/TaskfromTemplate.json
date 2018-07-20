@@ -1,0 +1,240 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 713,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-09T09:59:04.607Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-09T10:10:53.937Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create azuredeploy.json file",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create azuredeploy.json file with below functionalities:</div><div><br></div><div>1. Deploy both Azure Container Registry and Azure Web App in a single template</div><div>2. Should accept Subscription automatically</div><div>3. Should accept Resource Group name</div><div>4.&nbsp;Should accept Location name</div><div>5. Should accept Azure Container Registry (ACR) name</div><div>6.&nbsp;Should have a dropdown to know if Admin user in ACR must be enabled or not. Use True or False as options.</div><div>7. Should have a dropdown to accept ACR Storage Type. Use Standard_LRS, Standard_ZRS,&nbsp;Standard_GRS as options in dropdown</div><div>8. Should accept Azure Web App name</div><div>9. Provide means to accept Terms &amp; Conditions</div><div>10. Provide Purchase button</div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/712",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/713"
+    },
+    {
+      "id": 717,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-09T10:46:17.81Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-09T10:46:17.81Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create azuredeploy.parameters file",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create azuredeploy.parameters file with below functionalities, so that we could have a collection of parameters to pass into the azuredeploy.json template:</div><div><br></div><div>1. Set default values <font>for ACR such that a unique name is given</font></div><div>2. ACR Admin user is set to true</div><div>3. ACR Storage type is set to Standard_LRS</div><div>4. Web App name is set to null</div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/712",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/717"
+    },
+    {
+      "id": 720,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-09T10:52:56.28Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-09T10:52:56.28Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Update existing Azure Resource Manager endpoint",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update existing Azure Resource Manager endpoint, such that it points to your active Azure subscription",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 1.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/719",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/720"
+    },
+    {
+      "id": 722,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-09T13:26:47.853Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-09T13:26:47.853Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create ACR Endpoint",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<p style=\"margin:0px 0px 11px;\"><font color=\"#000000\" face=Calibri size=3><span style=\"margin:0px;line-height:107%;font-family:&quot;Calibri&quot;,sans-serif;font-size:11pt;\">Create ACR\nEndpoint by mapping details from Azure Portal:</span></font></p><p style=\"margin:0px 0px 11px;\"><font color=\"#000000\" face=Calibri size=3><b><br></b></font></p><p style=\"margin:0px 0px 11px;\"><font color=\"#000000\" face=Calibri size=3>Login server – Docker Registry </font></p>\n\n<p style=\"margin:0px 0px 11px;\"><font color=\"#000000\" face=Calibri size=3>Username – Docker ID</font></p>\n\n<p style=\"margin:0px 0px 11px;\"><font color=\"#000000\" face=Calibri size=3>Password – Password</font></p>\n\n<p style=\"margin:0px 0px 11px;\"><font color=\"#000000\" face=Calibri size=3>Enter email id associated with your Azure account – email</font></p>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/721",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/722"
+    },
+    {
+      "id": 727,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-13T07:21:11.707Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-13T07:22:03.083Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Create and add a dockerfile",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create and add a dockerfile with below contents:<div><br></div><div>FROM microsoft/aspnetcore:1.0<br>ARG source<br>WORKDIR /app<br>EXPOSE 80<br>COPY ${source:-obj/Docker/publish} .<br>ENTRYPOINT [&quot;dotnet&quot;, &quot;MyHealth.Web.dll&quot;]</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 10.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/726",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/727"
+    },
+    {
+      "id": 730,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-14T06:26:44.303Z",
+        "System.CreatedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.ChangedDate": "2017-11-14T06:27:00.787Z",
+        "System.ChangedBy": "Karthik N <ecanarys7@outlook.com>",
+        "System.Title": "Add docker-compose.ci.build.yml file",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/729",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/730"
+    }
+  ],
+  "HttpStatusCode": 0
+}

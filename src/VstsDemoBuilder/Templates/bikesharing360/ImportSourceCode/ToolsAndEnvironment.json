@@ -1,0 +1,9 @@
+﻿{
+  "parameters": {
+    "gitSource": {
+      "url": "https://bikesharing360dtl.visualstudio.com/bikesharing360/_git/ToolsAndEnvironments"
+    },
+    "serviceEndpointId": "$ToolsAndEnvoronments-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
