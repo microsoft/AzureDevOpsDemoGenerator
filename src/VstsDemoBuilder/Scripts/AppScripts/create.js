@@ -783,7 +783,9 @@ function checkForExtensions(callBack) {
     var Oauthtoken = $('#hiddenAccessToken').val();
     var selectedTemplate = $("#ddlTemplates").val();
     if (selectedTemplate != "" && accountNam != "") {
+        $("#imgLoading").show();
         $("#btnSubmit").prop("disabled", true);
+        $("#ddlAcccountName").prop("disabled", true);
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
@@ -799,7 +801,8 @@ function checkForExtensions(callBack) {
 function GetRequiredExtension() {
     checkForExtensions(function callBack(extensions) {
         if (extensions.message != "no extensions required" && extensions.message != "" && extensions.message != undefined && extensions.message.indexOf("Error") == -1 && extensions.message != "Template not found") {
-
+            $("#imgLoading").hide();
+            $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
@@ -817,7 +820,7 @@ function GetRequiredExtension() {
                 }
             } else { $("#btnSubmit").prop("disabled", false); }
         }
-        else { $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").prop("disabled", false); }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").prop("disabled", false); }
 
     });
 }
