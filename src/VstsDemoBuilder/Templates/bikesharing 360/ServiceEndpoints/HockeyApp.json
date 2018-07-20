@@ -1,0 +1,18 @@
+{
+  "data": {
+
+  },
+  "name": "HockeyApp",
+  "type": "hockeyapp",
+  "url": "https://rink.hockeyapp.net/api/2/apps/",
+  "authorization": {
+ "scheme": "UsernamePassword",
+    "parameters": {
+     
+   "username": "test",
+      "password": "test"
+    }
+   
+  },
+  "isReady": true
+}

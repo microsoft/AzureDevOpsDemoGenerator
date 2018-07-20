@@ -1,0 +1,150 @@
+{
+
+  "name": "Acquaint.Native.Droid-XTC-dev",
+  "lastRelease": null,
+  "variables": {
+
+  },
+  "variableGroups": [
+
+  ],
+  "environments": [
+    {
+      "name": "Environment 1",
+      "rank": 1,
+      "variables": {
+
+      },
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployStep": {
+       
+
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Xamarin-XTC$",
+            "demands": [
+
+            ],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Run on agent",
+          "workflowTasks": [
+				  {
+            "taskId": "53bb2e90-4b6e-11e5-89d9-2903d3f04d3f",
+            "version": "1.*",
+            "name": "Deploy $(System.DefaultWorkingDirectory)/**/com.xamarin.acquaintnative.apk to HockeyApp",
+            "enabled": true,
+            "alwaysRun": false,
+            "continueOnError": false,
+            "timeoutInMinutes": 0,
+            "definitionType": "task",
+            "inputs": {
+              "connectedServiceName": "$dwhathaway hockeyapp$",
+              "appID": "22a32eb5e4294bdca848f0fa639d1d70",
+              "binaryPath": "$(System.DefaultWorkingDirectory)/**/com.xamarin.acquaintnative.apk",
+              "symbolsPath": "",
+              "nativeLibraryPath": "",
+              "notesPath": "",
+              "notes": "",
+              "publish": "true",
+              "mandatory": "false",
+              "notify": "false",
+              "strategy": "add",
+              "tags": "",
+              "teams": "",
+              "users": ""
+            }
+          }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [
+
+      ],
+      "queueId": "$Xamarin-XTC$",
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": 1,
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [
+
+      ],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$Acquaint.Native.Droid-XTC-dev-id$",
+      "type": "Build",
+      "alias": "Acquaint.Native.Droid-XTC-dev",
+      "definitionReference": {
+
+        "definition": {
+          "id": "$Acquaint.Native.Droid-XTC-dev-id$",
+          "name": "Acquaint.Native.Droid-XTC-dev"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "Acquaint.Native.Droid-XTC-dev",
+      "triggerConditions": [
+
+      ],
+      "triggerType": 1
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)"
+}

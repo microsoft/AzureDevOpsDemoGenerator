@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['build',['Build',['../namespace_vsts_rest_a_p_i_1_1_build.html',1,'VstsRestAPI.Build'],['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_build.html',1,'VstsRestAPI.Viewmodel.Build']]],
+  ['controllers',['Controllers',['../namespace_vsts_demo_builder_1_1_controllers.html',1,'VstsDemoBuilder']]],
+  ['deliveryplans',['DeliveryPlans',['../namespace_vsts_rest_a_p_i_1_1_delivery_plans.html',1,'VstsRestAPI']]],
+  ['errorhandler',['ErrorHandler',['../namespace_vsts_demo_builder_1_1_error_handler.html',1,'VstsDemoBuilder']]],
+  ['extensions',['Extensions',['../namespace_vsts_demo_builder_1_1_extensions.html',1,'VstsDemoBuilder']]],
+  ['git',['Git',['../namespace_vsts_rest_a_p_i_1_1_git.html',1,'VstsRestAPI']]],
+  ['models',['Models',['../namespace_vsts_demo_builder_1_1_models.html',1,'VstsDemoBuilder']]],
+  ['projectandteams',['ProjectAndTeams',['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_project_and_teams.html',1,'VstsRestAPI::Viewmodel']]],
+  ['projectsandteams',['ProjectsAndTeams',['../namespace_vsts_rest_a_p_i_1_1_projects_and_teams.html',1,'VstsRestAPI']]],
+  ['querysandwidgets',['QuerysAndWidgets',['../namespace_vsts_rest_a_p_i_1_1_querys_and_widgets.html',1,'VstsRestAPI.QuerysAndWidgets'],['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_querys_and_widgets.html',1,'VstsRestAPI.Viewmodel.QuerysAndWidgets']]],
+  ['queue',['Queue',['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_queue.html',1,'VstsRestAPI::Viewmodel']]],
+  ['queues',['Queues',['../namespace_vsts_rest_a_p_i_1_1_queues.html',1,'VstsRestAPI']]],
+  ['release',['Release',['../namespace_vsts_rest_a_p_i_1_1_release.html',1,'VstsRestAPI']]],
+  ['releasedefinition',['ReleaseDefinition',['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_release_definition.html',1,'VstsRestAPI::Viewmodel']]],
+  ['repository',['Repository',['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_repository.html',1,'VstsRestAPI::Viewmodel']]],
+  ['service',['Service',['../namespace_vsts_rest_a_p_i_1_1_service.html',1,'VstsRestAPI.Service'],['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_service.html',1,'VstsRestAPI.Viewmodel.Service']]],
+  ['testmanagement',['TestManagement',['../namespace_vsts_rest_a_p_i_1_1_test_management.html',1,'VstsRestAPI']]],
+  ['viewmodel',['Viewmodel',['../namespace_vsts_rest_a_p_i_1_1_viewmodel.html',1,'VstsRestAPI']]],
+  ['vstsdemobuilder',['VstsDemoBuilder',['../namespace_vsts_demo_builder.html',1,'']]],
+  ['vstsrestapi',['VstsRestAPI',['../namespace_vsts_rest_a_p_i.html',1,'']]],
+  ['workitem',['WorkItem',['../namespace_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item.html',1,'VstsRestAPI::Viewmodel']]],
+  ['workitemandtracking',['WorkItemAndTracking',['../namespace_vsts_rest_a_p_i_1_1_work_item_and_tracking.html',1,'VstsRestAPI']]]
+];

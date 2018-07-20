@@ -1,0 +1,163 @@
+{
+  "name": "Acquaint.Native.iOS-CI-dev",
+  "path": "\\CI\\dev",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.iOS",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "0f077e3a-af59-496d-81bc-ad971b7464e0",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "App/Acquaint.Native.sln",
+        "configuration": "Release",
+        "packageApp": "true",
+        "forSimulator": "false",
+        "args": "",
+        "cwd": "",
+        "mdtoolLocation": "",
+        "signMethod": "id",
+        "iosSigningIdentity": "iPhone Developer: Joe Sauve (NA778H95WK)",
+        "unlockDefaultKeychain": "true",
+        "defaultKeychainPassword": "$(KeyChainPassword)",
+        "provProfileUuid": "a28567c4-e15a-4f71-b3f8-cbc12756e723",
+        "p12": "",
+        "p12pwd": "",
+        "provProfile": "",
+        "removeProfile": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Build.SourcesDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Build.SourcesDirectory)",
+        "Contents": "**"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Delete files from $(Agent.BuildDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b7e8b412-0437-4065-9371-edc5881de25b",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "$(Agent.BuildDirectory)",
+        "Contents": "**"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "689173",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+  
+  
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "KeyChainPassword": {
+      "value": null,
+      "isSecret": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [
+
+      ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "repository": {
+    "properties": {
+      "labelSources": "0",
+      "reportBuildStatus": "true",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "cleanOptions": "0"
+    },
+    "id": "$Acquaint$",
+    "type": "TfsGit",
+    "name": "Acquaint",
+    "url": "https://devops-mobile.visualstudio.com/_git/Acquaint",
+    "defaultBranch": "refs/heads/dev",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+
+  "queue": {
+    "pool": {
+      "name": "Xamarin-CI"
+    },
+    "name": "Xamarin-CI"
+  }
+
+}

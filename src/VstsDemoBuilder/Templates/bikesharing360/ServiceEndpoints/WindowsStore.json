@@ -1,0 +1,16 @@
+{
+  
+  "name": "WindowsStore",
+  "type": "devCenter",
+  "url": "https://manage.devcenter.microsoft.com",
+  "subscriptionId": "",
+  "authorization": {
+  "scheme": "ServicePrincipal",
+    "parameters": {
+    "url": "https://manage.devcenter.microsoft.com",
+      "tenantId": "test",
+        "servicePrincipalId": "test",
+       "servicePrincipalKey": "test"
+    }
+}
+}

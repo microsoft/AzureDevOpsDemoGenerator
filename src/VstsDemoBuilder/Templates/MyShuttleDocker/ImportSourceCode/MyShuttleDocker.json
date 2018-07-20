@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://Vstsdemodata.visualstudio.com/DefaultCollection/MyShuttleDocker/_git/MyShuttleDocker"
+    },
+    "serviceEndpointId": "$MyShuttleDocker-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

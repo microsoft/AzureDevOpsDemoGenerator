@@ -1,0 +1,146 @@
+{
+  "count": 4,
+  "value": [
+    {
+      "id": 25683,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "BikeSharing360",
+        "System.TeamProject": "BikeSharing360",
+        "System.IterationPath": "BikeSharing360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-04-19T23:03:54.94Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2017-04-19T23:09:51.73Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Web app display of all rides, third column is too short",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Sachin Hridayraj <sraj@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemos.visualstudio.com/_apis/wit/workItems/25656",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemos.visualstudio.com/_apis/wit/workItems/25683"
+    },
+    {
+      "id": 25681,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "BikeSharing360",
+        "System.TeamProject": "BikeSharing360",
+        "System.IterationPath": "BikeSharing360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-04-19T23:03:54.94Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2017-04-19T23:09:51.73Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Filtering of dates",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Sachin Hridayraj <sraj@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemos.visualstudio.com/_apis/wit/workItems/25656",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemos.visualstudio.com/_apis/wit/workItems/25681"
+    },
+    {
+      "id": 25654,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "BikeSharing360",
+        "System.TeamProject": "BikeSharing360",
+        "System.IterationPath": "BikeSharing360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-04-19T23:01:21.187Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2017-04-19T23:09:51.73Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Nearest renting station returns stations outside of what is \"close\"",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Donovan Brown <dbrown@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemos.visualstudio.com/_apis/wit/workItems/25654"
+    },
+    {
+      "id": 25436,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "BikeSharing360",
+        "System.TeamProject": "BikeSharing360",
+        "System.IterationPath": "BikeSharing360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-04-19T22:45:11.877Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2017-06-28T16:09:32.777Z",
+        "System.ChangedBy": "Abel.Wang <Abel.Wang@microsoft.com>",
+        "System.Title": "Fix crash in - [CustomRideViewModel+<Go>c__async2 <>m__0()], line 248",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Craig Kitterman <ckitter@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": "In Sprint",
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemos.visualstudio.com/_apis/wit/workItems/25436"
+    }
+  ],
+  "HttpStatusCode": 0
+}

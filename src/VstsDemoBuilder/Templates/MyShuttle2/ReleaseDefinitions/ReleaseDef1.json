@@ -1,0 +1,268 @@
+{
+   "name":"MyShuttle2- CD",
+   "description":null,
+   "path":"\\",
+   "variables":{
+
+   },
+   "variableGroups":[
+
+   ],
+   "environments":[
+      {
+         "name":"AzureVM",
+         "rank":1,
+         "owner":{
+            "id":"$OwnerId$",
+            "displayName":"$OwnerDisplayName$",
+            "uniqueName":"$OwnerUniqueName$"
+         },
+         "variables":{
+
+         },
+         "preDeployApprovals":{
+            "approvals":[
+               {
+                  "rank":1,
+                  "isAutomated":true,
+                  "isNotificationOn":false
+               }
+            ]
+         },
+         "deployStep":{
+           
+         },
+         "postDeployApprovals":{
+            "approvals":[
+               {
+                  "rank":1,
+                  "isAutomated":true,
+                  "isNotificationOn":false
+               }
+            ]
+         },
+         "deployPhases":[
+            {
+               "deploymentInput":{
+                  "parallelExecution":{
+                     "parallelExecutionType":"none"
+                  },
+                  "skipArtifactsDownload":false,
+                  "queueId":"$Hosted Linux Preview$",
+                  "demands":[
+
+                  ],
+                  "enableAccessToken":false,
+                  "timeoutInMinutes":0,
+                  "jobCancelTimeoutInMinutes":1,
+                  "condition":"succeeded()",
+                  "overrideInputs":{
+
+                  }
+               },
+               "rank":1,
+               "phaseType":"agentBasedDeployment",
+               "name":"Agent phase",
+               "workflowTasks":[
+                  {
+                     "taskId":"9240b5c1-a1b2-4799-9325-e071c63236fb",
+                     "version":"1.*",
+                     "name":"Replace tokens in ",
+                     "refName":"ReplaceTokens1",
+                     "enabled":true,
+                     "alwaysRun":false,
+                     "continueOnError":false,
+                     "timeoutInMinutes":0,
+                     "definitionType":"task",
+                     "overrideInputs":{
+
+                     },
+                     "condition":"succeeded()",
+                     "inputs":{
+                        "sourcePath":"",
+                        "filePattern":"*.release.*",
+                        "tokenRegex":"__(\\w+)__",
+                        "secretTokens":""
+                     }
+                  },
+                  {
+                     "taskId":"6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+                     "version":"0.*",
+                     "name":"Run services",
+                     "refName":"DockerCompose2",
+                     "enabled":true,
+                     "alwaysRun":false,
+                     "continueOnError":false,
+                     "timeoutInMinutes":0,
+                     "definitionType":"task",
+                     "overrideInputs":{
+
+                     },
+                     "condition":"succeeded()",
+                     "inputs":{
+                        "containerregistrytype":"Azure Container Registry",
+                        "dockerRegistryEndpoint":"",
+                        "azureSubscriptionEndpoint":"",
+                        "azureContainerRegistry":"",
+                        "dockerComposeFile":"**/docker-compose.yml",
+                        "additionalDockerComposeFiles":"",
+                        "dockerComposeFileArgs":"",
+                        "projectName":"$(Build.Repository.Name)",
+                        "qualifyImageNames":"true",
+                        "action":"Run services",
+                        "additionalImageTags":"",
+                        "includeSourceTags":"false",
+                        "includeLatestTag":"false",
+                        "buildImages":"false",
+                        "serviceName":"",
+                        "containerName":"",
+                        "ports":"",
+                        "workDir":"",
+                        "entrypoint":"",
+                        "containerCommand":"",
+                        "detached":"true",
+                        "abortOnContainerExit":"true",
+                        "imageDigestComposeFile":"$(Build.StagingDirectory)/docker-compose.images.yml",
+                        "removeBuildOptions":"false",
+                        "baseResolveDirectory":"",
+                        "outputDockerComposeFile":"$(Build.StagingDirectory)/docker-compose.yml",
+                        "dockerComposeCommand":"",
+                        "dockerHostEndpoint":"",
+                        "nopIfNoDockerComposeFile":"false",
+                        "requireAdditionalDockerComposeFiles":"false",
+                        "cwd":"$(System.DefaultWorkingDirectory)"
+                     }
+                  },
+                  {
+                     "taskId":"d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+                     "version":"1.*",
+                     "name":"Run java",
+                     "refName":"CmdLine3",
+                     "enabled":true,
+                     "alwaysRun":false,
+                     "continueOnError":false,
+                     "timeoutInMinutes":0,
+                     "definitionType":"task",
+                     "overrideInputs":{
+
+                     },
+                     "condition":"succeeded()",
+                     "inputs":{
+                        "filename":"java",
+                        "arguments":"-cp myshuttledev-tests.jar:test-jars/* org.testng.TestNG ../testng.release.xml",
+                        "workingFolder":"",
+                        "failOnStandardError":"false"
+                     }
+                  },
+                  {
+                     "taskId":"0b0f01ed-7dde-43ff-9cbb-e48954daf9b1",
+                     "version":"2.*",
+                     "name":"Publish Test Results",
+                     "refName":"PublishTestResults4",
+                     "enabled":true,
+                     "alwaysRun":false,
+                     "continueOnError":false,
+                     "timeoutInMinutes":0,
+                     "definitionType":"task",
+                     "overrideInputs":{
+
+                     },
+                     "condition":"succeeded()",
+                     "inputs":{
+                        "testRunner":"JUnit",
+                        "testResultsFiles":"**/TEST-*.xml",
+                        "searchFolder":"$(System.DefaultWorkingDirectory)",
+                        "mergeTestResults":"false",
+                        "testRunTitle":"",
+                        "platform":"",
+                        "configuration":"",
+                        "publishRunAttachments":"true"
+                     }
+                  }
+               ]
+            }
+         ],
+         "environmentOptions":{
+            "emailNotificationType":"OnlyOnFailure",
+            "emailRecipients":"release.environment.owner;release.creator",
+            "skipArtifactsDownload":false,
+            "timeoutInMinutes":0,
+            "enableAccessToken":false,
+            "publishDeploymentStatus":true
+         },
+        "demands": [
+
+        ],
+        "queueId":"$Hosted Linux Preview$",
+         "conditions":[
+            {
+               "name":"ReleaseStarted",
+               "conditionType":"event",
+               "value":""
+            }
+         ],
+         "executionPolicy":{
+            "concurrencyCount":0,
+            "queueDepthCount":0
+         },
+         "schedules":[
+
+         ],
+         "retentionPolicy":{
+            "daysToKeep":30,
+            "releasesToKeep":3,
+            "retainBuild":true
+         },
+         "processParameters":{
+
+         },
+         "properties":{
+
+         }
+      }
+   ],
+   "artifacts":[
+      {
+         "sourceId":"$ProjectId$:$MyShuttle2-id$",
+         "type":"Build",
+         "alias":"MyShuttle2",
+         "definitionReference":{
+            "defaultVersionBranch":{
+               "id":"",
+               "name":""
+            },
+            "defaultVersionSpecific":{
+               "id":"",
+               "name":""
+            },
+            "defaultVersionTags":{
+               "id":"",
+               "name":""
+            },
+            "defaultVersionType":{
+               "id":"latestType",
+               "name":"Latest"
+            },
+            "definition":{
+               "id":"$MyShuttle2-id$",
+               "name":"MyShuttle2"
+            },
+            "project":{
+               "id":"$ProjectId$",
+               "name":"MyShuttleJava"
+            }
+         },
+         "isPrimary":true
+      }
+   ],
+   "triggers":[
+
+   ],
+   "releaseNameFormat":"Release-$(rev:r)",
+   "tags":[
+
+   ],
+   "properties":{
+
+   }
+}

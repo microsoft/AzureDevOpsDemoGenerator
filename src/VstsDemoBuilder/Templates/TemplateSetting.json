@@ -1,0 +1,115 @@
+﻿{
+  "privateTemplates": [
+    "devops-mobile",
+    "bikesharing360",
+    "bikesharing 360",
+    "WhiteSource-Bolt",
+    "Docker",
+    "SonarQube",
+    "PHP",
+    "GitHub",
+    "DeploymentGroups",
+    "Selenium",
+    "Python",
+    "Octopus",
+    "MyShuttle",
+    "AKS",
+    "MyShuttleDocker",
+    "AzureFunctions"
+  ],
+  "privateTemplateKeys": [
+    {
+      "key": "77360",
+      "value": "devops-mobile"
+    },
+    {
+      "key": "77361",
+      "value": "bikesharing360"
+    },
+    {
+      "key": "",
+      "value": "MyHealthClinic"
+    },
+    {
+      "key": "",
+      "value": "PartsUnlimited"
+    },
+    {
+      "key": "77350",
+      "value": "bikesharing 360"
+    },
+    {
+      "key": "",
+      "value": "MyShuttle2"
+    },
+    {
+      "key": "",
+      "value": "PartsUnlimited-agile"
+    },
+    {
+      "key": "77362",
+      "value": "WhiteSource-Bolt"
+    },
+    {
+      "key": "77363",
+      "value": "Docker"
+    },
+    {
+      "key": "77364",
+      "value": "SonarQube"
+    },
+    {
+      "key": "77365",
+      "value": "PHP"
+    },
+    {
+      "key": "77366",
+      "value": "GitHub"
+    },
+    {
+      "key": "77367",
+      "value": "Selenium"
+    },
+    {
+      "key": "77368",
+      "value": "DeploymentGroups"
+    },
+    {
+      "key": "77369",
+      "value": "Python"
+    },
+    {
+      "key": "77370",
+      "value": "Octopus"
+    },
+    {
+      "key": "77371",
+      "value": "MyShuttle"
+    },
+    {
+      "key": "77372",
+      "value": "AKS"
+    },
+    {
+      "key": "77373",
+      "value": "MyShuttleDocker"
+    },
+    {
+      "key": "77374",
+      "value": "AzureFunctions"
+
+    },
+    {
+      "key": "77375",
+      "value": "ReleaseGates"
+    },
+    {
+      "key": "77376",
+      "value": "AzureFunctions_BuildWorkshop"
+    },
+    {
+      "key": "77377",
+      "value": "ContosoShuttle"
+    }
+  ]
+}

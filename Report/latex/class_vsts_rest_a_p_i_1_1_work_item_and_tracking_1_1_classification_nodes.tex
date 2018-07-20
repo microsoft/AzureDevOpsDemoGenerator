@@ -1,0 +1,158 @@
+\hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes}{}\section{Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes Class Reference}
+\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes}\index{Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a56901e63fcddff8c3b672404bcd45bfe}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a56901e63fcddff8c3b672404bcd45bfe}} 
+{\bfseries Classification\+Nodes} (\mbox{\hyperlink{interface_vsts_rest_a_p_i_1_1_i_configuration}{I\+Configuration}} configuration)
+\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_nodes_response_1_1_nodes}{Get\+Nodes\+Response.\+Nodes}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a9b9f298f8ae6cf16fcc809c69f99533a}{Get\+Iterations}} (string project\+Name)
+\begin{DoxyCompactList}\small\item\em Get Iteration \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_node_response_1_1_node}{Get\+Node\+Response.\+Node}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_ae8b553aaddd3dbd6d03d9ed7400b0667}{Create\+Iteration}} (string project\+Name, string path)
+\begin{DoxyCompactList}\small\item\em Create Iterations \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_node_response_1_1_node}{Get\+Node\+Response.\+Node}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a34362d25882c3145b7134f08bf8aae86}{Move\+Iteration}} (string project\+Name, string target\+Iteration, int source\+Iteration\+Id)
+\begin{DoxyCompactList}\small\item\em movie Iteration to parent \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_aff3aa00e48c8f5419e7ca2a0d35946ef}{Update\+Iteration\+Dates}} (string Project\+Name, string template\+Type)
+\begin{DoxyCompactList}\small\item\em Update Iteration Dates-\/ calculating from previous 22 days \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_node_response_1_1_node}{Get\+Node\+Response.\+Node}} \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a06d5cff8ab9703f58ffa2575abb2cdde}{Update\+Iteration\+Dates}} (string project, string path, Date\+Time start\+Date, Date\+Time finish\+Date)
+\begin{DoxyCompactList}\small\item\em Update Iteration Dates \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_aa9ec619ecc43346a57e84ec3206c78e3}{Rename\+Iteration}} (string project\+Name, Dictionary$<$ string, string $>$ Iteration\+To\+Update)
+\begin{DoxyCompactList}\small\item\em Rename Iteration \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a4c0a8a273de79ad69806b8e0bfd4d0d4}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a4c0a8a273de79ad69806b8e0bfd4d0d4}} 
+string {\bfseries Last\+Failure\+Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_ae8b553aaddd3dbd6d03d9ed7400b0667}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_ae8b553aaddd3dbd6d03d9ed7400b0667}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}!Create\+Iteration@{Create\+Iteration}}
+\index{Create\+Iteration@{Create\+Iteration}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}}
+\subsubsection{\texorpdfstring{Create\+Iteration()}{CreateIteration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_node_response_1_1_node}{Get\+Node\+Response.\+Node}} Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes.\+Create\+Iteration (\begin{DoxyParamCaption}\item[{string}]{project\+Name,  }\item[{string}]{path }\end{DoxyParamCaption})}
+
+
+
+Create Iterations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\+Name} & \\
+\hline
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a9b9f298f8ae6cf16fcc809c69f99533a}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a9b9f298f8ae6cf16fcc809c69f99533a}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}!Get\+Iterations@{Get\+Iterations}}
+\index{Get\+Iterations@{Get\+Iterations}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}}
+\subsubsection{\texorpdfstring{Get\+Iterations()}{GetIterations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_nodes_response_1_1_nodes}{Get\+Nodes\+Response.\+Nodes}} Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes.\+Get\+Iterations (\begin{DoxyParamCaption}\item[{string}]{project\+Name }\end{DoxyParamCaption})}
+
+
+
+Get Iteration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a34362d25882c3145b7134f08bf8aae86}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a34362d25882c3145b7134f08bf8aae86}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}!Move\+Iteration@{Move\+Iteration}}
+\index{Move\+Iteration@{Move\+Iteration}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}}
+\subsubsection{\texorpdfstring{Move\+Iteration()}{MoveIteration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_node_response_1_1_node}{Get\+Node\+Response.\+Node}} Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes.\+Move\+Iteration (\begin{DoxyParamCaption}\item[{string}]{project\+Name,  }\item[{string}]{target\+Iteration,  }\item[{int}]{source\+Iteration\+Id }\end{DoxyParamCaption})}
+
+
+
+movie Iteration to parent 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\+Name} & \\
+\hline
+{\em target\+Iteration} & \\
+\hline
+{\em source\+Iteration\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_aa9ec619ecc43346a57e84ec3206c78e3}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_aa9ec619ecc43346a57e84ec3206c78e3}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}!Rename\+Iteration@{Rename\+Iteration}}
+\index{Rename\+Iteration@{Rename\+Iteration}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}}
+\subsubsection{\texorpdfstring{Rename\+Iteration()}{RenameIteration()}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes.\+Rename\+Iteration (\begin{DoxyParamCaption}\item[{string}]{project\+Name,  }\item[{Dictionary$<$ string, string $>$}]{Iteration\+To\+Update }\end{DoxyParamCaption})}
+
+
+
+Rename Iteration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\+Name} & \\
+\hline
+{\em Iteration\+To\+Update} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_aff3aa00e48c8f5419e7ca2a0d35946ef}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_aff3aa00e48c8f5419e7ca2a0d35946ef}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}!Update\+Iteration\+Dates@{Update\+Iteration\+Dates}}
+\index{Update\+Iteration\+Dates@{Update\+Iteration\+Dates}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}}
+\subsubsection{\texorpdfstring{Update\+Iteration\+Dates()}{UpdateIterationDates()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes.\+Update\+Iteration\+Dates (\begin{DoxyParamCaption}\item[{string}]{Project\+Name,  }\item[{string}]{template\+Type }\end{DoxyParamCaption})}
+
+
+
+Update Iteration Dates-\/ calculating from previous 22 days 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Project\+Name} & \\
+\hline
+{\em template\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a06d5cff8ab9703f58ffa2575abb2cdde}\label{class_vsts_rest_a_p_i_1_1_work_item_and_tracking_1_1_classification_nodes_a06d5cff8ab9703f58ffa2575abb2cdde}} 
+\index{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}!Update\+Iteration\+Dates@{Update\+Iteration\+Dates}}
+\index{Update\+Iteration\+Dates@{Update\+Iteration\+Dates}!Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes@{Vsts\+Rest\+A\+P\+I\+::\+Work\+Item\+And\+Tracking\+::\+Classification\+Nodes}}
+\subsubsection{\texorpdfstring{Update\+Iteration\+Dates()}{UpdateIterationDates()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vsts_rest_a_p_i_1_1_viewmodel_1_1_work_item_1_1_get_node_response_1_1_node}{Get\+Node\+Response.\+Node}} Vsts\+Rest\+A\+P\+I.\+Work\+Item\+And\+Tracking.\+Classification\+Nodes.\+Update\+Iteration\+Dates (\begin{DoxyParamCaption}\item[{string}]{project,  }\item[{string}]{path,  }\item[{Date\+Time}]{start\+Date,  }\item[{Date\+Time}]{finish\+Date }\end{DoxyParamCaption})}
+
+
+
+Update Iteration Dates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project} & \\
+\hline
+{\em path} & \\
+\hline
+{\em start\+Date} & \\
+\hline
+{\em finish\+Date} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Canarys/\+Projects/\+Demo\+Generator\+Oauth/\+Vsts\+Rest\+A\+P\+I/\+Work\+Item\+And\+Tracking/Classification\+Nodes.\+cs\end{DoxyCompactItemize}

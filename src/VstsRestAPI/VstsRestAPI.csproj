@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{720825C0-F4F3-44F3-9492-3BC4C967034D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VstsRestAPI</RootNamespace>
+    <AssemblyName>VstsRestAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Build\BuildDefinition.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="DeliveryPlans\Plans.cs" />
+    <Compile Include="Git\Repository.cs" />
+    <Compile Include="IConfiguration.cs" />
+    <Compile Include="ProjectsAndTeams\Account.cs" />
+    <Compile Include="ProjectsAndTeams\Projects.cs" />
+    <Compile Include="ProjectsAndTeams\Team.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuerysAndWidgets\Querys.cs" />
+    <Compile Include="Queues\Queue.cs" />
+    <Compile Include="Release\ReleaseDefinition.cs" />
+    <Compile Include="Service\ServiceEndPoint.cs" />
+    <Compile Include="TestManagement\TestManagement.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Viewmodel\BaseViewModel.cs" />
+    <Compile Include="Viewmodel\Build\BuildGetListofBuildDefinitionsResponse.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\AccountMembers.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\TeamIterationsResponse.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\TeamResponse.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\TeamSettingResponse.cs" />
+    <Compile Include="Viewmodel\QuerysAndWidgets\DashBoardeTagResponse.cs" />
+    <Compile Include="Viewmodel\ReleaseDefinition\ReleaseDefinitions.cs" />
+    <Compile Include="Viewmodel\ReleaseDefinition\ReleaseDefinitionsResponse.cs" />
+    <Compile Include="Viewmodel\Repository\PullRequestComments.cs" />
+    <Compile Include="Viewmodel\Service\ServiceEndpointModel.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\GetTeamResponse.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\ListofProjectsResponse.cs" />
+    <Compile Include="Viewmodel\ProjectAndTeams\TeamMemberResponse.cs" />
+    <Compile Include="Viewmodel\QuerysAndWidgets\DashboardResponse.cs" />
+    <Compile Include="Viewmodel\QuerysAndWidgets\QueryResponse.cs" />
+    <Compile Include="Viewmodel\Queue\QueueModel.cs" />
+    <Compile Include="Viewmodel\Repository\GetAllRepositoriesResponse.cs" />
+    <Compile Include="Viewmodel\Wiki\CodewikiResponse.cs" />
+    <Compile Include="Viewmodel\Wiki\ProjectwikiResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\BatchRequest.cs" />
+    <Compile Include="Viewmodel\WorkItem\CardStylesPatch.cs" />
+    <Compile Include="Viewmodel\WorkItem\ColumnPost.cs" />
+    <Compile Include="Viewmodel\WorkItem\CreateUpdateNodeViewModel.cs" />
+    <Compile Include="Viewmodel\WorkItem\GetBoardColumnResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\GetCardFieldResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\GetNodeResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\GetNodesResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\GetWorkItemsResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\ImportWorkItemModel.cs" />
+    <Compile Include="Viewmodel\WorkItem\ReturnException.cs" />
+    <Compile Include="Viewmodel\WorkItem\SetEpicSettings.cs" />
+    <Compile Include="Viewmodel\WorkItem\WorkItemBatchPostResponse.cs" />
+    <Compile Include="Viewmodel\WorkItem\WorkItemPatch.cs" />
+    <Compile Include="Viewmodel\WorkItem\WorkItemPatchResponse.cs" />
+    <Compile Include="Wiki\ManageWiki.cs" />
+    <Compile Include="WorkItemAndTracking\BoardColumn.cs" />
+    <Compile Include="WorkItemAndTracking\Cards.cs" />
+    <Compile Include="WorkItemAndTracking\ClassificationNodes.cs" />
+    <Compile Include="WorkItemAndTracking\ImportWorkItems.cs" />
+    <Compile Include="WorkItemAndTracking\IssueWI.cs" />
+    <Compile Include="WorkItemAndTracking\SwimLanes.cs" />
+    <Compile Include="WorkItemAndTracking\WorkItemNew.cs" />
+    <Compile Include="WorkItemAndTracking\WorkItems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="JSON\CreateBuildDefination.json" />
+    <None Include="JSON\CreateTeam.json" />
+    <None Include="JSON\CreateTeamProject.json" />
+    <None Include="JSON\GetRepository.json" />
+    <None Include="JSON\ReleaseDefination.json" />
+    <None Include="JSON\WorkItem.json" />
+    <None Include="JSON\WorkItemNew.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

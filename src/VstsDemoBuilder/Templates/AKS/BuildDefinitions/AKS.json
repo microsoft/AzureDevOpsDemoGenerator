@@ -1,0 +1,352 @@
+{
+  "name": "MyHealth.AKS.build",
+  "path": "\\",
+  "type": "build",
+  "build": [
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Run services",
+      "timeoutInMinutes": 0,
+      "refName": "DockerCompose1",
+      "task": {
+        "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "containerregistrytype": "Azure Container Registry",
+        "dockerRegistryEndpoint": "",
+        "azureSubscriptionEndpoint": "",
+        "azureContainerRegistry": "",
+        "dockerComposeFile": "docker-compose.ci.build.yml",
+        "additionalDockerComposeFiles": "",
+        "dockerComposeFileArgs": "",
+        "projectName": "$(Build.Repository.Name)",
+        "qualifyImageNames": "true",
+        "action": "Run services",
+        "additionalImageTags": "",
+        "includeSourceTags": "false",
+        "includeLatestTag": "false",
+        "buildImages": "true",
+        "serviceName": "",
+        "containerName": "",
+        "ports": "",
+        "workDir": "",
+        "entrypoint": "",
+        "containerCommand": "",
+        "detached": "false",
+        "abortOnContainerExit": "true",
+        "imageDigestComposeFile": "$(Build.StagingDirectory)/docker-compose.images.yml",
+        "removeBuildOptions": "false",
+        "baseResolveDirectory": "",
+        "outputDockerComposeFile": "$(Build.StagingDirectory)/docker-compose.yml",
+        "dockerComposeCommand": "",
+        "dockerHostEndpoint": "",
+        "nopIfNoDockerComposeFile": "false",
+        "requireAdditionalDockerComposeFiles": "false",
+        "cwd": "$(System.DefaultWorkingDirectory)"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build services",
+      "timeoutInMinutes": 0,
+      "refName": "DockerCompose2",
+      "task": {
+        "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "containerregistrytype": "Azure Container Registry",
+        "dockerRegistryEndpoint": "",
+        "azureSubscriptionEndpoint": "",
+        "azureContainerRegistry": "",
+        "dockerComposeFile": "docker-compose.yml",
+        "additionalDockerComposeFiles": "",
+        "dockerComposeFileArgs": "DOCKER_BUILD_SOURCE=",
+        "projectName": "$(Build.Repository.Name)",
+        "qualifyImageNames": "true",
+        "action": "Build services",
+        "additionalImageTags": "$(Build.BuildId)",
+        "includeSourceTags": "false",
+        "includeLatestTag": "false",
+        "buildImages": "true",
+        "serviceName": "",
+        "containerName": "",
+        "ports": "",
+        "workDir": "",
+        "entrypoint": "",
+        "containerCommand": "",
+        "detached": "true",
+        "abortOnContainerExit": "true",
+        "imageDigestComposeFile": "$(Build.StagingDirectory)/docker-compose.images.yml",
+        "removeBuildOptions": "false",
+        "baseResolveDirectory": "",
+        "outputDockerComposeFile": "$(Build.StagingDirectory)/docker-compose.yml",
+        "dockerComposeCommand": "",
+        "dockerHostEndpoint": "",
+        "nopIfNoDockerComposeFile": "false",
+        "requireAdditionalDockerComposeFiles": "false",
+        "cwd": "$(System.DefaultWorkingDirectory)"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Push services",
+      "timeoutInMinutes": 0,
+      "refName": "DockerCompose3",
+      "task": {
+        "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "containerregistrytype": "Azure Container Registry",
+        "dockerRegistryEndpoint": "",
+        "azureSubscriptionEndpoint": "",
+        "azureContainerRegistry": "",
+        "dockerComposeFile": "docker-compose.yml",
+        "additionalDockerComposeFiles": "",
+        "dockerComposeFileArgs": "DOCKER_BUILD_SOURCE=",
+        "projectName": "$(Build.Repository.Name)",
+        "qualifyImageNames": "true",
+        "action": "Push services",
+        "additionalImageTags": "$(Build.BuildId)",
+        "includeSourceTags": "false",
+        "includeLatestTag": "false",
+        "buildImages": "true",
+        "serviceName": "",
+        "containerName": "",
+        "ports": "",
+        "workDir": "",
+        "entrypoint": "",
+        "containerCommand": "",
+        "detached": "true",
+        "abortOnContainerExit": "true",
+        "imageDigestComposeFile": "$(Build.StagingDirectory)/docker-compose.images.yml",
+        "removeBuildOptions": "false",
+        "baseResolveDirectory": "",
+        "outputDockerComposeFile": "$(Build.StagingDirectory)/docker-compose.yml",
+        "dockerComposeCommand": "",
+        "dockerHostEndpoint": "",
+        "nopIfNoDockerComposeFile": "false",
+        "requireAdditionalDockerComposeFiles": "false",
+        "cwd": "$(System.DefaultWorkingDirectory)"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Lock services",
+      "timeoutInMinutes": 0,
+      "refName": "DockerCompose4",
+      "task": {
+        "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "containerregistrytype": "Azure Container Registry",
+        "dockerRegistryEndpoint": "",
+        "azureSubscriptionEndpoint": "",
+        "azureContainerRegistry": "",
+        "dockerComposeFile": "docker-compose.yml",
+        "additionalDockerComposeFiles": "",
+        "dockerComposeFileArgs": "DOCKER_BUILD_SOURCE=",
+        "projectName": "$(Build.Repository.Name)",
+        "qualifyImageNames": "true",
+        "action": "Lock services",
+        "additionalImageTags": "",
+        "includeSourceTags": "false",
+        "includeLatestTag": "false",
+        "buildImages": "true",
+        "serviceName": "",
+        "containerName": "",
+        "ports": "",
+        "workDir": "",
+        "entrypoint": "",
+        "containerCommand": "",
+        "detached": "true",
+        "abortOnContainerExit": "true",
+        "imageDigestComposeFile": "$(Build.StagingDirectory)/docker-compose.images.yml",
+        "removeBuildOptions": "false",
+        "baseResolveDirectory": "",
+        "outputDockerComposeFile": "$(Build.StagingDirectory)/docker-compose.yml",
+        "dockerComposeCommand": "",
+        "dockerHostEndpoint": "",
+        "nopIfNoDockerComposeFile": "false",
+        "requireAdditionalDockerComposeFiles": "false",
+        "cwd": "$(System.DefaultWorkingDirectory)"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Copy Files",
+      "timeoutInMinutes": 0,
+      "refName": "CopyFiles5",
+      "task": {
+        "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "SourceFolder": "",
+        "Contents": "**/mhc-aks.yaml\n**/*.dacpac",
+        "TargetFolder": "$(Build.ArtifactStagingDirectory)",
+        "CleanTargetFolder": "false",
+        "OverWrite": "false",
+        "flattenFolders": "false"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Publish Artifact",
+      "timeoutInMinutes": 0,
+      "refName": "PublishBuildArtifacts6",
+      "task": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+        "ArtifactName": "deploy",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+        "Parallel": "false",
+        "ParallelCount": "8"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": true,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "721709",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "$AKS$",
+    "type": "TfsGit",
+    "name": "AKS",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+    "inputs": [
+      {
+        "aliases": [],
+        "options": {},
+        "properties": {},
+        "name": "azureSubscriptionEndpoint",
+        "label": "Azure subscription",
+        "defaultValue": "",
+        "type": "connectedService:AzureRM",
+        "helpMarkDown": "Select an Azure subscription",
+        "visibleRule": "",
+        "groupName": ""
+      },
+      {
+        "aliases": [],
+        "options": {},
+        "properties": {},
+        "name": "azureContainerRegistry",
+        "label": "Azure Container Registry",
+        "defaultValue": "{\"loginServer\":\"acrforaks.azurecr.io\", \"id\" : \"/subscriptions/e7b26610-1586-4dd7-b7b3-32e11f2f19bd/resourceGroups/AKSRG/providers/Microsoft.ContainerRegistry/registries/acrforaks\"}",
+        "type": "pickList",
+        "helpMarkDown": "Select an Azure Container Registry",
+        "visibleRule": "",
+        "groupName": ""
+      }
+    ],
+    "dataSourceBindings": [
+      {
+        "dataSourceName": "AzureRMContainerRegistries",
+        "parameters": {},
+        "endpointId": "$(azureSubscriptionEndpoint)",
+        "target": "azureContainerRegistry",
+        "resultTemplate": "{\"Value\":\"{\\\"loginServer\\\":\\\"{{{properties.loginServer}}}\\\", \\\"id\\\" : \\\"{{{id}}}\\\"}\",\"DisplayValue\":\"{{{name}}}\"}"
+      }
+    ]
+  },
+  "quality": "definition",
+  "drafts": [],
+  "queue": {
+    "name": "Hosted Linux Preview",
+    "pool": {
+      "name": "Hosted Linux Preview",
+      "isHosted": true
+    }
+  }
+}

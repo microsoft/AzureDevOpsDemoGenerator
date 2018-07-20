@@ -1,0 +1,125 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 590,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "MyHealthClinic",
+        "System.TeamProject": "MyHealthClinic",
+        "System.IterationPath": "MyHealthClinic",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-04-26T20:53:27.273Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2017-04-26T21:27:15.473Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Unable to select the page layout for invoice printing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/590"
+    },
+    {
+      "id": 573,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "MyHealthClinic",
+        "System.TeamProject": "MyHealthClinic",
+        "System.IterationPath": "MyHealthClinic",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-04-25T23:46:05.057Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2017-04-26T21:27:20.693Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Unable to filter by dates on the calendar",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/573"
+    },
+    
+    {
+      "id": 601,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "MyHealthClinic",
+        "System.TeamProject": "MyHealthClinic",
+        "System.IterationPath": "MyHealthClinic",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2017-05-03T12:41:43.727Z",
+        "System.CreatedBy": "Srivatsa Marichi <ecanarys1@outlook.com>",
+        "System.ChangedDate": "2017-05-04T09:16:03.427Z",
+        "System.ChangedBy": "Christina Kelly <ckelly109@outlook.com>",
+        "System.Title": "Copyrights information on the home Page is not latest",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/$projectId$%2F$RepositoryId$%2F$Copyright Information is updated to latest$",
+          "attributes": {
+            "authorizedDate": "2017-05-03T12:43:37.88Z",
+            "id": "224766",
+            "resourceCreatedDate": "2017-05-03T12:43:37.88Z",
+            "resourceModifiedDate": "2017-05-03T12:43:37.88Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/$projectId$%2f$RepositoryId$%2f188fa9bce50fb83dcca5cff6f97eb30ffb19301e",
+          "attributes": {
+            "authorizedDate": "2017-05-04T09:13:33.277Z",
+            "id": "225119",
+            "resourceCreatedDate": "2017-05-04T09:13:33.277Z",
+            "resourceModifiedDate": "2017-05-04T09:13:33.277Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/601"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,0 +1,248 @@
+{
+  "name": "Xamarin.UWP",
+  "lastRelease": null,
+  "path": "\\",
+  "variables": {},
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Test in HockeyApp",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployStep": {
+     
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "53bb2e90-4b6e-11e5-89d9-2903d3f04d3f",
+              "version": "1.*",
+              "name": "Deploy $(System.DefaultWorkingDirectory)/Xamarin.UWP/drop/BikeSharing.Clients.Windows_1.0.0.0_ARM.appxbundle to HockeyApp",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "connectedServiceName": "$HockeyApp$",
+                "appID": "",
+                "binaryPath": "$(System.DefaultWorkingDirectory)/Xamarin.UWP/drop/BikeSharing.Clients.Windows_1.0.0.0_ARM.appxbundle",
+                "symbolsPath": "",
+                "nativeLibraryPath": "",
+                "notesPath": "",
+                "notes": "",
+                "publish": "true",
+                "mandatory": "false",
+                "notify": "false",
+                "strategy": "add",
+                "tags": "",
+                "teams": "",
+                "users": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    },
+    {
+      "name": "Publish to store",
+      "rank": 2,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+               "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+            }
+          }
+        ]
+      },
+      "deployStep": {
+     
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "approver": null
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "queueId": "$Default$",
+            "demands": [],
+            "enableAccessToken": false,
+            "clean": false,
+            "cleanOptions": "source"
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "8e70da9d-532d-4416-a07f-5ec10f84339f",
+              "version": "0.*",
+              "name": "Publish ",
+              "enabled": false,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "serviceEndpoint": "",
+                "nameType": "AppId",
+                "appId": "BikeSharing360",
+                "appName": "",
+                "force": "false",
+                "metadataUpdateMethod": "NoUpdate",
+                "metadataPath": "",
+                "updateImages": "false",
+                "packagePath": "",
+                "additionalPackages": "",
+                "skipPolling": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false
+      },
+      "demands": [],
+      "queueId": "$Default$",
+      "conditions": [
+        {
+          "name": "Test in HockeyApp",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$Xamarin.UWP-id$",
+      "type": "Build",
+      "alias": "Xamarin.UWP",
+      "definitionReference": {
+        "definition": {
+          "id": "$Xamarin.UWP-id$",
+          "name": "Xamarin.UWP"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+  {
+"artifactAlias": "Xamarin.UWP",
+"triggerConditions": [],
+"triggerType": "artifactSource"
+}
+],
+  "releaseNameFormat": "Release-$(rev:r)"
+}

@@ -1,0 +1,57 @@
+{
+  
+  "name": "BikeSharing360",
+  "structureType": "iteration",
+  "hasChildren": true,
+  "children": [
+   {
+      
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      
+      "name": "Sprint 4",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      
+      "name": "Sprint 5",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    },
+    {
+      
+      "name": "Sprint 6",
+      "structureType": "iteration",
+      "hasChildren": false,
+      
+      "children": null
+    }
+  ]
+ 
+}

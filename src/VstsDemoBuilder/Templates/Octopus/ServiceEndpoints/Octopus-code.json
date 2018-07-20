@@ -1,0 +1,16 @@
+{
+  "data": {
+			
+		},		
+		"name": "Octopus-code",
+		"type": "git",
+		"url": "https://vstsdemodata.visualstudio.com/_git/Octopus",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+		"isReady": true
+}

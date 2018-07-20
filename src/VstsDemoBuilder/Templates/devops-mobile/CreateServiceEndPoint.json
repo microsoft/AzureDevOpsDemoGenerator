@@ -1,0 +1,31 @@
+{
+  "name": "$ProjectName$ServiceEndpoint",
+  "type": "azurerm",
+  "url": "https://management.core.windows.net/",
+  "subscriptionId": "",
+  "authorization": {
+    "scheme": "ServicePrincipal",
+    "parameters": {
+      "subscriptionId": ""
+    }
+  }
+
+
+  //{
+  //  "data": {
+  //    "subscriptionId": "3a813868-d0c7-4014-bc88-34bd140ceb55",
+  //    "subscriptionName": "Visual Studio Enterprise with MSDN",
+  //    "creationMode": "Automatic"
+  //  },
+  //  "name": "$ProjectName$ServiceEndpoint",
+  //  "type": "azurerm",
+  //  "url": "https://management.core.windows.net/",
+  //  "authorization": {
+  //    "parameters": {
+  //      "serviceprincipalid": "",
+  //      "serviceprincipalkey": "",
+  //      "tenantid": ""
+  //    },
+  //    "scheme": "ServicePrincipal"
+  //  }
+  }

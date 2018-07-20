@@ -1,0 +1,227 @@
+{
+    "build": [
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Restore",
+            "timeoutInMinutes": 0,
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "restore",
+                "publishWebProjects": "true",
+                "projects": "src/PartsUnlimited.Models/PartsUnlimited.Models.csproj\nsrc/PartsUnlimitedWebsite/PartsUnlimitedWebsite.csproj\ntest/PartsUnlimited.UnitTests/PartsUnlimited.UnitTests.csproj",
+                "arguments": "",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build",
+            "timeoutInMinutes": 0,
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "build",
+                "publishWebProjects": "true",
+                "projects": "src/PartsUnlimited.Models/PartsUnlimited.Models.csproj\nsrc/PartsUnlimitedWebsite/PartsUnlimitedWebsite.csproj\ntest/PartsUnlimited.UnitTests/PartsUnlimited.UnitTests.csproj",
+                "arguments": "--configuration $(BuildConfiguration)",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Test",
+            "timeoutInMinutes": 0,
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "test",
+                "publishWebProjects": "true",
+                "projects": "$(Parameters.TestProjects)",
+                "arguments": "--configuration $(BuildConfiguration)",
+                "zipAfterPublish": "true"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish",
+            "timeoutInMinutes": 0,
+            "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "command": "publish",
+                "publishWebProjects": "True",
+                "projects": "",
+                "arguments": "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)",
+                "zipAfterPublish": "True"
+            }
+        },
+        {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact",
+            "timeoutInMinutes": 0,
+            "task": {
+                "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+            },
+            "inputs": {
+                "PathtoPublish": "$(build.artifactstagingdirectory)",
+                "ArtifactName": "drop",
+                "ArtifactType": "Container",
+                "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+                "Parallel": "false",
+                "ParallelCount": "8"
+            }
+        }
+    ],
+    "options": [
+        {
+            "enabled": true,
+            "definition": {
+                "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+            },
+            "inputs": {
+                "branchFilters": "[\"+refs/heads/*\"]",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+            },
+            "inputs": {
+                "workItemType": "753326",
+                "assignToRequestor": "true",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+            },
+            "inputs": {}
+        }
+    ],
+    "triggers": [
+        {
+            "branchFilters": [
+                "+refs/heads/master"
+            ],
+            "pathFilters": [],
+            "batchChanges": false,
+            "maxConcurrentBuildsPerBranch": 1,
+            "pollingInterval": 0,
+            "triggerType": "continuousIntegration"
+        }
+    ],
+    "variables": {
+        "BuildConfiguration": {
+            "value": "release",
+            "allowOverride": true
+        },
+        "BuildPlatform": {
+            "value": "any cpu",
+            "allowOverride": true
+        },
+        "system.debug": {
+            "value": "false",
+            "allowOverride": true
+        }
+    },
+    "retentionRules": [
+        {
+            "branches": [
+                "+refs/heads/*"
+            ],
+            "artifacts": [],
+            "artifactTypesToDelete": [
+                "FilePath",
+                "SymbolStore"
+            ],
+            "daysToKeep": 10,
+            "minimumToKeep": 1,
+            "deleteBuildRecord": true,
+            "deleteTestResults": true
+        }
+    ],
+    "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+    "jobAuthorizationScope": "projectCollection",
+    "jobTimeoutInMinutes": 60,
+    "jobCancelTimeoutInMinutes": 5,
+    "repository": {
+        "properties": {
+            "labelSources": "0",
+            "labelSourcesFormat": "$(build.buildNumber)",
+            "reportBuildStatus": "true",
+            "fetchDepth": "0",
+            "cleanOptions": "0",
+            "gitLfsSupport": "false",
+            "skipSyncSource": "false",
+            "checkoutNestedSubmodules": "false"
+        },
+        "type": "TfsGit",
+        "name": "PartsUnlimited",
+        "defaultBranch": "refs/heads/master",
+        "clean": null,
+        "checkoutSubmodules": false
+    },
+    "processParameters": {
+        "inputs": [
+            {
+                "aliases": [],
+                "options": {},
+                "properties": {},
+                "name": "TestProjects",
+                "label": "Project(s) to test",
+                "defaultValue": "**/*Tests/*.csproj",
+                "type": "multiline",
+                "helpMarkDown": "Relative path of the .csproj file(s) from repo root. Wildcards can be used. For example, **/*.csproj for all .csproj files in all the subfolders.",
+                "visibleRule": "",
+                "groupName": ""
+            }
+        ]
+    },
+    "quality": "definition",
+    "drafts": [],
+    "queue": {
+        "name": "Hosted VS2017",
+        "pool": {
+            "name": "Hosted VS2017",
+            "isHosted": true
+        }
+    },
+    "name": "PartsUnlimited-CI",
+    "path": "\\",
+    "type": "build",
+    "queueStatus": "enabled"
+}

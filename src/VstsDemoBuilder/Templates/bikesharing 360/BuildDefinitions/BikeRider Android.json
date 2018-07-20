@@ -1,0 +1,234 @@
+{
+  
+  "name": "BikeRider Android",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "NuGet restore BikeSharing.Xamarin.sln",
+      "timeoutInMinutes": 0,
+      "refName": "NuGetInstaller_1",
+      "task": {
+        "id": "333b11bd-d341-40d9-afcf-b32d5ce6f23b",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "solution": "BikeSharing.Xamarin.sln",
+        "nugetConfigPath": "",
+        "restoreMode": "restore",
+        "noCache": "false",
+        "nuGetRestoreArgs": "",
+        "verbosity": "Detailed",
+        "nuGetVersion": "4.0.0.2283",
+        "nuGetPath": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.Android Project **/*.Droid.csproj",
+      "timeoutInMinutes": 0,
+      "refName": "XamarinAndroid_2",
+      "task": {
+        "id": "27edd013-36fd-43aa-96a3-7d73e1e35285",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "project": "**/*.Droid.csproj",
+        "target": "",
+        "outputDir": "$(build.binariesdirectory)/$(BuildConfiguration)",
+        "configuration": "$(BuildConfiguration)",
+        "createAppPackage": "true",
+        "clean": "false",
+        "msbuildLocationMethod": "version",
+        "msbuildVersion": "15.0",
+        "msbuildLocation": "",
+        "msbuildArchitecture": "x86",
+        "msbuildArguments": "",
+        "jdkSelection": "JDKVersion",
+        "jdkVersion": "1.8",
+        "jdkUserInputPath": "",
+        "jdkArchitecture": "x86"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download keystore",
+      "timeoutInMinutes": 0,
+      "refName": "ProcessRunner_3",
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "filename": "curl",
+        "arguments": "-k \"$(keystore.url)\" --output $(Build.SourcesDirectory)\\$(keystore.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Signing and aligning APK file(s) $(build.binariesdirectory)/$(BuildConfiguration)/*.apk",
+      "timeoutInMinutes": 0,
+      "refName": "AndroidSigning_4",
+      "task": {
+        "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "files": "$(build.binariesdirectory)/$(BuildConfiguration)/*.apk",
+        "jarsign": "true",
+        "keystoreFile": "$(Build.SourcesDirectory)\\$(keystore.name)",
+        "keystorePass": "$(keystore.pwd)",
+        "keystoreAlias": "$(keystore.alias)",
+        "keyPass": "$(keystore.pwd)",
+        "jarsignerArguments": "-verbose",
+        "zipalign": "true",
+        "zipalignLocation": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Publish Artifact: drop",
+      "timeoutInMinutes": 0,
+      "refName": "PublishBuildArtifacts_5",
+      "task": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "PathtoPublish": "$(build.binariesdirectory)/$(BuildConfiguration)",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "812111",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": { }
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "keystore.url": {
+      "value": "https://bikesharingpublicbuild.blob.core.windows.net/build-android/bikesharing.keystore"
+    },
+    "keystore.name": {
+      "value": "bikesharing.keystore"
+    },
+    "keystore.pwd": {
+      "value": "MyBikes360@1"
+    },
+    "keystore.alias": {
+      "value": "bikesharingKey"
+    },
+    "BuildConfiguration": {
+      "value": "Release"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [ ],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+ 
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "$bikesharing360$",
+    "type": "TfsGit",
+    "name": "BikeSharing360",
+    "url": "",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": { },
+  "quality": "definition",
+  "queue": {
+    
+    "name": "Hosted VS2017",
+    "pool": {
+      "name": "Hosted VS2017",
+      "isHosted": true
+    }
+  }
+ 
+}

@@ -1,0 +1,17 @@
+{
+  "data": {
+
+  },
+  "name": "GooglePlay",
+  "type": "google-play",
+  "url": "https://accounts.google.com/o/oauth2/v2/auth",
+  "authorization": {
+  "scheme": "UsernamePassword",
+    "parameters": {
+     "username": "nagaraj.bhairaji@ecanarys.com",
+      "password": "jej2vkt2fxmkclamf3tklrctcw65enoikyslx3qubzxq7wqiunaq"
+    }
+  
+  },
+  "isReady": true
+}

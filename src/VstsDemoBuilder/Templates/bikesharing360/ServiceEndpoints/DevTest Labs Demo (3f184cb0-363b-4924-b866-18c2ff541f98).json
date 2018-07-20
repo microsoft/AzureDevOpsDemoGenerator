@@ -1,0 +1,18 @@
+{
+  "data": {
+    "subscriptionId": "SubscriptionId",
+    "subscriptionName": "Visual Studio Enterprise",
+    "creationMode": "Automatic"
+  },
+  "name": "DevTest Labs Demo (3f184cb0-363b-4924-b866-18c2ff541f98)",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "serviceprincipalid": "ServiceprincipalId",
+      "tenantid": "tenantid"
+    },
+    "scheme": "ServicePrincipal"
+  },
+  "isReady": true
+}

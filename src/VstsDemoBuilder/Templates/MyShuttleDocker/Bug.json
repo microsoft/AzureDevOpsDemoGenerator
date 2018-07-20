@@ -1,0 +1,138 @@
+{
+  "count": 4,
+  "value": [
+    {
+      "id": 1073,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleDocker",
+        "System.TeamProject": "MyShuttleDocker",
+        "System.IterationPath": "MyShuttleDocker",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-01-18T23:32:37.36Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2018-01-18T23:32:37.36Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "There is a lag in the refresh of the map on the driver client application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "There is a lag in the refresh of the map on the driver client application",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Driver; shuttle",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1073"
+    },
+    {
+      "id": 1074,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleDocker",
+        "System.TeamProject": "MyShuttleDocker",
+        "System.IterationPath": "MyShuttleDocker",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-01-18T23:32:37.643Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2018-01-18T23:32:37.643Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "FireFox crashes when Admin profile screen is opened",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "FireFox crashes when Admin profile screen is opened",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1018",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1074"
+    },
+    {
+      "id": 1075,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleDocker",
+        "System.TeamProject": "MyShuttleDocker",
+        "System.IterationPath": "MyShuttleDocker",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-01-18T23:32:37.813Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2018-01-18T23:32:37.813Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "mail notification must include links to view on web portal",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "mail notification must include links to view on web portal",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1075"
+    },
+    {
+      "id": 1076,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "MyShuttleDocker",
+        "System.TeamProject": "MyShuttleDocker",
+        "System.IterationPath": "MyShuttleDocker",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-01-18T23:32:38.003Z",
+        "System.CreatedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.ChangedDate": "2018-01-18T23:32:38.003Z",
+        "System.ChangedBy": "Sachin Raj <sachin77@outlook.com>",
+        "System.Title": "Fare History Filter Date option needs to be fixed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Fare History Filter Date option needs to be fixed",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Admin; Fares",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/_apis/wit/workItems/1076"
+    }
+  ]
+}

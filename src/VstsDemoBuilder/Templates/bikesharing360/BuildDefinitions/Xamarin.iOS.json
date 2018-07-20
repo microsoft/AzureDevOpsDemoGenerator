@@ -1,0 +1,256 @@
+{
+  "name": "Xamarin.iOS",
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download p12",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+         "filename": "curl",
+        "arguments": "-k \"$(p12.url)\" --output $(Build.SourcesDirectory)/$(p12.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Download provisioning profile",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "filename": "curl",
+        "arguments": "-k \"$(provisioningProfile.url)\" --output $(Build.SourcesDirectory)/$(provisioningProfile.name)",
+        "workingFolder": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build Xamarin.iOS solution BikeSharing360_MobileApps/BikeSharing.Xamarin-iOS.sln",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "0f077e3a-af59-496d-81bc-ad971b7464e0",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+  "solution": "BikeSharing360_MobileApps/BikeSharing.Xamarin-iOS.sln",
+        "configuration": "$(BuildConfiguration)",
+        "packageApp": "true",
+        "forSimulator": "false",
+        "runNugetRestore": "true",
+        "args": "/p:IpaPackageDir=$(Build.SourcesDirectory)/BikeSharing360_MobileApps/src/BikeSharing.Clients.iOS/bin/iPhone/$(BuildConfiguration)/ipa",
+        "cwd": "",
+        "mdtoolLocation": "",
+        "signMethod": "file",
+        "iosSigningIdentity": "",
+        "unlockDefaultKeychain": "false",
+        "defaultKeychainPassword": "",
+        "provProfileUuid": "",
+        "p12": "$(Build.SourcesDirectory)/$(p12.name)",
+        "p12pwd": "$(p12.password)",
+        "provProfile": "$(Build.SourcesDirectory)/$(provisioningProfile.name)",
+        "removeProfile": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Test in Xamarin Test Cloud",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "049918cb-1488-48eb-85e8-c318eccaaa74",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+      "app": "$(Build.SourcesDirectory)/BikeSharing360_MobileApps/src/BikeSharing.Clients.iOS/bin/iPhone/$(BuildConfiguration)/ipa/*.ipa",
+        "dsym": "BikeSharing360_MobileApps/src/BikeSharing.Clients.iOS/bin/iPhone/$(BuildConfiguration)/*.dSYM",
+        "teamApiKey": "",
+        "user": "",
+        "devices": "",
+        "series": "master",
+        "testDir": "$(Build.SourcesDirectory)/BikeSharing360_MobileApps/BikeSharing.Xamarin.UITests/bin/$(BuildConfiguration)",
+        "parallelization": "none",
+        "locale": "en_US",
+        "userDefinedLocale": "",
+        "testCloudLocation": "**/packages/**/tools/test-cloud.exe",
+        "optionalArgs": "",
+        "publishNUnitResults": "true"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Copy Files to: $(Build.ArtifactStagingDirectory)",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+         "SourceFolder": "$(Build.SourcesDirectory)/BikeSharing360_MobileApps/src/BikeSharing.Clients.iOS/bin/iPhone/$(BuildConfiguration)",
+        "Contents": "**/*.ipa",
+        "TargetFolder": "$(Build.ArtifactStagingDirectory)",
+        "CleanTargetFolder": "true",
+        "OverWrite": "false",
+        "flattenFolders": "false"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Publish Artifact: drop",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+          "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"  }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "parallel": false,
+        "continueOnError": true,
+        "workItemType": null,
+        "assignToRequestor": false,
+        "additionalFields": "{}",
+        "multipliers": "[]"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "parallel": false,
+        "continueOnError": false,
+        "workItemType": "35102",
+        "assignToRequestor": true,
+        "additionalFields": "{}",
+        "multipliers": null
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {
+        "parallel": false,
+        "continueOnError": false,
+        "workItemType": null,
+        "assignToRequestor": false,
+        "additionalFields": "{}",
+        "multipliers": null
+      }
+    }
+  ],
+  "triggers": [
+  {
+"branchFilters": [
+  "+refs/heads/master"
+],
+"pathFilters": [],
+"batchChanges": true,
+"maxConcurrentBuildsPerBranch": 1,
+"triggerType": "continuousIntegration"
+}
+],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "BuildConfiguration": {
+      "value": "Release",
+      "allowOverride": true
+    },
+    "p12.url": {
+"value": ""
+},
+"provisioningProfile.url": {
+"value": ""
+},
+"p12.name": {
+"value": "bikesharingdtl.p12"
+},
+"provisioningProfile.name": {
+"value": "bikesharingdtl.mobileprovision"
+},
+"p12.password": {
+"value": ""
+}
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 600,
+  "repository": {
+    "properties": {
+      "labelSources": "0",
+      "reportBuildStatus": "true"
+    },
+    "id": "$bikesharing360$",
+    "type": "TfsGit",
+    "name": "bikesharing360",
+    "url": "",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "defaultBranch": null,
+  "queue": {
+    "pool": {
+      "name": "macBuilder"
+    },
+    "name": "macBuilder"
+  }
+}
