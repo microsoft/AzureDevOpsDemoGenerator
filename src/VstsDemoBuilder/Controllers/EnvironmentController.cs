@@ -2509,7 +2509,7 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult SendEmail(Email model)
         {
             Email objEmail = new Email();
-            string subject = "VSTS Demogenerator error detail";
+            string subject = "Azure DevOps Demo Generator error detail";
 
             var bodyContent = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/EmailTemplates/ErrorDetail.html"));
 
