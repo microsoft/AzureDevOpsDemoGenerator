@@ -15,17 +15,9 @@ using Newtonsoft.Json.Linq;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
-    public class Projects
+    public class Projects : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Projects(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Projects(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Check for the existance of project
@@ -111,7 +103,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return "-1";
                 }
             }
@@ -143,7 +135,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return Guid.Empty.ToString();
                 }
             }
@@ -175,7 +167,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return string.Empty;
                 }
             }

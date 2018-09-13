@@ -9,17 +9,9 @@ using VstsRestAPI.Viewmodel.Wiki;
 
 namespace VstsRestAPI.Wiki
 {
-    public class ManageWiki
+    public class ManageWiki : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public ManageWiki(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;
-        }
+        public ManageWiki(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create wiki
@@ -55,7 +47,7 @@ namespace VstsRestAPI.Wiki
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.lastFailureMessage = error;
+                        this.LastFailureMessage = error;
                     }
                 }
             }
@@ -98,7 +90,7 @@ namespace VstsRestAPI.Wiki
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.lastFailureMessage = error;
+                        this.LastFailureMessage = error;
                         return false;
                     }
                 }

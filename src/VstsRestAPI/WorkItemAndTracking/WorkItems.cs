@@ -10,18 +10,9 @@ using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public class WorkItems
+    public class WorkItems :ApiServiceBase
     {
-
-        public string LastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public WorkItems(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public WorkItems(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create Work items bypassing all rules

@@ -9,17 +9,9 @@ using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
-    public class Account
+    public class Account : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Account(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Account(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Account members

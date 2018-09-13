@@ -14,12 +14,9 @@ using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public class ImportWorkItems
+    public class ImportWorkItems : ApiServiceBase
     {
         public string boardRowFieldName;
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
         List<WIMapData> WIData = new List<WIMapData>();
         List<string> listAssignToUsers = new List<string>();
         string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related" };
@@ -28,13 +25,11 @@ namespace VstsRestAPI.WorkItemAndTracking
         string projectId = string.Empty;
         Dictionary<string, string> pullRequests = new Dictionary<string, string>();
 
-
-        public ImportWorkItems(IConfiguration configuration, string rowFieldName)
+        public ImportWorkItems(IConfiguration configuration, string rowFieldName) : base(configuration)
         {
             boardRowFieldName = rowFieldName;
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
         }
+
         /// <summary>
         /// Import Work items form the files
         /// </summary>
@@ -272,7 +267,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
 
                 return response.IsSuccessStatusCode;

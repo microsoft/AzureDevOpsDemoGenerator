@@ -11,18 +11,10 @@ using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public partial class BoardColumn
+    public partial class BoardColumn : ApiServiceBase
     {
         public string rowFieldName;
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public BoardColumn(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public BoardColumn(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Update kanban board colums styles
@@ -83,7 +75,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -119,7 +111,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new GetBoardColumnResponse.ColumnResponse();
                 }
             }

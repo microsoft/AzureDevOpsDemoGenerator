@@ -8,17 +8,9 @@ using System.Threading.Tasks;
 
 namespace VstsRestAPI.DeliveryPlans
 {
-    public class Plans
+    public class Plans : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Plans(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Plans(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create Delivery plans
@@ -50,7 +42,7 @@ namespace VstsRestAPI.DeliveryPlans
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.lastFailureMessage = error;
+                        this.LastFailureMessage = error;
                         return false;
                     }
                 }

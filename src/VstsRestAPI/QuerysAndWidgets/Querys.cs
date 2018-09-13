@@ -11,17 +11,9 @@ using VstsRestAPI.Viewmodel.QuerysAndWidgets;
 
 namespace VstsRestAPI.QuerysAndWidgets
 {
-    public class Querys
+    public class Querys : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Querys(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Querys(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Dashboard by ID
@@ -49,7 +41,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return dashBoardId;
                 }
             }
@@ -82,7 +74,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return dashBoardeTag;
                 }
             }
@@ -118,7 +110,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new QueryResponse();
 
                 }
@@ -184,7 +176,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -283,7 +275,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return string.Empty;
                 }
             }

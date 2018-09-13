@@ -12,17 +12,10 @@ using VstsRestAPI.Viewmodel.Build;
 
 namespace VstsRestAPI.Build
 {
-    public class BuildDefinition
+    public class BuildDefinition : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public BuildDefinition(IConfiguration configuration) : base(configuration) { }
 
-        public BuildDefinition(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Create Build Definition
         /// </summary>
@@ -64,7 +57,7 @@ namespace VstsRestAPI.Build
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new string[] { string.Empty, string.Empty };
                 }
             }
@@ -101,7 +94,7 @@ namespace VstsRestAPI.Build
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return -1;
                 }
             }

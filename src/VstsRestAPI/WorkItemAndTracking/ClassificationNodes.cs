@@ -10,17 +10,10 @@ using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public partial class ClassificationNodes
+    public partial class ClassificationNodes : ApiServiceBase
     {
-        public string LastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
 
-        public ClassificationNodes(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Get Iteration
         /// </summary>

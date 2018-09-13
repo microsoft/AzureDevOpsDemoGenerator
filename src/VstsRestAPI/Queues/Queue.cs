@@ -10,17 +10,10 @@ using VstsRestAPI.Viewmodel.Queue;
 
 namespace VstsRestAPI.Queues
 {
-    public class Queue
+    public class Queue : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public Queue(IConfiguration configuration) : base(configuration) { }
 
-        public Queue(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Get Agent queue
         /// </summary>
@@ -54,7 +47,7 @@ namespace VstsRestAPI.Queues
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;                    
+                    this.LastFailureMessage = error;                    
                 }
             }
 
@@ -89,7 +82,7 @@ namespace VstsRestAPI.Queues
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
 

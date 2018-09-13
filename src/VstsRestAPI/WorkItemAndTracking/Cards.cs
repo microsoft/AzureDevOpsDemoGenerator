@@ -10,17 +10,10 @@ using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public class Cards
+    public class Cards : ApiServiceBase
     {
-        public string LastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public Cards(IConfiguration configuration) : base(configuration) { }
 
-        public Cards(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Update Card fields
         /// </summary>

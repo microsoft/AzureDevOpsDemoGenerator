@@ -13,17 +13,9 @@ using Newtonsoft.Json;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
-    public class Team
+    public class Team : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Team(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Team(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create teams
@@ -57,7 +49,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
             return viewModel;
@@ -88,7 +80,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new TeamMemberResponse.TeamMembers();
                 }
             }
@@ -131,7 +123,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return string.Empty;
                 }
             }
@@ -166,7 +158,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -234,7 +226,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -302,7 +294,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -333,7 +325,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new TeamResponse();
                 }
             }

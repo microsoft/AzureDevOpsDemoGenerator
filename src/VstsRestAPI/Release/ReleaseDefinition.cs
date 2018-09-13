@@ -11,17 +11,9 @@ using VstsRestAPI.Viewmodel.ReleaseDefinition;
 
 namespace VstsRestAPI.Release
 {
-    public class ReleaseDefinition
+    public class ReleaseDefinition : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public ReleaseDefinition(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public ReleaseDefinition(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create Release Definition
@@ -56,7 +48,7 @@ namespace VstsRestAPI.Release
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return releaseDef;
                 }
             }
@@ -84,7 +76,7 @@ namespace VstsRestAPI.Release
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }

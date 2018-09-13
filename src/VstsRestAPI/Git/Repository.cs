@@ -12,17 +12,9 @@ using VstsRestAPI.Viewmodel.Repository;
 
 namespace VstsRestAPI.Git
 {
-    public class Repository
+    public class Repository : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Repository(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Repository(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Source Code from Git Hub
@@ -53,7 +45,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
             return false;
@@ -85,7 +77,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
 
@@ -123,7 +115,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
             return repo;
@@ -153,7 +145,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
 
@@ -201,7 +193,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
             return repository;
@@ -266,7 +258,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return pullRequest;
                 }
             }
@@ -304,7 +296,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return string.Empty;
                 }
             }
@@ -341,7 +333,7 @@ namespace VstsRestAPI.Git
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
         }

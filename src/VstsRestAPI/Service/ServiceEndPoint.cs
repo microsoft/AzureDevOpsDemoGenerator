@@ -10,17 +10,10 @@ using VstsRestAPI.Viewmodel.Service;
 
 namespace VstsRestAPI.Service
 {
-    public class ServiceEndPoint
+    public class ServiceEndPoint : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public ServiceEndPoint(IConfiguration configuration) : base(configuration) { }
 
-        public ServiceEndPoint(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Create service endpoints
         /// </summary>
@@ -51,7 +44,7 @@ namespace VstsRestAPI.Service
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
 
