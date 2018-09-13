@@ -23,13 +23,8 @@ namespace VstsRestAPI.Queues
             Dictionary<string, int> dicQueues = new Dictionary<string, int>();
             QueueModel viewModel = new QueueModel();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(_configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber + "-preview.1").Result;
 
                 if (response.IsSuccessStatusCode)
@@ -61,13 +56,8 @@ namespace VstsRestAPI.Queues
                 name = name
             };
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 

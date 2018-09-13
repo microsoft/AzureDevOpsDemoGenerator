@@ -25,16 +25,12 @@ namespace VstsRestAPI.WorkItemAndTracking
             if (System.IO.File.Exists(json))
             {
                 json = System.IO.File.ReadAllText(json);
-                using (var client = new HttpClient())
+                using (var client = GetHttpClient())
                 {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                     var patchValue = new StringContent(json, Encoding.UTF8, "application/json"); 
                     var method = new HttpMethod("PUT");
 
-                    var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/rows?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
+                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/rows?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {

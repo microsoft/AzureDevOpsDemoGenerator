@@ -23,13 +23,8 @@ namespace VstsRestAPI.WorkItemAndTracking
         {
             GetNodesResponse.Nodes viewModel = new GetNodesResponse.Nodes();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=1.0", projectName)).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -60,18 +55,14 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string  
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + string.Format("/{0}/_apis/wit/classificationNodes/iterations?api-version=1.0", projectName)) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations?api-version=1.0", projectName)) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -105,16 +96,12 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=1.0", projectName, targetIteration)) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=1.0", projectName, targetIteration)) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -192,18 +179,14 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string          
                 var patchValue = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("PATCH");
 
                 // send the request
-                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/wit/classificationNodes/iterations/" + path + "?api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                var request = new HttpRequestMessage(method, project + "/_apis/wit/classificationNodes/iterations/" + path + "?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -246,18 +229,14 @@ namespace VstsRestAPI.WorkItemAndTracking
                         name = IterationToUpdate[key]
                     };
 
-                    using (var client = new HttpClient())
+                    using (var client = GetHttpClient())
                     {
-                        client.DefaultRequestHeaders.Accept.Clear();
-                        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                         // serialize the fields array into a json string          
                         var patchValue = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                         var method = new HttpMethod("PATCH");
 
                         // send the request
-                        var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/_apis/wit/classificationNodes/Iterations/" + key + "?api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                        var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/Iterations/" + key + "?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                         var response = client.SendAsync(request).Result;
 
                         if (response.IsSuccessStatusCode)

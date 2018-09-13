@@ -22,13 +22,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         public AccountMembers.Account GetAccountMembers(string accountName, string AccessToken)
         {
             AccountMembers.Account viewModel = new AccountMembers.Account();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(string.Format("https://{0}.vsaex.visualstudio.com/", accountName));
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
-
                 // connect to the REST endpoint            
                 //HttpResponseMessage response = client.GetAsync("/_apis/memberentitlements?api-version=4.1-preview.1&top=100&skip=0").Result;
                 HttpResponseMessage response = client.GetAsync("/_apis/userentitlements?api-version=4.1-preview").Result;

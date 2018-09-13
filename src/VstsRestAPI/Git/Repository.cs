@@ -25,16 +25,12 @@ namespace VstsRestAPI.Git
         /// <returns></returns>
         public bool getSourceCodeFromGitHub(string json, string Project, string RepositoryID)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + Project + "/_apis/git/repositories/" + RepositoryID + "/importRequests?api-version=" + _configuration.VersionNumber + "-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + RepositoryID + "/importRequests?api-version=" + _configuration.VersionNumber + "-preview") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -59,13 +55,8 @@ namespace VstsRestAPI.Git
         public string GetRepositoryToDelete(string Project)
         {
             GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(Project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -93,13 +84,8 @@ namespace VstsRestAPI.Git
         {
             string[] repo = new string[2];
             GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(RepoName + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -128,13 +114,8 @@ namespace VstsRestAPI.Git
         public GetAllRepositoriesResponse.Repositories GetAllRepositories()
         {
             GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync("/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -169,16 +150,12 @@ namespace VstsRestAPI.Git
             objJson.project.id = projectId;
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(objJson);
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories?api-version=1.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "/_apis/git/repositories?api-version=1.0") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -206,14 +183,10 @@ namespace VstsRestAPI.Git
         /// <returns></returns>
         public bool DeleteRepository(string repositoryId)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var method = new HttpMethod("DELETE");
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories/" + repositoryId + "?api-version=2.0");
+                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositoryId + "?api-version=2.0");
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -233,16 +206,12 @@ namespace VstsRestAPI.Git
         {
             string[] pullRequest = new string[2];
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -273,16 +242,12 @@ namespace VstsRestAPI.Git
         /// <returns></returns>
         public string CreateCommentThread(string repositorId, string pullRequestId, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads?api-version=3.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads?api-version=3.0") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -312,16 +277,12 @@ namespace VstsRestAPI.Git
         /// <param name="json"></param>
         public void AddCommentToThread(string repositorId, string pullRequestId, string threadId, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads/" + threadId + "/comments?api-version=3.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads/" + threadId + "/comments?api-version=3.0") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

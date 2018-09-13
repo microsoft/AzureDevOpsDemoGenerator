@@ -49,16 +49,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
             }
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var newbatchRequest = new StringContent(JsonConvert.SerializeObject(batchRequests), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
+
                 // send the request
-                var request = new HttpRequestMessage(method, _configuration.UriString + "_apis/wit/$batch?api-version=" + _configuration.VersionNumber) { Content = newbatchRequest };
+                var request = new HttpRequestMessage(method, "_apis/wit/$batch?api-version=" + _configuration.VersionNumber) { Content = newbatchRequest };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -217,19 +214,15 @@ namespace VstsRestAPI.WorkItemAndTracking
                         "Order By [State] Asc"
             };
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var postValue = new StringContent(JsonConvert.SerializeObject(wiql), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
 
                 // set the httpmethod to Patch
                 var method = new HttpMethod("POST");
 
                 // send the request               
-                var request = new HttpRequestMessage(method, _configuration.UriString + "_apis/wit/wiql?api-version=" + _configuration.VersionNumber) { Content = postValue };
+                var request = new HttpRequestMessage(method, "_apis/wit/wiql?api-version=" + _configuration.VersionNumber) { Content = postValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

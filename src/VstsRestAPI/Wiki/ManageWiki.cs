@@ -24,14 +24,8 @@ namespace VstsRestAPI.Wiki
             try
             {
                 ProjectwikiResponse.Projectwiki projectwiki = new ProjectwikiResponse.Projectwiki();
-                using (var client = new HttpClient())
+                using (var client = GetHttpClient())
                 {
-
-                    client.BaseAddress = new Uri(_configuration.UriString);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _credentials);
-
                     var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
                     var method = new HttpMethod("POST");
@@ -70,12 +64,8 @@ namespace VstsRestAPI.Wiki
         {
             try
             {
-                using (var client = new HttpClient())
+                using (var client = GetHttpClient())
                 {
-                    client.BaseAddress = new Uri(_configuration.UriString);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _credentials);
                     var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
                     var method = new HttpMethod("PUT");

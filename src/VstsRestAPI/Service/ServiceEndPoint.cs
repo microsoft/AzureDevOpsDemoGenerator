@@ -24,16 +24,12 @@ namespace VstsRestAPI.Service
         {
             ServiceEndpointModel viewModel = new ServiceEndpointModel();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/distributedtask/serviceendpoints?api-version=" + _configuration.VersionNumber + "-preview.1") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/distributedtask/serviceendpoints?api-version=" + _configuration.VersionNumber + "-preview.1") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

@@ -27,18 +27,14 @@ namespace VstsRestAPI.ProjectsAndTeams
         {
             GetTeamResponse.Team viewModel = new GetTeamResponse.Team();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string  
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/projects/" + project + "/teams?api-version=4.1") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "/_apis/projects/" + project + "/teams?api-version=4.1") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -64,12 +60,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         public TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamaName)
         {
             TeamMemberResponse.TeamMembers viewModel = new TeamMemberResponse.TeamMembers();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
                 HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "/members/?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -98,18 +90,14 @@ namespace VstsRestAPI.ProjectsAndTeams
 
             object node = new { name = areaName };
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string  
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/_apis/wit/classificationNodes/areas?api-version=1.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/areas?api-version=1.0") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -138,17 +126,13 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public bool SetAreaForTeams(string projectName, string teamName, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/teamsettings/teamfieldvalues?api-version=2.0-preview.1") { Content = patchValue };
+                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/teamfieldvalues?api-version=2.0-preview.1") { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -173,13 +157,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         {
             TeamSettingResponse.TeamSetting viewModel = new TeamSettingResponse.TeamSetting();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings?api-version=3.0-preview").Result;
 
                 if (response.IsSuccessStatusCode)
@@ -206,17 +185,13 @@ namespace VstsRestAPI.ProjectsAndTeams
         {
             object objJSON = new { Backlogiteration = IterationId };
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var postValue = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
 
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/teamsettings?api-version=3.0-preview") { Content = postValue };
+                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings?api-version=3.0-preview") { Content = postValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -241,13 +216,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         {
             TeamIterationsResponse.Iterations viewModel = new TeamIterationsResponse.Iterations();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=v2.0-preview").Result;
 
                 if (response.IsSuccessStatusCode)
@@ -274,16 +244,12 @@ namespace VstsRestAPI.ProjectsAndTeams
         {
             object objJSON = new { id = IterationId };
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=v2.0-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=v2.0-preview") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -309,12 +275,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         public TeamResponse GetTeamByName(string projectName, string teamaName)
         {
             TeamResponse viewModel = new TeamResponse();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
                 HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "?api-version=2.2").Result;
                 if (response.IsSuccessStatusCode)
                 {

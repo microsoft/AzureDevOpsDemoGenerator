@@ -25,13 +25,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public bool IsAccountHasProjects()
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // connect to the REST endpoint            
                 HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
                 // check to see if we have a succesfull respond
@@ -47,13 +42,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         public ListofProjectsResponse.Projects ListOfProjects()
         {
             ListofProjectsResponse.Projects viewModel = new ListofProjectsResponse.Projects();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // connect to the REST endpoint            
                 HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=2.2").Result;
                 // check to see if we have a succesfull respond
@@ -77,13 +67,8 @@ namespace VstsRestAPI.ProjectsAndTeams
             //string json = System.IO.File.ReadAllText(Server.MapPath("~") + @"\JSON\CreateTeamProject.json");
             //json = json.Replace("$ProjectName$", txtProjectName.Text).Replace("$ProjectDescription$", txtProjectName.Text).Replace("$TemplateId$", ddlProcesses.SelectedValue);
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
@@ -116,13 +101,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetProjectIdByName(string projectName)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "?includeCapabilities=false&api-version=" + _configuration.VersionNumber).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -148,13 +128,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetProjectStateByName(string project)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync("_apis/projects/" + project + "?includeCapabilities=true&api-version=" + _configuration.VersionNumber).Result;
 
                 if (response.IsSuccessStatusCode)

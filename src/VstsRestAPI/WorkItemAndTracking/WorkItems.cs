@@ -25,16 +25,12 @@ namespace VstsRestAPI.WorkItemAndTracking
             WorkItemPatch.Field[] fields = new WorkItemPatch.Field[3];
 
             
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string          
                 var patchValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json-patch+json");
+
                 // set the httpmethod to Patch
                 var method = new HttpMethod("PATCH");
 
@@ -70,12 +66,8 @@ namespace VstsRestAPI.WorkItemAndTracking
             WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
             //string json = System.IO.File.ReadAllText(Server.MapPath("~") + @"\JSON\WorkItemLink.json");
             
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string          
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json-patch+json");
@@ -83,7 +75,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var method = new HttpMethod("PATCH");
 
                 // send the request
-                var request = new HttpRequestMessage(method, _configuration.UriString + "TestProject" + "/_apis/wit/workitems/$User Story?api-version=2.2") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "TestProject" + "/_apis/wit/workitems/$User Story?api-version=2.2") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

@@ -56,16 +56,12 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
             }
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/columns?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
+                var request = new HttpRequestMessage(method, "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/columns?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -90,7 +86,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         public GetBoardColumnResponse.ColumnResponse getBoardColumns(string projectName, string teamName)
         {
             GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -122,16 +118,12 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         public void RefreshBoard(string projectName)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 // var method = new HttpMethod("GET");
 
-                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/_backlogs/board/Backlog%20items").Result;
+                var response = client.GetAsync("/" + projectName + "/_backlogs/board/Backlog%20items").Result;
                 // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
