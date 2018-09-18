@@ -11,17 +11,9 @@ using VstsRestAPI.Viewmodel.QuerysAndWidgets;
 
 namespace VstsRestAPI.QuerysAndWidgets
 {
-    public class Querys
+    public class Querys : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Querys(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Querys(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Dashboard by ID
@@ -31,13 +23,8 @@ namespace VstsRestAPI.QuerysAndWidgets
         public string GetDashBoardId(string projectName)
         {
             string dashBoardId = string.Empty;
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/dashboard/dashboards?api-version=4.1-preview.2").Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -49,7 +36,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return dashBoardId;
                 }
             }
@@ -64,13 +51,8 @@ namespace VstsRestAPI.QuerysAndWidgets
         public string GetDashboardeTag(string dashboardId, string projectName)
         {
             string dashBoardeTag = string.Empty;
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/Dashboard/Dashboards/" + dashboardId + "?api-version=" + _configuration.VersionNumber + "-preview.2").Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -82,7 +64,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return dashBoardeTag;
                 }
             }
@@ -96,13 +78,8 @@ namespace VstsRestAPI.QuerysAndWidgets
         /// <returns></returns>
         public QueryResponse CreateQuery(string project, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
@@ -118,7 +95,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new QueryResponse();
 
                 }
@@ -134,16 +111,12 @@ namespace VstsRestAPI.QuerysAndWidgets
         /// <returns></returns>
         public bool UpdateQuery(string query, string project, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + string.Format("{0}/_apis/wit/queries/{1}?api-version=2.2", project, query)) { Content = patchValue };
+                var request = new HttpRequestMessage(method, string.Format("{0}/_apis/wit/queries/{1}?api-version=2.2", project, query)) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -163,13 +136,8 @@ namespace VstsRestAPI.QuerysAndWidgets
         /// <returns></returns>
         public bool CreateWidget(string project, string dashBoardId, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
@@ -184,7 +152,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -201,13 +169,8 @@ namespace VstsRestAPI.QuerysAndWidgets
         public QueryResponse GetQueryByPathAndName(string project, string queryName, string path)
         {
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(project + "/_apis/wit/queries/" + path + "/" + queryName + "?api-version=2.2").Result;
 
                 if (response.IsSuccessStatusCode)
@@ -228,14 +191,10 @@ namespace VstsRestAPI.QuerysAndWidgets
         /// <returns></returns>
         public bool DeleteDefaultDashboard(string project, string dashBoardId)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var method = new HttpMethod("DELETE");
-                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber + "-preview.2");
+                var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber + "-preview.2");
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -259,13 +218,8 @@ namespace VstsRestAPI.QuerysAndWidgets
         /// <returns></returns>
         public string CreateNewDashBoard(string project, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
@@ -283,7 +237,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return string.Empty;
                 }
             }
