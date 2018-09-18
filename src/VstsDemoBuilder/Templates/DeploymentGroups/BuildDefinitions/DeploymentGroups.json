@@ -295,7 +295,7 @@
                 "defaultValue": "**\\*.sln",
                 "required": true,
                 "type": "filePath",
-                "helpMarkDown": "The path to the Visual Studio solution file or NuGet packages.config",
+                "helpMarkDown": "The path to the Azure DevOps solution file or NuGet packages.config",
                 "visibleRule": "",
                 "groupName": ""
             },

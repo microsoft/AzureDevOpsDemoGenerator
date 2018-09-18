@@ -186,7 +186,7 @@
             "isNameConfigurable": true
         },
         {
-            "name": "Visual Studio Shortcuts",
+            "name": "Azure DevOps Shortcuts",
             "position": {
                 "row": 3,
                 "column": 6

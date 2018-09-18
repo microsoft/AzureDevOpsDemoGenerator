@@ -22,8 +22,10 @@ namespace VstsRestAPI
 
         protected HttpClient GetHttpClient()
         {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri(_configuration.UriString);
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(_configuration.UriString)
+            };
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);

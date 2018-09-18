@@ -2092,7 +2092,7 @@ namespace VstsDemoBuilder.Controllers
                             var BuildDefId = model.BuildDefinitions.FirstOrDefault();
                             dashBoardTemplate = dashBoardTemplate.Replace("$BuildDefId$", BuildDefId.Id)
                                   .Replace("$projectId$", model.Environment.ProjectId)
-                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
+                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id ?? string.Empty)
                                   .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
                                   .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
                                   .Replace("$Test Plan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
@@ -2115,7 +2115,7 @@ namespace VstsDemoBuilder.Controllers
                             .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
                             .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
                             .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
+                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id ?? string.Empty)
                             .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
                             .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
                             .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
@@ -2132,10 +2132,10 @@ namespace VstsDemoBuilder.Controllers
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
 
-                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
+                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id ?? string.Empty)
                                          .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
                                          .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
-                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"] != null ? model.Environment.RepositoryIdList["MyShuttleCalc"] : string.Empty)
+                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"] ?? string.Empty)
                                          .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
                                          .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
                                          .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
@@ -2224,9 +2224,9 @@ namespace VstsDemoBuilder.Controllers
 
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate
-                            .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : "")
-                            .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : "")
-                            .Replace("$ProductPlanning$", ProductPlanning.id != null ? ProductPlanning.id : "")
+                            .Replace("$projectId$", model.Environment.ProjectId ?? "")
+                            .Replace("$DefaultTeamId$", defaultTeam.id ?? "")
+                            .Replace("$ProductPlanning$", ProductPlanning.id ?? "")
                             .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
                             .Replace("$CompletedTasks$", queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault().id : string.Empty)
                             .Replace("$PublicWebBuild$", PublicWebBuild != null ? PublicWebBuild.Id : "")
@@ -2263,19 +2263,19 @@ namespace VstsDemoBuilder.Controllers
                             QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WotkInProgress.id)
-                                .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
-                                .Replace("$PublicWebBuild$", PublicWebBuild.Id != null ? PublicWebBuild.Id : string.Empty)
-                                .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : string.Empty).Replace("$AllItems$", AllItems.id != null ? AllItems.id : string.Empty)
-                                .Replace("$BacklogBoardWI$", BacklogBoardWI.id != null ? BacklogBoardWI.id : string.Empty)
-                                .Replace("$StateofTestCases$", StateofTestCase.id != null ? StateofTestCase.id : string.Empty)
-                                .Replace("$Feedback$", Feedback.id != null ? Feedback.id : string.Empty)
+                                .Replace("$projectId$", model.Environment.ProjectId ?? string.Empty)
+                                .Replace("$PublicWebBuild$", PublicWebBuild.Id ?? string.Empty)
+                                .Replace("$DefaultTeamId$", defaultTeam.id ?? string.Empty).Replace("$AllItems$", AllItems.id ?? string.Empty)
+                                .Replace("$BacklogBoardWI$", BacklogBoardWI.id ?? string.Empty)
+                                .Replace("$StateofTestCases$", StateofTestCase.id ?? string.Empty)
+                                .Replace("$Feedback$", Feedback.id ?? string.Empty)
                                 .Replace("$RepoPublicWeb$", model.Environment.RepositoryIdList["PublicWeb"])
-                                .Replace("$MobileTeamWork$", MobileTeamWork.id != null ? MobileTeamWork.id : string.Empty).Replace("$WebTeamWork$", WebTeamWork.id != null ? WebTeamWork.id : string.Empty)
-                                .Replace("$Bugs$", Bugs.id != null ? Bugs.id : string.Empty)
+                                .Replace("$MobileTeamWork$", MobileTeamWork.id ?? string.Empty).Replace("$WebTeamWork$", newValue: WebTeamWork.id ?? string.Empty)
+                                .Replace("$Bugs$", newValue: Bugs.id ?? string.Empty)
                                 .Replace("$sprint2$", sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault().id : string.Empty)
                                 .Replace("$sprint3$", sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault().id : string.Empty)
                                 .Replace("$startDate$", startdate)
-                                .Replace("$BugswithoutRepro$", BugsWithoutReproSteps.id != null ? BugsWithoutReproSteps.id : string.Empty).Replace("$UnfinishedWork$", UnfinishedWork.id != null ? UnfinishedWork.id : string.Empty)
+                                .Replace("$BugswithoutRepro$", newValue: BugsWithoutReproSteps.id ?? string.Empty).Replace("$UnfinishedWork$", UnfinishedWork.id ?? string.Empty)
                                 .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
                                 .Replace("$PublicWebSiteCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault().Id : string.Empty);
 
