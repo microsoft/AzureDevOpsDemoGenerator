@@ -9,17 +9,9 @@ using System.Threading.Tasks;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public class SwimLanes
+    public class SwimLanes : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public SwimLanes(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public SwimLanes(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Update swim lanes
@@ -33,16 +25,12 @@ namespace VstsRestAPI.WorkItemAndTracking
             if (System.IO.File.Exists(json))
             {
                 json = System.IO.File.ReadAllText(json);
-                using (var client = new HttpClient())
+                using (var client = GetHttpClient())
                 {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                     var patchValue = new StringContent(json, Encoding.UTF8, "application/json"); 
                     var method = new HttpMethod("PUT");
 
-                    var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/rows?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
+                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/rows?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -52,7 +40,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.lastFailureMessage = error;
+                        this.LastFailureMessage = error;
                         return false;
                     }
                 }

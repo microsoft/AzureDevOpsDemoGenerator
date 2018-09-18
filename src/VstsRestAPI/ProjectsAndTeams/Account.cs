@@ -9,17 +9,9 @@ using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
-    public class Account
+    public class Account : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public Account(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public Account(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Account members
@@ -30,13 +22,8 @@ namespace VstsRestAPI.ProjectsAndTeams
         public AccountMembers.Account GetAccountMembers(string accountName, string AccessToken)
         {
             AccountMembers.Account viewModel = new AccountMembers.Account();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(string.Format("https://{0}.vsaex.visualstudio.com/", accountName));
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
-
                 // connect to the REST endpoint            
                 //HttpResponseMessage response = client.GetAsync("/_apis/memberentitlements?api-version=4.1-preview.1&top=100&skip=0").Result;
                 HttpResponseMessage response = client.GetAsync("/_apis/userentitlements?api-version=4.1-preview").Result;
