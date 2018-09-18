@@ -315,7 +315,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }

@@ -119,9 +119,9 @@
             -->
             <div class="col-md-6 order-1 order-md-2">
                 <div class="form-group row">
-                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Account Name :</label>
+                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Organization Name :</label>
                     <div class="col-lg-8">
-                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Account", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName" })
+                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "OrganizationName" })
                         <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
                         </div>
                         <div style="color:red">
