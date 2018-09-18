@@ -10,17 +10,10 @@ using VstsRestAPI.Viewmodel.Queue;
 
 namespace VstsRestAPI.Queues
 {
-    public class Queue
+    public class Queue : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public Queue(IConfiguration configuration) : base(configuration) { }
 
-        public Queue(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Get Agent queue
         /// </summary>
@@ -30,13 +23,8 @@ namespace VstsRestAPI.Queues
             Dictionary<string, int> dicQueues = new Dictionary<string, int>();
             QueueModel viewModel = new QueueModel();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(_configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber + "-preview.1").Result;
 
                 if (response.IsSuccessStatusCode)
@@ -54,7 +42,7 @@ namespace VstsRestAPI.Queues
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;                    
+                    this.LastFailureMessage = error;                    
                 }
             }
 
@@ -68,13 +56,8 @@ namespace VstsRestAPI.Queues
                 name = name
             };
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
@@ -89,7 +72,7 @@ namespace VstsRestAPI.Queues
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
 

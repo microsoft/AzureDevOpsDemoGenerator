@@ -14,12 +14,9 @@ using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public class ImportWorkItems
+    public class ImportWorkItems : ApiServiceBase
     {
         public string boardRowFieldName;
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
         List<WIMapData> WIData = new List<WIMapData>();
         List<string> listAssignToUsers = new List<string>();
         string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related" };
@@ -28,13 +25,11 @@ namespace VstsRestAPI.WorkItemAndTracking
         string projectId = string.Empty;
         Dictionary<string, string> pullRequests = new Dictionary<string, string>();
 
-
-        public ImportWorkItems(IConfiguration configuration, string rowFieldName)
+        public ImportWorkItems(IConfiguration configuration, string rowFieldName) : base(configuration)
         {
             boardRowFieldName = rowFieldName;
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
         }
+
         /// <summary>
         /// Import Work items form the files
         /// </summary>
@@ -247,19 +242,15 @@ namespace VstsRestAPI.WorkItemAndTracking
                 lstFields.Add(new WorkItemPatch.Field() { op = "add", path = key, value = dicWIFields[key] });
             }
             WorkItemPatch.Field[] fields = lstFields.ToArray();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var postValue = new StringContent(JsonConvert.SerializeObject(wI), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var postValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
                 // set the httpmethod to Patch
                 var method = new HttpMethod("PATCH");
 
                 // send the request               
-                var request = new HttpRequestMessage(method, _configuration.UriString + ProjectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=2.2") { Content = postValue };
+                var request = new HttpRequestMessage(method, ProjectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=2.2") { Content = postValue };
                 var response = client.SendAsync(request).Result;
 
 
@@ -272,7 +263,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
 
                 return response.IsSuccessStatusCode;
@@ -415,17 +406,13 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateLink(string workItemType, string WItoUpdate, object[] patchWorkItem)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 // serialize the fields array into a json string          
                 var patchValue = new StringContent(JsonConvert.SerializeObject(patchWorkItem), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
 
                 var method = new HttpMethod("PATCH");
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/wit/workitems/" + WItoUpdate + "?bypassRules=true&api-version=2.2") { Content = patchValue };
+                var request = new HttpRequestMessage(method, "/_apis/wit/workitems/" + WItoUpdate + "?bypassRules=true&api-version=2.2") { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -455,13 +442,8 @@ namespace VstsRestAPI.WorkItemAndTracking
                     //read file bytes and put into byte array        
                     Byte[] bytes = File.ReadAllBytes(filePath);
 
-                    using (var client = new HttpClient())
+                    using (var client = GetHttpClient())
                     {
-                        client.BaseAddress = new Uri(_configuration.UriString);
-                        client.DefaultRequestHeaders.Accept.Clear();
-                        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/octet-stream"));
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                         ByteArrayContent content = new ByteArrayContent(bytes);
                         content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
                         HttpResponseMessage uploadResponse = client.PostAsync("_apis/wit/attachments?fileName=" + _fileName + "&api-version=2.2", content).Result;

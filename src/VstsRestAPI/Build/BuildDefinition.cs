@@ -12,17 +12,10 @@ using VstsRestAPI.Viewmodel.Build;
 
 namespace VstsRestAPI.Build
 {
-    public class BuildDefinition
+    public class BuildDefinition : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public BuildDefinition(IConfiguration configuration) : base(configuration) { }
 
-        public BuildDefinition(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Create Build Definition
         /// </summary>
@@ -33,22 +26,18 @@ namespace VstsRestAPI.Build
         public string[] CreateBuildDefinition(string json, string project, string SelectedTemplate)
         {
             BuildGetListofBuildDefinitionsResponse.Definitions viewModel = new BuildGetListofBuildDefinitionsResponse.Definitions();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
                 string uri = "";
                 if (SelectedTemplate == "SmartHotel360")
                 {
-                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=4.1-preview";
+                    uri = project + "/_apis/build/definitions?api-version=4.1-preview";
                 }
                 else
                 {
-                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
+                    uri = project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
                 }
                 var request = new HttpRequestMessage(method, uri) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
@@ -64,7 +53,7 @@ namespace VstsRestAPI.Build
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new string[] { string.Empty, string.Empty };
                 }
             }
@@ -79,16 +68,12 @@ namespace VstsRestAPI.Build
         /// <returns></returns>
         public int QueueBuild(string json, string project)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/build/builds?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/build/builds?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -101,7 +86,7 @@ namespace VstsRestAPI.Build
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return -1;
                 }
             }

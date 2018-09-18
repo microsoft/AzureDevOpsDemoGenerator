@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiServiceBase.cs" />
     <Compile Include="Build\BuildDefinition.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="DeliveryPlans\Plans.cs" />
