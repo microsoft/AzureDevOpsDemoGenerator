@@ -679,7 +679,7 @@ function getStatus() {
                                 success: function (data) {
                                     var accountName = data;
                                     $("#projCreateMsg").hide();
-                                    var link = "https://" + accountName + ".visualstudio.com/" + projectNameForLink;
+                                    var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
 
                                     if (selectedTemplate == "SmartHotel360") {
                                         $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
