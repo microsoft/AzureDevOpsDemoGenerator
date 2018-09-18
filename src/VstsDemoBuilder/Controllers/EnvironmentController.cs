@@ -628,7 +628,6 @@ namespace VstsDemoBuilder.Controllers
 
                     errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
                     errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
-                    errorMessages = errorMessages + Environment.NewLine + "WebsiteURL: " + websiteUrl;
 
                     string LogWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (LogWIT == "true")
@@ -675,7 +674,7 @@ namespace VstsDemoBuilder.Controllers
                 string PATBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
                 string URL = System.Configuration.ConfigurationManager.AppSettings["URL"];
                 string ProjectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                string ReportName = string.Format("{0}", "Analytics-DemoGenerator");
+                string ReportName = string.Format("{0}", "AzureDevOps_Analytics-DemoGenerator");
                 IssueWI objIssue = new IssueWI();
                 objIssue.CreateReportWI(PATBase64, "1.0", URL, websiteUrl, ReportName, "", templateUsed, ProjectId, model.Region);
             }
@@ -1003,15 +1002,27 @@ namespace VstsDemoBuilder.Controllers
             //Create query and widgets
             List<string> lstDashboardQueriesPath = new List<string>();
             string dashboardQueriesPath = templatesFolder + model.SelectedTemplate + @"\Dashboard\Queries";
+            string dashboardPath = templatesFolder + model.SelectedTemplate + @"\Dashboard";
             if (System.IO.Directory.Exists(dashboardQueriesPath))
             {
                 System.IO.Directory.GetFiles(dashboardQueriesPath).ToList().ForEach(i => lstDashboardQueriesPath.Add(i));
             }
-            //AddMessage(model.id, "Creating queries,widgets and charts...");
-            CreateQueryAndWidgets(templatesFolder, model, lstDashboardQueriesPath, _defaultConfiguration, _configuration2_0, _configuration3_0, _releaseDefinitionConfiguration);
-            AddMessage(model.id, "Queries, Widgets and Charts created");
-            Thread.Sleep(2000);
-
+            if (Directory.Exists(dashboardPath))
+            {
+                CreateQueryAndWidgets(templatesFolder, model, lstDashboardQueriesPath, _defaultConfiguration, _configuration2_0, _configuration3_0, _releaseDefinitionConfiguration);
+                AddMessage(model.id, "Queries, Widgets and Charts created");
+                Thread.Sleep(2000);
+            }
+            //string _checkIsPrivate = System.IO.File.ReadAllText(Server.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
+            //if (_checkIsPrivate != "")
+            //{
+            //    ProjectSetting setting = new ProjectSetting();
+            //    setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
+            //    if (setting.IsPrivate == "true")
+            //    {
+            //        Directory.Delete(Path.Combine(templatesFolder, model.SelectedTemplate), true);
+            //    }
+            //}
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
         }
@@ -1967,7 +1978,6 @@ namespace VstsDemoBuilder.Controllers
                     if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                     {
                         AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
-
                     }                    
                 }
                 //Create DashBoards
