@@ -339,5 +339,33 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
         }
 
+        public bool UpdateTeamsAreas(string projectName, string json)
+        {
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
+
+                var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var method = new HttpMethod("PATCH");
+
+                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + projectName + "%20Team/_apis/work/teamsettings/teamfieldvalues?api-version=2.0-preview.1") { Content = patchValue };
+                var response = client.SendAsync(request).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    var errorMessage = response.Content.ReadAsStringAsync();
+                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                    this.lastFailureMessage = error;
+                    return false;
+                }
+            }
+        }
+
     }
 }

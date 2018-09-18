@@ -1,0 +1,34 @@
+{
+  "rules": {
+    "fill": [
+      {
+        "name": "Mobile Team",
+        "isEnabled": "True",
+        "filter": "[System.AreaPath] = 'SmartHotel360\\Mobile'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#ffebd7"
+        }
+      },
+      {
+        "name": "Privacy",
+        "isEnabled": "True",
+        "filter": "[System.Tags] contains 'Privacy'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#d7e3fd"
+        }
+      },
+      {
+        "name": "High Priority",
+        "isEnabled": "True",
+        "filter": "[Microsoft.VSTS.Common.Priority] = '1'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#dffdff"
+        }
+      }
+    ],
+    "tagStyle": null
+  }
+}

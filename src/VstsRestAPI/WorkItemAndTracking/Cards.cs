@@ -80,7 +80,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         public void ApplyRules(string projectName, string Json)
         {
             //CardStylesPatch.ListofCardStyles cardStyles1 = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(File.ReadAllText(""));
-
+            Json = Json.Replace("$ProjectName$", projectName);
             CardStylesPatch.ListofCardStyles cardStyles = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(Json);
             if (cardStyles.rules.Message == null)
             {

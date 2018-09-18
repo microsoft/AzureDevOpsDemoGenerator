@@ -15,7 +15,9 @@
     "MyShuttle",
     "AKS",
     "MyShuttleDocker",
-    "AzureFunctions"
+    "AzureFunctions",
+    "BlogWebSite",
+    "ReleaseGates"
   ],
   "privateTemplateKeys": [
     {
@@ -27,11 +29,11 @@
       "value": "bikesharing360"
     },
     {
-      "key": "",
+      "key": "77380",
       "value": "MyHealthClinic"
     },
     {
-      "key": "",
+      "key": "77379",
       "value": "PartsUnlimited"
     },
     {
@@ -110,6 +112,10 @@
     {
       "key": "77377",
       "value": "ContosoShuttle"
+    },
+    {
+      "key": "77378",
+      "value": "BlogWebSite"
     }
   ]
 }

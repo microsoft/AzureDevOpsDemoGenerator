@@ -58,7 +58,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     col.id = newColID;
 
                 }
-                else if (col.name == "Done")
+                else if (col.name == "Done" || col.name == "Deploy")
                 {
                     col.id = doneColID;
                 }
