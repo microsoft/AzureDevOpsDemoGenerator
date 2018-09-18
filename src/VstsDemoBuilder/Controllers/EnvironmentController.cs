@@ -729,7 +729,7 @@ namespace VstsDemoBuilder.Controllers
 
             if (projectId == "-1")
             {
-                AddMessage(model.id, proj.lastFailureMessage);
+                AddMessage(model.id, proj.LastFailureMessage);
                 Thread.Sleep(1000);
                 return new string[] { model.id, accountName };
             }
@@ -1068,9 +1068,9 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
-                    if (!(string.IsNullOrEmpty(objTeam.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
                     }
                     else
                     {
@@ -1110,9 +1110,9 @@ namespace VstsDemoBuilder.Controllers
                 Team objTeam = new Team(_configuration);
                 viewModel = objTeam.GetTeamMembers(projectName, teamName);
 
-                if (!(string.IsNullOrEmpty(objTeam.lastFailureMessage)))
+                if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
                 {
-                    AddMessage(id.ErrorId(), "Error while getting team members: " + objTeam.lastFailureMessage + Environment.NewLine);
+                    AddMessage(id.ErrorId(), "Error while getting team members: " + objTeam.LastFailureMessage + Environment.NewLine);
                 }
                 return viewModel;
             }
@@ -1148,9 +1148,9 @@ namespace VstsDemoBuilder.Controllers
                     jsonWorkItems = jsonWorkItems.Replace("$version$", _defaultConfiguration.VersionNumber);
                     bool workItemResult = objWorkItem.CreateWorkItemUsingByPassRules(model.ProjectName, jsonWorkItems);
 
-                    if (!(string.IsNullOrEmpty(objWorkItem.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objWorkItem.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating workitems: " + objWorkItem.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating workitems: " + objWorkItem.LastFailureMessage + Environment.NewLine);
                     }
                 }
 
@@ -1187,9 +1187,9 @@ namespace VstsDemoBuilder.Controllers
                         model.Environment.BoardRowFieldName = objBoard.rowFieldName;
                         res = true;
                     }
-                    else if (!(string.IsNullOrEmpty(objBoard.lastFailureMessage)))
+                    else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1320,9 +1320,9 @@ namespace VstsDemoBuilder.Controllers
                     jsonProjectSettings = model.ReadJsonFile(jsonProjectSettings);
 
                     bool workItemUpdateResult = objWorkItem.UpdateWorkItemUsingByPassRules(jsonWorkItemsUpdate, model.ProjectName, currentUser, jsonProjectSettings);
-                    if (!(string.IsNullOrEmpty(objWorkItem.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objWorkItem.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while updating work items: " + objWorkItem.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while updating work items: " + objWorkItem.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1521,9 +1521,9 @@ namespace VstsDemoBuilder.Controllers
                     Repository objRepositorySourceCode = new Repository(importSourceConfiguration);
                     bool copySourceCode = objRepositorySourceCode.getSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
 
-                    if (!(string.IsNullOrEmpty(objRepository.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.LastFailureMessage + Environment.NewLine);
                     }
 
                 }
@@ -1652,9 +1652,9 @@ namespace VstsDemoBuilder.Controllers
                         }
                         var endpoint = objService.CreateServiceEndPoint(jsonCreateService, model.ProjectName);
 
-                        if (!(string.IsNullOrEmpty(objService.lastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objService.LastFailureMessage)))
                         {
-                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.lastFailureMessage + Environment.NewLine);
+                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.LastFailureMessage + Environment.NewLine);
                         }
                         else
                         {
@@ -1778,9 +1778,9 @@ namespace VstsDemoBuilder.Controllers
 
                         string[] buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
 
-                        if (!(string.IsNullOrEmpty(objBuild.lastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objBuild.LastFailureMessage)))
                         {
-                            AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.lastFailureMessage + Environment.NewLine);
+                            AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.LastFailureMessage + Environment.NewLine);
                         }
                         buildDef.Id = buildResult[0];
                         buildDef.Name = buildResult[1];
@@ -1817,9 +1817,9 @@ namespace VstsDemoBuilder.Controllers
                     BuildDefinition objBuild = new BuildDefinition(_configuration);
                     int queueId = objBuild.QueueBuild(jsonQueueABuild, model.ProjectName);
 
-                    if (!string.IsNullOrEmpty(objBuild.lastFailureMessage))
+                    if (!string.IsNullOrEmpty(objBuild.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.lastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1887,9 +1887,9 @@ namespace VstsDemoBuilder.Controllers
                         relDef.Id = releaseDef[0];
                         relDef.Name = releaseDef[1];
 
-                        if (!(string.IsNullOrEmpty(objRelease.lastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
                         {
-                            AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.lastFailureMessage + Environment.NewLine);
+                            AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.LastFailureMessage + Environment.NewLine);
                         }
                     }
                     flag = true;
@@ -1917,9 +1917,9 @@ namespace VstsDemoBuilder.Controllers
                     ReleaseDefinition objRelease = new ReleaseDefinition(_configuration);
                     objRelease.CreateRelease(jsonCreateRelease, model.ProjectName);
 
-                    if (!string.IsNullOrEmpty(objRelease.lastFailureMessage))
+                    if (!string.IsNullOrEmpty(objRelease.LastFailureMessage))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating release: " + objRelease.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating release: " + objRelease.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1951,9 +1951,9 @@ namespace VstsDemoBuilder.Controllers
                 string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
                 Thread.Sleep(2000);
 
-                if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
+                if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                 {
-                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.lastFailureMessage + Environment.NewLine);
+                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
                 }
 
                 foreach (string query in lstQueries)
@@ -1964,9 +1964,9 @@ namespace VstsDemoBuilder.Controllers
                     QueryResponse response = objQuery.CreateQuery(model.ProjectName, json);
                     queryResults.Add(response);
 
-                    if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
+                    if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.lastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
 
                     }                    
                 }

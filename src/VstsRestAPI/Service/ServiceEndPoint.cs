@@ -10,17 +10,10 @@ using VstsRestAPI.Viewmodel.Service;
 
 namespace VstsRestAPI.Service
 {
-    public class ServiceEndPoint
+    public class ServiceEndPoint : ApiServiceBase
     {
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
+        public ServiceEndPoint(IConfiguration configuration) : base(configuration) { }
 
-        public ServiceEndPoint(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
         /// <summary>
         /// Create service endpoints
         /// </summary>
@@ -31,16 +24,12 @@ namespace VstsRestAPI.Service
         {
             ServiceEndpointModel viewModel = new ServiceEndpointModel();
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/distributedtask/serviceendpoints?api-version=" + _configuration.VersionNumber + "-preview.1") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/distributedtask/serviceendpoints?api-version=" + _configuration.VersionNumber + "-preview.1") { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -51,7 +40,7 @@ namespace VstsRestAPI.Service
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                 }
             }
 

@@ -11,18 +11,10 @@ using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public partial class BoardColumn
+    public partial class BoardColumn : ApiServiceBase
     {
         public string rowFieldName;
-        public string lastFailureMessage;
-        readonly IConfiguration _configuration;
-        readonly string _credentials;
-
-        public BoardColumn(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
-        }
+        public BoardColumn(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Update kanban board colums styles
@@ -64,16 +56,12 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
             }
 
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/columns?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
+                var request = new HttpRequestMessage(method, "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/columns?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -83,7 +71,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return false;
                 }
             }
@@ -98,7 +86,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         public GetBoardColumnResponse.ColumnResponse getBoardColumns(string projectName, string teamName)
         {
             GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -119,7 +107,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.lastFailureMessage = error;
+                    this.LastFailureMessage = error;
                     return new GetBoardColumnResponse.ColumnResponse();
                 }
             }
@@ -130,16 +118,12 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         public void RefreshBoard(string projectName)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 // var method = new HttpMethod("GET");
 
-                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/_backlogs/board/Backlog%20items").Result;
+                var response = client.GetAsync("/" + projectName + "/_backlogs/board/Backlog%20items").Result;
                 // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {

@@ -17,20 +17,17 @@
         },
         {
           "Name": "MyHealthClinic",
-          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using Azure DevOps. "
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using Azure Pipelines. "
         },
         {
           "Name": "PartsUnlimited",
-          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using Azure DevOps. "
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using Azure Pipelines. "
         },
         {
           "Name": "MyShuttle",
           "Description": "<p><i >java</i>&nbsp;&nbsp;<i >azureappservice</i></p>This template contains code for a sample Java application which will be provisioned along with build & release definitions configured and customized to deploy the application to an Azure App service. <p> For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/jenkins/' target='_blank'> Deploying a Java application on Tomcat</a></p> "
-        },
-        {
-          "Name": "ReleaseGates",
-          "Description": "<p>Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. You can use gates to ensure that the release meets a wide range of criteria without requiring user intervention. </p> "
         }
+
       ]
     },
     {
@@ -38,15 +35,15 @@
       "Template": [
         {
           "Name": "Docker",
-          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >azureappservice</i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >containers</i></p>This template provisions team project which contains code of Docker based ASP.NET Core web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure DevOps.  <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a></p>"
+          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >azureappservice</i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >containers</i></p>This template provisions team project which contains code of Docker based ASP.NET Core web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure Pipelines.  <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a></p>"
         },
         {
           "Name": "AKS",
-          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >kubernetes </i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >azurecontainerservice</i></p>Provision the team project using this template to build a Docker based ASP.NET Core web application and deploy to a Kubernetes cluster running in Azure Container Service (AKS) by using Azure DevOps. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a></p>"
+          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >kubernetes </i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >azurecontainerservice</i></p>Provision the team project using this template to build a Docker based ASP.NET Core web application and deploy to a Kubernetes cluster running in Azure Container Service (AKS) using Azure DevOps. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a></p>"
         },
         {
           "Name": "GitHub",
-          "Description": "<p><i >aspdotnet  </i>&nbsp;&nbsp;<i >azureappservice </i></p>Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure DevOps</a></p>"
+          "Description": "<p><i >aspdotnet  </i>&nbsp;&nbsp;<i >azureappservice </i></p>Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure Pipelines</a></p>"
         },
         {
           "Name": "Octopus",
@@ -62,11 +59,11 @@
         },
         {
           "Name": "MyShuttleDocker",
-          "Description": "<p><iv>java</i>&nbsp;&nbsp;<i >dockercontainerservice</i></p>This template provisions team project which contains code of Docker based Java web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure DevOps. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/eclipse/' target='_blank'> Developing with Eclipse for Java projects</a></p>"
+          "Description": "<p><iv>java</i>&nbsp;&nbsp;<i >dockercontainerservice</i></p>This template provisions team project which contains code of Docker based Java web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure Pipelines. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/eclipse/' target='_blank'> Developing with Eclipse for Java projects</a></p>"
         },
         {
           "Name": "DeploymentGroups",
-          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >deploymentgroup</i></p>Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using Azure DevOps Deployment Groups. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p>"
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >deploymentgroup</i></p>Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using Deployment Groups. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p>"
         },
         {
           "Name": "SonarQube",
@@ -83,7 +80,7 @@
         },
         {
           "Name": "Python",
-          "Description": "<p><i >python</i>&nbsp;&nbsp;<i >azureappservice</i></p>This template contains code for a sample Python application which will be provisioned along with build and release definitions to deploy to an Azure App service using Django framework.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/python/' target='_blank'>How to deploy a Python application to Azure from Azure DevOps</a></p>"
+          "Description": "<p><i >python</i>&nbsp;&nbsp;<i >azureappservice</i></p>This template contains code for a sample Python application which will be provisioned along with build and release definitions to deploy to an Azure App service using Django framework.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/python/' target='_blank'>How to deploy a Python application to Azure using Azure Pipelines</a></p>"
         },
         {
           "Name": "WhiteSource-Bolt",

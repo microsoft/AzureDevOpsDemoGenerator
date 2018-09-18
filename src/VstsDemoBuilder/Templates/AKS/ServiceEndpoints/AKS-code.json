@@ -1,10 +1,10 @@
 ﻿{
   "data": {
-			
-		},		
-		"name": "AKS-code",
-		"type": "git",
-		"url": "https://vstsdemodata.visualstudio.com/_git/AKS",
+
+  },
+  "name": "AKS-code",
+  "type": "git",
+  "url": "https://vstsdemodata.visualstudio.com/_git/AKS",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
@@ -12,5 +12,5 @@
       "password": "$password$"
     }
   },
-		"isReady": true
+  "isReady": true
 }
