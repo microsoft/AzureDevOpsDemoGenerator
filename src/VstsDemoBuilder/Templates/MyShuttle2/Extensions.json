@@ -1,8 +1,8 @@
 ﻿{
   "Extensions": [
     {
-      "name": "Package Management",
-      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.feed' target='_blank'><b>Package Management</b></a>",
+      "name": "Azure Artifacts",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.feed' target='_blank'><b>Azure Artifacts</b></a>",
       "PublisherId": "ms",
       "ExtensionId": "feed",
       "publisher": "microsoft",
