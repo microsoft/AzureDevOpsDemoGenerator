@@ -1,6 +1,6 @@
 ﻿@model VstsDemoBuilder.Models.Project
 @{
-    ViewBag.Title = "Visual Studio Team Services Demo Generator";
+    ViewBag.Title = "Azure DevOps Demo Generator";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -49,28 +49,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @*<div class="form-group row">
-                        <label for="toEmail" class="col-lg-4 col-form-label" style="font-weight: 400;">Your Email ID :</label>
-                        <div class="col-lg-8">
-                            <input type="email" id="toEmail" class="form-control rmverror" placeholder="Email ID" />
-                            <div class="alert alert-danger d-none" role="alert" id="toEmail_Error">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="toAccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">VSTS Account Name :</label>
-                        <div class="col-lg-8">
-                            <input type="text" id="toAccountName" class="form-control rmverror" placeholder="VSTS Account Name" />
-                            <div class="alert alert-danger d-none" role="alert" id="toAccountName_Error">
-                            </div>
-                        </div>
-                    </div>*@
                     <div id="errorMail" style="text-align:justify;word-wrap: break-word;height: 150px;overflow: auto;">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    @*<button type="button" class="btn btn-primary" id="sendEmail">Send Email</button>*@
                 </div>
             </div>
         </div>
@@ -80,14 +63,14 @@
         <a class="navbar-brand p-0 mr-auto" href="#">
             <img src="~/content/assets/images/VS_logo.png" alt="">
             <span class="navbar-brand-text ml-1">
-                Visual Studio Team Services Demo Generator
+                Azure DevOps Demo Generator
             </span>
         </a>
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
-                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="VSTS Demogenerator">
+                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="Azure DevOps Demogenerator">
                     @if (Session["User"] != null)
                     {
                         <span class="VSTS-username ml-1" style="font-size:16px">@Session["User"].ToString()</span>
@@ -122,9 +105,9 @@
                         </p>
                         <p>
                             <script>function fbs_click() { u = "https://vstsdemogenerator.azurewebsites.net/"; t = +Visual + Studio + Team + Services + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-                            <a href="http://www.facebook.com/sharer.php?u=https://vstsdemogenerator.azurewebsites.net/&t=Visual+Studio+Team+Services+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vstsdemogenerator.azurewebsites.net/&t=Visual+Studio+Team+Services+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://twitter.com/intent/tweet?url=https://vstsdemogenerator.azurewebsites.net/&amp;text=Visual+Studio+Team+Services+Demo+Generator&amp;via=visualstudio&amp;hashtags=vstsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="http://www.facebook.com/sharer.php?u=https://vstsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vstsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://twitter.com/intent/tweet?url=https://vstsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=vstsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
                         </p>
                     </div>
                 </div>
@@ -135,10 +118,13 @@
             -->
             <div class="col-md-6 order-1 order-md-2">
                 <div class="form-group row">
-                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Account Name :</label>
+                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Organization Name :</label>
                     <div class="col-lg-8">
-                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Account", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName" })
+                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "OrganizationName" })
                         <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                        </div>
+                        <div style="color:red">
+                            @ViewBag.AccDDError
                         </div>
                     </div>
                 </div>

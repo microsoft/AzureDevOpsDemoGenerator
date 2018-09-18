@@ -212,7 +212,7 @@
             "properties": {},
             "name": "DockerRepository",
             "label": "Repository",
-            "defaultValue": "",
+            "defaultValue": "web",
             "required": true,
             "type": "string",
             "helpMarkDown": "Name of the repository where the container images are stored.<br/> Note: Fully qualified image name will be of the format: '`<registry or namespace`>/<b>`<repository`></b>:`<tag`>'. For example, 'myregistry.azurecr.io/<b>nginx</b>:latest'.",

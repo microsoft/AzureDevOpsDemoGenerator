@@ -94,6 +94,7 @@
     <Compile Include="Viewmodel\QuerysAndWidgets\QueryResponse.cs" />
     <Compile Include="Viewmodel\Queue\QueueModel.cs" />
     <Compile Include="Viewmodel\Repository\GetAllRepositoriesResponse.cs" />
+    <Compile Include="Viewmodel\Sprint\SprintResponse.cs" />
     <Compile Include="Viewmodel\Wiki\CodewikiResponse.cs" />
     <Compile Include="Viewmodel\Wiki\ProjectwikiResponse.cs" />
     <Compile Include="Viewmodel\WorkItem\BatchRequest.cs" />

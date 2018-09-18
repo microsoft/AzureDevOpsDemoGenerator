@@ -35,6 +35,8 @@ using System.Net.Http.Headers;
 using Microsoft.VisualStudio.Services.Client;
 using VstsRestAPI.Wiki;
 using VstsRestAPI.Viewmodel.Wiki;
+using VstsRestAPI.Viewmodel.Sprint;
+using System.Threading.Tasks;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -225,6 +227,11 @@ namespace VstsDemoBuilder.Controllers
                             model.accountsForDropdown.Sort();
                             model.hasAccount = true;
                         }
+                        else
+                        {
+                            model.accountsForDropdown.Add("Select Account");
+                            ViewBag.AccDDError = "Couldn't load your accounts. Please change the dirctory in profile page of Azure DevOps Organization and try again.";
+                        }
 
                         model.Templates = new List<string>();
                         model.accountUsersForDdl = new List<SelectListItem>();
@@ -294,6 +301,11 @@ namespace VstsDemoBuilder.Controllers
                             }
                             model.accountsForDropdown.Sort();
                             model.hasAccount = true;
+                        }
+                        else
+                        {
+                            model.accountsForDropdown.Add("Select Account");
+                            ViewBag.AccDDError = "Couldn't load your accounts. Please change the dirctory in profile page of Azure DevOps Organization and try again.";
                         }
 
                         model.Templates = new List<string>();
@@ -920,16 +932,20 @@ namespace VstsDemoBuilder.Controllers
                 {
                     if (model.SelectedTemplate == "MyHealthClinic")
                     {
-                        WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList["MyHealthClinic"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi);
+                        WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList["MyHealthClinic"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
+                    }
+                    else if (model.SelectedTemplate == "SmartHotel360V2")
+                    {
+                        WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList["PublicWeb"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
                     else
                     {
-                        WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList[model.SelectedTemplate], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi);
+                        WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList[model.SelectedTemplate], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
                 }
                 else
                 {
-                    WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi);
+                    WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                 }
                 AddMessage(model.id, "Work Items created");
             }
@@ -1059,6 +1075,16 @@ namespace VstsDemoBuilder.Controllers
                     else
                     {
                         AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
+                    }
+                    if (model.SelectedTemplate.ToLower() == "smarthotel360v2")
+                    {
+                        string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
+                        if (System.IO.File.Exists(updateAreaJSON))
+                        {
+                            updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                            updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
+                            bool IsUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                        }
                     }
                 }
             }
@@ -1527,6 +1553,7 @@ namespace VstsDemoBuilder.Controllers
                     string commentFile = Path.GetFileName(pullRequestJsonPath);
                     string repositoryId = string.Empty;
                     if (model.SelectedTemplate == "MyHealthClinic") { repositoryId = model.Environment.RepositoryIdList["MyHealthClinic"]; }
+                    if (model.SelectedTemplate == "SmartHotel360V2") { repositoryId = model.Environment.RepositoryIdList["PublicWeb"]; }
                     else { repositoryId = model.Environment.RepositoryIdList[model.SelectedTemplate]; }
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
@@ -1923,14 +1950,6 @@ namespace VstsDemoBuilder.Controllers
                 //GetDashBoardDetails
                 string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
                 Thread.Sleep(2000);
-                //string eTagString = objWidget.GetDashboardeTag(dashBoardId, model.ProjectName);
-                //Thread.Sleep(2000);
-
-                //int eTag = 0;
-                //if (!string.IsNullOrEmpty(eTagString))
-                //{
-                //    eTag = Convert.ToInt32(eTagString);
-                //}
 
                 if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
                 {
@@ -1949,36 +1968,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.lastFailureMessage + Environment.NewLine);
 
-                    }
-
-
-                    //string chartName = Path.GetFileName(query);
-                    //string jsonChart = string.Format(templatesFolder + @"{0}\Dashboard\Charts\{1}", model.SelectedTemplate, chartName);
-
-                    //if (System.IO.File.Exists(jsonChart))
-                    //{
-                    //    //create chart
-                    //    json = model.ReadJsonFile(jsonChart);
-                    //    json = json.Replace("$name$", response.name).Replace("$QueryId$", response.id).Replace("$QueryName$", response.name).Replace("$eTag$", eTag.ToString());
-                    //    bool chartResponse = objWidget.CreateWidget(model.ProjectName, dashBoardId, json);
-                    //    if (chartResponse) { eTag = eTag + 1; }
-
-                    //}
-                    //string widgetName = Path.GetFileName(query);
-                    //string jsonWidget = string.Format(templatesFolder + @"{0}\Dashboard\Widgets\{1}", model.SelectedTemplate, widgetName);
-
-                    //if (System.IO.File.Exists(jsonWidget))
-                    //{
-                    //    //create widget
-                    //    json = model.ReadJsonFile(jsonWidget);
-                    //    json = json.Replace("$name$", response.name).Replace("$QueryId$", response.id).Replace("$QueryName$", response.name).Replace("$eTag$", eTag.ToString());
-                    //    bool widgetResponse = objWidget.CreateWidget(model.ProjectName, dashBoardId, json);
-                    //    if (widgetResponse) { eTag = eTag + 1; }
-                    //}
-                    //if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
-                    //{
-                    //    AddMessage(model.id.ErrorId(), "Error while creating widget and charts: " + objWidget.lastFailureMessage + Environment.NewLine);
-                    //}
+                    }                    
                 }
                 //Create DashBoards
                 string dashBoardTemplate = string.Format(templatesFolder + @"{0}\Dashboard\Dashboard.json", model.SelectedTemplate);
@@ -1999,30 +1989,31 @@ namespace VstsDemoBuilder.Controllers
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
 
-                            string xamarin_DroidBuild = model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault().Id;
-                            string xamarin_IOSBuild = model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id;
-                            string RidesApiBuild = model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault().Id;
+                            string xamarin_DroidBuild = model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault().Id : string.Empty;
+                            string xamarin_IOSBuild = model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id : string.Empty;
+                            string RidesApiBuild = model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault().Id : string.Empty;
 
                             ReleaseDefinition objrelease = new ReleaseDefinition(releaseConfig);
                             int[] AndroidEnvironmentIds = objrelease.GetEnvironmentIdsByName(model.ProjectName, "Xamarin.Android", "Test in HockeyApp", "Publish to store");
-                            string AndroidbuildDefId = model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault().Id;
-                            string AndroidreleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault().Id;
+                            string AndroidbuildDefId = model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault().Id : string.Empty;
+                            string AndroidreleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault().Id : string.Empty;
 
                             int[] IOSEnvironmentIds = objrelease.GetEnvironmentIdsByName(model.ProjectName, "Xamarin.iOS", "Test in HockeyApp", "Publish to store");
-                            string IOSbuildDefId = model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id;
-                            string IOSreleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id;
+                            string IOSbuildDefId = model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id : string.Empty;
+                            string IOSreleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id : string.Empty;
 
-                            string RidesApireleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault().Id;
+                            string RidesApireleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault().Id : string.Empty;
                             QueryResponse OpenUserStories = objQuery.GetQueryByPathAndName(model.ProjectName, "Open User Stories", "Shared%20Queries/Current%20Iteration");
 
-                            dashBoardTemplate = dashBoardTemplate.Replace("$RidesAPIReleaseId$", RidesApireleaseDefId).Replace("$RidesAPIBuildId$", RidesApiBuild)
-                                                                                                                                                                                  .Replace("$repositoryId$", model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Value)
-                                                                                                                                                                                  .Replace("$IOSBuildId$", IOSbuildDefId).Replace("$IOSReleaseId$", IOSreleaseDefId).Replace("$IOSEnv1$", IOSEnvironmentIds[0].ToString()).Replace("$IOSEnv2$", IOSEnvironmentIds[1].ToString())
-                                                                                                                                                                                  .Replace("$Xamarin.iOS$", xamarin_IOSBuild)
-                                                                                                                                                                                  .Replace("$Xamarin.Droid$", xamarin_DroidBuild)
-                                                                                                                                                                                  .Replace("$AndroidBuildId$", AndroidbuildDefId).Replace("$AndroidreleaseDefId$", AndroidreleaseDefId).Replace("$AndroidEnv1$", AndroidEnvironmentIds[0].ToString()).Replace("$AndroidEnv2$", AndroidEnvironmentIds[1].ToString())
-                                                                                                                                                                                  .Replace("$OpenUserStoriesId$", OpenUserStories.id)
-                                                                                                                                                                                  .Replace("$projectId$", model.Environment.ProjectId);
+                            dashBoardTemplate = dashBoardTemplate.Replace("$RidesAPIReleaseId$", RidesApireleaseDefId)
+                            .Replace("$RidesAPIBuildId$", RidesApiBuild)
+                            .Replace("$repositoryId$", model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Value)
+                            .Replace("$IOSBuildId$", IOSbuildDefId).Replace("$IOSReleaseId$", IOSreleaseDefId).Replace("$IOSEnv1$", IOSEnvironmentIds[0].ToString()).Replace("$IOSEnv2$", IOSEnvironmentIds[1].ToString())
+                            .Replace("$Xamarin.iOS$", xamarin_IOSBuild)
+                            .Replace("$Xamarin.Droid$", xamarin_DroidBuild)
+                            .Replace("$AndroidBuildId$", AndroidbuildDefId).Replace("$AndroidreleaseDefId$", AndroidreleaseDefId).Replace("$AndroidEnv1$", AndroidEnvironmentIds[0].ToString()).Replace("$AndroidEnv2$", AndroidEnvironmentIds[1].ToString())
+                            .Replace("$OpenUserStoriesId$", OpenUserStories.id)
+                            .Replace("$projectId$", model.Environment.ProjectId);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
@@ -2039,9 +2030,9 @@ namespace VstsDemoBuilder.Controllers
 
 
                             dashBoardTemplate = dashBoardTemplate.Replace("$Feedback$", FeedBack.id).
-                                         Replace("$AllItems$", queryResults.Where(x => x.name == "All Items").FirstOrDefault().id).
-                                         Replace("$UserStories$", queryResults.Where(x => x.name == "User Stories").FirstOrDefault().id).
-                                         Replace("$TestCase$", queryResults.Where(x => x.name == "Test Case-Readiness").FirstOrDefault().id).
+                                         Replace("$AllItems$", queryResults.Where(x => x.name == "All Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Items").FirstOrDefault().id : string.Empty).
+                                         Replace("$UserStories$", queryResults.Where(x => x.name == "User Stories").FirstOrDefault() != null ? queryResults.Where(x => x.name == "User Stories").FirstOrDefault().id : string.Empty).
+                                         Replace("$TestCase$", queryResults.Where(x => x.name == "Test Case-Readiness").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Case-Readiness").FirstOrDefault().id : string.Empty).
                                          Replace("$teamID$", "").
                                          Replace("$teamName$", model.ProjectName + " Team").
                                          Replace("$projectID$", model.Environment.ProjectId).
@@ -2101,14 +2092,14 @@ namespace VstsDemoBuilder.Controllers
                             var BuildDefId = model.BuildDefinitions.FirstOrDefault();
                             dashBoardTemplate = dashBoardTemplate.Replace("$BuildDefId$", BuildDefId.Id)
                                   .Replace("$projectId$", model.Environment.ProjectId)
-                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id)
-                                  .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id)
-                                  .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id)
-                                  .Replace("$Test Plan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id)
-                                  .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id)
-                                  .Replace("$Feature$", queryResults.Where(x => x.name == "Feature").FirstOrDefault().id)
-                                  .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id)
-                                         .Replace("$RepoMyShuttleDocker$", model.Environment.RepositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().Value);
+                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
+                                  .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
+                                  .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
+                                  .Replace("$Test Plan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
+                                  .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
+                                  .Replace("$Feature$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
+                                  .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
+                                         .Replace("$RepoMyShuttleDocker$", model.Environment.RepositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().ToString() != "" ? model.Environment.RepositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().Value : string.Empty);
 
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2121,14 +2112,14 @@ namespace VstsDemoBuilder.Controllers
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate
-                            .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id)
-                            .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id)
-                            .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id)
-                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id)
-                            .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id)
-                            .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault().id)
-                            .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id)
-                            .Replace("$TestSuite$", queryResults.Where(x => x.name == "Test Suites").FirstOrDefault().id);
+                            .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
+                            .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
+                            .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
+                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
+                            .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
+                            .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
+                            .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
+                            .Replace("$TestSuite$", queryResults.Where(x => x.name == "Test Suites").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Suites").FirstOrDefault().id : string.Empty);
 
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2141,15 +2132,15 @@ namespace VstsDemoBuilder.Controllers
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
 
-                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id)
-                                         .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id)
-                                         .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id)
-                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"])
-                                         .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id)
-                                         .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id)
-                                         .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id)
-                                         .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault().id)
-                                         .Replace("$RepoMyShuttle2$", model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().Value);
+                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
+                                         .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
+                                         .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
+                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"] != null ? model.Environment.RepositoryIdList["MyShuttleCalc"] : string.Empty)
+                                         .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
+                                         .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
+                                         .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
+                                         .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
+                                         .Replace("$RepoMyShuttle2$", model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().ToString() != "" ? model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().Value : string.Empty);
 
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2231,12 +2222,11 @@ namespace VstsDemoBuilder.Controllers
                             Team objTeam = new Team(_defaultConfiguration);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
 
-
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate
-                            .Replace("$projectId$", model.Environment.ProjectId)
-                            .Replace("$DefaultTeamId$", defaultTeam.id)
-                            .Replace("$ProductPlanning$", ProductPlanning.id)
+                            .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : "")
+                            .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : "")
+                            .Replace("$ProductPlanning$", ProductPlanning.id != null ? ProductPlanning.id : "")
                             .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
                             .Replace("$CompletedTasks$", queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault().id : string.Empty)
                             .Replace("$PublicWebBuild$", PublicWebBuild != null ? PublicWebBuild.Id : "")
@@ -2248,17 +2238,64 @@ namespace VstsDemoBuilder.Controllers
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
+                    if (model.SelectedTemplate.ToLower() == "smarthotel360v2")
+                    {
+                        if (isDashboardDeleted)
+                        {
+                            var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "PublicWebSiteCI").FirstOrDefault();
+                            var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault();
+                            string startdate = DateTime.Now.ToString("yyyy-MM-dd");
+                            Team objTeam = new Team(_defaultConfiguration);
+                            TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
+                            ClassificationNodes objnodes = new ClassificationNodes(_defaultConfiguration);
+                            SprintResponse.Sprints sprints = objnodes.GetSprints(model.ProjectName);
+                            QueryResponse AllItems = objQuery.GetQueryByPathAndName(model.ProjectName, "All Items", "Shared%20Queries");
+                            QueryResponse BacklogBoardWI = objQuery.GetQueryByPathAndName(model.ProjectName, "BacklogBoard WI", "Shared%20Queries");
+                            QueryResponse BoardWI = objQuery.GetQueryByPathAndName(model.ProjectName, "Board WI", "Shared%20Queries");
+                            QueryResponse BugsWithoutReproSteps = objQuery.GetQueryByPathAndName(model.ProjectName, "Bugs without Repro Steps", "Shared%20Queries");
+                            QueryResponse Feedback = objQuery.GetQueryByPathAndName(model.ProjectName, "Feedback", "Shared%20Queries");
+                            QueryResponse MobileTeamWork = objQuery.GetQueryByPathAndName(model.ProjectName, "MobileTeam_Work", "Shared%20Queries");
+                            QueryResponse WebTeamWork = objQuery.GetQueryByPathAndName(model.ProjectName, "WebTeam_Work", "Shared%20Queries");
+                            QueryResponse StateofTestCase = objQuery.GetQueryByPathAndName(model.ProjectName, "State of TestCases", "Shared%20Queries");
+                            QueryResponse Bugs = objQuery.GetQueryByPathAndName(model.ProjectName, "Open Bugs", "Shared%20Queries");
 
+                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries");
+                            QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
+                            dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
+                            dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WotkInProgress.id)
+                                .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
+                                .Replace("$PublicWebBuild$", PublicWebBuild.Id != null ? PublicWebBuild.Id : string.Empty)
+                                .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : string.Empty).Replace("$AllItems$", AllItems.id != null ? AllItems.id : string.Empty)
+                                .Replace("$BacklogBoardWI$", BacklogBoardWI.id != null ? BacklogBoardWI.id : string.Empty)
+                                .Replace("$StateofTestCases$", StateofTestCase.id != null ? StateofTestCase.id : string.Empty)
+                                .Replace("$Feedback$", Feedback.id != null ? Feedback.id : string.Empty)
+                                .Replace("$RepoPublicWeb$", model.Environment.RepositoryIdList["PublicWeb"])
+                                .Replace("$MobileTeamWork$", MobileTeamWork.id != null ? MobileTeamWork.id : string.Empty).Replace("$WebTeamWork$", WebTeamWork.id != null ? WebTeamWork.id : string.Empty)
+                                .Replace("$Bugs$", Bugs.id != null ? Bugs.id : string.Empty)
+                                .Replace("$sprint2$", sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault().id : string.Empty)
+                                .Replace("$sprint3$", sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault().id : string.Empty)
+                                .Replace("$startDate$", startdate)
+                                .Replace("$BugswithoutRepro$", BugsWithoutReproSteps.id != null ? BugsWithoutReproSteps.id : string.Empty).Replace("$UnfinishedWork$", UnfinishedWork.id != null ? UnfinishedWork.id : string.Empty)
+                                .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
+                                .Replace("$PublicWebSiteCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault().Id : string.Empty);
+
+                            string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
+                            objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
+
+                        }
+                    }
                 }
                 //Update WorkInProgress ,UnfinishedWork Queries,Test Cases,Blocked Tasks queries.
                 string UpdateQueryString = string.Empty;
 
-                UpdateQueryString = "SELECT [System.Id],[System.Title],[Microsoft.VSTS.Common.BacklogPriority],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork],[Microsoft.VSTS.CMMI.Blocked],[System.WorkItemType] FROM workitemLinks WHERE ([Source].[System.TeamProject] = @project AND [Source].[System.IterationPath] UNDER @currentIteration AND ([Source].[System.WorkItemType] IN GROUP 'Microsoft.RequirementCategory' OR [Source].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' ) AND [Source].[System.State] <> 'Removed' AND [Source].[System.State] <> 'Done') AND ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward')  AND ([Target].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [Target].[System.State] <> 'Done' AND [Target].[System.State] <> 'Removed') ORDER BY [Microsoft.VSTS.Common.BacklogPriority],[Microsoft.VSTS.Scheduling.Effort], [Microsoft.VSTS.Scheduling.RemainingWork],[System.Id] MODE (Recursive)";
+                UpdateQueryString = "SELECT [System.Id],[System.Title],[Microsoft.VSTS.Common.BacklogPriority],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork],[Microsoft.VSTS.CMMI.Blocked],[System.WorkItemType] FROM workitemLinks WHERE ([Source].[System.TeamProject] = @project AND [Source].[System.IterationPath] UNDER '$Project$\\Sprint 2' AND ([Source].[System.WorkItemType] IN GROUP 'Microsoft.RequirementCategory' OR [Source].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' ) AND [Source].[System.State] <> 'Removed' AND [Source].[System.State] <> 'Done') AND ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward')  AND ([Target].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [Target].[System.State] <> 'Done' AND [Target].[System.State] <> 'Removed') ORDER BY [Microsoft.VSTS.Common.BacklogPriority],[Microsoft.VSTS.Scheduling.Effort], [Microsoft.VSTS.Scheduling.RemainingWork],[System.Id] MODE (Recursive)";
                 dynamic queryObject = new System.Dynamic.ExpandoObject();
+                UpdateQueryString = UpdateQueryString.Replace("$Project$", model.Environment.ProjectName);
                 queryObject.wiql = UpdateQueryString;
                 bool isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Unfinished Work", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
 
-                UpdateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER @currentIteration AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [System.State] = 'In Progress' ORDER BY [System.AssignedTo],[Microsoft.VSTS.Common.BacklogPriority],[System.Id]";
+                UpdateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER '$Project$\\Sprint 2' AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [System.State] = 'In Progress' ORDER BY [System.AssignedTo],[Microsoft.VSTS.Common.BacklogPriority],[System.Id]";
+                UpdateQueryString = UpdateQueryString.Replace("$Project$", model.Environment.ProjectName);
                 queryObject.wiql = UpdateQueryString;
                 isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Work in Progress", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
 
@@ -2327,7 +2364,10 @@ namespace VstsDemoBuilder.Controllers
                         var extensions = installed.Where(x => x.Flags == 0).ToList();
 
                         var trustedFlagExtensions = installed.Where(x => x.Flags == ExtensionFlags.Trusted).ToList();
+                        var builtInExtensions = installed.Where(x => x.Flags.ToString() == "BuiltIn, Trusted").ToList();
+
                         extensions.AddRange(trustedFlagExtensions);
+                        extensions.AddRange(builtInExtensions);
 
                         foreach (var ext in extensions)
                         {
@@ -2342,7 +2382,7 @@ namespace VstsDemoBuilder.Controllers
                         var required = dict.Where(x => x.Value == false).ToList();
                         if (required.Count > 0)
                         {
-                            requiresExtensionNames = "<p style='color:red'>One or more extension(s) is not installed/enabled in your VSTS account.</p><p> You will need to install and enable them in order to proceed. If you agree with the terms below, the required extensions will be installed automatically for the selected account when the project is provisioned, otherwise install them manually and try refreshing the page </p>";
+                            requiresExtensionNames = "<p style='color:red'>One or more extension(s) is not installed/enabled in your Azure DevOps Organization.</p><p> You will need to install and enable them in order to proceed. If you agree with the terms below, the required extensions will be installed automatically for the selected organization when the project is provisioned, otherwise install them manually and try refreshing the page </p>";
                             var InstalledExtensions = dict.Where(x => x.Value == true).ToList();
                             if (InstalledExtensions.Count > 0)
                             {
@@ -2380,7 +2420,7 @@ namespace VstsDemoBuilder.Controllers
                             }
                             if (!string.IsNullOrEmpty(requiredMicrosoftExt))
                             {
-                                requiredMicrosoftExt = requiredMicrosoftExt + "<br/><div id='agreeTerms'><label style='font-weight: 400; text-align: justify; padding-left: 5px;'><input type = 'checkbox' class='terms' id = 'agreeTermsConditions' placeholder='microsoft' /> &nbsp; By checking the box I agree, and also on behalf of all users in the account, that our use of the extension(s) is governed by the  <a href = 'https://go.microsoft.com/fwlink/?LinkID=266231' target = '_blank'> Microsoft Online Services Terms </a> and <a href = 'https://go.microsoft.com/fwlink/?LinkId=131004&clcid=0x409' target = '_blank'> Microsoft Online Services Privacy Statement</a></label></div>";
+                                requiredMicrosoftExt = requiredMicrosoftExt + "<br/><div id='agreeTerms'><label style='font-weight: 400; text-align: justify; padding-left: 5px;'><input type = 'checkbox' class='terms' id = 'agreeTermsConditions' placeholder='microsoft' /> &nbsp; By checking the box I agree, and also on behalf of all users in the organization, that our use of the extension(s) is governed by the  <a href = 'https://go.microsoft.com/fwlink/?LinkID=266231' target = '_blank'> Microsoft Online Services Terms </a> and <a href = 'https://go.microsoft.com/fwlink/?LinkId=131004&clcid=0x409' target = '_blank'> Microsoft Online Services Privacy Statement</a></label></div>";
                             }
                             if (!string.IsNullOrEmpty(requiredThirdPartyExt))
                             {
@@ -2394,7 +2434,7 @@ namespace VstsDemoBuilder.Controllers
                             var InstalledExtensions = dict.Where(x => x.Value == true).ToList();
                             if (InstalledExtensions.Count > 0)
                             {
-                                requiresExtensionNames = "All required extensions are installed/enabled in your VSTS account.<br/><br/><b>";
+                                requiresExtensionNames = "All required extensions are installed/enabled in your Azure DevOps Organization.<br/><br/><b>";
                                 foreach (var ins in InstalledExtensions)
                                 {
                                     string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.name == ins.Key).FirstOrDefault().link;
@@ -2462,7 +2502,9 @@ namespace VstsDemoBuilder.Controllers
                     var extensions = installed.Where(x => x.Flags == 0).ToList();
 
                     var trustedFlagExtensions = installed.Where(x => x.Flags == ExtensionFlags.Trusted).ToList();
+                    var builtInExtensions = installed.Where(x => x.Flags.ToString() == "BuiltIn, Trusted").ToList();
                     extensions.AddRange(trustedFlagExtensions);
+                    extensions.AddRange(builtInExtensions);
 
                     foreach (var ext in extensions)
                     {
@@ -2478,20 +2520,27 @@ namespace VstsDemoBuilder.Controllers
 
                     if (required.Count > 0)
                     {
-                        foreach (var req in required)
+                        Parallel.ForEach(required, async req =>
                         {
                             string publisherName = template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().PublisherId;
                             string extensionName = template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().ExtensionId;
-
-                            InstalledExtension extension = null;
-                            extension = client.InstallExtensionByNameAsync(publisherName, extensionName).Result;
-                        }
-
+                            try
+                            {
+                                InstalledExtension extension = null;
+                                extension = await client.InstallExtensionByNameAsync(publisherName, extensionName);
+                            }
+                            catch (OperationCanceledException cancelException)
+                            {
+                                AddMessage(model.id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + cancelException.StackTrace + Environment.NewLine);
+                            }
+                            catch (Exception exc)
+                            {
+                                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + exc.Message + exc.StackTrace + Environment.NewLine);
+                            }
+                        });
                     }
                 }
-
                 return true;
-
             }
             catch (Exception ex)
             {
@@ -2509,7 +2558,7 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult SendEmail(Email model)
         {
             Email objEmail = new Email();
-            string subject = "VSTS Demogenerator error detail";
+            string subject = "Azure DevOps Demogenerator error detail";
 
             var bodyContent = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/EmailTemplates/ErrorDetail.html"));
 

@@ -13,7 +13,7 @@ namespace VstsRestAPI.Viewmodel.Repository
         {
             public int parentCommentId { get; set; }
             public string content { get; set; }
-            public int commentType { get; set; }
+            public string commentType { get; set; }
         }
         public class reply
         {
@@ -65,7 +65,6 @@ namespace VstsRestAPI.Viewmodel.Repository
         {
             public IList<Comment> comments { get; set; }
             public Properties properties { get; set; }
-            public int status { get; set; }
             public PullRequestThreadContext pullRequestThreadContext { get; set; }
             public ThreadContext threadContext { get; set; }
             public IList<reply> Replies { get; set; }

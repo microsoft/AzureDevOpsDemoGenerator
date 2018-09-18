@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using VstsRestAPI.Viewmodel.Sprint;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
@@ -296,6 +297,27 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             return isSuccesfull;
 
+        }
+
+        public SprintResponse.Sprints GetSprints(string Project)
+        {
+            SprintResponse.Sprints sprints = new SprintResponse.Sprints();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(_configuration.UriString);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
+
+                HttpResponseMessage response = client.GetAsync(Project + "/" + Project + "%20Team/_apis/work/teamsettings/iterations?api-version=4.1").Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string res = response.Content.ReadAsStringAsync().Result;
+                    sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(res);
+                    return sprints;
+                }
+            }
+            return sprints;
         }
     }
 }

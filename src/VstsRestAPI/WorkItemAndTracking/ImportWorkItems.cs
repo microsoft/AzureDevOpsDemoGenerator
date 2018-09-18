@@ -50,7 +50,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="accountUsers"></param>
         /// <returns></returns>
 
-        public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests,string userMethod,List<string> accountUsers)
+        public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string SelectedTemplate)
         {
             try
             {
@@ -123,7 +123,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
                 return WIData;
             }
-            
+
         }
 
         /// <summary>
@@ -150,9 +150,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                     //String[] FieldstoAdd = { }; Object[] ValuestoAdd = { };
                     Dictionary<string, object> dicWIFields = new Dictionary<string, object>();
                     string assignToUser = string.Empty;
-                    if(listAssignToUsers.Count>0)
+                    if (listAssignToUsers.Count > 0)
                     {
-                        assignToUser= listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)];
+                        assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)];
                     }
 
                     //Test cases have different fields compared to other items like bug, Epics, etc.                     
@@ -177,9 +177,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                             dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
                         }
 
-                       if(newWI.fields.SystemTags!=null) dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
-                       dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
-                       
+                        if (newWI.fields.SystemTags != null) dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                        dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
+
                     }
                     else
                     {
@@ -189,7 +189,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         if (newWI.fields.SystemIterationPath.Contains("\\"))
                         {
                             iterationPath = string.Format(@"{0}\{1}", ProjectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
-                           
+
                         }
 
                         if (!string.IsNullOrWhiteSpace(boardRowFieldName))
@@ -292,7 +292,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             WIMapData findIDforUpdate;
             if (fetchedPBIs.count > 0)
             {
-                
+
                 foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.value)
                 {
                     //continue next iteration if there is no relation
@@ -395,7 +395,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                             name = rel.attributes["name"]
                                         }
                                     }
-                                    
+
                                 };
                                 bool isArtifactLinkCreated = UpdateLink(string.Empty, WIToUpdate, patchWorkItem);
                             }
@@ -443,7 +443,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="filePath"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public string UploadAttchment(string filePath,string fileName)
+        public string UploadAttchment(string filePath, string fileName)
         {
             try
             {
