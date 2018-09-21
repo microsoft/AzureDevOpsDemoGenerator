@@ -343,9 +343,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "name": "Hosted Linux Preview",
+    "name": "Hosted Ubuntu 1604",
     "pool": {
-      "name": "Hosted Linux Preview",
+      "name": "Hosted Ubuntu 1604",
       "isHosted": true
     }
   }

@@ -200,15 +200,15 @@
       ]
    },
    "quality":"definition",
-   
-   "queue":{  
-   
-      "name":"Hosted Linux Preview",
-      "pool":{  
 
-         "name":"Hosted Linux Preview"
-      }
-   },
+  "queue": {
+
+    "name": "Hosted Ubuntu 1604",
+    "pool": {
+
+      "name": "Hosted Ubuntu 1604"
+    }
+  },
    "path":"\\",
    "type":"build",
    "queueStatus":"enabled",

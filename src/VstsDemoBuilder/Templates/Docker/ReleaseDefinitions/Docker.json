@@ -121,7 +121,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted Linux Preview$",
+            "queueId": "$Hosted Ubuntu 1604$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
