@@ -280,13 +280,13 @@
     },
     "quality": "definition",
     "drafts": [],
-    "queue": {
-        "name": "Hosted Linux Preview",
-        "pool": {
-            "name": "Hosted Linux Preview",
-            "isHosted": true
-        }
-    },
+  "queue": {
+    "name": "Hosted Ubuntu 1604",
+    "pool": {
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
     "name": "MyShuttleDocker-Maven-CI",
     "path": "\\",
     "type": "build",
