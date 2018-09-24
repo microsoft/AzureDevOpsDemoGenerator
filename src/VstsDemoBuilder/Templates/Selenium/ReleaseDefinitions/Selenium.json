@@ -241,7 +241,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId":  "$Default$",
+            "queueId": "$Default$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -257,7 +257,7 @@
               "environment": {},
               "taskId": "2c65196a-54fd-4a02-9be8-d9d1837b7111",
               "version": "1.*",
-              "name": "Azure DevOps Test Platform Installer",
+              "name": "Visual Studio Test Platform Installer",
               "refName": "",
               "enabled": true,
               "alwaysRun": false,

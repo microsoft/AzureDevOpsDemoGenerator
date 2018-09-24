@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -28,6 +29,7 @@
     <UseGlobalApplicationHostFile />
     <ApplicationInsightsResourceId>/subscriptions/f74e6a4f-08cd-4e93-968f-6618f41c4531/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/VstsDemoBuilder</ApplicationInsightsResourceId>
     <Use64BitIISExpress />
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,7 +40,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <PublishDatabases>true</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,11 +51,26 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LaunchDarkly.Client, Version=5.4.0.0, Culture=neutral, PublicKeyToken=f86add69004e6885, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.Client.5.4.0\lib\net45\LaunchDarkly.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="LaunchDarkly.Common.StrongName, Version=1.1.1.0, Culture=neutral, PublicKeyToken=45ef1738a929a7df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.Common.StrongName.1.1.1\lib\net45\LaunchDarkly.Common.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="LaunchDarkly.EventSource, Version=3.1.5.0, Culture=neutral, PublicKeyToken=18e8c36453e3060f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LaunchDarkly.EventSource.3.1.5\lib\net45\LaunchDarkly.EventSource.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -127,6 +143,8 @@
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -212,9 +230,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
+    <Compile Include="Controllers\ExtractorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Extensions\Extension.cs" />
+    <Compile Include="ExtractorModels\ExtractorAnalysis.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\custom.min.css" />
+    <Content Include="assets\images\error.png" />
     <Content Include="assets\images\VSTS_cover_image.png" />
     <Content Include="assets\images\VSTS_full_logo.png" />
     <Content Include="assets\images\VS_logo.png" />
@@ -251,6 +272,23 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custome-style.css" />
     <Content Include="Content\ddlStyle.css" />
+    <Content Include="Content\extractor\assets\css\custom.min.css" />
+    <Content Include="Content\extractor\assets\images\demoGenBG.png" />
+    <Content Include="Content\extractor\assets\images\demoGenBG_2.png" />
+    <Content Include="Content\extractor\assets\images\VSTS-demoGen-image.png" />
+    <Content Include="Content\extractor\assets\images\VSTS-menu.svg" />
+    <Content Include="Content\extractor\assets\images\VSTS-user-image.svg" />
+    <Content Include="Content\extractor\assets\images\VSTS_cover_image.png" />
+    <Content Include="Content\extractor\assets\images\VSTS_cover_image_2.png" />
+    <Content Include="Content\extractor\assets\images\VSTS_full_logo.png" />
+    <Content Include="Content\extractor\assets\images\vsts_header_image.png" />
+    <Content Include="Content\extractor\assets\images\VS_add.png" />
+    <Content Include="Content\extractor\assets\images\VS_delete.png" />
+    <Content Include="Content\extractor\assets\images\VS_edit.png" />
+    <Content Include="Content\extractor\assets\images\VS_import.png" />
+    <Content Include="Content\extractor\assets\images\VS_logo.png" />
+    <Content Include="Content\extractor\assets\images\VS_new.png" />
+    <Content Include="Content\extractor\assets\script\script.js" />
     <Content Include="Content\Site.css" />
     <Content Include="EmailTemplates\ErrorDetail.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -260,6 +298,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Images\background-verify.png" />
+    <Content Include="Images\bg_new.png" />
     <Content Include="Images\check-10.png" />
     <Content Include="Images\check-10_new.png" />
     <Content Include="Images\create_img_final1.png" />
@@ -275,13 +314,18 @@
     <Content Include="Images\MSimgae.png" />
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
+    <Content Include="Images\sideImg.png" />
     <Content Include="Images\tfs.png" />
+    <Content Include="Images\theme_img_2.png" />
+    <Content Include="Images\theme_img_3.png" />
     <Content Include="Images\Thinking_Face_Emoji.png" />
     <Content Include="Images\twitter.png" />
     <Content Include="Images\user-clear.png" />
     <Content Include="Images\Verify_image.jpg" />
     <Content Include="Images\vs-logo.png" />
     <Content Include="Scripts\AppScripts\create.js" />
+    <Content Include="Scripts\AppScripts\Extractor.js" />
+    <Content Include="Scripts\AppScripts\Validates.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -304,6 +348,105 @@
     <Content Include="assets\css\custom.scss" />
     <Content Include="Content\assets\css\custom.min.css.map" />
     <Content Include="Content\assets\css\custom.scss" />
+    <Content Include="PreSetting\BoardColumns.json" />
+    <Content Include="PreSetting\TeamArea.json" />
+    <Content Include="PreSetting\UpdateCardFields.json" />
+    <Content Include="PreSetting\UpdateCardStyles.json" />
+    <Content Include="PreSetting\ProjectSettings.json" />
+    <Content Include="PreSetting\ProjectTemplate.json" />
+    <Content Include="Content\extractor\assets\css\custom.min.css.map" />
+    <Content Include="Content\extractor\assets\css\custom.scss" />
+    <Content Include="PreSetting\ImportSourceCode.json" />
+    <Content Include="PreSetting\ServiceEndPoint.json" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demogen - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\demogen - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\extracttemplate - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\extracttemplate - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\extracttemplate - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\extracttemplate - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
+    <Content Include="Templates\bikesharing 360\BoardColumns.json" />
+    <Content Include="Templates\bikesharing 360\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\BugfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider Android.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider iOS.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider UWP %28ARM%29.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeRider UWP %28x86%29.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeSharing360-ASP.NET %28PREVIEW%29-CI.json" />
+    <Content Include="Templates\bikesharing 360\BuildDefinitions\BikeSharing360-PublicWeb.json" />
+    <Content Include="Templates\bikesharing 360\CreateServiceEndPoint.json" />
+    <Content Include="Templates\bikesharing 360\Dashboard\Dashboard.json" />
+    <Content Include="Templates\bikesharing 360\Dashboard\Queries\All Items.json" />
+    <Content Include="Templates\bikesharing 360\Dashboard\Queries\New query.json" />
+    <Content Include="Templates\bikesharing 360\EpicfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\Extensions.json" />
+    <Content Include="Templates\bikesharing 360\FeaturefromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\ImportSourceCode\BikeSharing360.json" />
+    <Content Include="Templates\bikesharing 360\Iterations.json" />
+    <Content Include="Templates\bikesharing 360\PBIfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\ProjectSettings.json" />
+    <Content Include="Templates\bikesharing 360\ProjectTemplate.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\BikeShare Public Web.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin Android.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin iOS.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin UWP - ARM.json" />
+    <Content Include="Templates\bikesharing 360\ReleaseDefinitions\Xamarin UWP - x86.json" />
+    <Content Include="Templates\bikesharing 360\ServiceEndpoints\bikesharing360-code.json" />
+    <Content Include="Templates\bikesharing 360\ServiceEndpoints\HockeyApp.json" />
+    <Content Include="Templates\bikesharing 360\TaskfromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\TeamArea.json" />
+    <Content Include="Templates\bikesharing 360\Teams.json" />
+    <Content Include="Templates\bikesharing 360\TestCasefromTemplate.json" />
+    <Content Include="Templates\bikesharing 360\UpdateCardFields.json" />
+    <Content Include="Templates\bikesharing360\BoardColumns.json" />
+    <Content Include="Templates\bikesharing360\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\bikesharing360\BugfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\EventApi.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\PrivateWeb.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\ProfilesApi.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\PublicWeb.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\RidesApi.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\Xamarin.Droid.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\Xamarin.iOS.json" />
+    <Content Include="Templates\bikesharing360\BuildDefinitions\Xamarin.UWP.json" />
+    <Content Include="Templates\bikesharing360\Dashboard\Dashboard.json" />
+    <Content Include="Templates\bikesharing360\EnableEpic.json" />
+    <Content Include="Templates\bikesharing360\EpicfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\Extensions.json" />
+    <Content Include="Templates\bikesharing360\FeaturefromTemplate.json" />
+    <Content Include="Templates\bikesharing360\ImportSourceCode\bikesharing360.json" />
+    <Content Include="Templates\bikesharing360\ImportSourceCode\CodeAutomation.json" />
+    <Content Include="Templates\bikesharing360\ImportSourceCode\ToolsAndEnvironment.json" />
+    <Content Include="Templates\bikesharing360\Iterations.json" />
+    <Content Include="Templates\bikesharing360\PBIfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\ProjectSettings.json" />
+    <Content Include="Templates\bikesharing360\ProjectTemplate.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\EventApi.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\PrivateWeb.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\ProfilesApi.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\PublicWeb.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\RidesApi.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\Xamarin.Android.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\Xamarin.iOS.json" />
+    <Content Include="Templates\bikesharing360\ReleaseDefinitions\Xamarin.UWP.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\AppleStore.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\Automation-code.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\bikesharing360-code.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\DevTest Labs Demo %283f184cb0-363b-4924-b866-18c2ff541f98%29.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\GooglePlay.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\HockeyApp.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\ToolsAndEnvironments-code.json" />
+    <Content Include="Templates\bikesharing360\ServiceEndpoints\WindowsStore.json" />
+    <Content Include="Templates\bikesharing360\TaskfromTemplate.json" />
+    <Content Include="Templates\bikesharing360\TeamArea.json" />
+    <Content Include="Templates\bikesharing360\Teams.json" />
+    <Content Include="Templates\bikesharing360\TestCasefromTemplate.json" />
     <Content Include="Templates\CreateProject.json" />
     <Content Include="Templates\DeploymentGroups\BoardColumns.json" />
     <Content Include="Templates\DeploymentGroups\BoardRowsFromTemplate.json" />
@@ -326,6 +469,55 @@
     <Content Include="Templates\DeploymentGroups\Teams.json" />
     <Content Include="Templates\DeploymentGroups\UpdateCardFields.json" />
     <Content Include="Templates\DeploymentGroups\UpdateCardStyles.json" />
+    <Content Include="Templates\devops-mobile\BoardColumns.json" />
+    <Content Include="Templates\devops-mobile\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\devops-mobile\BugfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.Native.Droid-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.Native.iOS-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.XForms.Droid-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.XForms.iOS-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\dev\Acquaint.XForms.UWP-CI-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.Native.Droid-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.Native.iOS-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.XForms.Droid-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.XForms.iOS-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\CI\master\Acquaint.XForms.UWP-CI-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.Native.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.Native.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.XForms.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\dev\Acquaint.XForms.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.Native.Droid-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.Native.iOS-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.XForms.Droid-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\BuildDefinitions\XTC\master\Acquaint.XForms.iOS-XTC-master.json" />
+    <Content Include="Templates\devops-mobile\CreateServiceEndPoint.json" />
+    <Content Include="Templates\devops-mobile\EnableEpic.json" />
+    <Content Include="Templates\devops-mobile\EpicfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\Extensions.json" />
+    <Content Include="Templates\devops-mobile\FeaturefromTemplate.json" />
+    <Content Include="Templates\devops-mobile\ImportSourceCode.json" />
+    <Content Include="Templates\devops-mobile\ImportSourceCode\Acquaint.json" />
+    <Content Include="Templates\devops-mobile\PBIfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\ProjectSettings.json" />
+    <Content Include="Templates\devops-mobile\ProjectTemplate.json" />
+    <Content Include="Templates\devops-mobile\Query.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\-Acquaint.XForms.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\Acquaint.Native.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\Acquaint.Native.iOS-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ReleaseDefinitions\Acquaint.XForms.Droid-XTC-dev.json" />
+    <Content Include="Templates\devops-mobile\ServiceEndpoints\devops-code.json" />
+    <Content Include="Templates\devops-mobile\ServiceEndpoints\hockeyapp.json" />
+    <Content Include="Templates\devops-mobile\TaskfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\TeamArea.json" />
+    <Content Include="Templates\devops-mobile\Teams.json" />
+    <Content Include="Templates\devops-mobile\TestCasefromTemplate.json" />
+    <Content Include="Templates\devops-mobile\UerStoriesfromTemplate.json" />
+    <Content Include="Templates\devops-mobile\UpdateCardFields.json" />
+    <Content Include="Templates\devops-mobile\UpdateCardStyles.json" />
+    <Content Include="Templates\devops-mobile\Widget.json" />
+    <Content Include="Templates\devops-mobile\WidgetChart.json" />
+    <Content Include="Templates\devops-mobile\WidgetQuery.json" />
+    <Content Include="Templates\devops-mobile\WorkItems.json" />
     <Content Include="Templates\Events.json" />
     <Content Include="Templates\GitHub\BoardColumns.json" />
     <Content Include="Templates\GitHub\BoardRowsFromTemplate.json" />
@@ -723,11 +915,90 @@
     <Content Include="Templates\AzureFunctions\ServiceEndpoints\AzureFunctions-code.json" />
     <Content Include="Templates\AzureFunctions\TeamArea.json" />
     <Content Include="Templates\AzureFunctions\Teams.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\BuildDefinitions\AzureFunctions_CI.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\EnableEpic.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ImportSourceCode\AzureFunctions_BuildWorkshop.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ProjectSettings.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ProjectTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ReleaseDefinitions\AzureFunctions_CD.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\ServiceEndpoints\AzureFunctions_BuildWorkshop-code.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\TeamArea.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\Teams.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\EpicfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\FeaturefromTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\PBIfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions_BuildWorkshop\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\EnableEpic.json" />
+    <Content Include="Templates\ContosoShuttle\EpicfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ImportSourceCode\ContosoShuttle.json" />
+    <Content Include="Templates\ContosoShuttle\PBIfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectSettings.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ServiceEndpoints\ContosoShuttle-code.json" />
+    <Content Include="Templates\ContosoShuttle\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\TeamArea.json" />
+    <Content Include="Templates\ContosoShuttle\Teams.json" />
     <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\CreateWiki.json" />
     <Content Include="Templates\MyHealthClinic\Wiki\CodeWiki\CreateWiki.json" />
     <Content Include="Views\Account\Unsupported_browser.cshtml" />
-    <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
+    <Content Include="Templates\SmartHotel360\UpdateCardFields.json" />
+    <Content Include="Templates\SmartHotel360\UpdateCardStyles.json" />
+    <Content Include="Templates\SmartHotel360V2\BoardColumns.json" />
+    <Content Include="Templates\SmartHotel360V2\BugfromTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\BuildDefinitions\PublicWebCI.json" />
+    <Content Include="Templates\SmartHotel360V2\EnableEpic.json" />
+    <Content Include="Templates\SmartHotel360V2\EpicfromTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\Extensions.json" />
+    <Content Include="Templates\SmartHotel360V2\ImportSourceCode\PublicWeb.json" />
+    <Content Include="Templates\SmartHotel360V2\ImportSourceCode\SmartHotel360.json" />
+    <Content Include="Templates\SmartHotel360V2\Iterations.json" />
+    <Content Include="Templates\SmartHotel360V2\PBIfromTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\ProjectSettings.json" />
+    <Content Include="Templates\SmartHotel360V2\ProjectTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\ReleaseDefinitions\PublicWebCD.json" />
+    <Content Include="Templates\SmartHotel360V2\ServiceEndpoints\GitHubSmartHotel360-public-web.json" />
+    <Content Include="Templates\SmartHotel360V2\ServiceEndpoints\PublicWeb-code.json" />
+    <Content Include="Templates\SmartHotel360V2\ServiceEndpoints\SmartHotel360-code.json" />
+    <Content Include="Templates\SmartHotel360V2\TaskfromTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\TeamArea.json" />
+    <Content Include="Templates\SmartHotel360V2\Teams.json" />
+    <Content Include="Templates\SmartHotel360V2\UpdateCardFields.json" />
+    <Content Include="Templates\SmartHotel360V2\UpdateCardStyles.json" />
+    <Content Include="Templates\SmartHotel360V2\PullRequests\PullRequest1.json" />
+    <Content Include="Templates\SmartHotel360V2\PullRequests\PullRequest2.json" />
+    <Content Include="Templates\SmartHotel360V2\PullRequests\Comments\PullRequest1.json" />
+    <Content Include="Templates\SmartHotel360V2\PullRequests\Comments\PullRequest2.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\All Items.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\BacklogBoard WI.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Board WI.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Bugs without Repro Steps.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Features with no Product Owner.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\MobileTeam_Work.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Open Bugs.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\State of TestCases.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Unassigned Bugs.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Unassigned Tasks.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\WebTeam_Work.json" />
+    <Content Include="Templates\SmartHotel360V2\TestCasefromTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\TestPlans\TestPlan1.json" />
+    <Content Include="Templates\SmartHotel360V2\TestPlans\TestSuites\TestPlan1.json" />
+    <Content Include="Templates\SmartHotel360V2\FeaturefromTemplate.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Dashboard.json" />
+    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\Bugs.json" />
+    <Content Include="Templates\SmartHotel360V2\UpdateTeamArea.json" />
+    <Content Include="Templates\BlogWebSite\BoardColumns.json" />
+    <Content Include="Templates\BlogWebSite\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\BlogWebSite\BuildDefinitions\BlogWebSite-CI.json" />
+    <Content Include="Templates\BlogWebSite\ImportSourceCode\BlogWebSite.json" />
+    <Content Include="Templates\BlogWebSite\ProjectSettings.json" />
+    <Content Include="Templates\BlogWebSite\ProjectTemplate.json" />
+    <Content Include="Templates\BlogWebSite\ReleaseDefinitions\BlogWebSite-CD.json" />
+    <Content Include="Templates\BlogWebSite\ServiceEndpoints\BlogWebSite-code.json" />
+    <Content Include="Templates\BlogWebSite\TeamArea.json" />
+    <Content Include="Templates\BlogWebSite\Teams.json" />
+    <Content Include="Templates\BlogWebSite\UpdateCardFields.json" />
+    <Content Include="Views\Extractor\Index.cshtml" />
+    <Content Include="Views\Extractor\NotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -756,7 +1027,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="assets\script\" />
     <Folder Include="Content\assets\script\" />
+    <Folder Include="ExtractedTemplate\" />
     <Folder Include="Log\" />
+    <Folder Include="TemplateBackUp\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />
     <Folder Include="Templates\GitHub\Dashboard\Widgets\" />
     <Folder Include="Templates\PartsUnlimited\Dashboard\Charts\" />
@@ -776,11 +1049,15 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

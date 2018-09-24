@@ -2,10 +2,11 @@
   "Groups": [
     "General",
     "DevOps Labs",
-    "Others"
+    "Others",
+    "Private"
   ],
   "PrivateGroups": [
-    "Private"
+    "PrivateTemp"
   ],
   "GroupwiseTemplates": [
     {
@@ -17,11 +18,11 @@
         },
         {
           "Name": "MyHealthClinic",
-          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using Azure Pipelines. "
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using Azure DevOps. "
         },
         {
           "Name": "PartsUnlimited",
-          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using Azure Pipelines. "
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using Azure DevOps. "
         },
         {
           "Name": "MyShuttle",
@@ -31,7 +32,6 @@
           "Name": "ReleaseGates",
           "Description": "<p>Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. You can use gates to ensure that the release meets a wide range of criteria without requiring user intervention. </p> "
         }
-
       ]
     },
     {
@@ -39,19 +39,19 @@
       "Template": [
         {
           "Name": "Docker",
-          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >azureappservice</i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >containers</i></p>This template provisions team project which contains code of Docker based ASP.NET Core web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure Pipelines.  <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a></p>"
+          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >azureappservice</i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >containers</i></p>This template provisions team project which contains code of Docker based ASP.NET Core web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure DevOps.  <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a></p>"
         },
         {
           "Name": "AKS",
-          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >kubernetes </i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >azurecontainerservice</i></p>Provision the team project using this template to build a Docker based ASP.NET Core web application and deploy to a Kubernetes cluster running in Azure Container Service (AKS) using Azure DevOps. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a></p>"
+          "Description": "<p><i >docker </i>&nbsp;&nbsp;<i >kubernetes </i>&nbsp;&nbsp;<i >aspdotnetcore </i><i >azurecontainerservice</i></p>Provision the team project using this template to build a Docker based ASP.NET Core web application and deploy to a Kubernetes cluster running in Azure Container Service (AKS) by using Azure DevOps. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a></p>"
         },
         {
           "Name": "GitHub",
-          "Description": "<p><i >aspdotnet  </i>&nbsp;&nbsp;<i >azureappservice </i></p>Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure Pipelines</a></p>"
+          "Description": "<p><i >aspdotnet  </i>&nbsp;&nbsp;<i >azureappservice </i></p>Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure DevOps</a></p>"
         },
         {
           "Name": "Octopus",
-          "Description": "<p><i >php   </i>&nbsp;&nbsp;<i >octopus </i></p>This template contains code for a sample PHP application which will be compiled using Azure Pipelines and deployed using Octopus Deploy on to an Azure App service. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a></p>"
+          "Description": "<p><i >php   </i>&nbsp;&nbsp;<i >octopus </i></p>This template contains code for a sample PHP application which will be compiled using Azure DevOps Build and deployed using Octopus Deploy on to an Azure App service. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a></p>"
         },
         {
           "Name": "Selenium",
@@ -63,11 +63,11 @@
         },
         {
           "Name": "MyShuttleDocker",
-          "Description": "<p><iv>java</i>&nbsp;&nbsp;<i >dockercontainerservice</i></p>This template provisions team project which contains code of Docker based Java web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure Pipelines. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/eclipse/' target='_blank'> Developing with Eclipse for Java projects</a></p>"
+          "Description": "<p><iv>java</i>&nbsp;&nbsp;<i >dockercontainerservice</i></p>This template provisions team project which contains code of Docker based Java web application along with build & release definitions, to deploy the application to the Docker containers in the Azure App Service (Linux) using Azure DevOps. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/eclipse/' target='_blank'> Developing with Eclipse for Java projects</a></p>"
         },
         {
           "Name": "DeploymentGroups",
-          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >deploymentgroup</i></p>Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using Deployment Groups. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p>"
+          "Description": "<p><i >aspdotnet </i>&nbsp;&nbsp;<i >deploymentgroup</i></p>Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using Azure DevOps Deployment Groups. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p>"
         },
         {
           "Name": "SonarQube",
@@ -94,6 +94,15 @@
     },
     {
       "Groups": "Private",
+      "Template": [
+        {
+          "Name": "Private",
+          "Description": "<div class='template-body bg-light p-3'><p>Upload the template file that you have generated earlier for generating your demo. If you do not have the template file, you can create the template using the <a href='../Extractor/Index' target='_blank'> Template Builder</a></p><div class='form-group'><label>Upload archive file:</label><input class='form-control' type='file' id='FileUpload1' accept='.zip'/></div><div id='btnContainer'><button class='btn btn-primary' id='btnUpload'>Select this template</button></div></div>"
+        }
+      ]
+    },
+    {
+      "Groups": "PrivateTemp",
       "Template": [
         {
           "Name": "PartsUnlimited-agile",

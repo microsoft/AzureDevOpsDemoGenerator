@@ -7949,7 +7949,8 @@ html, body {
 
             .section-1 main .VSTS-hero-image .VSTS-hero {
                 flex: 1;
-                background: url("../images/VSTS_cover_image.png") center center/cover
+                background: url(../images/VSTS_cover_image.png) top right/ 600px, #EBF5FF;
+                background-repeat: no-repeat;
             }
 
                 .section-1 main .VSTS-hero-image .VSTS-hero img {

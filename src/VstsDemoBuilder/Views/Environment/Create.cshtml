@@ -18,6 +18,8 @@
     @Html.HiddenFor(model => model.IsAuthenticated, new { id = "hidIsAuthenticated" })
     @Html.HiddenFor(model => model.accessToken, new { id = "hiddenAccessToken" })
     @Html.HiddenFor(model => model.MemberID, new { id = "hiddenMemberID" })
+    @Html.HiddenFor(model => model.Email, new { id = "emailID" })
+
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -88,6 +90,11 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
+
+
+        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+            <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+        </div>
     </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
@@ -97,18 +104,18 @@
             -->
             <div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
                 <div class="d-flex flex-column VSTS-mh-100">
-                    <img class="img-fluid" src="~/content/assets/images/VSTS-demoGen-image.png" alt="">
-                    <div class="demo-generator-feedback VSTS-create-page-feedback mt-auto text-center text-sm-left">
+                    <img class="img-fluid" src="~/content/assets/images/VSTS-demoGen-image.png" alt="" style="max-width: 88%; opacity:0.3">
+                    <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
                         <h6>Feedback&colon;</h6>
                         <p class="mb-0">
                             To provide feedback, you can email us -
                             <a class="text-primary" href="mailto:devopsdemos@microsoft.com">devopsdemos@microsoft.com</a>. We would appreciate your feedback
                         </p>
                         <p>
-                            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Visual + Studio + Team + Services + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-                            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+DevOps+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+DevOps+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=azuredevopsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+                            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=vstsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
                         </p>
                     </div>
                 </div>
@@ -119,9 +126,10 @@
             -->
             <div class="col-md-6 order-1 order-md-2">
                 <div class="form-group row">
-                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Organization Name :</label>
+                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Select Organization :</label>
                     <div class="col-lg-8">
-                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "OrganizationName" })
+
+                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName" })
                         <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
                         </div>
                         <div style="color:red">
@@ -132,7 +140,7 @@
                 <div class="form-group row">
                     <label for="inputPassword" class="col-lg-4 col-form-label" style="font-weight: 400;">New Project Name :</label>
                     <div class="col-lg-8">
-                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength="64" })
+                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
                         <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
                         </div>
                     </div>
@@ -167,7 +175,7 @@
                 </div>
                 <!-- PROJECT PARAMETERS -->
                 <!--EXTENSIONS -->
-                <div class="mt-4 border border-primary p-3 d-none" id="lblextensionError">
+                <div class="mt-4 border p-3 d-none" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">
                         <p style="display:none;" id="extensionError"></p>
@@ -211,8 +219,9 @@
                     <div class="card-header">About this Template</div>
                     <div class="card-body" style="background-color:white; color:black">
                         <p class="card-text" id="descContainer">
-                         This template contains work items and code for SmartHotel360, an end-to-end reference application for the entire business, including a suite of mobile and desktop apps for business travelers (iOS, Android, and Windows), a website for booking a stay, and even an app for hotel employees to track and resolve maintenance issues. SmartHotel360 has many other reference applications, including a microservice oriented architecture implemented using Docker containers that power the client experience, a website powered by ASP.NET Core 2 for booking trips, and a sentiment analysis app for tracking customer experiences.For more details, please see the project page on GitHub at
-                        <p>For more information refer <a style='color:blue;' href='https://github.com/Microsoft/SmartHotel360' target='_blank'>SmartHotel360</a>
+                            This template contains work items and code for SmartHotel360, an end-to-end reference application for the entire business, including a suite of mobile and desktop apps for business travelers (iOS, Android, and Windows), a website for booking a stay, and even an app for hotel employees to track and resolve maintenance issues. SmartHotel360 has many other reference applications, including a microservice oriented architecture implemented using Docker containers that power the client experience, a website powered by ASP.NET Core 2 for booking trips, and a sentiment analysis app for tracking customer experiences.For more details, please see the project page on GitHub at
+                        <p>
+                            For more information refer <a style='color:blue;' href='https://github.com/Microsoft/SmartHotel360' target='_blank'>SmartHotel360</a>
                         </p>
                     </div>
                 </div>
@@ -238,5 +247,77 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/Scripts/AppScripts/create.js"></script>
     <script src="~/Scripts/tooltip.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('body').on('click', '#btnUpload', function () {
+
+                $("#fileError").remove();
+
+                // Checking whether FormData is available in browser
+                if (window.FormData !== undefined) {
+
+                    var fileUpload = $("#FileUpload1").get(0);
+                    var files = fileUpload.files;
+
+                    // Create FormData object
+                    var fileData = new FormData();
+
+                    // Looping over all files and add it to FormData object
+                    for (var i = 0; i < files.length; i++) {
+                        fileData.append(files[i].name, files[i]);
+                    }
+
+                    $.ajax({
+                        url: '/Environment/UploadFiles',
+                        type: "POST",
+                        contentType: false, // Not to set any content header
+                        processData: false, // Not to process data
+                        data: fileData,
+                        success: function (result) {
+                            if (result == "1") {
+                                alert("succesfully uploaded file: " + files[0].name);
+
+                                $.post("UnzipFile", { "fineName": files[0].name }, function (respose) {
+
+                                    if (respose == "SUCCESS") {
+
+                                        alert("succesfully unzipped file: " + files[0].name);
+                                        var NewTemplateName = files[0].name.replace(".zip", "");
+                                        $('#ddlTemplates').val(NewTemplateName);
+                                        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+                                        $("#lblextensionError").removeClass('d-block').addClass('d-none');
+                                        $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
+                                        $("#lblDescription").removeClass('d-block').addClass('d-none');
+                                        $("#ddlAcccountName").prop('selectedIndex', 0);
+                                    } else {
+                                        if (respose == "PROJECTANDSETTINGNOTFOUND") {
+
+                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again</span>')
+                                        }
+                                        if (respose == "SETTINGNOTFOUND") {
+                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting file not found! plase include the files in zip and try again</span>')
+                                        }
+                                        if (respose == "PROJECTFILENOTFOUND") {
+                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectTemplate file not found! plase include the files in zip and try again</span>')
+                                        }
+                                        if (respose == "ISPRIVATEERROR") {
+                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.</span>')
+                                        }
+                                    }
+                                })
+                            }
+                        },
+                        error: function (err) {
+                            alert(err.statusText);
+                        }
+                    });
+                } else {
+                    alert("FormData is not supported.");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

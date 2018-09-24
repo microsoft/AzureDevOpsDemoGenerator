@@ -37,6 +37,7 @@ using VstsRestAPI.Wiki;
 using VstsRestAPI.Viewmodel.Wiki;
 using VstsRestAPI.Viewmodel.Sprint;
 using System.Threading.Tasks;
+using VstsRestAPI.Viewmodel.Extractor;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -207,7 +208,7 @@ namespace VstsDemoBuilder.Controllers
                         AccessDetails.access_token = Session["PAT"].ToString();
                         ProfileDetails Profile1 = GetProfile(AccessDetails);
                         Session["User"] = Profile1.displayName;
-
+                        Session["Email"] = Profile1.emailAddress;
                         Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
 
                         model.accessToken = AccessDetails.access_token;
@@ -229,8 +230,8 @@ namespace VstsDemoBuilder.Controllers
                         }
                         else
                         {
-                            model.accountsForDropdown.Add("Select Account");
-                            ViewBag.AccDDError = "Couldn't load your accounts. Please change the dirctory in profile page of Azure DevOps Organization and try again.";
+                            model.accountsForDropdown.Add("Select Organization");
+                            ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
                         }
 
                         model.Templates = new List<string>();
@@ -278,11 +279,11 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiaXNzIjoiYXBwLnZzc3BzLnZpc3VhbHN0dWRpby5jb20iLCJhdWQiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsIm5iZiI6MTUyNTQxNzcwOCwiZXhwIjoxNTI1NDIxMzA4fQ.wVzTqndms_AzasqLAAES7YGjWpWeh2c1ZDLcUOBZ_yCLzjtI61rzYWHMDls5MOikv5GEz4O8evNkJ3Bgr3oFs87iMX38vmeLoDoV1yWxV-nsNONtYTMgUAi7fwLPYMJkFUqxDYUgc2zazdZDS7Z17aJk0pRMeeE3pHri2iP5dTomoXtP2Rz_ud25Ozv3pfpN-dZlSTv3MfDpdubQ84pM63SJnOpcB7CnyjjwcoxUQI-yS94C98cjYOKNV_sUDn7LM-v6vWKAjbmkLG0PsdF_MIHYYWUfBokgf3Sm_eOpDQIaGnyMvuf0q7syQlo1MV-8fm61t6G4guWP0CUCtdB5yw";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiaXNzIjoiYXBwLnZzc3BzLnZpc3VhbHN0dWRpby5jb20iLCJhdWQiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsIm5iZiI6MTUzNzUzNjc5MywiZXhwIjoxNTM3NTQwMzkzfQ.QbpciWjrqtgDaYgisbqJeQubiLOUzFh5UNMOa9g1xJp-PUO8wNjqHpxnmmSuSsq2BFH2HifFdGnkZvfZATkUt1pnoGoYxCCpq-nTCovmIDYiIJiAXZgblkHnjPrgMLvQubITC6pHJodTDvlmwUVOuKI5nE-Ea57RzCnsGpgxSJwoQ1cvkok5PlChj6Le_Kc2TlfL8U9T1WL1OY56XrvQxchrONy0CzaQLE--fzmtCguRtNeo5ciPMSay6APVlJM-igfnrmMfdiDws8E6ksxhR2njVUo6TU2ZAws2_YixW0gIZ0QT17U7pQUCZ5YNzvzCTpjxojRBTaCuGCBPMgfSyA";
 
                         ProfileDetails Profile = GetProfile(AccessDetails);
                         Session["User"] = Profile.displayName;
-
+                        Session["Email"] = Profile.emailAddress;
                         Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
 
                         model.accessToken = AccessDetails.access_token;
@@ -304,8 +305,8 @@ namespace VstsDemoBuilder.Controllers
                         }
                         else
                         {
-                            model.accountsForDropdown.Add("Select Account");
-                            ViewBag.AccDDError = "Couldn't load your accounts. Please change the dirctory in profile page of Azure DevOps Organization and try again.";
+                            model.accountsForDropdown.Add("Select Organization");
+                            ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
                         }
 
                         model.Templates = new List<string>();
@@ -364,6 +365,169 @@ namespace VstsDemoBuilder.Controllers
                 return View();
             }
         }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult UploadFiles()
+        {
+            // Checking no of files injected in Request object  
+            if (Request.Files.Count > 0)
+            {
+                try
+                {
+                    //  Get all files from Request object  
+                    HttpFileCollectionBase files = Request.Files;
+                    for (int i = 0; i < files.Count; i++)
+                    {
+                        //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
+                        //string filename = Path.GetFileName(Request.Files[i].FileName);  
+
+                        HttpPostedFileBase file = files[i];
+                        string fname;
+
+                        // Checking for Internet Explorer  
+                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                        {
+                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                            fname = testfiles[testfiles.Length - 1];
+                            if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/Templates/"), fname)))
+                            {
+                                System.IO.File.Delete(Path.Combine(Server.MapPath("~/Templates/"), fname));
+                            }
+                        }
+                        else
+                        {
+                            fname = file.FileName;
+
+                            if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/Templates/"), fname)))
+                            {
+                                System.IO.File.Delete(Path.Combine(Server.MapPath("~/Templates/"), fname));
+                            }
+                        }
+
+                        // Get the complete folder path and store the file inside it.  
+                        fname = Path.Combine(Server.MapPath("~/Templates/"), fname);
+                        file.SaveAs(fname);
+                    }
+                    // Returns message that successfully uploaded  
+                    return Json("1");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult UnzipFile(string fineName)
+        {
+            try
+            {
+                string zipPath = Server.MapPath("~/Templates/" + fineName);
+                string folder = fineName.Replace(".zip", "");
+                string extractPath = Server.MapPath("~/Templates/" + folder);
+
+                System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
+                System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
+
+
+                bool SettingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
+                bool ProjectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
+
+                if (SettingFile && ProjectFile)
+                {
+                    string ProjectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
+                    ProjectSetting Settings = JsonConvert.DeserializeObject<ProjectSetting>(ProjectFileData);
+
+                    if (!string.IsNullOrEmpty(Settings.IsPrivate))
+                    {
+                        return Json("SUCCESS");
+                    }
+                    else
+                    {
+                        Directory.Delete(extractPath, true);
+                        return Json("ISPRIVATEERROR");
+
+                    }
+                }
+                else if (!SettingFile && !ProjectFile)
+                {
+
+                    if (Directory.Exists(extractPath + "\\" + folder))
+                    {
+                        bool SettingFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectSettings.json") ? true : false);
+                        bool ProjectFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectTemplate.json") ? true : false);
+                        if (SettingFile1 && ProjectFile1)
+                        {
+                            string ProjectFileData1 = System.IO.File.ReadAllText(extractPath + "\\" + folder + "\\ProjectTemplate.json");
+                            ProjectSetting Settings1 = JsonConvert.DeserializeObject<ProjectSetting>(ProjectFileData1);
+
+                            if (!string.IsNullOrEmpty(Settings1.IsPrivate))
+                            {
+                                string SourceDirectory = extractPath + "\\" + folder;
+                                string TargetDirectory = extractPath;
+                                string BackupDirectory = Server.MapPath("~/TemplateBackUp/");
+                                string BackupDirectoryRandom = BackupDirectory + DateTime.Now.ToString("_MMMdd_yyyy_HHmmss");
+
+                                if (Directory.Exists(SourceDirectory))
+                                {
+                                    if (Directory.Exists(TargetDirectory))
+                                    {
+                                        Directory.Move(SourceDirectory, BackupDirectoryRandom);
+                                        Directory.Delete(TargetDirectory);
+                                        Directory.Move(BackupDirectoryRandom, TargetDirectory);
+
+                                        System.IO.DirectoryInfo di = new DirectoryInfo(BackupDirectory);
+
+                                        foreach (FileInfo file in di.GetFiles())
+                                        {
+                                            file.Delete();
+                                        }
+                                        foreach (DirectoryInfo dir in di.GetDirectories())
+                                        {
+                                            dir.Delete(true);
+                                        }
+                                    }
+                                }
+
+                                return Json("SUCCESS");
+                            }
+                            else
+                            {
+                                Directory.Delete(extractPath, true);
+                                return Json("ISPRIVATEERROR");
+                            }
+                        }
+                    }
+                    Directory.Delete(extractPath, true);
+                    return Json("PROJECTANDSETTINGNOTFOUND");
+                }
+                else
+                {
+                    if (!SettingFile)
+                    {
+                        Directory.Delete(extractPath, true);
+                        return Json("SETTINGNOTFOUND");
+                    }
+                    if (!ProjectFile)
+                    {
+                        Directory.Delete(extractPath, true);
+                        return Json("PROJECTFILENOTFOUND");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+
+            return Json("0");
+        }
+
 
         /// <summary>
         /// Formatting the request for OAuth
@@ -502,10 +666,10 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public Accounts.AccountList GetAccounts(string MemberID, AccessDetails Details)
         {
-            if (Session["PAT"] != null)
-            {
-                Details.access_token = Session["PAT"].ToString();
-            }
+            //if (Session["PAT"] != null)
+            //{
+            //    Details.access_token = Session["PAT"].ToString();
+            //}
             Accounts.AccountList Accounts = new Accounts.AccountList();
             var client = new HttpClient();
             string requestContent = "https://app.vssps.visualstudio.com/_apis/Accounts?memberId=" + MemberID + "&api-version=4.1-preview";
@@ -728,7 +892,7 @@ namespace VstsDemoBuilder.Controllers
 
             if (projectId == "-1")
             {
-                AddMessage(model.id, proj.LastFailureMessage);
+                AddMessage(model.id, proj.lastFailureMessage);
                 Thread.Sleep(1000);
                 return new string[] { model.id, accountName };
             }
@@ -800,9 +964,9 @@ namespace VstsDemoBuilder.Controllers
             //update sprint dates
             //AddMessage(model.id, "Updating sprint dates...");
             UpdateSprintItems(model, _defaultConfiguration, settings);
-            //UpdateIterations(model, _defaultConfiguration, templatesFolder, "iterations.json");
+            UpdateIterations(model, _defaultConfiguration, templatesFolder, "Iterations.json");
             RenameIterations(model, _defaultConfiguration, settings.renameIterations);
-            AddMessage(model.id, "Sprint dates updated");
+            //AddMessage(model.id, "Sprint dates updated");
 
             //create service endpoint
             //AddMessage(model.id, "Creating service endpoint...");
@@ -815,7 +979,7 @@ namespace VstsDemoBuilder.Controllers
             string endPointJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CreateService);
             lstEndPointsJsonPath.Add(endPointJson);
             CreateServiceEndPoint(model, lstEndPointsJsonPath, _configuration3_0);
-            AddMessage(model.id, "Service endpoints created");
+            //AddMessage(model.id, "Service endpoints created");
 
             //create agent queues on demand
             Queue queue = new Queue(_configuration3_0);
@@ -849,7 +1013,7 @@ namespace VstsDemoBuilder.Controllers
                 string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
                 bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
             }
-            AddMessage(model.id, "Source code imported");
+            //AddMessage(model.id, "Source code imported");
 
             //Create Pull request
             Thread.Sleep(10000);
@@ -948,7 +1112,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 AddMessage(model.id, "Work Items created");
             }
-
+            Thread.Sleep(2000);
             //Creat TestPlans and TestSuites
             List<string> lstTestPlansJsonPaths = new List<string>();
             string TestPlansFolder = templatesFolder + model.SelectedTemplate + @"\TestPlans";
@@ -996,13 +1160,13 @@ namespace VstsDemoBuilder.Controllers
             if (IsReleased)
             {
                 AddMessage(model.id, "Release definition created");
-
             }
 
             //Create query and widgets
             List<string> lstDashboardQueriesPath = new List<string>();
             string dashboardQueriesPath = templatesFolder + model.SelectedTemplate + @"\Dashboard\Queries";
             string dashboardPath = templatesFolder + model.SelectedTemplate + @"\Dashboard";
+
             if (System.IO.Directory.Exists(dashboardQueriesPath))
             {
                 System.IO.Directory.GetFiles(dashboardQueriesPath).ToList().ForEach(i => lstDashboardQueriesPath.Add(i));
@@ -1013,16 +1177,16 @@ namespace VstsDemoBuilder.Controllers
                 AddMessage(model.id, "Queries, Widgets and Charts created");
                 Thread.Sleep(2000);
             }
-            //string _checkIsPrivate = System.IO.File.ReadAllText(Server.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
-            //if (_checkIsPrivate != "")
-            //{
-            //    ProjectSetting setting = new ProjectSetting();
-            //    setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
-            //    if (setting.IsPrivate == "true")
-            //    {
-            //        Directory.Delete(Path.Combine(templatesFolder, model.SelectedTemplate), true);
-            //    }
-            //}
+            string _checkIsPrivate = System.IO.File.ReadAllText(Server.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
+            if (_checkIsPrivate != "")
+            {
+                ProjectSetting setting = new ProjectSetting();
+                setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
+                if (setting.IsPrivate == "true")
+                {
+                    Directory.Delete(Path.Combine(templatesFolder, model.SelectedTemplate), true);
+                }
+            }
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
         }
@@ -1079,9 +1243,9 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
-                    if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objTeam.lastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.lastFailureMessage + Environment.NewLine);
                     }
                     else
                     {
@@ -1121,9 +1285,9 @@ namespace VstsDemoBuilder.Controllers
                 Team objTeam = new Team(_configuration);
                 viewModel = objTeam.GetTeamMembers(projectName, teamName);
 
-                if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
+                if (!(string.IsNullOrEmpty(objTeam.lastFailureMessage)))
                 {
-                    AddMessage(id.ErrorId(), "Error while getting team members: " + objTeam.LastFailureMessage + Environment.NewLine);
+                    AddMessage(id.ErrorId(), "Error while getting team members: " + objTeam.lastFailureMessage + Environment.NewLine);
                 }
                 return viewModel;
             }
@@ -1159,9 +1323,9 @@ namespace VstsDemoBuilder.Controllers
                     jsonWorkItems = jsonWorkItems.Replace("$version$", _defaultConfiguration.VersionNumber);
                     bool workItemResult = objWorkItem.CreateWorkItemUsingByPassRules(model.ProjectName, jsonWorkItems);
 
-                    if (!(string.IsNullOrEmpty(objWorkItem.LastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objWorkItem.lastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating workitems: " + objWorkItem.LastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating workitems: " + objWorkItem.lastFailureMessage + Environment.NewLine);
                     }
                 }
 
@@ -1198,9 +1362,9 @@ namespace VstsDemoBuilder.Controllers
                         model.Environment.BoardRowFieldName = objBoard.rowFieldName;
                         res = true;
                     }
-                    else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
+                    else if (!(string.IsNullOrEmpty(objBoard.lastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.lastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1331,9 +1495,9 @@ namespace VstsDemoBuilder.Controllers
                     jsonProjectSettings = model.ReadJsonFile(jsonProjectSettings);
 
                     bool workItemUpdateResult = objWorkItem.UpdateWorkItemUsingByPassRules(jsonWorkItemsUpdate, model.ProjectName, currentUser, jsonProjectSettings);
-                    if (!(string.IsNullOrEmpty(objWorkItem.LastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objWorkItem.lastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while updating work items: " + objWorkItem.LastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while updating work items: " + objWorkItem.lastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1532,9 +1696,9 @@ namespace VstsDemoBuilder.Controllers
                     Repository objRepositorySourceCode = new Repository(importSourceConfiguration);
                     bool copySourceCode = objRepositorySourceCode.getSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
 
-                    if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objRepository.lastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.LastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.lastFailureMessage + Environment.NewLine);
                     }
 
                 }
@@ -1627,11 +1791,23 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
                         string password = System.Configuration.ConfigurationManager.AppSettings["Password"];
-
+                        string extractPath = Server.MapPath("~/Templates/" + model.SelectedTemplate);
+                        string ProjectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
+                        ProjectSetting Settings = JsonConvert.DeserializeObject<ProjectSetting>(ProjectFileData);
                         ServiceEndPoint objService = new ServiceEndPoint(_defaultConfiguration);
-                        jsonCreateService = model.ReadJsonFile(jsonCreateService);
-                        jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
-                        jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password);
+
+                        if (!string.IsNullOrEmpty(Settings.IsPrivate))
+                        {
+                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
+                            jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
+                            jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
+                        }
+                        else
+                        {
+                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
+                            jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
+                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password);
+                        }
                         if (model.SelectedTemplate.ToLower() == "bikesharing360")
                         {
                             string BikeSharing360username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
@@ -1663,9 +1839,9 @@ namespace VstsDemoBuilder.Controllers
                         }
                         var endpoint = objService.CreateServiceEndPoint(jsonCreateService, model.ProjectName);
 
-                        if (!(string.IsNullOrEmpty(objService.LastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objService.lastFailureMessage)))
                         {
-                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.LastFailureMessage + Environment.NewLine);
+                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.lastFailureMessage + Environment.NewLine);
                         }
                         else
                         {
@@ -1789,9 +1965,9 @@ namespace VstsDemoBuilder.Controllers
 
                         string[] buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
 
-                        if (!(string.IsNullOrEmpty(objBuild.LastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objBuild.lastFailureMessage)))
                         {
-                            AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.LastFailureMessage + Environment.NewLine);
+                            AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.lastFailureMessage + Environment.NewLine);
                         }
                         buildDef.Id = buildResult[0];
                         buildDef.Name = buildResult[1];
@@ -1828,9 +2004,9 @@ namespace VstsDemoBuilder.Controllers
                     BuildDefinition objBuild = new BuildDefinition(_configuration);
                     int queueId = objBuild.QueueBuild(jsonQueueABuild, model.ProjectName);
 
-                    if (!string.IsNullOrEmpty(objBuild.LastFailureMessage))
+                    if (!string.IsNullOrEmpty(objBuild.lastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.lastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1898,9 +2074,9 @@ namespace VstsDemoBuilder.Controllers
                         relDef.Id = releaseDef[0];
                         relDef.Name = releaseDef[1];
 
-                        if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objRelease.lastFailureMessage)))
                         {
-                            AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.LastFailureMessage + Environment.NewLine);
+                            AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.lastFailureMessage + Environment.NewLine);
                         }
                     }
                     flag = true;
@@ -1928,9 +2104,9 @@ namespace VstsDemoBuilder.Controllers
                     ReleaseDefinition objRelease = new ReleaseDefinition(_configuration);
                     objRelease.CreateRelease(jsonCreateRelease, model.ProjectName);
 
-                    if (!string.IsNullOrEmpty(objRelease.LastFailureMessage))
+                    if (!string.IsNullOrEmpty(objRelease.lastFailureMessage))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating release: " + objRelease.LastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating release: " + objRelease.lastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1962,9 +2138,9 @@ namespace VstsDemoBuilder.Controllers
                 string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
                 Thread.Sleep(2000);
 
-                if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
+                if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
                 {
-                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
+                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.lastFailureMessage + Environment.NewLine);
                 }
 
                 foreach (string query in lstQueries)
@@ -1975,10 +2151,12 @@ namespace VstsDemoBuilder.Controllers
                     QueryResponse response = objQuery.CreateQuery(model.ProjectName, json);
                     queryResults.Add(response);
 
-                    if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
+                    if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
-                    }                    
+                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.lastFailureMessage + Environment.NewLine);
+
+                    }
+
                 }
                 //Create DashBoards
                 string dashBoardTemplate = string.Format(templatesFolder + @"{0}\Dashboard\Dashboard.json", model.SelectedTemplate);
@@ -2102,7 +2280,7 @@ namespace VstsDemoBuilder.Controllers
                             var BuildDefId = model.BuildDefinitions.FirstOrDefault();
                             dashBoardTemplate = dashBoardTemplate.Replace("$BuildDefId$", BuildDefId.Id)
                                   .Replace("$projectId$", model.Environment.ProjectId)
-                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id ?? string.Empty)
+                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
                                   .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
                                   .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
                                   .Replace("$Test Plan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
@@ -2125,7 +2303,7 @@ namespace VstsDemoBuilder.Controllers
                             .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
                             .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
                             .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id ?? string.Empty)
+                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
                             .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
                             .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
                             .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
@@ -2142,10 +2320,10 @@ namespace VstsDemoBuilder.Controllers
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
 
-                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id ?? string.Empty)
+                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
                                          .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
                                          .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
-                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"] ?? string.Empty)
+                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"] != null ? model.Environment.RepositoryIdList["MyShuttleCalc"] : string.Empty)
                                          .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
                                          .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
                                          .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
@@ -2234,9 +2412,9 @@ namespace VstsDemoBuilder.Controllers
 
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate
-                            .Replace("$projectId$", model.Environment.ProjectId ?? "")
-                            .Replace("$DefaultTeamId$", defaultTeam.id ?? "")
-                            .Replace("$ProductPlanning$", ProductPlanning.id ?? "")
+                            .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : "")
+                            .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : "")
+                            .Replace("$ProductPlanning$", ProductPlanning.id != null ? ProductPlanning.id : "")
                             .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
                             .Replace("$CompletedTasks$", queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault().id : string.Empty)
                             .Replace("$PublicWebBuild$", PublicWebBuild != null ? PublicWebBuild.Id : "")
@@ -2273,25 +2451,37 @@ namespace VstsDemoBuilder.Controllers
                             QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WotkInProgress.id)
-                                .Replace("$projectId$", model.Environment.ProjectId ?? string.Empty)
-                                .Replace("$PublicWebBuild$", PublicWebBuild.Id ?? string.Empty)
-                                .Replace("$DefaultTeamId$", defaultTeam.id ?? string.Empty).Replace("$AllItems$", AllItems.id ?? string.Empty)
-                                .Replace("$BacklogBoardWI$", BacklogBoardWI.id ?? string.Empty)
-                                .Replace("$StateofTestCases$", StateofTestCase.id ?? string.Empty)
-                                .Replace("$Feedback$", Feedback.id ?? string.Empty)
+                                .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
+                                .Replace("$PublicWebBuild$", PublicWebBuild.Id != null ? PublicWebBuild.Id : string.Empty)
+                                .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : string.Empty).Replace("$AllItems$", AllItems.id != null ? AllItems.id : string.Empty)
+                                .Replace("$BacklogBoardWI$", BacklogBoardWI.id != null ? BacklogBoardWI.id : string.Empty)
+                                .Replace("$StateofTestCases$", StateofTestCase.id != null ? StateofTestCase.id : string.Empty)
+                                .Replace("$Feedback$", Feedback.id != null ? Feedback.id : string.Empty)
                                 .Replace("$RepoPublicWeb$", model.Environment.RepositoryIdList["PublicWeb"])
-                                .Replace("$MobileTeamWork$", MobileTeamWork.id ?? string.Empty).Replace("$WebTeamWork$", newValue: WebTeamWork.id ?? string.Empty)
-                                .Replace("$Bugs$", newValue: Bugs.id ?? string.Empty)
+                                .Replace("$MobileTeamWork$", MobileTeamWork.id != null ? MobileTeamWork.id : string.Empty).Replace("$WebTeamWork$", WebTeamWork.id != null ? WebTeamWork.id : string.Empty)
+                                .Replace("$Bugs$", Bugs.id != null ? Bugs.id : string.Empty)
                                 .Replace("$sprint2$", sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault().id : string.Empty)
                                 .Replace("$sprint3$", sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault().id : string.Empty)
                                 .Replace("$startDate$", startdate)
-                                .Replace("$BugswithoutRepro$", newValue: BugsWithoutReproSteps.id ?? string.Empty).Replace("$UnfinishedWork$", UnfinishedWork.id ?? string.Empty)
+                                .Replace("$BugswithoutRepro$", BugsWithoutReproSteps.id != null ? BugsWithoutReproSteps.id : string.Empty).Replace("$UnfinishedWork$", UnfinishedWork.id != null ? UnfinishedWork.id : string.Empty)
                                 .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
                                 .Replace("$PublicWebSiteCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault().Id : string.Empty);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
 
+                        }
+                    }
+                    if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                    {
+                        if (isDashboardDeleted)
+                        {
+                            QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries/Current%20Sprint");
+                            dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
+                            dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WotkInProgress.id);
+
+                            string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
+                            objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
                 }
@@ -2309,6 +2499,7 @@ namespace VstsDemoBuilder.Controllers
                 queryObject.wiql = UpdateQueryString;
                 isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Work in Progress", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
 
+
                 UpdateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.State],[Microsoft.VSTS.Common.Priority] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER @currentIteration AND [System.WorkItemType] IN GROUP 'Microsoft.TestCaseCategory' ORDER BY [Microsoft.VSTS.Common.Priority],[System.Id] ";
                 queryObject.wiql = UpdateQueryString;
                 isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Test Cases", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
@@ -2317,6 +2508,10 @@ namespace VstsDemoBuilder.Controllers
                 queryObject.wiql = UpdateQueryString;
                 isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Blocked Tasks", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
 
+            }
+            catch (OperationCanceledException oce)
+            {
+                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n" + oce.StackTrace + Environment.NewLine);
             }
             catch (Exception ex)
             {
@@ -2449,10 +2644,6 @@ namespace VstsDemoBuilder.Controllers
                                 {
                                     string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.name == ins.Key).FirstOrDefault().link;
                                     string lincense = "";
-                                    //if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.name == ins.Key).FirstOrDefault().License))
-                                    //{
-                                    //    lincense = " - " + template.Extensions.Where(x => x.name == ins.Key).FirstOrDefault().License;
-                                    //}
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/>";
                                 }
                                 return Json(new { message = requiresExtensionNames, status = "true" }, JsonRequestBehavior.AllowGet);
@@ -2474,7 +2665,6 @@ namespace VstsDemoBuilder.Controllers
                 return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
             }
         }
-
         /// <summary>
         /// Installing Extensions
         /// </summary>
@@ -2486,14 +2676,12 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-
                 string templatesFolder = Server.MapPath("~") + @"\Templates\";
                 string projTemplateFile = string.Format(templatesFolder + @"{0}\Extensions.json", model.SelectedTemplate);
                 if (!(System.IO.File.Exists(projTemplateFile)))
                 {
                     return false;
                 }
-
                 string templateItems = System.IO.File.ReadAllText(projTemplateFile);
                 var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(templateItems);
                 string requiresExtensionNames = string.Empty;
@@ -2557,8 +2745,9 @@ namespace VstsDemoBuilder.Controllers
                 AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
                 return false;
             }
-        }
 
+            return true;
+        }
         /// <summary>
         /// Mail Configuration
         /// </summary>
@@ -2568,7 +2757,7 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult SendEmail(Email model)
         {
             Email objEmail = new Email();
-            string subject = "Azure DevOps Demogenerator error detail";
+            string subject = "Azure Devops Demo Generator error detail";
 
             var bodyContent = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/EmailTemplates/ErrorDetail.html"));
 
@@ -2678,7 +2867,7 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
