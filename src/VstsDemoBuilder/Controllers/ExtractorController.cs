@@ -17,6 +17,7 @@ using VstsDemoBuilder.Models;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.Viewmodel.Extractor;
 using LaunchDarkly.Client;
+using System.Web.Hosting;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -76,9 +77,26 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Index(ProjectList.ProjectCount model)
         {
-            //string email = Session["Email"].ToString();
-            //User user = LaunchDarkly.Client.User.WithKey(email);
-            bool showFeature = true;// = ldClient.BoolVariation("extractor", user, false);
+            string email = Session["Email"].ToString();
+            User user = LaunchDarkly.Client.User.WithKey(email);
+            bool showFeature = ldClient.BoolVariation("extractor", user, false);
+
+            //string filePath = HostingEnvironment.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
+            //if (System.IO.File.Exists(filePath))
+            //{
+            //    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+            //    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
+            //    {
+            //        ReadUser.User Reguser = new ReadUser.User();
+            //        Reguser = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+            //        var isUesrExist = Reguser.Users.Where(x => x == email).FirstOrDefault();
+            //        if (isUesrExist != null || isUesrExist != "")
+            //            showFeature = true;
+            //        else
+            //            showFeature = false;
+            //    }
+            //}
+
             if (showFeature)
             {
                 string pat = "";
@@ -117,7 +135,7 @@ namespace VstsDemoBuilder.Controllers
             }
             else
             {
-                return RedirectToAction("NotFound");
+                return RedirectToAction("NotFound", "Extractor");
             }
 
         }
@@ -395,7 +413,7 @@ namespace VstsDemoBuilder.Controllers
                 // System.IO.File.WriteAllText(Server.MapPath("\\Templates\\Extension.json"), JsonConvert.SerializeObject(extensions, Formatting.Indented));
                 return Json(exa, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return null;
@@ -519,7 +537,7 @@ namespace VstsDemoBuilder.Controllers
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return false;

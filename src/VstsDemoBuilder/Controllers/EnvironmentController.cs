@@ -38,6 +38,7 @@ using VstsRestAPI.Viewmodel.Wiki;
 using VstsRestAPI.Viewmodel.Sprint;
 using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Extractor;
+using LaunchDarkly.Client;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -53,7 +54,7 @@ namespace VstsDemoBuilder.Controllers
         public string projectName = string.Empty;
         AccessDetails AccessDetails = new AccessDetails();
 
-
+        LdClient ldClient = new LdClient("sdk-36af231d-d756-445a-b539-97752bbba254");
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -204,12 +205,32 @@ namespace VstsDemoBuilder.Controllers
 
                     if (Session["PAT"] != null)
                     {
-
                         AccessDetails.access_token = Session["PAT"].ToString();
                         ProfileDetails Profile1 = GetProfile(AccessDetails);
                         Session["User"] = Profile1.displayName;
                         Session["Email"] = Profile1.emailAddress;
                         Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
+
+                        //New Feature Enabling
+                        User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress);
+                        bool showFeature = ldClient.BoolVariation("extractor", user, false);
+                        ViewBag.UserExist = showFeature;
+
+                        //string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
+                        //if (System.IO.File.Exists(filePath))
+                        //{
+                        //    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+                        //    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
+                        //    {
+                        //        ReadUser.User Reguser = new ReadUser.User();
+                        //        Reguser = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+                        //        var isUesrExist = Reguser.Users.Where(x => x == Profile1.emailAddress).FirstOrDefault();
+                        //        if (isUesrExist != null || isUesrExist != "")
+                        //            ViewBag.UserExist = true;
+                        //        else
+                        //            ViewBag.UserExist = false;
+                        //    }
+                        //}
 
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
@@ -279,12 +300,32 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiaXNzIjoiYXBwLnZzc3BzLnZpc3VhbHN0dWRpby5jb20iLCJhdWQiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsIm5iZiI6MTUzNzUzNjc5MywiZXhwIjoxNTM3NTQwMzkzfQ.QbpciWjrqtgDaYgisbqJeQubiLOUzFh5UNMOa9g1xJp-PUO8wNjqHpxnmmSuSsq2BFH2HifFdGnkZvfZATkUt1pnoGoYxCCpq-nTCovmIDYiIJiAXZgblkHnjPrgMLvQubITC6pHJodTDvlmwUVOuKI5nE-Ea57RzCnsGpgxSJwoQ1cvkok5PlChj6Le_Kc2TlfL8U9T1WL1OY56XrvQxchrONy0CzaQLE--fzmtCguRtNeo5ciPMSay6APVlJM-igfnrmMfdiDws8E6ksxhR2njVUo6TU2ZAws2_YixW0gIZ0QT17U7pQUCZ5YNzvzCTpjxojRBTaCuGCBPMgfSyA";
-
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiaXNzIjoiYXBwLnZzc3BzLnZpc3VhbHN0dWRpby5jb20iLCJhdWQiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsIm5iZiI6MTUzNzc5OTEyNCwiZXhwIjoxNTM3ODAyNzI0fQ.eLNQtGgXt5s8mo98Zjsqu6nPLkf3VNopDOLMqJKuMw7zrDfoleoh5Bw9Gde-lBF81Ki-JvS_qm_Wgfd52ihOyj97IkIRZKzvKAyS5X4R_vo0a-JSsJsFDcU1iUVsF1epx7QvvOLo35pxOK19ad_SoJlmG2vmzndvs6TUAnDcezvFw8vfymXh8nNXuRAeQAseqgBYF4pQ-t_84Oc98ZgUKr49fBjVNi_o0BiUqBq4imvS2bNtq1U7Fe9owzYFmi2wlvuRFnrBVE4u9GNYrkPs0FCl_lN0IXXDncddG3l2usFipUVSb6vto0My5JUcJ7VWCA2y-ZGSc-lRF_x1k_XSRg";
+                        //New Feature Enabling
                         ProfileDetails Profile = GetProfile(AccessDetails);
                         Session["User"] = Profile.displayName;
                         Session["Email"] = Profile.emailAddress;
                         Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
+
+                        User user = LaunchDarkly.Client.User.WithKey(Profile.emailAddress);
+                        bool showFeature = ldClient.BoolVariation("extractor", user, false);
+                        ViewBag.UserExist = showFeature;
+
+                        //string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
+                        //if (System.IO.File.Exists(filePath))
+                        //{
+                        //    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+                        //    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
+                        //    {
+                        //        ReadUser.User Reguser = new ReadUser.User();
+                        //        Reguser = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+                        //        var isUesrExist = Reguser.Users.Where(x => x == Profile.emailAddress).FirstOrDefault();
+                        //        if (isUesrExist != null || isUesrExist != "")
+                        //            ViewBag.UserExist = true;
+                        //        else
+                        //            ViewBag.UserExist = false;
+                        //    }
+                        //}
 
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
@@ -360,7 +401,7 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return View();
             }
@@ -588,7 +629,7 @@ namespace VstsDemoBuilder.Controllers
             var request = new HttpRequestMessage(HttpMethod.Get, "/_apis/profile/profiles/me");
 
             var requestContent = string.Format(
-                "site={0}&api-version={1}", Uri.EscapeDataString("https://app.vssps.visualstudio.com"), Uri.EscapeDataString("1.0"));
+                "site={0}&api-version={1}", Uri.EscapeDataString("https://app.vssps.visualstudio.com"), Uri.EscapeDataString("4.1"));
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             request.Headers.Add("Authorization", string.Format("Bearer {0}", accessDetails.access_token));
@@ -715,7 +756,7 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 AccountMembers.Account accountMembers = new AccountMembers.Account();
-                Configuration _defaultConfiguration = new Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = AccessToken };
+                VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = AccessToken };
                 Account objAccount = new Account(_defaultConfiguration);
                 accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
                 if (accountMembers.count > 0)
@@ -844,13 +885,13 @@ namespace VstsDemoBuilder.Controllers
             }
             //configuration setup
             string _credentials = model.accessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", PAT)));
-            Configuration _defaultConfiguration = new Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT };
-            Configuration _releaseDefinitionConfiguration = new Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT };
-            Configuration _createReleaseConfiguration = new Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT };
-            Configuration _configuration3_0 = new Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName };
-            Configuration _configuration2_0 = new Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT };
-            Configuration _cardConfiguration = new Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT };
-            Configuration _wikiConfiguration = new Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _releaseDefinitionConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _createReleaseConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _configuration3_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName };
+            VstsRestAPI.Configuration _configuration2_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _cardConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT };
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
             string projTemplateFile = string.Format(templatesFolder + @"{0}\ProjectTemplate.json", model.SelectedTemplate);
@@ -892,7 +933,7 @@ namespace VstsDemoBuilder.Controllers
 
             if (projectId == "-1")
             {
-                AddMessage(model.id, proj.lastFailureMessage);
+                AddMessage(model.id, proj.LastFailureMessage);
                 Thread.Sleep(1000);
                 return new string[] { model.id, accountName };
             }
@@ -1202,7 +1243,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <param name="teamAreaJSON"></param>
-        private void CreateTeams(string templatesFolder, Project model, string teamsJSON, Configuration _defaultConfiguration, string id, string teamAreaJSON)
+        private void CreateTeams(string templatesFolder, Project model, string teamsJSON, VstsRestAPI.Configuration _defaultConfiguration, string id, string teamAreaJSON)
         {
             try
             {
@@ -1243,9 +1284,9 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
-                    if (!(string.IsNullOrEmpty(objTeam.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
                     }
                     else
                     {
@@ -1277,7 +1318,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamName, Configuration _configuration, string id)
+        private TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamName, VstsRestAPI.Configuration _configuration, string id)
         {
             try
             {
@@ -1285,9 +1326,9 @@ namespace VstsDemoBuilder.Controllers
                 Team objTeam = new Team(_configuration);
                 viewModel = objTeam.GetTeamMembers(projectName, teamName);
 
-                if (!(string.IsNullOrEmpty(objTeam.lastFailureMessage)))
+                if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
                 {
-                    AddMessage(id.ErrorId(), "Error while getting team members: " + objTeam.lastFailureMessage + Environment.NewLine);
+                    AddMessage(id.ErrorId(), "Error while getting team members: " + objTeam.LastFailureMessage + Environment.NewLine);
                 }
                 return viewModel;
             }
@@ -1307,7 +1348,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="workItemJSON"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
-        private void CreateWorkItems(string templatesFolder, Project model, string workItemJSON, Configuration _defaultConfiguration, string id)
+        private void CreateWorkItems(string templatesFolder, Project model, string workItemJSON, VstsRestAPI.Configuration _defaultConfiguration, string id)
         {
             try
             {
@@ -1323,9 +1364,9 @@ namespace VstsDemoBuilder.Controllers
                     jsonWorkItems = jsonWorkItems.Replace("$version$", _defaultConfiguration.VersionNumber);
                     bool workItemResult = objWorkItem.CreateWorkItemUsingByPassRules(model.ProjectName, jsonWorkItems);
 
-                    if (!(string.IsNullOrEmpty(objWorkItem.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objWorkItem.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating workitems: " + objWorkItem.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating workitems: " + objWorkItem.LastFailureMessage + Environment.NewLine);
                     }
                 }
 
@@ -1345,7 +1386,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, Configuration _defaultConfiguration, string id)
+        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _defaultConfiguration, string id)
         {
             bool res = false;
             try
@@ -1362,9 +1403,9 @@ namespace VstsDemoBuilder.Controllers
                         model.Environment.BoardRowFieldName = objBoard.rowFieldName;
                         res = true;
                     }
-                    else if (!(string.IsNullOrEmpty(objBoard.lastFailureMessage)))
+                    else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1383,7 +1424,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardFields(string templatesFolder, Project model, string json, Configuration _configuration, string id)
+        private void UpdateCardFields(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id)
         {
             try
             {
@@ -1415,7 +1456,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardStyles(string templatesFolder, Project model, string json, Configuration _configuration, string id)
+        private void UpdateCardStyles(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id)
         {
             try
             {
@@ -1447,7 +1488,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_config3_0"></param>
         /// <param name="id"></param>
-        private void EnableEpic(string templatesFolder, Project model, string json, Configuration _config3_0, string id)
+        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _config3_0, string id)
         {
             try
             {
@@ -1482,7 +1523,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="id"></param>
         /// <param name="currentUser"></param>
         /// <param name="ProjectSettingsJSON"></param>
-        private void UpdateWorkItems(string templatesFolder, Project model, string workItemUpdateJSON, Configuration _defaultConfiguration, string id, string currentUser, string ProjectSettingsJSON)
+        private void UpdateWorkItems(string templatesFolder, Project model, string workItemUpdateJSON, VstsRestAPI.Configuration _defaultConfiguration, string id, string currentUser, string ProjectSettingsJSON)
         {
             try
             {
@@ -1495,9 +1536,9 @@ namespace VstsDemoBuilder.Controllers
                     jsonProjectSettings = model.ReadJsonFile(jsonProjectSettings);
 
                     bool workItemUpdateResult = objWorkItem.UpdateWorkItemUsingByPassRules(jsonWorkItemsUpdate, model.ProjectName, currentUser, jsonProjectSettings);
-                    if (!(string.IsNullOrEmpty(objWorkItem.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objWorkItem.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while updating work items: " + objWorkItem.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while updating work items: " + objWorkItem.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -1514,7 +1555,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="templatesFolder"></param>
         /// <param name="iterationsJSON"></param>
-        private void UpdateIterations(Project model, Configuration _defaultConfiguration, string templatesFolder, string iterationsJSON)
+        private void UpdateIterations(Project model, VstsRestAPI.Configuration _defaultConfiguration, string templatesFolder, string iterationsJSON)
         {
             try
             {
@@ -1613,7 +1654,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="settings"></param>
-        private void UpdateSprintItems(Project model, Configuration _defaultConfiguration, ProjectSettings settings)
+        private void UpdateSprintItems(Project model, VstsRestAPI.Configuration _defaultConfiguration, ProjectSettings settings)
         {
             try
             {
@@ -1637,7 +1678,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="renameIterations"></param>
-        public void RenameIterations(Project model, Configuration _defaultConfiguration, Dictionary<string, string> renameIterations)
+        public void RenameIterations(Project model, VstsRestAPI.Configuration _defaultConfiguration, Dictionary<string, string> renameIterations)
         {
             try
             {
@@ -1662,7 +1703,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="importSourceConfiguration"></param>
         /// <param name="id"></param>
-        private void ImportSourceCode(string templatesFolder, Project model, string sourceCodeJSON, Configuration _defaultConfiguration, Configuration importSourceConfiguration, string id)
+        private void ImportSourceCode(string templatesFolder, Project model, string sourceCodeJSON, VstsRestAPI.Configuration _defaultConfiguration, VstsRestAPI.Configuration importSourceConfiguration, string id)
         {
 
             try
@@ -1696,9 +1737,9 @@ namespace VstsDemoBuilder.Controllers
                     Repository objRepositorySourceCode = new Repository(importSourceConfiguration);
                     bool copySourceCode = objRepositorySourceCode.getSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
 
-                    if (!(string.IsNullOrEmpty(objRepository.lastFailureMessage)))
+                    if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
                     {
-                        AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.LastFailureMessage + Environment.NewLine);
                     }
 
                 }
@@ -1719,7 +1760,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="pullRequestJsonPath"></param>
         /// <param name="_configuration3_0"></param>
-        private void CreatePullRequest(string templatesFolder, Project model, string pullRequestJsonPath, Configuration _configuration3_0)
+        private void CreatePullRequest(string templatesFolder, Project model, string pullRequestJsonPath, VstsRestAPI.Configuration _configuration3_0)
         {
             try
             {
@@ -1779,7 +1820,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="jsonPaths"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, Configuration _defaultConfiguration)
+        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, VstsRestAPI.Configuration _defaultConfiguration)
         {
             try
             {
@@ -1839,9 +1880,9 @@ namespace VstsDemoBuilder.Controllers
                         }
                         var endpoint = objService.CreateServiceEndPoint(jsonCreateService, model.ProjectName);
 
-                        if (!(string.IsNullOrEmpty(objService.lastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objService.LastFailureMessage)))
                         {
-                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.lastFailureMessage + Environment.NewLine);
+                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.LastFailureMessage + Environment.NewLine);
                         }
                         else
                         {
@@ -1864,7 +1905,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="testPlanJson"></param>
         /// <param name="templateFolder"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateTestManagement(List<WIMapData> WImapping, Project model, string testPlanJson, string templateFolder, Configuration _defaultConfiguration)
+        private void CreateTestManagement(List<WIMapData> WImapping, Project model, string testPlanJson, string templateFolder, VstsRestAPI.Configuration _defaultConfiguration)
         {
             try
             {
@@ -1937,7 +1978,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool CreateBuildDefinition(string templatesFolder, Project model, Configuration _defaultConfiguration, string id)
+        private bool CreateBuildDefinition(string templatesFolder, Project model, VstsRestAPI.Configuration _defaultConfiguration, string id)
         {
             bool flag = false;
             try
@@ -1965,9 +2006,9 @@ namespace VstsDemoBuilder.Controllers
 
                         string[] buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
 
-                        if (!(string.IsNullOrEmpty(objBuild.lastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objBuild.LastFailureMessage)))
                         {
-                            AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.lastFailureMessage + Environment.NewLine);
+                            AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.LastFailureMessage + Environment.NewLine);
                         }
                         buildDef.Id = buildResult[0];
                         buildDef.Name = buildResult[1];
@@ -1990,7 +2031,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
-        private void QueueABuild(Project model, string json, Configuration _configuration)
+        private void QueueABuild(Project model, string json, VstsRestAPI.Configuration _configuration)
         {
             try
             {
@@ -2004,9 +2045,9 @@ namespace VstsDemoBuilder.Controllers
                     BuildDefinition objBuild = new BuildDefinition(_configuration);
                     int queueId = objBuild.QueueBuild(jsonQueueABuild, model.ProjectName);
 
-                    if (!string.IsNullOrEmpty(objBuild.lastFailureMessage))
+                    if (!string.IsNullOrEmpty(objBuild.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.lastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -2026,7 +2067,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="id"></param>
         /// <param name="teamMembers"></param>
         /// <returns></returns>
-        private bool CreateReleaseDefinition(string templatesFolder, Project model, Configuration _releaseConfiguration, Configuration _config3_0, string id, TeamMemberResponse.TeamMembers teamMembers)
+        private bool CreateReleaseDefinition(string templatesFolder, Project model, VstsRestAPI.Configuration _releaseConfiguration, VstsRestAPI.Configuration _config3_0, string id, TeamMemberResponse.TeamMembers teamMembers)
         {
             bool flag = false;
             try
@@ -2074,9 +2115,9 @@ namespace VstsDemoBuilder.Controllers
                         relDef.Id = releaseDef[0];
                         relDef.Name = releaseDef[1];
 
-                        if (!(string.IsNullOrEmpty(objRelease.lastFailureMessage)))
+                        if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
                         {
-                            AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.lastFailureMessage + Environment.NewLine);
+                            AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.LastFailureMessage + Environment.NewLine);
                         }
                     }
                     flag = true;
@@ -2092,7 +2133,7 @@ namespace VstsDemoBuilder.Controllers
             return flag;
         }
 
-        public void CreateRelease(string templatesFolder, Project model, string json, Configuration _configuration, string id, int releaseDefinitionId)
+        public void CreateRelease(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, int releaseDefinitionId)
         {
             try
             {
@@ -2104,9 +2145,9 @@ namespace VstsDemoBuilder.Controllers
                     ReleaseDefinition objRelease = new ReleaseDefinition(_configuration);
                     objRelease.CreateRelease(jsonCreateRelease, model.ProjectName);
 
-                    if (!string.IsNullOrEmpty(objRelease.lastFailureMessage))
+                    if (!string.IsNullOrEmpty(objRelease.LastFailureMessage))
                     {
-                        AddMessage(id.ErrorId(), "Error while creating release: " + objRelease.lastFailureMessage + Environment.NewLine);
+                        AddMessage(id.ErrorId(), "Error while creating release: " + objRelease.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
@@ -2126,7 +2167,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_configuration2"></param>
         /// <param name="_configuration3"></param>
         /// <param name="releaseConfig"></param>
-        public void CreateQueryAndWidgets(string templatesFolder, Project model, List<string> lstQueries, Configuration _defaultConfiguration, Configuration _configuration2, Configuration _configuration3, Configuration releaseConfig)
+        public void CreateQueryAndWidgets(string templatesFolder, Project model, List<string> lstQueries, VstsRestAPI.Configuration _defaultConfiguration, VstsRestAPI.Configuration _configuration2, VstsRestAPI.Configuration _configuration3, VstsRestAPI.Configuration releaseConfig)
         {
             try
             {
@@ -2138,9 +2179,9 @@ namespace VstsDemoBuilder.Controllers
                 string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
                 Thread.Sleep(2000);
 
-                if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
+                if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                 {
-                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.lastFailureMessage + Environment.NewLine);
+                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
                 }
 
                 foreach (string query in lstQueries)
@@ -2151,9 +2192,9 @@ namespace VstsDemoBuilder.Controllers
                     QueryResponse response = objQuery.CreateQuery(model.ProjectName, json);
                     queryResults.Add(response);
 
-                    if (!string.IsNullOrEmpty(objQuery.lastFailureMessage))
+                    if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.lastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
 
                     }
 
@@ -2745,8 +2786,6 @@ namespace VstsDemoBuilder.Controllers
                 AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
                 return false;
             }
-
-            return true;
         }
         /// <summary>
         /// Mail Configuration
@@ -2801,7 +2840,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="templatesFolder"></param>
         /// <param name="model"></param>
         /// <param name="_wikiConfiguration"></param>
-        public void SetUpWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
+        public void SetUpWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
         {
             try
             {
@@ -2867,10 +2906,42 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
+        }
+
+        [AllowAnonymous]
+        public bool RegisterUser(string userID)
+        {
+            if (userID != "")
+            {
+                string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
+                if (System.IO.File.Exists(filePath))
+                {
+                    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+                    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
+                    {
+                        ReadUser.User user = new ReadUser.User();
+                        user = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+                        user.Users.Add(userID);
+                        System.IO.File.WriteAllText(filePath, JsonConvert.SerializeObject(user));
+                        ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+                        user = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+                        var isUesrExist = user.Users.Where(x => x == userID).FirstOrDefault();
+                        if (userID == isUesrExist)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return false;
         }
         #endregion
     }
