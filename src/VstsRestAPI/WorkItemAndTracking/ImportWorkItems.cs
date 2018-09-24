@@ -104,7 +104,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 foreach (string wiType in dicWITypes.Keys)
                 {
-                    PrepareAndUpdateTarget(wiType, dicWITypes[wiType], projectName);
+                    PrepareAndUpdateTarget(wiType, dicWITypes[wiType], projectName, SelectedTemplate);
                 }
 
                 foreach (string wiType in dicWITypes.Keys)
@@ -128,9 +128,10 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="workImport"></param>
         /// <param name="ProjectName"></param>
         /// <returns></returns>
-        public bool PrepareAndUpdateTarget(string workItemType, string workImport, string ProjectName)
+        public bool PrepareAndUpdateTarget(string workItemType, string workImport, string ProjectName, string SelectedTemplate)
         {
             //List<ColumnPost> Columns = JsonConvert.DeserializeObject<List<ColumnPost>>(workImport);
+            workImport = workImport.Replace("$ProjectName$", ProjectName);
             ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
 
             if (fetchedWIs.count > 0)
@@ -166,7 +167,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
                         dicWIFields.Add("/fields/Microsoft.VSTS.TCM.LocalDataSource", newWI.fields.MicrosoftVSTSTCMLocalDataSource);
                         dicWIFields.Add("/fields/Microsoft.VSTS.TCM.AutomationStatus", newWI.fields.MicrosoftVSTSTCMAutomationStatus);
-
+                        
                         if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
                         {
                             dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
@@ -196,6 +197,10 @@ namespace VstsRestAPI.WorkItemAndTracking
                         if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane)) newWI.fields.SystemBoardLane = string.Empty;
 
                         dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
+                        if (SelectedTemplate.ToLower() == "smarthotel360v2")
+                        {
+                            dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
+                        }
                         dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
                         dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
                         dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);

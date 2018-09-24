@@ -12,6 +12,7 @@ namespace VstsDemoBuilder.Models
         public string id { get; set; }
         public string MemberID { get; set; }
 
+        public string ProcessTemplate { get; set; }
         public string ProjectName { get; set; }
         public string SelectedTemplate { get; set; }
         public string TemplateId { get; set; }

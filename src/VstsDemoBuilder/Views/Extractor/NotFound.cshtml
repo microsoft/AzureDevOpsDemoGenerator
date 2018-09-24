@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "HandleError";
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/assets/css/custom.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <title>NotFound</title>
+</head>
+<body class="pb-3">
+    <!-- /MODAL -->
+    <nav class="navbar navbar-dark navbar-expand-lg no-border navbar-toggler" id="headbar" style="background-color:#0078d7">
+        <a class="navbar-brand p-0 mr-auto" href="#">
+            <img src="~/assets/images/VS_logo.png" alt="">
+            <span class="navbar-brand-text ml-1">
+                Azure DevOps Demo Generator
+            </span>
+        </a>
+    </nav>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <!--
+                  COL 1
+                  Image and Feedback section
+            -->
+            <div class="col-md-2 order-2 order-md-1">
+
+            </div>
+            <!--
+                COL 2
+                Create section
+            -->
+            <div class="col-md-8 order-1 order-md-2" style="line-height: 1.2;color:#808080; font-weight:200; font-size: 1.75rem;text-align:center">
+
+                <img src="~/assets/images/error.png" />
+
+                @*<div class="text-center display-4 p-3" id="greeting">*@
+
+                <p>
+                    NOT FOUND
+                </p>
+
+                <u><a href="https://app.vssps.visualstudio.com/_signout" style="color:#808080;">Sign out</a></u>
+
+                @*</div>*@
+            </div>
+            <!--
+               COL 3
+               Notification section
+            -->
+            <div class="col-md-2 order-3 order-md-3">
+                <!-- Description card -->
+                <!-- /Description card -->
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
