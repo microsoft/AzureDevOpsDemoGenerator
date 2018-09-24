@@ -4,7 +4,6 @@ $(document).ready(function () {
 
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
-
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 50) {
@@ -387,6 +386,31 @@ $(document).ready(function (event) {
             $('#btnSubmit').click();
             return false;
         }
+    });
+
+    //New Feature Registration
+    $('#closeFeatureRibben').click(function () {
+        $('#newFeature').hide();
+    });
+
+    $('#tryNow').click(function () {
+        var userID = $('#emailID').val();
+        $.ajax({
+            url: '../Environment/RegisterUser',
+            type: 'POST',
+            data: { userID: userID },
+            success: function (res) {
+                if (res == "True") {
+                    $('#Featuremessage').empty().append("Thanks, feature will be enabled soon for you");
+                    $('#tryNow').hide();
+                    location.reload();
+                }
+                else {
+                    $('#Featuremessage').empty().append("Sorry, we ran into an issue, please try again");
+                }
+            },
+            error: function (er) { }
+        });
     });
 });
 $('#btnSubmit').click(function () {

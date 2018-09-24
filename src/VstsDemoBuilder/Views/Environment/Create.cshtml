@@ -12,6 +12,14 @@
     <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <title>Create Project</title>
+    <style type="text/css">
+        .newFeature {
+            background-color: #DEECF9;
+            line-height: 1.2;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="pb-3">
     <input type="hidden" id="hidnUID" />
@@ -39,6 +47,7 @@
             </div>
         </div>
     </div>
+
     <!--/TEMPLATEgROUPING-->
     <!-- MODAL -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -92,10 +101,23 @@
         </div>
 
 
-        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-            <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-        </div>
+        @if (ViewBag.UserExist)
+        {
+            <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+                <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+            </div>
+        }
+
+
     </div>
+    @if (!ViewBag.UserExist)
+    {
+        <div class="col-sm-12 newFeature text-center p-2" id="newFeature">
+            <a id="Featuremessage"> New Feature. Register to see!</a>
+            <button class="btn btn-primary btn-sm pull-right" id="tryNow">Try Now</button>
+            <a id="closeFeatureRibben" style="float: right;">X</a>
+        </div>
+    }
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
             <!--
@@ -246,78 +268,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/Scripts/AppScripts/create.js"></script>
+    <script src="~/Scripts/AppScripts/FileUpload.js"></script>
     <script src="~/Scripts/tooltip.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            $('body').on('click', '#btnUpload', function () {
-
-                $("#fileError").remove();
-
-                // Checking whether FormData is available in browser
-                if (window.FormData !== undefined) {
-
-                    var fileUpload = $("#FileUpload1").get(0);
-                    var files = fileUpload.files;
-
-                    // Create FormData object
-                    var fileData = new FormData();
-
-                    // Looping over all files and add it to FormData object
-                    for (var i = 0; i < files.length; i++) {
-                        fileData.append(files[i].name, files[i]);
-                    }
-
-                    $.ajax({
-                        url: '/Environment/UploadFiles',
-                        type: "POST",
-                        contentType: false, // Not to set any content header
-                        processData: false, // Not to process data
-                        data: fileData,
-                        success: function (result) {
-                            if (result == "1") {
-                                alert("succesfully uploaded file: " + files[0].name);
-
-                                $.post("UnzipFile", { "fineName": files[0].name }, function (respose) {
-
-                                    if (respose == "SUCCESS") {
-
-                                        alert("succesfully unzipped file: " + files[0].name);
-                                        var NewTemplateName = files[0].name.replace(".zip", "");
-                                        $('#ddlTemplates').val(NewTemplateName);
-                                        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
-                                        $("#lblextensionError").removeClass('d-block').addClass('d-none');
-                                        $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
-                                        $("#lblDescription").removeClass('d-block').addClass('d-none');
-                                        $("#ddlAcccountName").prop('selectedIndex', 0);
-                                    } else {
-                                        if (respose == "PROJECTANDSETTINGNOTFOUND") {
-
-                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again</span>')
-                                        }
-                                        if (respose == "SETTINGNOTFOUND") {
-                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting file not found! plase include the files in zip and try again</span>')
-                                        }
-                                        if (respose == "PROJECTFILENOTFOUND") {
-                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectTemplate file not found! plase include the files in zip and try again</span>')
-                                        }
-                                        if (respose == "ISPRIVATEERROR") {
-                                            $("#btnContainer").append('<span id="fileError" class="bg-warning">IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.</span>')
-                                        }
-                                    }
-                                })
-                            }
-                        },
-                        error: function (err) {
-                            alert(err.statusText);
-                        }
-                    });
-                } else {
-                    alert("FormData is not supported.");
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>

@@ -140,15 +140,14 @@
                         <input type="hidden" id="processtemplate" />
                     </div>
                 </div>
-                <div class="col-sm-11 text-right mt-3 listDivs1" style="padding:0px">
+                <div class="mr-3 text-right listDivs1" style="padding:0px">
                     <button class="btn btn-primary submitBtn btnUpdate" id="Analyse">
                         Analyze
                     </button>
                     <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="imgLoading" />
                 </div>
-                <br />
 
-                <div class="form-group d-none listDivs1" id="analyseDiv">
+                <div class="form-group d-none listDivs1 p-3" id="analyseDiv">
                     <div class="accordion" id="accordionExample">
                         <div class="card rounded">
                             <div class="card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne" style="padding:0px; background-color:white; cursor:pointer;">
@@ -174,7 +173,7 @@
 
                 </div>
 
-                <div class="col-sm-11 text-right mt-3 d-none listDivs1" style="padding:0px" id="genArtDiv">
+                <div class="text-right mt-3 mr-3 d-none listDivs1" style="padding:0px" id="genArtDiv">
                     <button class="btn btn-default" id="GenerateArtifacts" disabled>
                         Generate Artifacts
                     </button>
@@ -182,6 +181,34 @@
                 </div>
                 <!--EXTENSIONS -->
                 <!--/EXTENSIONS -->
+                <div class="order-md-2 p-3">
+                    <!-- PROGRESS BAR -->
+                    <div class="accordion d-none" id="GenerateArtifact">
+                        <div class="card">
+                            <div class="card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="headingTwo" style="padding:0px; background-color:white; cursor:pointer;">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>
+                                    <button class="btn" type="button">
+                                        <b>Artifact Summary</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse show genArtifacts" aria-labelledby="headingTwo" data-parent="#GenerateArtifact">
+                                <div class="card-body">
+                                    <div id="artifactProgress" class="d-none">
+                                    </div>
+                                    <div id="ExStatus-messages" class="mt-3" style="display:none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3 d-none" id="finalLink">
+                        <div class="card-body" id="accountLink" style="color: green;font-weight: 300;">
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!--
                COL 3
@@ -196,71 +223,15 @@
                   COL 1
                   Image and Feedback section
             -->
-            <div class="col-md-3 order-2 order-md-1 VSTS-mh-100 listDivs2">
-                <div class="d-flex flex-column VSTS-mh-100">
-                </div>
-            </div>
 
             <!--
                 COL 2
                 Create section
             -->
-            <div class="col-md-6 order-1 order-md-2">
-
-                <!-- PROGRESS BAR -->
-                @*<div class="progress mt-3 d-none" id="ExdvProgress">
-                        <div class="progress-bar progress-bar-striped bg-primary" id="ExtractorProgressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>*@
-                <h6 class="text-muted d-none" id="textMuted">Your template is being created...</h6>
-
-                <!-- PROGRESS BAR -->
-                <div class="accordion d-none" id="GenerateArtifact">
-                    <div class="card">
-                        <div class="card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="headingTwo" style="padding:0px; background-color:white; cursor:pointer;">
-                            <h5 class="mb-0">
-                                <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>
-                                <button class="btn" type="button">
-                                    <b>Artifact Summary</b>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse show genArtifacts" aria-labelledby="headingTwo" data-parent="#GenerateArtifact">
-                            <div class="card-body">
-                                <div id="artifactProgress" class="d-none">
-                                </div>
-                                <div id="ExStatus-messages" class="mt-3" style="display:none;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card mt-3 d-none" id="finalLink">
-                    <div class="card-body" id="accountLink" style="color: green;font-weight: 300;">
-                    </div>
-                </div>
-            </div>
             <!--
                COL 3
                Notification section
             -->
-            <div class="col-md-3 order-3 order-md-3">
-                <!-- Description card -->
-                <div class="card bg-primary mb-3 mt-auto" id="errorNotify" style="display:none;">
-                    <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
-                    <div class="card-body" style="background-color:white">
-                        <p class="card-text" id="errorDescription">
-                        </p>
-                    </div>
-                    <div class="card-footer" style="background-color:white">
-                        <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
-                            View Diagnostics
-                        </button>
-                    </div>
-                </div>
-                <!-- /Description card -->
-            </div>
         </div>
     </div>
 
