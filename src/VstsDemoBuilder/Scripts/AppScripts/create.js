@@ -393,25 +393,6 @@ $(document).ready(function (event) {
         $('#newFeature').hide();
     });
 
-    $('#tryNow').click(function () {
-        var userID = $('#emailID').val();
-        $.ajax({
-            url: '../Environment/RegisterUser',
-            type: 'POST',
-            data: { userID: userID },
-            success: function (res) {
-                if (res == "True") {
-                    $('#Featuremessage').empty().append("Thanks, feature will be enabled soon for you");
-                    $('#tryNow').hide();
-                    location.reload();
-                }
-                else {
-                    $('#Featuremessage').empty().append("Sorry, we ran into an issue, please try again");
-                }
-            },
-            error: function (er) { }
-        });
-    });
 });
 $('#btnSubmit').click(function () {
     statusCount = 0;
@@ -550,6 +531,22 @@ function getStatus() {
         url: 'GetCurrentProgress/' + uniqueId,
         type: 'GET',
         success: function (data) {
+
+            if (data == "OAUTHACCESSDENIED") {
+                $('#progressBar').width(currentPercentage++ + '%');
+                $('#status-messages').append('<i class="fas fa-forward"></i> &nbsp;Third Party application access via OAuth is disabled for this Organization,please change OAuth access setting and try again!<br/>');
+                $("#ddlAcccountName").removeAttr("disabled");
+                $("#txtProjectName").removeAttr("disabled");
+                $("#txtProjectName").val("");
+                $('#ddlAcccountName').prop('selectedIndex', 0);
+
+                $("#btnSubmit").prop("disabled", false);
+                $("#templateselection").prop("disabled", false);
+                $('#dvProgress').removeClass("d-block").addClass("d-none");
+                $('#textMuted').removeClass("d-block").addClass("d-none");
+                return;
+
+            }
             var isMessageShown = true;
 
             if (jQuery.inArray(data, messageList) == -1) {
@@ -839,8 +836,6 @@ $(document).ready(function () {
         url: "../Environment/GetGroups",
         type: "GET",
         success: function (groups) {
-            console.log(groups);
-
             var grp = "";
             if (groups.Groups.length > 0) {
                 for (var g = 0; g < groups.Groups.length; g++) {
@@ -894,8 +889,6 @@ function createTemplates() {
         url: "../Environment/GetGroups",
         type: "GET",
         success: function (groups) {
-            console.log(groups);
-
             var grp = "";
             if (groups.GroupwiseTemplates.length > 0) {
                 grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">'

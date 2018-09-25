@@ -17,7 +17,6 @@
             background-color: #DEECF9;
             line-height: 1.2;
             color: black;
-            cursor: pointer;
         }
     </style>
 </head>
@@ -89,8 +88,14 @@
                     }
                     <span class="sr-only">(current)</span>
                 </a>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://app.vsaex.visualstudio.com/me?mkt=en-US&campaign=o~msft~vscom~vssignin" target="_blank">Profile</a>
                 </div>
             </li>
         </ul>
@@ -99,8 +104,6 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-
-
         @if (ViewBag.UserExist)
         {
             <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
@@ -113,9 +116,9 @@
     @if (!ViewBag.UserExist)
     {
         <div class="col-sm-12 newFeature text-center p-2" id="newFeature">
-            <a id="Featuremessage"> New Feature. Register to see!</a>
-            <button class="btn btn-primary btn-sm pull-right" id="tryNow">Try Now</button>
-            <a id="closeFeatureRibben" style="float: right;">X</a>
+            <a id="Featuremessage"> Would you like to build your own template? If yes,</a>
+            <a class="pull-right" id="tryNow" href="mailto:mssupport@ecanarys.com?subject=Azure DevOps Demo Generator- Extractor">Mail us here</a>
+            <i class="fas fa-times" style="float: right; cursor:pointer" id="closeFeatureRibben"></i>
         </div>
     }
     <div class="container-fluid mt-3">
@@ -137,7 +140,7 @@
                             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
                             <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
                             <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=vstsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=azuredevopsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
                         </p>
                     </div>
                 </div>

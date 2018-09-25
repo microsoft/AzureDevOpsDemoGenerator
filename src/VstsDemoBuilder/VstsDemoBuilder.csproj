@@ -824,6 +824,7 @@
     <Content Include="NewFeature\RegisteredUsers.json" />
     <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
+    <Content Include="Templates\GroupSettings_FeatureFlag.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
