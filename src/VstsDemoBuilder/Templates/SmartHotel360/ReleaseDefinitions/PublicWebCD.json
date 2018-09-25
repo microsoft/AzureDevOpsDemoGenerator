@@ -1,6 +1,6 @@
 {
   "source": "userInterface",
-  "name": "PublicWebCD",
+  "name": "PublicWebSiteCD",
   "description": null,
   "isDeleted": false,
   "path": "\\",
@@ -15,7 +15,7 @@
   "variableGroups": [],
   "environments": [
     {
-      "name": "Azure",
+      "name": "Azure-Dev",
       "rank": 1,
       "owner": {
         "id": "$OwnerId$",
@@ -103,8 +103,8 @@
                 "templateLocation": "Linked artifact",
                 "csmFileLink": "",
                 "csmParametersFileLink": "",
-                "csmFile": "$(System.DefaultWorkingDirectory)/PublicWebCI/arm/cosmosdb.json",
-                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PublicWebCI/arm/cosmosdb.parameters.json",
+                "csmFile": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/arm/cosmosdb.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/arm/cosmosdb.parameters.json",
                 "overrideParameters": "-cosmosdb_name \"sh360cosmosdb\" -unique_resources true -environment \"public\"",
                 "deploymentMode": "Incremental",
                 "enableDeploymentPrerequisites": "None",
@@ -159,8 +159,8 @@
                 "templateLocation": "Linked artifact",
                 "csmFileLink": "",
                 "csmParametersFileLink": "",
-                "csmFile": "$(System.DefaultWorkingDirectory)/PublicWebCI/arm/func.json",
-                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PublicWebCI/arm/func.parameters.json",
+                "csmFile": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/arm/func.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/arm/func.parameters.json",
                 "overrideParameters": "-func_splan_name \"sh360websvcfunc\" -funcapp_name \"sh360webfuncapp\" -svcPlanSize \"Y1\" -svcFamily \"Y\" -svcPlanSku \"Free\" -svcCapacity 0 -funcapp_storage_name \"sh360strfuncapp\" -vision_name \"sh360-vision-\" -unique_resources true -environment \"public\"",
                 "deploymentMode": "Incremental",
                 "enableDeploymentPrerequisites": "None",
@@ -226,7 +226,7 @@
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/PublicWebCI/Function/PetCheckerFunction.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/Function/PetCheckerFunction.zip",
                 "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "",
                 "StartupCommand": "",
@@ -293,8 +293,8 @@
                 "templateLocation": "Linked artifact",
                 "csmFileLink": "",
                 "csmParametersFileLink": "",
-                "csmFile": "$(System.DefaultWorkingDirectory)/PublicWebCI/arm/web.json",
-                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PublicWebCI/arm/web.parameters.json",
+                "csmFile": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/arm/web.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/arm/web.parameters.json",
                 "overrideParameters": "-serverfarm_name \"sh360websvcplan\" -website_name \"smarthotel360\" -web_settings_url \"http://sh360services-public.eastus2.cloudapp.azure.com/configuration-api/cfg/public-http\" -svcPlanSize \"F1\" -svcPlanSku \"Free\" -unique_resources true -environment \"public\"",
                 "deploymentMode": "Incremental",
                 "enableDeploymentPrerequisites": "None",
@@ -360,7 +360,7 @@
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/PublicWebCI/web/SmartHotel360.PublicWeb.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/web/SmartHotel360.PublicWeb.zip",
                 "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "",
                 "StartupCommand": "",
@@ -431,9 +431,9 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$PublicWebCI-id$",
+      "sourceId": "$ProjectId$:$PublicWebSiteCI-id$",
       "type": "Build",
-      "alias": "PublicWebCI",
+      "alias": "PublicWebSiteCI",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -452,8 +452,8 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$PublicWebCI-id$",
-          "name": "PublicWebCI"
+          "id": "$PublicWebSiteCI-id$",
+          "name": "PublicWebSiteCI"
         },
         "project": {
           "id": "$ProjectId$",
@@ -465,7 +465,7 @@
   ],
   "triggers": [
     {
-      "artifactAlias": "PublicWebCI",
+      "artifactAlias": "PublicWebSiteCI",
       "triggerConditions": [],
       "triggerType": "artifactSource"
     }

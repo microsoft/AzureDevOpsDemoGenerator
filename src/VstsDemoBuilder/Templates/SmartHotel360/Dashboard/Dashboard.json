@@ -4,7 +4,142 @@
     "position": 1,
     "widgets": [
         {
-            "name": "Other Links",
+            "name": "Work in Progress",
+            "position": {
+                "row": 4,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$WorkinProgress$\",\"queryName\":\"Work in Progress\",\"colorRules\":[],\"lastArtifactName\":\"Work in Progress\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "PublicWebSiteCI",
+        "position": {
+          "row": 4,
+          "column": 7
+        },
+        "size": {
+          "rowSpan": 1,
+          "columnSpan": 2
+        },
+        "settings": "{\"name\":\"PublicWebSiteCI\",\"id\":$PublicWebBuild$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$PublicWebBuild$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"PublicWebSiteCI\"}",
+        "settingsVersion": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
+        "isNameConfigurable": true
+      },
+        {
+            "name": "Burndown",
+            "position": {
+                "row": 6,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":true,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":true,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":true,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":1,\"settings\":[\"$sprint2$\",\"$sprint3$\"]}},\"totalScopeTrendlineEnabled\":true}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "All Items by Assigned To",
+            "position": {
+                "row": 1,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"chartType\":\"PieChart\",\"groupKey\":\"$AllItems$\",\"scope\":\"WorkitemTracking.Queries\",\"title\":\"All Items by Assigned To\",\"transformOptions\":{\"filter\":\"$AllItems$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"All Items by Assigned To\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Build Health Overview",
+            "position": {
+                "row": 3,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 3
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contributionId": "ms-devlabs.TeamProjectHealth.TPHealth-OverviewWidget",
+            "typeId": "TPHealth-OverviewWidget",
+            "configurationContributionId": "ms-devlabs.TeamProjectHealth.TPHealth-OverviewWidget-Configuration",
+            "configurationContributionRelativeId": "TPHealth-OverviewWidget-Configuration",
+            "isNameConfigurable": true,
+            "loadingImageUrl": null
+        },
+        {
+            "name": "Sprint Overview",
             "position": {
                 "row": 3,
                 "column": 7
@@ -22,11 +157,391 @@
             "artifactId": "",
             "isEnabled": true,
             "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.OtherLinksWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.OtherLinksWidget",
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintOverviewWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.SprintOverviewWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintOverviewWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.SprintOverviewWidget.Configuration",
+            "isNameConfigurable": false
+        },
+      {
+        "name": "Release Health Details",
+        "position": {
+          "row": 6,
+          "column": 6
+        },
+        "size": {
+          "rowSpan": 1,
+          "columnSpan": 2
+        },
+        "settings": "{\"definitionId\":\"$PublicWebSiteCD$\",\"showRejectedAsFailed\":true}",
+        "settingsVersion": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contributionId": "ms-devlabs.TeamProjectHealth.TPHealth-ReleaseDetailsWidget",
+        "typeId": "TPHealth-ReleaseDetailsWidget",
+        "configurationContributionId": "ms-devlabs.TeamProjectHealth.TPHealth-ReleaseDetailsWidget-Configuration",
+        "configurationContributionRelativeId": "TPHealth-ReleaseDetailsWidget-Configuration",
+        "isNameConfigurable": false,
+        "loadingImageUrl": null
+      },
+        {
+            "name": "All Items by Assign To",
+            "position": {
+                "row": 4,
+                "column": 5
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$AllItems$\",\"queryName\":\"All Items\",\"colorRules\":[],\"lastArtifactName\":\"All Items\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "BacklogBoard WI",
+            "position": {
+                "row": 5,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#00643a\",\"queryId\":\"$BacklogBoardWI$\",\"queryName\":\"BacklogBoard WI\",\"colorRules\":[],\"lastArtifactName\":\"BacklogBoard WI\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Feedback",
+            "position": {
+                "row": 5,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$Feedback$\",\"queryName\":\"Feedback\",\"colorRules\":[],\"lastArtifactName\":\"Feedback\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "PublicWeb (master)",
+            "position": {
+                "row": 3,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"repositoryId\":\"$RepoPublicWeb$\",\"version\":\"GBmaster\",\"path\":\"/\",\"lastArtifactName\":\"PublicWeb (master)\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CodeScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.CodeScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CodeScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.CodeScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "All Items",
+            "position": {
+                "row": 6,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$AllItems$\",\"title\":\"All Items\",\"chartType\":\"AreaChart\",\"transformOptions\":{\"filter\":\"$AllItems$\",\"groupBy\":\"\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":\"last7Days\"},\"userColors\":[],\"lastArtifactName\":\"All Items\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "MobileTeam_Work by Assigned To",
+            "position": {
+                "row": 3,
+                "column": 9
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$MobileTeamWork$\",\"title\":\"MobileTeam_Work by Assigned To\",\"chartType\":\"ColumnChart\",\"transformOptions\":{\"filter\":\"$MobileTeamWork$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"MobileTeam_Work by Assigned To\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Bugs",
+            "position": {
+                "row": 5,
+                "column": 5
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#e60017\",\"queryId\":\"$Bugs$\",\"queryName\":\"Bugs\",\"colorRules\":[],\"lastArtifactName\":\"Bugs\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Bugs without Repro Steps by Assigned To",
+            "position": {
+                "row": 8,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$BugswithoutRepro$\",\"title\":\"Bugs without Repro Steps by Assigned To\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$BugswithoutRepro$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"Bugs without Repro Steps by Assigned To\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "smh360_scrum Team Velocity",
+            "position": {
+                "row": 4,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": "{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\",\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"numberOfIterations\":6,\"plannedWorkDelay\":null,\"lateWorkDelay\":null,\"lastArtifactName\":null}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VelocityWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.VelocityWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VelocityWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.VelocityWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Unfinished Work",
+            "position": {
+                "row": 4,
+                "column": 6
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$UnfinishedWork$\",\"queryName\":\"Unfinished Work\",\"colorRules\":[],\"lastArtifactName\":\"Unfinished Work\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Cumulative Flow Diagram",
+            "position": {
+                "row": 8,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 3
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CumulativeFlowDiagramWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.CumulativeFlowDiagramWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.CumulativeFlowDiagramWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.CumulativeFlowDiagramWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
+        },
+        {
+            "name": "Sprint Burndown",
+            "position": {
+                "row": 5,
+                "column": 7
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 2
+            },
+            "settings": null,
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
             "configurationContributionId": null,
             "configurationContributionRelativeId": null,
             "isNameConfigurable": false
+        },
+        {
+            "name": "State of TestCases - Chart",
+            "position": {
+                "row": 5,
+                "column": 9
+            },
+            "size": {
+                "rowSpan": 2,
+                "columnSpan": 2
+            },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$StateofTestCases$\",\"title\":\"State of TestCases - Chart\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$StateofTestCases$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"State of TestCases by State\"}",
+            "settingsVersion": {
+                "major": 3,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+            "isNameConfigurable": true,
+            "lightboxOptions": {
+                "width": 900,
+                "height": 700,
+                "resizable": true
+            }
         },
         {
             "name": "Markdown",
@@ -59,41 +574,16 @@
             }
         },
         {
-            "name": "Product Planning",
+            "name": "BacklogBoard WI - Chart",
             "position": {
-                "row": 2,
+                "row": 7,
                 "column": 6
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 1
-            },
-            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$ProductPlanning$\",\"queryName\":\"Product Planning\",\"colorRules\":[],\"lastArtifactName\":\"Product Planning\"}",
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
-            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
-            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
-            "isNameConfigurable": true
-        },
-        {
-            "name": "Product Planning by State",
-            "position": {
-                "row": 3,
-                "column": 5
             },
             "size": {
                 "rowSpan": 2,
                 "columnSpan": 2
             },
-            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$ProductPlanning$\",\"title\":\"Product Planning by State\",\"chartType\":\"ColumnChart\",\"transformOptions\":{\"filter\":\"$ProductPlanning$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"Product Planning by State\"}",
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$BacklogBoardWI$\",\"title\":\"BacklogBoard WI - Chart\",\"chartType\":\"StackAreaChart\",\"transformOptions\":{\"filter\":\"$BacklogBoardWI$\",\"groupBy\":\"System.WorkItemType\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":\"last7Days\"},\"userColors\":[],\"lastArtifactName\":\"BacklogBoard WI by Work Item Type\"}",
             "settingsVersion": {
                 "major": 3,
                 "minor": 0,
@@ -113,61 +603,11 @@
                 "resizable": true
             }
         },
-      {
-        "name": "Active Tasks",
-        "position": {
-          "row": 1,
-          "column": 6
-        },
-        "size": {
-          "rowSpan": 1,
-          "columnSpan": 1
-        },
-        "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$ActiveTasks$\",\"queryName\":\"Active Tasks\",\"colorRules\":[{\"isEnabled\":true,\"backgroundColor\":\"#339947\",\"thresholdCount\":10,\"operator\":\"<=\"},{\"isEnabled\":true,\"backgroundColor\":\"#e60017\",\"thresholdCount\":20,\"operator\":\">\"}],\"lastArtifactName\":\"Active Tasks\"}",
-        "settingsVersion": {
-          "major": 1,
-          "minor": 0,
-          "patch": 0
-        },
-        "artifactId": "",
-        "isEnabled": true,
-        "contentUri": null,
-        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
-        "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
-        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
-        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
-        "isNameConfigurable": true
-      },
-        {
-            "name": "Public Web CI",
-            "position": {
-                "row": 5,
-                "column": 6
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 2
-            },
-            "settings": "{\"name\":\"Public Web\",\"id\":$PublicWebBuild$,\"type\":2,\"uri\":\"vstfs:///Build/Definition/$PublicWebBuild$\",\"projectId\":\"$projectId$\",\"lastArtifactName\":\"Public Web\"}",
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget",
-            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
-            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
-            "isNameConfigurable": true
-        },
         {
             "name": "Assigned to Me",
             "position": {
                 "row": 1,
-                "column": 7
+                "column": 3
             },
             "size": {
                 "rowSpan": 2,
@@ -194,16 +634,16 @@
             }
         },
         {
-            "name": "Completed Tasks by Assigned To",
+            "name": "All Items by Assigned To",
             "position": {
-                "row": 3,
-                "column": 3
+                "row": 1,
+                "column": 8
             },
-            "size": {
-                "rowSpan": 2,
-                "columnSpan": 2
-            },
-            "settings": "{\"chartType\":\"PieChart\",\"groupKey\":\"$CompletedTasks$\",\"scope\":\"WorkitemTracking.Queries\",\"title\":\"Completed Tasks by Assigned To\",\"transformOptions\":{\"filter\":\"$CompletedTasks$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null},\"userColors\":[],\"lastArtifactName\":\"Completed Tasks by Assigned To\"}",
+          "size": {
+            "rowSpan": 2,
+            "columnSpan": 2
+          },
+            "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$AllItems$\",\"title\":\"All Items by Assigned To\",\"chartType\":\"stackBarChart\",\"transformOptions\":{\"filter\":\"$AllItems$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"series\":\"System.AssignedTo\"},\"userColors\":[],\"lastArtifactName\":\"All Items by Assigned To\"}",
             "settingsVersion": {
                 "major": 3,
                 "minor": 0,
@@ -222,162 +662,6 @@
                 "height": 700,
                 "resizable": true
             }
-        },
-        {
-            "name": "Velocity",
-            "position": {
-                "row": 1,
-                "column": 3
-            },
-            "size": {
-                "rowSpan": 2,
-                "columnSpan": 3
-            },
-            "settings": null,
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VelocityWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.VelocityWidget",
-            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VelocityWidget.Configuration",
-            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.VelocityWidget.Configuration",
-            "isNameConfigurable": true,
-            "lightboxOptions": {
-                "width": 900,
-                "height": 700,
-                "resizable": true
-            }
-        },
-        {
-            "name": "New Work Item",
-            "position": {
-                "row": 4,
-                "column": 7
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 2
-            },
-            "settings": null,
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget",
-            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget.Configuration",
-            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget.Configuration",
-            "isNameConfigurable": false
-        },
-        {
-            "name": "Azure DevOps Shortcuts",
-            "position": {
-                "row": 6,
-                "column": 6
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 2
-            },
-            "settings": null,
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VSLinksWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.VSLinksWidget",
-            "configurationContributionId": null,
-            "configurationContributionRelativeId": null,
-            "isNameConfigurable": false
-        },
-       
-        {
-            "name": "Team Members",
-            "position": {
-                "row": 6,
-                "column": 4
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 2
-            },
-            "settings": null,
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget",
-            "configurationContributionId": null,
-            "configurationContributionRelativeId": null,
-            "isNameConfigurable": false
-        },
-        {
-            "name": "Deployment status",
-            "position": {
-                "row": 5,
-                "column": 1
-            },
-            "size": {
-                "rowSpan": 2,
-                "columnSpan": 3
-            },
-            "settings": "{\"buildDefinitionId\":$PublicWebBuild$,\"projectId\":\"$projectId$\",\"useDefaultBranch\":true,\"branchName\":\"\",\"buildSourceType\":\"Build\",\"environments\":[{\"definitionEnvironmentId\":1,\"definitionEnvironmentName\":\"\",\"releaseDefinitionId\":1,\"releaseDefinitionName\":\"\"},{\"definitionEnvironmentId\":2,\"definitionEnvironmentName\":\"\",\"releaseDefinitionId\":$PublicWebCD$,\"releaseDefinitionName\":\"\"}],\"lastColumnType\":0,\"viewType\":\"Deployment Status\",\"ruleOperators\":[\"\",\"\",\"\"],\"ruleBoundaries\":[\"\",\"\",\"\"],\"ruleBoundariesErrors\":[false,false,false],\"metricsView\":\"testPassRate\"}",
-          "settingsVersion": {
-            "major": 1,
-            "minor": 0,
-            "patch": 0
-          },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget",
-            "typeId": "rm-deployment-status-widget",
-            "configurationContributionId": "ms.vss-releaseManagement-web.rm-deployment-status-widget.configuration",
-            "configurationContributionRelativeId": "rm-deployment-status-widget.configuration",
-            "isNameConfigurable": true,
-        },
-        {
-            "name": "Sprint Burndown",
-            "position": {
-                "row": 4,
-                "column": 1
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 2
-            },
-            "settings": null,
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget",
-            "configurationContributionId": null,
-            "configurationContributionRelativeId": null,
-            "isNameConfigurable": false
         }
     ]
 }

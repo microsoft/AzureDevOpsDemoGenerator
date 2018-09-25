@@ -2,12 +2,12 @@
   "rules": {
     "fill": [
       {
-        "name": "Mobile Team",
+        "name": "High Priority",
         "isEnabled": "True",
-        "filter": "[System.AreaPath] = 'SmartHotel360\\Mobile'",
+        "filter": "[Microsoft.VSTS.Common.Priority] = '1'",
         "settings": {
           "title-color": "#000000",
-          "background-color": "#ffebd7"
+          "background-color": "#dffdff"
         }
       },
       {
@@ -20,15 +20,24 @@
         }
       },
       {
-        "name": "High Priority",
+        "name": "Mobile Team",
         "isEnabled": "True",
-        "filter": "[Microsoft.VSTS.Common.Priority] = '1'",
+        "filter": "[System.AreaPath] = '$ProjectName$\\Mobile'",
         "settings": {
           "title-color": "#000000",
-          "background-color": "#dffdff"
+          "background-color": "#ffebd7"
         }
       }
     ],
-    "tagStyle": null
+    "tagStyle": [
+      {
+        "name": "Mobile",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#d7e3fd"
+        }
+      }
+    ]
   }
 }

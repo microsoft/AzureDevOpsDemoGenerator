@@ -1185,7 +1185,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList["MyHealthClinic"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
-                    else if (model.SelectedTemplate == "SmartHotel360V2")
+                    else if (model.SelectedTemplate == "SmartHotel360")
                     {
                         WImapping = import.ImportWorkitems(WorkItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), AttchmentFilesFolder, model.Environment.RepositoryIdList["PublicWeb"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
@@ -1339,7 +1339,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
                     }
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360v2")
+                    if (model.SelectedTemplate.ToLower() == "smarthotel360")
                     {
                         string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
                         if (System.IO.File.Exists(updateAreaJSON))
@@ -1816,7 +1816,7 @@ namespace VstsDemoBuilder.Controllers
                     string commentFile = Path.GetFileName(pullRequestJsonPath);
                     string repositoryId = string.Empty;
                     if (model.SelectedTemplate == "MyHealthClinic") { repositoryId = model.Environment.RepositoryIdList["MyHealthClinic"]; }
-                    if (model.SelectedTemplate == "SmartHotel360V2") { repositoryId = model.Environment.RepositoryIdList["PublicWeb"]; }
+                    if (model.SelectedTemplate == "SmartHotel360") { repositoryId = model.Environment.RepositoryIdList["PublicWeb"]; }
                     else { repositoryId = model.Environment.RepositoryIdList[model.SelectedTemplate]; }
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
@@ -2501,7 +2501,7 @@ namespace VstsDemoBuilder.Controllers
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360")
+                    if (model.SelectedTemplate.ToLower() == "smarthotel360V1")
                     {
                         if (isDashboardDeleted)
                         {
@@ -2528,7 +2528,7 @@ namespace VstsDemoBuilder.Controllers
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360v2")
+                    if (model.SelectedTemplate.ToLower() == "smarthotel360")
                     {
                         if (isDashboardDeleted)
                         {

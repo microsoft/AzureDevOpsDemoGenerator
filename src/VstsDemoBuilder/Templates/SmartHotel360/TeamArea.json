@@ -1,13 +1,9 @@
 ﻿{
-	"defaultValue": "$ProjectName$\\$AreaName$",
-	"values": [
-		{
-			"value": "$ProjectName$\\$AreaName$",
-			"includeChildren": false
-		},
-		{
-			"value": "$ProjectName$\\Public web",
-			"includeChildren": false
-		}
-	]
+  "defaultValue": "$ProjectName$\\$AreaName$",
+  "values": [
+    {
+      "value": "$ProjectName$\\$AreaName$",
+      "includeChildren": false
+    }
+  ]
 }

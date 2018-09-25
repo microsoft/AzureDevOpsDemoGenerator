@@ -1,0 +1,1654 @@
+{
+  "count": 26,
+  "value": [
+    {
+      "id": 1381,
+      "rev": 11,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2018-07-23T06:49:55.62Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:28.16Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to update conference room reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 8.0,
+        "System.Description": "As a customer, I should be able to update conference room reservation such that:<div><br></div><div>1. When a conference room is already reserved, an update option should be available<br><div><br></div><div><br></div></div>",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Admin; Business Meetings; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1736",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1809",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1808",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1381"
+    },
+    {
+      "id": 1387,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2018-07-23T06:49:56.2Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:28.16Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to update my details",
+        "Microsoft.VSTS.Scheduling.Effort": 12.0,
+        "System.Description": "<p class=MsoNormal style=\"margin-bottom:0in;margin-bottom:.0001pt;line-height:19.5pt;background:white;\"><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#222222;background:white;\">Sometimes customers need to change the card\ninfo that they have on record with your business, whether that’s just to swap\nin a preferred card, or because the card issuer sent a replacement.&nbsp;</span></p>",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Modification",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1812",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1734",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1387"
+    },
+    {
+      "id": 1373,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-23T06:49:54.73Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:28.16Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I would like to reserve a conference room",
+        "Microsoft.VSTS.Scheduling.Effort": 20.0,
+        "System.Description": "As a customer, I would like to reserve a conference room such that:<div><br></div><div>1. It should display available date and time slots</div><div>2. Give an option to reserve a conference room for X hours</div><div>3. One can reserve a conference room for max 4 hours per day</div>",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1736",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1785",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1803",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1806",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1807",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1373"
+    },
+    {
+      "id": 1371,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-23T06:49:54.513Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:28.16Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a reservation agent, I would like to send confirmations to guest",
+        "Microsoft.VSTS.Scheduling.Effort": 7.0,
+        "System.Description": "<p class=MsoNormal><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;,sans-serif;color:#222222;background:white;\">Enter the&nbsp;</span><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;,sans-serif;color:#222222;\">guest's<span style=\"background:white;\">&nbsp;name to whom you&nbsp;</span></span>would\nlike to send<span style=\"background:white;\">&nbsp;a&nbsp;</span>confirmation,&nbsp;<span style=\"background:white;\">display the company, contact, source\nand&nbsp;</span>agent<span style=\"background:white;\">&nbsp;associated\nwith the&nbsp;</span>reservation<span style=\"background:white;\">.</span></p>",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Notification",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1805",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1735",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1804",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1750",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1801",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1371"
+    },
+    {
+      "id": 1370,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-23T06:49:54.433Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:43.537Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to remove a car reservation ",
+        "Microsoft.VSTS.Scheduling.Effort": 6.0,
+        "System.Description": "<div><p class=MsoNormal><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">If you have not picked up\nyour&nbsp;</span><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;\">vehicle<span style=\"background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">&nbsp;you can remove or cancel your&nbsp;</span></span>reservation<span style=\"background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">&nbsp;by clicking here.</span></p><p class=MsoNormal><span style=\"background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\"><br></span></p></div><div>1. Car reserved should have an option to cancel the request</div><div>2. Car driver should receive a notification about cancellation</div>",
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1735",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1784",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1377",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1382",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1370"
+    },
+    {
+      "id": 1369,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-23T06:49:54.183Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:43.537Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to request hotel for late Check-out",
+        "Microsoft.VSTS.Scheduling.Effort": 15.0,
+        "System.Description": "<span style=\"font-family:&quot;Segoe UI&quot;, sans-serif;font-size:10.5pt;\">As a courtesy, grant an\nextra hour or two to leave&nbsp;the&nbsp;room, especially if it isn't booked\nfor&nbsp;the upcoming evening. But customer must&nbsp;call the&nbsp;front desk\nin advance and&nbsp;request&nbsp;a&nbsp;late checkout.</span><p class=MsoNormal><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\"></span></p><p class=MsoNormal><span style=\"font-size:12.0pt;line-height:107%;\"></span></p><div><div><br></div><div>1. Late Check-in time should be displayed</div><div>2. Request should be sent to front-desk&nbsp;</div><div>3. Any extra charge should be displayed</div></div>",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1783",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1799",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1392",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1380",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1369"
+    },
+    {
+      "id": 1379,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2018-07-23T06:49:55.42Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-20T09:22:43.537Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to a reserve car",
+        "Microsoft.VSTS.Scheduling.Effort": 15.0,
+        "System.Description": "As a customer, I should be able to a reserve car such that:<div><br></div><div>1. Car can be reserved and paid through the hotel</div>",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1735",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1383",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1379"
+    },
+    {
+      "id": 1388,
+      "rev": 17,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Web",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2018-07-23T06:49:56.293Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-21T09:30:23.563Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a hotel manager, I should be able to view current guest list",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "Show current guests list such that it includes:<div><br></div><div>1. Guest first and last name</div><div>2. Check-in and check-out date</div><div><br></div>",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Admin; Privacy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1673",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1376",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1674",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1734",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1388"
+    },
+    {
+      "id": 1368,
+      "rev": 16,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2018-07-23T06:49:53.967Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:18:51.77Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to change reservation time",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "Change reservation time",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guests; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1782",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1834",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1736",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1794",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1368"
+    },
+    {
+      "id": 1655,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a room guest, I should be able to communicate with all smart devices from the app",
+        "Microsoft.VSTS.Scheduling.Effort": 23.0,
+        "System.Description": "<font color=\"#5e5e5e\" face=\"montserrat, sans-serif\"><span style=\"font-size:15px;\">The smartphone will be the room's remote control. Through the app, the guest will be able to seamlessly control the room’s lighting, HVAC [heating, ventilation, and air conditioning], and entertainment options, including pre-loaded and streaming content.&nbsp;</span></font>",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "App; Guest; IoT; smarthotel",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1701",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1752",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1753",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1749",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1698",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1699",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1700",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655"
+    },
+    {
+      "id": 1659,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a room guest, I should be able to connect to the app with my own device",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Authorization",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1717",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1747",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1746",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1744",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1748",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1720",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1715",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1714",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1719",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1713",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659"
+    },
+    {
+      "id": 1661,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:39:05.96Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a reservation agent, I would like to search for available rooms",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "The Reservation Agent should be able to assist customers with planning and booking reservations. This can mean booking a hotel room, a car rental, airplane tickets, a cruise package or tickets to a show. They may also help plan travel itineraries by suggesting local tourist attractions and places of interest. They then process payments and send the details and confirmation to the guest. When issues arise with reservations, the Reservation Agent is often contacted to sort out the issues.",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Reservation; Rooms [List]",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1728",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1729",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1661"
+    },
+    {
+      "id": 1665,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a reservation agent, I would like to send confirmations to guest",
+        "Microsoft.VSTS.Scheduling.Effort": 12.0,
+        "System.Description": "A written confirmation from the reservation agent stating the confirmation of name, arrival departure date, number of guest staying, room rate, type of room booked, number of rooms, pick up details, details of deposit made, package details etc. should be sent out.<div>Confirmation letter may also include the cancellation and no-show polices of the hotel. And also about the retention charges, hotel standard check-in and check-out time, early morning / early arrival charges and also about late departure charges.</div>",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Confirmation; Guests; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1725",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1647",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1665"
+    },
+    {
+      "id": 1660,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a room guest, I should be able to personalize the app with themes",
+        "Microsoft.VSTS.Scheduling.Effort": 3.0,
+        "System.Description": "The user should be able to personalize the SMH360 app with themes available in the settings menu and also be able to personalize the app with customized themes on the Android and IOS app.",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Android; IOS; Personalization; Themes; Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1726",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1727",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1722",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1724",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1721",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1660"
+    },
+    {
+      "id": 1658,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to have a responsive search experience",
+        "Microsoft.VSTS.Scheduling.Effort": 8.0,
+        "System.Description": "The site should have responsive design for a better search experience, regardless of the device being used.&nbsp;The website adjusts automatically to the size of device’s screen and the user doesn’t have to browse through multiple pages to find what he is looking for, giving users a very smooth and optimized experience on the device.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guests; responsive; Rooms [List]; search",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1709",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1707",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1710",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1708",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1705",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1658"
+    },
+    {
+      "id": 1656,
+      "rev": 14,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to access the app on all mobile platforms",
+        "Microsoft.VSTS.Scheduling.Effort": 30.0,
+        "System.Description": "The guest should be able to access the SMH360 app on platforms -&nbsp;<div><br></div><div>1. Google PlayStore</div><div>2. Apple Itunes</div><div>3. Windows Store</div>",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Android; App; Gues; IO; Windows",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1703",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1702",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1704",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1656"
+    },
+    {
+      "id": 1650,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to make a reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "The user should be able to make a new reservation by clicking the &quot;Make a Reservation&quot; button in the site or in the app.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guests; Reservation; Room",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1797",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1650"
+    },
+    {
+      "id": 1649,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I would like to modify an existing reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 4.0,
+        "System.Description": "The user should be able to modify his existing reservation if the reservation hasnt already ended.&nbsp;",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Modification; Reservations; Web experience",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1664",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1683",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1649"
+    },
+    {
+      "id": 1378,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-23T06:49:55.263Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:40:51.65Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I would like to make a new reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As a customer, I would like to make a new reservation",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guest; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1378"
+    },
+    {
+      "id": 1375,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-23T06:49:54.95Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:40:51.65Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a user, I should be able to cancel an existing booking of a conference room",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Conference Room - Cancel an existing reservation",
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Conference Room; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1792",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1791",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1375"
+    },
+    {
+      "id": 1384,
+      "rev": 16,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-07-23T06:49:55.92Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a front-desk admin, I should be able to print breakfast coupons",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "As a front-desk admin, I should be able to print breakfast coupons such that:<div><br></div><div>1. Complementary breakfast coupons should be provided for each checked-in guest</div><div>2. Guest names should be printed so that it is non transferable</div><div>3. Coupons should have unique barcode</div><div><br></div>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": "Admin; Coupons",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1734",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1405",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1400",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1395",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/cf20ba8d-265d-4e08-8eae-244dca8002c7%2F26b80411-f31b-488e-a08f-577077cdc4d5%2F12",
+          "attributes": {
+            "authorizedDate": "2018-07-23T10:53:33.263Z",
+            "id": "1313386",
+            "resourceCreatedDate": "2018-07-23T10:53:33.263Z",
+            "resourceModifiedDate": "2018-07-23T10:53:33.263Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1384"
+    },
+    {
+      "id": 1389,
+      "rev": 12,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-07-23T06:49:56.403Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a hotel manager, I should be able to see guest list for a date",
+        "Microsoft.VSTS.Scheduling.Effort": 20.0,
+        "System.Description": "As a hotel manager, I should be able to see guest list for a particular date:<div><br></div><div>The guest list should include the following:</div><div><br></div><div>1. Guest first and last name</div><div>2. Check-in and check-out date</div><div>3. Advance amount paid</div><div>4. Balance amount to be paid</div><div>5. Booking mode</div>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Admin; Manager",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1396",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1398",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1403",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1374",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1401",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1389"
+    },
+    {
+      "id": 1644,
+      "rev": 11,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to use Bluetooth-enabled IoT Beacon sensors for registration",
+        "Microsoft.VSTS.Scheduling.Effort": 12.0,
+        "System.Description": "As a user, I should be able to able to use Bluetooth-enabled IoT Beacon sensors for registration such that:<div><br></div><div>1. As soon as a guest enters the hotel lobby, he should be registered automatically</div>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Registration",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1677",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1672",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1671",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1676",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1675",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1644"
+    },
+    {
+      "id": 1654,
+      "rev": 11,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a room guest, I should be able to enter the room with facial recognition",
+        "Microsoft.VSTS.Scheduling.Effort": 30.0,
+        "System.Description": "The guests should be able to check into their room with a quick scan of their face. To use the new feature, hotel guests must first scan their IDs, get their face scanned, and then add their contact details. Once the guest's booking information and identity have been confirmed, a room key will be presented.",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Authorization; Facial Recognition; Guests",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1695",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1692",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1690",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1693",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1691",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1696",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1697",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654"
+    },
+    {
+      "id": 1653,
+      "rev": 11,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a room guest, I should be able to control my room's lighting within the app",
+        "Microsoft.VSTS.Scheduling.Effort": 15.0,
+        "System.Description": "The guest should be able to control the room lighting and welcome light. When the room is empty, the lights should be out.&nbsp; When the guest enters the room, a welcome light should be on automatically. Sensor can be motion-based, daylight-sensing or a combination and placed in aisles, bathrooms, elevators, seating areas, conference rooms and more.&nbsp;",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "App; Guests; Lights; Rooms [List]",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1688",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1687",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1662",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1689",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1686",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1653"
+    },
+    {
+      "id": 1645,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "As a customer, I should be able to have a keyless entry to my room via smartphone",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "The hotel should configure the room key to the guest's mobile phone. With a single download, guests should be able to check-in and gain access to their hotel room and hotel amenities.",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guests; keyless; smartphone",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1680",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1681",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1679",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1678",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1645"
+    }
+  ],
+  "HttpStatusCode": 0
+}

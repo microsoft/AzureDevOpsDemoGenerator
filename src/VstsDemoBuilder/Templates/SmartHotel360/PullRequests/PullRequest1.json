@@ -1,0 +1,11 @@
+{
+  "title": "Search Citeis",
+  "description": "Please review",
+  "sourceRefName": "refs/heads/searchcities",
+  "targetRefName": "refs/heads/master",
+  "reviewers": [
+    {
+      "id": "$reviewer$"
+    }
+  ]
+}

@@ -425,7 +425,7 @@
       "isHosted": true
     }
   },
-    "name": "PublicWebCI",
+    "name": "PublicWebSiteCI",
     "path": "\\",
     "type": "build",
     "queueStatus": "enabled"

@@ -14,6 +14,14 @@
       "PublisherId": "keesschollaart",
       "ExtensionId": "arm-outputs",
       "License": "<a href='https://marketplace.visualstudio.com/items/keesschollaart.arm-outputs/license' target='_blank'>License Terms</a>"
+    },
+    {
+      "name": "Team Project Health",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.TeamProjectHealth' target='_blank'><b>Team Project Health</b></a>",
+      "PublisherId": "ms-devlabs",
+      "ExtensionId": "TeamProjectHealth",
+      "publisher": "microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items/ms-devlabs.TeamProjectHealth/license' target='_blank'>License Terms</a>"
     }
   ]
 }
