@@ -197,7 +197,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane)) newWI.fields.SystemBoardLane = string.Empty;
 
                         dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                        if (SelectedTemplate.ToLower() == "smarthotel360v2")
+                        if (SelectedTemplate.ToLower() == "smarthotel360")
                         {
                             dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
                         }

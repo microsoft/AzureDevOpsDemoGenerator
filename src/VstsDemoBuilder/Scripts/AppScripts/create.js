@@ -736,7 +736,7 @@ function checkForExtensions(callBack) {
     var selectedTemplate = $("#ddlTemplates").val();
     if (selectedTemplate !== "" && accountNam !== "") {
         $("#imgLoading").show();
-        $("#btnSubmit").prop("disabled", true);
+        $("#btnSubmit").removeClass('btn-primary').prop("disabled", true);
         $("#ddlAcccountName").prop("disabled", true);
 
         $.ajax({
@@ -755,7 +755,7 @@ function GetRequiredExtension() {
     checkForExtensions(function callBack(extensions) {
         if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== "undefined" && extensions.message.indexOf("Error") == -1 && extensions.message !== "Template not found") {
             $("#imgLoading").hide();
-            $("#ddlAcccountName").prop("disabled", false);
+            $("#ddlAcccountName").addClass('btn-primary').prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
@@ -774,7 +774,7 @@ function GetRequiredExtension() {
                 }
             } else { $("#btnSubmit").prop("disabled", false); }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").prop("disabled", false); }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); }
 
     });
 }

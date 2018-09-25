@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/smh360_scrum/smh360_scrum%20Team/_git/PublicWeb"
+    },
+    "serviceEndpointId": "$PublicWeb-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
