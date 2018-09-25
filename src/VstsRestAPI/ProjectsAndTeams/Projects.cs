@@ -87,7 +87,15 @@ namespace VstsRestAPI.ProjectsAndTeams
                 else
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                    string error = string.Empty;
+                    if (response.StatusCode.ToString() == "Unauthorized")
+                    {
+                        error = errorMessage.Result;
+                    }
+                    else
+                    {
+                        error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                    }
                     this.LastFailureMessage = error;
                     return "-1";
                 }

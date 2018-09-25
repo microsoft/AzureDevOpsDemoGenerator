@@ -63,12 +63,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        //[AllowAnonymous]
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
+        [AllowAnonymous]
         public ActionResult NotFound()
         {
             return View();
@@ -78,25 +73,8 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult Index(ProjectList.ProjectCount model)
         {
             string email = Session["Email"].ToString();
-            User user = LaunchDarkly.Client.User.WithKey(email);
+            User user = LaunchDarkly.Client.User.WithKey(email.ToLower());
             bool showFeature = ldClient.BoolVariation("extractor", user, false);
-
-            //string filePath = HostingEnvironment.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
-            //if (System.IO.File.Exists(filePath))
-            //{
-            //    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
-            //    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
-            //    {
-            //        ReadUser.User Reguser = new ReadUser.User();
-            //        Reguser = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
-            //        var isUesrExist = Reguser.Users.Where(x => x == email).FirstOrDefault();
-            //        if (isUesrExist != null || isUesrExist != "")
-            //            showFeature = true;
-            //        else
-            //            showFeature = false;
-            //    }
-            //}
-
             if (showFeature)
             {
                 string pat = "";
@@ -137,7 +115,6 @@ namespace VstsDemoBuilder.Controllers
             {
                 return RedirectToAction("NotFound", "Extractor");
             }
-
         }
 
         [HttpGet]

@@ -165,14 +165,33 @@ namespace VstsDemoBuilder.Controllers
             string groupDetails = "";
             GroupDetails details = new GroupDetails();
             GroupDetails Newdetails = new GroupDetails();
-            string templatesPath = Server.MapPath("~") + @"\Templates\";
-            if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
+            string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
+
+            string email = Session["Email"].ToString();
+            User user = LaunchDarkly.Client.User.WithKey(email.ToLower());
+            bool showFeature = ldClient.BoolVariation("extractor", user, false);
+
+            if (showFeature)
             {
-                Project objP = new Project();
-                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
-                details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-                Newdetails = details;
+                if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
+                {
+                    Project objP = new Project();
+                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
+                    details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
+                    Newdetails = details;
+                }
             }
+            else
+            {
+                if (System.IO.File.Exists(templatesPath + "GroupSettings_FeatureFlag.json"))
+                {
+                    Project objP = new Project();
+                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings_FeatureFlag.json");
+                    details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
+                    Newdetails = details;
+                }
+            }
+            
             return Json(Newdetails, JsonRequestBehavior.AllowGet);
         }
 
@@ -208,11 +227,11 @@ namespace VstsDemoBuilder.Controllers
                         AccessDetails.access_token = Session["PAT"].ToString();
                         ProfileDetails Profile1 = GetProfile(AccessDetails);
                         Session["User"] = Profile1.displayName;
-                        Session["Email"] = Profile1.emailAddress;
+                        Session["Email"] = Profile1.emailAddress.ToLower();
                         Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
 
                         //New Feature Enabling
-                        User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress);
+                        User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress.ToLower());
                         bool showFeature = ldClient.BoolVariation("extractor", user, false);
                         ViewBag.UserExist = showFeature;
 
@@ -235,7 +254,7 @@ namespace VstsDemoBuilder.Controllers
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
-                        model.Email = Profile1.emailAddress;
+                        model.Email = Profile1.emailAddress.ToLower();
                         model.Name = Profile1.displayName;
                         model.MemberID = Profile1.id;
                         model.accountsForDropdown = new List<string>();
@@ -300,37 +319,22 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiaXNzIjoiYXBwLnZzc3BzLnZpc3VhbHN0dWRpby5jb20iLCJhdWQiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsIm5iZiI6MTUzNzc5OTEyNCwiZXhwIjoxNTM3ODAyNzI0fQ.eLNQtGgXt5s8mo98Zjsqu6nPLkf3VNopDOLMqJKuMw7zrDfoleoh5Bw9Gde-lBF81Ki-JvS_qm_Wgfd52ihOyj97IkIRZKzvKAyS5X4R_vo0a-JSsJsFDcU1iUVsF1epx7QvvOLo35pxOK19ad_SoJlmG2vmzndvs6TUAnDcezvFw8vfymXh8nNXuRAeQAseqgBYF4pQ-t_84Oc98ZgUKr49fBjVNi_o0BiUqBq4imvS2bNtq1U7Fe9owzYFmi2wlvuRFnrBVE4u9GNYrkPs0FCl_lN0IXXDncddG3l2usFipUVSb6vto0My5JUcJ7VWCA2y-ZGSc-lRF_x1k_XSRg";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiJhOGIyNTI3OS02ZTYxLTRkYTgtODI2Yy0yNWQyZDkyYTFhYjYiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM3ODY1Nzc1LCJleHAiOjE1Mzc4NjkzNzV9.DJOTkat2f-FUywFC_3jBwxw2qrTY8-6tGMAkmc8iHOwiiiRefdwRlAbkbIQBIkYE7l2mbvSR075ZR6UhRBdUhSQvXDwYducVJD1pbzo0-wYDWn-_-EJAiEuq1lrIqx7DDD6NGMQHO-QBW0v2ZW6taiH_u3AJqMn9TJ_5Bv1HhJEHxhYhqAiUbl0m53DvcYXGBdVE3jvxRASMZNmknA-VQCBOZth7CPo0imHx1BGBoFUbw3O2mmjfyfijU5SWRBE9bQtf7Yylc5wAtWxyzL8CHZtBXdcghxKUe7TZxRpcVqGg900ZnzAu_305Fi2wWkoWXcYdFfGiDPll9jrXfe51aw";
                         //New Feature Enabling
-                        ProfileDetails Profile = GetProfile(AccessDetails);
+                        ProfileDetails Profile = new ProfileDetails();
+                        Profile = GetProfile(AccessDetails);
                         Session["User"] = Profile.displayName;
-                        Session["Email"] = Profile.emailAddress;
+                        Session["Email"] = Profile.emailAddress.ToLower();
                         Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
 
-                        User user = LaunchDarkly.Client.User.WithKey(Profile.emailAddress);
+                        User user = LaunchDarkly.Client.User.WithKey(Profile.emailAddress.ToLower());
                         bool showFeature = ldClient.BoolVariation("extractor", user, false);
                         ViewBag.UserExist = showFeature;
-
-                        //string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
-                        //if (System.IO.File.Exists(filePath))
-                        //{
-                        //    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
-                        //    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
-                        //    {
-                        //        ReadUser.User Reguser = new ReadUser.User();
-                        //        Reguser = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
-                        //        var isUesrExist = Reguser.Users.Where(x => x == Profile.emailAddress).FirstOrDefault();
-                        //        if (isUesrExist != null || isUesrExist != "")
-                        //            ViewBag.UserExist = true;
-                        //        else
-                        //            ViewBag.UserExist = false;
-                        //    }
-                        //}
-
+                        
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
-                        model.Email = Profile.emailAddress;
+                        model.Email = Profile.emailAddress.ToLower();
                         model.MemberID = Profile.id;
                         model.Name = Profile.displayName;
                         model.accountsForDropdown = new List<string>();
@@ -618,7 +622,7 @@ namespace VstsDemoBuilder.Controllers
         /// </summary>
         /// <param name="accessDetails"></param>
         /// <returns></returns>
-        public ProfileDetails GetProfile(AccessDetails accessDetails)
+        public ProfileDetails GetProfile1(AccessDetails accessDetails)
         {
             ProfileDetails Profile = new ProfileDetails();
 
@@ -658,6 +662,43 @@ namespace VstsDemoBuilder.Controllers
             }
             return Profile;
         }
+
+        public ProfileDetails GetProfile(AccessDetails accessDetails)
+        {
+            ProfileDetails Profile = new ProfileDetails();
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("https://app.vssps.visualstudio.com/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessDetails.access_token);
+                    HttpResponseMessage response = client.GetAsync("_apis/profile/profiles/me?api-version=4.1").Result;
+                    if (response.StatusCode == HttpStatusCode.NonAuthoritativeInformation)
+                    {
+                        AccessDetails = Refresh_AccessToken(accessDetails.refresh_token);
+                        GetProfile(AccessDetails);
+                    }
+                    else if (response.IsSuccessStatusCode)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        Profile = JsonConvert.DeserializeObject<ProfileDetails>(result);
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        Profile = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Profile.ErrorMessage = ex.Message;
+                }
+            }
+            return Profile;
+        }
+
 
         /// <summary>
         /// Refresh access token
@@ -933,8 +974,14 @@ namespace VstsDemoBuilder.Controllers
 
             if (projectId == "-1")
             {
-                AddMessage(model.id, proj.LastFailureMessage);
-                Thread.Sleep(1000);
+                if (!string.IsNullOrEmpty(proj.LastFailureMessage))
+                {
+                    if (proj.LastFailureMessage.Contains("TF400813"))
+                    {
+                        AddMessage(model.id, "OAUTHACCESSDENIED");
+                    }
+                }
+                Thread.Sleep(2000);
                 return new string[] { model.id, accountName };
             }
             else
@@ -2112,6 +2159,20 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                         string[] releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
+                        if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
+                        {
+                            if (objRelease.LastFailureMessage.TrimEnd() == "Tasks with versions 'ARM Outputs:3.*' are not valid for deploy job 'Function' in stage Azure.")
+                            {
+                                jsonReleaseDefinition = jsonReleaseDefinition.Replace("3.*", "4.*");
+                                releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
+                                relDef.Id = releaseDef[0];
+                                relDef.Name = releaseDef[1];
+                                if (!string.IsNullOrEmpty(relDef.Name))
+                                {
+                                    objRelease.LastFailureMessage = string.Empty;
+                                }
+                            }
+                        }
                         relDef.Id = releaseDef[0];
                         relDef.Name = releaseDef[1];
 
@@ -2912,37 +2973,37 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        [AllowAnonymous]
-        public bool RegisterUser(string userID)
-        {
-            if (userID != "")
-            {
-                string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
-                if (System.IO.File.Exists(filePath))
-                {
-                    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
-                    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
-                    {
-                        ReadUser.User user = new ReadUser.User();
-                        user = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
-                        user.Users.Add(userID);
-                        System.IO.File.WriteAllText(filePath, JsonConvert.SerializeObject(user));
-                        ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
-                        user = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
-                        var isUesrExist = user.Users.Where(x => x == userID).FirstOrDefault();
-                        if (userID == isUesrExist)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
+        //[AllowAnonymous]
+        //public bool RegisterUser(string userID)
+        //{
+        //    if (userID != "")
+        //    {
+        //        string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
+        //        if (System.IO.File.Exists(filePath))
+        //        {
+        //            string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+        //            if (ReadRegisteredUser != null || ReadRegisteredUser != "")
+        //            {
+        //                ReadUser.User user = new ReadUser.User();
+        //                user = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+        //                user.Users.Add(userID);
+        //                System.IO.File.WriteAllText(filePath, JsonConvert.SerializeObject(user));
+        //                ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
+        //                user = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
+        //                var isUesrExist = user.Users.Where(x => x == userID).FirstOrDefault();
+        //                if (userID == isUesrExist)
+        //                {
+        //                    return true;
+        //                }
+        //                else
+        //                {
+        //                    return false;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return false;
+        //}
         #endregion
     }
 }

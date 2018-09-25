@@ -174,7 +174,7 @@
             },
             {
               "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
-              "version": "4.*",
+              "version": "3.*",
               "name": "ARM Outputs",
               "refName": "",
               "enabled": true,
@@ -308,7 +308,7 @@
             },
             {
               "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
-              "version": "4.*",
+              "version": "3.*",
               "name": "ARM Outputs",
               "refName": "",
               "enabled": true,
