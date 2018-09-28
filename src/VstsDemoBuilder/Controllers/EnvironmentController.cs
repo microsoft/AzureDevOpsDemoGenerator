@@ -191,7 +191,7 @@ namespace VstsDemoBuilder.Controllers
                     Newdetails = details;
                 }
             }
-            
+
             return Json(Newdetails, JsonRequestBehavior.AllowGet);
         }
 
@@ -319,7 +319,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiJhOGIyNTI3OS02ZTYxLTRkYTgtODI2Yy0yNWQyZDkyYTFhYjYiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM3ODY1Nzc1LCJleHAiOjE1Mzc4NjkzNzV9.DJOTkat2f-FUywFC_3jBwxw2qrTY8-6tGMAkmc8iHOwiiiRefdwRlAbkbIQBIkYE7l2mbvSR075ZR6UhRBdUhSQvXDwYducVJD1pbzo0-wYDWn-_-EJAiEuq1lrIqx7DDD6NGMQHO-QBW0v2ZW6taiH_u3AJqMn9TJ_5Bv1HhJEHxhYhqAiUbl0m53DvcYXGBdVE3jvxRASMZNmknA-VQCBOZth7CPo0imHx1BGBoFUbw3O2mmjfyfijU5SWRBE9bQtf7Yylc5wAtWxyzL8CHZtBXdcghxKUe7TZxRpcVqGg900ZnzAu_305Fi2wWkoWXcYdFfGiDPll9jrXfe51aw";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4MDMyNjYyLCJleHAiOjE1MzgwMzYyNjJ9.OWqyyn67SNAo_Tt-GyECxI5h17cgwaYxbEEva7bvDtE0MO827xfPvDo5POiv9JNFtyISRsb9hM3wy5j-VJAn4ofDl3oa1AjCQ5TRRo_8Kzp7ujb5tCyt7VVkAPjWlk3QN9kFmt-e0ItNchc0m9pA673LFHy-u2X0EPTdWdRJDczyI7JoyKdmDAP3rl-psyCDRfd8QXdyS_UOwPY1g4EG17Eo83F-UvQrWYqMFWE_Z3Bq2WERgNMYdSuZT5MVr4AvqfePFx0rzaWUBsZfqq5ajZYkrt7SNSBeI4GswfnTIHI2clHG5ibQeni68QWEQTAyu911-BgQMNNk8EX2Av5hRA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -330,7 +330,7 @@ namespace VstsDemoBuilder.Controllers
                         User user = LaunchDarkly.Client.User.WithKey(Profile.emailAddress.ToLower());
                         bool showFeature = ldClient.BoolVariation("extractor", user, false);
                         ViewBag.UserExist = showFeature;
-                        
+
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
@@ -2161,7 +2161,7 @@ namespace VstsDemoBuilder.Controllers
                         string[] releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
                         if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
                         {
-                            if (objRelease.LastFailureMessage.TrimEnd() == "Tasks with versions 'ARM Outputs:3.*' are not valid for deploy job 'Function' in stage Azure.")
+                            if (objRelease.LastFailureMessage.TrimEnd() == "Tasks with versions 'ARM Outputs:3.*' are not valid for deploy job 'Function' in stage Azure-Dev.")
                             {
                                 jsonReleaseDefinition = jsonReleaseDefinition.Replace("3.*", "4.*");
                                 releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
@@ -2549,8 +2549,8 @@ namespace VstsDemoBuilder.Controllers
                             QueryResponse StateofTestCase = objQuery.GetQueryByPathAndName(model.ProjectName, "State of TestCases", "Shared%20Queries");
                             QueryResponse Bugs = objQuery.GetQueryByPathAndName(model.ProjectName, "Open Bugs", "Shared%20Queries");
 
-                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries");
-                            QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
+                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries/Current%20Sprint");
+                            QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries/Current%20Sprint");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WotkInProgress.id)
                                 .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
