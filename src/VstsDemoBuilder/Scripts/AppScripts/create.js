@@ -193,7 +193,7 @@ $(document).ready(function (event) {
                     $("#lblextensionError").removeClass("d-none").addClass("d-block");
 
                     if (extensions.status !== "true") {
-                        $("#btnSubmit").prop("disabled", true);
+                        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                         isExtensionNeeded = true;
                         microsoft = $('#agreeTermsConditions').attr('placeholder');
                         if (microsoft !== "microsoft") {
@@ -203,13 +203,13 @@ $(document).ready(function (event) {
                         if (ThirdParty !== "thirdparty") {
                             ThirdParty = "";
                         }
-                    } else { $("#btnSubmit").prop("disabled", false); }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
-                    $("#btnSubmit").prop("disabled", false);
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 }
 
             });
@@ -266,11 +266,11 @@ $(document).ready(function (event) {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
             if (isMicrosoftAgreement === "on" && isThirdparty === "on") {
-                $("#btnSubmit").prop("disabled", false);
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
             }
             else {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                 isAgreedTerms = false;
             }
         }
@@ -278,11 +278,11 @@ $(document).ready(function (event) {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
             if (isMicrosoftAgreement === "on") {
-                $("#btnSubmit").prop("disabled", false);
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
             }
             else {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                 isAgreedTerms = false;
 
             }
@@ -291,11 +291,11 @@ $(document).ready(function (event) {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
             if (isThirdparty === "on") {
-                $("#btnSubmit").prop("disabled", false);
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
             }
             else {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                 isAgreedTerms = false;
             }
         }
@@ -322,7 +322,7 @@ $(document).ready(function (event) {
                 var ParsedData = JSON.parse(data);
                 var Description = ParsedData.Description;
                 var parameters = ParsedData.Parameters;
-                $("#btnSubmit").prop("disabled", false);
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 if (Description !== "") {
                     $("#descContainer").html('');
                     $("#descContainer").html(Description);
@@ -357,7 +357,7 @@ $(document).ready(function (event) {
 
                     if (extensions.status !== "true") {
 
-                        $("#btnSubmit").prop("disabled", true);
+                        $("#btnSubmit").prop("disabled", true).addClass('btn-primary');
                         isExtensionNeeded = true;
                         microsoft = $('#agreeTermsConditions').attr('placeholder');
                         if (microsoft !== "microsoft") {
@@ -368,13 +368,13 @@ $(document).ready(function (event) {
                             ThirdParty = "";
                         }
 
-                    } else { $("#btnSubmit").prop("disabled", false); }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
-                    $("#btnSubmit").prop("disabled", false);
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 }
 
             });
@@ -508,7 +508,7 @@ $('#btnSubmit').click(function () {
 
 
         $("#templateselection").prop("disabled", true);
-        $("#btnSubmit").prop("disabled", true);
+        $("#btnSubmit").prop("disabled", true).addClass('btn-primary');
 
         $("input.terms").attr("disabled", true);
         $("#txtALertContainer").hide();
@@ -540,7 +540,7 @@ function getStatus() {
                 $("#txtProjectName").val("");
                 $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                $("#btnSubmit").prop("disabled", false);
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 $("#templateselection").prop("disabled", false);
                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                 $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -586,7 +586,7 @@ function getStatus() {
                             $("#txtProjectName").val("");
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                            $("#btnSubmit").prop("disabled", false);
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                             $("#templateselection").prop("disabled", false);
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -604,7 +604,7 @@ function getStatus() {
                             $("#txtProjectName").val("");
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                            $("#btnSubmit").prop("disabled", false);
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                             $("#templateselection").prop("disabled", false);
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -646,7 +646,7 @@ function getStatus() {
 
                                     $('#progressBar').width(currentPercentage++ + '%');
                                     $("#finalLink").removeClass("d-none").addClass("d-block");
-                                    $("#btnSubmit").prop("disabled", false);
+                                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                                     $("#txtProjectName").val("");
 
                                     $('#ddlAcccountName').prop('selectedIndex', 0);
@@ -672,7 +672,7 @@ function getStatus() {
                                 $("#errorMail").empty().append(ErrorData);
                                 $("#errorNotify").show();
 
-                                $("#btnSubmit").prop("disabled", false);
+                                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                                 $("#txtProjectName").val("");
                                 $('#ddlAcccountName').prop('selectedIndex', 0);
 
@@ -715,7 +715,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
     if (accountNam !== "" && selectedTemplate !== "") {
-        $("#btnSubmit").prop("disabled", true);
+        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
@@ -755,13 +755,13 @@ function GetRequiredExtension() {
     checkForExtensions(function callBack(extensions) {
         if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== "undefined" && extensions.message.indexOf("Error") == -1 && extensions.message !== "Template not found") {
             $("#imgLoading").hide();
-            $("#ddlAcccountName").addClass('btn-primary').prop("disabled", false);
+            $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
 
             if (extensions.status !== "true") {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
                 isExtensionNeeded = true;
                 microsoft = $('#agreeTermsConditions').attr('placeholder');
@@ -772,7 +772,7 @@ function GetRequiredExtension() {
                 if (ThirdParty !== "thirdparty") {
                     ThirdParty = "";
                 }
-            } else { $("#btnSubmit").prop("disabled", false); }
+            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
         }
         else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); }
 
@@ -983,7 +983,7 @@ function GetTemplates(selectedTemplate) {
             var ParsedData = JSON.parse(data);
             var Description = ParsedData.Description;
             var parameters = ParsedData.Parameters;
-            $("#btnSubmit").prop("disabled", false);
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
             if (Description !== "") {
                 $("#descContainer").html('');
                 $("#descContainer").html(Description);

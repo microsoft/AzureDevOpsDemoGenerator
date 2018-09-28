@@ -741,24 +741,6 @@
     <Content Include="Templates\Docker\Teams.json" />
     <Content Include="Templates\Docker\UpdateCardFields.json" />
     <Content Include="Templates\Docker\UpdateCardStyles.json" />
-    <Content Include="Templates\SmartHotel360V2\BoardRowsFromTemplate.json" />
-    <Content Include="Templates\SmartHotel360V2\BugfromTemplate.json" />
-    <Content Include="Templates\SmartHotel360V2\BuildDefinitions\PublicWebCI.json" />
-    <Content Include="Templates\SmartHotel360V2\Dashboard\Dashboard.json" />
-    <Content Include="Templates\SmartHotel360V2\Dashboard\Queries\CompletedTasks.json" />
-    <Content Include="Templates\SmartHotel360V2\EnableEpic.json" />
-    <Content Include="Templates\SmartHotel360V2\Extensions.json" />
-    <Content Include="Templates\SmartHotel360V2\FeaturefromTemplate.json" />
-    <Content Include="Templates\SmartHotel360V2\ImportSourceCode\SmartHotel360.json" />
-    <Content Include="Templates\SmartHotel360V2\Iterations.json" />
-    <Content Include="Templates\SmartHotel360V2\ProjectSettings.json" />
-    <Content Include="Templates\SmartHotel360V2\ProjectTemplate.json" />
-    <Content Include="Templates\SmartHotel360V2\ReleaseDefinitions\PublicWebCD.json" />
-    <Content Include="Templates\SmartHotel360V2\ServiceEndpoints\SmartHotel360-code.json" />
-    <Content Include="Templates\SmartHotel360V2\TaskfromTemplate.json" />
-    <Content Include="Templates\SmartHotel360V2\TeamArea.json" />
-    <Content Include="Templates\SmartHotel360V2\Teams.json" />
-    <Content Include="Templates\SmartHotel360V2\UerStoriesfromTemplate.json" />
     <Content Include="Templates\ReleaseGates\BugfromTemplate.json" />
     <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI.json" />
     <Content Include="Templates\ReleaseGates\Dashboard\Queries\Bugs.json" />
@@ -770,12 +752,9 @@
     <Content Include="Templates\ReleaseGates\ServiceEndpoints\PartsUnlimited-code.json" />
     <Content Include="Templates\ReleaseGates\TeamArea.json" />
     <Content Include="Templates\ReleaseGates\Teams.json" />
-    <Content Include="Templates\SmartHotel360V2\ServiceEndpoints\GitHubSmartHotel360-public-web.json" />
     <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\CreateWiki.json" />
     <Content Include="Templates\MyHealthClinic\Wiki\CodeWiki\CreateWiki.json" />
     <Content Include="Views\Account\Unsupported_browser.cshtml" />
-    <Content Include="Templates\SmartHotel360V2\UpdateCardFields.json" />
-    <Content Include="Templates\SmartHotel360V2\UpdateCardStyles.json" />
     <Content Include="Templates\SmartHotel360\BoardColumns.json" />
     <Content Include="Templates\SmartHotel360\BugfromTemplate.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitions\PublicWebCI.json" />
@@ -825,6 +804,8 @@
     <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
     <Content Include="Templates\GroupSettings_FeatureFlag.json" />
+    <Content Include="Templates\SmartHotel360\Dashboard\Queries\UnfinishedWork.json" />
+    <Content Include="Templates\SmartHotel360\Dashboard\Queries\Work in Progress.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
