@@ -19,6 +19,7 @@ namespace VstsRestAPI
         public string FilePath { get; set; }
         public string GitRepositoryId { get; set; }
         public string VersionNumber { get; set; }
+        public string Id { get; set; }
     }
 
     public enum TemplateType

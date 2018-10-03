@@ -259,6 +259,7 @@
     <Content Include="assets\images\VSTS_cover_image.png" />
     <Content Include="assets\images\VSTS_full_logo.png" />
     <Content Include="assets\images\VS_logo.png" />
+    <Content Include="assets\images\VS_logo_1.png" />
     <Content Include="assets\templategrouping\templategroup.custom.min.css" />
     <Content Include="Content\assets\css\custom.min.css" />
     <Content Include="Content\assets\images\VSTS-demoGen-image.png" />
@@ -757,7 +758,6 @@
     <Content Include="Views\Account\Unsupported_browser.cshtml" />
     <Content Include="Templates\SmartHotel360\BoardColumns.json" />
     <Content Include="Templates\SmartHotel360\BugfromTemplate.json" />
-    <Content Include="Templates\SmartHotel360\BuildDefinitions\PublicWebCI.json" />
     <Content Include="Templates\SmartHotel360\EnableEpic.json" />
     <Content Include="Templates\SmartHotel360\EpicfromTemplate.json" />
     <Content Include="Templates\SmartHotel360\Extensions.json" />
@@ -767,7 +767,6 @@
     <Content Include="Templates\SmartHotel360\PBIfromTemplate.json" />
     <Content Include="Templates\SmartHotel360\ProjectSettings.json" />
     <Content Include="Templates\SmartHotel360\ProjectTemplate.json" />
-    <Content Include="Templates\SmartHotel360\ReleaseDefinitions\PublicWebCD.json" />
     <Content Include="Templates\SmartHotel360\ServiceEndpoints\GitHubSmartHotel360-public-web.json" />
     <Content Include="Templates\SmartHotel360\ServiceEndpoints\PublicWeb-code.json" />
     <Content Include="Templates\SmartHotel360\ServiceEndpoints\SmartHotel360-code.json" />
@@ -806,6 +805,11 @@
     <Content Include="Templates\GroupSettings_FeatureFlag.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\UnfinishedWork.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\Work in Progress.json" />
+    <Content Include="Templates\SmartHotel360\BuildDefinitions\PetCheckerFunctionCI.json" />
+    <Content Include="Templates\SmartHotel360\BuildDefinitions\PublicWebSiteCI.json" />
+    <Content Include="Templates\SmartHotel360\ReleaseDefinitions\PublicWebSiteCD.json" />
+    <Content Include="Templates\SmartHotel360\ServiceEndpoints\GitHubSmartHotel360-PetChecker-Function.json" />
+    <Content Include="Templates\EndpointKeyConfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

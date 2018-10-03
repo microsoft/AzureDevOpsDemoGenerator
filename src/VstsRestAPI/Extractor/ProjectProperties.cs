@@ -18,6 +18,8 @@ namespace VstsRestAPI.Extractor
         {
             public int count { get; set; }
             public IList<Value> value { get; set; }
+
+            public string TypeClass { get; set; }
         }
 
 

@@ -98,7 +98,7 @@ namespace TemplatesGeneratorTool.Generators
                         "From WorkItems " +
                         "Where [Work Item Type] = '" + workItemType + "'" +
                         "And [System.TeamProject] = '" + _sourceConfig.Project + "' " +
-                        "Order By [State] Asc, [Changed Date] Desc"
+                        "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
             };
             using (var client = new HttpClient())
             {

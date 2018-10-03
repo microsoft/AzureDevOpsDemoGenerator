@@ -1,9 +1,11 @@
 {
-  "source": "userInterface",
   "name": "PublicWebSiteCD",
+  "path": "\\",
+  "projectReference": null,
+  "source": "userInterface",
+  "revision": 2,
   "description": null,
   "isDeleted": false,
-  "path": "\\",
   "variables": {
     "Location": {
       "value": "East US"
@@ -12,7 +14,9 @@
       "value": "SmartHotel360-PublicWebSite"
     }
   },
-  "variableGroups": [],
+  "variableGroups": [
+
+  ],
   "environments": [
     {
       "name": "Azure-Dev",
@@ -22,8 +26,12 @@
         "displayName": "$OwnerDisplayName$",
         "uniqueName": "$OwnerUniqueName$"
       },
-      "variables": {},
-      "variableGroups": [],
+      "variables": {
+
+      },
+      "variableGroups": [
+
+      ],
       "preDeployApprovals": {
         "approvals": [
           {
@@ -33,7 +41,7 @@
           }
         ],
         "approvalOptions": {
-          "requiredApproverCount": null,
+          "requiredApproverCount": 0,
           "releaseCreatorCanBeApprover": false,
           "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
           "enforceIdentityRevalidation": false,
@@ -53,7 +61,7 @@
           }
         ],
         "approvalOptions": {
-          "requiredApproverCount": null,
+          "requiredApproverCount": 0,
           "releaseCreatorCanBeApprover": false,
           "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
           "enforceIdentityRevalidation": false,
@@ -69,21 +77,30 @@
             },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
-              "downloadInputs": []
+              "downloadInputs": [
+
+              ]
             },
-            "queueId": "$Hosted VS2017$",
-            "demands": [],
+            "queueId": "$Hosted VS2017 (Hosted VS2017)$",
+            "demands": [
+
+            ],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
             "jobCancelTimeoutInMinutes": 1,
             "condition": "succeeded()",
-            "overrideInputs": {}
+            "overrideInputs": {
+
+            }
           },
           "rank": 1,
           "phaseType": "agentBasedDeployment",
           "name": "CosmosDB",
           "workflowTasks": [
             {
+              "environment": {
+
+              },
               "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
               "version": "2.*",
               "name": "Azure Deployment CosmosDB",
@@ -93,7 +110,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
@@ -112,6 +131,9 @@
                 "project": "",
                 "deploymentGroupName": "",
                 "copyAzureVMTags": "true",
+                "runAgentServiceAsUser": "false",
+                "userName": "",
+                "password": "",
                 "outputVariable": "",
                 "deploymentOutputs": ""
               }
@@ -125,21 +147,30 @@
             },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
-              "downloadInputs": []
+              "downloadInputs": [
+
+              ]
             },
             "queueId": "$Hosted VS2017$",
-            "demands": [],
+            "demands": [
+
+            ],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
             "jobCancelTimeoutInMinutes": 1,
             "condition": "succeeded()",
-            "overrideInputs": {}
+            "overrideInputs": {
+
+            }
           },
           "rank": 2,
           "phaseType": "agentBasedDeployment",
           "name": "Function",
           "workflowTasks": [
             {
+              "environment": {
+
+              },
               "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
               "version": "2.*",
               "name": "Azure Deployment Function",
@@ -149,7 +180,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
@@ -168,11 +201,17 @@
                 "project": "",
                 "deploymentGroupName": "",
                 "copyAzureVMTags": "true",
+                "runAgentServiceAsUser": "false",
+                "userName": "",
+                "password": "",
                 "outputVariable": "",
                 "deploymentOutputs": ""
               }
             },
             {
+              "environment": {
+
+              },
               "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
               "version": "3.*",
               "name": "ARM Outputs",
@@ -182,7 +221,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
@@ -195,6 +236,9 @@
               }
             },
             {
+              "environment": {
+
+              },
               "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
               "version": "3.*",
               "name": "Azure App Service Deploy Function",
@@ -204,7 +248,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
@@ -226,7 +272,7 @@
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/PublicWebSiteCI/Function/PetCheckerFunction.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/PetCheckerFunctoinCI/drop/PetCheckerFunction.zip",
                 "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "",
                 "StartupCommand": "",
@@ -259,21 +305,30 @@
             },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
-              "downloadInputs": []
+              "downloadInputs": [
+
+              ]
             },
             "queueId": "$Hosted VS2017$",
-            "demands": [],
+            "demands": [
+
+            ],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
             "jobCancelTimeoutInMinutes": 1,
             "condition": "succeeded()",
-            "overrideInputs": {}
+            "overrideInputs": {
+
+            }
           },
           "rank": 3,
           "phaseType": "agentBasedDeployment",
           "name": "Web",
           "workflowTasks": [
             {
+              "environment": {
+
+              },
               "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
               "version": "2.*",
               "name": "Azure Deployment Web",
@@ -283,7 +338,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
@@ -302,11 +359,17 @@
                 "project": "",
                 "deploymentGroupName": "",
                 "copyAzureVMTags": "true",
+                "runAgentServiceAsUser": "false",
+                "userName": "",
+                "password": "",
                 "outputVariable": "",
                 "deploymentOutputs": ""
               }
             },
             {
+              "environment": {
+
+              },
               "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
               "version": "3.*",
               "name": "ARM Outputs",
@@ -316,7 +379,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
@@ -329,6 +394,9 @@
               }
             },
             {
+              "environment": {
+
+              },
               "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
               "version": "3.*",
               "name": "Azure App Service Deploy Web",
@@ -338,7 +406,9 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {},
+              "overrideInputs": {
+
+              },
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
@@ -395,9 +465,12 @@
         "enableAccessToken": false,
         "publishDeploymentStatus": true,
         "badgeEnabled": false,
-        "autoLinkWorkItems": false
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
       },
-      "demands": [],
+      "demands": [
+
+      ],
       "conditions": [
         {
           "name": "ReleaseStarted",
@@ -409,27 +482,72 @@
         "concurrencyCount": 1,
         "queueDepthCount": 0
       },
-      "schedules": [],
+      "schedules": [
+
+      ],
       "retentionPolicy": {
         "daysToKeep": 30,
         "releasesToKeep": 3,
         "retainBuild": true
       },
-      "processParameters": {},
-      "properties": {},
+      "processParameters": {
+
+      },
+      "properties": {
+
+      },
       "preDeploymentGates": {
         "id": 0,
         "gatesOptions": null,
-        "gates": []
+        "gates": [
+
+        ]
       },
       "postDeploymentGates": {
         "id": 0,
         "gatesOptions": null,
-        "gates": []
-      }
+        "gates": [
+
+        ]
+      },
+      "environmentTriggers": [
+
+      ]
     }
   ],
   "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$PetCheckerFunctoinCI-id$",
+      "type": "Build",
+      "alias": "PetCheckerFunctoinCI",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$PetCheckerFunctoinCI-id$",
+          "name": "PetCheckerFunctionCI"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isRetained": false
+    },
     {
       "sourceId": "$ProjectId$:$PublicWebSiteCI-id$",
       "type": "Build",
@@ -460,25 +578,27 @@
           "name": "$ProjectName$"
         }
       },
-      "isPrimary": true
+      "isPrimary": true,
+      "isRetained": false
     }
   ],
   "triggers": [
     {
       "artifactAlias": "PublicWebSiteCI",
-      "triggerConditions": [],
+      "triggerConditions": [
+
+      ],
       "triggerType": "artifactSource"
     }
   ],
   "releaseNameFormat": "Release-$(rev:r)",
-  "tags": [],
-  "pipelineProcess": {
-    "type": "designer"
-  },
+  "tags": [
+
+  ],
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
-      "$value": "ReleaseNew"
+      "$value": "ReleaseClone"
     }
   }
 }

@@ -41,9 +41,11 @@ namespace VstsRestAPI.WorkItemAndTracking
                     var method = new HttpMethod("PATCH");
                     var request = new HttpRequestMessage(method, URL + "DefaultCollection/" + projectId + "/_apis/wit/workitems/$Issue?api-version=" + version) { Content = patchValue };
                     var response = client.SendAsync(request).Result;
+
+                    string res = response.Content.ReadAsStringAsync().Result;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

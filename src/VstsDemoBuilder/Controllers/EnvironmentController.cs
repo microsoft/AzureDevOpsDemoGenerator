@@ -234,22 +234,7 @@ namespace VstsDemoBuilder.Controllers
                         User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress.ToLower());
                         bool showFeature = ldClient.BoolVariation("extractor", user, false);
                         ViewBag.UserExist = showFeature;
-
-                        //string filePath = Server.MapPath("~") + @"\NewFeature\RegisteredUsers.json";
-                        //if (System.IO.File.Exists(filePath))
-                        //{
-                        //    string ReadRegisteredUser = System.IO.File.ReadAllText(filePath);
-                        //    if (ReadRegisteredUser != null || ReadRegisteredUser != "")
-                        //    {
-                        //        ReadUser.User Reguser = new ReadUser.User();
-                        //        Reguser = JsonConvert.DeserializeObject<ReadUser.User>(ReadRegisteredUser);
-                        //        var isUesrExist = Reguser.Users.Where(x => x == Profile1.emailAddress).FirstOrDefault();
-                        //        if (isUesrExist != null || isUesrExist != "")
-                        //            ViewBag.UserExist = true;
-                        //        else
-                        //            ViewBag.UserExist = false;
-                        //    }
-                        //}
+                                            
 
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
@@ -319,7 +304,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4MDMyNjYyLCJleHAiOjE1MzgwMzYyNjJ9.OWqyyn67SNAo_Tt-GyECxI5h17cgwaYxbEEva7bvDtE0MO827xfPvDo5POiv9JNFtyISRsb9hM3wy5j-VJAn4ofDl3oa1AjCQ5TRRo_8Kzp7ujb5tCyt7VVkAPjWlk3QN9kFmt-e0ItNchc0m9pA673LFHy-u2X0EPTdWdRJDczyI7JoyKdmDAP3rl-psyCDRfd8QXdyS_UOwPY1g4EG17Eo83F-UvQrWYqMFWE_Z3Bq2WERgNMYdSuZT5MVr4AvqfePFx0rzaWUBsZfqq5ajZYkrt7SNSBeI4GswfnTIHI2clHG5ibQeni68QWEQTAyu911-BgQMNNk8EX2Av5hRA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4Mzk3OTMzLCJleHAiOjE1Mzg0MDE1MzN9.Xu2ZWLWwueRa9rKPZYq5tiEldQZzfqulIyBikWRnwpOzep6YeyByD8SnJ8gQO7Pv1ivOe7Lmqi_8h-m6HrlVK8kGX5WwBoWkYpy_j62AWROE2SzY56Nbusuc6HSOJaJw9Ifnd2MI4kfLDKrScKdBQC60aF7DIdI2dNG8Sw_wnsEDgeed4UWLAl1tCTweRmRAvERkUhte0l033w4Qc7ZsBkazSheLpl51_wSEb13HmP5xiLQi8TUo1SNk_Wo3AmeRnFjPJzv_f_AxO0M-Mh-bKRjHBKrkijFZQRqCg0c-M5xPaXn2ATKjVwpIw2xPyh7-fOFoDTb26_TqPVnHBXqXGw";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -2036,7 +2021,8 @@ namespace VstsDemoBuilder.Controllers
                     {
                         BuildDefinition objBuild = new BuildDefinition(_defaultConfiguration);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
-
+                        jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
+                                             .Replace("$ProjectId$", model.Environment.ProjectId);
                         //update repositoryId 
                         foreach (string repository in model.Environment.RepositoryIdList.Keys)
                         {

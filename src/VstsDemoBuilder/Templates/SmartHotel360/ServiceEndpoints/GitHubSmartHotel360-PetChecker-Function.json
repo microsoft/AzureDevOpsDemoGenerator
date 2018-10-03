@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "GitHubSmartHotel360-PetChecker-Function",
+  "type": "git",
+  "url": "https://github.com/Microsoft/SmartHotel360-PetCheckerFunction.git",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "DemoGeneratorUser",
+      "password": "Canarys@12345"
+    }
+  },
+  "isReady": true
+}
