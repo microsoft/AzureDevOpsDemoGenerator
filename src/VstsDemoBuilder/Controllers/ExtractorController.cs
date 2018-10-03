@@ -296,9 +296,6 @@ namespace VstsDemoBuilder.Controllers
                     string PATBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
                     string URL = System.Configuration.ConfigurationManager.AppSettings["URL"];
                     string ProjectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    PATBase64 = "Omo1cWFxbXlub2FucWszYm1kYTZveW9oNmNybGluZXV6anozdHB5aTR3NW52YmplZWFvc2E="; //System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                    URL = "https://vstsprojectgenerator.visuaalstudio.com/";//System.Configuration.ConfigurationManager.AppSettings["URL"];
-                    ProjectId = "0229020d-7718-4638-834f-6f65efe3f24d";//System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
 
