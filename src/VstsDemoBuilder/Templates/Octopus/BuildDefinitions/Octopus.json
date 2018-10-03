@@ -18,7 +18,7 @@
          "refName":"OctopusPack1",
          "task":{
             "id":"179fac12-2402-486e-80cf-5a6a8571f7c0",
-            "versionSpec":"2.*",
+            "versionSpec":"3.*",
             "definitionType":"task"
          },
          "inputs":{
@@ -73,7 +73,7 @@
          "refName":"OctopusPush2",
          "task":{
             "id":"d05ad9a2-5d9e-4a1c-a887-14034334d6f2",
-            "versionSpec":"2.*",
+            "versionSpec":"3.*",
             "definitionType":"task"
          },
         "inputs": {
@@ -95,7 +95,7 @@
          "refName":"OctopusCreateRelease1",
          "task":{
             "id":"4e131b60-5532-4362-95b6-7c67d9841b4f",
-            "versionSpec":"2.*",
+            "versionSpec":"3.*",
             "definitionType":"task"
          },
         "inputs": {
@@ -125,7 +125,7 @@
          "refName":"OctopusDeployRelease2",
          "task":{
             "id":"8ca1d96a-151d-44b7-bc4f-9251e2ea6971",
-            "versionSpec":"2.*",
+            "versionSpec":"3.*",
             "definitionType":"task"
          },
         "inputs": {

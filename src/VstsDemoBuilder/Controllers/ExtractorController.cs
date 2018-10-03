@@ -926,13 +926,17 @@ namespace VstsDemoBuilder.Controllers
                                             }
                                             else
                                             {
-                                                queuename = "Hosted VS2017";
+                                                queuename = "";
                                             }
                                         }
                                     }
                                     if (queuename != "")
                                     {
                                         DepInput["queueId"] = "$" + queuename + "$";
+                                    }
+                                    else
+                                    {
+                                        DepInput["queueId"] = "";
                                     }
 
                                     var workflow = dep["workflowTasks"];
@@ -959,7 +963,7 @@ namespace VstsDemoBuilder.Controllers
                         {
                             foreach (var art in artifact)
                             {
-                                string BuildName = art["alias"].ToString();
+                                string BuildName = art["definitionReference"]["definition"]["name"].ToString();
 
                                 art["sourceId"] = "$ProjectId$:" + "$" + BuildName + "-id$";
                                 art["definitionReference"]["definition"]["id"] = "$" + BuildName + "-id$";

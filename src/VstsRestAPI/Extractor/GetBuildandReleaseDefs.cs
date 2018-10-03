@@ -2,11 +2,8 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.Queue;
 
@@ -38,7 +35,7 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -68,7 +65,7 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -95,7 +92,7 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -134,7 +131,7 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -173,7 +170,7 @@ namespace VstsRestAPI.Extractor
                         {
                             using (var clients = GetHttpClient())
                             {
-                                HttpResponseMessage resp = client.GetAsync("https://vsrm.dev.azure.com/" + Account + "/" + Project + "/_apis/release/definitions/" + rel.id + "?api-version=4.1-preview.3").Result;
+                                HttpResponseMessage resp = client.GetAsync("https://vsrm.dev.azure.com/" + Account + "/" + Project + "/_apis/release/definitions/" + rel.id).Result;
                                 if (resp.IsSuccessStatusCode && resp.StatusCode == System.Net.HttpStatusCode.OK)
                                 {
                                     JObject obj = new JObject();

@@ -661,7 +661,7 @@ function getStatus() {
                         else {
                             ErrorData = response;
                             if (ErrorData != '') {
-                                $("#projCreateMsg").hide();
+                                $("#projCreateMsg").hide(); $("#errorDescription").html("");
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
                                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                                 $("#errorNotify").removeClass("d-none").addClass("d-block");
