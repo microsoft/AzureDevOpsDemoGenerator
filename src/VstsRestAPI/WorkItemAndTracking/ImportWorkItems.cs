@@ -19,7 +19,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         public string boardRowFieldName;
         List<WIMapData> WIData = new List<WIMapData>();
         List<string> listAssignToUsers = new List<string>();
-        string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related" };
+        string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related", "System.LinkTypes.Dependency-Reverse", "System.LinkTypes.Dependency-Forward" };
         string attachmentFolder = string.Empty;
         string repositoryId = string.Empty;
         string projectId = string.Empty;

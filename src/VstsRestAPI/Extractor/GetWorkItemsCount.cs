@@ -10,40 +10,18 @@ using VstsRestAPI.Viewmodel.Extractor;
 
 namespace VstsRestAPI.Extractor
 {
-    public class GetWorkItemsCount
+    public class GetWorkItemsCount : ApiServiceBase
     {
-        readonly IConfiguration _sourceConfig;
-        readonly string _sourceCredentials;
-        readonly string _accountName;
 
-        public GetWorkItemsCount(IConfiguration configuration)
+        public GetWorkItemsCount(IConfiguration configuration) : base(configuration)
         {
-            _accountName = configuration.AccountName;
-            _sourceConfig = configuration;
-            _sourceCredentials = configuration.PersonalAccessToken;
+
         }
         public class WIMapData
         {
             public string oldID { get; set; }
             public string newID { get; set; }
             public string WIType { get; set; }
-        }
-
-        /// <summary>
-        /// method to get each work item type and save as json
-        /// </summary>
-        public void GetWorkItemsDetails()
-        {
-            WorkItemFetchResponse.WorkItems fetchedEpics = getWorkItemsfromSource("Epic");
-            //WorkItemFetchResponse.WorkItems fetchedFeatures = getWorkItemsfromSource("Feature");
-            //WorkItemFetchResponse.WorkItems fetchedPBIs = getWorkItemsfromSource("Product Backlog Item");
-            //WorkItemFetchResponse.WorkItems fetchedTasks = getWorkItemsfromSource("Task");
-            //WorkItemFetchResponse.WorkItems fetchedTestCase = getWorkItemsfromSource("Test Case");
-            //WorkItemFetchResponse.WorkItems fetchedBugs = getWorkItemsfromSource("Bug");
-            //WorkItemFetchResponse.WorkItems fetchedUserStories = getWorkItemsfromSource("User Story");
-            //WorkItemFetchResponse.WorkItems fetchedTestSuits = getWorkItemsfromSource("Test Suite");
-            //WorkItemFetchResponse.WorkItems fetchedTestPlan = getWorkItemsfromSource("Test Plan");
-            //WorkItemFetchResponse.WorkItems fetchedFeedbackRequest = getWorkItemsfromSource("Feedback Request");
         }
 
         /// <summary>
@@ -55,51 +33,58 @@ namespace VstsRestAPI.Extractor
         {
             GetWorkItemsResponse.Results viewModel = new GetWorkItemsResponse.Results();
             WorkItemFetchResponse.WorkItems fetchedWIs;
-
-            // create wiql object
-            Object wiql = new
+            try
             {
-                query = "Select [State], [Title] ,[Effort]" +
-                        "From WorkItems " +
-                        "Where [Work Item Type] = '" + workItemType + "'" +
-                        "And [System.TeamProject] = '" + _sourceConfig.Project + "' " +
-                        "Order By [State] Asc, [Changed Date] Desc"
-            };
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sourceCredentials);
-
-                var postValue = new StringContent(JsonConvert.SerializeObject(wiql), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-
-                // set the httpmethod to Patch
-                var method = new HttpMethod("POST");
-
-                // send the request               
-                var request = new HttpRequestMessage(method, _sourceConfig.UriString + "/_apis/wit/wiql?api-version=2.2") { Content = postValue };
-                var response = client.SendAsync(request).Result;
-
-                if (response.IsSuccessStatusCode)
+                // create wiql object
+                Object wiql = new
                 {
-                    viewModel = response.Content.ReadAsAsync<GetWorkItemsResponse.Results>().Result;
-                }
-
-                viewModel.HttpStatusCode = response.StatusCode;
-                string workitemIDstoFetch = ""; int WICtr = 0;
-                foreach (GetWorkItemsResponse.Workitem WI in viewModel.workItems)
+                    query = "Select [State], [Title] ,[Effort]" +
+                            "From WorkItems " +
+                            "Where [Work Item Type] = '" + workItemType + "'" +
+                            "And [System.TeamProject] = '" + Project + "' " +
+                            "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
+                };
+                using (var client = GetHttpClient())
                 {
-                    workitemIDstoFetch = WI.id + "," + workitemIDstoFetch;
-                    WICtr++;
-                }
-                Console.WriteLine("Total {0} {1} Work Items read from source", WICtr, workItemType);
-                workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
-                fetchedWIs = GetWorkItemsDetailinBatch(workitemIDstoFetch);
+                    var postValue = new StringContent(JsonConvert.SerializeObject(wiql), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
 
-                //update the work items in target if specified
+                    // set the httpmethod to Patch
+                    var method = new HttpMethod("POST");
+
+                    // send the request               
+                    var request = new HttpRequestMessage(method, "/_apis/wit/wiql?api-version=2.2") { Content = postValue };
+                    var response = client.SendAsync(request).Result;
+
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        viewModel = response.Content.ReadAsAsync<GetWorkItemsResponse.Results>().Result;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+
+                    viewModel.HttpStatusCode = response.StatusCode;
+                    string workitemIDstoFetch = ""; int WICtr = 0;
+                    foreach (GetWorkItemsResponse.Workitem WI in viewModel.workItems)
+                    {
+                        workitemIDstoFetch = WI.id + "," + workitemIDstoFetch;
+                        WICtr++;
+                    }
+                    Console.WriteLine("Total {0} {1} Work Items read from source", WICtr, workItemType);
+                    workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
+                    fetchedWIs = GetWorkItemsDetailinBatch(workitemIDstoFetch);
+                    return fetchedWIs;
+                }
             }
-
-            return fetchedWIs;
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                LastFailureMessage = error;
+            }
+            return new WorkItemFetchResponse.WorkItems();
         }
         /// <summary>
         /// method to get work item data in detail
@@ -111,24 +96,25 @@ namespace VstsRestAPI.Extractor
             WorkItemFetchResponse.WorkItems viewModel = new WorkItemFetchResponse.WorkItems();
             try
             {
-                using (var client = new HttpClient())
+                using (var client = GetHttpClient())
                 {
-                    client.BaseAddress = new Uri(_sourceConfig.UriString);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sourceCredentials);
-
-                    // use $expand=all to get all fields
-                    //HttpResponseMessage response = client.GetAsync(WorkItemURL + "?$expand=all&api-version=2.2").Result;
-                    HttpResponseMessage response = client.GetAsync(_sourceConfig.UriString + "/_apis/wit/workitems?api-version=2.2&ids=" + workitemstoFetch + "&$expand=relations").Result;
-                    if (response.IsSuccessStatusCode)
+                    HttpResponseMessage response = client.GetAsync("/_apis/wit/workitems?api-version=2.2&ids=" + workitemstoFetch + "&$expand=relations").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
                     }
                 }
             }
             catch (Exception ex)
             {
+                string error = ex.Message;
+                LastFailureMessage = error;
             }
             return viewModel;
         }

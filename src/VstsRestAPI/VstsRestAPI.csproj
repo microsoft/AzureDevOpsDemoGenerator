@@ -73,9 +73,11 @@
     <Compile Include="Viewmodel\Extractor\GetBuildDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\GetINumIteration.cs" />
     <Compile Include="Extractor\GetWorkItemsCount.cs" />
+    <Compile Include="Viewmodel\Extractor\GetProcessTemplate.cs" />
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\GetWorkItemsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\IterationtoSave.cs" />
+    <Compile Include="Viewmodel\Extractor\KeyConfig.cs" />
     <Compile Include="Viewmodel\Extractor\ProjectSetting.cs" />
     <Compile Include="Viewmodel\Extractor\ReleaseDefCountResponse.cs" />
     <Compile Include="Viewmodel\Extractor\ReleaseDefResponse.cs" />

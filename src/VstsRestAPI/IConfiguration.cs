@@ -20,5 +20,6 @@ namespace VstsRestAPI
         string FilePath { get; set; }
         string GitRepositoryId { get; set; }
         string VersionNumber { get; set; }
+        string Id { get; set; }
     }
 }

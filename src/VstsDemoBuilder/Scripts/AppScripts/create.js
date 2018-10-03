@@ -508,7 +508,7 @@ $('#btnSubmit').click(function () {
 
 
         $("#templateselection").prop("disabled", true);
-        $("#btnSubmit").prop("disabled", true).addClass('btn-primary');
+        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
         $("input.terms").attr("disabled", true);
         $("#txtALertContainer").hide();
@@ -933,6 +933,7 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled','disbaled');
             return false;
         }
         else if (projectName === "COM1" || projectName === "COM2" || projectName === "COM3" || projectName === "COM4" || projectName === "COM5" || projectName === "COM6" || projectName === "COM7" || projectName === "COM8" || projectName === "COM9" || projectName === "COM10") {
@@ -940,13 +941,14 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disbaled');
             return false;
         }
         else if (projectName === "PRN" || projectName === "LPT1" || projectName === "LPT2" || projectName === "LPT3" || projectName === "LPT4" || projectName === "LPT5" || projectName === "LPT6" || projectName === "LPT7" || projectName === "LPT8" || projectName === "LPT9") {
             var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
+            $("#txtProjectName").focus(); $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disbaled');
             return false;
         }
         else if (projectName === "NUL" || projectName === "CON" || projectName === "AUX" || projectName === "SERVER" || projectName === "SignalR" || projectName === "DefaultCollection" || projectName === "Web" || projectName === "App_code" || projectName === "App_Browsers" || projectName === "App_Data") {
@@ -954,6 +956,7 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disbaled');
             return false;
         }
         else if (projectName === "App_GlobalResources" || projectName === "App_LocalResources" || projectName === "App_Themes" || projectName === "App_WebResources" || projectName === "bin" || projectName === "web.config") {
@@ -961,17 +964,20 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disbaled');
             return false;
         }
         else {
             $("#txtProjectName_Error").text("");
             $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+            $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
             return false;
         }
     }
     else {
         $("#txtProjectName_Error").text("");
         $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+        $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
         return false;
     }
 });

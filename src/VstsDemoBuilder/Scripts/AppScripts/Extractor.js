@@ -49,26 +49,30 @@ $(document).ready(function () {
 
     $('#ddlAcccountName').change(function () {
         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
-
         var accSelected = $('#ddlAcccountName').val();
         var projectName = $("#projectSelect option:selected").text();
         $('#projectSelect').empty();
         var options = $("#projectSelect option");
         options.appendTo("#projectSelect", "Select Project");
         options.appendTo("#projectSelect");
-        if (accSelected == '' || accSelected == '--select organization--') {
+        if (accSelected === '' || accSelected === '--select organization--') {
             $("#ddlAcccountName_Error").text("Please select an organization");
             $("#ddlAcccountName_Error").removeClass('d-none');
             return;
         }
         else {
             $('#projectloader').removeClass('d-none');
+            $('#analyseDiv').addClass('d-none'); $('#analytics').html("");
+            $('#genArtDiv').addClass('d-none'); $('#artifactProgress').html("");
+            $('#GenerateArtifact').addClass('d-none');
+            $('#finalLink').addClass('d-none');
+            $('#Analyse').addClass('btn-primary').attr('disabled', 'disabled');
 
             var token = $('#key').val();
             var param = {
                 accname: accSelected,
                 pat: token
-            }
+            };
             $.ajax({
                 url: '../Extractor/GetprojectList',
                 type: 'POST',
@@ -110,28 +114,33 @@ $(document).ready(function () {
     });
 
     $('#projectSelect').change(function () {
-        $('#analyseDiv').addClass('d-none');
-        $('#genArtDiv').addClass('d-none'); 
+        $('#projectloader').removeClass('d-none');
+        $('#analyseDiv').addClass('d-none'); $('#analytics').html("");
+        $('#genArtDiv').addClass('d-none'); $('#artifactProgress').html("");
+        $('#GenerateArtifact').addClass('d-none');
         $("#msgSource").hide();
         var project = $('#projectSelect option:selected').val();
         var accSelected = $('#ddlAcccountName').val();
         var key = $('#key').val();
         $('#processtemplate').empty();
         $('#processTemplateLoader').removeClass('d-none');
-        if (project == 0 || project == "") {
+        if (project === 0 || project === "") {
             return;
         }
-        if (accSelected == '' || accSelected == '--select account--') {
+        if (accSelected === '' || accSelected === '--select account--') {
             return;
         }
         else {
-            $('#Analyse').addClass('btn-primary').attr('disabled', false);
+           
             $.ajax({
                 url: '../Extractor/GetProjectPropertirs',
                 type: 'POST',
                 data: { accname: accSelected, project: project, _credentials: key },
                 success: function (res) {
+                    $('#Analyse').addClass('btn-primary').attr('disabled', false);
+                    $('#projectloader').addClass('d-none');
                     $('#processtemplate').empty().val(res.value[4].value);
+                    $('#TemplateClass').empty().val(res.TypeClass);
                     $('#processTemplateLoader').addClass('d-none');
                     console.log(res);
                     var p = res.value[4].value;
@@ -146,6 +155,8 @@ $(document).ready(function () {
                     $('#processTemplateLoader').addClass('d-none');
                     $("#msg").text(e);
                     $("#msgSource").show();
+                    $('#projectloader').addClass('d-none');
+                    $('#Analyse').addClass('btn-primary').attr('disabled', false);
                 }
             });
         }
@@ -157,20 +168,20 @@ $(document).ready(function () {
         var projectName = $("#projectSelect option:selected").text();
         finalprojectName = projectName;
         var key = $('#key').val();
-        if (SourceAcc == "" || SourceAcc == "Select Organization") {
+        if (SourceAcc === "" || SourceAcc === "Select Organization") {
             $("#ddlAcccountName_Error").text("Please select an organization");
             $("#ddlAcccountName_Error").removeClass('d-none');
             return;
         }
-        if (project == "" || projectName == '--select project--' || project == 0 || typeof project == undefined) {
+        if (project === "" || projectName === '--select project--' || project === 0 || typeof project === undefined) {
             $("#projectSelect_Error").text("Please select a Project");
             $("#projectSelect_Error").removeClass('d-none');
             return;
         }
-        var project = {
+        var projectN = {
             ProjectName: projectName,
             accountName: SourceAcc, accessToken: key
-        }
+        };
         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
         $('#imgLoading').removeClass('d-none');
 
@@ -183,47 +194,56 @@ $(document).ready(function () {
             url: '../Extractor/CreateProjectEnvironment',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(project),
+            data: JSON.stringify(projectN),
             success: function (res) {
                 var row = "";
-                if (res != "") {
+                if (res !== "") {
                     var processTemplate = $('#processtemplate').val();
-                    row += ' Selected Project: ' + projectName + '&nbsp; Process Template: ' + processTemplate + '<br />';
+                    var templaetClass = $('#TemplateClass').val();
+                    if (templaetClass !== "system") {
+                        $('#GenerateArtifacts').hide();
+                        $('#templateError').empty().append("Tool doesn't support for projects based on custom or derived process templates");
+                    }
+                    else {
+                        $('#templateError').empty().append("Everything looks good.Click the button below to proceed.");
+                        $('#GenerateArtifacts').show();
+                    }
+                    row += ' Selected Project: ' + projectName + ', &nbsp; Process Template: ' + processTemplate + ' (' + templaetClass + ') <br />';
 
-                    if (res.teamCount != 0 && res.teamCount != null)
+                    if (res.teamCount !== 0 && res.teamCount !== null)
                         row += '<i class="fas fa-check-circle"></i>' + ' Teams: ' + res.teamCount + '<br />';
-                    if (res.IterationCount != 0 && res.IterationCount != null)
+                    if (res.IterationCount !== 0 && res.IterationCount !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Iteration: ' + res.IterationCount + '<br />';
-                    if (res.fetchedEpics != 0 && res.fetchedEpics != null)
+                    if (res.fetchedEpics !== 0 && res.fetchedEpics !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Epics: ' + res.fetchedEpics + '<br />';
-                    if (res.fetchedFeatures != 0 && res.fetchedFeatures != null)
+                    if (res.fetchedFeatures !== 0 && res.fetchedFeatures !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Features: ' + res.fetchedFeatures + '<br />';
-                    if (res.fetchedPBIs != 0 && res.fetchedPBIs != null)
+                    if (res.fetchedPBIs !== 0 && res.fetchedPBIs !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' PBIs: ' + res.fetchedPBIs + '<br />';
-                    if (res.fetchedTasks != 0 && res.fetchedTasks != null)
+                    if (res.fetchedTasks !== 0 && res.fetchedTasks !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Tasks: ' + res.fetchedTasks + '<br />';
 
-                    if (res.fetchedBugs != 0 && res.fetchedBugs != null)
+                    if (res.fetchedBugs !== 0 && res.fetchedBugs !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Bugs: ' + res.fetchedBugs + '<br />';
-                    if (res.fetchedUserStories != 0 && res.fetchedUserStories != null)
+                    if (res.fetchedUserStories !== 0 && res.fetchedUserStories !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' User Stories: ' + res.fetchedUserStories + '<br />';
 
-                    if (res.fetchedTestSuits != 0 && res.fetchedTestSuits != null)
+                    if (res.fetchedTestSuits !== 0 && res.fetchedTestSuits !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Test Suites: ' + res.fetchedTestSuits + '<br />';
 
-                    if (res.fetchedTestPlan != 0 && res.fetchedTestPlan != null)
+                    if (res.fetchedTestPlan !== 0 && res.fetchedTestPlan !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Test Plans: ' + res.fetchedTestPlan + '<br />';
 
-                    if (res.fetchedTestCase != 0 && res.fetchedTestCase != null)
+                    if (res.fetchedTestCase !== 0 && res.fetchedTestCase !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Test Cases: ' + res.fetchedTestCase + '<br />';
 
-                    if (res.fetchedFeedbackRequest != 0 && res.fetchedFeedbackRequest != null)
+                    if (res.fetchedFeedbackRequest !== 0 && res.fetchedFeedbackRequest !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Feedback Requests: ' + res.fetchedFeedbackRequest + '<br />';
 
-                    if (res.BuildDefCount != 0 && res.BuildDefCount != null)
+                    if (res.BuildDefCount !== 0 && res.BuildDefCount !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Build Definitions: ' + res.BuildDefCount + '<br />';
 
-                    if (res.ReleaseDefCount != 0 && res.ReleaseDefCount != null)
+                    if (res.ReleaseDefCount !== 0 && res.ReleaseDefCount !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Release Definitions: ' + res.ReleaseDefCount + '<br />';
                 }
                 $('#analyseDiv').removeClass('d-none');
@@ -250,34 +270,33 @@ $(document).ready(function () {
         var projectName = $("#projectSelect option:selected").text();
         var key = $('#key').val();
         var processTemplate = $('#processtemplate').val();
-        if (SourceAcc == "" || SourceAcc == "Select Account") {
-            $("#msg").text("Please select Source Account Name");
-            $("#msgSource").show();
+        if (SourceAcc === "" || SourceAcc === "Select Account") {
+            $("#ddlAcccountName_Error").text("Please select Source Account Name");
+            $("#ddlAcccountName_Error").removeClass('d-none');
             return;
         }
-        if (project == '' || projectName == '--select account--' || project == 0) {
-            $("#msg").text("Please select Source Project");
-            $("#msgSource").show();
+        if (project === '' || projectName === '--select account--' || project === 0) {
+            $("#projectSelect_Error").text("Please select Source Project");
+            $("#projectSelect_Error").removeClass('d-none');
             return;
         }
-        var project = {
+        var projects = {
             ProjectName: projectName,
             accountName: SourceAcc, accessToken: key, id: uniqueId, ProcessTemplate: processTemplate
-        }
+        };
         $('#ExStatus-messages').html('');
         $('#ExStatus-messages').show();
         $('#GenerateArtifact').removeClass('d-none');
-        //$('.listDivs1').addClass('d-none');
-        //  $('.listDivs2').removeClass('d-none');
         $('#ExdvProgress').removeClass('d-none');
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
+
         $.ajax({
             url: '../Extractor/StartEnvironmentSetupProcess',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(project),
+            data: JSON.stringify(projects),
             success: function (res) {
-                if (res == "True") {
+                if (res === "True") {
                     getStatus();
                     $('#artifactProgress').removeClass('d-none');
                 }
@@ -331,7 +350,7 @@ function getStatus() {
                             var link = "../ExtractedTemplate/" + finalprojectName + ".zip";
                             $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
                             $('.genArtifacts').removeClass('show');
-                            $('<b style="display: block;">Congratulations! Your template is ready. </b>Click <a href="' + link + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file<br>').appendTo("#accountLink");
+                            $('<b style="display: block;">Congratulations! Your template is ready. Click <a href="' + link + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
 
                             $('#ExtractorProgressBar').width(currentPercentage++ + '%');
                             $("#finalLink").removeClass("d-none").addClass("d-block");
@@ -353,37 +372,28 @@ function getStatus() {
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
                                 $('#ExdvProgress').removeClass("d-block").addClass("d-none");
                                 $("#errorNotify").removeClass("d-none").addClass("d-block");
-                                $('#textMuted').removeClass("d-block").addClass("d-none");
 
-                                currentPercentage = 0;
-                                $('#ExtractorProgressBar').width(currentPercentage++ + '%');
                                 $("#errorMail").empty().append(ErrorData);
                                 $("#errorNotify").show();
 
                                 $("#btnSubmit").prop("disabled", false);
                                 $("#txtProjectName").val("");
                                 $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                                $("#templateselection").prop("disabled", false);
-
                                 $('#ddlGroups').removeAttr("disabled");
-
                                 $("#ddlAcccountName").removeAttr("disabled");
-                                $("#txtProjectName").removeAttr("disabled");
-
                             }
                         }
                     });
                     messageList = [];
                 }
-                if ('@Request.QueryString["queryTemplate"]' === '') {
+                //if ('@Request.QueryString["queryTemplate"]' == '') {
 
-                    $('#ddlGroups').removeAttr("disabled");
+                //    $('#ddlGroups').removeAttr("disabled");
 
-                    $("#ddlAcccountName").removeAttr("disabled");
-                    $("#txtProjectName").removeAttr("disabled");
+                //    $("#ddlAcccountName").removeAttr("disabled");
+                //    $("#txtProjectName").removeAttr("disabled");
 
-                }
+                //}
 
             };
         },

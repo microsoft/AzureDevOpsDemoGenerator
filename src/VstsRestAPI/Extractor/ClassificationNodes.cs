@@ -11,10 +11,10 @@ using VstsRestAPI.Viewmodel.Extractor;
 
 namespace VstsRestAPI.Extractor
 {
-    public class ClassificationNodes :ApiServiceBase
+    public class GetClassificationNodes : ApiServiceBase
     {
-        public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
-
+        public GetClassificationNodes(IConfiguration configuration) : base(configuration) { }
+        
         public IterationtoSave.Nodes GetIterationsToSave(string projectName, string pat, string URL)//string projectName, string URL, string _credentials, string srcProject)
         {
             try
@@ -37,6 +37,7 @@ namespace VstsRestAPI.Extractor
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
                     }
                 }
             }
@@ -103,23 +104,29 @@ namespace VstsRestAPI.Extractor
         {
             Teams.TeamList teamObj = new Teams.TeamList();
             SrcTeamsList _team = new SrcTeamsList();
-            
-            using (var client = GetHttpClient())
+            try
             {
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + Project + "/teams?api-version=2.2").Result;
-                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                using (var client = GetHttpClient())
                 {
-                    string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(res);
-                    _team = JsonConvert.DeserializeObject<SrcTeamsList>(res);
-                    return _team;
+                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + Project + "/teams?api-version=2.2").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(res);
+                        _team = JsonConvert.DeserializeObject<SrcTeamsList>(res);
+                        return _team;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
                 }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    LastFailureMessage = error;
-                }
+            }
+            catch(Exception ex)
+            {
+                LastFailureMessage = ex.Message;
             }
             return new SrcTeamsList();
         }
