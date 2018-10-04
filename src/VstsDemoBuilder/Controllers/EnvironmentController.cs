@@ -1,60 +1,58 @@
-﻿using Newtonsoft.Json;
+﻿using LaunchDarkly.Client;
+using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+using Microsoft.VisualStudio.Services.WebApi;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Diagnostics;
+using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsRestAPI;
 using VstsRestAPI.Build;
 using VstsRestAPI.Git;
 using VstsRestAPI.ProjectsAndTeams;
+using VstsRestAPI.QuerysAndWidgets;
+using VstsRestAPI.Queues;
 using VstsRestAPI.Release;
 using VstsRestAPI.Service;
-using VstsRestAPI.Viewmodel.ProjectAndTeams;
-using VstsRestAPI.WorkItemAndTracking;
-using VstsDemoBuilder.Extensions;
-using VstsRestAPI.Queues;
-using VstsRestAPI.Viewmodel.WorkItem;
-using VstsRestAPI.Viewmodel.QuerysAndWidgets;
-using VstsRestAPI.QuerysAndWidgets;
-using System.Dynamic;
-using Microsoft.VisualStudio.Services.WebApi;
-using Microsoft.VisualStudio.Services.Common;
-using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
-using System.Net;
-using VstsRestAPI.Viewmodel.Repository;
 using VstsRestAPI.TestManagement;
-using System.Net.Http;
-using System.Text;
-using System.Net.Http.Headers;
-using Microsoft.VisualStudio.Services.Client;
-using VstsRestAPI.Wiki;
-using VstsRestAPI.Viewmodel.Wiki;
-using VstsRestAPI.Viewmodel.Sprint;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Extractor;
-using LaunchDarkly.Client;
+using VstsRestAPI.Viewmodel.ProjectAndTeams;
+using VstsRestAPI.Viewmodel.QuerysAndWidgets;
+using VstsRestAPI.Viewmodel.Repository;
+using VstsRestAPI.Viewmodel.Sprint;
+using VstsRestAPI.Viewmodel.Wiki;
+using VstsRestAPI.Viewmodel.WorkItem;
+using VstsRestAPI.Wiki;
+using VstsRestAPI.WorkItemAndTracking;
 
 namespace VstsDemoBuilder.Controllers
 {
     public class EnvironmentController : Controller
     {
+
         #region Variables & Properties
         private static object objLock = new object();
         private static Dictionary<string, string> statusMessages;
-        delegate string[] ProcessEnvironment(Project model, string PAT, string accountName);
+
+        private delegate string[] ProcessEnvironment(Project model, string PAT, string accountName);
         public bool isDefaultRepoTodetele = true;
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
-        AccessDetails AccessDetails = new AccessDetails();
-
-        LdClient ldClient = new LdClient("sdk-36af231d-d756-445a-b539-97752bbba254");
+        private AccessDetails AccessDetails = new AccessDetails();
+        private LdClient ldClient = new LdClient("sdk-36af231d-d756-445a-b539-97752bbba254");
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -234,7 +232,7 @@ namespace VstsDemoBuilder.Controllers
                         User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress.ToLower());
                         bool showFeature = ldClient.BoolVariation("extractor", user, false);
                         ViewBag.UserExist = showFeature;
-                                            
+
 
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
@@ -304,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4Mzk3OTMzLCJleHAiOjE1Mzg0MDE1MzN9.Xu2ZWLWwueRa9rKPZYq5tiEldQZzfqulIyBikWRnwpOzep6YeyByD8SnJ8gQO7Pv1ivOe7Lmqi_8h-m6HrlVK8kGX5WwBoWkYpy_j62AWROE2SzY56Nbusuc6HSOJaJw9Ifnd2MI4kfLDKrScKdBQC60aF7DIdI2dNG8Sw_wnsEDgeed4UWLAl1tCTweRmRAvERkUhte0l033w4Qc7ZsBkazSheLpl51_wSEb13HmP5xiLQi8TUo1SNk_Wo3AmeRnFjPJzv_f_AxO0M-Mh-bKRjHBKrkijFZQRqCg0c-M5xPaXn2ATKjVwpIw2xPyh7-fOFoDTb26_TqPVnHBXqXGw";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4NjYyNTQ5LCJleHAiOjE1Mzg2NjYxNDl9.GBAkrqPPALC5jqpnrA1IkIbwJTgYBpNqzCHDVWNocDg84bVsKoLvxMcAed5OFuc2j99djX5q7nruM8w_hsr18hgd5HEm8iNO9eIG5D-hyGIyFwku6hBc6wS-NNbFqRgLIcP-AU34-T8-YozocMLOdEwmpe6JxaBAnzx6Avsj96fQ507D-btvbT7JsVbBeYPfJISuElcgfNSr_qPRXpE3T9EDIERhgveSPUctrsof0YXpp0y0EwPF4bBZ0FGxLwVp-XRIeszpc17HOPt6ATdDDnLoeri1xiGhSP02fI9y7vFXpOEPx3TsSh8QgnYIpqLgbBU0szH4XoSeDDsFnGficA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -390,7 +388,7 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View();
             }
@@ -847,7 +845,10 @@ namespace VstsDemoBuilder.Controllers
                     string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                     if (!Directory.Exists(LogPath))
+                    {
                         Directory.CreateDirectory(LogPath);
+                    }
+
                     System.IO.File.AppendAllText(Path.Combine(LogPath, fileName), errorMessages);
 
                     //Create ISSUE work item with error details in VSTSProjectgenarator account
@@ -936,9 +937,18 @@ namespace VstsDemoBuilder.Controllers
 
                     if (!string.IsNullOrWhiteSpace(settings.type))
                     {
-                        if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower()) processTemplateId = Default.SCRUM;
-                        else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower()) processTemplateId = Default.Agile;
-                        else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower()) processTemplateId = Default.CMMI;
+                        if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                        {
+                            processTemplateId = Default.SCRUM;
+                        }
+                        else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
+                        {
+                            processTemplateId = Default.Agile;
+                        }
+                        else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
+                        {
+                            processTemplateId = Default.CMMI;
+                        }
                     }
                 }
             }
@@ -1008,8 +1018,15 @@ namespace VstsDemoBuilder.Controllers
             TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _defaultConfiguration, model.id);
 
             var teamMember = teamMembers.value.FirstOrDefault();
-            if (teamMember != null) model.Environment.UserUniquename = teamMember.uniqueName;
-            if (teamMember != null) model.Environment.UserUniqueId = teamMember.id;
+            if (teamMember != null)
+            {
+                model.Environment.UserUniquename = teamMember.uniqueName;
+            }
+
+            if (teamMember != null)
+            {
+                model.Environment.UserUniqueId = teamMember.id;
+            }
 
 
             //update board columns and rows
@@ -1061,9 +1078,16 @@ namespace VstsDemoBuilder.Controllers
             {
                 foreach (string aq in settings.queues)
                 {
-                    if (model.Environment.AgentQueues.ContainsKey(aq)) continue;
+                    if (model.Environment.AgentQueues.ContainsKey(aq))
+                    {
+                        continue;
+                    }
+
                     var id = queue.CreateQueue(aq);
-                    if (id > 0) model.Environment.AgentQueues[aq] = id;
+                    if (id > 0)
+                    {
+                        model.Environment.AgentQueues[aq] = id;
+                    }
                 }
             }
 
@@ -1149,16 +1173,50 @@ namespace VstsDemoBuilder.Controllers
             }
             Dictionary<string, string> WorkItems = new Dictionary<string, string>();
 
-            if (System.IO.File.Exists(featuresFilePath)) WorkItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
-            if (System.IO.File.Exists(productBackLogPath)) WorkItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
-            if (System.IO.File.Exists(taskPath)) WorkItems.Add("Task", model.ReadJsonFile(taskPath));
-            if (System.IO.File.Exists(testCasePath)) WorkItems.Add("Test Case", model.ReadJsonFile(testCasePath));
-            if (System.IO.File.Exists(bugPath)) WorkItems.Add("Bug", model.ReadJsonFile(bugPath));
-            if (System.IO.File.Exists(userStoriesPath)) WorkItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
-            if (System.IO.File.Exists(epicPath)) WorkItems.Add("Epic", model.ReadJsonFile(epicPath));
-            if (System.IO.File.Exists(testPlansPath)) WorkItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
-            if (System.IO.File.Exists(testSuitesPath)) WorkItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
+            if (System.IO.File.Exists(featuresFilePath))
+            {
+                WorkItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
+            }
 
+            if (System.IO.File.Exists(productBackLogPath))
+            {
+                WorkItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
+            }
+
+            if (System.IO.File.Exists(taskPath))
+            {
+                WorkItems.Add("Task", model.ReadJsonFile(taskPath));
+            }
+
+            if (System.IO.File.Exists(testCasePath))
+            {
+                WorkItems.Add("Test Case", model.ReadJsonFile(testCasePath));
+            }
+
+            if (System.IO.File.Exists(bugPath))
+            {
+                WorkItems.Add("Bug", model.ReadJsonFile(bugPath));
+            }
+
+            if (System.IO.File.Exists(userStoriesPath))
+            {
+                WorkItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
+            }
+
+            if (System.IO.File.Exists(epicPath))
+            {
+                WorkItems.Add("Epic", model.ReadJsonFile(epicPath));
+            }
+
+            if (System.IO.File.Exists(testPlansPath))
+            {
+                WorkItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
+            }
+
+            if (System.IO.File.Exists(testSuitesPath))
+            {
+                WorkItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
+            }
 
             ImportWorkItems import = new ImportWorkItems(_defaultConfiguration, model.Environment.BoardRowFieldName);
             if (System.IO.File.Exists(projectSettingsFile))
@@ -1639,7 +1697,10 @@ namespace VstsDemoBuilder.Controllers
             if (defaultSprints.Contains(child.name))
             {
                 var nd = (currentIterations.hasChildren) ? currentIterations.children.FirstOrDefault(i => i.name == child.name) : null;
-                if (nd != null) child.id = nd.id;
+                if (nd != null)
+                {
+                    child.id = nd.id;
+                }
             }
             else
             {
@@ -1656,7 +1717,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        string path = string.Empty;
+        private string path = string.Empty;
         /// <summary>
         /// Move Iterations to nodes
         /// </summary>
