@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Extractor;
 
 namespace VstsRestAPI.Extractor
@@ -14,7 +10,7 @@ namespace VstsRestAPI.Extractor
     public class GetClassificationNodes : ApiServiceBase
     {
         public GetClassificationNodes(IConfiguration configuration) : base(configuration) { }
-        
+
         public IterationtoSave.Nodes GetIterationsToSave(string projectName, string pat, string URL)//string projectName, string URL, string _credentials, string srcProject)
         {
             try
@@ -41,7 +37,7 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return new IterationtoSave.Nodes();
@@ -67,7 +63,7 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -91,10 +87,11 @@ namespace VstsRestAPI.Extractor
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return new ItearationList.Iterations();
@@ -124,11 +121,187 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LastFailureMessage = ex.Message;
             }
             return new SrcTeamsList();
+        }
+
+        public BoardColumnResponseScrum ExportBoardColumnsScrum()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Backlog%20items/columns?api-version=4.1").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        BoardColumnResponseScrum columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseScrum>(response.Content.ReadAsStringAsync().Result.ToString());
+                        return columns;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                        return new BoardColumnResponseScrum();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new BoardColumnResponseScrum();
+        }
+
+        public BoardColumnResponseAgile.ColumnResponse ExportBoardColumnsAgile()
+        {
+            try
+            {
+                BoardColumnResponseAgile.ColumnResponse columns = new BoardColumnResponseAgile.ColumnResponse();
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=4.1").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
+                        return columns;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new BoardColumnResponseAgile.ColumnResponse();
+        }
+
+        public ExportBoardRows.Rows ExportboardRows()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boardrows?api-version=4.1").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        ExportBoardRows.Rows rows = new ExportBoardRows.Rows();
+                        rows = JsonConvert.DeserializeObject<ExportBoardRows.Rows>(res);
+                        ExportBoardRows.Value addValue = new ExportBoardRows.Value();
+                        addValue.id = "00000000-0000-0000-0000-000000000000";
+                        addValue.name = null;
+                        rows.value.Add(addValue);
+                        return rows;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new ExportBoardRows.Rows();
+        }
+
+        public CardStyle.Style GetCardStyle(string boardType)
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20team/_apis/work/boards/" + boardType + "/cardrulesettings?api-version=4.1").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        CardStyle.Style style = new CardStyle.Style();
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        style = JsonConvert.DeserializeObject<CardStyle.Style>(res);
+                        return style;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new CardStyle.Style();
+        }
+
+        public CardFiledsScrum.CardField GetCardFieldsScrum()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/backlog%20items/cardsettings?api-version=4.1").Result;
+                    if(response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        CardFiledsScrum.CardField card = new CardFiledsScrum.CardField();
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        card = JsonConvert.DeserializeObject<CardFiledsScrum.CardField>(res);
+                        return card;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new CardFiledsScrum.CardField();
+        }
+
+        public CardFiledsAgile.CardField GetCardFieldsAgile()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=4.1").Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        CardFiledsAgile.CardField card = new CardFiledsAgile.CardField();
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        card = JsonConvert.DeserializeObject<CardFiledsAgile.CardField>(res);
+                        return card;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new CardFiledsAgile.CardField();
         }
     }
 }

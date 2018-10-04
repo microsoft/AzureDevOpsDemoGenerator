@@ -49,6 +49,7 @@ $(document).ready(function () {
 
     $('#ddlAcccountName').change(function () {
         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
+        $("#errorNotify").hide();
         var accSelected = $('#ddlAcccountName').val();
         var projectName = $("#projectSelect option:selected").text();
         $('#projectSelect').empty();
@@ -66,7 +67,8 @@ $(document).ready(function () {
             $('#genArtDiv').addClass('d-none'); $('#artifactProgress').html("");
             $('#GenerateArtifact').addClass('d-none');
             $('#finalLink').addClass('d-none');
-            $('#Analyse').addClass('btn-primary').attr('disabled', 'disabled');
+            $('#Analyse').attr('disabled', 'disabled');
+            $('#Analyse').removeClass('btn-primary');
 
             var token = $('#key').val();
             var param = {
@@ -98,16 +100,22 @@ $(document).ready(function () {
                         options.appendTo("#projectSelect", "Select Project");
                         options.appendTo("#projectSelect");
                         $('#projectloader').addClass('d-none');
+                        $('#Analyse').attr('disabled', false);
+                        $('#Analyse').addClass('btn-primary');
                     }
                     else {
                         $('#projectloader').addClass('d-none');
                         $("#projectSelect_Error").text(da.errmsg);
                         $("#projectSelect_Error").removeClass('d-none');
+                        $('#Analyse').attr('disabled', false);
+                        $('#Analyse').addClass('btn-primary');
                         return;
                     }
                 },
                 error: function () {
                     $('#projectloader').addClass('d-none');
+                    $('#Analyse').attr('disabled', false);
+                    $('#Analyse').addClass('btn-primary');
                 }
             });
         }
@@ -118,6 +126,7 @@ $(document).ready(function () {
         $('#analyseDiv').addClass('d-none'); $('#analytics').html("");
         $('#genArtDiv').addClass('d-none'); $('#artifactProgress').html("");
         $('#GenerateArtifact').addClass('d-none');
+        $("#errorNotify").hide();
         $("#msgSource").hide();
         var project = $('#projectSelect option:selected').val();
         var accSelected = $('#ddlAcccountName').val();
@@ -131,13 +140,14 @@ $(document).ready(function () {
             return;
         }
         else {
-           
+            $('#Analyse').attr('disabled', 'disabled');
+            $('#Analyse').removeClass('btn-primary');
+
             $.ajax({
                 url: '../Extractor/GetProjectPropertirs',
                 type: 'POST',
                 data: { accname: accSelected, project: project, _credentials: key },
                 success: function (res) {
-                    $('#Analyse').addClass('btn-primary').attr('disabled', false);
                     $('#projectloader').addClass('d-none');
                     $('#processtemplate').empty().val(res.value[4].value);
                     $('#TemplateClass').empty().val(res.TypeClass);
@@ -146,15 +156,17 @@ $(document).ready(function () {
                     var p = res.value[4].value;
                     if (p !== "Scrum" && p !== "Agile") {
                         $('#processTemplateLoader').addClass('d-none');
-                        $("#msg").text("Note: Please select a project that uses the standard Scrum or Agile process template.");
-                        $("#msgSource").show();
+                        $("#projectSelect_Error").text("Note: Please select a project that uses the standard Scrum or Agile process template.");
+                        $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
+                        $("#projectSelect_Error").removeClass('d-none');
                         return;
                     }
+                    $('#Analyse').addClass('btn-primary').attr('disabled', false);
                 },
                 error: function (e) {
                     $('#processTemplateLoader').addClass('d-none');
-                    $("#msg").text(e);
-                    $("#msgSource").show();
+                    $("#projectSelect_Error").text(e);
+                    $("#projectSelect_Error").removeClass('d-none');
                     $('#projectloader').addClass('d-none');
                     $('#Analyse').addClass('btn-primary').attr('disabled', false);
                 }
