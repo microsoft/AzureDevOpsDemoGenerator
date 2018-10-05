@@ -1,5 +1,7 @@
 # Visual Studio Team Services Demo Generator
 
+[![Build Status](https://vstsprojectgenerator.visualstudio.com/VSTSDemoGenerator/_apis/build/status/Azure%20DevOps%20-GitHUb-prod)](https://vstsprojectgenerator.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=11)
+
 ## About
 Visual Studio Team Services Demo Generator helps you create projects on your Visual Studio Team Services account with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
 
