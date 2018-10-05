@@ -960,7 +960,6 @@ namespace VstsDemoBuilder.Controllers
             }
 
             //create team project
-            //AddMessage(model.id, string.Format("Creating project {0}...", model.ProjectName));
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
 
@@ -974,6 +973,10 @@ namespace VstsDemoBuilder.Controllers
                     if (proj.LastFailureMessage.Contains("TF400813"))
                     {
                         AddMessage(model.id, "OAUTHACCESSDENIED");
+                    }
+                    else if (proj.LastFailureMessage.Contains("TF50309"))
+                    {
+                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
                     }
                 }
                 Thread.Sleep(2000);

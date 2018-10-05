@@ -256,7 +256,11 @@
     <Content Include="assets\css\custom.min.css" />
     <Content Include="assets\images\error.png" />
     <Content Include="assets\images\NotFound.png" />
+    <Content Include="assets\images\VSTS_cover_image_3.png" />
     <Content Include="assets\images\VSTS_cover_image.png" />
+    <Content Include="assets\images\VSTS_cover_image_1.PNG" />
+    <Content Include="assets\images\VSTS_cover_image_2.png" />
+    <Content Include="assets\images\VSTS_cover_image_t.png" />
     <Content Include="assets\images\VSTS_full_logo.png" />
     <Content Include="assets\images\VS_logo.png" />
     <Content Include="assets\images\VS_logo_1.png" />
@@ -319,7 +323,6 @@
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
     <Content Include="Images\tfs.png" />
-    <Content Include="Images\theme_img_2.png" />
     <Content Include="Images\theme_img_3.png" />
     <Content Include="Images\Thinking_Face_Emoji.png" />
     <Content Include="Images\twitter.png" />
