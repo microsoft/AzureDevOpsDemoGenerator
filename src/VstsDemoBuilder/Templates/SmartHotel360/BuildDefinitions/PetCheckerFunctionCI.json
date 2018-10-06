@@ -22,18 +22,6 @@
       }
     }
   ],
-  "triggers": [
-    {
-      "branchFilters": [
-        "+master"
-      ],
-      "pathFilters": [],
-      "batchChanges": false,
-      "maxConcurrentBuildsPerBranch": 1,
-      "pollingInterval": 0,
-      "triggerType": "continuousIntegration"
-    }
-  ],
   "variables": {
     "BuildConfiguration": {
       "value": "release",
