@@ -8,6 +8,8 @@ namespace VstsRestAPI.Viewmodel.Extractor
         {
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
+            [JsonProperty(PropertyName = "Bug")]
+            public string bug { get; set; }
         }
 
         public class Value

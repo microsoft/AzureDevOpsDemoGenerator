@@ -31,6 +31,10 @@
         {
           "Name": "ReleaseGates",
           "Description": "<p>Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. You can use gates to ensure that the release meets a wide range of criteria without requiring user intervention. </p> "
+        },
+        {
+          "Name": "AgileTemplate",
+          "Description": "<p>Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. You can use gates to ensure that the release meets a wide range of criteria without requiring user intervention. </p> "
         }
       ]
     },
