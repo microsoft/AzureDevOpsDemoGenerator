@@ -128,6 +128,7 @@
     <Compile Include="Viewmodel\WorkItem\CardStylesPatch.cs" />
     <Compile Include="Viewmodel\WorkItem\ColumnPost.cs" />
     <Compile Include="Viewmodel\WorkItem\CreateUpdateNodeViewModel.cs" />
+    <Compile Include="Viewmodel\WorkItem\GetBoardColumnResponseAgile.cs" />
     <Compile Include="Viewmodel\WorkItem\GetBoardColumnResponse.cs" />
     <Compile Include="Viewmodel\WorkItem\GetCardFieldResponse.cs" />
     <Compile Include="Viewmodel\WorkItem\GetNodeResponse.cs" />

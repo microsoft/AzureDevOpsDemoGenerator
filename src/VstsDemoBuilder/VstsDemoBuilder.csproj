@@ -813,6 +813,24 @@
     <Content Include="Templates\SmartHotel360\ReleaseDefinitions\PublicWebSiteCD.json" />
     <Content Include="Templates\SmartHotel360\ServiceEndpoints\GitHubSmartHotel360-PetChecker-Function.json" />
     <Content Include="Templates\EndpointKeyConfig.json" />
+    <Content Include="Templates\AgileTemplate\BoardColumns.json" />
+    <Content Include="Templates\AgileTemplate\BoardRowsFromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\BugfromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\EpicfromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\FeaturefromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\ImportSourceCode\NewAgileTemplate.json" />
+    <Content Include="Templates\AgileTemplate\Iterations.json" />
+    <Content Include="Templates\AgileTemplate\PBIfromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\ProjectSettings.json" />
+    <Content Include="Templates\AgileTemplate\ProjectTemplate.json" />
+    <Content Include="Templates\AgileTemplate\ServiceEndpoints\NewAgileTemplate-code.json" />
+    <Content Include="Templates\AgileTemplate\TaskfromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\TeamArea.json" />
+    <Content Include="Templates\AgileTemplate\Teams.json" />
+    <Content Include="Templates\AgileTemplate\TestCasefromTemplate.json" />
+    <Content Include="Templates\AgileTemplate\UpdateCardFields.json" />
+    <Content Include="Templates\AgileTemplate\UpdateCardStyles.json" />
+    <Content Include="Templates\AgileTemplate\UserStoriesfromTemplate.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

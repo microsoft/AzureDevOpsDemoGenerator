@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4NjYyNTQ5LCJleHAiOjE1Mzg2NjYxNDl9.GBAkrqPPALC5jqpnrA1IkIbwJTgYBpNqzCHDVWNocDg84bVsKoLvxMcAed5OFuc2j99djX5q7nruM8w_hsr18hgd5HEm8iNO9eIG5D-hyGIyFwku6hBc6wS-NNbFqRgLIcP-AU34-T8-YozocMLOdEwmpe6JxaBAnzx6Avsj96fQ507D-btvbT7JsVbBeYPfJISuElcgfNSr_qPRXpE3T9EDIERhgveSPUctrsof0YXpp0y0EwPF4bBZ0FGxLwVp-XRIeszpc17HOPt6ATdDDnLoeri1xiGhSP02fI9y7vFXpOEPx3TsSh8QgnYIpqLgbBU0szH4XoSeDDsFnGficA";
+                        AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4NzQ2NzUyLCJleHAiOjE1Mzg3NTAzNTJ9.iF0gNbICn9HWgj82qziT4d8vdJwkL3GCJPaHSnVUCjO6XklVBJiQQk_9eVKtOJuTuFJesMcRoomcbDbgpf0GH1CbOagKLKqq5XKQiPCX1B-baxD0M0xqVzuV1xlLkuajaCs5cy06G8TpA1HPeHRb0g3ZEUCLXE7MFI0tTzKlNj3VB5xtdrnjDfgLlOT5oEZQs-dZZSK8_5ownRsuDnVFkqaRt72t6D3qxZqk-nHvLZ_XgLlCmrJ5MVZEB9Nv1q2B-LFanRTPruTriNJKOmmo8PkiyS9by6SFsq1Nt1JH2WJozhTf9SYkmQ1xFXEaNIHmoKOO28o6ESDb_huOpdZaPA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -1034,13 +1034,26 @@ namespace VstsDemoBuilder.Controllers
 
             //update board columns and rows
             //AddMessage(model.id, "Updating board columns,rows,styles and enabling Epic...");
+            string ProSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
+            JObject ProObj = JsonConvert.DeserializeObject<JObject>(ProSetting);
+            string ProcessType = ProObj["type"] == null ? string.Empty : ProObj["type"].ToString();
+            string BoardType = string.Empty;
+            if (ProcessType == null || ProcessType == "")
+            {
+                ProcessType = "Scrum";
+                BoardType = "Backlog%20items";
+            }
+            else
+            {
+                BoardType = "Stories";
+            }
             BoardColumn objBoard = new BoardColumn(_defaultConfiguration);
             objBoard.RefreshBoard(model.ProjectName);
             string updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
             SwimLanes objSwimLanes = new SwimLanes(_configuration2_0);
-            bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName);
+            bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, BoardType);
 
-            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id);
+            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id, BoardType);
             if (success)
             {
                 //update Card Fields
@@ -1479,7 +1492,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _defaultConfiguration, string id)
+        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _defaultConfiguration, string id, string BoardType)
         {
             bool res = false;
             try
@@ -1489,7 +1502,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     BoardColumn objBoard = new BoardColumn(_defaultConfiguration);
                     jsonBoardColumns = model.ReadJsonFile(jsonBoardColumns);
-                    bool BoardColumnResult = objBoard.UpdateBoard(model.ProjectName, jsonBoardColumns);
+                    bool BoardColumnResult = objBoard.UpdateBoard(model.ProjectName, jsonBoardColumns, BoardType);
 
                     if (BoardColumnResult)
                     {
