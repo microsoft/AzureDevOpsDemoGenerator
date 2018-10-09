@@ -8619,6 +8619,7 @@ html, body {
 
     .template-body .template {
         padding: 16px;
+        padding-right:0px;
         background-color: #fff;
         min-width: 250px;
         max-width: 350px;
