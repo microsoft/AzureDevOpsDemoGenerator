@@ -188,6 +188,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
                         load = JsonConvert.DeserializeObject<ProjectList.ProjectCount>(res);
+                        
                         if (load.count == 0)
                         {
                             load.errmsg = "No projects found!";
@@ -381,6 +382,9 @@ namespace VstsDemoBuilder.Controllers
             AddMessage(model.id, "Work Items Definition");
             System.Threading.Thread.Sleep(2000);
 
+            GetRepositoryList(config);
+            AddMessage(model.id, "Repository and Service Endpoint Definition");
+
             int count = GetBuildDef(config);
             if (count >= 1)
             {
@@ -397,42 +401,40 @@ namespace VstsDemoBuilder.Controllers
                 System.Threading.Thread.Sleep(2000);
             }
 
-            GetRepositoryList(config);
-            AddMessage(model.id, "Repository and Service Endpoint Definition");
             ////Export Board Rows
-            //ExportboardRows(config);
+            ExportboardRows(config);
 
-            ////Export Card style
-            //ExportCardStyle(config, model.ProcessTemplate);
+            //Export Card style
+            ExportCardStyle(config, model.ProcessTemplate);
 
-            ////Export Board column json for Scrum and Agile            
-            //System.Threading.Thread.Sleep(2000);
-            //if (model.ProcessTemplate == "Scrum")
-            //{
-            //    GetBoardColumnsScrum(config);
-            //}
-            //else if (model.ProcessTemplate == "Agile")
-            //{
-            //    GetBoardColumnsAgile(config);
-            //}
+            //Export Board column json for Scrum and Agile            
+            System.Threading.Thread.Sleep(2000);
+            if (model.ProcessTemplate == "Scrum")
+            {
+                GetBoardColumnsScrum(config);
+            }
+            else if (model.ProcessTemplate == "Agile")
+            {
+                GetBoardColumnsAgile(config);
+            }
 
-            ////Export Card style json            
-            //if (model.ProcessTemplate == "Scrum")
-            //{
-            //    ExportCardFieldsScrum(config);
-            //}
-            //else if (model.ProcessTemplate == "Agile")
-            //{
-            //    ExportCardFieldsAgile(config);
-            //}
+            //Export Card style json            
+            if (model.ProcessTemplate == "Scrum")
+            {
+                ExportCardFieldsScrum(config);
+            }
+            else if (model.ProcessTemplate == "Agile")
+            {
+                ExportCardFieldsAgile(config);
+            }
 
             string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
             string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            if (System.IO.File.Exists(zipPath))
-            {
-                System.IO.File.Delete(zipPath);
-            }
+            //if (System.IO.File.Exists(zipPath))
+            //{
+            //    System.IO.File.Delete(zipPath);
+            //}
             ZipFile.CreateFromDirectory(startPath, zipPath);
             Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
             StatusMessages[model.id] = "100";
@@ -787,8 +789,6 @@ namespace VstsDemoBuilder.Controllers
                             repoID = re.id;
                         }
                     }
-                    def["repository"]["id"] = "$" + repoName + "$";
-                    def["repository"]["url"] = "";
                     def["authoredBy"] = "{}";
                     def["authoredBy"] = "{}";
                     def["project"] = "{}";
@@ -799,6 +799,49 @@ namespace VstsDemoBuilder.Controllers
                     def["queue"]["pool"]["id"] = "";
                     def["_links"] = "{}";
                     def["createdDate"] = "";
+                    var type = def["repository"]["type"];
+                    if (type.ToString().ToLower() == "github")
+                    {
+                        def["repository"]["type"] = "Git";
+                        def["repository"]["properties"]["fullName"] = "repository";
+                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                        def["repository"]["name"] = "repository";
+                        string url = def["repository"]["url"].ToString();
+                        if (url != "")
+                        {
+                            string EndPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                            EndPointString = EndPointString.Replace("$GitHubURL$", url);
+                            Guid g = Guid.NewGuid();
+                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints"))
+                            {
+                                Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints");
+                                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", EndPointString);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        def["repository"]["id"] = "$" + repoName + "$";
+                        def["repository"]["url"] = "";
+                    }
+                    var input = def["processParameters"]["inputs"];
+                    if (input.HasValues)
+                    {
+                        foreach (var i in input)
+                        {
+                            i["defaultValue"] = "";
+
+                        }
+                    }
+
+                    var build = def["build"];
+                    if (build.HasValues)
+                    {
+                        foreach (var b in build)
+                        {
+                            b["inputs"]["serverEndpoint"] = "";
+                        }
+                    }
 
                     if (!(Directory.Exists(TemplatePath + "\\BuildDefinitions")))
                     {

@@ -87,6 +87,7 @@ $(document).ready(function () {
                         console.log(da);
                         $('#projectSelect').empty();
                         var opt = "";
+                        opt += ' <option value="0">Select Project</option>';
                         for (var i = 0; i < da.count; i++) {
                             opt += ' <option value="' + da.value[i].id + '">' + da.value[i].name + '</option>';
                         }
@@ -97,7 +98,6 @@ $(document).ready(function () {
                             var bt = $(b).text();
                             return (at > bt) ? 1 : ((at < bt) ? -1 : 0);            // Tell the sort function how to order
                         });
-                        options.appendTo("#projectSelect", "Select Project");
                         options.appendTo("#projectSelect");
                         $('#projectloader').addClass('d-none');
                         $('#Analyse').attr('disabled', false);

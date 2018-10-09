@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4NzQ2NzUyLCJleHAiOjE1Mzg3NTAzNTJ9.iF0gNbICn9HWgj82qziT4d8vdJwkL3GCJPaHSnVUCjO6XklVBJiQQk_9eVKtOJuTuFJesMcRoomcbDbgpf0GH1CbOagKLKqq5XKQiPCX1B-baxD0M0xqVzuV1xlLkuajaCs5cy06G8TpA1HPeHRb0g3ZEUCLXE7MFI0tTzKlNj3VB5xtdrnjDfgLlOT5oEZQs-dZZSK8_5ownRsuDnVFkqaRt72t6D3qxZqk-nHvLZ_XgLlCmrJ5MVZEB9Nv1q2B-LFanRTPruTriNJKOmmo8PkiyS9by6SFsq1Nt1JH2WJozhTf9SYkmQ1xFXEaNIHmoKOO28o6ESDb_huOpdZaPA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4OTk2MzA0LCJleHAiOjE1Mzg5OTk5MDR9.ykOUPUIy-w9VWmZeK_gDl-gmwkQyHmRhWXBMgIqV5LEXrPoq3kAfKX2yW9A4p1q_wSGFv4Dq495MP0VtKSIOGlggF6M9Jff5zfC-bvpnGHKl-5qG-6MA_e6kVRrHPcdK2rjrOs20nHV4g03QL_ix5RiDH8lBskMYSEGHDpHs-2t0qhQ6zubhYuL6N7vZqCWCB_3T3O0oIT0QQNkVoXosZgFzVtQb5Q9ayiwH-iJRuUvmMf9weVqaT6yxdFnyd0-3ONZn44gxdNZTXlw3jBudUBuQhh_jDoG8WtxZjXoWBUtw0Mtr7ZModCD21PBrhqpLW4Yrr5cjewBLRqso27hoow";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -1053,7 +1053,7 @@ namespace VstsDemoBuilder.Controllers
             SwimLanes objSwimLanes = new SwimLanes(_configuration2_0);
             bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, BoardType);
 
-            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id, BoardType);
+            bool success = true;//UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id, BoardType);
             if (success)
             {
                 //update Card Fields

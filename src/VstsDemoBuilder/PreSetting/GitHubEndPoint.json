@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "GitHub",
+  "type": "git",
+  "url": "$GitHubURL$",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "DemoGeneratorUser",
+      "password": "Canarys@12345"
+    }
+  },
+  "isReady": true
+}

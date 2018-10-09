@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/content/assets/css/custom.min.css">
     <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
     <title>Create Project</title>
     <style type="text/css">
         .newFeature {
@@ -18,6 +19,33 @@
             line-height: 1.2;
             color: black;
         }
+
+        .vstsScroll {
+            margin-right: 6px;
+        }
+        .template {
+            margin-right: 6px;
+        }
+        .template:hover::-webkit-scrollbar, .vstsScroll:hover::-webkit-scrollbar {
+            display: block;
+        }
+
+        ::-webkit-scrollbar {
+            width: 1px;
+            display: none;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
     </style>
 </head>
 <body class="pb-3">
@@ -37,7 +65,7 @@
             <div class="template-group bg-primary d-flex align-items-center p-3">
                 <ul class="nav nav-pills w-100 justify-content-center" role="tablist" id="modtemplateGroup"></ul>
             </div>
-            <div class="template-body bg-light p-3">
+            <div class="template-body vstsScroll bg-light p-3">
                 <div class="tab-content" id="pills-tabContent">
                 </div>
             </div>
@@ -233,15 +261,15 @@
             -->
             <div class="col-md-3 order-3 order-md-3">
                 <!-- Description card -->
-                <div class="card text-white bg-primary mb-3 d-none" id="lblDescription" style="max-height:250px;overflow-y:auto;">
-                    <div class="card-header">About this Template</div>
+                <div class="card text-white mb-3 d-none vstsScroll" id="lblDescription" style="max-height:250px;overflow-y:auto;">
+                    <div class="card-header bg-primary ">About this Template</div>
                     <div class="card-body" style="background-color:white; color:black">
                         <p class="card-text" id="descContainer">
                         </p>
                     </div>
                 </div>
-                <div class="card text-white bg-primary mb-3" id="lblDefaultDescription" style="max-height:250px;overflow-y:scroll;">
-                    <div class="card-header">About this Template</div>
+                <div class="card text-white mb-3 vstsScroll" id="lblDefaultDescription" style="max-height:250px;overflow-y:auto;">
+                    <div class="card-header bg-primary ">About this Template</div>
                     <div class="card-body" style="background-color:white; color:black">
                         <p class="card-text" id="descContainer">
                             This template contains work items and code for SmartHotel360, an end-to-end reference application for the entire business, including a suite of mobile and desktop apps for business travelers (iOS, Android, and Windows), a website for booking a stay, and even an app for hotel employees to track and resolve maintenance issues. SmartHotel360 has many other reference applications, including a microservice oriented architecture implemented using Docker containers that power the client experience, a website powered by ASP.NET Core 2 for booking trips, and a sentiment analysis app for tracking customer experiences.For more details, please see the project page on GitHub at
@@ -267,11 +295,12 @@
         </div>
     </div>
     <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/Scripts/AppScripts/create.js"></script>
     <script src="~/Scripts/AppScripts/FileUpload.js"></script>
     <script src="~/Scripts/tooltip.js"></script>
-</body>
+    </body>
 </html>
