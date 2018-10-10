@@ -14,7 +14,6 @@ namespace VstsRestAPI.Viewmodel.Extractor
 
         public class Value
         {
-            public string id { get; set; }
             public string name { get; set; }
             public int itemLimit { get; set; }
             public StateMappings stateMappings { get; set; }

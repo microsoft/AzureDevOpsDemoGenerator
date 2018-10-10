@@ -128,7 +128,7 @@ namespace VstsRestAPI.Extractor
             return new SrcTeamsList();
         }
 
-        public BoardColumnResponseScrum ExportBoardColumnsScrum()
+        public BoardColumnResponseScrum.ColumnResponse ExportBoardColumnsScrum()
         {
             try
             {
@@ -137,7 +137,7 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Backlog%20items/columns?api-version=4.1").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
-                        BoardColumnResponseScrum columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseScrum>(response.Content.ReadAsStringAsync().Result.ToString());
+                        BoardColumnResponseScrum.ColumnResponse columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
                         return columns;
                     }
                     else
@@ -145,7 +145,7 @@ namespace VstsRestAPI.Extractor
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         LastFailureMessage = error;
-                        return new BoardColumnResponseScrum();
+                        return new BoardColumnResponseScrum.ColumnResponse();
                     }
                 }
             }
@@ -153,7 +153,7 @@ namespace VstsRestAPI.Extractor
             {
                 LastFailureMessage = ex.Message;
             }
-            return new BoardColumnResponseScrum();
+            return new BoardColumnResponseScrum.ColumnResponse();
         }
 
         public BoardColumnResponseAgile.ColumnResponse ExportBoardColumnsAgile()
@@ -253,7 +253,7 @@ namespace VstsRestAPI.Extractor
                 using (var client = GetHttpClient())
                 {
                     HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/backlog%20items/cardsettings?api-version=4.1").Result;
-                    if(response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsScrum.CardField card = new CardFiledsScrum.CardField();
                         string res = response.Content.ReadAsStringAsync().Result;
@@ -302,6 +302,36 @@ namespace VstsRestAPI.Extractor
                 LastFailureMessage = ex.Message;
             }
             return new CardFiledsAgile.CardField();
+        }
+
+
+        public GetTeamSetting.Setting GetTeamSetting()
+        {
+            GetTeamSetting.Setting setting = new GetTeamSetting.Setting();
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("https://dev.azure.com/" + Account + "/" + Project + "/_apis/work/teamsettings?api-version=4.1").Result;
+                    if(response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        setting = JsonConvert.DeserializeObject<GetTeamSetting.Setting>(res);
+                        return setting;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new GetTeamSetting.Setting();
         }
     }
 }

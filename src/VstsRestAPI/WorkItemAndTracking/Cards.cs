@@ -1,11 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
@@ -20,31 +15,47 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="Json"></param>
 
-        public void UpdateCardField(string projectName, string Json)
+        public void UpdateCardField(string projectName, string Json, string BoardType)
         {
-            GetCardFieldResponse.ListofCards cardfield = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(Json);
+            Json = Json.Replace("null", "\"\"");
+            GetCardFieldResponse.ListofCards cardfield = new GetCardFieldResponse.ListofCards();
+            GetCardFieldResponseAgile.ListofCards Agilecardfield = new GetCardFieldResponseAgile.ListofCards();
 
-            if (cardfield.cards.Message == null)
+            if (BoardType == "Backlog%20items")
             {
-                cardfield.cards.Message = "test";
+                cardfield = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(Json);
+                if (cardfield.cards.Message == null)
+                {
+                    cardfield.cards.Message = "test";
+                }
             }
-            //List<ColumnPost> Columns = JsonConvert.DeserializeObject<List<ColumnPost>>(fileName);
-            GetCardFieldResponse.ListofCards viewModel = new GetCardFieldResponse.ListofCards();
+            else if (BoardType == "Stories")
+            {
+                Agilecardfield = JsonConvert.DeserializeObject<GetCardFieldResponseAgile.ListofCards>(Json);
+                if (Agilecardfield.cards.Message == null)
+                {
+                    Agilecardfield.cards.Message = "test";
+                }
+            }
+
             string teamName = projectName + " Team";
             using (var client = GetHttpClient())
             {
-                // serialize the fields array into a json string
-                var patchValue = new StringContent(JsonConvert.SerializeObject(cardfield), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                StringContent patchValue = new StringContent("");
+                if (BoardType == "Backlog%20items")
+                {
+                    patchValue = new StringContent(JsonConvert.SerializeObject(cardfield), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                }
+                else if (BoardType == "Stories")
+                {
+                    patchValue = new StringContent(JsonConvert.SerializeObject(Agilecardfield), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                }
                 var method = new HttpMethod("PUT");
-                // GetBoards getAgileBoards = new GetBoards(_configuration);
-                string boardURL = "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/cardsettings?api-version=2.0-preview";
-                //Console.WriteLine("Board URL is {0}", boardURL);
+                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/cardsettings?api-version=4.1";
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
-
                 if (response.IsSuccessStatusCode)
                 {
-                    viewModel = response.Content.ReadAsAsync<GetCardFieldResponse.ListofCards>().Result;
 
                 }
                 else
@@ -53,11 +64,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                     this.LastFailureMessage = error;
                 }
-
-                // viewModel.HttpStatusCode = response.StatusCode;
-
-                //return viewModel;
-
             }
         }
         /// <summary>
@@ -66,9 +72,9 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="Json"></param>
 
-        public void ApplyRules(string projectName, string Json)
+        public void ApplyRules(string projectName, string Json, string BoardType)
         {
-            //CardStylesPatch.ListofCardStyles cardStyles1 = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(File.ReadAllText(""));
+            Json = Json.Replace("null", "\"\"");
             Json = Json.Replace("$ProjectName$", projectName);
             CardStylesPatch.ListofCardStyles cardStyles = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(Json);
             if (cardStyles.rules.Message == null)
@@ -80,19 +86,15 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             using (var client = GetHttpClient())
             {
-                // serialize the fields array into a json string
                 var patchValue = new StringContent(JsonConvert.SerializeObject(cardStyles), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PATCH");
-                // GetBoards getAgileBoards = new GetBoards(_configuration);
-                string boardURL = "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/cardrulesettings?api-version=" + _configuration.VersionNumber + "-preview";
-                //Console.WriteLine("Board URL i s {0}", boardURL);
+                //PATCH https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings?api-version=4.1
+                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/cardrulesettings?api-version=4.1";
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // viewModel = response.Content.ReadAsAsync<GetCardFieldResponse.ListofCards>().Result;
-
                 }
                 else
                 {
@@ -121,7 +123,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 if (response.IsSuccessStatusCode)
                 {
-                    
+
                 }
                 else
                 {

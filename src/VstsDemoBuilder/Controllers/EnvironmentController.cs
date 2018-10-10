@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM4OTk2MzA0LCJleHAiOjE1Mzg5OTk5MDR9.ykOUPUIy-w9VWmZeK_gDl-gmwkQyHmRhWXBMgIqV5LEXrPoq3kAfKX2yW9A4p1q_wSGFv4Dq495MP0VtKSIOGlggF6M9Jff5zfC-bvpnGHKl-5qG-6MA_e6kVRrHPcdK2rjrOs20nHV4g03QL_ix5RiDH8lBskMYSEGHDpHs-2t0qhQ6zubhYuL6N7vZqCWCB_3T3O0oIT0QQNkVoXosZgFzVtQb5Q9ayiwH-iJRuUvmMf9weVqaT6yxdFnyd0-3ONZn44gxdNZTXlw3jBudUBuQhh_jDoG8WtxZjXoWBUtw0Mtr7ZModCD21PBrhqpLW4Yrr5cjewBLRqso27hoow";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM5MTgxMTUxLCJleHAiOjE1MzkxODQ3NTF9.gAAlyd93jU-WvNgZm5ZEqEPwtYfCWbntZAypchhQLjuC2BM5PifVK4bL9c002MBOZEFk89apmNP1IH12T9TzmkB5mOhS-HXcQmnDbqPJK165oo17NLJ4mHSZ5DRYp2M1ltZFmAgElLNxvt_0IYCD6MuZZWpJYrNj7o11bzSZLcZmvmORy0fdp91ymu350gsvSz6GJc4-bSHSD3J-ikpybJPSDTPR7QXQJ7d5BL8rhC_VQCmtQyyS1syoRQ9o3vY__qIqTQNgcLTKOqz7V2eFSBUmyjqvu5de3upjt3c2KH7wWLYi2Q12pxLmvFLmHoSSS-USsapazUQyjJWtNW1zOA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -912,13 +912,13 @@ namespace VstsDemoBuilder.Controllers
             }
             //configuration setup
             string _credentials = model.accessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", PAT)));
-            VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT };
-            VstsRestAPI.Configuration _releaseDefinitionConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT };
-            VstsRestAPI.Configuration _createReleaseConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT };
-            VstsRestAPI.Configuration _configuration3_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName };
-            VstsRestAPI.Configuration _configuration2_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT };
-            VstsRestAPI.Configuration _cardConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT };
-            VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT };
+            VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
+            VstsRestAPI.Configuration _releaseDefinitionConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
+            VstsRestAPI.Configuration _createReleaseConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, AccountName = accountName };
+            VstsRestAPI.Configuration _configuration3_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _configuration2_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
+            VstsRestAPI.Configuration _cardConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
+            VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT, AccountName = accountName };
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
             string projTemplateFile = string.Format(templatesFolder + @"{0}\ProjectTemplate.json", model.SelectedTemplate);
@@ -1038,7 +1038,7 @@ namespace VstsDemoBuilder.Controllers
             JObject ProObj = JsonConvert.DeserializeObject<JObject>(ProSetting);
             string ProcessType = ProObj["type"] == null ? string.Empty : ProObj["type"].ToString();
             string BoardType = string.Empty;
-            if (ProcessType == null || ProcessType == "")
+            if (ProcessType == "" || ProcessType == "Scrum")
             {
                 ProcessType = "Scrum";
                 BoardType = "Backlog%20items";
@@ -1052,20 +1052,18 @@ namespace VstsDemoBuilder.Controllers
             string updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
             SwimLanes objSwimLanes = new SwimLanes(_configuration2_0);
             bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, BoardType);
-
-            bool success = true;//UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id, BoardType);
+            EnableEpic(templatesFolder, model, template.SetEpic, _configuration3_0, model.id);
+            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id, BoardType);
             if (success)
             {
                 //update Card Fields
-                UpdateCardFields(templatesFolder, model, template.CardField, _cardConfiguration, model.id);
+                UpdateCardFields(templatesFolder, model, template.CardField, _cardConfiguration, model.id, BoardType);
                 //Update card styles
-                UpdateCardStyles(templatesFolder, model, template.CardStyle, _cardConfiguration, model.id);
+                UpdateCardStyles(templatesFolder, model, template.CardStyle, _cardConfiguration, model.id, BoardType);
                 //Enable Epic Backlog
-                EnableEpic(templatesFolder, model, template.SetEpic, _configuration3_0, model.id);
-                AddMessage(model.id, "Board-Column, Swimlanes, Styles are updated and Epics enabled");
-
-                EnableEpic(templatesFolder, model, template.SetEpic, _configuration3_0, model.id);
+                AddMessage(model.id, "Board-Column, Swimlanes, Styles are updated");
             }
+
 
             //update sprint dates
             //AddMessage(model.id, "Updating sprint dates...");
@@ -1530,7 +1528,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardFields(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id)
+        private void UpdateCardFields(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, string BoardType)
         {
             try
             {
@@ -1539,7 +1537,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     json = model.ReadJsonFile(json);
                     Cards objCards = new Cards(_configuration);
-                    objCards.UpdateCardField(model.ProjectName, json);
+                    objCards.UpdateCardField(model.ProjectName, json, BoardType);
 
                     if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
                     {
@@ -1562,7 +1560,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardStyles(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id)
+        private void UpdateCardStyles(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, string BoardType)
         {
             try
             {
@@ -1571,7 +1569,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     json = model.ReadJsonFile(json);
                     Cards objCards = new Cards(_configuration);
-                    objCards.ApplyRules(model.ProjectName, json);
+                    objCards.ApplyRules(model.ProjectName, json, BoardType);
 
                     if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
                     {
@@ -2612,8 +2610,8 @@ namespace VstsDemoBuilder.Controllers
                             QueryResponse StateofTestCase = objQuery.GetQueryByPathAndName(model.ProjectName, "State of TestCases", "Shared%20Queries");
                             QueryResponse Bugs = objQuery.GetQueryByPathAndName(model.ProjectName, "Open Bugs", "Shared%20Queries");
 
-                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries/Current%20Sprint");
-                            QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries/Current%20Sprint");
+                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries");
+                            QueryResponse WotkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WotkInProgress.id)
                                 .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)

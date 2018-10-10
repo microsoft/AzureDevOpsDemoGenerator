@@ -188,7 +188,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
                         load = JsonConvert.DeserializeObject<ProjectList.ProjectCount>(res);
-                        
+
                         if (load.count == 0)
                         {
                             load.errmsg = "No projects found!";
@@ -385,21 +385,21 @@ namespace VstsDemoBuilder.Controllers
             GetRepositoryList(config);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            int count = GetBuildDef(config);
-            if (count >= 1)
-            {
-                AddMessage(model.id, "Build Definition");
-            }
+            //int count = GetBuildDef(config);
+            //if (count >= 1)
+            //{
+            //    AddMessage(model.id, "Build Definition");
+            //}
 
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000);
 
-            //int relCount = GetReleaseDef(config);
-            int relCount = AutoGetReleaseDef(config);
-            if (relCount >= 1)
-            {
-                AddMessage(model.id, "Release Definition");
-                System.Threading.Thread.Sleep(2000);
-            }
+            ////int relCount = GetReleaseDef(config);
+            //int relCount = AutoGetReleaseDef(config);
+            //if (relCount >= 1)
+            //{
+            //    AddMessage(model.id, "Release Definition");
+            //    System.Threading.Thread.Sleep(2000);
+            //}
 
             ////Export Board Rows
             ExportboardRows(config);
@@ -428,13 +428,15 @@ namespace VstsDemoBuilder.Controllers
                 ExportCardFieldsAgile(config);
             }
 
+            GetTeamSetting(config);
             string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
             string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            //if (System.IO.File.Exists(zipPath))
-            //{
-            //    System.IO.File.Delete(zipPath);
-            //}
+            if (System.IO.File.Exists(zipPath))
+            {
+                System.IO.File.Delete(zipPath);
+            }
+            zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
             ZipFile.CreateFromDirectory(startPath, zipPath);
             Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
             StatusMessages[model.id] = "100";
@@ -1072,7 +1074,7 @@ namespace VstsDemoBuilder.Controllers
             responseAgile = nodes.ExportBoardColumnsAgile();
             if (responseAgile.count > 0)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseAgile.value, Formatting.Indented));
+                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseAgile.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 AddMessage(con.Id, "Board Columns Definition");
                 Thread.Sleep(2000);
             }
@@ -1087,11 +1089,11 @@ namespace VstsDemoBuilder.Controllers
         public void GetBoardColumnsScrum(VstsRestAPI.Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
-            BoardColumnResponseScrum responseScrum = new BoardColumnResponseScrum();
+            BoardColumnResponseScrum.ColumnResponse responseScrum = new BoardColumnResponseScrum.ColumnResponse();
             responseScrum = nodes.ExportBoardColumnsScrum();
-            if (responseScrum.value != null)
+            if (responseScrum != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseScrum.value, Formatting.Indented));
+                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseScrum.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 AddMessage(con.Id, "Board Columns Definition");
                 Thread.Sleep(2000);
             }
@@ -1164,7 +1166,7 @@ namespace VstsDemoBuilder.Controllers
             CardFiledsAgile.CardField Fields = nodes.GetCardFieldsAgile();
             if (Fields.cards != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(Fields, Formatting.Indented));
+                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(Fields, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 AddMessage(con.Id, "Card Style Rules Definition");
                 Thread.Sleep(2000);
             }
@@ -1174,6 +1176,19 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
+        public void GetTeamSetting(VstsRestAPI.Configuration con)
+        {
+            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            GetTeamSetting.Setting setting = nodes.GetTeamSetting();
+            if (setting.backlogVisibilities != null)
+            {
+                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\EnableEpic.json", JsonConvert.SerializeObject(setting, Formatting.Indented));
+            }
+            else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Error while fetching Team Setting " + nodes.LastFailureMessage);
+            }
+        }
 
         [AllowAnonymous]
         private void RemoveFolder()
