@@ -238,31 +238,7 @@
             "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
             "isNameConfigurable": true
         },
-        {
-            "name": "Feedback",
-            "position": {
-                "row": 5,
-                "column": 4
-            },
-            "size": {
-                "rowSpan": 1,
-                "columnSpan": 1
-            },
-            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$Feedback$\",\"queryName\":\"Feedback\",\"colorRules\":[],\"lastArtifactName\":\"Feedback\"}",
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
-            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
-            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
-            "isNameConfigurable": true
-        },
+       
         {
             "name": "PublicWeb (master)",
             "position": {

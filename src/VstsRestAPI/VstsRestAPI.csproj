@@ -81,6 +81,7 @@
     <Compile Include="Extractor\GetWorkItemsCount.cs" />
     <Compile Include="Viewmodel\Extractor\GetProcessTemplate.cs" />
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\GetTeamSetting.cs" />
     <Compile Include="Viewmodel\Extractor\GetWorkItemsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\IterationtoSave.cs" />
     <Compile Include="Viewmodel\Extractor\KeyConfig.cs" />

@@ -23,93 +23,87 @@ namespace VstsRestAPI.WorkItemAndTracking
             List<Scrum.Columns> SColumns = new List<Scrum.Columns>();
             List<Agile.Columns> AColumns = new List<Agile.Columns>();
 
-            if (BoardType == "Backlog%20Items")
+            string newColID = "";
+            string doneColID = "";
+            GetBoardColumnResponse.ColumnResponse currColumns = new GetBoardColumnResponse.ColumnResponse();
+            GetBoardColumnResponseAgile.ColumnResponse currColumnsAgile = new GetBoardColumnResponseAgile.ColumnResponse();
+            if (BoardType == "Backlog%20items")
             {
                 SColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(fileName);
+
+                currColumns = getBoardColumns(projectName, teamName);
+                if (currColumns.columns != null)
+                {
+                    foreach (GetBoardColumnResponse.Value col in currColumns.columns)
+                    {
+                        if (col.columnType.ToLower() == "incoming")
+                        {
+                            newColID = col.id;
+                        }
+                        else if (col.columnType.ToLower() == "outgoing")
+                        {
+                            doneColID = col.id;
+                        }
+                    }
+                    foreach (Scrum.Columns col in SColumns)
+                    {
+                        if (col.columnType.ToLower() == "incoming")
+                        {
+                            col.id = newColID;
+                        }
+                        else if (col.columnType.ToLower() == "outgoing")
+                        {
+                            col.id = doneColID;
+                        }
+                    }
+                }
             }
             else if (BoardType == "Stories")
             {
                 AColumns = JsonConvert.DeserializeObject<List<Agile.Columns>>(fileName);
-            }
-            GetBoardColumnResponse.ColumnResponse currColumns = new GetBoardColumnResponse.ColumnResponse();
-            GetBoardColumnResponseAgile.ColumnResponse currColumnsAgile = new GetBoardColumnResponseAgile.ColumnResponse();
-            if (BoardType == "Backlog%20Items")
-            {
-                currColumns = getBoardColumns(projectName, teamName);
-            }
-            else if (BoardType == "Stories")
-            {
                 currColumnsAgile = getBoardColumnsAgile(projectName, teamName);
+                if (currColumnsAgile.columns != null)
+                {
+                    foreach (GetBoardColumnResponseAgile.Value col in currColumnsAgile.columns)
+                    {
+                        if (col.columnType == "incoming")
+                        {
+                            newColID = col.id;
+                        }
+                        else if (col.columnType.ToLower() == "outgoing")
+                        {
+                            doneColID = col.id;
+                        }
+                    }
+                    foreach (Agile.Columns col in AColumns)
+                    {
+                        if (col.columnType.ToLower() == "incoming")
+                        {
+                            col.id = newColID;
+                        }
+                        else if (col.columnType.ToLower() == "outgoing")
+                        {
+                            col.id = doneColID;
+                        }
+                    }
+                }
             }
-
             if (currColumns.columns == null && currColumnsAgile.columns == null)
             {
                 return false;
             }
-
-            string newColID = "";
-            string doneColID = "";
-            if (BoardType == "Backlog%20Items")
-            {
-                foreach (GetBoardColumnResponse.Value col in currColumns.columns)
-                {
-                    if (col.name == "New")
-                    {
-                        newColID = col.id;
-                    }
-                    else if (col.name == "Done" || col.name == "Closed")
-                    {
-                        doneColID = col.id;
-                    }
-                }
-                foreach (Scrum.Columns col in SColumns)
-                {
-                    if (col.name == "New")
-                    {
-                        col.id = newColID;
-                    }
-                    else if (col.name == "Done" || col.name == "Deploy" || col.name == "Closed")
-                    {
-                        col.id = doneColID;
-                    }
-                }
-            }
-            else if (BoardType == "Stories")
-            {
-                foreach(GetBoardColumnResponseAgile.Value col in currColumnsAgile.columns)
-                {
-                    if (col.name == "New")
-                    {
-                        newColID = col.id;
-                    }
-                    else if (col.name == "Done" || col.name == "Closed")
-                    {
-                        doneColID = col.id;
-                    }
-                }
-                foreach (Agile.Columns col in AColumns)
-                {
-                    if (col.name == "New")
-                    {
-                        col.id = newColID;
-                    }
-                    else if (col.name == "Done" || col.name == "Deploy" || col.name == "Closed")
-                    {
-                        col.id = doneColID;
-                    }
-                }
-            }
-
             using (var client = GetHttpClient())
             {
                 StringContent patchValue = new StringContent("");
-                if (BoardType == "Backlog%20Items")
+                if (BoardType == "Backlog%20items")
                 {
-                    patchValue = new StringContent(JsonConvert.SerializeObject(SColumns), Encoding.UTF8, "application/json");
+                    string x = JsonConvert.SerializeObject(SColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    patchValue = new StringContent(x, Encoding.UTF8, "application/json");
                 }
                 else if (BoardType == "Stories")
                 {
-                    patchValue = new StringContent(JsonConvert.SerializeObject(AColumns), Encoding.UTF8, "application/json");
+                    string x = JsonConvert.SerializeObject(AColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    patchValue = new StringContent(x, Encoding.UTF8, "application/json");
                 }
                 // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");

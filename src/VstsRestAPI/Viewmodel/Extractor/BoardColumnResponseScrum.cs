@@ -1,26 +1,32 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace VstsRestAPI.Viewmodel.Extractor
 {
     public class BoardColumnResponseScrum
     {
-        public Column[] value { get; set; }
-
         public class StateMappings
         {
             [JsonProperty(PropertyName = "Product Backlog Item")]
-            public string ProductBacklogItem { get; set; }
-            public string Bug { get; set; }
+            public string UserStory { get; set; }
+            [JsonProperty(PropertyName = "Bug")]
+            public string bug { get; set; }
         }
 
-        public class Column
+        public class Value
         {
             public string name { get; set; }
             public int itemLimit { get; set; }
             public StateMappings stateMappings { get; set; }
             public string columnType { get; set; }
             public bool? isSplit { get; set; }
-            public string description = "";
+            public string description { get; set; }
+        }
+
+        public class ColumnResponse
+        {
+            public int count { get; set; }
+            public List<Value> value { get; set; }
         }
     }
 }
