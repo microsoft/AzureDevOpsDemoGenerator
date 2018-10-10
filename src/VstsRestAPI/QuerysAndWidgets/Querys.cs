@@ -70,37 +70,47 @@ namespace VstsRestAPI.QuerysAndWidgets
             }
         }
 
-        /// <summary>
-        /// Create Query
-        /// </summary>
-        /// <param name="project"></param>
-        /// <param name="json"></param>
-        /// <returns></returns>
-        public QueryResponse CreateQuery(string project, string json)
-        {
-            using (var client = GetHttpClient())
+      /// <summary>
+      /// Create Query
+      /// </summary>
+      /// <param name="project"></param>
+      /// <param name="json"></param>
+      /// <returns></returns>
+      public QueryResponse CreateQuery(string project, string json)
+      {
+         QueryResponse result = new QueryResponse();
+         using (var clientParent = GetHttpClient())
+         {
+
+            HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
+            if (ResponseParent.IsSuccessStatusCode)
             {
-                //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
-                var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var method = new HttpMethod("POST");
+               using (var client = GetHttpClient())
+               {
+                  //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
+                  var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                  var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                var response = client.SendAsync(request).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    QueryResponse result = response.Content.ReadAsAsync<QueryResponse>().Result;
-                    return result;
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                    return new QueryResponse();
+                  var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                  var response = client.SendAsync(request).Result;
+                  if (response.IsSuccessStatusCode)
+                  {
+                     result = response.Content.ReadAsAsync<QueryResponse>().Result;
+                     return result;
+                  }
+                  else
+                  {
+                     var errorMessage = response.Content.ReadAsStringAsync();
+                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                     this.LastFailureMessage = error;
+                     return new QueryResponse();
 
-                }
+                  }
+               }
             }
-        }
+         }
+         return result;
+      }
 
         /// <summary>
         /// Update existing query
