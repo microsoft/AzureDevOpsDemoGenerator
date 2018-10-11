@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using VstsRestAPI.Viewmodel.QuerysAndWidgets;
 
 namespace VstsRestAPI.QuerysAndWidgets
@@ -70,47 +65,47 @@ namespace VstsRestAPI.QuerysAndWidgets
             }
         }
 
-      /// <summary>
-      /// Create Query
-      /// </summary>
-      /// <param name="project"></param>
-      /// <param name="json"></param>
-      /// <returns></returns>
-      public QueryResponse CreateQuery(string project, string json)
-      {
-         QueryResponse result = new QueryResponse();
-         using (var clientParent = GetHttpClient())
-         {
-
-            HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
-            if (ResponseParent.IsSuccessStatusCode)
+        /// <summary>
+        /// Create Query
+        /// </summary>
+        /// <param name="project"></param>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public QueryResponse CreateQuery(string project, string json)
+        {
+            QueryResponse result = new QueryResponse();
+            using (var clientParent = GetHttpClient())
             {
-               using (var client = GetHttpClient())
-               {
-                  //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
-                  var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                  var method = new HttpMethod("POST");
 
-                  var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                  var response = client.SendAsync(request).Result;
-                  if (response.IsSuccessStatusCode)
-                  {
-                     result = response.Content.ReadAsAsync<QueryResponse>().Result;
-                     return result;
-                  }
-                  else
-                  {
-                     var errorMessage = response.Content.ReadAsStringAsync();
-                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                     this.LastFailureMessage = error;
-                     return new QueryResponse();
+                HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=4.1").Result;
+                if (ResponseParent.IsSuccessStatusCode)
+                {
+                    using (var client = GetHttpClient())
+                    {
+                        //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                  }
-               }
+                        var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=4.1") { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            result = response.Content.ReadAsAsync<QueryResponse>().Result;
+                            return result;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            return new QueryResponse();
+
+                        }
+                    }
+                }
             }
-         }
-         return result;
-      }
+            return result;
+        }
 
         /// <summary>
         /// Update existing query
