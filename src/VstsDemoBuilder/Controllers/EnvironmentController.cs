@@ -1908,9 +1908,9 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
 
@@ -2064,9 +2064,9 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
 
@@ -2309,7 +2309,7 @@ namespace VstsDemoBuilder.Controllers
 
                     if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                     {
-                        //AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
                     }
 
                 }

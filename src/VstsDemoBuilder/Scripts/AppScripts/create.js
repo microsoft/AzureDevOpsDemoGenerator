@@ -631,8 +631,8 @@ function getStatus() {
                                 async: false,
                                 success: function (data) {
                                     var accountName = data;
-                                    $("#projCreateMsg").hide();
-                                    var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
+                                    $("#ddlAcccountName").hide();
+                                    var link = "https://dev.azure.com/" + AccountNameForLink + "/" + projectNameForLink;
 
                                     if (selectedTemplate == "SmartHotel360") {
                                         $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
@@ -660,30 +660,55 @@ function getStatus() {
                         }
                         else {
                             ErrorData = response;
-                            if (ErrorData != '') {
-                                $("#projCreateMsg").hide(); $("#errorDescription").html("");
-                                $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
-                                $('#dvProgress').removeClass("d-block").addClass("d-none");
-                                $("#errorNotify").removeClass("d-none").addClass("d-block");
-                                $('#textMuted').removeClass("d-block").addClass("d-none");
+                            var accountName = $('#ddlAcccountName option:selected').val();
+                            $("#projCreateMsg").hide();
+                            var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
 
-                                currentPercentage = 0;
-                                $('#progressBar').width(currentPercentage++ + '%');
-                                $("#errorMail").empty().append(ErrorData);
-                                $("#errorNotify").show();
-
-                                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                                $("#txtProjectName").val("");
-                                $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                                $("#templateselection").prop("disabled", false);
-
-                                $('#ddlGroups').removeAttr("disabled");
-
-                                $("#ddlAcccountName").removeAttr("disabled");
-                                $("#txtProjectName").removeAttr("disabled");
-
+                            if (selectedTemplate == "SmartHotel360") {
+                                $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
                             }
+                            else {
+                                $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
+                            }
+                            $('#dvProgress').removeClass("d-block").addClass("d-none");
+                            $('#textMuted').removeClass("d-block").addClass("d-none");
+                            currentPercentage = 0;
+
+                            $('#progressBar').width(currentPercentage++ + '%');
+                            $("#finalLink").removeClass("d-none").addClass("d-block");
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                            $("#txtProjectName").val("");
+
+                            $('#ddlAcccountName').prop('selectedIndex', 0);
+                            $("#templateselection").prop("disabled", false);
+
+                            $('#ddlGroups').removeAttr("disabled");
+                            $("#ddlAcccountName").removeAttr("disabled");
+                            $("#txtProjectName").removeAttr("disabled");
+                            //if (ErrorData != '') {
+                            //    $("#projCreateMsg").hide(); $("#errorDescription").html("");
+                            //    $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
+                            //    $('#dvProgress').removeClass("d-block").addClass("d-none");
+                            //    $("#errorNotify").removeClass("d-none").addClass("d-block");
+                            //    $('#textMuted').removeClass("d-block").addClass("d-none");
+
+                            //    currentPercentage = 0;
+                            //    $('#progressBar').width(currentPercentage++ + '%');
+                            //    $("#errorMail").empty().append(ErrorData);
+                            //    $("#errorNotify").show();
+
+                            //    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                            //    $("#txtProjectName").val("");
+                            //    $('#ddlAcccountName').prop('selectedIndex', 0);
+
+                            //    $("#templateselection").prop("disabled", false);
+
+                            //    $('#ddlGroups').removeAttr("disabled");
+
+                            //    $("#ddlAcccountName").removeAttr("disabled");
+                            //    $("#txtProjectName").removeAttr("disabled");
+
+                            //}
                         }
                     });
                     messageList = [];
