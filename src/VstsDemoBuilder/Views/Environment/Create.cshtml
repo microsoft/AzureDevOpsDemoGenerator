@@ -23,12 +23,14 @@
         .vstsScroll {
             margin-right: 6px;
         }
+
         .template {
             margin-right: 6px;
         }
-        .template:hover::-webkit-scrollbar, .vstsScroll:hover::-webkit-scrollbar {
-            display: block;
-        }
+
+            .template:hover::-webkit-scrollbar, .vstsScroll:hover::-webkit-scrollbar {
+                display: block;
+            }
 
         ::-webkit-scrollbar {
             width: 1px;
@@ -149,6 +151,9 @@
              <i class="fas fa-times" style="float: right; cursor:pointer" id="closeFeatureRibben"></i>
          </div>
      }-->
+    <div class="col-sm-12 newFeature text-center p-2" id="newFeature">
+        <span style="color:#0078d7"> We are facing technical issues due to API changes in the product. Dashboard, Shared Queries and Test work items may not be provisioned</span>
+    </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
             <!--
@@ -302,5 +307,5 @@
     <script src="~/Scripts/AppScripts/create.js"></script>
     <script src="~/Scripts/AppScripts/FileUpload.js"></script>
     <script src="~/Scripts/tooltip.js"></script>
-    </body>
+</body>
 </html>
