@@ -25,7 +25,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     var method = new HttpMethod("PUT");
 
                     //https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/rows?api-version=4.1
-                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/rows?api-version=4.1") { Content = patchValue };
+                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/rows?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {

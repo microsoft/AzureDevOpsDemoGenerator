@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM5MTgxMTUxLCJleHAiOjE1MzkxODQ3NTF9.gAAlyd93jU-WvNgZm5ZEqEPwtYfCWbntZAypchhQLjuC2BM5PifVK4bL9c002MBOZEFk89apmNP1IH12T9TzmkB5mOhS-HXcQmnDbqPJK165oo17NLJ4mHSZ5DRYp2M1ltZFmAgElLNxvt_0IYCD6MuZZWpJYrNj7o11bzSZLcZmvmORy0fdp91ymu350gsvSz6GJc4-bSHSD3J-ikpybJPSDTPR7QXQJ7d5BL8rhC_VQCmtQyyS1syoRQ9o3vY__qIqTQNgcLTKOqz7V2eFSBUmyjqvu5de3upjt3c2KH7wWLYi2Q12pxLmvFLmHoSSS-USsapazUQyjJWtNW1zOA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM5MjY5ODgwLCJleHAiOjE1MzkyNzM0ODB9.aow6Im4qVhlk9xnFC99sTF9JYtZnKDHmCbhvW1RhFOog6ObGiLD1pkSsEQ7F4YBcRMg3BnIDrUPTbiXDrKCdEPvkUr1_9LINe0L6fDltm0VVS377A6joyrZLTMfrKx7osYr9CPT_l6VQe4goSaHpFBNELY8UpaNLnBOY5c08PqGEK7YDFqWp_-oX2MS_W5ZHK98PsSr6GiHg-seA5o6wGJbA9VmSGzBcfLMlB1-f1_xsttx_7fJshtanrzymVZhBYWA-F2A2gaGhvEHFpRRrTSWhmThGy__wW9Qejyu_eYKalj0xrBDfoSbQKzd1VjrZyNvb4IieKZ6Phpn5Jor6CA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -605,47 +605,6 @@ namespace VstsDemoBuilder.Controllers
         /// </summary>
         /// <param name="accessDetails"></param>
         /// <returns></returns>
-        public ProfileDetails GetProfile1(AccessDetails accessDetails)
-        {
-            ProfileDetails Profile = new ProfileDetails();
-
-            var client = new HttpClient
-            {
-                BaseAddress = new Uri("https://app.vssps.visualstudio.com")
-            };
-            var request = new HttpRequestMessage(HttpMethod.Get, "/_apis/profile/profiles/me");
-
-            var requestContent = string.Format(
-                "site={0}&api-version={1}", Uri.EscapeDataString("https://app.vssps.visualstudio.com"), Uri.EscapeDataString("4.1"));
-
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Headers.Add("Authorization", string.Format("Bearer {0}", accessDetails.access_token));
-            try
-            {
-                var response = client.SendAsync(request).Result;
-                if (response.StatusCode == HttpStatusCode.NonAuthoritativeInformation)
-                {
-                    AccessDetails = Refresh_AccessToken(accessDetails.refresh_token);
-                    GetProfile(AccessDetails);
-                }
-                else if (response.IsSuccessStatusCode)
-                {
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    Profile = JsonConvert.DeserializeObject<ProfileDetails>(result);
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    Profile = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                Profile.ErrorMessage = ex.Message;
-            }
-            return Profile;
-        }
-
         public ProfileDetails GetProfile(AccessDetails accessDetails)
         {
             ProfileDetails Profile = new ProfileDetails();
@@ -864,7 +823,7 @@ namespace VstsDemoBuilder.Controllers
                     string LogWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (LogWIT == "true")
                     {
-                        objIssue.CreateIssueWI(PATBase64, "1.0", URL, issueName, errorMessages, ProjectId);
+                        objIssue.CreateIssueWI(PATBase64, "4.1", URL, issueName, errorMessages, ProjectId);
                     }
                 }
             }
@@ -895,6 +854,9 @@ namespace VstsDemoBuilder.Controllers
             string EndPointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
             string ExtensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
             string DashboardVersion = System.Configuration.ConfigurationManager.AppSettings["DashboardVersion"];
+            string AgentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+            string GetSourceCodeVersion = System.Configuration.ConfigurationManager.AppSettings["GetSourceCodeVersion"];
+            string TestPlanVersion = System.Configuration.ConfigurationManager.AppSettings["TestPlanVersion"];
 
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
@@ -935,7 +897,7 @@ namespace VstsDemoBuilder.Controllers
 
 
             VstsRestAPI.Configuration _ProjectCreationVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ProjectCreationVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _ReleaseVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ReleaseVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _ReleaseVersion = new VstsRestAPI.Configuration() { UriString = "https://vsrm.dev.azure.com/" + accountName + "/", VersionNumber = ReleaseVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _BuildVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = BuildVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _WorkItemsVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = WorkItemsVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _QueriesVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = QueriesVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
@@ -945,6 +907,11 @@ namespace VstsDemoBuilder.Controllers
             VstsRestAPI.Configuration _ExtensionVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ExtensionVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _DashboardVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = DashboardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _RepoVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = RepoVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+
+            VstsRestAPI.Configuration _GetSourceCodeVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = GetSourceCodeVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _AgentQueueVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = AgentQueueVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _TestPlanVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = TestPlanVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
             string projTemplateFile = string.Format(templatesFolder + @"{0}\ProjectTemplate.json", model.SelectedTemplate);
@@ -1049,12 +1016,12 @@ namespace VstsDemoBuilder.Controllers
             var teamMember = teamMembers.value.FirstOrDefault();
             if (teamMember != null)
             {
-                model.Environment.UserUniquename = teamMember.uniqueName;
+                model.Environment.UserUniquename = teamMember.identity.uniqueName;
             }
 
             if (teamMember != null)
             {
-                model.Environment.UserUniqueId = teamMember.id;
+                model.Environment.UserUniqueId = teamMember.identity.id;
             }
 
 
@@ -1112,7 +1079,7 @@ namespace VstsDemoBuilder.Controllers
             //AddMessage(model.id, "Service endpoints created");
 
             //create agent queues on demand
-            Queue queue = new Queue(_BuildVersion);
+            Queue queue = new Queue(_AgentQueueVersion);
             model.Environment.AgentQueues = queue.GetQueues();
             if (settings.queues != null && settings.queues.Count > 0)
             {
@@ -1142,7 +1109,7 @@ namespace VstsDemoBuilder.Controllers
             }
             foreach (string importSourceCode in lstImportSourceCodeJsonPaths)
             {
-                ImportSourceCode(templatesFolder, model, importSourceCode, _RepoVersion, model.id);
+                ImportSourceCode(templatesFolder, model, importSourceCode, _RepoVersion, model.id, _GetSourceCodeVersion);
             }
             if (isDefaultRepoTodetele)
             {
@@ -1294,7 +1261,7 @@ namespace VstsDemoBuilder.Controllers
             //if (lstTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "Creating testplans, testsuites and testcases..."); }
             foreach (string testPlan in lstTestPlansJsonPaths)
             {
-                CreateTestManagement(WImapping, model, testPlan, templatesFolder, _WorkItemsVersion);
+                CreateTestManagement(WImapping, model, testPlan, templatesFolder, _TestPlanVersion);
             }
             if (lstTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "TestPlans, TestSuites and TestCases created"); }
 
@@ -1344,7 +1311,7 @@ namespace VstsDemoBuilder.Controllers
             }
             if (Directory.Exists(dashboardPath))
             {
-                CreateQueryAndWidgets(templatesFolder, model, lstDashboardQueriesPath, _QueriesVersion, _DashboardVersion,_ReleaseVersion,_ProjectCreationVersion,_BoardVersion);
+                CreateQueryAndWidgets(templatesFolder, model, lstDashboardQueriesPath, _QueriesVersion, _DashboardVersion, _ReleaseVersion, _ProjectCreationVersion, _BoardVersion);
                 AddMessage(model.id, "Queries, Widgets and Charts created");
                 Thread.Sleep(2000);
             }
@@ -1373,14 +1340,14 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <param name="teamAreaJSON"></param>
-        private void CreateTeams(string templatesFolder, Project model, string teamsJSON, VstsRestAPI.Configuration _defaultConfiguration, string id, string teamAreaJSON)
+        private void CreateTeams(string templatesFolder, Project model, string teamsJSON, VstsRestAPI.Configuration _ProjectConfig, string id, string teamAreaJSON)
         {
             try
             {
                 string jsonTeams = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamsJSON);
                 if (System.IO.File.Exists(jsonTeams))
                 {
-                    Team objTeam = new Team(_defaultConfiguration);
+                    Team objTeam = new Team(_ProjectConfig);
                     jsonTeams = model.ReadJsonFile(jsonTeams); //System.IO.File.ReadAllText(jsonTeams);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     Newtonsoft.Json.Linq.JContainer teamsParsed = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JContainer>(jsonTeams);
@@ -1516,7 +1483,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _defaultConfiguration, string id, string BoardType)
+        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _BoardConfig, string id, string BoardType)
         {
             bool res = false;
             try
@@ -1524,7 +1491,7 @@ namespace VstsDemoBuilder.Controllers
                 string jsonBoardColumns = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, BoardColumnsJSON);
                 if (System.IO.File.Exists(jsonBoardColumns))
                 {
-                    BoardColumn objBoard = new BoardColumn(_defaultConfiguration);
+                    BoardColumn objBoard = new BoardColumn(_BoardConfig);
                     jsonBoardColumns = model.ReadJsonFile(jsonBoardColumns);
                     bool BoardColumnResult = objBoard.UpdateBoard(model.ProjectName, jsonBoardColumns, BoardType);
 
@@ -1618,7 +1585,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_config3_0"></param>
         /// <param name="id"></param>
-        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _config3_0, string id)
+        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _BoardVersion, string id)
         {
             try
             {
@@ -1626,8 +1593,8 @@ namespace VstsDemoBuilder.Controllers
                 if (System.IO.File.Exists(json))
                 {
                     json = model.ReadJsonFile(json);
-                    Cards objCards = new Cards(_config3_0);
-                    Projects project = new Projects(_config3_0);
+                    Cards objCards = new Cards(_BoardVersion);
+                    Projects project = new Projects(_BoardVersion);
                     objCards.EnablingEpic(model.ProjectName, json, model.ProjectName);
 
                     if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
@@ -1685,7 +1652,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="templatesFolder"></param>
         /// <param name="iterationsJSON"></param>
-        private void UpdateIterations(Project model, VstsRestAPI.Configuration _defaultConfiguration, string templatesFolder, string iterationsJSON)
+        private void UpdateIterations(Project model, VstsRestAPI.Configuration _BoardConfig, string templatesFolder, string iterationsJSON)
         {
             try
             {
@@ -1693,7 +1660,7 @@ namespace VstsDemoBuilder.Controllers
                 if (System.IO.File.Exists(jsonIterations))
                 {
                     iterationsJSON = model.ReadJsonFile(jsonIterations);
-                    ClassificationNodes ObjClassification = new ClassificationNodes(_defaultConfiguration);
+                    ClassificationNodes ObjClassification = new ClassificationNodes(_BoardConfig);
 
                     GetNodesResponse.Nodes nodes = ObjClassification.GetIterations(model.ProjectName);
 
@@ -1787,11 +1754,11 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="settings"></param>
-        private void UpdateSprintItems(Project model, VstsRestAPI.Configuration _defaultConfiguration, ProjectSettings settings)
+        private void UpdateSprintItems(Project model, VstsRestAPI.Configuration _BoardConfig, ProjectSettings settings)
         {
             try
             {
-                ClassificationNodes ObjClassification = new ClassificationNodes(_defaultConfiguration);
+                ClassificationNodes ObjClassification = new ClassificationNodes(_BoardConfig);
                 bool ClassificationNodesResult = ObjClassification.UpdateIterationDates(model.ProjectName, settings.type);
 
                 if (!(string.IsNullOrEmpty(ObjClassification.LastFailureMessage)))
@@ -1836,7 +1803,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="importSourceConfiguration"></param>
         /// <param name="id"></param>
-        private void ImportSourceCode(string templatesFolder, Project model, string sourceCodeJSON, VstsRestAPI.Configuration _Repo, string id)
+        private void ImportSourceCode(string templatesFolder, Project model, string sourceCodeJSON, VstsRestAPI.Configuration _Repo, string id, VstsRestAPI.Configuration _GetSourceCodeVersion)
         {
 
             try
@@ -1867,7 +1834,7 @@ namespace VstsDemoBuilder.Controllers
                         jsonSourceCode = jsonSourceCode.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                     }
 
-                    Repository objRepositorySourceCode = new Repository(_Repo);
+                    Repository objRepositorySourceCode = new Repository(_GetSourceCodeVersion);
                     bool copySourceCode = objRepositorySourceCode.getSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
 
                     if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
@@ -1893,7 +1860,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="pullRequestJsonPath"></param>
         /// <param name="_configuration3_0"></param>
-        private void CreatePullRequest(string templatesFolder, Project model, string pullRequestJsonPath, VstsRestAPI.Configuration _configuration3_0)
+        private void CreatePullRequest(string templatesFolder, Project model, string pullRequestJsonPath, VstsRestAPI.Configuration _WorkItemConfig)
         {
             try
             {
@@ -1907,7 +1874,7 @@ namespace VstsDemoBuilder.Controllers
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
                     pullRequestJsonPath = pullRequestJsonPath.Replace("$reviewer$", model.Environment.UserUniqueId);
-                    Repository objRepository = new Repository(_configuration3_0);
+                    Repository objRepository = new Repository(_WorkItemConfig);
                     string[] pullReqResponse = new string[2];
 
                     pullReqResponse = objRepository.CreatePullRequest(pullRequestJsonPath, repositoryId);
@@ -1941,9 +1908,9 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                // AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
 
@@ -1953,7 +1920,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="jsonPaths"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, VstsRestAPI.Configuration _defaultConfiguration)
+        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, VstsRestAPI.Configuration _EndpointConfig)
         {
             try
             {
@@ -1968,7 +1935,7 @@ namespace VstsDemoBuilder.Controllers
                         string extractPath = Server.MapPath("~/Templates/" + model.SelectedTemplate);
                         string ProjectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
                         ProjectSetting Settings = JsonConvert.DeserializeObject<ProjectSetting>(ProjectFileData);
-                        ServiceEndPoint objService = new ServiceEndPoint(_defaultConfiguration);
+                        ServiceEndPoint objService = new ServiceEndPoint(_EndpointConfig);
 
                         if (!string.IsNullOrEmpty(Settings.IsPrivate))
                         {
@@ -2038,7 +2005,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="testPlanJson"></param>
         /// <param name="templateFolder"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateTestManagement(List<WIMapData> WImapping, Project model, string testPlanJson, string templateFolder, VstsRestAPI.Configuration _defaultConfiguration)
+        private void CreateTestManagement(List<WIMapData> WImapping, Project model, string testPlanJson, string templateFolder, VstsRestAPI.Configuration _WorkItemConfig)
         {
             try
             {
@@ -2051,7 +2018,7 @@ namespace VstsDemoBuilder.Controllers
                     testPlanJson = model.ReadJsonFile(testPlanJson);
 
                     testPlanJson = testPlanJson.Replace("$project$", model.ProjectName);
-                    TestManagement objTest = new TestManagement(_defaultConfiguration);
+                    TestManagement objTest = new TestManagement(_WorkItemConfig);
                     string[] testPlanResponse = new string[2];
                     testPlanResponse = objTest.CreateTestPlan(testPlanJson, model.ProjectName);
 
@@ -2097,9 +2064,9 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                //AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
 
@@ -2111,7 +2078,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool CreateBuildDefinition(string templatesFolder, Project model, VstsRestAPI.Configuration _defaultConfiguration, string id)
+        private bool CreateBuildDefinition(string templatesFolder, Project model, VstsRestAPI.Configuration _BuildConfig, string id)
         {
             bool flag = false;
             try
@@ -2120,7 +2087,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     if (System.IO.File.Exists(buildDef.FilePath))
                     {
-                        BuildDefinition objBuild = new BuildDefinition(_defaultConfiguration);
+                        BuildDefinition objBuild = new BuildDefinition(_BuildConfig);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId);
@@ -2165,7 +2132,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
-        private void QueueABuild(Project model, string json, VstsRestAPI.Configuration _configuration)
+        private void QueueABuild(Project model, string json, VstsRestAPI.Configuration _BuildConfig)
         {
             try
             {
@@ -2176,7 +2143,7 @@ namespace VstsDemoBuilder.Controllers
 
                     jsonQueueABuild = model.ReadJsonFile(jsonQueueABuild);
                     jsonQueueABuild = jsonQueueABuild.Replace("$buildId$", buildId.ToString());
-                    BuildDefinition objBuild = new BuildDefinition(_configuration);
+                    BuildDefinition objBuild = new BuildDefinition(_BuildConfig);
                     int queueId = objBuild.QueueBuild(jsonQueueABuild, model.ProjectName);
 
                     if (!string.IsNullOrEmpty(objBuild.LastFailureMessage))
@@ -2216,9 +2183,9 @@ namespace VstsDemoBuilder.Controllers
                         string jsonReleaseDefinition = model.ReadJsonFile(relDef.FilePath);
                         jsonReleaseDefinition = jsonReleaseDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
-                                             .Replace("$OwnerUniqueName$", teamMember.uniqueName)
-                                             .Replace("$OwnerId$", teamMember.id)
-                                  .Replace("$OwnerDisplayName$", teamMember.displayName);
+                                             .Replace("$OwnerUniqueName$", teamMember.identity.uniqueName)
+                                             .Replace("$OwnerId$", teamMember.identity.id)
+                                  .Replace("$OwnerDisplayName$", teamMember.identity.displayName);
 
                         //Adding randon UUID to website name
                         string UUID = Guid.NewGuid().ToString();
@@ -2342,8 +2309,7 @@ namespace VstsDemoBuilder.Controllers
 
                     if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
-
+                        //AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
                     }
 
                 }
@@ -2588,7 +2554,7 @@ namespace VstsDemoBuilder.Controllers
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    
+
                     if (model.SelectedTemplate.ToLower() == "smarthotel360")
                     {
                         if (isDashboardDeleted)

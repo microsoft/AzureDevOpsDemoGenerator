@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading;
 using VstsRestAPI.Viewmodel.QuerysAndWidgets;
 
 namespace VstsRestAPI.QuerysAndWidgets
@@ -20,7 +19,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             string dashBoardId = string.Empty;
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/dashboard/dashboards?api-version=4.1-preview.2").Result;
+                HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     DashboardResponse.Dashboard dashBoard = response.Content.ReadAsAsync<DashboardResponse.Dashboard>().Result;
@@ -48,7 +47,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             string dashBoardeTag = string.Empty;
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/Dashboard/Dashboards/" + dashboardId + "?api-version=" + _configuration.VersionNumber + "-preview.2").Result;
+                HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/Dashboard/Dashboards/" + dashboardId + "?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     DashBoardeTagResponse.Dashboard dashBoard = response.Content.ReadAsAsync<DashBoardeTagResponse.Dashboard>().Result;
@@ -77,7 +76,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             using (var clientParent = GetHttpClient())
             {
 
-                HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=4.1").Result;
+                HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
                 if (ResponseParent.IsSuccessStatusCode)
                 {
                     using (var client = GetHttpClient())
@@ -86,7 +85,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                         var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                         var method = new HttpMethod("POST");
 
-                        var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=4.1") { Content = jsonContent };
+                        var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                         var response = client.SendAsync(request).Result;
                         if (response.IsSuccessStatusCode)
                         {
@@ -121,7 +120,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, string.Format("{0}/_apis/wit/queries/{1}?api-version=2.2", project, query)) { Content = patchValue };
+                var request = new HttpRequestMessage(method, string.Format("{0}/_apis/wit/queries/{1}?api-version=" + _configuration.VersionNumber, project, query)) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -147,7 +146,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/dashboard/dashboards/" + dashBoardId + "/Widgets?api-version=" + _configuration.VersionNumber + "-preview.2") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/dashboard/dashboards/" + dashBoardId + "/Widgets?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -176,7 +175,7 @@ namespace VstsRestAPI.QuerysAndWidgets
 
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(project + "/_apis/wit/queries/" + path + "/" + queryName + "?api-version=2.2").Result;
+                HttpResponseMessage response = client.GetAsync(project + "/_apis/wit/queries/" + path + "/" + queryName + "?api-version=" + _configuration.VersionNumber).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -199,7 +198,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             using (var client = GetHttpClient())
             {
                 var method = new HttpMethod("DELETE");
-                var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber + "-preview.2");
+                var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber);
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -229,7 +228,7 @@ namespace VstsRestAPI.QuerysAndWidgets
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber + "-preview.2") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {

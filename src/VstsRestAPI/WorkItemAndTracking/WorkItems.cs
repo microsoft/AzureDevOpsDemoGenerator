@@ -1,16 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public class WorkItems :ApiServiceBase
+    public class WorkItems : ApiServiceBase
     {
         public WorkItems(IConfiguration configuration) : base(configuration) { }
 
@@ -24,7 +19,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
             WorkItemPatch.Field[] fields = new WorkItemPatch.Field[3];
 
-            
+
             using (var client = GetHttpClient())
             {
                 // serialize the fields array into a json string          
@@ -35,7 +30,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var method = new HttpMethod("PATCH");
 
                 // send the request
-                var request = new HttpRequestMessage(method, _configuration.UriString + "TestProject" + "/_apis/wit/workitems/$" + "User Story" + "?bypassRules=true&api-version=2.2") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + "TestProject" + "/_apis/wit/workitems/$" + "User Story" + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 var me = response.ToString();
@@ -65,7 +60,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         {
             WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
             //string json = System.IO.File.ReadAllText(Server.MapPath("~") + @"\JSON\WorkItemLink.json");
-            
+
             using (var client = GetHttpClient())
             {
                 // serialize the fields array into a json string          

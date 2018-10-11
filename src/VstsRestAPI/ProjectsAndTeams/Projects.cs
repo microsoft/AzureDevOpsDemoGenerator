@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using VstsRestAPI;
-using VstsRestAPI.Viewmodel;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
-using Newtonsoft;
-using Newtonsoft.Json.Linq;
 
 
 
@@ -32,7 +25,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 // check to see if we have a succesfull respond
                 return response.StatusCode == System.Net.HttpStatusCode.OK;
             }
-           // return false;
+            // return false;
         }
 
         /// <summary>
@@ -45,7 +38,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             using (var client = GetHttpClient())
             {
                 // connect to the REST endpoint            
-                HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=2.2").Result;
+                HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
                 // check to see if we have a succesfull respond
                 if (response.IsSuccessStatusCode)
                 {
@@ -64,20 +57,13 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public string CreateTeamProject(string json)
         {
-            //string json = System.IO.File.ReadAllText(Server.MapPath("~") + @"\JSON\CreateTeamProject.json");
-            //json = json.Replace("$ProjectName$", txtProjectName.Text).Replace("$ProjectDescription$", txtProjectName.Text).Replace("$TemplateId$", ddlProcesses.SelectedValue);
-
             using (var client = GetHttpClient())
             {
-                //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method,  "_apis/projects?api-version=" + _configuration.VersionNumber + "-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, "_apis/projects?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
-
-                //HttpResponseMessage response = client.PostAsync("_apis/process/processes?api-version=2.2", jsonContent
-
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;

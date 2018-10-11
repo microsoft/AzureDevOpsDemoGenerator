@@ -26,7 +26,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             {
                 // connect to the REST endpoint            
                 //HttpResponseMessage response = client.GetAsync("/_apis/memberentitlements?api-version=4.1-preview.1&top=100&skip=0").Result;
-                HttpResponseMessage response = client.GetAsync("/_apis/userentitlements?api-version=4.1-preview").Result;
+                HttpResponseMessage response = client.GetAsync("/_apis/userentitlements?api-version="+_configuration.VersionNumber).Result;
 
                 // check to see if we have a succesfull respond
                 if (response.IsSuccessStatusCode)

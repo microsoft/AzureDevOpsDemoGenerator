@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Queue;
 
 namespace VstsRestAPI.Queues
@@ -25,24 +21,25 @@ namespace VstsRestAPI.Queues
 
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(_configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber + "-preview.1").Result;
+                string req = _configuration.UriString + _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber;
+                HttpResponseMessage response = client.GetAsync(req).Result;
 
                 if (response.IsSuccessStatusCode)
-                {                    
-                    viewModel = response.Content.ReadAsAsync<QueueModel>().Result;                    
+                {
+                    viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
                     if (viewModel != null && viewModel.value != null)
                     {
                         foreach (AgentQueueModel aq in viewModel.value)
                         {
                             dicQueues[aq.name] = aq.id;
-                        }                        
+                        }
                     }
                 }
                 else
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;                    
+                    this.LastFailureMessage = error;
                 }
             }
 
@@ -61,12 +58,12 @@ namespace VstsRestAPI.Queues
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber + "-preview.1") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
-                {                    
-                    viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;                    
+                {
+                    viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;
                 }
                 else
                 {

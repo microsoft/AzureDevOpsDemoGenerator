@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Wiki;
 
 namespace VstsRestAPI.Wiki
@@ -29,7 +26,7 @@ namespace VstsRestAPI.Wiki
                     var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
                     var method = new HttpMethod("POST");
-                    var request = new HttpRequestMessage(method, "/_apis/wiki/wikis?api-version=4.1") { Content = jsonContent };
+                    var request = new HttpRequestMessage(method, "/_apis/wiki/wikis?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                     HttpResponseMessage response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -69,7 +66,7 @@ namespace VstsRestAPI.Wiki
                     var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
                     var method = new HttpMethod("PUT");
-                    var request = new HttpRequestMessage(method, projectName + "/_apis/wiki/wikis/" + WikiId + "/pages?path=/" + path + "&api-version=4.1") { Content = jsonContent };
+                    var request = new HttpRequestMessage(method, projectName + "/_apis/wiki/wikis/" + WikiId + "/pages?path=/" + path + "&api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                     HttpResponseMessage response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {

@@ -1,13 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Repository;
 
 namespace VstsRestAPI.Git
@@ -30,7 +24,7 @@ namespace VstsRestAPI.Git
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + RepositoryID + "/importRequests?api-version=" + _configuration.VersionNumber + "-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + Project + "/_apis/git/repositories/" + RepositoryID + "/importRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -155,7 +149,7 @@ namespace VstsRestAPI.Git
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, "/_apis/git/repositories?api-version=1.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -186,7 +180,7 @@ namespace VstsRestAPI.Git
             using (var client = GetHttpClient())
             {
                 var method = new HttpMethod("DELETE");
-                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositoryId + "?api-version=2.0");
+                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositoryId + "?api-version=" + _configuration.VersionNumber);
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -211,7 +205,7 @@ namespace VstsRestAPI.Git
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -247,7 +241,7 @@ namespace VstsRestAPI.Git
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads?api-version=3.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -282,7 +276,7 @@ namespace VstsRestAPI.Git
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads/" + threadId + "/comments?api-version=3.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads/" + threadId + "/comments?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

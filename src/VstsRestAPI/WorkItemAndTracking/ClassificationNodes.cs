@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.Sprint;
 using VstsRestAPI.Viewmodel.WorkItem;
 
@@ -26,7 +24,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=1.0", projectName)).Result;
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, projectName)).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     if (response.IsSuccessStatusCode)
@@ -63,7 +61,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations?api-version=1.0", projectName)) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/_apis/wit/classificationNodes/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -102,7 +100,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=1.0", projectName, targetIteration)) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=" + _configuration.VersionNumber, projectName, targetIteration)) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -281,7 +279,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
 
-                HttpResponseMessage response = client.GetAsync(Project + "/" + Project + "%20Team/_apis/work/teamsettings/iterations?api-version=4.1").Result;
+                HttpResponseMessage response = client.GetAsync(Project + "/" + Project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;

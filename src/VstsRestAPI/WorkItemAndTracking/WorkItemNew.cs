@@ -142,14 +142,10 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
                 }
             };
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
                 HttpResponseMessage response = new HttpResponseMessage();
                 HttpRequestMessage request = new HttpRequestMessage();
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 foreach (var type in dic.Keys)
                 {
                     var res = GetListOfWorkItems_ByWiql(ProjectName, type);
@@ -211,7 +207,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         "Where [Work Item Type] = '" + WorkItemType + "' " +
                         "And [System.TeamProject] = '" + project + "' " +
                         "And [System.State] = 'New' " +
-                        "Order By [State] Asc"
+                        "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
             };
 
             using (var client = GetHttpClient())

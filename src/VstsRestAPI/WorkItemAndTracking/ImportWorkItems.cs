@@ -2,28 +2,25 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.WorkItem;
-using System.IO;
-using System.Web.Hosting;
-using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
     public class ImportWorkItems : ApiServiceBase
     {
         public string boardRowFieldName;
-        List<WIMapData> WIData = new List<WIMapData>();
-        List<string> listAssignToUsers = new List<string>();
-        string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related", "System.LinkTypes.Dependency-Reverse", "System.LinkTypes.Dependency-Forward" };
-        string attachmentFolder = string.Empty;
-        string repositoryId = string.Empty;
-        string projectId = string.Empty;
-        Dictionary<string, string> pullRequests = new Dictionary<string, string>();
+        private List<WIMapData> WIData = new List<WIMapData>();
+        private List<string> listAssignToUsers = new List<string>();
+        private string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related", "System.LinkTypes.Dependency-Reverse", "System.LinkTypes.Dependency-Forward" };
+        private string attachmentFolder = string.Empty;
+        private string repositoryId = string.Empty;
+        private string projectId = string.Empty;
+        private Dictionary<string, string> pullRequests = new Dictionary<string, string>();
 
         public ImportWorkItems(IConfiguration configuration, string rowFieldName) : base(configuration)
         {
@@ -114,7 +111,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 return WIData;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return WIData;
             }
@@ -155,9 +152,20 @@ namespace VstsRestAPI.WorkItemAndTracking
                     if ((workItemType == "Test Case"))
                     {
                         //replacing null values with Empty strngs; creation fails if the fields are null
-                        if (newWI.fields.MicrosoftVSTSTCMParameters == null) newWI.fields.MicrosoftVSTSTCMParameters = string.Empty;
-                        if (newWI.fields.MicrosoftVSTSTCMSteps == null) newWI.fields.MicrosoftVSTSTCMSteps = string.Empty;
-                        if (newWI.fields.MicrosoftVSTSTCMLocalDataSource == null) newWI.fields.MicrosoftVSTSTCMLocalDataSource = string.Empty;
+                        if (newWI.fields.MicrosoftVSTSTCMParameters == null)
+                        {
+                            newWI.fields.MicrosoftVSTSTCMParameters = string.Empty;
+                        }
+
+                        if (newWI.fields.MicrosoftVSTSTCMSteps == null)
+                        {
+                            newWI.fields.MicrosoftVSTSTCMSteps = string.Empty;
+                        }
+
+                        if (newWI.fields.MicrosoftVSTSTCMLocalDataSource == null)
+                        {
+                            newWI.fields.MicrosoftVSTSTCMLocalDataSource = string.Empty;
+                        }
 
                         dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
                         dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
@@ -167,13 +175,17 @@ namespace VstsRestAPI.WorkItemAndTracking
                         dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
                         dicWIFields.Add("/fields/Microsoft.VSTS.TCM.LocalDataSource", newWI.fields.MicrosoftVSTSTCMLocalDataSource);
                         dicWIFields.Add("/fields/Microsoft.VSTS.TCM.AutomationStatus", newWI.fields.MicrosoftVSTSTCMAutomationStatus);
-                        
+
                         if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
                         {
                             dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
                         }
 
-                        if (newWI.fields.SystemTags != null) dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                        if (newWI.fields.SystemTags != null)
+                        {
+                            dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                        }
+
                         dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
 
                     }
@@ -193,8 +205,15 @@ namespace VstsRestAPI.WorkItemAndTracking
                             boardRowField = string.Format("/fields/{0}", boardRowFieldName);
                         }
 
-                        if (newWI.fields.SystemDescription == null) newWI.fields.SystemDescription = newWI.fields.SystemTitle;
-                        if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane)) newWI.fields.SystemBoardLane = string.Empty;
+                        if (newWI.fields.SystemDescription == null)
+                        {
+                            newWI.fields.SystemDescription = newWI.fields.SystemTitle;
+                        }
+
+                        if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane))
+                        {
+                            newWI.fields.SystemBoardLane = string.Empty;
+                        }
 
                         dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
                         if (SelectedTemplate.ToLower() == "smarthotel360")
@@ -215,10 +234,25 @@ namespace VstsRestAPI.WorkItemAndTracking
                             dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
                         }
 
-                        if (newWI.fields.SystemTags != null) dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
-                        if (newWI.fields.MicrosoftVSTSTCMParameters != null) dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
-                        if (newWI.fields.MicrosoftVSTSTCMSteps != null) dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
-                        if (!string.IsNullOrWhiteSpace(boardRowField)) dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
+                        if (newWI.fields.SystemTags != null)
+                        {
+                            dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                        }
+
+                        if (newWI.fields.MicrosoftVSTSTCMParameters != null)
+                        {
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
+                        }
+
+                        if (newWI.fields.MicrosoftVSTSTCMSteps != null)
+                        {
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(boardRowField))
+                        {
+                            dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
+                        }
                     }
                     UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), ProjectName, dicWIFields);
                 }
@@ -255,7 +289,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var method = new HttpMethod("PATCH");
 
                 // send the request               
-                var request = new HttpRequestMessage(method, ProjectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=2.2") { Content = postValue };
+                var request = new HttpRequestMessage(method, ProjectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
                 var response = client.SendAsync(request).Result;
 
 
@@ -292,7 +326,11 @@ namespace VstsRestAPI.WorkItemAndTracking
                 foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.value)
                 {
                     //continue next iteration if there is no relation
-                    if (newWI.relations == null) continue;
+                    if (newWI.relations == null)
+                    {
+                        continue;
+                    }
+
                     int relCount = newWI.relations.Length;
                     string oldWIID = newWI.id.ToString();
 
@@ -363,16 +401,16 @@ namespace VstsRestAPI.WorkItemAndTracking
                                         value = new
                                         {
                                             rel = "AttachedFile",
-                                            url= attchmentURl
+                                            url = attchmentURl
                                         }
                                     };
                                     bool isAttachmemntCreated = UpdateLink(string.Empty, WIToUpdate, patchWorkItem);
                                 }
                             }
-                            if(rel.rel== "ArtifactLink")
+                            if (rel.rel == "ArtifactLink")
                             {
                                 rel.url = rel.url.Replace("$projectId$", projectId).Replace("$RepositoryId$", repositoryId);
-                                foreach(var pullReqest in pullRequests)
+                                foreach (var pullReqest in pullRequests)
                                 {
                                     string key = string.Format("${0}$", pullReqest.Key);
                                     rel.url = rel.url.Replace(key, pullReqest.Value);
@@ -417,7 +455,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var patchValue = new StringContent(JsonConvert.SerializeObject(patchWorkItem), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
 
                 var method = new HttpMethod("PATCH");
-                var request = new HttpRequestMessage(method, "/_apis/wit/workitems/" + WItoUpdate + "?bypassRules=true&api-version=2.2") { Content = patchValue };
+                var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + WItoUpdate + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -451,7 +489,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     {
                         ByteArrayContent content = new ByteArrayContent(bytes);
                         content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                        HttpResponseMessage uploadResponse = client.PostAsync("_apis/wit/attachments?fileName=" + _fileName + "&api-version=2.2", content).Result;
+                        HttpResponseMessage uploadResponse = client.PostAsync("_apis/wit/attachments?fileName=" + _fileName + "&api-version=" + _configuration.VersionNumber, content).Result;
 
                         if (uploadResponse.IsSuccessStatusCode)
                         {
@@ -462,7 +500,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return string.Empty;
             }

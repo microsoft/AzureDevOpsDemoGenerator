@@ -108,7 +108,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");
                 //PUT https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/columns?api-version=4.1
-                var request = new HttpRequestMessage(method, "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/columns?api-version=4.1") { Content = patchValue };
+                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/columns?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -138,7 +138,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 // var method = new HttpMethod("GET");
 
-                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20Items?api-version=" + _configuration.VersionNumber + "-preview").Result;
+                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20Items?api-version=" + _configuration.VersionNumber).Result;
                 // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -163,7 +163,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 // var method = new HttpMethod("GET");
 
-                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Stories?api-version=" + _configuration.VersionNumber + "-preview").Result;
+                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Stories?api-version=" + _configuration.VersionNumber).Result;
                 // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -188,11 +188,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         {
             using (var client = GetHttpClient())
             {
-                //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-                // var method = new HttpMethod("GET");
-
                 var response = client.GetAsync("/" + projectName + "/_backlogs/board/Backlog%20items").Result;
-                // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
 
