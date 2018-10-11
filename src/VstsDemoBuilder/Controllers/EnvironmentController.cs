@@ -737,7 +737,7 @@ namespace VstsDemoBuilder.Controllers
             //}
             Accounts.AccountList Accounts = new Accounts.AccountList();
             var client = new HttpClient();
-            string requestContent = "https://app.vssps.visualstudio.com/_apis/Accounts?memberId=" + MemberID + "&api-version=4.1-preview";
+            string requestContent = "https://app.vssps.visualstudio.com/_apis/Accounts?memberId=" + MemberID + "&api-version=4.1";
             var request = new HttpRequestMessage(HttpMethod.Get, requestContent);
             request.Headers.Add("Authorization", "Bearer " + Details.access_token);
             try
@@ -881,9 +881,21 @@ namespace VstsDemoBuilder.Controllers
         {
             PAT = model.accessToken;
             //define versions to be use
-            string defaultVersion = System.Configuration.ConfigurationManager.AppSettings["Version2.2"];
-            string ver2_0 = System.Configuration.ConfigurationManager.AppSettings["Version2.0"];
-            string Ver3_0 = System.Configuration.ConfigurationManager.AppSettings["Version3.0"];
+            //string defaultVersion = System.Configuration.ConfigurationManager.AppSettings["Version2.2"];
+            //string ver2_0 = System.Configuration.ConfigurationManager.AppSettings["Version2.0"];
+            //string Ver3_0 = System.Configuration.ConfigurationManager.AppSettings["Version3.0"];
+            string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
+            string RepoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
+            string BuildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
+            string ReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
+            string WikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
+            string BoardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
+            string WorkItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
+            string QueriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
+            string EndPointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
+            string ExtensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
+            string DashboardVersion = System.Configuration.ConfigurationManager.AppSettings["DashboardVersion"];
+
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
             {
@@ -911,14 +923,28 @@ namespace VstsDemoBuilder.Controllers
                 objIssue.CreateReportWI(PATBase64, "1.0", URL, websiteUrl, ReportName, "", templateUsed, ProjectId, model.Region);
             }
             //configuration setup
-            string _credentials = model.accessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", PAT)));
-            VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
-            VstsRestAPI.Configuration _releaseDefinitionConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
-            VstsRestAPI.Configuration _createReleaseConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, AccountName = accountName };
-            VstsRestAPI.Configuration _configuration3_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _configuration2_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
-            VstsRestAPI.Configuration _cardConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
-            VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT, AccountName = accountName };
+            string _credentials = model.accessToken;
+            //Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", PAT)));
+            //VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
+            //VstsRestAPI.Configuration _releaseDefinitionConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
+            //VstsRestAPI.Configuration _createReleaseConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, AccountName = accountName };
+            //VstsRestAPI.Configuration _configuration3_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            //VstsRestAPI.Configuration _configuration2_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
+            //VstsRestAPI.Configuration _cardConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
+            //VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT, AccountName = accountName };
+
+
+            VstsRestAPI.Configuration _ProjectCreationVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ProjectCreationVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _ReleaseVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ReleaseVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _BuildVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = BuildVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _WorkItemsVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = WorkItemsVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _QueriesVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = QueriesVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _BoardVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = BoardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _WikiVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = WikiVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _EndPointVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = EndPointVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _ExtensionVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ExtensionVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _DashboardVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = DashboardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _RepoVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = RepoVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
             string projTemplateFile = string.Format(templatesFolder + @"{0}\ProjectTemplate.json", model.SelectedTemplate);
@@ -963,7 +989,7 @@ namespace VstsDemoBuilder.Controllers
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
 
-            Projects proj = new Projects(_defaultConfiguration);
+            Projects proj = new Projects(_ProjectCreationVersion);
             string projectId = proj.CreateTeamProject(jsonProject);
 
             if (projectId == "-1")
@@ -991,7 +1017,7 @@ namespace VstsDemoBuilder.Controllers
             Stopwatch watch = new Stopwatch();
             watch.Start();
             string projectStatus = string.Empty;
-            Projects objProject = new Projects(_defaultConfiguration);
+            Projects objProject = new Projects(_ProjectCreationVersion);
             while (projectStatus.ToLower() != "wellformed")
             {
                 projectStatus = objProject.GetProjectStateByName(model.ProjectName);
@@ -1014,11 +1040,11 @@ namespace VstsDemoBuilder.Controllers
             }
 
             //create teams
-            CreateTeams(templatesFolder, model, template.Teams, _defaultConfiguration, model.id, template.TeamArea);
+            CreateTeams(templatesFolder, model, template.Teams, _ProjectCreationVersion, model.id, template.TeamArea);
 
             //current user Details
             string teamName = model.ProjectName + " team";
-            TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _defaultConfiguration, model.id);
+            TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _ProjectCreationVersion, model.id);
 
             var teamMember = teamMembers.value.FirstOrDefault();
             if (teamMember != null)
@@ -1047,19 +1073,19 @@ namespace VstsDemoBuilder.Controllers
             {
                 BoardType = "Stories";
             }
-            BoardColumn objBoard = new BoardColumn(_defaultConfiguration);
+            BoardColumn objBoard = new BoardColumn(_BoardVersion);
             objBoard.RefreshBoard(model.ProjectName);
             string updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
-            SwimLanes objSwimLanes = new SwimLanes(_configuration2_0);
+            SwimLanes objSwimLanes = new SwimLanes(_BoardVersion);
             bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, BoardType);
-            EnableEpic(templatesFolder, model, template.SetEpic, _configuration3_0, model.id);
-            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _configuration2_0, model.id, BoardType);
+            EnableEpic(templatesFolder, model, template.SetEpic, _BoardVersion, model.id);
+            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _BoardVersion, model.id, BoardType);
             if (success)
             {
                 //update Card Fields
-                UpdateCardFields(templatesFolder, model, template.CardField, _cardConfiguration, model.id, BoardType);
+                UpdateCardFields(templatesFolder, model, template.CardField, _BoardVersion, model.id, BoardType);
                 //Update card styles
-                UpdateCardStyles(templatesFolder, model, template.CardStyle, _cardConfiguration, model.id, BoardType);
+                UpdateCardStyles(templatesFolder, model, template.CardStyle, _BoardVersion, model.id, BoardType);
                 //Enable Epic Backlog
                 AddMessage(model.id, "Board-Column, Swimlanes, Styles are updated");
             }
@@ -1067,9 +1093,9 @@ namespace VstsDemoBuilder.Controllers
 
             //update sprint dates
             //AddMessage(model.id, "Updating sprint dates...");
-            UpdateSprintItems(model, _defaultConfiguration, settings);
-            UpdateIterations(model, _defaultConfiguration, templatesFolder, "Iterations.json");
-            RenameIterations(model, _defaultConfiguration, settings.renameIterations);
+            UpdateSprintItems(model, _BoardVersion, settings);
+            UpdateIterations(model, _BoardVersion, templatesFolder, "Iterations.json");
+            RenameIterations(model, _BoardVersion, settings.renameIterations);
             //AddMessage(model.id, "Sprint dates updated");
 
             //create service endpoint
@@ -1082,11 +1108,11 @@ namespace VstsDemoBuilder.Controllers
             }
             string endPointJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CreateService);
             lstEndPointsJsonPath.Add(endPointJson);
-            CreateServiceEndPoint(model, lstEndPointsJsonPath, _configuration3_0);
+            CreateServiceEndPoint(model, lstEndPointsJsonPath, _EndPointVersion);
             //AddMessage(model.id, "Service endpoints created");
 
             //create agent queues on demand
-            Queue queue = new Queue(_configuration3_0);
+            Queue queue = new Queue(_BuildVersion);
             model.Environment.AgentQueues = queue.GetQueues();
             if (settings.queues != null && settings.queues.Count > 0)
             {
@@ -1116,11 +1142,11 @@ namespace VstsDemoBuilder.Controllers
             }
             foreach (string importSourceCode in lstImportSourceCodeJsonPaths)
             {
-                ImportSourceCode(templatesFolder, model, importSourceCode, _defaultConfiguration, _configuration3_0, model.id);
+                ImportSourceCode(templatesFolder, model, importSourceCode, _RepoVersion, model.id);
             }
             if (isDefaultRepoTodetele)
             {
-                Repository objRepository = new Repository(_defaultConfiguration);
+                Repository objRepository = new Repository(_RepoVersion);
                 string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
                 bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
             }
@@ -1130,7 +1156,7 @@ namespace VstsDemoBuilder.Controllers
             Thread.Sleep(10000);
 
             //Create WIKI
-            SetUpWiki(templatesFolder, model, _wikiConfiguration);
+            SetUpWiki(templatesFolder, model, _WikiVersion);
 
 
             List<string> lstPullRequestJsonPaths = new List<string>();
@@ -1141,7 +1167,7 @@ namespace VstsDemoBuilder.Controllers
             }
             foreach (string pullReq in lstPullRequestJsonPaths)
             {
-                CreatePullRequest(templatesFolder, model, pullReq, _configuration3_0);
+                CreatePullRequest(templatesFolder, model, pullReq, _WorkItemsVersion);
             }
 
             //Configure account users
@@ -1153,7 +1179,7 @@ namespace VstsDemoBuilder.Controllers
             else if (model.UserMethod == "Random")
             {
                 //GetAccount Members
-                Account objAccount = new Account(_defaultConfiguration);
+                Account objAccount = new Account(_ProjectCreationVersion);
                 //accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
                 foreach (var member in accountMembers.value)
                 {
@@ -1232,7 +1258,7 @@ namespace VstsDemoBuilder.Controllers
                 WorkItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
             }
 
-            ImportWorkItems import = new ImportWorkItems(_defaultConfiguration, model.Environment.BoardRowFieldName);
+            ImportWorkItems import = new ImportWorkItems(_WorkItemsVersion, model.Environment.BoardRowFieldName);
             if (System.IO.File.Exists(projectSettingsFile))
             {
                 string AttchmentFilesFolder = string.Format(templatesFolder + @"{0}\WorkItemAttachments", model.SelectedTemplate);
@@ -1268,7 +1294,7 @@ namespace VstsDemoBuilder.Controllers
             //if (lstTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "Creating testplans, testsuites and testcases..."); }
             foreach (string testPlan in lstTestPlansJsonPaths)
             {
-                CreateTestManagement(WImapping, model, testPlan, templatesFolder, _defaultConfiguration);
+                CreateTestManagement(WImapping, model, testPlan, templatesFolder, _WorkItemsVersion);
             }
             if (lstTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "TestPlans, TestSuites and TestCases created"); }
 
@@ -1280,7 +1306,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 System.IO.Directory.GetFiles(BuildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new Models.BuildDef() { FilePath = i }));
             }
-            bool isBuild = CreateBuildDefinition(templatesFolder, model, _defaultConfiguration, model.id);
+            bool isBuild = CreateBuildDefinition(templatesFolder, model, _BuildVersion, model.id);
             if (isBuild)
             {
                 AddMessage(model.id, "Build definition created");
@@ -1290,7 +1316,7 @@ namespace VstsDemoBuilder.Controllers
             string BuildJson = string.Format(templatesFolder + @"{0}\QueueBuild.json", model.SelectedTemplate);
             if (System.IO.File.Exists(BuildJson))
             {
-                QueueABuild(model, BuildJson, _defaultConfiguration);
+                QueueABuild(model, BuildJson, _BuildVersion);
             }
 
             //create release Definition
@@ -1301,7 +1327,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 System.IO.Directory.GetFiles(ReleaseDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.ReleaseDefinitions.Add(new Models.ReleaseDef() { FilePath = i }));
             }
-            bool IsReleased = CreateReleaseDefinition(templatesFolder, model, _releaseDefinitionConfiguration, _configuration3_0, model.id, teamMembers);
+            bool IsReleased = CreateReleaseDefinition(templatesFolder, model, _ReleaseVersion, model.id, teamMembers);
             if (IsReleased)
             {
                 AddMessage(model.id, "Release definition created");
@@ -1318,7 +1344,7 @@ namespace VstsDemoBuilder.Controllers
             }
             if (Directory.Exists(dashboardPath))
             {
-                CreateQueryAndWidgets(templatesFolder, model, lstDashboardQueriesPath, _defaultConfiguration, _configuration2_0, _configuration3_0, _releaseDefinitionConfiguration);
+                CreateQueryAndWidgets(templatesFolder, model, lstDashboardQueriesPath, _QueriesVersion, _DashboardVersion,_ReleaseVersion,_ProjectCreationVersion,_BoardVersion);
                 AddMessage(model.id, "Queries, Widgets and Charts created");
                 Thread.Sleep(2000);
             }
@@ -1810,7 +1836,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="importSourceConfiguration"></param>
         /// <param name="id"></param>
-        private void ImportSourceCode(string templatesFolder, Project model, string sourceCodeJSON, VstsRestAPI.Configuration _defaultConfiguration, VstsRestAPI.Configuration importSourceConfiguration, string id)
+        private void ImportSourceCode(string templatesFolder, Project model, string sourceCodeJSON, VstsRestAPI.Configuration _Repo, string id)
         {
 
             try
@@ -1819,7 +1845,7 @@ namespace VstsDemoBuilder.Controllers
                 //string jsonSourceCode = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, sourceCodeJSON);
                 if (System.IO.File.Exists(sourceCodeJSON))
                 {
-                    Repository objRepository = new Repository(_defaultConfiguration);
+                    Repository objRepository = new Repository(_Repo);
                     string repositoryName = Path.GetFileName(sourceCodeJSON).Replace(".json", "");
                     if (model.ProjectName.ToLower() == repositoryName.ToLower())
                     {
@@ -1841,7 +1867,7 @@ namespace VstsDemoBuilder.Controllers
                         jsonSourceCode = jsonSourceCode.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                     }
 
-                    Repository objRepositorySourceCode = new Repository(importSourceConfiguration);
+                    Repository objRepositorySourceCode = new Repository(_Repo);
                     bool copySourceCode = objRepositorySourceCode.getSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
 
                     if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
@@ -2175,7 +2201,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="id"></param>
         /// <param name="teamMembers"></param>
         /// <returns></returns>
-        private bool CreateReleaseDefinition(string templatesFolder, Project model, VstsRestAPI.Configuration _releaseConfiguration, VstsRestAPI.Configuration _config3_0, string id, TeamMemberResponse.TeamMembers teamMembers)
+        private bool CreateReleaseDefinition(string templatesFolder, Project model, VstsRestAPI.Configuration _releaseConfiguration, string id, TeamMemberResponse.TeamMembers teamMembers)
         {
             bool flag = false;
             try
@@ -2289,12 +2315,12 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_configuration2"></param>
         /// <param name="_configuration3"></param>
         /// <param name="releaseConfig"></param>
-        public void CreateQueryAndWidgets(string templatesFolder, Project model, List<string> lstQueries, VstsRestAPI.Configuration _defaultConfiguration, VstsRestAPI.Configuration _configuration2, VstsRestAPI.Configuration _configuration3, VstsRestAPI.Configuration releaseConfig)
+        public void CreateQueryAndWidgets(string templatesFolder, Project model, List<string> lstQueries, VstsRestAPI.Configuration _QueriesVersion, VstsRestAPI.Configuration _DashboardVersion, VstsRestAPI.Configuration _releaseConfig, VstsRestAPI.Configuration _ProjectConfig, VstsRestAPI.Configuration _BoardConfig)
         {
             try
             {
-                Querys objWidget = new Querys(_configuration3);
-                Querys objQuery = new Querys(_defaultConfiguration);
+                Querys objWidget = new Querys(_DashboardVersion);
+                Querys objQuery = new Querys(_QueriesVersion);
                 List<QueryResponse> queryResults = new List<QueryResponse>();
 
                 //GetDashBoardDetails
@@ -2344,7 +2370,7 @@ namespace VstsDemoBuilder.Controllers
                             string xamarin_IOSBuild = model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id : string.Empty;
                             string RidesApiBuild = model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault().Id : string.Empty;
 
-                            ReleaseDefinition objrelease = new ReleaseDefinition(releaseConfig);
+                            ReleaseDefinition objrelease = new ReleaseDefinition(_releaseConfig);
                             int[] AndroidEnvironmentIds = objrelease.GetEnvironmentIdsByName(model.ProjectName, "Xamarin.Android", "Test in HockeyApp", "Publish to store");
                             string AndroidbuildDefId = model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault().Id : string.Empty;
                             string AndroidreleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault().Id : string.Empty;
@@ -2562,33 +2588,7 @@ namespace VstsDemoBuilder.Controllers
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360V1")
-                    {
-                        if (isDashboardDeleted)
-                        {
-                            var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "PublicWebCI").FirstOrDefault();
-                            var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "PublicWebCD").FirstOrDefault();
-                            QueryResponse ProductPlanning = objQuery.GetQueryByPathAndName(model.ProjectName, "Product Planning", "Shared%20Queries");
-                            QueryResponse ActiveTasks = objQuery.GetQueryByPathAndName(model.ProjectName, "Active Tasks", "Shared%20Queries/Current%20Iteration");
-                            Team objTeam = new Team(_defaultConfiguration);
-                            TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
-
-                            dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
-                            dashBoardTemplate = dashBoardTemplate
-                            .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : "")
-                            .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : "")
-                            .Replace("$ProductPlanning$", ProductPlanning.id != null ? ProductPlanning.id : "")
-                            .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList["SmartHotel360"])
-                            .Replace("$CompletedTasks$", queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Completed Tasks").FirstOrDefault().id : string.Empty)
-                            .Replace("$PublicWebBuild$", PublicWebBuild != null ? PublicWebBuild.Id : "")
-                            .Replace("$PublicWebCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebCD").FirstOrDefault().Id : string.Empty)
-                            .Replace("$ActiveTasks$", ActiveTasks.id);
-
-
-                            string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
-                            objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
-                        }
-                    }
+                    
                     if (model.SelectedTemplate.ToLower() == "smarthotel360")
                     {
                         if (isDashboardDeleted)
@@ -2596,9 +2596,9 @@ namespace VstsDemoBuilder.Controllers
                             var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "PublicWebSiteCI").FirstOrDefault();
                             var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault();
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
-                            Team objTeam = new Team(_defaultConfiguration);
+                            Team objTeam = new Team(_ProjectConfig);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
-                            ClassificationNodes objnodes = new ClassificationNodes(_defaultConfiguration);
+                            ClassificationNodes objnodes = new ClassificationNodes(_BoardConfig);
                             SprintResponse.Sprints sprints = objnodes.GetSprints(model.ProjectName);
                             QueryResponse AllItems = objQuery.GetQueryByPathAndName(model.ProjectName, "All Items", "Shared%20Queries");
                             QueryResponse BacklogBoardWI = objQuery.GetQueryByPathAndName(model.ProjectName, "BacklogBoard WI", "Shared%20Queries");
