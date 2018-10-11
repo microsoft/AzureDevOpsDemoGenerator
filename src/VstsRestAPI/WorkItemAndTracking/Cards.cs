@@ -51,7 +51,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     patchValue = new StringContent(JsonConvert.SerializeObject(Agilecardfield), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 }
                 var method = new HttpMethod("PUT");
-                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/cardsettings?api-version=4.1";
+                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/cardsettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
@@ -89,7 +89,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var patchValue = new StringContent(JsonConvert.SerializeObject(cardStyles), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PATCH");
                 //PATCH https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings?api-version=4.1
-                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/cardrulesettings?api-version=4.1";
+                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/cardrulesettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
@@ -118,7 +118,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var jsonContent = new StringContent(Json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("PATCH");
                 string teamName = projectName + " Team";
-                var request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/work/teamsettings?api-version=3.0-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

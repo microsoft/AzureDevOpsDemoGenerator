@@ -1,12 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using VstsRestAPI.Viewmodel;
 using VstsRestAPI.Viewmodel.ReleaseDefinition;
 
 namespace VstsRestAPI.Release
@@ -29,7 +26,7 @@ namespace VstsRestAPI.Release
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=4.0-preview.3") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -57,7 +54,7 @@ namespace VstsRestAPI.Release
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber + "-preview.2") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -81,7 +78,7 @@ namespace VstsRestAPI.Release
                 string requestURL = string.Empty;
                 using (var client = GetHttpClient())
                 {
-                    requestURL = string.Format("{0}/_apis/release/definitions?api-version=3.0-preview.1", project);
+                    requestURL = string.Format("{0}/_apis/release/definitions?api-version=" + _configuration.VersionNumber, project);
                     HttpResponseMessage response = client.GetAsync(requestURL).Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -95,7 +92,7 @@ namespace VstsRestAPI.Release
                             client1.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                             client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
 
-                            requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=3.0-preview.1", project, requiredDefinitionId);
+                            requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=" + _configuration.VersionNumber, project, requiredDefinitionId);
                             HttpResponseMessage ResponseDef = client1.GetAsync(requestURL).Result;
                             if (response.IsSuccessStatusCode)
                             {
@@ -112,4 +109,4 @@ namespace VstsRestAPI.Release
             return EnvironmentIds;
         }
     }
-}   
+}

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using VstsRestAPI.Viewmodel;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
-using Newtonsoft;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
@@ -34,7 +28,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, "/_apis/projects/" + project + "/teams?api-version=4.1") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, client.BaseAddress + "/_apis/projects/" + project + "/teams?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -97,7 +91,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/areas?api-version=1.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/areas?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -132,7 +126,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/teamfieldvalues?api-version=2.0-preview.1") { Content = patchValue };
+                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/teamfieldvalues?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -159,7 +153,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings?api-version=3.0-preview").Result;
+                HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -191,7 +185,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings?api-version=3.0-preview") { Content = postValue };
+                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber) { Content = postValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -218,7 +212,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=v2.0-preview").Result;
+                HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -249,7 +243,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=v2.0-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -277,7 +271,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             TeamResponse viewModel = new TeamResponse();
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "?api-version=2.2").Result;
+                HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     viewModel = response.Content.ReadAsAsync<TeamResponse>().Result;
@@ -305,7 +299,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 
                 var method = new HttpMethod("PATCH");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + projectName + "%20Team/_apis/work/teamsettings/teamfieldvalues?api-version=2.0-preview.1") { Content = patchValue };
+                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + projectName + "%20Team/_apis/work/teamsettings/teamfieldvalues?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {

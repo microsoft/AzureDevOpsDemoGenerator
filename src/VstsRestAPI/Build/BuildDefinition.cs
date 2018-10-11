@@ -1,12 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using VstsRestAPI.Viewmodel;
 using VstsRestAPI.Viewmodel.Build;
 
 
@@ -33,11 +27,11 @@ namespace VstsRestAPI.Build
                 string uri = "";
                 if (SelectedTemplate == "SmartHotel360V1" || SelectedTemplate == "SmartHotel360")
                 {
-                    uri = project + "/_apis/build/definitions?api-version=4.1-preview";
+                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
                 }
                 else
                 {
-                    uri = project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
+                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=2.2";
                 }
                 var request = new HttpRequestMessage(method, uri) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
