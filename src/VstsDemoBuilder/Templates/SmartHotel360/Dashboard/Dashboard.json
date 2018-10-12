@@ -53,36 +53,36 @@
         "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BuildChartWidget.Configuration",
         "isNameConfigurable": true
       },
-        {
-            "name": "Burndown",
-            "position": {
-                "row": 6,
-                "column": 3
-            },
-            "size": {
-                "rowSpan": 2,
-                "columnSpan": 3
-            },
-            "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":true,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":true,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":true,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":1,\"settings\":[\"$sprint2$\",\"$sprint3$\"]}},\"totalScopeTrendlineEnabled\":true}",
-            "settingsVersion": {
-                "major": 1,
-                "minor": 0,
-                "patch": 0
-            },
-            "artifactId": "",
-            "isEnabled": true,
-            "contentUri": null,
-            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
-            "typeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
-            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
-            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
-            "isNameConfigurable": true,
-            "lightboxOptions": {
-                "width": 900,
-                "height": 700,
-                "resizable": true
-            }
+      {
+        "name": "Burndown",
+        "position": {
+          "row": 6,
+          "column": 3
         },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 3
+        },
+        "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":true,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":true,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":true,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":1,\"settings\":[\"$sprint2$\",\"$sprint3$\"]}},\"totalScopeTrendlineEnabled\":true}",
+        "settingsVersion": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
         {
             "name": "All Items by Assigned To",
             "position": {
