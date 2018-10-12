@@ -77,7 +77,8 @@ namespace VstsRestAPI.QuerysAndWidgets
             {
 
                 HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
-                if (ResponseParent.IsSuccessStatusCode)
+
+                if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     using (var client = GetHttpClient())
                     {
