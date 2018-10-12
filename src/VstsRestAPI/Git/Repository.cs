@@ -180,7 +180,7 @@ namespace VstsRestAPI.Git
             using (var client = GetHttpClient())
             {
                 var method = new HttpMethod("DELETE");
-                var request = new HttpRequestMessage(method, "/_apis/git/repositories/" + repositoryId + "?api-version=" + _configuration.VersionNumber);
+                var request = new HttpRequestMessage(method, _configuration.UriString + Project + "/_apis/git/repositories/" + repositoryId + "?api-version=" + _configuration.VersionNumber);
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {

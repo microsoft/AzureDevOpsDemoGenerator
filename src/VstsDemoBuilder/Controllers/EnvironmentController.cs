@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM5MjY5ODgwLCJleHAiOjE1MzkyNzM0ODB9.aow6Im4qVhlk9xnFC99sTF9JYtZnKDHmCbhvW1RhFOog6ObGiLD1pkSsEQ7F4YBcRMg3BnIDrUPTbiXDrKCdEPvkUr1_9LINe0L6fDltm0VVS377A6joyrZLTMfrKx7osYr9CPT_l6VQe4goSaHpFBNELY8UpaNLnBOY5c08PqGEK7YDFqWp_-oX2MS_W5ZHK98PsSr6GiHg-seA5o6wGJbA9VmSGzBcfLMlB1-f1_xsttx_7fJshtanrzymVZhBYWA-F2A2gaGhvEHFpRRrTSWhmThGy__wW9Qejyu_eYKalj0xrBDfoSbQKzd1VjrZyNvb4IieKZ6Phpn5Jor6CA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI0ZTY0NjZlYy0wNGQ5LTQyYzYtYWNhZi0wMmQ3NWVhM2VjMDMiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM5MzI2OTQxLCJleHAiOjE1MzkzMzA1NDF9.TyiKM_jTPSKoBJzLqqG9VLGfTTj3Km-PFp0xYINBDVrcmp9EaRqNRyDtaVaD7e9jj5yRxp6okgaLFWLTyalF8pB9sRSoGQPekTWHWwNR3vC_8I8do5rncm6_73I9ScmoQKxLZg9av8rOnGoeqGmlZcQaEbCGoPsS-LORk9nqAIDLfRxO7wqJfQxl9psyfMh_AVzPfx-oskvovn32vzgoxYo_CcBtomWanVRN5rApNzhU8bV94MIW1M3qnPMFxzyP-ZoXEG6HFDeY2DbGcUgL9B73bJOjj5CS2vTMJTynk67R0J5VhBqHnyHIK1O8EeemlAAJstFXJzFaFKyc_ccBZg";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -2369,7 +2369,7 @@ namespace VstsDemoBuilder.Controllers
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
 
                             QueryResponse FeedBack = objQuery.GetQueryByPathAndName(model.ProjectName, "Feedback", "Shared%20Queries");
-                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries/Current%20Sprint");
+                            QueryResponse UnfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries");
 
 
                             dashBoardTemplate = dashBoardTemplate.Replace("$Feedback$", FeedBack.id).

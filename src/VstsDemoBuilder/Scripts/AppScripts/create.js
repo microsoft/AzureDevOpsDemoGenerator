@@ -971,7 +971,7 @@ $("#txtProjectName").keyup(function () {
             var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus(); 
+            $("#txtProjectName").focus();
             return false;
         }
         else if (projectName === "NUL" || projectName === "CON" || projectName === "AUX" || projectName === "SERVER" || projectName === "SignalR" || projectName === "DefaultCollection" || projectName === "Web" || projectName === "App_code" || projectName === "App_Browsers" || projectName === "App_Data") {
