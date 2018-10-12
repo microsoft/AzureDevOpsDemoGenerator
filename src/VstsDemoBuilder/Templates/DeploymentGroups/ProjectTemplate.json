@@ -1,6 +1,6 @@
 {
   "Name": "DeploymentGroups",
-  "Description": "Provision the team project using this template to build and release dotnet applications to multiple target servers on Azure using VSTS Deployment Groups.<p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p> ",
+  "Description": "Provision a team project using this template to learn how you build and release  applications to multiple target servers on Azure using Deployment Groups with Azure Pipelines.<p>Lab URL: <a style='color:blue;' href='https://azuredevopslabs.com/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a></p> ",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "",

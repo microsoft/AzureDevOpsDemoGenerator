@@ -857,6 +857,9 @@ namespace VstsDemoBuilder.Controllers
             string AgentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
             string GetSourceCodeVersion = System.Configuration.ConfigurationManager.AppSettings["GetSourceCodeVersion"];
             string TestPlanVersion = System.Configuration.ConfigurationManager.AppSettings["TestPlanVersion"];
+            string ReleaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
+            string DefaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+
 
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
@@ -896,21 +899,21 @@ namespace VstsDemoBuilder.Controllers
             //VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT, AccountName = accountName };
 
 
-            VstsRestAPI.Configuration _ProjectCreationVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ProjectCreationVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _ReleaseVersion = new VstsRestAPI.Configuration() { UriString = "https://vsrm.dev.azure.com/" + accountName + "/", VersionNumber = ReleaseVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _BuildVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = BuildVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _WorkItemsVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = WorkItemsVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _QueriesVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = QueriesVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _BoardVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = BoardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _WikiVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = WikiVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _EndPointVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = EndPointVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _ExtensionVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = ExtensionVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _DashboardVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = DashboardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _RepoVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = RepoVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _ProjectCreationVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = ProjectCreationVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _ReleaseVersion = new VstsRestAPI.Configuration() { UriString = ReleaseHost + accountName + "/", VersionNumber = ReleaseVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _BuildVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = BuildVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _WorkItemsVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = WorkItemsVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _QueriesVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = QueriesVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _BoardVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = BoardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _WikiVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = WikiVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _EndPointVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = EndPointVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _ExtensionVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = ExtensionVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _DashboardVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = DashboardVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _RepoVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = RepoVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
 
-            VstsRestAPI.Configuration _GetSourceCodeVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = GetSourceCodeVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _AgentQueueVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = AgentQueueVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _TestPlanVersion = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + accountName + "/", VersionNumber = TestPlanVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _GetSourceCodeVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = GetSourceCodeVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _AgentQueueVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = AgentQueueVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
+            VstsRestAPI.Configuration _TestPlanVersion = new VstsRestAPI.Configuration() { UriString = DefaultHost + accountName + "/", VersionNumber = TestPlanVersion, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
 
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
@@ -2005,7 +2008,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="testPlanJson"></param>
         /// <param name="templateFolder"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateTestManagement(List<WIMapData> WImapping, Project model, string testPlanJson, string templateFolder, VstsRestAPI.Configuration _WorkItemConfig)
+        private void CreateTestManagement(List<WIMapData> WImapping, Project model, string testPlanJson, string templateFolder, VstsRestAPI.Configuration _TestPlanVersion)
         {
             try
             {
@@ -2018,7 +2021,7 @@ namespace VstsDemoBuilder.Controllers
                     testPlanJson = model.ReadJsonFile(testPlanJson);
 
                     testPlanJson = testPlanJson.Replace("$project$", model.ProjectName);
-                    TestManagement objTest = new TestManagement(_WorkItemConfig);
+                    TestManagement objTest = new TestManagement(_TestPlanVersion);
                     string[] testPlanResponse = new string[2];
                     testPlanResponse = objTest.CreateTestPlan(testPlanJson, model.ProjectName);
 

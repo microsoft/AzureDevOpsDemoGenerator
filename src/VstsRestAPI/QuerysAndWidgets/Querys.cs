@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using VstsRestAPI.Viewmodel.QuerysAndWidgets;
 
 namespace VstsRestAPI.QuerysAndWidgets
@@ -77,7 +78,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             {
 
                 HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
-
+                Thread.Sleep(2000);
                 if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     using (var client = GetHttpClient())
