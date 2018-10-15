@@ -148,8 +148,7 @@
     <Compile Include="WorkItemAndTracking\ImportWorkItems.cs" />
     <Compile Include="WorkItemAndTracking\IssueWI.cs" />
     <Compile Include="WorkItemAndTracking\SwimLanes.cs" />
-    <Compile Include="WorkItemAndTracking\WorkItemNew.cs" />
-    <Compile Include="WorkItemAndTracking\WorkItems.cs" />
+    <Compile Include="WorkItemAndTracking\WorkItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

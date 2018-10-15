@@ -74,9 +74,9 @@ namespace VstsDemoBuilder.Models
         public string UserUniqueId { get; set; }
         public string ProjectId { get; set; }
         public string ProjectName { get; set; }
-        public Dictionary<string, string> RepositoryIdList { get; set; }
+        public Dictionary<string, string> repositoryIdList { get; set; }
         public Dictionary<string, int> AgentQueues { get; set; }
-        public Dictionary<string, string> ServiceEndpoints { get; set; }
+        public Dictionary<string, string> serviceEndpoints { get; set; }
 
         public Dictionary<string, string> pullRequests { get; set; }
         public string BoardRowFieldName { get; set; }

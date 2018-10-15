@@ -2,19 +2,15 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Web;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
-    public partial class WorkItemNew : ApiServiceBase
+    public partial class WorkItem : ApiServiceBase
     {
-        public WorkItemNew(IConfiguration configuration) : base(configuration) { }
+        public WorkItem(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Method to create the workItems
@@ -76,34 +72,37 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Method to update WorkItems based on id and workItem Type
         /// </summary>
         /// <param name="json"></param>
-        /// <param name="ProjectName"></param>
+        /// <param name="projectName"></param>
         /// <returns></returns>
-        public bool UpdateWorkItemUsingByPassRules(string json, string ProjectName, string currentUser, string jsonSettings)
+        public bool UpdateWorkItemUsingByPassRules(string json, string projectName, string currentUser, string jsonSettings)
         {
             string itemType = "";
             string itemTypes = "";
-            string UserType = "";
-            string JSON_Users = "";
-            string JsonType = "";
-            string JsonTypes = "";
-            List<int> WorkIds = new List<int>();
-            var jitems = JObject.Parse(jsonSettings);
-            List<string> Tags = new List<string>();
-            JArray Tag = jitems["tags"].Value<JArray>();
-            foreach (var data in Tag.Values())
+            string userType = "";
+            string json_Users = "";
+            string jsonType = "";
+            string jsonTypes = "";
+            List<int> workItemIds = new List<int>();
+            var jsonItems = JObject.Parse(jsonSettings);
+            List<string> tags = new List<string>();
+            JArray tag = jsonItems["tags"].Value<JArray>();
+            foreach (var data in tag.Values())
             {
-                Tags.Add(data.ToString());
+                tags.Add(data.ToString());
             }
 
 
-            JArray UserList = jitems["users"].Value<JArray>();
-            List<string> Users = new List<string>();
-            foreach (var data in UserList.Values())
+            JArray userList = jsonItems["users"].Value<JArray>();
+            List<string> users = new List<string>();
+            foreach (var data in userList.Values())
             {
-                Users.Add(data.ToString());
+                users.Add(data.ToString());
             }
 
-            if (!string.IsNullOrEmpty(currentUser)) Users.Add(currentUser);
+            if (!string.IsNullOrEmpty(currentUser))
+            {
+                users.Add(currentUser);
+            }
 
             Dictionary<string, List<string>> dic = new Dictionary<string, List<string>>
             {
@@ -113,7 +112,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 "In Progress",
                 "New",
                 "Done",
-            }
+                    }
                 },
                 {
                     "Product Backlog Item",
@@ -122,7 +121,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 "Committed",
                 "New",
                 "Done",
-            }
+                    }
                 },
                 {
                     "Bug",
@@ -131,7 +130,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 "Committed",
                 "New",
                 "Done",
-            }
+                    }
                 },
                 {
                     "Task",
@@ -139,7 +138,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 "In Progress",
                 "To Do",
                 "Done",
-            }
+                    }
                 }
             };
             using (var client = GetHttpClient())
@@ -148,25 +147,25 @@ namespace VstsRestAPI.WorkItemAndTracking
                 HttpRequestMessage request = new HttpRequestMessage();
                 foreach (var type in dic.Keys)
                 {
-                    var res = GetListOfWorkItems_ByWiql(ProjectName, type);
-                    WorkIds.Clear();
+                    var res = GetListOfWorkItems_ByWiql(projectName, type);
+                    workItemIds.Clear();
                     foreach (var ids in res.workItems)
                     {
-                        WorkIds.Add(ids.id);
+                        workItemIds.Add(ids.id);
                     }
-                    foreach (var id in WorkIds)
+                    foreach (var id in workItemIds)
                     {
                         if (type == "Feature" || type == "Product Backlog Item" || type == "Bug" || type == "Task")
                         {
                             itemType = dic[type][new Random().Next(0, dic[type].Count)];
-                            itemTypes = Tags[new Random().Next(0, Tags.Count)];
-                            UserType = Users[new Random().Next(0, Users.Count)];
-                            JsonType = json.Replace("$State$", itemType.ToString());
-                            JsonTypes = JsonType.Replace("$Tags$", itemTypes.ToString());
-                            JSON_Users = JsonTypes.Replace("$Users$", UserType.ToString());
+                            itemTypes = tags[new Random().Next(0, tags.Count)];
+                            userType = users[new Random().Next(0, users.Count)];
+                            jsonType = json.Replace("$State$", itemType.ToString());
+                            jsonTypes = jsonType.Replace("$Tags$", itemTypes.ToString());
+                            json_Users = jsonTypes.Replace("$Users$", userType.ToString());
                         }
 
-                        var jsonContent = new StringContent(JSON_Users, Encoding.UTF8, "application/json-patch+json");
+                        var jsonContent = new StringContent(json_Users, Encoding.UTF8, "application/json-patch+json");
                         var method = new HttpMethod("PATCH");
                         // send the request
                         request = new HttpRequestMessage(method, _configuration.UriString + "_apis/wit/workitems/" + id + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = jsonContent };
@@ -193,9 +192,9 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Method to Get the list of all workItems
         /// </summary>
         /// <param name="project"></param>
-        /// <param name="WorkItemType"></param>
+        /// <param name="workItemType"></param>
         /// <returns></returns>
-        public GetWorkItemsResponse.Results GetListOfWorkItems_ByWiql(string project, string WorkItemType)
+        public GetWorkItemsResponse.Results GetListOfWorkItems_ByWiql(string project, string workItemType)
         {
             GetWorkItemsResponse.Results viewModel = new GetWorkItemsResponse.Results();
 
@@ -204,7 +203,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
                 query = "Select [Work Item Type],[State], [Title],[Created By] " +
                         "From WorkItems " +
-                        "Where [Work Item Type] = '" + WorkItemType + "' " +
+                        "Where [Work Item Type] = '" + workItemType + "' " +
                         "And [System.TeamProject] = '" + project + "' " +
                         "And [System.State] = 'New' " +
                         "Order By [Stack Rank] Desc, [Backlog Priority] Desc"

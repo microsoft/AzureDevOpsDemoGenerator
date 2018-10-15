@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.ProjectsAndTeams
@@ -17,9 +11,9 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// Get Account members
         /// </summary>
         /// <param name="accountName"></param>
-        /// <param name="AccessToken"></param>
+        /// <param name="accessToken"></param>
         /// <returns></returns>
-        public AccountMembers.Account GetAccountMembers(string accountName, string AccessToken)
+        public AccountMembers.Account GetAccountMembers(string accountName, string accessToken)
         {
             AccountMembers.Account viewModel = new AccountMembers.Account();
             using (var client = GetHttpClient())

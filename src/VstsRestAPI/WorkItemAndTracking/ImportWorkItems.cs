@@ -14,7 +14,7 @@ namespace VstsRestAPI.WorkItemAndTracking
     public class ImportWorkItems : ApiServiceBase
     {
         public string boardRowFieldName;
-        private List<WIMapData> WIData = new List<WIMapData>();
+        private List<WIMapData> wiData = new List<WIMapData>();
         private List<string> listAssignToUsers = new List<string>();
         private string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related", "System.LinkTypes.Dependency-Reverse", "System.LinkTypes.Dependency-Forward" };
         private string attachmentFolder = string.Empty;
@@ -42,7 +42,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="accountUsers"></param>
         /// <returns></returns>
 
-        public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string SelectedTemplate)
+        public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string selectedTemplate)
         {
             try
             {
@@ -101,7 +101,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 foreach (string wiType in dicWITypes.Keys)
                 {
-                    PrepareAndUpdateTarget(wiType, dicWITypes[wiType], projectName, SelectedTemplate);
+                    PrepareAndUpdateTarget(wiType, dicWITypes[wiType], projectName, selectedTemplate);
                 }
 
                 foreach (string wiType in dicWITypes.Keys)
@@ -109,11 +109,11 @@ namespace VstsRestAPI.WorkItemAndTracking
                     UpdateWorkItemLinks(dicWITypes[wiType]);
                 }
 
-                return WIData;
+                return wiData;
             }
             catch (Exception)
             {
-                return WIData;
+                return wiData;
             }
 
         }
@@ -123,12 +123,12 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// </summary>
         /// <param name="workItemType"></param>
         /// <param name="workImport"></param>
-        /// <param name="ProjectName"></param>
+        /// <param name="projectName"></param>
         /// <returns></returns>
-        public bool PrepareAndUpdateTarget(string workItemType, string workImport, string ProjectName, string SelectedTemplate)
+        public bool PrepareAndUpdateTarget(string workItemType, string workImport, string projectName, string selectedTemplate)
         {
             //List<ColumnPost> Columns = JsonConvert.DeserializeObject<List<ColumnPost>>(workImport);
-            workImport = workImport.Replace("$ProjectName$", ProjectName);
+            workImport = workImport.Replace("$ProjectName$", projectName);
             ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
 
             if (fetchedWIs.count > 0)
@@ -191,12 +191,12 @@ namespace VstsRestAPI.WorkItemAndTracking
                     }
                     else
                     {
-                        string iterationPath = ProjectName;
+                        string iterationPath = projectName;
                         string boardRowField = string.Empty;
 
                         if (newWI.fields.SystemIterationPath.Contains("\\"))
                         {
-                            iterationPath = string.Format(@"{0}\{1}", ProjectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
+                            iterationPath = string.Format(@"{0}\{1}", projectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
 
                         }
 
@@ -216,7 +216,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         }
 
                         dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                        if (SelectedTemplate.ToLower() == "smarthotel360")
+                        if (selectedTemplate.ToLower() == "smarthotel360")
                         {
                             dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
                         }
@@ -254,7 +254,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                             dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
                         }
                     }
-                    UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), ProjectName, dicWIFields);
+                    UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), projectName, dicWIFields);
                 }
 
                 return true;
@@ -296,7 +296,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 if (response.IsSuccessStatusCode)
                 {
                     viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
-                    WIData.Add(new WIMapData() { OldID = old_wi_ID, NewID = viewModel.id.ToString(), WIType = workItemType });
+                    wiData.Add(new WIMapData() { OldID = old_wi_ID, NewID = viewModel.id.ToString(), WIType = workItemType });
                 }
                 else
                 {
@@ -318,7 +318,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         {
             ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
             //ImportWorkItemModel.WorkItems fetchedPBIs
-            string WIToUpdate = "";
+            string wiToUpdate = "";
             WIMapData findIDforUpdate;
             if (fetchedPBIs.count > 0)
             {
@@ -334,16 +334,16 @@ namespace VstsRestAPI.WorkItemAndTracking
                     int relCount = newWI.relations.Length;
                     string oldWIID = newWI.id.ToString();
 
-                    findIDforUpdate = WIData.Find(t => t.OldID == oldWIID);
+                    findIDforUpdate = wiData.Find(t => t.OldID == oldWIID);
                     if (findIDforUpdate != null)
                     {
-                        WIToUpdate = findIDforUpdate.NewID;
+                        wiToUpdate = findIDforUpdate.NewID;
                         foreach (ImportWorkItemModel.Relations rel in newWI.relations)
                         {
                             if (relTypes.Contains(rel.rel.Trim()))
                             {
                                 oldWIID = rel.url.Substring(rel.url.LastIndexOf("/") + 1);
-                                WIMapData findIDforlink = WIData.Find(t => t.OldID == oldWIID);
+                                WIMapData findIDforlink = wiData.Find(t => t.OldID == oldWIID);
 
                                 if (findIDforlink != null)
                                 {
@@ -365,7 +365,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                         }
                                     };
                                     //UpdateWorkIteminTarget("Product Backlog Item", newWI.id.ToString(), new String[] { "/relations/-"}, new Object[] { newWI.fields.SystemTitle, newWI.fields.SystemDescription });
-                                    if (UpdateLink("Product Backlog Item", WIToUpdate, patchWorkItem))
+                                    if (UpdateLink("Product Backlog Item", wiToUpdate, patchWorkItem))
                                     {
                                         //Console.WriteLine("Updated WI with link from {0} to {1}", oldWIID, newWIID);
                                     }
@@ -384,7 +384,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                         url = rel.url
                                     }
                                 };
-                                bool isHyperLinkCreated = UpdateLink(string.Empty, WIToUpdate, patchWorkItem);
+                                bool isHyperLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
                             }
                             if (rel.rel == "AttachedFile")
                             {
@@ -404,7 +404,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                             url = attchmentURl
                                         }
                                     };
-                                    bool isAttachmemntCreated = UpdateLink(string.Empty, WIToUpdate, patchWorkItem);
+                                    bool isAttachmemntCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
                                 }
                             }
                             if (rel.rel == "ArtifactLink")
@@ -431,7 +431,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                     }
 
                                 };
-                                bool isArtifactLinkCreated = UpdateLink(string.Empty, WIToUpdate, patchWorkItem);
+                                bool isArtifactLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
                             }
                         }
                     }
@@ -444,10 +444,10 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Udpate Links to work items
         /// </summary>
         /// <param name="workItemType"></param>
-        /// <param name="WItoUpdate"></param>
+        /// <param name="witoUpdate"></param>
         /// <param name="patchWorkItem"></param>
         /// <returns></returns>
-        public bool UpdateLink(string workItemType, string WItoUpdate, object[] patchWorkItem)
+        public bool UpdateLink(string workItemType, string witoUpdate, object[] patchWorkItem)
         {
             using (var client = GetHttpClient())
             {
@@ -455,7 +455,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var patchValue = new StringContent(JsonConvert.SerializeObject(patchWorkItem), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
 
                 var method = new HttpMethod("PATCH");
-                var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + WItoUpdate + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + witoUpdate + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

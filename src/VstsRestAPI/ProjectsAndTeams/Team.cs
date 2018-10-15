@@ -171,13 +171,13 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <summary>
         /// Set Iteration for team
         /// </summary>
-        /// <param name="IterationId"></param>
+        /// <param name="iterationId"></param>
         /// <param name="projectName"></param>
         /// <param name="teamName"></param>
         /// <returns></returns>
-        public bool SetBackLogIterationForTeam(string IterationId, string projectName, string teamName)
+        public bool SetBackLogIterationForTeam(string iterationId, string projectName, string teamName)
         {
-            object objJSON = new { Backlogiteration = IterationId };
+            object objJSON = new { Backlogiteration = iterationId };
 
             using (var client = GetHttpClient())
             {

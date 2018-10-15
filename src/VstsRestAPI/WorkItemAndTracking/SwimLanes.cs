@@ -13,7 +13,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="json"></param>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public bool UpdateSwimLanes(string json, string projectName, string BoardType)
+        public bool UpdateSwimLanes(string json, string projectName, string boardType)
         {
             string teamName = projectName + " Team";
             if (System.IO.File.Exists(json))
@@ -25,7 +25,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     var method = new HttpMethod("PUT");
 
                     //https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/rows?api-version=4.1
-                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/rows?api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/rows?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {

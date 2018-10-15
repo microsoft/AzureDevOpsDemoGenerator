@@ -1,25 +1,13 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Web;
+﻿using Newtonsoft.Json.Linq;
 using System.Web.Mvc;
-using System.Web.Security;
 using VstsDemoBuilder.Models;
-using VstsRestAPI;
-using VstsRestAPI.ProjectsAndTeams;
-using VstsDemoBuilder.Extensions;
 
 namespace VstsDemoBuilder.Controllers
 {
 
     public class AccountController : Controller
     {
-        AccessDetails AccessDetails = new AccessDetails();
+        readonly AccessDetails accessDetails = new AccessDetails();
         TemplateSetting privateTemplates = new TemplateSetting();
 
         [HttpGet]
@@ -146,7 +134,6 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult SignOut()
         {
             Session.Clear();
-
             return Redirect("https://app.vssps.visualstudio.com/_signout");
         }
     }

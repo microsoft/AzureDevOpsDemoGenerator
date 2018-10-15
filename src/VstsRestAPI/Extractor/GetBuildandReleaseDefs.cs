@@ -103,7 +103,7 @@ namespace VstsRestAPI.Extractor
         {
             try
             {
-                List<JObject> ResultList = new List<JObject>();
+                List<JObject> resultList = new List<JObject>();
                 using (var client = GetHttpClient())
                 {
                     HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/build/definitions?api-version=2.0", Project)).Result;
@@ -122,11 +122,11 @@ namespace VstsRestAPI.Extractor
                                     {
                                         string res = ResponseDef.Content.ReadAsStringAsync().Result;
                                         JObject o = JObject.Parse(res);
-                                        ResultList.Add(o);
+                                        resultList.Add(o);
                                     }
                                 }
                             }
-                            return ResultList;
+                            return resultList;
                         }
                     }
                 }
@@ -204,13 +204,8 @@ namespace VstsRestAPI.Extractor
             Dictionary<string, int> dicQueues = new Dictionary<string, int>();
             QueueModel viewModel = new QueueModel();
 
-            using (var client = new HttpClient())
+            using (var client =  GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 HttpResponseMessage response = client.GetAsync(_configuration.Project + "/_apis/distributedtask/queues?api-version=2.0-preview.1").Result;
 
                 if (response.IsSuccessStatusCode)

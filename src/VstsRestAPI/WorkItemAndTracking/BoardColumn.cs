@@ -17,19 +17,19 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public bool UpdateBoard(string projectName, string fileName, string BoardType)
+        public bool UpdateBoard(string projectName, string fileName, string boardType)
         {
             string teamName = projectName + " Team";
-            List<Scrum.Columns> SColumns = new List<Scrum.Columns>();
-            List<Agile.Columns> AColumns = new List<Agile.Columns>();
+            List<Scrum.Columns> scrumColumns = new List<Scrum.Columns>();
+            List<Agile.Columns> agileColumns = new List<Agile.Columns>();
 
             string newColID = "";
             string doneColID = "";
             GetBoardColumnResponse.ColumnResponse currColumns = new GetBoardColumnResponse.ColumnResponse();
             GetBoardColumnResponseAgile.ColumnResponse currColumnsAgile = new GetBoardColumnResponseAgile.ColumnResponse();
-            if (BoardType == "Backlog%20items")
+            if (boardType == "Backlog%20items")
             {
-                SColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(fileName);
+                scrumColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(fileName);
 
                 currColumns = getBoardColumns(projectName, teamName);
                 if (currColumns.columns != null)
@@ -45,7 +45,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                             doneColID = col.id;
                         }
                     }
-                    foreach (Scrum.Columns col in SColumns)
+                    foreach (Scrum.Columns col in scrumColumns)
                     {
                         if (col.columnType.ToLower() == "incoming")
                         {
@@ -58,9 +58,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                     }
                 }
             }
-            else if (BoardType == "Stories")
+            else if (boardType == "Stories")
             {
-                AColumns = JsonConvert.DeserializeObject<List<Agile.Columns>>(fileName);
+                agileColumns = JsonConvert.DeserializeObject<List<Agile.Columns>>(fileName);
                 currColumnsAgile = getBoardColumnsAgile(projectName, teamName);
                 if (currColumnsAgile.columns != null)
                 {
@@ -75,7 +75,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                             doneColID = col.id;
                         }
                     }
-                    foreach (Agile.Columns col in AColumns)
+                    foreach (Agile.Columns col in agileColumns)
                     {
                         if (col.columnType.ToLower() == "incoming")
                         {
@@ -95,20 +95,20 @@ namespace VstsRestAPI.WorkItemAndTracking
             using (var client = GetHttpClient())
             {
                 StringContent patchValue = new StringContent("");
-                if (BoardType == "Backlog%20items")
+                if (boardType == "Backlog%20items")
                 {
-                    string x = JsonConvert.SerializeObject(SColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    string x = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
                     patchValue = new StringContent(x, Encoding.UTF8, "application/json");
                 }
-                else if (BoardType == "Stories")
+                else if (boardType == "Stories")
                 {
-                    string x = JsonConvert.SerializeObject(AColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    string x = JsonConvert.SerializeObject(agileColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
                     patchValue = new StringContent(x, Encoding.UTF8, "application/json");
                 }
                 // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");
                 //PUT https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/columns?api-version=4.1
-                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + BoardType + "/columns?api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/columns?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {

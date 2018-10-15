@@ -78,7 +78,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             {
 
                 HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
-                Thread.Sleep(2000);
+                Thread.Sleep(2000); //Adding delay to generate Shared Query model in Azure DevOps
                 if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     using (var client = GetHttpClient())

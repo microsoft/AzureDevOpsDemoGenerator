@@ -14,17 +14,17 @@ namespace VstsRestAPI.Git
         /// Get Source Code from Git Hub
         /// </summary>
         /// <param name="json"></param>
-        /// <param name="Project"></param>
-        /// <param name="RepositoryID"></param>
+        /// <param name="project"></param>
+        /// <param name="repositoryID"></param>
         /// <returns></returns>
-        public bool getSourceCodeFromGitHub(string json, string Project, string RepositoryID)
+        public bool getSourceCodeFromGitHub(string json, string project, string repositoryID)
         {
             using (var client = GetHttpClient())
             {
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, _configuration.UriString + Project + "/_apis/git/repositories/" + RepositoryID + "/importRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/git/repositories/" + repositoryID + "/importRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -44,18 +44,18 @@ namespace VstsRestAPI.Git
         /// <summary>
         /// Delete the default repository
         /// </summary>
-        /// <param name="Project"></param>
+        /// <param name="project"></param>
         /// <returns></returns>
-        public string GetRepositoryToDelete(string Project)
+        public string GetRepositoryToDelete(string project)
         {
             GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(Project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
+                HttpResponseMessage response = client.GetAsync(project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
-                    string repository = viewModel.value.Where(x => x.name == Project).FirstOrDefault().id;
+                    string repository = viewModel.value.Where(x => x.name == project).FirstOrDefault().id;
                     return repository;
                 }
                 else

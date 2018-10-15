@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using VstsRestAPI.Viewmodel.Sprint;
 using VstsRestAPI.Viewmodel.WorkItem;
@@ -121,14 +120,14 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <summary>
         /// Update Iteration Dates- calculating from previous 22 days
         /// </summary>
-        /// <param name="ProjectName"></param>
+        /// <param name="projectName"></param>
         /// <param name="templateType"></param>
         /// <returns></returns>
-        public bool UpdateIterationDates(string ProjectName, string templateType)
+        public bool UpdateIterationDates(string projectName, string templateType)
         {
-            string project = ProjectName;
-            DateTime StartDate = DateTime.Today.AddDays(-22);
-            DateTime EndDate = DateTime.Today.AddDays(-1);
+            string project = projectName;
+            DateTime startDate = DateTime.Today.AddDays(-22);
+            DateTime endDate = DateTime.Today.AddDays(-1);
 
             Dictionary<string, string[]> sprint_dic = new Dictionary<string, string[]>();
 
@@ -136,22 +135,22 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
                 for (int i = 1; i <= 6; i++)
                 {
-                    sprint_dic.Add("Sprint " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
+                    sprint_dic.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                 }
             }
             else
             {
                 for (int i = 1; i <= 3; i++)
                 {
-                    sprint_dic.Add("Iteration " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
+                    sprint_dic.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                 }
             }
 
             foreach (var key in sprint_dic.Keys)
             {
-                UpdateIterationDates(project, key, StartDate, EndDate);
-                StartDate = EndDate.AddDays(1);
-                EndDate = StartDate.AddDays(21);
+                UpdateIterationDates(project, key, startDate, endDate);
+                startDate = endDate.AddDays(1);
+                endDate = startDate.AddDays(21);
             }
             return true;
         }
@@ -214,18 +213,18 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Rename Iteration
         /// </summary>
         /// <param name="projectName"></param>
-        /// <param name="IterationToUpdate"></param>
+        /// <param name="iterationToUpdate"></param>
         /// <returns></returns>
-        public bool RenameIteration(string projectName, Dictionary<string, string> IterationToUpdate)
+        public bool RenameIteration(string projectName, Dictionary<string, string> iterationToUpdate)
         {
-            bool isSuccesfull = false;
+            bool isSuccessful = false;
             try
             {
-                foreach (var key in IterationToUpdate.Keys)
+                foreach (var key in iterationToUpdate.Keys)
                 {
                     CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
                     {
-                        name = IterationToUpdate[key]
+                        name = iterationToUpdate[key]
                     };
 
                     using (var client = GetHttpClient())
@@ -240,7 +239,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                         if (response.IsSuccessStatusCode)
                         {
-                            isSuccesfull = true;
+                            isSuccessful = true;
                         }
                     }
                 }
@@ -249,7 +248,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 DateTime EndDate = DateTime.Today.AddDays(-1);
 
                 Dictionary<string, string[]> sprint_dic = new Dictionary<string, string[]>();
-                for (int i = 1; i <= IterationToUpdate.Count; i++)
+                for (int i = 1; i <= iterationToUpdate.Count; i++)
                 {
                     sprint_dic.Add("Sprint " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
                 }
@@ -265,21 +264,16 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
 
             }
-            return isSuccesfull;
+            return isSuccessful;
 
         }
 
-        public SprintResponse.Sprints GetSprints(string Project)
+        public SprintResponse.Sprints GetSprints(string project)
         {
             SprintResponse.Sprints sprints = new SprintResponse.Sprints();
-            using (var client = new HttpClient())
+            using (var client =  GetHttpClient())
             {
-                client.BaseAddress = new Uri(_configuration.UriString);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
-                HttpResponseMessage response = client.GetAsync(Project + "/" + Project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
+                HttpResponseMessage response = client.GetAsync(project + "/" + project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;
