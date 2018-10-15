@@ -818,6 +818,8 @@
     <Content Include="Templates\PartsUnlimited\Dashboard\Queries\Work in Progress.json" />
     <Content Include="Templates\DeploymentGroups\Dashboard\Queries\UnfinishedWork.json" />
     <Content Include="Templates\DeploymentGroups\Dashboard\Queries\Work in Progress.json" />
+    <Content Include="Templates\PartsUnlimited\Dashboard\Queries\Feedback.json" />
+    <Content Include="Templates\SmartHotel360\Dashboard\Queries\Feedback.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
