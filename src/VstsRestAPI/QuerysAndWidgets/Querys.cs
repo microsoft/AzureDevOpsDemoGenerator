@@ -76,7 +76,7 @@ namespace VstsRestAPI.QuerysAndWidgets
             QueryResponse result = new QueryResponse();
             using (var clientParent = GetHttpClient())
             {
-
+                //Since we were getting errors like "you do not have access to shared query folder", based on MS team guidence added GET call before POST request
                 HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
                 Thread.Sleep(2000); //Adding delay to generate Shared Query model in Azure DevOps
                 if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)

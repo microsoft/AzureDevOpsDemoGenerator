@@ -9,22 +9,22 @@
   "GroupwiseTemplates": [
     {
       "Groups": "General",
-      "Template": [
+       "Template": [
         {
           "Name": "SmartHotel360",
-          "Description": "<p><i>Scrum</i>&nbsp;&nbsp<i>aspnetcore</i>&nbsp;&nbsp;<i>azureappservice</i></p>This template contains work items and code for SmartHotel360, an end-to-end reference application for the entire business, including a suite of mobile and desktop apps for business travelers (iOS, Android, and Windows), a website for booking a stay, and even an app for hotel employees to track and resolve maintenance issues. SmartHotel360 has many other reference applications, including a microservice oriented architecture implemented using Docker containers that power the client experience, a website powered by ASP.NET Core 2 for booking trips, and a sentiment analysis app for tracking customer experiences.For more details, please see the project page on GitHub at <p>Lab URL: <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>SmartHotel360</a></p>"
+          "Description": "<p><i>Scrum</i>&nbsp;&nbsp<i>aspnetcore</i>&nbsp;&nbsp;<i>azureappservice</i></p>This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>"
         },
         {
           "Name": "MyHealthClinic",
-          "Description": "<p><i>Scrum</i>&nbsp;&nbsp;<i>aspnetcore </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using Azure DevOps. "
+          "Description": "<p><i>Scrum</i>&nbsp;&nbsp;<i>aspnetcore </i>&nbsp;&nbsp;<i >azureappservice</i></p>This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service."
         },
         {
           "Name": "PartsUnlimited",
-          "Description": "<p><i>Scrum</i>&nbsp;&nbsp;<i>aspdotnet </i>&nbsp;&nbsp;<i>azureappservice</i>&nbsp;&nbsp;<i>Azure SQL</i></p>This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using Azure DevOps. "
+          "Description": "<p><i>Scrum</i>&nbsp;&nbsp;<i>aspdotnet </i>&nbsp;&nbsp;<i>azureappservice</i>&nbsp;&nbsp;<i>Azure SQL</i></p>Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> "
         },
         {
           "Name": "MyShuttle",
-          "Description": "<p><i>Scrum</i>&nbsp;&nbsp;<i >java</i>&nbsp;&nbsp;<i >application</i>&nbsp;&nbsp;<i >azure web app</i>&nbsp;&nbsp;<i >MySQL</i></p>This template contains code for a sample Java application which will be provisioned along with build & release definitions configured and customized to deploy the application to an Azure App service. <p> Lab URL: <a href='https://almvm.azurewebsites.net/labs/vstsextend/jenkins/' target='_blank'> Deploying a Java application on Tomcat</a></p> "
+          "Description": "<p><i>Scrum</i>&nbsp;&nbsp;<i >java</i>&nbsp;&nbsp;<i >application</i>&nbsp;&nbsp;<i >azure web app</i>&nbsp;&nbsp;<i >MySQL</i></p>This template contains work items and source code for  MyShuttle, a sample Java application backed by a MySQL database. This template also contains pipeline definitions to build the maven project and deploy the app to Tomcat server on Azure app service. <p> Lab URL: <a href='https://www.azuredevopslabs.com/labs/vstsextend/tomcat/' target='_blank'> Deploying a Java application on Tomcat</a></p> "
         }
       ]
     },
@@ -69,7 +69,7 @@
         },
         {
           "Name": "ReleaseGates",
-          "Description": "<p>Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. Use this template if you are following the. <a href='https://azuredevopslabs.com/labs/vstsextend/releasegates/ target='_blank''>Controlling deployments using Release Gates</a> Lab </p> "
+          "Description": "<p>Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. Use this template if you are following the <a href='https://azuredevopslabs.com/labs/vstsextend/releasegates/ target='_blank''>Controlling deployments using Release Gates</a> Lab </p> "
         },
         {
           "Name": "PHP",
