@@ -2392,7 +2392,7 @@ namespace VstsDemoBuilder.Controllers
                             }
                             if (model.SelectedTemplate == "PartsUnlimited" || model.SelectedTemplate == "PartsUnlimited-agile")
                             {
-                                QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries/Current%20Sprint");
+                                QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
 
                                 dashBoardTemplate = dashBoardTemplate.Replace("$ReleaseDefId$", model.ReleaseDefinitions.Where(x => x.Name == "PartsUnlimitedE2E").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PartsUnlimitedE2E").FirstOrDefault().Id : string.Empty).
                                           Replace("$ActiveBugs$", queryResults.Where(x => x.name == "Critical Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Critical Bugs").FirstOrDefault().id : string.Empty).
@@ -2411,7 +2411,7 @@ namespace VstsDemoBuilder.Controllers
                         if (isDashboardDeleted)
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
-                            QueryResponse unfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries/Current%20Sprint");
+                            QueryResponse unfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work", "Shared%20Queries");
                             string allItems = queryResults.Where(x => x.name == "All Items").FirstOrDefault().id;
                             string repositoryId = model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Key;
                             string bikeSharing360_PublicWeb = model.BuildDefinitions.Where(x => x.Name == "BikeSharing360-PublicWeb").FirstOrDefault().Id;
@@ -2534,7 +2534,7 @@ namespace VstsDemoBuilder.Controllers
 
                             else if (model.SelectedTemplate == "DeploymentGroups")
                             {
-                                QueryResponse WorkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries/Current%20Sprint");
+                                QueryResponse WorkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
                                 dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WorkInProgress.id);
                             }
 
@@ -2604,7 +2604,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         if (isDashboardDeleted)
                         {
-                            QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries/Current%20Sprint");
+                            QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress", "Shared%20Queries");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.id);
 

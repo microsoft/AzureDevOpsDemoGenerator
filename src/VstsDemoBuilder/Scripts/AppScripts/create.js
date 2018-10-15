@@ -70,7 +70,7 @@ var uniqueId = "";
 var ErrorData = '';
 var statusCount = 0;
 var selectedTemplate = "";
-var messagesCount = 13;
+var messagesCount = 8;
 var percentForMessage = Math.floor(100 / messagesCount);
 var currentPercentage = 0;
 var projectNameForLink = '';
@@ -560,13 +560,13 @@ function getStatus() {
                     if (messageList.length == 1) {
                         $('#progressBar').width(currentPercentage++ + '%');
                         if (data.length > 0) {
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                         }
                     }
                     else {
                         if (data.indexOf("TF50309") == 0) {
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
                             $("#txtProjectName").val("");
@@ -580,7 +580,7 @@ function getStatus() {
                         }
                         else if (data.indexOf("TF200019") == 0) {
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
                             $("#txtProjectName").val("");
@@ -595,10 +595,10 @@ function getStatus() {
                         }
                         else if (data.indexOf("TF200019") == -1) {
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                         }
                         else {
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
                             $("#txtProjectName").val("");
@@ -631,7 +631,6 @@ function getStatus() {
                                 async: false,
                                 success: function (data) {
                                     var accountName = data;
-                                    $("#ddlAcccountName").hide();
                                     var link = "https://dev.azure.com/" + AccountNameForLink + "/" + projectNameForLink;
 
                                     if (selectedTemplate == "SmartHotel360") {
@@ -681,34 +680,16 @@ function getStatus() {
 
                             $('#ddlAcccountName').prop('selectedIndex', 0);
                             $("#templateselection").prop("disabled", false);
-
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
-                            //if (ErrorData != '') {
-                            //    $("#projCreateMsg").hide(); $("#errorDescription").html("");
-                            //    $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
-                            //    $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            //    $("#errorNotify").removeClass("d-none").addClass("d-block");
-                            //    $('#textMuted').removeClass("d-block").addClass("d-none");
-
-                            //    currentPercentage = 0;
-                            //    $('#progressBar').width(currentPercentage++ + '%');
-                            //    $("#errorMail").empty().append(ErrorData);
-                            //    $("#errorNotify").show();
-
-                            //    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            //    $("#txtProjectName").val("");
-                            //    $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            //    $("#templateselection").prop("disabled", false);
-
-                            //    $('#ddlGroups').removeAttr("disabled");
-
-                            //    $("#ddlAcccountName").removeAttr("disabled");
-                            //    $("#txtProjectName").removeAttr("disabled");
-
-                            //}
+                            if (ErrorData != '') {
+                                $("#projCreateMsg").hide(); $("#errorDescription").html("");
+                                $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
+                                $("#errorMail").empty().append(ErrorData);
+                                $("#errorNotify").show();
+                                $("#errorNotify").removeClass("d-none").addClass("d-block");
+                            }
                         }
                     });
                     messageList = [];
