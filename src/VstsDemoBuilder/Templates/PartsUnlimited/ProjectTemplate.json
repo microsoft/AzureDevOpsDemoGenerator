@@ -1,6 +1,6 @@
 {
   "Name": "Template Name",
-  "Description": "This template is used to provision Team Project containing a sample ASP.NET web application-Parts Unlimited, along with build & release definitions and customized to deploy the application to Azure App Service using Azure DevOps.",
+  "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a>",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",

@@ -1,6 +1,6 @@
 {
   "Name": "Template Name",
-  "Description": "This template provisions team project which contains sample ASP.NET Core web application-My Health Clinic, along with build & release definitions, to deploy the application to Azure App Service using Azure DevOps.",
+  "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",
