@@ -72,7 +72,7 @@ namespace VstsRestAPI.Release
         }
         public int[] GetEnvironmentIdsByName(string project, string definitionName, string environment1, string environment2)
         {
-            int[] EnvironmentIds = new int[2];
+            int[] environmentIds = new int[2];
             try
             {
                 string requestURL = string.Empty;
@@ -97,16 +97,16 @@ namespace VstsRestAPI.Release
                             if (response.IsSuccessStatusCode)
                             {
                                 ReleaseDefinitions.ReleaseDefinition DefinitionResult = Newtonsoft.Json.JsonConvert.DeserializeObject<ReleaseDefinitions.ReleaseDefinition>(ResponseDef.Content.ReadAsStringAsync().Result.ToString());
-                                EnvironmentIds[0] = DefinitionResult.environments.Where(x => x.name == environment1).FirstOrDefault().id;
-                                EnvironmentIds[1] = DefinitionResult.environments.Where(x => x.name == environment2).FirstOrDefault().id;
-                                return EnvironmentIds;
+                                environmentIds[0] = DefinitionResult.environments.Where(x => x.name == environment1).FirstOrDefault().id;
+                                environmentIds[1] = DefinitionResult.environments.Where(x => x.name == environment2).FirstOrDefault().id;
+                                return environmentIds;
                             }
                         }
                     }
                 }
             }
-            catch (Exception) { return EnvironmentIds; }
-            return EnvironmentIds;
+            catch (Exception) { return environmentIds; }
+            return environmentIds;
         }
     }
 }

@@ -15,9 +15,9 @@ namespace VstsRestAPI.Build
         /// </summary>
         /// <param name="json"></param>
         /// <param name="project"></param>
-        /// <param name="SelectedTemplate"></param>
+        /// <param name="selectedTemplate"></param>
         /// <returns></returns>
-        public string[] CreateBuildDefinition(string json, string project, string SelectedTemplate)
+        public string[] CreateBuildDefinition(string json, string project, string selectedTemplate)
         {
             BuildGetListofBuildDefinitionsResponse.Definitions viewModel = new BuildGetListofBuildDefinitionsResponse.Definitions();
             using (var client = GetHttpClient())
@@ -25,7 +25,7 @@ namespace VstsRestAPI.Build
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
                 string uri = "";
-                if (SelectedTemplate == "SmartHotel360V1" || SelectedTemplate == "SmartHotel360")
+                if (selectedTemplate == "SmartHotel360V1" || selectedTemplate == "SmartHotel360")
                 {
                     uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
                 }
