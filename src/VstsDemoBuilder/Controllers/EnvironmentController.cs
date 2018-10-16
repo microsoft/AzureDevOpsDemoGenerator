@@ -226,7 +226,7 @@ namespace VstsDemoBuilder.Controllers
                         ProfileDetails Profile1 = GetProfile(AccessDetails);
                         Session["User"] = Profile1.displayName;
                         Session["Email"] = Profile1.emailAddress.ToLower();
-                        Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
+                        Models.Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
 
                         //New Feature Enabling
                         User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress.ToLower());
@@ -308,7 +308,7 @@ namespace VstsDemoBuilder.Controllers
                         Profile = GetProfile(AccessDetails);
                         Session["User"] = Profile.displayName;
                         Session["Email"] = Profile.emailAddress.ToLower();
-                        Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
+                        Models.Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
 
                         User user = LaunchDarkly.Client.User.WithKey(Profile.emailAddress.ToLower());
                         bool showFeature = ldClient.BoolVariation("extractor", user, false);
@@ -686,13 +686,13 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="memberID"></param>
         /// <param name="details"></param>
         /// <returns></returns>
-        public Accounts.AccountList GetAccounts(string memberID, AccessDetails details)
+        public Models.Accounts.AccountList GetAccounts(string memberID, AccessDetails details)
         {
             //if (Session["PAT"] != null)
             //{
             //    Details.access_token = Session["PAT"].ToString();
             //}
-            Accounts.AccountList accounts = new Accounts.AccountList();
+            Models.Accounts.AccountList accounts = new Models.Accounts.AccountList();
             var client = new HttpClient();
             string requestContent = "https://app.vssps.visualstudio.com/_apis/Accounts?memberId=" + memberID + "&api-version=4.1";
             var request = new HttpRequestMessage(HttpMethod.Get, requestContent);
@@ -708,7 +708,7 @@ namespace VstsDemoBuilder.Controllers
                 else if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
-                    accounts = JsonConvert.DeserializeObject<Accounts.AccountList>(result);
+                    accounts = JsonConvert.DeserializeObject<Models.Accounts.AccountList>(result);
                 }
                 else
                 {
@@ -738,7 +738,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 AccountMembers.Account accountMembers = new AccountMembers.Account();
                 VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = accessToken };
-                Account objAccount = new Account(_defaultConfiguration);
+                VstsRestAPI.ProjectsAndTeams.Accounts objAccount = new VstsRestAPI.ProjectsAndTeams.Accounts(_defaultConfiguration);
                 accountMembers = objAccount.GetAccountMembers(accountName, accessToken);
                 if (accountMembers.count > 0)
                 {
@@ -1146,7 +1146,7 @@ namespace VstsDemoBuilder.Controllers
             else if (model.UserMethod == "Random")
             {
                 //GetAccount Members
-                Account objAccount = new Account(_projectCreationVersion);
+                VstsRestAPI.ProjectsAndTeams.Accounts objAccount = new VstsRestAPI.ProjectsAndTeams.Accounts(_projectCreationVersion);
                 //accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
                 foreach (var member in accountMembers.value)
                 {
@@ -1345,7 +1345,7 @@ namespace VstsDemoBuilder.Controllers
                 string jsonTeams = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamsJSON);
                 if (System.IO.File.Exists(jsonTeams))
                 {
-                    Team objTeam = new Team(_projectConfig);
+                    VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
                     jsonTeams = model.ReadJsonFile(jsonTeams); //System.IO.File.ReadAllText(jsonTeams);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
@@ -1418,7 +1418,7 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 TeamMemberResponse.TeamMembers viewModel = new TeamMemberResponse.TeamMembers();
-                Team objTeam = new Team(_configuration);
+                VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_configuration);
                 viewModel = objTeam.GetTeamMembers(projectName, teamName);
 
                 if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
@@ -2259,8 +2259,8 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                Querys objWidget = new Querys(_dashboardVersion);
-                Querys objQuery = new Querys(_queriesVersion);
+                Queries objWidget = new Queries(_dashboardVersion);
+                Queries objQuery = new Queries(_queriesVersion);
                 List<QueryResponse> queryResults = new List<QueryResponse>();
 
                 //GetDashBoardDetails
@@ -2535,7 +2535,7 @@ namespace VstsDemoBuilder.Controllers
                             var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "PublicWebSiteCI").FirstOrDefault();
                             var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault();
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
-                            Team objTeam = new Team(_projectConfig);
+                            VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
                             ClassificationNodes objnodes = new ClassificationNodes(_boardConfig);
                             SprintResponse.Sprints sprints = objnodes.GetSprints(model.ProjectName);

@@ -3,9 +3,9 @@ using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
-    public class Account : ApiServiceBase
+    public class Accounts : ApiServiceBase
     {
-        public Account(IConfiguration configuration) : base(configuration) { }
+        public Accounts(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Account members

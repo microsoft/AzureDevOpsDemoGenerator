@@ -6,9 +6,9 @@ using VstsRestAPI.Viewmodel.QuerysAndWidgets;
 
 namespace VstsRestAPI.QuerysAndWidgets
 {
-    public class Querys : ApiServiceBase
+    public class Queries : ApiServiceBase
     {
-        public Querys(IConfiguration configuration) : base(configuration) { }
+        public Queries(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Get Existing Dashboard by ID

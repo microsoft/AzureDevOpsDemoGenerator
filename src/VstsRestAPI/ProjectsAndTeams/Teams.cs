@@ -6,9 +6,9 @@ using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 namespace VstsRestAPI.ProjectsAndTeams
 {
-    public class Team : ApiServiceBase
+    public class Teams : ApiServiceBase
     {
-        public Team(IConfiguration configuration) : base(configuration) { }
+        public Teams(IConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create teams
