@@ -41,7 +41,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="userMethod"></param>
         /// <param name="accountUsers"></param>
         /// <returns></returns>
-
+        
         public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string selectedTemplate)
         {
             try
@@ -50,7 +50,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 repositoryId = repositoryID;
                 projectId = projectID;
                 pullRequests = dictPullRequests;
-                JArray UserList = new JArray();
+                JArray userList = new JArray();
 
                 if (userMethod == "Select")
                 {
@@ -72,13 +72,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                     else
                     {
                         var jitems = JObject.Parse(projectSettingsJson);
-                        UserList = jitems["users"].Value<JArray>();
+                        userList = jitems["users"].Value<JArray>();
 
-                        if (UserList.Count > 0)
+                        if (userList.Count > 0)
                         {
                             listAssignToUsers.Add(uniqueUser);
                         }
-                        foreach (var data in UserList.Values())
+                        foreach (var data in userList.Values())
                         {
                             listAssignToUsers.Add(data.ToString());
                         }
@@ -87,13 +87,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                 else
                 {
                     var jitems = JObject.Parse(projectSettingsJson);
-                    UserList = jitems["users"].Value<JArray>();
+                    userList = jitems["users"].Value<JArray>();
 
-                    if (UserList.Count > 0)
+                    if (userList.Count > 0)
                     {
                         listAssignToUsers.Add(uniqueUser);
                     }
-                    foreach (var data in UserList.Values())
+                    foreach (var data in userList.Values())
                     {
                         listAssignToUsers.Add(data.ToString());
                     }
@@ -267,20 +267,20 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// </summary>
         /// <param name="workItemType"></param>
         /// <param name="old_wi_ID"></param>
-        /// <param name="ProjectName"></param>
-        /// <param name="dicWIFields"></param>
+        /// <param name="projectName"></param>
+        /// <param name="dictionaryWIFields"></param>
         /// <returns></returns>
-        public bool UpdateWorkIteminTarget(string workItemType, string old_wi_ID, string ProjectName, Dictionary<string, object> dicWIFields)
+        public bool UpdateWorkIteminTarget(string workItemType, string old_wi_ID, string projectName, Dictionary<string, object> dictionaryWIFields)
         {
             //int pathCount = paths.Count();
-            List<WorkItemPatch.Field> lstFields = new List<WorkItemPatch.Field>();
+            List<WorkItemPatch.Field> listFields = new List<WorkItemPatch.Field>();
             WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
             // change some values on a few fields
-            foreach (string key in dicWIFields.Keys)
+            foreach (string key in dictionaryWIFields.Keys)
             {
-                lstFields.Add(new WorkItemPatch.Field() { op = "add", path = key, value = dicWIFields[key] });
+                listFields.Add(new WorkItemPatch.Field() { op = "add", path = key, value = dictionaryWIFields[key] });
             }
-            WorkItemPatch.Field[] fields = lstFields.ToArray();
+            WorkItemPatch.Field[] fields = listFields.ToArray();
             using (var client = GetHttpClient())
             {
                 //var postValue = new StringContent(JsonConvert.SerializeObject(wI), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
@@ -289,7 +289,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var method = new HttpMethod("PATCH");
 
                 // send the request               
-                var request = new HttpRequestMessage(method, ProjectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
+                var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
                 var response = client.SendAsync(request).Result;
 
 

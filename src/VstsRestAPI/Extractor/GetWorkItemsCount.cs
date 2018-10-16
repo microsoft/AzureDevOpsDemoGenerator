@@ -29,7 +29,7 @@ namespace VstsRestAPI.Extractor
         /// </summary>
         /// <param name="workItemType"></param>
         /// <returns></returns>
-        public WorkItemFetchResponse.WorkItems getWorkItemsfromSource(string workItemType)
+        public WorkItemFetchResponse.WorkItems GetWorkItemsfromSource(string workItemType)
         {
             GetWorkItemsResponse.Results viewModel = new GetWorkItemsResponse.Results();
             WorkItemFetchResponse.WorkItems fetchedWIs;
@@ -75,7 +75,7 @@ namespace VstsRestAPI.Extractor
                     }
                     Console.WriteLine("Total {0} {1} Work Items read from source", WICtr, workItemType);
                     workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
-                    fetchedWIs = GetWorkItemsDetailinBatch(workitemIDstoFetch);
+                    fetchedWIs = GetWorkItemsDetailInBatch(workitemIDstoFetch);
                     return fetchedWIs;
                 }
             }
@@ -91,7 +91,7 @@ namespace VstsRestAPI.Extractor
         /// </summary>
         /// <param name="workitemstoFetch"></param>
         /// <returns></returns>
-        public WorkItemFetchResponse.WorkItems GetWorkItemsDetailinBatch(string workitemstoFetch)
+        public WorkItemFetchResponse.WorkItems GetWorkItemsDetailInBatch(string workitemstoFetch)
         {
             WorkItemFetchResponse.WorkItems viewModel = new WorkItemFetchResponse.WorkItems();
             try

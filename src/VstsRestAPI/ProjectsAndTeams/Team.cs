@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
@@ -286,15 +285,16 @@ namespace VstsRestAPI.ProjectsAndTeams
                 }
             }
         }
-
+        /// <summary>
+        /// Update team areas
+        /// </summary>
+        /// <param name="projectName"></param>
+        /// <param name="json"></param>
+        /// <returns></returns>
         public bool UpdateTeamsAreas(string projectName, string json)
         {
-            using (var client = new HttpClient())
+            using (var client = GetHttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                 var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var method = new HttpMethod("PATCH");

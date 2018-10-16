@@ -17,7 +17,7 @@ namespace VstsRestAPI.Git
         /// <param name="project"></param>
         /// <param name="repositoryID"></param>
         /// <returns></returns>
-        public bool getSourceCodeFromGitHub(string json, string project, string repositoryID)
+        public bool GetSourceCodeFromGitHub(string json, string project, string repositoryID)
         {
             using (var client = GetHttpClient())
             {
@@ -133,7 +133,7 @@ namespace VstsRestAPI.Git
         /// <param name="name"></param>
         /// <param name="projectId"></param>
         /// <returns></returns>
-        public string[] CreateRepositorie(string name, string projectId)
+        public string[] CreateRepository(string name, string projectId)
         {
             string[] repository = new string[2];
 

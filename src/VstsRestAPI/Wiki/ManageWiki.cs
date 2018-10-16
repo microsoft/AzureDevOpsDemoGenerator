@@ -30,8 +30,8 @@ namespace VstsRestAPI.Wiki
                     HttpResponseMessage response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        projectwiki = JsonConvert.DeserializeObject<ProjectwikiResponse.Projectwiki>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        projectwiki = JsonConvert.DeserializeObject<ProjectwikiResponse.Projectwiki>(result);
                         return projectwiki;
                     }
                     else
@@ -70,7 +70,7 @@ namespace VstsRestAPI.Wiki
                     HttpResponseMessage response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
+                        string result = response.Content.ReadAsStringAsync().Result;
                         return true;
                     }
                     else

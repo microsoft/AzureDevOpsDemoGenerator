@@ -45,7 +45,11 @@ namespace VstsRestAPI.Queues
 
             return dicQueues;
         }
-
+        /// <summary>
+        /// Create Agent Queue by queue name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public int CreateQueue(string name)
         {
             AgentQueueModel viewModel = new AgentQueueModel
