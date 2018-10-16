@@ -47,11 +47,11 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             using (var client = GetHttpClient())
             {
-                var newbatchRequest = new StringContent(JsonConvert.SerializeObject(batchRequests), Encoding.UTF8, "application/json");
+                var newBatchRequest = new StringContent(JsonConvert.SerializeObject(batchRequests), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
                 // send the request
-                var request = new HttpRequestMessage(method, "_apis/wit/$batch?api-version=" + _configuration.VersionNumber) { Content = newbatchRequest };
+                var request = new HttpRequestMessage(method, "_apis/wit/$batch?api-version=" + _configuration.VersionNumber) { Content = newBatchRequest };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {

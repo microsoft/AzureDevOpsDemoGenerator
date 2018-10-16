@@ -203,7 +203,7 @@ $(document).ready(function () {
         $('#ExStatus-messages').empty();
         $('#accountLink').empty(); $('#finalLink').addClass('d-none');
         $.ajax({
-            url: '../Extractor/CreateProjectEnvironment',
+            url: '../Extractor/AnalyzeProject',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(projectN),

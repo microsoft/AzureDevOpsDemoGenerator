@@ -11,37 +11,10 @@ namespace VstsRestAPI.Extractor
     {
         public GetClassificationNodes(IConfiguration configuration) : base(configuration) { }
 
-        public IterationtoSave.Nodes GetIterationsToSave(string projectName, string pat, string URL)//string projectName, string URL, string _credentials, string srcProject)
-        {
-            try
-            {
-
-                IterationtoSave.Nodes viewModel = new IterationtoSave.Nodes();
-                List<IterationtoSave.Nodes> viewModelList = new List<IterationtoSave.Nodes>();
-
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=1&api-version=1.0", projectName)).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        viewModel = JsonConvert.DeserializeObject<IterationtoSave.Nodes>(result);
-                        viewModelList.Add(viewModel);
-                        return viewModel;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-            return new IterationtoSave.Nodes();
-        }
+        /// <summary>
+        /// Get Iteration Count
+        /// </summary>
+        /// <returns></returns>
         public GetINumIteration.Iterations GetiterationCount()
         {
             try
@@ -51,8 +24,8 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/teamsettings/iterations?api-version=4.1").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        GetINumIteration.Iterations getINum = JsonConvert.DeserializeObject<GetINumIteration.Iterations>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        GetINumIteration.Iterations getINum = JsonConvert.DeserializeObject<GetINumIteration.Iterations>(result);
                         return getINum;
                     }
                     else
@@ -69,6 +42,10 @@ namespace VstsRestAPI.Extractor
             }
             return new GetINumIteration.Iterations();
         }
+        /// <summary>
+        /// Get Iterations to write file
+        /// </summary>
+        /// <returns></returns>
         public ItearationList.Iterations GetIterations()
         {
             try
@@ -96,7 +73,10 @@ namespace VstsRestAPI.Extractor
             }
             return new ItearationList.Iterations();
         }
-
+        /// <summary>
+        /// Get Team List to write to file
+        /// </summary>
+        /// <returns></returns>
         public SrcTeamsList GetTeamList()
         {
             Teams.TeamList teamObj = new Teams.TeamList();
@@ -108,9 +88,9 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("_apis/projects/" + Project + "/teams?api-version=2.2").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(res);
-                        _team = JsonConvert.DeserializeObject<SrcTeamsList>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(result);
+                        _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
                         return _team;
                     }
                     else
@@ -128,6 +108,10 @@ namespace VstsRestAPI.Extractor
             return new SrcTeamsList();
         }
 
+        /// <summary>
+        /// Get Board colums for Scrum template to write to file
+        /// </summary>
+        /// <returns></returns>
         public BoardColumnResponseScrum.ColumnResponse ExportBoardColumnsScrum()
         {
             try
@@ -156,6 +140,10 @@ namespace VstsRestAPI.Extractor
             return new BoardColumnResponseScrum.ColumnResponse();
         }
 
+        /// <summary>
+        /// Get Board Columns for Agile template to write file
+        /// </summary>
+        /// <returns></returns>
         public BoardColumnResponseAgile.ColumnResponse ExportBoardColumnsAgile()
         {
             try
@@ -184,6 +172,10 @@ namespace VstsRestAPI.Extractor
             return new BoardColumnResponseAgile.ColumnResponse();
         }
 
+        /// <summary>
+        /// Get Board Rows to write file
+        /// </summary>
+        /// <returns></returns>
         public ExportBoardRows.Rows ExportboardRows()
         {
             try
@@ -193,9 +185,9 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boardrows?api-version=4.1").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
+                        string result = response.Content.ReadAsStringAsync().Result;
                         ExportBoardRows.Rows rows = new ExportBoardRows.Rows();
-                        rows = JsonConvert.DeserializeObject<ExportBoardRows.Rows>(res);
+                        rows = JsonConvert.DeserializeObject<ExportBoardRows.Rows>(result);
                         ExportBoardRows.Value addValue = new ExportBoardRows.Value();
                         addValue.id = "00000000-0000-0000-0000-000000000000";
                         addValue.name = null;
@@ -217,6 +209,11 @@ namespace VstsRestAPI.Extractor
             return new ExportBoardRows.Rows();
         }
 
+        /// <summary>
+        /// Get Card Style details to write file
+        /// </summary>
+        /// <param name="boardType"></param>
+        /// <returns></returns>
         public CardStyle.Style GetCardStyle(string boardType)
         {
             try
@@ -227,8 +224,8 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardStyle.Style style = new CardStyle.Style();
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        style = JsonConvert.DeserializeObject<CardStyle.Style>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        style = JsonConvert.DeserializeObject<CardStyle.Style>(result);
                         return style;
                     }
                     else
@@ -246,6 +243,10 @@ namespace VstsRestAPI.Extractor
             return new CardStyle.Style();
         }
 
+        /// <summary>
+        /// Get Card fields for Scrum process template to write file
+        /// </summary>
+        /// <returns></returns>
         public CardFiledsScrum.CardField GetCardFieldsScrum()
         {
             try
@@ -256,8 +257,8 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsScrum.CardField card = new CardFiledsScrum.CardField();
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        card = JsonConvert.DeserializeObject<CardFiledsScrum.CardField>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        card = JsonConvert.DeserializeObject<CardFiledsScrum.CardField>(result);
                         return card;
                     }
                     else
@@ -275,6 +276,10 @@ namespace VstsRestAPI.Extractor
             return new CardFiledsScrum.CardField();
         }
 
+        /// <summary>
+        /// Get Card fields for Agile process template to write file
+        /// </summary>
+        /// <returns></returns>
         public CardFiledsAgile.CardField GetCardFieldsAgile()
         {
             try
@@ -285,8 +290,8 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsAgile.CardField card = new CardFiledsAgile.CardField();
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        card = JsonConvert.DeserializeObject<CardFiledsAgile.CardField>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        card = JsonConvert.DeserializeObject<CardFiledsAgile.CardField>(result);
                         return card;
                     }
                     else
@@ -304,7 +309,10 @@ namespace VstsRestAPI.Extractor
             return new CardFiledsAgile.CardField();
         }
 
-
+        /// <summary>
+        /// Get Team setting
+        /// </summary>
+        /// <returns></returns>
         public GetTeamSetting.Setting GetTeamSetting()
         {
             GetTeamSetting.Setting setting = new GetTeamSetting.Setting();
@@ -315,8 +323,8 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("https://dev.azure.com/" + Account + "/" + Project + "/_apis/work/teamsettings?api-version=4.1").Result;
                     if(response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        setting = JsonConvert.DeserializeObject<GetTeamSetting.Setting>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        setting = JsonConvert.DeserializeObject<GetTeamSetting.Setting>(result);
                         return setting;
                     }
                     else

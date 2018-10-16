@@ -14,21 +14,21 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="credential"></param>
         /// <param name="version"></param>
         /// <param name="url"></param>
-        /// <param name="issuenName"></param>
+        /// <param name="issueName"></param>
         /// <param name="description"></param>
         /// <param name="projectId"></param>
-        public void CreateIssueWI(string credential, string version, string url, string issuenName, string description, string projectId)
+        public void CreateIssueWI(string credential, string version, string url, string issueName, string description, string projectId)
         {
             try
             {
                 Object[] patchDocument = new Object[2];
-                patchDocument[0] = new { op = "add", path = "/fields/System.Title", value = issuenName };
+                patchDocument[0] = new { op = "add", path = "/fields/System.Title", value = issueName };
                 patchDocument[1] = new { op = "add", path = "/fields/System.Description", value = description };
 
                 using (var client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credential);
 
                     // serialize the fields array into a json string          
@@ -79,7 +79,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 using (var client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credential);
 
                     // serialize the fields array into a json string          

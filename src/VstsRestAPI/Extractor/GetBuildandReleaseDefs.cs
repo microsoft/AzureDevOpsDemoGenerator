@@ -14,6 +14,10 @@ namespace VstsRestAPI.Extractor
         public GetBuildandReleaseDefs(IConfiguration configuration) : base(configuration) { }
 
         //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
+        /// <summary>
+        /// Get Build Definition count
+        /// </summary>
+        /// <returns></returns>
         public GetBuildDefResponse.BuildDef GetBuildDefCount()
         {
             try
@@ -23,8 +27,8 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/build/definitions?api-version=4.1").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        GetBuildDefResponse.BuildDef getINum = JsonConvert.DeserializeObject<GetBuildDefResponse.BuildDef>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        GetBuildDefResponse.BuildDef getINum = JsonConvert.DeserializeObject<GetBuildDefResponse.BuildDef>(result);
                         return getINum;
                     }
                     else
@@ -43,6 +47,10 @@ namespace VstsRestAPI.Extractor
         }
 
         //https://d2a2v2.vsrm.visualstudio.com/selenium2/_apis/release/definitions?api-version=4.1-preview.3
+        /// <summary>
+        /// Get Release Definition count
+        /// </summary>
+        /// <returns></returns>
         public GetReleaseDefResponse.ReleaseDef GetReleaseDefCount()
         {
             try
@@ -53,8 +61,8 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync("https://vsrm.dev.azure.com/" + Account + "//" + Project + "/_apis/release/definitions?api-version=4.1-preview.3").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        GetReleaseDefResponse.ReleaseDef getINum = JsonConvert.DeserializeObject<GetReleaseDefResponse.ReleaseDef>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        GetReleaseDefResponse.ReleaseDef getINum = JsonConvert.DeserializeObject<GetReleaseDefResponse.ReleaseDef>(result);
                         return getINum;
                     }
                     else
@@ -71,6 +79,11 @@ namespace VstsRestAPI.Extractor
             }
             return new GetReleaseDefResponse.ReleaseDef();
         }
+
+        /// <summary>
+        /// Get Release Definition count
+        /// </summary>
+        /// <returns></returns>
         public GetReleaseDefResponse.ReleaseDef GetReleaseDef()
         {
             try
@@ -80,8 +93,8 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync(Project + "/_apis/release/definitions?api-version=4.1-preview.3").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        GetReleaseDefResponse.ReleaseDef getRelease = JsonConvert.DeserializeObject<GetReleaseDefResponse.ReleaseDef>(res);
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        GetReleaseDefResponse.ReleaseDef getRelease = JsonConvert.DeserializeObject<GetReleaseDefResponse.ReleaseDef>(result);
                         return getRelease;
                     }
                     else
@@ -99,6 +112,10 @@ namespace VstsRestAPI.Extractor
             return new GetReleaseDefResponse.ReleaseDef();
         }
 
+        /// <summary>
+        /// Export build definitions to write file
+        /// </summary>
+        /// <returns></returns>
         public List<JObject> ExportBuildDefinitions()
         {
             try
@@ -120,8 +137,8 @@ namespace VstsRestAPI.Extractor
                                     HttpResponseMessage ResponseDef = client1.GetAsync(string.Format("{0}/_apis/build/definitions/{1}?api-version=2.0", Project, value.id)).Result;
                                     if (response.IsSuccessStatusCode)
                                     {
-                                        string res = ResponseDef.Content.ReadAsStringAsync().Result;
-                                        JObject o = JObject.Parse(res);
+                                        string result = ResponseDef.Content.ReadAsStringAsync().Result;
+                                        JObject o = JObject.Parse(result);
                                         resultList.Add(o);
                                     }
                                 }
@@ -138,6 +155,10 @@ namespace VstsRestAPI.Extractor
             return new List<JObject>();
         }
 
+        /// <summary>
+        /// Get Repository list to create service end point json and import source code json
+        /// </summary>
+        /// <returns></returns>
         public RepositoryList.Repository GetRepoList()
         {
             using (var client = GetHttpClient())
@@ -145,14 +166,18 @@ namespace VstsRestAPI.Extractor
                 HttpResponseMessage response = client.GetAsync("https://dev.azure.com/" + Account + "/" + Project + "/_apis/git/repositories?api-version=5.0-preview.1").Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    string res = response.Content.ReadAsStringAsync().Result;
-                    RepositoryList.Repository repo = JsonConvert.DeserializeObject<RepositoryList.Repository>(res);
-                    return repo;
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    RepositoryList.Repository repository = JsonConvert.DeserializeObject<RepositoryList.Repository>(result);
+                    return repository;
                 }
             }
             return new RepositoryList.Repository();
         }
 
+        /// <summary>
+        /// Get Release Definition to write file - Generalizing
+        /// </summary>
+        /// <returns></returns>
         public List<JObject> GetReleaseDefs()
         {
             List<JObject> jobj = new List<JObject>();
@@ -199,9 +224,13 @@ namespace VstsRestAPI.Extractor
             }
         }
 
+        /// <summary>
+        /// Get Agent Queue to Replace the Queue name in the build definition
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, int> GetQueues()
         {
-            Dictionary<string, int> dicQueues = new Dictionary<string, int>();
+            Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
             QueueModel viewModel = new QueueModel();
 
             using (var client =  GetHttpClient())
@@ -215,7 +244,7 @@ namespace VstsRestAPI.Extractor
                     {
                         foreach (AgentQueueModel aq in viewModel.value)
                         {
-                            dicQueues[aq.name] = aq.id;
+                            dictionaryQueues[aq.name] = aq.id;
                         }
                     }
                 }
@@ -227,7 +256,7 @@ namespace VstsRestAPI.Extractor
                 }
             }
 
-            return dicQueues;
+            return dictionaryQueues;
         }
 
     }

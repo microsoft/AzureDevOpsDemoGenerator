@@ -31,7 +31,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
                 scrumColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(fileName);
 
-                currColumns = getBoardColumns(projectName, teamName);
+                currColumns = GetBoardColumns(projectName, teamName);
                 if (currColumns.columns != null)
                 {
                     foreach (GetBoardColumnResponse.Value col in currColumns.columns)
@@ -61,7 +61,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             else if (boardType == "Stories")
             {
                 agileColumns = JsonConvert.DeserializeObject<List<Agile.Columns>>(fileName);
-                currColumnsAgile = getBoardColumnsAgile(projectName, teamName);
+                currColumnsAgile = GetBoardColumnsAgile(projectName, teamName);
                 if (currColumnsAgile.columns != null)
                 {
                     foreach (GetBoardColumnResponseAgile.Value col in currColumnsAgile.columns)
@@ -97,13 +97,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                 StringContent patchValue = new StringContent("");
                 if (boardType == "Backlog%20items")
                 {
-                    string x = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-                    patchValue = new StringContent(x, Encoding.UTF8, "application/json");
+                    string stringSerialize = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    patchValue = new StringContent(stringSerialize, Encoding.UTF8, "application/json");
                 }
                 else if (boardType == "Stories")
                 {
-                    string x = JsonConvert.SerializeObject(agileColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-                    patchValue = new StringContent(x, Encoding.UTF8, "application/json");
+                    string stringserialize = JsonConvert.SerializeObject(agileColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    patchValue = new StringContent(stringserialize, Encoding.UTF8, "application/json");
                 }
                 // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");
@@ -130,7 +130,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="teamName"></param>
         /// <returns></returns>
-        public GetBoardColumnResponse.ColumnResponse getBoardColumns(string projectName, string teamName)
+        public GetBoardColumnResponse.ColumnResponse GetBoardColumns(string projectName, string teamName)
         {
             GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
             using (var client = GetHttpClient())
@@ -155,7 +155,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
             }
         }
-        public GetBoardColumnResponseAgile.ColumnResponse getBoardColumnsAgile(string projectName, string teamName)
+        public GetBoardColumnResponseAgile.ColumnResponse GetBoardColumnsAgile(string projectName, string teamName)
         {
             GetBoardColumnResponseAgile.ColumnResponse columns = new GetBoardColumnResponseAgile.ColumnResponse();
             using (var client = GetHttpClient())

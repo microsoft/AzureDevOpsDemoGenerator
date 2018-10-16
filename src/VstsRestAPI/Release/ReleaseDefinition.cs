@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using VstsRestAPI.Viewmodel.ReleaseDefinition;
 
@@ -85,13 +84,8 @@ namespace VstsRestAPI.Release
                         ReleaseDefinitionsResponse.Release Definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<ReleaseDefinitionsResponse.Release>(response.Content.ReadAsStringAsync().Result.ToString());
 
                         int requiredDefinitionId = Definitions.value.Where(x => x.name == definitionName).FirstOrDefault().id;
-                        using (var client1 = new HttpClient())
+                        using (var client1 = GetHttpClient())
                         {
-                            client1.BaseAddress = new Uri(_configuration.UriString);
-                            client1.DefaultRequestHeaders.Accept.Clear();
-                            client1.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                            client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
                             requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=" + _configuration.VersionNumber, project, requiredDefinitionId);
                             HttpResponseMessage ResponseDef = client1.GetAsync(requestURL).Result;
                             if (response.IsSuccessStatusCode)

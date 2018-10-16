@@ -129,24 +129,24 @@ namespace VstsRestAPI.WorkItemAndTracking
             DateTime startDate = DateTime.Today.AddDays(-22);
             DateTime endDate = DateTime.Today.AddDays(-1);
 
-            Dictionary<string, string[]> sprint_dic = new Dictionary<string, string[]>();
+            Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
 
             if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
             {
                 for (int i = 1; i <= 6; i++)
                 {
-                    sprint_dic.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                    sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                 }
             }
             else
             {
                 for (int i = 1; i <= 3; i++)
                 {
-                    sprint_dic.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                    sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                 }
             }
 
-            foreach (var key in sprint_dic.Keys)
+            foreach (var key in sprint_dictionary.Keys)
             {
                 UpdateIterationDates(project, key, startDate, endDate);
                 startDate = endDate.AddDays(1);
@@ -276,8 +276,8 @@ namespace VstsRestAPI.WorkItemAndTracking
                 HttpResponseMessage response = client.GetAsync(project + "/" + project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    string res = response.Content.ReadAsStringAsync().Result;
-                    sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(res);
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(result);
                     return sprints;
                 }
             }
