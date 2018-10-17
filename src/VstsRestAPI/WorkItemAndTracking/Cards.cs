@@ -88,7 +88,6 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
                 var patchValue = new StringContent(JsonConvert.SerializeObject(cardStyles), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PATCH");
-                //PATCH https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings?api-version=4.1
                 string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardrulesettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;

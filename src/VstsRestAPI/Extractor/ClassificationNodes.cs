@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using VstsRestAPI.Viewmodel.Extractor;
@@ -53,7 +52,7 @@ namespace VstsRestAPI.Extractor
                 ItearationList.Iterations viewModel = new ItearationList.Iterations();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=1.0", Project)).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, Project)).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -85,7 +84,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + Project + "/teams?api-version=2.2").Result;
+                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -118,7 +117,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Backlog%20items/columns?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Backlog%20items/columns?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         BoardColumnResponseScrum.ColumnResponse columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
@@ -151,7 +150,7 @@ namespace VstsRestAPI.Extractor
                 BoardColumnResponseAgile.ColumnResponse columns = new BoardColumnResponseAgile.ColumnResponse();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
@@ -182,7 +181,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boardrows?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boardrows?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -220,7 +219,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20team/_apis/work/boards/" + boardType + "/cardrulesettings?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20team/_apis/work/boards/" + boardType + "/cardrulesettings?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardStyle.Style style = new CardStyle.Style();
@@ -253,7 +252,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/backlog%20items/cardsettings?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/backlog%20items/cardsettings?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsScrum.CardField card = new CardFiledsScrum.CardField();
@@ -286,7 +285,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsAgile.CardField card = new CardFiledsAgile.CardField();
@@ -320,8 +319,8 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("https://dev.azure.com/" + Account + "/" + Project + "/_apis/work/teamsettings?api-version=4.1").Result;
-                    if(response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         setting = JsonConvert.DeserializeObject<GetTeamSetting.Setting>(result);

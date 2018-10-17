@@ -135,11 +135,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
             using (var client = GetHttpClient())
             {
-                //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-                // var method = new HttpMethod("GET");
-
                 var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20Items?api-version=" + _configuration.VersionNumber).Result;
-                // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     columns = response.Content.ReadAsAsync<GetBoardColumnResponse.ColumnResponse>().Result;
@@ -160,11 +156,8 @@ namespace VstsRestAPI.WorkItemAndTracking
             GetBoardColumnResponseAgile.ColumnResponse columns = new GetBoardColumnResponseAgile.ColumnResponse();
             using (var client = GetHttpClient())
             {
-                //var patchValue = new StringContent(JsonConvert.SerializeObject(Columns), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-                // var method = new HttpMethod("GET");
 
                 var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Stories?api-version=" + _configuration.VersionNumber).Result;
-                // var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     columns = response.Content.ReadAsAsync<GetBoardColumnResponseAgile.ColumnResponse>().Result;

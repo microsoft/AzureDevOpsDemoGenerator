@@ -578,9 +578,10 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public AccessDetails GetAccessToken(string body)
         {
+            string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
             var client = new HttpClient
             {
-                BaseAddress = new Uri("https://app.vssps.visualstudio.com")
+                BaseAddress = new Uri(baseAddress)
             };
 
             var request = new HttpRequestMessage(HttpMethod.Post, "/oauth2/token");
@@ -610,7 +611,9 @@ namespace VstsDemoBuilder.Controllers
             {
                 try
                 {
-                    client.BaseAddress = new Uri("https://app.vssps.visualstudio.com/");
+                    string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+
+                    client.BaseAddress = new Uri(baseAddress);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessDetails.access_token);
@@ -651,7 +654,9 @@ namespace VstsDemoBuilder.Controllers
             {
                 string redirectUri = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
                 string cientSecret = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
-                var request = new HttpRequestMessage(HttpMethod.Post, "https://app.vssps.visualstudio.com/oauth2/token");
+                string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+
+                var request = new HttpRequestMessage(HttpMethod.Post, baseAddress + "/oauth2/token");
                 var requestContent = string.Format(
                     "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&client_assertion={0}&grant_type=refresh_token&assertion={1}&redirect_uri={2}",
                     HttpUtility.UrlEncode(cientSecret),
@@ -694,7 +699,9 @@ namespace VstsDemoBuilder.Controllers
             //}
             Models.Accounts.AccountList accounts = new Models.Accounts.AccountList();
             var client = new HttpClient();
-            string requestContent = "https://app.vssps.visualstudio.com/_apis/Accounts?memberId=" + memberID + "&api-version=4.1";
+            string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+
+            string requestContent = baseAddress + "/_apis/Accounts?memberId=" + memberID + "&api-version=4.1";
             var request = new HttpRequestMessage(HttpMethod.Get, requestContent);
             request.Headers.Add("Authorization", "Bearer " + details.access_token);
             try
@@ -838,9 +845,6 @@ namespace VstsDemoBuilder.Controllers
         {
             pat = model.accessToken;
             //define versions to be use
-            //string defaultVersion = System.Configuration.ConfigurationManager.AppSettings["Version2.2"];
-            //string ver2_0 = System.Configuration.ConfigurationManager.AppSettings["Version2.0"];
-            //string Ver3_0 = System.Configuration.ConfigurationManager.AppSettings["Version3.0"];
             string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
             string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
             string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
@@ -887,16 +891,6 @@ namespace VstsDemoBuilder.Controllers
             }
             //configuration setup
             string _credentials = model.accessToken;
-            //Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", PAT)));
-            //VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
-            //VstsRestAPI.Configuration _releaseDefinitionConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = defaultVersion, PersonalAccessToken = PAT, AccountName = accountName };
-            //VstsRestAPI.Configuration _createReleaseConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".vsrm.visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, AccountName = accountName };
-            //VstsRestAPI.Configuration _configuration3_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = Ver3_0, PersonalAccessToken = PAT, Project = model.ProjectName, AccountName = accountName };
-            //VstsRestAPI.Configuration _configuration2_0 = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
-            //VstsRestAPI.Configuration _cardConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com:", VersionNumber = ver2_0, PersonalAccessToken = PAT, AccountName = accountName };
-            //VstsRestAPI.Configuration _wikiConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/", PersonalAccessToken = PAT, AccountName = accountName };
-
-
             VstsRestAPI.Configuration _projectCreationVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _releaseVersion = new VstsRestAPI.Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             VstsRestAPI.Configuration _buildVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
@@ -1060,14 +1054,11 @@ namespace VstsDemoBuilder.Controllers
 
 
             //update sprint dates
-            //AddMessage(model.id, "Updating sprint dates...");
             UpdateSprintItems(model, _boardVersion, settings);
             UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
             RenameIterations(model, _boardVersion, settings.renameIterations);
-            //AddMessage(model.id, "Sprint dates updated");
 
             //create service endpoint
-            //AddMessage(model.id, "Creating service endpoint...");
             List<string> listEndPointsJsonPath = new List<string>();
             string serviceEndPointsPath = templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
             if (System.IO.Directory.Exists(serviceEndPointsPath))
@@ -1100,7 +1091,6 @@ namespace VstsDemoBuilder.Controllers
             }
 
             //import source code from GitHub
-            //AddMessage(model.id, "Importing source code...");
 
             List<string> listImportSourceCodeJsonPaths = new List<string>();
             string importSourceCodePath = templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
@@ -1157,7 +1147,6 @@ namespace VstsDemoBuilder.Controllers
 
 
             //import work items
-            //AddMessage(model.id, "Creating work items ...");
             string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate);
             string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate);
             string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate);
@@ -1257,7 +1246,6 @@ namespace VstsDemoBuilder.Controllers
             {
                 Directory.GetFiles(testPlansFolder).ToList().ForEach(i => listTestPlansJsonPaths.Add(i));
             }
-            //if (lstTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "Creating testplans, testsuites and testcases..."); }
             foreach (string testPlan in listTestPlansJsonPaths)
             {
                 CreateTestManagement(wiMapping, model, testPlan, templatesFolder, _testPlanVersion);
@@ -1265,7 +1253,6 @@ namespace VstsDemoBuilder.Controllers
             if (listTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "TestPlans, TestSuites and TestCases created"); }
 
             //create build Definition
-            //AddMessage(model.id, "Creating build definition...");
             string buildDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
             model.BuildDefinitions = new List<BuildDef>();
             if (Directory.Exists(buildDefinitionsPath))
@@ -1286,7 +1273,6 @@ namespace VstsDemoBuilder.Controllers
             }
 
             //create release Definition
-            //AddMessage(model.id, "Creating release definition...");
             string releaseDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\ReleaseDefinitions";
             model.ReleaseDefinitions = new List<ReleaseDef>();
             if (Directory.Exists(releaseDefinitionsPath))
@@ -1346,11 +1332,10 @@ namespace VstsDemoBuilder.Controllers
                 if (System.IO.File.Exists(jsonTeams))
                 {
                     VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
-                    jsonTeams = model.ReadJsonFile(jsonTeams); //System.IO.File.ReadAllText(jsonTeams);
+                    jsonTeams = model.ReadJsonFile(jsonTeams); 
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
 
-                    //AddMessage(id, string.Format("Creating {0} teams...", teamsParsed.Count));
                     //get Backlog Iteration Id
                     string backlogIteration = objTeam.GetTeamSetting(model.ProjectName);
                     //get all Iterations
@@ -1807,7 +1792,6 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 string[] repositoryDetail = new string[2];
-                //string jsonSourceCode = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, sourceCodeJSON);
                 if (System.IO.File.Exists(sourceCodeJSON))
                 {
                     Repository objRepository = new Repository(_repo);

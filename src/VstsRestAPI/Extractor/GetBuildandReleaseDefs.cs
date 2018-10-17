@@ -3,7 +3,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.Queue;
 
@@ -24,7 +23,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/build/definitions?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -123,7 +122,7 @@ namespace VstsRestAPI.Extractor
                 List<JObject> resultList = new List<JObject>();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/build/definitions?api-version=2.0", Project)).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/build/definitions?api-version=" + _configuration.VersionNumber, Project)).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         BuildDefinitionResponse.Build Definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<BuildDefinitionResponse.Build>(response.Content.ReadAsStringAsync().Result.ToString());
@@ -134,7 +133,7 @@ namespace VstsRestAPI.Extractor
                                 BuildDefinitions.BuildDefinition DefinitionResult = new BuildDefinitions.BuildDefinition();
                                 using (var client1 = GetHttpClient())
                                 {
-                                    HttpResponseMessage ResponseDef = client1.GetAsync(string.Format("{0}/_apis/build/definitions/{1}?api-version=2.0", Project, value.id)).Result;
+                                    HttpResponseMessage ResponseDef = client1.GetAsync(string.Format("{0}/_apis/build/definitions/{1}?api-version=" + _configuration.VersionNumber, Project, value.id)).Result;
                                     if (response.IsSuccessStatusCode)
                                     {
                                         string result = ResponseDef.Content.ReadAsStringAsync().Result;
@@ -163,7 +162,7 @@ namespace VstsRestAPI.Extractor
         {
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync("https://dev.azure.com/" + Account + "/" + Project + "/_apis/git/repositories?api-version=5.0-preview.1").Result;
+                HttpResponseMessage response = client.GetAsync(Project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
@@ -183,7 +182,7 @@ namespace VstsRestAPI.Extractor
             List<JObject> jobj = new List<JObject>();
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync("https://vsrm.dev.azure.com/" + Account + "/" + Project + "/_apis/release/definitions?api-version=4.1-preview.3").Result;
+                HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     ReleaseDefCountResponse.Release release = new ReleaseDefCountResponse.Release();
@@ -195,7 +194,7 @@ namespace VstsRestAPI.Extractor
                         {
                             using (var clients = GetHttpClient())
                             {
-                                HttpResponseMessage resp = client.GetAsync("https://vsrm.dev.azure.com/" + Account + "/" + Project + "/_apis/release/definitions/" + rel.id).Result;
+                                HttpResponseMessage resp = client.GetAsync("/" + Project + "/_apis/release/definitions/" + rel.id).Result;
                                 if (resp.IsSuccessStatusCode && resp.StatusCode == System.Net.HttpStatusCode.OK)
                                 {
                                     JObject obj = new JObject();
@@ -233,7 +232,7 @@ namespace VstsRestAPI.Extractor
             Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
             QueueModel viewModel = new QueueModel();
 
-            using (var client =  GetHttpClient())
+            using (var client = GetHttpClient())
             {
                 HttpResponseMessage response = client.GetAsync(_configuration.Project + "/_apis/distributedtask/queues?api-version=2.0-preview.1").Result;
 

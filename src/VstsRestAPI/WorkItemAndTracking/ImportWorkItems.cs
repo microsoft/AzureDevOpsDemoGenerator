@@ -127,7 +127,6 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool PrepareAndUpdateTarget(string workItemType, string workImport, string projectName, string selectedTemplate)
         {
-            //List<ColumnPost> Columns = JsonConvert.DeserializeObject<List<ColumnPost>>(workImport);
             workImport = workImport.Replace("$ProjectName$", projectName);
             ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
 
@@ -136,11 +135,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                 foreach (ImportWorkItemModel.Value newWI in fetchedWIs.value)
                 {
                     newWI.fields.SystemCreatedDate = DateTime.Now.AddDays(-3);
-                    //newWI.fields.SystemChangedDate = DateTime.Now.AddDays(-2);
-                    //newWI.fields.SystemRevisedDate = DateTime.Now.AddDays(-2);
-                    // UpdateWorkIteminTarget(workItemType,newWI, new String[] {"/fields/System.Title", "/fields/Microsoft.VSTS.CommonPriority","/fields/Microsoft.VSTS.CommonStackRank", "/fields/System.Description"}, new Object[] {newWI.fields.SystemTitle,newWI.fields.MicrosoftVSTSCommonPriority,newWI.fields.MicrosoftVSTSCommonStackRank,newWI.fields.SystemDescription });
-
-                    //String[] FieldstoAdd = { }; Object[] ValuestoAdd = { };
                     Dictionary<string, object> dicWIFields = new Dictionary<string, object>();
                     string assignToUser = string.Empty;
                     if (listAssignToUsers.Count > 0)
@@ -272,7 +266,6 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateWorkIteminTarget(string workItemType, string old_wi_ID, string projectName, Dictionary<string, object> dictionaryWIFields)
         {
-            //int pathCount = paths.Count();
             List<WorkItemPatch.Field> listFields = new List<WorkItemPatch.Field>();
             WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
             // change some values on a few fields
@@ -283,7 +276,6 @@ namespace VstsRestAPI.WorkItemAndTracking
             WorkItemPatch.Field[] fields = listFields.ToArray();
             using (var client = GetHttpClient())
             {
-                //var postValue = new StringContent(JsonConvert.SerializeObject(wI), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var postValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
                 // set the httpmethod to Patch
                 var method = new HttpMethod("PATCH");
@@ -317,7 +309,6 @@ namespace VstsRestAPI.WorkItemAndTracking
         public bool UpdateWorkItemLinks(string workItemTemplateJson)
         {
             ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
-            //ImportWorkItemModel.WorkItems fetchedPBIs
             string wiToUpdate = "";
             WIMapData findIDforUpdate;
             if (fetchedPBIs.count > 0)
@@ -364,10 +355,8 @@ namespace VstsRestAPI.WorkItemAndTracking
                                             }
                                         }
                                     };
-                                    //UpdateWorkIteminTarget("Product Backlog Item", newWI.id.ToString(), new String[] { "/relations/-"}, new Object[] { newWI.fields.SystemTitle, newWI.fields.SystemDescription });
                                     if (UpdateLink("Product Backlog Item", wiToUpdate, patchWorkItem))
                                     {
-                                        //Console.WriteLine("Updated WI with link from {0} to {1}", oldWIID, newWIID);
                                     }
                                 }
                             }
@@ -460,9 +449,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
                 }
-                //viewModel.HttpStatusCode = response.StatusCode;
 
                 return response.IsSuccessStatusCode;
             }
