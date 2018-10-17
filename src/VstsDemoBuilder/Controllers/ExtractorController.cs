@@ -192,13 +192,13 @@ namespace VstsDemoBuilder.Controllers
             ProjectList.ProjectCount load = new ProjectList.ProjectCount();
             string accname = auth.accname;
             string _credentials = auth.pat;
-            string URL = "https://" + accname + ".visualstudio.com/DefaultCollection/";
-
+            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string url = defaultHost + accname;
             try
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(URL);
+                    client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
@@ -237,14 +237,14 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public JsonResult GetProjectPropertirs(string accname, string project, string _credentials)
         {
-            //GET https://dev.azure.com/{organization}/_apis/work/processes/{processTypeId}?api-version=4.1-preview.1
-            string URL = "https://" + accname + ".visualstudio.com/DefaultCollection/";
+            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string url = defaultHost + accname;
             ProjectProperties.Properties load = new ProjectProperties.Properties();
             try
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(URL);
+                    client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
@@ -255,23 +255,24 @@ namespace VstsDemoBuilder.Controllers
                         load = JsonConvert.DeserializeObject<ProjectProperties.Properties>(res);
                         GetProcessTemplate.PTemplate template = new GetProcessTemplate.PTemplate();
 
-                        string ProcessTypeId = string.Empty;
+                        string processTypeId = string.Empty;
                         var processTypeID = load.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault();
                         if (processTypeID != null)
                         {
-                            ProcessTypeId = processTypeID.value;
+                            processTypeId = processTypeID.value;
                         }
 
                         using (var client1 = new HttpClient())
                         {
+                            client1.BaseAddress = new Uri(url);
                             client1.DefaultRequestHeaders.Accept.Clear();
                             client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                             client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                            HttpResponseMessage response1 = client1.GetAsync("https://dev.azure.com/" + accname + "/_apis/work/processes/" + ProcessTypeId + "?api-version=4.1-preview.1").Result;
+                            HttpResponseMessage response1 = client1.GetAsync("/_apis/work/processes/" + processTypeId + "?api-version=4.1-preview.1").Result;
                             if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                             {
-                                string TemplateData = response1.Content.ReadAsStringAsync().Result;
-                                template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(TemplateData);
+                                string templateData = response1.Content.ReadAsStringAsync().Result;
+                                template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
                                 load.TypeClass = template.properties.Class;
                             }
                         }
@@ -280,8 +281,8 @@ namespace VstsDemoBuilder.Controllers
                     }
                     else
                     {
-                        var res = response.Content.ReadAsStringAsync().Result;
-                        return Json(res, JsonRequestBehavior.AllowGet);
+                        var result = response.Content.ReadAsStringAsync().Result;
+                        return Json(result, JsonRequestBehavior.AllowGet);
                     }
                 }
             }
@@ -317,21 +318,21 @@ namespace VstsDemoBuilder.Controllers
                 if (errorMessages != "")
                 {
                     //also, log message to file system
-                    string LogPath = Server.MapPath("~") + @"\Log";
+                    string logPath = Server.MapPath("~") + @"\Log";
                     string accountName = strResult[1];
                     string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                    if (!Directory.Exists(LogPath))
+                    if (!Directory.Exists(logPath))
                     {
-                        Directory.CreateDirectory(LogPath);
+                        Directory.CreateDirectory(logPath);
                     }
 
-                    System.IO.File.AppendAllText(Path.Combine(LogPath, fileName), errorMessages);
+                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
                     //Create ISSUE work item with error details in VSTSProjectgenarator account
-                    string PATBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                    string URL = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                    string ProjectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                    string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                    string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                    string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
 
@@ -340,7 +341,7 @@ namespace VstsDemoBuilder.Controllers
                     string LogWIT = "true";//System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (LogWIT == "true")
                     {
-                        objIssue.CreateIssueWI(PATBase64, "1.0", URL, issueName, errorMessages, ProjectId);
+                        objIssue.CreateIssueWI(patBase64, "1.0", url, issueName, errorMessages, projectId);
                     }
                 }
             }
@@ -395,14 +396,34 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public string[] GenerateTemplateArifacts(Project model)
         {
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://" + model.accountName + ".visualstudio.com:", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            bool isTeam = GetTeamList(config);
+            string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
+            string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
+            string releaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
+            string wikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
+            string boardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
+            string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
+            string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
+            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
+            string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+
+            VstsRestAPI.Configuration _agentQueueConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            VstsRestAPI.Configuration _workItemConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            VstsRestAPI.Configuration _buildDefinitionConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
+            VstsRestAPI.Configuration _releaseDefinitionConfig = new VstsRestAPI.Configuration() { UriString = releaseHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
+            VstsRestAPI.Configuration _repoConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
+            VstsRestAPI.Configuration _boardConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
+            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
+            VstsRestAPI.Configuration _getReleaseConfig = new VstsRestAPI.Configuration() { UriString = releaseHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+
+
+            bool isTeam = GetTeamList(_boardConfig);
             if (isTeam)
             {
                 AddMessage(model.id, "Teams Definition");
             }
 
-            bool isIteration = GetIterations(config);
+            bool isIteration = GetIterations(_boardConfig);
             if (isIteration)
             {
                 AddMessage(model.id, "Iterations Definition");
@@ -412,22 +433,22 @@ namespace VstsDemoBuilder.Controllers
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectSettings.json", projectSetting);
 
-            string ProjectTemplate = "";
-            ProjectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectTemplate.json", ProjectTemplate);
+            string projectTemplate = "";
+            projectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
+            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectTemplate.json", projectTemplate);
 
-            string TeamArea = "";
-            TeamArea = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\TeamArea.json");
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\TeamArea.json", TeamArea);
+            string teamArea = "";
+            teamArea = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\TeamArea.json");
+            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas Definition");
 
-            GetWorkItems(config);
+            GetWorkItems(_workItemConfig);
             AddMessage(model.id, "Work Items Definition");
 
-            GetRepositoryList(config);
+            GetRepositoryList(_repoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            //int count = GetBuildDefinitions(config);
+            //int count = GetBuildDefinitions(_buildDefinitionConfig, _repoConfig);
             //if (count >= 1)
             //{
             //    AddMessage(model.id, "Build Definition");
@@ -435,8 +456,8 @@ namespace VstsDemoBuilder.Controllers
 
             //System.Threading.Thread.Sleep(2000);
 
-            ////int relCount = GetReleaseDefinitions(config);
-            //int relCount = GeneralizingGetReleaseDefinitions(config);
+            ////int relCount = GetReleaseDefinitions(_releaseDefinitionConfig);
+            //int relCount = GeneralizingGetReleaseDefinitions(_getReleaseConfig, _agentQueueConfig);
             //if (relCount >= 1)
             //{
             //    AddMessage(model.id, "Release Definition");
@@ -444,33 +465,33 @@ namespace VstsDemoBuilder.Controllers
             //}
 
             ////Export Board Rows
-            ExportboardRows(config);
+            ExportboardRows(_boardConfig);
 
             //Export Card style
-            ExportCardStyle(config, model.ProcessTemplate);
+            ExportCardStyle(_boardConfig, model.ProcessTemplate);
 
             //Export Board column json for Scrum and Agile            
             System.Threading.Thread.Sleep(2000);
             if (model.ProcessTemplate == "Scrum")
             {
-                GetBoardColumnsScrum(config);
+                GetBoardColumnsScrum(_boardConfig);
             }
             else if (model.ProcessTemplate == "Agile")
             {
-                GetBoardColumnsAgile(config);
+                GetBoardColumnsAgile(_boardConfig);
             }
 
             //Export Card style json            
             if (model.ProcessTemplate == "Scrum")
             {
-                ExportCardFieldsScrum(config);
+                ExportCardFieldsScrum(_boardConfig);
             }
             else if (model.ProcessTemplate == "Agile")
             {
-                ExportCardFieldsAgile(config);
+                ExportCardFieldsAgile(_boardConfig);
             }
 
-            GetTeamSetting(config);
+            GetTeamSetting(_boardConfig);
             string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
             string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
@@ -489,18 +510,20 @@ namespace VstsDemoBuilder.Controllers
         /// Get Teams Count
         /// </summary>
         /// <param name="projectName"></param>
-        /// <param name="AccountName"></param>
+        /// <param name="accountName"></param>
         /// <param name="pat"></param>
         /// <returns></returns>
         [AllowAnonymous]
-        public int GetTeamsCount(string projectName, string AccountName, string pat)
+        public int GetTeamsCount(string projectName, string accountName, string pat)
         {
             Teams.TeamList teamObj = new Teams.TeamList();
             SrcTeamsList _team = new SrcTeamsList();
-            string URL = "https://" + AccountName + ".visualstudio.com/";
+
+            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string url = defaultHost + accountName;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(URL);
+                client.BaseAddress = new Uri(url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
@@ -836,11 +859,12 @@ namespace VstsDemoBuilder.Controllers
             {
                 foreach (var repo in repos.value)
                 {
-                    string Host = "https://dev.azure.com/" + con.AccountName + "/" + con.Project;
+                    string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+                    string host = defaultHost + con.AccountName + "/" + con.Project;
                     string sourceCodeJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ImportSourceCode.json");
-                    sourceCodeJson = sourceCodeJson.Replace("$Host$", Host).Replace("$Repo$", repo.name);
+                    sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
                     string endPointJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ServiceEndPoint.json");
-                    endPointJson = endPointJson.Replace("$Host$", Host).Replace("$Repo$", repo.name);
+                    endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
                     if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ImportSourceCode"))
                     {
                         Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ImportSourceCode");
@@ -869,11 +893,12 @@ namespace VstsDemoBuilder.Controllers
         /// </summary>
         /// <param name="con"></param>
         /// <returns></returns>
-        public int GetBuildDefinitions(VstsRestAPI.Configuration con)
+        public int GetBuildDefinitions(VstsRestAPI.Configuration con, VstsRestAPI.Configuration repoCon)
         {
             GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
             List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
-            RepositoryList.Repository repo = buildandReleaseDefs.GetRepoList();
+            GetBuildandReleaseDefs repoDefs = new GetBuildandReleaseDefs(repoCon);
+            RepositoryList.Repository repo = repoDefs.GetRepoList();
             if (builds.Count > 0)
             {
                 int count = 1;
@@ -910,13 +935,13 @@ namespace VstsDemoBuilder.Controllers
                         string url = def["repository"]["url"].ToString();
                         if (url != "")
                         {
-                            string EndPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                            EndPointString = EndPointString.Replace("$GitHubURL$", url);
+                            string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                            endPointString = endPointString.Replace("$GitHubURL$", url);
                             Guid g = Guid.NewGuid();
                             string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints"))
                             {
                                 Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints");
-                                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", EndPointString);
+                                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                             }
                         }
                     }
@@ -1057,13 +1082,15 @@ namespace VstsDemoBuilder.Controllers
         /// </summary>
         /// <param name="con"></param>
         /// <returns></returns>
-        public int GeneralizingGetReleaseDefinitions(VstsRestAPI.Configuration con)
+        public int GeneralizingGetReleaseDefinitions(VstsRestAPI.Configuration con, VstsRestAPI.Configuration _agentQueue)
         {
             try
             {
                 GetBuildandReleaseDefs releaseDefs = new GetBuildandReleaseDefs(con);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
-                Dictionary<string, int> queue = releaseDefs.GetQueues();
+                GetBuildandReleaseDefs agent = new GetBuildandReleaseDefs(_agentQueue);
+
+                Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
                 int releasecount = 1;
                 if (releases.Count > 0)
