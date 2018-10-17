@@ -35,7 +35,7 @@ namespace VstsDemoBuilder.Controllers
 
         private ExtractorAnalysis analysis = new ExtractorAnalysis();
         private string templateUsed = string.Empty;
-        private LdClient ldClient = new LdClient("sdk-36af231d-d756-445a-b539-97752bbba254");
+        private LdClient ldClient = new LdClient("sdk-4b9ad4ac-a716-47b0-a161-d43024df0ec4");
         public void AddMessage(string id, string message)
         {
             lock (objLock)
