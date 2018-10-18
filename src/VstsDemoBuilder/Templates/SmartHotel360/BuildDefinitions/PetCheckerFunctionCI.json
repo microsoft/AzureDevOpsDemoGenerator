@@ -253,7 +253,7 @@
       "isHosted": true
     }
   },
-  "name": "PetCheckerFunctoinCI",
+  "name": "PetCheckerFunctionCI",
   "path": "\\",
   "type": "build",
   "queueStatus": "enabled"
