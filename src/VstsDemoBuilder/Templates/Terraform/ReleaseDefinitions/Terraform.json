@@ -1,0 +1,431 @@
+{
+    "source": "userInterface",
+    "revision": 5,
+    "description": null,
+    "isDeleted": false,
+    "variables": {
+        "appservicename": {
+            "value": "pulterraformweb$UUID$"
+        },
+        "appserviceplan": {
+            "value": "PULTerraformplan"
+        },
+        "storagekey": {
+            "value": "PipelineWillGetThisValueRuntime"
+        },
+        "terraformstorageaccount": {
+            "value": "terraformstorage$UUID$"
+        },
+        "terraformstoragerg": {
+            "value": "terraformrg"
+        }
+    },
+    "variableGroups": [],
+    "environments": [
+        {
+            "name": "Dev",
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+            },
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "beforeGates"
+                }
+            },
+            "deployStep": {},
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "afterSuccessfulGates"
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": [
+                                {
+                                    "artifactItems": [],
+                                    "alias": "_Terraform-CI",
+                                    "artifactType": "Build",
+                                    "artifactDownloadMode": "All"
+                                }
+                            ]
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": "agentBasedDeployment",
+                    "name": "Agent job",
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+                            "version": "1.*",
+                            "name": "Azure CLI to deploy required Azure resources",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "connectedServiceNameARM": "",
+                                "scriptLocation": "inlineScript",
+                                "scriptPath": "",
+                                "inlineScript": "# this will create Azure resource group\ncall az group create --location westus --name $(terraformstoragerg)\n\ncall az storage account create --name $(terraformstorageaccount) --resource-group $(terraformstoragerg) --location westus --sku Standard_LRS\n\ncall az storage container create --name terraform --account-name $(terraformstorageaccount)\n\ncall az storage account keys list -g $(terraformstoragerg) -n $(terraformstorageaccount)\n\n",
+                                "args": "",
+                                "cwd": "",
+                                "failOnStandardError": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "72a1931b-effb-4d2e-8fd8-f8472a07cb62",
+                            "version": "3.*",
+                            "name": "Azure PowerShell script to get the storage key",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceNameSelector": "",
+                                "ConnectedServiceName": "",
+                                "ConnectedServiceNameARM": "",
+                                "ScriptType": "InlineScript",
+                                "ScriptPath": "",
+                                "Inline": "# Using this script we will fetch storage key which is required in terraform file to authenticate backend stoarge account\n\n$key=(Get-AzureRmStorageAccountKey -ResourceGroupName $(terraformstoragerg) -AccountName $(terraformstorageaccount)).Value[0]\n\nWrite-Host \"##vso[task.setvariable variable=storagekey]$key\"",
+                                "ScriptArguments": "",
+                                "errorActionPreference": "stop",
+                                "FailOnStandardError": "false",
+                                "TargetAzurePs": "LatestVersion",
+                                "CustomTargetAzurePs": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "a8515ec8-7254-4ffd-912c-86772e2b5962",
+                            "version": "3.*",
+                            "name": "Replace tokens in terraform file",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "rootDirectory": "",
+                                "targetFiles": "**/*.tf",
+                                "encoding": "auto",
+                                "writeBOM": "true",
+                                "actionOnMissing": "warn",
+                                "keepToken": "false",
+                                "tokenPrefix": "__",
+                                "tokenSuffix": "__",
+                                "emptyValue": "(empty)",
+                                "escapeType": "none",
+                                "escapeChar": "",
+                                "charsToEscape": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "31f040e5-e040-4336-878a-59a493289794",
+                            "version": "2.*",
+                            "name": "Terraform init",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "TemplatePath": "$(System.DefaultWorkingDirectory)/**/drop/Terraform",
+                                "Arguments": "init",
+                                "PlanPath": "",
+                                "InstallTerraform": "true",
+                                "Version": "latest",
+                                "UseAzureSub": "true",
+                                "ConnectedServiceNameSelector": "",
+                                "ConnectedServiceNameARM": "",
+                                "ManageState": "false",
+                                "SpecifyStorageAccount": "false",
+                                "StorageAccountResourceGroup": "",
+                                "StorageAccountRM": "",
+                                "StorageContainerName": "",
+                                "InitArguments": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "31f040e5-e040-4336-878a-59a493289794",
+                            "version": "2.*",
+                            "name": "Terraform plan",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "TemplatePath": "$(System.DefaultWorkingDirectory)/**/drop/Terraform",
+                                "Arguments": "plan",
+                                "PlanPath": "",
+                                "InstallTerraform": "true",
+                                "Version": "latest",
+                                "UseAzureSub": "true",
+                                "ConnectedServiceNameSelector": "",
+                                "ConnectedServiceNameARM": "",
+                                "ManageState": "false",
+                                "SpecifyStorageAccount": "false",
+                                "StorageAccountResourceGroup": "",
+                                "StorageAccountRM": "",
+                                "StorageContainerName": "",
+                                "InitArguments": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "31f040e5-e040-4336-878a-59a493289794",
+                            "version": "2.*",
+                            "name": "Terraform apply -auto-approve",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "TemplatePath": "$(System.DefaultWorkingDirectory)/**/drop/Terraform",
+                                "Arguments": "apply -auto-approve",
+                                "PlanPath": "",
+                                "InstallTerraform": "true",
+                                "Version": "latest",
+                                "UseAzureSub": "true",
+                                "ConnectedServiceNameSelector": "",
+                                "ConnectedServiceNameARM": "",
+                                "ManageState": "false",
+                                "SpecifyStorageAccount": "false",
+                                "StorageAccountResourceGroup": "",
+                                "StorageAccountRM": "",
+                                "StorageContainerName": "",
+                                "InitArguments": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+                            "version": "3.*",
+                            "name": "Azure App Service Deploy: $(appservicename)",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceName": "",
+                                "WebAppKind": "app",
+                                "WebAppName": "$(appservicename)",
+                                "DeployToSlotFlag": "false",
+                                "ResourceGroupName": "",
+                                "SlotName": "",
+                                "ImageSource": "Registry",
+                                "AzureContainerRegistry": "",
+                                "AzureContainerRegistryLoginServer": "",
+                                "AzureContainerRegistryImage": "",
+                                "AzureContainerRegistryTag": "",
+                                "DockerRepositoryAccess": "public",
+                                "RegistryConnectedServiceName": "",
+                                "PrivateRegistryImage": "",
+                                "PrivateRegistryTag": "",
+                                "DockerNamespace": "",
+                                "DockerRepository": "",
+                                "DockerImageTag": "",
+                                "VirtualApplication": "",
+                                "Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "RuntimeStack": "",
+                                "StartupCommand": "",
+                                "WebAppUri": "",
+                                "ScriptType": "",
+                                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                                "ScriptPath": "",
+                                "GenerateWebConfig": "false",
+                                "WebConfigParameters": "",
+                                "AppSettings": "",
+                                "ConfigurationSettings": "",
+                                "TakeAppOfflineFlag": "false",
+                                "UseWebDeploy": "false",
+                                "SetParametersFile": "",
+                                "RemoveAdditionalFilesFlag": "false",
+                                "ExcludeFilesFromAppDataFlag": "false",
+                                "AdditionalArguments": "",
+                                "RenameFilesFlag": "false",
+                                "XmlTransformation": "false",
+                                "XmlVariableSubstitution": "false",
+                                "JSONFiles": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "ReleaseStarted",
+                    "conditionType": "event",
+                    "value": ""
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 1,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {
+                "id": 1,
+                "_links": {}
+            },
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        }
+    ],
+    "artifacts": [
+        {
+            "sourceId": "$ProjectId$:$Terraform-CI-id$",
+            "type": "Build",
+            "alias": "_Terraform-CI",
+            "definitionReference": {
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "selectDuringReleaseCreationType",
+                    "name": "Specify at the time of release creation"
+                },
+                "definition": {
+                    "id": "$Terraform-CI-id$",
+                    "name": "Terraform-CI"
+                },
+                "definitions": {
+                    "id": "",
+                    "name": ""
+                },
+                "IsMultiDefinitionType": {
+                    "id": "False",
+                    "name": "False"
+                },
+                "project": {
+                    "id": "$ProjectId$",
+                    "name": "$ProjectName$"
+                }
+            },
+            "isPrimary": true,
+            "isRetained": false
+        }
+    ],
+    "triggers": [],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "pipelineProcess": {
+        "type": "designer"
+    },
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "Other"
+        }
+    },
+    "name": "Terraform-CD",
+    "path": "\\"
+}

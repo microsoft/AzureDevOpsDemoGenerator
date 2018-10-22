@@ -93,11 +93,11 @@ $(document).ready(function () {
                         }
                         $("#projectSelect").append(opt);
                         var options = $("#projectSelect option");                    // Collect options         
-                        options.detach().sort(function (a, b) {               // Detach from select, then Sort
-                            var at = $(a).text();
-                            var bt = $(b).text();
-                            return (at > bt) ? 1 : ((at < bt) ? -1 : 0);            // Tell the sort function how to order
-                        });
+                        //options.detach().sort(function (a, b) {               // Detach from select, then Sort
+                        //    var at = $(a).text();
+                        //    var bt = $(b).text();
+                        //    return (at > bt) ? 1 : ((at < bt) ? -1 : 0);            // Tell the sort function how to order
+                        //});
                         options.appendTo("#projectSelect");
                         $('#projectloader').addClass('d-none');
                         $('#Analyse').attr('disabled', false);

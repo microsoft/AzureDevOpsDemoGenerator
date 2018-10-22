@@ -51,7 +51,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                 projectId = projectID;
                 pullRequests = dictPullRequests;
                 JArray userList = new JArray();
-
                 if (userMethod == "Select")
                 {
                     foreach (string user in accountUsers)
@@ -90,6 +89,10 @@ namespace VstsRestAPI.WorkItemAndTracking
                     userList = jitems["users"].Value<JArray>();
 
                     if (userList.Count > 0)
+                    {
+                        listAssignToUsers.Add(uniqueUser);
+                    }
+                    else
                     {
                         listAssignToUsers.Add(uniqueUser);
                     }

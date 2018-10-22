@@ -1,14 +1,14 @@
 {
   "source": "userInterface",
-  "revision": 8,
+  "name": "AzureFunctions_CD",
   "description": null,
   "isDeleted": false,
+  "path": "\\",
   "variables": {},
   "variableGroups": [],
   "environments": [
     {
-      "id": 1,
-      "name": "Azure-Dev",
+      "name": "Environment 1",
       "rank": 1,
       "owner": {
         "id": "$OwnerId$",
@@ -22,8 +22,7 @@
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 1
+            "isNotificationOn": false
           }
         ],
         "approvalOptions": {
@@ -35,7 +34,8 @@
           "executionOrder": "beforeGates"
         }
       },
-      "deployStep": {},
+      "deployStep": {
+      },
       "postDeployApprovals": {
         "approvals": [
           {
@@ -61,7 +61,14 @@
             },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
-              "downloadInputs": []
+              "downloadInputs": [
+                {
+                  "artifactItems": [],
+                  "alias": "AzureFunctions_CI",
+                  "artifactType": "Build",
+                  "artifactDownloadMode": "All"
+                }
+              ]
             },
             "queueId": "$Hosted VS2017$",
             "demands": [],
@@ -73,13 +80,12 @@
           },
           "rank": 1,
           "phaseType": "agentBasedDeployment",
-          "name": "Run on agent",
+          "name": "Agent phase",
           "workflowTasks": [
             {
-              "environment": {},
-              "taskId": "bd1bed02-f04e-11e7-8c3f-9a214cf093ae",
-              "version": "1.*",
-              "name": "Execute Azure MySQL : SqlTaskFile",
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy PartsUnlimited Website",
               "refName": "",
               "enabled": true,
               "alwaysRun": false,
@@ -90,37 +96,8 @@
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
-                "ServerName": "",
-                "DatabaseName": "",
-                "SqlUsername": "",
-                "SqlPassword": "",
-                "TaskNameSelector": "SqlTaskFile",
-                "SqlFile": "$(System.DefaultWorkingDirectory)/**/drop/CreateMYSQLDB.sql",
-                "SqlInline": "",
-                "SqlAdditionalArguments": "",
-                "IpDetectionMethod": "AutoDetect",
-                "StartIpAddress": "",
-                "EndIpAddress": "",
-                "DeleteFirewallRule": "true"
-              }
-            },
-            {
-              "environment": {},
-              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
-              "version": "3.*",
-              "name": "Deploy Azure App Service",
-              "refName": "AzureRmWebAppDeployment1",
-              "enabled": true,
-              "alwaysRun": false,
-              "continueOnError": false,
-              "timeoutInMinutes": 0,
-              "definitionType": null,
-              "overrideInputs": {},
-              "condition": "succeeded()",
-              "inputs": {
-                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
-                "WebAppKind": "$(Parameters.WebAppKind)",
-                "WebAppName": "$(Parameters.WebAppName)",
+                "WebAppKind": "app",
+                "WebAppName": "",
                 "DeployToSlotFlag": "false",
                 "ResourceGroupName": "",
                 "SlotName": "",
@@ -133,17 +110,17 @@
                 "RegistryConnectedServiceName": "",
                 "PrivateRegistryImage": "",
                 "PrivateRegistryTag": "",
-                "DockerNamespace": "$(Parameters.DockerNamespace)",
-                "DockerRepository": "$(Parameters.DockerRepository)",
-                "DockerImageTag": "$(Build.BuildId)",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/**/*.war",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*Website.zip",
                 "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "",
                 "StartupCommand": "",
                 "WebAppUri": "",
                 "ScriptType": "",
-                "InlineScript": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
                 "ScriptPath": "",
                 "GenerateWebConfig": "false",
                 "WebConfigParameters": "",
@@ -155,7 +132,119 @@
                 "RemoveAdditionalFilesFlag": "false",
                 "ExcludeFilesFromAppDataFlag": "false",
                 "AdditionalArguments": "",
-                "RenameFilesFlag": "true",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy PartsUnlimited APIs",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppKind": "app",
+                "WebAppName": "",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "ImageSource": "Registry",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*API.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "ConfigurationSettings": "",
+                "TakeAppOfflineFlag": "true",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy PartsUnlimited AzureFunction",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppKind": "functionapp",
+                "WebAppName": "",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "ImageSource": "Registry",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*AzureFunction.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "ConfigurationSettings": "",
+                "TakeAppOfflineFlag": "true",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
                 "XmlTransformation": "false",
                 "XmlVariableSubstitution": "false",
                 "JSONFiles": ""
@@ -172,8 +261,7 @@
         "enableAccessToken": false,
         "publishDeploymentStatus": true,
         "badgeEnabled": false,
-        "autoLinkWorkItems": false,
-        "pullRequestDeploymentEnabled": false
+        "autoLinkWorkItems": false
       },
       "demands": [],
       "conditions": [
@@ -184,106 +272,16 @@
         }
       ],
       "executionPolicy": {
-        "concurrencyCount": 0,
+        "concurrencyCount": 1,
         "queueDepthCount": 0
       },
       "schedules": [],
-      "currentRelease": {
-        "id": 6,
-        "_links": {}
-      },
       "retentionPolicy": {
         "daysToKeep": 30,
         "releasesToKeep": 3,
         "retainBuild": true
       },
-      "processParameters": {
-        "inputs": [
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {},
-            "name": "ConnectedServiceName",
-            "label": "Azure subscription",
-            "defaultValue": "",
-            "required": true,
-            "type": "connectedService:AzureRM",
-            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
-            "visibleRule": "",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {
-              "app": "Web App",
-              "applinux": "Linux App",
-              "functionapp": "Function App",
-              "api": "API App",
-              "mobileapp": "Mobile App"
-            },
-            "properties": {
-              "EditableOptions": "false"
-            },
-            "name": "WebAppKind",
-            "label": "App type",
-            "defaultValue": "app",
-            "type": "pickList",
-            "helpMarkDown": "",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {
-              "EditableOptions": "True"
-            },
-            "name": "WebAppName",
-            "label": "App service name",
-            "defaultValue": "MyShuttle1",
-            "required": true,
-            "type": "pickList",
-            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
-            "visibleRule": "",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {},
-            "name": "DockerNamespace",
-            "label": "Registry or Namespace",
-            "defaultValue": "",
-            "required": true,
-            "type": "string",
-            "helpMarkDown": "A globally unique top-level domain name for your specific registry or namespace.<br/> Note: Fully qualified image name will be of the format: '<b>`<registry or namespace`></b>/`<repository`>:`<tag`>'. For example, '<b>myregistry.azurecr.io</b>/nginx:latest'.",
-            "visibleRule": "WebAppKind = applinux",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {},
-            "name": "DockerRepository",
-            "label": "Repository",
-            "defaultValue": "",
-            "required": true,
-            "type": "string",
-            "helpMarkDown": "Name of the repository where the container images are stored.<br/> Note: Fully qualified image name will be of the format: '`<registry or namespace`>/<b>`<repository`></b>:`<tag`>'. For example, 'myregistry.azurecr.io/<b>nginx</b>:latest'.",
-            "visibleRule": "WebAppKind = applinux",
-            "groupName": ""
-          }
-        ],
-        "dataSourceBindings": [
-          {
-            "dataSourceName": "AzureRMWebAppNamesByType",
-            "parameters": {
-              "WebAppKind": "$(WebAppKind)"
-            },
-            "endpointId": "",
-            "target": "WebAppName"
-          }
-        ]
-      },
+      "processParameters": {},
       "properties": {},
       "preDeploymentGates": {
         "id": 0,
@@ -294,15 +292,14 @@
         "id": 0,
         "gatesOptions": null,
         "gates": []
-      },
-      "environmentTriggers": []
+      }
     }
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$MyShuttleBuild-id$",
+      "sourceId": "$ProjectId$:$AzureFunctions_CI-id$",
       "type": "Build",
-      "alias": "MyShuttle Build",
+      "alias": "AzureFunctions_CI",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -321,8 +318,8 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$MyShuttleBuild-id$",
-          "name": "MyShuttleBuild"
+          "id": "$AzureFunctions_CI-id$",
+          "name": "AzureFunctions_CI"
         },
         "project": {
           "id": "$ProjectId$",
@@ -343,9 +340,5 @@
       "$type": "System.String",
       "$value": "ReleaseNew"
     }
-  },
-  "id": 1,
-  "name": "MyShuttleRelease",
-  "path": "\\",
-  "projectReference": null
+  }
 }

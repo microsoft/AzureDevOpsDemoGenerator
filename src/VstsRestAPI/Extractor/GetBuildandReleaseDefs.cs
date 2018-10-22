@@ -162,7 +162,7 @@ namespace VstsRestAPI.Extractor
         {
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(Project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
+                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;

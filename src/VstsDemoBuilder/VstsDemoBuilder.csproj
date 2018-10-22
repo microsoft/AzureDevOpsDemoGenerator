@@ -820,6 +820,34 @@
     <Content Include="Templates\DeploymentGroups\Dashboard\Queries\Work in Progress.json" />
     <Content Include="Templates\PartsUnlimited\Dashboard\Queries\Feedback.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\Feedback.json" />
+    <Content Include="Templates\LaunchDarkly\BuildDefinitions\LaunchDarkly.json" />
+    <Content Include="Templates\LaunchDarkly\Extensions.json" />
+    <Content Include="Templates\LaunchDarkly\ImportSourceCode\LaunchDarkly.json" />
+    <Content Include="Templates\LaunchDarkly\ProjectSettings.json" />
+    <Content Include="Templates\LaunchDarkly\ProjectTemplate.json" />
+    <Content Include="Templates\LaunchDarkly\ReleaseDefinitions\LaunchDarkly.json" />
+    <Content Include="Templates\LaunchDarkly\ServiceEndpoints\LaunchDarkly-code.json" />
+    <Content Include="Templates\LaunchDarkly\UerStoriesfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions\BuildDefinitions\AzureFunctions_CI.json" />
+    <Content Include="Templates\AzureFunctions\EnableEpic.json" />
+    <Content Include="Templates\AzureFunctions\EpicfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions\FeaturefromTemplate.json" />
+    <Content Include="Templates\AzureFunctions\ImportSourceCode\AzureFunctions_BuildWorkshop.json" />
+    <Content Include="Templates\AzureFunctions\PBIfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions\ProjectSettings.json" />
+    <Content Include="Templates\AzureFunctions\ProjectTemplate.json" />
+    <Content Include="Templates\AzureFunctions\ReleaseDefinitions\AzureFunctions_CD.json" />
+    <Content Include="Templates\AzureFunctions\ServiceEndpoints\AzureFunctions_BuildWorkshop-code.json" />
+    <Content Include="Templates\AzureFunctions\TaskfromTemplate.json" />
+    <Content Include="Templates\AzureFunctions\TeamArea.json" />
+    <Content Include="Templates\AzureFunctions\Teams.json" />
+    <Content Include="Templates\Terraform\BuildDefinitions\Terraform.json" />
+    <Content Include="Templates\Terraform\Extensions.json" />
+    <Content Include="Templates\Terraform\ImportSourceCode\Terraform.json" />
+    <Content Include="Templates\Terraform\ProjectSettings.json" />
+    <Content Include="Templates\Terraform\ProjectTemplate.json" />
+    <Content Include="Templates\Terraform\ReleaseDefinitions\Terraform.json" />
+    <Content Include="Templates\Terraform\ServiceEndpoints\Terraform-code.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -853,6 +881,7 @@
     <Folder Include="TemplateBackUp\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />
     <Folder Include="Templates\GitHub\Dashboard\Widgets\" />
+    <Folder Include="Templates\LaunchDarkly\Dashboard\" />
     <Folder Include="Templates\PartsUnlimited\Dashboard\Charts\" />
     <Folder Include="Templates\PartsUnlimited\Dashboard\Widgets\" />
   </ItemGroup>
