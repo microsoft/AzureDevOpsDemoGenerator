@@ -17,7 +17,9 @@
     "MyShuttleDocker",
     "AzureFunctions",
     "BlogWebSite",
-    "ReleaseGates"
+    "ReleaseGates",
+    "LaunchDarkly",
+    "Terraform"
   ],
   "privateTemplateKeys": [
     {
@@ -27,14 +29,6 @@
     {
       "key": "77361",
       "value": "bikesharing360"
-    },
-    {
-      "key": "77380",
-      "value": "MyHealthClinic"
-    },
-    {
-      "key": "77379",
-      "value": "PartsUnlimited"
     },
     {
       "key": "77350",
@@ -99,7 +93,6 @@
     {
       "key": "77374",
       "value": "AzureFunctions"
-
     },
     {
       "key": "77375",
@@ -116,6 +109,22 @@
     {
       "key": "77378",
       "value": "BlogWebSite"
+    },
+    {
+      "key": "77379",
+      "value": "PartsUnlimited"
+    },
+    {
+      "key": "77380",
+      "value": "MyHealthClinic"
+    },
+    {
+      "key": "77381",
+      "value": "LaunchDarkly"
+    },
+    {
+      "key": "77382",
+      "value": "Terraform"
     }
   ]
 }

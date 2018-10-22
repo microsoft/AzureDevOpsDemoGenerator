@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI0ZTY0NjZlYy0wNGQ5LTQyYzYtYWNhZi0wMmQ3NWVhM2VjMDMiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTM5MzI2OTQxLCJleHAiOjE1MzkzMzA1NDF9.TyiKM_jTPSKoBJzLqqG9VLGfTTj3Km-PFp0xYINBDVrcmp9EaRqNRyDtaVaD7e9jj5yRxp6okgaLFWLTyalF8pB9sRSoGQPekTWHWwNR3vC_8I8do5rncm6_73I9ScmoQKxLZg9av8rOnGoeqGmlZcQaEbCGoPsS-LORk9nqAIDLfRxO7wqJfQxl9psyfMh_AVzPfx-oskvovn32vzgoxYo_CcBtomWanVRN5rApNzhU8bV94MIW1M3qnPMFxzyP-ZoXEG6HFDeY2DbGcUgL9B73bJOjj5CS2vTMJTynk67R0J5VhBqHnyHIK1O8EeemlAAJstFXJzFaFKyc_ccBZg";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwMjExMzA0LCJleHAiOjE1NDAyMTQ5MDR9.t9fR-9r834glMaIej-G_PKZ56kXbwYANWuutx7Al7Ce7B3fSQGk8M9rUMmpX7XPq8kLaup4C2xmiv7piPthT1AQZ3VdytY2dXGRuHb5UtZNUToVo-KlhbcRzniZbv4uxYv-DUMbqwFBls9V3fzCl6S6sFNCIlf_WA4-9R95YZg5X7UtqWXwwqCcmB5LcZiUrsudjALL9lmUAwjHwOPseT8FNozOM08dDirApj5dZUcJzk184SS2LMEXQWda-srUwemQpwiuKfihNCvSPXx6UBcyvfeQQ2r4upO2Cd_v1P5JJAZMxMNIis-5lKd52Sg0xq0N9T1lMzLyuJilJgKK7FA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -1332,7 +1332,7 @@ namespace VstsDemoBuilder.Controllers
                 if (System.IO.File.Exists(jsonTeams))
                 {
                     VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
-                    jsonTeams = model.ReadJsonFile(jsonTeams); 
+                    jsonTeams = model.ReadJsonFile(jsonTeams);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
 
@@ -1512,6 +1512,7 @@ namespace VstsDemoBuilder.Controllers
                 if (System.IO.File.Exists(json))
                 {
                     json = model.ReadJsonFile(json);
+                    json = json.Replace("null", "\"\"");
                     Cards objCards = new Cards(_configuration);
                     objCards.UpdateCardField(model.ProjectName, json, boardType);
 
@@ -1919,6 +1920,10 @@ namespace VstsDemoBuilder.Controllers
                         ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
                         ServiceEndPoint objService = new ServiceEndPoint(_endpointConfig);
 
+                        string gitUserName = System.Configuration.ConfigurationManager.AppSettings["GitUserName"];
+                        string gitUserPassword = System.Configuration.ConfigurationManager.AppSettings["GitUserPassword"];
+
+
                         if (!string.IsNullOrEmpty(settings.IsPrivate))
                         {
                             jsonCreateService = model.ReadJsonFile(jsonCreateService);
@@ -1929,7 +1934,7 @@ namespace VstsDemoBuilder.Controllers
                         {
                             jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
-                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password);
+                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password).Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword);
                         }
                         if (model.SelectedTemplate.ToLower() == "bikesharing360")
                         {
@@ -2171,7 +2176,7 @@ namespace VstsDemoBuilder.Controllers
                         //Adding randon UUID to website name
                         string uuid = Guid.NewGuid().ToString();
                         uuid = uuid.Substring(0, 8);
-                        jsonReleaseDefinition = jsonReleaseDefinition.Replace("$UUID$", uuid);
+                        jsonReleaseDefinition = jsonReleaseDefinition.Replace("$UUID$", uuid).Replace("$RandomNumber$", uuid).Replace("$AccountName$", model.accountName); ;
 
                         foreach (BuildDef objBuildDef in model.BuildDefinitions)
                         {

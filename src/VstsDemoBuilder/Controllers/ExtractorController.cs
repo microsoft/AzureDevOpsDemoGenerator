@@ -198,11 +198,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync("/_apis/projects?stateFilter=WellFormed&api-version=1.0").Result;
+                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects?stateFilter=WellFormed&api-version=4.1").Result;
                     if (response.IsSuccessStatusCode)
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
@@ -216,6 +215,8 @@ namespace VstsDemoBuilder.Controllers
                     else
                     {
                         var res = response.Content.ReadAsStringAsync().Result;
+                        load.errmsg = "Something went wrong";
+
                     }
                 }
             }
@@ -248,7 +249,7 @@ namespace VstsDemoBuilder.Controllers
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync("/_apis/projects/" + project + "/properties?api-version=4.1-preview.1").Result;
+                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=4.1-preview.1").Result;
                     if (response.IsSuccessStatusCode)
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
@@ -268,7 +269,7 @@ namespace VstsDemoBuilder.Controllers
                             client1.DefaultRequestHeaders.Accept.Clear();
                             client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                             client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                            HttpResponseMessage response1 = client1.GetAsync("/_apis/work/processes/" + processTypeId + "?api-version=4.1-preview.1").Result;
+                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=4.1-preview.1").Result;
                             if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                             {
                                 string templateData = response1.Content.ReadAsStringAsync().Result;
@@ -1290,8 +1291,12 @@ namespace VstsDemoBuilder.Controllers
             style = nodes.GetCardStyle(boardType);
             if (style.rules != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardStyles.json", JsonConvert.SerializeObject(style, Formatting.Indented));
-                AddMessage(con.Id, "Card Style Rules Definition");
+                if (style.rules.fill != null)
+                {
+                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardStyles.json", JsonConvert.SerializeObject(style, Formatting.Indented));
+                    AddMessage(con.Id, "Card Style Rules Definition");
+                }
+
                 Thread.Sleep(2000);
             }
             else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))

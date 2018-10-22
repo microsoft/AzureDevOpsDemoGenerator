@@ -24,7 +24,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
         public class Cards
         {
             public IList<Bug> Bug { get; set; }
-            [JsonProperty(PropertyName = "ProductBacklog Item")]
+            [JsonProperty(PropertyName = "Product Backlog Item")]
             public IList<ProductBacklogItem> ProductBacklogItem { get; set; }
         }
 
@@ -32,7 +32,5 @@ namespace VstsRestAPI.Viewmodel.Extractor
         {
             public Cards cards { get; set; }
         }
-
-
     }
 }

@@ -48,7 +48,7 @@ namespace VstsRestAPI.Extractor
                     var method = new HttpMethod("POST");
 
                     // send the request               
-                    var request = new HttpRequestMessage(method, "/_apis/wit/wiql?api-version=" + _configuration.VersionNumber) { Content = postValue };
+                    var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/wit/wiql?api-version=" + _configuration.VersionNumber) { Content = postValue };
                     var response = client.SendAsync(request).Result;
 
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -94,7 +94,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/_apis/wit/workitems?api-version=" + _configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/wit/workitems?api-version=" + _configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
