@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading;
-using VstsRestAPI.Viewmodel.QuerysAndWidgets;
+using VstsRestAPI.Viewmodel.QueriesAndWidgets;
 
-namespace VstsRestAPI.QuerysAndWidgets
+namespace VstsRestAPI.QueriesAndWidgets
 {
     public class Queries : ApiServiceBase
     {
@@ -52,11 +52,10 @@ namespace VstsRestAPI.QuerysAndWidgets
                 HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
                 Thread.Sleep(2000);
                 ////Adding delay to generate Shared Query model in Azure DevOps
-                //if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
+                if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     using (var client = GetHttpClient())
                     {
-                        //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                         var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                         var method = new HttpMethod("POST");
 

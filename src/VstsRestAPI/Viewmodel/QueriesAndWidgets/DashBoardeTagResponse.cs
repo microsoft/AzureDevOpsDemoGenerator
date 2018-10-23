@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VstsRestAPI.Viewmodel.QuerysAndWidgets
+namespace VstsRestAPI.Viewmodel.QueriesAndWidgets
 {
     public class DashBoardeTagResponse
     {

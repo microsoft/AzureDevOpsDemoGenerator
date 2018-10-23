@@ -97,7 +97,7 @@
     <Compile Include="ProjectsAndTeams\Projects.cs" />
     <Compile Include="ProjectsAndTeams\Teams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuerysAndWidgets\Queries.cs" />
+    <Compile Include="QueriesAndWidgets\Queries.cs" />
     <Compile Include="Queues\Queue.cs" />
     <Compile Include="Release\ReleaseDefinition.cs" />
     <Compile Include="Service\ServiceEndPoint.cs" />
@@ -110,7 +110,7 @@
     <Compile Include="Viewmodel\ProjectAndTeams\TeamIterationsResponse.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\TeamResponse.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\TeamSettingResponse.cs" />
-    <Compile Include="Viewmodel\QuerysAndWidgets\DashBoardeTagResponse.cs" />
+    <Compile Include="Viewmodel\QueriesAndWidgets\DashBoardeTagResponse.cs" />
     <Compile Include="Viewmodel\ReleaseDefinition\ReleaseDefinitions.cs" />
     <Compile Include="Viewmodel\ReleaseDefinition\ReleaseDefinitionsResponse.cs" />
     <Compile Include="Viewmodel\Repository\PullRequestComments.cs" />
@@ -118,8 +118,8 @@
     <Compile Include="Viewmodel\ProjectAndTeams\GetTeamResponse.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\ListofProjectsResponse.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\TeamMemberResponse.cs" />
-    <Compile Include="Viewmodel\QuerysAndWidgets\DashboardResponse.cs" />
-    <Compile Include="Viewmodel\QuerysAndWidgets\QueryResponse.cs" />
+    <Compile Include="Viewmodel\QueriesAndWidgets\DashboardResponse.cs" />
+    <Compile Include="Viewmodel\QueriesAndWidgets\QueryResponse.cs" />
     <Compile Include="Viewmodel\Queue\QueueModel.cs" />
     <Compile Include="Viewmodel\Repository\GetAllRepositoriesResponse.cs" />
     <Compile Include="Viewmodel\Sprint\SprintResponse.cs" />
