@@ -1,5 +1,4 @@
-﻿using LaunchDarkly.Client;
-using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -167,23 +166,23 @@ namespace VstsDemoBuilder.Controllers
             string email = Session["Email"].ToString();
             //if (showFeature)
             //{
-            //    if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
-            //    {
-            //        Project objP = new Project();
-            //        groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
-            //        details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-            //        Newdetails = details;
-            //    }
-            //}
-            //else
-            //{
-            if (System.IO.File.Exists(templatesPath + "GroupSettings_FeatureFlag.json"))
+            if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
             {
                 Project objP = new Project();
-                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings_FeatureFlag.json");
+                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
                 details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
                 Newdetails = details;
             }
+            //}
+            //else
+            //{
+            //if (System.IO.File.Exists(templatesPath + "GroupSettings_FeatureFlag.json"))
+            //{
+            //    Project objP = new Project();
+            //    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings_FeatureFlag.json");
+            //    details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
+            //    Newdetails = details;
+            //}
             //}
             return Json(Newdetails, JsonRequestBehavior.AllowGet);
         }
