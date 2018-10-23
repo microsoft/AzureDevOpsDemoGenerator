@@ -802,8 +802,8 @@
     <Content Include="Views\Extractor\NotFound.cshtml" />
     <Content Include="NewFeature\RegisteredUsers.json" />
     <Content Include="PreSetting\GitHubEndPoint.json" />
-    <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
     <Content Include="Templates\GroupSettings_FeatureFlag.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\UnfinishedWork.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\Work in Progress.json" />
@@ -832,12 +832,12 @@
     <Content Include="Templates\AzureFunctions\EnableEpic.json" />
     <Content Include="Templates\AzureFunctions\EpicfromTemplate.json" />
     <Content Include="Templates\AzureFunctions\FeaturefromTemplate.json" />
-    <Content Include="Templates\AzureFunctions\ImportSourceCode\AzureFunctions_BuildWorkshop.json" />
+    <Content Include="Templates\AzureFunctions\ImportSourceCode\AzureFunctions.json" />
     <Content Include="Templates\AzureFunctions\PBIfromTemplate.json" />
     <Content Include="Templates\AzureFunctions\ProjectSettings.json" />
     <Content Include="Templates\AzureFunctions\ProjectTemplate.json" />
     <Content Include="Templates\AzureFunctions\ReleaseDefinitions\AzureFunctions_CD.json" />
-    <Content Include="Templates\AzureFunctions\ServiceEndpoints\AzureFunctions_BuildWorkshop-code.json" />
+    <Content Include="Templates\AzureFunctions\ServiceEndpoints\AzureFunctions-code.json" />
     <Content Include="Templates\AzureFunctions\TaskfromTemplate.json" />
     <Content Include="Templates\AzureFunctions\TeamArea.json" />
     <Content Include="Templates\AzureFunctions\Teams.json" />
@@ -848,6 +848,8 @@
     <Content Include="Templates\Terraform\ProjectTemplate.json" />
     <Content Include="Templates\Terraform\ReleaseDefinitions\Terraform.json" />
     <Content Include="Templates\Terraform\ServiceEndpoints\Terraform-code.json" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
