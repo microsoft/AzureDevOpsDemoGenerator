@@ -52,7 +52,6 @@ namespace VstsDemoBuilder.Controllers
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
-        private LdClient ldClient = new LdClient("sdk-4b9ad4ac-a716-47b0-a161-d43024df0ec4");
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -166,30 +165,26 @@ namespace VstsDemoBuilder.Controllers
             string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
 
             string email = Session["Email"].ToString();
-            User user = LaunchDarkly.Client.User.WithKey(email.ToLower());
-            bool showFeature = ldClient.BoolVariation("extractor", user, false);
-
-            if (showFeature)
+            //if (showFeature)
+            //{
+            //    if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
+            //    {
+            //        Project objP = new Project();
+            //        groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
+            //        details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
+            //        Newdetails = details;
+            //    }
+            //}
+            //else
+            //{
+            if (System.IO.File.Exists(templatesPath + "GroupSettings_FeatureFlag.json"))
             {
-                if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
-                {
-                    Project objP = new Project();
-                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
-                    details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-                    Newdetails = details;
-                }
+                Project objP = new Project();
+                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings_FeatureFlag.json");
+                details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
+                Newdetails = details;
             }
-            else
-            {
-                if (System.IO.File.Exists(templatesPath + "GroupSettings_FeatureFlag.json"))
-                {
-                    Project objP = new Project();
-                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings_FeatureFlag.json");
-                    details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-                    Newdetails = details;
-                }
-            }
-
+            //}
             return Json(Newdetails, JsonRequestBehavior.AllowGet);
         }
 
@@ -229,11 +224,6 @@ namespace VstsDemoBuilder.Controllers
                         Models.Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
 
                         //New Feature Enabling
-                        User user = LaunchDarkly.Client.User.WithKey(Profile1.emailAddress.ToLower());
-                        bool showFeature = ldClient.BoolVariation("extractor", user, false);
-                        ViewBag.UserExist = showFeature;
-
-
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
@@ -309,10 +299,6 @@ namespace VstsDemoBuilder.Controllers
                         Session["User"] = Profile.displayName;
                         Session["Email"] = Profile.emailAddress.ToLower();
                         Models.Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
-
-                        User user = LaunchDarkly.Client.User.WithKey(Profile.emailAddress.ToLower());
-                        bool showFeature = ldClient.BoolVariation("extractor", user, false);
-                        ViewBag.UserExist = showFeature;
 
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;

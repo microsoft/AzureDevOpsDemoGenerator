@@ -134,23 +134,11 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-        @if (ViewBag.UserExist)
-        {
-            <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-            </div>
-        }
 
-
+        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+            <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+        </div>
     </div>
-    <!--@if (!ViewBag.UserExist)
-     {
-         <div class="col-sm-12 newFeature text-center p-2" id="newFeature">
-             <a id="Featuremessage"> Want to build your own template? ?,</a>
-             <span><a class="pull-right" id="tryNow" href="mailto:mssupport@ecanarys.com?subject=Azure DevOps Demo Generator- Extractor">Email us</a> to sign up for the preview.</span>
-             <i class="fas fa-times" style="float: right; cursor:pointer" id="closeFeatureRibben"></i>
-         </div>
-     }-->
     <div class="col-sm-12 newFeature text-center p-2" id="newFeature">
         <span style="color:#0078d7"> We are facing technical issues due to API changes in the product. Dashboard, Shared Queries and Test work items may not be provisioned</span>
     </div>
