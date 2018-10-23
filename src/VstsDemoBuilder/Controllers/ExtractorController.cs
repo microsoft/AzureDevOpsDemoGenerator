@@ -1,5 +1,4 @@
-﻿using LaunchDarkly.Client;
-using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.OAuth;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
@@ -35,7 +34,6 @@ namespace VstsDemoBuilder.Controllers
 
         private ExtractorAnalysis analysis = new ExtractorAnalysis();
         private string templateUsed = string.Empty;
-        private LdClient ldClient = new LdClient("sdk-4b9ad4ac-a716-47b0-a161-d43024df0ec4");
         public void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -86,47 +84,38 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult Index(ProjectList.ProjectCount model)
         {
             string email = Session["Email"].ToString();
-            User user = LaunchDarkly.Client.User.WithKey(email.ToLower());
-            bool showFeature = ldClient.BoolVariation("extractor", user, false);
-            if (showFeature)
+            string pat = "";
+            if (Session["PAT"] != null)
             {
-                string pat = "";
-                if (Session["PAT"] != null)
-                {
-                    pat = Session["PAT"].ToString();
-                }
-                if (string.IsNullOrEmpty(pat))
-                {
-                    return Redirect("../Account/Verify");
-                }
-                else
-                {
-                    accessDetails.access_token = pat;
-                    ProfileDetails profile = con.GetProfile(accessDetails);
-                    Session["User"] = profile.displayName;
-                    Session["PAT"] = pat;
-                    Accounts.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
-                    model.accessToken = accessDetails.access_token;
-                    model.accountsForDropdown = new List<string>();
-                    if (accountList.count > 0)
-                    {
-                        foreach (var account in accountList.value)
-                        {
-                            model.accountsForDropdown.Add(account.accountName);
-                        }
-                        model.accountsForDropdown.Sort();
-                    }
-                    else
-                    {
-                        model.accountsForDropdown.Add("Select Organization");
-                        ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
-                    }
-                    return View(model);
-                }
+                pat = Session["PAT"].ToString();
+            }
+            if (string.IsNullOrEmpty(pat))
+            {
+                return Redirect("../Account/Verify");
             }
             else
             {
-                return RedirectToAction("NotFound", "Extractor");
+                accessDetails.access_token = pat;
+                ProfileDetails profile = con.GetProfile(accessDetails);
+                Session["User"] = profile.displayName;
+                Session["PAT"] = pat;
+                Accounts.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
+                model.accessToken = accessDetails.access_token;
+                model.accountsForDropdown = new List<string>();
+                if (accountList.count > 0)
+                {
+                    foreach (var account in accountList.value)
+                    {
+                        model.accountsForDropdown.Add(account.accountName);
+                    }
+                    model.accountsForDropdown.Sort();
+                }
+                else
+                {
+                    model.accountsForDropdown.Add("Select Organization");
+                    ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                }
+                return View(model);
             }
         }
 
