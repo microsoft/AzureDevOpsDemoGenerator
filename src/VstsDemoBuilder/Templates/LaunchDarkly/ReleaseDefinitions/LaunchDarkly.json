@@ -87,7 +87,7 @@
 						"artifactDownloadMode": "All"
 					}]
 				},
-				"queueId": "$Hosted VS2017 (Hosted VS2017)$",
+				"queueId": "$Hosted VS2017$",
 				"demands": [],
 				"enableAccessToken": false,
 				"timeoutInMinutes": 0,

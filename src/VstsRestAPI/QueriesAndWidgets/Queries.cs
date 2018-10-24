@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading;
 using VstsRestAPI.Viewmodel.QueriesAndWidgets;
 
 namespace VstsRestAPI.QueriesAndWidgets
@@ -48,35 +47,35 @@ namespace VstsRestAPI.QueriesAndWidgets
             QueryResponse result = new QueryResponse();
             using (var clientParent = GetHttpClient())
             {
-                ////Since we were getting errors like "you do not have access to shared query folder", based on MS team guidence added GET call before POST request
-                HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
-                Thread.Sleep(2000);
-                ////Adding delay to generate Shared Query model in Azure DevOps
-                if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
+                //////Since we were getting errors like "you do not have access to shared query folder", based on MS team guidence added GET call before POST request
+                //HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
+                //Thread.Sleep(2000);
+                //////Adding delay to generate Shared Query model in Azure DevOps
+                //if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
+                //{
+                using (var client = GetHttpClient())
                 {
-                    using (var client = GetHttpClient())
-                    {
-                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                        var method = new HttpMethod("POST");
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
 
-                        var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                        var response = client.SendAsync(request).Result;
-                        if (response.IsSuccessStatusCode)
-                        {
-                            result = response.Content.ReadAsAsync<QueryResponse>().Result;
-                            return result;
-                        }
-                        else
-                        {
-                            var errorMessage = response.Content.ReadAsStringAsync();
-                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            this.LastFailureMessage = error;
-                            return new QueryResponse();
-                        }
+                    var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var response = client.SendAsync(request).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = response.Content.ReadAsAsync<QueryResponse>().Result;
+                        return result;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                        return new QueryResponse();
                     }
                 }
             }
-            return result;
+            //}
+            //return result;
         }
 
         /// <summary>
