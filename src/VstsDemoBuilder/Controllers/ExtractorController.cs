@@ -234,11 +234,12 @@ namespace VstsDemoBuilder.Controllers
             {
                 using (var client = new HttpClient())
                 {
+                    string version = System.Configuration.ConfigurationManager.AppSettings["ProjectProperties"];
                     client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=4.1-preview.1").Result;
+                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=" + version).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
@@ -258,7 +259,7 @@ namespace VstsDemoBuilder.Controllers
                             client1.DefaultRequestHeaders.Accept.Clear();
                             client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                             client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=4.1-preview.1").Result;
+                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=" + version).Result;
                             if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                             {
                                 string templateData = response1.Content.ReadAsStringAsync().Result;
