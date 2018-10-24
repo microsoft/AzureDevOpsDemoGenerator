@@ -850,6 +850,8 @@
     <Content Include="Templates\Terraform\ServiceEndpoints\Terraform-code.json" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
+    <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />
+    <Content Include="Templates\MyShuttle\ReleaseDefinitions\MyShuttleDockerRelease.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
