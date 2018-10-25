@@ -89,7 +89,7 @@
             "refName": "WhiteSourceBolt3",
             "task": {
                 "id": "521d1e00-f5fb-4b73-a93b-b2fe88a9af91",
-                "versionSpec": "1.*",
+                "versionSpec": "",
                 "definitionType": "task"
             },
             "inputs": {
