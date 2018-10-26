@@ -7,9 +7,6 @@
       "value": null,
       "isSecret": true
     },
-    "DBSERVER": {
-      "value": "myshuttle-db.mysql.database.azure.com"
-    },
     "DBUSER": {
       "value": "dbadmin@myshuttle-db"
     }
