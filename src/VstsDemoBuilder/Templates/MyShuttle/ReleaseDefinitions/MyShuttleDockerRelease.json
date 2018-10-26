@@ -260,7 +260,7 @@
             },
             "name": "WebAppName",
             "label": "App service name",
-            "defaultValue": "myshuttle21",
+            "defaultValue": "",
             "required": true,
             "type": "pickList",
             "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
