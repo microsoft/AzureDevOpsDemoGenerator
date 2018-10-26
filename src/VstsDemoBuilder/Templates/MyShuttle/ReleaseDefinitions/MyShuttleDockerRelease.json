@@ -163,7 +163,7 @@
                 "RegistryConnectedServiceName": "",
                 "PrivateRegistryImage": "",
                 "PrivateRegistryTag": "",
-                "DockerNamespace": "myshuttleregistry",
+                "DockerNamespace": "",
                 "DockerRepository": "web",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
