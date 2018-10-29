@@ -7,9 +7,6 @@
       "value": null,
       "isSecret": true
     },
-    "DBSERVER": {
-      "value": "myshuttle-db.mysql.database.azure.com"
-    },
     "DBUSER": {
       "value": "dbadmin@myshuttle-db"
     }
@@ -163,7 +160,7 @@
                 "RegistryConnectedServiceName": "",
                 "PrivateRegistryImage": "",
                 "PrivateRegistryTag": "",
-                "DockerNamespace": "myshuttleregistry",
+                "DockerNamespace": "",
                 "DockerRepository": "web",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
@@ -260,7 +257,7 @@
             },
             "name": "WebAppName",
             "label": "App service name",
-            "defaultValue": "myshuttle21",
+            "defaultValue": "",
             "required": true,
             "type": "pickList",
             "helpMarkDown": "Enter or select the name of an existing Azure App Service.",

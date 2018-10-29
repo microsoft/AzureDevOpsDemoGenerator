@@ -16,7 +16,7 @@
       "inputs": {
         "mavenPOMFile": "pom.xml",
         "goals": "package",
-        "options": "-Dtest=FaresTest,SimpleTest",
+        "options": "-DskipITs --settings ./maven/settings.xml",
         "publishJUnitResults": "false",
         "testResultsFiles": "**/surefire-reports/TEST-*.xml",
         "testRunTitle": "",
