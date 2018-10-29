@@ -1,295 +1,342 @@
 {
-  "name": "MyHealth.AKS.Release",
-  "description": null,
-  "isDeleted": false,
-  "path": "\\",
-  "variables": {
-    "ACR": {
-      "value": "YOUR_ACR.azurecr.io"
+    "source": "userInterface",
+    "revision": 33,
+    "description": null,
+    "isDeleted": false,
+    "variables": {
+        "ACR": {
+            "value": "YOURACR.azurecr.io"
+        },
+        "DatabaseName": {
+            "value": "mhcdb"
+        },
+        "SQLpassword": {
+            "value": null,
+            "isSecret": true
+        },
+        "SQLuser": {
+            "value": null,
+            "isSecret": true
+        },
+        "SQLserver": {
+            "value": "YOURSQLSERVER.database.windows.net"
+        }
     },
-    "DatabaseName": {
-      "value": "mhcdb"
-    },
-    "Password": {
-      "value": "P2ssw0rd1234"
-    },
-    "SQLadmin": {
-      "value": "sqladmin"
-    },
-    "SQLserver": {
-      "value": "YOUR_DBSERVER.database.windows.net"
-    }
-  },
-  "variableGroups": [],
-  "environments": [
-    {
-      "name": "Dev",
-      "rank": 1,
-      "owner": {
-        "id": "$OwnerId$",
-        "displayName": "$OwnerDisplayName$",
-        "uniqueName": "$OwnerUniqueName$"
-      },
-      "variables": {},
-      "variableGroups": [],
-      "preDeployApprovals": {
-        "approvals": [
-          {
+    "variableGroups": [],
+    "environments": [
+        {
+            "name": "Dev",
             "rank": 1,
-            "isAutomated": true,
-            "isNotificationOn": false
-          }
-        ]
-      },
-      "deployStep": {
-      },
-      "postDeployApprovals": {
-        "approvals": [
-          {
-            "rank": 1,
-            "isAutomated": true,
-            "isNotificationOn": false
-          }
-        ]
-      },
-      "deployPhases": [
-        {
-          "deploymentInput": {
-            "parallelExecution": {
-              "parallelExecutionType": "none"
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
             },
-            "skipArtifactsDownload": false,
-            "artifactsDownloadInput": {
-              "downloadInputs": []
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "beforeGates"
+                }
             },
-            "queueId": "$Hosted VS2017$",
+            "deployStep": {},
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "afterSuccessfulGates"
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": "agentBasedDeployment",
+                    "name": "DB deployment",
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "ce85a08b-a538-4d2b-8589-1d37a9ab970f",
+                            "version": "1.*",
+                            "name": "Execute Azure SQL : DacpacTask",
+                            "refName": "SqlAzureDacpacDeployment1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceNameSelector": "",
+                                "ConnectedServiceName": "",
+                                "ConnectedServiceNameARM": "",
+                                "ServerName": "$(SQLserver)",
+                                "DatabaseName": "$(DatabaseName)",
+                                "SqlUsername": " $(SQLuser)",
+                                "SqlPassword": "$(SQLpassword)",
+                                "DeploymentAction": "Publish",
+                                "TaskNameSelector": "DacpacTask",
+                                "DacpacFile": "$(System.DefaultWorkingDirectory)/AKS/deploy/myhealthclinic.dacpac",
+                                "BacpacFile": "",
+                                "SqlFile": "",
+                                "SqlInline": "",
+                                "PublishProfile": "",
+                                "AdditionalArguments": "",
+                                "SqlAdditionalArguments": "",
+                                "InlineAdditionalArguments": "",
+                                "IpDetectionMethod": "AutoDetect",
+                                "StartIpAddress": "",
+                                "EndIpAddress": "",
+                                "DeleteFirewallRule": "true"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "$Hosted Ubuntu 1604$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 2,
+                    "phaseType": "agentBasedDeployment",
+                    "name": "AKS deployment",
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "cbc316a2-586f-4def-be79-488a1f503564",
+                            "version": "1.*",
+                            "name": "Create Deployments & Services in AKS",
+                            "refName": "Kubernetes1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "connectionType": "Azure Resource Manager",
+                                "kubernetesServiceEndpoint": "",
+                                "azureSubscriptionEndpoint": "",
+                                "azureResourceGroup": "",
+                                "kubernetesCluster": "",
+                                "namespace": "",
+                                "command": "apply",
+                                "useConfigurationFile": "true",
+                                "configuration": "$(System.DefaultWorkingDirectory)/MyHealth.AKS.build/deploy/mhc-aks.yaml",
+                                "arguments": "",
+                                "secretType": "dockerRegistry",
+                                "secretArguments": "",
+                                "containerRegistryType": "Azure Container Registry",
+                                "dockerRegistryEndpoint": "",
+                                "azureSubscriptionEndpointForSecrets": "",
+                                "azureContainerRegistry": "$(ACR)",
+                                "secretName": "mysecretkey",
+                                "forceUpdate": "true",
+                                "configMapName": "",
+                                "forceUpdateConfigMap": "false",
+                                "useConfigMapFile": "false",
+                                "configMapFile": "",
+                                "configMapArguments": "",
+                                "versionOrLocation": "version",
+                                "versionSpec": "1.8.1",
+                                "checkLatest": "false",
+                                "specifyLocation": "",
+                                "cwd": "$(System.DefaultWorkingDirectory)",
+                                "outputFormat": "json"
+                            }
+                        },
+                      {
+                        "environment": {},
+                        "taskId": "cbc316a2-586f-4def-be79-488a1f503564",
+                        "version": "1.*",
+                        "name": "Update image in AKS",
+                        "refName": "Kubernetes2",
+                        "enabled": true,
+                        "alwaysRun": false,
+                        "continueOnError": false,
+                        "timeoutInMinutes": 0,
+                        "definitionType": "task",
+                        "overrideInputs": {},
+                        "condition": "succeeded()",
+                        "inputs": {
+                          "connectionType": "Azure Resource Manager",
+                          "kubernetesServiceEndpoint": "",
+                          "azureSubscriptionEndpoint": "",
+                          "azureResourceGroup": "",
+                          "kubernetesCluster": "",
+                          "namespace": "",
+                          "command": "set",
+                          "useConfigurationFile": "false",
+                          "configuration": "",
+                          "arguments": "image deployments/mhc-front mhc-front=$(ACR)/myhealth.web:$(Build.BuildId)",
+                          "secretType": "dockerRegistry",
+                          "secretArguments": "",
+                          "containerRegistryType": "Azure Container Registry",
+                          "dockerRegistryEndpoint": "",
+                          "azureSubscriptionEndpointForSecrets": "",
+                          "azureContainerRegistry": "$(ACR)",
+                          "secretName": "mysecretkey",
+                          "forceUpdate": "true",
+                          "configMapName": "",
+                          "forceUpdateConfigMap": "false",
+                          "useConfigMapFile": "false",
+                          "configMapFile": "",
+                          "configMapArguments": "",
+                          "versionOrLocation": "version",
+                          "versionSpec": "1.8.1",
+                          "checkLatest": "false",
+                          "specifyLocation": "",
+                          "cwd": "$(System.DefaultWorkingDirectory)",
+                          "outputFormat": "json"
+                        }
+                      }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
             "demands": [],
-            "enableAccessToken": false,
-            "timeoutInMinutes": 0,
-            "jobCancelTimeoutInMinutes": 1,
-            "condition": "succeeded()",
-            "overrideInputs": {}
-          },
-          "rank": 1,
-          "phaseType": "agentBasedDeployment",
-          "name": "DB deployment",
-          "workflowTasks": [
-            {
-              "taskId": "ce85a08b-a538-4d2b-8589-1d37a9ab970f",
-              "version": "1.*",
-              "name": "Execute Azure SQL : DacpacTask",
-              "refName": "SqlAzureDacpacDeployment1",
-              "enabled": true,
-              "alwaysRun": false,
-              "continueOnError": false,
-              "timeoutInMinutes": 0,
-              "definitionType": "task",
-              "overrideInputs": {},
-              "condition": "succeeded()",
-              "inputs": {
-                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                "ConnectedServiceName": "",
-                "ConnectedServiceNameARM": "",
-                "ServerName": "$(SQLserver)",
-                "DatabaseName": "$(DatabaseName)",
-                "SqlUsername": " $(SQLadmin)",
-                "SqlPassword": "$(Password)",
-                "TaskNameSelector": "DacpacTask",
-                "DacpacFile": "$(System.DefaultWorkingDirectory)/MyHealth.AKS.build/deploy/myhealthclinic.dacpac",
-                "SqlFile": "",
-                "SqlInline": "",
-                "PublishProfile": "",
-                "AdditionalArguments": "",
-                "SqlAdditionalArguments": "",
-                "InlineAdditionalArguments": "",
-                "IpDetectionMethod": "AutoDetect",
-                "StartIpAddress": "",
-                "EndIpAddress": "",
-                "DeleteFirewallRule": "true"
-              }
-            }
-          ]
-        },
+            "conditions": [
+                {
+                    "name": "ReleaseStarted",
+                    "conditionType": "event",
+                    "value": ""
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 0,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {},
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        }
+    ],
+    "artifacts": [
         {
-          "deploymentInput": {
-            "parallelExecution": {
-              "parallelExecutionType": "none"
+            "sourceId": "$ProjectId$:$MyHealth.AKS.build-id$",
+            "type": "Build",
+            "alias": "MyHealth.AKS.build",
+            "definitionReference": {
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "latestType",
+                    "name": "Latest"
+                },
+                "definition": {
+                    "id": "$MyHealth.AKS.build-id$",
+                    "name": "MyHealth.AKS.build"
+                },
+                "project": {
+                    "id": "$ProjectId$",
+                    "name": "$ProjectName$"
+                }
             },
-            "skipArtifactsDownload": false,
-            "artifactsDownloadInput": {
-              "downloadInputs": []
-            },
-            "queueId": "$Hosted Ubuntu 1604$",
-            "demands": [],
-            "enableAccessToken": false,
-            "timeoutInMinutes": 0,
-            "jobCancelTimeoutInMinutes": 1,
-            "condition": "succeeded()",
-            "overrideInputs": {}
-          },
-          "rank": 2,
-          "phaseType": "agentBasedDeployment",
-          "name": "AKS deployment",
-          "workflowTasks": [
-            {
-              "taskId": "cbc316a2-586f-4def-be79-488a1f503564",
-              "version": "0.*",
-              "name": "Create Deployments & Services in AKS",
-              "refName": "Kubernetes1",
-              "enabled": true,
-              "alwaysRun": false,
-              "continueOnError": false,
-              "timeoutInMinutes": 0,
-              "definitionType": "task",
-              "overrideInputs": {},
-              "condition": "succeeded()",
-              "inputs": {
-                "kubernetesServiceEndpoint": "",
-                "command": "apply",
-                "useConfigurationFile": "true",
-                "configuration": "$(System.DefaultWorkingDirectory)/MyHealth.AKS.build/deploy/mhc-aks.yaml",
-                "arguments": "",
-                "containerRegistryType": "Azure Container Registry",
-                "dockerRegistryEndpoint": "",
-                "azureSubscriptionEndpoint": "",
-                "azureContainerRegistry": "{\"loginServer\":\"acrforaks.azurecr.io\", \"id\" : \"/subscriptions/e7b26610-1586-4dd7-b7b3-32e11f2f19bd/resourceGroups/AKSRG/providers/Microsoft.ContainerRegistry/registries/acrforaks\"}",
-                "secretName": "mysecretkey",
-                "forceUpdate": "true",
-                "versionOrLocation": "version",
-                "versionSpec": "1.8.1",
-                "checkLatest": "false",
-                "specifyLocation": "",
-                "cwd": "$(System.DefaultWorkingDirectory)",
-                "outputFormat": "json",
-                "kubectlOutput": ""
-              }
-            },
-            {
-              "taskId": "cbc316a2-586f-4def-be79-488a1f503564",
-              "version": "0.*",
-              "name": "Update image in AKS",
-              "refName": "Kubernetes2",
-              "enabled": true,
-              "alwaysRun": false,
-              "continueOnError": false,
-              "timeoutInMinutes": 0,
-              "definitionType": "task",
-              "overrideInputs": {},
-              "condition": "succeeded()",
-              "inputs": {
-                "kubernetesServiceEndpoint": "",
-                "command": "set",
-                "useConfigurationFile": "false",
-                "configuration": "",
-                "arguments": "image deployments/mhc-front mhc-front=$(ACR)/myhealth.web:$(Build.BuildId)",
-                "containerRegistryType": "Azure Container Registry",
-                "dockerRegistryEndpoint": "",
-                "azureSubscriptionEndpoint": "",
-                "azureContainerRegistry": "{\"loginServer\":\"acrforaks.azurecr.io\", \"id\" : \"/subscriptions/e7b26610-1586-4dd7-b7b3-32e11f2f19bd/resourceGroups/AKSRG/providers/Microsoft.ContainerRegistry/registries/acrforaks\"}",
-                "secretName": "mysecretkey",
-                "forceUpdate": "true",
-                "versionOrLocation": "version",
-                "versionSpec": "1.8.1",
-                "checkLatest": "false",
-                "specifyLocation": "",
-                "cwd": "$(System.DefaultWorkingDirectory)",
-                "outputFormat": "json",
-                "kubectlOutput": ""
-              }
-            }
-          ]
+            "isPrimary": true,
+            "isRetained": false
         }
-      ],
-      "environmentOptions": {
-        "emailNotificationType": "OnlyOnFailure",
-        "emailRecipients": "release.environment.owner;release.creator",
-        "skipArtifactsDownload": false,
-        "timeoutInMinutes": 0,
-        "enableAccessToken": false,
-        "publishDeploymentStatus": true,
-        "badgeEnabled": false,
-        "autoLinkWorkItems": false
-      },
-      "demands": [],
-      "conditions": [
-        {
-          "name": "ReleaseStarted",
-          "conditionType": "event",
-          "value": ""
+    ],
+    "triggers": [],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "pipelineProcess": {
+        "type": "designer"
+    },
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "ReleaseNew"
         }
-      ],
-      "executionPolicy": {
-        "concurrencyCount": 0,
-        "queueDepthCount": 0
-      },
-      "schedules": [],
-      "retentionPolicy": {
-        "daysToKeep": 30,
-        "releasesToKeep": 3,
-        "retainBuild": true
-      },
-      "processParameters": {},
-      "properties": {},
-      "preDeploymentGates": {
-        "id": 0,
-        "gatesOptions": null,
-        "gates": []
-      },
-      "postDeploymentGates": {
-        "id": 0,
-        "gatesOptions": null,
-        "gates": []
-      }
-    }
-  ],
-  "artifacts": [
-    {
-      "sourceId": "$ProjectId$:$MyHealth.AKS.build-id$",
-      "type": "Build",
-      "alias": "MyHealth.AKS.build",
-      "definitionReference": {
-
-        "defaultVersionBranch": {
-          "id": "",
-          "name": ""
-        },
-        "defaultVersionSpecific": {
-          "id": "",
-          "name": ""
-        },
-        "defaultVersionTags": {
-          "id": "",
-          "name": ""
-        },
-        "defaultVersionType": {
-          "id": "latestType",
-          "name": "Latest"
-        },
-        "definition": {
-          "id": "$MyHealth.AKS.build-id$",
-          "name": "MyHealth.AKS.build"
-        },
-        "project": {
-          "id": "$ProjectId$",
-          "name": "$ProjectName$"
-        }
-      },
-      "isPrimary": true
-    }
-  ],
-  "triggers": [
-    {
-      "artifactAlias": "MyHealth.AKS.build",
-      "triggerConditions": [],
-      "triggerType": "artifactSource"
-    }
-  ],
-  "releaseNameFormat": "Release-$(rev:r)",
-  "tags": [],
-  "properties": {
-    "DefinitionCreationSource": {
-      "$type": "System.String",
-      "$value": "ReleaseNew"
-    }
-  }
+    },
+    "name": "MyHealth.AKS.Release",
+    "path": "\\",
+    "projectReference": null    
 }
