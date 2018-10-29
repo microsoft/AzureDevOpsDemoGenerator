@@ -90,6 +90,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
+        ga('send', 'event', 'Choose Template Button', 'Clicked');
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -218,7 +219,7 @@ $(document).ready(function (event) {
 
         var accountNameExt = $('#ddlAcccountName option:selected').val();
         var selectedTemplateForExtension = $('#ddlTemplates').val();
-
+        ga('send', 'event', 'Selected Template : ', selectedTemplateForExtension);
         if (accountNameExt === "" || accountNameExt === "--select organiaztion--") {
             return false;
         }
