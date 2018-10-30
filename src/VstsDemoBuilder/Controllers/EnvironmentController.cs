@@ -10,7 +10,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -501,9 +500,17 @@ namespace VstsDemoBuilder.Controllers
                                 string sourceDirectory = subDir;
                                 string targetDirectory = extractPath;
                                 string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
+                                if (!Directory.Exists(backupDirectory))
+                                {
+                                    Directory.CreateDirectory(backupDirectory);
+                                }
                                 //Create a tempprary directory
-                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("_MMMdd_yyyy_HHmmss");
+                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
                                 System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
+
+                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
+
+                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
@@ -511,11 +518,9 @@ namespace VstsDemoBuilder.Controllers
 
                                     if (Directory.Exists(targetDirectory))
                                     {
-                                        //FileIOPermission f2 = new FileIOPermission(FileIOPermissionAccess.Read, sourceDirectory);
-                                        //f2.AddPathList(FileIOPermissionAccess.Write | FileIOPermissionAccess.Read, targetDirectory);
                                         System.IO.File.AppendAllText(logPath, "targetDirectory Path :" + targetDirectory + "\r\n");
                                         //copy the content of source directory to temp directory
-                                        
+
                                         Directory.Move(sourceDirectory, backupDirectoryRandom);
                                         System.IO.File.AppendAllText(logPath, "Copied to temp dir" + "\r\n");
 
