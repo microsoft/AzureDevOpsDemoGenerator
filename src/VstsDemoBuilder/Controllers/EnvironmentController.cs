@@ -50,6 +50,7 @@ namespace VstsDemoBuilder.Controllers
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
+        private string extractPath = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
         private string logPath = "";
         private static Dictionary<string, string> StatusMessages
@@ -292,7 +293,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMzE2OTUzOTQtZTNiYy00YWE3LWFlZGQtN2YxYWVkMTc3ZjQ1IiwiYXBwaWQiOiJjYTc5MGFhYi1kNGFhLTQzMTctYjdhMC1iMTMyYjczNThjMWQiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwODI2MjQwLCJleHAiOjE1NDA4Mjk4NDB9.f7ESIPBRmWjQoSpYG1d0TYtsspP1jbkqM0jIHiHSQgq7j7okv1WC0yIqcsY3yxxuzy9hADYnJ16ODosuRdbm1djo2Kt8n_zO7yvXDc0Q2Lr67361-g3EXfOFyCvFfhan-vJnlzozrvjH1JgI7Mhtl9ngLKD1kRwN1bqYFrMviAM6D5UX2KLhRUpR8XSQzbaaXgEk1WFJ8WEEz4Gaqv6M7X1qkVXHR9DBiWWsQZWdt61m4qkS6tHzP_yDT6iiZCVBQq3imXHGK9Ej0mINosVskHpM1kpHbq9v2ma2Ygq7pXuFS6MvFVVaAeFuoE2IQv7SLnWKbZFHRYRSzwV4P1odFg";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMzAzMTNiZTQtYzMyNC00NzMzLTk4MjktNjBmMTNlMDQ3YTEzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwODk3OTgyLCJleHAiOjE1NDA5MDE1ODJ9.3O9xU5gswgfYjDsVBmv9bsNVXaAJUUHu5LUA0Gfx5dpx-X-pWEN4CGhetECrz3tl65lPUZ1lZlgEBp_ZszL7ebbZ8_U6shda3C-qalhiiftMUgK5N4BEClpBnbf7Oob1FaXzQgATf8I17ISczjgq2_4_CBsIh0hZnMt-YM-6h7dXfk9EzjYiFrQmk5Cg7kC_iNZWwT-hunrddJ7EOPSsPOhk0Y1X-wBS9Ef0S5RJZcMgwTH3UT6IpixZIgm7buMqplfFn56FkA9EZbPb4ZRVHbHq21je0QHGdne_GAxEfwuBzg-_rDvUXU8ndPJ9K8jfzLXke2-gQ9UEWnsYLn1YJA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -444,14 +445,14 @@ namespace VstsDemoBuilder.Controllers
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
                 }
                 logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                logPath += "Log" + DateTime.Now.ToString("ddMMyymmss") + ".txt";
 
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
-                string extractPath = Server.MapPath("~/Templates/" + folder);
+                logPath += "Log_" + folder + DateTime.Now.ToString("ddMMyymmss") + ".txt";
+
+                extractPath = Server.MapPath("~/Templates/" + folder);
                 System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
                 System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
-
 
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
@@ -573,8 +574,9 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Directory.Delete(extractPath, true);
                 System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
-                return Json(ex.Message + ex.StackTrace);
+                return Json(ex.Message);
             }
 
             return Json("0");
