@@ -1,0 +1,230 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 38436,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "May16_MHC01",
+        "System.TeamProject": "May16_MHC01",
+        "System.IterationPath": "May16_MHC01",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-05-16T04:45:42.517Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-05-16T04:45:42.517Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Patient Information",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Patient Information",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38352",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38357",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38436"
+    },
+    {
+      "id": 38437,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "May16_MHC01",
+        "System.TeamProject": "May16_MHC01",
+        "System.IterationPath": "May16_MHC01",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-05-16T04:45:42.597Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-05-16T04:45:42.597Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Fianance Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Fianance Management",
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38359",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38437"
+    },
+    {
+      "id": 38438,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "May16_MHC01",
+        "System.TeamProject": "May16_MHC01",
+        "System.IterationPath": "May16_MHC01",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-05-16T04:45:42.673Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-05-16T04:45:42.673Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Patient Mobile App",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Patient Mobile App",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38353",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38354",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38438"
+    },
+    {
+      "id": 38439,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "May16_MHC01",
+        "System.TeamProject": "May16_MHC01",
+        "System.IterationPath": "May16_MHC01",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-05-16T04:45:42.737Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-05-16T04:45:42.737Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "Web Portal for Doctors",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Web Portal for Doctors",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38355",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38356",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38439"
+    },
+    {
+      "id": 38440,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "May16_MHC01",
+        "System.TeamProject": "May16_MHC01",
+        "System.IterationPath": "May16_MHC01",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-05-16T04:45:42.8Z",
+        "System.CreatedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.ChangedDate": "2017-05-16T04:45:42.8Z",
+        "System.ChangedBy": "Bharath YM <Bharath.YM@hotmail.com>",
+        "System.Title": "HIPAA Compliance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "HIPAA Compliance",
+        "System.AssignedTo": "Bharath YM <Bharath.YM@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38358",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://bharathym.visualstudio.com/_apis/wit/workItems/38440"
+    }
+  ],
+  "HttpStatusCode": 0
+}
