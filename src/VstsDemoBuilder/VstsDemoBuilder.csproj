@@ -852,6 +852,10 @@
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />
     <Content Include="Templates\MyShuttle\ReleaseDefinitions\MyShuttleDockerRelease.json" />
+    <Content Include="Templates\AKS\TaskfromTemplate.json" />
+    <Content Include="Templates\AKS\FeaturefromTemplate.json" />
+    <Content Include="Templates\AKS\EpicfromTemplate.json" />
+    <Content Include="Templates\AKS\PBIfromTemplate.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
