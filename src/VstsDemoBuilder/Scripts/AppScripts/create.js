@@ -126,7 +126,12 @@ $(document).ready(function (event) {
         $('#lblDefaultDescription').hide();
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
-        $('#descContainer').html(selectedTemplateDescription);
+        if (selectedTemplateDescription != "") {
+            $('#descContainer').html(selectedTemplateDescription);
+        }
+        else {
+            $('#descContainer').html("Azure DevOps Demo Generator");
+        }
         if (groputempSelected !== "") {
             $('#ddlTemplates').val(groputempSelected);
             $(".VSTemplateSelection").fadeOut('fast');
