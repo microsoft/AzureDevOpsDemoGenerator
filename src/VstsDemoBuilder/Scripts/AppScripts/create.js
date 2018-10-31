@@ -90,6 +90,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
+        ga('send', 'event', 'Choose Template Button', 'Clicked');
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -101,19 +102,19 @@ $(document).ready(function (event) {
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
 
-        var accountNameExt = $('#ddlAcccountName option:selected').val();
-        var selectedTemplateForExtension = $('#ddlTemplates').val();
+        var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
+        var checkExtensionForSelectedTemplate = $('#ddlTemplates').val();
 
-        if (selectedTemplateForExtension === "SonarQube") {
+        if (checkExtensionForSelectedTemplate === "SonarQube") {
             $("#SoanrQubeDiv").show();
         }
         else {
             $("#SoanrQubeDiv").hide();
         }
-        if (accountNameExt === "" || accountNameExt === "Select Organiaztion") {
+        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
             return false;
         }
-        else if (selectedTemplateForExtension === "") {
+        else if (checkExtensionForSelectedTemplate === "") {
             return;
         }
         else {
@@ -216,13 +217,13 @@ $(document).ready(function (event) {
         }
         //Till here
 
-        var accountNameExt = $('#ddlAcccountName option:selected').val();
-        var selectedTemplateForExtension = $('#ddlTemplates').val();
-
-        if (accountNameExt === "" || accountNameExt === "--select organiaztion--") {
+        var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
+        var checkExtensionsForSelectedTemplate = $('#ddlTemplates').val();
+        ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
+        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "--select organiaztion--") {
             return false;
         }
-        else if (selectedTemplateForExtension === "") {
+        else if (checkExtensionsForSelectedTemplate === "") {
             return;
         }
         else {
@@ -238,7 +239,7 @@ $(document).ready(function (event) {
     $("#sendEmail").click(function () {
         var pattern = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         var emailAddress = $("#toEmail").val();
-        var AccountName = $("#toAccountName").val();
+        var accountName = $("#toAccountName").val();
         var errorLog = $("#errorMail").text();
         if (emailAddress === "") { $("#toEmail_Error").empty().append("Please enter email address"); $("#toEmail_Error").removeClass('d-none').addClass('d-block'); return false; }
         else if (!pattern.test(emailAddress)) {
@@ -247,11 +248,11 @@ $(document).ready(function (event) {
             $("#toEmail").focus();
             return false;
         }
-        if (AccountName === '') { $("#toAccountName_Error").empty().append("Please enter Azure DevOps Organiaztion name"); $("#toAccountName_Error").removeClass('d-none').addClass('d-block'); return false; }
+        if (accountName === '') { $("#toAccountName_Error").empty().append("Please enter Azure DevOps Organiaztion name"); $("#toAccountName_Error").removeClass('d-none').addClass('d-block'); return false; }
 
         $("#sendEmail").prop('disabled', true);
 
-        var modelData = { "EmailAddress": emailAddress, "AccountName": AccountName, "ErrorLog": errorLog };
+        var modelData = { "EmailAddress": emailAddress, "AccountName": accountName, "ErrorLog": errorLog };
         $.post("SendEmail", modelData, function (data) {
             $("#EmailModal").modal('hide');
             $("#infoModel").modal('show');
