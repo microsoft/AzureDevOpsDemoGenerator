@@ -1,6 +1,5 @@
 {
   "Name": "LaunchDarkly",
-  "Description": "LaunchDarkly",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",
