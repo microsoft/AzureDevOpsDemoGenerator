@@ -50,7 +50,9 @@ namespace VstsDemoBuilder.Controllers
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
+        private string extractPath = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
+        private string logPath = "";
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -291,7 +293,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwMjExMzA0LCJleHAiOjE1NDAyMTQ5MDR9.t9fR-9r834glMaIej-G_PKZ56kXbwYANWuutx7Al7Ce7B3fSQGk8M9rUMmpX7XPq8kLaup4C2xmiv7piPthT1AQZ3VdytY2dXGRuHb5UtZNUToVo-KlhbcRzniZbv4uxYv-DUMbqwFBls9V3fzCl6S6sFNCIlf_WA4-9R95YZg5X7UtqWXwwqCcmB5LcZiUrsudjALL9lmUAwjHwOPseT8FNozOM08dDirApj5dZUcJzk184SS2LMEXQWda-srUwemQpwiuKfihNCvSPXx6UBcyvfeQQ2r4upO2Cd_v1P5JJAZMxMNIis-5lKd52Sg0xq0N9T1lMzLyuJilJgKK7FA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMzAzMTNiZTQtYzMyNC00NzMzLTk4MjktNjBmMTNlMDQ3YTEzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwODk3OTgyLCJleHAiOjE1NDA5MDE1ODJ9.3O9xU5gswgfYjDsVBmv9bsNVXaAJUUHu5LUA0Gfx5dpx-X-pWEN4CGhetECrz3tl65lPUZ1lZlgEBp_ZszL7ebbZ8_U6shda3C-qalhiiftMUgK5N4BEClpBnbf7Oob1FaXzQgATf8I17ISczjgq2_4_CBsIh0hZnMt-YM-6h7dXfk9EzjYiFrQmk5Cg7kC_iNZWwT-hunrddJ7EOPSsPOhk0Y1X-wBS9Ef0S5RJZcMgwTH3UT6IpixZIgm7buMqplfFn56FkA9EZbPb4ZRVHbHq21je0QHGdne_GAxEfwuBzg-_rDvUXU8ndPJ9K8jfzLXke2-gQ9UEWnsYLn1YJA";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -438,9 +440,19 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
-                string extractPath = Server.MapPath("~/Templates/" + folder);
+                logPath += "Log_" + folder + DateTime.Now.ToString("ddMMyymmss") + ".txt";
+
+                extractPath = Server.MapPath("~/Templates/" + folder);
+                System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
+                System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
 
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
@@ -448,6 +460,8 @@ namespace VstsDemoBuilder.Controllers
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
+                System.IO.File.AppendAllText(logPath, "settingFileOut :" + settingFile + "\r\n" + "projectFileOut :" + projectFile + "\r\n");
+
 
                 if (settingFile && projectFile)
                 {
@@ -467,30 +481,57 @@ namespace VstsDemoBuilder.Controllers
                 }
                 else if (!settingFile && !projectFile)
                 {
-
-                    if (Directory.Exists(extractPath + "\\" + folder))
+                    string[] folderName = System.IO.Directory.GetDirectories(extractPath);
+                    string subDir = folderName[0];
+                    System.IO.File.AppendAllText(logPath, "SubDir Path :" + subDir + "\r\n");
+                    if (subDir != "")
                     {
-                        bool settingFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectSettings.json") ? true : false);
-                        bool projectFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectTemplate.json") ? true : false);
+
+                        bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
+                        bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
+                        System.IO.File.AppendAllText(logPath, "settingFileIn :" + settingFile1 + "\r\n" + "projectFileIn :" + projectFile1 + "\r\n");
+
                         if (settingFile1 && projectFile1)
                         {
-                            string projectFileData1 = System.IO.File.ReadAllText(extractPath + "\\" + folder + "\\ProjectTemplate.json");
+                            string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
                             ProjectSetting settings1 = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData1);
 
                             if (!string.IsNullOrEmpty(settings1.IsPrivate))
                             {
-                                string sourceDirectory = extractPath + "\\" + folder;
+                                string sourceDirectory = subDir;
                                 string targetDirectory = extractPath;
-                                string backupDirectory = Server.MapPath("~/TemplateBackUp/");
-                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("_MMMdd_yyyy_HHmmss");
+                                string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
+                                if (!Directory.Exists(backupDirectory))
+                                {
+                                    Directory.CreateDirectory(backupDirectory);
+                                }
+                                //Create a tempprary directory
+                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
+                                System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
+
+                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
+
+                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
+                                    System.IO.File.AppendAllText(logPath, "sourceDirectory Path :" + sourceDirectory + "\r\n");
+
                                     if (Directory.Exists(targetDirectory))
                                     {
+                                        System.IO.File.AppendAllText(logPath, "targetDirectory Path :" + targetDirectory + "\r\n");
+                                        //copy the content of source directory to temp directory
+
                                         Directory.Move(sourceDirectory, backupDirectoryRandom);
+                                        System.IO.File.AppendAllText(logPath, "Copied to temp dir" + "\r\n");
+
+                                        //Delete the target directory
                                         Directory.Delete(targetDirectory);
+                                        System.IO.File.AppendAllText(logPath, "Deleted Target dir" + "\r\n");
+
+                                        //Target Directory should not be exist, it will create a new directory
                                         Directory.Move(backupDirectoryRandom, targetDirectory);
+                                        System.IO.File.AppendAllText(logPath, "Movied Target dir" + "\r\n");
 
                                         System.IO.DirectoryInfo di = new DirectoryInfo(backupDirectory);
 
@@ -533,6 +574,8 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Directory.Delete(extractPath, true);
+                System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
             }
 
