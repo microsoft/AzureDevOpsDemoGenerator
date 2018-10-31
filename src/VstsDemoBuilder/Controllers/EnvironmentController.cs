@@ -160,10 +160,8 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult GetGroups()
         {
             string groupDetails = "";
-            GroupDetails details = new GroupDetails();
-            GroupDetails Newdetails = new GroupDetails();
+            TemplateSelection.Templates templates = new TemplateSelection.Templates();
             string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
-
             string email = Session["Email"].ToString();
             //if (showFeature)
             //{
@@ -177,15 +175,13 @@ namespace VstsDemoBuilder.Controllers
             //}
             //else
             //{
-            if (System.IO.File.Exists(templatesPath + "GroupSettings_FeatureFlag.json"))
+            if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
             {
-                Project objP = new Project();
-                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings_FeatureFlag.json");
-                details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-                Newdetails = details;
+                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
+                templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
             }
             //}
-            return Json(Newdetails, JsonRequestBehavior.AllowGet);
+            return Json(templates, JsonRequestBehavior.AllowGet);
         }
 
         #endregion
@@ -292,7 +288,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwMjExMzA0LCJleHAiOjE1NDAyMTQ5MDR9.t9fR-9r834glMaIej-G_PKZ56kXbwYANWuutx7Al7Ce7B3fSQGk8M9rUMmpX7XPq8kLaup4C2xmiv7piPthT1AQZ3VdytY2dXGRuHb5UtZNUToVo-KlhbcRzniZbv4uxYv-DUMbqwFBls9V3fzCl6S6sFNCIlf_WA4-9R95YZg5X7UtqWXwwqCcmB5LcZiUrsudjALL9lmUAwjHwOPseT8FNozOM08dDirApj5dZUcJzk184SS2LMEXQWda-srUwemQpwiuKfihNCvSPXx6UBcyvfeQQ2r4upO2Cd_v1P5JJAZMxMNIis-5lKd52Sg0xq0N9T1lMzLyuJilJgKK7FA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiZTE3N2ZmYTUtZDQ4Yy00NzZmLWFjZjYtNjUzZDdkMDcyODVlIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwOTc0MzQzLCJleHAiOjE1NDA5Nzc5NDN9.MlOJ3tCua0m6jR3J5cmJzeWCtNTFe4N4QMSQghIGfsi-AdOBP3AVmqJXdJ4BHWWadMhpO0G8UuRjYSErcq10v__h2wJH62KLCA8TLWAM9pVKw7drLFIxZ9Dn12_Kpi2pqZqAG55slXpwlQ8GMcXXv4IrO2Aym_bATrdW4ZsOatOj-svPS1qGYPl13cONFpyA822ciRBObI66pAvmDltSbD9-Fbt-1pVESUZMhf5u1JzWWr98WLxATJvFx4YJgu_jgbfWfOjOXFGeAOkCdULzFvWVzLH9YsZ9TOXjPEculc0nluJvIvQc7NkhjhSCwHZSMRQXP2N3WXl5nugll_pUwg";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
