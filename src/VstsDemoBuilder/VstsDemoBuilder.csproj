@@ -250,6 +250,7 @@
     <Compile Include="Models\ProjectList.cs" />
     <Compile Include="Models\Query.cs" />
     <Compile Include="Models\ReadUser.cs" />
+    <Compile Include="Models\TemplateSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

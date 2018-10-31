@@ -1,5 +1,4 @@
 ﻿/// <reference path="../jquery-1.12.4.min.js" />
-
 $(document).ready(function () {
 
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
@@ -126,9 +125,16 @@ $(document).ready(function (event) {
     $('#selecttmplate').click(function () {
         //Added
         $('#lblDefaultDescription').hide();
-        var GroputempSelected = $(".template.selected").data('template');
-        if (GroputempSelected !== "") {
-            $('#ddlTemplates').val(GroputempSelected);
+        var groputempSelected = $(".template.selected").data('template');
+        var selectedTemplateDescription = $(".description.descSelected").data('description');
+        if (selectedTemplateDescription != "") {
+            $('#descContainer').html(selectedTemplateDescription);
+        }
+        else {
+            $('#descContainer').html("Azure DevOps Demo Generator");
+        }
+        if (groputempSelected !== "") {
+            $('#ddlTemplates').val(groputempSelected);
             $(".VSTemplateSelection").fadeOut('fast');
         }
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
@@ -162,13 +168,6 @@ $(document).ready(function (event) {
                 var Description = ParsedData.Description;
                 var parameters = ParsedData.Parameters;
 
-                if (Description !== "") {
-                    $("#descContainer").html('');
-                    $("#descContainer").html(Description);
-                    $("#lblDescription").removeClass("d-none").addClass("d-block");
-
-                }
-                else { $("#lblDescription").removeClass("d-block").addClass("d-none"); }
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
@@ -178,11 +177,6 @@ $(document).ready(function (event) {
                     }
                     else { $("#projectParameters").html(''); }
                 }
-            }
-            else {
-                $("#lblDescription").removeClass("d-block").addClass("d-none");
-                $("#projectParameters").html('');
-
             }
         });
         if (TemplateName !== "") {
@@ -324,13 +318,6 @@ $(document).ready(function (event) {
                 var Description = ParsedData.Description;
                 var parameters = ParsedData.Parameters;
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                if (Description !== "") {
-                    $("#descContainer").html('');
-                    $("#descContainer").html(Description);
-                    $("#lblDescription").removeClass("d-none").addClass("d-block");
-
-                }
-                else { $("#lblDescription").removeClass("d-block").addClass("d-none"); }
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
@@ -340,11 +327,6 @@ $(document).ready(function (event) {
                     }
                     else { $("#projectParameters").html(''); }
                 }
-            }
-            else {
-                $("#lblDescription").removeClass("d-lock").addClass("d-none");
-                $("#projectParameters").html('');
-
             }
         });
         if (selectedTemplate !== "" && typeof selectedTemplate !== "undefined") {
@@ -798,7 +780,6 @@ $(document).ready(function () {
             success: function (groups) {
                 var grp = "";
                 var private = "";
-                debugger;
                 if (groups.GroupwiseTemplates.length > 0) {
                     grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">'
                     grp += '<div class="templates d-flex align-items-center flex-wrap">';
@@ -815,13 +796,29 @@ $(document).ready(function () {
                                     if (i === 0) {
                                         grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
                                         grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                        grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
+                                        if (MatchedGroup.Template[i].tags != null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                         grp += '</div>';
                                     }
                                     else {
                                         grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
                                         grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                        grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
+                                        if (MatchedGroup.Template[i].tags != null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                         grp += '</div>';
                                     }
                                 }
@@ -883,6 +880,8 @@ $(function () {
     $(document.body).on("click", '.template', function () {
         $(".template").removeClass("selected");
         $(this).addClass("selected");
+        $('.description').removeClass('descSelected');
+        $(this.lastElementChild).addClass('descSelected');
     });
 
     // GET ID TO BE SHOWN
@@ -907,14 +906,36 @@ function createTemplates() {
                             if (i === 0) {
                                 grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
                                 grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
+                                if (MatchedGroup.Template[i].tags != null) {
+                                    grp += '<p></p>';
+                                    grp += '<p>';
+                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                    }
+                                    grp += '</p>';
+                                }
+                                grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
+                                if (MatchedGroup.Template[i].Name == "SmartHotel360") {
+                                    $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
                             }
                             else {
                                 grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
                                 grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
+                                if (MatchedGroup.Template[i].tags != null) {
+                                    grp += '<p></p>';
+                                    grp += '<p>';
+                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                    }
+                                    grp += '</p>';
+                                }
+                                grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
+                                if (MatchedGroup.Template[i].Name == "SmartHotel360") {
+                                    $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
                             }
                         }
                     }
@@ -992,13 +1013,6 @@ function GetTemplates(selectedTemplate) {
             var Description = ParsedData.Description;
             var parameters = ParsedData.Parameters;
             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-            if (Description !== "") {
-                $("#descContainer").html('');
-                $("#descContainer").html(Description);
-                $("#lblDescription").removeClass("d-none").addClass("d-block");
-
-            }
-            else { $("#lblDescription").removeClass("d-block").addClass("d-none"); }
             if (typeof parameters !== "undefined") {
                 if (parameters.length > 0) {
                     $.each(parameters, function (key, value) {
@@ -1008,11 +1022,6 @@ function GetTemplates(selectedTemplate) {
                 }
                 else { $("#projectParameters").html(''); }
             }
-        }
-        else {
-            $("#lblDescription").removeClass("d-lock").addClass("d-none");
-            $("#projectParameters").html('');
-
         }
     });
 }

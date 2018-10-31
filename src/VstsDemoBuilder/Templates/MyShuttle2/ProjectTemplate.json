@@ -1,6 +1,5 @@
 {
   "Name": "MyShuttleJava",
-  "Description": "Build, and deploy Java projects along with using Agile tools to keep our development lifecycle on track.",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",
