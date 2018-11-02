@@ -162,18 +162,6 @@ namespace VstsDemoBuilder.Controllers
             TemplateSelection.Templates templates = new TemplateSelection.Templates();
             string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
             string email = Session["Email"].ToString();
-            //if (showFeature)
-            //{
-            //    if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
-            //    {
-            //        Project objP = new Project();
-            //        groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
-            //        details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-            //        Newdetails = details;
-            //    }
-            //}
-            //else
-            //{
             if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
             {
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
@@ -276,6 +264,7 @@ namespace VstsDemoBuilder.Controllers
                                         {
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
+                                            model.selectedTemplateDescription = template.Description;
                                         }
                                     }
                                 }
@@ -358,6 +347,7 @@ namespace VstsDemoBuilder.Controllers
                                         {
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
+                                            model.selectedTemplateDescription = template.Description;
                                         }
                                     }
                                 }

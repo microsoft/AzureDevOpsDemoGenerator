@@ -376,6 +376,12 @@ $(document).ready(function (event) {
         $('#newFeature').hide();
     });
 
+    var descContent = $("#descContainer").text();
+    var privateTemplateDescription = $('#selectedTemplateDescription').val();
+    if (privateTemplateDescription != "") {
+        $("#descContainer").html(privateTemplateDescription);
+    }
+
 });
 $('#btnSubmit').click(function () {
     statusCount = 0;
@@ -613,22 +619,21 @@ function getStatus() {
                                 type: "GET",
                                 async: false,
                                 success: function (data) {
-                                    //var accountName = data;
-                                    //var link = "https://dev.azure.com/" + AccountNameForLink + "/" + projectNameForLink;
+                                    var accountName = data;
+                                    var link = "https://dev.azure.com/" + AccountNameForLink + "/" + projectNameForLink;
 
-                                    //if (selectedTemplate == "SmartHotel360") {
-                                    //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                                    //}
-                                    //else {
-                                    //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                                    //}
+                                    if (selectedTemplate == "SmartHotel360") {
+                                        $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
+                                    }
+                                    else {
+                                        $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
+                                    }
                                     $('#dvProgress').removeClass("d-block").addClass("d-none");
                                     $('#textMuted').removeClass("d-block").addClass("d-none");
-                                    $('#status-messages').empty().hide();
                                     currentPercentage = 0;
 
                                     $('#progressBar').width(currentPercentage++ + '%');
-                                    $("#finalLink").addClass("d-none").removeClass("d-block");
+                                    $("#finalLink").removeClass("d-none").addClass("d-block");
                                     $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                                     $("#txtProjectName").val("");
 
@@ -658,7 +663,7 @@ function getStatus() {
                             currentPercentage = 0;
                             $('#status-messages').empty().hide();
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $("#finalLink").removeClass("d-none").addClass("d-block");
+                            $("#finalLink").addClass("d-none").removeClass("d-block");
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                             $("#txtProjectName").val("");
 
