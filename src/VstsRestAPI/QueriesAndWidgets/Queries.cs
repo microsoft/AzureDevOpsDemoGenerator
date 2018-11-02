@@ -104,38 +104,6 @@ namespace VstsRestAPI.QueriesAndWidgets
         }
 
         /// <summary>
-        /// Create widget for dashboard
-        /// </summary>
-        /// <param name="project"></param>
-        /// <param name="dashBoardId"></param>
-        /// <param name="json"></param>
-        /// <returns></returns>
-        //public bool CreateWidget(string project, string dashBoardId, string json)
-        //{
-        //    using (var client = GetHttpClient())
-        //    {
-        //        //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
-        //        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-        //        var method = new HttpMethod("POST");
-
-        //        var request = new HttpRequestMessage(method, project + "/_apis/dashboard/dashboards/" + dashBoardId + "/Widgets?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-        //        var response = client.SendAsync(request).Result;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            var errorMessage = response.Content.ReadAsStringAsync();
-        //            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-        //            this.LastFailureMessage = error;
-        //            return false;
-        //        }
-        //    }
-
-        //}
-
-        /// <summary>
         /// Get Query by path and Query Name
         /// </summary>
         /// <param name="project"></param>
