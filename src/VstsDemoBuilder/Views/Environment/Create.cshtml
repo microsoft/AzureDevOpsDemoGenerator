@@ -56,7 +56,10 @@
     @Html.HiddenFor(model => model.accessToken, new { id = "hiddenAccessToken" })
     @Html.HiddenFor(model => model.MemberID, new { id = "hiddenMemberID" })
     @Html.HiddenFor(model => model.Email, new { id = "emailID" })
-
+    @if (!string.IsNullOrEmpty(Model.selectedTemplateDescription))
+    {
+        <input type="hidden" value="@Model.selectedTemplateDescription" id="selectedTemplateDescription" />
+    }
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -123,11 +126,6 @@
                     <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://app.vsaex.visualstudio.com/me?mkt=en-US&campaign=o~msft~vscom~vssignin" target="_blank">Profile</a>
-                </div>
-            </li>
         </ul>
     </nav>
     <div class="jumbotron mb-0" style="padding-bottom: 25px; padding-top: 25px;">
@@ -150,8 +148,8 @@
                     <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
                         <h6>Feedback&colon;</h6>
                         <p class="mb-0">
-                            To provide feedback, you can email us -
-                            <a class="text-primary" href="mailto:devopsdemos@microsoft.com">devopsdemos@microsoft.com</a>. We would appreciate your feedback
+                            To provide feedback, you can email us
+                            <a class="text-primary" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com">here </a>. <p>Like our service? We would appreciate if you share feedback on social</p>
                         </p>
                         <p>
                             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
@@ -168,7 +166,7 @@
             -->
             <div class="col-md-6 order-1 order-md-2">
                 <div class="form-group row">
-                    <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Select Organization :</label>
+                    <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
                     <div class="col-lg-8">
 
                         @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName" })
@@ -180,7 +178,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputPassword" class="col-lg-4 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                    <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
                     <div class="col-lg-8">
                         @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
                         <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
@@ -188,7 +186,7 @@
                     </div>
                 </div>
                 <div class="form-group row" id="">
-                    <label for="Template" class="col-lg-4 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
+                    <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
                     <div class="col-lg-6  mb-3 mt-1">
                         <input type="text" class="form-control" id="ddlTemplates" disabled />
                         <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
@@ -205,7 +203,7 @@
                 <!--/SELECT TEMPLATE BUTTON-->
                 <!-- PROJECT PARAMETERS -->
                 <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
-                    <label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">SonarQube URL:</label>
+                    <label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">SonarQube URL:</label>
                     <div class="col-lg-8">
                         <input type="text" class="form-control project-parameters rmverror" id="txtSonarServerDNSName" placeholder="SonarQube URL">
                         <div class="alert alert-danger d-none" role="alert" id="txtSonarServerDNSName_Error">
@@ -217,31 +215,31 @@
                 </div>
                 <!-- PROJECT PARAMETERS -->
                 <!--EXTENSIONS -->
-                <div class="mt-4 border p-3 d-none" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                <div class="mt-4 border p-3 d-none col-lg-11" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">
                         <p style="display:none;" id="extensionError"></p>
                     </div>
                 </div>
                 <!--/EXTENSIONS -->
-                <div class="text-right mt-3">
+                <div class="text-right mt-3 col-lg-11" style="padding-right:0px">
                     <button class="btn btn-primary submitBtn btnUpdate" id="btnSubmit" style="font-size:12px;">
                         Create Project
                     </button>
                     <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
                 </div>
-                <div class="card mt-3 d-none" id="finalLink" style="border-color: #0074d0;">
+                <div class="card mt-3 d-none col-lg-11" id="finalLink">
                     <div class="card-body" id="accountLink" style="color: green;font-weight: 300;">
                     </div>
                 </div>
                 <!-- PROGRESS BAR -->
-                <div class="progress mt-3 d-none" id="dvProgress">
+                <div class="progress mt-3 d-none col-lg-11" id="dvProgress" style="padding-left:0px;">
                     <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
 
                 <!-- PROGRESS BAR -->
-                <div id="status-messages" class="border p-3 mt-3" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                <div id="status-messages" class="border p-3 mt-3 col-lg-11" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                 </div>
             </div>
             <!--
@@ -254,6 +252,7 @@
                     <div class="card-header bg-primary ">About this Template</div>
                     <div class="card-body" style="background-color:white; color:black">
                         <p class="card-text" id="descContainer">
+
                         </p>
                     </div>
                 </div>
