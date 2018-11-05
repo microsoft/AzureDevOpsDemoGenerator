@@ -376,10 +376,11 @@ $(document).ready(function (event) {
         $('#newFeature').hide();
     });
 
-    var descContent = $("#descContainer").text();
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription != "") {
-        $("#descContainer").html(privateTemplateDescription);
+        var templateTxt = $('#descContainer').text();
+        if (templateTxt != "")
+            $("#descContainer").html(privateTemplateDescription);
     }
 
 });
@@ -924,7 +925,9 @@ function createTemplates() {
                                 grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
                                 if (MatchedGroup.Template[i].Name == "SmartHotel360") {
-                                    $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                    var templateTxt = $('#selectedTemplateDescription').val();
+                                    if (templateTxt == "" || typeof templateTxt == "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
                                 }
                             }
                             else {
@@ -941,7 +944,9 @@ function createTemplates() {
                                 grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
                                 if (MatchedGroup.Template[i].Name == "SmartHotel360") {
-                                    $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                    var templateTxt = $('#selectedTemplateDescription').val();
+                                    if (templateTxt == "" || typeof templateTxt == "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
                                 }
                             }
                         }
