@@ -234,7 +234,6 @@ namespace VstsDemoBuilder.Controllers
                         model.Templates = new List<string>();
                         model.accountUsersForDdl = new List<SelectListItem>();
                         TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                        //TemplateSetting privateTemplates = new TemplateSetting();
                         string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
 
                         //Taking all the template folder and adding to list
@@ -317,7 +316,6 @@ namespace VstsDemoBuilder.Controllers
                         model.Templates = new List<string>();
                         model.accountUsersForDdl = new List<SelectListItem>();
                         TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                        //TemplateSetting privateTemplates = new TemplateSetting();
                         string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
 
                         //Taking all the template folder and adding to list
