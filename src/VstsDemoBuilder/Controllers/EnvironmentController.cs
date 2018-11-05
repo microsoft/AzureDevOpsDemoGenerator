@@ -175,21 +175,17 @@ namespace VstsDemoBuilder.Controllers
 
         #region Controller Actions
         /// <summary>
-        /// Call to Create View()
+        /// View ProjectSetUp
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns>View()</returns>
+        /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Create(Project model)
+        public ActionResult ProjectSetup()
         {
             try
             {
-                string isCode = Request.QueryString["code"];
-                if (isCode == null)
-                {
-                    return Redirect("../Account/Verify");
-                }
+                Project model = new Project();
+                
                 if (Session["visited"] != null)
                 {
                     if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
@@ -201,18 +197,18 @@ namespace VstsDemoBuilder.Controllers
                     if (Session["PAT"] != null)
                     {
                         AccessDetails.access_token = Session["PAT"].ToString();
-                        ProfileDetails Profile1 = GetProfile(AccessDetails);
-                        Session["User"] = Profile1.displayName;
-                        Session["Email"] = Profile1.emailAddress.ToLower();
-                        Models.Accounts.AccountList accountList1 = GetAccounts(Profile1.id, AccessDetails);
+                        ProfileDetails profile = GetProfile(AccessDetails);
+                        Session["User"] = profile.displayName;
+                        Session["Email"] = profile.emailAddress.ToLower();
+                        Models.Accounts.AccountList accountList1 = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
-                        model.Email = Profile1.emailAddress.ToLower();
-                        model.Name = Profile1.displayName;
-                        model.MemberID = Profile1.id;
+                        model.Email = profile.emailAddress.ToLower();
+                        model.Name = profile.displayName;
+                        model.MemberID = profile.id;
                         model.accountsForDropdown = new List<string>();
 
                         if (accountList1.count > 0)
@@ -271,93 +267,54 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                         return View(model);
+
                     }
-                    else
+                    return Redirect("../Account/Verify");
+                }
+                else
+                {
+                    Session.Clear();
+                    return Redirect("../Account/Verify");
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
+        }
+
+        /// <summary>
+        /// Call to Create View()
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>View()</returns>
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Create(Project model)
+        {
+            try
+            {
+                string isCode = Request.QueryString["code"];
+                if (isCode == null)
+                {
+                    return Redirect("../Account/Verify");
+                }
+                if (Session["visited"] != null)
+                {
+                    if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
                     {
-                        string code = Request.QueryString["code"];
-
-                        string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
-                        string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
-
-                        string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
-
-                        AccessDetails = GetAccessToken(accessRequestBody);
-                        //AccessDetails.access_token = "_REPLACE YOUR YOUR ACCESS TOKEN WHEN YOU ARE DEBUGGING LOCALLY_"
-                        //New Feature Enabling
-                        ProfileDetails Profile = new ProfileDetails();
-                        Profile = GetProfile(AccessDetails);
-                        Session["User"] = Profile.displayName;
-                        Session["Email"] = Profile.emailAddress.ToLower();
-                        Models.Accounts.AccountList accountList = GetAccounts(Profile.id, AccessDetails);
-
-                        model.accessToken = AccessDetails.access_token;
-                        Session["PAT"] = AccessDetails.access_token;
-                        model.refreshToken = AccessDetails.refresh_token;
-                        model.Email = Profile.emailAddress.ToLower();
-                        model.MemberID = Profile.id;
-                        model.Name = Profile.displayName;
-                        model.accountsForDropdown = new List<string>();
-
-                        if (accountList.count > 0)
-                        {
-                            foreach (var account in accountList.value)
-                            {
-                                model.accountsForDropdown.Add(account.accountName);
-                            }
-                            model.accountsForDropdown.Sort();
-                            model.hasAccount = true;
-                        }
-                        else
-                        {
-                            model.accountsForDropdown.Add("Select Organization");
-                            ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
-                        }
-                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
-                        model.Templates = new List<string>();
-                        model.accountUsersForDdl = new List<SelectListItem>();
-                        TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                        string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
-
-                        //Taking all the template folder and adding to list
-                        foreach (string template in dirTemplates)
-                        {
-                            model.Templates.Add(Path.GetFileName(template));
-                        }
-                        // Reading Template setting file to check for private templates
-                        if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
-                        {
-                            string privateTemplatesJson = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
-                        }
-                        //[for direct URLs] if the incoming template name is not null, checking for Template name and Key in Template setting file. 
-                        //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-                        if (!string.IsNullOrEmpty(model.TemplateName))
-                        {
-                            if (string.IsNullOrEmpty(model.TemplateId)) { model.TemplateId = ""; }
-
-                            foreach (var grpTemplate in templates.GroupwiseTemplates)
-                            {
-                                foreach (var template in grpTemplate.Template)
-                                {
-                                    if (template.key != null && template.Name != null)
-                                    {
-                                        if (template.key.ToLower() == model.TemplateId.ToLower() && template.Name.ToLower() == model.TemplateName.ToLower())
-                                        {
-                                            model.SelectedTemplate = template.Name;
-                                            model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description;
-                                        }
-                                    }
-                                }
-
-                            }
-                        }
-                        else
-                        {
-                            model.SelectedTemplate = "SmartHotel360";
-                        }
-                        return View(model);
+                        model.TemplateName = Session["templateName"].ToString();
+                        model.TemplateId = Session["templateId"].ToString();
                     }
+                    string code = Request.QueryString["code"];
+
+                    string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
+                    string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
+                    string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
+                    AccessDetails = GetAccessToken(accessRequestBody);
+                    model.accessToken = AccessDetails.access_token;
+                    Session["PAT"] = AccessDetails.access_token;
+                    return RedirectToAction("ProjectSetup", "Environment");
                 }
                 else
                 {
@@ -2496,8 +2453,8 @@ namespace VstsDemoBuilder.Controllers
                     {
                         if (isDashboardDeleted)
                         {
-                            var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "PublicWebSiteCI").FirstOrDefault();
-                            var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault();
+                            var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault();
+                            var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "SmartHotel360_Website-Deploy").FirstOrDefault();
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
                             VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
