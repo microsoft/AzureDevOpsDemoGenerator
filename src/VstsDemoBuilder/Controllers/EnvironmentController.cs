@@ -1,5 +1,4 @@
-﻿using LaunchDarkly.Client;
-using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -163,18 +162,6 @@ namespace VstsDemoBuilder.Controllers
             TemplateSelection.Templates templates = new TemplateSelection.Templates();
             string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
             string email = Session["Email"].ToString();
-            //if (showFeature)
-            //{
-            //    if (System.IO.File.Exists(templatesPath + "GroupSettings.json"))
-            //    {
-            //        Project objP = new Project();
-            //        groupDetails = System.IO.File.ReadAllText(templatesPath + @"\GroupSettings.json");
-            //        details = JsonConvert.DeserializeObject<GroupDetails>(groupDetails);
-            //        Newdetails = details;
-            //    }
-            //}
-            //else
-            //{
             if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
             {
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
@@ -243,36 +230,44 @@ namespace VstsDemoBuilder.Controllers
                             ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
                         }
 
+                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
                         model.Templates = new List<string>();
                         model.accountUsersForDdl = new List<SelectListItem>();
-                        TemplateSetting privateTemplates = new TemplateSetting();
-                        string[] dirTemplates1 = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
+                        TemplateSelection.Templates templates = new TemplateSelection.Templates();
+                        string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
 
-                        foreach (string template in dirTemplates1)
+                        //Taking all the template folder and adding to list
+                        foreach (string template in dirTemplates)
                         {
                             model.Templates.Add(Path.GetFileName(template));
                         }
+                        // Reading Template setting file to check for private templates
                         if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                         {
                             string privateTemplatesJson = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            privateTemplates = JsonConvert.DeserializeObject<TemplateSetting>(privateTemplatesJson);
+                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
                         }
-                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
-                        foreach (string template in privateTemplates.privateTemplates)
-                        {
-                            model.Templates.Remove(template);
-                        }
+                        //[for direct URLs] if the incoming template name is not null, checking for Template name and Key in Template setting file. 
+                        //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
                         if (!string.IsNullOrEmpty(model.TemplateName))
                         {
                             if (string.IsNullOrEmpty(model.TemplateId)) { model.TemplateId = ""; }
 
-                            foreach (var template in privateTemplates.privateTemplateKeys)
+                            foreach (var grpTemplate in templates.GroupwiseTemplates)
                             {
-                                if (template.key.ToLower() == model.TemplateId.ToLower() && template.value.ToLower() == model.TemplateName.ToLower())
+                                foreach (var template in grpTemplate.Template)
                                 {
-                                    model.SelectedTemplate = template.value;
-                                    model.Templates.Add(template.value);
+                                    if (template.key != null && template.Name != null)
+                                    {
+                                        if (template.key.ToLower() == model.TemplateId.ToLower() && template.Name.ToLower() == model.TemplateName.ToLower())
+                                        {
+                                            model.SelectedTemplate = template.Name;
+                                            model.Templates.Add(template.Name);
+                                            model.selectedTemplateDescription = template.Description;
+                                        }
+                                    }
                                 }
+
                             }
                         }
                         return View(model);
@@ -287,8 +282,7 @@ namespace VstsDemoBuilder.Controllers
                         string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
 
                         AccessDetails = GetAccessToken(accessRequestBody);
-
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiZTE3N2ZmYTUtZDQ4Yy00NzZmLWFjZjYtNjUzZDdkMDcyODVlIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwOTc0MzQzLCJleHAiOjE1NDA5Nzc5NDN9.MlOJ3tCua0m6jR3J5cmJzeWCtNTFe4N4QMSQghIGfsi-AdOBP3AVmqJXdJ4BHWWadMhpO0G8UuRjYSErcq10v__h2wJH62KLCA8TLWAM9pVKw7drLFIxZ9Dn12_Kpi2pqZqAG55slXpwlQ8GMcXXv4IrO2Aym_bATrdW4ZsOatOj-svPS1qGYPl13cONFpyA822ciRBObI66pAvmDltSbD9-Fbt-1pVESUZMhf5u1JzWWr98WLxATJvFx4YJgu_jgbfWfOjOXFGeAOkCdULzFvWVzLH9YsZ9TOXjPEculc0nluJvIvQc7NkhjhSCwHZSMRQXP2N3WXl5nugll_pUwg";
+                        //AccessDetails.access_token = "_REPLACE YOUR YOUR ACCESS TOKEN WHEN YOU ARE DEBUGGING LOCALLY_"
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -318,50 +312,51 @@ namespace VstsDemoBuilder.Controllers
                             model.accountsForDropdown.Add("Select Organization");
                             ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
                         }
-
+                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
                         model.Templates = new List<string>();
                         model.accountUsersForDdl = new List<SelectListItem>();
-                        TemplateSetting privateTemplates = new TemplateSetting();
+                        TemplateSelection.Templates templates = new TemplateSelection.Templates();
                         string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
 
+                        //Taking all the template folder and adding to list
                         foreach (string template in dirTemplates)
                         {
                             model.Templates.Add(Path.GetFileName(template));
                         }
+                        // Reading Template setting file to check for private templates
                         if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                         {
                             string privateTemplatesJson = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            privateTemplates = JsonConvert.DeserializeObject<TemplateSetting>(privateTemplatesJson);
+                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
                         }
-                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
-                        foreach (string template in privateTemplates.privateTemplates)
-                        {
-                            model.Templates.Remove(template);
-                        }
+                        //[for direct URLs] if the incoming template name is not null, checking for Template name and Key in Template setting file. 
+                        //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
                         if (!string.IsNullOrEmpty(model.TemplateName))
                         {
                             if (string.IsNullOrEmpty(model.TemplateId)) { model.TemplateId = ""; }
 
-                            foreach (var template in privateTemplates.privateTemplateKeys)
+                            foreach (var grpTemplate in templates.GroupwiseTemplates)
                             {
-                                if (template.key.ToLower() == model.TemplateId.ToLower() && template.value.ToLower() == model.TemplateName.ToLower())
+                                foreach (var template in grpTemplate.Template)
                                 {
-                                    model.SelectedTemplate = template.value;
-                                    model.Templates.Add(template.value);
+                                    if (template.key != null && template.Name != null)
+                                    {
+                                        if (template.key.ToLower() == model.TemplateId.ToLower() && template.Name.ToLower() == model.TemplateName.ToLower())
+                                        {
+                                            model.SelectedTemplate = template.Name;
+                                            model.Templates.Add(template.Name);
+                                            model.selectedTemplateDescription = template.Description;
+                                        }
+                                    }
                                 }
+
                             }
-                        }
-                        if (Session["templateName"] != null)
-                        {
-                            model.SelectedTemplate = Session["templateName"].ToString();
                         }
                         else
                         {
                             model.SelectedTemplate = "SmartHotel360";
                         }
                         return View(model);
-
-
                     }
                 }
                 else
@@ -675,10 +670,6 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public Models.Accounts.AccountList GetAccounts(string memberID, AccessDetails details)
         {
-            //if (Session["PAT"] != null)
-            //{
-            //    Details.access_token = Session["PAT"].ToString();
-            //}
             Models.Accounts.AccountList accounts = new Models.Accounts.AccountList();
             var client = new HttpClient();
             string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
@@ -948,6 +939,10 @@ namespace VstsDemoBuilder.Controllers
                     {
                         AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
                     }
+                    else
+                    {
+                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
+                    }
                 }
                 Thread.Sleep(2000); // Adding Delay to Get Error message
                 return new string[] { model.id, accountName };
@@ -1018,7 +1013,6 @@ namespace VstsDemoBuilder.Controllers
                 boardType = "Stories";
             }
             BoardColumn objBoard = new BoardColumn(_boardVersion);
-            objBoard.RefreshBoard(model.ProjectName);
             string updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
             SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
             bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType);
@@ -1050,7 +1044,6 @@ namespace VstsDemoBuilder.Controllers
             string endPointJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CreateService);
             listEndPointsJsonPath.Add(endPointJson);
             CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
-            //AddMessage(model.id, "Service endpoints created");
 
             //create agent queues on demand
             Queue queue = new Queue(_agentQueueVersion);

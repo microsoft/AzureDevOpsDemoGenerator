@@ -376,6 +376,12 @@ $(document).ready(function (event) {
         $('#newFeature').hide();
     });
 
+    var descContent = $("#descContainer").text();
+    var privateTemplateDescription = $('#selectedTemplateDescription').val();
+    if (privateTemplateDescription != "") {
+        $("#descContainer").html(privateTemplateDescription);
+    }
+
 });
 $('#btnSubmit').click(function () {
     statusCount = 0;
@@ -644,20 +650,20 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                            var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
+                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
 
-                            if (selectedTemplate == "SmartHotel360") {
-                                $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                            }
-                            else {
-                                $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                            }
+                            //if (selectedTemplate == "SmartHotel360") {
+                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
+                            //}
+                            //else {
+                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
+                            //}
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
-
+                            $('#status-messages').empty().hide();
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $("#finalLink").removeClass("d-none").addClass("d-block");
+                            $("#finalLink").addClass("d-none").removeClass("d-block");
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                             $("#txtProjectName").val("");
 
@@ -727,6 +733,7 @@ function checkForExtensions(callBack) {
         $("#imgLoading").show();
         $("#btnSubmit").removeClass('btn-primary').prop("disabled", true);
         $("#ddlAcccountName").prop("disabled", true);
+        $("#txtProjectName").prop('disabled', 'disabled');
 
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
@@ -748,7 +755,7 @@ function GetRequiredExtension() {
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
-
+            $("#txtProjectName").prop('disabled', false);
             if (extensions.status !== "true") {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
@@ -763,7 +770,7 @@ function GetRequiredExtension() {
                 }
             } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); }
 
     });
 }
@@ -955,45 +962,21 @@ $("#txtProjectName").keyup(function () {
     var regex = /^[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
 
     if (projectName !== "") {
-
+        var restrictedNames = ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "PRN", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LTP", "LTP8", "LTP9", "NUL", "CON", "AUX", "SERVER", "SignalR", "DefaultCollection", "Web", "App_code", "App_Browesers", "App_Data", "App_GlobalResources", "App_LocalResources", "App_Themes", "App_WebResources", "bin", "web.config"];
+        if (restrictedNames.find(x => x.toLowerCase() == projectName.toLowerCase())) {
+            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
+            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
+            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
+            $("#txtProjectName").focus();
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
+            return false;
+        }
         if (!(regex.test(projectName))) {
             var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName === "COM1" || projectName === "COM2" || projectName === "COM3" || projectName === "COM4" || projectName === "COM5" || projectName === "COM6" || projectName === "COM7" || projectName === "COM8" || projectName === "COM9" || projectName === "COM10") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName === "PRN" || projectName === "LPT1" || projectName === "LPT2" || projectName === "LPT3" || projectName === "LPT4" || projectName === "LPT5" || projectName === "LPT6" || projectName === "LPT7" || projectName === "LPT8" || projectName === "LPT9") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName === "NUL" || projectName === "CON" || projectName === "AUX" || projectName === "SERVER" || projectName === "SignalR" || projectName === "DefaultCollection" || projectName === "Web" || projectName === "App_code" || projectName === "App_Browsers" || projectName === "App_Data") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName === "App_GlobalResources" || projectName === "App_LocalResources" || projectName === "App_Themes" || projectName === "App_WebResources" || projectName === "bin" || projectName === "web.config") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else {
-            $("#txtProjectName_Error").text("");
-            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
             return false;
         }
     }
