@@ -1799,7 +1799,8 @@ select.form-control:focus::-ms-value {
     margin-bottom: 0;
     font-size: inherit;
     font-weight: 700;
-    line-height: 1.5
+    line-height: 1.5;
+    text-align: right;
 }
 
 .col-form-label-lg {
