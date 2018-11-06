@@ -278,9 +278,9 @@
       "checkoutNestedSubmodules": "false",
       "fetchDepth": "0"
     },
-    "id": "$AzureFunctions_BuildWorkshop$",
+    "id": "$AzureFunctions$",
     "type": "TfsGit",
-    "name": "AzureFunctions_BuildWorkshop",
+    "name": "AzureFunctions",
     "defaultBranch": "refs/heads/master",
     "clean": "false",
     "checkoutSubmodules": false

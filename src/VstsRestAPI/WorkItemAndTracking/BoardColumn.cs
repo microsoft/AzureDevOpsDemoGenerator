@@ -173,24 +173,5 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
             }
         }
-        /// <summary>
-        /// Refresh kanban board
-        /// </summary>
-        /// <param name="projectName"></param>
-        public void RefreshBoard(string projectName)
-        {
-            using (var client = GetHttpClient())
-            {
-                var response = client.GetAsync("/" + projectName + "/_backlogs/board/Backlog%20items").Result;
-                if (response.IsSuccessStatusCode)
-                {
-
-                }
-                else
-                {
-
-                }
-            }
-        }
     }
 }
