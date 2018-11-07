@@ -787,7 +787,7 @@
     <Content Include="Templates\AKS\FeaturefromTemplate.json" />
     <Content Include="Templates\AKS\EpicfromTemplate.json" />
     <Content Include="Templates\AKS\PBIfromTemplate.json" />
-    <Content Include="Views\Environment\ProjectSetup.cshtml" />
+    <Content Include="Views\Environment\CreateProject.cshtml" />
     <Content Include="Templates\SmartHotel360\ReleaseDefinitions\SmartHotelWebsite Deploy.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitions\SmartHotelPetcheckerWeb.json" />
     <None Include="Web.Debug.config">
