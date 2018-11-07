@@ -6,8 +6,8 @@
     "authorization": {
       "scheme": "UsernamePassword",
       "parameters": {
-        "username": "$GitUserName$",
-        "password": "$GitUserPassword$"
+        "username": "$username$",
+        "password": "$password$"
       }
     },
     "isReady": true
