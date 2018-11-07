@@ -1,6 +1,5 @@
 {
   "Name": "Octopus",
-  "Description": "Select this template if you are following the “Integrating Octopus Deploy” lab. The template provisions code for a sample PHP application and a build pipeline.<p>Lab URL: <a style='color:blue;' href='https://azuredevopslabs.com/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a></p> ",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",

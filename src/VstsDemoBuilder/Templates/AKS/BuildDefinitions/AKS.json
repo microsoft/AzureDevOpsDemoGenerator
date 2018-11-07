@@ -1,10 +1,67 @@
 {
-  "name": "MyHealth.AKS.build",
-  "path": "\\",
-  "type": "build",
   "build": [
     {
-      "environment": {},
+      "environment": {
+
+      },
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Replace tokens in appsettings.json",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "a8515ec8-7254-4ffd-912c-86772e2b5962",
+        "versionSpec": "",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "rootDirectory": "$(build.sourcesdirectory)/src/MyHealth.Web",
+        "targetFiles": "appsettings.json",
+        "encoding": "auto",
+        "writeBOM": "true",
+        "actionOnMissing": "warn",
+        "keepToken": "false",
+        "tokenPrefix": "__",
+        "tokenSuffix": "__",
+        "emptyValue": "(empty)",
+        "escapeType": "none",
+        "escapeChar": "",
+        "charsToEscape": ""
+      }
+    },
+    {
+      "environment": {
+
+      },
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Replace tokens in mhc-aks.yaml",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "a8515ec8-7254-4ffd-912c-86772e2b5962",
+        "versionSpec": "",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "rootDirectory": "",
+        "targetFiles": "mhc-aks.yaml",
+        "encoding": "auto",
+        "writeBOM": "true",
+        "actionOnMissing": "warn",
+        "keepToken": "false",
+        "tokenPrefix": "__",
+        "tokenSuffix": "__",
+        "emptyValue": "(empty)",
+        "escapeType": "none",
+        "escapeChar": "",
+        "charsToEscape": ""
+      }
+    },
+    {
+      "environment": {
+
+      },
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
@@ -13,7 +70,7 @@
       "refName": "DockerCompose1",
       "task": {
         "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
-        "versionSpec": "0.*",
+        "versionSpec": "",
         "definitionType": "task"
       },
       "inputs": {
@@ -51,7 +108,9 @@
       }
     },
     {
-      "environment": {},
+      "environment": {
+
+      },
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
@@ -60,7 +119,7 @@
       "refName": "DockerCompose2",
       "task": {
         "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
-        "versionSpec": "0.*",
+        "versionSpec": "",
         "definitionType": "task"
       },
       "inputs": {
@@ -98,7 +157,9 @@
       }
     },
     {
-      "environment": {},
+      "environment": {
+
+      },
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
@@ -107,7 +168,7 @@
       "refName": "DockerCompose3",
       "task": {
         "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
-        "versionSpec": "0.*",
+        "versionSpec": "",
         "definitionType": "task"
       },
       "inputs": {
@@ -145,7 +206,9 @@
       }
     },
     {
-      "environment": {},
+      "environment": {
+
+      },
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
@@ -154,14 +217,14 @@
       "refName": "DockerCompose4",
       "task": {
         "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
-        "versionSpec": "0.*",
+        "versionSpec": "",
         "definitionType": "task"
       },
       "inputs": {
         "containerregistrytype": "Azure Container Registry",
         "dockerRegistryEndpoint": "",
         "azureSubscriptionEndpoint": "",
-        "azureContainerRegistry": "",
+        "azureContainerRegistry": "{\"loginServer\":\"acrforaks.azurecr.io\", \"id\" : \"/subscriptions/e7b26610-1586-4dd7-b7b3-32e11f2f19bd/resourceGroups/AKSRG/providers/Microsoft.ContainerRegistry/registries/acrforaks\"}",
         "dockerComposeFile": "docker-compose.yml",
         "additionalDockerComposeFiles": "",
         "dockerComposeFileArgs": "DOCKER_BUILD_SOURCE=",
@@ -192,7 +255,9 @@
       }
     },
     {
-      "environment": {},
+      "environment": {
+
+      },
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
@@ -201,12 +266,12 @@
       "refName": "CopyFiles5",
       "task": {
         "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
-        "versionSpec": "2.*",
+        "versionSpec": "",
         "definitionType": "task"
       },
       "inputs": {
         "SourceFolder": "",
-        "Contents": "**/mhc-aks.yaml\n**/*.dacpac",
+        "Contents": "**/mhc-aks.yaml\n**/*.dacpac\n$(build.sourcesdirectory)/src/MyHealth.Web/appsettings.json",
         "TargetFolder": "$(Build.ArtifactStagingDirectory)",
         "CleanTargetFolder": "false",
         "OverWrite": "false",
@@ -214,7 +279,9 @@
       }
     },
     {
-      "environment": {},
+      "environment": {
+
+      },
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
@@ -223,7 +290,7 @@
       "refName": "PublishBuildArtifacts6",
       "task": {
         "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
-        "versionSpec": "1.*",
+        "versionSpec": "",
         "definitionType": "task"
       },
       "inputs": {
@@ -253,13 +320,27 @@
         "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
       },
       "inputs": {
-        "workItemType": "721709",
+        "workItemType": "Bug",
         "assignToRequestor": "true",
         "additionalFields": "{}"
       }
     }
   ],
   "variables": {
+    "ACR": {
+      "value": "YOURACR.azurecr.io"
+    },
+    "SQLpassword": {
+      "value": null,
+      "isSecret": true
+    },
+    "SQLserver": {
+      "value": "YOURSQLSERVER.database.windows.net"
+    },
+    "SQLuser": {
+      "value": null,
+      "isSecret": true
+    },
     "system.debug": {
       "value": "false",
       "allowOverride": true
@@ -270,7 +351,9 @@
       "branches": [
         "+refs/heads/*"
       ],
-      "artifacts": [],
+      "artifacts": [
+
+      ],
       "artifactTypesToDelete": [
         "FilePath",
         "SymbolStore"
@@ -305,48 +388,28 @@
   },
   "processParameters": {
     "inputs": [
-      {
-        "aliases": [],
-        "options": {},
-        "properties": {},
-        "name": "azureSubscriptionEndpoint",
-        "label": "Azure subscription",
-        "defaultValue": "",
-        "type": "connectedService:AzureRM",
-        "helpMarkDown": "Select an Azure subscription",
-        "visibleRule": "",
-        "groupName": ""
-      },
-      {
-        "aliases": [],
-        "options": {},
-        "properties": {},
-        "name": "azureContainerRegistry",
-        "label": "Azure Container Registry",
-        "defaultValue": "{\"loginServer\":\"acrforaks.azurecr.io\", \"id\" : \"/subscriptions/e7b26610-1586-4dd7-b7b3-32e11f2f19bd/resourceGroups/AKSRG/providers/Microsoft.ContainerRegistry/registries/acrforaks\"}",
-        "type": "pickList",
-        "helpMarkDown": "Select an Azure Container Registry",
-        "visibleRule": "",
-        "groupName": ""
-      }
+
+    ],
+    "sourceDefinitions": [
+
     ],
     "dataSourceBindings": [
-      {
-        "dataSourceName": "AzureRMContainerRegistries",
-        "parameters": {},
-        "endpointId": "$(azureSubscriptionEndpoint)",
-        "target": "azureContainerRegistry",
-        "resultTemplate": "{\"Value\":\"{\\\"loginServer\\\":\\\"{{{properties.loginServer}}}\\\", \\\"id\\\" : \\\"{{{id}}}\\\"}\",\"DisplayValue\":\"{{{name}}}\"}"
-      }
+
     ]
   },
   "quality": "definition",
-  "drafts": [],
+  "drafts": [
+
+  ],
   "queue": {
     "name": "Hosted Ubuntu 1604",
     "pool": {
       "name": "Hosted Ubuntu 1604",
       "isHosted": true
     }
-  }
+  },
+  "name": "MyHealth.AKS.build",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled"
 }

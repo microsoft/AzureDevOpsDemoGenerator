@@ -1,6 +1,5 @@
 {
   "Name": "Terraform",
-  "Description": "Terraform",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",

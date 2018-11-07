@@ -48,10 +48,10 @@ namespace VstsRestAPI.QueriesAndWidgets
             QueryResponse result = new QueryResponse();
             using (var clientParent = GetHttpClient())
             {
-                ////Since we were getting errors like "you do not have access to shared query folder", based on MS team guidence added GET call before POST request
+                //Since we were getting errors like "you do not have access to shared query folder", based on MS team guidence added GET call before POST request
+                //Adding delay to generate Shared Query model in Azure DevOps
                 HttpResponseMessage ResponseParent = clientParent.GetAsync(project + "/_apis/wit/queries?api-version=" + _configuration.VersionNumber).Result;
                 Thread.Sleep(2000);
-                ////Adding delay to generate Shared Query model in Azure DevOps
                 if (ResponseParent.IsSuccessStatusCode && ResponseParent.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     using (var client = GetHttpClient())
@@ -59,7 +59,7 @@ namespace VstsRestAPI.QueriesAndWidgets
                         var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                         var method = new HttpMethod("POST");
 
-                        var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                        var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                         var response = client.SendAsync(request).Result;
                         if (response.IsSuccessStatusCode)
                         {
@@ -103,38 +103,6 @@ namespace VstsRestAPI.QueriesAndWidgets
                 return false;
             }
         }
-
-        /// <summary>
-        /// Create widget for dashboard
-        /// </summary>
-        /// <param name="project"></param>
-        /// <param name="dashBoardId"></param>
-        /// <param name="json"></param>
-        /// <returns></returns>
-        //public bool CreateWidget(string project, string dashBoardId, string json)
-        //{
-        //    using (var client = GetHttpClient())
-        //    {
-        //        //var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
-        //        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-        //        var method = new HttpMethod("POST");
-
-        //        var request = new HttpRequestMessage(method, project + "/_apis/dashboard/dashboards/" + dashBoardId + "/Widgets?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-        //        var response = client.SendAsync(request).Result;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            var errorMessage = response.Content.ReadAsStringAsync();
-        //            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-        //            this.LastFailureMessage = error;
-        //            return false;
-        //        }
-        //    }
-
-        //}
 
         /// <summary>
         /// Get Query by path and Query Name

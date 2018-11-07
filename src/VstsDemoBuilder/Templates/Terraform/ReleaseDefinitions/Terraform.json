@@ -68,29 +68,29 @@
             },
             "deployPhases": [
                 {
-                    "deploymentInput": {
-                        "parallelExecution": {
-                            "parallelExecutionType": "none"
-                        },
-                        "skipArtifactsDownload": false,
-                        "artifactsDownloadInput": {
-                            "downloadInputs": [
-                                {
-                                    "artifactItems": [],
-                                    "alias": "_Terraform-CI",
-                                    "artifactType": "Build",
-                                    "artifactDownloadMode": "All"
-                                }
-                            ]
-                        },
-                        "queueId": "$Hosted VS2017$",
-                        "demands": [],
-                        "enableAccessToken": false,
-                        "timeoutInMinutes": 0,
-                        "jobCancelTimeoutInMinutes": 1,
-                        "condition": "succeeded()",
-                        "overrideInputs": {}
+                  "deploymentInput": {
+                    "parallelExecution": {
+                      "parallelExecutionType": "none"
                     },
+                    "skipArtifactsDownload": false,
+                    "artifactsDownloadInput": {
+                      "downloadInputs": [
+                        {
+                          "artifactItems": [],
+                          "alias": "_Terraform-CI",
+                          "artifactType": "Build",
+                          "artifactDownloadMode": "All"
+                        }
+                      ]
+                    },
+                    "queueId": "$Hosted VS2017$",
+                    "demands": [],
+                    "enableAccessToken": false,
+                    "timeoutInMinutes": 0,
+                    "jobCancelTimeoutInMinutes": 1,
+                    "condition": "succeeded()",
+                    "overrideInputs": {}
+                  },
                     "rank": 1,
                     "phaseType": "agentBasedDeployment",
                     "name": "Agent job",
@@ -108,15 +108,15 @@
                             "definitionType": "task",
                             "overrideInputs": {},
                             "condition": "succeeded()",
-                            "inputs": {
-                                "connectedServiceNameARM": "",
-                                "scriptLocation": "inlineScript",
-                                "scriptPath": "",
-                                "inlineScript": "# this will create Azure resource group\ncall az group create --location westus --name $(terraformstoragerg)\n\ncall az storage account create --name $(terraformstorageaccount) --resource-group $(terraformstoragerg) --location westus --sku Standard_LRS\n\ncall az storage container create --name terraform --account-name $(terraformstorageaccount)\n\ncall az storage account keys list -g $(terraformstoragerg) -n $(terraformstorageaccount)\n\n",
-                                "args": "",
-                                "cwd": "",
-                                "failOnStandardError": "false"
-                            }
+                          "inputs": {
+                            "connectedServiceNameARM": "",
+                            "scriptLocation": "inlineScript",
+                            "scriptPath": "",
+                            "inlineScript": "# the following script will create Azure resource group, Storage account and a Storage container which will be used to store terraform state\ncall az group create --location westus --name $(terraformstoragerg)\n\ncall az storage account create --name $(terraformstorageaccount) --resource-group $(terraformstoragerg) --location westus --sku Standard_LRS\n\ncall az storage container create --name terraform --account-name $(terraformstorageaccount)\n\n",
+                            "args": "",
+                            "cwd": "",
+                            "failOnStandardError": "false"
+                          }
                         },
                         {
                             "environment": {},
