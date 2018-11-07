@@ -741,9 +741,6 @@
     <Content Include="Templates\GroupSettings_FeatureFlag.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\UnfinishedWork.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\Work in Progress.json" />
-    <Content Include="Templates\SmartHotel360\BuildDefinitions\PetCheckerFunctionCI.json" />
-    <Content Include="Templates\SmartHotel360\BuildDefinitions\PublicWebSiteCI.json" />
-    <Content Include="Templates\SmartHotel360\ReleaseDefinitions\PublicWebSiteCD.json" />
     <Content Include="Templates\SmartHotel360\ServiceEndpoints\GitHubSmartHotel360-PetChecker-Function.json" />
     <Content Include="Templates\EndpointKeyConfig.json" />
     <Content Include="Templates\MyHealthClinic\Dashboard\Queries\UnfinishedWork.json" />
