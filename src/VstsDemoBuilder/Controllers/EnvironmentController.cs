@@ -180,7 +180,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult ProjectSetup()
+        public ActionResult CreateProject()
         {
             try
             {
@@ -314,7 +314,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
-                    return RedirectToAction("ProjectSetup", "Environment");
+                    return RedirectToAction("CreateProject", "Environment");
                 }
                 else
                 {
