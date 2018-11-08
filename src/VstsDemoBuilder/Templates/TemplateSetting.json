@@ -112,6 +112,11 @@
       "Groups": "PrivateTemp",
       "Template": [
         {
+          "key": "77377",
+          "Name": "ContosoShuttle",
+          "Description": "Azure DevOps Demo Generator"
+        },
+        {
           "Name": "devops-mobile",
           "Description": "A simple Xamarin app named Acquaint. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen. It runs on iOS 9+, Android 4.2+, and UWP (mobile and desktop)."
         },
