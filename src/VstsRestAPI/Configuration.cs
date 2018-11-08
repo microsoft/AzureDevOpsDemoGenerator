@@ -4,6 +4,7 @@ namespace VstsRestAPI
     public class Configuration : IConfiguration
     {
         public string UriString { get; set; }
+        public string AccountName { get; set; }
         public string PersonalAccessToken { get; set; }
         public string Project { get; set; }
         public string Team { get; set; }
@@ -18,6 +19,7 @@ namespace VstsRestAPI
         public string FilePath { get; set; }
         public string GitRepositoryId { get; set; }
         public string VersionNumber { get; set; }
+        public string Id { get; set; }
     }
 
     public enum TemplateType

@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "$Host$/_git/$Repo$"
+    },
+    "serviceEndpointId": "$$Repo$-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "name": "Feedback_WI",
+  "wiql": "SELECT [System.Id],[System.Title], [System.State],[System.CreatedBy],[Microsoft.VSTS.Common.Rating] FROM workitems WHERE [System.TeamProject] = @project AND [System.WorkItemType] IN GROUP 'Microsoft.FeedbackResponseCategory' AND [System.State] = 'Active' ORDER BY [System.Id]"
+}

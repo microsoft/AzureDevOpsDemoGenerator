@@ -1,0 +1,54 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "The pull request is mergable and the target commit would be 5bf2674da949ffd3425e2f20aa7df6907a85d16f.",
+          "commentType": "system"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": null
+      },
+      "status": null,
+      "pullRequestThreadContext": null,
+      "threadContext": null
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "Bad idea!",
+          "commentType": "text"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": null,
+          "value": 0
+        }
+      },
+      "status": "fixed",
+      "pullRequestThreadContext": {
+        "iterationContext": {
+          "firstComparingIteration": 1,
+          "secondComparingIteration": 1
+        },
+        "changeTrackingId": 1
+      },
+      "threadContext": {
+        "filePath": "/SmartHotel360.PublicWeb/package.json",
+        "rightFileStart": {
+          "line": 25,
+          "offset": 1
+        },
+        "rightFileEnd": {
+          "line": 25,
+          "offset": 38
+        }
+      }
+    }
+  ]
+}

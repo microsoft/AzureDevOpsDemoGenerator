@@ -4451,9 +4451,9 @@ tbody.collapse.show {
     }
 
 .alert-danger {
-    color: #f9fbfb;
-    background-color: #0074d0;
-    border-color: #f7eff0;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f8d7da;
 }
 
     .alert-danger hr {
@@ -8619,6 +8619,7 @@ html, body {
 
     .template-body .template {
         padding: 16px;
+        padding-right:0px;
         background-color: #fff;
         min-width: 250px;
         max-width: 350px;

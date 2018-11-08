@@ -1,6 +1,8 @@
 ﻿/// <reference path="../jquery-1.12.4.min.js" />
-
 $(document).ready(function () {
+
+    $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
+
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 50) {
@@ -16,13 +18,13 @@ $(document).ready(function () {
         type: "GET",
         success: function (data) {
             if (data.length > 0) {
-                if ((data[0] != "" || data[0] != null) && (data[1] != "" || data[1] != null)) {
+                if ((data[0] !== "" || data[0] !== null) && (data[1] !== "" || data[1] !== null)) {
                     var templateNameExt = "";
                     var templateIdExt = "";
                     templateNameExt = data[0];
                     templateIdExt = data[1];
 
-                    if ((templateNameExt != null || typeof templateNameExt != "undefined" || templateNameExt != "") && (templateIdExt != "" || templateIdExt != null || typeof templateIdExt != "undefined")) {
+                    if ((templateNameExt !== null || typeof templateNameExt !== "undefined" || templateNameExt !== "") && (templateIdExt !== "" || templateIdExt !== null || typeof templateIdExt !== "undefined")) {
                         $("#templateselection").addClass('d-none');
                         $('#ddlTemplates').val(templateNameExt);
                         GetTemplates(templateNameExt);
@@ -45,80 +47,11 @@ $(document).ready(function () {
 });
 
 $(function () {
-
     $("#Default").prop("checked", "checked");
-
     $("input").on("keypress", function (e) {
         if (e.which === 32 && !this.value.length)
             e.preventDefault();
     });
-
-    $('.dropdown-container')
-        .on('input', '.dropdown-search', function () {
-            var target = $(this);
-            var search = target.val().toLowerCase();
-
-            if (!search) {
-                $('li').show();
-                return false;
-            }
-
-            $('li').each(function () {
-                var text = $(this).text().toLowerCase();
-                var match = text.indexOf(search) > -1;
-                $(this).toggle(match);
-            });
-        })
-        .on('change', '[type="checkbox"]', function () {
-            var numChecked = $('[type="checkbox"]:checked').length;
-            $('.quantity').text(numChecked || '0');
-        });
-
-    //clear searchBox
-    $("#clrSearch").click(function () {
-        $(".dropdown-search").val('');
-        $('li').show();
-    });
-
-    $("#DeselectChk").click(function () {
-        $(".checkbox").each(function () {
-            this.checked = false;
-        });
-        $('.quantity').text('0');
-    });
-
-    //RadioButtons
-    $('input:radio').change(function () {
-        var changedRadio = this;
-
-        $('input:radio').each(function () {
-            this.checked = false;
-        });
-        $("#ddlUserContainer").hide();
-        $("#userModal").modal('hide');
-        //$('.quantity').text('0');
-        changedRadio.checked = true;
-    });
-
-    $(".checkbox").click(function () {
-
-        var checkCount = $(":checkbox:checked").length;
-        if (checkCount > 5) {
-            this.checked = false;
-            alert("Maximum 5 users can be selected");
-        }
-    });
-
-    $("#btnUserShow").click(function () {
-        var radioVal = $("input[type='radio']:checked").val();
-        if (radioVal == "Select") {
-
-            $("#ddlUserContainer").show();
-            $("#userModal").modal('show');
-        }
-
-    });
-
 });
 
 var messageList = [];
@@ -136,7 +69,7 @@ var uniqueId = "";
 var ErrorData = '';
 var statusCount = 0;
 var selectedTemplate = "";
-var messagesCount = 13;
+var messagesCount = 8;
 var percentForMessage = Math.floor(100 / messagesCount);
 var currentPercentage = 0;
 var projectNameForLink = '';
@@ -144,6 +77,7 @@ var isExtensionNeeded = false;
 var isAgreedTerms = false;
 var microsoft = "";
 var ThirdParty = "";
+var AccountNameForLink;
 
 $(document).ready(function (event) {
     uniqueId = ID();
@@ -155,6 +89,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
+        ga('send', 'event', 'Choose Template Button', 'Clicked');
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -166,19 +101,19 @@ $(document).ready(function (event) {
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
 
-        var accountNameExt = $('#ddlAcccountName option:selected').val();
-        var selectedTemplateForExtension = $('#ddlTemplates').val();
+        var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
+        var checkExtensionForSelectedTemplate = $('#ddlTemplates').val();
 
-        if (selectedTemplateForExtension == "SonarQube") {
+        if (checkExtensionForSelectedTemplate === "SonarQube") {
             $("#SoanrQubeDiv").show();
         }
         else {
             $("#SoanrQubeDiv").hide();
         }
-        if (accountNameExt == "" || accountNameExt == "Select Account") {
+        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
             return false;
         }
-        else if (selectedTemplateForExtension == "") {
+        else if (checkExtensionForSelectedTemplate === "") {
             return;
         }
         else {
@@ -190,12 +125,18 @@ $(document).ready(function (event) {
     $('#selecttmplate').click(function () {
         //Added
         $('#lblDefaultDescription').hide();
-        var GroputempSelected = $(".template.selected").data('template');
-        if (GroputempSelected != "") {
-            $('#ddlTemplates').val(GroputempSelected);
+        var groputempSelected = $(".template.selected").data('template');
+        var selectedTemplateDescription = $(".description.descSelected").data('description');
+        if (selectedTemplateDescription != "") {
+            $('#descContainer').html(selectedTemplateDescription);
+        }
+        else {
+            $('#descContainer').html("Azure DevOps Demo Generator");
+        }
+        if (groputempSelected !== "") {
+            $('#ddlTemplates').val(groputempSelected);
             $(".VSTemplateSelection").fadeOut('fast');
         }
-
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
         //till here
         $('#status-messages').empty().hide();
@@ -204,16 +145,17 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-
         //Added
         $("#projectParameters").hide();
         $("#projectParameters").html('');
-        $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none");
+        $("#extensionError").html('');
+        $("#extensionError").hide();
+        $("#lblextensionError").removeClass("d-block").addClass("d-none");
         var TemplateName = $('#ddlTemplates').val();
-        if (TemplateName == "MyShuttle-Java") {
+        if (TemplateName === "MyShuttle-Java") {
             $("#NotificationModal").modal('show');
         }
-        if (TemplateName == "SonarQube") {
+        if (TemplateName === "SonarQube") {
             $("#SoanrQubeDiv").show();
         }
         else {
@@ -221,24 +163,13 @@ $(document).ready(function (event) {
         }
         var Url = 'GetTemplate/';
         $.get(Url, { "TemplateName": TemplateName }, function (data) {
-            if (data != "") {
+            if (data !== "") {
                 var ParsedData = JSON.parse(data);
                 var Description = ParsedData.Description;
                 var parameters = ParsedData.Parameters;
 
-                if (Description != "") {
-                    $("#descContainer").html('');
-                    $("#descContainer").html(Description);
-                    $("#lblDescription").removeClass("d-none").addClass("d-block");
-
-                }
-                else { $("#lblDescription").removeClass("d-block").addClass("d-none"); }
-                if (parameters != undefined) {
+                if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
-                            console.log(key, value)
-                        });
-
                         $.each(parameters, function (key, value) {
                             $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
@@ -247,46 +178,46 @@ $(document).ready(function (event) {
                     else { $("#projectParameters").html(''); }
                 }
             }
-            else {
-                $("#lblDescription").removeClass("d-block").addClass("d-none");
-                $("#projectParameters").html('');
-
-            }
         });
-        if (TemplateName != "") {
+        if (TemplateName !== "") {
             checkForInstalledExtensions(TemplateName, function callBack(extensions) {
-                if (extensions.message != "no extensions required" && extensions.message != "" && extensions.message != undefined && extensions.message.indexOf("Error") == -1 && extensions.message != "Template not found") {
+                if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== undefined && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
 
-                    $("#extensionError").empty().append(extensions.message);//html(extensions.message);
+                    $("#extensionError").empty().append(extensions.message);
                     $("#extensionError").show();
                     $("#lblextensionError").removeClass("d-none").addClass("d-block");
 
-                    if (extensions.status != "true") {
-                        $("#btnSubmit").prop("disabled", true);
+                    if (extensions.status !== "true") {
+                        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                         isExtensionNeeded = true;
                         microsoft = $('#agreeTermsConditions').attr('placeholder');
-                        if (microsoft != "microsoft") {
+                        if (microsoft !== "microsoft") {
                             microsoft = "";
                         }
                         ThirdParty = $('#ThirdPartyagreeTermsConditions').attr('placeholder');
-                        if (ThirdParty != "thirdparty") {
+                        if (ThirdParty !== "thirdparty") {
                             ThirdParty = "";
                         }
-                    } else { $("#btnSubmit").prop("disabled", false); }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
                 }
-                else { $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").prop("disabled", false); }
+                else {
+                    $("#extensionError").html('');
+                    $("#extensionError").hide();
+                    $("#lblextensionError").removeClass("d-block").addClass("d-none");
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                }
 
             });
         }
         //Till here
 
-        var accountNameExt = $('#ddlAcccountName option:selected').val();
-        var selectedTemplateForExtension = $('#ddlTemplates').val();
-
-        if (accountNameExt == "" || accountNameExt == "--select account--") {
+        var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
+        var checkExtensionsForSelectedTemplate = $('#ddlTemplates').val();
+        ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
+        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "--select organiaztion--") {
             return false;
         }
-        else if (selectedTemplateForExtension == "") {
+        else if (checkExtensionsForSelectedTemplate === "") {
             return;
         }
         else {
@@ -301,22 +232,21 @@ $(document).ready(function (event) {
 
     $("#sendEmail").click(function () {
         var pattern = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        //var pattern = /^[a-zA-Z0-9._-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         var emailAddress = $("#toEmail").val();
-        var AccountName = $("#toAccountName").val();
+        var accountName = $("#toAccountName").val();
         var errorLog = $("#errorMail").text();
-        if (emailAddress == '') { $("#toEmail_Error").empty().append("Please enter email address"); $("#toEmail_Error").removeClass('d-none').addClass('d-block'); return false; }
+        if (emailAddress === "") { $("#toEmail_Error").empty().append("Please enter email address"); $("#toEmail_Error").removeClass('d-none').addClass('d-block'); return false; }
         else if (!pattern.test(emailAddress)) {
             $("#toEmail_Error").removeClass('d-none').addClass('d-block');
             $("#toEmail_Error").empty().append("Please enter valid email address");
             $("#toEmail").focus();
             return false;
         }
-        if (AccountName == '') { $("#toAccountName_Error").empty().append("Please enter VSTS account name"); $("#toAccountName_Error").removeClass('d-none').addClass('d-block'); return false; }
+        if (accountName === '') { $("#toAccountName_Error").empty().append("Please enter Azure DevOps Organiaztion name"); $("#toAccountName_Error").removeClass('d-none').addClass('d-block'); return false; }
 
         $("#sendEmail").prop('disabled', true);
 
-        var modelData = { "EmailAddress": emailAddress, "AccountName": AccountName, "ErrorLog": errorLog };
+        var modelData = { "EmailAddress": emailAddress, "AccountName": accountName, "ErrorLog": errorLog };
         $.post("SendEmail", modelData, function (data) {
             $("#EmailModal").modal('hide');
             $("#infoModel").modal('show');
@@ -327,40 +257,40 @@ $(document).ready(function (event) {
     var isMicrosoftAgreement = "";
     var isThirdparty = "";
     $('#extensionError').click(function () {
-        if (microsoft == "microsoft" && ThirdParty == "thirdparty") {
+        if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-            if (isMicrosoftAgreement == "on" && isThirdparty == "on") {
-                $("#btnSubmit").prop("disabled", false);
+            if (isMicrosoftAgreement === "on" && isThirdparty === "on") {
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
             }
             else {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                 isAgreedTerms = false;
             }
         }
-        else if (microsoft == "microsoft" && ThirdParty == "") {
+        else if (microsoft === "microsoft" && ThirdParty === "") {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-            if (isMicrosoftAgreement == "on") {
-                $("#btnSubmit").prop("disabled", false);
+            if (isMicrosoftAgreement === "on") {
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
             }
             else {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                 isAgreedTerms = false;
 
             }
         }
-        else if (microsoft == "" && ThirdParty == "thirdparty") {
+        else if (microsoft === "" && ThirdParty === "thirdparty") {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-            if (isThirdparty == "on") {
-                $("#btnSubmit").prop("disabled", false);
+            if (isThirdparty === "on") {
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
             }
             else {
-                $("#btnSubmit").prop("disabled", true);
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
                 isAgreedTerms = false;
             }
         }
@@ -369,86 +299,90 @@ $(document).ready(function (event) {
     $("#projectParameters").html('');
     var selectedTemplate = $("#ddlTemplates").val();
 
-    if (selectedTemplate == "MyShuttle-Java") {
+    if (selectedTemplate === "MyShuttle-Java") {
         $("#NotificationModal").modal('show');
     }
-    if (selectedTemplate == "SonarQube") {
+    if (selectedTemplate === "SonarQube") {
         $("#SoanrQubeDiv").show();
     }
     else {
         $("#SoanrQubeDiv").hide();
     }
 
-    if (selectedTemplate != "") {
+    if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
         $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
-            if (data != "") {
+            if (data !== "") {
                 var ParsedData = JSON.parse(data);
                 var Description = ParsedData.Description;
                 var parameters = ParsedData.Parameters;
-                $("#btnSubmit").prop("disabled", false);
-                if (Description != "") {
-                    $("#descContainer").html('');
-                    $("#descContainer").html(Description);
-                    $("#lblDescription").removeClass("d-none").addClass("d-block");
-
-                }
-                else { $("#lblDescription").removeClass("d-block").addClass("d-none"); }
-                if (parameters != undefined) {
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
                             $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
-
-                            // $('<div class="form-group"><label style="font-size:14px; width:30%;" class="col-sm-3 control-label">' + value.label + ':</label><div style="width:70%;" class="col-sm-4"><input type="text"  class ="form-control project-parameters"  id = "txt' + value.fieldName + '" proj-parameter-name="' + value.fieldName + '"  placeholder = "' + value.fieldName + '"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
                     else { $("#projectParameters").html(''); }
                 }
             }
-            else {
-                $("#lblDescription").removeClass("d-lock").addClass("d-none");
-                $("#projectParameters").html('');
-
-            }
         });
-        if (selectedTemplate != "" && typeof selectedTemplate != "undefined") {
+        if (selectedTemplate !== "" && typeof selectedTemplate !== "undefined") {
             checkForInstalledExtensions(selectedTemplate, function callBack(extensions) {
 
-                if (extensions.message != "no extensions required" && extensions.message != "" && extensions.message != undefined && extensions.message.indexOf("Error") == -1 && extensions.message != "Template not found") {
+                if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== "undefined" && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
 
                     $("#extensionError").empty().append(extensions.message);
                     $("#extensionError").show();
                     $("#lblextensionError").removeClass("d-none").addClass("d-block");
 
-                    if (extensions.status != "true") {
+                    if (extensions.status !== "true") {
 
-                        $("#btnSubmit").prop("disabled", true);
+                        $("#btnSubmit").prop("disabled", true).addClass('btn-primary');
                         isExtensionNeeded = true;
                         microsoft = $('#agreeTermsConditions').attr('placeholder');
-                        if (microsoft != "microsoft") {
+                        if (microsoft !== "microsoft") {
                             microsoft = "";
                         }
                         ThirdParty = $('#ThirdPartyagreeTermsConditions').attr('placeholder');
-                        if (ThirdParty != "thirdparty") {
+                        if (ThirdParty !== "thirdparty") {
                             ThirdParty = "";
                         }
 
-                    } else { $("#btnSubmit").prop("disabled", false); }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
                 }
-                else { $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").prop("disabled", false); }
+                else {
+                    $("#extensionError").html('');
+                    $("#extensionError").hide();
+                    $("#lblextensionError").removeClass("d-block").addClass("d-none");
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                }
 
             });
         }
     }
 
     $(document).keypress(function (e) {
-        if (e.which == 13) {
+        if (e.which === 13) {
             $('#btnSubmit').click();
             return false;
         }
     });
+
+    //New Feature Registration
+    $('#closeFeatureRibben').click(function () {
+        $('#newFeature').hide();
+    });
+
+    var privateTemplateDescription = $('#selectedTemplateDescription').val();
+    if (privateTemplateDescription != "") {
+        var templateTxt = $('#descContainer').text();
+        if (templateTxt != "")
+            $("#descContainer").html(privateTemplateDescription);
+    }
+
 });
 $('#btnSubmit').click(function () {
     statusCount = 0;
@@ -458,14 +392,14 @@ $('#btnSubmit').click(function () {
 
     var projectName = $("#txtProjectName").val();
     var template = $("#ddlTemplates").val();
-    //var groupSelected = $('#ddlGroups option:selected').text();
     var accountName = $('#ddlAcccountName option:selected').val();
     var token = $('#hiddenAccessToken').val();
+    var email = $('#emailID').val();
     var regex = /^[A-Za-z0-9 -_]*[A-Za-z0-9][A-Za-z0-9 -_]*$/;
-    if (template == "Octopus") {
+    if (template === "Octopus") {
         var octopusURL = $('#txtOctopusURL').val();
         var octopusAPIkey = $('#txtAPIkey').val();
-        if (octopusURL != "") {
+        if (octopusURL !== "") {
             var pattern = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]\$&'\(\)\*\+,;=.]+$/
 
             if (!(pattern.test(octopusURL))) {
@@ -479,22 +413,20 @@ $('#btnSubmit').click(function () {
             $("#txtALertContainer").show();
             return false;
         }
-        if (octopusAPIkey == "") {
+        if (octopusAPIkey === "") {
             $("#txtAlert").text("Please enter a valid Octopus Key.");
             $("#txtALertContainer").show();
             return false;
         }
     }
-    if (accountName == "" || accountName == "Select Account") {
-        $("#ddlAcccountName_Error").text("Please choose an account first!");
+    if (accountName === "" || accountName === "Select Organiaztion") {
+        $("#ddlAcccountName_Error").text("Please choose an organization first!");
         $("#ddlAcccountName_Error").removeClass("d-none").addClass("d-block");
         $("#ddlAcccountName").focus();
         return false;
     }
     //checking for session templatename and templateID
-
-
-    if (projectName == "") {
+    if (projectName === "") {
         $("#txtProjectName_Error").text("Please provide a project name");
         $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
         return false;
@@ -505,38 +437,32 @@ $('#btnSubmit').click(function () {
         $("#txtProjectName").focus();
         return false;
     }
-    if (template == "") {
+    if (template === "") {
         $("#ddlTemplates_Error").text("Please select Project template");
         $("#ddlTemplates_Error").removeClass("d-none").addClass("d-block");
         return false;
     }
-    if (template == "SonarQube") {
+    if (template === "SonarQube") {
         var ServerDNS = $("#txtSonarServerDNSName").val();
-        if (ServerDNS == "") {
+        if (ServerDNS === "") {
             $("#txtSonarServerDNSName_Error").text("Please enter sonar server DNS name");
             $("#txtSonarServerDNSName_Error").removeClass("d-none").addClass("d-block");
             return false;
         }
-        //var URLPattern = /^(http|https)?:\/\/[a-zA-Z0-9-\.]+\:[0-9]/;
-        //if (!(URLPattern.test(ServerDNS))) {
-        //    $("#txtAlert").text("Please enter valid Server DNS name");
-        //    $("#txtSonarServerDNSName_Error").removeClass("d-none").addClass("d-block");
-        //    return false;
-        //}
     }
 
     //get userMethod and selected users
     var SelectedUsers = '';
     var userMethod = $("input[type='radio']:checked").val();
-    if (userMethod == "Select") {
+    if (userMethod === "Select") {
         $(".checkbox").each(function () {
             if (this.checked) {
                 SelectedUsers = SelectedUsers + this.value + ',';
             }
         });
 
-        if (SelectedUsers.length == 0) {
-            $("#txtAlert").text("Please select account users");
+        if (SelectedUsers.length === 0) {
+            $("#txtAlert").text("Please select organiaztion users");
             $("#txtALertContainer").show();
             return false;
         }
@@ -551,10 +477,10 @@ $('#btnSubmit').click(function () {
     });
     selectedTemplate = template;
     var websiteUrl = window.location.href;
-    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token };
+    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
-        if (data != "True") {
+        if (data !== "True") {
             var queryTemplate = '@Request.QueryString["queryTemplate"]';
             window.location.href = "~/Account/Verify?template=" + queryTemplate;
             return;
@@ -572,13 +498,14 @@ $('#btnSubmit').click(function () {
 
 
         $("#templateselection").prop("disabled", true);
-        $("#btnSubmit").prop("disabled", true);
+        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
         $("input.terms").attr("disabled", true);
         $("#txtALertContainer").hide();
         $("#accountLink").html('');
         $("#errorNotify").removeClass("d-block").addClass("d-none");
         projectNameForLink = projectName;
+        AccountNameForLink = accountName;
         ErrorData = '';
         getStatus();
         $('#dvProgress').removeClass("d-none").addClass("d-block");
@@ -594,6 +521,22 @@ function getStatus() {
         url: 'GetCurrentProgress/' + uniqueId,
         type: 'GET',
         success: function (data) {
+
+            if (data == "OAUTHACCESSDENIED") {
+                $('#progressBar').width(currentPercentage++ + '%');
+                $('#status-messages').append('<i class="fas fa-forward"></i> &nbsp;Third Party application access via OAuth is disabled for this Organization,please change OAuth access setting and try again!<br/>');
+                $("#ddlAcccountName").removeAttr("disabled");
+                $("#txtProjectName").removeAttr("disabled");
+                $("#txtProjectName").val("");
+                $('#ddlAcccountName').prop('selectedIndex', 0);
+
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                $("#templateselection").prop("disabled", false);
+                $('#dvProgress').removeClass("d-block").addClass("d-none");
+                $('#textMuted').removeClass("d-block").addClass("d-none");
+                return;
+
+            }
             var isMessageShown = true;
 
             if (jQuery.inArray(data, messageList) == -1) {
@@ -607,13 +550,13 @@ function getStatus() {
                     if (messageList.length == 1) {
                         $('#progressBar').width(currentPercentage++ + '%');
                         if (data.length > 0) {
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                         }
                     }
                     else {
                         if (data.indexOf("TF50309") == 0) {
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
                             $("#txtProjectName").val("");
@@ -627,13 +570,13 @@ function getStatus() {
                         }
                         else if (data.indexOf("TF200019") == 0) {
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
                             $("#txtProjectName").val("");
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                            $("#btnSubmit").prop("disabled", false);
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                             $("#templateselection").prop("disabled", false);
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -642,16 +585,16 @@ function getStatus() {
                         }
                         else if (data.indexOf("TF200019") == -1) {
                             $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                         }
                         else {
-                            $('#status-messages').append('<i class="fas fa-clipboard-check"></i> &nbsp;' + data + '<br/>');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
                             $("#txtProjectName").val("");
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                            $("#btnSubmit").prop("disabled", false);
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                             $("#templateselection").prop("disabled", false);
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -678,8 +621,7 @@ function getStatus() {
                                 async: false,
                                 success: function (data) {
                                     var accountName = data;
-                                    $("#projCreateMsg").hide();
-                                    var link = "https://" + accountName + ".visualstudio.com/" + projectNameForLink;
+                                    var link = "https://dev.azure.com/" + AccountNameForLink + "/" + projectNameForLink;
 
                                     if (selectedTemplate == "SmartHotel360") {
                                         $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
@@ -693,7 +635,7 @@ function getStatus() {
 
                                     $('#progressBar').width(currentPercentage++ + '%');
                                     $("#finalLink").removeClass("d-none").addClass("d-block");
-                                    $("#btnSubmit").prop("disabled", false);
+                                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                                     $("#txtProjectName").val("");
 
                                     $('#ddlAcccountName').prop('selectedIndex', 0);
@@ -707,29 +649,36 @@ function getStatus() {
                         }
                         else {
                             ErrorData = response;
-                            if (ErrorData != '') {
-                                $("#projCreateMsg").hide();
-                                $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
-                                $('#dvProgress').removeClass("d-block").addClass("d-none");
-                                $("#errorNotify").removeClass("d-none").addClass("d-block");
-                                $('#textMuted').removeClass("d-block").addClass("d-none");
+                            var accountName = $('#ddlAcccountName option:selected').val();
+                            $("#projCreateMsg").hide();
+                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
 
-                                currentPercentage = 0;
-                                $('#progressBar').width(currentPercentage++ + '%');
+                            //if (selectedTemplate == "SmartHotel360") {
+                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
+                            //}
+                            //else {
+                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
+                            //}
+                            $('#dvProgress').removeClass("d-block").addClass("d-none");
+                            $('#textMuted').removeClass("d-block").addClass("d-none");
+                            currentPercentage = 0;
+                            $('#status-messages').empty().hide();
+                            $('#progressBar').width(currentPercentage++ + '%');
+                            $("#finalLink").addClass("d-none").removeClass("d-block");
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                            $("#txtProjectName").val("");
+
+                            $('#ddlAcccountName').prop('selectedIndex', 0);
+                            $("#templateselection").prop("disabled", false);
+                            $('#ddlGroups').removeAttr("disabled");
+                            $("#ddlAcccountName").removeAttr("disabled");
+                            $("#txtProjectName").removeAttr("disabled");
+                            if (ErrorData != '') {
+                                $("#projCreateMsg").hide(); $("#errorDescription").html("");
+                                $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
                                 $("#errorMail").empty().append(ErrorData);
                                 $("#errorNotify").show();
-
-                                $("#btnSubmit").prop("disabled", false);
-                                $("#txtProjectName").val("");
-                                $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                                $("#templateselection").prop("disabled", false);
-
-                                $('#ddlGroups').removeAttr("disabled");
-
-                                $("#ddlAcccountName").removeAttr("disabled");
-                                $("#txtProjectName").removeAttr("disabled");
-
+                                $("#errorNotify").removeClass("d-none").addClass("d-block");
                             }
                         }
                     });
@@ -761,9 +710,8 @@ function DisplayErrors() {
 function checkForInstalledExtensions(selectedTemplate, callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
-    var selectedTemplate = selectedTemplate;
-    if (accountNam != "" && selectedTemplate != "") {
-        $("#btnSubmit").prop("disabled", true);
+    if (accountNam !== "" && selectedTemplate !== "") {
+        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
@@ -782,10 +730,12 @@ function checkForExtensions(callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
     var selectedTemplate = $("#ddlTemplates").val();
-    if (selectedTemplate != "" && accountNam != "") {
+    if (selectedTemplate !== "" && accountNam !== "") {
         $("#imgLoading").show();
-        $("#btnSubmit").prop("disabled", true);
+        $("#btnSubmit").removeClass('btn-primary').prop("disabled", true);
         $("#ddlAcccountName").prop("disabled", true);
+        $("#txtProjectName").prop('disabled', 'disabled');
+
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
@@ -800,27 +750,28 @@ function checkForExtensions(callBack) {
 
 function GetRequiredExtension() {
     checkForExtensions(function callBack(extensions) {
-        if (extensions.message != "no extensions required" && extensions.message != "" && extensions.message != undefined && extensions.message.indexOf("Error") == -1 && extensions.message != "Template not found") {
+        if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== "undefined" && extensions.message.indexOf("Error") == -1 && extensions.message !== "Template not found") {
             $("#imgLoading").hide();
             $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
+            $("#txtProjectName").prop('disabled', false);
+            if (extensions.status !== "true") {
+                $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
 
-            if (extensions.status != "true") {
-                $("#btnSubmit").prop("disabled", true);
                 isExtensionNeeded = true;
                 microsoft = $('#agreeTermsConditions').attr('placeholder');
-                if (microsoft != "microsoft") {
+                if (microsoft !== "microsoft") {
                     microsoft = "";
                 }
                 ThirdParty = $('#ThirdPartyagreeTermsConditions').attr('placeholder');
-                if (ThirdParty != "thirdparty") {
+                if (ThirdParty !== "thirdparty") {
                     ThirdParty = "";
                 }
-            } else { $("#btnSubmit").prop("disabled", false); }
+            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").prop("disabled", false); }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); }
 
     });
 }
@@ -836,31 +787,57 @@ $(document).ready(function () {
             type: "GET",
             success: function (groups) {
                 var grp = "";
+                var private = "";
                 if (groups.GroupwiseTemplates.length > 0) {
                     grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">'
                     grp += '<div class="templates d-flex align-items-center flex-wrap">';
                     for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                        if (groups.GroupwiseTemplates[g].Groups == grpSelected) {
+                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
                             var MatchedGroup = groups.GroupwiseTemplates[g];
-                            for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                                if (i == 0) {
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
-                                    grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                    grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
-                                    grp += '</div>';
+                            if (MatchedGroup.Template[0].Name == "Private") {
+                                $('#selecttmplate').hide();
+                                private += MatchedGroup.Template[0].Description;
+                                $('#pills-tabContent').html('').html(private);
+                            }
+                            else {
+                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                                    if (i === 0) {
+                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
+                                        grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
+                                        if (MatchedGroup.Template[i].tags != null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '</div>';
+                                    }
+                                    else {
+                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
+                                        grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
+                                        if (MatchedGroup.Template[i].tags != null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '</div>';
+                                    }
                                 }
-                                else {
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
-                                    grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                    grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
-                                    grp += '</div>';
-                                }
+                                $('#selecttmplate').show();
+
+                                grp += '</div></div>';
+                                $('#pills-tabContent').html('').html(grp);
                             }
                         }
                     }
-                    grp += '</div></div>';
 
-                    $('#pills-tabContent').html('').html(grp);
                 }
             }
         });
@@ -874,7 +851,7 @@ $(document).ready(function () {
             var grp = "";
             if (groups.Groups.length > 0) {
                 for (var g = 0; g < groups.Groups.length; g++) {
-                    if (g == 0)
+                    if (g === 0)
                         grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
                     else
                         grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
@@ -911,12 +888,12 @@ $(function () {
     $(document.body).on("click", '.template', function () {
         $(".template").removeClass("selected");
         $(this).addClass("selected");
-
+        $('.description').removeClass('descSelected');
+        $(this.lastElementChild).addClass('descSelected');
     });
 
     // GET ID TO BE SHOWN
     let showId = $(".template-group-item.active").attr('href');
-    console.log(showId);
     $(`.template-body .templates${showId}`).show();
 });
 
@@ -931,20 +908,46 @@ function createTemplates() {
                 grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">'
                 grp += '<div class="templates d-flex align-items-center flex-wrap">';
                 for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                    if (groups.GroupwiseTemplates[g].Groups == grpSelected) {
+                    if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
                         var MatchedGroup = groups.GroupwiseTemplates[g];
                         for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                            if (i == 0) {
+                            if (i === 0) {
                                 grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
                                 grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
+                                if (MatchedGroup.Template[i].tags != null) {
+                                    grp += '<p></p>';
+                                    grp += '<p>';
+                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                    }
+                                    grp += '</p>';
+                                }
+                                grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
+                                if (MatchedGroup.Template[i].Name == "SmartHotel360") {
+                                    var templateTxt = $('#selectedTemplateDescription').val();
+                                    if (templateTxt == "" || typeof templateTxt == "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
                             }
                             else {
                                 grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
                                 grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
-                                grp += '<p class="description">' + MatchedGroup.Template[i].Description + '</p>';
+                                if (MatchedGroup.Template[i].tags != null) {
+                                    grp += '<p></p>';
+                                    grp += '<p>';
+                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
+                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>'
+                                    }
+                                    grp += '</p>';
+                                }
+                                grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
+                                if (MatchedGroup.Template[i].Name == "SmartHotel360") {
+                                    var templateTxt = $('#selectedTemplateDescription').val();
+                                    if (templateTxt == "" || typeof templateTxt == "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
                             }
                         }
                     }
@@ -961,57 +964,31 @@ function createTemplates() {
 $("#txtProjectName").keyup(function () {
 
     var projectName = this.value;
-    //var regex1 = /^[a-zA-Z_!)(][a-zA-Z0-9_!)(]*(?:\s+[a-zA-Z!)(][a-zA-Z0-9!)(]+)?$/;
-    //var regex2 = /^[a-zA-Z0-9!^\-`)( ]*[a-zA-Z0-9!^\-`_)(]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:\s+[a-zA-Z!)(][a-zA-Z0-9!)(]+)?$/;
-
     var regex = /^[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
 
-    if (projectName != "") {
-
+    if (projectName !== "") {
+        var restrictedNames = ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "PRN", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LTP", "LTP8", "LTP9", "NUL", "CON", "AUX", "SERVER", "SignalR", "DefaultCollection", "Web", "App_code", "App_Browesers", "App_Data", "App_GlobalResources", "App_LocalResources", "App_Themes", "App_WebResources", "bin", "web.config"];
+        if (restrictedNames.find(x => x.toLowerCase() == projectName.toLowerCase())) {
+            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
+            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
+            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
+            $("#txtProjectName").focus();
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
+            return false;
+        }
         if (!(regex.test(projectName))) {
             var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
             $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName == "COM1" || projectName == "COM2" || projectName == "COM3" || projectName == "COM4" || projectName == "COM5" || projectName == "COM6" || projectName == "COM7" || projectName == "COM8" || projectName == "COM9" || projectName == "COM10") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName == "PRN" || projectName == "LPT1" || projectName == "LPT2" || projectName == "LPT3" || projectName == "LPT4" || projectName == "LPT5" || projectName == "LPT6" || projectName == "LPT7" || projectName == "LPT8" || projectName == "LPT9") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName == "NUL" || projectName == "CON" || projectName == "AUX" || projectName == "SERVER" || projectName == "SignalR" || projectName == "DefaultCollection" || projectName == "Web" || projectName == "App_code" || projectName == "App_Browsers" || projectName == "App_Data") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else if (projectName == "App_GlobalResources" || projectName == "App_LocalResources" || projectName == "App_Themes" || projectName == "App_WebResources" || projectName == "bin" || projectName == "web.config") {
-            var link = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
-            $("#txtProjectName_Error").html("The project name '" + projectName + "' is invalid " + link);
-            $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
-            $("#txtProjectName").focus();
-            return false;
-        }
-        else {
-            $("#txtProjectName_Error").text("");
-            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+            $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
             return false;
         }
     }
     else {
         $("#txtProjectName_Error").text("");
         $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+        $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
         return false;
     }
 });
@@ -1019,19 +996,12 @@ $("#txtProjectName").keyup(function () {
 function GetTemplates(selectedTemplate) {
     var Url = 'GetTemplate/';
     $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
-        if (data != "") {
+        if (data !== "") {
             var ParsedData = JSON.parse(data);
             var Description = ParsedData.Description;
             var parameters = ParsedData.Parameters;
-            $("#btnSubmit").prop("disabled", false);
-            if (Description != "") {
-                $("#descContainer").html('');
-                $("#descContainer").html(Description);
-                $("#lblDescription").removeClass("d-none").addClass("d-block");
-
-            }
-            else { $("#lblDescription").removeClass("d-block").addClass("d-none"); }
-            if (parameters != undefined) {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            if (typeof parameters !== "undefined") {
                 if (parameters.length > 0) {
                     $.each(parameters, function (key, value) {
                         $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
@@ -1041,10 +1011,9 @@ function GetTemplates(selectedTemplate) {
                 else { $("#projectParameters").html(''); }
             }
         }
-        else {
-            $("#lblDescription").removeClass("d-lock").addClass("d-none");
-            $("#projectParameters").html('');
-
-        }
     });
+}
+
+function openImportPopUp() {
+    $("#privateTemplatepop").removeClass('d-none').addClass('d-block');
 }
