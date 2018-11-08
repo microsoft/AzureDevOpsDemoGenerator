@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using VstsRestAPI.Viewmodel;
 using VstsRestAPI.Viewmodel.ReleaseDefinition;
 
 namespace VstsRestAPI.Release
@@ -29,7 +25,7 @@ namespace VstsRestAPI.Release
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=4.0-preview.3") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -57,7 +53,7 @@ namespace VstsRestAPI.Release
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber + "-preview.2") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -75,41 +71,36 @@ namespace VstsRestAPI.Release
         }
         public int[] GetEnvironmentIdsByName(string project, string definitionName, string environment1, string environment2)
         {
-            int[] EnvironmentIds = new int[2];
+            int[] environmentIds = new int[2];
             try
             {
                 string requestURL = string.Empty;
                 using (var client = GetHttpClient())
                 {
-                    requestURL = string.Format("{0}/_apis/release/definitions?api-version=3.0-preview.1", project);
+                    requestURL = string.Format("{0}/_apis/release/definitions?api-version=" + _configuration.VersionNumber, project);
                     HttpResponseMessage response = client.GetAsync(requestURL).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         ReleaseDefinitionsResponse.Release Definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<ReleaseDefinitionsResponse.Release>(response.Content.ReadAsStringAsync().Result.ToString());
 
                         int requiredDefinitionId = Definitions.value.Where(x => x.name == definitionName).FirstOrDefault().id;
-                        using (var client1 = new HttpClient())
+                        using (var client1 = GetHttpClient())
                         {
-                            client1.BaseAddress = new Uri(_configuration.UriString);
-                            client1.DefaultRequestHeaders.Accept.Clear();
-                            client1.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                            client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-
-                            requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=3.0-preview.1", project, requiredDefinitionId);
+                            requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=" + _configuration.VersionNumber, project, requiredDefinitionId);
                             HttpResponseMessage ResponseDef = client1.GetAsync(requestURL).Result;
                             if (response.IsSuccessStatusCode)
                             {
                                 ReleaseDefinitions.ReleaseDefinition DefinitionResult = Newtonsoft.Json.JsonConvert.DeserializeObject<ReleaseDefinitions.ReleaseDefinition>(ResponseDef.Content.ReadAsStringAsync().Result.ToString());
-                                EnvironmentIds[0] = DefinitionResult.environments.Where(x => x.name == environment1).FirstOrDefault().id;
-                                EnvironmentIds[1] = DefinitionResult.environments.Where(x => x.name == environment2).FirstOrDefault().id;
-                                return EnvironmentIds;
+                                environmentIds[0] = DefinitionResult.environments.Where(x => x.name == environment1).FirstOrDefault().id;
+                                environmentIds[1] = DefinitionResult.environments.Where(x => x.name == environment2).FirstOrDefault().id;
+                                return environmentIds;
                             }
                         }
                     }
                 }
             }
-            catch (Exception) { return EnvironmentIds; }
-            return EnvironmentIds;
+            catch (Exception) { return environmentIds; }
+            return environmentIds;
         }
     }
-}   
+}

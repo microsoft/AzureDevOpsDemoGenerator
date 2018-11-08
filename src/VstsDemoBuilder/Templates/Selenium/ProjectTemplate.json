@@ -1,6 +1,5 @@
 {
   "Name": "Selenium",
-  "Description": "This template contains code of Parts Unlimited, a fictional eCommerce application which will be provisioned along with build & release definitions and customized to deploy and test the application on an Azure VM using Selenium. <p>For more information refer <a style='color:blue;' href='https://almvm.azurewebsites.net/labs/vstsextend/Selenium/' target='_blank'>Driving continuous testing with Selenium</a></p> ",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",

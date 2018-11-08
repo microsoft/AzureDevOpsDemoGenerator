@@ -1,11 +1,11 @@
 [
   {
-    "name": "Team1",
-    "Description": "Team1 Description"
+    "name": "Web",
+    "Description": "Web Description"
   },
   {
-    "name": "Team2",
-    "Description": "Team2 Description"
+    "name": "Mobile",
+    "Description": "Mobile Description"
   }
 
 ]

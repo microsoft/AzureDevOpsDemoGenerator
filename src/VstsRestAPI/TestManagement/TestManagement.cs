@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VstsRestAPI.TestManagement
 {
@@ -29,7 +25,7 @@ namespace VstsRestAPI.TestManagement
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/test/plans?api-version=1.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/test/plans?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -54,7 +50,7 @@ namespace VstsRestAPI.TestManagement
         /// <param name="testPlan"></param>
         /// <param name="project"></param>
         /// <returns></returns>
-        public string[] CreatTestSuite(string json,string testPlan, string project)
+        public string[] CreatTestSuite(string json, string testPlan, string project)
         {
             string[] testSuite = new string[2];
             int parentTestSuite = Convert.ToInt32(testPlan);
@@ -64,8 +60,8 @@ namespace VstsRestAPI.TestManagement
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + parentTestSuite + "?api-version=1.0") { Content = jsonContent };
-                var response = client.SendAsync(request).Result; 
+                var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + parentTestSuite + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -99,7 +95,7 @@ namespace VstsRestAPI.TestManagement
                 var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + testSuite + "/testcases/" + testCases + "?api-version=1.0") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + testSuite + "/testcases/" + testCases + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

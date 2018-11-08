@@ -60,7 +60,7 @@
             "refName": "Bower_3",
             "task": {
                 "id": "4fa3aac0-0020-4832-9089-9979c9dd3e69",
-                "versionSpec": "0.*",
+                "versionSpec": "",
                 "definitionType": "task"
             },
             "inputs": {

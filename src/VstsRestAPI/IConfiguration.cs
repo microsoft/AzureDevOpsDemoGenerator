@@ -4,6 +4,8 @@ namespace VstsRestAPI
     public interface IConfiguration
     {        
         string PersonalAccessToken { get; set; }
+        string AccountName { get; set; }
+
         string Project { get; set; }
         string Team { get; set; }
         string MoveToProject { get; set; }
@@ -18,5 +20,6 @@ namespace VstsRestAPI
         string FilePath { get; set; }
         string GitRepositoryId { get; set; }
         string VersionNumber { get; set; }
+        string Id { get; set; }
     }
 }

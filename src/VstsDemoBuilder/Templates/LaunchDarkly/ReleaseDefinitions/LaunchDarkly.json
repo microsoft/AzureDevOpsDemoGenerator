@@ -1,0 +1,326 @@
+{
+	"source": "userInterface",
+	"revision": 4,
+	"description": null,
+	"isDeleted": false,
+	"variables": {
+		"hostingPlanName": {
+			"value": "launchdarklyplan"
+		},
+		"launchdarkly-account-name": {
+			"value": "$AccountName$"
+		},
+		"launchdarkly-pat": {
+			"value": ""
+		},
+		"launchdarkly-project-name": {
+			"value": "LaunchDarkly"
+		},
+		"location": {
+			"value": "Central US"
+		},
+		"ResourceGroupName": {
+			"value": "LaunchDarklyRG"
+		},
+		"siteName": {
+			"value": "PartsUnlimitedweb$RandomNumber$"
+		}
+	},
+	"variableGroups": [],
+	"environments": [{
+		
+		"name": "Stage 1",
+		"rank": 1,
+		"owner": {
+			"id": "$OwnerId$",
+			"displayName": "$OwnerDisplayName$",
+			"uniqueName": "$OwnerUniqueName$"
+		  },
+		"variables": {
+			
+		},
+		"variableGroups": [],
+		"preDeployApprovals": {
+			"approvals": [{
+				"rank": 1,
+				"isAutomated": true,
+				"isNotificationOn": false
+			}],
+			"approvalOptions": {
+				"requiredApproverCount": 0,
+				"releaseCreatorCanBeApprover": false,
+				"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+				"enforceIdentityRevalidation": false,
+				"timeoutInMinutes": 0,
+				"executionOrder": "beforeGates"
+			}
+		},
+		"deployStep": {
+			
+		},
+		"postDeployApprovals": {
+			"approvals": [{
+				"rank": 1,
+				"isAutomated": true,
+				"isNotificationOn": false
+			}],
+			"approvalOptions": {
+				"requiredApproverCount": 0,
+				"releaseCreatorCanBeApprover": false,
+				"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+				"enforceIdentityRevalidation": false,
+				"timeoutInMinutes": 0,
+				"executionOrder": "afterSuccessfulGates"
+			}
+		},
+		"deployPhases": [{
+			"deploymentInput": {
+				"parallelExecution": {
+					"parallelExecutionType": "none"
+				},
+				"skipArtifactsDownload": false,
+				"artifactsDownloadInput": {
+					"downloadInputs": [{
+						"artifactItems": [],
+						"alias": "LaunchDarkly-CI",
+						"artifactType": "Build",
+						"artifactDownloadMode": "All"
+					}]
+				},
+				"queueId": "$Hosted VS2017$",
+				"demands": [],
+				"enableAccessToken": false,
+				"timeoutInMinutes": 0,
+				"jobCancelTimeoutInMinutes": 1,
+				"condition": "succeeded()",
+				"overrideInputs": {
+					
+				}
+			},
+			"rank": 1,
+			"phaseType": "agentBasedDeployment",
+			"name": "Agent job",
+			"workflowTasks": [{
+				"environment": {
+					
+				},
+				"taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+				"version": "2.*",
+				"name": "Azure Resource Group Deployment",
+				"refName": "",
+				"enabled": true,
+				"alwaysRun": false,
+				"continueOnError": false,
+				"timeoutInMinutes": 0,
+				"definitionType": "task",
+				"overrideInputs": {
+					
+				},
+				"condition": "succeeded()",
+				"inputs": {
+					"ConnectedServiceName": "",
+					"action": "Create Or Update Resource Group",
+					"resourceGroupName": "$(ResourceGroupName)",
+					"location": "$(location)",
+					"templateLocation": "Linked artifact",
+					"csmFileLink": "",
+					"csmParametersFileLink": "",
+					"csmFile": "$(System.DefaultWorkingDirectory)/LaunchDarkly-CI/drop/Environment/azuredeploy.json",
+					"csmParametersFile": "$(System.DefaultWorkingDirectory)/LaunchDarkly-CI/drop/Environment/azuredeploy.parameter.json",
+					"overrideParameters": "-siteName $(siteName) -hostingPlanName $(hostingPlanName)",
+					"deploymentMode": "Incremental",
+					"enableDeploymentPrerequisites": "None",
+					"deploymentGroupEndpoint": "",
+					"project": "",
+					"deploymentGroupName": "",
+					"copyAzureVMTags": "true",
+					"runAgentServiceAsUser": "false",
+					"userName": "",
+					"password": "",
+					"outputVariable": "",
+					"deploymentOutputs": ""
+				}
+			},
+			{
+				"environment": {
+					
+				},
+				"taskId": "cc77dce8-9bc2-4bd0-b8bb-2e252dbdd7d0",
+				"version": "3.*",
+				"name": "LaunchDarkly Rollout",
+				"refName": "",
+				"enabled": true,
+				"alwaysRun": false,
+				"continueOnError": false,
+				"timeoutInMinutes": 0,
+				"definitionType": "task",
+				"overrideInputs": {
+					
+				},
+				"condition": "succeeded()",
+				"inputs": {
+					"serviceEndpoint": "",
+					"rollout": "100",
+					"turnOn": "true"
+				}
+			},
+			{
+				"environment": {
+					
+				},
+				"taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+				"version": "3.*",
+				"name": "Azure App Service Deploy",
+				"refName": "",
+				"enabled": true,
+				"alwaysRun": false,
+				"continueOnError": false,
+				"timeoutInMinutes": 0,
+				"definitionType": "task",
+				"overrideInputs": {
+					
+				},
+				"condition": "succeeded()",
+				"inputs": {
+					"ConnectedServiceName": "",
+					"WebAppKind": "app",
+					"WebAppName": "$(siteName)",
+					"DeployToSlotFlag": "false",
+					"ResourceGroupName": "",
+					"SlotName": "",
+					"ImageSource": "Registry",
+					"AzureContainerRegistry": "",
+					"AzureContainerRegistryLoginServer": "",
+					"AzureContainerRegistryImage": "",
+					"AzureContainerRegistryTag": "",
+					"DockerRepositoryAccess": "public",
+					"RegistryConnectedServiceName": "",
+					"PrivateRegistryImage": "",
+					"PrivateRegistryTag": "",
+					"DockerNamespace": "",
+					"DockerRepository": "",
+					"DockerImageTag": "",
+					"VirtualApplication": "",
+					"Package": "$(System.DefaultWorkingDirectory)/**/*.zip",
+					"BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+					"RuntimeStack": "",
+					"StartupCommand": "",
+					"WebAppUri": "",
+					"ScriptType": "",
+					"InlineScript": ":: You can provide your deployment commands here. One command per line.",
+					"ScriptPath": "",
+					"GenerateWebConfig": "false",
+					"WebConfigParameters": "",
+					"AppSettings": "",
+					"ConfigurationSettings": "",
+					"TakeAppOfflineFlag": "true",
+					"UseWebDeploy": "false",
+					"SetParametersFile": "",
+					"RemoveAdditionalFilesFlag": "false",
+					"ExcludeFilesFromAppDataFlag": "false",
+					"AdditionalArguments": "",
+					"RenameFilesFlag": "false",
+					"XmlTransformation": "false",
+					"XmlVariableSubstitution": "false",
+					"JSONFiles": ""
+				}
+			}]
+		}],
+		"environmentOptions": {
+			"emailNotificationType": "OnlyOnFailure",
+			"emailRecipients": "release.environment.owner;release.creator",
+			"skipArtifactsDownload": false,
+			"timeoutInMinutes": 0,
+			"enableAccessToken": false,
+			"publishDeploymentStatus": true,
+			"badgeEnabled": false,
+			"autoLinkWorkItems": false,
+			"pullRequestDeploymentEnabled": false
+		},
+		"demands": [],
+		"conditions": [{
+			"name": "ReleaseStarted",
+			"conditionType": "event",
+			"value": ""
+		}],
+		"executionPolicy": {
+			"concurrencyCount": 1,
+			"queueDepthCount": 0
+		},
+		"schedules": [],
+		
+		"retentionPolicy": {
+			"daysToKeep": 30,
+			"releasesToKeep": 3,
+			"retainBuild": true
+		},
+		"processParameters": {
+			
+		},
+		"properties": {
+			
+		},
+		"preDeploymentGates": {
+			"id": 0,
+			"gatesOptions": null,
+			"gates": []
+		},
+		"postDeploymentGates": {
+			"id": 0,
+			"gatesOptions": null,
+			"gates": []
+		},
+		"environmentTriggers": []
+	}],
+	"artifacts": [{
+		"sourceId": "$ProjectId$:$LaunchDarkly-CI-id$",
+		"type": "Build",
+		"alias": "LaunchDarkly-CI",
+		"definitionReference": {
+			
+			"defaultVersionBranch": {
+				"id": "",
+				"name": ""
+			},
+			"defaultVersionSpecific": {
+				"id": "",
+				"name": ""
+			},
+			"defaultVersionTags": {
+				"id": "",
+				"name": ""
+			},
+			"defaultVersionType": {
+				"id": "latestType",
+				"name": "Latest"
+			},
+			"definition": {
+				"id": "$LaunchDarkly-CI-id$",
+				"name": "LaunchDarkly-CI"
+			},
+      "project": {
+        "id": "$ProjectId$",
+        "name": "$ProjectName$"
+      }
+		},
+		"isPrimary": true,
+		"isRetained": false
+	}],
+	"triggers": [{
+		"artifactAlias": "LaunchDarkly-CI",
+		"triggerConditions": [],
+		"triggerType": "artifactSource"
+	}],
+	"releaseNameFormat": "Release-$(rev:r)",
+	"tags": [],
+	"properties": {
+		"DefinitionCreationSource": {
+			"$type": "System.String",
+			"$value": "ReleaseClone"
+		}
+	},
+
+	"name": "LaunchDarkly_CD",
+	"path": "\\",
+	"projectReference": null
+}

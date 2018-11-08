@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+
+/src/VstsDemoBuilder/Templates/BlogWebSite
+/src/VstsDemoBuilder/Templates/SmartHotel360V2
+/src/VstsRestAPI/VstsRestAPI.csproj.user
+/src/VstsDemoBuilder/Logs

@@ -10,7 +10,6 @@
 /VstsDemoBuilder/obj
 /VstsDemoBuilder/Properties/PublishProfiles
 /VstsRestAPI/bin
-/VstsRestAPI/obj
 /VstsDemoBuilder/Templates/BasicBot
 /VstsDemoBuilder/Templates/PartsUnlimited-agile
 /.vs/DemoGenerator/v15
@@ -18,3 +17,4 @@
 /.vs
 /VstsRestAPI/obj
 
+/ExportWorkitemsTool/bin/Release
