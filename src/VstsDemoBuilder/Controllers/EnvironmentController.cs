@@ -200,7 +200,7 @@ namespace VstsDemoBuilder.Controllers
                         ProfileDetails profile = GetProfile(AccessDetails);
                         Session["User"] = profile.displayName;
                         Session["Email"] = profile.emailAddress.ToLower();
-                        Models.Accounts.AccountList accountList1 = GetAccounts(profile.id, AccessDetails);
+                        Models.Accounts.AccountList accountList = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
                         model.accessToken = AccessDetails.access_token;
@@ -211,9 +211,9 @@ namespace VstsDemoBuilder.Controllers
                         model.MemberID = profile.id;
                         model.accountsForDropdown = new List<string>();
 
-                        if (accountList1.count > 0)
+                        if (accountList.count > 0)
                         {
-                            foreach (var account in accountList1.value)
+                            foreach (var account in accountList.value)
                             {
                                 model.accountsForDropdown.Add(account.accountName);
                             }
@@ -260,6 +260,7 @@ namespace VstsDemoBuilder.Controllers
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
                                             model.selectedTemplateDescription = template.Description;
+                                            model.selectedTemplateFolder = template.FolderName;
                                         }
                                     }
                                 }
@@ -872,7 +873,7 @@ namespace VstsDemoBuilder.Controllers
             }
             else
             {
-                AddMessage(model.id, "Project Template not found");
+                AddMessage(model.id.ErrorId(), "Project Template not found");
                 StatusMessages[model.id] = "100";
                 return new string[] { model.id, accountName };
             }
