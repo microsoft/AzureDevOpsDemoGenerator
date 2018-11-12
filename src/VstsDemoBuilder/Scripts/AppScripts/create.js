@@ -230,29 +230,6 @@ $(document).ready(function (event) {
         $("#EmailModal").modal('show');
     });
 
-    $("#sendEmail").click(function () {
-        var pattern = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        var emailAddress = $("#toEmail").val();
-        var accountName = $("#toAccountName").val();
-        var errorLog = $("#errorMail").text();
-        if (emailAddress === "") { $("#toEmail_Error").empty().append("Please enter email address"); $("#toEmail_Error").removeClass('d-none').addClass('d-block'); return false; }
-        else if (!pattern.test(emailAddress)) {
-            $("#toEmail_Error").removeClass('d-none').addClass('d-block');
-            $("#toEmail_Error").empty().append("Please enter valid email address");
-            $("#toEmail").focus();
-            return false;
-        }
-        if (accountName === '') { $("#toAccountName_Error").empty().append("Please enter Azure DevOps Organiaztion name"); $("#toAccountName_Error").removeClass('d-none').addClass('d-block'); return false; }
-
-        $("#sendEmail").prop('disabled', true);
-
-        var modelData = { "EmailAddress": emailAddress, "AccountName": accountName, "ErrorLog": errorLog };
-        $.post("SendEmail", modelData, function (data) {
-            $("#EmailModal").modal('hide');
-            $("#infoModel").modal('show');
-            $("#sendEmail").removeAttr("disabled");
-        });
-    });
     //checking for extenisoin start
     var isMicrosoftAgreement = "";
     var isThirdparty = "";
