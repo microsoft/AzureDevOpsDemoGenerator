@@ -1,11 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
@@ -19,7 +13,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="json"></param>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public bool UpdateSwimLanes(string json, string projectName)
+        public bool UpdateSwimLanes(string json, string projectName, string boardType)
         {
             string teamName = projectName + " Team";
             if (System.IO.File.Exists(json))
@@ -27,10 +21,10 @@ namespace VstsRestAPI.WorkItemAndTracking
                 json = System.IO.File.ReadAllText(json);
                 using (var client = GetHttpClient())
                 {
-                    var patchValue = new StringContent(json, Encoding.UTF8, "application/json"); 
+                    var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
                     var method = new HttpMethod("PUT");
 
-                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/rows?api-version=" + _configuration.VersionNumber + "-preview") { Content = patchValue };
+                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/rows?api-version=" + _configuration.VersionNumber) { Content = patchValue };
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -46,10 +40,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
             }
             return false;
-            
+
         }
     }
 }
-                   
-        
-      
+
+

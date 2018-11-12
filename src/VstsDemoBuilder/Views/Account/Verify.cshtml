@@ -19,49 +19,60 @@
     <section class="section-1 d-flex flex-column">
         <main class="d-flex">
             <div class="VSTS-hero-image d-none d-sm-flex flex-column" style="position:relative;">
-                <div class="VSTS-hero p-5">
-                </div>
-                <div class="VSTS-hero-text text-white p-5" style="position: absolute; bottom: 0;width: 100%;">
-                    <div class="display-4">
+                <div class="VSTS-hero p-4">
+                    <div class="display-4 ml-5 text-white text-center" style="font-weight: 400;">
                         <img src="~/assets/images/VS_logo.png" alt="" width="60px" class="p-2">
                         Azure DevOps Demo Generator
                     </div>
-                    @*<a class="text-white mt-3 d-inline-block" href="mailto:devopsdemos@microsoft.com">devopsdemos@microsoft.com</a>*@
+                </div>
+
+                <div class="VSTS-hero-text text-primary p-5" style="position: absolute; bottom: 0;width: 100%;">
                 </div>
             </div>
             <div class="VSTS-details p-3 d-flex flex-column">
                 <img class="d-block mx-auto demo-generator-details-logo mt-2 mt-md-5" src="~/assets/images/VSTS_full_logo.png" alt="">
-                <h6 class="h6 text-primary mt-3 text-uppercase text-center">Azure DevOps Demo Generator</h6>
+                <h6 class="h6 text-primary mt-3 text-uppercase text-center"><a href="https://docs.microsoft.com/azure/devops/demo-gen/?view=vsts" target="_blank">Azure DevOps Demo Generator</a></h6>
                 <p class="text-center">
-                    Azure DevOps Demo Generator helps you create projects on your Azure DevOps organization with pre-populated  sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
+                    Azure DevOps Demo Generator helps you create projects on your Azure DevOps Organization with pre-populated  sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose. <a href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-vsts-demo-generator-v2?view=vsts" target="_blank">Read more</a>
                 </p>
                 <p class="text-center mb-0">
-                    The purpose of this system is to simplify working with the hands-on-labs, demos and other education material provided by the Microsoft Visual Studio Marketing team.
+                    The purpose of this system is to simplify working with the <a href="https://www.azuredevopslabs.com" target="_blank"> Azure Devops hands-on-labs</a>, demos and other education material provided by the Microsoft Visual Studio Marketing team.
                 </p>
                 <div class="text-center mt-4">
                     <button class="btn btn-primary" id="signInWithVSTS">Sign In</button>
                 </div>
-                <p class="text-center mt-3 mb-0">Don’t have a Team Services Organization?</p>
+                <p class="text-center mt-3 mb-0">Don’t have an Azure DevOps Organization?</p>
                 <div class="text-center">
                     <a target="_blank" aria-label="Get started with Azure DevOps for free" class="btn btn-primary mt-2" href="https://app.vsaex.visualstudio.com">
                         <span class="">Get started for free</span>
                         <img src="~/Images/next.png" style="width:10px" />
                     </a>
                 </div>
-                <div class="demo-generator-feedback mt-auto text-center text-sm-left">
+
+                <!--div class="demo-generator-feedback mt-auto text-center text-sm-left">
                     <p>
-                        Looking to populate your TFS projects? Checkout the
-                        <a href="https://github.com/Microsoft/TFSDemoGenerator" target="_blank">TFS Demo Generator</a>
+                        <ul>
+                            <li>
+                                Looking to populate your TFS projects? Checkout the
+                                <a href="https://github.com/Microsoft/TFSDemoGenerator" target="_blank">TFS Demo Generator</a>
+                            </li>
+                            <li>
+                                Looking for Mobile DevOps projects? Checkout the
+                                <a href="https://appcenterdemobuilder.azurewebsites.net/" target="_blank">App Center Demo Builder</a>
+                            </li>
+
+                        </ul>
                     </p>
-                </div>
+                </div-->
+            </div>
         </main>
         <footer class="footer bg-light text-sm p-2 text-center d-flex flex-column flex-sm-row text-sm-left">
-            <a href="https://www.ecanarys.com" class="text-primary mr-sm-auto" target="_blank">Developed by Canarys Automations</a>
+            <a href="https://www.ecanarys.com" class="text-primary mr-sm-auto" target="_blank">Developed by Canarys Automations Pvt Ltd</a>
             <div class="link">
-                <script>function fbs_click() { u = "https://vstsdemogenerator.azurewebsites.net/"; t = +Visual + Studio + Team + Services + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-                <a href="http://www.facebook.com/sharer.php?u=https://vstsdemogenerator.azurewebsites.net/&t=Visual+Studio+Team+Services+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vstsdemogenerator.azurewebsites.net/&t=Visual+Studio+Team+Services+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                <a href="https://twitter.com/intent/tweet?url=https://vstsdemogenerator.azurewebsites.net/&amp;text=Visual+Studio+Team+Services+Demo+Generator&amp;via=visualstudio&amp;hashtags=vstsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+                <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+DevOps+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+DevOps+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=azuredevopsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
 
                 <a href="https://www.visualstudio.com/support/support-overview-vs" target="_blank" class="text-primary ml-3">Contact Us</a>
                 <a href="https://go.microsoft.com/fwlink/?LinkID=264782" target="_blank" class="text-primary ml-3">Privacy</a>

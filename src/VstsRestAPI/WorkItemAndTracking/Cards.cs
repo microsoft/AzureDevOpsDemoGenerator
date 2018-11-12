@@ -1,11 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
@@ -18,33 +13,49 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Update Card fields
         /// </summary>
         /// <param name="projectName"></param>
-        /// <param name="Json"></param>
+        /// <param name="json"></param>
 
-        public void UpdateCardField(string projectName, string Json)
+        public void UpdateCardField(string projectName, string json, string boardType)
         {
-            GetCardFieldResponse.ListofCards cardfield = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(Json);
+            json = json.Replace("null", "\"\"");
+            GetCardFieldResponse.ListofCards cardField = new GetCardFieldResponse.ListofCards();
+            GetCardFieldResponseAgile.ListofCards agileCardField = new GetCardFieldResponseAgile.ListofCards();
 
-            if (cardfield.cards.Message == null)
+            if (boardType == "Backlog%20items")
             {
-                cardfield.cards.Message = "test";
+                cardField = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(json);
+                if (cardField.cards.Message == null)
+                {
+                    cardField.cards.Message = "test";
+                }
             }
-            //List<ColumnPost> Columns = JsonConvert.DeserializeObject<List<ColumnPost>>(fileName);
-            GetCardFieldResponse.ListofCards viewModel = new GetCardFieldResponse.ListofCards();
+            else if (boardType == "Stories")
+            {
+                agileCardField = JsonConvert.DeserializeObject<GetCardFieldResponseAgile.ListofCards>(json);
+                if (agileCardField.cards.Message == null)
+                {
+                    agileCardField.cards.Message = "test";
+                }
+            }
+
             string teamName = projectName + " Team";
             using (var client = GetHttpClient())
             {
-                // serialize the fields array into a json string
-                var patchValue = new StringContent(JsonConvert.SerializeObject(cardfield), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                StringContent patchValue = new StringContent("");
+                if (boardType == "Backlog%20items")
+                {
+                    patchValue = new StringContent(JsonConvert.SerializeObject(cardField), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                }
+                else if (boardType == "Stories")
+                {
+                    patchValue = new StringContent(JsonConvert.SerializeObject(agileCardField), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                }
                 var method = new HttpMethod("PUT");
-                // GetBoards getAgileBoards = new GetBoards(_configuration);
-                string boardURL = "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/cardsettings?api-version=2.0-preview";
-                //Console.WriteLine("Board URL is {0}", boardURL);
+                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardsettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
-
                 if (response.IsSuccessStatusCode)
                 {
-                    viewModel = response.Content.ReadAsAsync<GetCardFieldResponse.ListofCards>().Result;
 
                 }
                 else
@@ -53,24 +64,19 @@ namespace VstsRestAPI.WorkItemAndTracking
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                     this.LastFailureMessage = error;
                 }
-
-                // viewModel.HttpStatusCode = response.StatusCode;
-
-                //return viewModel;
-
             }
         }
         /// <summary>
         /// Apply rules to cards
         /// </summary>
         /// <param name="projectName"></param>
-        /// <param name="Json"></param>
+        /// <param name="json"></param>
 
-        public void ApplyRules(string projectName, string Json)
+        public void ApplyRules(string projectName, string json, string boardType)
         {
-            //CardStylesPatch.ListofCardStyles cardStyles1 = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(File.ReadAllText(""));
-
-            CardStylesPatch.ListofCardStyles cardStyles = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(Json);
+            json = json.Replace("null", "\"\"");
+            json = json.Replace("$ProjectName$", projectName);
+            CardStylesPatch.ListofCardStyles cardStyles = JsonConvert.DeserializeObject<CardStylesPatch.ListofCardStyles>(json);
             if (cardStyles.rules.Message == null)
             {
                 cardStyles.rules.Message = "test";
@@ -80,19 +86,14 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             using (var client = GetHttpClient())
             {
-                // serialize the fields array into a json string
                 var patchValue = new StringContent(JsonConvert.SerializeObject(cardStyles), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PATCH");
-                // GetBoards getAgileBoards = new GetBoards(_configuration);
-                string boardURL = "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20items/cardrulesettings?api-version=" + _configuration.VersionNumber + "-preview";
-                //Console.WriteLine("Board URL i s {0}", boardURL);
+                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardrulesettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // viewModel = response.Content.ReadAsAsync<GetCardFieldResponse.ListofCards>().Result;
-
                 }
                 else
                 {
@@ -107,21 +108,21 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Enable Epic
         /// </summary>
         /// <param name="projectName"></param>
-        /// <param name="Json"></param>
+        /// <param name="json"></param>
         /// <param name="project"></param>
-        public void EnablingEpic(string projectName, string Json, string project)
+        public void EnablingEpic(string projectName, string json, string project)
         {
             using (var client = GetHttpClient())
             {
-                var jsonContent = new StringContent(Json, Encoding.UTF8, "application/json");
+                var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("PATCH");
                 string teamName = projectName + " Team";
-                var request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/work/teamsettings?api-version=3.0-preview") { Content = jsonContent };
+                var request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    
+
                 }
                 else
                 {

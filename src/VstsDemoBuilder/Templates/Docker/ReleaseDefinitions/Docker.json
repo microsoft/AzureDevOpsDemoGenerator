@@ -97,7 +97,7 @@
                 "SqlUsername": " $(SQLadmin)",
                 "SqlPassword": "$(Password)",
                 "TaskNameSelector": "DacpacTask",
-                "DacpacFile": "$(System.DefaultWorkingDirectory)/Docker/dacpac/myhealthclinic.dacpac",
+                "DacpacFile": "$(System.DefaultWorkingDirectory)/**/*.dacpac",
                 "SqlFile": "",
                 "SqlInline": "",
                 "PublishProfile": "",
@@ -121,7 +121,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted Linux Preview$",
+            "queueId": "$Hosted Ubuntu 1604$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,

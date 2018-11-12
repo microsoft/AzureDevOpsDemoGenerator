@@ -45,7 +45,7 @@ namespace VstsRestAPI.Viewmodel.WorkItem
         {
             [JsonProperty(PropertyName = "Product Backlog Item")]
             public string PBI { get; set; }
-            [JsonProperty(PropertyName = "Bug")]
+            [JsonProperty(PropertyName ="Bug")]
             public string bug { get; set; }
         }
     }

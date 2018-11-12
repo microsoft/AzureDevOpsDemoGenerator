@@ -1,0 +1,4 @@
+{
+  "name": "Bugs without Repro Steps",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from WorkItems where [System.TeamProject] = @project and [System.WorkItemType] = 'Bug' and [System.State] <> '' and [Microsoft.VSTS.TCM.ReproSteps] is empty"
+}

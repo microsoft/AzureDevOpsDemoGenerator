@@ -1,26 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Web;
+﻿using Newtonsoft.Json.Linq;
 using System.Web.Mvc;
-using System.Web.Security;
 using VstsDemoBuilder.Models;
-using VstsRestAPI;
-using VstsRestAPI.ProjectsAndTeams;
-using VstsDemoBuilder.Extensions;
 
 namespace VstsDemoBuilder.Controllers
 {
 
     public class AccountController : Controller
     {
-        AccessDetails AccessDetails = new AccessDetails();
-        TemplateSetting privateTemplates = new TemplateSetting();
+        private readonly AccessDetails accessDetails = new AccessDetails();
+        private TemplateSelection.Templates templates = new TemplateSelection.Templates();
 
         [HttpGet]
         [AllowAnonymous]
@@ -52,19 +40,22 @@ namespace VstsDemoBuilder.Controllers
                     if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                     {
                         string privateTemplatesJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                        privateTemplates = Newtonsoft.Json.JsonConvert.DeserializeObject<TemplateSetting>(privateTemplatesJson);
-                        if (privateTemplates != null)
+                        templates = Newtonsoft.Json.JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
+                        if (templates != null)
                         {
                             bool flag = false;
-                            foreach (var template in privateTemplates.privateTemplateKeys)
+                            foreach (var grpTemplate in templates.GroupwiseTemplates)
                             {
-                                if (template.key != "" && template.value != "")
+                                foreach (var template in grpTemplate.Template)
                                 {
-                                    if (template.key == model.templateid && template.value.ToLower() == model.name.ToLower())
+                                    if (template.key != null && template.Name != null)
                                     {
-                                        flag = true;
-                                        Session["templateName"] = model.name;
-                                        Session["templateId"] = model.templateid;
+                                        if (template.key == model.templateid && template.Name.ToLower() == model.name.ToLower())
+                                        {
+                                            flag = true;
+                                            Session["templateName"] = model.name;
+                                            Session["templateId"] = model.templateid;
+                                        }
                                     }
                                 }
                             }
@@ -146,7 +137,6 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult SignOut()
         {
             Session.Clear();
-
             return Redirect("https://app.vssps.visualstudio.com/_signout");
         }
     }
