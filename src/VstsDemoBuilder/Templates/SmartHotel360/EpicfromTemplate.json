@@ -1,0 +1,105 @@
+﻿{
+  "count": 2,
+  "value": [
+    {
+      "id": 1732,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2018-07-24T09:52:50.867Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:42:12.993Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Smartphone Experience",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1733",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1732"
+    },
+    {
+      "id": 1731,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2018-07-24T09:52:40.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:42:12.993Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Web Experience",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1734",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1736",
+          "attributes": {
+            "isLocked": "False"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1735",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1731"
+    }
+  ],
+  "HttpStatusCode": 0
+}

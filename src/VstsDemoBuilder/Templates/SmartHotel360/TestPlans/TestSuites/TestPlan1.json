@@ -1,0 +1,170 @@
+{
+  "value": [
+    {
+      "name": "$1655$ : As a room guest, I should be able to communicate with all smart devices",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1655$"
+      ],
+      "testCaseCount": 5,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1749",
+        "1750",
+        "1751",
+        "1752",
+        "1753"
+      ]
+    },
+    {
+      "name": "$1659$ : As a user, I should be able to connect to the app with my own device",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1659$"
+      ],
+      "testCaseCount": 5,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1744",
+        "1745",
+        "1746",
+        "1747",
+        "1748"
+      ]
+    },
+    {
+      "name": "$1375$ : As a user, I should be able to connect to the app with my own device",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1375$"
+      ],
+      "testCaseCount": 2,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1791",
+        "1792"
+      ]
+    },
+    {
+      "name": "$1369$ : As a customer, I should be able to request hotel for late Check-out ",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1369$"
+      ],
+      "testCaseCount": 2,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1783",
+        "1799"
+      ]
+    },
+    {
+      "name": "$1368$ : As a customer, I should be able to change reservation time ",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1368$"
+      ],
+      "testCaseCount": 2,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1782",
+        "1794"
+      ]
+    },
+    {
+      "name": "$1370$ : As a customer, I should be able to remove a car reservation  ",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1370$"
+      ],
+      "testCaseCount": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1784"
+      ]
+    },
+    {
+      "name": "$1371$ : As a reservation agent, I would like to send confirmations to guest  ",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1371$"
+      ],
+      "testCaseCount": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1750",
+        "1801"
+      ]
+    },
+    {
+      "name": "$1373$ : As a reservation agent, I would like to send confirmations to guest  ",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1373$"
+      ],
+      "testCaseCount": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+        "1785",
+        "1803"
+      ]
+    },
+    {
+      "name": "$1373$ : As a customer, I would like to modify an existing reservation  ",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [
+        "$1373$"
+      ],
+      "testCaseCount": 0,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "state": "In Progress",
+      "TestCases": [
+      ]
+    }
+  ],
+  "count": 9
+}

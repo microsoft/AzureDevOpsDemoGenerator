@@ -8,21 +8,27 @@ namespace VstsRestAPI.Viewmodel.ProjectAndTeams
 {
     public class TeamMemberResponse
     {
-        public int count { get; set; }
+        public class Identity
+        {
+            public string displayName { get; set; }
+            public string url { get; set; }
+            public string id { get; set; }
+            public string uniqueName { get; set; }
+            public string imageUrl { get; set; }
+            public string descriptor { get; set; }
+        }
+
+        public class Value
+        {
+            public Identity identity { get; set; }
+        }
 
         public class TeamMembers
         {
+            public IList<Value> value { get; set; }
             public int count { get; set; }
-            public value[] value { get; set; }
         }
 
-        public class value
-        {
-            public string id { get; set; }
-            public string displayName { get; set; }
-            public string uniqueName { get; set; }
-            public string url { get; set; }
-            public string imageUrl { get; set; }
-        }
+
     }
 }

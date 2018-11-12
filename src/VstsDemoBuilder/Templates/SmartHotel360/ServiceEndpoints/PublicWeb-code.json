@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "PublicWeb-code",
+  "type": "git",
+  "url": "https://vstsdemodata.visualstudio.com/smh360_scrum/smh360_scrum%20Team/_git/PublicWeb",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

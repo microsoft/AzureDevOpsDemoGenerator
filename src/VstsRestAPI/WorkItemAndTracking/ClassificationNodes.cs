@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
+using VstsRestAPI.Viewmodel.Sprint;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
@@ -25,7 +23,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=1.0", projectName)).Result;
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, projectName)).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     if (response.IsSuccessStatusCode)
@@ -57,12 +55,10 @@ namespace VstsRestAPI.WorkItemAndTracking
 
             using (var client = GetHttpClient())
             {
-                // serialize the fields array into a json string  
-                //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations?api-version=1.0", projectName)) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/_apis/wit/classificationNodes/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -101,7 +97,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=1.0", projectName, targetIteration)) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=" + _configuration.VersionNumber, projectName, targetIteration)) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -122,37 +118,37 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <summary>
         /// Update Iteration Dates- calculating from previous 22 days
         /// </summary>
-        /// <param name="ProjectName"></param>
+        /// <param name="projectName"></param>
         /// <param name="templateType"></param>
         /// <returns></returns>
-        public bool UpdateIterationDates(string ProjectName, string templateType)
+        public bool UpdateIterationDates(string projectName, string templateType)
         {
-            string project = ProjectName;
-            DateTime StartDate = DateTime.Today.AddDays(-22);
-            DateTime EndDate = DateTime.Today.AddDays(-1);
+            string project = projectName;
+            DateTime startDate = DateTime.Today.AddDays(-22);
+            DateTime endDate = DateTime.Today.AddDays(-1);
 
-            Dictionary<string, string[]> sprint_dic = new Dictionary<string, string[]>();
+            Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
 
             if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
             {
                 for (int i = 1; i <= 6; i++)
                 {
-                    sprint_dic.Add("Sprint " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
+                    sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                 }
             }
             else
             {
                 for (int i = 1; i <= 3; i++)
                 {
-                    sprint_dic.Add("Iteration " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
+                    sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                 }
             }
 
-            foreach (var key in sprint_dic.Keys)
+            foreach (var key in sprint_dictionary.Keys)
             {
-                UpdateIterationDates(project, key, StartDate, EndDate);
-                StartDate = EndDate.AddDays(1);
-                EndDate = StartDate.AddDays(21);
+                UpdateIterationDates(project, key, startDate, endDate);
+                startDate = endDate.AddDays(1);
+                endDate = startDate.AddDays(21);
             }
             return true;
         }
@@ -215,18 +211,18 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// Rename Iteration
         /// </summary>
         /// <param name="projectName"></param>
-        /// <param name="IterationToUpdate"></param>
+        /// <param name="iterationToUpdate"></param>
         /// <returns></returns>
-        public bool RenameIteration(string projectName, Dictionary<string, string> IterationToUpdate)
+        public bool RenameIteration(string projectName, Dictionary<string, string> iterationToUpdate)
         {
-            bool isSuccesfull = false;
+            bool isSuccessful = false;
             try
             {
-                foreach (var key in IterationToUpdate.Keys)
+                foreach (var key in iterationToUpdate.Keys)
                 {
                     CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
                     {
-                        name = IterationToUpdate[key]
+                        name = iterationToUpdate[key]
                     };
 
                     using (var client = GetHttpClient())
@@ -241,7 +237,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                         if (response.IsSuccessStatusCode)
                         {
-                            isSuccesfull = true;
+                            isSuccessful = true;
                         }
                     }
                 }
@@ -250,7 +246,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 DateTime EndDate = DateTime.Today.AddDays(-1);
 
                 Dictionary<string, string[]> sprint_dic = new Dictionary<string, string[]>();
-                for (int i = 1; i <= IterationToUpdate.Count; i++)
+                for (int i = 1; i <= iterationToUpdate.Count; i++)
                 {
                     sprint_dic.Add("Sprint " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
                 }
@@ -266,8 +262,24 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
 
             }
-            return isSuccesfull;
+            return isSuccessful;
 
+        }
+
+        public SprintResponse.Sprints GetSprints(string project)
+        {
+            SprintResponse.Sprints sprints = new SprintResponse.Sprints();
+            using (var client =  GetHttpClient())
+            {
+                HttpResponseMessage response = client.GetAsync(project + "/" + project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(result);
+                    return sprints;
+                }
+            }
+            return sprints;
         }
     }
 }

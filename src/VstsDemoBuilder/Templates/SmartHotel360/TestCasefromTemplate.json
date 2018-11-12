@@ -1,0 +1,863 @@
+{
+  "count": 23,
+  "value": [
+    {
+      "id": 1744,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Ready",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-07-24T10:31:16.637Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-25T06:31:11.183Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that someone new to the app can log in with Facebook id",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the app and tap on &amp;quot;Login with Facebook&amp;quot; button&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Tap OK to accept the Read permissions&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click OK again to accept write permissions if applicable&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1744"
+    },
+    {
+      "id": 1748,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:31:16.637Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-24T10:31:16.637Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify whether the application has been launched successfully or not.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Open the browser </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch the application </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log the result </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Close the application </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Close the browser </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1748"
+    },
+    {
+      "id": 1752,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:35:20.613Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-24T10:35:20.613Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that a notification is auto-closed after X seconds",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"3\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click the notification icon&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\">The notification should appear on the screen&amp;nbsp;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Wait for X seconds with the notification window&amp;nbsp;open</parameterizedString><parameterizedString isformatted=\"true\">Once the X seconds are passed, the notification window should close.&amp;nbsp;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1752"
+    },
+    {
+      "id": 1751,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:35:20.613Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-24T10:35:20.613Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that trying to display a notification causes a dialog to appear",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"2\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&amp;nbsp;Click the notification icon</parameterizedString><parameterizedString isformatted=\"true\">A dialog box should appear showing the notification content&amp;nbsp;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1751"
+    },
+    {
+      "id": 1750,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:35:20.613Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-24T10:35:20.613Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Check that each screen is appropriately displayed in each display mode (landscape, portrait).",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch the application </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Change the display mode to landscape&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log the result&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Change the display mode to portrait&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log the result&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Close the application&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1371",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1750"
+    },
+    {
+      "id": 1749,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:35:20.613Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-24T10:35:20.613Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that the application’s display is adapted to the screen size and all buttons and menus are easily clickable",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch the application&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check the screen size adaption </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check whether all buttons are working&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log the results&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Close the application&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1749"
+    },
+    {
+      "id": 1746,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:31:16.637Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-25T10:37:34.893Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that a changed Facebook password will ask for re-login in the application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Open the Browser&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Open Facebook in the browser &lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Enter the login credentials &lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Login to the SmartHotel application through Facebook&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Come back to Facebook and change the login password &lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;SmartHotel application should detect the Password change and ask for credentials&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Logout from Facebook &lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"9\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Close the browser &lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1746"
+    },
+    {
+      "id": 1770,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-16T10:49:15.457Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-16T10:49:15.457Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that user can add reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Click the &lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;reservation button displayed in the main menu.&lt;/SPAN&gt;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;&amp;nbsp;&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal;background-color: rgb(255, 255, 255)\"&gt;Add data in the fields of the form.&amp;nbsp;&amp;nbsp;&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should allow user to enter data in the form.&lt;/SPAN&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Check if the mandatory fields are empty.&amp;nbsp;&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should display error message.&lt;/SPAN&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;FONT color=\"#333333\" face=\"Verdana, Geneva, sans-serif\"&gt;&lt;SPAN style=\"font-size: 13.3333px;white-space: normal;background-color: rgb(255, 255, 255)\"&gt;Click on Clear button to check if all fields are cleared.&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System clear all fields of the form.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Click on Cancel button to cancel the form.&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should cancel the form.&lt;/SPAN&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;After filling the form, click on Save button to save the form.&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should save the form.&lt;/SPAN&gt;&amp;nbsp;&lt;/P&gt;</parameterizedString><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1770"
+    },
+    {
+      "id": 1771,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-16T11:08:55.15Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-16T11:08:55.15Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that system should calculate & display the departure date.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Enter the arrival date in correct format.</parameterizedString><parameterizedString isformatted=\"true\">\t\tSystem should allow user to enter correct date only.    </parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Enter the number of nights to stay in terms of integer.</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should allow only integer value.&amp;nbsp;&amp;nbsp;&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Calculated departure date is displayed in the departure date field. </parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should calculate departure date and display in the correct field.&lt;/SPAN&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1771"
+    },
+    {
+      "id": 1772,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-16T11:25:55.49Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-16T11:25:55.49Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that user can select a reservation from existing reservation list.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Reservation list is displayed to the user.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">Reservation list is displayed to the user.\t</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">User selects his reservation and click the 'UPDATE' button to invoke update reservation interface.&amp;nbsp;\tUpon invoking the update reservation interface, reservation information is displayed to the user.</parameterizedString><parameterizedString isformatted=\"true\">Upon invoking the update reservation interface, reservation information is displayed to the user.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;User clears the update reservation interface.&lt;/SPAN&gt;&lt;BR/&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;User can clear the update reservation interface.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;User cancels the form.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should cancel form.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Upon clicking update button, information is updated.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should update the form.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"7\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">User does not fill the mandatory fields in the form,</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should check and if empty generate error message.&lt;/SPAN&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1772"
+    },
+    {
+      "id": 1782,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-17T12:22:33.997Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-17T12:22:33.997Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that system allow user to update the fields in the reservation form.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Check-in with guest credentials</parameterizedString><parameterizedString isformatted=\"true\">System should allow check-in with valid credentials.</parameterizedString><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Select a reservation from existing reservation list.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;BR/&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;User must fill the mandatory fields.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should check mandatory fields and display error if found empty.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;User can clear or cancel form.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should clear &amp;amp; cancel form.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;While clicking on the update button, system updates the reservation details.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should update reservation information.&lt;/SPAN&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1368",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1782"
+    },
+    {
+      "id": 1783,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-17T12:31:23.79Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-17T12:31:23.79Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": " Verify that System should allow user to checkout late with a later time value.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Login to the application.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Choose a later time from the time drop down for checkout.</parameterizedString><parameterizedString isformatted=\"true\">System should allow the user to choose the time.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on \"Checkout\" Button to invoke check-out interface.</parameterizedString><parameterizedString isformatted=\"true\">System should allow user to invoke check out interface by clicking 'Checkout' button.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1369",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1783"
+    },
+    {
+      "id": 1784,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-17T12:39:13.713Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-17T12:39:13.713Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that the reservation gets cancelled after click on Cancel order number link",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"8\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Launch the Car reservation link from the hotel portal.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;System should launch the car reservation page&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&amp;nbsp;Login to the application using valid username and password.&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Click the \"Car Reservations\" link.&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Choose an order number.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Click on Cancel  &amp;lt;Order&amp;gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Click Yes on confirmation pop-up window&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Verify that the reservation is cancelled and no longer shows in the Booked Itinerary page.&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1370",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1784"
+    },
+    {
+      "id": 1785,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-17T13:06:26.837Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-17T13:06:26.837Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that user can book a reservation for conference rooms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Login to the application</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Click on the \"Reserve a conference room\" button in the main menu.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should allow user to click the button.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;User will enter data in the fields of the form.&amp;nbsp; &amp;nbsp;&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should allow user to enter data in the form.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Check if the mandatory fields are empty&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should display error message.&lt;/SPAN&gt;</parameterizedString><description/></step><step id=\"6\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Upon clicking save button, user can save reservation.&lt;/SPAN&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;SPAN style=\"color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;System should save the form.&lt;/SPAN&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1373",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1785"
+    },
+    {
+      "id": 1792,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-20T06:13:18.41Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T06:13:18.41Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that user is not allowed to save invalid credit card details",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Launch the application and login into the application as a customer.</parameterizedString><parameterizedString isformatted=\"true\">Customer should be able to login into the application with his credentials</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on the Profile and select Saved Cards</parameterizedString><parameterizedString isformatted=\"true\">Customer should get navigated to Saved cards page.</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on ADD button to add new card details and enter invalid card details, Click on Save button</parameterizedString><parameterizedString isformatted=\"true\">Customer should not be allowed to save the invalid card details</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1375",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1792"
+    },
+    {
+      "id": 1794,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-20T06:21:35.687Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T06:48:18.967Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that a notification is sent out to the user when there are changes to the reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"7\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Launch the application and login into the application as a customer&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;Customer  should be able to login into the application as an Customer.&amp;nbsp;&lt;/P&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;Search for the reservation by entering the id on the search bar&amp;nbsp;&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;Reservation details based on the search results should be displayed.&amp;nbsp;&lt;/P&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;Select the reservation and click the date control to change the date, click on \"Confirm\" button.&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;ID should be successfully re-generated.&amp;nbsp;&lt;/P&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;Click \"Save\" button&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;&amp;nbsp;a. Updated reservation should be saved&lt;/P&gt;b. An email and an SMS notification on the reservation change should be sent out to the customer</parameterizedString><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;&amp;nbsp;&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;&amp;nbsp;&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1368",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1794"
+    },
+    {
+      "id": 1801,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-20T07:07:17.9Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T07:07:17.9Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify Order number is generated in booking confirmation page",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"14\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch hotel reservation application using URL as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Login to the application using username and password as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select location as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select hotel as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select room type as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select no-of-rooms as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter check-out-date as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"9\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select No-of-adults as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"10\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select No-of-children as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"11\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on Search button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"12\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select the hotel and click on continue button</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"13\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that total-price is being calculated as (price-pernight*no-ofrooms*no-of-days</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"14\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on \"Reserve\" button.</parameterizedString><parameterizedString isformatted=\"true\">ORDER no should be generated</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1371",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1801"
+    },
+    {
+      "id": 1803,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 3",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-20T07:11:57.097Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T07:11:57.097Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "To check whether the booked conference room reflects the correct information in line with the booking.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"10\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch hotel reservation application using URL as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Login to the application using username and password as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click the \"Conference Rooms\" link from the main menu.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select Location as in the test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select the From Date and To Date data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select the number of attendees as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Fill the form and click on Book now button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"9\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on My Bookings button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"10\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Verify that the details are reflected correctly as per the booking.</parameterizedString><parameterizedString isformatted=\"true\">Booking should reflect the correct information in\nline with the booking.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1373",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1803"
+    },
+    {
+      "id": 1773,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 1",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-16T11:27:55.163Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T11:02:58.02Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that system displays a confirmation message upon updating reservation.  ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;Launch the application with the provided URL&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Login to the application with valid username and password.&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;P&gt;&lt;SPAN style=\"background-color: rgb(239, 246, 252)\"&gt;Click&lt;/SPAN&gt;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt; on the update button to update reservation.&lt;/SPAN&gt;&amp;nbsp;&lt;/P&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;&lt;SPAN style=\"background-color: rgb(255, 255, 255);color: rgb(51, 51, 51);font-family: Verdana, Geneva, sans-serif;font-size: 13.3333px;white-space: normal\"&gt;Successfully updating reservation system&amp;nbsp; should display a confirmation message.&lt;/SPAN&gt;&amp;nbsp;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&amp;nbsp;Click on the \"Save\" button to close the page.&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;&amp;nbsp;System should close the page.&lt;/P&gt;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1773"
+    },
+    {
+      "id": 1799,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 4",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-20T07:02:39.263Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "To verify whether the check-out date field accepts a later date than check-in date.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch hotel reservation application using URL</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Login to the application using username and\npassword as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select location as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select hotel as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select room type as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select no-of-rooms as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter check-in-date later than the checkout-\ndate field as in test data.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Verify that system gives an error saying ‘check-in-date should not be later than check-out-date’.</parameterizedString><parameterizedString isformatted=\"true\">System should report an error message.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1369",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1799"
+    },
+    {
+      "id": 1791,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-08-20T06:13:18.41Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that user can save his credit card detail",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\"> Launch the application and login into the application as a customer</parameterizedString><parameterizedString isformatted=\"true\">User should be able to login into the application as an Customer.</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on the Profile and select Saved Cards</parameterizedString><parameterizedString isformatted=\"true\">User should be navigated to Saved cards page.</parameterizedString><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on ADD button to add new card details</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Enter the Credit Card number, Expiry date, CVV number and Card holders name and click on Save button</parameterizedString><parameterizedString isformatted=\"true\">Customers card details should be saved successfully.</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1375",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1791"
+    },
+    {
+      "id": 1747,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-07-24T10:31:16.637Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify that someone logs into the app when the Facebook app is not installed, and iOS Facebook integration is not enabled",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"9\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Open the browser </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Launch the SmartHotel application  </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Login with the credentials </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check whether Facebook is installed  </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check whether integration of IOS and Facebook is enabled </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log the results </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Close the application </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"9\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Close the browser </parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1747"
+    },
+    {
+      "id": 1753,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "smh360_scrum",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Closed",
+        "System.Reason": "Deferred",
+        "System.CreatedDate": "2018-07-24T10:35:20.613Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-07-25T06:31:46.957Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Verify notification can be dismissed by clicking the close button",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"3\"><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click the Notification icon&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\">Notification window should be displayed&amp;nbsp;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">In the Notification window, click the &amp;quot;Close&amp;quot; button.&amp;nbsp;</parameterizedString><parameterizedString isformatted=\"true\">This should close the notification window.&amp;nbsp;</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1753"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,12 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using VstsRestAPI.Viewmodel;
 using VstsRestAPI.Viewmodel.Build;
 
 
@@ -21,9 +15,9 @@ namespace VstsRestAPI.Build
         /// </summary>
         /// <param name="json"></param>
         /// <param name="project"></param>
-        /// <param name="SelectedTemplate"></param>
+        /// <param name="selectedTemplate"></param>
         /// <returns></returns>
-        public string[] CreateBuildDefinition(string json, string project, string SelectedTemplate)
+        public string[] CreateBuildDefinition(string json, string project, string selectedTemplate)
         {
             BuildGetListofBuildDefinitionsResponse.Definitions viewModel = new BuildGetListofBuildDefinitionsResponse.Definitions();
             using (var client = GetHttpClient())
@@ -31,13 +25,13 @@ namespace VstsRestAPI.Build
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
                 string uri = "";
-                if (SelectedTemplate == "SmartHotel360")
+                if (selectedTemplate == "SmartHotel360V1" || selectedTemplate == "SmartHotel360" || selectedTemplate == "LaunchDarkly")
                 {
-                    uri = project + "/_apis/build/definitions?api-version=4.1-preview";
+                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
                 }
                 else
                 {
-                    uri = project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
+                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=2.2";
                 }
                 var request = new HttpRequestMessage(method, uri) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;

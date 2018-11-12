@@ -1,5 +1,0 @@
-﻿{
-  "type": "Agile",
-  "users": [ "josau@microsoft.com", "dahat@microsoft.com", "erehrlic@microsoft.com" ],
-  "queues": [ "Xamarin-CI", "Xamarin-XTC" ]
-}

@@ -1,0 +1,182 @@
+{
+  "count": 8,
+  "value": [
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "The pull request is mergable and the target commit would be d029ed3d5a1503bd73623228db288dfc20034c2c.",
+          "commentType": "system"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": null
+      },
+      "status": null,
+      "pullRequestThreadContext": null,
+      "threadContext": null
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "I think the best is to keep this just internal to the class so'll leave it this way, what do you think Mark?",
+          "commentType": "text"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": null,
+          "value": 0
+        }
+      },
+      "status": "active",
+      "pullRequestThreadContext": {
+        "iterationContext": {
+          "firstComparingIteration": 1,
+          "secondComparingIteration": 1
+        },
+        "changeTrackingId": 1
+      },
+      "threadContext": {
+        "filePath": "/SmartHotel360.PublicWeb/Controllers/SearchController.cs",
+        "rightFileStart": {
+          "line": 11,
+          "offset": 1
+        },
+        "rightFileEnd": {
+          "line": 11,
+          "offset": 57
+        }
+      }
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "Sachin Raj added Paris Morgan as a reviewer",
+          "commentType": "system"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": null
+      },
+      "status": null,
+      "pullRequestThreadContext": null,
+      "threadContext": null
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "Sachin Raj added Preeti Rana👻 as a reviewer",
+          "commentType": "system"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": null
+      },
+      "status": null,
+      "pullRequestThreadContext": null,
+      "threadContext": null
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": null,
+          "commentType": "text"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": null,
+          "value": 0
+        }
+      },
+      "status": "active",
+      "pullRequestThreadContext": {
+        "iterationContext": {
+          "firstComparingIteration": 1,
+          "secondComparingIteration": 1
+        },
+        "changeTrackingId": 1
+      },
+      "threadContext": {
+        "filePath": "/SmartHotel360.PublicWeb/Controllers/SearchController.cs",
+        "rightFileStart": {
+          "line": 22,
+          "offset": 1
+        },
+        "rightFileEnd": {
+          "line": 22,
+          "offset": 37
+        }
+      }
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "I think the best I can do is to have the entire Controls.TextBox in black in this case, so actually I think I'll leave it this way, what do you think Sai?",
+          "commentType": "text"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": null,
+          "value": 0
+        }
+      },
+      "status": "active",
+      "pullRequestThreadContext": {
+        "iterationContext": {
+          "firstComparingIteration": 1,
+          "secondComparingIteration": 1
+        },
+        "changeTrackingId": 2
+      },
+      "threadContext": {
+        "filePath": "/SmartHotel360.PublicWeb/Models/Settings/Resources.cs",
+        "rightFileStart": {
+          "line": 5,
+          "offset": 1
+        },
+        "rightFileEnd": {
+          "line": 5,
+          "offset": 47
+        }
+      }
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "Sachin Raj joined as a reviewer",
+          "commentType": "system"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": null
+      },
+      "status": null,
+      "pullRequestThreadContext": null,
+      "threadContext": null
+    },
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "Sachin Raj voted 10",
+          "commentType": "system"
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": null
+      },
+      "status": null,
+      "pullRequestThreadContext": null,
+      "threadContext": null
+    }
+  ]
+}

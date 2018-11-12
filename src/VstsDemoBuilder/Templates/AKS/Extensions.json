@@ -6,6 +6,15 @@
       "PublisherId": "tsuyoshiushio",
       "ExtensionId": "k8s-endpoint",
       "License": ""
+    },
+    {
+      "name": "Replace Tokens",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'><b>Replace Tokens</b></a>",
+      "PublisherId": "qetza",
+      "ExtensionId": "replacetokens",
+      "publisher": "Guillaume Rouchon",
+      "License": "<a href='https://marketplace.visualstudio.com/items/qetza.replacetokens/license' target='_blank'>License Terms</a>"
+
     }
   ]
 }

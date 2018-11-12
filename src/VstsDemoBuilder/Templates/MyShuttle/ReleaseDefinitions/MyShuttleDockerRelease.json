@@ -1,0 +1,362 @@
+{
+  "source": "userInterface",
+  "description": null,
+  "isDeleted": false,
+  "variables": {
+    "DBPASSWORD": {
+      "value": null,
+      "isSecret": true
+    },
+    "DBUSER": {
+      "value": "dbadmin@myshuttle-db"
+    }
+  },
+  "variableGroups": [
+
+  ],
+  "environments": [
+    {
+      "name": "Azure-Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+
+      },
+      "variableGroups": [
+
+      ],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 1
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "beforeGates"
+        }
+      },
+      "deployStep": {
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "afterSuccessfulGates"
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+
+              ]
+            },
+            "queueId": "$Hosted VS2017$",
+            "demands": [
+
+            ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {
+
+            }
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "environment": {
+
+              },
+              "taskId": "bd1bed02-f04e-11e7-8c3f-9a214cf093ae",
+              "version": "1.*",
+              "name": "Execute Azure MySQL : SqlTaskFile",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "ServerName": "myshuttle-db.mysql.database.azure.com",
+                "DatabaseName": "alm",
+                "SqlUsername": "$(DBUSER)",
+                "SqlPassword": "$(DBPASSWORD)",
+                "TaskNameSelector": "SqlTaskFile",
+                "SqlFile": "$(System.DefaultWorkingDirectory)/**/drop/CreateMYSQLDB.sql",
+                "SqlInline": "",
+                "SqlAdditionalArguments": "",
+                "IpDetectionMethod": "AutoDetect",
+                "StartIpAddress": "",
+                "EndIpAddress": "",
+                "DeleteFirewallRule": "true"
+              }
+            },
+            {
+              "environment": {
+
+              },
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "refName": "AzureRmWebAppDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {
+
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "WebAppKind": "applinux",
+                "WebAppName": "$(Parameters.WebAppName)",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "ImageSource": "Registry",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "web",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/MyShuttle Build/drop/target/myshuttledev.war",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "ConfigurationSettings": "",
+                "TakeAppOfflineFlag": "true",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [
+
+      ],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [
+
+      ],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "aliases": [
+
+            ],
+            "options": {
+
+            },
+            "properties": {
+
+            },
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+
+            },
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ],
+        "dataSourceBindings": [
+          {
+            "dataSourceName": "AzureRMWebAppNamesByType",
+            "parameters": {
+              "WebAppKind": "$(WebAppKind)"
+            },
+            "endpointId": "$(ConnectedServiceName)",
+            "target": "WebAppName"
+          }
+        ]
+      },
+      "properties": {
+
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": [
+
+        ]
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": [
+
+        ]
+      },
+      "environmentTriggers": [
+
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$MyShuttleDockerBuild-id$",
+      "type": "Build",
+      "alias": "MyShuttleDockerBuild",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "selectDuringReleaseCreationType",
+          "name": "Specify at the time of release creation"
+        },
+        "definition": {
+          "id": "$MyShuttleDockerBuild-id$",
+          "name": "MyShuttleDockerBuild"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [
+
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [
+
+  ],
+  "pipelineProcess": {
+    "type": "designer"
+  },
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "ReleaseNew"
+    }
+  },
+  "name": "MyShuttleDockerRelease",
+  "path": "\\"
+}
