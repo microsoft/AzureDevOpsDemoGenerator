@@ -802,8 +802,14 @@ $(document).ready(function () {
                             else {
                                 for (var i = 0; i < MatchedGroup.Template.length; i++) {
                                     if (i === 0) {
+                                        var templateImg = MatchedGroup.Template[i].image;
+                                        if (templateImg == "" || templateImg == null) {
+                                            templateImg = "/Images/TemplateImages/CodeFile.png"
+                                        }
                                         grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
-                                        grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
+                                        grp += '<div class="template-header">'
+                                        grp += '<img class="templateImage" src="' + templateImg + '"/>'
+                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >'
                                         if (MatchedGroup.Template[i].tags != null) {
                                             grp += '<p></p>';
                                             grp += '<p>';
@@ -816,8 +822,14 @@ $(document).ready(function () {
                                         grp += '</div>';
                                     }
                                     else {
+                                        var templateImg = MatchedGroup.Template[i].image;
+                                        if (templateImg == "" || templateImg == null) {
+                                            templateImg = "/Images/TemplateImages/CodeFile.png"
+                                        }
                                         grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
-                                        grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
+                                        grp += '<div class="template-header">'
+                                        grp += '<img class="templateImage" src="' + templateImg + '"/>'
+                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >'
                                         if (MatchedGroup.Template[i].tags != null) {
                                             grp += '<p></p>';
                                             grp += '<p>';
@@ -912,8 +924,14 @@ function createTemplates() {
                         var MatchedGroup = groups.GroupwiseTemplates[g];
                         for (var i = 0; i < MatchedGroup.Template.length; i++) {
                             if (i === 0) {
+                                var templateImg = MatchedGroup.Template[i].image;
+                                if (templateImg == "" || templateImg == null) {
+                                    templateImg = "/Images/TemplateImages/CodeFile.png"
+                                }
                                 grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '">';
-                                grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
+                                grp += '<div class="template-header">'
+                                grp += '<img class="templateImage" src="' + templateImg + '"/>'
+                                grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >'
                                 if (MatchedGroup.Template[i].tags != null) {
                                     grp += '<p></p>';
                                     grp += '<p>';
@@ -931,8 +949,14 @@ function createTemplates() {
                                 }
                             }
                             else {
+                                var templateImg = MatchedGroup.Template[i].image;
+                                if (templateImg == "" || templateImg == null) {
+                                    templateImg = "/Images/TemplateImages/CodeFile.png"
+                                }
                                 grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '">';
-                                grp += '<div class="template-header"><i class="fas fa-file-code fa-4x"></i><strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div>'
+                                grp += '<div class="template-header">'
+                                grp += '<img class="templateImage" src="' + templateImg + '"/>'
+                                grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >'
                                 if (MatchedGroup.Template[i].tags != null) {
                                     grp += '<p></p>';
                                     grp += '<p>';
