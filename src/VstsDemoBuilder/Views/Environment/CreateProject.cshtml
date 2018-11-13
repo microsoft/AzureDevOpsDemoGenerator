@@ -15,7 +15,7 @@
     <title>Create Project</title>
     <style type="text/css">
         .templateImage {
-            width: 70px;
+            max-width: 70px;
         }
 
         .newFeature {
@@ -63,7 +63,10 @@
     @if (!string.IsNullOrEmpty(Model.selectedTemplateDescription))
     {
         <input type="hidden" value="@Model.selectedTemplateDescription" id="selectedTemplateDescription" />
-        <input type="hidden" class="ddlTemplates" />
+    }
+    @if (!string.IsNullOrEmpty(Model.selectedTemplateFolder))
+    {
+        <input type="hidden" value="@Model.selectedTemplateFolder" id="selectedTemplateFolder" />
     }
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
