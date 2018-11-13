@@ -148,14 +148,17 @@
         },
         {
           "Name": "devops-mobile",
+          "TemplateFolder": "devops-mobile",
           "Description": "A simple Xamarin app named Acquaint. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen. It runs on iOS 9+, Android 4.2+, and UWP (mobile and desktop)."
         },
         {
           "Name": "bikesharing 360",
+          "TemplateFolder": "bikesharing 360",
           "Description": "BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence."
         },
         {
           "Name": "bikesharing360",
+          "TemplateFolder": "bikesharing360",
           "Description": "BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence."
         }
       ]
