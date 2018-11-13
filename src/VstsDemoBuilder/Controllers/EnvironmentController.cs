@@ -185,7 +185,7 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 Project model = new Project();
-                
+
                 if (Session["visited"] != null)
                 {
                     if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
@@ -210,7 +210,7 @@ namespace VstsDemoBuilder.Controllers
                         model.Name = profile.displayName;
                         model.MemberID = profile.id;
                         model.accountsForDropdown = new List<string>();
-
+                        model.selectedTemplateFolder = "";
                         if (accountList.count > 0)
                         {
                             foreach (var account in accountList.value)
@@ -260,7 +260,7 @@ namespace VstsDemoBuilder.Controllers
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
                                             model.selectedTemplateDescription = template.Description;
-                                            model.selectedTemplateFolder = template.FolderName;
+                                            model.selectedTemplateFolder = template.TemplateFolder;
                                         }
                                     }
                                 }
@@ -2454,8 +2454,6 @@ namespace VstsDemoBuilder.Controllers
                     {
                         if (isDashboardDeleted)
                         {
-                            var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault();
-                            var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "SmartHotel360_Website-Deploy").FirstOrDefault();
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
                             VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
@@ -2476,7 +2474,7 @@ namespace VstsDemoBuilder.Controllers
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.id)
                                 .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
-                                .Replace("$PublicWebBuild$", PublicWebBuild.Id != null ? PublicWebBuild.Id : string.Empty)
+                                .Replace("$PublicWebBuild$", model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault().Id : string.Empty)
                                 .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : string.Empty).Replace("$AllItems$", allItems.id != null ? allItems.id : string.Empty)
                                 .Replace("$BacklogBoardWI$", backlogBoardWI.id != null ? backlogBoardWI.id : string.Empty)
                                 .Replace("$StateofTestCases$", stateofTestCase.id != null ? stateofTestCase.id : string.Empty)
