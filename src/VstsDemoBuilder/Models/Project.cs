@@ -42,8 +42,8 @@ namespace VstsDemoBuilder.Models
 
         public string accountName { get; set; }
         public bool hasAccount { get; set; }
-
         public string selectedTemplateDescription { get; set; }
+        public string selectedTemplateFolder { get; set; }
     }
     //Template Grouping
     public class Template
