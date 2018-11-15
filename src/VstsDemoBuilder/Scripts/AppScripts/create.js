@@ -606,9 +606,8 @@ function getStatus() {
                                 async: false,
                                 success: function (data) {
                                     var accountName = data;
-                                    var link = "https://dev.azure.com/" + AccountNameForLink + "/" + projectNameForLink;
 
-                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Proceed to organization</button></a>";
+                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
                                     var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Did you find the tool useful? We would appreciate your feedback &nbsp;";
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
