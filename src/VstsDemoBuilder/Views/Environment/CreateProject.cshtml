@@ -68,6 +68,7 @@
     {
         <input type="hidden" value="@Model.selectedTemplateFolder" id="selectedTemplateFolder" />
     }
+    <input type="hidden" id="hdnMessage" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -224,6 +225,9 @@
                 </div>
                 <!-- PROJECT PARAMETERS -->
                 <!--EXTENSIONS -->
+                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border col-lg-11 d-block mt-4 p-3">
+
+                </div>
                 <div class="mt-4 border p-3 d-none col-lg-11" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">
