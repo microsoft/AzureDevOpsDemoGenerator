@@ -130,6 +130,16 @@ $(document).ready(function (event) {
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
+
+        var infoMsg = $(".description.descSelected").data('message');
+        if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
+            $('#InfoMessage').html('');
+            $('#InfoMessage').removeClass('d-block').addClass('d-none');
+        }
+        else {
+            $('#InfoMessage').html(infoMsg);
+            $('#InfoMessage').removeClass('d-none').addClass('d-block');
+        }
         if (selectedTemplateDescription !== "") {
             $('#descContainer').html(selectedTemplateDescription);
         }
@@ -605,20 +615,15 @@ function getStatus() {
                                 type: "GET",
                                 async: false,
                                 success: function (data) {
-                                    var accountName = data;
-
+                                    var accountName = $('#ddlAcccountName option:selected').val();
+                                    var projectNameForLink = $("#txtProjectName").val();
+                                    var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
                                     var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
                                     var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Did you find the tool useful? We would appreciate your feedback &nbsp;";
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
                                     social += twitter;
-
-                                    if (selectedTemplate === "SmartHotel360") {
-                                        $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b><br />' + proceedOrg + social).appendTo("#accountLink");
-                                    }
-                                    else {
-                                        $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a> <br />' + proceedOrg + social).appendTo("#accountLink");
-                                    }
+                                    $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + social).appendTo("#accountLink");
                                     $('#dvProgress').removeClass("d-block").addClass("d-none");
                                     $('#textMuted').removeClass("d-block").addClass("d-none");
                                     currentPercentage = 0;
@@ -674,14 +679,6 @@ function getStatus() {
                     });
                     messageList = [];
                 }
-                //if ('@Request.QueryString["queryTemplate"]' == '') {
-
-                //    $('#ddlGroups').removeAttr("disabled");
-                //    $("#ddlAcccountName").removeAttr("disabled");
-                //    $("#txtProjectName").removeAttr("disabled");
-
-                //}
-
             }
         },
         error: function (xhr) {
@@ -807,7 +804,7 @@ $(document).ready(function () {
                                             }
                                             grp += '</p>';
                                         }
-                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                         grp += '</div>';
                                     }
                                     else {
@@ -827,7 +824,7 @@ $(document).ready(function () {
                                             }
                                             grp += '</p>';
                                         }
-                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                         grp += '</div>';
                                     }
                                 }
@@ -906,7 +903,7 @@ function createTemplates() {
         success: function (groups) {
             var grp = "";
             if (groups.GroupwiseTemplates.length > 0) {
-                grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">'
+                grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
                 grp += '<div class="templates d-flex align-items-center flex-wrap">';
                 for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
                     if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
@@ -917,7 +914,7 @@ function createTemplates() {
                                 if (templateImg === "" || templateImg === null) {
                                     templateImg = "/Images/TemplateImages/CodeFile.png";
                                 }
-                                grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                 grp += '<div class="template-header">';
                                 grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                 grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -929,18 +926,20 @@ function createTemplates() {
                                     }
                                     grp += '</p>';
                                 }
-                                grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
                                 if (MatchedGroup.Template[i].Name === "SmartHotel360") {
                                     var templateTxt = $('#selectedTemplateDescription').val();
                                     if (templateTxt === "" || typeof templateTxt === "undefined")
                                         $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                    $('#InfoMessage').html(MatchedGroup.Template[i].Message);
+                                    $('#hdnMessage').val(MatchedGroup.Template[i].Message);
                                 }
                             }
                             else {
                                 var templateImgs = MatchedGroup.Template[i].image;
                                 if (templateImgs === "" || templateImgs === null) {
-                                    templateImgs = "/Images/TemplateImages/CodeFile.png"
+                                    templateImgs = "/Images/TemplateImages/CodeFile.png";
                                 }
                                 grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                 grp += '<div class="template-header">';
@@ -950,16 +949,18 @@ function createTemplates() {
                                     grp += '<p></p>';
                                     grp += '<p>';
                                     for (var m = 0; m < MatchedGroup.Template[i].tags.length; m++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[m] + '</i>'
+                                        grp += '<i>' + MatchedGroup.Template[i].tags[m] + '</i>';
                                     }
                                     grp += '</p>';
                                 }
-                                grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
                                 if (MatchedGroup.Template[i].Name === "SmartHotel360") {
                                     var templateTxtx = $('#selectedTemplateDescription').val();
                                     if (templateTxtx === "" || typeof templateTxt === "undefined")
                                         $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                    $('#hdnMessage').html(MatchedGroup.Template[i].Message);
+                                    $('#hdnMessage').val(MatchedGroup.Template[i].Message);
                                 }
                             }
                         }
