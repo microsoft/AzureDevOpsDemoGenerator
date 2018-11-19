@@ -25,7 +25,6 @@ $(document).ready(function () {
                     templateIdExt = data[1];
 
                     if ((templateNameExt !== null || typeof templateNameExt !== "undefined" || templateNameExt !== "") && (templateIdExt !== "" || templateIdExt !== null || typeof templateIdExt !== "undefined")) {
-                        $("#templateselection").addClass('d-none');
                         $('#ddlTemplates').val(templateNameExt);
                         GetTemplates(templateNameExt);
                         $('#lblDefaultDescription').addClass('d-none');
@@ -80,6 +79,8 @@ var microsoft = "";
 var ThirdParty = "";
 var AccountNameForLink;
 var templateFolder = "";
+var publicTemplateMsg = "";
+var privateTemplateMsg = "";
 
 $(document).ready(function (event) {
     uniqueId = ID();
@@ -130,6 +131,15 @@ $(document).ready(function (event) {
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
+
+        //$.ajax({
+        //    url: "../Environment/GetTemplateMessage",
+        //    type: "POST",
+        //    data: { TemplateName: templateFolderSelected },
+        //    success: function (data) {
+        //        alert(data);
+        //    }
+        //});
 
         var infoMsg = $(".description.descSelected").data('message');
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -382,6 +392,8 @@ $(document).ready(function (event) {
     else {
         templateFolder = publicTemplate;
     }
+    privateTemplateMsg = $('#infoMessageTxt').val();
+
 });
 $('#btnSubmit').click(function () {
     statusCount = 0;
@@ -619,7 +631,7 @@ function getStatus() {
                                     var projectNameForLink = $("#txtProjectName").val();
                                     var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
                                     var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
-                                    var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Did you find the tool useful? We would appreciate your feedback &nbsp;";
+                                    var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Like out tool? Tweet your feedback &nbsp;";
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
                                     social += twitter;
@@ -932,7 +944,9 @@ function createTemplates() {
                                     var templateTxt = $('#selectedTemplateDescription').val();
                                     if (templateTxt === "" || typeof templateTxt === "undefined")
                                         $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                    $('#InfoMessage').html(MatchedGroup.Template[i].Message);
+                                    //$('#InfoMessage').html(MatchedGroup.Template[i].Message);
+                                    publicTemplateMsg = MatchedGroup.Template[i].Message;
+                                    AppendMessage();
                                     $('#hdnMessage').val(MatchedGroup.Template[i].Message);
                                 }
                             }
@@ -959,7 +973,9 @@ function createTemplates() {
                                     var templateTxtx = $('#selectedTemplateDescription').val();
                                     if (templateTxtx === "" || typeof templateTxt === "undefined")
                                         $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                    $('#hdnMessage').html(MatchedGroup.Template[i].Message);
+                                    //$('#hdnMessage').html(MatchedGroup.Template[i].Message);
+                                    publicTemplateMsg = MatchedGroup.Template[i].Message;
+                                    AppendMessage();
                                     $('#hdnMessage').val(MatchedGroup.Template[i].Message);
                                 }
                             }
@@ -1030,4 +1046,15 @@ function GetTemplates(selectedTemplate) {
 
 function openImportPopUp() {
     $("#privateTemplatepop").removeClass('d-none').addClass('d-block');
+}
+
+function AppendMessage() {
+    if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
+        $('#InfoMessage').html(privateTemplateMsg);
+        $('#InfoMessage').removeClass('d-none').addClass('d-block');
+    }
+    else {
+        $('#InfoMessage').html(publicTemplateMsg);
+        $('#InfoMessage').removeClass('d-none').addClass('d-block');
+    }
 }
