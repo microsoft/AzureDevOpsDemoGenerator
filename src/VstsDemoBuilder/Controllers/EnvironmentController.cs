@@ -986,7 +986,7 @@ namespace VstsDemoBuilder.Controllers
                 //Update card styles
                 UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
                 //Enable Epic Backlog
-                AddMessage(model.id, "Board-Column, Swimlanes, Styles are updated");
+                AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
             }
 
 
