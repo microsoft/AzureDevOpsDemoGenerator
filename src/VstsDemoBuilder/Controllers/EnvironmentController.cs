@@ -167,7 +167,6 @@ namespace VstsDemoBuilder.Controllers
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
             }
-            //}
             return Json(templates, JsonRequestBehavior.AllowGet);
         }
 
@@ -261,6 +260,7 @@ namespace VstsDemoBuilder.Controllers
                                             model.Templates.Add(template.Name);
                                             model.selectedTemplateDescription = template.Description;
                                             model.selectedTemplateFolder = template.TemplateFolder;
+                                            model.Message = template.Message;
                                         }
                                     }
                                 }
@@ -313,6 +313,9 @@ namespace VstsDemoBuilder.Controllers
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
                     AccessDetails = GetAccessToken(accessRequestBody);
+
+                    // add your access token here for local debugging
+                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiYzljZjNkN2ItZjY4MS00MjkzLWIwNzItYjk5OTE1MTg5ZjNiIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQyNjI1NjQyLCJleHAiOjE1NDI2MjkyNDJ9.S2skumAj_b3wePzRwwjA9_KUJHGmuNWlrHuLZu7BnWZoErEt2-q1A3BkjFy7HAx5DLNxIn8HslSZzkkeNAZaec-eR6x-zYx6L13XlUV3DUwkIystC_MTctC2mKiSSnpgj7PwbPaalcfs9Tm7PcYhstWtAe4jNp_40jYfU4MGvsakizEui8OwIAcWd-L2pWaEbcQZvGQyaUv_bsZ4wAQfMEv3K10MU0rp98GFoYPEP7XtZyngOTZ3kIzN834P6Qo_8cFRxs_19JN9Q32bj_vClhQnZcYcExV6QVbzZ4AT8Z81cQHPLyIP3-V8R-axJAFPYxOB5yoQ7a-PmSXkNZbvKQ";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -2811,6 +2814,11 @@ namespace VstsDemoBuilder.Controllers
             {
                 listSession.Add(Session["templateId"].ToString());
             }
+
+            if (Session["Message"] != null)
+            {
+                listSession.Add(Session["Message"].ToString());
+            }
             return Json(listSession, JsonRequestBehavior.AllowGet);
         }
 
@@ -2891,6 +2899,32 @@ namespace VstsDemoBuilder.Controllers
             {
 
             }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public string GetTemplateMessage(string TemplateName)
+        {
+            try
+            {
+                string groupDetails = "";
+                TemplateSelection.Templates templates = new TemplateSelection.Templates();
+                string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
+                if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
+                {
+                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
+                    templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
+                    foreach (var template in templates.GroupwiseTemplates.FirstOrDefault().Template)
+                    {
+                        if (template.TemplateFolder.ToLower() == TemplateName.ToLower())
+                        {
+                            return template.Message;
+                        }
+                    }
+                }
+            }
+            catch (Exception) { }
+            return string.Empty;
         }
 
         #endregion
