@@ -392,7 +392,8 @@ $(document).ready(function (event) {
     else {
         templateFolder = publicTemplate;
     }
-    privateTemplateMsg = $('#infoMessageTxt').val();
+
+    AppendMessage();
 
 });
 $('#btnSubmit').click(function () {
@@ -950,10 +951,6 @@ function createTemplates() {
                                     var templateTxt = $('#selectedTemplateDescription').val();
                                     if (templateTxt === "" || typeof templateTxt === "undefined")
                                         $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                    //$('#InfoMessage').html(MatchedGroup.Template[i].Message);
-                                    publicTemplateMsg = MatchedGroup.Template[i].Message;
-                                    AppendMessage();
-                                    $('#hdnMessage').val(MatchedGroup.Template[i].Message);
                                 }
                             }
                             else {
@@ -979,10 +976,6 @@ function createTemplates() {
                                     var templateTxtx = $('#selectedTemplateDescription').val();
                                     if (templateTxtx === "" || typeof templateTxt === "undefined")
                                         $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                    //$('#hdnMessage').html(MatchedGroup.Template[i].Message);
-                                    publicTemplateMsg = MatchedGroup.Template[i].Message;
-                                    AppendMessage();
-                                    $('#hdnMessage').val(MatchedGroup.Template[i].Message);
                                 }
                             }
                         }
@@ -1055,12 +1048,15 @@ function openImportPopUp() {
 }
 
 function AppendMessage() {
+
+    privateTemplateMsg = $('#infoMessageTxt').val();
+
     if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
         $('#InfoMessage').html(privateTemplateMsg);
         $('#InfoMessage').removeClass('d-none').addClass('d-block');
     }
     else {
-        $('#InfoMessage').html(publicTemplateMsg);
-        $('#InfoMessage').removeClass('d-none').addClass('d-block');
+        $('#InfoMessage').html('');
+        $('#InfoMessage').removeClass('d-block').addClass('d-none');
     }
 }
