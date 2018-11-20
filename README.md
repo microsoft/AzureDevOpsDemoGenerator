@@ -1,6 +1,6 @@
 # Azure DevOps Demo Generator
 
-[![Build Status](https://vstsprojectgenerator.visualstudio.com/VSTSDemoGenerator/_apis/build/status/Azure%20DevOps%20-GitHUb-prod)](https://vstsprojectgenerator.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=11)
+[![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
 
 ## About
 Azure DevOps Demo Generator helps you create projects on your Azure DevOps org  with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
