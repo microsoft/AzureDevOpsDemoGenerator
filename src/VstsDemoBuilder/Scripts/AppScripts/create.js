@@ -635,7 +635,13 @@ function getStatus() {
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
                                     social += twitter;
-                                    $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + social).appendTo("#accountLink");
+                                    if (selectedTemplate === "SmartHotel360") {
+                                        var sm360 = "<b>The CI pipeline for the SmartHotel360 Website refers to the code on <a href='https://github.com/Microsoft/SmartHotel360-PetCheckerFunction.git' target='_blank'>GitHub</a></b><br />";
+                                        $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + sm360 + proceedOrg + social).appendTo("#accountLink");
+
+                                    } else {
+                                        $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + social).appendTo("#accountLink");
+                                    }
                                     $('#dvProgress').removeClass("d-block").addClass("d-none");
                                     $('#textMuted').removeClass("d-block").addClass("d-none");
                                     currentPercentage = 0;
