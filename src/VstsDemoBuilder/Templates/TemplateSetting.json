@@ -27,8 +27,7 @@
           "TemplateFolder": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
           "tags": [ "Scrum", "aspnetcore", "azureappservice" ],
-          "image": "/Templates/TemplateImages/MyHealthClinic.png",
-          "Message": "This is My Health Clinic Template"
+          "image": "/Templates/TemplateImages/MyHealthClinic.png"
         },
         {
           "key": "77379",
