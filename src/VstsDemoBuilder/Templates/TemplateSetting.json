@@ -19,7 +19,7 @@
           "Description": "This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>",
           "tags": [ "Scrum", "aspnetcore", "azureappservice" ],
           "image": "/Templates/TemplateImages/SmartHotel.png",
-          "Message": "The CI Pipeline for the SmartHotel360 Website refers to the code on <a href='https://github.com/Microsoft/SmartHotel360-PetCheckerFunction.gi' target='_blank'>GitHub</a>"
+          "Message": "The CI pipeline for the SmartHotel360 Website refers to the code on <a href='https://github.com/Microsoft/SmartHotel360-PetCheckerFunction.gi' target='_blank'>GitHub</a>"
         },
         {
           "key": "77380",
