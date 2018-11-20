@@ -184,13 +184,18 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 Project model = new Project();
-
+                string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {
                     if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
                         model.TemplateId = Session["templateId"].ToString();
+                        TemplateSelected = model.TemplateName;
+                    }
+                    else
+                    {
+                        TemplateSelected = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
                     }
 
                     if (Session["PAT"] != null)
@@ -258,9 +263,30 @@ namespace VstsDemoBuilder.Controllers
                                         {
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description;
-                                            model.selectedTemplateFolder = template.TemplateFolder;
-                                            model.Message = template.Message;
+                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                            model.Message = template.Message == null ? string.Empty : template.Message;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            foreach (var grpTemplate in templates.GroupwiseTemplates)
+                            {
+                                foreach (var template in grpTemplate.Template)
+                                {
+                                    if (template.key != null && template.Name != null)
+                                    {
+                                        if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                        {
+                                            model.SelectedTemplate = template.Name;
+                                            model.Templates.Add(template.Name);
+                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                            model.Message = template.Message == null ? string.Empty : template.Message;
                                         }
                                     }
                                 }
