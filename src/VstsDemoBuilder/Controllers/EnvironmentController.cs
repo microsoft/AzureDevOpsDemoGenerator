@@ -183,6 +183,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                Project model = new Project();
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {
