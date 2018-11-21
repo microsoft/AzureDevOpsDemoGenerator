@@ -183,10 +183,11 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                Project model = new Project();
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {
+                    Project model = new Project();
+
                     if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
@@ -208,20 +209,20 @@ namespace VstsDemoBuilder.Controllers
 
                         //New Feature Enabling
                         model.accessToken = AccessDetails.access_token;
-                        Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
+                        Session["PAT"] = AccessDetails.access_token;
                         model.Email = profile.emailAddress.ToLower();
                         model.Name = profile.displayName;
                         model.MemberID = profile.id;
-                        model.accountsForDropdown = new List<string>();
-                        model.selectedTemplateFolder = "";
+                        List<string> accList = new List<string>();
                         if (accountList.count > 0)
                         {
                             foreach (var account in accountList.value)
                             {
-                                model.accountsForDropdown.Add(account.accountName);
+                                accList.Add(account.accountName);
                             }
-                            model.accountsForDropdown.Sort();
+                            accList.Sort();
+                            model.accountsForDropdown = accList;
                             model.hasAccount = true;
                         }
                         else
@@ -304,7 +305,7 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return View();
             }
@@ -341,7 +342,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiYzljZjNkN2ItZjY4MS00MjkzLWIwNzItYjk5OTE1MTg5ZjNiIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQyNjI1NjQyLCJleHAiOjE1NDI2MjkyNDJ9.S2skumAj_b3wePzRwwjA9_KUJHGmuNWlrHuLZu7BnWZoErEt2-q1A3BkjFy7HAx5DLNxIn8HslSZzkkeNAZaec-eR6x-zYx6L13XlUV3DUwkIystC_MTctC2mKiSSnpgj7PwbPaalcfs9Tm7PcYhstWtAe4jNp_40jYfU4MGvsakizEui8OwIAcWd-L2pWaEbcQZvGQyaUv_bsZ4wAQfMEv3K10MU0rp98GFoYPEP7XtZyngOTZ3kIzN834P6Qo_8cFRxs_19JN9Q32bj_vClhQnZcYcExV6QVbzZ4AT8Z81cQHPLyIP3-V8R-axJAFPYxOB5yoQ7a-PmSXkNZbvKQ";
+                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiNWRhOGZiMGItMmMzMS00YjBiLTg5NjUtNjU1MDA2MGJmYmQzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQyNzk2MDA3LCJleHAiOjE1NDI3OTk2MDd9.DmIL2WRyqGwK5mAf390g14lEpEk5678rzGAMtsyZXrKArhimgvWzLUrtWoJxIL3KwEKKeUK14q3AGwjdZ8K7SNsS5mYYEq9e5TxZo66s5hY9CQwYN7RZUAfu56ObnzPSaSnC96vtlSp77aICbCdr_L1OsyxcZ3t_wE0AYnKj1GGAo9IjXsWcUo3d44w2xnQ2KSIoXgAlp8eW3N_PjjiehZNIrulDCJuUbC6ndXhXwuhVjAR_VjV7AS251ZDe6YjFldzXBJIVS-aAuZ_cnAEU7EHUsALp1Jr5213lM7VZWpJwahdYpa3fZUdjDKe0mh4T7aj6uxJ6rymJwG1o7KqnKQ";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -734,10 +735,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Location.IPHostGenerator IpCon = new Location.IPHostGenerator();
-            string IP = IpCon.GetVisitorDetails();
-            string region = IpCon.GetLocation(IP);
-            model.Region = region;
             Session["PAT"] = model.accessToken;
             Session["AccountName"] = model.accountName;
             AddMessage(model.id, string.Empty);
