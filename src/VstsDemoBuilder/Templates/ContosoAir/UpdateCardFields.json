@@ -1,0 +1,74 @@
+{
+  "cards": {
+    "User Story": [
+      {
+        "fieldIdentifier": "System.Title",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "Microsoft.VSTS.Common.Priority",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.IterationPath",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.AreaPath",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.Id",
+        "displayType": "CORE",
+        "displayFormat": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.AssignedTo",
+        "displayFormat": "AvatarAndFullName",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "Microsoft.VSTS.Scheduling.StoryPoints",
+        "displayType": "CORE",
+        "displayFormat": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.Tags",
+        "displayType": "CORE",
+        "displayFormat": "",
+        "showEmptyFields": ""
+      }
+    ],
+    "Bug": [
+      {
+        "fieldIdentifier": "System.Title",
+        "displayFormat": "",
+        "displayType": "",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.AssignedTo",
+        "displayFormat": "AvatarAndFullName",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      },
+      {
+        "fieldIdentifier": "System.Tags",
+        "displayFormat": "",
+        "displayType": "CORE",
+        "showEmptyFields": ""
+      }
+    ]
+  }
+}

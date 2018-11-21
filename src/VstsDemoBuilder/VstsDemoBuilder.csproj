@@ -805,6 +805,25 @@
     <Content Include="Views\Environment\CreateProject.cshtml" />
     <Content Include="Templates\SmartHotel360\ReleaseDefinitions\SmartHotelWebsite Deploy.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitions\SmartHotelPetcheckerWeb.json" />
+    <Content Include="Templates\ContosoAir\BugfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\BuildDefinitions\ContosoAirBuild.json" />
+    <Content Include="Templates\ContosoAir\EnableEpic.json" />
+    <Content Include="Templates\ContosoAir\EpicfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\Extensions.json" />
+    <Content Include="Templates\ContosoAir\FeaturefromTemplate.json" />
+    <Content Include="Templates\ContosoAir\Iterations.json" />
+    <Content Include="Templates\ContosoAir\PBIfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\ProjectSettings.json" />
+    <Content Include="Templates\ContosoAir\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoAir\ReleaseDefinitions\ContosoAirRelease.json" />
+    <Content Include="Templates\ContosoAir\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\TeamArea.json" />
+    <Content Include="Templates\ContosoAir\Teams.json" />
+    <Content Include="Templates\ContosoAir\UpdateCardStyles.json" />
+    <Content Include="Templates\ContosoAir\UserStoriesfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\ServiceEndpoints\ContosoAir.json" />
+    <Content Include="Templates\ContosoAir\BoardColumns.json" />
+    <Content Include="Templates\ContosoAir\UpdateCardFields.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
