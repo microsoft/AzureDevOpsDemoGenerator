@@ -402,7 +402,7 @@ $('#btnSubmit').click(function () {
     $('#status-messages').hide();
     $("#finalLink").removeClass("d-block").addClass("d-none");
 
-    var projectName = $("#txtProjectName").val();
+    var projectName = $.trim($("#txtProjectName").val());
     var template = templateFolder;
     var accountName = $('#ddlAcccountName option:selected').val();
     var token = $('#hiddenAccessToken').val();
@@ -803,7 +803,7 @@ $(document).ready(function () {
                                     if (i === 0) {
                                         var templateImg = MatchedGroup.Template[i].image;
                                         if (templateImg === "" || templateImg === null) {
-                                            templateImg = "/Images/TemplateImages/CodeFile.png";
+                                            templateImg = "/Templates/TemplateImages/CodeFile.png";
                                         }
                                         grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                         grp += '<div class="template-header">';
@@ -823,7 +823,7 @@ $(document).ready(function () {
                                     else {
                                         var templateImgs = MatchedGroup.Template[i].image;
                                         if (templateImgs === "" || templateImgs === null) {
-                                            templateImgs = "/Images/TemplateImages/CodeFile.png";
+                                            templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                         }
                                         grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                         grp += '<div class="template-header">';
@@ -925,7 +925,7 @@ function createTemplates() {
                             if (i === 0) {
                                 var templateImg = MatchedGroup.Template[i].image;
                                 if (templateImg === "" || templateImg === null) {
-                                    templateImg = "/Images/TemplateImages/CodeFile.png";
+                                    templateImg = "/Templates/TemplateImages/CodeFile.png";
                                 }
                                 grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                 grp += '<div class="template-header">';
@@ -950,7 +950,7 @@ function createTemplates() {
                             else {
                                 var templateImgs = MatchedGroup.Template[i].image;
                                 if (templateImgs === "" || templateImgs === null) {
-                                    templateImgs = "/Images/TemplateImages/CodeFile.png";
+                                    templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                 }
                                 grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                 grp += '<div class="template-header">';
@@ -984,11 +984,11 @@ function createTemplates() {
 }
 
 //Project name validtaion on keyup
+
 $("#txtProjectName").keyup(function () {
 
-    var projectName = this.value;
-    var regex = /^[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
-
+    var projectName = $.trim(this.value);
+    var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
     if (projectName !== "") {
         var restrictedNames = ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "PRN", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LTP", "LTP8", "LTP9", "NUL", "CON", "AUX", "SERVER", "SignalR", "DefaultCollection", "Web", "App_code", "App_Browesers", "App_Data", "App_GlobalResources", "App_LocalResources", "App_Themes", "App_WebResources", "bin", "web.config"];
         if (restrictedNames.find(x => x.toLowerCase() === projectName.toLowerCase())) {
@@ -998,6 +998,11 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName").focus();
             $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
             return false;
+        }
+        else {
+            $("#txtProjectName_Error").text("");
+            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+            $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
         }
         if (!(regex.test(projectName))) {
             var links = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
