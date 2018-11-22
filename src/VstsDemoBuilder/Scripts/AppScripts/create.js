@@ -985,6 +985,7 @@ function createTemplates() {
 
 //Project name validtaion on keyup
 
+
 $("#txtProjectName").keyup(function () {
 
     var checkboxMicrosoft = "";
@@ -1005,6 +1006,7 @@ $("#txtProjectName").keyup(function () {
         else {
             $("#txtProjectName_Error").text("");
             $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+
             if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
                 checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
                 checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
