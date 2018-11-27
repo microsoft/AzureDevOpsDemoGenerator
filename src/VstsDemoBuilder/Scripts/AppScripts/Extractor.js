@@ -56,7 +56,7 @@ $(document).ready(function () {
         var options = $("#projectSelect option");
         options.appendTo("#projectSelect", "Select Project");
         options.appendTo("#projectSelect");
-        if (accSelected === '' || accSelected === '--select organization--') {
+        if (accSelected === '' || accSelected === 'Select Organization') {
             $("#ddlAcccountName_Error").text("Please select an organization");
             $("#ddlAcccountName_Error").removeClass('d-none');
             return;
@@ -87,18 +87,18 @@ $(document).ready(function () {
                         console.log(da);
                         $('#projectSelect').empty();
                         var opt = "";
-                        opt += ' <option value="0">Select Project</option>';
+                        opt += ' <option value="0" selected="selected">Select Project</option>';
                         for (var i = 0; i < da.count; i++) {
                             opt += ' <option value="' + da.value[i].id + '">' + da.value[i].name + '</option>';
                         }
                         $("#projectSelect").append(opt);
-                        var options = $("#projectSelect option");                    // Collect options         
+                        //var options = $("#projectSelect option");                    // Collect options         
                         //options.detach().sort(function (a, b) {               // Detach from select, then Sort
                         //    var at = $(a).text();
                         //    var bt = $(b).text();
                         //    return (at > bt) ? 1 : ((at < bt) ? -1 : 0);            // Tell the sort function how to order
                         //});
-                        options.appendTo("#projectSelect");
+                        //options.appendTo("#projectSelect");
                         $('#projectloader').addClass('d-none');
                         $('#Analyse').attr('disabled', false);
                         $('#Analyse').addClass('btn-primary');
@@ -310,7 +310,6 @@ $(document).ready(function () {
             success: function (res) {
                 if (res === "True") {
                     getStatus();
-                    $('#artifactProgress').removeClass('d-none');
                 }
             },
             error: function (er) {
@@ -348,14 +347,17 @@ function getStatus() {
                 else if (currentPercentage <= ((messageList.length + 1) * percentForMessage) && currentPercentage <= 100) {
                     $('#ExtractorProgressBar').width(currentPercentage++ + '%');
                 }
-                window.setTimeout("getStatus()", 500);
+                window.setTimeout("getStatus()", 1000);
             }
             else {
                 if (messageList.length !== 3) {
                     var ID = uniqueId + "_Errors";
                     var url2 = 'GetCurrentProgress/' + ID;
                     $.get(url2, function (response) {
+                        console.log(response);
                         if (response === "100" || response === "") {
+                            $('#artifactProgress').removeClass('d-none');
+
                             $('#ExdvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
@@ -380,6 +382,14 @@ function getStatus() {
                         else {
                             ErrorData = response;
                             if (ErrorData !== '') {
+                                $('#artifactProgress').removeClass('d-none');
+
+                                currentPercentage = 0;
+                                var links = "../ExtractedTemplate/" + finalprojectName + ".zip";
+                                $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                                $('.genArtifacts').removeClass('show');
+                                $('<b style="display: block;"> Click <a href="' + links + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
+
                                 $("#projCreateMsg").hide();
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
                                 $('#ExdvProgress').removeClass("d-block").addClass("d-none");
@@ -398,16 +408,7 @@ function getStatus() {
                     });
                     messageList = [];
                 }
-                //if ('@Request.QueryString["queryTemplate"]' == '') {
-
-                //    $('#ddlGroups').removeAttr("disabled");
-
-                //    $("#ddlAcccountName").removeAttr("disabled");
-                //    $("#txtProjectName").removeAttr("disabled");
-
-                //}
-
-            };
+            }
         },
         error: function (xhr) {
             getStatus();

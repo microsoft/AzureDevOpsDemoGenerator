@@ -293,7 +293,7 @@ namespace VstsDemoBuilder.Controllers
 
                         AccessDetails = GetAccessToken(accessRequestBody);
 
-                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMzAzMTNiZTQtYzMyNC00NzMzLTk4MjktNjBmMTNlMDQ3YTEzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQwODk3OTgyLCJleHAiOjE1NDA5MDE1ODJ9.3O9xU5gswgfYjDsVBmv9bsNVXaAJUUHu5LUA0Gfx5dpx-X-pWEN4CGhetECrz3tl65lPUZ1lZlgEBp_ZszL7ebbZ8_U6shda3C-qalhiiftMUgK5N4BEClpBnbf7Oob1FaXzQgATf8I17ISczjgq2_4_CBsIh0hZnMt-YM-6h7dXfk9EzjYiFrQmk5Cg7kC_iNZWwT-hunrddJ7EOPSsPOhk0Y1X-wBS9Ef0S5RJZcMgwTH3UT6IpixZIgm7buMqplfFn56FkA9EZbPb4ZRVHbHq21je0QHGdne_GAxEfwuBzg-_rDvUXU8ndPJ9K8jfzLXke2-gQ9UEWnsYLn1YJA";
+                        //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiZjA2YzUyNmMtZmVkMy00Y2VjLTkxMWUtYWQzYzQyZGUzNzViIiwiYXBwaWQiOiJjYTc5MGFhYi1kNGFhLTQzMTctYjdhMC1iMTMyYjczNThjMWQiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQzMzIwOTQ3LCJleHAiOjE1NDMzMjQ1NDd9.cgxSn370NbQCNMYc9Np2BByMh1Xsgtd5mvMdz5dulOx6skxk6tgmZr8c4dOy4PoSzQpdDj1YCBaJXL-zIh7yf4L3QnEfRDTGHAiYnAbZ6Is9bbyYoLlQHdDrtlNSih7vV84RHRgtPWcAzdPXVVqqfEJ6E5N0A0Lq7IjtJRQH47nZ5O4YOoW-bAcXke-2aYpGciTjO7RJwfg_RrZ4yaW_cfwNAS586YJL--zBYny1GUZQh-5o_fzyiIhS8mEZHEaJi13Ts2efNcZLOTgkjeZ75wWO3zOnEXoaCtujp7jrC6JzbScwpBi-7wFSQy490Dqpi8_vSD-re2KyrKugMAYNVg";
                         //New Feature Enabling
                         ProfileDetails Profile = new ProfileDetails();
                         Profile = GetProfile(AccessDetails);
@@ -802,10 +802,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Location.IPHostGenerator IpCon = new Location.IPHostGenerator();
-            string IP = IpCon.GetVisitorDetails();
-            string region = IpCon.GetLocation(IP);
-            model.Region = region;
             Session["PAT"] = model.accessToken;
             Session["AccountName"] = model.accountName;
             AddMessage(model.id, string.Empty);
@@ -1278,7 +1274,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 CreateTestManagement(wiMapping, model, testPlan, templatesFolder, _testPlanVersion);
             }
-            if (listTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "TestPlans, TestSuites and TestCases created"); }
+            if (listTestPlansJsonPaths.Count > 0)
+            {
+                //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
+            }
 
             //create build Definition
             string buildDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
@@ -1290,7 +1289,7 @@ namespace VstsDemoBuilder.Controllers
             bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
             if (isBuild)
             {
-                AddMessage(model.id, "Build definition created");
+                //AddMessage(model.id, "Build definition created");
             }
 
             //Queue a Build
@@ -1310,7 +1309,7 @@ namespace VstsDemoBuilder.Controllers
             bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
             if (isReleased)
             {
-                AddMessage(model.id, "Release definition created");
+                //AddMessage(model.id, "Release definition created");
             }
 
             //Create query and widgets

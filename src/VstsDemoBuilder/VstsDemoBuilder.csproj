@@ -330,7 +330,6 @@
     <Content Include="Scripts\AppScripts\create.js" />
     <Content Include="Scripts\AppScripts\Extractor.js" />
     <Content Include="Scripts\AppScripts\FileUpload.js" />
-    <Content Include="Scripts\AppScripts\Validates.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -802,6 +801,10 @@
     <Content Include="Views\Extractor\NotFound.cshtml" />
     <Content Include="NewFeature\RegisteredUsers.json" />
     <Content Include="PreSetting\GitHubEndPoint.json" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\demogen - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\demogen - Web Deploy.pubxml" />
     <Content Include="Templates\GroupSettings_FeatureFlag.json" />
@@ -848,6 +851,8 @@
     <Content Include="Templates\Terraform\ProjectTemplate.json" />
     <Content Include="Templates\Terraform\ReleaseDefinitions\Terraform.json" />
     <Content Include="Templates\Terraform\ServiceEndpoints\Terraform-code.json" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

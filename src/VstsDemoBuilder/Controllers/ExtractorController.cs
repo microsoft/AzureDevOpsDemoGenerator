@@ -347,11 +347,10 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult AnalyzeProject(Project model)
         {
             templateUsed = model.ProjectName;
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://" + model.accountName + ".visualstudio.com:", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName };
+            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName };
             analysis.teamCount = GetTeamsCount(model.ProjectName, model.accountName, model.accessToken);
             analysis.IterationCount = GetIterationsCount(config);
             GetWorkItemDetails(config);
-            GetIterationsCount(config);
             GetBuildDefinitoinCount(config);
             GetReleaseDefinitoinCount(config);
             return Json(analysis, JsonRequestBehavior.AllowGet);
@@ -366,12 +365,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Location.IPHostGenerator IpCon = new Location.IPHostGenerator();
-            string IP = IpCon.GetVisitorDetails();
-            string Region = IpCon.GetLocation(IP);
-            model.Region = Region;
-            AddMessage(model.id, string.Empty);
-            AddMessage(model.id.ErrorId(), string.Empty);
             System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
 
             ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
@@ -518,7 +511,7 @@ namespace VstsDemoBuilder.Controllers
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams?api-version=2.2").Result;
+                HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + projectName + "/teams?api-version=2.2").Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;
