@@ -1,5 +1,5 @@
 {
-  "Name": "AzureFunctions_BuildWorkshop",
+  "Name": "AzureFunctions",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",
