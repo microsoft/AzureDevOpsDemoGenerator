@@ -985,7 +985,11 @@ function createTemplates() {
 
 //Project name validtaion on keyup
 
+
 $("#txtProjectName").keyup(function () {
+
+    var checkboxMicrosoft = "";
+    var checkboxTrirdparty = "";
 
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
@@ -1002,7 +1006,44 @@ $("#txtProjectName").keyup(function () {
         else {
             $("#txtProjectName_Error").text("");
             $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
-            $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
+
+            if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
+                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+                if (checkboxMicrosoft === "on" && checkboxTrirdparty === "on") {
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    isAgreedTerms = true;
+                }
+                else {
+                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+                    isAgreedTerms = false;
+                }
+            }
+            else if (microsoft === "microsoft" && ThirdParty === "") {
+                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+                if (checkboxMicrosoft === "on") {
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    isAgreedTerms = true;
+                }
+                else {
+                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+                    isAgreedTerms = false;
+
+                }
+            }
+            else if (microsoft === "" && ThirdParty === "thirdparty") {
+                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+                if (checkboxTrirdparty === "on") {
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    isAgreedTerms = true;
+                }
+                else {
+                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+                    isAgreedTerms = false;
+                }
+            }
         }
         if (!(regex.test(projectName))) {
             var links = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
@@ -1016,7 +1057,6 @@ $("#txtProjectName").keyup(function () {
     else {
         $("#txtProjectName_Error").text("");
         $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
-        $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
         return false;
     }
 });
