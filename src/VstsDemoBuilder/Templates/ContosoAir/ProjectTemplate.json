@@ -1,5 +1,4 @@
 {
-  "Name": "AzureFunctions",
   "Teams": "Teams.json",
   "SourceCode": "ImportSourceCode.json",
   "CreateService": "CreateServiceEndPoint.json",
@@ -13,11 +12,10 @@
   "TaskfromTemplate": "TaskfromTemplate.json",
   "TestCasefromTemplate": "TestCasefromTemplate.json",
   "FeaturefromTemplate": "FeaturefromTemplate.json",
-  "UserStoriesFromTemplate": "",
+  "UserStoriesFromTemplate": "UserStoriesfromTemplate.json",
   "SetEpic": "EnableEpic.json",
-  "BoardRows": "",
+  "BoardRows": "BoardRowsFromTemplate.json",
   "Widget": "WidgetQuery.json",
   "Chart": "WidgetChart.json",
   "TeamArea": "TeamArea.json"
-
 }

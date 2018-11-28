@@ -167,7 +167,6 @@ namespace VstsDemoBuilder.Controllers
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
             }
-            //}
             return Json(templates, JsonRequestBehavior.AllowGet);
         }
 
@@ -184,14 +183,20 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                Project model = new Project();
-                
+                string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {
+                    Project model = new Project();
+
                     if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
                         model.TemplateId = Session["templateId"].ToString();
+                        TemplateSelected = model.TemplateName;
+                    }
+                    else
+                    {
+                        TemplateSelected = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
                     }
 
                     if (Session["PAT"] != null)
@@ -200,24 +205,24 @@ namespace VstsDemoBuilder.Controllers
                         ProfileDetails profile = GetProfile(AccessDetails);
                         Session["User"] = profile.displayName;
                         Session["Email"] = profile.emailAddress.ToLower();
-                        Models.Accounts.AccountList accountList1 = GetAccounts(profile.id, AccessDetails);
+                        Models.Accounts.AccountList accountList = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
                         model.accessToken = AccessDetails.access_token;
-                        Session["PAT"] = AccessDetails.access_token;
                         model.refreshToken = AccessDetails.refresh_token;
+                        Session["PAT"] = AccessDetails.access_token;
                         model.Email = profile.emailAddress.ToLower();
                         model.Name = profile.displayName;
                         model.MemberID = profile.id;
-                        model.accountsForDropdown = new List<string>();
-
-                        if (accountList1.count > 0)
+                        List<string> accList = new List<string>();
+                        if (accountList.count > 0)
                         {
-                            foreach (var account in accountList1.value)
+                            foreach (var account in accountList.value)
                             {
-                                model.accountsForDropdown.Add(account.accountName);
+                                accList.Add(account.accountName);
                             }
-                            model.accountsForDropdown.Sort();
+                            accList.Sort();
+                            model.accountsForDropdown = accList;
                             model.hasAccount = true;
                         }
                         else
@@ -259,7 +264,30 @@ namespace VstsDemoBuilder.Controllers
                                         {
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description;
+                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                            model.Message = template.Message == null ? string.Empty : template.Message;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            foreach (var grpTemplate in templates.GroupwiseTemplates)
+                            {
+                                foreach (var template in grpTemplate.Template)
+                                {
+                                    if (template.key != null && template.Name != null)
+                                    {
+                                        if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                        {
+                                            model.SelectedTemplate = template.Name;
+                                            model.Templates.Add(template.Name);
+                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                            model.Message = template.Message == null ? string.Empty : template.Message;
                                         }
                                     }
                                 }
@@ -277,7 +305,7 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return View();
             }
@@ -312,6 +340,9 @@ namespace VstsDemoBuilder.Controllers
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
                     AccessDetails = GetAccessToken(accessRequestBody);
+
+                    // add your access token here for local debugging
+                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiNWRhOGZiMGItMmMzMS00YjBiLTg5NjUtNjU1MDA2MGJmYmQzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQyNzk2MDA3LCJleHAiOjE1NDI3OTk2MDd9.DmIL2WRyqGwK5mAf390g14lEpEk5678rzGAMtsyZXrKArhimgvWzLUrtWoJxIL3KwEKKeUK14q3AGwjdZ8K7SNsS5mYYEq9e5TxZo66s5hY9CQwYN7RZUAfu56ObnzPSaSnC96vtlSp77aICbCdr_L1OsyxcZ3t_wE0AYnKj1GGAo9IjXsWcUo3d44w2xnQ2KSIoXgAlp8eW3N_PjjiehZNIrulDCJuUbC6ndXhXwuhVjAR_VjV7AS251ZDe6YjFldzXBJIVS-aAuZ_cnAEU7EHUsALp1Jr5213lM7VZWpJwahdYpa3fZUdjDKe0mh4T7aj6uxJ6rymJwG1o7KqnKQ";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -704,10 +735,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Location.IPHostGenerator IpCon = new Location.IPHostGenerator();
-            string IP = IpCon.GetVisitorDetails();
-            string region = IpCon.GetLocation(IP);
-            model.Region = region;
             Session["PAT"] = model.accessToken;
             Session["AccountName"] = model.accountName;
             AddMessage(model.id, string.Empty);
@@ -872,7 +899,7 @@ namespace VstsDemoBuilder.Controllers
             }
             else
             {
-                AddMessage(model.id, "Project Template not found");
+                AddMessage(model.id.ErrorId(), "Project Template not found");
                 StatusMessages[model.id] = "100";
                 return new string[] { model.id, accountName };
             }
@@ -982,7 +1009,7 @@ namespace VstsDemoBuilder.Controllers
                 //Update card styles
                 UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
                 //Enable Epic Backlog
-                AddMessage(model.id, "Board-Column, Swimlanes, Styles are updated");
+                AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
             }
 
 
@@ -2453,8 +2480,6 @@ namespace VstsDemoBuilder.Controllers
                     {
                         if (isDashboardDeleted)
                         {
-                            var PublicWebBuild = model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault();
-                            var PublicWebRelease = model.ReleaseDefinitions.Where(x => x.Name == "SmartHotel360_Website-Deploy").FirstOrDefault();
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
                             VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
@@ -2475,7 +2500,7 @@ namespace VstsDemoBuilder.Controllers
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.id)
                                 .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
-                                .Replace("$PublicWebBuild$", PublicWebBuild.Id != null ? PublicWebBuild.Id : string.Empty)
+                                .Replace("$PublicWebBuild$", model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault().Id : string.Empty)
                                 .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : string.Empty).Replace("$AllItems$", allItems.id != null ? allItems.id : string.Empty)
                                 .Replace("$BacklogBoardWI$", backlogBoardWI.id != null ? backlogBoardWI.id : string.Empty)
                                 .Replace("$StateofTestCases$", stateofTestCase.id != null ? stateofTestCase.id : string.Empty)
@@ -2812,6 +2837,11 @@ namespace VstsDemoBuilder.Controllers
             {
                 listSession.Add(Session["templateId"].ToString());
             }
+
+            if (Session["Message"] != null)
+            {
+                listSession.Add(Session["Message"].ToString());
+            }
             return Json(listSession, JsonRequestBehavior.AllowGet);
         }
 
@@ -2892,6 +2922,32 @@ namespace VstsDemoBuilder.Controllers
             {
 
             }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public string GetTemplateMessage(string TemplateName)
+        {
+            try
+            {
+                string groupDetails = "";
+                TemplateSelection.Templates templates = new TemplateSelection.Templates();
+                string templatesPath = ""; templatesPath = Server.MapPath("~") + @"\Templates\";
+                if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
+                {
+                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
+                    templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
+                    foreach (var template in templates.GroupwiseTemplates.FirstOrDefault().Template)
+                    {
+                        if (template.TemplateFolder.ToLower() == TemplateName.ToLower())
+                        {
+                            return template.Message;
+                        }
+                    }
+                }
+            }
+            catch (Exception) { }
+            return string.Empty;
         }
 
         #endregion
