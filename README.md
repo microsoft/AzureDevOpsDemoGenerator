@@ -1,13 +1,13 @@
-# Visual Studio Team Services Demo Generator
+# Azure DevOps Demo Generator
+
+[![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
 
 ## About
-Visual Studio Team Services Demo Generator helps you create projects on your Visual Studio Team Services account with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
+Azure DevOps Demo Generator helps you create projects on your Azure DevOps org  with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
 
-The purpose of this system is to simplify working with the hands-on-labs, demos and other education material provided by the Microsoft Visual Studio Marketing team.
+The purpose of this system is to simplify working with the hands-on-labs, demos and other education material provided by Azure Marketing team.
 
 ## Prerequisite
-
-
  1. This application requires Visual Studio 2017
 
  1. GitHub Account
@@ -17,7 +17,7 @@ The purpose of this system is to simplify working with the hands-on-labs, demos 
 
   Clone the solution to your local repository or fork it to your GitHub repo and clone it from your repository.
 
-  To run locally you need to get access token and hard code it in the code. To get Access Token Signin with your VSTS credentials [here](https://mstokengenerator.azurewebsites.net)
+  To run locally you need to get access token and hard code it in the code. To get Access Token Signin with your Azure DevOps credentials [here](https://mstokengenerator.azurewebsites.net)
 
   Once you got the Access Token, open **Environment Controller** in **VSTSDemoBuilder** web project, go to line number 274, uncomment it and replace the value with your access token.
 
