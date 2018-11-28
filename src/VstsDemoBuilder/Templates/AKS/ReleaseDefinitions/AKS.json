@@ -103,7 +103,7 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
-                "ConnectedServiceNameSelector": "",
+                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
                 "ConnectedServiceName": "Azure Resource Manager",
                 "ConnectedServiceNameARM": "",
                 "ServerName": "$(SQLserver)",
@@ -120,7 +120,7 @@
                 "AdditionalArguments": "",
                 "SqlAdditionalArguments": "",
                 "InlineAdditionalArguments": "",
-                "IpDetectionMethod": "AutoDetect",
+                "IpDetectionMethod": "IPAddressRange",
                 "StartIpAddress": "0.0.0.0",
                 "EndIpAddress": "255.255.255.255",
                 "DeleteFirewallRule": "true"
