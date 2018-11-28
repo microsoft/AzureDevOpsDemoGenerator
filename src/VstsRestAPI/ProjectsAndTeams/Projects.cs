@@ -64,7 +64,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 
                 var request = new HttpRequestMessage(method, "_apis/projects?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
-                if (response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.Accepted)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
                     string projectId = JObject.Parse(result)["id"].ToString();

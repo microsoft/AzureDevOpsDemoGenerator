@@ -14,6 +14,10 @@
 
     <title>Create Project</title>
     <style type="text/css">
+        .templateImage {
+            max-width: 70px;
+        }
+
         .newFeature {
             background-color: #DEECF9;
             line-height: 1.2;
@@ -60,6 +64,15 @@
     {
         <input type="hidden" value="@Model.selectedTemplateDescription" id="selectedTemplateDescription" />
     }
+    @if (!string.IsNullOrEmpty(Model.selectedTemplateFolder))
+    {
+        <input type="hidden" value="@Model.selectedTemplateFolder" id="selectedTemplateFolder" />
+    }
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <input type="hidden" value="@Model.Message" id="infoMessageTxt" />
+    }
+    <input type="hidden" id="hdnMessage" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -150,13 +163,13 @@
                         <p class="mb-0">
                             To provide feedback, you can email us
                             <a class="text-primary" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com">here </a>.
-                        <p>Like our service? We would appreciate if you share feedback on social</p>
-                        </p>
+                        <p>Like our tool? We would appreciate if you share feedback on social</p>
+
                         <p>
                             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
                             <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
                             <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;via=visualstudio&amp;hashtags=azuredevopsdemogenerator,DevOpsLabs" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
                         </p>
                     </div>
                 </div>
@@ -216,6 +229,9 @@
                 </div>
                 <!-- PROJECT PARAMETERS -->
                 <!--EXTENSIONS -->
+                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border col-lg-11 d-block mt-4 p-3">
+
+                </div>
                 <div class="mt-4 border p-3 d-none col-lg-11" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">

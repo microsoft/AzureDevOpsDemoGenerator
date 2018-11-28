@@ -320,6 +320,23 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Templates\TemplateImages\AzureFunction.png" />
+    <Content Include="Templates\TemplateImages\CodeFile.png" />
+    <Content Include="Templates\TemplateImages\ContosAir.png" />
+    <Content Include="Templates\TemplateImages\Docker.png" />
+    <Content Include="Templates\TemplateImages\GitHub.png" />
+    <Content Include="Templates\TemplateImages\kubernetes.png" />
+    <Content Include="Templates\TemplateImages\MyHealthClinic.png" />
+    <Content Include="Templates\TemplateImages\MyShuttle.png" />
+    <Content Include="Templates\TemplateImages\octopus.png" />
+    <Content Include="Templates\TemplateImages\Partunlimited.png" />
+    <Content Include="Templates\TemplateImages\PHP.png" />
+    <Content Include="Templates\TemplateImages\Python.png" />
+    <Content Include="Templates\TemplateImages\selenium.png" />
+    <Content Include="Templates\TemplateImages\AzureDevOps.png" />
+    <Content Include="Templates\TemplateImages\SmartHotel.png" />
+    <Content Include="Templates\TemplateImages\SonarQube.png" />
+    <Content Include="Templates\TemplateImages\WhiteSourceBolt.png" />
     <Content Include="Images\tfs.png" />
     <Content Include="Images\theme_img_3.png" />
     <Content Include="Images\Thinking_Face_Emoji.png" />
@@ -737,6 +754,7 @@
     <Content Include="NewFeature\RegisteredUsers.json" />
     <Content Include="PreSetting\GitHubEndPoint.json" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
     <Content Include="Templates\GroupSettings_FeatureFlag.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\UnfinishedWork.json" />
@@ -790,6 +808,25 @@
     <Content Include="Views\Environment\CreateProject.cshtml" />
     <Content Include="Templates\SmartHotel360\ReleaseDefinitions\SmartHotelWebsite Deploy.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitions\SmartHotelPetcheckerWeb.json" />
+    <Content Include="Templates\ContosoAir\BugfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\BuildDefinitions\ContosoAirBuild.json" />
+    <Content Include="Templates\ContosoAir\EnableEpic.json" />
+    <Content Include="Templates\ContosoAir\EpicfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\Extensions.json" />
+    <Content Include="Templates\ContosoAir\FeaturefromTemplate.json" />
+    <Content Include="Templates\ContosoAir\Iterations.json" />
+    <Content Include="Templates\ContosoAir\PBIfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\ProjectSettings.json" />
+    <Content Include="Templates\ContosoAir\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoAir\ReleaseDefinitions\ContosoAirRelease.json" />
+    <Content Include="Templates\ContosoAir\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\TeamArea.json" />
+    <Content Include="Templates\ContosoAir\Teams.json" />
+    <Content Include="Templates\ContosoAir\UpdateCardStyles.json" />
+    <Content Include="Templates\ContosoAir\UserStoriesfromTemplate.json" />
+    <Content Include="Templates\ContosoAir\ServiceEndpoints\ContosoAir.json" />
+    <Content Include="Templates\ContosoAir\BoardColumns.json" />
+    <Content Include="Templates\ContosoAir\UpdateCardFields.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
