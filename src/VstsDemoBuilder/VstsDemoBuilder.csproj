@@ -801,6 +801,7 @@
     <Content Include="Views\Extractor\NotFound.cshtml" />
     <Content Include="NewFeature\RegisteredUsers.json" />
     <Content Include="PreSetting\GitHubEndPoint.json" />
+    <Content Include="PreSetting\DemoExtensions.json" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
