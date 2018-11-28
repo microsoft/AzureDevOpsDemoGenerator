@@ -195,7 +195,7 @@ $(document).ready(function (event) {
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
@@ -322,7 +322,7 @@ $(document).ready(function (event) {
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
@@ -988,9 +988,6 @@ function createTemplates() {
 
 $("#txtProjectName").keyup(function () {
 
-    var checkboxMicrosoft = "";
-    var checkboxTrirdparty = "";
-
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
     if (projectName !== "") {
@@ -1004,46 +1001,7 @@ $("#txtProjectName").keyup(function () {
             return false;
         }
         else {
-            $("#txtProjectName_Error").text("");
-            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
-
-            if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
-                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
-                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-                if (checkboxMicrosoft === "on" && checkboxTrirdparty === "on") {
-                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                    isAgreedTerms = true;
-                }
-                else {
-                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-                    isAgreedTerms = false;
-                }
-            }
-            else if (microsoft === "microsoft" && ThirdParty === "") {
-                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
-                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-                if (checkboxMicrosoft === "on") {
-                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                    isAgreedTerms = true;
-                }
-                else {
-                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-                    isAgreedTerms = false;
-
-                }
-            }
-            else if (microsoft === "" && ThirdParty === "thirdparty") {
-                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
-                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-                if (checkboxTrirdparty === "on") {
-                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                    isAgreedTerms = true;
-                }
-                else {
-                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-                    isAgreedTerms = false;
-                }
-            }
+            validateExtensionCheckbox();
         }
         if (!(regex.test(projectName))) {
             var links = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
@@ -1054,9 +1012,7 @@ $("#txtProjectName").keyup(function () {
             return false;
         }
         else {
-            $("#txtProjectName_Error").text("");
-            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
-            $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
+            validateExtensionCheckbox();
             return false;
         }
     }
@@ -1067,6 +1023,52 @@ $("#txtProjectName").keyup(function () {
         return false;
     }
 });
+
+function validateExtensionCheckbox() {
+    var checkboxMicrosoft = "";
+    var checkboxTrirdparty = "";
+
+    $("#txtProjectName_Error").text("");
+    $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+
+    if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
+        checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+        checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+        if (checkboxMicrosoft === "on" && checkboxTrirdparty === "on") {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            isAgreedTerms = true;
+        }
+        else {
+            $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+            isAgreedTerms = false;
+        }
+    }
+    else if (microsoft === "microsoft" && ThirdParty === "") {
+        checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+        checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+        if (checkboxMicrosoft === "on") {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            isAgreedTerms = true;
+        }
+        else {
+            $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+            isAgreedTerms = false;
+
+        }
+    }
+    else if (microsoft === "" && ThirdParty === "thirdparty") {
+        checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+        checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+        if (checkboxTrirdparty === "on") {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            isAgreedTerms = true;
+        }
+        else {
+            $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+            isAgreedTerms = false;
+        }
+    }
+}
 
 function GetTemplates(selectedTemplate) {
     var Url = 'GetTemplate/';
@@ -1079,7 +1081,7 @@ function GetTemplates(selectedTemplate) {
             if (typeof parameters !== "undefined") {
                 if (parameters.length > 0) {
                     $.each(parameters, function (key, value) {
-                        $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                        $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                     });
                     $("#projectParameters").show();
                 }
