@@ -11,12 +11,10 @@
       "value": "mhcdb"
     },
     "SQLpassword": {
-      "value": null,
-      "isSecret": true
+      "value": "P2ssw0rd1234"
     },
     "SQLuser": {
-      "value": null,
-      "isSecret": true
+      "value": "sqladmin"
     },
     "SQLserver": {
       "value": "YOURSQLSERVER.database.windows.net"
@@ -106,7 +104,7 @@
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceNameSelector": "",
-                "ConnectedServiceName": "",
+                "ConnectedServiceName": "Azure Resource Manager",
                 "ConnectedServiceNameARM": "",
                 "ServerName": "$(SQLserver)",
                 "DatabaseName": "$(DatabaseName)",
@@ -123,8 +121,8 @@
                 "SqlAdditionalArguments": "",
                 "InlineAdditionalArguments": "",
                 "IpDetectionMethod": "AutoDetect",
-                "StartIpAddress": "",
-                "EndIpAddress": "",
+                "StartIpAddress": "0.0.0.0",
+                "EndIpAddress": "255.255.255.255",
                 "DeleteFirewallRule": "true"
               }
             }
