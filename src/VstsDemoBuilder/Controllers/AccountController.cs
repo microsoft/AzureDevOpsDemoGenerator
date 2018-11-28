@@ -35,7 +35,7 @@ namespace VstsDemoBuilder.Controllers
             Session.Clear();
             try
             {
-                if (!string.IsNullOrEmpty(model.name) && !string.IsNullOrEmpty(model.templateid))
+                if (!string.IsNullOrEmpty(model.name))
                 {
                     if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                     {
@@ -48,13 +48,12 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var template in grpTemplate.Template)
                                 {
-                                    if (template.key != null && template.Name != null)
+                                    if (template.Name != null)
                                     {
-                                        if (template.key == model.templateid && template.Name.ToLower() == model.name.ToLower())
+                                        if (template.Name.ToLower() == model.name.ToLower())
                                         {
                                             flag = true;
                                             Session["templateName"] = model.name;
-                                            Session["templateId"] = model.templateid;
                                         }
                                     }
                                 }
@@ -62,7 +61,6 @@ namespace VstsDemoBuilder.Controllers
                             if (flag == false)
                             {
                                 Session["templateName"] = null;
-                                Session["templateId"] = null;
                             }
                         }
                     }

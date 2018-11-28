@@ -188,10 +188,9 @@ namespace VstsDemoBuilder.Controllers
                 {
                     Project model = new Project();
 
-                    if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
+                    if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
-                        model.TemplateId = Session["templateId"].ToString();
                         TemplateSelected = model.TemplateName;
                     }
                     else
@@ -258,9 +257,9 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var template in grpTemplate.Template)
                                 {
-                                    if (template.key != null && template.Name != null)
+                                    if (template.Name != null)
                                     {
-                                        if (template.key.ToLower() == model.TemplateId.ToLower() && template.Name.ToLower() == model.TemplateName.ToLower())
+                                        if (template.Name.ToLower() == model.TemplateName.ToLower())
                                         {
                                             model.SelectedTemplate = template.Name;
                                             model.Templates.Add(template.Name);
@@ -279,7 +278,7 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var template in grpTemplate.Template)
                                 {
-                                    if (template.key != null && template.Name != null)
+                                    if (template.Name != null)
                                     {
                                         if (template.Name.ToLower() == TemplateSelected.ToLower())
                                         {
@@ -305,7 +304,7 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View();
             }
@@ -329,10 +328,9 @@ namespace VstsDemoBuilder.Controllers
                 }
                 if (Session["visited"] != null)
                 {
-                    if (Session["templateName"] != null && Session["templateId"] != null && Session["templateName"].ToString() != "" && Session["templateId"].ToString() != "")
+                    if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
-                        model.TemplateId = Session["templateId"].ToString();
                     }
                     string code = Request.QueryString["code"];
 
