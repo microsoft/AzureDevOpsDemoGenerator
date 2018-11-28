@@ -50,7 +50,7 @@
           "Name": "ContosoAir",
           "TemplateFolder": "ContosoAir",
           "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
-          "Message": "The CI pipeline for the Contoso Air Website refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
+          "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
           "tags": [ "Agile", " Node.js", "User stories" ],
           "image": "/Templates/TemplateImages/ContosAir.png"
         }
