@@ -417,6 +417,12 @@ namespace VstsDemoBuilder.Controllers
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectSettings.json", projectSetting);
 
+            string Extensions = "";
+            Extensions = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\DemoExtensions.json");
+            Extensions = projectSetting.Replace("$type$", model.ProcessTemplate);
+            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\DemoExtensions.json", Extensions);
+
+
             string projectTemplate = "";
             projectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
             System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectTemplate.json", projectTemplate);
@@ -647,8 +653,6 @@ namespace VstsDemoBuilder.Controllers
                     accountExtension.name = extension.ExtensionDisplayName;
                     exa.Add(accountExtension);
                 }
-
-                // System.IO.File.WriteAllText(Server.MapPath("\\Templates\\Extension.json"), JsonConvert.SerializeObject(extensions, Formatting.Indented));
                 return Json(exa, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)
