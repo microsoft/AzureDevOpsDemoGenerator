@@ -1053,10 +1053,17 @@ $("#txtProjectName").keyup(function () {
             $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
             return false;
         }
+        else {
+            $("#txtProjectName_Error").text("");
+            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+            $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
+            return false;
+        }
     }
     else {
         $("#txtProjectName_Error").text("");
         $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+        $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
         return false;
     }
 });
