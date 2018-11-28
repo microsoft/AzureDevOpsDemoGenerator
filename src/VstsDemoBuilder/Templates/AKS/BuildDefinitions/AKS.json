@@ -271,7 +271,7 @@
       },
       "inputs": {
         "SourceFolder": "",
-        "Contents": "**/mhc-aks.yaml\n**/*.dacpac\n$(build.sourcesdirectory)/src/MyHealth.Web/appsettings.json",
+        "Contents": "**/mhc-aks.yaml\n**/*.dacpac\n",
         "TargetFolder": "$(Build.ArtifactStagingDirectory)",
         "CleanTargetFolder": "false",
         "OverWrite": "false",
@@ -331,15 +331,14 @@
       "value": "YOURACR.azurecr.io"
     },
     "SQLpassword": {
-      "value": null,
-      "isSecret": true
+      "value": "P2ssw0rd1234"
     },
     "SQLserver": {
       "value": "YOURSQLSERVER.database.windows.net"
     },
     "SQLuser": {
-      "value": null,
-      "isSecret": true
+      "value": "sqladmin"
+
     },
     "system.debug": {
       "value": "false",
