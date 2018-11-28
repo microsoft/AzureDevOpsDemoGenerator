@@ -183,7 +183,7 @@
                     <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
                     <div class="col-lg-8">
 
-                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName" })
+                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
                         <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
                         </div>
                         <div style="color:red">
@@ -202,7 +202,7 @@
                 <div class="form-group row" id="">
                     <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
                     <div class="col-lg-6  mb-3 mt-1">
-                        <input type="text" class="form-control" id="ddlTemplates" disabled />
+                        <input type="text" class="form-control" id="ddlTemplates"  disabled />
                         <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
 
                         </div>
