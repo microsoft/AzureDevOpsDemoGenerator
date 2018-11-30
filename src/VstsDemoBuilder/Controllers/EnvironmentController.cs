@@ -50,7 +50,9 @@ namespace VstsDemoBuilder.Controllers
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
+        private string extractPath = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
+        private string logPath = "";
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -418,9 +420,19 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
-                string extractPath = Server.MapPath("~/Templates/" + folder);
+                logPath += "Log_" + folder + DateTime.Now.ToString("ddMMyymmss") + ".txt";
+
+                extractPath = Server.MapPath("~/Templates/" + folder);
+                System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
+                System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
 
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
@@ -428,6 +440,8 @@ namespace VstsDemoBuilder.Controllers
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
+                System.IO.File.AppendAllText(logPath, "settingFileOut :" + settingFile + "\r\n" + "projectFileOut :" + projectFile + "\r\n");
+
 
                 if (settingFile && projectFile)
                 {
@@ -447,30 +461,57 @@ namespace VstsDemoBuilder.Controllers
                 }
                 else if (!settingFile && !projectFile)
                 {
-
-                    if (Directory.Exists(extractPath + "\\" + folder))
+                    string[] folderName = System.IO.Directory.GetDirectories(extractPath);
+                    string subDir = folderName[0];
+                    System.IO.File.AppendAllText(logPath, "SubDir Path :" + subDir + "\r\n");
+                    if (subDir != "")
                     {
-                        bool settingFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectSettings.json") ? true : false);
-                        bool projectFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectTemplate.json") ? true : false);
+
+                        bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
+                        bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
+                        System.IO.File.AppendAllText(logPath, "settingFileIn :" + settingFile1 + "\r\n" + "projectFileIn :" + projectFile1 + "\r\n");
+
                         if (settingFile1 && projectFile1)
                         {
-                            string projectFileData1 = System.IO.File.ReadAllText(extractPath + "\\" + folder + "\\ProjectTemplate.json");
+                            string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
                             ProjectSetting settings1 = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData1);
 
                             if (!string.IsNullOrEmpty(settings1.IsPrivate))
                             {
-                                string sourceDirectory = extractPath + "\\" + folder;
+                                string sourceDirectory = subDir;
                                 string targetDirectory = extractPath;
-                                string backupDirectory = Server.MapPath("~/TemplateBackUp/");
-                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("_MMMdd_yyyy_HHmmss");
+                                string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
+                                if (!Directory.Exists(backupDirectory))
+                                {
+                                    Directory.CreateDirectory(backupDirectory);
+                                }
+                                //Create a tempprary directory
+                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
+                                System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
+
+                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
+
+                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
+                                    System.IO.File.AppendAllText(logPath, "sourceDirectory Path :" + sourceDirectory + "\r\n");
+
                                     if (Directory.Exists(targetDirectory))
                                     {
+                                        System.IO.File.AppendAllText(logPath, "targetDirectory Path :" + targetDirectory + "\r\n");
+                                        //copy the content of source directory to temp directory
+
                                         Directory.Move(sourceDirectory, backupDirectoryRandom);
+                                        System.IO.File.AppendAllText(logPath, "Copied to temp dir" + "\r\n");
+
+                                        //Delete the target directory
                                         Directory.Delete(targetDirectory);
+                                        System.IO.File.AppendAllText(logPath, "Deleted Target dir" + "\r\n");
+
+                                        //Target Directory should not be exist, it will create a new directory
                                         Directory.Move(backupDirectoryRandom, targetDirectory);
+                                        System.IO.File.AppendAllText(logPath, "Movied Target dir" + "\r\n");
 
                                         System.IO.DirectoryInfo di = new DirectoryInfo(backupDirectory);
 
@@ -513,6 +554,8 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Directory.Delete(extractPath, true);
+                System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
             }
 
@@ -1209,7 +1252,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 CreateTestManagement(wiMapping, model, testPlan, templatesFolder, _testPlanVersion);
             }
-            if (listTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "TestPlans, TestSuites and TestCases created"); }
+            if (listTestPlansJsonPaths.Count > 0)
+            {
+                //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
+            }
 
             //create build Definition
             string buildDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
@@ -1221,7 +1267,7 @@ namespace VstsDemoBuilder.Controllers
             bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
             if (isBuild)
             {
-                AddMessage(model.id, "Build definition created");
+                //AddMessage(model.id, "Build definition created");
             }
 
             //Queue a Build
@@ -1241,7 +1287,7 @@ namespace VstsDemoBuilder.Controllers
             bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
             if (isReleased)
             {
-                AddMessage(model.id, "Release definition created");
+                //AddMessage(model.id, "Release definition created");
             }
 
             //Create query and widgets

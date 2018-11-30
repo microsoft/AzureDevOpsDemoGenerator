@@ -3,6 +3,10 @@ $(document).ready(function () {
 
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
+    $('#buildYourTemplate').click(function () {
+        ga('send', 'event', 'Build Your Template', 'visited');
+    });
+
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 50) {
