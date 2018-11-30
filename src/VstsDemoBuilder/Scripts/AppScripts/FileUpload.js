@@ -24,13 +24,12 @@
                 processData: false, // Not to process data
                 data: fileData,
                 success: function (result) {
-                    if (result == "1") {
+                    if (result === "1") {
                         alert("succesfully uploaded file: " + files[0].name);
 
                         $.post("UnzipFile", { "fineName": files[0].name }, function (respose) {
 
-                            if (respose == "SUCCESS") {
-
+                            if (respose === "SUCCESS") {
                                 alert("succesfully unzipped file: " + files[0].name);
                                 var NewTemplateName = files[0].name.replace(".zip", "");
                                 $('#ddlTemplates').val(NewTemplateName);
@@ -39,22 +38,22 @@
                                 $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
                                 $("#lblDescription").removeClass('d-block').addClass('d-none');
                                 $("#ddlAcccountName").prop('selectedIndex', 0);
-                            } else {
-                                if (respose == "PROJECTANDSETTINGNOTFOUND") {
-
-                                    $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again</span>')
-                                }
-                                if (respose == "SETTINGNOTFOUND") {
-                                    $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting file not found! plase include the files in zip and try again</span>')
-                                }
-                                if (respose == "PROJECTFILENOTFOUND") {
-                                    $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectTemplate file not found! plase include the files in zip and try again</span>')
-                                }
-                                if (respose == "ISPRIVATEERROR") {
-                                    $("#btnContainer").append('<span id="fileError" class="bg-warning">IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.</span>')
-                                }
+                            } else if (respose === "PROJECTANDSETTINGNOTFOUND") {
+                                $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again</span>');
                             }
-                        })
+                            else if (respose === "SETTINGNOTFOUND") {
+                                $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectSetting file not found! plase include the files in zip and try again</span>');
+                            }
+                            else if (respose === "PROJECTFILENOTFOUND") {
+                                $("#btnContainer").append('<span id="fileError" class="bg-warning">ProjectTemplate file not found! plase include the files in zip and try again</span>');
+                            }
+                            else if (respose === "ISPRIVATEERROR") {
+                                $("#btnContainer").append('<span id="fileError" class="bg-warning">IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.</span>');
+                            }
+                            else {
+                                $("#btnContainer").append('<span id="fileError" class="bg-warning">' + respose +"\r\n Please check the template folder format, Tool can handle only one level of subfolder within zip folder" + '</span>');
+                            }
+                        });
                     }
                 },
                 error: function (err) {
@@ -66,5 +65,5 @@
         }
     });
 
-    
+
 });

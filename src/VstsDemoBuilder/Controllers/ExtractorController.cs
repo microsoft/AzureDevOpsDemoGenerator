@@ -234,11 +234,12 @@ namespace VstsDemoBuilder.Controllers
             {
                 using (var client = new HttpClient())
                 {
+                    string version = System.Configuration.ConfigurationManager.AppSettings["ProjectProperties"];
                     client.BaseAddress = new Uri(url);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=4.1-preview.1").Result;
+                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=" + version).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
@@ -258,7 +259,7 @@ namespace VstsDemoBuilder.Controllers
                             client1.DefaultRequestHeaders.Accept.Clear();
                             client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
                             client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=4.1-preview.1").Result;
+                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=" + version).Result;
                             if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                             {
                                 string templateData = response1.Content.ReadAsStringAsync().Result;
@@ -346,11 +347,10 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult AnalyzeProject(Project model)
         {
             templateUsed = model.ProjectName;
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://" + model.accountName + ".visualstudio.com:", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName };
+            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName };
             analysis.teamCount = GetTeamsCount(model.ProjectName, model.accountName, model.accessToken);
             analysis.IterationCount = GetIterationsCount(config);
             GetWorkItemDetails(config);
-            GetIterationsCount(config);
             GetBuildDefinitoinCount(config);
             GetReleaseDefinitoinCount(config);
             return Json(analysis, JsonRequestBehavior.AllowGet);
@@ -365,12 +365,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Location.IPHostGenerator IpCon = new Location.IPHostGenerator();
-            string IP = IpCon.GetVisitorDetails();
-            string Region = IpCon.GetLocation(IP);
-            model.Region = Region;
-            AddMessage(model.id, string.Empty);
-            AddMessage(model.id.ErrorId(), string.Empty);
             System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
 
             ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
@@ -422,6 +416,12 @@ namespace VstsDemoBuilder.Controllers
             projectSetting = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectSettings.json");
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectSettings.json", projectSetting);
+
+            string Extensions = "";
+            Extensions = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\DemoExtensions.json");
+            Extensions = projectSetting.Replace("$type$", model.ProcessTemplate);
+            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\DemoExtensions.json", Extensions);
+
 
             string projectTemplate = "";
             projectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
@@ -517,7 +517,7 @@ namespace VstsDemoBuilder.Controllers
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams?api-version=2.2").Result;
+                HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + projectName + "/teams?api-version=2.2").Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;
@@ -653,8 +653,6 @@ namespace VstsDemoBuilder.Controllers
                     accountExtension.name = extension.ExtensionDisplayName;
                     exa.Add(accountExtension);
                 }
-
-                // System.IO.File.WriteAllText(Server.MapPath("\\Templates\\Extension.json"), JsonConvert.SerializeObject(extensions, Formatting.Indented));
                 return Json(exa, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)

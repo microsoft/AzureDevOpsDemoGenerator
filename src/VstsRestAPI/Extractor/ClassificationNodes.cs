@@ -20,7 +20,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/teamsettings/iterations?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/work/teamsettings/iterations?api-version=4.1").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -89,7 +89,16 @@ namespace VstsRestAPI.Extractor
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(result);
+
                         _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
+                        for (var x = 0; x < _team.value.Count; x++)
+                        {
+                            if (_team.value[x].description.ToLower() == "the default project team.")
+                            {
+                                _team.value.RemoveAt(x);
+                            }
+                        }
+
                         return _team;
                     }
                     else
