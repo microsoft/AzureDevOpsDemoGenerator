@@ -20,7 +20,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/work/teamsettings/iterations?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -78,7 +78,7 @@ namespace VstsRestAPI.Extractor
         /// <returns></returns>
         public SrcTeamsList GetTeamList()
         {
-            Teams.TeamList teamObj = new Teams.TeamList();
+            ListTeams.TeamList teamObj = new ListTeams.TeamList();
             SrcTeamsList _team = new SrcTeamsList();
             try
             {
@@ -88,7 +88,7 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(result);
+                        teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(result);
 
                         _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
                         for (var x = 0; x < _team.value.Count; x++)

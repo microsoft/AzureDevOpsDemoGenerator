@@ -32,18 +32,18 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// Get List of project
         /// </summary>
         /// <returns></returns>
-        public ListofProjectsResponse.Projects ListOfProjects()
+        public ProjectsResponse.ProjectResult GetListOfProjects()
         {
-            ListofProjectsResponse.Projects viewModel = new ListofProjectsResponse.Projects();
+            ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
             using (var client = GetHttpClient())
             {
                 // connect to the REST endpoint            
-                HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
+                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
                 // check to see if we have a succesfull respond
                 if (response.IsSuccessStatusCode)
                 {
                     // set the viewmodel from the content in the response
-                    viewModel = response.Content.ReadAsAsync<ListofProjectsResponse.Projects>().Result;
+                    viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
                 }
                 viewModel.HttpStatusCode = response.StatusCode;
                 return viewModel;
