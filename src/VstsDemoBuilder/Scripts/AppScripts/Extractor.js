@@ -208,6 +208,7 @@ $(document).ready(function () {
             success: function (res) {
                 var row = "";
                 if (res !== "") {
+                    console.log(res);
                     var processTemplate = $('#processtemplate').val();
                     var templaetClass = $('#TemplateClass').val();
                     if (templaetClass !== "system") {
@@ -222,39 +223,20 @@ $(document).ready(function () {
 
                     if (res.teamCount !== 0 && res.teamCount !== null)
                         row += '<i class="fas fa-check-circle"></i>' + ' Teams: ' + res.teamCount + '<br />';
+
                     if (res.IterationCount !== 0 && res.IterationCount !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Iteration: ' + res.IterationCount + '<br />';
-                    if (res.fetchedEpics !== 0 && res.fetchedEpics !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Epics: ' + res.fetchedEpics + '<br />';
-                    if (res.fetchedFeatures !== 0 && res.fetchedFeatures !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Features: ' + res.fetchedFeatures + '<br />';
-                    if (res.fetchedPBIs !== 0 && res.fetchedPBIs !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' PBIs: ' + res.fetchedPBIs + '<br />';
-                    if (res.fetchedTasks !== 0 && res.fetchedTasks !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Tasks: ' + res.fetchedTasks + '<br />';
-
-                    if (res.fetchedBugs !== 0 && res.fetchedBugs !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Bugs: ' + res.fetchedBugs + '<br />';
-                    if (res.fetchedUserStories !== 0 && res.fetchedUserStories !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' User Stories: ' + res.fetchedUserStories + '<br />';
-
-                    if (res.fetchedTestSuits !== 0 && res.fetchedTestSuits !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Test Suites: ' + res.fetchedTestSuits + '<br />';
-
-                    if (res.fetchedTestPlan !== 0 && res.fetchedTestPlan !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Test Plans: ' + res.fetchedTestPlan + '<br />';
-
-                    if (res.fetchedTestCase !== 0 && res.fetchedTestCase !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Test Cases: ' + res.fetchedTestCase + '<br />';
-
-                    if (res.fetchedFeedbackRequest !== 0 && res.fetchedFeedbackRequest !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Feedback Requests: ' + res.fetchedFeedbackRequest + '<br />';
 
                     if (res.BuildDefCount !== 0 && res.BuildDefCount !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Build Definitions: ' + res.BuildDefCount + '<br />';
 
                     if (res.ReleaseDefCount !== 0 && res.ReleaseDefCount !== null)
                         row += '<i class="fas fa-check-circle" ></i >' + ' Release Definitions: ' + res.ReleaseDefCount + '<br />';
+
+                    $.each(res.WorkItemCounts, function (x, y) {
+                        row += '<i class="fas fa-check-circle" ></i > ' + x + ': ' + y + '<br />';
+                    });
+                    console.log(res.WorkItemCounts);
                 }
                 $('#analyseDiv').removeClass('d-none');
                 $('#analytics').empty().append(row);
