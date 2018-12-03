@@ -207,7 +207,7 @@ namespace VstsDemoBuilder.Controllers
                         ProfileDetails profile = GetProfile(AccessDetails);
                         Session["User"] = profile.displayName;
                         Session["Email"] = profile.emailAddress.ToLower();
-                        Models.Accounts.AccountList accountList = GetAccounts(profile.id, AccessDetails);
+                        Models.AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
                         model.accessToken = AccessDetails.access_token;
@@ -344,7 +344,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiNWRhOGZiMGItMmMzMS00YjBiLTg5NjUtNjU1MDA2MGJmYmQzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQyNzk2MDA3LCJleHAiOjE1NDI3OTk2MDd9.DmIL2WRyqGwK5mAf390g14lEpEk5678rzGAMtsyZXrKArhimgvWzLUrtWoJxIL3KwEKKeUK14q3AGwjdZ8K7SNsS5mYYEq9e5TxZo66s5hY9CQwYN7RZUAfu56ObnzPSaSnC96vtlSp77aICbCdr_L1OsyxcZ3t_wE0AYnKj1GGAo9IjXsWcUo3d44w2xnQ2KSIoXgAlp8eW3N_PjjiehZNIrulDCJuUbC6ndXhXwuhVjAR_VjV7AS251ZDe6YjFldzXBJIVS-aAuZ_cnAEU7EHUsALp1Jr5213lM7VZWpJwahdYpa3fZUdjDKe0mh4T7aj6uxJ6rymJwG1o7KqnKQ";
+                    AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiNTIzODQ0ZmQtNDU4Ny00ZTFmLTg1ZjYtMzM5YTFkMzhlZDY2IiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQzODIxNzQxLCJleHAiOjE1NDM4MjUzNDF9.A0juLQRH-UkHa_yyjhzRS0my22OYdThX3Rb2Uv5c3kFjRVjJe28cOn5t70Va8rnXhzzaBOfxgTi_BHSMJrYYD5GTuxi-2elW4mQiQ0CqJY3XfWzUASVuj6f727BlfmE95gP4LQF497-xJuvIa473N3Nc7xO6UDwaDtlzyIj2v30fSp7gi85Pfp4JbBSNOY6vqUngr2YXI24In7JpH4lS2Us_qQ6zP4fHJZEWtQ1py2ixOrO8B_5R7S3Q-M9u_UbUjLmlLW8D7B2wkZYdSW371ll6x42cWmxBawoqYtQzko-26kc3sdlMF7_km7RoHXRvyShE0FfQJ8EGWcTE5YEHqw";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -699,9 +699,9 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="memberID"></param>
         /// <param name="details"></param>
         /// <returns></returns>
-        public Models.Accounts.AccountList GetAccounts(string memberID, AccessDetails details)
+        public Models.AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
         {
-            Models.Accounts.AccountList accounts = new Models.Accounts.AccountList();
+            Models.AccountsResponse.AccountList accounts = new Models.AccountsResponse.AccountList();
             var client = new HttpClient();
             string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
 
@@ -719,7 +719,7 @@ namespace VstsDemoBuilder.Controllers
                 else if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
-                    accounts = JsonConvert.DeserializeObject<Models.Accounts.AccountList>(result);
+                    accounts = JsonConvert.DeserializeObject<Models.AccountsResponse.AccountList>(result);
                 }
                 else
                 {

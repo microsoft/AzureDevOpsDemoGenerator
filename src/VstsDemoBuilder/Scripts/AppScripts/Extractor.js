@@ -71,15 +71,14 @@ $(document).ready(function () {
             $('#Analyse').removeClass('btn-primary');
 
             var token = $('#key').val();
-            var param = {
-                accname: accSelected,
-                pat: token
-            };
+            //var param = {
+            //    accname: accSelected,
+            //    pat: token
+            //};
             $.ajax({
                 url: '../Extractor/GetprojectList',
                 type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(param),
+                data: { accname: accSelected, pat: token },
                 success: function (da) {
                     if (da.count > 0) {
                         $('#Analyse').addClass('btn-primary').attr('disabled', false);
@@ -136,7 +135,7 @@ $(document).ready(function () {
         if (project === 0 || project === "") {
             return;
         }
-        if (accSelected === '' || accSelected === '--select account--') {
+        if (accSelected === '' || accSelected === 'Select Organization') {
             return;
         }
         else {
@@ -144,15 +143,14 @@ $(document).ready(function () {
             $('#Analyse').removeClass('btn-primary');
 
             $.ajax({
-                url: '../Extractor/GetProjectPropertirs',
-                type: 'POST',
+                url: '../Extractor/GetProjectProperties',
+                type: 'GET',
                 data: { accname: accSelected, project: project, _credentials: key },
                 success: function (res) {
                     $('#projectloader').addClass('d-none');
                     $('#processtemplate').empty().val(res.value[4].value);
                     $('#TemplateClass').empty().val(res.TypeClass);
                     $('#processTemplateLoader').addClass('d-none');
-                    console.log(res);
                     var p = res.value[4].value;
                     if (p !== "Scrum" && p !== "Agile") {
                         $('#processTemplateLoader').addClass('d-none');
@@ -355,7 +353,7 @@ function getStatus() {
                     var url2 = 'GetCurrentProgress/' + ID;
                     $.get(url2, function (response) {
                         console.log(response);
-                        if (response === "100" || response === "") {
+                        if (response === "100") {
                             $('#artifactProgress').removeClass('d-none');
 
                             $('#ExdvProgress').removeClass("d-block").addClass("d-none");

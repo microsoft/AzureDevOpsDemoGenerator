@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
-using Microsoft.VisualStudio.Services.OAuth;
-using Microsoft.VisualStudio.Services.WebApi;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -16,8 +13,11 @@ using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.ExtractorModels;
 using VstsDemoBuilder.Models;
+using VstsRestAPI;
 using VstsRestAPI.Extractor;
+using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.Viewmodel.Extractor;
+using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
 
 namespace VstsDemoBuilder.Controllers
@@ -33,7 +33,7 @@ namespace VstsDemoBuilder.Controllers
         private delegate string[] ProcessEnvironment(Project model);
 
         private ExtractorAnalysis analysis = new ExtractorAnalysis();
-        private string templateUsed = string.Empty;
+        private string projectSelectedToExtract = string.Empty;
         public void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -64,24 +64,15 @@ namespace VstsDemoBuilder.Controllers
                 statusMessages = value;
             }
         }
-        /// <summary>
-        /// View NotFound - Using Feature flag
-        /// If the user whos doesn't have permission to access extractor page, will be redirected to not found page
-        /// </summary>
-        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult NotFound()
         {
             return View();
         }
 
-        /// <summary>
-        /// Extractor index page
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        // Extractor index page
         [AllowAnonymous]
-        public ActionResult Index(ProjectList.ProjectCount model)
+        public ActionResult Index(ProjectList.ProjectDetails model)
         {
             string email = Session["Email"].ToString();
             string pat = "";
@@ -99,7 +90,7 @@ namespace VstsDemoBuilder.Controllers
                 ProfileDetails profile = con.GetProfile(accessDetails);
                 Session["User"] = profile.displayName;
                 Session["PAT"] = pat;
-                Accounts.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
+                AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
                 model.accessToken = accessDetails.access_token;
                 model.accountsForDropdown = new List<string>();
                 if (accountList.count > 0)
@@ -119,11 +110,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get the current progress of work done
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        // Get the current progress of work done
         [HttpGet]
         [AllowAnonymous]
         public ContentResult GetCurrentProgress(string id)
@@ -132,11 +119,8 @@ namespace VstsDemoBuilder.Controllers
             var currentProgress = GetStatusMessage(id).ToString();
             return Content(currentProgress);
         }
-        /// <summary>
-        /// Get status message to resplay
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+
+        // Get status message to display
         [HttpGet]
         [AllowAnonymous]
         public string GetStatusMessage(string id)
@@ -170,62 +154,39 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Project List from the selected Organization
-        /// </summary>
-        /// <param name="auth"></param>
-        /// <returns></returns>
+        // Get Project List from the selected Organization
         [AllowAnonymous]
-        public JsonResult GetprojectList(ProjectList.Authentication auth)
+        public JsonResult GetprojectList(string accname, string pat)
         {
-            ProjectList.ProjectCount load = new ProjectList.ProjectCount();
-            string accname = auth.accname;
-            string _credentials = auth.pat;
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string url = defaultHost + accname;
+            string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
+
+
+            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
+            Projects projects = new Projects(config);
+            ProjectsResponse.ProjectResult projectResult = projects.GetListOfProjects();
             try
             {
-                using (var client = new HttpClient())
+                if (string.IsNullOrEmpty(projectResult.errmsg))
                 {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects?stateFilter=WellFormed&api-version=4.1").Result;
-                    if (response.IsSuccessStatusCode)
+                    if (projectResult.count == 0)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        load = JsonConvert.DeserializeObject<ProjectList.ProjectCount>(res);
-
-                        if (load.count == 0)
-                        {
-                            load.errmsg = "No projects found!";
-                        }
+                        projectResult.errmsg = "No projects found!";
                     }
-                    else
-                    {
-                        var res = response.Content.ReadAsStringAsync().Result;
-                        load.errmsg = "Something went wrong";
-
-                    }
+                    return Json(projectResult, JsonRequestBehavior.AllowGet);
                 }
             }
             catch (Exception ex)
             {
-                load.errmsg = ex.Message.ToString();
+                projectResult.errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
             }
-            return Json(load, JsonRequestBehavior.AllowGet);
+            return Json(projectResult, JsonRequestBehavior.AllowGet);
         }
 
-        /// <summary>
-        /// Get Project Properties to knwo which process template it is following
-        /// </summary>
-        /// <param name="accname"></param>
-        /// <param name="project"></param>
-        /// <param name="_credentials"></param>
-        /// <returns></returns>
+        //Get Project Properties to knwo which process template it is following
         [AllowAnonymous]
-        public JsonResult GetProjectPropertirs(string accname, string project, string _credentials)
+        public JsonResult GetProjectProperties(string accname, string project, string _credentials)
         {
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string url = defaultHost + accname;
@@ -283,21 +244,14 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Inintiate the extraction process
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        //Inintiate the extraction process
         [AllowAnonymous]
-        public bool startExtractionProcess(Project model)
+        public bool StartExtractionProcess(Project model)
         {
             return true;
         }
 
-        /// <summary>
-        /// End the extraction process
-        /// </summary>
-        /// <param name="result"></param>
+        // End the extraction process
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
             ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
@@ -311,7 +265,7 @@ namespace VstsDemoBuilder.Controllers
                     //also, log message to file system
                     string logPath = Server.MapPath("~") + @"\Log";
                     string accountName = strResult[1];
-                    string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                    string fileName = string.Format("{0}_{1}.txt", projectSelectedToExtract, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                     if (!Directory.Exists(logPath))
                     {
@@ -324,10 +278,10 @@ namespace VstsDemoBuilder.Controllers
                     string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
                     string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
                     string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                    string issueName = string.Format("{0}_{1}", projectSelectedToExtract, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
 
-                    errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
+                    errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + projectSelectedToExtract;
 
                     string LogWIT = "true";//System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (LogWIT == "true")
@@ -338,47 +292,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Analyze the selected project to know what all the artifacts it has
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public JsonResult AnalyzeProject(Project model)
-        {
-            templateUsed = model.ProjectName;
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://dev.azure.com/" + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName };
-            analysis.teamCount = GetTeamsCount(model.ProjectName, model.accountName, model.accessToken);
-            analysis.IterationCount = GetIterationsCount(config);
-            GetWorkItemDetails(config);
-            GetBuildDefinitoinCount(config);
-            GetReleaseDefinitoinCount(config);
-            return Json(analysis, JsonRequestBehavior.AllowGet);
-        }
-
-        /// <summary>
-        /// Initial the extraction process
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [AllowAnonymous]
-        public bool StartEnvironmentSetupProcess(Project model)
-        {
-            System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
-
-            ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
-            processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
-            return true;
-        }
-
-        /// <summary>
-        /// Extract the project artifacts
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public string[] GenerateTemplateArifacts(Project model)
+        //Analyze the selected project to know what all the artifacts it has
+        public static ProjectConfigurations ProjectConfiguration(Project model)
         {
             string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
             string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
@@ -390,24 +305,58 @@ namespace VstsDemoBuilder.Controllers
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+            ProjectConfigurations projectConfig = new ProjectConfigurations();
 
-            VstsRestAPI.Configuration _agentQueueConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            VstsRestAPI.Configuration _workItemConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            VstsRestAPI.Configuration _buildDefinitionConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
-            VstsRestAPI.Configuration _releaseDefinitionConfig = new VstsRestAPI.Configuration() { UriString = releaseHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
-            VstsRestAPI.Configuration _repoConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
-            VstsRestAPI.Configuration _boardConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            VstsRestAPI.Configuration _getReleaseConfig = new VstsRestAPI.Configuration() { UriString = releaseHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+            projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.WorkItemConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.BuildDefinitionConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
+            projectConfig.ReleaseDefinitionConfig = new Configuration() { UriString = releaseHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
+            projectConfig.RepoConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
+            projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
+            projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
+            projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
 
+            return projectConfig;
+        }
 
-            bool isTeam = GetTeamList(_boardConfig);
+        [AllowAnonymous]
+        public JsonResult AnalyzeProject(Project model)
+        {
+            ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
+            projectSelectedToExtract = model.ProjectName;
+            analysis.teamCount = GetTeamsCount(model.ProjectName, model.accountName, model.accessToken);
+            analysis.IterationCount = GetIterationsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
+            GetWorkItemsCount(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
+            GetBuildDefinitionCount(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
+            GetReleaseDefinitionCount(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig);
+            return Json(analysis, JsonRequestBehavior.AllowGet);
+        }
+
+        //Initiate the extraction process
+        [HttpPost]
+        [AllowAnonymous]
+        public bool StartEnvironmentSetupProcess(Project model)
+        {
+            System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
+
+            ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
+            processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+            return true;
+        }
+
+        //Extract the project artifacts
+        [AllowAnonymous]
+        public string[] GenerateTemplateArifacts(Project model)
+        {
+            ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
+
+            bool isTeam = GetTeamList(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             if (isTeam)
             {
                 AddMessage(model.id, "Teams Definition");
             }
 
-            bool isIteration = GetIterations(_boardConfig);
+            bool isIteration = GetIterations(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             if (isIteration)
             {
                 AddMessage(model.id, "Iterations Definition");
@@ -432,10 +381,10 @@ namespace VstsDemoBuilder.Controllers
             System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas Definition");
 
-            GetWorkItems(_workItemConfig);
+            GetWorkItems(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
             AddMessage(model.id, "Work Items Definition");
 
-            GetRepositoryList(_repoConfig);
+            GetRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
             //int count = GetBuildDefinitions(_buildDefinitionConfig, _repoConfig);
@@ -455,33 +404,33 @@ namespace VstsDemoBuilder.Controllers
             //}
 
             ////Export Board Rows
-            ExportboardRows(_boardConfig);
+            ExportboardRows(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
 
             //Export Card style
-            ExportCardStyle(_boardConfig, model.ProcessTemplate);
+            ExportCardStyle(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, model.ProcessTemplate);
 
             //Export Board column json for Scrum and Agile            
             System.Threading.Thread.Sleep(2000);
             if (model.ProcessTemplate == "Scrum")
             {
-                GetBoardColumnsScrum(_boardConfig);
+                GetBoardColumnsScrum(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             }
             else if (model.ProcessTemplate == "Agile")
             {
-                GetBoardColumnsAgile(_boardConfig);
+                GetBoardColumnsAgile(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             }
 
             //Export Card style json            
             if (model.ProcessTemplate == "Scrum")
             {
-                ExportCardFieldsScrum(_boardConfig);
+                ExportCardFieldsScrum(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             }
             else if (model.ProcessTemplate == "Agile")
             {
-                ExportCardFieldsAgile(_boardConfig);
+                ExportCardFieldsAgile(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             }
 
-            GetTeamSetting(_boardConfig);
+            GetTeamSetting(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
             string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
@@ -496,17 +445,11 @@ namespace VstsDemoBuilder.Controllers
             return new string[] { model.id, "" };
         }
 
-        /// <summary>
-        /// Get Teams Count
-        /// </summary>
-        /// <param name="projectName"></param>
-        /// <param name="accountName"></param>
-        /// <param name="pat"></param>
-        /// <returns></returns>
+        // Get Teams Count
         [AllowAnonymous]
         public int GetTeamsCount(string projectName, string accountName, string pat)
         {
-            Teams.TeamList teamObj = new Teams.TeamList();
+            ListTeams.TeamList teamObj = new ListTeams.TeamList();
             SrcTeamsList _team = new SrcTeamsList();
 
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
@@ -521,18 +464,14 @@ namespace VstsDemoBuilder.Controllers
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(res);
+                    teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
                     return teamObj.count;
                 }
             }
             return 0;
         }
-        /// <summary>
-        /// Get Iteration Count
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GetIterationsCount(VstsRestAPI.Configuration con)
+        // Get Iteration Count
+        public int GetIterationsCount(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
@@ -552,11 +491,8 @@ namespace VstsDemoBuilder.Controllers
 
         }
 
-        /// <summary>
-        /// Get Work Items Details
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetWorkItemDetails(VstsRestAPI.Configuration con)
+        // Get Work Items Details
+        public void GetWorkItemsCount(Configuration con)
         {
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
             WorkItemFetchResponse.WorkItems fetchedEpics = itemsCount.GetWorkItemsfromSource("Epic");
@@ -589,11 +525,8 @@ namespace VstsDemoBuilder.Controllers
             analysis.fetchedFeedbackRequest = fetchedFeedbackRequest.count;
         }
 
-        /// <summary>
-        /// Get Build Definitions count
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetBuildDefinitoinCount(VstsRestAPI.Configuration con)
+        //Get Build Definitions count
+        public void GetBuildDefinitionCount(Configuration con)
         {
             GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
             GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
@@ -608,11 +541,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Release Definitions count
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetReleaseDefinitoinCount(VstsRestAPI.Configuration con)
+        // Get Release Definitions count
+        public void GetReleaseDefinitionCount(Configuration con)
         {
             GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
             GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
@@ -627,47 +557,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Check for Installed extensions in the selected organization
-        /// </summary>
-        /// <param name="AccountName"></param>
-        /// <param name="PAT"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public JsonResult CheckForInstalledExtensions(string AccountName, string PAT)
-        {
-            try
-            {
-                List<ProjectList.AccountExtension> exa = new List<ProjectList.AccountExtension>();
-                var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", AccountName)), new VssOAuthAccessTokenCredential(PAT));
-                var client = connection.GetClient<ExtensionManagementHttpClient>();
-                var installed = client.GetInstalledExtensionsAsync().Result;
-                var extensions = installed.Where(x => x.Flags == 0).ToList();
-
-                foreach (var extension in extensions)
-                {
-                    ProjectList.AccountExtension accountExtension = new ProjectList.AccountExtension();
-
-                    accountExtension.ExtensionId = extension.ExtensionName;
-                    accountExtension.PublisherId = extension.PublisherName;
-                    accountExtension.name = extension.ExtensionDisplayName;
-                    exa.Add(accountExtension);
-                }
-                return Json(exa, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception)
-            {
-            }
-            return null;
-
-        }
-
-        /// <summary>
-        /// Get Team List to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public bool GetTeamList(VstsRestAPI.Configuration con)
+        // Get Team List to write into file
+        public bool GetTeamList(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             SrcTeamsList _team = new SrcTeamsList();
@@ -706,11 +597,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Iteration List to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
+        // Get Iteration List to write into file
         public bool GetIterations(VstsRestAPI.Configuration con)
         {
             try
@@ -743,11 +630,8 @@ namespace VstsDemoBuilder.Controllers
             return false;
         }
 
-        /// <summary>
-        /// Get Work items to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetWorkItems(VstsRestAPI.Configuration con)
+        // Get Work items to write into file
+        public void GetWorkItems(Configuration con)
         {
             if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
             {
@@ -833,13 +717,10 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Repository list to create Service end point json with respect to the repositiory
-        /// and also create the import source code json
-        /// It works only for the user who is having access to both Source and Target repositories in the organization with the same UserID
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetRepositoryList(VstsRestAPI.Configuration con)
+        // Get Repository list to create Service end point json with respect to the repositiory
+        // and also create the import source code json
+        // It works only for the user who is having access to both Source and Target repositories in the organization with the same UserID
+        public void GetRepositoryList(Configuration con)
         {
             GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
             RepositoryList.Repository repos = buildandReleaseDefs.GetRepoList();
@@ -876,12 +757,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get the Build definitions to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GetBuildDefinitions(VstsRestAPI.Configuration con, VstsRestAPI.Configuration repoCon)
+        // Get the Build definitions to write into file
+        public int GetBuildDefinitions(Configuration con, Configuration repoCon)
         {
             GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
             List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
@@ -973,12 +850,8 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
-        /// <summary>
-        /// Get the release definition to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GetReleaseDefinitions(VstsRestAPI.Configuration con)
+        // Get the release definition to write into file
+        public int GetReleaseDefinitions(Configuration con)
         {
             GetBuildandReleaseDefs releaseDefs = new GetBuildandReleaseDefs(con);
             List<JObject> releases = releaseDefs.GetReleaseDefs();
@@ -1065,12 +938,8 @@ namespace VstsDemoBuilder.Controllers
             return 1;
         }
 
-        /// <summary>
-        /// Generalizing the release definition method to make it work for All kind of Release definition
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GeneralizingGetReleaseDefinitions(VstsRestAPI.Configuration con, VstsRestAPI.Configuration _agentQueue)
+        // Generalizing the release definition method to make it work for All kind of Release definition
+        public int GeneralizingGetReleaseDefinitions(Configuration con, Configuration _agentQueue)
         {
             try
             {
@@ -1192,11 +1061,8 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
-        /// <summary>
-        /// Get Agile project Board column details
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetBoardColumnsAgile(VstsRestAPI.Configuration con)
+        // Get Agile project Board column details
+        public void GetBoardColumnsAgile(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             BoardColumnResponseAgile.ColumnResponse responseAgile = new BoardColumnResponseAgile.ColumnResponse();
@@ -1216,11 +1082,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Scrum project board column details
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetBoardColumnsScrum(VstsRestAPI.Configuration con)
+        // Get Scrum project board column details
+        public void GetBoardColumnsScrum(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             BoardColumnResponseScrum.ColumnResponse responseScrum = new BoardColumnResponseScrum.ColumnResponse();
@@ -1237,11 +1100,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Board Row details to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        public void ExportboardRows(VstsRestAPI.Configuration con)
+        // Get Board Row details to write into file
+        public void ExportboardRows(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             ExportBoardRows.Rows rows = nodes.ExportboardRows();
@@ -1257,12 +1117,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Card style detials to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <param name="processType"></param>
-        public void ExportCardStyle(VstsRestAPI.Configuration con, string processType)
+        // Get Card style detials to write into file
+        public void ExportCardStyle(Configuration con, string processType)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             CardStyle.Style style = new CardStyle.Style();
@@ -1292,11 +1148,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Card fields details to Scrum project
-        /// </summary>
-        /// <param name="con"></param>
-        public void ExportCardFieldsScrum(VstsRestAPI.Configuration con)
+        // Get Card fields details to Scrum project
+        public void ExportCardFieldsScrum(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             CardFiledsScrum.CardField fields = nodes.GetCardFieldsScrum();
@@ -1312,11 +1165,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Card field details to Agile project
-        /// </summary>
-        /// <param name="con"></param>
-        public void ExportCardFieldsAgile(VstsRestAPI.Configuration con)
+        // Get Card field details to Agile project
+        public void ExportCardFieldsAgile(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             CardFiledsAgile.CardField fields = nodes.GetCardFieldsAgile();
@@ -1332,11 +1182,8 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get the Team setting to check the Backlog board setting and Enable Epic feature
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetTeamSetting(VstsRestAPI.Configuration con)
+        // Get the Team setting to check the Backlog board setting and Enable Epic feature
+        public void GetTeamSetting(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             GetTeamSetting.Setting setting = nodes.GetTeamSetting();
@@ -1350,9 +1197,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Remove the template folder after zipping it
-        /// </summary>
+        // Remove the template folder after zipping it
         [AllowAnonymous]
         private void RemoveFolder()
         {
