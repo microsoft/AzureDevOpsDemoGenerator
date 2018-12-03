@@ -307,14 +307,14 @@ namespace VstsDemoBuilder.Controllers
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
-            projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.WorkItemConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.BuildDefinitionConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
-            projectConfig.ReleaseDefinitionConfig = new Configuration() { UriString = releaseHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
-            projectConfig.RepoConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
-            projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
-            projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/" + model.ProjectName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+            projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.WorkItemConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.BuildDefinitionConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
+            projectConfig.ReleaseDefinitionConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
+            projectConfig.RepoConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
+            projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
+            projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
+            projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
 
             return projectConfig;
         }
@@ -324,9 +324,9 @@ namespace VstsDemoBuilder.Controllers
         {
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             projectSelectedToExtract = model.ProjectName;
-            analysis.teamCount = GetTeamsCount(model.ProjectName, model.accountName, model.accessToken);
+            analysis.teamCount = GetTeamsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
             analysis.IterationCount = GetIterationsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
-            GetWorkItemsCount(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
+            analysis.WorkItemCounts = GetWorkItemsCount(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
             GetBuildDefinitionCount(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             GetReleaseDefinitionCount(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig);
             return Json(analysis, JsonRequestBehavior.AllowGet);
@@ -349,12 +349,9 @@ namespace VstsDemoBuilder.Controllers
         public string[] GenerateTemplateArifacts(Project model)
         {
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
+            AddMessage(model.id, "Teams Definition");
 
             bool isTeam = GetTeamList(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
-            if (isTeam)
-            {
-                AddMessage(model.id, "Teams Definition");
-            }
 
             bool isIteration = GetIterations(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             if (isIteration)
@@ -447,28 +444,13 @@ namespace VstsDemoBuilder.Controllers
 
         // Get Teams Count
         [AllowAnonymous]
-        public int GetTeamsCount(string projectName, string accountName, string pat)
+        public int GetTeamsCount(Configuration con)
         {
             ListTeams.TeamList teamObj = new ListTeams.TeamList();
             SrcTeamsList _team = new SrcTeamsList();
-
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string url = defaultHost + accountName;
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(url);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
-                HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + projectName + "/teams?api-version=2.2").Result;
-                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
-                    return teamObj.count;
-                }
-            }
-            return 0;
+            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            int count = nodes.GetTeamsCount();
+            return count;
         }
         // Get Iteration Count
         public int GetIterationsCount(Configuration con)
@@ -492,37 +474,24 @@ namespace VstsDemoBuilder.Controllers
         }
 
         // Get Work Items Details
-        public void GetWorkItemsCount(Configuration con)
+        public Dictionary<string, int> GetWorkItemsCount(Configuration con)
         {
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
-            WorkItemFetchResponse.WorkItems fetchedEpics = itemsCount.GetWorkItemsfromSource("Epic");
-            analysis.fetchedEpics = fetchedEpics.count;
-            WorkItemFetchResponse.WorkItems fetchedFeatures = itemsCount.GetWorkItemsfromSource("Feature");
-            analysis.fetchedFeatures = fetchedFeatures.count;
+            Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
+            if (workItemtypes.Length > 0)
+            {
+                foreach (var workItem in workItemtypes)
+                {
+                    WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
+                    if (WITCount.count > 0)
+                    {
+                        fetchedWorkItemsCount.Add(workItem, WITCount.count);
+                    }
+                }
+            }
 
-            WorkItemFetchResponse.WorkItems fetchedPBIs = itemsCount.GetWorkItemsfromSource("Product Backlog Item");
-            analysis.fetchedPBIs = fetchedPBIs.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTasks = itemsCount.GetWorkItemsfromSource("Task");
-            analysis.fetchedTasks = fetchedTasks.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTestCase = itemsCount.GetWorkItemsfromSource("Test Case");
-            analysis.fetchedTestCase = fetchedTestCase.count;
-
-            WorkItemFetchResponse.WorkItems fetchedBugs = itemsCount.GetWorkItemsfromSource("Bug");
-            analysis.fetchedBugs = fetchedBugs.count;
-
-            WorkItemFetchResponse.WorkItems fetchedUserStories = itemsCount.GetWorkItemsfromSource("User Story");
-            analysis.fetchedUserStories = fetchedUserStories.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTestSuits = itemsCount.GetWorkItemsfromSource("Test Suite");
-            analysis.fetchedTestSuits = fetchedTestSuits.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTestPlan = itemsCount.GetWorkItemsfromSource("Test Plan");
-            analysis.fetchedTestPlan = fetchedTestPlan.count;
-
-            WorkItemFetchResponse.WorkItems fetchedFeedbackRequest = itemsCount.GetWorkItemsfromSource("Feedback Request");
-            analysis.fetchedFeedbackRequest = fetchedFeedbackRequest.count;
+            return fetchedWorkItemsCount;
         }
 
         //Get Build Definitions count

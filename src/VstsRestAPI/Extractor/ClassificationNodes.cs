@@ -20,7 +20,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + _configuration.Project + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -348,6 +348,24 @@ namespace VstsRestAPI.Extractor
                 LastFailureMessage = ex.Message;
             }
             return new GetTeamSetting.Setting();
+        }
+
+        public int GetTeamsCount()
+        {
+            ListTeams.TeamList teamObj = new ListTeams.TeamList();
+            SrcTeamsList _team = new SrcTeamsList();
+            using (var client = GetHttpClient())
+            {
+                //https://dev.azure.com/australiaEastaksh/_apis/projects/SmartHotel360/teams?api-version=4.1
+                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "_apis/projects/" + _configuration.Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
+                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string res = response.Content.ReadAsStringAsync().Result;
+                    teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
+                    return teamObj.count;
+                }
+            }
+            return 0;
         }
     }
 }
