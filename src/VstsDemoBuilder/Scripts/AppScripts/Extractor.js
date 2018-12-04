@@ -208,7 +208,6 @@ $(document).ready(function () {
             success: function (res) {
                 var row = "";
                 if (res !== "") {
-                    console.log(res);
                     var processTemplate = $('#processtemplate').val();
                     var templaetClass = $('#TemplateClass').val();
                     if (templaetClass !== "system") {
@@ -234,9 +233,13 @@ $(document).ready(function () {
                         row += '<i class="fas fa-check-circle" ></i >' + ' Release Definitions: ' + res.ReleaseDefCount + '<br />';
 
                     $.each(res.WorkItemCounts, function (x, y) {
-                        row += '<i class="fas fa-check-circle" ></i > ' + x + ': ' + y + '<br />';
+                        row += '<i class="fas fa-check-circle" ></i >' + y + ' <br /> ';
                     });
-                    console.log(res.WorkItemCounts);
+                    var er = "";
+                    $.each(res.ErrorMessages, function (x, y) {
+                        er += '<p>' + y + '</p >';
+                    });
+                    $('#templateError').empty().append(er);
                 }
                 $('#analyseDiv').removeClass('d-none');
                 $('#analytics').empty().append(row);

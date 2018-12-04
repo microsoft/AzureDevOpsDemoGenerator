@@ -66,9 +66,9 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                LastFailureMessage = ex.Message;
             }
             return new GetReleaseDefResponse.ReleaseDef();
         }
