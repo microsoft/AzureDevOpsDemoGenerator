@@ -29,10 +29,11 @@ namespace VstsDemoBuilder.Controllers
         private EnvironmentController con = new EnvironmentController();
         private static object objLock = new object();
         private static Dictionary<string, string> statusMessages;
-
+        public List<string> errorMessages = new List<string>();
         private delegate string[] ProcessEnvironment(Project model);
 
         private ExtractorAnalysis analysis = new ExtractorAnalysis();
+
         private string projectSelectedToExtract = string.Empty;
         public void AddMessage(string id, string message)
         {
@@ -259,8 +260,8 @@ namespace VstsDemoBuilder.Controllers
             RemoveKey(strResult[0]);
             if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
             {
-                string errorMessages = statusMessages[strResult[0] + "_Errors"];
-                if (errorMessages != "")
+                string errorstatusMessages = statusMessages[strResult[0] + "_Errors"];
+                if (errorstatusMessages != "")
                 {
                     //also, log message to file system
                     string logPath = Server.MapPath("~") + @"\Log";
@@ -272,7 +273,7 @@ namespace VstsDemoBuilder.Controllers
                         Directory.CreateDirectory(logPath);
                     }
 
-                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorstatusMessages);
 
                     //Create ISSUE work item with error details in VSTSProjectgenarator account
                     string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
@@ -281,12 +282,12 @@ namespace VstsDemoBuilder.Controllers
                     string issueName = string.Format("{0}_{1}", projectSelectedToExtract, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
 
-                    errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + projectSelectedToExtract;
+                    errorstatusMessages = errorstatusMessages + Environment.NewLine + "TemplateUsed: " + projectSelectedToExtract;
 
                     string LogWIT = "true";//System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (LogWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "1.0", url, issueName, errorMessages, projectId);
+                        objIssue.CreateIssueWI(patBase64, "1.0", url, issueName, errorstatusMessages, projectId);
                     }
                 }
             }
@@ -319,6 +320,8 @@ namespace VstsDemoBuilder.Controllers
             return projectConfig;
         }
 
+        #region GetCounts
+        // Start Analysis process
         [AllowAnonymous]
         public JsonResult AnalyzeProject(Project model)
         {
@@ -329,9 +332,112 @@ namespace VstsDemoBuilder.Controllers
             analysis.WorkItemCounts = GetWorkItemsCount(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
             GetBuildDefinitionCount(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             GetReleaseDefinitionCount(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig);
+            analysis.ErrorMessages = errorMessages;
             return Json(analysis, JsonRequestBehavior.AllowGet);
         }
 
+        // Get Teams Count
+        [AllowAnonymous]
+        public int GetTeamsCount(Configuration con)
+        {
+            ListTeams.TeamList teamObj = new ListTeams.TeamList();
+            SrcTeamsList _team = new SrcTeamsList();
+            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            int count = nodes.GetTeamsCount();
+            if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
+            {
+                errorMessages.Add("Error while fetching team(s) count:" + nodes.LastFailureMessage);
+            }
+            return count;
+        }
+        // Get Iteration Count
+        public int GetIterationsCount(Configuration con)
+        {
+            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
+            iterations = nodes.GetiterationCount();
+            if (iterations.count > 0)
+            {
+                return iterations.count;
+            }
+            else
+            {
+                if (!(string.IsNullOrEmpty(nodes.LastFailureMessage)))
+                {
+                    errorMessages.Add("Error while fetching iteration(s) count: " + nodes.LastFailureMessage);
+                }
+                return 0;
+            }
+
+        }
+
+        // Get Work Items Details
+        public Dictionary<string, int> GetWorkItemsCount(Configuration con)
+        {
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
+            Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
+            if (workItemtypes.Length > 0)
+            {
+                foreach (var workItem in workItemtypes)
+                {
+                    WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
+                    if (WITCount.count > 0)
+                    {
+                        fetchedWorkItemsCount.Add(workItem, WITCount.count);
+                    }
+                    else if (!string.IsNullOrEmpty(itemsCount.LastFailureMessage))
+                    {
+                        errorMessages.Add("Error while querying work items: " + itemsCount.LastFailureMessage);
+                    }
+                }
+            }
+
+            return fetchedWorkItemsCount;
+        }
+
+        //Get Build Definitions count
+        public void GetBuildDefinitionCount(Configuration con)
+        {
+            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
+            buildDef = buildandReleaseDefs.GetBuildDefCount();
+            if (buildDef.count > 0)
+            {
+                analysis.BuildDefCount = buildDef.count;
+            }
+            else if (!string.IsNullOrEmpty(buildandReleaseDefs.LastFailureMessage))
+            {
+                errorMessages.Add("Error while fetching build definition count: " + buildandReleaseDefs.LastFailureMessage);
+            }
+            else
+            {
+                analysis.BuildDefCount = 0;
+            }
+        }
+
+        // Get Release Definitions count
+        public void GetReleaseDefinitionCount(Configuration con)
+        {
+            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
+            releaseDef = buildandReleaseDefs.GetReleaseDefCount();
+            if (releaseDef.count > 0)
+            {
+                analysis.ReleaseDefCount = releaseDef.count;
+            }
+            else if (!string.IsNullOrEmpty(buildandReleaseDefs.LastFailureMessage))
+            {
+                errorMessages.Add("Error while fetching release definition count: " + buildandReleaseDefs.LastFailureMessage);
+            }
+            else
+            {
+                analysis.ReleaseDefCount = 0;
+            }
+        }
+        #endregion
+
+        #region Extract Template
         //Initiate the extraction process
         [HttpPost]
         [AllowAnonymous]
@@ -351,31 +457,32 @@ namespace VstsDemoBuilder.Controllers
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             AddMessage(model.id, "Teams Definition");
 
-            bool isTeam = GetTeamList(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
+            bool isTeam = GetTeamList(ProjectConfigurationDetails.AppConfig.BoardConfig);
 
-            bool isIteration = GetIterations(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
+            bool isIteration = GetIterations(ProjectConfigurationDetails.AppConfig.BoardConfig);
             if (isIteration)
             {
                 AddMessage(model.id, "Iterations Definition");
             }
+            string extractedFolderName = Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName;
             string projectSetting = "";
             projectSetting = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectSettings.json");
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectSettings.json", projectSetting);
+            System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
             string Extensions = "";
             Extensions = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\DemoExtensions.json");
             Extensions = projectSetting.Replace("$type$", model.ProcessTemplate);
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\DemoExtensions.json", Extensions);
+            System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
 
 
             string projectTemplate = "";
             projectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectTemplate.json", projectTemplate);
+            System.IO.File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
 
             string teamArea = "";
             teamArea = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\TeamArea.json");
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\TeamArea.json", teamArea);
+            System.IO.File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas Definition");
 
             GetWorkItems(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
@@ -384,21 +491,17 @@ namespace VstsDemoBuilder.Controllers
             GetRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            //int count = GetBuildDefinitions(_buildDefinitionConfig, _repoConfig);
-            //if (count >= 1)
-            //{
-            //    AddMessage(model.id, "Build Definition");
-            //}
+            int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            if (count >= 1)
+            {
+                AddMessage(model.id, "Build Definition");
+            }
 
-            //System.Threading.Thread.Sleep(2000);
-
-            ////int relCount = GetReleaseDefinitions(_releaseDefinitionConfig);
-            //int relCount = GeneralizingGetReleaseDefinitions(_getReleaseConfig, _agentQueueConfig);
-            //if (relCount >= 1)
-            //{
-            //    AddMessage(model.id, "Release Definition");
-            //    System.Threading.Thread.Sleep(2000);
-            //}
+            int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            if (relCount >= 1)
+            {
+                AddMessage(model.id, "Release Definition");
+            }
 
             ////Export Board Rows
             ExportboardRows(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
@@ -407,7 +510,6 @@ namespace VstsDemoBuilder.Controllers
             ExportCardStyle(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, model.ProcessTemplate);
 
             //Export Board column json for Scrum and Agile            
-            System.Threading.Thread.Sleep(2000);
             if (model.ProcessTemplate == "Scrum")
             {
                 GetBoardColumnsScrum(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
@@ -441,59 +543,6 @@ namespace VstsDemoBuilder.Controllers
             StatusMessages[model.id] = "100";
             return new string[] { model.id, "" };
         }
-
-        // Get Teams Count
-        [AllowAnonymous]
-        public int GetTeamsCount(Configuration con)
-        {
-            ListTeams.TeamList teamObj = new ListTeams.TeamList();
-            SrcTeamsList _team = new SrcTeamsList();
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            int count = nodes.GetTeamsCount();
-            return count;
-        }
-        // Get Iteration Count
-        public int GetIterationsCount(Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
-            iterations = nodes.GetiterationCount();
-            if (iterations.count > 0)
-            {
-                return iterations.count;
-            }
-            else
-            {
-                if (!(string.IsNullOrEmpty(nodes.LastFailureMessage)))
-                {
-                    return 0;
-                }
-                return 0;
-            }
-
-        }
-
-        // Get Work Items Details
-        public Dictionary<string, int> GetWorkItemsCount(Configuration con)
-        {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
-            GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
-            Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
-            if (workItemtypes.Length > 0)
-            {
-                foreach (var workItem in workItemtypes)
-                {
-                    WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
-                    if (WITCount.count > 0)
-                    {
-                        fetchedWorkItemsCount.Add(workItem, WITCount.count);
-                    }
-                }
-            }
-
-            return fetchedWorkItemsCount;
-        }
-
         // Get Team List to write into file
         public bool GetTeamList(Configuration con)
         {
@@ -557,7 +606,6 @@ namespace VstsDemoBuilder.Controllers
                 {
                     string error = nodes.LastFailureMessage;
                     AddMessage(con.Id.ErrorId(), error);
-
                     return false;
                 }
             }
@@ -636,38 +684,6 @@ namespace VstsDemoBuilder.Controllers
                         System.IO.File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
                     }
                 }
-            }
-        }
-
-        //Get Build Definitions count
-        public void GetBuildDefinitionCount(Configuration con)
-        {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
-            GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
-            buildDef = buildandReleaseDefs.GetBuildDefCount();
-            if (buildDef.count > 0)
-            {
-                analysis.BuildDefCount = buildDef.count;
-            }
-            else
-            {
-                analysis.BuildDefCount = 0;
-            }
-        }
-
-        // Get Release Definitions count
-        public void GetReleaseDefinitionCount(Configuration con)
-        {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
-            GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
-            releaseDef = buildandReleaseDefs.GetReleaseDefCount();
-            if (releaseDef.count > 0)
-            {
-                analysis.ReleaseDefCount = releaseDef.count;
-            }
-            else
-            {
-                analysis.ReleaseDefCount = 0;
             }
         }
 
@@ -761,94 +777,6 @@ namespace VstsDemoBuilder.Controllers
                 return count;
             }
             return 0;
-        }
-
-        // Get the release definition to write into file
-        public int GetReleaseDefinitions(Configuration con)
-        {
-            GetBuildandReleaseDefs releaseDefs = new GetBuildandReleaseDefs(con);
-            List<JObject> releases = releaseDefs.GetReleaseDefs();
-            Dictionary<string, int> queue = releaseDefs.GetQueues();
-            string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
-            if (releases.Count > 0)
-            {
-                int count = 1;
-                foreach (JObject rel in releases)
-                {
-                    ReleaseDefResponse.Response responseObj = new ReleaseDefResponse.Response();
-                    responseObj = JsonConvert.DeserializeObject<ReleaseDefResponse.Response>(rel.ToString());
-                    foreach (var ownerObj in responseObj.environments)
-                    {
-                        ownerObj.owner.id = "$OwnerId$";
-                        ownerObj.owner.displayName = "$OwnerDisplayName$";
-                        ownerObj.owner.uniqueName = "$OwnerUniqueName$";
-                        if (ownerObj.deployPhases.Count > 0)
-                        {
-                            foreach (var deployPhase in ownerObj.deployPhases)
-                            {
-                                string queueName = "";
-                                if (queue != null)
-                                {
-                                    if (queue.Count > 0)
-                                    {
-                                        var agenetName = queue.Where(x => x.Value.ToString() == deployPhase.deploymentInput.queueId).FirstOrDefault();
-                                        if (agenetName.Key != null)
-                                        {
-                                            queueName = agenetName.Key.ToString();
-                                        }
-                                        else
-                                        {
-                                            queueName = "Hosted VS2017";
-                                        }
-                                    }
-                                }
-                                if (queueName != "")
-                                {
-                                    deployPhase.deploymentInput.queueId = "$" + queueName + "$";
-                                }
-                                else
-                                {
-                                    deployPhase.deploymentInput.queueId = "";
-                                }
-                                if (deployPhase.workflowTasks.Count > 0)
-                                {
-                                    foreach (var workFlow in deployPhase.workflowTasks)
-                                    {
-                                        workFlow.inputs.ConnectedServiceName = "";
-                                        workFlow.inputs.ConnectedServiceNameARM = "";
-                                        workFlow.inputs.deploymentGroupEndpoint = "";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    if (responseObj.artifacts.Count > 0)
-                    {
-                        foreach (var artifact in responseObj.artifacts)
-                        {
-                            string buildName = artifact.definitionReference.definition.name;
-
-                            artifact.sourceId = "$ProjectId$:" + "$" + buildName + "-id$";
-                            artifact.definitionReference.definition.id = "$" + buildName + "-id$";
-
-                            artifact.definitionReference.project.id = "$ProjectId$";
-                            artifact.definitionReference.project.name = "$ProjectName$";
-                        }
-                        if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
-                        {
-                            Directory.CreateDirectory(templatePath + "\\ReleaseDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + count + ".json", JsonConvert.SerializeObject(responseObj, Formatting.Indented));
-                        }
-                        else
-                        {
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + count + ".json", JsonConvert.SerializeObject(responseObj, Formatting.Indented));
-                        }
-                    }
-                    count++;
-                }
-                return count;
-            }
-            return 1;
         }
 
         // Generalizing the release definition method to make it work for All kind of Release definition
@@ -1109,7 +1037,7 @@ namespace VstsDemoBuilder.Controllers
                 AddMessage(con.Id.ErrorId(), "Error while fetching Team Setting " + nodes.LastFailureMessage);
             }
         }
-
+        #endregion end extract template
         // Remove the template folder after zipping it
         [AllowAnonymous]
         private void RemoveFolder()

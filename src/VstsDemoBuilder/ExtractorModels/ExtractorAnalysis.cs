@@ -9,5 +9,6 @@ namespace VstsDemoBuilder.ExtractorModels
         public int BuildDefCount { get; set; }
         public int ReleaseDefCount { get; set; }
         public Dictionary<string, int> WorkItemCounts { get; set; }
+        public List<string> ErrorMessages { get; set; }
     }
 }
