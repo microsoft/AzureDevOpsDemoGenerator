@@ -88,6 +88,10 @@ $(document).ready(function (event) {
         var errID = this.nextElementSibling.getAttribute('id');
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
+    $('body').on('click', '.rmverrorOn', function () {
+        var errID = this.nextElementSibling.getAttribute('id');
+        $('#' + errID).removeClass("d-block").addClass("d-none");
+    });
 
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
@@ -131,15 +135,6 @@ $(document).ready(function (event) {
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
-
-        //$.ajax({
-        //    url: "../Environment/GetTemplateMessage",
-        //    type: "POST",
-        //    data: { TemplateName: templateFolderSelected },
-        //    success: function (data) {
-        //        alert(data);
-        //    }
-        //});
 
         var infoMsg = $(".description.descSelected").data('message');
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -195,7 +190,7 @@ $(document).ready(function (event) {
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
@@ -322,7 +317,7 @@ $(document).ready(function (event) {
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
@@ -408,29 +403,6 @@ $('#btnSubmit').click(function () {
     var token = $('#hiddenAccessToken').val();
     var email = $('#emailID').val();
     var regex = /^[A-Za-z0-9 -_]*[A-Za-z0-9][A-Za-z0-9 -_]*$/;
-    if (template === "Octopus") {
-        var octopusURL = $('#txtOctopusURL').val();
-        var octopusAPIkey = $('#txtAPIkey').val();
-        if (octopusURL !== "") {
-            var pattern = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]\$&'\(\)\*\+,;=.]+$/
-
-            if (!(pattern.test(octopusURL))) {
-                $("#txtAlert").text("Please enter a valid URL.");
-                $("#txtALertContainer").show();
-                return false;
-            }
-        }
-        else {
-            $("#txtAlert").text("Please enter a valid URL.");
-            $("#txtALertContainer").show();
-            return false;
-        }
-        if (octopusAPIkey === "") {
-            $("#txtAlert").text("Please enter a valid Octopus Key.");
-            $("#txtALertContainer").show();
-            return false;
-        }
-    }
     if (accountName === "" || accountName === "Select Organiaztion") {
         $("#ddlAcccountName_Error").text("Please choose an organization first!");
         $("#ddlAcccountName_Error").removeClass("d-none").addClass("d-block");
@@ -454,6 +426,30 @@ $('#btnSubmit').click(function () {
         $("#ddlTemplates_Error").removeClass("d-none").addClass("d-block");
         return false;
     }
+    if (template === "Octopus") {
+        var octopusURL = $('#txtOctopusURL').val();
+        var octopusAPIkey = $('#txtAPIkey').val();
+        if (octopusURL !== "") {
+            var pattern = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]\$&'\(\)\*\+,;=.]+$/;
+
+            if (!(pattern.test(octopusURL))) {
+                $("#txtOctopusURL_Error").text("Please enter a valid URL.");
+                $("#txtOctopusURL_Error").removeClass("d-none").addClass("d-block");
+                return false;
+            }
+        }
+        else {
+            $("#txtOctopusURL_Error").text("Please enter a valid URL.");
+            $("#txtOctopusURL_Error").removeClass("d-none").addClass("d-block");
+            return false;
+        }
+        if (octopusAPIkey === "") {
+            $("#txtAPIkey_Error").text("Please enter a valid Octopus Key.");
+            $("#txtAPIkey_Error").removeClass("d-none").addClass("d-block");
+            return false;
+        }
+    }
+
     if (template === "SonarQube") {
         var ServerDNS = $("#txtSonarServerDNSName").val();
         if (ServerDNS === "") {
@@ -988,9 +984,6 @@ function createTemplates() {
 
 $("#txtProjectName").keyup(function () {
 
-    var checkboxMicrosoft = "";
-    var checkboxTrirdparty = "";
-
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
     if (projectName !== "") {
@@ -1004,46 +997,7 @@ $("#txtProjectName").keyup(function () {
             return false;
         }
         else {
-            $("#txtProjectName_Error").text("");
-            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
-
-            if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
-                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
-                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-                if (checkboxMicrosoft === "on" && checkboxTrirdparty === "on") {
-                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                    isAgreedTerms = true;
-                }
-                else {
-                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-                    isAgreedTerms = false;
-                }
-            }
-            else if (microsoft === "microsoft" && ThirdParty === "") {
-                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
-                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-                if (checkboxMicrosoft === "on") {
-                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                    isAgreedTerms = true;
-                }
-                else {
-                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-                    isAgreedTerms = false;
-
-                }
-            }
-            else if (microsoft === "" && ThirdParty === "thirdparty") {
-                checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
-                checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
-                if (checkboxTrirdparty === "on") {
-                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                    isAgreedTerms = true;
-                }
-                else {
-                    $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-                    isAgreedTerms = false;
-                }
-            }
+            validateExtensionCheckbox();
         }
         if (!(regex.test(projectName))) {
             var links = "<a href='https://go.microsoft.com/fwlink/?linkid=842564' target='_blank'>Learn more</a>";
@@ -1054,9 +1008,7 @@ $("#txtProjectName").keyup(function () {
             return false;
         }
         else {
-            $("#txtProjectName_Error").text("");
-            $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
-            $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
+            validateExtensionCheckbox();
             return false;
         }
     }
@@ -1067,6 +1019,52 @@ $("#txtProjectName").keyup(function () {
         return false;
     }
 });
+
+function validateExtensionCheckbox() {
+    var checkboxMicrosoft = "";
+    var checkboxTrirdparty = "";
+
+    $("#txtProjectName_Error").text("");
+    $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
+
+    if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
+        checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+        checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+        if (checkboxMicrosoft === "on" && checkboxTrirdparty === "on") {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            isAgreedTerms = true;
+        }
+        else {
+            $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+            isAgreedTerms = false;
+        }
+    }
+    else if (microsoft === "microsoft" && ThirdParty === "") {
+        checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+        checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+        if (checkboxMicrosoft === "on") {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            isAgreedTerms = true;
+        }
+        else {
+            $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+            isAgreedTerms = false;
+
+        }
+    }
+    else if (microsoft === "" && ThirdParty === "thirdparty") {
+        checkboxMicrosoft = $('input[id=agreeTermsConditions]:checked').val();
+        checkboxTrirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
+        if (checkboxTrirdparty === "on") {
+            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+            isAgreedTerms = true;
+        }
+        else {
+            $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+            isAgreedTerms = false;
+        }
+    }
+}
 
 function GetTemplates(selectedTemplate) {
     var Url = 'GetTemplate/';
@@ -1079,7 +1077,7 @@ function GetTemplates(selectedTemplate) {
             if (typeof parameters !== "undefined") {
                 if (parameters.length > 0) {
                     $.each(parameters, function (key, value) {
-                        $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-4 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverror" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                        $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                     });
                     $("#projectParameters").show();
                 }
