@@ -21,6 +21,23 @@ namespace VstsRestAPI
         public string VersionNumber { get; set; }
         public string Id { get; set; }
     }
+    public class ProjectConfigurationDetails
+    {
+        public static ProjectConfigurations AppConfig { get; set; }
+
+    }
+    public class ProjectConfigurations
+    {
+        public Configuration AgentQueueConfig { get; set; }
+        public Configuration WorkItemConfig { get; set; }
+        public Configuration BuildDefinitionConfig { get; set; }
+        public Configuration ReleaseDefinitionConfig { get; set; }
+        public Configuration RepoConfig { get; set; }
+        public Configuration BoardConfig { get; set; }
+        public Configuration Config { get; set; }
+        public Configuration GetReleaseConfig { get; set; }
+
+    }
 
     public enum TemplateType
     {

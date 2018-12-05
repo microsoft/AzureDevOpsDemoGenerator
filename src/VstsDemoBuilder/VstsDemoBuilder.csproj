@@ -63,15 +63,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="LaunchDarkly.Client, Version=5.4.0.0, Culture=neutral, PublicKeyToken=f86add69004e6885, processorArchitecture=MSIL">
-      <HintPath>..\packages\LaunchDarkly.Client.5.4.0\lib\net45\LaunchDarkly.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="LaunchDarkly.Common.StrongName, Version=1.1.1.0, Culture=neutral, PublicKeyToken=45ef1738a929a7df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LaunchDarkly.Common.StrongName.1.1.1\lib\net45\LaunchDarkly.Common.StrongName.dll</HintPath>
-    </Reference>
-    <Reference Include="LaunchDarkly.EventSource, Version=3.1.5.0, Culture=neutral, PublicKeyToken=18e8c36453e3060f, processorArchitecture=MSIL">
-      <HintPath>..\packages\LaunchDarkly.EventSource.3.1.5\lib\net45\LaunchDarkly.EventSource.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -239,10 +230,8 @@
     </Compile>
     <Compile Include="Models\AccessDetails.cs" />
     <Compile Include="Models\Accounts.cs" />
-    <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\Default.cs" />
     <Compile Include="Models\Email.cs" />
-    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProfileDetails.cs" />
     <Compile Include="Models\Project.cs" />

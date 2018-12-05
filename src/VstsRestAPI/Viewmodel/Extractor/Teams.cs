@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VstsRestAPI.Viewmodel.Extractor
 {
-    public class Teams
+    public class ListTeams
     {
         public class Value
         {
