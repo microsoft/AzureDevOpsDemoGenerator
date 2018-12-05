@@ -17,30 +17,30 @@ $(document).ready(function () {
         }
     });
 
-    $.ajax({
-        url: "../Environment/CheckSession",
-        type: "GET",
-        success: function (data) {
-            if (data.length > 0) {
-                if ((data[0] !== "" || data[0] !== null) && (data[1] !== "" || data[1] !== null)) {
-                    var templateNameExt = "";
-                    var templateIdExt = "";
-                    templateNameExt = data[0];
-                    templateIdExt = data[1];
+    //$.ajax({
+    //    url: "../Environment/CheckSession",
+    //    type: "GET",
+    //    success: function (data) {
+    //        if (data.length > 0) {
+    //            if ((data[0] !== "" || data[0] !== null) && (data[1] !== "" || data[1] !== null)) {
+    //                var templateNameExt = "";
+    //                var templateIdExt = "";
+    //                templateNameExt = data[0];
+    //                templateIdExt = data[1];
 
-                    if ((templateNameExt !== null || typeof templateNameExt !== "undefined" || templateNameExt !== "") && (templateIdExt !== "" || templateIdExt !== null || typeof templateIdExt !== "undefined")) {
-                        $('#ddlTemplates').val(templateNameExt);
-                        GetTemplates(templateNameExt);
-                        $('#lblDefaultDescription').addClass('d-none');
-                    }
-                }
-            }
-            else {
-                $('#ddlTemplates').val("SmartHotel360");
-                templateFolder = "SmartHotel360";
-            }
-        }
-    });
+    //                if ((templateNameExt !== null || typeof templateNameExt !== "undefined" || templateNameExt !== "") && (templateIdExt !== "" || templateIdExt !== null || typeof templateIdExt !== "undefined")) {
+    //                    $('#ddlTemplates').val(templateNameExt);
+    //                    GetTemplates(templateNameExt);
+    //                    $('#lblDefaultDescription').addClass('d-none');
+    //                }
+    //            }
+    //        }
+    //        else {
+    //            $('#ddlTemplates').val("SmartHotel360");selectedTemplate
+    //            templateFolder = "SmartHotel360";
+    //        }
+    //    }
+    //});
 
 
     $("input[id=Random]").attr('disabled', true);
@@ -393,6 +393,8 @@ $(document).ready(function (event) {
     }
 
     AppendMessage();
+    var defaultTemplate = $('#selectedTemplate').val();
+    $('#ddlTemplates').val(defaultTemplate);
 
 });
 $('#btnSubmit').click(function () {

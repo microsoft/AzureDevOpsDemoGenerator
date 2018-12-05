@@ -1,64 +1,39 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
+using VstsRestAPI.Services;
 
 namespace VstsRestAPI.WorkItemAndTracking
 {
     public class IssueWI
     {
-        /// <summary>
-        /// Create Issue Work Items
-        /// </summary>
-        /// <param name="credential"></param>
-        /// <param name="version"></param>
-        /// <param name="url"></param>
-        /// <param name="issueName"></param>
-        /// <param name="description"></param>
-        /// <param name="projectId"></param>
+        private Configuration con = new Configuration();
+
+        // Create Issue Work Items
         public void CreateIssueWI(string credential, string version, string url, string issueName, string description, string projectId)
         {
             try
             {
-                Object[] patchDocument = new Object[2];
+                Object[] patchDocument = new Object[3];
                 patchDocument[0] = new { op = "add", path = "/fields/System.Title", value = issueName };
                 patchDocument[1] = new { op = "add", path = "/fields/System.Description", value = description };
+                patchDocument[2] = new { op = "add", path = "/fields/System.Tags", value = "Extractor" };
 
-                using (var client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credential);
 
-                    // serialize the fields array into a json string          
-                    var patchValue = new StringContent(JsonConvert.SerializeObject(patchDocument), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-
-                    var method = new HttpMethod("PATCH");
-                    var request = new HttpRequestMessage(method, url + "DefaultCollection/" + projectId + "/_apis/wit/workitems/$Issue?api-version=" + version) { Content = patchValue };
-                    var response = client.SendAsync(request).Result;
-
-                    string res = response.Content.ReadAsStringAsync().Result;
-                }
+                con.UriString = url;
+                con.PersonalAccessToken = credential;
+                con.Project = projectId;
+                con.VersionNumber = version;
+                con.UriParams = "/_apis/wit/workitems/$Issue?api-version=";
+                con.RequestBody = JsonConvert.SerializeObject(patchDocument);
+                HttpServices httpServices = new HttpServices(con);
+                var response = httpServices.PatchBasic();
             }
             catch (Exception)
             {
-
             }
         }
 
-        /// <summary>
-        /// Create Report work items
-        /// </summary>
-        /// <param name="credential"></param>
-        /// <param name="version"></param>
-        /// <param name="url"></param>
-        /// <param name="websiteUrl"></param>
-        /// <param name="reportName"></param>
-        /// <param name="accountName"></param>
-        /// <param name="templateName"></param>
-        /// <param name="projectId"></param>
-        /// <param name="region"></param>
+        // Create Report work items
         public void CreateReportWI(string credential, string version, string url, string websiteUrl, string reportName, string accountName, string templateName, string projectId, string region)
         {
             try
@@ -68,27 +43,22 @@ namespace VstsRestAPI.WorkItemAndTracking
                     region = "";
                 }
 
-                Object[] patchDocument = new Object[5];
+                Object[] ReportPatchDocument = new Object[5];
 
-                patchDocument[0] = new { op = "add", path = "/fields/System.Title", value = reportName };
-                patchDocument[1] = new { op = "add", path = "/fields/CustomAgile.SiteName", value = websiteUrl };
-                patchDocument[2] = new { op = "add", path = "/fields/CustomAgile.AccountName", value = accountName };
-                patchDocument[3] = new { op = "add", path = "/fields/CustomAgile.TemplateName", value = templateName };
-                patchDocument[4] = new { op = "add", path = "/fields/CustomAgile.Region", value = region };
+                ReportPatchDocument[0] = new { op = "add", path = "/fields/System.Title", value = reportName };
+                ReportPatchDocument[1] = new { op = "add", path = "/fields/CustomAgile.SiteName", value = websiteUrl };
+                ReportPatchDocument[2] = new { op = "add", path = "/fields/CustomAgile.AccountName", value = accountName };
+                ReportPatchDocument[3] = new { op = "add", path = "/fields/CustomAgile.TemplateName", value = templateName };
+                ReportPatchDocument[4] = new { op = "add", path = "/fields/CustomAgile.Region", value = region };
 
-                using (var client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credential);
-
-                    // serialize the fields array into a json string          
-                    var patchValue = new StringContent(JsonConvert.SerializeObject(patchDocument), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-
-                    var method = new HttpMethod("PATCH");
-                    var request = new HttpRequestMessage(method, url + "DefaultCollection/" + projectId + "/_apis/wit/workitems/$Analytics?api-version=" + version) { Content = patchValue };
-                    var response = client.SendAsync(request).Result;
-                }
+                con.UriString = url;
+                con.PersonalAccessToken = credential;
+                con.Project = projectId;
+                con.VersionNumber = version;
+                con.UriParams = "/_apis/wit/workitems/$Analytics?api-version=";
+                con.RequestBody = JsonConvert.SerializeObject(ReportPatchDocument);
+                HttpServices httpServices = new HttpServices(con);
+                var response = httpServices.PatchBasic();
             }
             catch (Exception)
             {

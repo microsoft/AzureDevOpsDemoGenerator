@@ -249,32 +249,13 @@ namespace VstsDemoBuilder.Controllers
                             string privateTemplatesJson = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
                             templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
                         }
-                        //[for direct URLs] if the incoming template name is not null, checking for Template name and Key in Template setting file. 
+                        //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
                         if (!string.IsNullOrEmpty(model.TemplateName))
                         {
-                            if (string.IsNullOrEmpty(model.TemplateId)) { model.TemplateId = ""; }
-
-                            foreach (var grpTemplate in templates.GroupwiseTemplates)
-                            {
-                                foreach (var template in grpTemplate.Template)
-                                {
-                                    if (template.Name != null)
-                                    {
-                                        if (template.Name.ToLower() == model.TemplateName.ToLower())
-                                        {
-                                            model.SelectedTemplate = template.Name;
-                                            model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
-                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
-                                            model.Message = template.Message == null ? string.Empty : template.Message;
-                                        }
-                                    }
-                                }
-
-                            }
+                            TemplateSelected = model.TemplateName;
                         }
-                        else
+                        if (!string.IsNullOrEmpty(TemplateSelected))
                         {
                             foreach (var grpTemplate in templates.GroupwiseTemplates)
                             {
@@ -292,11 +273,9 @@ namespace VstsDemoBuilder.Controllers
                                         }
                                     }
                                 }
-
                             }
                         }
                         return View(model);
-
                     }
                     return Redirect("../Account/Verify");
                 }
@@ -342,7 +321,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiZWUzMmI5MTItNjMwZi00Mjk2LTg3ZTgtOGJmMWM3YTY3YjNmIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQzOTIwODI4LCJleHAiOjE1NDM5MjQ0Mjh9.Qs_Fn9RQ3idGcv1e9V_a4KQ27UyrKa3D_KENYXjxafJW7pvER4TVEZ2XzJmCUXwsXOXKrLtOAM42-UI31HunmTJrkwXAzM2PEl3b-wMHZLcPAeHNnU2zg8W9pS4ARC9mcPiEjQT2GPjUcIOHtWUM1HUisK3_0xftP2E9X4NOJPjuTGCCx2gGvGTDTa0p6nZuKX1ob_uMOBuldSL0fj-HDu_KSWA3jbcrlcZgaSFm6ecMhFNiJV7n4Q_sEEw4Wf2U2hXp3Srn9JnsSIZA58nD4WT3wWXd1YT3kVK7rCrNxwz8qJqyrpnJ75hZN4Z4WEO3TLkNIuB_uzpjCfGreeIjJQ";
+                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiODkxMzdhNDYtNzhiNy00NGU1LWE1MzMtMjk0ODExZGVhNTFiIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQ0MDA3Mzg1LCJleHAiOjE1NDQwMTA5ODV9.rLw8kH7fBtxYtd9BUfcAYwwKhdka3qg55bPIyjus0eNjhIP9DaJUDGYm8OJQybs3Kj-mY86FYXPH3Tsfcm7eLOnmgEwR80J0ghZ3tQz2SOjEDhr12Y49kxKSjYRQbVhCNYwefu7d_BQz7xbyxLQalxXmJ67NSvO1VLd2a5N7Ge7ckfMqOcbREHj2HXIQzZlCQt06p8NkblI4jmG13wAvdGshtd3nPJLLXdWgRMregyEMfoWgJwTWZPhDswAQe8lLCbfBaClwKIBfuzw1pEZDwHBuY8ugiEE0fIGdOXK1jzGi8fOFvZ1ViIgGJG4DWXMZ5dPaspLjyPTYST66ot77_Q";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -889,21 +868,21 @@ namespace VstsDemoBuilder.Controllers
             }
             //configuration setup
             string _credentials = model.accessToken;
-            VstsRestAPI.Configuration _projectCreationVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _releaseVersion = new VstsRestAPI.Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _buildVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _workItemsVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _queriesVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _boardVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _wikiVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _endPointVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _extensionVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _dashboardVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _repoVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
-            VstsRestAPI.Configuration _getSourceCodeVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _agentQueueVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _testPlanVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";

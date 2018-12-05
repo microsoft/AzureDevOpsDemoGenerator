@@ -4,6 +4,11 @@ namespace VstsRestAPI
     public class Configuration : IConfiguration
     {
         public string UriString { get; set; }
+
+        public string  UriParams { get; set; }
+
+        public string RequestBody { get; set; }
+
         public string AccountName { get; set; }
         public string PersonalAccessToken { get; set; }
         public string Project { get; set; }

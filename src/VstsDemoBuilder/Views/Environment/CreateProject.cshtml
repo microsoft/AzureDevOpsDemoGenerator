@@ -72,6 +72,10 @@
     {
         <input type="hidden" value="@Model.Message" id="infoMessageTxt" />
     }
+    @if (!string.IsNullOrEmpty(Model.SelectedTemplate))
+    {
+        <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate"/>
+    }
     <input type="hidden" id="hdnMessage" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">

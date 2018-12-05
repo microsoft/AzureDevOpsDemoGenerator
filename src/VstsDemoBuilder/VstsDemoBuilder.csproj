@@ -742,6 +742,7 @@
     <Content Include="Views\Extractor\NotFound.cshtml" />
     <Content Include="NewFeature\RegisteredUsers.json" />
     <Content Include="PreSetting\GitHubEndPoint.json" />
+    <Content Include="PreSetting\DemoExtensions.json" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
@@ -844,7 +845,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="assets\script\" />
     <Folder Include="Content\assets\script\" />
-    <Folder Include="ExtractedTemplate\" />
     <Folder Include="Log\" />
     <Folder Include="TemplateBackUp\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />
