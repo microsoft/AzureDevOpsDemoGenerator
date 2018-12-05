@@ -162,7 +162,6 @@ namespace VstsDemoBuilder.Controllers
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
 
-
             Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
             Projects projects = new Projects(config);
             ProjectsResponse.ProjectResult projectResult = projects.GetListOfProjects();
@@ -245,49 +244,40 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        //Inintiate the extraction process
-        [AllowAnonymous]
-        public bool StartExtractionProcess(Project model)
-        {
-            return true;
-        }
-
         // End the extraction process
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
             ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
             string[] strResult = processTask.EndInvoke(result);
+
             RemoveKey(strResult[0]);
             if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
             {
-                string errorstatusMessages = statusMessages[strResult[0] + "_Errors"];
-                if (errorstatusMessages != "")
+                string errorMessages = statusMessages[strResult[0] + "_Errors"];
+                if (errorMessages != "")
                 {
                     //also, log message to file system
                     string logPath = Server.MapPath("~") + @"\Log";
                     string accountName = strResult[1];
-                    string fileName = string.Format("{0}_{1}.txt", projectSelectedToExtract, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                    string fileName = string.Format("{0}_{1}.txt", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                     if (!Directory.Exists(logPath))
                     {
                         Directory.CreateDirectory(logPath);
                     }
-
-                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorstatusMessages);
+                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
                     //Create ISSUE work item with error details in VSTSProjectgenarator account
                     string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
                     string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
                     string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    string issueName = string.Format("{0}_{1}", projectSelectedToExtract, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                    string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
 
-                    errorstatusMessages = errorstatusMessages + Environment.NewLine + "TemplateUsed: " + projectSelectedToExtract;
-
-                    string LogWIT = "true";//System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                    if (LogWIT == "true")
+                    string logWIT = "true"; //System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                    if (logWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "1.0", url, issueName, errorstatusMessages, projectId);
+                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId);
                     }
                 }
             }
@@ -444,7 +434,8 @@ namespace VstsDemoBuilder.Controllers
         public bool StartEnvironmentSetupProcess(Project model)
         {
             System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
-
+            AddMessage(model.id, string.Empty);
+            AddMessage(model.id.ErrorId(), string.Empty);
             ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
             processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             return true;
@@ -472,7 +463,6 @@ namespace VstsDemoBuilder.Controllers
 
             string Extensions = "";
             Extensions = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\DemoExtensions.json");
-            Extensions = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
 
 
@@ -491,17 +481,17 @@ namespace VstsDemoBuilder.Controllers
             GetRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
-            if (count >= 1)
-            {
-                AddMessage(model.id, "Build Definition");
-            }
+            //int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            //if (count >= 1)
+            //{
+            //    AddMessage(model.id, "Build Definition");
+            //}
 
-            int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
-            if (relCount >= 1)
-            {
-                AddMessage(model.id, "Release Definition");
-            }
+            //int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            //if (relCount >= 1)
+            //{
+            //    AddMessage(model.id, "Release Definition");
+            //}
 
             ////Export Board Rows
             ExportboardRows(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
@@ -745,21 +735,26 @@ namespace VstsDemoBuilder.Controllers
                         def["repository"]["url"] = "";
                     }
                     var input = def["processParameters"]["inputs"];
-                    if (input.HasValues)
+                    if (input != null)
                     {
-                        foreach (var i in input)
+                        if (input.HasValues)
                         {
-                            i["defaultValue"] = "";
+                            foreach (var i in input)
+                            {
+                                i["defaultValue"] = "";
 
+                            }
                         }
                     }
-
                     var build = def["build"];
-                    if (build.HasValues)
+                    if (build != null)
                     {
-                        foreach (var b in build)
+                        if (build.HasValues)
                         {
-                            b["inputs"]["serverEndpoint"] = "";
+                            foreach (var b in build)
+                            {
+                                b["inputs"]["serverEndpoint"] = "";
+                            }
                         }
                     }
 

@@ -71,10 +71,6 @@ $(document).ready(function () {
             $('#Analyse').removeClass('btn-primary');
 
             var token = $('#key').val();
-            //var param = {
-            //    accname: accSelected,
-            //    pat: token
-            //};
             $.ajax({
                 url: '../Extractor/GetprojectList',
                 type: 'POST',
@@ -91,13 +87,7 @@ $(document).ready(function () {
                             opt += ' <option value="' + da.value[i].id + '">' + da.value[i].name + '</option>';
                         }
                         $("#projectSelect").append(opt);
-                        //var options = $("#projectSelect option");                    // Collect options         
-                        //options.detach().sort(function (a, b) {               // Detach from select, then Sort
-                        //    var at = $(a).text();
-                        //    var bt = $(b).text();
-                        //    return (at > bt) ? 1 : ((at < bt) ? -1 : 0);            // Tell the sort function how to order
-                        //});
-                        //options.appendTo("#projectSelect");
+                        var options = $("#projectSelect option");
                         $('#projectloader').addClass('d-none');
                         $('#Analyse').attr('disabled', false);
                         $('#Analyse').addClass('btn-primary');
@@ -233,7 +223,7 @@ $(document).ready(function () {
                         row += '<i class="fas fa-check-circle" ></i >' + ' Release Definitions: ' + res.ReleaseDefCount + '<br />';
 
                     $.each(res.WorkItemCounts, function (x, y) {
-                        row += '<i class="fas fa-check-circle" ></i >' + y + ' <br /> ';
+                        row += '<i class="fas fa-check-circle" ></i >' + x + ': ' + y + ' <br /> ';
                     });
                     var er = "";
                     $.each(res.ErrorMessages, function (x, y) {
@@ -338,7 +328,7 @@ function getStatus() {
                     var url2 = 'GetCurrentProgress/' + ID;
                     $.get(url2, function (response) {
                         console.log(response);
-                        if (response === "100") {
+                        if (response === "100" || response === "") {
                             $('#artifactProgress').removeClass('d-none');
 
                             $('#ExdvProgress').removeClass("d-block").addClass("d-none");
@@ -377,6 +367,7 @@ function getStatus() {
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
                                 $('#ExdvProgress').removeClass("d-block").addClass("d-none");
                                 $("#errorNotify").removeClass("d-none").addClass("d-block");
+                                $("#finalLink").removeClass("d-none").addClass("d-block");
 
                                 $("#errorMail").empty().append(ErrorData);
                                 $("#errorNotify").show();

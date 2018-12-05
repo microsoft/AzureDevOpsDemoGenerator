@@ -78,6 +78,7 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
+                        LastFailureMessage = "Inserting error";
                         string result = response.Content.ReadAsStringAsync().Result;
                         teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(result);
 
