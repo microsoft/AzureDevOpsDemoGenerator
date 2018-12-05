@@ -5,10 +5,8 @@ namespace VstsDemoBuilder.Models
 {
     public class Project
     {
-        public string Greeting { get; set; }
         public string id { get; set; }
         public string MemberID { get; set; }
-
         public string ProcessTemplate { get; set; }
         public string ProjectName { get; set; }
         public string SelectedTemplate { get; set; }
@@ -21,7 +19,6 @@ namespace VstsDemoBuilder.Models
         public EnvironmentValues Environment { get; set; }
         public List<BuildDef> BuildDefinitions { get; set; }
         public List<ReleaseDef> ReleaseDefinitions { get; set; }
-        public List<BuildReleaseMapping> BuildReleaseMap { get; set; }
         public string UserMethod { get; set; }
         public List<SelectListItem> accountUsersForDdl { get; set; }
         public string selectedUsers { get; set; }

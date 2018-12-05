@@ -15,6 +15,4 @@ namespace VstsDemoBuilder.Models
 
         public const string Queue = "Hosted";
     }
-
-
 }
