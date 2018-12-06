@@ -17,32 +17,6 @@ $(document).ready(function () {
         }
     });
 
-    //$.ajax({
-    //    url: "../Environment/CheckSession",
-    //    type: "GET",
-    //    success: function (data) {
-    //        if (data.length > 0) {
-    //            if ((data[0] !== "" || data[0] !== null) && (data[1] !== "" || data[1] !== null)) {
-    //                var templateNameExt = "";
-    //                var templateIdExt = "";
-    //                templateNameExt = data[0];
-    //                templateIdExt = data[1];
-
-    //                if ((templateNameExt !== null || typeof templateNameExt !== "undefined" || templateNameExt !== "") && (templateIdExt !== "" || templateIdExt !== null || typeof templateIdExt !== "undefined")) {
-    //                    $('#ddlTemplates').val(templateNameExt);
-    //                    GetTemplates(templateNameExt);
-    //                    $('#lblDefaultDescription').addClass('d-none');
-    //                }
-    //            }
-    //        }
-    //        else {
-    //            $('#ddlTemplates').val("SmartHotel360");selectedTemplate
-    //            templateFolder = "SmartHotel360";
-    //        }
-    //    }
-    //});
-
-
     $("input[id=Random]").attr('disabled', true);
     $("input[id=Select]").attr('disabled', true);
     $("#btnUserShow").attr('disabled', true);
@@ -524,6 +498,19 @@ $('#btnSubmit').click(function () {
     event.preventDefault;
 });
 
+// if the user uploading his exported template (zip file), we will take that template name as folder name
+$('body').on('click', '#btnUpload', function () {
+    var fileUpload = $("#FileUpload1").get(0);
+    var files = fileUpload.files;
+    $('#InfoMessage').removeClass('d-block').addClass('d-none');
+    // Create FormData object
+    var fileData = new FormData();
+    // Looping over all files and add it to FormData object
+    for (var i = 0; i < files.length; i++) {
+        fileData.append(files[i].name, files[i]);
+    }
+    templateFolder = files[0].name.replace(".zip", "");
+});
 
 function getStatus() {
 

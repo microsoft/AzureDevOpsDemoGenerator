@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
@@ -189,59 +186,22 @@ namespace VstsDemoBuilder.Controllers
         public JsonResult GetProjectProperties(string accname, string project, string _credentials)
         {
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string url = defaultHost + accname;
+            string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+
+            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, Project = project };
+
             ProjectProperties.Properties load = new ProjectProperties.Properties();
-            try
+            Projects projects = new Projects(config);
+            load = projects.GetProjectProperties();
+            if (load.count > 0)
             {
-                using (var client = new HttpClient())
+                if (load.TypeClass != null)
                 {
-                    string version = System.Configuration.ConfigurationManager.AppSettings["ProjectProperties"];
-                    client.BaseAddress = new Uri(url);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=" + version).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        load = JsonConvert.DeserializeObject<ProjectProperties.Properties>(res);
-                        GetProcessTemplate.PTemplate template = new GetProcessTemplate.PTemplate();
-
-                        string processTypeId = string.Empty;
-                        var processTypeID = load.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault();
-                        if (processTypeID != null)
-                        {
-                            processTypeId = processTypeID.value;
-                        }
-
-                        using (var client1 = new HttpClient())
-                        {
-                            client1.BaseAddress = new Uri(url);
-                            client1.DefaultRequestHeaders.Accept.Clear();
-                            client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
-                            client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=" + version).Result;
-                            if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                            {
-                                string templateData = response1.Content.ReadAsStringAsync().Result;
-                                template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
-                                load.TypeClass = template.properties.Class;
-                            }
-                        }
-                        return Json(load, JsonRequestBehavior.AllowGet);
-
-                    }
-                    else
-                    {
-                        var result = response.Content.ReadAsStringAsync().Result;
-                        return Json(result, JsonRequestBehavior.AllowGet);
-                    }
+                    return Json(load, JsonRequestBehavior.AllowGet);
                 }
             }
-            catch (Exception ex)
-            {
-                return Json(ex.Message, JsonRequestBehavior.AllowGet);
-            }
+            return new JsonResult();
+
         }
 
         // End the extraction process
@@ -650,7 +610,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     string preSettingPath = Server.MapPath("~") + @"PreSetting";
                     string templateFolderPath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
-                    string host = con.UriString + " / " + con.Project;
+                    string host = con.UriString + con.Project;
                     string sourceCodeJson = System.IO.File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
                     sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
                     string endPointJson = System.IO.File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
@@ -941,7 +901,7 @@ namespace VstsDemoBuilder.Controllers
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             ExportBoardRows.Rows rows = nodes.ExportboardRows();
-            if (rows.count > 0)
+            if (rows.value.Count > 0)
             {
                 System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardRowsFromTemplate.json", JsonConvert.SerializeObject(rows.value, Formatting.Indented));
                 AddMessage(con.Id, "Board Rows Definition");

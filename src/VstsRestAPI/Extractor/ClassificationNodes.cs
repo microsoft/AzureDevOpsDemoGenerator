@@ -78,7 +78,6 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        LastFailureMessage = "Inserting error";
                         string result = response.Content.ReadAsStringAsync().Result;
                         teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(result);
 
@@ -90,7 +89,6 @@ namespace VstsRestAPI.Extractor
                                 _team.value.RemoveAt(x);
                             }
                         }
-
                         return _team;
                     }
                     else
@@ -108,7 +106,7 @@ namespace VstsRestAPI.Extractor
             return new SrcTeamsList();
         }
 
-        // Get Board colums for Scrum template to write to file
+        // Get Board colums for Scrum template and write it to file
         public BoardColumnResponseScrum.ColumnResponse ExportBoardColumnsScrum()
         {
             try
@@ -137,7 +135,7 @@ namespace VstsRestAPI.Extractor
             return new BoardColumnResponseScrum.ColumnResponse();
         }
 
-        // Get Board Columns for Agile template to write file
+        // Get Board Columns for Agile template and write it file
         public BoardColumnResponseAgile.ColumnResponse ExportBoardColumnsAgile()
         {
             try
@@ -145,7 +143,7 @@ namespace VstsRestAPI.Extractor
                 BoardColumnResponseAgile.ColumnResponse columns = new BoardColumnResponseAgile.ColumnResponse();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         columns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
@@ -267,7 +265,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsAgile.CardField card = new CardFiledsAgile.CardField();
