@@ -321,7 +321,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "";
+                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMDU4NzAxNzItMmVhYS00NTVmLThlOWUtMzEyNGNkYjQ5ODk4IiwiYXBwaWQiOiI0N2YzZmU3OS04MTAxLTQzNDEtYTNiNC0wZTdiNzliZDJjMDYiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQ0MTkyNzgzLCJleHAiOjE1NDQxOTYzODN9.w0kugv0xM3rRiwpREMX9nDpwLTYSKRN0eqAZDVaIO-g15RAhhKxiK7IufrNkXWvPbieTWn45LRnpn3dqu5boCGd7FXf6yXcP68XNTI20KQN5OG3oO6hNXeFvn9SR9fW1_saG7V-7Y_UEM6jY-vXQvgtdPAqv4_LmW31oTZd08IPEC2CBqYIZX4B0z_2ZPmJecPkkA9mxOg-p-viIoTl4OxNzMp1MK5YotftpWsxBmyFilDsl2PEBItv3V8PVJ1-m2_G7r6t9E4gznwTmVpv19x0Va2SEPbmMJNrV9Yj-6f1W1TyYSde5wTBW5ncoEuhzTTCCLlQs6RRQwUqt08oGaA";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -411,8 +411,12 @@ namespace VstsDemoBuilder.Controllers
                 System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
                 System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
 
+                if (Directory.Exists(extractPath))
+                {
+                    System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
+                    return Json("Folder already exist. Please rename the folder and upload it.");
+                }
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
-                System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
 
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);

@@ -817,6 +817,13 @@
     <Content Include="Templates\ContosoAir\ServiceEndpoints\ContosoAir.json" />
     <Content Include="Templates\ContosoAir\BoardColumns.json" />
     <Content Include="Templates\ContosoAir\UpdateCardFields.json" />
+    <Content Include="Templates\Ansible\BuildDefinitions\Ansible-CI.json" />
+    <Content Include="Templates\Ansible\Extensions.json" />
+    <Content Include="Templates\Ansible\ImportSourceCode\SmartHotel360-CouponManagement.json" />
+    <Content Include="Templates\Ansible\ProjectSettings.json" />
+    <Content Include="Templates\Ansible\ProjectTemplate.json" />
+    <Content Include="Templates\Ansible\ReleaseDefinitions\Ansible.json" />
+    <Content Include="Templates\Ansible\ServiceEndpoints\SmartHotel360-CouponManagement.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
