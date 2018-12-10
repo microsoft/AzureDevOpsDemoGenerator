@@ -1,0 +1,14 @@
+﻿{
+  "Extensions": [
+    {
+      "name": "Secure Development Tools",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=securedevelopmentteam.vss-secure-development-tools' target='_blank'><b>Secure Development Tools</b></a>",
+      "PublisherId": "securedevelopmentteam",
+      "ExtensionId": "vss-secure-development-tools",
+      "publisher": "microsoft",
+      "License": "<a href='http://secdevtools.azurewebsites.net/eula.htm' target='_blank'>License Terms</a>"
+	  
+      
+    }
+  ]
+}
