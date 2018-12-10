@@ -230,6 +230,7 @@
     </Compile>
     <Compile Include="Models\AccessDetails.cs" />
     <Compile Include="Models\Accounts.cs" />
+    <Compile Include="Models\CreateZips.cs" />
     <Compile Include="Models\Default.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -852,6 +853,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="assets\script\" />
     <Folder Include="Content\assets\script\" />
+    <Folder Include="ExtractedTemplate\" />
     <Folder Include="Log\" />
     <Folder Include="TemplateBackUp\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />

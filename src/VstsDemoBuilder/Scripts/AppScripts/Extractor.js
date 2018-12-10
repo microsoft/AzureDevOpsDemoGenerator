@@ -253,6 +253,7 @@ $(document).ready(function () {
         var SourceAcc = $("#ddlAcccountName").val();
         var project = $("#projectSelect").val();
         var projectName = $("#projectSelect option:selected").text();
+        $('#hdnProjecName').val(projectName);
         var key = $('#key').val();
         var processTemplate = $('#processtemplate').val();
         if (SourceAcc === "" || SourceAcc === "Select Account") {
@@ -292,6 +293,14 @@ $(document).ready(function () {
         });
     });
 
+    //$('#fileDownload').click(function () {
+    //    var project = $("#projectSelect option:selected").text();
+    //    if (project !== "") {
+    //        $.post("../Extractor/ZipAndDownloadFiles/?fileName=" + project, function (data) {
+    //            console.log("downloaded");
+    //        });
+    //    }
+    //});
 });
 
 function getStatus() {

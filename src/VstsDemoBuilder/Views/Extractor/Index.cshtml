@@ -251,6 +251,10 @@
                         <div class="card mt-3 d-none" id="finalLink" style="border: 0px">
                             <div class="card-body" id="accountLink" style="color: green;font-weight: 300;box-shadow: 0px 3px 10px #e0e0e0;">
                             </div>
+                            <form action="~/Extractor/ZipAndDownloadFiles" method="post">
+                                <input type="hidden" name="fileName" id="hdnProjecName">
+                            </form>
+                            <button type="submit" value="Download" class="btn btn-primary" id="fileDownload">Download</button>
                         </div>
                     </div>
 

@@ -72,12 +72,13 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Index(ProjectList.ProjectDetails model)
         {
-            string email = Session["Email"].ToString();
             string pat = "";
             if (Session["PAT"] != null)
             {
                 pat = Session["PAT"].ToString();
             }
+            string email = Session["Email"].ToString();
+
             if (string.IsNullOrEmpty(pat))
             {
                 return Redirect("../Account/Verify");
@@ -441,17 +442,17 @@ namespace VstsDemoBuilder.Controllers
             GetRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            //int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
-            //if (count >= 1)
-            //{
-            //    AddMessage(model.id, "Build Definition");
-            //}
+            int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            if (count >= 1)
+            {
+                AddMessage(model.id, "Build Definition");
+            }
 
-            //int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
-            //if (relCount >= 1)
-            //{
-            //    AddMessage(model.id, "Release Definition");
-            //}
+            int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            if (relCount >= 1)
+            {
+                AddMessage(model.id, "Release Definition");
+            }
 
             ////Export Board Rows
             ExportboardRows(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
@@ -489,7 +490,7 @@ namespace VstsDemoBuilder.Controllers
             }
             zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
             ZipFile.CreateFromDirectory(startPath, zipPath);
-            Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
+            //Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
             StatusMessages[model.id] = "100";
             return new string[] { model.id, "" };
         }
@@ -1003,6 +1004,131 @@ namespace VstsDemoBuilder.Controllers
                 System.IO.File.Delete(Server.MapPath("~") + @"ExtractedTemplate\" + projectName);
                 System.IO.File.Delete(Server.MapPath("~") + @"ExtractedTemplate\" + projectName + ".zip");
             }
+
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult ZipAndDownloadFiles(string fileName)
+        {
+            string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
+            CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
+            if (System.IO.Directory.Exists(filePath))
+            {
+                string[] files = Directory.GetFiles(filePath);
+                string[] subDirs = Directory.GetDirectories(filePath);
+                if (files.Length > 0)
+                {
+                    sfiles.Files = new List<CreateZips.FileInfo>();
+
+                    foreach (var f in files)
+                    {
+                        CreateZips.FileInfo fileInfo = new CreateZips.FileInfo();
+
+                        string[] fSplit = f.Split('\\');
+                        string splitLength = fSplit[fSplit.Length - 1];
+                        fSplit = splitLength.Split('.');
+
+                        fileInfo.Name = fSplit[0];
+                        fileInfo.Extension = fSplit[1];
+                        fileInfo.FileBytes = System.IO.File.ReadAllBytes(f);
+                        sfiles.Files.Add(fileInfo);
+                    }
+                }
+
+                if (subDirs.Length > 0)
+                {
+                    sfiles.Folder = new List<CreateZips.Folder>();
+
+                    foreach (var dir in subDirs)
+                    {
+                        string[] subDirFiles = System.IO.Directory.GetFiles(dir);
+                        if (subDirFiles.Length > 0)
+                        {
+                            CreateZips.Folder folder = new CreateZips.Folder();
+                            string[] getFolderName = dir.Split('\\');
+                            string subFolderName = getFolderName[getFolderName.Length - 1];
+                            folder.FolderName = subFolderName;
+                            folder.FolderItems = new List<CreateZips.FolderItem>();
+
+                            foreach (var sdf in subDirFiles)
+                            {
+                                CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
+                                string[] fSplit = sdf.Split('\\');
+                                string splitLength = fSplit[fSplit.Length - 1];
+                                fSplit = splitLength.Split('.');
+
+                                folderItem.Name = fSplit[0];
+                                folderItem.Extension = fSplit[1];
+                                folderItem.FileBytes = System.IO.File.ReadAllBytes(sdf);
+                                folder.FolderItems.Add(folderItem);
+                            }
+                            sfiles.Folder.Add(folder);
+                        }
+                    }
+                }
+            }
+            // ...
+
+            // the output bytes of the zip
+            byte[] fileBytes = null;
+
+            //create a working memory stream
+            using (System.IO.MemoryStream memoryStream = new System.IO.MemoryStream())
+            {
+                // create a zip
+                using (System.IO.Compression.ZipArchive zip = new System.IO.Compression.ZipArchive(memoryStream, System.IO.Compression.ZipArchiveMode.Create, true))
+                {
+                    // interate through the source files
+                    if (sfiles.Folder != null)
+                    {
+                        if (sfiles.Folder.Count > 0)
+                        {
+                            foreach (var folder in sfiles.Folder)
+                            {
+                                // add the item name to the zip
+
+                                foreach (var file in folder.FolderItems)
+                                {
+                                    System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension);
+
+                                    using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes))
+                                    {
+                                        using (System.IO.Stream entryStream = zipItem.Open())
+                                        {
+                                            originalFileMemoryStream.CopyTo(entryStream);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (sfiles.Files != null)
+                    {
+                        if (sfiles.Files.Count > 0)
+                        {
+                            foreach (var outerFile in sfiles.Files)
+                            {
+                                // add the item name to the zip
+                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(outerFile.Name + "." + outerFile.Extension);
+                                // add the item bytes to the zip entry by opening the original file and copying the bytes 
+                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(outerFile.FileBytes))
+                                {
+                                    using (System.IO.Stream entryStream = zipItem.Open())
+                                    {
+                                        originalFileMemoryStream.CopyTo(entryStream);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                fileBytes = memoryStream.ToArray();
+            }
+
+            // download the constructed zip
+            Response.AddHeader("Content-Disposition", "attachment; filename=download.zip");
+            return File(fileBytes, "application/zip");
 
         }
 
