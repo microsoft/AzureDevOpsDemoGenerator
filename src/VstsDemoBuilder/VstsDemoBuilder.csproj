@@ -827,6 +827,14 @@
     <Content Include="Templates\ContosoAir\ServiceEndpoints\ContosoAir.json" />
     <Content Include="Templates\ContosoAir\BoardColumns.json" />
     <Content Include="Templates\ContosoAir\UpdateCardFields.json" />
+    <Content Include="Templates\MachineLearning\BuildDefinitions\DevOps-for-AI.json" />
+    <Content Include="Templates\MachineLearning\Extensions.json" />
+    <Content Include="Templates\MachineLearning\ImportSourceCode\DevOps-for-AI.json" />
+    <Content Include="Templates\MachineLearning\ProjectSettings.json" />
+    <Content Include="Templates\MachineLearning\ProjectTemplate.json" />
+    <Content Include="Templates\MachineLearning\ReleaseDefinitions\DevOps-for-AI.json" />
+    <Content Include="Templates\MachineLearning\ServiceEndpoints\DevOps-for-AI.json" />
+    <Content Include="Templates\MachineLearning\TeamArea.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
