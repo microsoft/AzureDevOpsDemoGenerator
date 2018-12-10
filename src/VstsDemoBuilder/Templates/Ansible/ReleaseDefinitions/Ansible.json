@@ -95,7 +95,7 @@
                                 }
                             ]
                         },
-                        "queueId": "$Hosted Ubuntu 1604$",
+                        "queueId": "$Hosted VS2017$",
                         "demands": [],
                         "enableAccessToken": false,
                         "timeoutInMinutes": 0,
