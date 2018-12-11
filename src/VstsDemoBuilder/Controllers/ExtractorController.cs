@@ -481,15 +481,15 @@ namespace VstsDemoBuilder.Controllers
             }
 
             GetTeamSetting(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
-            string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
+            //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
-            string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            if (System.IO.File.Exists(zipPath))
-            {
-                System.IO.File.Delete(zipPath);
-            }
-            zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            ZipFile.CreateFromDirectory(startPath, zipPath);
+            //string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
+            //if (System.IO.File.Exists(zipPath))
+            //{
+            //    System.IO.File.Delete(zipPath);
+            //}
+            //zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
+            //ZipFile.CreateFromDirectory(startPath, zipPath);
             //Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
             StatusMessages[model.id] = "100";
             return new string[] { model.id, "" };
@@ -1007,10 +1007,10 @@ namespace VstsDemoBuilder.Controllers
 
         }
 
-        [HttpPost]
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
+            //string val = Convert.ToString(Request.Params["fileName1"]);
             string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
             CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
             if (System.IO.Directory.Exists(filePath))
@@ -1125,9 +1125,9 @@ namespace VstsDemoBuilder.Controllers
                 }
                 fileBytes = memoryStream.ToArray();
             }
-
+            //System.IO.Directory.Delete(filePath, true);
             // download the constructed zip
-            Response.AddHeader("Content-Disposition", "attachment; filename=download.zip");
+            Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
             return File(fileBytes, "application/zip");
 
         }
