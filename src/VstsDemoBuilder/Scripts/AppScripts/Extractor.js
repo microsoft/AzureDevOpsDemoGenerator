@@ -293,14 +293,6 @@ $(document).ready(function () {
         });
     });
 
-    //$('#fileDownload').click(function () {
-    //    var project = $("#projectSelect option:selected").text();
-    //    if (project !== "") {
-    //        $.post("../Extractor/ZipAndDownloadFiles/?fileName=" + project, function (data) {
-    //            console.log("downloaded");
-    //        });
-    //    }
-    //});
 });
 
 function getStatus() {
@@ -343,10 +335,10 @@ function getStatus() {
                             $('#ExdvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
-                            var link = "../ExtractedTemplate/" + finalprojectName + ".zip";
+                            //var link = "../ExtractedTemplate/" + finalprojectName + ".zip";
                             $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
                             $('.genArtifacts').removeClass('show');
-                            $('<b style="display: block;">Congratulations! Your template is ready. Click <a href="' + link + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
+                            //$('<b style="display: block;">Congratulations! Your template is ready. Click <a href="' + link + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
 
                             $('#ExtractorProgressBar').width(currentPercentage++ + '%');
                             $("#finalLink").removeClass("d-none").addClass("d-block");
@@ -367,10 +359,10 @@ function getStatus() {
                                 $('#artifactProgress').removeClass('d-none');
 
                                 currentPercentage = 0;
-                                var links = "../ExtractedTemplate/" + finalprojectName + ".zip";
+                                //var links = "../ExtractedTemplate/" + finalprojectName + ".zip";
                                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
                                 $('.genArtifacts').removeClass('show');
-                                $('<b style="display: block;"> Click <a href="' + links + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
+                                //$('<b style="display: block;"> Click <a href="' + links + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
 
                                 $("#projCreateMsg").hide();
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
