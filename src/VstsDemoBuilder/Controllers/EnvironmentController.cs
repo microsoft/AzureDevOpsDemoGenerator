@@ -340,7 +340,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiNWRhOGZiMGItMmMzMS00YjBiLTg5NjUtNjU1MDA2MGJmYmQzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQyNzk2MDA3LCJleHAiOjE1NDI3OTk2MDd9.DmIL2WRyqGwK5mAf390g14lEpEk5678rzGAMtsyZXrKArhimgvWzLUrtWoJxIL3KwEKKeUK14q3AGwjdZ8K7SNsS5mYYEq9e5TxZo66s5hY9CQwYN7RZUAfu56ObnzPSaSnC96vtlSp77aICbCdr_L1OsyxcZ3t_wE0AYnKj1GGAo9IjXsWcUo3d44w2xnQ2KSIoXgAlp8eW3N_PjjiehZNIrulDCJuUbC6ndXhXwuhVjAR_VjV7AS251ZDe6YjFldzXBJIVS-aAuZ_cnAEU7EHUsALp1Jr5213lM7VZWpJwahdYpa3fZUdjDKe0mh4T7aj6uxJ6rymJwG1o7KqnKQ";
+                    AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMzJiNzFhMWEtNTVlMS00NWQ1LWEzNWYtMmRkMzIxNGZjOTZjIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQ0NjA1ODQxLCJleHAiOjE1NDQ2MDk0NDF9.cI2h9EXvlEXr63IfqhakCSgRFh5jXbX_xuLAMB7zd90DuPaIPsNw94xuwWxJG-xn51pDnJgKhRfapXs7b_LJVu_UrN80LDpMykIvYhVfFLqAuw_E3L-tjuLk8eV3xTXv7FM2zPl8mdMKtuHmMteoR6LODc7NkhvULAsSsuEkJcTomTlHQreiq0TWGCSo0DacCUSXUAkCt983kJ3r7ga6fMOlBaMCcQgPSrR3Eoaz98VWxlqYkJ3miCsSftqOwzChkFLh8oIBCWW_IYLmpEc18HqZOU15M_-FChJfEZLnr3Y2y2qQidEivo1W0M6NmXY-vSR6NPaZFpwl9M4hOglM1Q";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -995,20 +995,32 @@ namespace VstsDemoBuilder.Controllers
                 boardType = "Stories";
             }
             BoardColumn objBoard = new BoardColumn(_boardVersion);
-            string updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
-            SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
-            bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType);
-            EnableEpic(templatesFolder, model, template.SetEpic, _boardVersion, model.id);
-            bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _boardVersion, model.id, boardType);
-            if (success)
+            string updateSwimLanesJSON = "";
+            if (template.BoardRows != null)
             {
-                //update Card Fields
-                UpdateCardFields(templatesFolder, model, template.CardField, _boardVersion, model.id, boardType);
-                //Update card styles
-                UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
-                //Enable Epic Backlog
-                AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
+                SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType);
             }
+            if (template.SetEpic != null)
+            {
+                EnableEpic(templatesFolder, model, template.SetEpic, _boardVersion, model.id);
+            }
+
+            if (template.BoardColumns != null)
+            {
+                bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _boardVersion, model.id, boardType);
+                if (success)
+                {
+                    //update Card Fields
+                    UpdateCardFields(templatesFolder, model, template.CardField, _boardVersion, model.id, boardType);
+                    //Update card styles
+                    UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
+                    //Enable Epic Backlog
+                    AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                }
+            }
+
 
 
             //update sprint dates
@@ -1023,9 +1035,12 @@ namespace VstsDemoBuilder.Controllers
             {
                 System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
             }
-            string endPointJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CreateService);
-            listEndPointsJsonPath.Add(endPointJson);
-            CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
+            if (!string.IsNullOrEmpty(template.CreateService))
+            {
+                string endPointJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CreateService);
+                listEndPointsJsonPath.Add(endPointJson);
+                CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
+            }
 
             //create agent queues on demand
             Queue queue = new Queue(_agentQueueVersion);
@@ -1104,13 +1119,13 @@ namespace VstsDemoBuilder.Controllers
 
 
             //import work items
-            string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate);
-            string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate);
-            string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate);
-            string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate);
-            string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate);
-            string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate);
-            string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate);
+            string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
+            string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
+            string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
+            string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
+            string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
+            string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
+            string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
             string testPlansPath = string.Empty;
             string testSuitesPath = string.Empty;
             if (model.SelectedTemplate.ToLower() == "myshuttle2")
