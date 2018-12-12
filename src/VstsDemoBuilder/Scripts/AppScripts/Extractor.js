@@ -189,7 +189,8 @@ $(document).ready(function () {
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
         $('#ExStatus-messages').empty();
-        $('#accountLink').empty(); $('#finalLink').addClass('d-none');
+        //$('#accountLink').empty();
+        $('#finalLink').addClass('d-none');
         $.ajax({
             url: '../Extractor/AnalyzeProject',
             type: 'POST',
