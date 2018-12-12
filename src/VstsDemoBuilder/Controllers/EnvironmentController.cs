@@ -443,7 +443,15 @@ namespace VstsDemoBuilder.Controllers
                 else if (!settingFile && !projectFile)
                 {
                     string[] folderName = System.IO.Directory.GetDirectories(extractPath);
-                    string subDir = folderName[0];
+                    string subDir = "";
+                    if (folderName.Length > 0)
+                    {
+                        subDir = folderName[0];
+                    }
+                    else
+                    {
+                        return Json("Could not find required preoject setting and project template file.");
+                    }
                     System.IO.File.AppendAllText(logPath, "SubDir Path :" + subDir + "\r\n");
                     if (subDir != "")
                     {

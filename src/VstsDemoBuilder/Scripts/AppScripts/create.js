@@ -757,9 +757,9 @@ function GetRequiredExtension() {
                 if (ThirdParty !== "thirdparty") {
                     ThirdParty = "";
                 }
-            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = ""; }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = ""; }
 
     });
 }
