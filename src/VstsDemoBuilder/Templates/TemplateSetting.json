@@ -2,11 +2,10 @@
   "Groups": [
     "General",
     "DevOps Labs",
+    "Private"
   ],
   "PrivateGroups": [
-    "PrivateTemp",
-    "Private"
-
+    "PrivateTemp"
   ],
   "GroupwiseTemplates": [
     {
