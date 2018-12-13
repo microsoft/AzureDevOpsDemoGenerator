@@ -340,7 +340,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "";
+                    AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiZWVjYzkyNTItNTJiMi00ZGU1LWJhODAtNzFiNDNlOWVlNmE1IiwiYXBwaWQiOiI0N2YzZmU3OS04MTAxLTQzNDEtYTNiNC0wZTdiNzliZDJjMDYiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQ0Njc4NjQ5LCJleHAiOjE1NDQ2ODIyNDl9.Pb1b4xqiqPDDixYVMRS_4AH31UINdWUJJ7Q8TM6BAqUOCp6Tw-FtNj9DW5rzktR-cS0HFK877ReEm04GlBLAOBtwIm0KyIYJvtX8jvUZxuUfbrhFnRVOwOB6ofY-idw1doF0hipe33EshrXUmN6VNNx77Pb1wdyAYH6x5quwIKrRTblG3nOsViRaYVXsKRWtMOnfShBUjAqzLafRVKHnNf9B9Qj2OTqLjFekGOxD6gs8oSq_eTXfWwdb8BLyuP-ktrkxap7VPd4ehLm9KklnfKGStZqWE-WY814Ma3H4XFzTABrrvEjSJQyBuy5RjPNAeP7nICAGnXO7kAVAYq3yYQ";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -1035,13 +1035,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
             }
-            if (!string.IsNullOrEmpty(template.CreateService))
-            {
-                string endPointJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CreateService);
-                listEndPointsJsonPath.Add(endPointJson);
-                CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
-            }
-
+            CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
             //create agent queues on demand
             Queue queue = new Queue(_agentQueueVersion);
             model.Environment.AgentQueues = queue.GetQueues();
