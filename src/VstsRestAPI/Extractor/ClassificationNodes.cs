@@ -10,17 +10,14 @@ namespace VstsRestAPI.Extractor
     {
         public GetClassificationNodes(IConfiguration configuration) : base(configuration) { }
 
-        /// <summary>
-        /// Get Iteration Count
-        /// </summary>
-        /// <returns></returns>
+        // Get Iteration Count
         public GetINumIteration.Iterations GetiterationCount()
         {
             try
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/teamsettings/iterations?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + _configuration.Project + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -41,10 +38,7 @@ namespace VstsRestAPI.Extractor
             }
             return new GetINumIteration.Iterations();
         }
-        /// <summary>
-        /// Get Iterations to write file
-        /// </summary>
-        /// <returns></returns>
+        // Get Iterations to write file
         public ItearationList.Iterations GetIterations()
         {
             try
@@ -72,13 +66,10 @@ namespace VstsRestAPI.Extractor
             }
             return new ItearationList.Iterations();
         }
-        /// <summary>
-        /// Get Team List to write to file
-        /// </summary>
-        /// <returns></returns>
+        // Get Team List to write to file
         public SrcTeamsList GetTeamList()
         {
-            Teams.TeamList teamObj = new Teams.TeamList();
+            ListTeams.TeamList teamObj = new ListTeams.TeamList();
             SrcTeamsList _team = new SrcTeamsList();
             try
             {
@@ -88,8 +79,16 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(result);
+                        teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(result);
+
                         _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
+                        for (var x = 0; x < _team.value.Count; x++)
+                        {
+                            if (_team.value[x].description.ToLower() == "the default project team.")
+                            {
+                                _team.value.RemoveAt(x);
+                            }
+                        }
                         return _team;
                     }
                     else
@@ -107,10 +106,7 @@ namespace VstsRestAPI.Extractor
             return new SrcTeamsList();
         }
 
-        /// <summary>
-        /// Get Board colums for Scrum template to write to file
-        /// </summary>
-        /// <returns></returns>
+        // Get Board colums for Scrum template and write it to file
         public BoardColumnResponseScrum.ColumnResponse ExportBoardColumnsScrum()
         {
             try
@@ -139,10 +135,7 @@ namespace VstsRestAPI.Extractor
             return new BoardColumnResponseScrum.ColumnResponse();
         }
 
-        /// <summary>
-        /// Get Board Columns for Agile template to write file
-        /// </summary>
-        /// <returns></returns>
+        // Get Board Columns for Agile template and write it file
         public BoardColumnResponseAgile.ColumnResponse ExportBoardColumnsAgile()
         {
             try
@@ -150,10 +143,10 @@ namespace VstsRestAPI.Extractor
                 BoardColumnResponseAgile.ColumnResponse columns = new BoardColumnResponseAgile.ColumnResponse();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
-                        columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
+                        columns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
                         return columns;
                     }
                     else
@@ -171,10 +164,7 @@ namespace VstsRestAPI.Extractor
             return new BoardColumnResponseAgile.ColumnResponse();
         }
 
-        /// <summary>
-        /// Get Board Rows to write file
-        /// </summary>
-        /// <returns></returns>
+        // Get Board Rows to write file
         public ExportBoardRows.Rows ExportboardRows()
         {
             try
@@ -208,11 +198,7 @@ namespace VstsRestAPI.Extractor
             return new ExportBoardRows.Rows();
         }
 
-        /// <summary>
-        /// Get Card Style details to write file
-        /// </summary>
-        /// <param name="boardType"></param>
-        /// <returns></returns>
+        // Get Card Style details to write file
         public CardStyle.Style GetCardStyle(string boardType)
         {
             try
@@ -242,10 +228,7 @@ namespace VstsRestAPI.Extractor
             return new CardStyle.Style();
         }
 
-        /// <summary>
-        /// Get Card fields for Scrum process template to write file
-        /// </summary>
-        /// <returns></returns>
+        // Get Card fields for Scrum process template to write file
         public CardFiledsScrum.CardField GetCardFieldsScrum()
         {
             try
@@ -275,17 +258,14 @@ namespace VstsRestAPI.Extractor
             return new CardFiledsScrum.CardField();
         }
 
-        /// <summary>
-        /// Get Card fields for Agile process template to write file
-        /// </summary>
-        /// <returns></returns>
+        // Get Card fields for Agile process template to write file
         public CardFiledsAgile.CardField GetCardFieldsAgile()
         {
             try
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         CardFiledsAgile.CardField card = new CardFiledsAgile.CardField();
@@ -308,10 +288,7 @@ namespace VstsRestAPI.Extractor
             return new CardFiledsAgile.CardField();
         }
 
-        /// <summary>
-        /// Get Team setting
-        /// </summary>
-        /// <returns></returns>
+        // Get Team setting
         public GetTeamSetting.Setting GetTeamSetting()
         {
             GetTeamSetting.Setting setting = new GetTeamSetting.Setting();
@@ -339,6 +316,29 @@ namespace VstsRestAPI.Extractor
                 LastFailureMessage = ex.Message;
             }
             return new GetTeamSetting.Setting();
+        }
+
+        public int GetTeamsCount()
+        {
+            ListTeams.TeamList teamObj = new ListTeams.TeamList();
+            SrcTeamsList _team = new SrcTeamsList();
+            using (var client = GetHttpClient())
+            {
+                //https://dev.azure.com/australiaEastaksh/_apis/projects/SmartHotel360/teams?api-version=4.1
+                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "_apis/projects/" + _configuration.Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
+                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string res = response.Content.ReadAsStringAsync().Result;
+                    teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
+                    return teamObj.count;
+                }
+                else
+                {
+                    string errorMessage = response.Content.ReadAsStringAsync().Result;
+                    LastFailureMessage = errorMessage;
+                }
+            }
+            return 0;
         }
     }
 }

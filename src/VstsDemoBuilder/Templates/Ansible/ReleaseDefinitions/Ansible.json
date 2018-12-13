@@ -1,0 +1,343 @@
+{
+    "source": "userInterface",
+    "revision": 16,
+    "description": null,
+    "isDeleted": false,
+    "variables": {
+        "location": {
+            "value": "South India"
+        },
+        "mysqlAdmin": {
+            "value": "vmadmin"
+        },
+        "mysqlAdminSecret": {
+            "value": "P2ssw0rd@123"
+        },
+        "mysqlDbName": {
+            "value": "hotel_coupon"
+        },
+        "mysqlServerName": {
+            "value": "smh360mysql$UUID$"
+        },
+        "resourceGroupName": {
+            "value": "ansible"
+        },
+        "webappName": {
+            "value": "smh360web$UUID$"
+        }
+    },
+    "variableGroups": [],
+    "environments": [
+        {
+            "id": 2,
+            "name": "Azure Dev",
+            "rank": 1,
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+            },
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 4
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "beforeGates"
+                }
+            },
+            "deployStep": {
+                "id": 5
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 6
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "afterSuccessfulGates"
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": [
+                                {
+                                    "artifactItems": [],
+                                    "alias": "_Ansible-CI",
+                                    "artifactType": "Build",
+                                    "artifactDownloadMode": "All"
+                                }
+                            ]
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": "agentBasedDeployment",
+                    "name": "Agent job",
+                    "refName": null,
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "a8515ec8-7254-4ffd-912c-86772e2b5962",
+                            "version": "3.*",
+                            "name": "Replace variables in Ansible script to deploy Azure resources",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "rootDirectory": "",
+                                "targetFiles": "**/*.yml",
+                                "encoding": "auto",
+                                "writeBOM": "true",
+                                "actionOnMissing": "warn",
+                                "keepToken": "false",
+                                "tokenPrefix": "__",
+                                "tokenSuffix": "__",
+                                "emptyValue": "(empty)",
+                                "escapeType": "none",
+                                "escapeChar": "",
+                                "charsToEscape": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "6f650d20-9c5d-4cce-ad66-e68742ceadf5",
+                            "version": "0.*",
+                            "name": "Run playbook to deploy Azure resources",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ansibleInterface": "remoteMachine",
+                                "connectionOverSsh": "",
+                                "playbookSourceRemoteMachine": "agentMachine",
+                                "playbookRootRemoteMachine": "$(System.DefaultWorkingDirectory)/_Ansible-CI/drop/ansible-scripts",
+                                "playbookPathLinkedArtifactOnRemoteMachine": "webapp.yml",
+                                "playbookPathAnsibleMachineOnRemoteMachine": "",
+                                "playbookPathOnAgentMachine": "",
+                                "inventoriesRemoteMachine": "noInventory",
+                                "inventoryFileSourceRemoteMachine": "agentMachine",
+                                "inventoryFileLinkedArtifactOnRemoteMachine": "",
+                                "inventoryFileAnsibleMachineOnRemoteMachine": "",
+                                "inventoryHostListRemoteMachine": "",
+                                "inventoryInlineDynamicRemoteMachine": "false",
+                                "inventoryInlineContentRemoteMachine": "",
+                                "inventoriesAgentMachine": "noInventory",
+                                "inventoryFileOnAgentMachine": "",
+                                "inventoryHostListAgentMachine": "",
+                                "inventoryInlineDynamicAgentMachine": "false",
+                                "inventoryInlineContentAgentMachine": "",
+                                "sudoEnabled": "false",
+                                "sudoUser": "",
+                                "args": "",
+                                "failOnStdErr": "false",
+                                "connectionAnsibleTower": "",
+                                "jobTemplateName": ""
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+                            "version": "3.*",
+                            "name": "Azure App Service Deploy",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "ConnectedServiceName": "",
+                                "WebAppKind": "app",
+                                "WebAppName": "$(webappName)",
+                                "DeployToSlotFlag": "false",
+                                "ResourceGroupName": "",
+                                "SlotName": "",
+                                "ImageSource": "Registry",
+                                "AzureContainerRegistry": "",
+                                "AzureContainerRegistryLoginServer": "",
+                                "AzureContainerRegistryImage": "",
+                                "AzureContainerRegistryTag": "",
+                                "DockerRepositoryAccess": "public",
+                                "RegistryConnectedServiceName": "",
+                                "PrivateRegistryImage": "",
+                                "PrivateRegistryTag": "",
+                                "DockerNamespace": "",
+                                "DockerRepository": "",
+                                "DockerImageTag": "",
+                                "VirtualApplication": "",
+                                "Package": "$(System.DefaultWorkingDirectory)/**/*.war",
+                                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                                "RuntimeStack": "",
+                                "StartupCommand": "",
+                                "WebAppUri": "",
+                                "ScriptType": "",
+                                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                                "ScriptPath": "",
+                                "GenerateWebConfig": "false",
+                                "WebConfigParameters": "",
+                                "AppSettings": "-SPRING_DATASOURCE_USERNAME $(mysqlAdmin)@$(mysqlServerName) -SPRING_DATASOURCE_PASSWORD $(mysqlAdminSecret) -SPRING_DATASOURCE_URL jdbc:mysql://$(mysqlServerName).mysql.database.azure.com:3306/hotel_coupon?useSSL=true&requireSSL=false",
+                                "ConfigurationSettings": "",
+                                "TakeAppOfflineFlag": "true",
+                                "UseWebDeploy": "true",
+                                "SetParametersFile": "",
+                                "RemoveAdditionalFilesFlag": "true",
+                                "ExcludeFilesFromAppDataFlag": "false",
+                                "AdditionalArguments": "",
+                                "RenameFilesFlag": "false",
+                                "XmlTransformation": "false",
+                                "XmlVariableSubstitution": "false",
+                                "JSONFiles": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "ReleaseStarted",
+                    "conditionType": "event",
+                    "value": ""
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 1,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {
+            },
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        }
+    ],
+    "artifacts": [
+        {
+            "sourceId": "$ProjectId$:$Ansible-CI-id$",
+            "type": "Build",
+            "alias": "_Ansible-CI",
+            "definitionReference": {
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "selectDuringReleaseCreationType",
+                    "name": "Specify at the time of release creation"
+                },
+                "definition": {
+                    "id": "$Ansible-CI-id$",
+                    "name": "Ansible-CI"
+                },
+                "definitions": {
+                    "id": "",
+                    "name": ""
+                },
+                "IsMultiDefinitionType": {
+                    "id": "False",
+                    "name": "False"
+                },
+                "project": {
+                    "id": "$ProjectId$",
+                    "name": "$ProjectName$"
+                }
+            },
+            "isPrimary": true,
+            "isRetained": false
+        }
+    ],
+    "triggers": [],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "pipelineProcess": {
+        "type": "designer"
+    },
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "Other"
+        }
+    },
+    "name": "Ansible-CD",
+    "path": "\\"
+}

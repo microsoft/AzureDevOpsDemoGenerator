@@ -21,37 +21,38 @@ namespace VstsRestAPI.WorkItemAndTracking
             GetCardFieldResponse.ListofCards cardField = new GetCardFieldResponse.ListofCards();
             GetCardFieldResponseAgile.ListofCards agileCardField = new GetCardFieldResponseAgile.ListofCards();
 
-            if (boardType == "Backlog%20items")
-            {
-                cardField = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(json);
-                if (cardField.cards.Message == null)
-                {
-                    cardField.cards.Message = "test";
-                }
-            }
-            else if (boardType == "Stories")
-            {
-                agileCardField = JsonConvert.DeserializeObject<GetCardFieldResponseAgile.ListofCards>(json);
-                if (agileCardField.cards.Message == null)
-                {
-                    agileCardField.cards.Message = "test";
-                }
-            }
+            //if (boardType == "Backlog%20items")
+            //{
+            //    cardField = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(json);
+            //    if (cardField.cards.Message == null)
+            //    {
+            //        cardField.cards.Message = "test";
+            //    }
+            //}
+            //else if (boardType == "Stories")
+            //{
+            //    agileCardField = JsonConvert.DeserializeObject<GetCardFieldResponseAgile.ListofCards>(json);
+            //    if (agileCardField.cards.Message == null)
+            //    {
+            //        agileCardField.cards.Message = "test";
+            //    }
+            //}
 
             string teamName = projectName + " Team";
             using (var client = GetHttpClient())
             {
                 StringContent patchValue = new StringContent("");
+                //json = JsonConvert.SerializeObject(cardField);
                 if (boardType == "Backlog%20items")
                 {
-                    patchValue = new StringContent(JsonConvert.SerializeObject(cardField), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                    patchValue = new StringContent(json, Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 }
                 else if (boardType == "Stories")
                 {
-                    patchValue = new StringContent(JsonConvert.SerializeObject(agileCardField), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+                    patchValue = new StringContent(json, Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
                 }
                 var method = new HttpMethod("PUT");
-                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardsettings?api-version=" + _configuration.VersionNumber;
+                string boardURL = _configuration.UriString  + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardsettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)

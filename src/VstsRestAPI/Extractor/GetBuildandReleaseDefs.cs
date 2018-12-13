@@ -13,17 +13,14 @@ namespace VstsRestAPI.Extractor
         public GetBuildandReleaseDefs(IConfiguration configuration) : base(configuration) { }
 
         //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
-        /// <summary>
-        /// Get Build Definition count
-        /// </summary>
-        /// <returns></returns>
+        // Get Build Definition count
         public GetBuildDefResponse.BuildDef GetBuildDefCount()
         {
             try
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -46,10 +43,7 @@ namespace VstsRestAPI.Extractor
         }
 
         //https://d2a2v2.vsrm.visualstudio.com/selenium2/_apis/release/definitions?api-version=4.1-preview.3
-        /// <summary>
-        /// Get Release Definition count
-        /// </summary>
-        /// <returns></returns>
+        // Get Release Definition count
         public GetReleaseDefResponse.ReleaseDef GetReleaseDefCount()
         {
             try
@@ -72,17 +66,14 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                LastFailureMessage = ex.Message;
             }
             return new GetReleaseDefResponse.ReleaseDef();
         }
 
-        /// <summary>
-        /// Get Release Definition count
-        /// </summary>
-        /// <returns></returns>
+        // Get Release Definition count
         public GetReleaseDefResponse.ReleaseDef GetReleaseDef()
         {
             try
@@ -111,10 +102,7 @@ namespace VstsRestAPI.Extractor
             return new GetReleaseDefResponse.ReleaseDef();
         }
 
-        /// <summary>
-        /// Export build definitions to write file
-        /// </summary>
-        /// <returns></returns>
+        //Export build definitions to write file
         public List<JObject> ExportBuildDefinitions()
         {
             try
@@ -154,10 +142,7 @@ namespace VstsRestAPI.Extractor
             return new List<JObject>();
         }
 
-        /// <summary>
-        /// Get Repository list to create service end point json and import source code json
-        /// </summary>
-        /// <returns></returns>
+        // Get Repository list to create service end point json and import source code json
         public RepositoryList.Repository GetRepoList()
         {
             using (var client = GetHttpClient())
@@ -173,10 +158,7 @@ namespace VstsRestAPI.Extractor
             return new RepositoryList.Repository();
         }
 
-        /// <summary>
-        /// Get Release Definition to write file - Generalizing
-        /// </summary>
-        /// <returns></returns>
+        // Get Release Definition to write file - Generalizing
         public List<JObject> GetReleaseDefs()
         {
             List<JObject> jobj = new List<JObject>();
@@ -223,10 +205,7 @@ namespace VstsRestAPI.Extractor
             }
         }
 
-        /// <summary>
-        /// Get Agent Queue to Replace the Queue name in the build definition
-        /// </summary>
-        /// <returns></returns>
+        // Get Agent Queue to Replace the Queue name in the build definition
         public Dictionary<string, int> GetQueues()
         {
             Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
