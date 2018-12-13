@@ -68,6 +68,7 @@
     <Compile Include="Extractor\ClassificationNodes.cs" />
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
+    <Compile Include="Services\HttpServices.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseAgile.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseScrum.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitionResponse.cs" />

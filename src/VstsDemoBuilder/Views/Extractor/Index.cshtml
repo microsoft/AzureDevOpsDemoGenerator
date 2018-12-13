@@ -1,4 +1,8 @@
-﻿@model VstsDemoBuilder.Models.ProjectList.ProjectCount
+﻿@model VstsDemoBuilder.Models.ProjectList.ProjectDetails
+@{
+    ViewBag.Title = "Azure DevOps Demo Generator - Template Builder";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +40,7 @@
             position: relative;
             display: inline-block;
             border-bottom: 1px dotted black;
-            opacity:1;
+            opacity: 1;
         }
 
             .tooltip .tooltiptext {
@@ -246,6 +250,11 @@
                         </div>
                         <div class="card mt-3 d-none" id="finalLink" style="border: 0px">
                             <div class="card-body" id="accountLink" style="color: green;font-weight: 300;box-shadow: 0px 3px 10px #e0e0e0;">
+                                <form action="~/Extractor/ZipAndDownloadFiles" method="post">
+                                    <input type="hidden" name="fileName" id="hdnProjecName">
+                                    Click <button type="submit" class="btn btn-link" id="fileDownload" style="padding:0px">here</button>to download your file
+                                    <p style="font-weight:600">Note: Folder will be deleted from the server once you click on download button.</p>
+                                </form>
                             </div>
                         </div>
                     </div>

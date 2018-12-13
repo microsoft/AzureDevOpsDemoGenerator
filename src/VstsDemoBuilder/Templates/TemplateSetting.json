@@ -2,10 +2,11 @@
   "Groups": [
     "General",
     "DevOps Labs",
-    "Private"
   ],
   "PrivateGroups": [
-    "PrivateTemp"
+    "PrivateTemp",
+    "Private"
+
   ],
   "GroupwiseTemplates": [
     {
@@ -164,7 +165,7 @@
     {
       "Groups": "PrivateTemp",
       "Template": [
-       
+
         {
           "key": "77386",
           "Name": "Ansible",
