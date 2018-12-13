@@ -1,0 +1,491 @@
+{
+    "name": "Deploy Webservice",
+    "path": "\\",
+    "projectReference": null,
+    "isDeleted": false,
+    "variables": {},
+    "variableGroups": [],
+    "environments": [
+        {
+            "id": 2,
+            "name": "QA - Deploy on ACI",
+            "rank": 1,
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+            },
+            "variables": {},
+            "variableGroups": [],
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 4
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": 0,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 1
+                }
+            },
+            "deployStep": {
+                "id": 5
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 6
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": 0,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 2
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": 0
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": 1,
+                    "name": "Deploy on New ACI",
+                    "refName": null,
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "03dd16c3-43e0-4667-ba84-40515d27a410",
+                            "version": "0.*",
+                            "name": "Conda Environment ",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "environmentName": "azuremlsdk",
+                                "packageSpecs": "python=3.6",
+                                "updateConda": "true",
+                                "createOptions": "cython numpy",
+                                "cleanEnvironment": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+                            "version": "3.*",
+                            "name": "Install Requirements",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "targetType": "filePath",
+                                "filePath": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai/environment_setup/install_requirements.sh",
+                                "arguments": "",
+                                "script": "# Write your commands here\n\n# Use the environment variables input below to pass secret variables to this script",
+                                "workingDirectory": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai/environment_setup",
+                                "failOnStderr": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+                            "version": "1.*",
+                            "name": "Deploy Webservice on ACI",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "connectedServiceNameARM": "",
+                                "scriptLocation": "inlineScript",
+                                "scriptPath": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai/deployment/deployOnAci.py",
+                                "inlineScript": "python ./aml_service/50-deployOnAci.py",
+                                "args": "",
+                                "cwd": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai",
+                                "failOnStandardError": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+                            "version": "1.*",
+                            "name": "Test ACI Webservice",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "connectedServiceNameARM": "",
+                                "scriptLocation": "inlineScript",
+                                "scriptPath": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai/test/AciWebserviceTest.py",
+                                "inlineScript": "python ./aml_service/60-AciWebserviceTest.py",
+                                "args": "",
+                                "cwd": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai",
+                                "failOnStandardError": "false"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "ReleaseStarted",
+                    "conditionType": 1,
+                    "value": ""
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 1,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {},
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        },
+        {
+            "id": 3,
+            "name": "Prod - Deploy On AKS",
+            "rank": 2,
+            "owner": {
+                "id": "$OwnerId$",
+                "displayName": "$OwnerDisplayName$",
+                "uniqueName": "$OwnerUniqueName$"
+            },
+            "variables": {},
+            "variableGroups": [],
+             "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 4
+                    }
+                ],
+              "approvalOptions": {
+                "requiredApproverCount": 0,
+                "releaseCreatorCanBeApprover": false,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+              }
+            },
+            "deployStep": {
+                "id": 5
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 6
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": 0,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": 2
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": 0
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": [
+                                {
+                                    "artifactItems": [],
+                                    "alias": "_devops-for-ai-CI",
+                                    "artifactType": "Build",
+                                    "artifactDownloadMode": "All"
+                                }
+                            ]
+                        },
+                        "queueId": "$Hosted VS2017$",
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": 1,
+                    "name": "Agent phase",
+                    "refName": null,
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "03dd16c3-43e0-4667-ba84-40515d27a410",
+                            "version": "0.*",
+                            "name": "Conda Environment azuremlsdk",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "environmentName": "azuremlsdk",
+                                "packageSpecs": "python=3.6",
+                                "updateConda": "true",
+                                "createOptions": "cython numpy",
+                                "cleanEnvironment": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+                            "version": "3.*",
+                            "name": "Install Requirements",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "targetType": "filePath",
+                                "filePath": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai/environment_setup/install_requirements.sh",
+                                "arguments": "",
+                                "script": "# Write your commands here\n\n# Use the environment variables input below to pass secret variables to this script",
+                                "workingDirectory": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai",
+                                "failOnStderr": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+                            "version": "1.*",
+                            "name": "Deploy on AKS",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "connectedServiceNameARM": "",
+                                "scriptLocation": "inlineScript",
+                                "scriptPath": "",
+                                "inlineScript": "python ./aml_service/51-deployOnAci.py",
+                                "args": "",
+                                "cwd": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai",
+                                "failOnStandardError": "false"
+                            }
+                        },
+                        {
+                            "environment": {},
+                            "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+                            "version": "1.*",
+                            "name": "Test AKS Webservice",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "connectedServiceNameARM": "",
+                                "scriptLocation": "inlineScript",
+                                "scriptPath": "",
+                                "inlineScript": "python ./aml_service/61-AksWebserviceTest.py",
+                                "args": "",
+                                "cwd": "$(System.DefaultWorkingDirectory)/_devops-for-ai-CI/devops-for-ai",
+                                "failOnStandardError": "false"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "demands": [],
+            "conditions": [
+                {
+                    "name": "QA - Deploy on ACI",
+                    "conditionType": 2,
+                    "value": "4"
+                }
+            ],
+            "executionPolicy": {
+                "concurrencyCount": 1,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "currentRelease": {},
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {},
+            "preDeploymentGates": {
+                "id": 11,
+                "gatesOptions": {
+                    "isEnabled": true,
+                    "timeout": 1440,
+                    "samplingInterval": 15,
+                    "stabilizationTime": 5,
+                    "minimumSuccessDuration": 0
+                },
+                "gates": []
+            },
+            "postDeploymentGates": {
+                "id": 0,
+                "gatesOptions": null,
+                "gates": []
+            },
+            "environmentTriggers": []
+        }
+    ],
+    "artifacts": [
+        {
+            "sourceId": "$ProjectId$:$DevOps-for-AI-CI-id$",
+            "type": "Build",
+            "alias": "_devops-for-ai-CI",
+            "definitionReference": {
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "latestType",
+                    "name": "Latest"
+                },
+                "definition": {
+                    "id": "$DevOps-for-AI-CI-id$",
+                    "name": "DevOps-for-AI-CI"
+                },
+                "project": {
+                    "id": "$ProjectId$",
+                    "name": "$ProjectName$"
+                }
+            },
+            "isPrimary": true,
+            "isRetained": false
+        }
+    ],
+    "triggers": [
+        {
+            "artifactAlias": "_devops-for-ai-CI",
+            "triggerConditions": [],
+            "triggerType": 1
+        }
+    ],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "ReleaseNew"
+        }
+    }
+}
