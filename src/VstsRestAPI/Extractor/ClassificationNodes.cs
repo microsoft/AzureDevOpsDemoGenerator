@@ -67,10 +67,9 @@ namespace VstsRestAPI.Extractor
             return new ItearationList.Iterations();
         }
         // Get Team List to write to file
-        public SrcTeamsList GetTeamList()
+        public TeamList GetTeamList()
         {
-            ListTeams.TeamList teamObj = new ListTeams.TeamList();
-            SrcTeamsList _team = new SrcTeamsList();
+            TeamList teamObj = new TeamList();
             try
             {
                 using (var client = GetHttpClient())
@@ -79,17 +78,16 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(result);
+                        teamObj = JsonConvert.DeserializeObject<TeamList>(result);
 
-                        _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
-                        for (var x = 0; x < _team.value.Count; x++)
+                        for (var x = 0; x < teamObj.value.Count; x++)
                         {
-                            if (_team.value[x].description.ToLower() == "the default project team.")
+                            if (teamObj.value[x].description.ToLower() == "the default project team.")
                             {
-                                _team.value.RemoveAt(x);
+                                teamObj.value.RemoveAt(x);
                             }
                         }
-                        return _team;
+                        return teamObj;
                     }
                     else
                     {
@@ -103,7 +101,7 @@ namespace VstsRestAPI.Extractor
             {
                 LastFailureMessage = ex.Message;
             }
-            return new SrcTeamsList();
+            return new TeamList();
         }
 
         // Get Board colums for Scrum template and write it to file
@@ -320,8 +318,7 @@ namespace VstsRestAPI.Extractor
 
         public int GetTeamsCount()
         {
-            ListTeams.TeamList teamObj = new ListTeams.TeamList();
-            SrcTeamsList _team = new SrcTeamsList();
+            TeamList teamObj = new TeamList();
             using (var client = GetHttpClient())
             {
                 //https://dev.azure.com/australiaEastaksh/_apis/projects/SmartHotel360/teams?api-version=4.1
@@ -329,8 +326,12 @@ namespace VstsRestAPI.Extractor
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
-                    return teamObj.count;
+                    teamObj = JsonConvert.DeserializeObject<TeamList>(res);
+                    if (teamObj.value != null)
+                    {
+                        return teamObj.value.Count;
+                    }
+                    return 0;
                 }
                 else
                 {
