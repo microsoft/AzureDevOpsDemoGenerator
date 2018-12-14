@@ -316,30 +316,30 @@ namespace VstsRestAPI.Extractor
             return new GetTeamSetting.Setting();
         }
 
-        public int GetTeamsCount()
-        {
-            TeamList teamObj = new TeamList();
-            using (var client = GetHttpClient())
-            {
-                //https://dev.azure.com/australiaEastaksh/_apis/projects/SmartHotel360/teams?api-version=4.1
-                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "_apis/projects/" + _configuration.Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
-                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<TeamList>(res);
-                    if (teamObj.value != null)
-                    {
-                        return teamObj.value.Count;
-                    }
-                    return 0;
-                }
-                else
-                {
-                    string errorMessage = response.Content.ReadAsStringAsync().Result;
-                    LastFailureMessage = errorMessage;
-                }
-            }
-            return 0;
-        }
+        //public int GetTeamsCount()
+        //{
+        //    TeamList teamObj = new TeamList();
+        //    using (var client = GetHttpClient())
+        //    {
+        //        //https://dev.azure.com/australiaEastaksh/_apis/projects/SmartHotel360/teams?api-version=4.1
+        //        HttpResponseMessage response = client.GetAsync(_configuration.UriString + "_apis/projects/" + _configuration.Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
+        //        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+        //        {
+        //            string res = response.Content.ReadAsStringAsync().Result;
+        //            teamObj = JsonConvert.DeserializeObject<TeamList>(res);
+        //            if (teamObj.value != null)
+        //            {
+        //                return teamObj.value.Count;
+        //            }
+        //            return 0;
+        //        }
+        //        else
+        //        {
+        //            string errorMessage = response.Content.ReadAsStringAsync().Result;
+        //            LastFailureMessage = errorMessage;
+        //        }
+        //    }
+        //    return 0;
+        //}
     }
 }

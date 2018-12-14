@@ -3,7 +3,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
@@ -292,12 +291,18 @@ namespace VstsDemoBuilder.Controllers
         public int GetTeamsCount(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
-            int count = nodes.GetTeamsCount();
-
-            if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
+            TeamList teamList = nodes.GetTeamList();
+            int count = 0;
+            if (teamList.value != null)
             {
-                errorMessages.Add("Error while fetching team(s) count:" + nodes.LastFailureMessage);
+                count = teamList.value.Count;
             }
+            //int count = nodes.GetTeamsCount();
+
+            //if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
+            //{
+            //    errorMessages.Add("Error while fetching team(s) count:" + nodes.LastFailureMessage);
+            //}
             return count;
         }
         // Get Iteration Count

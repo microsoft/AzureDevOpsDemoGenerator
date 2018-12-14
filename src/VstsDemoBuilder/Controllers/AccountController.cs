@@ -48,13 +48,10 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var template in grpTemplate.Template)
                                 {
-                                    if (template.Name != null)
+                                    if (template.Name != null && template.Name.ToLower() == model.name.ToLower())
                                     {
-                                        if (template.Name.ToLower() == model.name.ToLower())
-                                        {
-                                            flag = true;
-                                            Session["templateName"] = model.name;
-                                        }
+                                        flag = true;
+                                        Session["templateName"] = model.name;
                                     }
                                 }
                             }
