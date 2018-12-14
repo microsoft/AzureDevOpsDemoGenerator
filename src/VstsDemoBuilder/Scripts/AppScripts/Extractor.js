@@ -89,15 +89,11 @@ $(document).ready(function () {
                         $("#projectSelect").append(opt);
                         var options = $("#projectSelect option");
                         $('#projectloader').addClass('d-none');
-                        $('#Analyse').attr('disabled', false);
-                        $('#Analyse').addClass('btn-primary');
                     }
                     else {
                         $('#projectloader').addClass('d-none');
                         $("#projectSelect_Error").text(da.errmsg);
                         $("#projectSelect_Error").removeClass('d-none');
-                        $('#Analyse').attr('disabled', false);
-                        $('#Analyse').addClass('btn-primary');
                         return;
                     }
                 },
@@ -122,10 +118,16 @@ $(document).ready(function () {
         var key = $('#key').val();
         $('#processtemplate').empty();
         $('#processTemplateLoader').removeClass('d-none');
-        if (project === 0 || project === "") {
+        if (project === "0" || project === "" || project === 'Select Project') {
+            $('#Analyse').attr('disabled', 'disabled');
+            $('#Analyse').removeClass('btn-primary');
+            $('#projectloader').addClass('d-none');
             return;
         }
         if (accSelected === '' || accSelected === 'Select Organization') {
+            $('#Analyse').attr('disabled', 'disabled');
+            $('#Analyse').removeClass('btn-primary');
+            $('#projectloader').addClass('d-none');
             return;
         }
         else {
@@ -173,7 +175,7 @@ $(document).ready(function () {
             $("#ddlAcccountName_Error").removeClass('d-none');
             return;
         }
-        if (project === "" || projectName === '--select project--' || project === 0 || typeof project === undefined) {
+        if (project === "" || projectName === 'Select Project' || project === "0" || typeof project === undefined) {
             $("#projectSelect_Error").text("Please select a Project");
             $("#projectSelect_Error").removeClass('d-none');
             return;
@@ -257,12 +259,12 @@ $(document).ready(function () {
         $('#hdnProjecName').val(projectName);
         var key = $('#key').val();
         var processTemplate = $('#processtemplate').val();
-        if (SourceAcc === "" || SourceAcc === "Select Account") {
+        if (SourceAcc === "" || SourceAcc === "Select Organization") {
             $("#ddlAcccountName_Error").text("Please select Source Account Name");
             $("#ddlAcccountName_Error").removeClass('d-none');
             return;
         }
-        if (project === '' || projectName === '--select account--' || project === 0) {
+        if (project === "" || projectName === 'Select Project' || project === "0") {
             $("#projectSelect_Error").text("Please select Source Project");
             $("#projectSelect_Error").removeClass('d-none');
             return;
