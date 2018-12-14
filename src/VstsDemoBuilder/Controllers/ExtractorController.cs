@@ -291,10 +291,9 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public int GetTeamsCount(Configuration con)
         {
-            ListTeams.TeamList teamObj = new ListTeams.TeamList();
-            SrcTeamsList _team = new SrcTeamsList();
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             int count = nodes.GetTeamsCount();
+
             if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
             {
                 errorMessages.Add("Error while fetching team(s) count:" + nodes.LastFailureMessage);
@@ -498,7 +497,7 @@ namespace VstsDemoBuilder.Controllers
         public bool GetTeamList(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
-            SrcTeamsList _team = new SrcTeamsList();
+            TeamList _team = new TeamList();
 
             _team = nodes.GetTeamList();
             if (_team.value != null)

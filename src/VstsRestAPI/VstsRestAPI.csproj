@@ -90,7 +90,6 @@
     <Compile Include="Viewmodel\Extractor\ReleaseDefCountResponse.cs" />
     <Compile Include="Viewmodel\Extractor\ReleaseDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\RepositoryList.cs" />
-    <Compile Include="Viewmodel\Extractor\SrcTeams.cs" />
     <Compile Include="Viewmodel\Extractor\Teams.cs" />
     <Compile Include="Git\Repository.cs" />
     <Compile Include="IConfiguration.cs" />
