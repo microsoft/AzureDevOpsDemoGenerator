@@ -8,9 +8,9 @@ using VstsRestAPI.Viewmodel.Queue;
 
 namespace VstsRestAPI.Extractor
 {
-    public class GetBuildandReleaseDefs : ApiServiceBase
+    public class BuildandReleaseDefs : ApiServiceBase
     {
-        public GetBuildandReleaseDefs(IConfiguration configuration) : base(configuration) { }
+        public BuildandReleaseDefs(IConfiguration configuration) : base(configuration) { }
 
         //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
         // Get Build Definition count

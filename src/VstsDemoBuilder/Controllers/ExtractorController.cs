@@ -290,25 +290,19 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public int GetTeamsCount(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             TeamList teamList = nodes.GetTeamList();
             int count = 0;
             if (teamList.value != null)
             {
                 count = teamList.value.Count;
             }
-            //int count = nodes.GetTeamsCount();
-
-            //if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-            //{
-            //    errorMessages.Add("Error while fetching team(s) count:" + nodes.LastFailureMessage);
-            //}
             return count;
         }
         // Get Iteration Count
         public int GetIterationsCount(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
             iterations = nodes.GetiterationCount();
             if (iterations.count > 0)
@@ -354,7 +348,7 @@ namespace VstsDemoBuilder.Controllers
         //Get Build Definitions count
         public void GetBuildDefinitionCount(Configuration con)
         {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
             GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
             buildDef = buildandReleaseDefs.GetBuildDefCount();
             if (buildDef.count > 0)
@@ -374,7 +368,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Release Definitions count
         public void GetReleaseDefinitionCount(Configuration con)
         {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
             GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
             releaseDef = buildandReleaseDefs.GetReleaseDefCount();
             if (releaseDef.count > 0)
@@ -501,7 +495,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Team List to write into file
         public bool GetTeamList(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             TeamList _team = new TeamList();
 
             _team = nodes.GetTeamList();
@@ -543,7 +537,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                GetClassificationNodes nodes = new GetClassificationNodes(con);
+                VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
                 ItearationList.Iterations viewModel = new ItearationList.Iterations();
                 viewModel = nodes.GetIterations();
                 string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
@@ -607,7 +601,7 @@ namespace VstsDemoBuilder.Controllers
         // It works only for the user who is having access to both Source and Target repositories in the organization with the same UserID
         public void GetRepositoryList(Configuration con)
         {
-            GetBuildandReleaseDefs repolist = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs repolist = new BuildandReleaseDefs(con);
             RepositoryList.Repository repos = repolist.GetRepoList();
             if (repos.count > 0)
             {
@@ -645,9 +639,9 @@ namespace VstsDemoBuilder.Controllers
         // Get the Build definitions to write into file
         public int GetBuildDefinitions(Configuration con, Configuration repoCon)
         {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
             List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
-            GetBuildandReleaseDefs repoDefs = new GetBuildandReleaseDefs(repoCon);
+            BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(repoCon);
             RepositoryList.Repository repo = repoDefs.GetRepoList();
             if (builds.Count > 0)
             {
@@ -744,9 +738,9 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                GetBuildandReleaseDefs releaseDefs = new GetBuildandReleaseDefs(con);
+                BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(con);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
-                GetBuildandReleaseDefs agent = new GetBuildandReleaseDefs(_agentQueue);
+                BuildandReleaseDefs agent = new BuildandReleaseDefs(_agentQueue);
 
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
@@ -865,7 +859,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Agile project Board column details
         public void GetBoardColumnsAgile(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             BoardColumnResponseAgile.ColumnResponse responseAgile = new BoardColumnResponseAgile.ColumnResponse();
             responseAgile = nodes.ExportBoardColumnsAgile();
             if (responseAgile.count > 0)
@@ -886,7 +880,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Scrum project board column details
         public void GetBoardColumnsScrum(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             BoardColumnResponseScrum.ColumnResponse responseScrum = new BoardColumnResponseScrum.ColumnResponse();
             responseScrum = nodes.ExportBoardColumnsScrum();
             if (responseScrum != null)
@@ -904,8 +898,8 @@ namespace VstsDemoBuilder.Controllers
         // Get Board Row details to write into file
         public void ExportboardRows(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            ExportBoardRows.Rows rows = nodes.ExportboardRows();
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+            ExportBoardRows.Rows rows = nodes.ExportBoardRows();
             if (rows.value.Count > 0)
             {
                 System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardRowsFromTemplate.json", JsonConvert.SerializeObject(rows.value, Formatting.Indented));
@@ -921,7 +915,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Card style detials to write into file
         public void ExportCardStyle(Configuration con, string processType)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             CardStyle.Style style = new CardStyle.Style();
             string boardType = string.Empty;
             if (processType == "Scrum")
@@ -952,7 +946,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Card fields details to Scrum project
         public void ExportCardFieldsScrum(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             CardFiledsScrum.CardField fields = nodes.GetCardFieldsScrum();
             if (fields.cards != null)
             {
@@ -969,7 +963,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Card field details to Agile project
         public void ExportCardFieldsAgile(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             CardFiledsAgile.CardField fields = nodes.GetCardFieldsAgile();
             if (fields.cards != null)
             {
@@ -986,7 +980,7 @@ namespace VstsDemoBuilder.Controllers
         // Get the Team setting to check the Backlog board setting and Enable Epic feature
         public void GetTeamSetting(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             GetTeamSetting.Setting setting = nodes.GetTeamSetting();
             if (setting.backlogVisibilities != null)
             {
@@ -1084,44 +1078,38 @@ namespace VstsDemoBuilder.Controllers
                 using (System.IO.Compression.ZipArchive zip = new System.IO.Compression.ZipArchive(memoryStream, System.IO.Compression.ZipArchiveMode.Create, true))
                 {
                     // interate through the source files
-                    if (sfiles.Folder != null)
+                    if (sfiles.Folder != null && sfiles.Folder.Count > 0)
                     {
-                        if (sfiles.Folder.Count > 0)
+                        foreach (var folder in sfiles.Folder)
                         {
-                            foreach (var folder in sfiles.Folder)
-                            {
-                                // add the item name to the zip
+                            // add the item name to the zip
 
-                                foreach (var file in folder.FolderItems)
-                                {
-                                    System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension);
-
-                                    using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes))
-                                    {
-                                        using (System.IO.Stream entryStream = zipItem.Open())
-                                        {
-                                            originalFileMemoryStream.CopyTo(entryStream);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    if (sfiles.Files != null)
-                    {
-                        if (sfiles.Files.Count > 0)
-                        {
-                            foreach (var outerFile in sfiles.Files)
+                            foreach (var file in folder.FolderItems)
                             {
-                                // add the item name to the zip
-                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(outerFile.Name + "." + outerFile.Extension);
-                                // add the item bytes to the zip entry by opening the original file and copying the bytes 
-                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(outerFile.FileBytes))
+                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension);
+
+                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes))
                                 {
                                     using (System.IO.Stream entryStream = zipItem.Open())
                                     {
                                         originalFileMemoryStream.CopyTo(entryStream);
                                     }
+                                }
+                            }
+                        }
+                    }
+                    if (sfiles.Files != null && sfiles.Files.Count > 0)
+                    {
+                        foreach (var outerFile in sfiles.Files)
+                        {
+                            // add the item name to the zip
+                            System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(outerFile.Name + "." + outerFile.Extension);
+                            // add the item bytes to the zip entry by opening the original file and copying the bytes 
+                            using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(outerFile.FileBytes))
+                            {
+                                using (System.IO.Stream entryStream = zipItem.Open())
+                                {
+                                    originalFileMemoryStream.CopyTo(entryStream);
                                 }
                             }
                         }
