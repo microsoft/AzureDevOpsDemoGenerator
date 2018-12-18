@@ -1,0 +1,80 @@
+{
+  "cards": {
+    "Bug": [
+      {
+        "fieldIdentifier": "System.Id",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.Title",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.AssignedTo",
+        "displayFormat": "AvatarAndFullName",
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.Tags",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.State",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      }
+    ],
+    "Product Backlog Item": [
+      {
+        "fieldIdentifier": "System.Id",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.Title",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.AssignedTo",
+        "displayFormat": "AvatarAndFullName",
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.Tags",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "System.State",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      },
+      {
+        "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort",
+        "displayFormat": null,
+        "displayType": null,
+        "showEmptyFields": null
+      }
+    ]
+  }
+}

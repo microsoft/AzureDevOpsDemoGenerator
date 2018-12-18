@@ -47,7 +47,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
         }
     }
 
-    public class ItearationList
+    public class IterationList
     {
         public class Child
         {
@@ -64,6 +64,28 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public List<Child> children = new List<Child>();
         }
 
+    }
+
+
+    public class Iterations
+    {
+        public int count { get; set; }
+        public List<Iteration> Iteration { get; set; }
+
+    }
+
+    public class Iteration{
+        public string id { get; set; }
+        public string name { get; set; }
+        public string path { get; set; }
+        public attributes attributes { get; set; }
+    }
+
+    public class attributes
+    {
+        public string startdate { get; set; }
+        public string finishdate { get; set; }
+        public string timeFrame { get; set; }
     }
 
 }

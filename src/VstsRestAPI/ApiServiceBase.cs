@@ -17,6 +17,7 @@ namespace VstsRestAPI
             _configuration = configuration;
             _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
             Project = configuration.Project;
+           
             Account = configuration.AccountName;
         }
 

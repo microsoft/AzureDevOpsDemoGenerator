@@ -8,29 +8,34 @@ namespace VstsRestAPI.Extractor
 {
     public class GetClassificationNodes : ApiServiceBase
     {
+
+
         public GetClassificationNodes(IConfiguration configuration) : base(configuration) { }
 
         // Get Iteration Count
-        public GetINumIteration.Iterations GetiterationCount()
+        public GetINumIteration.Iterations GetiterationCount(string TeamName)
         {
             try
             {
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + _configuration.Project + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+
+                    using (var client = GetHttpClient())
                     {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        GetINumIteration.Iterations getINum = JsonConvert.DeserializeObject<GetINumIteration.Iterations>(result);
-                        return getINum;
+                        HttpResponseMessage response = client.GetAsync(_configuration.UriString + _configuration.Project +"/"+TeamName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            GetINumIteration.Iterations getINum = JsonConvert.DeserializeObject<GetINumIteration.Iterations>(result);
+                            return getINum;
+                        }
+                        else
+                        {
+                            string errorMessage = response.Content.ReadAsStringAsync().Result;
+                            LastFailureMessage = errorMessage;
+                            return new GetINumIteration.Iterations();
+                        }
                     }
-                    else
-                    {
-                        string errorMessage = response.Content.ReadAsStringAsync().Result;
-                        LastFailureMessage = errorMessage;
-                        return new GetINumIteration.Iterations();
-                    }
-                }
+                
+                
             }
             catch (Exception)
             {
@@ -39,18 +44,19 @@ namespace VstsRestAPI.Extractor
             return new GetINumIteration.Iterations();
         }
         // Get Iterations to write file
-        public ItearationList.Iterations GetIterations()
+        public Iterations GetIterations(string TeamName)
         {
             try
             {
-                ItearationList.Iterations viewModel = new ItearationList.Iterations();
+                Iterations viewModel = new Iterations();
+
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format(_configuration.UriString + "/{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, Project)).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format(_configuration.UriString + "/{0}/{1}/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber, Project, TeamName)).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        viewModel = JsonConvert.DeserializeObject<ItearationList.Iterations>(result);
+                        viewModel = JsonConvert.DeserializeObject<Iterations>(result);
                         return viewModel;
                     }
                     else
@@ -64,8 +70,10 @@ namespace VstsRestAPI.Extractor
             catch (Exception)
             {
             }
-            return new ItearationList.Iterations();
+            return new Iterations();
         }
+       
+
         // Get Team List to write to file
         public SrcTeamsList GetTeamList()
         {
@@ -104,6 +112,40 @@ namespace VstsRestAPI.Extractor
                 LastFailureMessage = ex.Message;
             }
             return new SrcTeamsList();
+        }
+
+        //Sachin: Getting backlog configuration for each team
+        public BacklogConfiguration GetBacklogConfiguration(string TeamName)
+        {
+            BacklogConfiguration viewModel = new BacklogConfiguration();
+
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(string.Format(_configuration.UriString + "/{0}/{1}/_apis/work/backlogconfiguration?api-version=" + _configuration.VersionNumber, Project, TeamName)).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        viewModel = JsonConvert.DeserializeObject<BacklogConfiguration>(result);
+                        return viewModel;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+
+                }
+            }
+            catch (Exception E)
+            {
+                LastFailureMessage = E.Message;
+            }
+
+            return new BacklogConfiguration();
+
         }
 
         // Get Board colums for Scrum template and write it to file
@@ -288,6 +330,35 @@ namespace VstsRestAPI.Extractor
             return new CardFiledsAgile.CardField();
         }
 
+        public TeamMembers GetTeamMembers(string teamName)
+        {
+            TeamMembers members = new TeamMembers();
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "_apis/projects/" + Project + "/teams/" + teamName + "/members?api-version=" + _configuration.VersionNumber).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        members = JsonConvert.DeserializeObject<TeamMembers>(result);
+                        return members;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LastFailureMessage = ex.Message;
+            }
+            return new TeamMembers();
+        }
+
         // Get Team setting
         public GetTeamSetting.Setting GetTeamSetting()
         {
@@ -320,8 +391,8 @@ namespace VstsRestAPI.Extractor
 
         public int GetTeamsCount()
         {
-            ListTeams.TeamList teamObj = new ListTeams.TeamList();
-            SrcTeamsList _team = new SrcTeamsList();
+            ListTeams.TeamList srcProjectTeams = new ListTeams.TeamList();
+           // SrcTeamsList _team = new SrcTeamsList();
             using (var client = GetHttpClient())
             {
                 //https://dev.azure.com/australiaEastaksh/_apis/projects/SmartHotel360/teams?api-version=4.1
@@ -329,8 +400,8 @@ namespace VstsRestAPI.Extractor
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
-                    return teamObj.count;
+                    srcProjectTeams = JsonConvert.DeserializeObject<ListTeams.TeamList>(res);
+                    return srcProjectTeams.count;
                 }
                 else
                 {

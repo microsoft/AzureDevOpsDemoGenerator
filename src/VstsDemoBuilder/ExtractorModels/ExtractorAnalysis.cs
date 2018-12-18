@@ -6,6 +6,8 @@ namespace VstsDemoBuilder.ExtractorModels
     {
         public int teamCount { get; set; }
         public int IterationCount { get; set; }
+
+        public int BacklogConfigurationCount { get; set;  }
         public int BuildDefCount { get; set; }
         public int ReleaseDefCount { get; set; }
         public Dictionary<string, int> WorkItemCounts { get; set; }

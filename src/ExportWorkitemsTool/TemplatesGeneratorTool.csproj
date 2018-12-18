@@ -96,6 +96,7 @@
     <Compile Include="SourceConfiguration.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BoardColumnsResponse.cs" />
+    <Compile Include="ViewModel\BoardConfiguration.cs" />
     <Compile Include="ViewModel\BuildDefinitionResponse.cs" />
     <Compile Include="ViewModel\BuildDefinitions.cs" />
     <Compile Include="ViewModel\CardFieldResponse.cs" />

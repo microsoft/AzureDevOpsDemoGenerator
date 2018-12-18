@@ -7,6 +7,8 @@ namespace VstsRestAPI
         string AccountName { get; set; }
 
         string Project { get; set; }
+
+        
         string Team { get; set; }
         string MoveToProject { get; set; }
         string UriString { get; set; }        

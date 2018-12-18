@@ -71,6 +71,7 @@
     <Compile Include="Services\HttpServices.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseAgile.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseScrum.cs" />
+    <Compile Include="Viewmodel\Extractor\BacklogConfiguration.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitionResponse.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitions.cs" />
     <Compile Include="Viewmodel\Extractor\CardFiledsAgile.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Viewmodel\Extractor\ReleaseDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\RepositoryList.cs" />
     <Compile Include="Viewmodel\Extractor\SrcTeams.cs" />
+    <Compile Include="Viewmodel\Extractor\TeamMembers.cs" />
     <Compile Include="Viewmodel\Extractor\Teams.cs" />
     <Compile Include="Git\Repository.cs" />
     <Compile Include="IConfiguration.cs" />
