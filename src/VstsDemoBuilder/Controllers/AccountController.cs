@@ -115,11 +115,12 @@ namespace VstsDemoBuilder.Controllers
             Session["visited"] = "1";
 
             //testing
-            string url = "https://app.vssps.visualstudio.com/oauth2/authorize?client_id={0}&response_type=Assertion&state=User1&scope=vso.agentpools_manage%20vso.build_execute%20vso.code_manage%20vso.dashboards_manage%20vso.extension_manage%20vso.identity%20vso.project_manage%20vso.release_manage%20vso.serviceendpoint_manage%20vso.test_write%20vso.wiki_write%20vso.work_full&redirect_uri={1}";
+            string url = "https://app.vssps.visualstudio.com/oauth2/authorize?client_id={0}&response_type=Assertion&state=User1&scope={1}&redirect_uri={2}";
 
             string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
             string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientId"];
-            url = string.Format(url, clientId, redirectUrl);
+            string AppScope = System.Configuration.ConfigurationManager.AppSettings["AppScope"];
+            url = string.Format(url, clientId, AppScope, redirectUrl);
             return Redirect(url);
         }
 

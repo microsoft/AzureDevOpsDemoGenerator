@@ -10,7 +10,6 @@ namespace VstsDemoBuilder.Models
         public string ProcessTemplate { get; set; }
         public string ProjectName { get; set; }
         public string SelectedTemplate { get; set; }
-        public string TemplateId { get; set; }
         public string TemplateName { get; set; }
         public bool IsAuthenticated { get; set; }
         public string SupportEmail { get; set; }
@@ -36,7 +35,6 @@ namespace VstsDemoBuilder.Models
         public string Email { get; set; }
         public string Name { get; set; }
         public List<string> accountsForDropdown { get; set; }
-
         public string accountName { get; set; }
         public bool hasAccount { get; set; }
         public string selectedTemplateDescription { get; set; }
@@ -44,24 +42,15 @@ namespace VstsDemoBuilder.Models
         public string Message { get; set; }
 
     }
-    //Template Grouping
-    public class Template
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-    }
-
     public class EnvironmentValues
     {
         public string UserUniquename { get; set; }
-
         public string UserUniqueId { get; set; }
         public string ProjectId { get; set; }
         public string ProjectName { get; set; }
         public Dictionary<string, string> repositoryIdList { get; set; }
         public Dictionary<string, int> AgentQueues { get; set; }
         public Dictionary<string, string> serviceEndpoints { get; set; }
-
         public Dictionary<string, string> pullRequests { get; set; }
         public string BoardRowFieldName { get; set; }
     }
@@ -113,11 +102,7 @@ namespace VstsDemoBuilder.Models
 
     public class ProjectTemplate
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
         public string Teams { get; set; }
-        public string SourceCode { get; set; }
-        public string CreateService { get; set; }
         public string BoardColumns { get; set; }
         public string ProjectSettings { get; set; }
         public string CardStyle { get; set; }
@@ -131,14 +116,9 @@ namespace VstsDemoBuilder.Models
         public string UserStoriesFromTemplate { get; set; }
         public string SetEpic { get; set; }
         public string BoardRows { get; set; }
-        public string Widget { get; set; }
-        public string Chart { get; set; }
         public string TeamArea { get; set; }
-
         public string TestPlanfromTemplate { get; set; }
         public string TestSuitefromTemplate { get; set; }
-
-
     }
 
     public class ProjectSettings
@@ -166,16 +146,6 @@ namespace VstsDemoBuilder.Models
             public ExtensionWithLink[] Extensions { get; set; }
         }
     }
-    public class templateKeyValue
-    {
-        public string key { get; set; }
-        public string value { get; set; }
-    }
-    public class TestCase
-    {
-        public List<string> TestCases { get; set; }
-    }
-
     public class TestSuite
     {
         public class Plan
