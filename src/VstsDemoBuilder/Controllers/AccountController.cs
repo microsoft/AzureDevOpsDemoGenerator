@@ -119,7 +119,7 @@ namespace VstsDemoBuilder.Controllers
 
             string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
             string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientId"];
-            string AppScope = System.Configuration.ConfigurationManager.AppSettings["AppScope"];
+            string AppScope = System.Configuration.ConfigurationManager.AppSettings["appScope"];
             url = string.Format(url, clientId, AppScope, redirectUrl);
             return Redirect(url);
         }
