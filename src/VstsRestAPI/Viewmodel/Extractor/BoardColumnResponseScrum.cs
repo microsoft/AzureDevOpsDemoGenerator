@@ -26,7 +26,13 @@ namespace VstsRestAPI.Viewmodel.Extractor
         public class ColumnResponse
         {
             public int count { get; set; }
+            public string TeamName { get; set; }
             public List<Value> value { get; set; }
+        }
+
+        public class ListColumnResponses
+        {
+            public List<ColumnResponse> ColumnResponse { get; set; }
         }
     }
 }

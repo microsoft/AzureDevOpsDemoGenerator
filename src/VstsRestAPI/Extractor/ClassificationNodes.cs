@@ -67,7 +67,7 @@ namespace VstsRestAPI.Extractor
             return new ItearationList.Iterations();
         }
         // Get Team List to write to file
-        public TeamList GetTeamList()
+        public TeamList ExportTeamList()
         {
             TeamList teamObj = new TeamList();
             try
@@ -79,14 +79,6 @@ namespace VstsRestAPI.Extractor
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         teamObj = JsonConvert.DeserializeObject<TeamList>(result);
-
-                        //for (var x = 0; x < teamObj.value.Count; x++)
-                        //{
-                        //    if (teamObj.value[x].description.ToLower() == "the default project team.")
-                        //    {
-                        //        teamObj.value.RemoveAt(x);
-                        //    }
-                        //}
                         return teamObj;
                     }
                     else
@@ -103,82 +95,33 @@ namespace VstsRestAPI.Extractor
             }
             return new TeamList();
         }
-
-        // Get Board colums for Scrum template and write it to file
-        public BoardColumnResponseScrum.ColumnResponse ExportBoardColumnsScrum()
+      
+        /// <summary>
+        /// GET https://dev.azure.com/fabrikam/Fabrikam/Fabrikam Team/_apis/work/boards/{board}/columns?api-version=4.1
+        /// </summary>
+        public HttpResponseMessage ExportBoardColums(string boardType)
         {
-            try
+            using (var client = GetHttpClient())
             {
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/" + Project + "%20Team/_apis/work/boards/Backlog%20items/columns?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                    {
-                        BoardColumnResponseScrum.ColumnResponse columns = Newtonsoft.Json.JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
-                        return columns;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                        return new BoardColumnResponseScrum.ColumnResponse();
-                    }
-                }
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/columns?api-version={4}", _configuration.UriString, _configuration.Project, _configuration.Team, boardType, _configuration.VersionNumber)).Result;
+                return response;
             }
-            catch (Exception ex)
-            {
-                LastFailureMessage = ex.Message;
-            }
-            return new BoardColumnResponseScrum.ColumnResponse();
         }
 
-        // Get Board Columns for Agile template and write it file
-        public BoardColumnResponseAgile.ColumnResponse ExportBoardColumnsAgile()
-        {
-            try
-            {
-                BoardColumnResponseAgile.ColumnResponse columns = new BoardColumnResponseAgile.ColumnResponse();
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/" + Project + "%20Team/_apis/work/boards/Stories/columns?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                    {
-                        columns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(response.Content.ReadAsStringAsync().Result.ToString());
-                        return columns;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LastFailureMessage = ex.Message;
-            }
-            return new BoardColumnResponseAgile.ColumnResponse();
-        }
-
-        // Get Board Rows to write file
-        public ExportBoardRows.Rows ExportBoardRows()
+        // Export Board Rows to write file
+        //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/rows?api-version=4.1
+        public ExportBoardRows.Rows ExportBoardRows(string boardType)
         {
             try
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/work/boardrows?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/rows?api-version={4}", _configuration.UriString, Project, Team, boardType, _configuration.VersionNumber)).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         ExportBoardRows.Rows rows = new ExportBoardRows.Rows();
                         rows = JsonConvert.DeserializeObject<ExportBoardRows.Rows>(result);
-                        ExportBoardRows.Value addValue = new ExportBoardRows.Value();
-                        addValue.id = "00000000-0000-0000-0000-000000000000";
-                        addValue.name = null;
-                        rows.value.Add(addValue);
                         return rows;
                     }
                     else
@@ -196,105 +139,16 @@ namespace VstsRestAPI.Extractor
             return new ExportBoardRows.Rows();
         }
 
-        // Get Card Style details to write file
-        public CardStyle.Style GetCardStyle(string boardType)
-        {
-            try
-            {
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/" + Project + "%20team/_apis/work/boards/" + boardType + "/cardrulesettings?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                    {
-                        CardStyle.Style style = new CardStyle.Style();
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        style = JsonConvert.DeserializeObject<CardStyle.Style>(result);
-                        return style;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LastFailureMessage = ex.Message;
-            }
-            return new CardStyle.Style();
-        }
-
-        // Get Card fields for Scrum process template to write file
-        public CardFiledsScrum.CardField GetCardFieldsScrum()
-        {
-            try
-            {
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/work/boards/backlog%20items/cardsettings?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                    {
-                        CardFiledsScrum.CardField card = new CardFiledsScrum.CardField();
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        card = JsonConvert.DeserializeObject<CardFiledsScrum.CardField>(result);
-                        return card;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LastFailureMessage = ex.Message;
-            }
-            return new CardFiledsScrum.CardField();
-        }
-
-        // Get Card fields for Agile process template to write file
-        public CardFiledsAgile.CardField GetCardFieldsAgile()
-        {
-            try
-            {
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/work/boards/stories/cardsettings?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                    {
-                        CardFiledsAgile.CardField card = new CardFiledsAgile.CardField();
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        card = JsonConvert.DeserializeObject<CardFiledsAgile.CardField>(result);
-                        return card;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LastFailureMessage = ex.Message;
-            }
-            return new CardFiledsAgile.CardField();
-        }
-
         // Get Team setting
-        public GetTeamSetting.Setting GetTeamSetting()
+        //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/teamsettings?api-version=4.1
+        public GetTeamSetting.Setting ExportTeamSetting()
         {
             GetTeamSetting.Setting setting = new GetTeamSetting.Setting();
             try
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/teamsettings?api-version={3}", _configuration.UriString, Project, Team, _configuration.VersionNumber)).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
@@ -316,14 +170,24 @@ namespace VstsRestAPI.Extractor
             return new GetTeamSetting.Setting();
         }
 
-        /// <summary>
-        /// GET https://dev.azure.com/fabrikam/Fabrikam/Fabrikam Team/_apis/work/boards/{board}/columns?api-version=4.1
-        /// </summary>
-        public HttpResponseMessage XGetBoardColums(string boardType)
+        //Get Card Fields
+        //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/cardsettings?api-version=4.1
+        public HttpResponseMessage ExportCardFields(string boardType)
         {
-            using(var client = GetHttpClient())
+            using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/columns?api-version={4}", _configuration.UriString, _configuration.Project, _configuration.Team, boardType, _configuration.VersionNumber)).Result;
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/cardsettings?api-version={4}", _configuration.UriString, Project, Team, boardType, _configuration.VersionNumber)).Result;
+                return response;
+            }
+        }
+
+        //Export Card Styles
+        //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings?api-version=4.1
+        public HttpResponseMessage ExportCardStyle(string boardType)
+        {
+            using (var client = GetHttpClient())
+            {
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/cardrulesettings?api-version={4}",_configuration.UriString,Project,Team, boardType,_configuration.VersionNumber)).Result;
                 return response;
             }
         }
