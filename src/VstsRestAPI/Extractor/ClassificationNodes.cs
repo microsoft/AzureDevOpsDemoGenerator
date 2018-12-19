@@ -80,13 +80,13 @@ namespace VstsRestAPI.Extractor
                         string result = response.Content.ReadAsStringAsync().Result;
                         teamObj = JsonConvert.DeserializeObject<TeamList>(result);
 
-                        for (var x = 0; x < teamObj.value.Count; x++)
-                        {
-                            if (teamObj.value[x].description.ToLower() == "the default project team.")
-                            {
-                                teamObj.value.RemoveAt(x);
-                            }
-                        }
+                        //for (var x = 0; x < teamObj.value.Count; x++)
+                        //{
+                        //    if (teamObj.value[x].description.ToLower() == "the default project team.")
+                        //    {
+                        //        teamObj.value.RemoveAt(x);
+                        //    }
+                        //}
                         return teamObj;
                     }
                     else
@@ -314,6 +314,18 @@ namespace VstsRestAPI.Extractor
                 LastFailureMessage = ex.Message;
             }
             return new GetTeamSetting.Setting();
+        }
+
+        /// <summary>
+        /// GET https://dev.azure.com/fabrikam/Fabrikam/Fabrikam Team/_apis/work/boards/{board}/columns?api-version=4.1
+        /// </summary>
+        public HttpResponseMessage XGetBoardColums(string boardType)
+        {
+            using(var client = GetHttpClient())
+            {
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/columns?api-version={4}", _configuration.UriString, _configuration.Project, _configuration.Team, boardType, _configuration.VersionNumber)).Result;
+                return response;
+            }
         }
     }
 }

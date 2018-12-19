@@ -31,6 +31,7 @@ namespace VstsDemoBuilder.Controllers
         private ExtractorAnalysis analysis = new ExtractorAnalysis();
 
         private string projectSelectedToExtract = string.Empty;
+        private string extractedTemplatePath = string.Empty;
         public void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -404,40 +405,43 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public string[] GenerateTemplateArifacts(Project model)
         {
+            extractedTemplatePath = Server.MapPath("~") + @"ExtractedTemplate\";
+
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             AddMessage(model.id, "Teams Definition");
+            bool isTeam = ExportTeamList(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate);
 
-            bool isTeam = GetTeamList(ProjectConfigurationDetails.AppConfig.BoardConfig);
-
-            bool isIteration = GetIterations(ProjectConfigurationDetails.AppConfig.BoardConfig);
+            bool isIteration = ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig);
             if (isIteration)
             {
                 AddMessage(model.id, "Iterations Definition");
             }
-            string extractedFolderName = Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName;
+            string extractedFolderName = extractedTemplatePath + model.ProjectName;
+            string filePathToRead = Server.MapPath("~") + @"\\PreSetting";
+
             string projectSetting = "";
-            projectSetting = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectSettings.json");
+            projectSetting = filePathToRead + "\\ProjectSettings.json";
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
             string Extensions = "";
-            Extensions = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\DemoExtensions.json");
+            Extensions = filePathToRead + "\\DemoExtensions.json";
             System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
 
 
             string projectTemplate = "";
-            projectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
+            projectTemplate = filePathToRead + "\\ProjectTemplate.json";
             System.IO.File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
 
             string teamArea = "";
-            teamArea = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\TeamArea.json");
+            teamArea = filePathToRead + "\\TeamArea.json";
             System.IO.File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas Definition");
 
-            GetWorkItems(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
+            ExportWorkItems(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
             AddMessage(model.id, "Work Items Definition");
 
-            GetRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
+            ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
             int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
@@ -493,7 +497,7 @@ namespace VstsDemoBuilder.Controllers
             return new string[] { model.id, "" };
         }
         // Get Team List to write into file
-        public bool GetTeamList(Configuration con)
+        public bool ExportTeamList(Configuration con, string processTemplate)
         {
             VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             TeamList _team = new TeamList();
@@ -506,12 +510,38 @@ namespace VstsDemoBuilder.Controllers
                 {
                     fetchedJson = fetchedJson.Remove(0, 14);
                     fetchedJson = fetchedJson.Remove(fetchedJson.Length - 1);
-                    if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
+                    if (!Directory.Exists(extractedTemplatePath + con.Project))
                     {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project);
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
                     }
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams.json", fetchedJson);
+                    string boardType = processTemplate.ToLower() == "scrum" ? boardType = "backlog%20items" : boardType = "stories";
 
-                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\Teams.json", fetchedJson);
+                    foreach (var team in _team.value)
+                    {
+                        con.Team = team.name;
+                        VstsRestAPI.Extractor.ClassificationNodes teamNodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                        var response = teamNodes.XGetBoardColums(boardType);
+                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            if (!Directory.Exists(extractedTemplatePath + con.Project + "\\BoardColumns"))
+                            {
+                                Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\BoardColumns");
+                            }
+                            if (processTemplate.ToLower() == "scrum")
+                            {
+                                string res = response.Content.ReadAsStringAsync().Result;
+                                BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
+                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns\\" + team.name + "_BoardColumns.json", JsonConvert.SerializeObject(scrumColumns.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            }
+                            else if (processTemplate.ToLower() == "agile")
+                            {
+                                string res = response.Content.ReadAsStringAsync().Result;
+                                BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
+                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns\\" + team.name + "BoardColumns.json", JsonConvert.SerializeObject(agileColumns.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            }
+                        }
+                    }
                     return true;
                 }
                 else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
@@ -533,7 +563,7 @@ namespace VstsDemoBuilder.Controllers
         }
 
         // Get Iteration List to write into file
-        public bool GetIterations(VstsRestAPI.Configuration con)
+        public bool ExportIterations(Configuration con)
         {
             try
             {
@@ -543,12 +573,12 @@ namespace VstsDemoBuilder.Controllers
                 string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
                 if (fetchedJson != "")
                 {
-                    if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
+                    if (!Directory.Exists(extractedTemplatePath + con.Project))
                     {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project);
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
                     }
 
-                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\Iterations.json", fetchedJson);
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", fetchedJson);
                     return true;
                 }
                 else
@@ -565,14 +595,12 @@ namespace VstsDemoBuilder.Controllers
         }
 
         // Get Work items to write into file
-        public void GetWorkItems(Configuration con)
+        public void ExportWorkItems(Configuration con)
         {
-            string templateDirectory = string.Empty;
             string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
-            templateDirectory = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
-            if (!Directory.Exists(templateDirectory))
+            if (!Directory.Exists(extractedTemplatePath + con.Project))
             {
-                Directory.CreateDirectory(templateDirectory);
+                Directory.CreateDirectory(extractedTemplatePath + con.Project);
             }
 
             if (workItemtypes.Length > 0)
@@ -586,7 +614,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string item = WIT;
                         item = item.Replace(" ", "");
-                        System.IO.File.WriteAllText(templateDirectory + "\\" + item + ".json", workItemJson);
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\" + item + ".json", workItemJson);
                     }
                     else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
                     {
@@ -599,7 +627,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Repository list to create Service end point json with respect to the repositiory
         // and also create the import source code json
         // It works only for the user who is having access to both Source and Target repositories in the organization with the same UserID
-        public void GetRepositoryList(Configuration con)
+        public void ExportRepositoryList(Configuration con)
         {
             BuildandReleaseDefs repolist = new BuildandReleaseDefs(con);
             RepositoryList.Repository repos = repolist.GetRepoList();
@@ -608,7 +636,7 @@ namespace VstsDemoBuilder.Controllers
                 foreach (var repo in repos.value)
                 {
                     string preSettingPath = Server.MapPath("~") + @"PreSetting";
-                    string templateFolderPath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
+                    string templateFolderPath = extractedTemplatePath + con.Project;
                     string host = con.UriString + con.Project;
                     string sourceCodeJson = System.IO.File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
                     sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
@@ -647,7 +675,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 int count = 1;
                 //creating ImportCode Json file
-                string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
+                string templatePath = extractedTemplatePath + con.Project;
                 foreach (JObject def in builds)
                 {
                     string repoID = "";
@@ -681,10 +709,10 @@ namespace VstsDemoBuilder.Controllers
                             string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                             endPointString = endPointString.Replace("$GitHubURL$", url);
                             Guid g = Guid.NewGuid();
-                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints"))
+                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
                             {
-                                Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints");
-                                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                             }
                         }
                     }
@@ -743,7 +771,7 @@ namespace VstsDemoBuilder.Controllers
                 BuildandReleaseDefs agent = new BuildandReleaseDefs(_agentQueue);
 
                 Dictionary<string, int> queue = agent.GetQueues();
-                string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
+                string templatePath = extractedTemplatePath + con.Project;
                 int releasecount = 1;
                 if (releases.Count > 0)
                 {
@@ -864,7 +892,7 @@ namespace VstsDemoBuilder.Controllers
             responseAgile = nodes.ExportBoardColumnsAgile();
             if (responseAgile.count > 0)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseAgile.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseAgile.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 AddMessage(con.Id, "Board Columns Definition");
                 Thread.Sleep(2000);
             }
@@ -885,7 +913,7 @@ namespace VstsDemoBuilder.Controllers
             responseScrum = nodes.ExportBoardColumnsScrum();
             if (responseScrum != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseScrum.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseScrum.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 AddMessage(con.Id, "Board Columns Definition");
                 Thread.Sleep(2000);
             }
@@ -902,7 +930,7 @@ namespace VstsDemoBuilder.Controllers
             ExportBoardRows.Rows rows = nodes.ExportBoardRows();
             if (rows.value.Count > 0)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardRowsFromTemplate.json", JsonConvert.SerializeObject(rows.value, Formatting.Indented));
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardRowsFromTemplate.json", JsonConvert.SerializeObject(rows.value, Formatting.Indented));
                 AddMessage(con.Id, "Board Rows Definition");
                 Thread.Sleep(2000);
             }
@@ -931,7 +959,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 if (style.rules.fill != null)
                 {
-                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardStyles.json", JsonConvert.SerializeObject(style, Formatting.Indented));
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\UpdateCardStyles.json", JsonConvert.SerializeObject(style, Formatting.Indented));
                     AddMessage(con.Id, "Card Style Rules Definition");
                 }
 
@@ -950,7 +978,7 @@ namespace VstsDemoBuilder.Controllers
             CardFiledsScrum.CardField fields = nodes.GetCardFieldsScrum();
             if (fields.cards != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(fields, Formatting.Indented));
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(fields, Formatting.Indented));
                 AddMessage(con.Id, "Card Style Rules Definition");
                 Thread.Sleep(2000);
             }
@@ -967,7 +995,7 @@ namespace VstsDemoBuilder.Controllers
             CardFiledsAgile.CardField fields = nodes.GetCardFieldsAgile();
             if (fields.cards != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(fields, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(fields, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                 AddMessage(con.Id, "Card Style Rules Definition");
                 Thread.Sleep(2000);
             }
@@ -984,7 +1012,7 @@ namespace VstsDemoBuilder.Controllers
             GetTeamSetting.Setting setting = nodes.GetTeamSetting();
             if (setting.backlogVisibilities != null)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\EnableEpic.json", JsonConvert.SerializeObject(setting, Formatting.Indented));
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\EnableEpic.json", JsonConvert.SerializeObject(setting, Formatting.Indented));
             }
             else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
             {
@@ -999,8 +1027,8 @@ namespace VstsDemoBuilder.Controllers
             string projectName = Session["Project"].ToString();
             if (projectName != "")
             {
-                System.IO.File.Delete(Server.MapPath("~") + @"ExtractedTemplate\" + projectName);
-                System.IO.File.Delete(Server.MapPath("~") + @"ExtractedTemplate\" + projectName + ".zip");
+                System.IO.File.Delete(extractedTemplatePath + projectName);
+                System.IO.File.Delete(extractedTemplatePath + projectName + ".zip");
             }
 
         }

@@ -321,7 +321,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "";
+                    AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiZTVlM2ZlYjQtNDRmOC00MmQzLTg4YTYtZDY4NzdhZjEyNzAzIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQ1MTQzNTEzLCJleHAiOjE1NDUxNDcxMTN9.ceirjCgelcxNG6Fi2vtp0TRm0bjhUsUJc7maAzrvWPjqGD3EkdwwfIyywXaZK_D0MAMs88Ew6w2eeDDdUqM9qeyDqyHPdgIDTmJI049d9HbGqQBo6xS7bpeTcPqBAQSm83laOggSTWFd1SM0oOdIJXMCLkmYejOHs_jpFktCyHA25HQsD6jqSIJE_yO1aZLsJl8PREKDLAf8-PEKp9yj4n1Yea0xhq_yF_4dEgEdnOZVtsTTwZ-5yArUdBAlEjMvxvuzyWSwFqbjI3ddj-ZTdRx3Dg9ljWlukeVDaoioCfZzTT8GbweYXmyDK6dXuqw96AW3eOU9GClSe5VDO0anJg";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
