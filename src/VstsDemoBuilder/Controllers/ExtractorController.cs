@@ -279,7 +279,7 @@ namespace VstsDemoBuilder.Controllers
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             projectSelectedToExtract = model.ProjectName;
             analysis.teamCount = GetTeamsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
-            analysis.IterationCount = GetIterationsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
+            //analysis.IterationCount = GetIterationsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
             analysis.WorkItemCounts = GetWorkItemsCount(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
             GetBuildDefinitionCount(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
             GetReleaseDefinitionCount(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig);
@@ -302,11 +302,11 @@ namespace VstsDemoBuilder.Controllers
             return count;
         }
         // Get Iteration Count
-        public int GetIterationsCount(Configuration con)
+       /* public int GetIterationsCount(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
             GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
-            iterations = nodes.GetiterationCount();
+           // iterations = nodes.GetiterationCount();
             if (iterations.count > 0)
             {
                 return iterations.count;
@@ -320,7 +320,7 @@ namespace VstsDemoBuilder.Controllers
                 return 0;
             }
 
-        }
+        }*/
 
         // Get Work Items Details
         public Dictionary<string, int> GetWorkItemsCount(Configuration con)
@@ -407,15 +407,18 @@ namespace VstsDemoBuilder.Controllers
         public string[] GenerateTemplateArifacts(Project model)
         {
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
-            AddMessage(model.id, "Teams Definition");
 
-            bool isTeam = GetTeamList(ProjectConfigurationDetails.AppConfig.BoardConfig);
 
-            bool isIteration = GetIterations(ProjectConfigurationDetails.AppConfig.BoardConfig);
-            if (isIteration)
+            if (ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig))
+            {
+                AddMessage(model.id, "Teams Definition");
+            }
+
+           /* if (GetIterations(ProjectConfigurationDetails.AppConfig.BoardConfig) )         
             {
                 AddMessage(model.id, "Iterations Definition");
             }
+            */
             string extractedFolderName = Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName;
             string projectSetting = "";
             projectSetting = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectSettings.json");
@@ -495,25 +498,38 @@ namespace VstsDemoBuilder.Controllers
             return new string[] { model.id, "" };
         }
         // Get Team List to write into file
-        public bool GetTeamList(Configuration con)
+        public bool ExportTeams(Configuration con)
         {
             GetClassificationNodes nodes = new GetClassificationNodes(con);
-            SrcTeamsList _team = new SrcTeamsList();
+            SrcTeamsList _teams = new SrcTeamsList();
 
-            _team = nodes.GetTeamList();
-            if (_team.value != null)
+            _teams = nodes.GetTeamList();
+
+            if (_teams != null)
             {
-                string fetchedJson = JsonConvert.SerializeObject(_team, Formatting.Indented);
+                string fetchedJson = JsonConvert.SerializeObject(_teams.value, Formatting.Indented);
                 if (fetchedJson != "")
                 {
-                    fetchedJson = fetchedJson.Remove(0, 14);
-                    fetchedJson = fetchedJson.Remove(fetchedJson.Length - 1);
+                    //fetchedJson = fetchedJson.Remove(0, 14);
+                   // fetchedJson = fetchedJson.Remove(fetchedJson.Length - 1);
                     if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
                     {
                         Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project);
                     }
-
                     System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\Teams.json", fetchedJson);
+
+                    foreach (SrcTeams _team in _teams.value)
+                    {
+                        BacklogConfiguration _backlogforTeam = new BacklogConfiguration();
+                        _backlogforTeam=  nodes.GetBacklogConfiguration(_team.id);
+                        fetchedJson = JsonConvert.SerializeObject(_backlogforTeam, Formatting.Indented);
+                        System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\backlogsettings-"+_team.name+".json", fetchedJson);
+
+                        GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
+                        iterations = nodes.Getiterations(_team.id);
+                        fetchedJson = JsonConvert.SerializeObject(_backlogforTeam, Formatting.Indented);
+                        System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\iterations-" + _team.name + ".json", fetchedJson);
+                    }
                     return true;
                 }
                 else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
@@ -535,7 +551,7 @@ namespace VstsDemoBuilder.Controllers
         }
 
         // Get Iteration List to write into file
-        public bool GetIterations(VstsRestAPI.Configuration con)
+        /*public bool GetIterations(VstsRestAPI.Configuration con)
         {
             try
             {
@@ -565,6 +581,7 @@ namespace VstsDemoBuilder.Controllers
             }
             return false;
         }
+        */
 
         // Get Work items to write into file
         public void GetWorkItems(Configuration con)

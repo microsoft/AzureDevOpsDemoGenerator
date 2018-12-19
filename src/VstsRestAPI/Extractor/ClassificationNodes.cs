@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using VstsRestAPI.Viewmodel.Extractor;
@@ -13,7 +14,7 @@ namespace VstsRestAPI.Extractor
         public GetClassificationNodes(IConfiguration configuration) : base(configuration) { }
 
         // Get Iteration Count
-        public GetINumIteration.Iterations GetiterationCount(string TeamName)
+        public GetINumIteration.Iterations Getiterations(string TeamName)
         {
             try
             {
@@ -72,12 +73,12 @@ namespace VstsRestAPI.Extractor
             }
             return new Iterations();
         }
-       
+
 
         // Get Team List to write to file
         public SrcTeamsList GetTeamList()
         {
-            ListTeams.TeamList teamObj = new ListTeams.TeamList();
+
             SrcTeamsList _team = new SrcTeamsList();
             try
             {
@@ -86,17 +87,17 @@ namespace VstsRestAPI.Extractor
                     HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<ListTeams.TeamList>(result);
+                        string result = response.Content.ReadAsStringAsync().Result;                                         
+                         _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
 
-                        _team = JsonConvert.DeserializeObject<SrcTeamsList>(result);
+                        /*
                         for (var x = 0; x < _team.value.Count; x++)
                         {
                             if (_team.value[x].description.ToLower() == "the default project team.")
                             {
                                 _team.value.RemoveAt(x);
                             }
-                        }
+                        }*/
                         return _team;
                     }
                     else
@@ -111,7 +112,7 @@ namespace VstsRestAPI.Extractor
             {
                 LastFailureMessage = ex.Message;
             }
-            return new SrcTeamsList();
+            return null;
         }
 
         //Sachin: Getting backlog configuration for each team

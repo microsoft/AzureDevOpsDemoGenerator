@@ -1,17 +1,17 @@
 [
-    {
-      "id": "a597a99b-8648-4285-b487-127b87a69a42",
-      "name": "FabrikamFiber Web Team",
-      "description": ""
-    },
-    {
-      "id": "a3236015-8a75-4c7c-9e98-8f630f787339",
-      "name": "Fabrikam Fiber Database Team",
-      "description": ""
-    },
-    {
-      "id": "c212802e-61eb-409b-9c5e-d94690eddc53",
-      "name": "FabrikamFiber Team",
-      "description": "Parent Team"
-    }
-  ]
+  {
+    "id": "a597a99b-8648-4285-b487-127b87a69a42",
+    "name": "FabrikamFiber Web Team",
+    "description": ""
+  },
+  {
+    "id": "a3236015-8a75-4c7c-9e98-8f630f787339",
+    "name": "Fabrikam Fiber Database Team",
+    "description": ""
+  },
+  {
+    "id": "c212802e-61eb-409b-9c5e-d94690eddc53",
+    "name": "FabrikamFiber Team",
+    "description": "Parent Team"
+  }
+]

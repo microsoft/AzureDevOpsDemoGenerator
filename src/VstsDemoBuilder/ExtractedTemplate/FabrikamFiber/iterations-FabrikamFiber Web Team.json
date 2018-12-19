@@ -1,0 +1,378 @@
+{
+  "bugsBehavior": "asRequirements",
+  "hiddenBacklogs": [
+    "Microsoft.EpicCategory"
+  ],
+  "backlogLevelConfiguration": null,
+  "backlogFields": {
+    "typeFields": {
+      "Activity": "Microsoft.VSTS.Common.Activity",
+      "Order": "Microsoft.VSTS.Common.BacklogPriority",
+      "ApplicationLaunchInstructions": "Microsoft.VSTS.Feedback.ApplicationLaunchInstructions",
+      "ApplicationStartInformation": "Microsoft.VSTS.Feedback.ApplicationStartInformation",
+      "ApplicationType": "Microsoft.VSTS.Feedback.ApplicationType",
+      "Effort": "Microsoft.VSTS.Scheduling.Effort",
+      "RemainingWork": "Microsoft.VSTS.Scheduling.RemainingWork",
+      "Team": "System.AreaPath"
+    }
+  },
+  "portfolioBacklogs": [
+    {
+      "Color": "FF773B93",
+      "id": "Microsoft.FeatureCategory",
+      "isHidden": false,
+      "name": "Features",
+      "rank": 3,
+      "workItemCountLimit": 1000,
+      "defaultWorkItemType": {
+        "name": "Feature",
+        "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Feature"
+      },
+      "workItemTypes": [
+        {
+          "name": "Feature",
+          "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Feature"
+        }
+      ],
+      "addPanelFields": [
+        {
+          "name": "Title",
+          "referenceName": "System.Title",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+        }
+      ],
+      "columnFields": [
+        {
+          "columnFieldReference": {
+            "name": "Work Item Type",
+            "referenceName": "System.WorkItemType",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.WorkItemType"
+          },
+          "width": 100
+        },
+        {
+          "columnFieldReference": {
+            "name": "Title",
+            "referenceName": "System.Title",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+          },
+          "width": 400
+        },
+        {
+          "columnFieldReference": {
+            "name": "State",
+            "referenceName": "System.State",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.State"
+          },
+          "width": 100
+        },
+        {
+          "columnFieldReference": {
+            "name": "Effort",
+            "referenceName": "Microsoft.VSTS.Scheduling.Effort",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Scheduling.Effort"
+          },
+          "width": 50
+        },
+        {
+          "columnFieldReference": {
+            "name": "Business Value",
+            "referenceName": "Microsoft.VSTS.Common.BusinessValue",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Common.BusinessValue"
+          },
+          "width": 50
+        },
+        {
+          "columnFieldReference": {
+            "name": "Value Area",
+            "referenceName": "Microsoft.VSTS.Common.ValueArea",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Common.ValueArea"
+          },
+          "width": 100
+        },
+        {
+          "columnFieldReference": {
+            "name": "Tags",
+            "referenceName": "System.Tags",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Tags"
+          },
+          "width": 200
+        }
+      ]
+    },
+    {
+      "Color": "FFFF7B00",
+      "id": "Microsoft.EpicCategory",
+      "isHidden": true,
+      "name": "Epics",
+      "rank": 4,
+      "workItemCountLimit": 1000,
+      "defaultWorkItemType": {
+        "name": "Epic",
+        "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Epic"
+      },
+      "workItemTypes": [
+        {
+          "name": "Epic",
+          "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Epic"
+        }
+      ],
+      "addPanelFields": [
+        {
+          "name": "Title",
+          "referenceName": "System.Title",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+        }
+      ],
+      "columnFields": [
+        {
+          "columnFieldReference": {
+            "name": "Work Item Type",
+            "referenceName": "System.WorkItemType",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.WorkItemType"
+          },
+          "width": 100
+        },
+        {
+          "columnFieldReference": {
+            "name": "Title",
+            "referenceName": "System.Title",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+          },
+          "width": 400
+        },
+        {
+          "columnFieldReference": {
+            "name": "State",
+            "referenceName": "System.State",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.State"
+          },
+          "width": 100
+        },
+        {
+          "columnFieldReference": {
+            "name": "Effort",
+            "referenceName": "Microsoft.VSTS.Scheduling.Effort",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Scheduling.Effort"
+          },
+          "width": 50
+        },
+        {
+          "columnFieldReference": {
+            "name": "Business Value",
+            "referenceName": "Microsoft.VSTS.Common.BusinessValue",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Common.BusinessValue"
+          },
+          "width": 50
+        },
+        {
+          "columnFieldReference": {
+            "name": "Value Area",
+            "referenceName": "Microsoft.VSTS.Common.ValueArea",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Common.ValueArea"
+          },
+          "width": 100
+        },
+        {
+          "columnFieldReference": {
+            "name": "Tags",
+            "referenceName": "System.Tags",
+            "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Tags"
+          },
+          "width": 200
+        }
+      ]
+    }
+  ],
+  "requirementBacklog": {
+    "Color": "FF009CCC",
+    "id": "Microsoft.RequirementCategory",
+    "isHidden": false,
+    "name": "Backlog items",
+    "rank": 2,
+    "workItemCountLimit": 1000,
+    "defaultWorkItemType": {
+      "name": "Product Backlog Item",
+      "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Product%20Backlog%20Item"
+    },
+    "workItemTypes": [
+      {
+        "name": "Product Backlog Item",
+        "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Product%20Backlog%20Item"
+      },
+      {
+        "name": "Bug",
+        "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Bug"
+      }
+    ],
+    "addPanelFields": [
+      {
+        "name": "Title",
+        "referenceName": "System.Title",
+        "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+      }
+    ],
+    "columnFields": [
+      {
+        "columnFieldReference": {
+          "name": "Work Item Type",
+          "referenceName": "System.WorkItemType",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.WorkItemType"
+        },
+        "width": 100
+      },
+      {
+        "columnFieldReference": {
+          "name": "Title",
+          "referenceName": "System.Title",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+        },
+        "width": 400
+      },
+      {
+        "columnFieldReference": {
+          "name": "State",
+          "referenceName": "System.State",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.State"
+        },
+        "width": 100
+      },
+      {
+        "columnFieldReference": {
+          "name": "Effort",
+          "referenceName": "Microsoft.VSTS.Scheduling.Effort",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Scheduling.Effort"
+        },
+        "width": 50
+      },
+      {
+        "columnFieldReference": {
+          "name": "Value Area",
+          "referenceName": "Microsoft.VSTS.Common.ValueArea",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Common.ValueArea"
+        },
+        "width": 100
+      },
+      {
+        "columnFieldReference": {
+          "name": "Iteration Path",
+          "referenceName": "System.IterationPath",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.IterationPath"
+        },
+        "width": 200
+      },
+      {
+        "columnFieldReference": {
+          "name": "Tags",
+          "referenceName": "System.Tags",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Tags"
+        },
+        "width": 200
+      }
+    ]
+  },
+  "taskBacklog": {
+    "Color": "FFF2CB1D",
+    "id": "Microsoft.TaskCategory",
+    "isHidden": false,
+    "name": "Tasks",
+    "rank": 1,
+    "workItemCountLimit": 1000,
+    "defaultWorkItemType": {
+      "name": "Task",
+      "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Task"
+    },
+    "workItemTypes": [
+      {
+        "name": "Task",
+        "URL": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/_apis/wit/workItemTypes/Task"
+      }
+    ],
+    "addPanelFields": [
+      {
+        "name": "Title",
+        "referenceName": "System.Title",
+        "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+      }
+    ],
+    "columnFields": [
+      {
+        "columnFieldReference": {
+          "name": "Title",
+          "referenceName": "System.Title",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.Title"
+        },
+        "width": 400
+      },
+      {
+        "columnFieldReference": {
+          "name": "State",
+          "referenceName": "System.State",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.State"
+        },
+        "width": 100
+      },
+      {
+        "columnFieldReference": {
+          "name": "Assigned To",
+          "referenceName": "System.AssignedTo",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/System.AssignedTo"
+        },
+        "width": 100
+      },
+      {
+        "columnFieldReference": {
+          "name": "Remaining Work",
+          "referenceName": "Microsoft.VSTS.Scheduling.RemainingWork",
+          "URL": "https://dev.azure.com/sachinraj/_apis/wit/fields/Microsoft.VSTS.Scheduling.RemainingWork"
+        },
+        "width": 50
+      }
+    ]
+  },
+  "url": "https://dev.azure.com/sachinraj/b965a18a-1a63-413b-a982-9a074610515b/a597a99b-8648-4285-b487-127b87a69a42/_apis/work/backlogconfiguration",
+  "workItemTypeMappedStates": [
+    {
+      "workItemTypeName": "Epic",
+      "states": {
+        "New": "Proposed",
+        "In Progress": "InProgress",
+        "Done": "Completed"
+      }
+    },
+    {
+      "workItemTypeName": "Feature",
+      "states": {
+        "New": "Proposed",
+        "In Progress": "InProgress",
+        "Done": "Completed"
+      }
+    },
+    {
+      "workItemTypeName": "Product Backlog Item",
+      "states": {
+        "New": "Proposed",
+        "Approved": "Proposed",
+        "Committed": "InProgress",
+        "Done": "Completed"
+      }
+    },
+    {
+      "workItemTypeName": "Task",
+      "states": {
+        "To Do": "Proposed",
+        "In Progress": "InProgress",
+        "Done": "Completed"
+      }
+    },
+    {
+      "workItemTypeName": "Bug",
+      "states": {
+        "New": "Proposed",
+        "Approved": "Proposed",
+        "Committed": "InProgress",
+        "Done": "Completed"
+      }
+    }
+  ]
+}
