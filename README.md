@@ -22,7 +22,7 @@ To run this locally, you will need:
 
     > 127.0.0.1 azuredevopsdemogen-mylocal.com
 
-    ![](images/hostfile.png)
+    ![](Images/hostfile.png)
 
 1. You can register the app using this domain but you will need to provide a secure connection (https) for the callback URL. Create a new website **azuredevopsdemogen-mylocal.com** and enable HTTPS with a self-signed certificate on IIS by following the instructions provided in this [article](https://weblogs.asp.net/scottgu/tip-trick-enabling-ssl-on-iis7-using-self-signed-certificates)
 
@@ -30,9 +30,9 @@ To run this locally, you will need:
 
 1. Select the following scopes and submit. If the submission is successful, the application settings page is displayed. You will need these information.
 
-   ![](images/scopes.png)
+   ![](Images/scopes.png)
 
-   ![](images/AppSetting.png)
+   ![](Images/AppSetting.png)
 
 1. Go to IIS Manager, select the wesbiste you created. Open the  **Configuration Editor** by double-clicking it. Open the **Collections**. Add the following entries to the collection:
 
@@ -41,17 +41,17 @@ To run this locally, you will need:
     * ClientSecret - Client Secret from the application settings
     * AppScope - Authorized Scopes from the application settings (Encode the Authorized scopes and copy)
 
-    ![](images/IIS_Appsettings.png)
+    ![](Images/IIS_Appsettings.png)
 
    If you want to view the settings for the app that you registered, you can get it from [here](https://app.vssps.visualstudio.com/profile/view).
 
 1. Open the solution in Visual Studio and run the application in debug mode. Make sure you are running using the Local IIS and not IIS Express.
 
-   ![](images/local-debug.png)
+   ![](Images/local-debug.png)
 
 
 ## Extractor
 
 When you are using extractor make sure you have given the Read & Write permissions for **IIS_IUSRS** group on the folder **ExtractedTemplate**
 
-   ![](images/permissions.png)
+   ![](Images/permissions.png)
