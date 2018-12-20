@@ -12,10 +12,13 @@ namespace VstsRestAPI.Viewmodel.Extractor
 
         public class Rows
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public string Team { get; set; }
+            public List<Value> value { get; set; }
         }
-
+        public class TeamRows
+        {
+            public List<Rows> Rows { get; set; }
+        }
 
     }
 }

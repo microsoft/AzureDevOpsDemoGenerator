@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VstsRestAPI.Viewmodel.Extractor
 {
-    public class GetTeamSetting
+    public class ExportTeamSetting
     {
         public class BacklogVisibilities
         {
@@ -16,8 +16,13 @@ namespace VstsRestAPI.Viewmodel.Extractor
         }
         public class Setting
         {
+            public string Team { get; set; }
             public string bugsBehavior { get; set; }
             public BacklogVisibilities backlogVisibilities { get; set; }
+        }
+        public class TeamSetting
+        {
+            public List<Setting> settings { get; set; }
         }
     }
 }

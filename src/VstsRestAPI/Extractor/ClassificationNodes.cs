@@ -38,34 +38,7 @@ namespace VstsRestAPI.Extractor
             }
             return new GetINumIteration.Iterations();
         }
-        // Get Iterations to write file
-        public ItearationList.Iterations GetIterations()
-        {
-            try
-            {
-                ItearationList.Iterations viewModel = new ItearationList.Iterations();
-                using (var client = GetHttpClient())
-                {
-                    HttpResponseMessage response = client.GetAsync(string.Format(_configuration.UriString + "/{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, Project)).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        viewModel = JsonConvert.DeserializeObject<ItearationList.Iterations>(result);
-                        return viewModel;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-            return new ItearationList.Iterations();
-        }
+       
         // Get Team List to write to file
         public TeamList ExportTeamList()
         {
@@ -141,9 +114,9 @@ namespace VstsRestAPI.Extractor
 
         // Get Team setting
         //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/teamsettings?api-version=4.1
-        public GetTeamSetting.Setting ExportTeamSetting()
+        public ExportTeamSetting.Setting ExportTeamSetting()
         {
-            GetTeamSetting.Setting setting = new GetTeamSetting.Setting();
+            ExportTeamSetting.Setting setting = new ExportTeamSetting.Setting();
             try
             {
                 using (var client = GetHttpClient())
@@ -152,7 +125,7 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        setting = JsonConvert.DeserializeObject<GetTeamSetting.Setting>(result);
+                        setting = JsonConvert.DeserializeObject<ExportTeamSetting.Setting>(result);
                         return setting;
                     }
                     else
@@ -167,7 +140,7 @@ namespace VstsRestAPI.Extractor
             {
                 LastFailureMessage = ex.Message;
             }
-            return new GetTeamSetting.Setting();
+            return new ExportTeamSetting.Setting();
         }
 
         //Get Card Fields
@@ -190,6 +163,36 @@ namespace VstsRestAPI.Extractor
                 HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/cardrulesettings?api-version={4}",_configuration.UriString,Project,Team, boardType,_configuration.VersionNumber)).Result;
                 return response;
             }
+        }
+
+        // Get Iterations to write file
+        //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/teamsettings/iterations?api-version=4.1
+        public ExportIterations.Iterations ExportIterationsToSave()
+        {
+            try
+            {
+                ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/teamsettings/iterations?api-version={3}", _configuration.UriString, Project, Team, _configuration.VersionNumber)).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        viewModel = JsonConvert.DeserializeObject<ExportIterations.Iterations>(result);
+                        return viewModel;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return new ExportIterations.Iterations();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace VstsDemoBuilder.Controllers
     {
         private AccessDetails accessDetails = new AccessDetails();
         private EnvironmentController con = new EnvironmentController();
-        private static object objLock = new object();
+        private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
         public List<string> errorMessages = new List<string>();
         private delegate string[] ProcessEnvironment(Project model);
@@ -411,10 +411,10 @@ namespace VstsDemoBuilder.Controllers
             AddMessage(model.id, "");
             ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate);
 
-            if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
-            {
-                AddMessage(model.id, "Iterations Definition");
-            }
+            //if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
+            //{
+            //    AddMessage(model.id, "Iterations Definition");
+            //}
             string extractedFolderName = extractedTemplatePath + model.ProjectName;
             string filePathToRead = Server.MapPath("~") + @"\\PreSetting";
 
@@ -454,7 +454,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 AddMessage(model.id, "Release Definition");
             }
-           
+
             //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
             //string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
@@ -488,6 +488,21 @@ namespace VstsDemoBuilder.Controllers
                     }
                     System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams.json", fetchedJson);
                     string boardType = processTemplate.ToLower() == "agile" ? boardType = "stories" : boardType = "backlog%20items";
+
+                    BoardColumnResponseScrum.ListColumnResponses listColumnResponses = new BoardColumnResponseScrum.ListColumnResponses();
+                    listColumnResponses.ColumnResponse = new List<BoardColumnResponseScrum.ColumnResponse>();
+
+                    ExportBoardRows.TeamRows teamRows = new ExportBoardRows.TeamRows();
+                    teamRows.Rows = new List<ExportBoardRows.Rows>();
+
+                    ExportTeamSetting.TeamSetting listTeamSetting = new ExportTeamSetting.TeamSetting();
+                    listTeamSetting.settings = new List<ExportTeamSetting.Setting>();
+
+                    List<JObject> jObjCardFieldList = new List<JObject>();
+                    List<JObject> jObjcardStyleList = new List<JObject>();
+
+                    ExportIterations.ListIterations listIterations = new ExportIterations.ListIterations();
+                    listIterations.IterationsList = new List<ExportIterations.Iterations>();
                     foreach (var team in _team.value)
                     {
                         //Export Board Colums for each team
@@ -504,15 +519,15 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 string res = response.Content.ReadAsStringAsync().Result;
                                 BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
-                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns\\" + team.name + "-BoardColumns.json", JsonConvert.SerializeObject(scrumColumns.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-
+                                scrumColumns.TeamName = team.name;
+                                listColumnResponses.ColumnResponse.Add(scrumColumns);
                             }
                             else if (processTemplate.ToLower() == "agile")
                             {
                                 string res = response.Content.ReadAsStringAsync().Result;
                                 BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
-                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns\\" + team.name + "-BoardColumns.json", JsonConvert.SerializeObject(agileColumns.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
+
                             AddMessage(con.Id, "Board Columns Definition");
                             Thread.Sleep(2000);
                         }
@@ -532,8 +547,8 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\BoardRows");
                             }
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardRows\\" + team.name + "-BoardRows.json", JsonConvert.SerializeObject(rows.value, Formatting.Indented));
-
+                            rows.Team = team.name;
+                            teamRows.Rows.Add(rows);
                             AddMessage(con.Id, "Board Rows Definition");
                             Thread.Sleep(2000);
                         }
@@ -543,14 +558,15 @@ namespace VstsDemoBuilder.Controllers
                         }
 
                         //Export Team Setting for each team
-                        GetTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                        ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
                         if (teamSetting.backlogVisibilities != null)
                         {
                             if (!Directory.Exists(extractedTemplatePath + con.Project + "\\TeamSetting"))
                             {
                                 Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\TeamSetting");
                             }
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\TeamSetting\\" + team.name + "-Setting.json", JsonConvert.SerializeObject(teamSetting, Formatting.Indented));
+                            teamSetting.Team = team.name;
+                            listTeamSetting.settings.Add(teamSetting);
                         }
                         else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
                         {
@@ -567,7 +583,8 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\CardFields");
                             }
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\CardFields\\" + team.name + "-CardFields.json", JsonConvert.SerializeObject(jObj, Formatting.Indented));
+                            jObj["Team"] = team.name;
+                            jObjCardFieldList.Add(jObj);
                         }
                         else
                         {
@@ -577,12 +594,13 @@ namespace VstsDemoBuilder.Controllers
                             AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
                         }
 
-                        // export card styles for each team
+                        // Export card styles for each team
                         var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
                         if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
                         {
                             string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
                             JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                            jObj["Team"] = team.name;
                             var style = jObj;
                             style["url"] = "";
                             style["_links"] = "{}";
@@ -590,9 +608,7 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\CardStyles");
                             }
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\CardStyles\\" + team.name + "-CardStyles.json", JsonConvert.SerializeObject(style, Formatting.Indented));
-
-
+                            jObjcardStyleList.Add(jObj);
                         }
                         else
                         {
@@ -602,7 +618,37 @@ namespace VstsDemoBuilder.Controllers
                             AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
                         }
 
-
+                        // Export Iterations for each team
+                        ExportIterations.Iterations iterations = teamNodes.ExportIterationsToSave();
+                        if (iterations.value.Count > 0)
+                        {
+                            iterations.Team = team.name;
+                            listIterations.IterationsList.Add(iterations);
+                        }
+                    }
+                    if (listColumnResponses.ColumnResponse.Count > 0)
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns\\" + "BoardColumns.json", JsonConvert.SerializeObject(listColumnResponses, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                    }
+                    if (teamRows.Rows.Count > 0)
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardRows\\ " + "BoardRows.json", JsonConvert.SerializeObject(teamRows, Formatting.Indented));
+                    }
+                    if (listTeamSetting.settings.Count > 0)
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\TeamSetting\\" + "TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                    }
+                    if (jObjCardFieldList.Count > 0)
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\CardFields\\" + "CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                    }
+                    if (jObjcardStyleList.Count > 0)
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\CardStyles\\" + "CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                    }
+                    if (listIterations.IterationsList.Count > 0)
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", JsonConvert.SerializeObject(listIterations, Formatting.Indented));
                     }
                     return true;
                 }
@@ -624,37 +670,37 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        // Get Iteration List to write into file
-        public bool ExportIterations(Configuration con)
-        {
-            try
-            {
-                VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-                ItearationList.Iterations viewModel = new ItearationList.Iterations();
-                viewModel = nodes.GetIterations();
-                string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
-                if (fetchedJson != "")
-                {
-                    if (!Directory.Exists(extractedTemplatePath + con.Project))
-                    {
-                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
-                    }
+        // Export Iterations
+        //public bool ExportIterations(Configuration con)
+        //{
+        //    try
+        //    {
+        //        VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+        //        ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
+        //        viewModel = nodes.ExportIterationsToSave();
+        //        string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+        //        if (fetchedJson != "")
+        //        {
+        //            if (!Directory.Exists(extractedTemplatePath + con.Project))
+        //            {
+        //                Directory.CreateDirectory(extractedTemplatePath + con.Project);
+        //            }
 
-                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", fetchedJson);
-                    return true;
-                }
-                else
-                {
-                    string error = nodes.LastFailureMessage;
-                    AddMessage(con.Id.ErrorId(), error);
-                    return false;
-                }
-            }
-            catch (Exception)
-            {
-            }
-            return false;
-        }
+        //            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", fetchedJson);
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            string error = nodes.LastFailureMessage;
+        //            AddMessage(con.Id.ErrorId(), error);
+        //            return false;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //    }
+        //    return false;
+        //}
 
         // Get Work items to write into file
         public void ExportWorkItems(Configuration con)
@@ -676,11 +722,11 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string item = WIT;
                         item = item.Replace(" ", "");
-                        if(!Directory.Exists(extractedTemplatePath + con.Project + "\\WorkItems"))
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\WorkItems"))
                         {
                             Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\WorkItems");
                         }
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project+ "\\WorkItems\\" + item + ".json", workItemJson);
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\WorkItems\\" + item + ".json", workItemJson);
                     }
                     else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
                     {
@@ -950,20 +996,6 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
-        // Get the Team setting to check the Backlog board setting and Enable Epic feature
-        public void GetTeamSetting(Configuration con)
-        {
-            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-            GetTeamSetting.Setting setting = nodes.ExportTeamSetting();
-            if (setting.backlogVisibilities != null)
-            {
-                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\EnableEpic.json", JsonConvert.SerializeObject(setting, Formatting.Indented));
-            }
-            else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-            {
-                AddMessage(con.Id.ErrorId(), "Error while fetching Team Setting " + nodes.LastFailureMessage);
-            }
-        }
         #endregion end extract template
         // Remove the template folder after zipping it
         [AllowAnonymous]
