@@ -73,9 +73,6 @@
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseScrum.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitionResponse.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitions.cs" />
-    <Compile Include="Viewmodel\Extractor\CardFiledsAgile.cs" />
-    <Compile Include="Viewmodel\Extractor\CardFiledsScrum.cs" />
-    <Compile Include="Viewmodel\Extractor\CardStyle.cs" />
     <Compile Include="Viewmodel\Extractor\ExportBoardRows.cs" />
     <Compile Include="Viewmodel\Extractor\GetBuildDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\GetINumIteration.cs" />
@@ -84,6 +81,7 @@
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\GetTeamSetting.cs" />
     <Compile Include="Viewmodel\Extractor\GetWorkItemsResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\Iterations.cs" />
     <Compile Include="Viewmodel\Extractor\IterationtoSave.cs" />
     <Compile Include="Viewmodel\Extractor\KeyConfig.cs" />
     <Compile Include="Viewmodel\Extractor\ProjectSetting.cs" />

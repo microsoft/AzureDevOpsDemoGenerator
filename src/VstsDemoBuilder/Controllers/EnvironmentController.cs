@@ -42,7 +42,7 @@ namespace VstsDemoBuilder.Controllers
     {
 
         #region Variables & Properties
-        private static object objLock = new object();
+        private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
 
         private delegate string[] ProcessEnvironment(Project model, string PAT, string accountName);
