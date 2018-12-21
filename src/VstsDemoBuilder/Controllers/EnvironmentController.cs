@@ -246,8 +246,8 @@ namespace VstsDemoBuilder.Controllers
                         // Reading Template setting file to check for private templates
                         if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                         {
-                            string privateTemplatesJson = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
+                            string templateSetting = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
+                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
                         }
                         //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template

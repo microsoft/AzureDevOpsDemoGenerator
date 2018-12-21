@@ -74,11 +74,20 @@ namespace VstsRestAPI.Extractor
         /// </summary>
         public HttpResponseMessage ExportBoardColums(string boardType)
         {
-            using (var client = GetHttpClient())
+            var response = new HttpResponseMessage();
+            try
             {
-                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/columns?api-version={4}", _configuration.UriString, _configuration.Project, _configuration.Team, boardType, _configuration.VersionNumber)).Result;
-                return response;
+                using (var client = GetHttpClient())
+                {
+                    response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/columns?api-version={4}", _configuration.UriString, _configuration.Project, _configuration.Team, boardType, _configuration.VersionNumber)).Result;
+                    return response;
+                }
             }
+            catch (Exception ex)
+            {
+
+            }
+            return response;
         }
 
         // Export Board Rows to write file
