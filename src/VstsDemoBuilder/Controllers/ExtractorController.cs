@@ -429,8 +429,8 @@ namespace VstsDemoBuilder.Controllers
 
             string Extensions = "";
             Extensions = filePathToRead + "\\DemoExtensions.json";
+            Extensions = System.IO.File.ReadAllText(Extensions);
             System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
-
 
             string projectTemplate = "";
             projectTemplate = filePathToRead + "\\ProjectTemplate.json";
