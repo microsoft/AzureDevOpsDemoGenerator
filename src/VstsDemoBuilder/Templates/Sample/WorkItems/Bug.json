@@ -1,0 +1,247 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 359,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-11-28T14:31:12.633Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-18T14:28:55.3Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Search hotel works only for certain cities",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Search hotel works only for certain cities",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 3.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Search Hotel Bug",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/228",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/359"
+    },
+    {
+      "id": 358,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-11-28T14:31:12.383Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:12.383Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Room lights are not dimming within the app",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Room lights are not dimming within the app",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/257",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/358"
+    },
+    {
+      "id": 357,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-11-28T14:31:12.15Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:12.15Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Same face patterns are not recognized",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Same face patterns are not recognized",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/357"
+    },
+    {
+      "id": 356,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-11-28T14:31:11.917Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:11.917Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Services has a bug",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Services has a bug",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/247",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/356"
+    },
+    {
+      "id": 355,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-11-28T14:31:11.667Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:11.667Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Unable to connect through 3G network",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Unable to connect through 3G network",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/355"
+    },
+    {
+      "id": 354,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 5",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-11-28T14:31:11.43Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:11.43Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Lengthy usernames not accepted",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Demo is long!",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Bug; Guests",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/228",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/354"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

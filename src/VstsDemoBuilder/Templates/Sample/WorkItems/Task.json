@@ -1,0 +1,2890 @@
+{
+  "count": 72,
+  "value": [
+    {
+      "id": 276,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:51.07Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:51.07Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Disable walk-in reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Disable walk-in reservation",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/233",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/276"
+    },
+    {
+      "id": 275,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:50.837Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:50.837Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Integrate iPad Connectivity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Integrate iPad Connectivity",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/233",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/275"
+    },
+    {
+      "id": 274,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:50.57Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:50.57Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Implement cosmos db storage for reservation changes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement cosmos db storage for reservation changes",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/241",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/274"
+    },
+    {
+      "id": 262,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-11-28T14:30:46.9Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:46.9Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Implement off-season discount",
+        "Microsoft.VSTS.Scheduling.Effort": 18.0,
+        "System.Description": "As a front-desk agent, I should be able to apply off-season discount, such that:<div><br></div><div>1. When new bookings are taken off-season discount should be applied</div><div>2. Should be valid for a time period</div><div>3. Should be available for members only</div>",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/237",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/262"
+    },
+    {
+      "id": 261,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-11-28T14:30:46.667Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:46.667Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Search for an existing reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "As a manager, I should be able to search for an existing reservation:<div><br></div><div>1. Guest first and last name should be listed along with the duration</div><div><br></div>",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Manager",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/238",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/261"
+    },
+    {
+      "id": 260,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360\\Mobile",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Work stopped",
+        "System.CreatedDate": "2018-11-28T14:30:45.98Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:45.98Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Implement to search for loyalty membership",
+        "Microsoft.VSTS.Scheduling.Effort": 3.0,
+        "System.Description": "Search loyalty membership",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/238",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/260"
+    },
+    {
+      "id": 330,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:05.337Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:05.337Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Ability to find an existing reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 4.0,
+        "System.Description": "The user should be able to find and review or modify their reservation online using first name, last name, and reservation confirmation number or log into the SMH360 account.",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Reservations; search; Web experience",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/245",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/330"
+    },
+    {
+      "id": 329,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:05.103Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:05.103Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Install sensors along with the latest location-aware mobility",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Sensors need to be installed in the reception area and parking lots to recognize the guests.",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/329"
+    },
+    {
+      "id": 328,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:04.87Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:04.87Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Push notification to the guest phone with room details and offers",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ability to push notifications to guests' smartphones about room and facilities offers should be implemented along with discounts and other offers",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/258",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/328"
+    },
+    {
+      "id": 327,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:04.633Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:04.633Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Able to modify reservation from mobile or website",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Able to modify reservation from mobile or website",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/250",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/327"
+    },
+    {
+      "id": 326,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:03.947Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:03.947Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create tables",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Design and create tables for controlling the lighting system",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/257",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/326"
+    },
+    {
+      "id": 325,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:03.713Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:03.713Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Compatibility of the app for Windows Marketplace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Compatibility of the app for Windows Marketplace",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/248",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/325"
+    },
+    {
+      "id": 324,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:03.477Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:03.477Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Compatibility of the app for IOS Play Store",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Compatibility of the app for IOS Play Store",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/248",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/324"
+    },
+    {
+      "id": 323,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:03.243Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:03.243Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Compatibility of the app for Android Play Store",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Compatibility of the app for Android Play Store",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/248",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/323"
+    },
+    {
+      "id": 322,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:03.01Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:03.01Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Generate Tweets, Sentiments, hashtags and Tag Phrases",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Generate Tweets, Sentiments, hashtags and Tag Phrases",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/247",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/322"
+    },
+    {
+      "id": 321,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:02.79Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:02.79Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Generate data about hotels, people, locations and sentiments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Generate data about hotels, people, locations and sentiments",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/247",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/321"
+    },
+    {
+      "id": 320,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:02.557Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:02.557Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Generate Hotel Conference Rooms Tweets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Generate Hotel Conference Rooms Tweets",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/247",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/320"
+    },
+    {
+      "id": 319,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:02.273Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:02.273Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create stored procedure for production",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create stored procedure for production",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/247",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/319"
+    },
+    {
+      "id": 318,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:02.04Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:02.04Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Unable to customize themes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Unable to customize themes",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/246",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/318"
+    },
+    {
+      "id": 317,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:01.82Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:01.82Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Ability to change app background color",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ability to change app background color",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/246",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/317"
+    },
+    {
+      "id": 316,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:01.59Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:01.59Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create ARM template",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/246",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/316"
+    },
+    {
+      "id": 315,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:01.32Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:01.32Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create Cosmos DB account",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create Cosmos DB account",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/245",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/315"
+    },
+    {
+      "id": 314,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:01.087Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:01.087Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create evaluation scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create evaluation scripts",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/246",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/314"
+    },
+    {
+      "id": 313,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:00.853Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:00.853Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "App background to have theme based on the chosen room",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "App background to have theme based on the chosen room",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/246",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/313"
+    },
+    {
+      "id": 312,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:31:00.167Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:00.167Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Update checkout rule engine",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update checkout rule engine",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/254",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/312"
+    },
+    {
+      "id": 311,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:30:59.93Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:59.93Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Add breakfast print button",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add print button for breakfast option to print the vouchers for guests.",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/311"
+    },
+    {
+      "id": 310,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-11-28T14:30:59.697Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:59.697Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Store my credit card details securely",
+        "Microsoft.VSTS.Scheduling.Effort": 7.0,
+        "System.Description": "Store my credit card details securely",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/249",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/310"
+    },
+    {
+      "id": 309,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-11-28T14:30:59.463Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:59.463Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Update membership profile",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update membership profile",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guest; membership",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/254",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/309"
+    },
+    {
+      "id": 308,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:59.23Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:59.23Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Adapt to Azure Functions model",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Build reservation module on Azure functions model with an event-driven, serverless compute experience.",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/258",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/308"
+    },
+    {
+      "id": 307,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:58.993Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:58.993Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Compatibility for Hue lighting system",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Develop the mobile app to make it compatible with Hue lighting system",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 12.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/257",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/307"
+    },
+    {
+      "id": 306,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:58.773Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:58.773Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Update R scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update R scripts",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/306"
+    },
+    {
+      "id": 305,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:58.54Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:58.54Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create entity framework classes and configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create entity framework classes and configuration",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 4.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/305"
+    },
+    {
+      "id": 304,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:58.307Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:58.307Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Facial recognition algorithm to be implemented",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The face recognition system should be developed in two modes:</div><div><br></div><div>Verification or authentication of a facial image: it basically compares the input facial image with the facial image related to the user which is requiring the authentication. It is basically a 1x1 comparison.</div><div><br></div><div>Identification or facial recognition: it basically compares the input facial image with all facial images from a dataset with the aim to find the user that matches that face. It is basically a 1xN comparison.</div>",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/304"
+    },
+    {
+      "id": 303,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:58.07Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:58.07Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create Azure Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create Azure cosmos db for registering bluetooth based registrations.",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 1.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/303"
+    },
+    {
+      "id": 302,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:57.853Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:57.853Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Walk-in registration with automatic recognition of guests",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create walk-in registration for hotel guests to automatically recognize them based on their previous facial recognition registration or registered mobile number or registered social id.",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 4.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/302"
+    },
+    {
+      "id": 301,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:57.62Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:57.62Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "UI Changes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Change the UI for separating guests details from the main user's details.",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 21.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/254",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/301"
+    },
+    {
+      "id": 300,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:57.383Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:57.383Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Validate meals voucher ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Meals vouchers with the guests should be validated for -&nbsp;<div><br></div><div>1. Date</div><div>2. Number of guests</div><div>3. Hotel's location</div><div>4. Guest Name</div>",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/300"
+    },
+    {
+      "id": 299,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-11-28T14:30:57.15Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:31:53.26Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Allow filtering of data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "The user needs to be able to filter the guests list data based on -&nbsp;<div><br></div><div>1. Number of guests</div><div>2. Age&nbsp;</div><div>3. Gender</div>",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/254",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/cf20ba8d-265d-4e08-8eae-244dca8002c7%2F26b80411-f31b-488e-a08f-577077cdc4d5%2F12",
+          "attributes": {
+            "authorizedDate": "2018-11-28T14:31:53.26Z",
+            "id": "3926600",
+            "resourceCreatedDate": "2018-11-28T14:31:53.26Z",
+            "resourceModifiedDate": "2018-11-28T14:31:53.26Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/299"
+    },
+    {
+      "id": 298,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-11-28T14:30:56.82Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:56.82Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Add breakfast to room rate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add breakfast to room rate",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guest; Room",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/240",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/298"
+    },
+    {
+      "id": 297,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-11-28T14:30:56.57Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:56.57Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Apply membership points",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Apply membership points",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/237",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/297"
+    },
+    {
+      "id": 296,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-11-28T14:30:55.9Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:55.9Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Integrate in First Response repository",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Integrate in First Response repository",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/240",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/296"
+    },
+    {
+      "id": 295,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-11-28T14:30:55.667Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:55.667Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create Azure SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create Azure SQL DB",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/240",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/295"
+    },
+    {
+      "id": 294,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:55.43Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:55.43Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create Schema and insert data into Azure SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create a schema and insert guest details into Azure SQL DB.",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/294"
+    },
+    {
+      "id": 293,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-11-28T14:30:55.18Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:55.18Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Ambient settings API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ambient settings API",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/257",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/293"
+    },
+    {
+      "id": 292,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-11-28T14:30:54.947Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:54.947Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "What do you need API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "What do you need API",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/292"
+    },
+    {
+      "id": 291,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-11-28T14:30:54.697Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:54.697Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Find my room API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Find my room API",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/250",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/291"
+    },
+    {
+      "id": 290,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:54.48Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:54.48Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Add required methods to API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add required methods to API for implementing keyless room entry",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 2.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/258",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/290"
+    },
+    {
+      "id": 289,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:54.243Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:54.243Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Encryption of the key code with room number",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement key codes with encryption for all rooms.",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/258",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/289"
+    },
+    {
+      "id": 288,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:54.01Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:54.01Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create external tables to access Hotels DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create external tables to access Hotels DB",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/288"
+    },
+    {
+      "id": 287,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:53.773Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:53.773Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Dashboard notification for all sensors that are switched ON",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Dashboard notification for all sensors that are switched ON",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/242",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/287"
+    },
+    {
+      "id": 286,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:53.54Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:53.54Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Configure Alerts for email and text notifications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Configure Alerts for email and text notifications",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/242",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/286"
+    },
+    {
+      "id": 285,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:53.32Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:53.32Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Insert ePCR data in Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Insert ePCR data in Cosmos DB",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/242",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/285"
+    },
+    {
+      "id": 284,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:53.023Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:53.023Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create ePCR collection",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create ePCR collection",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/242",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/284"
+    },
+    {
+      "id": 283,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:52.79Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:52.79Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create ARM Template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create ARM Template",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 2.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/257",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/283"
+    },
+    {
+      "id": 282,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:52.57Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:52.57Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Recreate AzureML experiment in R",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<font color=\"#111111\" face=\"Open Sans, arial, verdana\"><span style=\"font-size:16px;\">Implement Azure ML to share the real-time predictive analytics of the new personal assistant with Cortana.&nbsp;</span></font>",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/282"
+    },
+    {
+      "id": 281,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:52.337Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:52.337Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Update generator to adapt to new DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update generator to adapt to new DB",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 2.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/281"
+    },
+    {
+      "id": 280,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:52.103Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:52.103Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Implement multiple notifications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement multiple notifications",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/236",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/280"
+    },
+    {
+      "id": 279,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:51.87Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:51.87Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Algorithm to check available conference rooms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Algorithm to check available conference rooms",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/235",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/279"
+    },
+    {
+      "id": 278,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:51.603Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:51.603Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Integrate Google Calendar",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Integrate Google Calendar",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/235",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/278"
+    },
+    {
+      "id": 277,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:51.37Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:51.37Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Capture data in SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Capture data in SQL DB",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/234",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/277"
+    },
+    {
+      "id": 273,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:50.32Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:50.32Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Not reflecting guest details after update",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Not reflecting guest details after update",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/244",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/273"
+    },
+    {
+      "id": 272,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:50.07Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:50.07Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Print breakfast coupons",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Print breakfast coupons",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/244",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/272"
+    },
+    {
+      "id": 271,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:49.54Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:49.54Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Google or Facebook Login",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Google or Facebook Login",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/271"
+    },
+    {
+      "id": 270,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:49.307Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:49.307Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Receive email or text notifications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Receive email or text notifications",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/270"
+    },
+    {
+      "id": 269,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:48.62Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:48.62Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create console program that generate booking data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create console program that generate booking data",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/269"
+    },
+    {
+      "id": 268,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:48.37Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:48.37Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create POCOs for the Graph to be generated",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create POCOs for the Graph to be generated",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/268"
+    },
+    {
+      "id": 267,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:48.15Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:48.15Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create document",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create document",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/267"
+    },
+    {
+      "id": 266,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:47.853Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:47.853Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create training script",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create demo script for hotel managers to get training of the features",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 4.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/266"
+    },
+    {
+      "id": 265,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:47.62Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:47.62Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Dining notification",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Dining notifications should be sent to guests who are in the vicinity of the dining area.",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/265"
+    },
+    {
+      "id": 264,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:47.383Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:47.383Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Add new columns",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add new columns in the guests table for capturing additional information of guests for a particular reservation.<div><br></div>",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 12.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/254",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/264"
+    },
+    {
+      "id": 263,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-11-28T14:30:47.133Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:47.133Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Generate complimentary parking coupons ",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">Complimentary parking coupons can be used when guests park their vehicle in designated coupon car parks during specified parking hours.&nbsp;</span><div><font face=\"Segoe UI, sans-serif\"><br></font><div>The front-desk agent should be able to enter the correct vehicle and parking details on behalf of the other person to start a parking session. The parking coupons can be generated either through app or from a computer.</div><div><br><div><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">- coupons should include a valid date and time range</span></div><div><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">- should include car parks in which it can be used</span></div><div><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\"><br></span></div></div></div>",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Guests; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/239",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/263"
+    },
+    {
+      "id": 259,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-11-28T14:30:45.743Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-11-28T14:30:45.743Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Capture guest details to Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Capture guest details to Cosmos DB",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/236",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/259"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

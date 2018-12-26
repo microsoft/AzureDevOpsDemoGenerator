@@ -1,0 +1,31 @@
+{
+  "settings": [
+    {
+      "BoardType": "Epics",
+      "bugsBehavior": "asRequirements",
+      "backlogVisibilities": {
+        "Microsoft.EpicCategory": true,
+        "Microsoft.FeatureCategory": true,
+        "Microsoft.RequirementCategory": true
+      }
+    },
+    {
+      "BoardType": "Features",
+      "bugsBehavior": "asRequirements",
+      "backlogVisibilities": {
+        "Microsoft.EpicCategory": true,
+        "Microsoft.FeatureCategory": true,
+        "Microsoft.RequirementCategory": true
+      }
+    },
+    {
+      "BoardType": "Backlog Items",
+      "bugsBehavior": "asRequirements",
+      "backlogVisibilities": {
+        "Microsoft.EpicCategory": true,
+        "Microsoft.FeatureCategory": true,
+        "Microsoft.RequirementCategory": true
+      }
+    }
+  ]
+}
