@@ -31,15 +31,6 @@ namespace VstsRestAPI.Viewmodel.Extractor
         {
             public string BoardName { get; set; }
             public List<Value> value { get; set; }
-            public ExportBoardRows.Rows ColteamsRows { get; set; }
-
         }
-
-        public class ListColumnResponses
-        {
-            public string TeamName { get; set; }
-            public List<ColumnResponse> ColumnResponse { get; set; }
-        }
-
     }
 }

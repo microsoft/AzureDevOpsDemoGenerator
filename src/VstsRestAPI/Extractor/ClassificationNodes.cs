@@ -183,7 +183,7 @@ namespace VstsRestAPI.Extractor
                 ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/teamsettings/iterations?api-version={3}", _configuration.UriString, Project, Team, _configuration.VersionNumber)).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/_apis/work/teamsettings/iterations?api-version={2}", _configuration.UriString, Project, _configuration.VersionNumber)).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;

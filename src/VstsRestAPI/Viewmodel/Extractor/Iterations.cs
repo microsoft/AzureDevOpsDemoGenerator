@@ -14,13 +14,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
 
         public class Iterations
         {
-            public string Team { get; set; }
             public IList<Value> value { get; set; }
-        }
-
-        public class ListIterations
-        {
-            public List<Iterations> IterationsList { get; set; }
         }
     }
 }
