@@ -578,7 +578,7 @@
     <Content Include="Templates\Python\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\Python\EnableEpic.json" />
     <Content Include="Templates\Python\Extensions.json" />
-    <Content Include="Templates\Python\ImportSourceCode\Python.json" />
+    <Content Include="Templates\Python\ImportSourceCode\PythonDjango.json" />
     <Content Include="Templates\Python\ProjectSettings.json" />
     <Content Include="Templates\Python\ProjectTemplate.json" />
     <Content Include="Templates\Python\ReleaseDefinitions\Python.json" />
