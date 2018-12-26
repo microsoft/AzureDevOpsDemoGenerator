@@ -423,6 +423,7 @@ namespace VstsDemoBuilder.Controllers
 
             string projectSetting = "";
             projectSetting = filePathToRead + "\\ProjectSettings.json";
+            projectSetting = System.IO.File.ReadAllText(projectSetting);
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
@@ -433,10 +434,12 @@ namespace VstsDemoBuilder.Controllers
 
             string projectTemplate = "";
             projectTemplate = filePathToRead + "\\ProjectTemplate.json";
+            projectTemplate = System.IO.File.ReadAllText(projectTemplate);
             System.IO.File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
 
             string teamArea = "";
             teamArea = filePathToRead + "\\TeamArea.json";
+            teamArea = System.IO.File.ReadAllText(teamArea);
             System.IO.File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas Definition");
 
