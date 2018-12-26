@@ -73,12 +73,15 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult Index(ProjectList.ProjectDetails model)
         {
             string pat = "";
+            string email = "";
             if (Session["PAT"] != null)
             {
                 pat = Session["PAT"].ToString();
             }
-            string email = Session["Email"].ToString();
-
+            if (Session["Email"] != null)
+            {
+                email = Session["PAT"].ToString();
+            }
             if (string.IsNullOrEmpty(pat))
             {
                 return Redirect("../Account/Verify");
@@ -411,10 +414,10 @@ namespace VstsDemoBuilder.Controllers
             AddMessage(model.id, "");
             ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate);
 
-            //if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
-            //{
-            //    AddMessage(model.id, "Iterations Definition");
-            //}
+            if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
+            {
+                AddMessage(model.id, "Iterations Definition");
+            }
             string extractedFolderName = extractedTemplatePath + model.ProjectName;
             string filePathToRead = Server.MapPath("~") + @"\\PreSetting";
 
@@ -482,11 +485,11 @@ namespace VstsDemoBuilder.Controllers
                 string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
                 if (fetchedJson != "")
                 {
-                    if (!Directory.Exists(extractedTemplatePath + con.Project))
+                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Teams"))
                     {
-                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Teams");
                     }
-                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams.json", fetchedJson);
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
 
                     List<string> boardTypes = new List<string>();
                     boardTypes.Add("Epics"); boardTypes.Add("Features");
@@ -495,47 +498,44 @@ namespace VstsDemoBuilder.Controllers
                     { boardTypes.Add("Stories"); }
                     else { boardTypes.Add("Backlog Items"); }
 
-                    List<BoardColumnResponseScrum.ListColumnResponses> olistColumnResponses = new List<BoardColumnResponseScrum.ListColumnResponses>();
-                    List<ExportBoardRows.TeamRows> oteamRows = new List<ExportBoardRows.TeamRows>();
-
-                    ExportTeamSetting.TeamSetting listTeamSetting = new ExportTeamSetting.TeamSetting();
-                    listTeamSetting.settings = new List<ExportTeamSetting.Setting>();
-
-                    List<JObject> jObjCardFieldList = new List<JObject>();
-                    List<JObject> jObjcardStyleList = new List<JObject>();
-
-                    ExportIterations.ListIterations listIterations = new ExportIterations.ListIterations();
-                    listIterations.IterationsList = new List<ExportIterations.Iterations>();
                     foreach (var team in _team.value)
                     {
+                        List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
+                        List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
+                        List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
+
+                        ExportTeamSetting.TeamSetting listTeamSetting = new ExportTeamSetting.TeamSetting();
+                        listTeamSetting.settings = new List<ExportTeamSetting.Setting>();
+
+                        List<JObject> jObjCardFieldList = new List<JObject>();
+                        List<JObject> jObjcardStyleList = new List<JObject>();
+                        string teamFolderPath = extractedTemplatePath + con.Project + "\\Teams\\" + team.name;
+                        if (!Directory.Exists(teamFolderPath))
+                        {
+                            Directory.CreateDirectory(teamFolderPath);
+                        }
                         //Export Board Colums for each team
                         con.Team = team.name;
-                        BoardColumnResponseScrum.ListColumnResponses listColumnResponses = new BoardColumnResponseScrum.ListColumnResponses();
-                        listColumnResponses.ColumnResponse = new List<BoardColumnResponseScrum.ColumnResponse>();
-
-                        ExportBoardRows.TeamRows teamRows = new ExportBoardRows.TeamRows();
-                        teamRows.Rows = new List<ExportBoardRows.Rows>();
 
                         VstsRestAPI.Extractor.ClassificationNodes teamNodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
                         foreach (var boardType in boardTypes)
                         {
                             var response = teamNodes.ExportBoardColums(boardType);
-                            BoardColumnResponseScrum.ColumnResponse scrumColumns = new BoardColumnResponseScrum.ColumnResponse();
                             if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                             {
-                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\BoardColumns"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\BoardColumns");
-                                }
                                 if (processTemplate.ToLower() == "scrum")
                                 {
                                     string res = response.Content.ReadAsStringAsync().Result;
-                                    scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
+                                    BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
+                                    scrumColumns.BoardName = boardType;
+                                    columnResponsesScrum.Add(scrumColumns);
                                 }
                                 else if (processTemplate.ToLower() == "agile")
                                 {
                                     string res = response.Content.ReadAsStringAsync().Result;
                                     BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
+                                    agileColumns.BoardName = boardType;
+                                    columnResponsesAgile.Add(agileColumns);
                                 }
                                 AddMessage(con.Id, "Board Columns Definition");
                                 Thread.Sleep(2000);
@@ -552,13 +552,8 @@ namespace VstsDemoBuilder.Controllers
                             ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
                             if (rows.value != null && rows.value.Count > 0)
                             {
-                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\BoardRows"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\BoardRows");
-                                }
-                                //teamRows.Rows.Add(rows);
-                                rows.Team = team.name;
-                                scrumColumns.ColteamsRows = rows;
+                                rows.BoardName = boardType;
+                                boardRows.Add(rows);
                                 AddMessage(con.Id, "Board Rows Definition");
                                 Thread.Sleep(2000);
                             }
@@ -567,19 +562,13 @@ namespace VstsDemoBuilder.Controllers
                                 AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
                             }
 
-                            scrumColumns.BoardName = boardType;
-                            listColumnResponses.ColumnResponse.Add(scrumColumns);
-
                             //Export Team Setting for each team
                             ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
                             if (teamSetting.backlogVisibilities != null)
                             {
-                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\TeamSetting"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\TeamSetting");
-                                }
-                                teamSetting.Team = team.name;
+                                teamSetting.BoardType = boardType;
                                 listTeamSetting.settings.Add(teamSetting);
+                                AddMessage(con.Id, "Team Settings Definition");
                             }
                             else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
                             {
@@ -592,12 +581,10 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 string res = cardFieldResponse.Content.ReadAsStringAsync().Result;
                                 JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
-                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\CardFields"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\CardFields");
-                                }
-                                jObj["Team"] = team.name;
+                                jObj["BoardName"] = boardType;
                                 jObjCardFieldList.Add(jObj);
+                                AddMessage(con.Id, "Card fields Definition");
+
                             }
                             else
                             {
@@ -607,21 +594,19 @@ namespace VstsDemoBuilder.Controllers
                                 AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
                             }
 
-                            // Export card styles for each team
+                            //// Export card styles for each team
                             var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
                             if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
                             {
                                 string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
                                 JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
-                                jObj["Team"] = team.name;
+                                jObj["BoardName"] = boardType;
                                 var style = jObj;
                                 style["url"] = "";
                                 style["_links"] = "{}";
-                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\CardStyles"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\CardStyles");
-                                }
                                 jObjcardStyleList.Add(jObj);
+                                AddMessage(con.Id, "Card style Definition");
+
                             }
                             else
                             {
@@ -630,44 +615,33 @@ namespace VstsDemoBuilder.Controllers
                                 teamNodes.LastFailureMessage = error;
                                 AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
                             }
-
-                            // Export Iterations for each team
-                            ExportIterations.Iterations iterations = teamNodes.ExportIterationsToSave();
-                            if (iterations.value.Count > 0)
-                            {
-                                iterations.Team = team.name;
-                                listIterations.IterationsList.Add(iterations);
-                            }
-
                         }
-                        listColumnResponses.TeamName = team.name;
-                        olistColumnResponses.Add(listColumnResponses);
-                        
+                        if (columnResponsesAgile.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
+                        if (columnResponsesScrum.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
+                        if (boardRows.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
+                        if (listTeamSetting.settings.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                        }
+                        if (jObjCardFieldList.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                        }
+                        if (jObjcardStyleList.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                        }
                     }
-                    if (olistColumnResponses.Count > 0)
-                    {
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardColumns\\" + "BoardColumns.json", JsonConvert.SerializeObject(olistColumnResponses, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                    }
-                    //if (teamRows.Rows.Count > 0)
-                    //{
-                    //    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\BoardRows\\ " + "BoardRows.json", JsonConvert.SerializeObject(teamRows, Formatting.Indented));
-                    //}
-                    if (listTeamSetting.settings.Count > 0)
-                    {
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\TeamSetting\\" + "TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
-                    }
-                    if (jObjCardFieldList.Count > 0)
-                    {
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\CardFields\\" + "CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
-                    }
-                    if (jObjcardStyleList.Count > 0)
-                    {
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\CardStyles\\" + "CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
-                    }
-                    if (listIterations.IterationsList.Count > 0)
-                    {
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", JsonConvert.SerializeObject(listIterations, Formatting.Indented));
-                    }
+
                     return true;
                 }
                 else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
@@ -688,37 +662,36 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        // Export Iterations
-        //public bool ExportIterations(Configuration con)
-        //{
-        //    try
-        //    {
-        //        VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-        //        ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
-        //        viewModel = nodes.ExportIterationsToSave();
-        //        string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
-        //        if (fetchedJson != "")
-        //        {
-        //            if (!Directory.Exists(extractedTemplatePath + con.Project))
-        //            {
-        //                Directory.CreateDirectory(extractedTemplatePath + con.Project);
-        //            }
-
-        //            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", fetchedJson);
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            string error = nodes.LastFailureMessage;
-        //            AddMessage(con.Id.ErrorId(), error);
-        //            return false;
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //    }
-        //    return false;
-        //}
+        //Export Iterations
+        public bool ExportIterations(Configuration con)
+        {
+            try
+            {
+                VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
+                viewModel = nodes.ExportIterationsToSave();
+                string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+                if (fetchedJson != "")
+                {
+                    if (!Directory.Exists(extractedTemplatePath + con.Project))
+                    {
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                    }
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", fetchedJson);
+                    return true;
+                }
+                else
+                {
+                    string error = nodes.LastFailureMessage;
+                    AddMessage(con.Id.ErrorId(), error);
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return false;
+        }
 
         // Get Work items to write into file
         public void ExportWorkItems(Configuration con)
@@ -1031,7 +1004,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
-            //string val = Convert.ToString(Request.Params["fileName1"]);
             string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
             CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
             if (System.IO.Directory.Exists(filePath))
@@ -1064,6 +1036,8 @@ namespace VstsDemoBuilder.Controllers
                     foreach (var dir in subDirs)
                     {
                         string[] subDirFiles = System.IO.Directory.GetFiles(dir);
+                        string[] subDirsLevel2 = Directory.GetDirectories(dir);
+
                         if (subDirFiles.Length > 0)
                         {
                             CreateZips.Folder folder = new CreateZips.Folder();
@@ -1083,6 +1057,36 @@ namespace VstsDemoBuilder.Controllers
                                 folderItem.Extension = fSplit[1];
                                 folderItem.FileBytes = System.IO.File.ReadAllBytes(sdf);
                                 folder.FolderItems.Add(folderItem);
+                            }
+                            if (subDirsLevel2.Length > 0)
+                            {
+                                folder.FolderL2 = new List<CreateZips.FolderL2>();
+                                foreach (var dirL2 in subDirsLevel2)
+                                {
+                                    string[] subDirFilesL2 = System.IO.Directory.GetFiles(dirL2);
+                                    if (subDirFilesL2.Length > 0)
+                                    {
+                                        CreateZips.FolderL2 folderFL2 = new CreateZips.FolderL2();
+                                        string[] getFolderNameL2 = dirL2.Split('\\');
+                                        string subFolderNameL2 = getFolderNameL2[getFolderNameL2.Length - 1];
+                                        folderFL2.FolderName = subFolderNameL2;
+                                        folderFL2.FolderItems = new List<CreateZips.FolderItem>();
+
+                                        foreach (var sdfL2 in subDirFilesL2)
+                                        {
+                                            CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
+                                            string[] fSplit = sdfL2.Split('\\');
+                                            string splitLength = fSplit[fSplit.Length - 1];
+                                            fSplit = splitLength.Split('.');
+
+                                            folderItem.Name = fSplit[0];
+                                            folderItem.Extension = fSplit[1];
+                                            folderItem.FileBytes = System.IO.File.ReadAllBytes(sdfL2);
+                                            folderFL2.FolderItems.Add(folderItem);
+                                        }
+                                        folder.FolderL2.Add(folderFL2);
+                                    }
+                                }
                             }
                             sfiles.Folder.Add(folder);
                         }
@@ -1116,6 +1120,24 @@ namespace VstsDemoBuilder.Controllers
                                     using (System.IO.Stream entryStream = zipItem.Open())
                                     {
                                         originalFileMemoryStream.CopyTo(entryStream);
+                                    }
+                                }
+                                // for second level of folder like /Template/Teams/BoardColums.json
+                                if (folder.FolderL2 != null)
+                                {
+                                    foreach (var folder2 in folder.FolderL2)
+                                    {
+                                        foreach (var file2 in folder2.FolderItems)
+                                        {
+                                            System.IO.Compression.ZipArchiveEntry zipItem2 = zip.CreateEntry(folder.FolderName + "/" + folder2.FolderName + "/" + file2.Name + "." + file2.Extension);
+                                            using (System.IO.MemoryStream originalFileMemoryStreamL2 = new System.IO.MemoryStream(file2.FileBytes))
+                                            {
+                                                using (System.IO.Stream entryStreamL2 = zipItem2.Open())
+                                                {
+                                                    originalFileMemoryStreamL2.CopyTo(entryStreamL2);
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
