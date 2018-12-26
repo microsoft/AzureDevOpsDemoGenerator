@@ -36,20 +36,19 @@ To run this locally, you will need:
 
    ![](Images/AppSetting.png)
 
-1. Go to IIS Manager, select the wesbiste you created. Open the  **Configuration Editor** by double-clicking it. Open the **Collections**. Add the following entries to the collection ( **Note:** If you want to view the settings for the app that you registered, you can get it from [here]):
+1. Go to IIS Manager, select the wesbiste you created. Open the  **Configuration Editor** by double-clicking it. Open the **Collections**. Add the following entries to the collection ( **Note:** If you want to view the settings for the app that you registered, you can get it from [here](https://app.vssps.visualstudio.com/profile/view).:
 
-   * RedirectUri - `https://<<domain name>>/Environment/Create`
+    * RedirectUri - `https://<<domain name>>/Environment/Create`
     * ClientId - App ID from the application settings
     * ClientSecret - Client Secret from the application settings
     * AppScope - Authorized Scopes from the application settings (Encode the Authorized scopes and copy)
 
     ![](Images/IIS_Appsettings.png)
 
-(https://app.vssps.visualstudio.com/profile/view).
 
 1.  Update the **Web \| Server** information in the Project properties file. Make sure you are running using the Local IIS and not IIS Express and your Project URL matches the web server name created in IIS.
 
-   ![](Images/local-debug.png)
+    ![](Images/local-debug.png)
 
 1. Save the file and run the application
 
