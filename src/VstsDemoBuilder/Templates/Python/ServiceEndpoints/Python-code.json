@@ -1,10 +1,10 @@
 ﻿{
   "data": {
-			
-		},		
-		"name": "Python-code",
-		"type": "git",
-		"url": "https://vstsdemodata.visualstudio.com/_git/Python",
+
+  },
+  "name": "Python-code",
+  "type": "git",
+  "url": "https://vstsdemodata.visualstudio.com/Python/_git/PythonDjango",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
@@ -12,5 +12,5 @@
       "password": "$password$"
     }
   },
-		"isReady": true
+  "isReady": true
 }
