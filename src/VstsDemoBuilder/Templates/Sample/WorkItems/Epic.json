@@ -1,0 +1,111 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 361,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2018-11-28T14:31:18.667Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:40:55.923Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Web Experience",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Web Experience",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/230",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/229",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/231",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/361"
+    },
+    {
+      "id": 360,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2018-11-28T14:31:18.43Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:40:55.923Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Smartphone Experience",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Smartphone Experience",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/232",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/228",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/360"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

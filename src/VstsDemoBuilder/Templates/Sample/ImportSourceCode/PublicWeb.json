@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/australiaEastaksh/SmartHotel360/_git/PublicWeb"
+    },
+    "serviceEndpointId": "$PublicWeb-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 232,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2018-11-28T14:30:37.493Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:41:04.25Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Go green with smart sensors",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Go green with smart sensors",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/258",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/360",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/254",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/256",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/242",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/257",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/232"
+    },
+    {
+      "id": 231,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2018-11-28T14:30:37.23Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:41:04.25Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "User Registration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "User Registration",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/234",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/240",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/361",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/231"
+    },
+    {
+      "id": 230,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2018-11-28T14:30:36.993Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:41:04.25Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Reservations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Reservations",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/361",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/237",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/236",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/239",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/230"
+    },
+    {
+      "id": 229,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2018-11-28T14:30:36.76Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:41:04.25Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Conference Rooms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Conference Rooms",
+        "System.AssignedTo": "Akshay H <H.akshay@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/361",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/241",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/235",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/233",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/229"
+    },
+    {
+      "id": 228,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "SmartHotel360",
+        "System.TeamProject": "SmartHotel360",
+        "System.IterationPath": "SmartHotel360",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2018-11-28T14:30:36.48Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2018-12-21T12:41:04.25Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Check-in from your phone",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Check-in from your phone",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/246",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/354",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/244",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/243",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/250",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/359",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/238",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/360",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/249",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/228"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
