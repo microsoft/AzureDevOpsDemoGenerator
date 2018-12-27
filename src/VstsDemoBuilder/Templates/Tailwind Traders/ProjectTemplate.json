@@ -1,0 +1,9 @@
+{
+  "Name": "Tailwind Traders",
+  "Teams": "Teams.json",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "UpdateCardStyles.json",
+  "CardField": "UpdateCardFields.json",
+  "SetEpic": "EnableEpic.json",
+  "TeamArea": "TeamArea.json"
+}
