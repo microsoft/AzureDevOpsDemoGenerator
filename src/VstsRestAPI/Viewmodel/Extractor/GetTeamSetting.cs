@@ -16,13 +16,8 @@ namespace VstsRestAPI.Viewmodel.Extractor
         }
         public class Setting
         {
-            public string BoardType { get; set; }
             public string bugsBehavior { get; set; }
             public BacklogVisibilities backlogVisibilities { get; set; }
-        }
-        public class TeamSetting
-        {
-            public List<Setting> settings { get; set; }
         }
     }
 }

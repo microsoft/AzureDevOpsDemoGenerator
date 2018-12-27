@@ -22,6 +22,12 @@ namespace VstsRestAPI.Viewmodel.WorkItem
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public string Bug { get; set; }
+            [JsonProperty(PropertyName = "Epic")]
+            public string epic { get; set; }
+            [JsonProperty(PropertyName = "Feature")]
+            public string feature { get; set; }
+            [JsonProperty(PropertyName = "User Story")]
+            public string UserStory { get; set; }
         }
     }
     public class Agile
