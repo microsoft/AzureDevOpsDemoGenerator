@@ -1071,9 +1071,25 @@ namespace VstsDemoBuilder.Controllers
                         if (success)
                         {
                             //update Card Fields
-                            UpdateCardFields(templatesFolder, model, template.CardField, _boardVersion, model.id, boardType);
+                            if (template.CardField != null)
+                            {
+                                string cardFieldJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardField);
+                                if (System.IO.File.Exists(cardFieldJson))
+                                {
+                                    cardFieldJson = model.ReadJsonFile(cardFieldJson);
+                                    UpdateCardFields(templatesFolder, model, cardFieldJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                }
+                            }
                             //Update card styles
-                            UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
+                            if (template.CardStyle != null)
+                            {
+                                string cardStyleJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardStyle);
+                                if (System.IO.File.Exists(cardStyleJson))
+                                {
+                                    cardStyleJson = model.ReadJsonFile(cardStyleJson);
+                                    UpdateCardStyles(templatesFolder, model, cardStyleJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                }
+                            }
                             //Enable Epic Backlog
                             AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                         }
@@ -1143,6 +1159,38 @@ namespace VstsDemoBuilder.Controllers
                                 }
                             }
 
+                            // updating card fields for each team and each board
+                            string teamCardFields = "";
+                            template.CardField = "CardFields.json";
+                            teamCardFields = System.IO.Path.Combine(teamFolderPath, template.CardField);
+                            if (System.IO.File.Exists(teamCardFields))
+                            {
+                                teamCardFields = System.IO.File.ReadAllText(teamCardFields);
+                                List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
+                                cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
+                                foreach (var card in cardFields)
+                                {
+                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, jteam["name"].ToString());
+                                }
+                            }
+
+                            // updating card styles for each team and each board
+                            string teamCardStyle = "";
+                            template.CardStyle = "CardStyles.json";
+                            teamCardStyle = System.IO.Path.Combine(teamFolderPath, template.CardStyle);
+                            if (System.IO.File.Exists(teamCardStyle))
+                            {
+                                teamCardStyle = System.IO.File.ReadAllText(teamCardStyle);
+                                List<CardStyle.Style> cardStyles = new List<CardStyle.Style>();
+                                cardStyles = JsonConvert.DeserializeObject<List<CardStyle.Style>>(teamCardStyle);
+                                foreach (var cardStyle in cardStyles)
+                                {
+                                    if (cardStyle.rules.fill != null)
+                                    {
+                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, jteam["name"].ToString());
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -1587,22 +1635,17 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardFields(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, string boardType)
+        private void UpdateCardFields(string templatesFolder, Project model, string json, Configuration _configuration, string id, string boardType, string team)
         {
             try
             {
-                json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, json);
-                if (System.IO.File.Exists(json))
-                {
-                    json = model.ReadJsonFile(json);
-                    json = json.Replace("null", "\"\"");
-                    Cards objCards = new Cards(_configuration);
-                    objCards.UpdateCardField(model.ProjectName, json, boardType);
+                json = json.Replace("null", "\"\"");
+                Cards objCards = new Cards(_configuration);
+                objCards.UpdateCardField(model.ProjectName, json, boardType, team);
 
-                    if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
-                    {
-                        AddMessage(id.ErrorId(), "Error while updating card fields: " + objCards.LastFailureMessage + Environment.NewLine);
-                    }
+                if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
+                {
+                    AddMessage(id.ErrorId(), "Error while updating card fields: " + objCards.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)
@@ -1620,21 +1663,16 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardStyles(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, string boardType)
+        private void UpdateCardStyles(string templatesFolder, Project model, string json, Configuration _configuration, string id, string boardType, string team)
         {
             try
             {
-                json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, json);
-                if (System.IO.File.Exists(json))
-                {
-                    json = model.ReadJsonFile(json);
-                    Cards objCards = new Cards(_configuration);
-                    objCards.ApplyRules(model.ProjectName, json, boardType);
+                Cards objCards = new Cards(_configuration);
+                objCards.ApplyRules(model.ProjectName, json, boardType, team);
 
-                    if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
-                    {
-                        AddMessage(id.ErrorId(), "Error while updating card styles: " + objCards.LastFailureMessage + Environment.NewLine);
-                    }
+                if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
+                {
+                    AddMessage(id.ErrorId(), "Error while updating card styles: " + objCards.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)
