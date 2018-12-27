@@ -104,8 +104,10 @@
     <Compile Include="Viewmodel\BaseViewModel.cs" />
     <Compile Include="Viewmodel\Build\BuildGetListofBuildDefinitionsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\WorkItemFetchResponse.cs" />
-    <Compile Include="Viewmodel\Importer\BoardRows.cs" />
+    <Compile Include="Viewmodel\Importer\ImportBoardRows.cs" />
+    <Compile Include="Viewmodel\Importer\ImpotCardStyle.cs" />
     <Compile Include="Viewmodel\Importer\ImportBoardColumns.cs" />
+    <Compile Include="Viewmodel\Importer\ImportCardFields.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\AccountMembers.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\TeamIterationsResponse.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\TeamResponse.cs" />
