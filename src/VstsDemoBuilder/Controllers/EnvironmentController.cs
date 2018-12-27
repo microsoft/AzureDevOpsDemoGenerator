@@ -27,6 +27,7 @@ using VstsRestAPI.Release;
 using VstsRestAPI.Service;
 using VstsRestAPI.TestManagement;
 using VstsRestAPI.Viewmodel.Extractor;
+using VstsRestAPI.Viewmodel.Importer;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.Viewmodel.QueriesAndWidgets;
 using VstsRestAPI.Viewmodel.Repository;
@@ -53,6 +54,7 @@ namespace VstsDemoBuilder.Controllers
         private string extractPath = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
         private string logPath = "";
+        private string templateVersion = string.Empty;
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -321,7 +323,7 @@ namespace VstsDemoBuilder.Controllers
                     AccessDetails = GetAccessToken(accessRequestBody);
 
                     // add your access token here for local debugging
-                    //AccessDetails.access_token = "";
+                    AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiI5ZjNlMTMyOS0yNzE3LTYxZWMtOTE1Yy04ODdlZDRjY2YxZjEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMTY5MTc2OWYtZWMwYy00YzM4LWI4MDAtMjJjYjNiMjg4MjdiIiwiYXBwaWQiOiI0Y2U1MjhjMi1iM2M3LTQ1YjctYTAwMS01NzgwN2FiNmRkM2YiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTQ1ODk1NTEwLCJleHAiOjE1NDU4OTkxMTB9.zpVWamAUoNylPO_WDH1hb2nqU6Z8ZQp4rueV7ErANlt_fal8QkaFUGrUV5afUSg6SYFbIIMhA9NauJ4uCK2eje5L868sAlYeTW_l8cfQJTeyXUyvhOkt32bKyogYJ31BVNYUyfYDT5hgY3RP-hTgLA6d8UbX-GiWMtW3cuPwvf3UbTtv435jPH3mBBbGB--XzLl3MDnT-heEf5ivVB03Yyvpa5Yko2q6rtxWxmJ49-M0uo2M79kR3Ng8RNCVFGHk23SNtr0i9R3DCID0FB90EhHMvKa-IXYznc3TCS-Wl1H_JDuMbhaXgscB4FMmkDBgocwMHwCXGKeXy6x_6E941Q";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
                     return RedirectToAction("CreateProject", "Environment");
@@ -994,9 +996,6 @@ namespace VstsDemoBuilder.Controllers
                 if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
             }
 
-            //create teams
-            CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
-
             //current user Details
             string teamName = model.ProjectName + " team";
             TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
@@ -1006,61 +1005,148 @@ namespace VstsDemoBuilder.Controllers
             {
                 model.Environment.UserUniquename = teamMember.identity.uniqueName;
             }
-
             if (teamMember != null)
             {
                 model.Environment.UserUniqueId = teamMember.identity.id;
             }
 
-
             //update board columns and rows
-
-            string projectSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
-            JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
-            string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
-            string boardType = string.Empty;
-            if (processType == "" || processType == "Scrum")
+            // Checking for template version
+            string projectTemplate = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectTemplate.json"));
+            if (!string.IsNullOrEmpty(projectTemplate))
             {
-                processType = "Scrum";
-                boardType = "Backlog%20items";
+                JObject jObject = JsonConvert.DeserializeObject<JObject>(projectTemplate);
+                templateVersion = jObject["TemplateVersion"] == null ? string.Empty : jObject["TemplateVersion"].ToString();
+            }
+            if (templateVersion != "2.0")
+            {
+                //create teams
+                CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+
+                // for older templates
+                string projectSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
+                JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
+                string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
+                string boardType = string.Empty;
+                if (processType == "" || processType == "Scrum")
+                {
+                    processType = "Scrum";
+                    boardType = "Backlog%20items";
+                }
+                else
+                {
+                    boardType = "Stories";
+                }
+                BoardColumn objBoard = new BoardColumn(_boardVersion);
+                string updateSwimLanesJSON = "";
+                if (template.BoardRows != null)
+                {
+                    updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
+                    SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                    if (System.IO.File.Exists(updateSwimLanesJSON))
+                    {
+                        updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                        bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType, model.ProjectName + " Team");
+                    }
+                }
+                if (template.SetEpic != null)
+                {
+                    string team = model.ProjectName + " Team";
+                    string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.SetEpic);
+                    if (System.IO.File.Exists(json))
+                    {
+                        json = model.ReadJsonFile(json);
+                        EnableEpic(templatesFolder, model, json, _boardVersion, model.id, team);
+                    }
+                }
+
+                if (template.BoardColumns != null)
+                {
+                    string team = model.ProjectName + " Team";
+                    string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.BoardColumns);
+                    if (System.IO.File.Exists(json))
+                    {
+                        json = model.ReadJsonFile(json);
+                        bool success = UpdateBoardColumn(templatesFolder, model, json, _boardVersion, model.id, boardType, team);
+                        if (success)
+                        {
+                            //update Card Fields
+                            UpdateCardFields(templatesFolder, model, template.CardField, _boardVersion, model.id, boardType);
+                            //Update card styles
+                            UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
+                            //Enable Epic Backlog
+                            AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                        }
+                    }
+                }
+
+                //update sprint dates
+                UpdateSprintItems(model, _boardVersion, settings);
+                UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
+                RenameIterations(model, _boardVersion, settings.renameIterations);
             }
             else
             {
-                boardType = "Stories";
-            }
-            BoardColumn objBoard = new BoardColumn(_boardVersion);
-            string updateSwimLanesJSON = "";
-            if (template.BoardRows != null)
-            {
-                updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
-                SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
-                bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType);
-            }
-            if (template.SetEpic != null)
-            {
-                EnableEpic(templatesFolder, model, template.SetEpic, _boardVersion, model.id);
-            }
-
-            if (template.BoardColumns != null)
-            {
-                bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _boardVersion, model.id, boardType);
-                if (success)
+                // for newer version of templates
+                string teamsJsonPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
+                if (System.IO.File.Exists(teamsJsonPath))
                 {
-                    //update Card Fields
-                    UpdateCardFields(templatesFolder, model, template.CardField, _boardVersion, model.id, boardType);
-                    //Update card styles
-                    UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
-                    //Enable Epic Backlog
-                    AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                    template.Teams = "Teams\\Teams.json";
+                    template.TeamArea = "TeamArea.json";
+                    CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+                    string jsonTeams = model.ReadJsonFile(teamsJsonPath);
+                    JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
+                    JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
+                    foreach (var jteam in jTeams)
+                    {
+                        string teamFolderPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
+                        if (System.IO.Directory.Exists(teamFolderPath))
+                        {
+                            BoardColumn objBoard = new BoardColumn(_boardVersion);
+
+                            // updating swimlanes for each teams each board(epic, feature, PBI, Stories) 
+                            string updateSwimLanesJSON = "";
+                            SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                            template.BoardRows = "BoardRows.json";
+                            updateSwimLanesJSON = System.IO.Path.Combine(teamFolderPath, template.BoardRows);
+                            if (System.IO.File.Exists(updateSwimLanesJSON))
+                            {
+                                updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                                List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
+                                foreach (var board in importRows)
+                                {
+                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, jteam["name"].ToString());
+                                }
+                            }
+
+                            // updating team setting for each team
+                            string teamSettingJson = "";
+                            template.SetEpic = "TeamSetting.json";
+                            teamSettingJson = System.IO.Path.Combine(teamFolderPath, template.SetEpic);
+                            if (System.IO.File.Exists(teamSettingJson))
+                            {
+                                teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
+                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, jteam["name"].ToString());
+                            }
+
+                            // updating board columns for each teams each board
+                            string teamBoardColumns = "";
+                            template.BoardColumns = "BoardColumns.json";
+                            teamBoardColumns = System.IO.Path.Combine(teamFolderPath, template.BoardColumns);
+                            if (System.IO.File.Exists(teamBoardColumns))
+                            {
+                                teamBoardColumns = System.IO.File.ReadAllText(teamBoardColumns);
+                                List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
+                                foreach (var board in importBoardCols)
+                                {
+                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, jteam["name"].ToString());
+                                }
+                            }
+
+                        }
+                    }
                 }
             }
-
-
-
-            //update sprint dates
-            UpdateSprintItems(model, _boardVersion, settings);
-            UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
-            RenameIterations(model, _boardVersion, settings.renameIterations);
 
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
@@ -1469,27 +1555,21 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _BoardConfig, string id, string BoardType)
+        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _BoardConfig, string id, string BoardType, string team)
         {
             bool result = false;
             try
             {
-                string jsonBoardColumns = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, BoardColumnsJSON);
-                if (System.IO.File.Exists(jsonBoardColumns))
+                BoardColumn objBoard = new BoardColumn(_BoardConfig);
+                bool boardColumnResult = objBoard.UpdateBoard(model.ProjectName, BoardColumnsJSON, BoardType, team);
+                if (boardColumnResult)
                 {
-                    BoardColumn objBoard = new BoardColumn(_BoardConfig);
-                    jsonBoardColumns = model.ReadJsonFile(jsonBoardColumns);
-                    bool boardColumnResult = objBoard.UpdateBoard(model.ProjectName, jsonBoardColumns, BoardType);
-
-                    if (boardColumnResult)
-                    {
-                        model.Environment.BoardRowFieldName = objBoard.rowFieldName;
-                        result = true;
-                    }
-                    else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
-                    {
-                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
-                    }
+                    model.Environment.BoardRowFieldName = objBoard.rowFieldName;
+                    result = true;
+                }
+                else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
+                {
+                    AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)
@@ -1572,22 +1652,17 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_config3_0"></param>
         /// <param name="id"></param>
-        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _boardVersion, string id)
+        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _boardVersion, string id, string team)
         {
             try
             {
-                json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, json);
-                if (System.IO.File.Exists(json))
-                {
-                    json = model.ReadJsonFile(json);
-                    Cards objCards = new Cards(_boardVersion);
-                    Projects project = new Projects(_boardVersion);
-                    objCards.EnablingEpic(model.ProjectName, json, model.ProjectName);
+                Cards objCards = new Cards(_boardVersion);
+                Projects project = new Projects(_boardVersion);
+                objCards.EnablingEpic(model.ProjectName, json, model.ProjectName, team);
 
-                    if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
-                    {
-                        AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + objCards.LastFailureMessage + Environment.NewLine);
-                    }
+                if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
+                {
+                    AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + objCards.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)

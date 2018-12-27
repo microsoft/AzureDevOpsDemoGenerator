@@ -14,6 +14,6 @@
   "TestCasefromTemplate": "TestCase.json",
   "SetEpic": "EnableEpic.json",
   "TeamArea": "TeamArea.json",
-  "IsPrivate": "true"
-
+  "IsPrivate": "true",
+  "TemplateVersion": "2.0"
 }

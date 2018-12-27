@@ -111,7 +111,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="json"></param>
         /// <param name="project"></param>
-        public void EnablingEpic(string projectName, string json, string project)
+        public void EnablingEpic(string projectName, string json, string project, string team)
         {
             using (var client = GetHttpClient())
             {

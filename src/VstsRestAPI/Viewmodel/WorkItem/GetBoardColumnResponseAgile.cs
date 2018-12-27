@@ -41,6 +41,10 @@ namespace VstsRestAPI.Viewmodel.WorkItem
             public string UserStory { get; set; }
             [JsonProperty(PropertyName = "Bug")]
             public string bug { get; set; }
+            [JsonProperty(PropertyName = "Epic")]
+            public string epic { get; set; }
+            [JsonProperty(PropertyName = "Feature")]
+            public string feature { get; set; }
         }
     }
 }

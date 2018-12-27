@@ -507,8 +507,7 @@ namespace VstsDemoBuilder.Controllers
                         List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
                         List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
 
-                        ExportTeamSetting.TeamSetting listTeamSetting = new ExportTeamSetting.TeamSetting();
-                        listTeamSetting.settings = new List<ExportTeamSetting.Setting>();
+                        ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
 
                         List<JObject> jObjCardFieldList = new List<JObject>();
                         List<JObject> jObjcardStyleList = new List<JObject>();
@@ -565,18 +564,6 @@ namespace VstsDemoBuilder.Controllers
                                 AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
                             }
 
-                            //Export Team Setting for each team
-                            ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
-                            if (teamSetting.backlogVisibilities != null)
-                            {
-                                teamSetting.BoardType = boardType;
-                                listTeamSetting.settings.Add(teamSetting);
-                                AddMessage(con.Id, "Team Settings Definition");
-                            }
-                            else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
-                            {
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
-                            }
 
                             //Export Card Fields for each team
                             var cardFieldResponse = teamNodes.ExportCardFields(boardType);
@@ -619,6 +606,18 @@ namespace VstsDemoBuilder.Controllers
                                 AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
                             }
                         }
+                        //Export Team Setting for each team
+                        ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                        if (teamSetting.backlogVisibilities != null)
+                        {
+                            listTeamSetting = teamSetting;
+                            AddMessage(con.Id, "Team Settings Definition");
+                        }
+                        else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
+                        {
+                            AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
+                        }
+
                         if (columnResponsesAgile.Count > 0)
                         {
                             System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
@@ -629,9 +628,9 @@ namespace VstsDemoBuilder.Controllers
                         }
                         if (boardRows.Count > 0)
                         {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                         }
-                        if (listTeamSetting.settings.Count > 0)
+                        if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
                         {
                             System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
                         }

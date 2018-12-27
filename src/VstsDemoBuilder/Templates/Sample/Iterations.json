@@ -1,109 +1,34 @@
 {
-  "IterationsList": [
+  "value": [
     {
-      "Team": "Web",
-      "value": [
-        {
-          "id": "d9cedaa4-1308-45c0-a687-a1dbd741b592",
-          "name": "Sprint 1",
-          "path": "SmartHotel360\\Sprint 1"
-        },
-        {
-          "id": "3659a28d-4a63-4a2d-80db-6d18c91e8417",
-          "name": "Sprint 2",
-          "path": "SmartHotel360\\Sprint 2"
-        },
-        {
-          "id": "c4ad336a-c3d0-4e94-a09a-ebf1f505c20f",
-          "name": "Sprint 3",
-          "path": "SmartHotel360\\Sprint 3"
-        },
-        {
-          "id": "957412af-e35d-40d8-95c7-f6b70173b57e",
-          "name": "Sprint 4",
-          "path": "SmartHotel360\\Sprint 4"
-        },
-        {
-          "id": "a13ee6d2-38f0-4cb4-852a-da341671cef1",
-          "name": "Sprint 5",
-          "path": "SmartHotel360\\Sprint 5"
-        },
-        {
-          "id": "bf69fba3-72d5-473b-aeb3-cf7356596701",
-          "name": "Sprint 6",
-          "path": "SmartHotel360\\Sprint 6"
-        }
-      ]
+      "id": "d9cedaa4-1308-45c0-a687-a1dbd741b592",
+      "name": "Sprint 1",
+      "path": "SmartHotel360\\Sprint 1"
     },
     {
-      "Team": "SmartHotel360 Team",
-      "value": [
-        {
-          "id": "d9cedaa4-1308-45c0-a687-a1dbd741b592",
-          "name": "Sprint 1",
-          "path": "SmartHotel360\\Sprint 1"
-        },
-        {
-          "id": "3659a28d-4a63-4a2d-80db-6d18c91e8417",
-          "name": "Sprint 2",
-          "path": "SmartHotel360\\Sprint 2"
-        },
-        {
-          "id": "c4ad336a-c3d0-4e94-a09a-ebf1f505c20f",
-          "name": "Sprint 3",
-          "path": "SmartHotel360\\Sprint 3"
-        },
-        {
-          "id": "957412af-e35d-40d8-95c7-f6b70173b57e",
-          "name": "Sprint 4",
-          "path": "SmartHotel360\\Sprint 4"
-        },
-        {
-          "id": "a13ee6d2-38f0-4cb4-852a-da341671cef1",
-          "name": "Sprint 5",
-          "path": "SmartHotel360\\Sprint 5"
-        },
-        {
-          "id": "bf69fba3-72d5-473b-aeb3-cf7356596701",
-          "name": "Sprint 6",
-          "path": "SmartHotel360\\Sprint 6"
-        }
-      ]
+      "id": "3659a28d-4a63-4a2d-80db-6d18c91e8417",
+      "name": "Sprint 2",
+      "path": "SmartHotel360\\Sprint 2"
     },
     {
-      "Team": "Mobile",
-      "value": [
-        {
-          "id": "d9cedaa4-1308-45c0-a687-a1dbd741b592",
-          "name": "Sprint 1",
-          "path": "SmartHotel360\\Sprint 1"
-        },
-        {
-          "id": "3659a28d-4a63-4a2d-80db-6d18c91e8417",
-          "name": "Sprint 2",
-          "path": "SmartHotel360\\Sprint 2"
-        },
-        {
-          "id": "c4ad336a-c3d0-4e94-a09a-ebf1f505c20f",
-          "name": "Sprint 3",
-          "path": "SmartHotel360\\Sprint 3"
-        },
-        {
-          "id": "957412af-e35d-40d8-95c7-f6b70173b57e",
-          "name": "Sprint 4",
-          "path": "SmartHotel360\\Sprint 4"
-        },
-        {
-          "id": "a13ee6d2-38f0-4cb4-852a-da341671cef1",
-          "name": "Sprint 5",
-          "path": "SmartHotel360\\Sprint 5"
-        },
-        {
-          "id": "bf69fba3-72d5-473b-aeb3-cf7356596701",
-          "name": "Sprint 6",
-          "path": "SmartHotel360\\Sprint 6"
-        }
-      ]
+      "id": "c4ad336a-c3d0-4e94-a09a-ebf1f505c20f",
+      "name": "Sprint 3",
+      "path": "SmartHotel360\\Sprint 3"
+    },
+    {
+      "id": "957412af-e35d-40d8-95c7-f6b70173b57e",
+      "name": "Sprint 4",
+      "path": "SmartHotel360\\Sprint 4"
+    },
+    {
+      "id": "a13ee6d2-38f0-4cb4-852a-da341671cef1",
+      "name": "Sprint 5",
+      "path": "SmartHotel360\\Sprint 5"
+    },
+    {
+      "id": "bf69fba3-72d5-473b-aeb3-cf7356596701",
+      "name": "Sprint 6",
+      "path": "SmartHotel360\\Sprint 6"
     }
   ]
 }
