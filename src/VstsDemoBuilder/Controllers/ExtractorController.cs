@@ -449,17 +449,17 @@ namespace VstsDemoBuilder.Controllers
             ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
-            if (count >= 1)
-            {
-                AddMessage(model.id, "Build Definition");
-            }
+            //int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            //if (count >= 1)
+            //{
+            //    AddMessage(model.id, "Build Definition");
+            //}
 
-            int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
-            if (relCount >= 1)
-            {
-                AddMessage(model.id, "Release Definition");
-            }
+            //int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            //if (relCount >= 1)
+            //{
+            //    AddMessage(model.id, "Release Definition");
+            //}
 
             //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
@@ -670,8 +670,8 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-                ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
-                viewModel = nodes.ExportIterationsToSave();
+                //ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
+                ExportedIterations.Iterations viewModel = nodes.ExportIterationsToSave();
                 string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
                 if (fetchedJson != "")
                 {

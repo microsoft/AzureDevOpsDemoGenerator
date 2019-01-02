@@ -1193,6 +1193,7 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
+                    UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
                 }
             }
 
