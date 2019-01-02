@@ -1,10 +1,9 @@
 {
   "parameters":
     {
-      "gitSource":
-        {
-          "url": "https://vstsdemodata.visualstudio.com/_git/Python"
-        },
+      "gitSource": {
+        "url": "https://vstsdemodata.visualstudio.com/Python/_git/PythonDjango"
+      },
       "serviceEndpointId": "$Python-code$",
       "deleteServiceEndpointAfterImportIsDone": true
     }

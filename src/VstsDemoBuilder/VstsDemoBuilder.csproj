@@ -568,7 +568,7 @@
     <Content Include="Templates\Python\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\Python\EnableEpic.json" />
     <Content Include="Templates\Python\Extensions.json" />
-    <Content Include="Templates\Python\ImportSourceCode\Python.json" />
+    <Content Include="Templates\Python\ImportSourceCode\PythonDjango.json" />
     <Content Include="Templates\Python\ProjectSettings.json" />
     <Content Include="Templates\Python\ProjectTemplate.json" />
     <Content Include="Templates\Python\ReleaseDefinitions\Python.json" />
@@ -827,6 +827,7 @@
     <Content Include="Templates\MachineLearning\ServiceEndpoints\DevOps-for-AI.json" />
     <Content Include="Templates\MachineLearning\TeamArea.json" />
     <Content Include="Templates\MachineLearning\Teams.json" />
+
     <Content Include="Templates\Ansible\BuildDefinitions\Ansible-CI.json" />
     <Content Include="Templates\Ansible\Extensions.json" />
     <Content Include="Templates\Ansible\ImportSourceCode\SmartHotel360-CouponManagement.json" />
@@ -866,6 +867,19 @@
     <Content Include="Templates\Sample\WorkItems\ProductBacklogItem.json" />
     <Content Include="Templates\Sample\WorkItems\Task.json" />
     <Content Include="Templates\Sample\WorkItems\TestCase.json" />
+
+    <Content Include="Templates\Tailwind Traders\BuildDefinitions\Website-CI.json" />
+    <Content Include="Templates\Tailwind Traders\EnableEpic.json" />
+    <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Backend.json" />
+    <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Website.json" />
+    <Content Include="Templates\Tailwind Traders\ProjectSettings.json" />
+    <Content Include="Templates\Tailwind Traders\ProjectTemplate.json" />
+    <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Website-CD.json" />
+    <Content Include="Templates\Tailwind Traders\ServiceEndpoints\TailwindTraders-Backend-code.json" />
+    <Content Include="Templates\Tailwind Traders\ServiceEndpoints\TailwindTraders-Website-code.json" />
+    <Content Include="Templates\Tailwind Traders\TeamArea.json" />
+    <Content Include="Templates\Tailwind Traders\Teams.json" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
