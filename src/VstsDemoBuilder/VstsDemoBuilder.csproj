@@ -320,6 +320,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
     <Content Include="Templates\TemplateImages\CodeFile.png" />
     <Content Include="Templates\TemplateImages\ContosAir.png" />
@@ -338,6 +339,7 @@
     <Content Include="Templates\TemplateImages\SmartHotel.png" />
     <Content Include="Templates\TemplateImages\SonarQube.png" />
     <Content Include="Templates\TemplateImages\TailwindTraders.png" />
+    <Content Include="Templates\TemplateImages\Terraform.png" />
     <Content Include="Templates\TemplateImages\WhiteSourceBolt.png" />
     <Content Include="Images\tfs.png" />
     <Content Include="Images\theme_img_3.png" />
