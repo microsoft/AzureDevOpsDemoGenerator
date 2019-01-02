@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using VstsRestAPI.Viewmodel.Extractor;
@@ -38,7 +40,7 @@ namespace VstsRestAPI.Extractor
             }
             return new GetINumIteration.Iterations();
         }
-       
+
         // Get Team List to write to file
         public TeamList ExportTeamList()
         {
@@ -68,7 +70,7 @@ namespace VstsRestAPI.Extractor
             }
             return new TeamList();
         }
-      
+
         /// <summary>
         /// GET https://dev.azure.com/fabrikam/Fabrikam/Fabrikam Team/_apis/work/boards/{board}/columns?api-version=4.1
         /// </summary>
@@ -83,7 +85,7 @@ namespace VstsRestAPI.Extractor
                     return response;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -169,14 +171,14 @@ namespace VstsRestAPI.Extractor
         {
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/cardrulesettings?api-version={4}",_configuration.UriString,Project,Team, boardType,_configuration.VersionNumber)).Result;
+                HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/{2}/_apis/work/boards/{3}/cardrulesettings?api-version={4}", _configuration.UriString, Project, Team, boardType, _configuration.VersionNumber)).Result;
                 return response;
             }
         }
 
         // Get Iterations to write file
         //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/teamsettings/iterations?api-version=4.1
-        public ExportIterations.Iterations ExportIterationsToSave()
+        public ExportedIterations.Iterations ExportIterationsToSave()
         {
             try
             {
@@ -188,7 +190,25 @@ namespace VstsRestAPI.Extractor
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         viewModel = JsonConvert.DeserializeObject<ExportIterations.Iterations>(result);
-                        return viewModel;
+                        ExportedIterations.Iterations iterations = new ExportedIterations.Iterations();
+                        List<ExportedIterations.Child> Listchild = new List<ExportedIterations.Child>();
+                        
+                        if (viewModel.count > 0)
+                        {
+                            foreach (var iteration in viewModel.value)
+                            {
+                                ExportedIterations.Child child = new ExportedIterations.Child();
+                                child.name = iteration.name;
+                                child.hasChildren = false;
+                                child.structureType = "iteration";
+                                Listchild.Add(child);
+                            }
+                            iterations.children = Listchild;
+                            iterations.hasChildren = true;
+                            iterations.name = _configuration.Project;
+                            iterations.structureType = "iteration";
+                            return iterations;
+                        }
                     }
                     else
                     {
@@ -201,7 +221,7 @@ namespace VstsRestAPI.Extractor
             catch (Exception)
             {
             }
-            return new ExportIterations.Iterations();
+            return new ExportedIterations.Iterations();
         }
     }
 }
