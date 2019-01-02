@@ -1,64 +1,58 @@
-# Azure DevOps Demo Generator
+# DevOps Demo Generator
 
-[![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
+   [![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
 
 ## About
-Azure DevOps Demo Generator helps you create projects on your Azure DevOps org  with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
+Azure DevOps Demo Generator helps you create projects on your Azure DevOps organization  with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
 
 The purpose of this system is to simplify working with the hands-on-labs, demos and other education material provided by Azure Marketing team.
 
-## Prerequisite
- 1. This application requires Visual Studio 2017
-
- 1. GitHub Account
-
-
 ## How to Run this application locally?
 
-  Clone the solution to your local repository or fork it to your GitHub repo and clone it from your repository.
+To run this locally, you will need:
+ * Microsoft Visual Studio 2017 or higher;       
+ * Internet Information Server and ASP.NET 4.5  or above installed;
+ * SQL Server 2016 Express LocalDB
 
-  To run locally you need to get access token and hard code it in the code. To get Access Token Signin with your Azure DevOps credentials [here](https://mstokengenerator.azurewebsites.net)
-
-  Once you got the Access Token, open **Environment Controller** in **VSTSDemoBuilder** web project, go to line number 274, uncomment it and replace the value with your access token.
-
-   ![CreateMethod](Images/CreateMethod.png)
-
-  Keep break points at line number 186 and 264. Run your application. 
-
- Once the browser loads the sign in page, change the URL to ***/Environment/Create***. Once the control hits the Break point, jump the control to line number 264 and press F5 key to continue the debugging session.
-
-## How to host?
-
- 1. Register your application with [Microsoft App Registration](https://app.vsaex.visualstudio.com/app/register?mkt=en-US) page
-
- 1. Fill the required details of your application
-
- 1. In place of ***Application website*** provide the URL for your application where it is hosted.
-
- 1. In place of ***Authorization callback URL*** provide the callback URL of your application. This is the page where your app will receive the access token from the VSTS  after a successful login
-
-    > For this application please use ***https://YOUR_WEBSITE/Environment/Create*** as redirect URL
-
- 1. Select the scope for your application. Based these scopes you will get Access Token from VSTS
-  
-    ![scope](Images/scopes.png)
+ 1. Clone the solution to your local repository  or fork it to your GitHub repo first and clone it from there. 
  
-    Click on ***Create Application*** button once you provide all the required details.
+ 1. Open the solution (src\VSTSDemoGeneratorV2.sln ) in Visual Studio and restore the required packages.
 
-  1. Upon successful creation of application you will get application settings for the registered application, save these details.
+ 1. This application uses **OAuth** for authorization. In order to register the app, you will need to provide a callback URL. However, App registration does not allow localhost (http) to be the hostname in your callback URL. You can edit the hosts file (C:\Windows\System32\Drivers\etc\hosts) on your local computer to map a hostname to 127.0.0.1. **Then use this hostname when you register your app**. 
 
-      ![AppSetting](Images/AppSetting.png)
+1. Using an elevated command prompt, open the Hosts file on your machine and add a new mapping to your hostname. For instance, let's say we will use **azuredevopsdemogen-mylocal.com** domain name.
 
-  1. Now open Visual Studio, go to solution explorer. Under **VSTSDemoBuilder** web project open **Web.config** file. In the App Setting part of the web.config file, replace your ***App ID***, ***Client Secret*** and the ***Redirect URL***.
+    > 127.0.0.1 azuredevopsdemogen-mylocal.com
+
+    ![](Images/hostfile.png)
+
+1. You can register the app using this domain but you will need to provide a secure connection (https) for the callback URL. Create a new website **azuredevopsdemogen-mylocal.com** and enable HTTPS with a self-signed certificate on IIS by following the instructions provided in this [article](https://weblogs.asp.net/scottgu/tip-trick-enabling-ssl-on-iis7-using-self-signed-certificates)
+
+1. Next, go to (https://app.vsaex.visualstudio.com/app/register) to register your app. Specify the domain name (**azuredevopsdemogen-mylocal.com**) for the **Application website** and the **Application Callback URL** must be `https://<<domain name>>/Environment/Create`
+
+1. Select the following scopes and submit. If the submission is successful, the application settings page is displayed. You will need these information.
+
+   ![](Images/scopes.png)
+
+   ![](Images/AppSetting.png)
+
+1. Go to IIS Manager, select the wesbiste you created. Open the  **Configuration Editor** by double-clicking it. Open the **Collections**. Add the following entries to the collection ( **Note:** If you want to view the settings for the app that you registered, you can get it from [here](https://app.vssps.visualstudio.com/profile/view).:
+
+    * RedirectUri - `https://<<domain name>>/Environment/Create`
+    * ClientId - App ID from the application settings
+    * ClientSecret - Client Secret from the application settings
+    * AppScope - Authorized Scopes from the application settings (Encode the Authorized scopes and copy)
+
+    ![](Images/IIS_Appsettings.png)
 
 
-      ```
-      <add key="ClientId" value="YOUR_APP_ID" />
-      <add key="ClientSecret" value="YOUR_APPLICATION_CLIENT_SECRET" />
-      <add key="RedirectUri" value="YOUR_APPLICATION_REDIRECT_URL" />
-      ```
-  Now you can host and run this application.
+1.  Update the **Web \| Server** information in the Project properties file. Make sure you are running using the Local IIS and not IIS Express and your Project URL matches the web server name created in IIS.
 
+    ![](Images/local-debug.png)
 
+1. Save the file and run the application
 
+## Extractor
+When you are using extractor make sure you have given the Read & Write permissions for **IIS_IUSRS** group on the folder **ExtractedTemplate**
 
+   ![](Images/permissions.png)
