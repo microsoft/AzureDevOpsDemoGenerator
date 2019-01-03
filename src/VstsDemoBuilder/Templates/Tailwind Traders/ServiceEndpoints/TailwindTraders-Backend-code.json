@@ -2,9 +2,9 @@
   "data": {
 
   },
-  "name": "Python-code",
+  "name": "TailwindTraders-Backend-code",
   "type": "git",
-  "url": "https://vstsdemodata.visualstudio.com/Python/_git/PythonDjango",
+  "url": "https://vstsdemodata.visualstudio.com/Tailwind%20Traders/_git/TailwindTraders-Backend",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
