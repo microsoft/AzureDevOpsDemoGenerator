@@ -310,6 +310,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
     <Content Include="Templates\TemplateImages\CodeFile.png" />
     <Content Include="Templates\TemplateImages\ContosAir.png" />
@@ -327,6 +328,8 @@
     <Content Include="Templates\TemplateImages\AzureDevOps.png" />
     <Content Include="Templates\TemplateImages\SmartHotel.png" />
     <Content Include="Templates\TemplateImages\SonarQube.png" />
+    <Content Include="Templates\TemplateImages\TailwindTraders.png" />
+    <Content Include="Templates\TemplateImages\Terraform.png" />
     <Content Include="Templates\TemplateImages\WhiteSourceBolt.png" />
     <Content Include="Images\tfs.png" />
     <Content Include="Images\theme_img_3.png" />
@@ -641,7 +644,6 @@
     <Content Include="Templates\WhiteSource-Bolt\TeamArea.json" />
     <Content Include="Templates\WhiteSource-Bolt\Teams.json" />
     <Content Include="Templates\WhiteSource-Bolt\UerStoriesfromTemplate.json" />
-    <Content Include="Templates\GroupSettings.json" />
     <Content Include="Templates\AKS\BoardColumns.json" />
     <Content Include="Templates\AKS\BoardRowsFromTemplate.json" />
     <Content Include="Templates\AKS\BuildDefinitions\AKS.json" />
@@ -748,7 +750,6 @@
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
-    <Content Include="Templates\GroupSettings_FeatureFlag.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\UnfinishedWork.json" />
     <Content Include="Templates\SmartHotel360\Dashboard\Queries\Work in Progress.json" />
     <Content Include="Templates\SmartHotel360\ServiceEndpoints\GitHubSmartHotel360-PetChecker-Function.json" />
