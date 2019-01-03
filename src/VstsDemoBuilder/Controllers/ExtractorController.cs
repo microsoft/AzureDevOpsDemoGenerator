@@ -1109,23 +1109,27 @@ namespace VstsDemoBuilder.Controllers
                     // interate through the source files
                     if (sfiles.Folder != null && sfiles.Folder.Count > 0)
                     {
+                        //each folder in source file [depth 1]
                         foreach (var folder in sfiles.Folder)
                         {
                             // add the item name to the zip
-
+                            // each file in the folder
                             foreach (var file in folder.FolderItems)
                             {
-                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension);
+                                // folder items - file name, extension, and file bytes or content in bytes
+                                // zip.CreateEntry can create folder or the file. If you just provide a name, it will create a folder (if it doesn't not exist). If you provide with extension, it will create file 
+                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension); // Creating folder and create file inside that folder
 
-                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes))
+                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes)) // adding file bytes to memory stream object
                                 {
-                                    using (System.IO.Stream entryStream = zipItem.Open())
+                                    using (System.IO.Stream entryStream = zipItem.Open()) // opening the folder/file
                                     {
-                                        originalFileMemoryStream.CopyTo(entryStream);
+                                        originalFileMemoryStream.CopyTo(entryStream); // copy memory stream dat bytes to file created
                                     }
                                 }
                                 // for second level of folder like /Template/Teams/BoardColums.json
-                                if (folder.FolderL2 != null)
+                                //each folder in source file [depth 2]
+                                if (folder.FolderL2 != null && folder.FolderL2.Count > 0)
                                 {
                                     foreach (var folder2 in folder.FolderL2)
                                     {
