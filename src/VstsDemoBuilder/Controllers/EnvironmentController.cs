@@ -1278,101 +1278,104 @@ namespace VstsDemoBuilder.Controllers
                     model.accountUsersForWi.Add(member.member.mailAddress);
                 }
             }
-
-
-
-            //import work items
-            string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
-            string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
-            string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
-            string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
-            string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
-            string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
-            string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
-            string testPlansPath = string.Empty;
-            string testSuitesPath = string.Empty;
-            if (model.SelectedTemplate.ToLower() == "myshuttle2")
-            {
-                testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
-            }
-
-            if (model.SelectedTemplate.ToLower() == "myshuttle")
-            {
-                testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
-            }
             Dictionary<string, string> workItems = new Dictionary<string, string>();
 
-            if (System.IO.File.Exists(featuresFilePath))
+            if (templateVersion != "2.0")
             {
-                workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
-            }
 
-            if (System.IO.File.Exists(productBackLogPath))
-            {
-                workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
-            }
+                //import work items
+                string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
+                string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
+                string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
+                string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
+                string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
+                string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
+                string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
+                string testPlansPath = string.Empty;
+                string testSuitesPath = string.Empty;
+                if (model.SelectedTemplate.ToLower() == "myshuttle2")
+                {
+                    testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                }
 
-            if (System.IO.File.Exists(taskPath))
-            {
-                workItems.Add("Task", model.ReadJsonFile(taskPath));
-            }
+                if (model.SelectedTemplate.ToLower() == "myshuttle")
+                {
+                    testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                }
 
-            if (System.IO.File.Exists(testCasePath))
-            {
-                workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
-            }
+                if (System.IO.File.Exists(featuresFilePath))
+                {
+                    workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
+                }
 
-            if (System.IO.File.Exists(bugPath))
-            {
-                workItems.Add("Bug", model.ReadJsonFile(bugPath));
-            }
+                if (System.IO.File.Exists(productBackLogPath))
+                {
+                    workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
+                }
 
-            if (System.IO.File.Exists(userStoriesPath))
-            {
-                workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
-            }
+                if (System.IO.File.Exists(taskPath))
+                {
+                    workItems.Add("Task", model.ReadJsonFile(taskPath));
+                }
 
-            if (System.IO.File.Exists(epicPath))
-            {
-                workItems.Add("Epic", model.ReadJsonFile(epicPath));
-            }
+                if (System.IO.File.Exists(testCasePath))
+                {
+                    workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
+                }
 
-            if (System.IO.File.Exists(testPlansPath))
-            {
-                workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
-            }
+                if (System.IO.File.Exists(bugPath))
+                {
+                    workItems.Add("Bug", model.ReadJsonFile(bugPath));
+                }
 
-            if (System.IO.File.Exists(testSuitesPath))
-            {
-                workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
-            }
+                if (System.IO.File.Exists(userStoriesPath))
+                {
+                    workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
+                }
 
+                if (System.IO.File.Exists(epicPath))
+                {
+                    workItems.Add("Epic", model.ReadJsonFile(epicPath));
+                }
+
+                if (System.IO.File.Exists(testPlansPath))
+                {
+                    workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
+                }
+
+                if (System.IO.File.Exists(testSuitesPath))
+                {
+                    workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
+                }
+            }
             //// Modified Work Item import logic
-            //Dictionary<string, string> workItems = new Dictionary<string, string>();
-            //string _WitPath = Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
-            //if (System.IO.Directory.Exists(_WitPath))
-            //{
-            //    string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
-            //    if (workItemFilePaths.Length > 0)
-            //    {
-            //        foreach (var workItem in workItemFilePaths)
-            //        {
-            //            string[] workItemPatSplit = workItem.Split('\\');
-            //            if (workItemPatSplit.Length > 0)
-            //            {
-            //                string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
-            //                if (!string.IsNullOrEmpty(workItemName))
-            //                {
-            //                    string[] nameExtension = workItemName.Split('.');
-            //                    string name = nameExtension[0];
-            //                    workItems.Add(name, model.ReadJsonFile(workItem));
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
+            else
+            {
+                string _WitPath = Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
+                if (System.IO.Directory.Exists(_WitPath))
+                {
+                    string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
+                    if (workItemFilePaths.Length > 0)
+                    {
+                        foreach (var workItem in workItemFilePaths)
+                        {
+                            string[] workItemPatSplit = workItem.Split('\\');
+                            if (workItemPatSplit.Length > 0)
+                            {
+                                string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
+                                if (!string.IsNullOrEmpty(workItemName))
+                                {
+                                    string[] nameExtension = workItemName.Split('.');
+                                    string name = nameExtension[0];
+                                    workItems.Add(name, model.ReadJsonFile(workItem));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (System.IO.File.Exists(projectSettingsFile))
