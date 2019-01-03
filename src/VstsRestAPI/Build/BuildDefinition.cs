@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Text;
 using VstsRestAPI.Viewmodel.Build;
@@ -22,6 +23,10 @@ namespace VstsRestAPI.Build
             BuildGetListofBuildDefinitionsResponse.Definitions viewModel = new BuildGetListofBuildDefinitionsResponse.Definitions();
             using (var client = GetHttpClient())
             {
+                string uuid = Guid.NewGuid().ToString();
+                uuid = uuid.Substring(0, 8);
+                json = json.Replace("$UUID$", uuid);
+
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
                 string uri = "";
