@@ -1349,6 +1349,31 @@ namespace VstsDemoBuilder.Controllers
                 workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
             }
 
+            //// Modified Work Item import logic
+            //Dictionary<string, string> workItems = new Dictionary<string, string>();
+            //string _WitPath = Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
+            //if (System.IO.Directory.Exists(_WitPath))
+            //{
+            //    string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
+            //    if (workItemFilePaths.Length > 0)
+            //    {
+            //        foreach (var workItem in workItemFilePaths)
+            //        {
+            //            string[] workItemPatSplit = workItem.Split('\\');
+            //            if (workItemPatSplit.Length > 0)
+            //            {
+            //                string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
+            //                if (!string.IsNullOrEmpty(workItemName))
+            //                {
+            //                    string[] nameExtension = workItemName.Split('.');
+            //                    string name = nameExtension[0];
+            //                    workItems.Add(name, model.ReadJsonFile(workItem));
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (System.IO.File.Exists(projectSettingsFile))
             {
