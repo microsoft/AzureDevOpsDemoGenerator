@@ -849,6 +849,8 @@
     <Content Include="Templates\Tailwind Traders\Teams\Website Team\TeamSetting.json" />
     <Content Include="Templates\Tailwind Traders\WorkItems\Task.json" />
     <Content Include="Templates\Tailwind Traders\WorkItems\User Story.json" />
+    <Content Include="Templates\Tailwind Traders\BuildDefinitions\Website-CI.json" />
+    <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Website-CD.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
