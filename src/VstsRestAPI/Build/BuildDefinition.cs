@@ -30,7 +30,7 @@ namespace VstsRestAPI.Build
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
                 string uri = "";
-                if (selectedTemplate == "SmartHotel360V1" || selectedTemplate == "SmartHotel360" || selectedTemplate == "LaunchDarkly")
+                if (selectedTemplate == "SmartHotel360" || selectedTemplate == "LaunchDarkly")
                 {
                     uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
                 }

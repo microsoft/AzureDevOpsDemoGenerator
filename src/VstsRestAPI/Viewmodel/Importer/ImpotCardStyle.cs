@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace VstsRestAPI.Viewmodel.Extractor
+namespace VstsRestAPI.Viewmodel.Importer
 {
     public class CardStyle
     {
@@ -10,16 +10,17 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string fieldName { get; set; }
             public int index { get; set; }
             public string logicalOperator { get; set; }
-            [JsonProperty(PropertyName = "operator")]
+            [JsonProperty("operator")]
             public string Operator { get; set; }
             public string value { get; set; }
         }
 
         public class Settings
         {
-            [JsonProperty(PropertyName = "title-color")]
+            [JsonProperty("title-color")]
             public string titlecolor { get; set; }
-            [JsonProperty(PropertyName = "background-color")]
+
+            [JsonProperty("background-color")]
             public string backgroundcolor { get; set; }
         }
 
@@ -47,7 +48,10 @@ namespace VstsRestAPI.Viewmodel.Extractor
 
         public class Style
         {
+            public string url { get; set; }
             public Rules rules { get; set; }
+            public string _links { get; set; }
+            public string BoardName { get; set; }
         }
     }
 }

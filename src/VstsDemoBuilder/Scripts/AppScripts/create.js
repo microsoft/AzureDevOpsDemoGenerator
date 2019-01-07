@@ -3,6 +3,10 @@ $(document).ready(function () {
 
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
+    $('#buildYourTemplate').click(function () {
+        ga('send', 'event', 'Build Your Template', 'visited');
+    });
+
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 50) {
@@ -12,32 +16,6 @@ $(document).ready(function () {
             $(".navbar").css("background-color", "transparent");
         }
     });
-
-    $.ajax({
-        url: "../Environment/CheckSession",
-        type: "GET",
-        success: function (data) {
-            if (data.length > 0) {
-                if ((data[0] !== "" || data[0] !== null) && (data[1] !== "" || data[1] !== null)) {
-                    var templateNameExt = "";
-                    var templateIdExt = "";
-                    templateNameExt = data[0];
-                    templateIdExt = data[1];
-
-                    if ((templateNameExt !== null || typeof templateNameExt !== "undefined" || templateNameExt !== "") && (templateIdExt !== "" || templateIdExt !== null || typeof templateIdExt !== "undefined")) {
-                        $('#ddlTemplates').val(templateNameExt);
-                        GetTemplates(templateNameExt);
-                        $('#lblDefaultDescription').addClass('d-none');
-                    }
-                }
-            }
-            else {
-                $('#ddlTemplates').val("SmartHotel360");
-                templateFolder = "SmartHotel360";
-            }
-        }
-    });
-
 
     $("input[id=Random]").attr('disabled', true);
     $("input[id=Select]").attr('disabled', true);
@@ -389,6 +367,8 @@ $(document).ready(function (event) {
     }
 
     AppendMessage();
+    var defaultTemplate = $('#selectedTemplate').val();
+    $('#ddlTemplates').val(defaultTemplate);
 
 });
 $('#btnSubmit').click(function () {
@@ -518,6 +498,19 @@ $('#btnSubmit').click(function () {
     event.preventDefault;
 });
 
+// if the user uploading his exported template (zip file), we will take that template name as folder name
+$('body').on('click', '#btnUpload', function () {
+    var fileUpload = $("#FileUpload1").get(0);
+    var files = fileUpload.files;
+    $('#InfoMessage').removeClass('d-block').addClass('d-none');
+    // Create FormData object
+    var fileData = new FormData();
+    // Looping over all files and add it to FormData object
+    for (var i = 0; i < files.length; i++) {
+        fileData.append(files[i].name, files[i]);
+    }
+    templateFolder = files[0].name.replace(".zip", "");
+});
 
 function getStatus() {
 
@@ -764,9 +757,9 @@ function GetRequiredExtension() {
                 if (ThirdParty !== "thirdparty") {
                     ThirdParty = "";
                 }
-            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = ""; }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = ""; }
 
     });
 }

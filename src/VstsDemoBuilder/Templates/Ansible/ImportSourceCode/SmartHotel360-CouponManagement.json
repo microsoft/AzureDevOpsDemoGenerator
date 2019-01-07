@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/Ansible/_git/SmartHotel360-CouponManagement"
+    },
+    "serviceEndpointId": "$Ansible-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

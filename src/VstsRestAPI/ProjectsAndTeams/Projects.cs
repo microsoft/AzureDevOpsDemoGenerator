@@ -1,7 +1,12 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
+using VstsRestAPI.Extractor;
+using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 
 
@@ -32,18 +37,18 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// Get List of project
         /// </summary>
         /// <returns></returns>
-        public ListofProjectsResponse.Projects ListOfProjects()
+        public ProjectsResponse.ProjectResult GetListOfProjects()
         {
-            ListofProjectsResponse.Projects viewModel = new ListofProjectsResponse.Projects();
+            ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
             using (var client = GetHttpClient())
             {
                 // connect to the REST endpoint            
-                HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
+                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
                 // check to see if we have a succesfull respond
                 if (response.IsSuccessStatusCode)
                 {
                     // set the viewmodel from the content in the response
-                    viewModel = response.Content.ReadAsAsync<ListofProjectsResponse.Projects>().Result;
+                    viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
                 }
                 viewModel.HttpStatusCode = response.StatusCode;
                 return viewModel;
@@ -140,6 +145,61 @@ namespace VstsRestAPI.ProjectsAndTeams
                     return string.Empty;
                 }
             }
+        }
+
+        public ProjectProperties.Properties GetProjectProperties()
+        {
+            try
+            {
+                ProjectProperties.Properties load = new ProjectProperties.Properties();
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + _configuration.Project + "/properties?api-version=" + _configuration.VersionNumber).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        load = JsonConvert.DeserializeObject<ProjectProperties.Properties>(res);
+                        GetProcessTemplate.PTemplate template = new GetProcessTemplate.PTemplate();
+
+                        string processTypeId = string.Empty;
+                        var processTypeID = load.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault();
+                        if (processTypeID != null)
+                        {
+                            processTypeId = processTypeID.value;
+                        }
+                        using (var client1 = GetHttpClient())
+                        {
+                            HttpResponseMessage response1 = client1.GetAsync(_configuration.UriString + "/_apis/work/processes/" + processTypeId + "?api-version=" + _configuration.VersionNumber).Result;
+                            if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                            {
+                                string templateData = response1.Content.ReadAsStringAsync().Result;
+                                template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
+                                load.TypeClass = template.properties.Class;
+                                return load;
+                            }
+                            else
+                            {
+                                var errorMessage = response1.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                this.LastFailureMessage = error;
+                                return new ProjectProperties.Properties();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                this.LastFailureMessage = ex.Message;
+            }
+            return new ProjectProperties.Properties();
         }
 
     }
