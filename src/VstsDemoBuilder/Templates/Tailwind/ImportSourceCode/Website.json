@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/Tailwind%20Traders/_git/TailwindTraders-Website"
+    },
+    "serviceEndpointId": "$Website-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

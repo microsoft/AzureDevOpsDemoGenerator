@@ -1,0 +1,258 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 101,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-10-22T08:03:39.63Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-10-22T08:14:07.333Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "Have a public landing page",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/104",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/103",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/123",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/122",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/124",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/125",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/102",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/101"
+    },
+    {
+      "id": 105,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-10-22T08:11:35.957Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-10-22T08:14:12.223Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "Products catalog",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/106",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/107",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/105"
+    },
+    {
+      "id": 108,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "Resolved",
+        "System.Reason": "Code complete and unit tests pass",
+        "System.CreatedDate": "2018-10-22T08:12:55.427Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-11-07T08:30:23.597Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "Coupons page",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/159",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/109",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/108"
+    },
+    {
+      "id": 110,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-10-22T08:13:26.85Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-10-22T08:15:08.27Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "Login to private web",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/111",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/110"
+    },
+    {
+      "id": 112,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-10-22T08:13:47.91Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-10-22T08:15:21.583Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "User profile",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/113",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/112"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

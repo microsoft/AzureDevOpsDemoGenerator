@@ -1,0 +1,20 @@
+[
+  {
+    "url": "",
+    "rules": {},
+    "_links": "{}",
+    "BoardName": "Epics"
+  },
+  {
+    "url": "",
+    "rules": {},
+    "_links": "{}",
+    "BoardName": "Features"
+  },
+  {
+    "url": "",
+    "rules": {},
+    "_links": "{}",
+    "BoardName": "Stories"
+  }
+]
