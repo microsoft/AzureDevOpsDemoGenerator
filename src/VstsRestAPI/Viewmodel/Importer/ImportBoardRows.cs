@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace VstsRestAPI.Viewmodel.Extractor
+namespace VstsRestAPI.Viewmodel.Importer
 {
-    public class ExportBoardRows
+    public class ImportBoardRows
     {
         public class Value
         {
@@ -13,7 +13,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
         public class Rows
         {
             public string BoardName { get; set; }
-            public List<Value> value { get; set; }
+            public IList<Value> value { get; set; }
         }
     }
 }

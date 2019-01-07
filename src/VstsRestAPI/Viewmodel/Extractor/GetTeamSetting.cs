@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VstsRestAPI.Viewmodel.Extractor
 {
-    public class GetTeamSetting
+    public class ExportTeamSetting
     {
         public class BacklogVisibilities
         {

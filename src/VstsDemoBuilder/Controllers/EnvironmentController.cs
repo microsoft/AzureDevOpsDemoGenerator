@@ -27,6 +27,7 @@ using VstsRestAPI.Release;
 using VstsRestAPI.Service;
 using VstsRestAPI.TestManagement;
 using VstsRestAPI.Viewmodel.Extractor;
+using VstsRestAPI.Viewmodel.Importer;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.Viewmodel.QueriesAndWidgets;
 using VstsRestAPI.Viewmodel.Repository;
@@ -42,7 +43,7 @@ namespace VstsDemoBuilder.Controllers
     {
 
         #region Variables & Properties
-        private static object objLock = new object();
+        private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
 
         private delegate string[] ProcessEnvironment(Project model, string PAT, string accountName);
@@ -50,7 +51,10 @@ namespace VstsDemoBuilder.Controllers
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
+        private string extractPath = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
+        private string logPath = "";
+        private string templateVersion = string.Empty;
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -204,7 +208,7 @@ namespace VstsDemoBuilder.Controllers
                         ProfileDetails profile = GetProfile(AccessDetails);
                         Session["User"] = profile.displayName;
                         Session["Email"] = profile.emailAddress.ToLower();
-                        Models.Accounts.AccountList accountList = GetAccounts(profile.id, AccessDetails);
+                        Models.AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
                         model.accessToken = AccessDetails.access_token;
@@ -244,35 +248,16 @@ namespace VstsDemoBuilder.Controllers
                         // Reading Template setting file to check for private templates
                         if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                         {
-                            string privateTemplatesJson = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
+                            string templateSetting = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
+                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
                         }
-                        //[for direct URLs] if the incoming template name is not null, checking for Template name and Key in Template setting file. 
+                        //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
                         if (!string.IsNullOrEmpty(model.TemplateName))
                         {
-                            if (string.IsNullOrEmpty(model.TemplateId)) { model.TemplateId = ""; }
-
-                            foreach (var grpTemplate in templates.GroupwiseTemplates)
-                            {
-                                foreach (var template in grpTemplate.Template)
-                                {
-                                    if (template.Name != null)
-                                    {
-                                        if (template.Name.ToLower() == model.TemplateName.ToLower())
-                                        {
-                                            model.SelectedTemplate = template.Name;
-                                            model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
-                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
-                                            model.Message = template.Message == null ? string.Empty : template.Message;
-                                        }
-                                    }
-                                }
-
-                            }
+                            TemplateSelected = model.TemplateName;
                         }
-                        else
+                        if (!string.IsNullOrEmpty(TemplateSelected))
                         {
                             foreach (var grpTemplate in templates.GroupwiseTemplates)
                             {
@@ -290,11 +275,9 @@ namespace VstsDemoBuilder.Controllers
                                         }
                                     }
                                 }
-
                             }
                         }
                         return View(model);
-
                     }
                     return Redirect("../Account/Verify");
                 }
@@ -416,16 +399,32 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
-                string extractPath = Server.MapPath("~/Templates/" + folder);
+                logPath += "Log_" + folder + DateTime.Now.ToString("ddMMyymmss") + ".txt";
 
+                extractPath = Server.MapPath("~/Templates/" + folder);
+                System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
+                System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
+
+                if (Directory.Exists(extractPath))
+                {
+                    System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
+                    return Json("Folder already exist. Please rename the folder and upload it.");
+                }
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
-                System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
 
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
+                System.IO.File.AppendAllText(logPath, "settingFileOut :" + settingFile + "\r\n" + "projectFileOut :" + projectFile + "\r\n");
+
 
                 if (settingFile && projectFile)
                 {
@@ -445,30 +444,65 @@ namespace VstsDemoBuilder.Controllers
                 }
                 else if (!settingFile && !projectFile)
                 {
-
-                    if (Directory.Exists(extractPath + "\\" + folder))
+                    string[] folderName = System.IO.Directory.GetDirectories(extractPath);
+                    string subDir = "";
+                    if (folderName.Length > 0)
                     {
-                        bool settingFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectSettings.json") ? true : false);
-                        bool projectFile1 = (System.IO.File.Exists(extractPath + "\\" + folder + "\\ProjectTemplate.json") ? true : false);
+                        subDir = folderName[0];
+                    }
+                    else
+                    {
+                        return Json("Could not find required preoject setting and project template file.");
+                    }
+                    System.IO.File.AppendAllText(logPath, "SubDir Path :" + subDir + "\r\n");
+                    if (subDir != "")
+                    {
+
+                        bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
+                        bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
+                        System.IO.File.AppendAllText(logPath, "settingFileIn :" + settingFile1 + "\r\n" + "projectFileIn :" + projectFile1 + "\r\n");
+
                         if (settingFile1 && projectFile1)
                         {
-                            string projectFileData1 = System.IO.File.ReadAllText(extractPath + "\\" + folder + "\\ProjectTemplate.json");
+                            string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
                             ProjectSetting settings1 = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData1);
 
                             if (!string.IsNullOrEmpty(settings1.IsPrivate))
                             {
-                                string sourceDirectory = extractPath + "\\" + folder;
+                                string sourceDirectory = subDir;
                                 string targetDirectory = extractPath;
-                                string backupDirectory = Server.MapPath("~/TemplateBackUp/");
-                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("_MMMdd_yyyy_HHmmss");
+                                string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
+                                if (!Directory.Exists(backupDirectory))
+                                {
+                                    Directory.CreateDirectory(backupDirectory);
+                                }
+                                //Create a tempprary directory
+                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
+                                System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
+
+                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
+
+                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
+                                    System.IO.File.AppendAllText(logPath, "sourceDirectory Path :" + sourceDirectory + "\r\n");
+
                                     if (Directory.Exists(targetDirectory))
                                     {
+                                        System.IO.File.AppendAllText(logPath, "targetDirectory Path :" + targetDirectory + "\r\n");
+                                        //copy the content of source directory to temp directory
+
                                         Directory.Move(sourceDirectory, backupDirectoryRandom);
+                                        System.IO.File.AppendAllText(logPath, "Copied to temp dir" + "\r\n");
+
+                                        //Delete the target directory
                                         Directory.Delete(targetDirectory);
+                                        System.IO.File.AppendAllText(logPath, "Deleted Target dir" + "\r\n");
+
+                                        //Target Directory should not be exist, it will create a new directory
                                         Directory.Move(backupDirectoryRandom, targetDirectory);
+                                        System.IO.File.AppendAllText(logPath, "Movied Target dir" + "\r\n");
 
                                         System.IO.DirectoryInfo di = new DirectoryInfo(backupDirectory);
 
@@ -511,6 +545,8 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Directory.Delete(extractPath, true);
+                System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
             }
 
@@ -654,9 +690,9 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="memberID"></param>
         /// <param name="details"></param>
         /// <returns></returns>
-        public Models.Accounts.AccountList GetAccounts(string memberID, AccessDetails details)
+        public Models.AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
         {
-            Models.Accounts.AccountList accounts = new Models.Accounts.AccountList();
+            Models.AccountsResponse.AccountList accounts = new Models.AccountsResponse.AccountList();
             var client = new HttpClient();
             string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
 
@@ -674,7 +710,7 @@ namespace VstsDemoBuilder.Controllers
                 else if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
-                    accounts = JsonConvert.DeserializeObject<Models.Accounts.AccountList>(result);
+                    accounts = JsonConvert.DeserializeObject<Models.AccountsResponse.AccountList>(result);
                 }
                 else
                 {
@@ -846,21 +882,21 @@ namespace VstsDemoBuilder.Controllers
             }
             //configuration setup
             string _credentials = model.accessToken;
-            VstsRestAPI.Configuration _projectCreationVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _releaseVersion = new VstsRestAPI.Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _buildVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _workItemsVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _queriesVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _boardVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _wikiVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _endPointVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _extensionVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _dashboardVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _repoVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
-            VstsRestAPI.Configuration _getSourceCodeVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _agentQueueVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            VstsRestAPI.Configuration _testPlanVersion = new VstsRestAPI.Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
@@ -960,9 +996,6 @@ namespace VstsDemoBuilder.Controllers
                 if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
             }
 
-            //create teams
-            CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
-
             //current user Details
             string teamName = model.ProjectName + " team";
             TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
@@ -972,61 +1005,197 @@ namespace VstsDemoBuilder.Controllers
             {
                 model.Environment.UserUniquename = teamMember.identity.uniqueName;
             }
-
             if (teamMember != null)
             {
                 model.Environment.UserUniqueId = teamMember.identity.id;
             }
 
-
             //update board columns and rows
-
-            string projectSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
-            JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
-            string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
-            string boardType = string.Empty;
-            if (processType == "" || processType == "Scrum")
+            // Checking for template version
+            string projectTemplate = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectTemplate.json"));
+            if (!string.IsNullOrEmpty(projectTemplate))
             {
-                processType = "Scrum";
-                boardType = "Backlog%20items";
+                JObject jObject = JsonConvert.DeserializeObject<JObject>(projectTemplate);
+                templateVersion = jObject["TemplateVersion"] == null ? string.Empty : jObject["TemplateVersion"].ToString();
+            }
+            if (templateVersion != "2.0")
+            {
+                //create teams
+                CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+
+                // for older templates
+                string projectSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
+                JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
+                string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
+                string boardType = string.Empty;
+                if (processType == "" || processType == "Scrum")
+                {
+                    processType = "Scrum";
+                    boardType = "Backlog%20items";
+                }
+                else
+                {
+                    boardType = "Stories";
+                }
+                BoardColumn objBoard = new BoardColumn(_boardVersion);
+                string updateSwimLanesJSON = "";
+                if (template.BoardRows != null)
+                {
+                    updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
+                    SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                    if (System.IO.File.Exists(updateSwimLanesJSON))
+                    {
+                        updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                        bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType, model.ProjectName + " Team");
+                    }
+                }
+                if (template.SetEpic != null)
+                {
+                    string team = model.ProjectName + " Team";
+                    string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.SetEpic);
+                    if (System.IO.File.Exists(json))
+                    {
+                        json = model.ReadJsonFile(json);
+                        EnableEpic(templatesFolder, model, json, _boardVersion, model.id, team);
+                    }
+                }
+
+                if (template.BoardColumns != null)
+                {
+                    string team = model.ProjectName + " Team";
+                    string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.BoardColumns);
+                    if (System.IO.File.Exists(json))
+                    {
+                        json = model.ReadJsonFile(json);
+                        bool success = UpdateBoardColumn(templatesFolder, model, json, _boardVersion, model.id, boardType, team);
+                        if (success)
+                        {
+                            //update Card Fields
+                            if (template.CardField != null)
+                            {
+                                string cardFieldJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardField);
+                                if (System.IO.File.Exists(cardFieldJson))
+                                {
+                                    cardFieldJson = model.ReadJsonFile(cardFieldJson);
+                                    UpdateCardFields(templatesFolder, model, cardFieldJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                }
+                            }
+                            //Update card styles
+                            if (template.CardStyle != null)
+                            {
+                                string cardStyleJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardStyle);
+                                if (System.IO.File.Exists(cardStyleJson))
+                                {
+                                    cardStyleJson = model.ReadJsonFile(cardStyleJson);
+                                    UpdateCardStyles(templatesFolder, model, cardStyleJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                }
+                            }
+                            //Enable Epic Backlog
+                            AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                        }
+                    }
+                }
+
+                //update sprint dates
+                UpdateSprintItems(model, _boardVersion, settings);
+                UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
+                RenameIterations(model, _boardVersion, settings.renameIterations);
             }
             else
             {
-                boardType = "Stories";
-            }
-            BoardColumn objBoard = new BoardColumn(_boardVersion);
-            string updateSwimLanesJSON = "";
-            if (template.BoardRows != null)
-            {
-                updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
-                SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
-                bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType);
-            }
-            if (template.SetEpic != null)
-            {
-                EnableEpic(templatesFolder, model, template.SetEpic, _boardVersion, model.id);
-            }
-
-            if (template.BoardColumns != null)
-            {
-                bool success = UpdateBoardColumn(templatesFolder, model, template.BoardColumns, _boardVersion, model.id, boardType);
-                if (success)
+                // for newer version of templates
+                string teamsJsonPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
+                if (System.IO.File.Exists(teamsJsonPath))
                 {
-                    //update Card Fields
-                    UpdateCardFields(templatesFolder, model, template.CardField, _boardVersion, model.id, boardType);
-                    //Update card styles
-                    UpdateCardStyles(templatesFolder, model, template.CardStyle, _boardVersion, model.id, boardType);
-                    //Enable Epic Backlog
-                    AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                    template.Teams = "Teams\\Teams.json";
+                    template.TeamArea = "TeamArea.json";
+                    CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+                    string jsonTeams = model.ReadJsonFile(teamsJsonPath);
+                    JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
+                    JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
+                    foreach (var jteam in jTeams)
+                    {
+                        string teamFolderPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
+                        if (System.IO.Directory.Exists(teamFolderPath))
+                        {
+                            BoardColumn objBoard = new BoardColumn(_boardVersion);
+
+                            // updating swimlanes for each teams each board(epic, feature, PBI, Stories) 
+                            string updateSwimLanesJSON = "";
+                            SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                            template.BoardRows = "BoardRows.json";
+                            updateSwimLanesJSON = System.IO.Path.Combine(teamFolderPath, template.BoardRows);
+                            if (System.IO.File.Exists(updateSwimLanesJSON))
+                            {
+                                updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                                List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
+                                foreach (var board in importRows)
+                                {
+                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, jteam["name"].ToString());
+                                }
+                            }
+
+                            // updating team setting for each team
+                            string teamSettingJson = "";
+                            template.SetEpic = "TeamSetting.json";
+                            teamSettingJson = System.IO.Path.Combine(teamFolderPath, template.SetEpic);
+                            if (System.IO.File.Exists(teamSettingJson))
+                            {
+                                teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
+                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, jteam["name"].ToString());
+                            }
+
+                            // updating board columns for each teams each board
+                            string teamBoardColumns = "";
+                            template.BoardColumns = "BoardColumns.json";
+                            teamBoardColumns = System.IO.Path.Combine(teamFolderPath, template.BoardColumns);
+                            if (System.IO.File.Exists(teamBoardColumns))
+                            {
+                                teamBoardColumns = System.IO.File.ReadAllText(teamBoardColumns);
+                                List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
+                                foreach (var board in importBoardCols)
+                                {
+                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, jteam["name"].ToString());
+                                }
+                            }
+
+                            // updating card fields for each team and each board
+                            string teamCardFields = "";
+                            template.CardField = "CardFields.json";
+                            teamCardFields = System.IO.Path.Combine(teamFolderPath, template.CardField);
+                            if (System.IO.File.Exists(teamCardFields))
+                            {
+                                teamCardFields = System.IO.File.ReadAllText(teamCardFields);
+                                List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
+                                cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
+                                foreach (var card in cardFields)
+                                {
+                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, jteam["name"].ToString());
+                                }
+                            }
+
+                            // updating card styles for each team and each board
+                            string teamCardStyle = "";
+                            template.CardStyle = "CardStyles.json";
+                            teamCardStyle = System.IO.Path.Combine(teamFolderPath, template.CardStyle);
+                            if (System.IO.File.Exists(teamCardStyle))
+                            {
+                                teamCardStyle = System.IO.File.ReadAllText(teamCardStyle);
+                                List<CardStyle.Style> cardStyles = new List<CardStyle.Style>();
+                                cardStyles = JsonConvert.DeserializeObject<List<CardStyle.Style>>(teamCardStyle);
+                                foreach (var cardStyle in cardStyles)
+                                {
+                                    if (cardStyle.rules.fill != null)
+                                    {
+                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, jteam["name"].ToString());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
                 }
             }
-
-
-
-            //update sprint dates
-            UpdateSprintItems(model, _boardVersion, settings);
-            UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
-            RenameIterations(model, _boardVersion, settings.renameIterations);
 
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
@@ -1109,75 +1278,103 @@ namespace VstsDemoBuilder.Controllers
                     model.accountUsersForWi.Add(member.member.mailAddress);
                 }
             }
-
-
-
-            //import work items
-            string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
-            string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
-            string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
-            string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
-            string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
-            string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
-            string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
-            string testPlansPath = string.Empty;
-            string testSuitesPath = string.Empty;
-            if (model.SelectedTemplate.ToLower() == "myshuttle2")
-            {
-                testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
-            }
-
-            if (model.SelectedTemplate.ToLower() == "myshuttle")
-            {
-                testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
-            }
             Dictionary<string, string> workItems = new Dictionary<string, string>();
 
-            if (System.IO.File.Exists(featuresFilePath))
+            if (templateVersion != "2.0")
             {
-                workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
-            }
 
-            if (System.IO.File.Exists(productBackLogPath))
-            {
-                workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
-            }
+                //import work items
+                string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
+                string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
+                string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
+                string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
+                string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
+                string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
+                string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
+                string testPlansPath = string.Empty;
+                string testSuitesPath = string.Empty;
+                if (model.SelectedTemplate.ToLower() == "myshuttle2")
+                {
+                    testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                }
 
-            if (System.IO.File.Exists(taskPath))
-            {
-                workItems.Add("Task", model.ReadJsonFile(taskPath));
-            }
+                if (model.SelectedTemplate.ToLower() == "myshuttle")
+                {
+                    testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                }
 
-            if (System.IO.File.Exists(testCasePath))
-            {
-                workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
-            }
+                if (System.IO.File.Exists(featuresFilePath))
+                {
+                    workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
+                }
 
-            if (System.IO.File.Exists(bugPath))
-            {
-                workItems.Add("Bug", model.ReadJsonFile(bugPath));
-            }
+                if (System.IO.File.Exists(productBackLogPath))
+                {
+                    workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
+                }
 
-            if (System.IO.File.Exists(userStoriesPath))
-            {
-                workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
-            }
+                if (System.IO.File.Exists(taskPath))
+                {
+                    workItems.Add("Task", model.ReadJsonFile(taskPath));
+                }
 
-            if (System.IO.File.Exists(epicPath))
-            {
-                workItems.Add("Epic", model.ReadJsonFile(epicPath));
-            }
+                if (System.IO.File.Exists(testCasePath))
+                {
+                    workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
+                }
 
-            if (System.IO.File.Exists(testPlansPath))
-            {
-                workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
-            }
+                if (System.IO.File.Exists(bugPath))
+                {
+                    workItems.Add("Bug", model.ReadJsonFile(bugPath));
+                }
 
-            if (System.IO.File.Exists(testSuitesPath))
+                if (System.IO.File.Exists(userStoriesPath))
+                {
+                    workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
+                }
+
+                if (System.IO.File.Exists(epicPath))
+                {
+                    workItems.Add("Epic", model.ReadJsonFile(epicPath));
+                }
+
+                if (System.IO.File.Exists(testPlansPath))
+                {
+                    workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
+                }
+
+                if (System.IO.File.Exists(testSuitesPath))
+                {
+                    workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
+                }
+            }
+            //// Modified Work Item import logic
+            else
             {
-                workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
+                string _WitPath = Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
+                if (System.IO.Directory.Exists(_WitPath))
+                {
+                    string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
+                    if (workItemFilePaths.Length > 0)
+                    {
+                        foreach (var workItem in workItemFilePaths)
+                        {
+                            string[] workItemPatSplit = workItem.Split('\\');
+                            if (workItemPatSplit.Length > 0)
+                            {
+                                string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
+                                if (!string.IsNullOrEmpty(workItemName))
+                                {
+                                    string[] nameExtension = workItemName.Split('.');
+                                    string name = nameExtension[0];
+                                    workItems.Add(name, model.ReadJsonFile(workItem));
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
@@ -1216,7 +1413,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 CreateTestManagement(wiMapping, model, testPlan, templatesFolder, _testPlanVersion);
             }
-            if (listTestPlansJsonPaths.Count > 0) { AddMessage(model.id, "TestPlans, TestSuites and TestCases created"); }
+            if (listTestPlansJsonPaths.Count > 0)
+            {
+                //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
+            }
 
             //create build Definition
             string buildDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
@@ -1228,7 +1428,7 @@ namespace VstsDemoBuilder.Controllers
             bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
             if (isBuild)
             {
-                AddMessage(model.id, "Build definition created");
+                //AddMessage(model.id, "Build definition created");
             }
 
             //Queue a Build
@@ -1248,7 +1448,7 @@ namespace VstsDemoBuilder.Controllers
             bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
             if (isReleased)
             {
-                AddMessage(model.id, "Release definition created");
+                //AddMessage(model.id, "Release definition created");
             }
 
             //Create query and widgets
@@ -1432,27 +1632,21 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _BoardConfig, string id, string BoardType)
+        private bool UpdateBoardColumn(string templatesFolder, Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _BoardConfig, string id, string BoardType, string team)
         {
             bool result = false;
             try
             {
-                string jsonBoardColumns = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, BoardColumnsJSON);
-                if (System.IO.File.Exists(jsonBoardColumns))
+                BoardColumn objBoard = new BoardColumn(_BoardConfig);
+                bool boardColumnResult = objBoard.UpdateBoard(model.ProjectName, BoardColumnsJSON, BoardType, team);
+                if (boardColumnResult)
                 {
-                    BoardColumn objBoard = new BoardColumn(_BoardConfig);
-                    jsonBoardColumns = model.ReadJsonFile(jsonBoardColumns);
-                    bool boardColumnResult = objBoard.UpdateBoard(model.ProjectName, jsonBoardColumns, BoardType);
-
-                    if (boardColumnResult)
-                    {
-                        model.Environment.BoardRowFieldName = objBoard.rowFieldName;
-                        result = true;
-                    }
-                    else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
-                    {
-                        AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
-                    }
+                    model.Environment.BoardRowFieldName = objBoard.rowFieldName;
+                    result = true;
+                }
+                else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
+                {
+                    AddMessage(id.ErrorId(), "Error while updating board column " + objBoard.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)
@@ -1470,22 +1664,17 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardFields(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, string boardType)
+        private void UpdateCardFields(string templatesFolder, Project model, string json, Configuration _configuration, string id, string boardType, string team)
         {
             try
             {
-                json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, json);
-                if (System.IO.File.Exists(json))
-                {
-                    json = model.ReadJsonFile(json);
-                    json = json.Replace("null", "\"\"");
-                    Cards objCards = new Cards(_configuration);
-                    objCards.UpdateCardField(model.ProjectName, json, boardType);
+                json = json.Replace("null", "\"\"");
+                Cards objCards = new Cards(_configuration);
+                objCards.UpdateCardField(model.ProjectName, json, boardType, team);
 
-                    if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
-                    {
-                        AddMessage(id.ErrorId(), "Error while updating card fields: " + objCards.LastFailureMessage + Environment.NewLine);
-                    }
+                if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
+                {
+                    AddMessage(id.ErrorId(), "Error while updating card fields: " + objCards.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)
@@ -1503,21 +1692,16 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardStyles(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _configuration, string id, string boardType)
+        private void UpdateCardStyles(string templatesFolder, Project model, string json, Configuration _configuration, string id, string boardType, string team)
         {
             try
             {
-                json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, json);
-                if (System.IO.File.Exists(json))
-                {
-                    json = model.ReadJsonFile(json);
-                    Cards objCards = new Cards(_configuration);
-                    objCards.ApplyRules(model.ProjectName, json, boardType);
+                Cards objCards = new Cards(_configuration);
+                objCards.ApplyRules(model.ProjectName, json, boardType, team);
 
-                    if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
-                    {
-                        AddMessage(id.ErrorId(), "Error while updating card styles: " + objCards.LastFailureMessage + Environment.NewLine);
-                    }
+                if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
+                {
+                    AddMessage(id.ErrorId(), "Error while updating card styles: " + objCards.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)
@@ -1535,22 +1719,17 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="json"></param>
         /// <param name="_config3_0"></param>
         /// <param name="id"></param>
-        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _boardVersion, string id)
+        private void EnableEpic(string templatesFolder, Project model, string json, VstsRestAPI.Configuration _boardVersion, string id, string team)
         {
             try
             {
-                json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, json);
-                if (System.IO.File.Exists(json))
-                {
-                    json = model.ReadJsonFile(json);
-                    Cards objCards = new Cards(_boardVersion);
-                    Projects project = new Projects(_boardVersion);
-                    objCards.EnablingEpic(model.ProjectName, json, model.ProjectName);
+                Cards objCards = new Cards(_boardVersion);
+                Projects project = new Projects(_boardVersion);
+                objCards.EnablingEpic(model.ProjectName, json, model.ProjectName, team);
 
-                    if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
-                    {
-                        AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + objCards.LastFailureMessage + Environment.NewLine);
-                    }
+                if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
+                {
+                    AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + objCards.LastFailureMessage + Environment.NewLine);
                 }
             }
             catch (Exception ex)

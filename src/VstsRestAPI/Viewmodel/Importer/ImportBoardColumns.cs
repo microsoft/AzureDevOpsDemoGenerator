@@ -1,20 +1,25 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace VstsRestAPI.Viewmodel.Extractor
+namespace VstsRestAPI.Viewmodel.Importer
 {
-    public class BoardColumnResponseScrum
+    public class ImportBoardColumns
     {
         public class StateMappings
         {
-            [JsonProperty(PropertyName = "Product Backlog Item")]
+            [JsonProperty("Epic")]
+            public string Epic { get; set; }
+
+            [JsonProperty("Feature")]
+            public string Feature { get; set; }
+
+            [JsonProperty("Product Backlog Item")]
+            public string ProductBacklogItem { get; set; }
+
+            [JsonProperty("Bug")]
+            public string Bug { get; set; }
+            [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
-            [JsonProperty(PropertyName = "Bug")]
-            public string bug { get; set; }
-            [JsonProperty(PropertyName = "Feature")]
-            public string feature { get; set; }
-            [JsonProperty(PropertyName = "Epic")]
-            public string epic { get; set; }
         }
 
         public class Value
@@ -27,10 +32,10 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string description { get; set; }
         }
 
-        public class ColumnResponse
+        public class ImportBoardCols
         {
             public string BoardName { get; set; }
-            public List<Value> value { get; set; }
+            public IList<Value> value { get; set; }
         }
     }
 }
