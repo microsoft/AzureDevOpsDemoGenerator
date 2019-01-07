@@ -179,6 +179,13 @@
       "Groups": "PrivateTemp",
       "Template": [
         {
+          "key": "77387",
+          "Name": "Tailwind",
+          "TemplateFolder": "Tailwind",
+          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
+          "tags": [ "Agile", "Data and AI", "React" ],
+          "image": "/Templates/TemplateImages/TailwindTraders.png"
+        },{
           "key": "77386",
           "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders",
