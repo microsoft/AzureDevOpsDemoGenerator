@@ -847,11 +847,10 @@
     <Content Include="Templates\Tailwind Traders\TeamArea.json" />
     <Content Include="Templates\Tailwind Traders\Teams.json" />
     <Content Include="Templates\Tailwind\DemoExtensions.json" />
-    <Content Include="Templates\Tailwind\ImportSourceCode\Website.json" />
+    <Content Include="Templates\Tailwind\ImportSourceCode\TailwindTraders-Website.json" />
     <Content Include="Templates\Tailwind\Iterations.json" />
     <Content Include="Templates\Tailwind\ProjectSettings.json" />
     <Content Include="Templates\Tailwind\ProjectTemplate.json" />
-    <Content Include="Templates\Tailwind\ServiceEndpoints\Website-code.json" />
     <Content Include="Templates\Tailwind\TeamArea.json" />
     <Content Include="Templates\Tailwind\Teams\Teams.json" />
     <Content Include="Templates\Tailwind\Teams\Website Team\BoardColumns.json" />
@@ -860,7 +859,7 @@
     <Content Include="Templates\Tailwind\Teams\Website Team\CardStyles.json" />
     <Content Include="Templates\Tailwind\Teams\Website Team\TeamSetting.json" />
     <Content Include="Templates\Tailwind\WorkItems\Task.json" />
-    <Content Include="Templates\Tailwind\WorkItems\UserStory.json" />
+    <Content Include="Templates\Tailwind\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
