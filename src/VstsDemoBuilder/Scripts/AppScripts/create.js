@@ -1,7 +1,7 @@
 ﻿/// <reference path="../jquery-1.12.4.min.js" />
 $(document).ready(function () {
 
-    $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
+    //$("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
     $('#buildYourTemplate').click(function () {
         ga('send', 'event', 'Build Your Template', 'visited');
@@ -24,21 +24,10 @@ $(document).ready(function () {
     ga('send', 'event', 'Create page', 'visited');
 });
 
-$(function () {
-    $("#Default").prop("checked", "checked");
-    $("input").on("keypress", function (e) {
-        if (e.which === 32 && !this.value.length)
-            e.preventDefault();
-    });
-});
-
 var messageList = [];
 /**/
 /**/
 var ID = function () {
-    // Math.random should be unique because of its seeding algorithm.
-    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-    // after the decimal.
     return '_' + Math.random().toString(36).substr(2, 9);
 };
 var uniqueId = "";
@@ -61,6 +50,7 @@ var publicTemplateMsg = "";
 var privateTemplateMsg = "";
 
 $(document).ready(function (event) {
+    //REMOVE ERROR MESSAGE
     uniqueId = ID();
     $('.rmverror').click(function () {
         var errID = this.nextElementSibling.getAttribute('id');
@@ -71,6 +61,7 @@ $(document).ready(function (event) {
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
 
+    //ON CLICK OF CHOOSE TEMPLATE BUTTON, SHOW THE TEMPLATE POPUP
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
@@ -85,7 +76,7 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-
+        // IF ACCOUNT NAME IS NOT SELECTED, IT WILL VALIDATE THE EXTENSION
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
 
@@ -106,15 +97,16 @@ $(document).ready(function (event) {
         }
     });
 
-    //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
+    //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION - ON CLICK OF Select Template BUTTOON
     $('#selecttmplate').click(function () {
-        //Added
+        // related to temlate selection POPUP - modify this
+        //.template will change to .template__block 
         $('#lblDefaultDescription').hide();
-        var templateFolderSelected = $(".template.selected").data('folder');
-        var groputempSelected = $(".template.selected").data('template');
-        var selectedTemplateDescription = $(".description.descSelected").data('description');
+        var templateFolderSelected = $(".template.selected").data('folder'); // taking template folder name - appended from JSON
+        var groputempSelected = $(".template.selected").data('template'); // taking template name - appended from JSON
+        var selectedTemplateDescription = $(".description.descSelected").data('description'); // taking template description  - appended from JSON
+        var infoMsg = $(".description.descSelected").data('message'); // taking info message - appended from JSON
 
-        var infoMsg = $(".description.descSelected").data('message');
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
             $('#InfoMessage').html('');
             $('#InfoMessage').removeClass('d-block').addClass('d-none');
@@ -134,7 +126,7 @@ $(document).ready(function (event) {
             $('#ddlTemplates').val(groputempSelected);
             $(".VSTemplateSelection").fadeOut('fast');
         }
-        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none'); // hiding Popup
         //till here
         $('#status-messages').empty().hide();
         $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -148,34 +140,16 @@ $(document).ready(function (event) {
         $("#extensionError").html('');
         $("#extensionError").hide();
         $("#lblextensionError").removeClass("d-block").addClass("d-none");
-        var TemplateName = templateFolder;
-        if (TemplateName === "MyShuttle-Java") {
-            $("#NotificationModal").modal('show');
-        }
+        var TemplateName = templateFolder; // COPYING TEMPLATE FOLDER NAME FROM GLOBAL VARIABLE TO LOCAL VARIABLE
+
         if (TemplateName === "SonarQube") {
             $("#SoanrQubeDiv").show();
         }
         else {
             $("#SoanrQubeDiv").hide();
         }
-        var Url = 'GetTemplate/';
-        $.get(Url, { "TemplateName": TemplateName }, function (data) {
-            if (data !== "") {
-                var ParsedData = JSON.parse(data);
-                var Description = ParsedData.Description;
-                var parameters = ParsedData.Parameters;
-
-                if (typeof parameters !== "undefined") {
-                    if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
-                        });
-                        $("#projectParameters").show();
-                    }
-                    else { $("#projectParameters").html(''); }
-                }
-            }
-        });
+        // binding projecct parameters
+        GetTemplateParameters(TemplateName);
         if (TemplateName !== "") {
             checkForInstalledExtensions(TemplateName, function callBack(extensions) {
                 if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== undefined && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
@@ -206,8 +180,7 @@ $(document).ready(function (event) {
 
             });
         }
-        //Till here
-
+        // taking accout name to check for installed extension.
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
         ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
@@ -227,7 +200,8 @@ $(document).ready(function (event) {
         $("#EmailModal").modal('show');
     });
 
-    //checking for extenisoin start
+    //checking for extenisoin
+    // START - validating extension installation agreement checkbox- based on Microsoft and Third party category
     var isMicrosoftAgreement = "";
     var isThirdparty = "";
     $('#extensionError').click(function () {
@@ -269,13 +243,11 @@ $(document).ready(function (event) {
             }
         }
     });
+    // END - validating extension installation agreement checkbox- based on Microsoft and Third party category
 
     $("#projectParameters").html('');
-    var selectedTemplate = templateFolder;
+    var selectedTemplate = templateFolder; // COPYING TEMPLATE FOLDER NAME FROM GLOBAL VARIABLE TO LOCAL VARIABLE
 
-    if (selectedTemplate === "MyShuttle-Java") {
-        $("#NotificationModal").modal('show');
-    }
     if (selectedTemplate === "SonarQube") {
         $("#SoanrQubeDiv").show();
     }
@@ -286,23 +258,9 @@ $(document).ready(function (event) {
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
-        $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
-            if (data !== "") {
-                var ParsedData = JSON.parse(data);
-                var Description = ParsedData.Description;
-                var parameters = ParsedData.Parameters;
-                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                if (typeof parameters !== "undefined") {
-                    if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
-                        });
-                        $("#projectParameters").show();
-                    }
-                    else { $("#projectParameters").html(''); }
-                }
-            }
-        });
+        // CHECKING FOR TEMPLATE PATAMETERS
+        GetTemplateParameters(selectedTemplate);
+        // IF TEMPLATE IS NOT NULL OF UNDEFINED, CHECKING FOR EXTENSION AND CATEGORIZING INTO MICROSOFT AND THIRD PARTY
         if (selectedTemplate !== "" && typeof selectedTemplate !== "undefined") {
             checkForInstalledExtensions(selectedTemplate, function callBack(extensions) {
 
@@ -344,12 +302,8 @@ $(document).ready(function (event) {
             return false;
         }
     });
-
-    //New Feature Registration
-    $('#closeFeatureRibben').click(function () {
-        $('#newFeature').hide();
-    });
-
+    // for private templates AND when the user directly comes form template URL
+    // TAKING PRIVATE TEMPLATE DESCRIPTION FROM MODEL - SINCE  these templates are not availabe in selection popup
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
@@ -358,19 +312,20 @@ $(document).ready(function (event) {
     }
     //If User comes with lab url(private), we will check for PrivatetemplateFolderName in the field
     var publicTemplate = $('#ddlTemplates').val();
-    var privateTemplate = $('#selectedTemplateFolder').val();
+    var privateTemplate = $('#selectedTemplateFolder').val(); // taking private template folder name from model
     if (privateTemplate !== "" || typeof privateTemplate !== "undefined") {
         templateFolder = privateTemplate;
     }
     else {
         templateFolder = publicTemplate;
     }
-
+    // add private template info message to info box
     AppendMessage();
     var defaultTemplate = $('#selectedTemplate').val();
     $('#ddlTemplates').val(defaultTemplate);
 
 });
+// on click of submit button, validates project name, account name and the selected template
 $('#btnSubmit').click(function () {
     statusCount = 0;
     $("#txtALertContainer").hide();
@@ -389,7 +344,6 @@ $('#btnSubmit').click(function () {
         $("#ddlAcccountName").focus();
         return false;
     }
-    //checking for session templatename and templateID
     if (projectName === "") {
         $("#txtProjectName_Error").text("Please provide a project name");
         $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
@@ -439,23 +393,6 @@ $('#btnSubmit').click(function () {
         }
     }
 
-    //get userMethod and selected users
-    var SelectedUsers = '';
-    var userMethod = $("input[type='radio']:checked").val();
-    if (userMethod === "Select") {
-        $(".checkbox").each(function () {
-            if (this.checked) {
-                SelectedUsers = SelectedUsers + this.value + ',';
-            }
-        });
-
-        if (SelectedUsers.length === 0) {
-            $("#txtAlert").text("Please select organiaztion users");
-            $("#txtALertContainer").show();
-            return false;
-        }
-    }
-
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -498,27 +435,12 @@ $('#btnSubmit').click(function () {
     event.preventDefault;
 });
 
-// if the user uploading his exported template (zip file), we will take that template name as folder name
-$('body').on('click', '#btnUpload', function () {
-    var fileUpload = $("#FileUpload1").get(0);
-    var files = fileUpload.files;
-    $('#InfoMessage').removeClass('d-block').addClass('d-none');
-    // Create FormData object
-    var fileData = new FormData();
-    // Looping over all files and add it to FormData object
-    for (var i = 0; i < files.length; i++) {
-        fileData.append(files[i].name, files[i]);
-    }
-    templateFolder = files[0].name.replace(".zip", "");
-});
-
 function getStatus() {
-
     $.ajax({
         url: 'GetCurrentProgress/' + uniqueId,
         type: 'GET',
         success: function (data) {
-
+            // showing error when the process template has been disabled by user
             if (data === "OAUTHACCESSDENIED") {
                 $('#progressBar').width(currentPercentage++ + '%');
                 $('#status-messages').append('<i class="fas fa-forward"></i> &nbsp;Third Party application access via OAuth is disabled for this Organization,please change OAuth access setting and try again!<br/>');
@@ -532,7 +454,6 @@ function getStatus() {
                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                 $('#textMuted').removeClass("d-block").addClass("d-none");
                 return;
-
             }
             var isMessageShown = true;
 
@@ -540,9 +461,7 @@ function getStatus() {
                 messageList.push(data);
                 isMessageShown = false;
             }
-
             if (data !== "100") {
-
                 if (isMessageShown === false) {
                     if (messageList.length === 1) {
                         $('#progressBar').width(currentPercentage++ + '%');
@@ -551,55 +470,17 @@ function getStatus() {
                         }
                     }
                     else {
-                        if (data.indexOf("TF50309") === 0) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
+                        $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
+                        $("#ddlAcccountName").removeAttr("disabled");
+                        $("#txtProjectName").removeAttr("disabled");
+                        $("#txtProjectName").val("");
+                        $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                            $("#btnSubmit").prop("disabled", false);
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-                            return;
-                        }
-                        else if (data.indexOf("TF200019") === 0) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-                            return;
-
-                        }
-                        else if (data.indexOf("TF200019") === -1) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                        }
-                        else {
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-
-                        }
-
+                        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                        $("#templateselection").prop("disabled", false);
+                        $('#dvProgress').removeClass("d-block").addClass("d-none");
+                        $('#textMuted').removeClass("d-block").addClass("d-none");
                     }
-
                 }
                 else if (currentPercentage <= ((messageList.length + 1) * percentForMessage) && currentPercentage <= 100) {
                     $('#progressBar').width(currentPercentage++ + '%');
@@ -688,13 +569,7 @@ function getStatus() {
         }
     });
 }
-
-function DisplayErrors() {
-    $("#errorBody").html('<pre>' + ErrorData + '</pre>');
-    $("#errorModal").modal('show');
-}
-
-
+// check for installed extensions
 function checkForInstalledExtensions(selectedTemplate, callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
@@ -706,12 +581,10 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam },
             success: function (InstalledExtensions) {
-
                 callBack(InstalledExtensions);
             }
         });
     }
-
 }
 
 function checkForExtensions(callBack) {
@@ -733,7 +606,6 @@ function checkForExtensions(callBack) {
             }
         });
     }
-
 }
 
 function GetRequiredExtension() {
@@ -764,7 +636,7 @@ function GetRequiredExtension() {
     });
 }
 
-//TEMPLATE GROUP CREATION
+//TEMPLATE GROUP CREATION - modify this
 $(document).ready(function () {
     createTemplates();
 
@@ -866,6 +738,7 @@ $(document).ready(function () {
 
 $(function () {
 
+    //modify this
     // SHOW MODAL ON EVENT
     $(".template-invoke").on("click", function () {
         $(".VSTemplateSelection").fadeIn('fast');
@@ -897,6 +770,7 @@ $(function () {
     $(`.template-body .templates${showId}`).show();
 });
 
+// create template tile and bind it to POPUP - reading from JSON
 function createTemplates() {
     var grpSelected = "General";
     $.ajax({
@@ -973,8 +847,6 @@ function createTemplates() {
 }
 
 //Project name validtaion on keyup
-
-
 $("#txtProjectName").keyup(function () {
 
     var projectName = $.trim(this.value);
@@ -1013,6 +885,7 @@ $("#txtProjectName").keyup(function () {
     }
 });
 
+// validate the extension agreement checkboxes
 function validateExtensionCheckbox() {
     var checkboxMicrosoft = "";
     var checkboxTrirdparty = "";
@@ -1059,7 +932,8 @@ function validateExtensionCheckbox() {
     }
 }
 
-function GetTemplates(selectedTemplate) {
+// Get Template parameters
+function GetTemplateParameters(selectedTemplate) {
     var Url = 'GetTemplate/';
     $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
         if (data !== "") {
@@ -1086,7 +960,7 @@ function openImportPopUp() {
 
 function AppendMessage() {
 
-    privateTemplateMsg = $('#infoMessageTxt').val();
+    privateTemplateMsg = $('#infoMessageTxt').val(); // taking infor message form model
 
     if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
         $('#InfoMessage').html(privateTemplateMsg);
@@ -1097,3 +971,17 @@ function AppendMessage() {
         $('#InfoMessage').removeClass('d-block').addClass('d-none');
     }
 }
+
+// if the user uploading his exported template (zip file), we will take that template name as folder name
+$('body').on('click', '#btnUpload', function () {
+    var fileUpload = $("#FileUpload1").get(0);
+    var files = fileUpload.files;
+    $('#InfoMessage').removeClass('d-block').addClass('d-none');
+    // Create FormData object
+    var fileData = new FormData();
+    // Looping over all files and add it to FormData object
+    for (var i = 0; i < files.length; i++) {
+        fileData.append(files[i].name, files[i]);
+    }
+    templateFolder = files[0].name.replace(".zip", "");
+});
