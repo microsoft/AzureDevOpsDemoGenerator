@@ -8899,6 +8899,9 @@ html, body {
         .templates__list .preview__image img {
             min-width: 100%;
             width: 100%;
+            border: 1px solid #777;
+            border-radius: 4px;
+            box-shadow: 0px 5px 8px #a6a3a3;
         }
 
 .template__block {
@@ -8906,6 +8909,7 @@ html, body {
     border-bottom: 1px solid #e9ecef;
     padding: 8px 16px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
     .template__block.blur {
@@ -8914,7 +8918,7 @@ html, body {
     }
 
     .template__block.selected {
-        background: #eaf6ff;
+        background: #DEECF9;
     }
 
         .template__block.selected h4 {
@@ -8926,7 +8930,7 @@ html, body {
         }
 
     .template__block .template__block__description {
-        color: #ced4da;
+        color: #212529;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -8965,18 +8969,21 @@ html, body {
 
 .template__block .template__intro span {
     font-size: 12px !important;
-    color: #ffffff !important;
+    color: #212529 !important;
     line-height: 22px;
-    background-color: #0078d7;
+    background-color: #73abff;
     display: inline-block;
     opacity: 0.5;
     margin-right: 4px;
-    padding: 2px 8px;
+    padding: 0px 8px;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
 }
 .selected .template__intro span {
     opacity: 1;
+}
+.template__block:hover {
+    background: rgba(239,246,252,1)
 }
 
 

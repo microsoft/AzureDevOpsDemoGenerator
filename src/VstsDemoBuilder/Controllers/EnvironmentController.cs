@@ -183,7 +183,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult CreateProject()
+        public ActionResult createproject()
         {
             try
             {
@@ -300,7 +300,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns>View()</returns>
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Create(Project model)
+        public ActionResult create(Project model)
         {
             try
             {
@@ -326,7 +326,7 @@ namespace VstsDemoBuilder.Controllers
                     //AccessDetails.access_token = "";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
-                    return RedirectToAction("CreateProject", "Environment");
+                    return RedirectToAction("createproject", "Environment");
                 }
                 else
                 {
