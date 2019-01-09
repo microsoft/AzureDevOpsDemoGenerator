@@ -18,7 +18,8 @@
           "Description": "This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>",
           "tags": [ "Scrum", "aspnetcore", "azureappservice" ],
           "image": "/Templates/TemplateImages/SmartHotel.png",
-          "Message": "Note that the code for the SmartHotel 360 Website hosted on <a href='https://github.com/Microsoft/SmartHotel360-Website' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub"
+          "Message": "Note that the code for the SmartHotel 360 Website hosted on <a href='https://github.com/Microsoft/SmartHotel360-Website' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
+          "PreviewImages": [ "https://blog.chef.io/wp-content/uploads/2017/11/vsts-plugins.png", "http://jeroenniesen.com/wp-content/uploads/2017/04/tfs_vsts_process.png", "https://msdnshared.blob.core.windows.net/media/2017/07/image510.png" ]
         },
         {
           "key": "77380",
@@ -26,7 +27,9 @@
           "TemplateFolder": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
           "tags": [ "Scrum", "aspnetcore", "azureappservice" ],
-          "image": "/Templates/TemplateImages/MyHealthClinic.png"
+          "image": "/Templates/TemplateImages/MyHealthClinic.png",
+          "PreviewImages": [ "https://blog.chef.io/wp-content/uploads/2017/11/vsts-plugins.png", "http://jeroenniesen.com/wp-content/uploads/2017/04/tfs_vsts_process.png", "https://msdnshared.blob.core.windows.net/media/2017/07/image510.png" ]
+
         },
         {
           "key": "77379",
