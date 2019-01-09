@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace VstsRestAPI.Viewmodel.ProjectAndTeams
 {
-    public class ListofProjectsResponse
+    public class ProjectsResponse
     {
-        public class Projects : BaseViewModel
+        public class ProjectResult : BaseViewModel
         {
             public int count { get; set; }
-            public Value[] value { get; set; }
+            public List<Value> value { get; set; }
+            public string errmsg { get; set; }
         }
 
         public class Value

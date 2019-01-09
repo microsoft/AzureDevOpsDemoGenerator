@@ -1,10 +1,10 @@
-﻿{
+{
   "data": {
 
   },
-  "name": "Python-code",
+  "name": "Ansible-code",
   "type": "git",
-  "url": "https://vstsdemodata.visualstudio.com/Tailwind%20Traders/_git/TailwindTraders-Website",
+  "url": "https://vstsdemodata.visualstudio.com/Ansible/_git/SmartHotel360-CouponManagement",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {

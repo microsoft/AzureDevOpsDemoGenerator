@@ -63,15 +63,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="LaunchDarkly.Client, Version=5.4.0.0, Culture=neutral, PublicKeyToken=f86add69004e6885, processorArchitecture=MSIL">
-      <HintPath>..\packages\LaunchDarkly.Client.5.4.0\lib\net45\LaunchDarkly.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="LaunchDarkly.Common.StrongName, Version=1.1.1.0, Culture=neutral, PublicKeyToken=45ef1738a929a7df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LaunchDarkly.Common.StrongName.1.1.1\lib\net45\LaunchDarkly.Common.StrongName.dll</HintPath>
-    </Reference>
-    <Reference Include="LaunchDarkly.EventSource, Version=3.1.5.0, Culture=neutral, PublicKeyToken=18e8c36453e3060f, processorArchitecture=MSIL">
-      <HintPath>..\packages\LaunchDarkly.EventSource.3.1.5\lib\net45\LaunchDarkly.EventSource.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -239,10 +230,9 @@
     </Compile>
     <Compile Include="Models\AccessDetails.cs" />
     <Compile Include="Models\Accounts.cs" />
-    <Compile Include="Models\Dashboard.cs" />
+    <Compile Include="Models\CreateZips.cs" />
     <Compile Include="Models\Default.cs" />
     <Compile Include="Models\Email.cs" />
-    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProfileDetails.cs" />
     <Compile Include="Models\Project.cs" />
@@ -756,6 +746,7 @@
     <Content Include="Views\Extractor\NotFound.cshtml" />
     <Content Include="NewFeature\RegisteredUsers.json" />
     <Content Include="PreSetting\GitHubEndPoint.json" />
+    <Content Include="PreSetting\DemoExtensions.json" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
@@ -837,17 +828,29 @@
     <Content Include="Templates\MachineLearning\ServiceEndpoints\DevOps-for-AI.json" />
     <Content Include="Templates\MachineLearning\TeamArea.json" />
     <Content Include="Templates\MachineLearning\Teams.json" />
-    <Content Include="Templates\Tailwind Traders\BuildDefinitions\Website-CI.json" />
-    <Content Include="Templates\Tailwind Traders\EnableEpic.json" />
-    <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Backend.json" />
+    <Content Include="Templates\Ansible\BuildDefinitions\Ansible-CI.json" />
+    <Content Include="Templates\Ansible\Extensions.json" />
+    <Content Include="Templates\Ansible\ImportSourceCode\SmartHotel360-CouponManagement.json" />
+    <Content Include="Templates\Ansible\ProjectSettings.json" />
+    <Content Include="Templates\Ansible\ProjectTemplate.json" />
+    <Content Include="Templates\Ansible\ReleaseDefinitions\Ansible.json" />
+    <Content Include="Templates\Ansible\ServiceEndpoints\SmartHotel360-CouponManagement.json" />
+    <Content Include="Templates\Tailwind Traders\DemoExtensions.json" />
     <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Website.json" />
+    <Content Include="Templates\Tailwind Traders\Iterations.json" />
     <Content Include="Templates\Tailwind Traders\ProjectSettings.json" />
     <Content Include="Templates\Tailwind Traders\ProjectTemplate.json" />
-    <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Website-CD.json" />
-    <Content Include="Templates\Tailwind Traders\ServiceEndpoints\TailwindTraders-Backend-code.json" />
-    <Content Include="Templates\Tailwind Traders\ServiceEndpoints\TailwindTraders-Website-code.json" />
     <Content Include="Templates\Tailwind Traders\TeamArea.json" />
-    <Content Include="Templates\Tailwind Traders\Teams.json" />
+    <Content Include="Templates\Tailwind Traders\Teams\Teams.json" />
+    <Content Include="Templates\Tailwind Traders\Teams\Website Team\BoardColumns.json" />
+    <Content Include="Templates\Tailwind Traders\Teams\Website Team\BoardRows.json" />
+    <Content Include="Templates\Tailwind Traders\Teams\Website Team\CardFields.json" />
+    <Content Include="Templates\Tailwind Traders\Teams\Website Team\CardStyles.json" />
+    <Content Include="Templates\Tailwind Traders\Teams\Website Team\TeamSetting.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Task.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\User Story.json" />
+    <Content Include="Templates\Tailwind Traders\BuildDefinitions\Website-CI.json" />
+    <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Website-CD.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -917,11 +920,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>28910</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49474/</IISUrl>
+          <IISUrl>http://localhost:28910/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

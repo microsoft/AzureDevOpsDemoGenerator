@@ -11,6 +11,8 @@ namespace VstsRestAPI
         protected readonly string _credentials;
         protected readonly string Project;
         protected readonly string Account;
+        protected readonly string Team;
+
 
         public ApiServiceBase(IConfiguration configuration)
         {
@@ -18,6 +20,7 @@ namespace VstsRestAPI
             _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
             Project = configuration.Project;
             Account = configuration.AccountName;
+            Team = configuration.Team;
         }
 
         protected HttpClient GetHttpClient()

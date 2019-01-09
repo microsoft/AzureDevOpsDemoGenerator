@@ -17,94 +17,93 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public bool UpdateBoard(string projectName, string fileName, string boardType)
+        public bool UpdateBoard(string projectName, string json, string boardType, string teamName)
         {
-            string teamName = projectName + " Team";
             List<Scrum.Columns> scrumColumns = new List<Scrum.Columns>();
-            List<Agile.Columns> agileColumns = new List<Agile.Columns>();
+            //List<Agile.Columns> agileColumns = new List<Agile.Columns>();
 
             string newColID = "";
             string doneColID = "";
             GetBoardColumnResponse.ColumnResponse currColumns = new GetBoardColumnResponse.ColumnResponse();
-            GetBoardColumnResponseAgile.ColumnResponse currColumnsAgile = new GetBoardColumnResponseAgile.ColumnResponse();
-            if (boardType == "Backlog%20items")
-            {
-                scrumColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(fileName);
+            //GetBoardColumnResponseAgile.ColumnResponse currColumnsAgile = new GetBoardColumnResponseAgile.ColumnResponse();
+            //if (boardType == "Backlog%20items")
+            //{
+            scrumColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(json);
 
-                currColumns = GetBoardColumns(projectName, teamName);
-                if (currColumns.columns != null)
-                {
-                    foreach (GetBoardColumnResponse.Value col in currColumns.columns)
-                    {
-                        if (col.columnType.ToLower() == "incoming")
-                        {
-                            newColID = col.id;
-                        }
-                        else if (col.columnType.ToLower() == "outgoing")
-                        {
-                            doneColID = col.id;
-                        }
-                    }
-                    foreach (Scrum.Columns col in scrumColumns)
-                    {
-                        if (col.columnType.ToLower() == "incoming")
-                        {
-                            col.id = newColID;
-                        }
-                        else if (col.columnType.ToLower() == "outgoing")
-                        {
-                            col.id = doneColID;
-                        }
-                    }
-                }
-            }
-            else if (boardType == "Stories")
+            currColumns = GetBoardColumns(projectName, teamName, boardType);
+            if (currColumns.columns != null)
             {
-                agileColumns = JsonConvert.DeserializeObject<List<Agile.Columns>>(fileName);
-                currColumnsAgile = GetBoardColumnsAgile(projectName, teamName);
-                if (currColumnsAgile.columns != null)
+                foreach (GetBoardColumnResponse.Value col in currColumns.columns)
                 {
-                    foreach (GetBoardColumnResponseAgile.Value col in currColumnsAgile.columns)
+                    if (col.columnType.ToLower() == "incoming")
                     {
-                        if (col.columnType == "incoming")
-                        {
-                            newColID = col.id;
-                        }
-                        else if (col.columnType.ToLower() == "outgoing")
-                        {
-                            doneColID = col.id;
-                        }
+                        newColID = col.id;
                     }
-                    foreach (Agile.Columns col in agileColumns)
+                    else if (col.columnType.ToLower() == "outgoing")
                     {
-                        if (col.columnType.ToLower() == "incoming")
-                        {
-                            col.id = newColID;
-                        }
-                        else if (col.columnType.ToLower() == "outgoing")
-                        {
-                            col.id = doneColID;
-                        }
+                        doneColID = col.id;
+                    }
+                }
+                foreach (Scrum.Columns col in scrumColumns)
+                {
+                    if (col.columnType.ToLower() == "incoming")
+                    {
+                        col.id = newColID;
+                    }
+                    else if (col.columnType.ToLower() == "outgoing")
+                    {
+                        col.id = doneColID;
                     }
                 }
             }
-            if (currColumns.columns == null && currColumnsAgile.columns == null)
+            //}
+            //else if (boardType == "Stories")
+            //{
+            //    agileColumns = JsonConvert.DeserializeObject<List<Agile.Columns>>(fileName);
+            //    currColumnsAgile = GetBoardColumnsAgile(projectName, teamName);
+            //    if (currColumnsAgile.columns != null)
+            //    {
+            //        foreach (GetBoardColumnResponseAgile.Value col in currColumnsAgile.columns)
+            //        {
+            //            if (col.columnType == "incoming")
+            //            {
+            //                newColID = col.id;
+            //            }
+            //            else if (col.columnType.ToLower() == "outgoing")
+            //            {
+            //                doneColID = col.id;
+            //            }
+            //        }
+            //        foreach (Agile.Columns col in agileColumns)
+            //        {
+            //            if (col.columnType.ToLower() == "incoming")
+            //            {
+            //                col.id = newColID;
+            //            }
+            //            else if (col.columnType.ToLower() == "outgoing")
+            //            {
+            //                col.id = doneColID;
+            //            }
+            //        }
+            //    }
+            //}
+            if (currColumns.columns == null /*&& currColumnsAgile.columns == null*/)
             {
                 return false;
             }
             using (var client = GetHttpClient())
             {
                 StringContent patchValue = new StringContent("");
-                if (boardType == "Backlog%20items")
-                {
-                    string stringSerialize = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-                    patchValue = new StringContent(stringSerialize, Encoding.UTF8, "application/json");
-                }
-                else if (boardType == "Stories")
-                {
-                    string stringserialize = JsonConvert.SerializeObject(agileColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-                    patchValue = new StringContent(stringserialize, Encoding.UTF8, "application/json");
-                }
+                //if (boardType == "Backlog%20items")
+                //{
+                string stringSerialize = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                patchValue = new StringContent(stringSerialize, Encoding.UTF8, "application/json");
+                //}
+                //else if (boardType == "Stories")
+                //{
+                //    string stringserialize = JsonConvert.SerializeObject(agileColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                //    patchValue = new StringContent(stringserialize, Encoding.UTF8, "application/json");
+                //}
                 // mediaType needs to be application/json-patch+json for a patch call
                 var method = new HttpMethod("PUT");
                 //PUT https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/columns?api-version=4.1
@@ -130,12 +129,12 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="teamName"></param>
         /// <returns></returns>
-        public GetBoardColumnResponse.ColumnResponse GetBoardColumns(string projectName, string teamName)
+        public GetBoardColumnResponse.ColumnResponse GetBoardColumns(string projectName, string teamName, string boardType)
         {
             GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
             using (var client = GetHttpClient())
             {
-                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Backlog%20Items?api-version=" + _configuration.VersionNumber).Result;
+                var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     columns = response.Content.ReadAsAsync<GetBoardColumnResponse.ColumnResponse>().Result;

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace VstsDemoBuilder.Models
 {
-    public class Accounts
+    public class AccountsResponse
     {
         public class Properties
         {

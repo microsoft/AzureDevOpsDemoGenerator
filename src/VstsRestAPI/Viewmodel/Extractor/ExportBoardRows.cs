@@ -12,10 +12,8 @@ namespace VstsRestAPI.Viewmodel.Extractor
 
         public class Rows
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public string BoardName { get; set; }
+            public List<Value> value { get; set; }
         }
-
-
     }
 }

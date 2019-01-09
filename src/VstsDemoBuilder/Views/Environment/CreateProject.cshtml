@@ -14,6 +14,10 @@
 
     <title>Create Project</title>
     <style type="text/css">
+        .msgColor {
+            color: red;
+            padding: 6px;
+        }
         .templateImage {
             max-width: 70px;
         }
@@ -71,6 +75,10 @@
     @if (!string.IsNullOrEmpty(Model.Message))
     {
         <input type="hidden" value="@Model.Message" id="infoMessageTxt" />
+    }
+    @if (!string.IsNullOrEmpty(Model.SelectedTemplate))
+    {
+        <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate"/>
     }
     <input type="hidden" id="hdnMessage" />
     <!--TEMPLATE GROUPING-->
@@ -145,9 +153,9 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-        @*<div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-            </div>*@
+        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+            <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+        </div>
     </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
@@ -202,7 +210,7 @@
                 <div class="form-group row" id="">
                     <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
                     <div class="col-lg-6  mb-3 mt-1">
-                        <input type="text" class="form-control" id="ddlTemplates"  disabled />
+                        <input type="text" class="form-control" id="ddlTemplates" disabled />
                         <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
 
                         </div>
