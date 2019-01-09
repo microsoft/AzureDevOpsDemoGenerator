@@ -710,7 +710,7 @@ $(function () {
         $(".selected__preview").addClass("d-none");
         $(".selected").removeClass("selected");
         $(this).addClass("selected");
-        let selectedTitle = $(this).find("h4").text();
+        let selectedTitle = $(this).find("h6").text();
         let selectedDesc = $(this).data('description');
         $(".selected__title").text(selectedTitle);
         $(".selected__desc").html(selectedDesc);
