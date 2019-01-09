@@ -13,6 +13,7 @@ namespace VstsDemoBuilder.Models
             public string image { get; set; }
             public string TemplateFolder { get; set; }
             public string Message { get; set; }
+            public List<string> PreviewImages { get; set; }
 
         }
 

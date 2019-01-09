@@ -66,6 +66,7 @@ $(document).ready(function (event) {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
         ga('send', 'event', 'Choose Template Button', 'Clicked');
+        $(".template__block")[0].click();
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -102,8 +103,8 @@ $(document).ready(function (event) {
         // related to temlate selection POPUP - modify this
         //.template will change to .template__block 
         $('#lblDefaultDescription').hide();
-        var templateFolderSelected = $(".template.selected").data('folder'); // taking template folder name - appended from JSON
-        var groputempSelected = $(".template.selected").data('template'); // taking template name - appended from JSON
+        var templateFolderSelected = $(".template__block.selected").data('folder'); // taking template folder name - appended from JSON
+        var groputempSelected = $(".template__block.selected").data('template'); // taking template name - appended from JSON
         var selectedTemplateDescription = $(".description.descSelected").data('description'); // taking template description  - appended from JSON
         var infoMsg = $(".description.descSelected").data('message'); // taking info message - appended from JSON
 
@@ -638,81 +639,11 @@ function GetRequiredExtension() {
 
 //TEMPLATE GROUP CREATION - modify this
 $(document).ready(function () {
-    createTemplates();
+    createTemplatesNew();
 
     $(document.body).on('click', '.nav-link', function () {
         grpSelected = this.text;
-        $.ajax({
-            url: "../Environment/GetGroups",
-            type: "GET",
-            success: function (groups) {
-                var grp = "";
-                var isPrivate = "";
-                if (groups.GroupwiseTemplates.length > 0) {
-                    grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
-                    grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                    for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                            var MatchedGroup = groups.GroupwiseTemplates[g];
-                            if (MatchedGroup.Template[0].Name === "Private") {
-                                $('#selecttmplate').hide();
-                                isPrivate += MatchedGroup.Template[0].Description;
-                                $('#pills-tabContent').html('').html(isPrivate);
-                            }
-                            else {
-                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                                    if (i === 0) {
-                                        var templateImg = MatchedGroup.Template[i].image;
-                                        if (templateImg === "" || templateImg === null) {
-                                            templateImg = "/Templates/TemplateImages/CodeFile.png";
-                                        }
-                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                        grp += '<div class="template-header">';
-                                        grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
-                                            grp += '<p></p>';
-                                            grp += '<p>';
-                                            for (var rx = 0; rx < MatchedGroup.Template[i].tags.length; rx++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[rx] + '</i>';
-                                            }
-                                            grp += '</p>';
-                                        }
-                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                        grp += '</div>';
-                                    }
-                                    else {
-                                        var templateImgs = MatchedGroup.Template[i].image;
-                                        if (templateImgs === "" || templateImgs === null) {
-                                            templateImgs = "/Templates/TemplateImages/CodeFile.png";
-                                        }
-                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                        grp += '<div class="template-header">';
-                                        grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
-                                            grp += '<p></p>';
-                                            grp += '<p>';
-                                            for (var x = 0; x < MatchedGroup.Template[i].tags.length; x++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[x] + '</i>';
-                                            }
-                                            grp += '</p>';
-                                        }
-                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                        grp += '</div>';
-                                    }
-                                }
-                                $('#selecttmplate').show();
-
-                                grp += '</div></div>';
-                                $('#pills-tabContent').html('').html(grp);
-                            }
-                        }
-                    }
-
-                }
-            }
-        });
+        LoadTemplates(grpSelected);
     });
 
     //Group load
@@ -736,115 +667,74 @@ $(document).ready(function () {
 
 });
 
+// template selection 
 $(function () {
+    let length = $(".template").length;
+    for (let i = 0; i < length; i++) {
+        $(".template").eq(i).css({
+            animationDelay: "0." + i + "s"
+        });
+    }
 
-    //modify this
-    // SHOW MODAL ON EVENT
     $(".template-invoke").on("click", function () {
         $(".VSTemplateSelection").fadeIn('fast');
     });
-
-    // CLOSE MODAL ON EVENT
     $(".template-close").on("click", function () {
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
     });
 
-    // TOGGLING ACTIVE CLASS TO TEMPLATE GROUP
     $(".template-group-item").on('click', function (e) {
         e.preventDefault();
         $(".template-group-item").removeClass('active');
         $(this).addClass('active');
     });
 
-    // TOGGLING SELECTED CLASS TO TEMPLATE
-
-    $(document.body).on("click", '.template', function () {
-        $(".template").removeClass("selected");
-        $(this).addClass("selected");
-        $('.description').removeClass('descSelected');
-        $(this.lastElementChild).addClass('descSelected');
+    $(document).on('mouseover', ".selected__preview img", function () {
+        let src = $(this).attr("src");
+        $(".preview__image .img__preview").attr('src', src);
+        $(".preview__image").removeClass("d-none");
+        $(".template__block").addClass('blur');
     });
 
-    // GET ID TO BE SHOWN
-    let showId = $(".template-group-item.active").attr('href');
-    $(`.template-body .templates${showId}`).show();
-});
+    $(document).on('mouseout', ".selected__preview img", function () {
+        $(".preview__image").addClass("d-none");
+        $(".template__block").removeClass('blur');
+    });
+    
 
-// create template tile and bind it to POPUP - reading from JSON
-function createTemplates() {
-    var grpSelected = "General";
-    $.ajax({
-        url: "../Environment/GetGroups",
-        type: "GET",
-        success: function (groups) {
-            var grp = "";
-            if (groups.GroupwiseTemplates.length > 0) {
-                grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
-                grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                    if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                        var MatchedGroup = groups.GroupwiseTemplates[g];
-                        for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                            if (i === 0) {
-                                var templateImg = MatchedGroup.Template[i].image;
-                                if (templateImg === "" || templateImg === null) {
-                                    templateImg = "/Templates/TemplateImages/CodeFile.png";
-                                }
-                                grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                grp += '<div class="template-header">';
-                                grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                if (MatchedGroup.Template[i].tags !== null) {
-                                    grp += '<p></p>';
-                                    grp += '<p>';
-                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>';
-                                    }
-                                    grp += '</p>';
-                                }
-                                grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxt = $('#selectedTemplateDescription').val();
-                                    if (templateTxt === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
-                            }
-                            else {
-                                var templateImgs = MatchedGroup.Template[i].image;
-                                if (templateImgs === "" || templateImgs === null) {
-                                    templateImgs = "/Templates/TemplateImages/CodeFile.png";
-                                }
-                                grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                grp += '<div class="template-header">';
-                                grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                if (MatchedGroup.Template[i].tags !== null) {
-                                    grp += '<p></p>';
-                                    grp += '<p>';
-                                    for (var m = 0; m < MatchedGroup.Template[i].tags.length; m++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[m] + '</i>';
-                                    }
-                                    grp += '</p>';
-                                }
-                                grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxtx = $('#selectedTemplateDescription').val();
-                                    if (templateTxtx === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
-                            }
-                        }
-                    }
-                }
-                grp += '</div></div>';
+    $(document).on('click', '.template__block', function () {
+        $(".selected__preview").empty();
+        $(".selected__preview").addClass("d-none");
+        $(".selected").removeClass("selected");
+        $(this).addClass("selected");
+        let selectedTitle = $(this).find("h4").text();
+        let selectedDesc = $(this).data('description');
+        $(".selected__title").text(selectedTitle);
+        $(".selected__desc").html(selectedDesc);
 
-                $('#pills-tabContent').empty().append(grp);
+        $('.description').removeClass('descSelected');
+        $(this.lastElementChild).addClass('descSelected');
+
+        let selectedImages = $(this).data('images').split(',');
+        if (selectedImages !== null && selectedImages !== "") {
+            $(".selected__preview").removeClass("d-none");
+            let imagePreviews;
+            for (image of selectedImages) {
+                const imgElement = $("<img>", {
+                    src: image,
+                    class: "template_image"
+                });
+                $(".selected__preview").append(imgElement);
             }
         }
     });
+});
+
+function createTemplatesNew() {
+    var grpSelected = "General";
+    LoadTemplates(grpSelected);
 }
+
 
 //Project name validtaion on keyup
 $("#txtProjectName").keyup(function () {
@@ -972,6 +862,88 @@ function AppendMessage() {
     }
 }
 
+function LoadTemplates(grpSelected) {
+    $.ajax({
+        url: "../Environment/GetGroups",
+        type: "GET",
+        success: function (groups) {
+            var grp = "";
+            if (groups.GroupwiseTemplates.length > 0) {
+                console.log(groups);
+                for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
+                    if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
+                        var MatchedGroup = groups.GroupwiseTemplates[g];
+                        for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                            if (i === 0) {
+                                var templateImg = MatchedGroup.Template[i].image;
+                                if (templateImg === "" || templateImg === null) {
+                                    templateImg = "/Templates/TemplateImages/CodeFile.png";
+                                }
+                                console.log(MatchedGroup.Template[i]);
+                                var imgList = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
+
+                                grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+                                grp += '<div class="d-flex align-items-center">';
+                                grp += '<div class="template__logo">';
+                                grp += '<img src="' + templateImg + '"/></div>';
+                                grp += '<div class="template__intro">';
+                                grp += '<h4>' + MatchedGroup.Template[i].Name + '</h4>';
+
+                                if (MatchedGroup.Template[i].tags !== null) {
+                                    for (var l = 0; l < MatchedGroup.Template[i].tags.length; l++) {
+                                        grp += '<span>' + MatchedGroup.Template[i].tags[l] + '</span>';
+                                    }
+                                }
+                                grp += '</div></div>';
+
+                                grp += '<p class="template__block__description description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '</div>';
+                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
+                                    var templateTxt = $('#selectedTemplateDescription').val();
+                                    if (templateTxt === "" || typeof templateTxt === "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
+                                $(".selected__title").text(MatchedGroup.Template[i].Name);
+                                $(".selected__desc").html(MatchedGroup.Template[i].Description);
+                            }
+                            else {
+                                var templateImgs = MatchedGroup.Template[i].image;
+                                if (templateImgs === "" || templateImgs === null) {
+                                    templateImgs = "/Templates/TemplateImages/CodeFile.png";
+                                }
+                                var imgLists = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
+
+                                grp += '<div class="template__block" data-images="' + imgLists + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+
+                                grp += '<div class="d-flex align-items-center">';
+                                grp += '<div class="template__logo">';
+                                grp += '<img src="' + templateImgs + '"/></div>';
+                                grp += '<div class="template__intro">';
+                                grp += '<h4>' + MatchedGroup.Template[i].Name + '</h4>';
+                                if (MatchedGroup.Template[i].tags !== null) {
+                                    for (var m = 0; m < MatchedGroup.Template[i].tags.length; m++) {
+                                        grp += '<span>' + MatchedGroup.Template[i].tags[m] + '</span>';
+                                    }
+                                }
+                                grp += '</div></div>';
+
+                                grp += '<p class="template__block__description description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '</div>';
+                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
+                                    var templateTxtx = $('#selectedTemplateDescription').val();
+                                    if (templateTxtx === "" || typeof templateTxt === "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
+                            }
+                        }
+                    }
+                }
+                $('#templates__list').empty().append(grp);
+            }
+        }
+    });
+
+}
 // if the user uploading his exported template (zip file), we will take that template name as folder name
 $('body').on('click', '#btnUpload', function () {
     var fileUpload = $("#FileUpload1").get(0);
