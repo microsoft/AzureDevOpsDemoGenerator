@@ -10,6 +10,10 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string UserStory { get; set; }
             [JsonProperty(PropertyName = "Bug")]
             public string bug { get; set; }
+            [JsonProperty(PropertyName = "Feature")]
+            public string feature { get; set; }
+            [JsonProperty(PropertyName = "Epic")]
+            public string epic { get; set; }
         }
 
         public class Value
@@ -24,7 +28,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
 
         public class ColumnResponse
         {
-            public int count { get; set; }
+            public string BoardName { get; set; }
             public List<Value> value { get; set; }
         }
     }

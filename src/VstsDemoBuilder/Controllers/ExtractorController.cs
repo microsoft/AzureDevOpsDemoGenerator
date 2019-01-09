@@ -1,23 +1,19 @@
-﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
-using Microsoft.VisualStudio.Services.OAuth;
-using Microsoft.VisualStudio.Services.WebApi;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.ExtractorModels;
 using VstsDemoBuilder.Models;
+using VstsRestAPI;
 using VstsRestAPI.Extractor;
+using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.Viewmodel.Extractor;
+using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
 
 namespace VstsDemoBuilder.Controllers
@@ -27,13 +23,15 @@ namespace VstsDemoBuilder.Controllers
     {
         private AccessDetails accessDetails = new AccessDetails();
         private EnvironmentController con = new EnvironmentController();
-        private static object objLock = new object();
+        private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
-
+        public List<string> errorMessages = new List<string>();
         private delegate string[] ProcessEnvironment(Project model);
 
         private ExtractorAnalysis analysis = new ExtractorAnalysis();
-        private string templateUsed = string.Empty;
+
+        private string projectSelectedToExtract = string.Empty;
+        private string extractedTemplatePath = string.Empty;
         public void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -64,30 +62,25 @@ namespace VstsDemoBuilder.Controllers
                 statusMessages = value;
             }
         }
-        /// <summary>
-        /// View NotFound - Using Feature flag
-        /// If the user whos doesn't have permission to access extractor page, will be redirected to not found page
-        /// </summary>
-        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult NotFound()
         {
             return View();
         }
 
-        /// <summary>
-        /// Extractor index page
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        // Extractor index page
         [AllowAnonymous]
-        public ActionResult Index(ProjectList.ProjectCount model)
+        public ActionResult Index(ProjectList.ProjectDetails model)
         {
-            string email = Session["Email"].ToString();
             string pat = "";
+            string email = "";
             if (Session["PAT"] != null)
             {
                 pat = Session["PAT"].ToString();
+            }
+            if (Session["Email"] != null)
+            {
+                email = Session["PAT"].ToString();
             }
             if (string.IsNullOrEmpty(pat))
             {
@@ -99,7 +92,7 @@ namespace VstsDemoBuilder.Controllers
                 ProfileDetails profile = con.GetProfile(accessDetails);
                 Session["User"] = profile.displayName;
                 Session["PAT"] = pat;
-                Accounts.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
+                AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
                 model.accessToken = accessDetails.access_token;
                 model.accountsForDropdown = new List<string>();
                 if (accountList.count > 0)
@@ -119,11 +112,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get the current progress of work done
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        // Get the current progress of work done
         [HttpGet]
         [AllowAnonymous]
         public ContentResult GetCurrentProgress(string id)
@@ -132,11 +121,8 @@ namespace VstsDemoBuilder.Controllers
             var currentProgress = GetStatusMessage(id).ToString();
             return Content(currentProgress);
         }
-        /// <summary>
-        /// Get status message to resplay
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+
+        // Get status message to display
         [HttpGet]
         [AllowAnonymous]
         public string GetStatusMessage(string id)
@@ -170,137 +156,64 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Project List from the selected Organization
-        /// </summary>
-        /// <param name="auth"></param>
-        /// <returns></returns>
+        // Get Project List from the selected Organization
         [AllowAnonymous]
-        public JsonResult GetprojectList(ProjectList.Authentication auth)
+        public JsonResult GetprojectList(string accname, string pat)
         {
-            ProjectList.ProjectCount load = new ProjectList.ProjectCount();
-            string accname = auth.accname;
-            string _credentials = auth.pat;
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string url = defaultHost + accname;
+            string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
+
+            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
+            Projects projects = new Projects(config);
+            ProjectsResponse.ProjectResult projectResult = projects.GetListOfProjects();
             try
             {
-                using (var client = new HttpClient())
+                if (string.IsNullOrEmpty(projectResult.errmsg))
                 {
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects?stateFilter=WellFormed&api-version=4.1").Result;
-                    if (response.IsSuccessStatusCode)
+                    if (projectResult.count == 0)
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        load = JsonConvert.DeserializeObject<ProjectList.ProjectCount>(res);
-
-                        if (load.count == 0)
-                        {
-                            load.errmsg = "No projects found!";
-                        }
+                        projectResult.errmsg = "No projects found!";
                     }
-                    else
-                    {
-                        var res = response.Content.ReadAsStringAsync().Result;
-                        load.errmsg = "Something went wrong";
-
-                    }
+                    return Json(projectResult, JsonRequestBehavior.AllowGet);
                 }
             }
             catch (Exception ex)
             {
-                load.errmsg = ex.Message.ToString();
+                projectResult.errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
             }
-            return Json(load, JsonRequestBehavior.AllowGet);
+            return Json(projectResult, JsonRequestBehavior.AllowGet);
         }
 
-        /// <summary>
-        /// Get Project Properties to knwo which process template it is following
-        /// </summary>
-        /// <param name="accname"></param>
-        /// <param name="project"></param>
-        /// <param name="_credentials"></param>
-        /// <returns></returns>
+        //Get Project Properties to knwo which process template it is following
         [AllowAnonymous]
-        public JsonResult GetProjectPropertirs(string accname, string project, string _credentials)
+        public JsonResult GetProjectProperties(string accname, string project, string _credentials)
         {
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string url = defaultHost + accname;
+            string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+
+            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, Project = project };
+
             ProjectProperties.Properties load = new ProjectProperties.Properties();
-            try
+            Projects projects = new Projects(config);
+            load = projects.GetProjectProperties();
+            if (load.count > 0)
             {
-                using (var client = new HttpClient())
+                if (load.TypeClass != null)
                 {
-                    client.BaseAddress = new Uri(url);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                    HttpResponseMessage response = client.GetAsync(url + "/_apis/projects/" + project + "/properties?api-version=4.1-preview.1").Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        load = JsonConvert.DeserializeObject<ProjectProperties.Properties>(res);
-                        GetProcessTemplate.PTemplate template = new GetProcessTemplate.PTemplate();
-
-                        string processTypeId = string.Empty;
-                        var processTypeID = load.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault();
-                        if (processTypeID != null)
-                        {
-                            processTypeId = processTypeID.value;
-                        }
-
-                        using (var client1 = new HttpClient())
-                        {
-                            client1.BaseAddress = new Uri(url);
-                            client1.DefaultRequestHeaders.Accept.Clear();
-                            client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
-                            client1.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
-                            HttpResponseMessage response1 = client1.GetAsync(url + "/_apis/work/processes/" + processTypeId + "?api-version=4.1-preview.1").Result;
-                            if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                            {
-                                string templateData = response1.Content.ReadAsStringAsync().Result;
-                                template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
-                                load.TypeClass = template.properties.Class;
-                            }
-                        }
-                        return Json(load, JsonRequestBehavior.AllowGet);
-
-                    }
-                    else
-                    {
-                        var result = response.Content.ReadAsStringAsync().Result;
-                        return Json(result, JsonRequestBehavior.AllowGet);
-                    }
+                    return Json(load, JsonRequestBehavior.AllowGet);
                 }
             }
-            catch (Exception ex)
-            {
-                return Json(ex.Message, JsonRequestBehavior.AllowGet);
-            }
+            return new JsonResult();
+
         }
 
-        /// <summary>
-        /// Inintiate the extraction process
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public bool startExtractionProcess(Project model)
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// End the extraction process
-        /// </summary>
-        /// <param name="result"></param>
+        // End the extraction process
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
             ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
             string[] strResult = processTask.EndInvoke(result);
+
             RemoveKey(strResult[0]);
             if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
             {
@@ -310,81 +223,32 @@ namespace VstsDemoBuilder.Controllers
                     //also, log message to file system
                     string logPath = Server.MapPath("~") + @"\Log";
                     string accountName = strResult[1];
-                    string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                    string fileName = string.Format("{0}_{1}.txt", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                     if (!Directory.Exists(logPath))
                     {
                         Directory.CreateDirectory(logPath);
                     }
-
                     System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
                     //Create ISSUE work item with error details in VSTSProjectgenarator account
                     string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
                     string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
                     string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                    string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
 
-                    errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
-
-                    string LogWIT = "true";//System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                    if (LogWIT == "true")
+                    string logWIT = "true"; //System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                    if (logWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "1.0", url, issueName, errorMessages, projectId);
+                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId);
                     }
                 }
             }
         }
 
-        /// <summary>
-        /// Analyze the selected project to know what all the artifacts it has
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public JsonResult AnalyzeProject(Project model)
-        {
-            templateUsed = model.ProjectName;
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = "https://" + model.accountName + ".visualstudio.com:", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName };
-            analysis.teamCount = GetTeamsCount(model.ProjectName, model.accountName, model.accessToken);
-            analysis.IterationCount = GetIterationsCount(config);
-            GetWorkItemDetails(config);
-            GetIterationsCount(config);
-            GetBuildDefinitoinCount(config);
-            GetReleaseDefinitoinCount(config);
-            return Json(analysis, JsonRequestBehavior.AllowGet);
-        }
-
-        /// <summary>
-        /// Initial the extraction process
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [AllowAnonymous]
-        public bool StartEnvironmentSetupProcess(Project model)
-        {
-            Location.IPHostGenerator IpCon = new Location.IPHostGenerator();
-            string IP = IpCon.GetVisitorDetails();
-            string Region = IpCon.GetLocation(IP);
-            model.Region = Region;
-            AddMessage(model.id, string.Empty);
-            AddMessage(model.id.ErrorId(), string.Empty);
-            System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
-
-            ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
-            processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
-            return true;
-        }
-
-        /// <summary>
-        /// Extract the project artifacts
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public string[] GenerateTemplateArifacts(Project model)
+        //Analyze the selected project to know what all the artifacts it has
+        public static ProjectConfigurations ProjectConfiguration(Project model)
         {
             string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
             string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
@@ -396,145 +260,53 @@ namespace VstsDemoBuilder.Controllers
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+            ProjectConfigurations projectConfig = new ProjectConfigurations();
 
-            VstsRestAPI.Configuration _agentQueueConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            VstsRestAPI.Configuration _workItemConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            VstsRestAPI.Configuration _buildDefinitionConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
-            VstsRestAPI.Configuration _releaseDefinitionConfig = new VstsRestAPI.Configuration() { UriString = releaseHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
-            VstsRestAPI.Configuration _repoConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
-            VstsRestAPI.Configuration _boardConfig = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
-            VstsRestAPI.Configuration config = new VstsRestAPI.Configuration() { UriString = defaultHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            VstsRestAPI.Configuration _getReleaseConfig = new VstsRestAPI.Configuration() { UriString = releaseHost + model.accountName, PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+            projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.WorkItemConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.BuildDefinitionConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
+            projectConfig.ReleaseDefinitionConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
+            projectConfig.RepoConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
+            projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
+            projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
+            projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
 
-
-            bool isTeam = GetTeamList(_boardConfig);
-            if (isTeam)
-            {
-                AddMessage(model.id, "Teams Definition");
-            }
-
-            bool isIteration = GetIterations(_boardConfig);
-            if (isIteration)
-            {
-                AddMessage(model.id, "Iterations Definition");
-            }
-            string projectSetting = "";
-            projectSetting = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectSettings.json");
-            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectSettings.json", projectSetting);
-
-            string projectTemplate = "";
-            projectTemplate = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ProjectTemplate.json");
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\ProjectTemplate.json", projectTemplate);
-
-            string teamArea = "";
-            teamArea = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\TeamArea.json");
-            System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + model.ProjectName + "\\TeamArea.json", teamArea);
-            AddMessage(model.id, "Team Areas Definition");
-
-            GetWorkItems(_workItemConfig);
-            AddMessage(model.id, "Work Items Definition");
-
-            GetRepositoryList(_repoConfig);
-            AddMessage(model.id, "Repository and Service Endpoint Definition");
-
-            //int count = GetBuildDefinitions(_buildDefinitionConfig, _repoConfig);
-            //if (count >= 1)
-            //{
-            //    AddMessage(model.id, "Build Definition");
-            //}
-
-            //System.Threading.Thread.Sleep(2000);
-
-            ////int relCount = GetReleaseDefinitions(_releaseDefinitionConfig);
-            //int relCount = GeneralizingGetReleaseDefinitions(_getReleaseConfig, _agentQueueConfig);
-            //if (relCount >= 1)
-            //{
-            //    AddMessage(model.id, "Release Definition");
-            //    System.Threading.Thread.Sleep(2000);
-            //}
-
-            ////Export Board Rows
-            ExportboardRows(_boardConfig);
-
-            //Export Card style
-            ExportCardStyle(_boardConfig, model.ProcessTemplate);
-
-            //Export Board column json for Scrum and Agile            
-            System.Threading.Thread.Sleep(2000);
-            if (model.ProcessTemplate == "Scrum")
-            {
-                GetBoardColumnsScrum(_boardConfig);
-            }
-            else if (model.ProcessTemplate == "Agile")
-            {
-                GetBoardColumnsAgile(_boardConfig);
-            }
-
-            //Export Card style json            
-            if (model.ProcessTemplate == "Scrum")
-            {
-                ExportCardFieldsScrum(_boardConfig);
-            }
-            else if (model.ProcessTemplate == "Agile")
-            {
-                ExportCardFieldsAgile(_boardConfig);
-            }
-
-            GetTeamSetting(_boardConfig);
-            string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
-
-            string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            if (System.IO.File.Exists(zipPath))
-            {
-                System.IO.File.Delete(zipPath);
-            }
-            zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            ZipFile.CreateFromDirectory(startPath, zipPath);
-            Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
-            StatusMessages[model.id] = "100";
-            return new string[] { model.id, "" };
+            return projectConfig;
         }
 
-        /// <summary>
-        /// Get Teams Count
-        /// </summary>
-        /// <param name="projectName"></param>
-        /// <param name="accountName"></param>
-        /// <param name="pat"></param>
-        /// <returns></returns>
+        #region GetCounts
+        // Start Analysis process
         [AllowAnonymous]
-        public int GetTeamsCount(string projectName, string accountName, string pat)
+        public JsonResult AnalyzeProject(Project model)
         {
-            Teams.TeamList teamObj = new Teams.TeamList();
-            SrcTeamsList _team = new SrcTeamsList();
-
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string url = defaultHost + accountName;
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(url);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", pat);
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams?api-version=2.2").Result;
-                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    string res = response.Content.ReadAsStringAsync().Result;
-                    teamObj = JsonConvert.DeserializeObject<Teams.TeamList>(res);
-                    return teamObj.count;
-                }
-            }
-            return 0;
+            ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
+            projectSelectedToExtract = model.ProjectName;
+            analysis.teamCount = GetTeamsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
+            analysis.IterationCount = GetIterationsCount(ProjectConfigurationDetails.AppConfig.BoardConfig);
+            analysis.WorkItemCounts = GetWorkItemsCount(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
+            GetBuildDefinitionCount(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig);
+            GetReleaseDefinitionCount(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig);
+            analysis.ErrorMessages = errorMessages;
+            return Json(analysis, JsonRequestBehavior.AllowGet);
         }
-        /// <summary>
-        /// Get Iteration Count
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GetIterationsCount(VstsRestAPI.Configuration con)
+
+        // Get Teams Count
+        [AllowAnonymous]
+        public int GetTeamsCount(Configuration con)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+            TeamList teamList = nodes.ExportTeamList();
+            int count = 0;
+            if (teamList.value != null)
+            {
+                count = teamList.value.Count;
+            }
+            return count;
+        }
+        // Get Iteration Count
+        public int GetIterationsCount(Configuration con)
+        {
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
             iterations = nodes.GetiterationCount();
             if (iterations.count > 0)
@@ -545,62 +317,51 @@ namespace VstsDemoBuilder.Controllers
             {
                 if (!(string.IsNullOrEmpty(nodes.LastFailureMessage)))
                 {
-                    return 0;
+                    errorMessages.Add("Error while fetching iteration(s) count: " + nodes.LastFailureMessage);
                 }
                 return 0;
             }
 
         }
 
-        /// <summary>
-        /// Get Work Items Details
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetWorkItemDetails(VstsRestAPI.Configuration con)
+        // Get Work Items Details
+        public Dictionary<string, int> GetWorkItemsCount(Configuration con)
         {
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
-            WorkItemFetchResponse.WorkItems fetchedEpics = itemsCount.GetWorkItemsfromSource("Epic");
-            analysis.fetchedEpics = fetchedEpics.count;
-            WorkItemFetchResponse.WorkItems fetchedFeatures = itemsCount.GetWorkItemsfromSource("Feature");
-            analysis.fetchedFeatures = fetchedFeatures.count;
+            Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
+            if (workItemtypes.Length > 0)
+            {
+                foreach (var workItem in workItemtypes)
+                {
+                    WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
+                    if (WITCount.count > 0)
+                    {
+                        fetchedWorkItemsCount.Add(workItem, WITCount.count);
+                    }
+                    else if (!string.IsNullOrEmpty(itemsCount.LastFailureMessage))
+                    {
+                        errorMessages.Add("Error while querying work items: " + itemsCount.LastFailureMessage);
+                    }
+                }
+            }
 
-            WorkItemFetchResponse.WorkItems fetchedPBIs = itemsCount.GetWorkItemsfromSource("Product Backlog Item");
-            analysis.fetchedPBIs = fetchedPBIs.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTasks = itemsCount.GetWorkItemsfromSource("Task");
-            analysis.fetchedTasks = fetchedTasks.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTestCase = itemsCount.GetWorkItemsfromSource("Test Case");
-            analysis.fetchedTestCase = fetchedTestCase.count;
-
-            WorkItemFetchResponse.WorkItems fetchedBugs = itemsCount.GetWorkItemsfromSource("Bug");
-            analysis.fetchedBugs = fetchedBugs.count;
-
-            WorkItemFetchResponse.WorkItems fetchedUserStories = itemsCount.GetWorkItemsfromSource("User Story");
-            analysis.fetchedUserStories = fetchedUserStories.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTestSuits = itemsCount.GetWorkItemsfromSource("Test Suite");
-            analysis.fetchedTestSuits = fetchedTestSuits.count;
-
-            WorkItemFetchResponse.WorkItems fetchedTestPlan = itemsCount.GetWorkItemsfromSource("Test Plan");
-            analysis.fetchedTestPlan = fetchedTestPlan.count;
-
-            WorkItemFetchResponse.WorkItems fetchedFeedbackRequest = itemsCount.GetWorkItemsfromSource("Feedback Request");
-            analysis.fetchedFeedbackRequest = fetchedFeedbackRequest.count;
+            return fetchedWorkItemsCount;
         }
 
-        /// <summary>
-        /// Get Build Definitions count
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetBuildDefinitoinCount(VstsRestAPI.Configuration con)
+        //Get Build Definitions count
+        public void GetBuildDefinitionCount(Configuration con)
         {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
             GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
             buildDef = buildandReleaseDefs.GetBuildDefCount();
             if (buildDef.count > 0)
             {
                 analysis.BuildDefCount = buildDef.count;
+            }
+            else if (!string.IsNullOrEmpty(buildandReleaseDefs.LastFailureMessage))
+            {
+                errorMessages.Add("Error while fetching build definition count: " + buildandReleaseDefs.LastFailureMessage);
             }
             else
             {
@@ -608,86 +369,281 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Release Definitions count
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetReleaseDefinitoinCount(VstsRestAPI.Configuration con)
+        // Get Release Definitions count
+        public void GetReleaseDefinitionCount(Configuration con)
         {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
             GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
             releaseDef = buildandReleaseDefs.GetReleaseDefCount();
             if (releaseDef.count > 0)
             {
                 analysis.ReleaseDefCount = releaseDef.count;
             }
+            else if (!string.IsNullOrEmpty(buildandReleaseDefs.LastFailureMessage))
+            {
+                errorMessages.Add("Error while fetching release definition count: " + buildandReleaseDefs.LastFailureMessage);
+            }
             else
             {
                 analysis.ReleaseDefCount = 0;
             }
         }
+        #endregion
 
-        /// <summary>
-        /// Check for Installed extensions in the selected organization
-        /// </summary>
-        /// <param name="AccountName"></param>
-        /// <param name="PAT"></param>
-        /// <returns></returns>
+        #region Extract Template
+        //Initiate the extraction process
+        [HttpPost]
         [AllowAnonymous]
-        public JsonResult CheckForInstalledExtensions(string AccountName, string PAT)
+        public bool StartEnvironmentSetupProcess(Project model)
         {
-            try
-            {
-                List<ProjectList.AccountExtension> exa = new List<ProjectList.AccountExtension>();
-                var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", AccountName)), new VssOAuthAccessTokenCredential(PAT));
-                var client = connection.GetClient<ExtensionManagementHttpClient>();
-                var installed = client.GetInstalledExtensionsAsync().Result;
-                var extensions = installed.Where(x => x.Flags == 0).ToList();
-
-                foreach (var extension in extensions)
-                {
-                    ProjectList.AccountExtension accountExtension = new ProjectList.AccountExtension();
-
-                    accountExtension.ExtensionId = extension.ExtensionName;
-                    accountExtension.PublisherId = extension.PublisherName;
-                    accountExtension.name = extension.ExtensionDisplayName;
-                    exa.Add(accountExtension);
-                }
-
-                // System.IO.File.WriteAllText(Server.MapPath("\\Templates\\Extension.json"), JsonConvert.SerializeObject(extensions, Formatting.Indented));
-                return Json(exa, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception)
-            {
-            }
-            return null;
-
+            System.Web.HttpContext.Current.Session["Project"] = model.ProjectName;
+            AddMessage(model.id, string.Empty);
+            AddMessage(model.id.ErrorId(), string.Empty);
+            ProcessEnvironment processTask = new ProcessEnvironment(GenerateTemplateArifacts);
+            processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+            return true;
         }
 
-        /// <summary>
-        /// Get Team List to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public bool GetTeamList(VstsRestAPI.Configuration con)
+        //Extract the project artifacts
+        [AllowAnonymous]
+        public string[] GenerateTemplateArifacts(Project model)
         {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            SrcTeamsList _team = new SrcTeamsList();
+            extractedTemplatePath = Server.MapPath("~") + @"ExtractedTemplate\";
 
-            _team = nodes.GetTeamList();
+            ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
+            AddMessage(model.id, "");
+            ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate);
+
+            if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
+            {
+                AddMessage(model.id, "Iterations Definition");
+            }
+            string extractedFolderName = extractedTemplatePath + model.ProjectName;
+            string filePathToRead = Server.MapPath("~") + @"\\PreSetting";
+
+            string projectSetting = "";
+            projectSetting = filePathToRead + "\\ProjectSettings.json";
+            projectSetting = System.IO.File.ReadAllText(projectSetting);
+            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
+            System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
+
+            string Extensions = "";
+            Extensions = filePathToRead + "\\DemoExtensions.json";
+            Extensions = System.IO.File.ReadAllText(Extensions);
+            System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
+
+            string projectTemplate = "";
+            projectTemplate = filePathToRead + "\\ProjectTemplate.json";
+            projectTemplate = System.IO.File.ReadAllText(projectTemplate);
+            System.IO.File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
+
+            string teamArea = "";
+            teamArea = filePathToRead + "\\TeamArea.json";
+            teamArea = System.IO.File.ReadAllText(teamArea);
+            System.IO.File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
+            AddMessage(model.id, "Team Areas Definition");
+
+            ExportWorkItems(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
+            AddMessage(model.id, "Work Items Definition");
+
+            ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
+            AddMessage(model.id, "Repository and Service Endpoint Definition");
+
+            //int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            //if (count >= 1)
+            //{
+            //    AddMessage(model.id, "Build Definition");
+            //}
+
+            //int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            //if (relCount >= 1)
+            //{
+            //    AddMessage(model.id, "Release Definition");
+            //}
+
+            //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
+
+            //string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
+            //if (System.IO.File.Exists(zipPath))
+            //{
+            //    System.IO.File.Delete(zipPath);
+            //}
+            //zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
+            //ZipFile.CreateFromDirectory(startPath, zipPath);
+            //Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
+            StatusMessages[model.id] = "100";
+            return new string[] { model.id, "" };
+        }
+        // Get Team List to write into file
+        public bool ExportTeams(Configuration con, string processTemplate)
+        {
+            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+            TeamList _team = new TeamList();
+
+            _team = nodes.ExportTeamList();
             if (_team.value != null)
             {
-                string fetchedJson = JsonConvert.SerializeObject(_team, Formatting.Indented);
+                AddMessage(con.Id, "Teams Definition");
+
+                string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
                 if (fetchedJson != "")
                 {
-                    fetchedJson = fetchedJson.Remove(0, 14);
-                    fetchedJson = fetchedJson.Remove(fetchedJson.Length - 1);
-                    if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
+                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Teams"))
                     {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project);
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Teams");
+                    }
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
+
+                    List<string> boardTypes = new List<string>();
+                    boardTypes.Add("Epics"); boardTypes.Add("Features");
+
+                    if (processTemplate.ToLower() == "agile")
+                    { boardTypes.Add("Stories"); }
+                    else { boardTypes.Add("Backlog Items"); }
+
+                    foreach (var team in _team.value)
+                    {
+                        List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
+                        List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
+                        List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
+
+                        ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
+
+                        List<JObject> jObjCardFieldList = new List<JObject>();
+                        List<JObject> jObjcardStyleList = new List<JObject>();
+                        string teamFolderPath = extractedTemplatePath + con.Project + "\\Teams\\" + team.name;
+                        if (!Directory.Exists(teamFolderPath))
+                        {
+                            Directory.CreateDirectory(teamFolderPath);
+                        }
+                        //Export Board Colums for each team
+                        con.Team = team.name;
+
+                        VstsRestAPI.Extractor.ClassificationNodes teamNodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                        foreach (var boardType in boardTypes)
+                        {
+                            var response = teamNodes.ExportBoardColums(boardType);
+                            if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                            {
+                                if (processTemplate.ToLower() == "scrum")
+                                {
+                                    string res = response.Content.ReadAsStringAsync().Result;
+                                    BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
+                                    scrumColumns.BoardName = boardType;
+                                    columnResponsesScrum.Add(scrumColumns);
+                                }
+                                else if (processTemplate.ToLower() == "agile")
+                                {
+                                    string res = response.Content.ReadAsStringAsync().Result;
+                                    BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
+                                    agileColumns.BoardName = boardType;
+                                    columnResponsesAgile.Add(agileColumns);
+                                }
+                                AddMessage(con.Id, "Board Columns Definition");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                var errorMessage = response.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                teamNodes.LastFailureMessage = error;
+                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Columns: " + teamNodes.LastFailureMessage);
+                            }
+
+                            //Export board rows for each team
+                            ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
+                            if (rows.value != null && rows.value.Count > 0)
+                            {
+                                rows.BoardName = boardType;
+                                boardRows.Add(rows);
+                                AddMessage(con.Id, "Board Rows Definition");
+                                Thread.Sleep(2000);
+                            }
+                            else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
+                            {
+                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
+                            }
+
+
+                            //Export Card Fields for each team
+                            var cardFieldResponse = teamNodes.ExportCardFields(boardType);
+                            if (cardFieldResponse.IsSuccessStatusCode && cardFieldResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                            {
+                                string res = cardFieldResponse.Content.ReadAsStringAsync().Result;
+                                JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                                jObj["BoardName"] = boardType;
+                                jObjCardFieldList.Add(jObj);
+                                AddMessage(con.Id, "Card fields Definition");
+
+                            }
+                            else
+                            {
+                                var errorMessage = cardFieldResponse.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                teamNodes.LastFailureMessage = error;
+                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
+                            }
+
+                            //// Export card styles for each team
+                            var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
+                            if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                            {
+                                string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
+                                JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                                jObj["BoardName"] = boardType;
+                                var style = jObj;
+                                style["url"] = "";
+                                style["_links"] = "{}";
+                                jObjcardStyleList.Add(jObj);
+                                AddMessage(con.Id, "Card style Definition");
+
+                            }
+                            else
+                            {
+                                var errorMessage = cardStyleResponse.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                teamNodes.LastFailureMessage = error;
+                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
+                            }
+                        }
+                        //Export Team Setting for each team
+                        ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                        if (teamSetting.backlogVisibilities != null)
+                        {
+                            listTeamSetting = teamSetting;
+                            AddMessage(con.Id, "Team Settings Definition");
+                        }
+                        else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
+                        {
+                            AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
+                        }
+
+                        if (columnResponsesAgile.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
+                        if (columnResponsesScrum.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
+                        if (boardRows.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
+                        }
+                        if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                        }
+                        if (jObjCardFieldList.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                        }
+                        if (jObjcardStyleList.Count > 0)
+                        {
+                            System.IO.File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                        }
                     }
 
-                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\Teams.json", fetchedJson);
                     return true;
                 }
                 else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
@@ -708,34 +664,28 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        /// <summary>
-        /// Get Iteration List to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public bool GetIterations(VstsRestAPI.Configuration con)
+        //Export Iterations
+        public bool ExportIterations(Configuration con)
         {
             try
             {
-                GetClassificationNodes nodes = new GetClassificationNodes(con);
-                ItearationList.Iterations viewModel = new ItearationList.Iterations();
-                viewModel = nodes.GetIterations();
+                VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                //ExportIterations.Iterations viewModel = new ExportIterations.Iterations();
+                ExportedIterations.Iterations viewModel = nodes.ExportIterationsToSave();
                 string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
                 if (fetchedJson != "")
                 {
-                    if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
+                    if (!Directory.Exists(extractedTemplatePath + con.Project))
                     {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project);
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
                     }
-
-                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\Iterations.json", fetchedJson);
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Iterations.json", fetchedJson);
                     return true;
                 }
                 else
                 {
                     string error = nodes.LastFailureMessage;
                     AddMessage(con.Id.ErrorId(), error);
-
                     return false;
                 }
             }
@@ -745,155 +695,92 @@ namespace VstsDemoBuilder.Controllers
             return false;
         }
 
-        /// <summary>
-        /// Get Work items to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetWorkItems(VstsRestAPI.Configuration con)
+        // Get Work items to write into file
+        public void ExportWorkItems(Configuration con)
         {
-            if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project))
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            if (!Directory.Exists(extractedTemplatePath + con.Project))
             {
-                Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project);
+                Directory.CreateDirectory(extractedTemplatePath + con.Project);
             }
 
-            GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
-            WorkItemFetchResponse.WorkItems fetchedEpics = itemsCount.GetWorkItemsfromSource("Epic");
-            string epicJson = JsonConvert.SerializeObject(fetchedEpics, Formatting.Indented);
-            if (epicJson != null || epicJson != "")
+            if (workItemtypes.Length > 0)
             {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\EpicfromTemplate.json", epicJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-
-            WorkItemFetchResponse.WorkItems fetchedFeatures = itemsCount.GetWorkItemsfromSource("Feature");
-            string featureJson = JsonConvert.SerializeObject(fetchedFeatures, Formatting.Indented);
-            if (featureJson != null || featureJson != "")
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\FeaturefromTemplate.json", featureJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-
-            WorkItemFetchResponse.WorkItems fetchedPBIs = itemsCount.GetWorkItemsfromSource("Product Backlog Item");
-            string pbiJson = JsonConvert.SerializeObject(fetchedPBIs, Formatting.Indented);
-            if (pbiJson != null || pbiJson != "")
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\PBIfromTemplate.json", pbiJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-
-            WorkItemFetchResponse.WorkItems fetchedTasks = itemsCount.GetWorkItemsfromSource("Task");
-            string taskJson = JsonConvert.SerializeObject(fetchedTasks, Formatting.Indented);
-            if (taskJson != null || taskJson != "")
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\TaskfromTemplate.json", taskJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-
-            WorkItemFetchResponse.WorkItems fetchedTestCase = itemsCount.GetWorkItemsfromSource("Test Case");
-            string testCasesJson = JsonConvert.SerializeObject(fetchedTestCase, Formatting.Indented);
-            if (testCasesJson != null || testCasesJson != "")
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\TestCasefromTemplate.json", testCasesJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-
-            WorkItemFetchResponse.WorkItems fetchedBugs = itemsCount.GetWorkItemsfromSource("Bug");
-            string bugJson = JsonConvert.SerializeObject(fetchedBugs, Formatting.Indented);
-            if (bugJson != null || bugJson != "")
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BugfromTemplate.json", bugJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-
-            WorkItemFetchResponse.WorkItems fetchedUserStories = itemsCount.GetWorkItemsfromSource("User Story");
-            string userStoryJson = JsonConvert.SerializeObject(fetchedUserStories, Formatting.Indented);
-            if (userStoryJson != null || userStoryJson != "")
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UserStoriesfromTemplate.json", userStoryJson);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), itemsCount.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Get Repository list to create Service end point json with respect to the repositiory
-        /// and also create the import source code json
-        /// It works only for the user who is having access to both Source and Target repositories in the organization with the same UserID
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetRepositoryList(VstsRestAPI.Configuration con)
-        {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
-            RepositoryList.Repository repos = buildandReleaseDefs.GetRepoList();
-            if (repos.count > 0)
-            {
-                foreach (var repo in repos.value)
+                foreach (var WIT in workItemtypes)
                 {
-                    string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-                    string host = defaultHost + con.AccountName + "/" + con.Project;
-                    string sourceCodeJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ImportSourceCode.json");
-                    sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                    string endPointJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\ServiceEndPoint.json");
-                    endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                    if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ImportSourceCode"))
+                    GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(con);
+                    WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
+                    string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
+                    if (fetchedWorkItem.count > 0)
                     {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ImportSourceCode");
-                        System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                        string item = WIT;
+                        item = item.Replace(" ", "");
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\WorkItems"))
+                        {
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\WorkItems");
+                        }
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\WorkItems\\" + item + ".json", workItemJson);
                     }
-                    else
+                    else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
                     {
-                        System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                        AddMessage(con.Id.ErrorId(), WorkitemsCount.LastFailureMessage);
                     }
-                    if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints"))
-                    {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints");
-                        System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
-                    }
-                    else
-                    {
-                        System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
-                    }
-
                 }
             }
         }
 
-        /// <summary>
-        /// Get the Build definitions to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GetBuildDefinitions(VstsRestAPI.Configuration con, VstsRestAPI.Configuration repoCon)
+        // Get Repository list to create Service end point json with respect to the repositiory
+        // and also create the import source code json
+        // It works only for the user who is having access to both Source and Target repositories in the organization with the same UserID
+        public void ExportRepositoryList(Configuration con)
         {
-            GetBuildandReleaseDefs buildandReleaseDefs = new GetBuildandReleaseDefs(con);
+            BuildandReleaseDefs repolist = new BuildandReleaseDefs(con);
+            RepositoryList.Repository repos = repolist.GetRepoList();
+            if (repos.count > 0)
+            {
+                foreach (var repo in repos.value)
+                {
+                    string preSettingPath = Server.MapPath("~") + @"PreSetting";
+                    string templateFolderPath = extractedTemplatePath + con.Project;
+                    string host = con.UriString + con.Project;
+                    string sourceCodeJson = System.IO.File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
+                    sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
+                    string endPointJson = System.IO.File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
+                    endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
+                    if (!Directory.Exists(templateFolderPath + "\\ImportSourceCode"))
+                    {
+                        Directory.CreateDirectory(templateFolderPath + "\\ImportSourceCode");
+                        System.IO.File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                    }
+                    else
+                    {
+                        System.IO.File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                    }
+                    if (!Directory.Exists(templateFolderPath + "\\ServiceEndpoints"))
+                    {
+                        Directory.CreateDirectory(templateFolderPath + "\\ServiceEndpoints");
+                        System.IO.File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                    }
+                    else
+                    {
+                        System.IO.File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                    }
+                }
+            }
+        }
+
+        // Get the Build definitions to write into file
+        public int GetBuildDefinitions(Configuration con, Configuration repoCon)
+        {
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
             List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
-            GetBuildandReleaseDefs repoDefs = new GetBuildandReleaseDefs(repoCon);
+            BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(repoCon);
             RepositoryList.Repository repo = repoDefs.GetRepoList();
             if (builds.Count > 0)
             {
                 int count = 1;
                 //creating ImportCode Json file
-                string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
+                string templatePath = extractedTemplatePath + con.Project;
                 foreach (JObject def in builds)
                 {
                     string repoID = "";
@@ -905,7 +792,6 @@ namespace VstsDemoBuilder.Controllers
                             repoID = re.id;
                         }
                     }
-                    def["authoredBy"] = "{}";
                     def["authoredBy"] = "{}";
                     def["project"] = "{}";
                     def["url"] = "";
@@ -928,10 +814,10 @@ namespace VstsDemoBuilder.Controllers
                             string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                             endPointString = endPointString.Replace("$GitHubURL$", url);
                             Guid g = Guid.NewGuid();
-                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints"))
+                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
                             {
-                                Directory.CreateDirectory(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints");
-                                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                             }
                         }
                     }
@@ -941,21 +827,26 @@ namespace VstsDemoBuilder.Controllers
                         def["repository"]["url"] = "";
                     }
                     var input = def["processParameters"]["inputs"];
-                    if (input.HasValues)
+                    if (input != null)
                     {
-                        foreach (var i in input)
+                        if (input.HasValues)
                         {
-                            i["defaultValue"] = "";
+                            foreach (var i in input)
+                            {
+                                i["defaultValue"] = "";
 
+                            }
                         }
                     }
-
                     var build = def["build"];
-                    if (build.HasValues)
+                    if (build != null)
                     {
-                        foreach (var b in build)
+                        if (build.HasValues)
                         {
-                            b["inputs"]["serverEndpoint"] = "";
+                            foreach (var b in build)
+                            {
+                                b["inputs"]["serverEndpoint"] = "";
+                            }
                         }
                     }
 
@@ -975,113 +866,17 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
-        /// <summary>
-        /// Get the release definition to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GetReleaseDefinitions(VstsRestAPI.Configuration con)
-        {
-            GetBuildandReleaseDefs releaseDefs = new GetBuildandReleaseDefs(con);
-            List<JObject> releases = releaseDefs.GetReleaseDefs();
-            Dictionary<string, int> queue = releaseDefs.GetQueues();
-            string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
-            if (releases.Count > 0)
-            {
-                int count = 1;
-                foreach (JObject rel in releases)
-                {
-                    ReleaseDefResponse.Response responseObj = new ReleaseDefResponse.Response();
-                    responseObj = JsonConvert.DeserializeObject<ReleaseDefResponse.Response>(rel.ToString());
-                    foreach (var ownerObj in responseObj.environments)
-                    {
-                        ownerObj.owner.id = "$OwnerId$";
-                        ownerObj.owner.displayName = "$OwnerDisplayName$";
-                        ownerObj.owner.uniqueName = "$OwnerUniqueName$";
-                        if (ownerObj.deployPhases.Count > 0)
-                        {
-                            foreach (var deployPhase in ownerObj.deployPhases)
-                            {
-                                string queueName = "";
-                                if (queue != null)
-                                {
-                                    if (queue.Count > 0)
-                                    {
-                                        var agenetName = queue.Where(x => x.Value.ToString() == deployPhase.deploymentInput.queueId).FirstOrDefault();
-                                        if (agenetName.Key != null)
-                                        {
-                                            queueName = agenetName.Key.ToString();
-                                        }
-                                        else
-                                        {
-                                            queueName = "Hosted VS2017";
-                                        }
-                                    }
-                                }
-                                if (queueName != "")
-                                {
-                                    deployPhase.deploymentInput.queueId = "$" + queueName + "$";
-                                }
-                                else
-                                {
-                                    deployPhase.deploymentInput.queueId = "";
-                                }
-                                if (deployPhase.workflowTasks.Count > 0)
-                                {
-                                    foreach (var workFlow in deployPhase.workflowTasks)
-                                    {
-                                        workFlow.inputs.ConnectedServiceName = "";
-                                        workFlow.inputs.ConnectedServiceNameARM = "";
-                                        workFlow.inputs.deploymentGroupEndpoint = "";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    if (responseObj.artifacts.Count > 0)
-                    {
-                        foreach (var artifact in responseObj.artifacts)
-                        {
-                            string buildName = artifact.definitionReference.definition.name;
-
-                            artifact.sourceId = "$ProjectId$:" + "$" + buildName + "-id$";
-                            artifact.definitionReference.definition.id = "$" + buildName + "-id$";
-
-                            artifact.definitionReference.project.id = "$ProjectId$";
-                            artifact.definitionReference.project.name = "$ProjectName$";
-                        }
-                        if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
-                        {
-                            Directory.CreateDirectory(templatePath + "\\ReleaseDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + count + ".json", JsonConvert.SerializeObject(responseObj, Formatting.Indented));
-                        }
-                        else
-                        {
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + count + ".json", JsonConvert.SerializeObject(responseObj, Formatting.Indented));
-                        }
-                    }
-                    count++;
-                }
-                return count;
-            }
-            return 1;
-        }
-
-        /// <summary>
-        /// Generalizing the release definition method to make it work for All kind of Release definition
-        /// </summary>
-        /// <param name="con"></param>
-        /// <returns></returns>
-        public int GeneralizingGetReleaseDefinitions(VstsRestAPI.Configuration con, VstsRestAPI.Configuration _agentQueue)
+        // Generalizing the release definition method to make it work for All kind of Release definition
+        public int GeneralizingGetReleaseDefinitions(Configuration con, Configuration _agentQueue)
         {
             try
             {
-                GetBuildandReleaseDefs releaseDefs = new GetBuildandReleaseDefs(con);
+                BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(con);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
-                GetBuildandReleaseDefs agent = new GetBuildandReleaseDefs(_agentQueue);
+                BuildandReleaseDefs agent = new BuildandReleaseDefs(_agentQueue);
 
                 Dictionary<string, int> queue = agent.GetQueues();
-                string templatePath = Server.MapPath("~") + @"ExtractedTemplate\" + con.Project;
+                string templatePath = extractedTemplatePath + con.Project;
                 int releasecount = 1;
                 if (releases.Count > 0)
                 {
@@ -1194,176 +989,189 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
-        /// <summary>
-        /// Get Agile project Board column details
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetBoardColumnsAgile(VstsRestAPI.Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            BoardColumnResponseAgile.ColumnResponse responseAgile = new BoardColumnResponseAgile.ColumnResponse();
-            responseAgile = nodes.ExportBoardColumnsAgile();
-            if (responseAgile.count > 0)
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseAgile.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                AddMessage(con.Id, "Board Columns Definition");
-                Thread.Sleep(2000);
-            }
-            else
-            {
-                if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-                {
-                    AddMessage(con.Id.ErrorId(), "Error While Exporting board column : " + nodes.LastFailureMessage);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Get Scrum project board column details
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetBoardColumnsScrum(VstsRestAPI.Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            BoardColumnResponseScrum.ColumnResponse responseScrum = new BoardColumnResponseScrum.ColumnResponse();
-            responseScrum = nodes.ExportBoardColumnsScrum();
-            if (responseScrum != null)
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardColumns.json", JsonConvert.SerializeObject(responseScrum.value, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                AddMessage(con.Id, "Board Columns Definition");
-                Thread.Sleep(2000);
-            }
-            if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-            {
-                AddMessage(con.Id.ErrorId(), "Error While Exporting board column : " + nodes.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Get Board Row details to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        public void ExportboardRows(VstsRestAPI.Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            ExportBoardRows.Rows rows = nodes.ExportboardRows();
-            if (rows.count > 0)
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\BoardRowsFromTemplate.json", JsonConvert.SerializeObject(rows.value, Formatting.Indented));
-                AddMessage(con.Id, "Board Rows Definition");
-                Thread.Sleep(2000);
-            }
-            else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-            {
-                AddMessage(con.Id.ErrorId(), "Error While Exporting board rows : " + nodes.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Get Card style detials to write into file
-        /// </summary>
-        /// <param name="con"></param>
-        /// <param name="processType"></param>
-        public void ExportCardStyle(VstsRestAPI.Configuration con, string processType)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            CardStyle.Style style = new CardStyle.Style();
-            string boardType = string.Empty;
-            if (processType == "Scrum")
-            {
-                boardType = "Backlog%20Items";
-            }
-            else if (processType == "Agile")
-            {
-                boardType = "Stories";
-            }
-            style = nodes.GetCardStyle(boardType);
-            if (style.rules != null)
-            {
-                if (style.rules.fill != null)
-                {
-                    System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardStyles.json", JsonConvert.SerializeObject(style, Formatting.Indented));
-                    AddMessage(con.Id, "Card Style Rules Definition");
-                }
-
-                Thread.Sleep(2000);
-            }
-            else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-            {
-                AddMessage(con.Id.ErrorId(), "Error While Exporting Card Styles : " + nodes.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Get Card fields details to Scrum project
-        /// </summary>
-        /// <param name="con"></param>
-        public void ExportCardFieldsScrum(VstsRestAPI.Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            CardFiledsScrum.CardField fields = nodes.GetCardFieldsScrum();
-            if (fields.cards != null)
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(fields, Formatting.Indented));
-                AddMessage(con.Id, "Card Style Rules Definition");
-                Thread.Sleep(2000);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), "Error While Exporting Card fields : " + nodes.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Get Card field details to Agile project
-        /// </summary>
-        /// <param name="con"></param>
-        public void ExportCardFieldsAgile(VstsRestAPI.Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            CardFiledsAgile.CardField fields = nodes.GetCardFieldsAgile();
-            if (fields.cards != null)
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\UpdateCardFields.json", JsonConvert.SerializeObject(fields, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                AddMessage(con.Id, "Card Style Rules Definition");
-                Thread.Sleep(2000);
-            }
-            else
-            {
-                AddMessage(con.Id.ErrorId(), "Error While Exporting Card fields : " + nodes.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Get the Team setting to check the Backlog board setting and Enable Epic feature
-        /// </summary>
-        /// <param name="con"></param>
-        public void GetTeamSetting(VstsRestAPI.Configuration con)
-        {
-            GetClassificationNodes nodes = new GetClassificationNodes(con);
-            GetTeamSetting.Setting setting = nodes.GetTeamSetting();
-            if (setting.backlogVisibilities != null)
-            {
-                System.IO.File.WriteAllText(Server.MapPath("~") + @"ExtractedTemplate\" + con.Project + "\\EnableEpic.json", JsonConvert.SerializeObject(setting, Formatting.Indented));
-            }
-            else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-            {
-                AddMessage(con.Id.ErrorId(), "Error while fetching Team Setting " + nodes.LastFailureMessage);
-            }
-        }
-
-        /// <summary>
-        /// Remove the template folder after zipping it
-        /// </summary>
+        #endregion end extract template
+        // Remove the template folder after zipping it
         [AllowAnonymous]
         private void RemoveFolder()
         {
             string projectName = Session["Project"].ToString();
             if (projectName != "")
             {
-                System.IO.File.Delete(Server.MapPath("~") + @"ExtractedTemplate\" + projectName);
-                System.IO.File.Delete(Server.MapPath("~") + @"ExtractedTemplate\" + projectName + ".zip");
+                System.IO.File.Delete(extractedTemplatePath + projectName);
+                System.IO.File.Delete(extractedTemplatePath + projectName + ".zip");
             }
+
+        }
+
+        [AllowAnonymous]
+        public ActionResult ZipAndDownloadFiles(string fileName)
+        {
+            string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
+            CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
+            if (System.IO.Directory.Exists(filePath))
+            {
+                string[] files = Directory.GetFiles(filePath);
+                string[] subDirs = Directory.GetDirectories(filePath);
+                if (files.Length > 0)
+                {
+                    sfiles.Files = new List<CreateZips.FileInfo>();
+
+                    foreach (var f in files)
+                    {
+                        CreateZips.FileInfo fileInfo = new CreateZips.FileInfo();
+
+                        string[] fSplit = f.Split('\\');
+                        string splitLength = fSplit[fSplit.Length - 1];
+                        fSplit = splitLength.Split('.');
+
+                        fileInfo.Name = fSplit[0];
+                        fileInfo.Extension = fSplit[1];
+                        fileInfo.FileBytes = System.IO.File.ReadAllBytes(f);
+                        sfiles.Files.Add(fileInfo);
+                    }
+                }
+
+                if (subDirs.Length > 0)
+                {
+                    sfiles.Folder = new List<CreateZips.Folder>();
+
+                    foreach (var dir in subDirs)
+                    {
+                        string[] subDirFiles = System.IO.Directory.GetFiles(dir);
+                        string[] subDirsLevel2 = Directory.GetDirectories(dir);
+
+                        if (subDirFiles.Length > 0)
+                        {
+                            CreateZips.Folder folder = new CreateZips.Folder();
+                            string[] getFolderName = dir.Split('\\');
+                            string subFolderName = getFolderName[getFolderName.Length - 1];
+                            folder.FolderName = subFolderName;
+                            folder.FolderItems = new List<CreateZips.FolderItem>();
+
+                            foreach (var sdf in subDirFiles)
+                            {
+                                CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
+                                string[] fSplit = sdf.Split('\\');
+                                string splitLength = fSplit[fSplit.Length - 1];
+                                fSplit = splitLength.Split('.');
+
+                                folderItem.Name = fSplit[0];
+                                folderItem.Extension = fSplit[1];
+                                folderItem.FileBytes = System.IO.File.ReadAllBytes(sdf);
+                                folder.FolderItems.Add(folderItem);
+                            }
+                            if (subDirsLevel2.Length > 0)
+                            {
+                                folder.FolderL2 = new List<CreateZips.FolderL2>();
+                                foreach (var dirL2 in subDirsLevel2)
+                                {
+                                    string[] subDirFilesL2 = System.IO.Directory.GetFiles(dirL2);
+                                    if (subDirFilesL2.Length > 0)
+                                    {
+                                        CreateZips.FolderL2 folderFL2 = new CreateZips.FolderL2();
+                                        string[] getFolderNameL2 = dirL2.Split('\\');
+                                        string subFolderNameL2 = getFolderNameL2[getFolderNameL2.Length - 1];
+                                        folderFL2.FolderName = subFolderNameL2;
+                                        folderFL2.FolderItems = new List<CreateZips.FolderItem>();
+
+                                        foreach (var sdfL2 in subDirFilesL2)
+                                        {
+                                            CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
+                                            string[] fSplit = sdfL2.Split('\\');
+                                            string splitLength = fSplit[fSplit.Length - 1];
+                                            fSplit = splitLength.Split('.');
+
+                                            folderItem.Name = fSplit[0];
+                                            folderItem.Extension = fSplit[1];
+                                            folderItem.FileBytes = System.IO.File.ReadAllBytes(sdfL2);
+                                            folderFL2.FolderItems.Add(folderItem);
+                                        }
+                                        folder.FolderL2.Add(folderFL2);
+                                    }
+                                }
+                            }
+                            sfiles.Folder.Add(folder);
+                        }
+                    }
+                }
+            }
+            // ...
+
+            // the output bytes of the zip
+            byte[] fileBytes = null;
+
+            //create a working memory stream
+            using (System.IO.MemoryStream memoryStream = new System.IO.MemoryStream())
+            {
+                // create a zip
+                using (System.IO.Compression.ZipArchive zip = new System.IO.Compression.ZipArchive(memoryStream, System.IO.Compression.ZipArchiveMode.Create, true))
+                {
+                    // interate through the source files
+                    if (sfiles.Folder != null && sfiles.Folder.Count > 0)
+                    {
+                        //each folder in source file [depth 1]
+                        foreach (var folder in sfiles.Folder)
+                        {
+                            // add the item name to the zip
+                            // each file in the folder
+                            foreach (var file in folder.FolderItems)
+                            {
+                                // folder items - file name, extension, and file bytes or content in bytes
+                                // zip.CreateEntry can create folder or the file. If you just provide a name, it will create a folder (if it doesn't not exist). If you provide with extension, it will create file 
+                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension); // Creating folder and create file inside that folder
+
+                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes)) // adding file bytes to memory stream object
+                                {
+                                    using (System.IO.Stream entryStream = zipItem.Open()) // opening the folder/file
+                                    {
+                                        originalFileMemoryStream.CopyTo(entryStream); // copy memory stream dat bytes to file created
+                                    }
+                                }
+                                // for second level of folder like /Template/Teams/BoardColums.json
+                                //each folder in source file [depth 2]
+                                if (folder.FolderL2 != null && folder.FolderL2.Count > 0)
+                                {
+                                    foreach (var folder2 in folder.FolderL2)
+                                    {
+                                        foreach (var file2 in folder2.FolderItems)
+                                        {
+                                            System.IO.Compression.ZipArchiveEntry zipItem2 = zip.CreateEntry(folder.FolderName + "/" + folder2.FolderName + "/" + file2.Name + "." + file2.Extension);
+                                            using (System.IO.MemoryStream originalFileMemoryStreamL2 = new System.IO.MemoryStream(file2.FileBytes))
+                                            {
+                                                using (System.IO.Stream entryStreamL2 = zipItem2.Open())
+                                                {
+                                                    originalFileMemoryStreamL2.CopyTo(entryStreamL2);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (sfiles.Files != null && sfiles.Files.Count > 0)
+                    {
+                        foreach (var outerFile in sfiles.Files)
+                        {
+                            // add the item name to the zip
+                            System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(outerFile.Name + "." + outerFile.Extension);
+                            // add the item bytes to the zip entry by opening the original file and copying the bytes 
+                            using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(outerFile.FileBytes))
+                            {
+                                using (System.IO.Stream entryStream = zipItem.Open())
+                                {
+                                    originalFileMemoryStream.CopyTo(entryStream);
+                                }
+                            }
+                        }
+                    }
+                }
+                fileBytes = memoryStream.ToArray();
+            }
+            //System.IO.Directory.Delete(filePath, true);
+            // download the constructed zip
+            Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
+            return File(fileBytes, "application/zip");
 
         }
 

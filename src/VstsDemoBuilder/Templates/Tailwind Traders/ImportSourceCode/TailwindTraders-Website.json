@@ -1,10 +1,7 @@
 {
-  "parameters":
-    {
-      "gitSource": {
-        "url": "https://vstsdemodata.visualstudio.com/Tailwind%20Traders/_git/TailwindTraders-Website"
-      },
-      "serviceEndpointId": "$Python-code$",
-      "deleteServiceEndpointAfterImportIsDone": true
+  "parameters": {
+    "gitSource": {
+      "url": "https://github.com/Microsoft/TailwindTraders-Website"
     }
+  }
 }

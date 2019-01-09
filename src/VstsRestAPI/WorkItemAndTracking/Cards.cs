@@ -15,43 +15,16 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="json"></param>
 
-        public void UpdateCardField(string projectName, string json, string boardType)
+        public void UpdateCardField(string projectName, string json, string boardType, string teamName)
         {
             json = json.Replace("null", "\"\"");
-            GetCardFieldResponse.ListofCards cardField = new GetCardFieldResponse.ListofCards();
-            GetCardFieldResponseAgile.ListofCards agileCardField = new GetCardFieldResponseAgile.ListofCards();
-
-            if (boardType == "Backlog%20items")
-            {
-                cardField = JsonConvert.DeserializeObject<GetCardFieldResponse.ListofCards>(json);
-                if (cardField.cards.Message == null)
-                {
-                    cardField.cards.Message = "test";
-                }
-            }
-            else if (boardType == "Stories")
-            {
-                agileCardField = JsonConvert.DeserializeObject<GetCardFieldResponseAgile.ListofCards>(json);
-                if (agileCardField.cards.Message == null)
-                {
-                    agileCardField.cards.Message = "test";
-                }
-            }
-
-            string teamName = projectName + " Team";
             using (var client = GetHttpClient())
             {
                 StringContent patchValue = new StringContent("");
-                if (boardType == "Backlog%20items")
-                {
-                    patchValue = new StringContent(JsonConvert.SerializeObject(cardField), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-                }
-                else if (boardType == "Stories")
-                {
-                    patchValue = new StringContent(JsonConvert.SerializeObject(agileCardField), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-                }
+                patchValue = new StringContent(json, Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
+
                 var method = new HttpMethod("PUT");
-                string boardURL = "https://dev.azure.com/" + Account + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardsettings?api-version=" + _configuration.VersionNumber;
+                string boardURL = _configuration.UriString + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/cardsettings?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, boardURL) { Content = patchValue };
                 var response = client.SendAsync(request).Result;
                 if (response.IsSuccessStatusCode)
@@ -72,7 +45,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="json"></param>
 
-        public void ApplyRules(string projectName, string json, string boardType)
+        public void ApplyRules(string projectName, string json, string boardType, string teamName)
         {
             json = json.Replace("null", "\"\"");
             json = json.Replace("$ProjectName$", projectName);
@@ -81,9 +54,6 @@ namespace VstsRestAPI.WorkItemAndTracking
             {
                 cardStyles.rules.Message = "test";
             }
-
-            string teamName = projectName + " Team";
-
             using (var client = GetHttpClient())
             {
                 var patchValue = new StringContent(JsonConvert.SerializeObject(cardStyles), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
@@ -110,7 +80,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="json"></param>
         /// <param name="project"></param>
-        public void EnablingEpic(string projectName, string json, string project)
+        public void EnablingEpic(string projectName, string json, string project, string team)
         {
             using (var client = GetHttpClient())
             {
