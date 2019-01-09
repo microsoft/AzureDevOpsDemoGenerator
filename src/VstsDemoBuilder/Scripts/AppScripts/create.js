@@ -403,7 +403,7 @@ $('#btnSubmit').click(function () {
     });
     selectedTemplate = template;
     var websiteUrl = window.location.href;
-    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email };
+    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
         if (data !== "True") {
@@ -415,8 +415,6 @@ $('#btnSubmit').click(function () {
         appInsights.trackEvent("Create button clicked");
         appInsights.trackEvent("Created project using" + selectedTemplate + " template");
         ga('send', 'event', selectedTemplate, 'selected');
-        appInsights.trackEvent("User method" + userMethod);
-
         $('#ddlGroups').attr("disabled", "disabled");
 
         $("#ddlAcccountName").attr("disabled", "disabled");
@@ -437,11 +435,12 @@ $('#btnSubmit').click(function () {
 });
 
 function getStatus() {
+
     $.ajax({
         url: 'GetCurrentProgress/' + uniqueId,
         type: 'GET',
         success: function (data) {
-            // showing error when the process template has been disabled by user
+
             if (data === "OAUTHACCESSDENIED") {
                 $('#progressBar').width(currentPercentage++ + '%');
                 $('#status-messages').append('<i class="fas fa-forward"></i> &nbsp;Third Party application access via OAuth is disabled for this Organization,please change OAuth access setting and try again!<br/>');
@@ -455,6 +454,7 @@ function getStatus() {
                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                 $('#textMuted').removeClass("d-block").addClass("d-none");
                 return;
+
             }
             var isMessageShown = true;
 
@@ -462,7 +462,9 @@ function getStatus() {
                 messageList.push(data);
                 isMessageShown = false;
             }
+
             if (data !== "100") {
+
                 if (isMessageShown === false) {
                     if (messageList.length === 1) {
                         $('#progressBar').width(currentPercentage++ + '%');
@@ -471,17 +473,55 @@ function getStatus() {
                         }
                     }
                     else {
-                        $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                        $("#ddlAcccountName").removeAttr("disabled");
-                        $("#txtProjectName").removeAttr("disabled");
-                        $("#txtProjectName").val("");
-                        $('#ddlAcccountName').prop('selectedIndex', 0);
+                        if (data.indexOf("TF50309") === 0) {
+                            $('#progressBar').width(currentPercentage++ + '%');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
+                            $("#ddlAcccountName").removeAttr("disabled");
+                            $("#txtProjectName").removeAttr("disabled");
+                            $("#txtProjectName").val("");
+                            $('#ddlAcccountName').prop('selectedIndex', 0);
 
-                        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                        $("#templateselection").prop("disabled", false);
-                        $('#dvProgress').removeClass("d-block").addClass("d-none");
-                        $('#textMuted').removeClass("d-block").addClass("d-none");
+                            $("#btnSubmit").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false);
+                            $('#dvProgress').removeClass("d-block").addClass("d-none");
+                            $('#textMuted').removeClass("d-block").addClass("d-none");
+                            return;
+                        }
+                        else if (data.indexOf("TF200019") === 0) {
+                            $('#progressBar').width(currentPercentage++ + '%');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
+                            $("#ddlAcccountName").removeAttr("disabled");
+                            $("#txtProjectName").removeAttr("disabled");
+                            $("#txtProjectName").val("");
+                            $('#ddlAcccountName').prop('selectedIndex', 0);
+
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                            $("#templateselection").prop("disabled", false);
+                            $('#dvProgress').removeClass("d-block").addClass("d-none");
+                            $('#textMuted').removeClass("d-block").addClass("d-none");
+                            return;
+
+                        }
+                        else if (data.indexOf("TF200019") === -1) {
+                            $('#progressBar').width(currentPercentage++ + '%');
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
+                        }
+                        else {
+                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
+                            $("#ddlAcccountName").removeAttr("disabled");
+                            $("#txtProjectName").removeAttr("disabled");
+                            $("#txtProjectName").val("");
+                            $('#ddlAcccountName').prop('selectedIndex', 0);
+
+                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                            $("#templateselection").prop("disabled", false);
+                            $('#dvProgress').removeClass("d-block").addClass("d-none");
+                            $('#textMuted').removeClass("d-block").addClass("d-none");
+
+                        }
+
                     }
+
                 }
                 else if (currentPercentage <= ((messageList.length + 1) * percentForMessage) && currentPercentage <= 100) {
                     $('#progressBar').width(currentPercentage++ + '%');
@@ -875,7 +915,7 @@ function LoadTemplates(grpSelected) {
                         var MatchedGroup = groups.GroupwiseTemplates[g];
                         for (var i = 0; i < MatchedGroup.Template.length; i++) {
                             if (i === 0) {
-                                var templateImg = MatchedGroup.Template[i].image;
+                                var templateImg = MatchedGroup.Template[i].Image;
                                 if (templateImg === "" || templateImg === null) {
                                     templateImg = "/Templates/TemplateImages/CodeFile.png";
                                 }
@@ -889,9 +929,9 @@ function LoadTemplates(grpSelected) {
                                 grp += '<div class="template__intro">';
                                 grp += '<h4>' + MatchedGroup.Template[i].Name + '</h4>';
 
-                                if (MatchedGroup.Template[i].tags !== null) {
-                                    for (var l = 0; l < MatchedGroup.Template[i].tags.length; l++) {
-                                        grp += '<span>' + MatchedGroup.Template[i].tags[l] + '</span>';
+                                if (MatchedGroup.Template[i].Tags !== null) {
+                                    for (var l = 0; l < MatchedGroup.Template[i].Tags.length; l++) {
+                                        grp += '<span>' + MatchedGroup.Template[i].Tags[l] + '</span>';
                                     }
                                 }
                                 grp += '</div></div>';
@@ -907,7 +947,7 @@ function LoadTemplates(grpSelected) {
                                 $(".selected__desc").html(MatchedGroup.Template[i].Description);
                             }
                             else {
-                                var templateImgs = MatchedGroup.Template[i].image;
+                                var templateImgs = MatchedGroup.Template[i].Image;
                                 if (templateImgs === "" || templateImgs === null) {
                                     templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                 }
@@ -920,9 +960,9 @@ function LoadTemplates(grpSelected) {
                                 grp += '<img src="' + templateImgs + '"/></div>';
                                 grp += '<div class="template__intro">';
                                 grp += '<h4>' + MatchedGroup.Template[i].Name + '</h4>';
-                                if (MatchedGroup.Template[i].tags !== null) {
-                                    for (var m = 0; m < MatchedGroup.Template[i].tags.length; m++) {
-                                        grp += '<span>' + MatchedGroup.Template[i].tags[m] + '</span>';
+                                if (MatchedGroup.Template[i].Tags !== null) {
+                                    for (var m = 0; m < MatchedGroup.Template[i].Tags.length; m++) {
+                                        grp += '<span>' + MatchedGroup.Template[i].Tags[m] + '</span>';
                                     }
                                 }
                                 grp += '</div></div>';

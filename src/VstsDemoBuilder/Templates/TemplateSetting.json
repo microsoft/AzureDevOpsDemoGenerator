@@ -12,49 +12,49 @@
       "Groups": "General",
       "Template": [
         {
-          "key": "77383",
+          "Key": "77383",
           "Name": "SmartHotel360",
           "TemplateFolder": "SmartHotel360",
           "Description": "This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>",
-          "tags": [ "Scrum", "aspnetcore", "azureappservice" ],
-          "image": "/Templates/TemplateImages/SmartHotel.png",
+          "Tags": [ "Scrum", "aspnetcore", "azureappservice" ],
+          "Image": "/Templates/TemplateImages/SmartHotel.png",
           "Message": "Note that the code for the SmartHotel 360 Website hosted on <a href='https://github.com/Microsoft/SmartHotel360-Website' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
           "PreviewImages": [ "https://blog.chef.io/wp-content/uploads/2017/11/vsts-plugins.png", "http://jeroenniesen.com/wp-content/uploads/2017/04/tfs_vsts_process.png", "https://msdnshared.blob.core.windows.net/media/2017/07/image510.png" ]
         },
         {
-          "key": "77380",
+          "Key": "77380",
           "Name": "MyHealthClinic",
           "TemplateFolder": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
-          "tags": [ "Scrum", "aspnetcore", "azureappservice" ],
-          "image": "/Templates/TemplateImages/MyHealthClinic.png",
+          "Tags": [ "Scrum", "aspnetcore", "azureappservice" ],
+          "Image": "/Templates/TemplateImages/MyHealthClinic.png",
           "PreviewImages": [ "https://blog.chef.io/wp-content/uploads/2017/11/vsts-plugins.png", "http://jeroenniesen.com/wp-content/uploads/2017/04/tfs_vsts_process.png", "https://msdnshared.blob.core.windows.net/media/2017/07/image510.png" ]
 
         },
         {
-          "key": "77379",
+          "Key": "77379",
           "Name": "PartsUnlimited",
           "TemplateFolder": "PartsUnlimited",
           "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> ",
-          "tags": [ "Scrum", "aspdotnet", "azureappservice" ],
-          "image": "/Templates/TemplateImages/Partunlimited.png"
+          "Tags": [ "Scrum", "aspdotnet", "azureappservice" ],
+          "Image": "/Templates/TemplateImages/Partunlimited.png"
         },
         {
-          "key": "77371",
+          "Key": "77371",
           "Name": "MyShuttle",
           "TemplateFolder": "MyShuttle",
           "Description": "This template contains work items and source code for  MyShuttle, a sample Java application backed by a MySQL database. This template also contains pipeline definitions to build the maven project and deploy the app to Tomcat server on Azure app service. <br />Lab URL: <a href='https://www.azuredevopslabs.com/labs/vstsextend/tomcat/' target='_blank'> Deploying a Java application on Tomcat</a> ",
-          "tags": [ "Scrum", "java", "application", "azure web app", "MySQL" ],
-          "image": "/Templates/TemplateImages/MyShuttle.png"
+          "Tags": [ "Scrum", "java", "application", "azure web app", "MySQL" ],
+          "Image": "/Templates/TemplateImages/MyShuttle.png"
         },
         {
-          "key": "77384",
+          "Key": "77384",
           "Name": "ContosoAir",
           "TemplateFolder": "ContosoAir",
           "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
           "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
-          "tags": [ "Agile", " Node.js", "User stories" ],
-          "image": "/Templates/TemplateImages/ContosAir.png"
+          "Tags": [ "Agile", " Node.js", "User stories" ],
+          "Image": "/Templates/TemplateImages/ContosAir.png"
         }
       ]
     },
@@ -62,110 +62,110 @@
       "Groups": "DevOps Labs",
       "Template": [
         {
-          "key": "77382",
+          "Key": "77382",
           "Name": "Terraform",
           "TemplateFolder": "Terraform",
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
-          "image": "/Templates/TemplateImages/Terraform.png"
+          "Image": "/Templates/TemplateImages/Terraform.png"
         },
         {
-          "key": "77386",
+          "Key": "77386",
           "Name": "Ansible",
           "TemplateFolder": "Ansible",
           "Description": "Use this template to learn how Ansible can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Ansible and Azure pipelines",
-          "image": "/Templates/TemplateImages/Ansible.png"
+          "Image": "/Templates/TemplateImages/Ansible.png"
         },
         {
-          "key": "77385",
+          "Key": "77385",
           "Name": "MachineLearning",
           "TemplateFolder": "MachineLearning",
           "Description": "This template contains code and pipeline definition for a machine learning project demonstrating how to automate the end to end ML/AI project. The build pipelines include DevOps tasks for data sanity test, unit test, model training on different compute targets, model version management, model evaluation/model selection, model deployment as realtime web service, staged deployment to QA/prod, integration testing and functional testing.",
-          "image": "/Templates/TemplateImages/MachineLearning.png",
-          "tags": [ "Agile", "Machine Learning", "AI" ]
+          "Image": "/Templates/TemplateImages/MachineLearning.png",
+          "Tags": [ "Agile", "Machine Learning", "AI" ]
         },
         {
-          "key": "77363",
+          "Key": "77363",
           "Name": "Docker",
           "TemplateFolder": "Docker",
           "Description": "Learn how you can use Azure pipelines to build and deploy a Docker based ASP.NET Core web application to Azure Container Registry and  Azure App Service. <br/> Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a>",
-          "image": "/Templates/TemplateImages/Docker.png"
+          "Image": "/Templates/TemplateImages/Docker.png"
         },
         {
-          "key": "77372",
+          "Key": "77372",
           "Name": "AKS",
           "TemplateFolder": "AKS",
           "Description": "Use this template to learn how to deploy a Docker-based ASP.NET Core web application to a Kubernetes cluster running in Azure Kubernetes Service (AKS) with Azure Pipelines. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a>",
-          "image": "/Templates/TemplateImages/kubernetes.png"
+          "Image": "/Templates/TemplateImages/kubernetes.png"
         },
         {
-          "key": "77366",
+          "Key": "77366",
           "Name": "GitHub",
           "TemplateFolder": "GitHub",
           "Description": "Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <br /> Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure DevOps</a>",
-          "image": "/Templates/TemplateImages/GitHub.png"
+          "Image": "/Templates/TemplateImages/GitHub.png"
         },
         {
-          "key": "77370",
+          "Key": "77370",
           "Name": "Octopus",
           "TemplateFolder": "Octopus",
           "Description": "Select this template if you are following the “integrating Octopus Deploy” lab. The template provisions code for a sample PHP application and a build pipeline. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a>",
-          "image": "/Templates/TemplateImages/octopus.png"
+          "Image": "/Templates/TemplateImages/octopus.png"
         },
         {
-          "key": "77367",
+          "Key": "77367",
           "Name": "Selenium",
           "TemplateFolder": "Selenium",
           "Description": "This template contains code of Parts Unlimited and pipelines definitions that will show you how you can deploy and test applications using Selenium. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/Selenium/' target='_blank'>Driving continuous testing with Selenium</a>",
-          "image": "/Templates/TemplateImages/selenium.png"
+          "Image": "/Templates/TemplateImages/selenium.png"
         },
         {
-          "key": "77368",
+          "Key": "77368",
           "Name": "DeploymentGroups",
           "TemplateFolder": "DeploymentGroups",
           "Description": "Provision a team project using this template to learn how you build and release  applications to multiple target servers on Azure using Deployment Groups with Azure Pipelines. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a>",
-          "image": "/Templates/TemplateImages/AzureDevOps.png"
+          "Image": "/Templates/TemplateImages/AzureDevOps.png"
         },
         {
-          "key": "77364",
+          "Key": "77364",
           "Name": "SonarQube",
           "TemplateFolder": "SonarQube",
           "Description": "This template contains code of MyShuttle, a sample application and a pipeline definition that will show you how you can use SonarQube with Azure Pipeline to analyze code during build and improve code quality. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/sonarqube/' target='_blank'>Technical Debt Management with SonarQube</a>",
-          "image": "/Templates/TemplateImages/SonarQube.png"
+          "Image": "/Templates/TemplateImages/SonarQube.png"
         },
         {
-          "key": "77375",
+          "Key": "77375",
           "Name": "ReleaseGates",
           "TemplateFolder": "ReleaseGates",
           "Description": "Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. Use this template if you are following the <a href='https://azuredevopslabs.com/labs/vstsextend/releasegates/' target='_blank''>Controlling deployments using Release Gates</a> Lab",
-          "image": "/Templates/TemplateImages/AzureDevOps.png"
+          "Image": "/Templates/TemplateImages/AzureDevOps.png"
         },
         {
-          "key": "77365",
+          "Key": "77365",
           "Name": "PHP",
           "TemplateFolder": "PHP",
           "Description": "This template contains code for a sample PHP application and pipeline definitions to build & deploy a PHP application  to Azure App service. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/PHP/' target='_blank'> Deploy PHP application to Azure App Service</a>",
-          "image": "/Templates/TemplateImages/PHP.png"
+          "Image": "/Templates/TemplateImages/PHP.png"
         },
         {
-          "key": "77369",
+          "Key": "77369",
           "Name": "Python",
           "TemplateFolder": "Python",
           "Description": "Select this template with code for a sample Python application and pipeline definitions to learn how you can build and deploy a Python app to Azure App service using Django framework.<br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/python/' target='_blank'>How to deploy a Python application to Azure using Azure Pipelines</a>",
-          "image": "/Templates/TemplateImages/Python.png"
+          "Image": "/Templates/TemplateImages/Python.png"
         },
         {
-          "key": "77362",
+          "Key": "77362",
           "Name": "WhiteSource-Bolt",
           "TemplateFolder": "WhiteSource-Bolt",
           "Description": "This template provisions WebGoat code, a deliberately insecure web application from OWASP along with CI and CD definitions that will teach you how you can manage security and compliance when using open-source software, with WhiteSource. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/WhiteSource/' target='_blank'>OSS governance with WhiteSource</a>",
-          "image": "/Templates/TemplateImages/WhiteSourceBolt.png"
+          "Image": "/Templates/TemplateImages/WhiteSourceBolt.png"
         },
         {
-          "key": "77374",
+          "Key": "77374",
           "Name": "AzureFunctions",
           "TemplateFolder": "AzureFunctions",
           "Description": "Provision a team project using this template to learn how you build and release Azure Functions with Azure Pipelines",
-          "image": "/Templates/TemplateImages/AzureFunction.png"
+          "Image": "/Templates/TemplateImages/AzureFunction.png"
         }
       ]
     },
@@ -182,31 +182,24 @@
       "Groups": "PrivateTemp",
       "Template": [
         {
-          "key": "77386",
+          "Key": "77386",
           "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders",
           "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
-          "tags": [ "Agile", "Data and AI", "React" ],
-          "image": "/Templates/TemplateImages/TailwindTraders.png"
+          "Tags": [ "Agile", "Data and AI", "React" ],
+          "Image": "/Templates/TemplateImages/TailwindTraders.png"
         },
         {
-          "key": "77377",
+          "Key": "77377",
           "Name": "ContosoShuttle",
           "TemplateFolder": "ContosoShuttle",
           "Description": "Generated by Azure DevOps Demo Generator"
         },
         {
-          "key": "77381",
+          "Key": "77381",
           "Name": "LaunchDarkly",
           "TemplateFolder": "LaunchDarkly",
           "Description": "Use this template to learn how to implement a very simple feature flag for an ASP.NET MVC application using LaunchDarkly and how we can integrate LaunchDarkly with Azure DevOps release pipelines"
-        },
-        {
-          "key": "77384",
-          "Name": "ContosoAir",
-          "TemplateFolder": "ContosoAir",
-          "Description": "A sample nodejs application that stores customer booked flights in the CosmosDb database",
-          "Message": "The CI pipeline for the Contoso Air Website refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>"
         },
         {
           "Name": "devops-mobile",
