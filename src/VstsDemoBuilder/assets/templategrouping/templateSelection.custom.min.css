@@ -8927,6 +8927,7 @@ html, body {
 
         .template__block.selected p {
             color: #000;
+            font-size: 12px;
         }
 
     .template__block .template__block__description {
@@ -8956,6 +8957,7 @@ html, body {
     max-height: 100%;
     overflow-y: auto;
 }
+
 .template__logo {
     width: 50px;
     line-height: 50PX;
@@ -8969,9 +8971,9 @@ html, body {
 
 .template__block .template__intro span {
     font-size: 12px !important;
-    color: #212529 !important;
-    line-height: 22px;
-    background-color: #73abff;
+    color: #f8f9fa !important;
+    line-height: 18px;
+    background-color: #0078d7;
     display: inline-block;
     opacity: 0.5;
     margin-right: 4px;
@@ -8979,12 +8981,16 @@ html, body {
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
 }
+
 .selected .template__intro span {
     opacity: 1;
 }
+
 .template__block:hover {
     background: rgba(239,246,252,1)
 }
-
+.selected__title{
+    color:black;
+}
 
 /*# sourceMappingURL=custom.min.css.map */
