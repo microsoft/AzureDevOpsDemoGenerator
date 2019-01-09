@@ -66,7 +66,9 @@
           "Name": "Terraform",
           "TemplateFolder": "Terraform",
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
-          "Image": "/Templates/TemplateImages/Terraform.png"
+          "Image": "/Templates/TemplateImages/Terraform.png",
+          "PreviewImages": [ "https://abelsquidhead.com/wp-content/uploads/2018/08/image-1.png", "https://i0.wp.com/pleasereleaseme.net/wp-content/uploads/2018/04/vsts-connect-to-github.png?ssl=1", "https://www.visualstudiogeeks.com/images/screenshots/tarun/SonarQube/VSTS_SonarQube_BuildSummaryMarkDown.png" ]
+
         },
         {
           "Key": "77386",
@@ -81,7 +83,8 @@
           "TemplateFolder": "MachineLearning",
           "Description": "This template contains code and pipeline definition for a machine learning project demonstrating how to automate the end to end ML/AI project. The build pipelines include DevOps tasks for data sanity test, unit test, model training on different compute targets, model version management, model evaluation/model selection, model deployment as realtime web service, staged deployment to QA/prod, integration testing and functional testing.",
           "Image": "/Templates/TemplateImages/MachineLearning.png",
-          "Tags": [ "Agile", "Machine Learning", "AI" ]
+          "Tags": [ "Agile", "Machine Learning", "AI" ],
+          "PreviewImages": [ "https://abelsquidhead.com/wp-content/uploads/2018/08/image-1.png", "https://i0.wp.com/pleasereleaseme.net/wp-content/uploads/2018/04/vsts-connect-to-github.png?ssl=1", "https://www.visualstudiogeeks.com/images/screenshots/tarun/SonarQube/VSTS_SonarQube_BuildSummaryMarkDown.png" ]
         },
         {
           "Key": "77363",
@@ -109,7 +112,8 @@
           "Name": "Octopus",
           "TemplateFolder": "Octopus",
           "Description": "Select this template if you are following the “integrating Octopus Deploy” lab. The template provisions code for a sample PHP application and a build pipeline. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a>",
-          "Image": "/Templates/TemplateImages/octopus.png"
+          "Image": "/Templates/TemplateImages/octopus.png",
+          "PreviewImages": [ "https://abelsquidhead.com/wp-content/uploads/2018/08/image-1.png", "https://i0.wp.com/pleasereleaseme.net/wp-content/uploads/2018/04/vsts-connect-to-github.png?ssl=1", "https://www.visualstudiogeeks.com/images/screenshots/tarun/SonarQube/VSTS_SonarQube_BuildSummaryMarkDown.png" ]
         },
         {
           "Key": "77367",

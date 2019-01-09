@@ -473,36 +473,7 @@ function getStatus() {
                         }
                     }
                     else {
-                        if (data.indexOf("TF50309") === 0) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            $("#btnSubmit").prop("disabled", false);
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-                            return;
-                        }
-                        else if (data.indexOf("TF200019") === 0) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-                            return;
-
-                        }
-                        else if (data.indexOf("TF200019") === -1) {
+                        if (data.indexOf("TF200019") === -1) {
                             $('#progressBar').width(currentPercentage++ + '%');
                             $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                         }
@@ -570,14 +541,6 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-
-                            //if (selectedTemplate == "SmartHotel360") {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                            //}
-                            //else {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                            //}
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
@@ -740,7 +703,7 @@ $(function () {
         $(".preview__image").addClass("d-none");
         $(".template__block").removeClass('blur');
     });
-    
+
 
     $(document).on('click', '.template__block', function () {
         $(".selected__preview").empty();
@@ -756,7 +719,7 @@ $(function () {
         $(this.lastElementChild).addClass('descSelected');
 
         let selectedImages = $(this).data('images').split(',');
-        if (selectedImages !== null && selectedImages !== "") {
+        if (selectedImages.length > 1) {
             $(".selected__preview").removeClass("d-none");
             let imagePreviews;
             for (image of selectedImages) {
@@ -927,7 +890,7 @@ function LoadTemplates(grpSelected) {
                                 grp += '<div class="template__logo">';
                                 grp += '<img src="' + templateImg + '"/></div>';
                                 grp += '<div class="template__intro">';
-                                grp += '<h4>' + MatchedGroup.Template[i].Name + '</h4>';
+                                grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
 
                                 if (MatchedGroup.Template[i].Tags !== null) {
                                     for (var l = 0; l < MatchedGroup.Template[i].Tags.length; l++) {
@@ -959,7 +922,7 @@ function LoadTemplates(grpSelected) {
                                 grp += '<div class="template__logo">';
                                 grp += '<img src="' + templateImgs + '"/></div>';
                                 grp += '<div class="template__intro">';
-                                grp += '<h4>' + MatchedGroup.Template[i].Name + '</h4>';
+                                grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
                                 if (MatchedGroup.Template[i].Tags !== null) {
                                     for (var m = 0; m < MatchedGroup.Template[i].Tags.length; m++) {
                                         grp += '<span>' + MatchedGroup.Template[i].Tags[m] + '</span>';
@@ -979,6 +942,7 @@ function LoadTemplates(grpSelected) {
                     }
                 }
                 $('#templates__list').empty().append(grp);
+                $(".template__block")[0].click();
             }
         }
     });
