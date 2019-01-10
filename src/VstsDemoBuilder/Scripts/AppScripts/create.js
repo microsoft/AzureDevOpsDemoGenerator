@@ -691,6 +691,7 @@ $(function () {
     });
 
     $(document).on('mouseover', ".selected__preview img", function () {
+        $(".preview__image").css('top', $(".templates__list").scrollTop() + 'px');
         let src = $(this).attr("src");
         $(".preview__image .img__preview").attr('src', src);
         $(".preview__image").removeClass("d-none");
