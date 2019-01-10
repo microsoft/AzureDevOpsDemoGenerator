@@ -8997,7 +8997,7 @@ html, body {
 }
 .template-footer {
     position: absolute;
-    bottom: 0;
+    bottom: 14px;
     margin-left: 590px;
 }
 
