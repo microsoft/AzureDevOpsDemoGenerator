@@ -835,7 +835,7 @@
     <Content Include="Templates\Ansible\ProjectTemplate.json" />
     <Content Include="Templates\Ansible\ReleaseDefinitions\Ansible.json" />
     <Content Include="Templates\Ansible\ServiceEndpoints\SmartHotel360-CouponManagement.json" />
-    <Content Include="Templates\Tailwind Traders\DemoExtensions.json" />
+    <Content Include="Templates\Tailwind Traders\Extensions.json" />
     <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Website.json" />
     <Content Include="Templates\Tailwind Traders\Iterations.json" />
     <Content Include="Templates\Tailwind Traders\ProjectSettings.json" />
