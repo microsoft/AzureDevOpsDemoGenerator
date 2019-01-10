@@ -8992,7 +8992,13 @@ html, body {
     color:black;
 }
 .selected__desc {
-    height: 220px;
+    max-height: 190px;
+    overflow-y: auto;
+}
+.template-footer {
+    position: absolute;
+    bottom: 0;
+    margin-left: 590px;
 }
 
 /*# sourceMappingURL=custom.min.css.map */
