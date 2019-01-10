@@ -14,7 +14,7 @@
 
     <title>Create Project</title>
     <style type="text/css">
-      
+
         .msgColor {
             color: red;
             padding: 6px;
@@ -181,9 +181,14 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-            <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-        </div>
+        @{
+            if (!string.IsNullOrEmpty(Model.IsExtractor) && Model.IsExtractor.ToLower() == "true")
+            {
+                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+                    <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+                </div>
+            }
+        }
     </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">

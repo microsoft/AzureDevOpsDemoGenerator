@@ -40,6 +40,7 @@ namespace VstsDemoBuilder.Models
         public string selectedTemplateDescription { get; set; }
         public string selectedTemplateFolder { get; set; }
         public string Message { get; set; }
+        public string IsExtractor { get; set; }
 
     }
     public class EnvironmentValues
