@@ -100,8 +100,6 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION - ON CLICK OF Select Template BUTTOON
     $('#selecttmplate').click(function () {
-        // related to temlate selection POPUP - modify this
-        //.template will change to .template__block 
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template__block.selected").data('folder'); // taking template folder name - appended from JSON
         var groputempSelected = $(".template__block.selected").data('template'); // taking template name - appended from JSON

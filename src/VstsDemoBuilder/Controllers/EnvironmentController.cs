@@ -183,7 +183,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult createproject()
+        public ActionResult CreateProject()
         {
             try
             {
@@ -191,7 +191,10 @@ namespace VstsDemoBuilder.Controllers
                 if (Session["visited"] != null)
                 {
                     Project model = new Project();
-
+                    if (Session["IsExtractor"] != null)
+                    {
+                        model.isExtractor = Session["IsExtractor"].ToString();
+                    }
                     if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
@@ -300,7 +303,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns>View()</returns>
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult create(Project model)
+        public ActionResult Create(Project model)
         {
             try
             {

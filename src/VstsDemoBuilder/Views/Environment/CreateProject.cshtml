@@ -14,7 +14,7 @@
 
     <title>Create Project</title>
     <style type="text/css">
-      
+
         .msgColor {
             color: red;
             padding: 6px;
@@ -84,24 +84,6 @@
     }
     <input type="hidden" id="hdnMessage" />
     <!--TEMPLATE GROUPING-->
-    @*<div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
-            <div class="template-holder bg-white ">
-                <div class="template-dialog-title text-primary p-3 text-center">
-                    <span>Choose a template</span>
-                    <div class="template-close">X</div>
-                </div>
-                <div class="template-group bg-primary d-flex align-items-center p-3">
-                    <ul class="nav nav-pills w-100 justify-content-center" role="tablist" id="modtemplateGroup"></ul>
-                </div>
-                <div class="template-body vstsScroll bg-light p-3">
-                    <div class="tab-content" id="pills-tabContent">
-                    </div>
-                </div>
-                <div class="template-footer p-3 bg-white text-right">
-                    <button class="btn btn-primary" id="selecttmplate">Select Template</button>
-                </div>
-            </div>
-        </div>*@
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
             <div class="template-dialog-title text-primary p-3 text-center">
@@ -122,22 +104,12 @@
                                 </p>
                             </div>
                             <div class="section" id="templates__list">
-                                <div class="template__block selected" data-description="Provision a team project using this template to learn how you build and release  applications to multiple target servers on Azure using Deployment Groups with Azure Pipelines. <br ></p>Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a>">
-                                    <h4>Smart hotel 360</h4>
-                                    <p class="template__block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quas nisi, assumenda pariatur accusamus nobis perferendis, non corrupti dolores quaerat architecto similique ex molestiae qui labore eum esse quisquam iusto?</p>
-                                </div>
-                                <div class="template__block" data-description="some desc">
-                                    <h4>Mr.360</h4>
-                                    <p class="template__block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quas nisi, assumenda pariatur accusamus nobis perferendis, non corrupti dolores quaerat architecto similique ex molestiae qui labore eum esse quisquam iusto?</p>
-                                </div>
                             </div>
-
                         </div>
                         <div class="col-md-7 bg-light p-3 h-100">
                             <div class="template__details h-100 bg-white p-2 rounded">
                                 <div class="d-flex mb-3 justify-content-between">
                                     <h4 class="selected__title"></h4>
-                                    <button class="btn btn-primary ml-3" id="selecttmplate">Select Template</button>
                                 </div>
                                 <div class="selected__preview d-none">
                                     <p>
@@ -145,6 +117,9 @@
                                     </p>
                                 </div>
                                 <div class="selected__desc mt-3"></div>
+                                <div class="p-3 text-right">
+                                    <button class="btn btn-primary" id="selecttmplate">Select Template</button>
+                                </div>
                             </div>
 
                         </div>
@@ -206,9 +181,14 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-            <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-        </div>
+        @{
+            if (!string.IsNullOrEmpty(Model.isExtractor) && Model.isExtractor.ToLower() == "true")
+            {
+                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+                    <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+                </div>
+            }
+        }
     </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
@@ -270,7 +250,7 @@
                     </div>
                     <div class="template-invoke mb-3 mt-1 col-lg-2" style="padding-left:0px;">
                         <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; font-size:12px;width: 100%">
-                            Choose Template
+                            Choose template
                         </button>
                     </div>
                 </div>

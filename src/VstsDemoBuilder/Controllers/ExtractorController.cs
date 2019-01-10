@@ -82,6 +82,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 email = Session["PAT"].ToString();
             }
+            if (Session["IsExtractor"] == null || Session["IsExtractor"].ToString().ToLower() == "false")
+            {
+                return RedirectToAction("NotFound");
+            }
             if (string.IsNullOrEmpty(pat))
             {
                 return Redirect("../Account/Verify");

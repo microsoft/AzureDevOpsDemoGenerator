@@ -8927,7 +8927,6 @@ html, body {
 
         .template__block.selected p {
             color: #000;
-            font-size: 12px;
         }
 
     .template__block .template__block__description {
@@ -8935,7 +8934,7 @@ html, body {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-size: 14px;
+        font-size: 12px;
     }
 
 .selected__preview img {
@@ -8975,7 +8974,7 @@ html, body {
     line-height: 18px;
     background-color: #0078d7;
     display: inline-block;
-    opacity: 0.5;
+    opacity: 1;
     margin-right: 4px;
     padding: 0px 8px;
     border-radius: 20px;
@@ -8991,6 +8990,9 @@ html, body {
 }
 .selected__title{
     color:black;
+}
+.selected__desc {
+    height: 220px;
 }
 
 /*# sourceMappingURL=custom.min.css.map */
