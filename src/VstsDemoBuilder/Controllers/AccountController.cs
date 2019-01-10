@@ -27,12 +27,19 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Verify(LoginModel model, string id)
         {
+            Session.Clear();
+
+            Session["IsExtractor"] = "false";
+            if (!string.IsNullOrEmpty(model.isExtractor))
+            {
+                Session["IsExtractor"] = model.isExtractor;
+            }
+
             var browser = Request.Browser.Type;
             if (browser.Contains("InternetExplorer"))
             {
                 return RedirectToAction("Unsupported_browser", "Account");
             }
-            Session.Clear();
             try
             {
                 if (!string.IsNullOrEmpty(model.name))

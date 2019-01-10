@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-namespace VstsDemoBuilder.Models
+﻿namespace VstsDemoBuilder.Models
 {
     public class LoginModel
     {
@@ -18,6 +12,6 @@ namespace VstsDemoBuilder.Models
 
         public string name { get; set; }
 
-        public string templateid { get; set; }
+        public string isExtractor { get; set; }
     }
 }
