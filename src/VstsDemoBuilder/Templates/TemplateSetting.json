@@ -74,7 +74,7 @@
         },
         {
           "key": "77385",
-          "Name": "MachineLearning",
+          "Name": "Azure Machine Learning",
           "TemplateFolder": "MachineLearning",
           "Description": "This template contains code and pipeline definition for a machine learning project demonstrating how to automate the end to end ML/AI project. The build pipelines include DevOps tasks for data sanity test, unit test, model training on different compute targets, model version management, model evaluation/model selection, model deployment as realtime web service, staged deployment to QA/prod, integration testing and functional testing.",
           "image": "/Templates/TemplateImages/MachineLearning.png",
@@ -197,13 +197,6 @@
           "Name": "LaunchDarkly",
           "TemplateFolder": "LaunchDarkly",
           "Description": "Use this template to learn how to implement a very simple feature flag for an ASP.NET MVC application using LaunchDarkly and how we can integrate LaunchDarkly with Azure DevOps release pipelines"
-        },
-        {
-          "key": "77384",
-          "Name": "ContosoAir",
-          "TemplateFolder": "ContosoAir",
-          "Description": "A sample nodejs application that stores customer booked flights in the CosmosDb database",
-          "Message": "The CI pipeline for the Contoso Air Website refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>"
         },
         {
           "Name": "devops-mobile",
