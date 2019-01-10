@@ -103,7 +103,7 @@ $(document).ready(function (event) {
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template__block.selected").data('folder'); // taking template folder name - appended from JSON
         var groputempSelected = $(".template__block.selected").data('template'); // taking template name - appended from JSON
-        var selectedTemplateDescription = $(".description.descSelected").data('description'); // taking template description  - appended from JSON
+        var selectedTemplateDescription = $(".template__block.selected").data('description'); // taking template description  - appended from JSON
         var infoMsg = $(".description.descSelected").data('message'); // taking info message - appended from JSON
 
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -883,22 +883,31 @@ function LoadTemplates(grpSelected) {
                                 console.log(MatchedGroup.Template[i]);
                                 var imgList = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
 
-                                grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
-                                grp += '<div class="d-flex align-items-center">';
-                                grp += '<div class="template__logo">';
-                                grp += '<img src="' + templateImg + '"/></div>';
-                                grp += '<div class="template__intro">';
-                                grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
-
-                                if (MatchedGroup.Template[i].Tags !== null) {
-                                    for (var l = 0; l < MatchedGroup.Template[i].Tags.length; l++) {
-                                        grp += '<span>' + MatchedGroup.Template[i].Tags[l] + '</span>';
+                                if (grpSelected !== "Private") {
+                                    // checking for the group name private, if not , we will process the below logic
+                                    grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+                                    grp += '<div class="d-flex align-items-center">';
+                                    grp += '<div class="template__logo">';
+                                    grp += '<img src="' + templateImg + '"/></div>';
+                                    grp += '<div class="template__intro">';
+                                    grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
+                                    if (MatchedGroup.Template[i].Tags !== null) {
+                                        for (var l = 0; l < MatchedGroup.Template[i].Tags.length; l++) {
+                                            grp += '<span>' + MatchedGroup.Template[i].Tags[l] + '</span>';
+                                        }
                                     }
+                                    grp += '</div></div>';
+                                    grp += '<p class="template__block__description description descSelected"  data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                    grp += '</div>';
+                                    $('#list_templates').removeClass('d-none').addClass('d-block');
+                                    $('.templates__list').removeClass('col-sm-12').addClass('col-md-5');
                                 }
-                                grp += '</div></div>';
+                                else {
+                                    $('.templates__list').removeClass('col-md-5').addClass('col-sm-12');
+                                    grp += MatchedGroup.Template[i].TemplateFolder;
+                                    $('#list_templates').removeClass('d-block').addClass('d-none');
+                                }
 
-                                grp += '<p class="template__block__description description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                grp += '</div>';
                                 if (MatchedGroup.Template[i].Name === "SmartHotel360") {
                                     var templateTxt = $('#selectedTemplateDescription').val();
                                     if (templateTxt === "" || typeof templateTxt === "undefined")
@@ -928,7 +937,7 @@ function LoadTemplates(grpSelected) {
                                 }
                                 grp += '</div></div>';
 
-                                grp += '<p class="template__block__description description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '<p class="template__block__description description" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
                                 if (MatchedGroup.Template[i].Name === "SmartHotel360") {
                                     var templateTxtx = $('#selectedTemplateDescription').val();
@@ -944,8 +953,8 @@ function LoadTemplates(grpSelected) {
             }
         }
     });
-
 }
+
 // if the user uploading his exported template (zip file), we will take that template name as folder name
 $('body').on('click', '#btnUpload', function () {
     var fileUpload = $("#FileUpload1").get(0);
