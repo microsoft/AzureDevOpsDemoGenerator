@@ -1,7 +1,7 @@
 ﻿/// <reference path="../jquery-1.12.4.min.js" />
 $(document).ready(function () {
 
-    $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
+    //$("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
     $('#buildYourTemplate').click(function () {
         ga('send', 'event', 'Build Your Template', 'visited');
@@ -24,21 +24,10 @@ $(document).ready(function () {
     ga('send', 'event', 'Create page', 'visited');
 });
 
-$(function () {
-    $("#Default").prop("checked", "checked");
-    $("input").on("keypress", function (e) {
-        if (e.which === 32 && !this.value.length)
-            e.preventDefault();
-    });
-});
-
 var messageList = [];
 /**/
 /**/
 var ID = function () {
-    // Math.random should be unique because of its seeding algorithm.
-    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-    // after the decimal.
     return '_' + Math.random().toString(36).substr(2, 9);
 };
 var uniqueId = "";
@@ -61,6 +50,7 @@ var publicTemplateMsg = "";
 var privateTemplateMsg = "";
 
 $(document).ready(function (event) {
+    //REMOVE ERROR MESSAGE
     uniqueId = ID();
     $('.rmverror').click(function () {
         var errID = this.nextElementSibling.getAttribute('id');
@@ -71,10 +61,12 @@ $(document).ready(function (event) {
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
 
+    //ON CLICK OF CHOOSE TEMPLATE BUTTON, SHOW THE TEMPLATE POPUP
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
         ga('send', 'event', 'Choose Template Button', 'Clicked');
+        $(".template__block")[0].click();
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -85,7 +77,7 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-
+        // IF ACCOUNT NAME IS NOT SELECTED, IT WILL VALIDATE THE EXTENSION
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
 
@@ -106,15 +98,14 @@ $(document).ready(function (event) {
         }
     });
 
-    //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
+    //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION - ON CLICK OF Select Template BUTTOON
     $('#selecttmplate').click(function () {
-        //Added
         $('#lblDefaultDescription').hide();
-        var templateFolderSelected = $(".template.selected").data('folder');
-        var groputempSelected = $(".template.selected").data('template');
-        var selectedTemplateDescription = $(".description.descSelected").data('description');
+        var templateFolderSelected = $(".template__block.selected").data('folder'); // taking template folder name - appended from JSON
+        var groputempSelected = $(".template__block.selected").data('template'); // taking template name - appended from JSON
+        var selectedTemplateDescription = $(".description.descSelected").data('description'); // taking template description  - appended from JSON
+        var infoMsg = $(".description.descSelected").data('message'); // taking info message - appended from JSON
 
-        var infoMsg = $(".description.descSelected").data('message');
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
             $('#InfoMessage').html('');
             $('#InfoMessage').removeClass('d-block').addClass('d-none');
@@ -134,7 +125,7 @@ $(document).ready(function (event) {
             $('#ddlTemplates').val(groputempSelected);
             $(".VSTemplateSelection").fadeOut('fast');
         }
-        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none'); // hiding Popup
         //till here
         $('#status-messages').empty().hide();
         $('#textMuted').removeClass("d-block").addClass("d-none");
@@ -148,34 +139,16 @@ $(document).ready(function (event) {
         $("#extensionError").html('');
         $("#extensionError").hide();
         $("#lblextensionError").removeClass("d-block").addClass("d-none");
-        var TemplateName = templateFolder;
-        if (TemplateName === "MyShuttle-Java") {
-            $("#NotificationModal").modal('show');
-        }
+        var TemplateName = templateFolder; // COPYING TEMPLATE FOLDER NAME FROM GLOBAL VARIABLE TO LOCAL VARIABLE
+
         if (TemplateName === "SonarQube") {
             $("#SoanrQubeDiv").show();
         }
         else {
             $("#SoanrQubeDiv").hide();
         }
-        var Url = 'GetTemplate/';
-        $.get(Url, { "TemplateName": TemplateName }, function (data) {
-            if (data !== "") {
-                var ParsedData = JSON.parse(data);
-                var Description = ParsedData.Description;
-                var parameters = ParsedData.Parameters;
-
-                if (typeof parameters !== "undefined") {
-                    if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
-                        });
-                        $("#projectParameters").show();
-                    }
-                    else { $("#projectParameters").html(''); }
-                }
-            }
-        });
+        // binding projecct parameters
+        GetTemplateParameters(TemplateName);
         if (TemplateName !== "") {
             checkForInstalledExtensions(TemplateName, function callBack(extensions) {
                 if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== undefined && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
@@ -206,8 +179,7 @@ $(document).ready(function (event) {
 
             });
         }
-        //Till here
-
+        // taking accout name to check for installed extension.
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
         ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
@@ -227,7 +199,8 @@ $(document).ready(function (event) {
         $("#EmailModal").modal('show');
     });
 
-    //checking for extenisoin start
+    //checking for extenisoin
+    // START - validating extension installation agreement checkbox- based on Microsoft and Third party category
     var isMicrosoftAgreement = "";
     var isThirdparty = "";
     $('#extensionError').click(function () {
@@ -269,13 +242,11 @@ $(document).ready(function (event) {
             }
         }
     });
+    // END - validating extension installation agreement checkbox- based on Microsoft and Third party category
 
     $("#projectParameters").html('');
-    var selectedTemplate = templateFolder;
+    var selectedTemplate = templateFolder; // COPYING TEMPLATE FOLDER NAME FROM GLOBAL VARIABLE TO LOCAL VARIABLE
 
-    if (selectedTemplate === "MyShuttle-Java") {
-        $("#NotificationModal").modal('show');
-    }
     if (selectedTemplate === "SonarQube") {
         $("#SoanrQubeDiv").show();
     }
@@ -286,23 +257,9 @@ $(document).ready(function (event) {
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
-        $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
-            if (data !== "") {
-                var ParsedData = JSON.parse(data);
-                var Description = ParsedData.Description;
-                var parameters = ParsedData.Parameters;
-                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                if (typeof parameters !== "undefined") {
-                    if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
-                        });
-                        $("#projectParameters").show();
-                    }
-                    else { $("#projectParameters").html(''); }
-                }
-            }
-        });
+        // CHECKING FOR TEMPLATE PATAMETERS
+        GetTemplateParameters(selectedTemplate);
+        // IF TEMPLATE IS NOT NULL OF UNDEFINED, CHECKING FOR EXTENSION AND CATEGORIZING INTO MICROSOFT AND THIRD PARTY
         if (selectedTemplate !== "" && typeof selectedTemplate !== "undefined") {
             checkForInstalledExtensions(selectedTemplate, function callBack(extensions) {
 
@@ -344,12 +301,8 @@ $(document).ready(function (event) {
             return false;
         }
     });
-
-    //New Feature Registration
-    $('#closeFeatureRibben').click(function () {
-        $('#newFeature').hide();
-    });
-
+    // for private templates AND when the user directly comes form template URL
+    // TAKING PRIVATE TEMPLATE DESCRIPTION FROM MODEL - SINCE  these templates are not availabe in selection popup
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
@@ -358,19 +311,20 @@ $(document).ready(function (event) {
     }
     //If User comes with lab url(private), we will check for PrivatetemplateFolderName in the field
     var publicTemplate = $('#ddlTemplates').val();
-    var privateTemplate = $('#selectedTemplateFolder').val();
+    var privateTemplate = $('#selectedTemplateFolder').val(); // taking private template folder name from model
     if (privateTemplate !== "" || typeof privateTemplate !== "undefined") {
         templateFolder = privateTemplate;
     }
     else {
         templateFolder = publicTemplate;
     }
-
+    // add private template info message to info box
     AppendMessage();
     var defaultTemplate = $('#selectedTemplate').val();
     $('#ddlTemplates').val(defaultTemplate);
 
 });
+// on click of submit button, validates project name, account name and the selected template
 $('#btnSubmit').click(function () {
     statusCount = 0;
     $("#txtALertContainer").hide();
@@ -389,7 +343,6 @@ $('#btnSubmit').click(function () {
         $("#ddlAcccountName").focus();
         return false;
     }
-    //checking for session templatename and templateID
     if (projectName === "") {
         $("#txtProjectName_Error").text("Please provide a project name");
         $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
@@ -439,23 +392,6 @@ $('#btnSubmit').click(function () {
         }
     }
 
-    //get userMethod and selected users
-    var SelectedUsers = '';
-    var userMethod = $("input[type='radio']:checked").val();
-    if (userMethod === "Select") {
-        $(".checkbox").each(function () {
-            if (this.checked) {
-                SelectedUsers = SelectedUsers + this.value + ',';
-            }
-        });
-
-        if (SelectedUsers.length === 0) {
-            $("#txtAlert").text("Please select organiaztion users");
-            $("#txtALertContainer").show();
-            return false;
-        }
-    }
-
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -465,7 +401,7 @@ $('#btnSubmit').click(function () {
     });
     selectedTemplate = template;
     var websiteUrl = window.location.href;
-    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email };
+    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
         if (data !== "True") {
@@ -477,8 +413,6 @@ $('#btnSubmit').click(function () {
         appInsights.trackEvent("Create button clicked");
         appInsights.trackEvent("Created project using" + selectedTemplate + " template");
         ga('send', 'event', selectedTemplate, 'selected');
-        appInsights.trackEvent("User method" + userMethod);
-
         $('#ddlGroups').attr("disabled", "disabled");
 
         $("#ddlAcccountName").attr("disabled", "disabled");
@@ -496,20 +430,6 @@ $('#btnSubmit').click(function () {
         $('#textMuted').removeClass("d-none").addClass("d-block");
     });
     event.preventDefault;
-});
-
-// if the user uploading his exported template (zip file), we will take that template name as folder name
-$('body').on('click', '#btnUpload', function () {
-    var fileUpload = $("#FileUpload1").get(0);
-    var files = fileUpload.files;
-    $('#InfoMessage').removeClass('d-block').addClass('d-none');
-    // Create FormData object
-    var fileData = new FormData();
-    // Looping over all files and add it to FormData object
-    for (var i = 0; i < files.length; i++) {
-        fileData.append(files[i].name, files[i]);
-    }
-    templateFolder = files[0].name.replace(".zip", "");
 });
 
 function getStatus() {
@@ -551,36 +471,7 @@ function getStatus() {
                         }
                     }
                     else {
-                        if (data.indexOf("TF50309") === 0) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            $("#btnSubmit").prop("disabled", false);
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-                            return;
-                        }
-                        else if (data.indexOf("TF200019") === 0) {
-                            $('#progressBar').width(currentPercentage++ + '%');
-                            $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
-                            $("#ddlAcccountName").removeAttr("disabled");
-                            $("#txtProjectName").removeAttr("disabled");
-                            $("#txtProjectName").val("");
-                            $('#ddlAcccountName').prop('selectedIndex', 0);
-
-                            $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
-                            $('#dvProgress').removeClass("d-block").addClass("d-none");
-                            $('#textMuted').removeClass("d-block").addClass("d-none");
-                            return;
-
-                        }
-                        else if (data.indexOf("TF200019") === -1) {
+                        if (data.indexOf("TF200019") === -1) {
                             $('#progressBar').width(currentPercentage++ + '%');
                             $('#status-messages').append('<i class="fas fa-check-circle" style="color:green"></i> &nbsp;' + data + '<br/>');
                         }
@@ -648,14 +539,6 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-
-                            //if (selectedTemplate == "SmartHotel360") {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                            //}
-                            //else {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                            //}
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
@@ -688,13 +571,7 @@ function getStatus() {
         }
     });
 }
-
-function DisplayErrors() {
-    $("#errorBody").html('<pre>' + ErrorData + '</pre>');
-    $("#errorModal").modal('show');
-}
-
-
+// check for installed extensions
 function checkForInstalledExtensions(selectedTemplate, callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
@@ -706,12 +583,10 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam },
             success: function (InstalledExtensions) {
-
                 callBack(InstalledExtensions);
             }
         });
     }
-
 }
 
 function checkForExtensions(callBack) {
@@ -733,7 +608,6 @@ function checkForExtensions(callBack) {
             }
         });
     }
-
 }
 
 function GetRequiredExtension() {
@@ -764,83 +638,13 @@ function GetRequiredExtension() {
     });
 }
 
-//TEMPLATE GROUP CREATION
+//TEMPLATE GROUP CREATION - modify this
 $(document).ready(function () {
-    createTemplates();
+    createTemplatesNew();
 
     $(document.body).on('click', '.nav-link', function () {
         grpSelected = this.text;
-        $.ajax({
-            url: "../Environment/GetGroups",
-            type: "GET",
-            success: function (groups) {
-                var grp = "";
-                var isPrivate = "";
-                if (groups.GroupwiseTemplates.length > 0) {
-                    grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
-                    grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                    for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                            var MatchedGroup = groups.GroupwiseTemplates[g];
-                            if (MatchedGroup.Template[0].Name === "Private") {
-                                $('#selecttmplate').hide();
-                                isPrivate += MatchedGroup.Template[0].Description;
-                                $('#pills-tabContent').html('').html(isPrivate);
-                            }
-                            else {
-                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                                    if (i === 0) {
-                                        var templateImg = MatchedGroup.Template[i].image;
-                                        if (templateImg === "" || templateImg === null) {
-                                            templateImg = "/Templates/TemplateImages/CodeFile.png";
-                                        }
-                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                        grp += '<div class="template-header">';
-                                        grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
-                                            grp += '<p></p>';
-                                            grp += '<p>';
-                                            for (var rx = 0; rx < MatchedGroup.Template[i].tags.length; rx++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[rx] + '</i>';
-                                            }
-                                            grp += '</p>';
-                                        }
-                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                        grp += '</div>';
-                                    }
-                                    else {
-                                        var templateImgs = MatchedGroup.Template[i].image;
-                                        if (templateImgs === "" || templateImgs === null) {
-                                            templateImgs = "/Templates/TemplateImages/CodeFile.png";
-                                        }
-                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                        grp += '<div class="template-header">';
-                                        grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
-                                            grp += '<p></p>';
-                                            grp += '<p>';
-                                            for (var x = 0; x < MatchedGroup.Template[i].tags.length; x++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[x] + '</i>';
-                                            }
-                                            grp += '</p>';
-                                        }
-                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                        grp += '</div>';
-                                    }
-                                }
-                                $('#selecttmplate').show();
-
-                                grp += '</div></div>';
-                                $('#pills-tabContent').html('').html(grp);
-                            }
-                        }
-                    }
-
-                }
-            }
-        });
+        LoadTemplates(grpSelected);
     });
 
     //Group load
@@ -864,117 +668,76 @@ $(document).ready(function () {
 
 });
 
+// template selection 
 $(function () {
+    let length = $(".template").length;
+    for (let i = 0; i < length; i++) {
+        $(".template").eq(i).css({
+            animationDelay: "0." + i + "s"
+        });
+    }
 
-    // SHOW MODAL ON EVENT
     $(".template-invoke").on("click", function () {
         $(".VSTemplateSelection").fadeIn('fast');
     });
-
-    // CLOSE MODAL ON EVENT
     $(".template-close").on("click", function () {
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
     });
 
-    // TOGGLING ACTIVE CLASS TO TEMPLATE GROUP
     $(".template-group-item").on('click', function (e) {
         e.preventDefault();
         $(".template-group-item").removeClass('active');
         $(this).addClass('active');
     });
 
-    // TOGGLING SELECTED CLASS TO TEMPLATE
-
-    $(document.body).on("click", '.template', function () {
-        $(".template").removeClass("selected");
-        $(this).addClass("selected");
-        $('.description').removeClass('descSelected');
-        $(this.lastElementChild).addClass('descSelected');
+    $(document).on('mouseover', ".selected__preview img", function () {
+        let src = $(this).attr("src");
+        $(".preview__image .img__preview").attr('src', src);
+        $(".preview__image").removeClass("d-none");
+        $(".template__block").addClass('blur');
     });
 
-    // GET ID TO BE SHOWN
-    let showId = $(".template-group-item.active").attr('href');
-    $(`.template-body .templates${showId}`).show();
-});
+    $(document).on('mouseout', ".selected__preview img", function () {
+        $(".preview__image").addClass("d-none");
+        $(".template__block").removeClass('blur');
+    });
 
-function createTemplates() {
-    var grpSelected = "General";
-    $.ajax({
-        url: "../Environment/GetGroups",
-        type: "GET",
-        success: function (groups) {
-            var grp = "";
-            if (groups.GroupwiseTemplates.length > 0) {
-                grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
-                grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                    if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                        var MatchedGroup = groups.GroupwiseTemplates[g];
-                        for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                            if (i === 0) {
-                                var templateImg = MatchedGroup.Template[i].image;
-                                if (templateImg === "" || templateImg === null) {
-                                    templateImg = "/Templates/TemplateImages/CodeFile.png";
-                                }
-                                grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                grp += '<div class="template-header">';
-                                grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                if (MatchedGroup.Template[i].tags !== null) {
-                                    grp += '<p></p>';
-                                    grp += '<p>';
-                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>';
-                                    }
-                                    grp += '</p>';
-                                }
-                                grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxt = $('#selectedTemplateDescription').val();
-                                    if (templateTxt === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
-                            }
-                            else {
-                                var templateImgs = MatchedGroup.Template[i].image;
-                                if (templateImgs === "" || templateImgs === null) {
-                                    templateImgs = "/Templates/TemplateImages/CodeFile.png";
-                                }
-                                grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                grp += '<div class="template-header">';
-                                grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                if (MatchedGroup.Template[i].tags !== null) {
-                                    grp += '<p></p>';
-                                    grp += '<p>';
-                                    for (var m = 0; m < MatchedGroup.Template[i].tags.length; m++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[m] + '</i>';
-                                    }
-                                    grp += '</p>';
-                                }
-                                grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxtx = $('#selectedTemplateDescription').val();
-                                    if (templateTxtx === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
-                            }
-                        }
-                    }
-                }
-                grp += '</div></div>';
 
-                $('#pills-tabContent').empty().append(grp);
+    $(document).on('click', '.template__block', function () {
+        $(".selected__preview").empty();
+        $(".selected__preview").addClass("d-none");
+        $(".selected").removeClass("selected");
+        $(this).addClass("selected");
+        let selectedTitle = $(this).find("h6").text();
+        let selectedDesc = $(this).data('description');
+        $(".selected__title").text(selectedTitle);
+        $(".selected__desc").html(selectedDesc);
+
+        $('.description').removeClass('descSelected');
+        $(this.lastElementChild).addClass('descSelected');
+
+        let selectedImages = $(this).data('images').split(',');
+        if (selectedImages.length > 1) {
+            $(".selected__preview").removeClass("d-none");
+            let imagePreviews;
+            for (image of selectedImages) {
+                const imgElement = $("<img>", {
+                    src: image,
+                    class: "template_image"
+                });
+                $(".selected__preview").append(imgElement);
             }
         }
     });
+});
+
+function createTemplatesNew() {
+    var grpSelected = "General";
+    LoadTemplates(grpSelected);
 }
 
+
 //Project name validtaion on keyup
-
-
 $("#txtProjectName").keyup(function () {
 
     var projectName = $.trim(this.value);
@@ -1013,6 +776,7 @@ $("#txtProjectName").keyup(function () {
     }
 });
 
+// validate the extension agreement checkboxes
 function validateExtensionCheckbox() {
     var checkboxMicrosoft = "";
     var checkboxTrirdparty = "";
@@ -1059,7 +823,8 @@ function validateExtensionCheckbox() {
     }
 }
 
-function GetTemplates(selectedTemplate) {
+// Get Template parameters
+function GetTemplateParameters(selectedTemplate) {
     var Url = 'GetTemplate/';
     $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
         if (data !== "") {
@@ -1086,7 +851,7 @@ function openImportPopUp() {
 
 function AppendMessage() {
 
-    privateTemplateMsg = $('#infoMessageTxt').val();
+    privateTemplateMsg = $('#infoMessageTxt').val(); // taking infor message form model
 
     if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
         $('#InfoMessage').html(privateTemplateMsg);
@@ -1097,3 +862,100 @@ function AppendMessage() {
         $('#InfoMessage').removeClass('d-block').addClass('d-none');
     }
 }
+
+function LoadTemplates(grpSelected) {
+    $.ajax({
+        url: "../Environment/GetGroups",
+        type: "GET",
+        success: function (groups) {
+            var grp = "";
+            if (groups.GroupwiseTemplates.length > 0) {
+                console.log(groups);
+                for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
+                    if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
+                        var MatchedGroup = groups.GroupwiseTemplates[g];
+                        for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                            if (i === 0) {
+                                var templateImg = MatchedGroup.Template[i].Image;
+                                if (templateImg === "" || templateImg === null) {
+                                    templateImg = "/Templates/TemplateImages/CodeFile.png";
+                                }
+                                console.log(MatchedGroup.Template[i]);
+                                var imgList = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
+
+                                grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+                                grp += '<div class="d-flex align-items-center">';
+                                grp += '<div class="template__logo">';
+                                grp += '<img src="' + templateImg + '"/></div>';
+                                grp += '<div class="template__intro">';
+                                grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
+
+                                if (MatchedGroup.Template[i].Tags !== null) {
+                                    for (var l = 0; l < MatchedGroup.Template[i].Tags.length; l++) {
+                                        grp += '<span>' + MatchedGroup.Template[i].Tags[l] + '</span>';
+                                    }
+                                }
+                                grp += '</div></div>';
+
+                                grp += '<p class="template__block__description description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '</div>';
+                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
+                                    var templateTxt = $('#selectedTemplateDescription').val();
+                                    if (templateTxt === "" || typeof templateTxt === "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
+                                $(".selected__title").text(MatchedGroup.Template[i].Name);
+                                $(".selected__desc").html(MatchedGroup.Template[i].Description);
+                            }
+                            else {
+                                var templateImgs = MatchedGroup.Template[i].Image;
+                                if (templateImgs === "" || templateImgs === null) {
+                                    templateImgs = "/Templates/TemplateImages/CodeFile.png";
+                                }
+                                var imgLists = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
+
+                                grp += '<div class="template__block" data-images="' + imgLists + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+
+                                grp += '<div class="d-flex align-items-center">';
+                                grp += '<div class="template__logo">';
+                                grp += '<img src="' + templateImgs + '"/></div>';
+                                grp += '<div class="template__intro">';
+                                grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
+                                if (MatchedGroup.Template[i].Tags !== null) {
+                                    for (var m = 0; m < MatchedGroup.Template[i].Tags.length; m++) {
+                                        grp += '<span>' + MatchedGroup.Template[i].Tags[m] + '</span>';
+                                    }
+                                }
+                                grp += '</div></div>';
+
+                                grp += '<p class="template__block__description description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '</div>';
+                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
+                                    var templateTxtx = $('#selectedTemplateDescription').val();
+                                    if (templateTxtx === "" || typeof templateTxt === "undefined")
+                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                }
+                            }
+                        }
+                    }
+                }
+                $('#templates__list').empty().append(grp);
+                $(".template__block")[0].click();
+            }
+        }
+    });
+
+}
+// if the user uploading his exported template (zip file), we will take that template name as folder name
+$('body').on('click', '#btnUpload', function () {
+    var fileUpload = $("#FileUpload1").get(0);
+    var files = fileUpload.files;
+    $('#InfoMessage').removeClass('d-block').addClass('d-none');
+    // Create FormData object
+    var fileData = new FormData();
+    // Looping over all files and add it to FormData object
+    for (var i = 0; i < files.length; i++) {
+        fileData.append(files[i].name, files[i]);
+    }
+    templateFolder = files[0].name.replace(".zip", "");
+});
