@@ -819,7 +819,7 @@ namespace VstsDemoBuilder.Controllers
                     string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId);
+                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
                     }
                 }
             }
