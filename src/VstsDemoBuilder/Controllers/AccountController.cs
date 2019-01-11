@@ -29,10 +29,10 @@ namespace VstsDemoBuilder.Controllers
         {
             Session.Clear();
 
-            Session["IsExtractor"] = "false";
-            if (!string.IsNullOrEmpty(model.isExtractor))
+            Session["EnableExtractor"] = "false";
+            if (!string.IsNullOrEmpty(model.EnableExtractor))
             {
-                Session["IsExtractor"] = model.isExtractor;
+                Session["EnableExtractor"] = model.EnableExtractor;
             }
 
             var browser = Request.Browser.Type;
