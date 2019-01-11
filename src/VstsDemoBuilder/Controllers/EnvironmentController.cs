@@ -1250,6 +1250,7 @@ namespace VstsDemoBuilder.Controllers
 
             //Create WIKI
             SetUpWiki(templatesFolder, model, _wikiVersion);
+            CreateCodeWiki(templatesFolder, model, _wikiVersion);
 
 
             List<string> listPullRequestJsonPaths = new List<string>();
@@ -3111,6 +3112,47 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
+        public void CreateCodeWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
+        {
+            try
+            {
+                string wikiFolder = templatesFolder + model.SelectedTemplate + "\\Wiki";
+                if (Directory.Exists(wikiFolder))
+                {
+                    string[] wikiFilePaths = Directory.GetFiles(wikiFolder);
+                    if (wikiFilePaths.Length > 0)
+                    {
+                        ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
+
+                        foreach (string wiki in wikiFilePaths)
+                        {
+                            string[] nameExtension = wiki.Split('\\');
+                            string name = (nameExtension[nameExtension.Length - 1]).Split('.')[0];
+                            string json = model.ReadJsonFile(wiki);
+                            foreach (string repository in model.Environment.repositoryIdList.Keys)
+                            {
+                                string placeHolder = string.Format("${0}$", repository);
+                                json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
+                                    .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                            }
+                            bool isWiki = manageWiki.CreateCodeWiki(json);
+                            if (isWiki)
+                            {
+                                AddMessage(model.id, "Created Wiki");
+                            }
+                            else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
+                            {
+                                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
+            }
+        }
         [AllowAnonymous]
         [HttpPost]
         public string GetTemplateMessage(string TemplateName)
