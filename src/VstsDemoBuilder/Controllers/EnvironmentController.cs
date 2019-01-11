@@ -191,9 +191,9 @@ namespace VstsDemoBuilder.Controllers
                 if (Session["visited"] != null)
                 {
                     Project model = new Project();
-                    if (Session["IsExtractor"] != null)
+                    if (Session["EnableExtractor"] != null)
                     {
-                        model.isExtractor = Session["IsExtractor"].ToString();
+                        model.EnableExtractor = Session["EnableExtractor"].ToString();
                     }
                     if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {

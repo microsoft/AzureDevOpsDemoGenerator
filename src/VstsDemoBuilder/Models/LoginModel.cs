@@ -12,6 +12,6 @@
 
         public string name { get; set; }
 
-        public string isExtractor { get; set; }
+        public string EnableExtractor { get; set; }
     }
 }
