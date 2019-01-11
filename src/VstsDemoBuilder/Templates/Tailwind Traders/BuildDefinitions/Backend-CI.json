@@ -1,0 +1,288 @@
+{
+  "build": [
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Azure Deployment:Create Or Update Resource Group action on TailwindTradersBackend5",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "94a74903-f93f-4075-884f-dc11f34058b4",
+        "versionSpec": "2.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "ConnectedServiceName": "",
+        "action": "Create Or Update Resource Group",
+        "resourceGroupName": "TailwindTradersBackend5",
+        "location": "South India",
+        "templateLocation": "Linked artifact",
+        "csmFileLink": "",
+        "csmParametersFileLink": "",
+        "csmFile": "Deploy/deployment.json",
+        "csmParametersFile": "",
+        "overrideParameters": "-sqlServerAdministratorLogin sqladmin -sqlServerAdministratorLoginPassword P2ssw0rd@123 -servicePrincipalId 7098e0aa-fd96-4da7-b2d8-97dea119d2e1 -servicePrincipalSecret P2ssw0rd",
+        "deploymentMode": "Incremental",
+        "enableDeploymentPrerequisites": "None",
+        "deploymentGroupEndpoint": "",
+        "project": "",
+        "deploymentGroupName": "",
+        "copyAzureVMTags": "true",
+        "runAgentServiceAsUser": "false",
+        "userName": "",
+        "password": "",
+        "outputVariable": "",
+        "deploymentOutputs": ""
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "ARM Outputs",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "584bcff2-3353-4f11-872b-6ba01267a972",
+        "versionSpec": "5.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
+        "ConnectedServiceNameARM": "",
+        "resourceGroupName": "TailwindTradersBackend5",
+        "prefix": "",
+        "outputNames": "",
+        "whenLastDeploymentIsFailed": "fail",
+        "deploymentNameFilter": ""
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Azure CLI ",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "connectedServiceNameARM": "",
+        "scriptLocation": "inlineScript",
+        "scriptPath": "",
+        "inlineScript": "echo \"##vso[task.setvariable variable=registry;]$(acr).azurecr.io\"",
+        "args": "",
+        "addSpnToEnvironment": "false",
+        "useGlobalConfig": "false",
+        "cwd": "",
+        "failOnStandardError": "false"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Build services",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "containerregistrytype": "Azure Container Registry",
+        "dockerRegistryEndpoint": "",
+        "azureSubscriptionEndpoint": "",
+        "azureContainerRegistry": "$(acr)",
+        "dockerComposeFile": "Source/docker-compose.yml",
+        "additionalDockerComposeFiles": "$(extracomposefile)",
+        "dockerComposeFileArgs": "TAG=$(tag)\nREGISTRY=$(registry)",
+        "projectName": "$(Build.Repository.Name)",
+        "qualifyImageNames": "true",
+        "action": "Build services",
+        "additionalImageTags": "",
+        "includeSourceTags": "false",
+        "includeLatestTag": "true",
+        "buildImages": "true",
+        "serviceName": "",
+        "containerName": "",
+        "ports": "",
+        "workDir": "",
+        "entrypoint": "",
+        "containerCommand": "",
+        "detached": "true",
+        "abortOnContainerExit": "true",
+        "imageDigestComposeFile": "$(Build.StagingDirectory)/docker-compose.images.yml",
+        "removeBuildOptions": "false",
+        "baseResolveDirectory": "",
+        "outputDockerComposeFile": "$(Build.StagingDirectory)/docker-compose.yml",
+        "dockerComposeCommand": "",
+        "dockerHostEndpoint": "",
+        "nopIfNoDockerComposeFile": "false",
+        "requireAdditionalDockerComposeFiles": "false",
+        "cwd": "$(System.DefaultWorkingDirectory)"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Push services",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "6975e2d1-96d3-4afc-8a41-498b5d34ea19",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "containerregistrytype": "Azure Container Registry",
+        "dockerRegistryEndpoint": "",
+        "azureSubscriptionEndpoint": "",
+        "azureContainerRegistry": "$(acr).azurecr.io",
+        "dockerComposeFile": "**/docker-compose.yml",
+        "additionalDockerComposeFiles": "$(extracomposefile)",
+        "dockerComposeFileArgs": "",
+        "projectName": "$(Build.Repository.Name)",
+        "qualifyImageNames": "true",
+        "action": "Push services",
+        "additionalImageTags": "$(tag)",
+        "includeSourceTags": "false",
+        "includeLatestTag": "true",
+        "buildImages": "true",
+        "serviceName": "",
+        "containerName": "",
+        "ports": "",
+        "workDir": "",
+        "entrypoint": "",
+        "containerCommand": "",
+        "detached": "true",
+        "abortOnContainerExit": "true",
+        "imageDigestComposeFile": "$(Build.StagingDirectory)/docker-compose.images.yml",
+        "removeBuildOptions": "false",
+        "baseResolveDirectory": "",
+        "outputDockerComposeFile": "$(Build.StagingDirectory)/docker-compose.yml",
+        "dockerComposeCommand": "",
+        "dockerHostEndpoint": "",
+        "nopIfNoDockerComposeFile": "false",
+        "requireAdditionalDockerComposeFiles": "false",
+        "cwd": "$(System.DefaultWorkingDirectory)"
+      }
+    },
+    {
+      "environment": {},
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Publish Artifact: HelmScripts",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "PathtoPublish": "Deploy",
+        "ArtifactName": "HelmScripts",
+        "ArtifactType": "Container",
+        "TargetPath": "",
+        "Parallel": "false",
+        "ParallelCount": "8"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "Bug",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "variables": {
+    "extracomposefile": {
+      "value": "docker-compose.netcore22.yml"
+    },
+    "registry": {
+      "value": ""
+    },
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "tag": {
+      "value": "c2018"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "$TailwindTraders-Backend$",
+    "type": "TfsGit",
+    "name": "TailwindTraders-Backend",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {},
+  "quality": "definition",
+  "drafts": [],
+  "queue": {
+    "name": "Hosted Ubuntu 1604",
+    "pool": {
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "name": "Backend-CI",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled"
+}

@@ -854,6 +854,12 @@
     <Content Include="Templates\Tailwind Traders\WorkItems\User Story.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitions\Website-CI.json" />
     <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Website-CD.json" />
+    <Content Include="Templates\Tailwind Traders\Wiki\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Backend.json" />
+    <Content Include="Templates\Tailwind Traders\ImportSourceCode\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders\ServiceEndpoints\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Backend-CD.json" />
+    <Content Include="Templates\Tailwind Traders\BuildDefinitions\Backend-CI.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

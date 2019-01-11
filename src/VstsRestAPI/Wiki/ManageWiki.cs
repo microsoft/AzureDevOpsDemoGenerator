@@ -88,5 +88,27 @@ namespace VstsRestAPI.Wiki
             }
             return false;
         }
+
+        public bool CreateCodeWiki(string jsonString)
+        {
+            using (var client = GetHttpClient())
+            {
+                var json = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                var method = new HttpMethod("POST");
+                var request = new HttpRequestMessage(method, string.Format("{0}/{1}/_apis/wiki/wikis?api-version={2}", _configuration.UriString, Project, _configuration.VersionNumber)) { Content = json };
+                HttpResponseMessage response = client.SendAsync(request).Result;
+                if(response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.Created)
+                {
+                    return response.IsSuccessStatusCode;
+                }
+                else
+                {
+                    var errorMessage = response.Content.ReadAsStringAsync();
+                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                    this.LastFailureMessage = error;
+                    return false;
+                }
+            }
+        }
     }
 }
