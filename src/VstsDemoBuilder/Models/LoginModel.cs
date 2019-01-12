@@ -18,6 +18,6 @@ namespace VstsDemoBuilder.Models
 
         public string name { get; set; }
 
-        public string templateid { get; set; }
+        public string EnableExtractor { get; set; }
     }
 }
