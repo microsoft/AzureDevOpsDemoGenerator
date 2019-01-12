@@ -82,7 +82,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 email = Session["PAT"].ToString();
             }
-            if (Session["IsExtractor"] == null || Session["IsExtractor"].ToString().ToLower() == "false")
+            if (Session["EnableExtractor"] == null || Session["EnableExtractor"].ToString().ToLower() == "false")
             {
                 return RedirectToAction("NotFound");
             }
