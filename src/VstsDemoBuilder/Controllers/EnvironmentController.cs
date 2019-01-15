@@ -1250,7 +1250,7 @@ namespace VstsDemoBuilder.Controllers
 
             //Create WIKI
             SetUpWiki(templatesFolder, model, _wikiVersion);
-
+            CreateProjetWiki(templatesFolder, model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = templatesFolder + model.SelectedTemplate + @"\PullRequests";
@@ -3061,7 +3061,7 @@ namespace VstsDemoBuilder.Controllers
                             string jsonPageString = System.IO.File.ReadAllText(mainPage);
                             string fileName = System.IO.Path.GetFileName(mainPage);
                             string[] wikipath = fileName.Split('.');
-                            wiki.CreatePages(jsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0]);
+                            wiki.CreateUpdatePages(jsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0]);
 
 
                             List<string> listWikiPagePAths = new List<string>();
@@ -3080,7 +3080,7 @@ namespace VstsDemoBuilder.Controllers
                                     string subfileName = System.IO.Path.GetFileName(pages);
                                     string[] subwikipath = subfileName.Split('.');
 
-                                    wiki.CreatePages(subjsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0] + "/" + subwikipath[0]);
+                                    wiki.CreateUpdatePages(subjsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0] + "/" + subwikipath[0]);
                                     AddMessage(model.id, "Created Wiki");
 
                                 }
@@ -3111,6 +3111,79 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
+        public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
+        {
+            ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
+            string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
+            if (Directory.Exists(projectWikiFolderPath))
+            {
+                string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
+                if (System.IO.File.Exists(createWiki))
+                {
+                    string jsonString = System.IO.File.ReadAllText(createWiki);
+                    jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
+                        .Replace("$Name$", model.Environment.ProjectName);
+                    ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                    string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
+                    foreach (var dir in subDirectories)
+                    {
+                        //dirName==parentName//
+                        string[] dirSplit = dir.Split('\\');
+                        string dirName = dirSplit[dirSplit.Length - 1];
+                        string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                        sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
+                        bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
+
+                        if (isPage)
+                        {
+                            string[] getFiles = System.IO.Directory.GetFiles(dir);
+                            if (getFiles.Length > 0)
+                            {
+                                List<string> childFileNames = new List<string>();
+                                foreach (var file in getFiles)
+                                {
+                                    string[] fileNameExtension = file.Split('\\');
+                                    string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
+                                    string fileContent = model.ReadJsonFile(file);
+                                    bool isCreated = false;
+                                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                                    dic.Add("content", fileContent);
+                                    string newContent = JsonConvert.SerializeObject(dic);
+                                    if (fileName == dirName)
+                                    {
+                                        manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                    }
+                                    else
+                                    {
+                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                    }
+                                    if (isCreated)
+                                    {
+                                        childFileNames.Add(fileName);
+                                    }
+                                }
+                                if (childFileNames.Count > 0)
+                                {
+                                    foreach (var child in childFileNames)
+                                    {
+                                        if (child != dirName)
+                                        {
+                                            string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
+                                            if (!string.IsNullOrEmpty(movePages))
+                                            {
+                                                movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
+                                                manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         [AllowAnonymous]
         [HttpPost]
         public string GetTemplateMessage(string TemplateName)
