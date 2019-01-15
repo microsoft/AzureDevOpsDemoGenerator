@@ -241,7 +241,7 @@ namespace VstsDemoBuilder.Controllers
                     string logWIT = "true"; //System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId);
+                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Extractor");
                     }
                 }
             }
