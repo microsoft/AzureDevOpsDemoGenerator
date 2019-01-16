@@ -182,7 +182,7 @@
             Create New Project
         </div>
         @{
-            if (!string.IsNullOrEmpty(Model.isExtractor) && Model.isExtractor.ToLower() == "true")
+            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
             {
                 <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
                     <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
