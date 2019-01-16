@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -54,6 +53,17 @@ namespace VstsRestAPI.Extractor
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         teamObj = JsonConvert.DeserializeObject<TeamList>(result);
+                        foreach (var team in teamObj.value)
+                        {
+                            if (team.name == Project + " Team")
+                            {
+                                team.isDefault = "true";
+                            }
+                            else
+                            {
+                                team.isDefault = "false";
+                            }
+                        }
                         return teamObj;
                     }
                     else
@@ -192,7 +202,7 @@ namespace VstsRestAPI.Extractor
                         viewModel = JsonConvert.DeserializeObject<ExportIterations.Iterations>(result);
                         ExportedIterations.Iterations iterations = new ExportedIterations.Iterations();
                         List<ExportedIterations.Child> Listchild = new List<ExportedIterations.Child>();
-                        
+
                         if (viewModel.count > 0)
                         {
                             foreach (var iteration in viewModel.value)

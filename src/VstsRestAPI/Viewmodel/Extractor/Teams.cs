@@ -7,6 +7,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
     {
         public string name { get; set; }
         public string description { get; set; }
+        public string isDefault { get; set; }
     }
 
     public class TeamList

@@ -593,6 +593,7 @@ namespace VstsDemoBuilder.Controllers
                             if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
                             {
                                 string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
+                                res = res.Replace(con.Project, "$ProjectName$");
                                 JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
                                 jObj["BoardName"] = boardType;
                                 var style = jObj;
@@ -718,7 +719,6 @@ namespace VstsDemoBuilder.Controllers
                     if (fetchedWorkItem.count > 0)
                     {
                         string item = WIT;
-                        item = item.Replace(" ", "");
                         if (!Directory.Exists(extractedTemplatePath + con.Project + "\\WorkItems"))
                         {
                             Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\WorkItems");
