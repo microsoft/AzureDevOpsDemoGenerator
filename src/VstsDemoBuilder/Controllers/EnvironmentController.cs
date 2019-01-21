@@ -1249,8 +1249,8 @@ namespace VstsDemoBuilder.Controllers
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
 
             //Create WIKI
-            SetUpWiki(templatesFolder, model, _wikiVersion);
-
+            CreateProjetWiki(templatesFolder, model, _wikiVersion);
+            CreateCodeWiki(templatesFolder, model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = templatesFolder + model.SelectedTemplate + @"\PullRequests";
@@ -3039,78 +3039,120 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="templatesFolder"></param>
         /// <param name="model"></param>
         /// <param name="_wikiConfiguration"></param>
-        public void SetUpWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
+        public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
         {
-            try
+            ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
+            string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
+            if (Directory.Exists(projectWikiFolderPath))
             {
-                ManageWiki wiki = new ManageWiki(_wikiConfiguration);
-                if (model.SelectedTemplate.ToLower() == "partsunlimited")
+                string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
+                if (System.IO.File.Exists(createWiki))
                 {
-                    string createWiki = string.Format(templatesFolder + @"{0}\Wiki\ProjectWiki\CreateWiki.json", model.SelectedTemplate);
-                    if (System.IO.File.Exists(createWiki))
+                    string jsonString = System.IO.File.ReadAllText(createWiki);
+                    jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
+                        .Replace("$Name$", model.Environment.ProjectName);
+                    ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                    string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
+                    foreach (var dir in subDirectories)
                     {
-                        ProjectwikiResponse.Projectwiki projectwiki = new ProjectwikiResponse.Projectwiki();
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
-                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId);
-                        projectwiki = wiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
-                        if (projectwiki.id != null)
+                        //dirName==parentName//
+                        string[] dirSplit = dir.Split('\\');
+                        string dirName = dirSplit[dirSplit.Length - 1];
+                        string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                        sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
+                        bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
+
+                        if (isPage)
                         {
-
-                            string mainPage = templatesFolder + model.SelectedTemplate + @"\Wiki\ProjectWiki\AboutPartsUnlimited.json";
-
-                            string jsonPageString = System.IO.File.ReadAllText(mainPage);
-                            string fileName = System.IO.Path.GetFileName(mainPage);
-                            string[] wikipath = fileName.Split('.');
-                            wiki.CreatePages(jsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0]);
-
-
-                            List<string> listWikiPagePAths = new List<string>();
-
-                            string wikiPages = templatesFolder + model.SelectedTemplate + @"\Wiki\ProjectWiki\PartsUnlimitedWiki";
-                            if (System.IO.Directory.Exists(wikiPages))
+                            string[] getFiles = System.IO.Directory.GetFiles(dir);
+                            if (getFiles.Length > 0)
                             {
-                                System.IO.Directory.GetFiles(wikiPages).ToList().ForEach(i => listWikiPagePAths.Add(i));
-                            }
-
-                            if (listWikiPagePAths.Count > 0)
-                            {
-                                foreach (string pages in listWikiPagePAths)
+                                List<string> childFileNames = new List<string>();
+                                foreach (var file in getFiles)
                                 {
-                                    string subjsonPageString = System.IO.File.ReadAllText(pages);
-                                    string subfileName = System.IO.Path.GetFileName(pages);
-                                    string[] subwikipath = subfileName.Split('.');
-
-                                    wiki.CreatePages(subjsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0] + "/" + subwikipath[0]);
-                                    AddMessage(model.id, "Created Wiki");
-
+                                    string[] fileNameExtension = file.Split('\\');
+                                    string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
+                                    string fileContent = model.ReadJsonFile(file);
+                                    bool isCreated = false;
+                                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                                    dic.Add("content", fileContent);
+                                    string newContent = JsonConvert.SerializeObject(dic);
+                                    if (fileName == dirName)
+                                    {
+                                        manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                    }
+                                    else
+                                    {
+                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                    }
+                                    if (isCreated)
+                                    {
+                                        childFileNames.Add(fileName);
+                                    }
+                                }
+                                if (childFileNames.Count > 0)
+                                {
+                                    foreach (var child in childFileNames)
+                                    {
+                                        if (child != dirName)
+                                        {
+                                            string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
+                                            if (!string.IsNullOrEmpty(movePages))
+                                            {
+                                                movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
+                                                manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                            }
+                                        }
+                                    }
                                 }
                             }
-
                         }
                     }
                 }
-                if (model.SelectedTemplate.ToLower() == "myhealthclinic")
+            }
+        }
+        public void CreateCodeWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
+        {
+            try
+            {
+                string wikiFolder = templatesFolder + model.SelectedTemplate + "\\Wiki";
+                if (Directory.Exists(wikiFolder))
                 {
-                    string createWiki = string.Format(templatesFolder + @"{0}\Wiki\CodeWiki\CreateWiki.json", model.SelectedTemplate);
-                    if (System.IO.File.Exists(createWiki))
+                    string[] wikiFilePaths = Directory.GetFiles(wikiFolder);
+                    if (wikiFilePaths.Length > 0)
                     {
-                        CodewikiResponse.Projectwiki projectwiki = new CodewikiResponse.Projectwiki();
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
-                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
-                            .Replace("$RepoID$", model.Environment.repositoryIdList.Any(i => i.Key.ToLower().Contains("myhealthclinic")) ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myhealthclinic").FirstOrDefault().Value : string.Empty);
-                        wiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                        ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
 
-                        AddMessage(model.id, "Created Wiki");
-
+                        foreach (string wiki in wikiFilePaths)
+                        {
+                            string[] nameExtension = wiki.Split('\\');
+                            string name = (nameExtension[nameExtension.Length - 1]).Split('.')[0];
+                            string json = model.ReadJsonFile(wiki);
+                            foreach (string repository in model.Environment.repositoryIdList.Keys)
+                            {
+                                string placeHolder = string.Format("${0}$", repository);
+                                json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
+                                    .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                            }
+                            bool isWiki = manageWiki.CreateCodeWiki(json);
+                            if (isWiki)
+                            {
+                                AddMessage(model.id, "Created Wiki");
+                            }
+                            else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
+                            {
+                                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                            }
+                        }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
-
         [AllowAnonymous]
         [HttpPost]
         public string GetTemplateMessage(string TemplateName)

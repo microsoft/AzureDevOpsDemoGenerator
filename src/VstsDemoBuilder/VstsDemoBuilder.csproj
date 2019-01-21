@@ -63,6 +63,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LowercaseRoutesMVC, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LowercaseRoutesMVC.1.0.3\lib\LowercaseRoutesMVC.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -851,6 +854,15 @@
     <Content Include="Templates\Tailwind Traders\WorkItems\User Story.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitions\Website-CI.json" />
     <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Website-CD.json" />
+    <Content Include="Templates\CreateWiki.json" />
+    <Content Include="Templates\MovePages.json" />
+    <Content Include="Templates\SampleContent.json" />
+    <Content Include="Templates\Tailwind Traders\Wiki\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Backend.json" />
+    <Content Include="Templates\Tailwind Traders\ImportSourceCode\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders\ServiceEndpoints\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Backend-CD.json" />
+    <Content Include="Templates\Tailwind Traders\BuildDefinitions\Backend-CI.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
