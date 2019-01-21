@@ -690,26 +690,24 @@ $(function () {
         $(this).addClass('active');
     });
 
-    $(document).on('mouseover', ".selected__preview img", function () {
-        $(".preview__image").css('top', $(".templates__list").scrollTop() + 'px');
+    $(document).on('click', ".selected__preview img", function () {
         let src = $(this).attr("src");
         $(".preview__image .img__preview").attr('src', src);
         $(".preview__image").removeClass("d-none");
-        $(".template__block").addClass('blur');
+        // $(".template__block").addClass('blur');
     });
-
-    $(document).on('mouseout', ".selected__preview img", function () {
+    $(document).on('click', ".preview__image", function () {
         $(".preview__image").addClass("d-none");
         $(".template__block").removeClass('blur');
     });
 
-
     $(document).on('click', '.template__block', function () {
         $(".selected__preview").empty();
+        $(".preview__image").addClass("d-none");
         $(".selected__preview").addClass("d-none");
         $(".selected").removeClass("selected");
         $(this).addClass("selected");
-        let selectedTitle = $(this).find("h6").text();
+        let selectedTitle = $(this).find("p").text();
         let selectedDesc = $(this).data('description');
         $(".selected__title").text(selectedTitle);
         $(".selected__desc").html(selectedDesc);
@@ -891,20 +889,20 @@ function LoadTemplates(grpSelected) {
                                     grp += '<div class="template__logo">';
                                     grp += '<img src="' + templateImg + '"/></div>';
                                     grp += '<div class="template__intro">';
-                                    grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
+                                    grp += '<p>' + MatchedGroup.Template[i].Name + '</p>';
                                     if (MatchedGroup.Template[i].Tags !== null) {
                                         for (var l = 0; l < MatchedGroup.Template[i].Tags.length; l++) {
                                             grp += '<span>' + MatchedGroup.Template[i].Tags[l] + '</span>';
                                         }
                                     }
                                     grp += '</div></div>';
-                                    grp += '<p class="template__block__description description descSelected"  data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                    grp += '<p class="template__block__description description descSelected"  data-message="' + MatchedGroup.Template[i].Message + '"></p>';
                                     grp += '</div>';
                                     $('#list_templates').removeClass('d-none').addClass('d-block');
-                                    $('.templates__list').removeClass('col-sm-12').addClass('col-md-5');
+                                    $('.templates__list').removeClass('col-sm-12').addClass('col-md-3');
                                 }
                                 else {
-                                    $('.templates__list').removeClass('col-md-5').addClass('col-sm-12');
+                                    $('.templates__list').removeClass('col-md-3').addClass('col-sm-12');
                                     grp += MatchedGroup.Template[i].TemplateFolder;
                                     $('#list_templates').removeClass('d-block').addClass('d-none');
                                 }
@@ -930,7 +928,7 @@ function LoadTemplates(grpSelected) {
                                 grp += '<div class="template__logo">';
                                 grp += '<img src="' + templateImgs + '"/></div>';
                                 grp += '<div class="template__intro">';
-                                grp += '<h6>' + MatchedGroup.Template[i].Name + '</h6>';
+                                grp += '<p>' + MatchedGroup.Template[i].Name + '</p>';
                                 if (MatchedGroup.Template[i].Tags !== null) {
                                     for (var m = 0; m < MatchedGroup.Template[i].Tags.length; m++) {
                                         grp += '<span>' + MatchedGroup.Template[i].Tags[m] + '</span>';
@@ -938,7 +936,7 @@ function LoadTemplates(grpSelected) {
                                 }
                                 grp += '</div></div>';
 
-                                grp += '<p class="template__block__description description" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                grp += '<p class="template__block__description description" data-message="' + MatchedGroup.Template[i].Message + '"></p>';
                                 grp += '</div>';
                                 if (MatchedGroup.Template[i].Name === "SmartHotel360") {
                                     var templateTxtx = $('#selectedTemplateDescription').val();
