@@ -299,7 +299,7 @@ namespace VstsDemoBuilder.Controllers
         public int GetTeamsCount(Configuration con)
         {
             VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-            TeamList teamList = nodes.ExportTeamList();
+            TeamList teamList = nodes.ExportTeamList("");
             int count = 0;
             if (teamList.value != null)
             {
@@ -416,7 +416,7 @@ namespace VstsDemoBuilder.Controllers
 
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             AddMessage(model.id, "");
-            ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate);
+            ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
 
             if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
             {
@@ -453,17 +453,17 @@ namespace VstsDemoBuilder.Controllers
             ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            //int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
-            //if (count >= 1)
-            //{
-            //    AddMessage(model.id, "Build Definition");
-            //}
+            int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            if (count >= 1)
+            {
+                AddMessage(model.id, "Build Definition");
+            }
 
-            //int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
-            //if (relCount >= 1)
-            //{
-            //    AddMessage(model.id, "Release Definition");
-            //}
+            int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            if (relCount >= 1)
+            {
+                AddMessage(model.id, "Release Definition");
+            }
 
             //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
@@ -479,12 +479,21 @@ namespace VstsDemoBuilder.Controllers
             return new string[] { model.id, "" };
         }
         // Get Team List to write into file
-        public bool ExportTeams(Configuration con, string processTemplate)
+        public bool ExportTeams(Configuration con, string processTemplate, string projectID)
         {
+            string defaultTeamID = string.Empty;
             VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             TeamList _team = new TeamList();
-
-            _team = nodes.ExportTeamList();
+            string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+            con.VersionNumber = ProjectPropertyVersion;
+            con.ProjectId = projectID;
+            Projects projects = new Projects(con);
+            ProjectProperties.Properties projectProperties = projects.GetProjectProperties();
+            if (projectProperties.count > 0)
+            {
+                defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
+            }
+            _team = nodes.ExportTeamList(defaultTeamID);
             if (_team.value != null)
             {
                 AddMessage(con.Id, "Teams Definition");
@@ -802,6 +811,8 @@ namespace VstsDemoBuilder.Controllers
                     def["uri"] = "";
                     def["id"] = "";
                     def["queue"]["id"] = "";
+                    def["queue"]["url"] = "";
+                    def["queue"]["_links"] = "{}";
                     def["queue"]["pool"]["id"] = "";
                     def["_links"] = "{}";
                     def["createdDate"] = "";
@@ -825,10 +836,29 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
+                    else if (type.ToString().ToLower() == "git")
+                    {
+                        string url = def["repository"]["url"].ToString();
+                        string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                        endPointString = endPointString.Replace("$GitHubURL$", url);
+                        Guid g = Guid.NewGuid();
+                        string randStr = g.ToString().Substring(0, 8);
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                        {
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                        }
+                        else
+                        {
+                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                        }
+                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                    }
                     else
                     {
                         def["repository"]["id"] = "$" + repoName + "$";
                         def["repository"]["url"] = "";
+                        def["repository"]["properties"]["connectedServiceId"] = "";
                     }
                     var input = def["processParameters"]["inputs"];
                     if (input != null)
