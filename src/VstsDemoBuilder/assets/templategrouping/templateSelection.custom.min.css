@@ -8490,7 +8490,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .nav-pills a {
-    color: white !important;
     font-size: 12px;
 }
 
@@ -8650,7 +8649,6 @@ html, body {
 
     .VSTemplateSelection .template-group .nav-pills a.active {
         background: white !important;
-        border-radius: 25px;
         color: #0078d7 !important;
         font-weight: bolder;
     }
