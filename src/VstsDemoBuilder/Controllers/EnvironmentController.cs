@@ -1249,7 +1249,6 @@ namespace VstsDemoBuilder.Controllers
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
 
             //Create WIKI
-            SetUpWiki(templatesFolder, model, _wikiVersion);
             CreateProjetWiki(templatesFolder, model, _wikiVersion);
             CreateCodeWiki(templatesFolder, model, _wikiVersion);
 
@@ -3040,78 +3039,6 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="templatesFolder"></param>
         /// <param name="model"></param>
         /// <param name="_wikiConfiguration"></param>
-        public void SetUpWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
-        {
-            try
-            {
-                ManageWiki wiki = new ManageWiki(_wikiConfiguration);
-                if (model.SelectedTemplate.ToLower() == "partsunlimited")
-                {
-                    string createWiki = string.Format(templatesFolder + @"{0}\Wiki\ProjectWiki\CreateWiki.json", model.SelectedTemplate);
-                    if (System.IO.File.Exists(createWiki))
-                    {
-                        ProjectwikiResponse.Projectwiki projectwiki = new ProjectwikiResponse.Projectwiki();
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
-                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId);
-                        projectwiki = wiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
-                        if (projectwiki.id != null)
-                        {
-
-                            string mainPage = templatesFolder + model.SelectedTemplate + @"\Wiki\ProjectWiki\AboutPartsUnlimited.json";
-
-                            string jsonPageString = System.IO.File.ReadAllText(mainPage);
-                            string fileName = System.IO.Path.GetFileName(mainPage);
-                            string[] wikipath = fileName.Split('.');
-                            wiki.CreateUpdatePages(jsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0]);
-
-
-                            List<string> listWikiPagePAths = new List<string>();
-
-                            string wikiPages = templatesFolder + model.SelectedTemplate + @"\Wiki\ProjectWiki\PartsUnlimitedWiki";
-                            if (System.IO.Directory.Exists(wikiPages))
-                            {
-                                System.IO.Directory.GetFiles(wikiPages).ToList().ForEach(i => listWikiPagePAths.Add(i));
-                            }
-
-                            if (listWikiPagePAths.Count > 0)
-                            {
-                                foreach (string pages in listWikiPagePAths)
-                                {
-                                    string subjsonPageString = System.IO.File.ReadAllText(pages);
-                                    string subfileName = System.IO.Path.GetFileName(pages);
-                                    string[] subwikipath = subfileName.Split('.');
-
-                                    wiki.CreateUpdatePages(subjsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0] + "/" + subwikipath[0]);
-                                    AddMessage(model.id, "Created Wiki");
-
-                                }
-                            }
-
-                        }
-                    }
-                }
-                if (model.SelectedTemplate.ToLower() == "myhealthclinic")
-                {
-                    string createWiki = string.Format(templatesFolder + @"{0}\Wiki\CodeWiki\CreateWiki.json", model.SelectedTemplate);
-                    if (System.IO.File.Exists(createWiki))
-                    {
-                        CodewikiResponse.Projectwiki projectwiki = new CodewikiResponse.Projectwiki();
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
-                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
-                            .Replace("$RepoID$", model.Environment.repositoryIdList.Any(i => i.Key.ToLower().Contains("myhealthclinic")) ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myhealthclinic").FirstOrDefault().Value : string.Empty);
-                        wiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
-
-                        AddMessage(model.id, "Created Wiki");
-
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
         public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
         {
             ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
