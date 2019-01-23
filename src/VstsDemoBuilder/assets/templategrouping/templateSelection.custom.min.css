@@ -8626,7 +8626,7 @@ html, body {
 
     .VSTemplateSelection .template-holder {
         position: absolute;
-        width: calc(100% - 32px);
+        width: calc(100% - 20%);
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
@@ -9026,6 +9026,7 @@ html, body {
 .template-footer {
     position: absolute;
     bottom: 14px;
+    right:16px;
 }
 
 .template__intro p {
