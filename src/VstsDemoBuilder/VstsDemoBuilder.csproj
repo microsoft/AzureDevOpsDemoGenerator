@@ -356,6 +356,10 @@
     <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\PartsUnlimitedWiki\Key Features.json" />
     <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\AboutPartsUnlimited.json" />
     <Content Include="Templates\PartsUnlimited\WorkItemAttachments\217227appInsights.png" />
+    <Content Include="Templates\Terraform\Images\queuebuild.gif" />
+    <Content Include="Templates\Terraform\Images\releasetasks.png" />
+    <Content Include="Templates\Terraform\Images\releasetrigger.gif" />
+    <Content Include="Templates\Terraform\Images\webapp.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
