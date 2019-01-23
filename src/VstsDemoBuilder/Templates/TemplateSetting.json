@@ -67,7 +67,7 @@
           "TemplateFolder": "Terraform",
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
           "Image": "/Templates/TemplateImages/Terraform.png",
-          "PreviewImages": [ "https://abelsquidhead.com/wp-content/uploads/2018/08/image-1.png", "https://i0.wp.com/pleasereleaseme.net/wp-content/uploads/2018/04/vsts-connect-to-github.png?ssl=1", "https://www.visualstudiogeeks.com/images/screenshots/tarun/SonarQube/VSTS_SonarQube_BuildSummaryMarkDown.png" ]
+          "PreviewImages": [ "/Templates/Terraform/Images/queuebuild.gif", "/Templates/Terraform/Images/releasetasks.png", "/Templates/Terraform/Images/releasetrigger.gif", "/Templates/Terraform/Images/webapp.png" ]
 
         },
         {
