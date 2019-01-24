@@ -422,7 +422,7 @@ namespace VstsDemoBuilder.Controllers
                     return Json("Folder already exist. Please rename the folder and upload it.");
                 }
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
-
+                System.IO.File.Delete(zipPath);
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
