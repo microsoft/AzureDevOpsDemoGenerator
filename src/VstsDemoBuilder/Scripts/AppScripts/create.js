@@ -345,11 +345,105 @@ $(document).ready(function (event) {
         }
     });
 
-    //New Feature Registration
-    $('#closeFeatureRibben').click(function () {
-        $('#newFeature').hide();
+    //Call create templates 
+    createTemplates();
+
+    // load other templates on tab click
+    $(document.body).on('click', '.nav-link', function () {
+        grpSelected = this.text;
+        $.ajax({
+            url: "../Environment/GetGroups",
+            type: "GET",
+            success: function (groups) {
+                var grp = "";
+                var isPrivate = "";
+                if (groups.GroupwiseTemplates.length > 0) {
+                    grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
+                    grp += '<div class="templates d-flex align-items-center flex-wrap">';
+                    for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
+                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
+                            var MatchedGroup = groups.GroupwiseTemplates[g];
+                            if (MatchedGroup.Template[0].Name === "Private") {
+                                $('#selecttmplate').hide();
+                                isPrivate += MatchedGroup.Template[0].Description;
+                                $('#pills-tabContent').html('').html(isPrivate);
+                            }
+                            else {
+                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                                    if (i === 0) {
+                                        var templateImg = MatchedGroup.Template[i].image;
+                                        if (templateImg === "" || templateImg === null) {
+                                            templateImg = "/Templates/TemplateImages/CodeFile.png";
+                                        }
+                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                        grp += '<div class="template-header">';
+                                        grp += '<img class="templateImage" src="' + templateImg + '"/>';
+                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
+                                        if (MatchedGroup.Template[i].tags !== null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var rx = 0; rx < MatchedGroup.Template[i].tags.length; rx++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].tags[rx] + '</i>';
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '</div>';
+                                    }
+                                    else {
+                                        var templateImgs = MatchedGroup.Template[i].image;
+                                        if (templateImgs === "" || templateImgs === null) {
+                                            templateImgs = "/Templates/TemplateImages/CodeFile.png";
+                                        }
+                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                        grp += '<div class="template-header">';
+                                        grp += '<img class="templateImage" src="' + templateImgs + '"/>';
+                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
+                                        if (MatchedGroup.Template[i].tags !== null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var x = 0; x < MatchedGroup.Template[i].tags.length; x++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].tags[x] + '</i>';
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '</div>';
+                                    }
+                                }
+                                $('#selecttmplate').show();
+
+                                grp += '</div></div>';
+                                $('#pills-tabContent').html('').html(grp);
+                            }
+                        }
+                    }
+
+                }
+            }
+        });
     });
 
+    //Group load
+    $.ajax({
+        url: "../Environment/GetGroups",
+        type: "GET",
+        success: function (groups) {
+            var grp = "";
+            if (groups.Groups.length > 0) {
+                for (var g = 0; g < groups.Groups.length; g++) {
+                    if (g === 0)
+                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
+                    else
+                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
+                }
+                $('#modtemplateGroup').empty().append(grp);
+
+            }
+        }
+    });
+
+  
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
@@ -766,102 +860,7 @@ function GetRequiredExtension() {
 
 //TEMPLATE GROUP CREATION
 $(document).ready(function () {
-    createTemplates();
-
-    $(document.body).on('click', '.nav-link', function () {
-        grpSelected = this.text;
-        $.ajax({
-            url: "../Environment/GetGroups",
-            type: "GET",
-            success: function (groups) {
-                var grp = "";
-                var isPrivate = "";
-                if (groups.GroupwiseTemplates.length > 0) {
-                    grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
-                    grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                    for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                            var MatchedGroup = groups.GroupwiseTemplates[g];
-                            if (MatchedGroup.Template[0].Name === "Private") {
-                                $('#selecttmplate').hide();
-                                isPrivate += MatchedGroup.Template[0].Description;
-                                $('#pills-tabContent').html('').html(isPrivate);
-                            }
-                            else {
-                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                                    if (i === 0) {
-                                        var templateImg = MatchedGroup.Template[i].image;
-                                        if (templateImg === "" || templateImg === null) {
-                                            templateImg = "/Templates/TemplateImages/CodeFile.png";
-                                        }
-                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                        grp += '<div class="template-header">';
-                                        grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
-                                            grp += '<p></p>';
-                                            grp += '<p>';
-                                            for (var rx = 0; rx < MatchedGroup.Template[i].tags.length; rx++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[rx] + '</i>';
-                                            }
-                                            grp += '</p>';
-                                        }
-                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                        grp += '</div>';
-                                    }
-                                    else {
-                                        var templateImgs = MatchedGroup.Template[i].image;
-                                        if (templateImgs === "" || templateImgs === null) {
-                                            templateImgs = "/Templates/TemplateImages/CodeFile.png";
-                                        }
-                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
-                                        grp += '<div class="template-header">';
-                                        grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
-                                            grp += '<p></p>';
-                                            grp += '<p>';
-                                            for (var x = 0; x < MatchedGroup.Template[i].tags.length; x++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[x] + '</i>';
-                                            }
-                                            grp += '</p>';
-                                        }
-                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                        grp += '</div>';
-                                    }
-                                }
-                                $('#selecttmplate').show();
-
-                                grp += '</div></div>';
-                                $('#pills-tabContent').html('').html(grp);
-                            }
-                        }
-                    }
-
-                }
-            }
-        });
-    });
-
-    //Group load
-    $.ajax({
-        url: "../Environment/GetGroups",
-        type: "GET",
-        success: function (groups) {
-            var grp = "";
-            if (groups.Groups.length > 0) {
-                for (var g = 0; g < groups.Groups.length; g++) {
-                    if (g === 0)
-                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
-                    else
-                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
-                }
-                $('#modtemplateGroup').empty().append(grp);
-
-            }
-        }
-    });
-
+ 
 });
 
 $(function () {
@@ -930,11 +929,11 @@ function createTemplates() {
                                 }
                                 grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxt = $('#selectedTemplateDescription').val();
-                                    if (templateTxt === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
+                                //if (MatchedGroup.Template[i].Name === "SmartHotel360") {
+                                //    var templateTxt = $('#selectedTemplateDescription').val();
+                                //    if (templateTxt === "" || typeof templateTxt === "undefined")
+                                //        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                //}
                             }
                             else {
                                 var templateImgs = MatchedGroup.Template[i].image;
@@ -955,11 +954,11 @@ function createTemplates() {
                                 }
                                 grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxtx = $('#selectedTemplateDescription').val();
-                                    if (templateTxtx === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
+                                //if (MatchedGroup.Template[i].Name === "SmartHotel360") {
+                                //    var templateTxtx = $('#selectedTemplateDescription').val();
+                                //    if (templateTxtx === "" || typeof templateTxt === "undefined")
+                                //        $('#descContainer').html(MatchedGroup.Template[i].Description);
+                                //}
                             }
                         }
                     }
@@ -1056,6 +1055,9 @@ function validateExtensionCheckbox() {
             $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
             isAgreedTerms = false;
         }
+    }
+    else {
+        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
     }
 }
 
