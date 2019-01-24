@@ -816,6 +816,38 @@ namespace VstsDemoBuilder.Controllers
                     def["queue"]["pool"]["id"] = "";
                     def["_links"] = "{}";
                     def["createdDate"] = "";
+
+                    var process = def["process"];
+                    if (process != null)
+                    {
+                        var phases = process["phases"];
+                        if (phases != null)
+                        {
+                            foreach (var phase in phases)
+                            {
+                                phase["target"]["queue"] = "{}";
+                                var steps = phase["steps"];
+                                if (steps != null)
+                                {
+                                    foreach (var step in steps)
+                                    {
+                                        string keyConfig = System.IO.File.ReadAllText(Server.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                        KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                        keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
+                                        foreach (var key in keyC.keys)
+                                        {
+                                            string keyVal = step[key] != null ? step[key].ToString() : "";
+                                            if (!string.IsNullOrEmpty(keyVal))
+                                            {
+                                                step[key] = "";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     var type = def["repository"]["type"];
                     if (type.ToString().ToLower() == "github")
                     {
@@ -980,7 +1012,11 @@ namespace VstsDemoBuilder.Controllers
                                             keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                             foreach (var key in keyC.keys)
                                             {
-                                                input[key] = "";
+                                                string keyVal = input[key] != null ? input[key].ToString() : "";
+                                                if (!string.IsNullOrEmpty(keyVal))
+                                                {
+                                                    input[key] = "";
+                                                }
                                             }
                                         }
                                     }

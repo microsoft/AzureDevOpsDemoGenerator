@@ -483,10 +483,6 @@ namespace VstsDemoBuilder.Controllers
                                 string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
                                 System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
 
-                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
-
-                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
-
                                 if (Directory.Exists(sourceDirectory))
                                 {
                                     System.IO.File.AppendAllText(logPath, "sourceDirectory Path :" + sourceDirectory + "\r\n");

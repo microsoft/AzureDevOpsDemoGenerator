@@ -1057,6 +1057,9 @@ function validateExtensionCheckbox() {
             isAgreedTerms = false;
         }
     }
+    else {
+        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+    }
 }
 
 function GetTemplates(selectedTemplate) {
