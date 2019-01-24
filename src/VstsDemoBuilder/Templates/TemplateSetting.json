@@ -15,7 +15,7 @@
           "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders Web",
           "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
-          "tags": [ "Agile", "Data and AI", "React" ],
+          "tags": [ "Agile", "DotNet", "React", "Docker" ],
           "image": "/Templates/TemplateImages/TailwindTraders.png"
         },
         {
@@ -187,7 +187,7 @@
       "Template": [
         {
           "key": "77387",
-          "Name": "Tailwind Traders",
+          "Name": "Tailwind Traders V1",
           "TemplateFolder": "Tailwind Traders",
           "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
           "tags": [ "Agile", "Data and AI", "React" ],
