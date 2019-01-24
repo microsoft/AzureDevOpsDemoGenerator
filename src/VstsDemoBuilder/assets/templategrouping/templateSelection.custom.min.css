@@ -8899,7 +8899,6 @@ html, body {
     .details__section .preview__image img {
         /* min-width: 80%; */
         max-width: 80%;
-        height: 100%;
         /* width: 100%; */
         border: 1px solid #777;
         border-radius: 4px;
