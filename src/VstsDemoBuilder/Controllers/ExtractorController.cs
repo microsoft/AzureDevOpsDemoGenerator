@@ -196,7 +196,7 @@ namespace VstsDemoBuilder.Controllers
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
 
-            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, Project = project };
+            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
 
             ProjectProperties.Properties load = new ProjectProperties.Properties();
             Projects projects = new Projects(config);
