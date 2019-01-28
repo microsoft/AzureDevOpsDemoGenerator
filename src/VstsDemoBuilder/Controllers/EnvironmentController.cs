@@ -253,10 +253,7 @@ namespace VstsDemoBuilder.Controllers
                         }
                         //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-                        if (!string.IsNullOrEmpty(model.TemplateName))
-                        {
-                            TemplateSelected = model.TemplateName;
-                        }
+                       
                         if (!string.IsNullOrEmpty(TemplateSelected))
                         {
                             foreach (var grpTemplate in templates.GroupwiseTemplates)
@@ -272,6 +269,7 @@ namespace VstsDemoBuilder.Controllers
                                             model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
                                             model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
                                             model.Message = template.Message == null ? string.Empty : template.Message;
+                                            model.selectedTemplateDescription = template.Description;
                                         }
                                     }
                                 }
@@ -1194,6 +1192,8 @@ namespace VstsDemoBuilder.Controllers
                         }
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
+                    UpdateSprintItems(model, _boardVersion, settings);
+                    RenameIterations(model, _boardVersion, settings.renameIterations);
                     UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
                 }
             }

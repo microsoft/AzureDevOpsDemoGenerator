@@ -863,6 +863,36 @@
     <Content Include="Templates\Tailwind Traders\ServiceEndpoints\Tailwind Traders.json" />
     <Content Include="Templates\Tailwind Traders\ReleaseDefinitions\Backend-CD.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitions\Backend-CI.json" />
+    <Content Include="Templates\Tailwind Traders Web\BuildDefinitions\Website-CI.json" />
+    <Content Include="Templates\Tailwind Traders Web\Extensions.json" />
+    <Content Include="Templates\Tailwind Traders Web\ImportSourceCode\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders Web\Iterations.json" />
+    <Content Include="Templates\Tailwind Traders Web\ProjectSettings.json" />
+    <Content Include="Templates\Tailwind Traders Web\ProjectTemplate.json" />
+    <Content Include="Templates\Tailwind Traders Web\ReleaseDefinitions\Website-CD.json" />
+    <Content Include="Templates\Tailwind Traders Web\ServiceEndpoints\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders Web\TeamArea.json" />
+    <Content Include="Templates\Tailwind Traders Web\Teams\Teams.json" />
+    <Content Include="Templates\Tailwind Traders Web\Teams\Website Team\BoardColumns.json" />
+    <Content Include="Templates\Tailwind Traders Web\Teams\Website Team\BoardRows.json" />
+    <Content Include="Templates\Tailwind Traders Web\Teams\Website Team\CardFields.json" />
+    <Content Include="Templates\Tailwind Traders Web\Teams\Website Team\CardStyles.json" />
+    <Content Include="Templates\Tailwind Traders Web\Teams\Website Team\TeamSetting.json" />
+    <Content Include="Templates\Tailwind Traders Web\Wiki\Tailwind Traders.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Task.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\User Story.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Feature.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Epic.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Bug.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Test Case.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Test Plan.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Test Suite.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Bug.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Epic.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Feature.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Case.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Plan.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Suite.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
