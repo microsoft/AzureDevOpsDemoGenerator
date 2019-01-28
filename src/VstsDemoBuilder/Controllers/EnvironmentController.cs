@@ -1192,6 +1192,8 @@ namespace VstsDemoBuilder.Controllers
                         }
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
+                    UpdateSprintItems(model, _boardVersion, settings);
+                    RenameIterations(model, _boardVersion, settings.renameIterations);
                     UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
                 }
             }
