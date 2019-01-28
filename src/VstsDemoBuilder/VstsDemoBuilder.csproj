@@ -881,6 +881,18 @@
     <Content Include="Templates\Tailwind Traders Web\Wiki\Tailwind Traders.json" />
     <Content Include="Templates\Tailwind Traders Web\WorkItems\Task.json" />
     <Content Include="Templates\Tailwind Traders Web\WorkItems\User Story.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Feature.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Epic.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Bug.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Test Case.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Test Plan.json" />
+    <Content Include="Templates\Tailwind Traders\WorkItems\Test Suite.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Bug.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Epic.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Feature.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Case.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Plan.json" />
+    <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Suite.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
