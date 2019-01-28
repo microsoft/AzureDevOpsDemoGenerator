@@ -5,7 +5,7 @@
       "enabled": true,
       "continueOnError": false,
       "alwaysRun": false,
-      "displayName": "Azure Deployment:Create Or Update Resource Group action on TailwindTradersBackend5",
+      "displayName": "Azure Deployment:Create Or Update Resource Group action on $(resourcegroup)",
       "timeoutInMinutes": 0,
       "task": {
         "id": "94a74903-f93f-4075-884f-dc11f34058b4",
@@ -15,14 +15,14 @@
       "inputs": {
         "ConnectedServiceName": "",
         "action": "Create Or Update Resource Group",
-        "resourceGroupName": "TailwindTradersBackend5",
+        "resourceGroupName": "$(resourcegroup)",
         "location": "South India",
         "templateLocation": "Linked artifact",
         "csmFileLink": "",
         "csmParametersFileLink": "",
         "csmFile": "Deploy/deployment.json",
         "csmParametersFile": "",
-        "overrideParameters": "-sqlServerAdministratorLogin sqladmin -sqlServerAdministratorLoginPassword P2ssw0rd@123 -servicePrincipalId 7098e0aa-fd96-4da7-b2d8-97dea119d2e1 -servicePrincipalSecret P2ssw0rd",
+        "overrideParameters": "-sqlServerAdministratorLogin $(sqlServerAdministratorLogin) -sqlServerAdministratorLoginPassword $(sqlServerAdministratorLoginPassword) -servicePrincipalId $(servicePrincipalId) -servicePrincipalSecret $(servicePrincipalSecret)",
         "deploymentMode": "Incremental",
         "enableDeploymentPrerequisites": "None",
         "deploymentGroupEndpoint": "",
@@ -51,7 +51,7 @@
       "inputs": {
         "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
         "ConnectedServiceNameARM": "",
-        "resourceGroupName": "TailwindTradersBackend5",
+        "resourceGroupName": "$(resourcegroup)",
         "prefix": "",
         "outputNames": "",
         "whenLastDeploymentIsFailed": "fail",
@@ -225,6 +225,21 @@
     },
     "registry": {
       "value": ""
+    },
+    "resourcegroup": {
+      "value": "TailwindTradersBackend"
+    },
+    "servicePrincipalId": {
+      "value": ""
+    },
+    "servicePrincipalSecret": {
+      "value": ""
+    },
+    "sqlServerAdministratorLogin": {
+      "value": "sqladmin"
+    },
+    "sqlServerAdministratorLoginPassword": {
+      "value": "P2ssw0rd@123"
     },
     "system.debug": {
       "value": "false",
