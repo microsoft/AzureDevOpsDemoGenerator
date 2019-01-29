@@ -709,9 +709,12 @@ $(function () {
         $(this).addClass("selected");
         let selectedTitle = $(this).find("p").text();
         let selectedDesc = $(this).data('description');
+        let author = $(this).data('author');
+        let updateddate = $(this).data('lastupdated');
         $(".selected__title").text(selectedTitle);
         $(".selected__desc").html(selectedDesc);
-
+        $('#author').empty().append(author);
+        $('#lastupdated').empty().append(updateddate);
         $('.description').removeClass('descSelected');
         $(this.lastElementChild).addClass('descSelected');
 
@@ -867,13 +870,15 @@ function LoadTemplates(grpSelected) {
         url: "../Environment/GetGroups",
         type: "GET",
         success: function (groups) {
-            var grp = "";
             if (groups.GroupwiseTemplates.length > 0) {
                 console.log(groups);
+                $('#templates__list').empty();
                 for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
                     if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
                         var MatchedGroup = groups.GroupwiseTemplates[g];
                         for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                            var grp = "";
+
                             if (i === 0) {
                                 var templateImg = MatchedGroup.Template[i].Image;
                                 if (templateImg === "" || templateImg === null) {
@@ -884,7 +889,7 @@ function LoadTemplates(grpSelected) {
 
                                 if (grpSelected !== "Private") {
                                     // checking for the group name private, if not , we will process the below logic
-                                    grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+                                    grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '" data-author="' + MatchedGroup.Template[i].Author + '" data-lastupdated="' + MatchedGroup.Template[i].LastUpdatedDate + '">';
                                     grp += '<div class="d-flex align-items-center">';
                                     grp += '<div class="template__logo">';
                                     grp += '<img src="' + templateImg + '"/></div>';
@@ -906,12 +911,6 @@ function LoadTemplates(grpSelected) {
                                     grp += MatchedGroup.Template[i].TemplateFolder;
                                     $('#list_templates').removeClass('d-block').addClass('d-none');
                                 }
-
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxt = $('#selectedTemplateDescription').val();
-                                    if (templateTxt === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
                                 $(".selected__title").text(MatchedGroup.Template[i].Name);
                                 $(".selected__desc").html(MatchedGroup.Template[i].Description);
                             }
@@ -922,7 +921,7 @@ function LoadTemplates(grpSelected) {
                                 }
                                 var imgLists = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
 
-                                grp += '<div class="template__block" data-images="' + imgLists + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '">';
+                                grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '" data-author="' + MatchedGroup.Template[i].Author + '" data-lastupdated="' + MatchedGroup.Template[i].LastUpdatedDate + '">';
 
                                 grp += '<div class="d-flex align-items-center">';
                                 grp += '<div class="template__logo">';
@@ -938,16 +937,11 @@ function LoadTemplates(grpSelected) {
 
                                 grp += '<p class="template__block__description description" data-message="' + MatchedGroup.Template[i].Message + '"></p>';
                                 grp += '</div>';
-                                if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                    var templateTxtx = $('#selectedTemplateDescription').val();
-                                    if (templateTxtx === "" || typeof templateTxt === "undefined")
-                                        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                }
                             }
+                            $(grp).appendTo("#templates__list");
                         }
                     }
                 }
-                $('#templates__list').empty().append(grp);
                 $(".template__block")[0].click();
             }
         }

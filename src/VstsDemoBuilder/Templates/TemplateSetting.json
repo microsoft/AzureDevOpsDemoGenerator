@@ -19,7 +19,9 @@
           "Tags": [ "scrum", "aspnetcore", "azureappservice" ],
           "Image": "/Templates/TemplateImages/SmartHotel.png",
           "Message": "Note that the code for the SmartHotel 360 Website hosted on <a href='https://github.com/Microsoft/SmartHotel360-Website' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
-          "PreviewImages": [ "/Templates/SmartHotel360/Images/dashboard.png", "/Templates/SmartHotel360/Images/Diagram.png", "/Templates/SmartHotel360/Images/Screens.png" ]
+          "PreviewImages": [ "/Templates/SmartHotel360/Images/dashboard.png", "/Templates/SmartHotel360/Images/Diagram.png", "/Templates/SmartHotel360/Images/Screens.png" ],
+          "Author": "Microsoft",
+          "LastUpdatedDate": "20/12/2018"
         },
         {
           "Key": "77380",
@@ -28,7 +30,9 @@
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
           "Tags": [ "scrum", "aspnetcore", "azureappservice" ],
           "Image": "/Templates/TemplateImages/MyHealthClinic.png",
-          "PreviewImages": [ "/Templates/MyHealthClinic/Images/boards.png", "/Templates/MyHealthClinic/Images/CI.png", "/Templates/MyHealthClinic/Images/dashboard.png", "/Templates/MyHealthClinic/Images/site.png" ]
+          "PreviewImages": [ "/Templates/MyHealthClinic/Images/boards.png", "/Templates/MyHealthClinic/Images/CI.png", "/Templates/MyHealthClinic/Images/dashboard.png", "/Templates/MyHealthClinic/Images/site.png" ],
+          "Author": "Microsoft",
+          "LastUpdatedDate": "20/12/2018"
         },
         {
           "Key": "77379",
@@ -69,7 +73,7 @@
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
           "Tags": [ "infrastructure as code", "aspdotnet", "azure cloud" ],
           "Image": "/Templates/TemplateImages/Terraform.png",
-          "PreviewImages": [ "/Templates/Terraform/Images/queuebuild.gif", "/Templates/Terraform/Images/releasetasks.png", "/Templates/Terraform/Images/releasetrigger.gif", "/Templates/Terraform/Images/webapp.png" ]
+          "PreviewImages": [ "/Templates/Terraform/Images/Terraform.png", "/Templates/Terraform/Images/queuebuild.gif", "/Templates/Terraform/Images/releasetasks.png", "/Templates/Terraform/Images/releasetrigger.gif" ]
         },
         {
           "Key": "77386",
@@ -105,7 +109,7 @@
           "Description": "Use this template to learn how to deploy a Docker-based ASP.NET Core web application to a Kubernetes cluster running in Azure Kubernetes Service (AKS) with Azure Pipelines. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a>",
           "Tags": [ "aks", "kubernetes", "containers" ],
           "Image": "/Templates/TemplateImages/kubernetes.png",
-          "PreviewImages": [ "/Templates/AKS/Images/aksdashboard.png", "/Templates/AKS/Images/update_CD3.png", "/Templates/AKS/Images/updateprocessbd.png", "/Templates/AKS/Images/finalresult.png" ]
+          "PreviewImages": [ "/Templates/AKS/Images/AKS.png", "/Templates/AKS/Images/aksdashboard.png", "/Templates/AKS/Images/update_CD3.png", "/Templates/AKS/Images/updateprocessbd.png" ]
         },
         {
           "Key": "77370",
