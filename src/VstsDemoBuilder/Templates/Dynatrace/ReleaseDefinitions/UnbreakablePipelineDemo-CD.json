@@ -1,0 +1,541 @@
+{
+  "source": "userInterface",
+  "revision": 19,
+  "description": null,
+  "isDeleted": false,
+  "variables": {
+    "ApplicationName": {
+      "value": "SampleDevOpsApp"
+    },
+    "DeploymentId": {
+      "value": ""
+    },
+    "Dynatrace_API_TOKEN": {
+      "value": ""
+    },
+    "Dynatrace_Tenant": {
+      "value": ""
+    },
+    "Dynatrace_Token": {
+      "value": ""
+    },
+    "SimulateBuildNumber": {
+      "value": "1"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "name": "Staging",
+      "rank": 1,
+      "owner": {
+        "Name": "$OwnerName$",
+        "id": "$OwnerId$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "beforeGates"
+        }
+      },
+      "deployStep": {},
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "afterSuccessfulGates"
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "healthPercent": 0,
+            "deploymentHealthOption": "Custom",
+            "tags": [
+              "Staging"
+            ],
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+                {
+                  "artifactItems": [],
+                  "alias": "_UnbreakablePipelineDemo-CI",
+                  "artifactType": "Build",
+                  "artifactDownloadMode": "All"
+                }
+              ]
+            },
+            "queueId": "$Deployment group job$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "machineGroupBasedDeployment",
+          "name": "Deployment group job",
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Copy the Demo app to Staging VM",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "pm2 stop all\npm2 delete all\nsudo pkill -9 pm2\nsleep 30;\nsudo rm -R /home/unbreakablepipeline/dynatrace\nsudo mkdir /home/unbreakablepipeline/dynatrace\nsudo chmod -R 777 /home/unbreakablepipeline/dynatrace\ncp -R $(System.DefaultWorkingDirectory)/_UnbreakablePipelineDemo-CI/app /home/unbreakablepipeline/dynatrace\ncp $(System.DefaultWorkingDirectory)/_UnbreakablePipelineDemo-CI/app/start_loadtest.sh /home/unbreakablepipeline/dynatrace\nsudo chmod 777 /home/unbreakablepipeline/dynatrace/app/app.js\nsudo chmod 777 /home/unbreakablepipeline/dynatrace/start_loadtest.sh\n",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Deploy the Demo app",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "export DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName)\nexport APPLICATION_NAME=$(ApplicationName)\nexport DT_TAGS=DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName)\nexport DT_CUSTOM_PROP=\"DEPLOYMENT_ID=$(DeploymentId) DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName) APPLICATION_NAME=$(ApplicationName)\"\nexport DT_CLUSTER_ID=\"$(Release.EnvironmentName) $(ApplicationName)\"\nenv\nsudo kill -9 `ps -ef | grep pm2 | grep -v grep | awk '{print $2}'`\n\n# now we launch our app\ncd /home/unbreakablepipeline/dynatrace/app\nsudo DT_TAGS=DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName) DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName) DT_CLUSTER_ID=\"$(Release.EnvironmentName) $(ApplicationName)\" BUILD_NUMBER=$(SimulateBuildNumber) pm2 start --no-pmx --update-env app.js\n\necho \"Deploying DEPLOYMENT_ID=\"  $(DeploymentId)\necho \"DEPLOYMENT_GROUP_NAME=\"  $(Release.EnvironmentName) \necho \"APPLICATION_NAME=\"$(ApplicationName)\necho \"DT-Tags=\" $DT_TAGS\necho \"DT_CLUSTER_ID=\"$DT_CLUSTER_ID\necho \"BUILD_NUMBER=\"$(SimulateBuildNumber)\n\n\n# now lets make sure the app is really up & running - execute a couple of requests using the x-dynatrace header to identify these requests in Dynatrace as startup tests\nsleep 5;\necho \"Running a simply set of curls to validate the service is up and running\"\ncurl -s \"http://localhost:8080/\" -H \"x-dynatrace: NA=StartUp.Homepage;\" -o nul &> startuptest.log\ncurl -s \"http://localhost:8080/version\" -H \"x-dynatrace: NA=StartUp.Version;\" -o nul &> startuptest.log\ncurl -s \"http://localhost:8080/api/echo?text=This is from a testing script\" -H \"x-dynatrace: NA=StartUp.Echo;\" -o nul &> startuptest.log\ncurl -s \"http://localhost:8080/api/invoke?url=http://www.dynatrace.com\" -H \"x-dynatrace: NA=StartUp.Invoke;\" -o nul &> startuptest.log\nsleep 5;\nexit 0\n\n",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Run Load test against the app",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "export DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName)\nsudo chmod 777 /home/unbreakablepipeline/dynatrace/start_loadtest.sh\nsed -i -e 's/\\r$//' /home/unbreakablepipeline/dynatrace/start_loadtest.sh\nsudo DEPLOYMENT_GROUP_NAME=$DEPLOYMENT_GROUP_NAME nohup /home/unbreakablepipeline/dynatrace/start_loadtest.sh &>/dev/null &\nsleep 300;",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Push Deployment Event to Dynatrace",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "#!/bin/sh\npostData=$(cat <<EOF\n    {\n        \"eventType\" : \"CUSTOM_DEPLOYMENT\",\n        \"source\" : \"AzureDevops\" ,\n        \"deploymentName\" : \"$(Release.DefinitionName)\",\n        \"deploymentVersion\" : \"$(Release.ReleaseId)\"  ,\n        \"deploymentProject\" : \"$(System.TeamProject)\" ,\n        \"ciBackLink\" : \"$(System.TeamFoundationCollectionUri)\",\n        \"attachRules\" : {\n               \"tagRule\" : [\n                   {\n                       \"meTypes\":\"SERVICE\" ,\n                   \"tags\" : [\n                       {\n                           \"context\" : \"ENVIRONMENT\",\n                           \"key\": \"DEPLOYMENT_GROUP_NAME\",\n                           \"value\" : \"Staging\"    \n                       }\n                       ]\n                   }\n                   ]\n        }\n}\nEOF\n)\necho \"$postData\"\necho  $(Dynatrace_Tenant)\"/api/v1/events\"\nDynatrace_APIURL=\"$(Dynatrace_Tenant)\"\nDynatrace_APIURL=\"$Dynatrace_APIURL/api/v1/events\"\necho \"$Dynatrace_APIURL\"\ncurl --url \"$Dynatrace_APIURL\" -H \"Content-type: application/json\" -H \"Authorization: Api-Token \"$(Dynatrace_API_TOKEN) -X POST -d  \"$postData\"",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {},
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "gatesOptions": {
+          "isEnabled": true,
+          "timeout": 10,
+          "samplingInterval": 5,
+          "stabilizationTime": 5,
+          "minimumSuccessDuration": 0
+        },
+        "gates": [
+          {
+            "tasks": [
+              {
+                "environment": {},
+                "taskId": "9c3e8943-130d-4c78-ac63-8af81df62dfb",
+                "version": "1.*",
+                "name": "Invoke REST API: POST",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                  "connectedServiceNameSelector": "connectedServiceName",
+                  "connectedServiceName": "",
+                  "connectedServiceNameARM": "",
+                  "method": "POST",
+                  "headers": "{\n\"Content-Type\":\"application/json\"\n}",
+                  "body": "{\n\"dynatraceApiToken\":\"<Enter your API Token\",\n\"dynatraceTennant\":\"Enter your tenant\"\n}",
+                  "urlSuffix": "?code=Enter function key From Azure portal",
+                  "waitForCompletion": "false",
+                  "successCriteria": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "environmentTriggers": []
+    },
+    {
+      "name": "Production",
+      "rank": 2,
+      "owner": {
+        "displayName": "$OwnerUniqueName$",
+        "id": "$OwnerId$",
+        "uniqueName": "$OwnerUniqueId$"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "beforeGates"
+        }
+      },
+      "deployStep": {},
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "afterSuccessfulGates"
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "healthPercent": 0,
+            "deploymentHealthOption": "Custom",
+            "tags": [
+              "Production"
+            ],
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+                {
+                  "artifactItems": [],
+                  "alias": "_UnbreakablePipelineDemo-CI",
+                  "artifactType": "Build",
+                  "artifactDownloadMode": "All"
+                }
+              ]
+            },
+            "queueId": "$Deployment group job$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "machineGroupBasedDeployment",
+          "name": "Deployment group job",
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Copy the Demo app to Production VM",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "pm2 stop all\npm2 delete all\nsudo pkill -9 pm2\nsleep 30;\nsudo rm -R /home/unbreakablepipeline/dynatrace\nsudo mkdir /home/unbreakablepipeline/dynatrace\nsudo chmod -R 777 /home/unbreakablepipeline/dynatrace\ncp -R $(System.DefaultWorkingDirectory)/_UnbreakablePipelineDemo-CI/app /home/unbreakablepipeline/dynatrace\ncp $(System.DefaultWorkingDirectory)/_UnbreakablePipelineDemo-CI/app/start_loadtest.sh /home/unbreakablepipeline/dynatrace\nsudo chmod 777 /home/unbreakablepipeline/dynatrace/app/app.js\nsudo chmod 777 /home/unbreakablepipeline/dynatrace/start_loadtest.sh\n",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Deploy the Demo app",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "export DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName)\nexport APPLICATION_NAME=$(ApplicationName)\nexport DT_TAGS=DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName)\nexport DT_CUSTOM_PROP=\"DEPLOYMENT_ID=$(DeploymentId) DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName) APPLICATION_NAME=$(ApplicationName)\"\nexport DT_CLUSTER_ID=\"$(Release.EnvironmentName) $(ApplicationName)\"\nenv\nsudo kill -9 `ps -ef | grep pm2 | grep -v grep | awk '{print $2}'`\n\n# now we launch our app\ncd /home/unbreakablepipeline/dynatrace/app\nsudo DT_TAGS=DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName) DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName) DT_CLUSTER_ID=\"$(Release.EnvironmentName) $(ApplicationName)\" BUILD_NUMBER=$(SimulateBuildNumber) pm2 start --no-pmx --update-env app.js\n\necho \"Deploying DEPLOYMENT_ID=\"  $(DeploymentId)\necho \"DEPLOYMENT_GROUP_NAME=\"  $(Release.EnvironmentName) \necho \"APPLICATION_NAME=\"$(ApplicationName)\necho \"DT-Tags=\" $DT_TAGS\necho \"DT_CLUSTER_ID=\"$DT_CLUSTER_ID\necho \"BUILD_NUMBER=\"$(SimulateBuildNumber)\n\n\n# now lets make sure the app is really up & running - execute a couple of requests using the x-dynatrace header to identify these requests in Dynatrace as startup tests\nsleep 5;\necho \"Running a simply set of curls to validate the service is up and running\"\ncurl -s \"http://localhost:8080/\" -H \"x-dynatrace: NA=StartUp.Homepage;\" -o nul &> startuptest.log\ncurl -s \"http://localhost:8080/version\" -H \"x-dynatrace: NA=StartUp.Version;\" -o nul &> startuptest.log\ncurl -s \"http://localhost:8080/api/echo?text=This is from a testing script\" -H \"x-dynatrace: NA=StartUp.Echo;\" -o nul &> startuptest.log\ncurl -s \"http://localhost:8080/api/invoke?url=http://www.dynatrace.com\" -H \"x-dynatrace: NA=StartUp.Invoke;\" -o nul &> startuptest.log\nsleep 5;\nexit 0\n\n",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Run Load test against the app",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "export DEPLOYMENT_GROUP_NAME=$(Release.EnvironmentName)\nsudo chmod 777 /home/unbreakablepipeline/dynatrace/start_loadtest.sh\nsed -i -e 's/\\r$//' /home/unbreakablepipeline/dynatrace/start_loadtest.sh\nsudo DEPLOYMENT_GROUP_NAME=$DEPLOYMENT_GROUP_NAME nohup /home/unbreakablepipeline/dynatrace/start_loadtest.sh &>/dev/null &\nsleep 300;",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Push Deployment Event to Dynatrace",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "#!/bin/sh\npostData=$(cat <<EOF\n    {\n        \"eventType\" : \"CUSTOM_DEPLOYMENT\",\n        \"source\" : \"AzureDevops\" ,\n        \"deploymentName\" : \"$(Release.DefinitionName)\",\n        \"deploymentVersion\" : \"$(Release.ReleaseId)\"  ,\n        \"deploymentProject\" : \"$(System.TeamProject)\" ,\n        \"ciBackLink\" : \"$(System.TeamFoundationCollectionUri)\",\n        \"attachRules\" : {\n               \"tagRule\" : [\n                   {\n                       \"meTypes\":\"SERVICE\" ,\n                   \"tags\" : [\n                       {\n                           \"context\" : \"ENVIRONMENT\",\n                           \"key\": \"DEPLOYMENT_GROUP_NAME\",\n                           \"value\" : \"Production\"    \n                       }\n                       ]\n                   }\n                   ]\n        }\n}\nEOF\n)\necho \"$postData\"\necho  $(Dynatrace_Tenant)\"/api/v1/events\"\nDynatrace_APIURL=\"$(Dynatrace_Tenant)\"\nDynatrace_APIURL=\"$Dynatrace_APIURL/api/v1/events\"\necho \"$Dynatrace_APIURL\"\ncurl --url \"$Dynatrace_APIURL\" -H \"Content-type: application/json\" -H \"Authorization: Api-Token \"$(Dynatrace_API_TOKEN) -X POST -d  \"$postData\"",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            }
+          ]
+        }
+
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "Staging",
+          "conditionType": "environmentState",
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {},
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "gatesOptions": null,
+        "gates": []
+      },
+      "environmentTriggers": []
+
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$UnbreakablePipelineDemo-CI-id$",
+      "type": "Build",
+      "alias": "_UnbreakablePipelineDemo-CI",
+      "definitionReference": {
+        "artifactSourceDefinitionUrl": {
+
+        },
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "selectDuringReleaseCreationType",
+          "name": "Specify at the time of release creation"
+        },
+        "definition": {
+          "id": "$UnbreakablePipelineDemo-CI-id$",
+          "name": "UnbreakablePipelineDemo-CI"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        },
+        "repository": {
+          "id": "",
+          "name": "UnbreakablePipelineDemo"
+        }
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "Other"
+    }
+  },
+  "name": "UnbreakablePipelineDemo-CD",
+  "projectReference": null
+}

@@ -206,6 +206,12 @@
           "Description": "Use this template to learn how to implement a very simple feature flag for an ASP.NET MVC application using LaunchDarkly and how we can integrate LaunchDarkly with Azure DevOps release pipelines"
         },
         {
+          "key": "77388",
+          "Name": "Dynatrace",
+          "TemplateFolder": "Dynatrace",
+          "Description": "Azure DevOps Demo Generator"
+        },
+        {
           "Name": "devops-mobile",
           "TemplateFolder": "devops-mobile",
           "Description": "A simple Xamarin app named Acquaint. The app is a simple list of contacts, each of which can be viewed in a detail screen and modified in an edit screen. It runs on iOS 9+, Android 4.2+, and UWP (mobile and desktop)."
