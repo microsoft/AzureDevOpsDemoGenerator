@@ -2,53 +2,6 @@
   "name": "PHP",
   "path": "\\",
   "type": "build",
-  "queueStatus": "enabled",
-  "build": [
-    {
-      "environment": {},
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "Archive files ",
-      "timeoutInMinutes": 0,
-      "refName": "ArchiveFiles2",
-      "task": {
-        "id": "d8b84976-e99a-4b86-b885-4849694435b0",
-        "versionSpec": "1.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "rootFolder": "$(Build.sourcesDirectory)",
-        "includeRootFolder": "false",
-        "archiveType": "default",
-        "tarCompression": "gz",
-        "archiveFile": "$(Build.ArtifactStagingDirectory)/$(Build.DefinitionName).$(Build.BuildId).zip",
-        "replaceExistingArchive": "true"
-      }
-    },
-    {
-      "environment": {},
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "Publish Artifact",
-      "timeoutInMinutes": 0,
-      "refName": "PublishBuildArtifacts5",
-      "task": {
-        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
-        "versionSpec": "",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
-        "ArtifactName": "drop",
-        "ArtifactType": "Container",
-        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
-        "Parallel": "false",
-        "ParallelCount": "8"
-      }
-    }
-  ],
   "options": [
     {
       "enabled": false,
@@ -106,10 +59,78 @@
       "deleteTestResults": true
     }
   ],
-
+  "properties": {},
+  "tags": [],
   "jobAuthorizationScope": "projectCollection",
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "phases": [
+      {
+        "steps": [
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Archive files ",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "ArchiveFiles2",
+            "task": {
+              "id": "d8b84976-e99a-4b86-b885-4849694435b0",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "rootFolder": "$(Build.sourcesDirectory)",
+              "includeRootFolder": "false",
+              "archiveType": "default",
+              "tarCompression": "gz",
+              "archiveFile": "$(Build.ArtifactStagingDirectory)/$(Build.DefinitionName).$(Build.BuildId).zip",
+              "replaceExistingArchive": "true"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "PublishBuildArtifacts5",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          }
+        ],
+        "name": "Phase 1",
+        "refName": "Phase_1",
+        "condition": "succeeded()",
+        "target": {
+          "executionOptions": {
+            "type": 0
+          },
+          "allowScriptsAuthAccessOption": false,
+          "type": 1
+        },
+        "jobAuthorizationScope": "projectCollection",
+        "jobCancelTimeoutInMinutes": 1
+      }
+    ],
+    "type": 1
+  },
   "repository": {
     "properties": {
       "cleanOptions": "0",

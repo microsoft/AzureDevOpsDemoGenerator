@@ -1,0 +1,5 @@
+{
+  "path": "$ChildFile$",
+  "newPath": "$ParentFile$/$ChildFile$",
+  "newOrder": 0
+}

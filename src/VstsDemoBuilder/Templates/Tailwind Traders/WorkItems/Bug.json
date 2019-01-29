@@ -1,0 +1,46 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 278,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-01-25T21:12:56.5Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-25T22:00:44.363Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "The link to \"about us\" on the bottom of the main page missing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/264",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/278"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
