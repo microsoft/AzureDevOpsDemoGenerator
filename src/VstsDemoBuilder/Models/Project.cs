@@ -9,6 +9,7 @@ namespace VstsDemoBuilder.Models
         public string MemberID { get; set; }
         public string ProcessTemplate { get; set; }
         public string ProjectName { get; set; }
+        public string ProjectId { get; set; }
         public string SelectedTemplate { get; set; }
         public string TemplateName { get; set; }
         public bool IsAuthenticated { get; set; }
@@ -40,6 +41,7 @@ namespace VstsDemoBuilder.Models
         public string selectedTemplateDescription { get; set; }
         public string selectedTemplateFolder { get; set; }
         public string Message { get; set; }
+        public string EnableExtractor { get; set; }
 
     }
     public class EnvironmentValues

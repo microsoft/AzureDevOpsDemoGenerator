@@ -242,7 +242,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 var jsonContent = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
                 if (response.IsSuccessStatusCode)

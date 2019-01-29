@@ -82,6 +82,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 email = Session["PAT"].ToString();
             }
+            if (Session["EnableExtractor"] == null || Session["EnableExtractor"].ToString().ToLower() == "false")
+            {
+                return RedirectToAction("NotFound");
+            }
             if (string.IsNullOrEmpty(pat))
             {
                 return Redirect("../Account/Verify");
@@ -192,7 +196,7 @@ namespace VstsDemoBuilder.Controllers
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
 
-            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, Project = project };
+            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
 
             ProjectProperties.Properties load = new ProjectProperties.Properties();
             Projects projects = new Projects(config);
@@ -295,7 +299,7 @@ namespace VstsDemoBuilder.Controllers
         public int GetTeamsCount(Configuration con)
         {
             VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-            TeamList teamList = nodes.ExportTeamList();
+            TeamList teamList = nodes.ExportTeamList("");
             int count = 0;
             if (teamList.value != null)
             {
@@ -412,7 +416,7 @@ namespace VstsDemoBuilder.Controllers
 
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             AddMessage(model.id, "");
-            ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate);
+            ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
 
             if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
             {
@@ -449,17 +453,17 @@ namespace VstsDemoBuilder.Controllers
             ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint Definition");
 
-            //int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
-            //if (count >= 1)
-            //{
-            //    AddMessage(model.id, "Build Definition");
-            //}
+            int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
+            if (count >= 1)
+            {
+                AddMessage(model.id, "Build Definition");
+            }
 
-            //int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
-            //if (relCount >= 1)
-            //{
-            //    AddMessage(model.id, "Release Definition");
-            //}
+            int relCount = GeneralizingGetReleaseDefinitions(ProjectConfigurationDetails.AppConfig.ReleaseDefinitionConfig, ProjectConfigurationDetails.AppConfig.AgentQueueConfig);
+            if (relCount >= 1)
+            {
+                AddMessage(model.id, "Release Definition");
+            }
 
             //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
@@ -475,12 +479,21 @@ namespace VstsDemoBuilder.Controllers
             return new string[] { model.id, "" };
         }
         // Get Team List to write into file
-        public bool ExportTeams(Configuration con, string processTemplate)
+        public bool ExportTeams(Configuration con, string processTemplate, string projectID)
         {
+            string defaultTeamID = string.Empty;
             VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
             TeamList _team = new TeamList();
-
-            _team = nodes.ExportTeamList();
+            string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+            con.VersionNumber = ProjectPropertyVersion;
+            con.ProjectId = projectID;
+            Projects projects = new Projects(con);
+            ProjectProperties.Properties projectProperties = projects.GetProjectProperties();
+            if (projectProperties.count > 0)
+            {
+                defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
+            }
+            _team = nodes.ExportTeamList(defaultTeamID);
             if (_team.value != null)
             {
                 AddMessage(con.Id, "Teams Definition");
@@ -589,6 +602,7 @@ namespace VstsDemoBuilder.Controllers
                             if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
                             {
                                 string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
+                                res = res.Replace(con.Project, "$ProjectName$");
                                 JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
                                 jObj["BoardName"] = boardType;
                                 var style = jObj;
@@ -714,7 +728,6 @@ namespace VstsDemoBuilder.Controllers
                     if (fetchedWorkItem.count > 0)
                     {
                         string item = WIT;
-                        item = item.Replace(" ", "");
                         if (!Directory.Exists(extractedTemplatePath + con.Project + "\\WorkItems"))
                         {
                             Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\WorkItems");
@@ -798,9 +811,43 @@ namespace VstsDemoBuilder.Controllers
                     def["uri"] = "";
                     def["id"] = "";
                     def["queue"]["id"] = "";
+                    def["queue"]["url"] = "";
+                    def["queue"]["_links"] = "{}";
                     def["queue"]["pool"]["id"] = "";
                     def["_links"] = "{}";
                     def["createdDate"] = "";
+
+                    var process = def["process"];
+                    if (process != null)
+                    {
+                        var phases = process["phases"];
+                        if (phases != null)
+                        {
+                            foreach (var phase in phases)
+                            {
+                                phase["target"]["queue"] = "{}";
+                                var steps = phase["steps"];
+                                if (steps != null)
+                                {
+                                    foreach (var step in steps)
+                                    {
+                                        string keyConfig = System.IO.File.ReadAllText(Server.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                        KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                        keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
+                                        foreach (var key in keyC.keys)
+                                        {
+                                            string keyVal = step[key] != null ? step[key].ToString() : "";
+                                            if (!string.IsNullOrEmpty(keyVal))
+                                            {
+                                                step[key] = "";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     var type = def["repository"]["type"];
                     if (type.ToString().ToLower() == "github")
                     {
@@ -821,10 +868,29 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
+                    else if (type.ToString().ToLower() == "git")
+                    {
+                        string url = def["repository"]["url"].ToString();
+                        string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                        endPointString = endPointString.Replace("$GitHubURL$", url);
+                        Guid g = Guid.NewGuid();
+                        string randStr = g.ToString().Substring(0, 8);
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                        {
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                        }
+                        else
+                        {
+                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                        }
+                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                    }
                     else
                     {
                         def["repository"]["id"] = "$" + repoName + "$";
                         def["repository"]["url"] = "";
+                        def["repository"]["properties"]["connectedServiceId"] = "";
                     }
                     var input = def["processParameters"]["inputs"];
                     if (input != null)
@@ -946,7 +1012,11 @@ namespace VstsDemoBuilder.Controllers
                                             keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                             foreach (var key in keyC.keys)
                                             {
-                                                input[key] = "";
+                                                string keyVal = input[key] != null ? input[key].ToString() : "";
+                                                if (!string.IsNullOrEmpty(keyVal))
+                                                {
+                                                    input[key] = "";
+                                                }
                                             }
                                         }
                                     }
@@ -1168,12 +1238,10 @@ namespace VstsDemoBuilder.Controllers
                 }
                 fileBytes = memoryStream.ToArray();
             }
-            //System.IO.Directory.Delete(filePath, true);
             // download the constructed zip
+            System.IO.Directory.Delete(filePath, true);
             Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
             return File(fileBytes, "application/zip");
-
         }
-
     }
 }
