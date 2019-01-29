@@ -310,6 +310,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Templates\AKS\Images\AKS.png" />
     <Content Include="Templates\AKS\Images\aksdashboard.png" />
     <Content Include="Templates\AKS\Images\finalresult.png" />
     <Content Include="Templates\AKS\Images\updateprocessbd.png" />
@@ -419,6 +420,7 @@
     <Content Include="Templates\Terraform\Images\queuebuild.gif" />
     <Content Include="Templates\Terraform\Images\releasetasks.png" />
     <Content Include="Templates\Terraform\Images\releasetrigger.gif" />
+    <Content Include="Templates\Terraform\Images\Terraform.png" />
     <Content Include="Templates\Terraform\Images\webapp.png" />
     <Content Include="Templates\WhiteSource-Bolt\Images\CI.png" />
     <Content Include="Templates\WhiteSource-Bolt\Images\WhiteSourceBolt13.png" />
