@@ -18,6 +18,7 @@
             color: red;
             padding: 6px;
         }
+
         .templateImage {
             max-width: 70px;
         }
@@ -78,7 +79,7 @@
     }
     @if (!string.IsNullOrEmpty(Model.SelectedTemplate))
     {
-        <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate"/>
+        <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
     }
     <input type="hidden" id="hdnMessage" />
     <!--TEMPLATE GROUPING-->
@@ -153,9 +154,15 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-            <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-        </div>
+        @{
+            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
+            {
+                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+                    <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+                </div>
+            }
+        }
+
     </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">

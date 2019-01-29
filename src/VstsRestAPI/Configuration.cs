@@ -9,6 +9,7 @@ namespace VstsRestAPI
         public string AccountName { get; set; }
         public string PersonalAccessToken { get; set; }
         public string Project { get; set; }
+        public string ProjectId { get; set; }
         public string VersionNumber { get; set; }
         public string Id { get; set; }
         public string Team { get; set; }

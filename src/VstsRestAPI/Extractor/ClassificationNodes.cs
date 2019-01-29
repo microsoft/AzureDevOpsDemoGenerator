@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -42,7 +41,7 @@ namespace VstsRestAPI.Extractor
         }
 
         // Get Team List to write to file
-        public TeamList ExportTeamList()
+        public TeamList ExportTeamList(string defaultTeamId)
         {
             TeamList teamObj = new TeamList();
             try
@@ -50,17 +49,28 @@ namespace VstsRestAPI.Extractor
                 using (var client = GetHttpClient())
                 {
                     HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + Project + "/teams?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<TeamList>(result);
-                        return teamObj;
-                    }
-                    else
+                    if (!response.IsSuccessStatusCode || response.StatusCode != HttpStatusCode.OK)
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         LastFailureMessage = error;
+                    }
+                    else
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        teamObj = JsonConvert.DeserializeObject<TeamList>(result);
+                        foreach (var team in teamObj.value)
+                        {
+                            if (team.id==defaultTeamId)
+                            {
+                                team.isDefault = "true";
+                            }
+                            else
+                            {
+                                team.isDefault = "false";
+                            }
+                        }
+                        return teamObj;
                     }
                 }
             }
@@ -192,7 +202,7 @@ namespace VstsRestAPI.Extractor
                         viewModel = JsonConvert.DeserializeObject<ExportIterations.Iterations>(result);
                         ExportedIterations.Iterations iterations = new ExportedIterations.Iterations();
                         List<ExportedIterations.Child> Listchild = new List<ExportedIterations.Child>();
-                        
+
                         if (viewModel.count > 0)
                         {
                             foreach (var iteration in viewModel.value)

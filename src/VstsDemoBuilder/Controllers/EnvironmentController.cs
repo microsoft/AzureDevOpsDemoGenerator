@@ -191,7 +191,10 @@ namespace VstsDemoBuilder.Controllers
                 if (Session["visited"] != null)
                 {
                     Project model = new Project();
-
+                    if (Session["EnableExtractor"] != null)
+                    {
+                        model.EnableExtractor = Session["EnableExtractor"].ToString();
+                    }
                     if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {
                         model.TemplateName = Session["templateName"].ToString();
@@ -417,7 +420,7 @@ namespace VstsDemoBuilder.Controllers
                     return Json("Folder already exist. Please rename the folder and upload it.");
                 }
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
-
+                System.IO.File.Delete(zipPath);
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
@@ -477,10 +480,6 @@ namespace VstsDemoBuilder.Controllers
                                 //Create a tempprary directory
                                 string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
                                 System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
-
-                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
-
-                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
@@ -1113,6 +1112,16 @@ namespace VstsDemoBuilder.Controllers
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
                     foreach (var jteam in jTeams)
                     {
+                        string _teamName = string.Empty;
+                        string isDefault = jteam["isDefault"] != null ? jteam["isDefault"].ToString() : string.Empty;
+                        if (isDefault == "true")
+                        {
+                            _teamName = model.ProjectName + " Team";
+                        }
+                        else
+                        {
+                            _teamName = jteam["name"].ToString();
+                        }
                         string teamFolderPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
                         if (System.IO.Directory.Exists(teamFolderPath))
                         {
@@ -1129,7 +1138,7 @@ namespace VstsDemoBuilder.Controllers
                                 List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
                                 foreach (var board in importRows)
                                 {
-                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, jteam["name"].ToString());
+                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, _teamName);
                                 }
                             }
 
@@ -1140,7 +1149,7 @@ namespace VstsDemoBuilder.Controllers
                             if (System.IO.File.Exists(teamSettingJson))
                             {
                                 teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
-                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, jteam["name"].ToString());
+                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, _teamName);
                             }
 
                             // updating board columns for each teams each board
@@ -1153,7 +1162,7 @@ namespace VstsDemoBuilder.Controllers
                                 List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
                                 foreach (var board in importBoardCols)
                                 {
-                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, jteam["name"].ToString());
+                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, _teamName);
                                 }
                             }
 
@@ -1168,7 +1177,7 @@ namespace VstsDemoBuilder.Controllers
                                 cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
                                 foreach (var card in cardFields)
                                 {
-                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, jteam["name"].ToString());
+                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
                                 }
                             }
 
@@ -1185,7 +1194,7 @@ namespace VstsDemoBuilder.Controllers
                                 {
                                     if (cardStyle.rules.fill != null)
                                     {
-                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, jteam["name"].ToString());
+                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, _teamName);
                                     }
                                 }
                             }
@@ -1193,8 +1202,8 @@ namespace VstsDemoBuilder.Controllers
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
                     UpdateSprintItems(model, _boardVersion, settings);
-                    RenameIterations(model, _boardVersion, settings.renameIterations);
                     UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
+                    RenameIterations(model, _boardVersion, settings.renameIterations);
                 }
             }
 
@@ -1510,43 +1519,47 @@ namespace VstsDemoBuilder.Controllers
 
                     foreach (var jTeam in jTeams)
                     {
-                        GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
-                        if (!(string.IsNullOrEmpty(teamResponse.id)))
+                        string isDefault = jTeam["isDefault"] != null ? jTeam["isDefault"].ToString() : string.Empty;
+                        if (isDefault == "false" || isDefault == "")
                         {
-                            string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
-                            string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
-                            if (System.IO.File.Exists(updateAreaJSON))
+                            GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
+                            if (!(string.IsNullOrEmpty(teamResponse.id)))
                             {
-                                updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
-                                updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
-                                bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
-                            }
-                            bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
-                            if (iterations.count > 0)
-                            {
-                                foreach (var iteration in iterations.value)
+                                string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
+                                string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
+                                if (System.IO.File.Exists(updateAreaJSON))
                                 {
-                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                    updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                    updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
+                                    bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
+                                }
+                                bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
+                                if (iterations.count > 0)
+                                {
+                                    foreach (var iteration in iterations.value)
+                                    {
+                                        bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                    }
                                 }
                             }
                         }
-                    }
-                    if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
-                    {
-                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
-                    }
-                    else
-                    {
-                        AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
-                    }
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360")
-                    {
-                        string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
-                        if (System.IO.File.Exists(updateAreaJSON))
+                        if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
                         {
-                            updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
-                            updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
-                            bool isUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                            AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
+                        }
+                        else
+                        {
+                            AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
+                        }
+                        if (model.SelectedTemplate.ToLower() == "smarthotel360")
+                        {
+                            string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
+                            if (System.IO.File.Exists(updateAreaJSON))
+                            {
+                                updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
+                                bool isUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                            }
                         }
                     }
                 }

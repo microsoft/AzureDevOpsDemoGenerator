@@ -8,8 +8,8 @@
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "DemoGeneratorUser",
-      "password": "Canarys@12345"
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
     }
   },
   "isReady": true

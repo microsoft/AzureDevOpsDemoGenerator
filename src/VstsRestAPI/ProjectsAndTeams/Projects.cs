@@ -154,7 +154,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 ProjectProperties.Properties load = new ProjectProperties.Properties();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + _configuration.Project + "/properties?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + ProjectId + "/properties?api-version=" + _configuration.VersionNumber).Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string res = response.Content.ReadAsStringAsync().Result;
