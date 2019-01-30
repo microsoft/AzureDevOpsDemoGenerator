@@ -6,6 +6,7 @@ namespace VstsRestAPI
         string PersonalAccessToken { get; set; }
         string AccountName { get; set; }
         string Project { get; set; }
+        string ProjectId { get; set; }
         string UriString { get; set; }        
         string VersionNumber { get; set; }
         string Id { get; set; }

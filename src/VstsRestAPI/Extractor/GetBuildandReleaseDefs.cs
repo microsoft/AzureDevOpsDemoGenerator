@@ -164,7 +164,7 @@ namespace VstsRestAPI.Extractor
             List<JObject> jobj = new List<JObject>();
             using (var client = GetHttpClient())
             {
-                HttpResponseMessage response = client.GetAsync("/" + Project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber).Result;
+                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber).Result;
                 if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     ReleaseDefCountResponse.Release release = new ReleaseDefCountResponse.Release();
@@ -176,7 +176,7 @@ namespace VstsRestAPI.Extractor
                         {
                             using (var clients = GetHttpClient())
                             {
-                                HttpResponseMessage resp = client.GetAsync("/" + Project + "/_apis/release/definitions/" + rel.id).Result;
+                                HttpResponseMessage resp = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/release/definitions/" + rel.id).Result;
                                 if (resp.IsSuccessStatusCode && resp.StatusCode == System.Net.HttpStatusCode.OK)
                                 {
                                     JObject obj = new JObject();

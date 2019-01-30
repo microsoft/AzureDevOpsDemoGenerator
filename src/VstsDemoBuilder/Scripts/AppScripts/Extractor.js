@@ -271,7 +271,7 @@ $(document).ready(function () {
         }
         var projects = {
             ProjectName: projectName,
-            accountName: SourceAcc, accessToken: key, id: uniqueId, ProcessTemplate: processTemplate
+            accountName: SourceAcc, accessToken: key, id: uniqueId, ProcessTemplate: processTemplate, ProjectId:project
         };
         $('#ExStatus-messages').html('');
         $('#ExStatus-messages').show();
