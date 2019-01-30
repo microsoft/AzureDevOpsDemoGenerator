@@ -29,8 +29,9 @@ namespace VstsRestAPI.Build
 
                 var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                 var method = new HttpMethod("POST");
+
                 string uri = "";                
-                    uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
+                uri = _configuration.UriString + project + "/_apis/build/definitions?api-version=" + _configuration.VersionNumber;
                 var request = new HttpRequestMessage(method, uri) { Content = jsonContent };
                 var response = client.SendAsync(request).Result;
 
