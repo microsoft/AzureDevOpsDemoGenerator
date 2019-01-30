@@ -4,7 +4,7 @@
   },
   "name": "UnbreakablePipelineDemo-code",
   "type": "git",
-  "url": "https://dev.azure.com/unbreakablepipeline/UnbreakablePipelineDemo/_git/UnbreakablePipelineDemo",
+  "url": "https://vstsdemodata.visualstudio.com/Dynatrace/_git/UnbreakablePipelineDemo",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {

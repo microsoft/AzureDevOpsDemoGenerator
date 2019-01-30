@@ -894,7 +894,6 @@
     <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Plan.json" />
     <Content Include="Templates\Tailwind Traders Web\WorkItems\Test Suite.json" />
     <Content Include="Templates\Dynatrace\BuildDefinitions\UnbreakablePipelineDemo-CI.json" />
-    <Content Include="Templates\Dynatrace\DemoExtensions.json" />
     <Content Include="Templates\Dynatrace\ImportSourceCode\UnbreakablePipelineDemo.json" />
     <Content Include="Templates\Dynatrace\Iterations.json" />
     <Content Include="Templates\Dynatrace\ProjectSettings.json" />
