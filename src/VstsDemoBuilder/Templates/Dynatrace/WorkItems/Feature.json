@@ -1,0 +1,38 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 1,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "UnbreakablePipelineDemo",
+        "System.TeamProject": "UnbreakablePipelineDemo",
+        "System.IterationPath": "UnbreakablePipelineDemo",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-01-25T13:30:01.87Z",
+        "System.CreatedBy": "Safia Habib <safia.abdullah@gmail.com>",
+        "System.ChangedDate": "2019-01-29T11:54:39.02Z",
+        "System.ChangedBy": "akshay.hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Shift Left with Dynatrace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>After finding and fixing any Bugs in Production, make your pipeline more robust by adding Quality Gates. This will ensure that bad code does not make it to Production. Learn from Production issues and work towards Preventing in CI/CD than repairing in Production.</div><div>&nbsp;</div><div><img src=\"https://dev.azure.com/unbreakablepipeline/dc9f2e8c-6f91-47dd-ba4f-0ff52879732e/_apis/wit/attachments/28e36ab7-6559-41b4-98f8-fe84199fcef9?fileName=QualityGates.PNG\"><br></div><div><br></div><div><br></div><div>In this sample we add two key metrics into Azure Devops Quality Gates:</div><div><ul><li>Changes in Response time&nbsp;<img src=\"https://dev.azure.com/unbreakablepipeline/dc9f2e8c-6f91-47dd-ba4f-0ff52879732e/_apis/wit/attachments/9bdb10d6-2d13-458b-b2d4-52c5bff77aee?fileName=Responsetime.PNG\"></li><li>Changes in Number of Errors&nbsp;<img src=\"https://dev.azure.com/unbreakablepipeline/dc9f2e8c-6f91-47dd-ba4f-0ff52879732e/_apis/wit/attachments/b1790dab-add0-44d6-a8af-5fd99fb5dd77?fileName=ErrorHandling.PNG\"><br></li></ul><br></div><div>Based on our experience with our customers we see the following metrics being added to the Quality Gates for robust Pipelines:&nbsp;</div><div><img src=\"https://dev.azure.com/unbreakablepipeline/dc9f2e8c-6f91-47dd-ba4f-0ff52879732e/_apis/wit/attachments/c70a7a1a-984e-43ac-8af4-6c116e0da25b?fileName=List%20OfMetrics.PNG\"><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/unbreakablepipeline/_apis/wit/workItems/1"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
