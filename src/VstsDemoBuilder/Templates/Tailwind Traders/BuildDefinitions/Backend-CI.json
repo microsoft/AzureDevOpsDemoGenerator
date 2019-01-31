@@ -91,7 +91,7 @@
               "definitionType": "task"
             },
             "inputs": {
-              "ConnectedServiceName": "aef817c7-0017-4b81-8410-56cf322eabda",
+              "ConnectedServiceName": "",
               "action": "Create Or Update Resource Group",
               "resourceGroupName": "$(resourcegroup)",
               "location": "South India",
