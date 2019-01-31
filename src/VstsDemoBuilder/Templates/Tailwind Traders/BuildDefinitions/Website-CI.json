@@ -36,9 +36,9 @@
             "value": "false",
             "allowOverride": true
         },
-        "useremail": {
-            "value": "admin@test.com"
-        }
+      "useremail": {
+        "value": "rimman@microsoft.com"
+      }
     },
     "retentionRules": [
         {
