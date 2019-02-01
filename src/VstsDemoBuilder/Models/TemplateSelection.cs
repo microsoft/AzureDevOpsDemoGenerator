@@ -6,11 +6,11 @@ namespace VstsDemoBuilder.Models
     {
         public class Template
         {
-            public string key { get; set; }
+            public string Key { get; set; }
             public string Name { get; set; }
             public string Description { get; set; }
-            public string[] tags { get; set; }
-            public string image { get; set; }
+            public string[] Tags { get; set; }
+            public string Image { get; set; }
             public string TemplateFolder { get; set; }
             public string Message { get; set; }
 

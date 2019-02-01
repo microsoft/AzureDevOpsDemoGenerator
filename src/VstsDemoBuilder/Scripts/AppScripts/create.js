@@ -371,7 +371,7 @@ $(document).ready(function (event) {
                             else {
                                 for (var i = 0; i < MatchedGroup.Template.length; i++) {
                                     if (i === 0) {
-                                        var templateImg = MatchedGroup.Template[i].image;
+                                        var templateImg = MatchedGroup.Template[i].Image;
                                         if (templateImg === "" || templateImg === null) {
                                             templateImg = "/Templates/TemplateImages/CodeFile.png";
                                         }
@@ -379,11 +379,11 @@ $(document).ready(function (event) {
                                         grp += '<div class="template-header">';
                                         grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                         grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
+                                        if (MatchedGroup.Template[i].Tags !== null) {
                                             grp += '<p></p>';
                                             grp += '<p>';
-                                            for (var rx = 0; rx < MatchedGroup.Template[i].tags.length; rx++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[rx] + '</i>';
+                                            for (var rx = 0; rx < MatchedGroup.Template[i].Tags.length; rx++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].Tags[rx] + '</i>';
                                             }
                                             grp += '</p>';
                                         }
@@ -391,7 +391,7 @@ $(document).ready(function (event) {
                                         grp += '</div>';
                                     }
                                     else {
-                                        var templateImgs = MatchedGroup.Template[i].image;
+                                        var templateImgs = MatchedGroup.Template[i].Image;
                                         if (templateImgs === "" || templateImgs === null) {
                                             templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                         }
@@ -399,11 +399,11 @@ $(document).ready(function (event) {
                                         grp += '<div class="template-header">';
                                         grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                         grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].tags !== null) {
+                                        if (MatchedGroup.Template[i].Tags !== null) {
                                             grp += '<p></p>';
                                             grp += '<p>';
-                                            for (var x = 0; x < MatchedGroup.Template[i].tags.length; x++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].tags[x] + '</i>';
+                                            for (var x = 0; x < MatchedGroup.Template[i].Tags.length; x++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].Tags[x] + '</i>';
                                             }
                                             grp += '</p>';
                                         }
@@ -911,7 +911,7 @@ function createTemplates() {
                         var MatchedGroup = groups.GroupwiseTemplates[g];
                         for (var i = 0; i < MatchedGroup.Template.length; i++) {
                             if (i === 0) {
-                                var templateImg = MatchedGroup.Template[i].image;
+                                var templateImg = MatchedGroup.Template[i].Image;
                                 if (templateImg === "" || templateImg === null) {
                                     templateImg = "/Templates/TemplateImages/CodeFile.png";
                                 }
@@ -919,24 +919,19 @@ function createTemplates() {
                                 grp += '<div class="template-header">';
                                 grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                 grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                if (MatchedGroup.Template[i].tags !== null) {
+                                if (MatchedGroup.Template[i].Tags !== null) {
                                     grp += '<p></p>';
                                     grp += '<p>';
-                                    for (var v = 0; v < MatchedGroup.Template[i].tags.length; v++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[v] + '</i>';
+                                    for (var v = 0; v < MatchedGroup.Template[i].Tags.length; v++) {
+                                        grp += '<i>' + MatchedGroup.Template[i].Tags[v] + '</i>';
                                     }
                                     grp += '</p>';
                                 }
                                 grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
-                                //if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                //    var templateTxt = $('#selectedTemplateDescription').val();
-                                //    if (templateTxt === "" || typeof templateTxt === "undefined")
-                                //        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                //}
                             }
                             else {
-                                var templateImgs = MatchedGroup.Template[i].image;
+                                var templateImgs = MatchedGroup.Template[i].Image;
                                 if (templateImgs === "" || templateImgs === null) {
                                     templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                 }
@@ -944,21 +939,16 @@ function createTemplates() {
                                 grp += '<div class="template-header">';
                                 grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                 grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                if (MatchedGroup.Template[i].tags !== null) {
+                                if (MatchedGroup.Template[i].Tags !== null) {
                                     grp += '<p></p>';
                                     grp += '<p>';
-                                    for (var m = 0; m < MatchedGroup.Template[i].tags.length; m++) {
-                                        grp += '<i>' + MatchedGroup.Template[i].tags[m] + '</i>';
+                                    for (var m = 0; m < MatchedGroup.Template[i].Tags.length; m++) {
+                                        grp += '<i>' + MatchedGroup.Template[i].Tags[m] + '</i>';
                                     }
                                     grp += '</p>';
                                 }
                                 grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                 grp += '</div>';
-                                //if (MatchedGroup.Template[i].Name === "SmartHotel360") {
-                                //    var templateTxtx = $('#selectedTemplateDescription').val();
-                                //    if (templateTxtx === "" || typeof templateTxt === "undefined")
-                                //        $('#descContainer').html(MatchedGroup.Template[i].Description);
-                                //}
                             }
                         }
                     }
