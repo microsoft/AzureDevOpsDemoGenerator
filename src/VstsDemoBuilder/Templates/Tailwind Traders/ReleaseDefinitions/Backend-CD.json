@@ -1,10 +1,13 @@
 {
   "source": "userInterface",
-  "revision": 13,
+  "revision": 16,
   "description": null,
   "isDeleted": false,
   "variables": {
     "acrLogin": {
+      "value": ""
+    },
+    "acrName": {
       "value": ""
     },
     "aksHost": {
@@ -185,9 +188,9 @@
               "inputs": {
                 "connectedServiceNameARM": "",
                 "scriptLocation": "scriptPath",
-                "scriptPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/Create-Secret.ps1",
+                "scriptPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/create-secret.sh",
                 "inlineScript": "-g TailwindTradersBackend  --acr-name ttacrwuh4r5fleek4q --clientid 682afe77-9f64-4905-8814-cf50587a4d49 --password P2SSWORD",
-                "args": "-g $(resourcegroup) --acr-name $(acrLogin) --clientid $(servicePrincipalId) --password $(servicePrincipalSecret)",
+                "args": "-g $(resourcegroup) --acr-name $(acrName) --clientid $(servicePrincipalId) --password $(servicePrincipalSecret)",
                 "addSpnToEnvironment": "false",
                 "useGlobalConfig": "false",
                 "cwd": "",
