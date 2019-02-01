@@ -55,6 +55,7 @@ namespace VstsDemoBuilder.Controllers
         private AccessDetails AccessDetails = new AccessDetails();
         private string logPath = "";
         private string templateVersion = string.Empty;
+        private string enableExtractor = "";
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -170,6 +171,20 @@ namespace VstsDemoBuilder.Controllers
             {
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
+                enableExtractor = Session["EnableExtractor"] != null ? Session["EnableExtractor"].ToString() : string.Empty;
+                if (!string.IsNullOrEmpty(enableExtractor) && enableExtractor == "false")
+                {
+                    TemplateSelection.Templates _templates = new TemplateSelection.Templates();
+                    _templates.Groups = new List<string>();
+                    foreach (var group in templates.Groups)
+                    {
+                        if (group.ToLower() != "private")
+                        {
+                            _templates.Groups.Add(group);
+                        }
+                    }
+                    templates.Groups = _templates.Groups;
+                }
             }
             return Json(templates, JsonRequestBehavior.AllowGet);
         }
@@ -194,6 +209,7 @@ namespace VstsDemoBuilder.Controllers
                     if (Session["EnableExtractor"] != null)
                     {
                         model.EnableExtractor = Session["EnableExtractor"].ToString();
+                        enableExtractor = model.EnableExtractor.ToLower();
                     }
                     if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {
@@ -256,7 +272,7 @@ namespace VstsDemoBuilder.Controllers
                         }
                         //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-                       
+
                         if (!string.IsNullOrEmpty(TemplateSelected))
                         {
                             foreach (var grpTemplate in templates.GroupwiseTemplates)
