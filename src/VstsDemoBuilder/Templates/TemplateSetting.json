@@ -5,7 +5,7 @@
     "Private"
   ],
   "PrivateGroups": [
-    "PrivateTemp"
+    "PrivateTemplates"
   ],
   "GroupwiseTemplates": [
     {
@@ -176,7 +176,7 @@
       ]
     },
     {
-      "Groups": "PrivateTemp",
+      "Groups": "PrivateTemplates",
       "Template": [
         {
           "Name": "Tailwind Traders",
@@ -209,6 +209,12 @@
           "Key": "77388",
           "Name": "Dynatrace",
           "TemplateFolder": "Dynatrace",
+          "Description": "This template uses tools to create a high performant, resilient, self- healing pipeline: Azure Repos: Source control repository for the application"
+        },
+        {
+          "Key": "77389",
+          "Name": "ContosoAir V1",
+          "TemplateFolder": "ContosoAir_Ready",
           "Description": "This template uses tools to create a high performant, resilient, self- healing pipeline: Azure Repos: Source control repository for the application"
         },
         {
