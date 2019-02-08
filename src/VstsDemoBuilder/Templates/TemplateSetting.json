@@ -215,7 +215,7 @@
           "Key": "77389",
           "Name": "ContosoAir V1",
           "TemplateFolder": "ContosoAir_Ready",
-          "Description": "This template uses tools to create a high performant, resilient, self- healing pipeline: Azure Repos: Source control repository for the application"
+          "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>"
         },
         {
           "Name": "devops-mobile",
