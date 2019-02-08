@@ -909,6 +909,29 @@
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\CardStyles.json" />
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\TeamSetting.json" />
     <Content Include="Templates\Dynatrace\WorkItems\Feature.json" />
+    <Content Include="Templates\ContosoAir_Ready\Extensions.json" />
+    <Content Include="Templates\ContosoAir_Ready\Iterations.json" />
+    <Content Include="Templates\ContosoAir_Ready\ProjectSettings.json" />
+    <Content Include="Templates\ContosoAir_Ready\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoAir_Ready\TeamArea.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\BoardColumns.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\BoardRows.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\CardFields.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\CardStyles.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\TeamSetting.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\BoardColumns.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\BoardRows.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\CardFields.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\CardStyles.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\TeamSetting.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\Teams.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\BoardColumns.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\BoardRows.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\CardFields.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\CardStyles.json" />
+    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\TeamSetting.json" />
+    <Content Include="Templates\ContosoAir_Ready\WorkItems\Feature.json" />
+    <Content Include="Templates\ContosoAir_Ready\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
