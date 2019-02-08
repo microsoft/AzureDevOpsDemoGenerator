@@ -76,7 +76,6 @@
             "healthPercent": 0,
             "deploymentHealthOption": "Custom",
             "tags": [
-              "Staging"
             ],
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
@@ -184,7 +183,7 @@
                 "targetType": "inline",
                 "filePath": "",
                 "arguments": "",
-                "script": "#!/bin/sh\npostData=$(cat <<EOF\n    {\n        \"eventType\" : \"CUSTOM_DEPLOYMENT\",\n        \"source\" : \"AzureDevops\" ,\n        \"deploymentName\" : \"$(Release.DefinitionName)\",\n        \"deploymentVersion\" : \"$(Release.ReleaseId)\"  ,\n        \"deploymentProject\" : \"$(System.TeamProject)\" ,\n        \"ciBackLink\" : \"$(System.TeamFoundationCollectionUri)\",\n        \"attachRules\" : {\n               \"tagRule\" : [\n                   {\n                       \"meTypes\":\"SERVICE\" ,\n                   \"tags\" : [\n                       {\n                           \"context\" : \"ENVIRONMENT\",\n                           \"key\": \"DEPLOYMENT_GROUP_NAME\",\n                           \"value\" : \"Staging\"    \n                       }\n                       ]\n                   }\n                   ]\n        }\n}\nEOF\n)\necho \"$postData\"\necho  $(Dynatrace_Tenant)\"/api/v1/events\"\nDynatrace_APIURL=\"$(Dynatrace_Tenant)\"\nDynatrace_APIURL=\"$Dynatrace_APIURL/api/v1/events\"\necho \"$Dynatrace_APIURL\"\ncurl --url \"$Dynatrace_APIURL\" -H \"Content-type: application/json\" -H \"Authorization: Api-Token \"$(Dynatrace_API_TOKEN) -X POST -d  \"$postData\"",
+                "script": "#!/bin/sh\npostData=$(cat <<EOF\n    {\n        \"eventType\" : \"CUSTOM_DEPLOYMENT\",\n        \"source\" : \"VSTS \" ,\n        \"deploymentName\" : \"$(Release.DefinitionName)\",\n        \"deploymentVersion\" : \"$(Release.ReleaseId)\"  ,\n        \"deploymentProject\" : \"$(System.TeamProject)\" ,\n        \"ciBackLink\" : \"$(System.TeamFoundationCollectionUri)\",\n        \"attachRules\" : {\n               \"tagRule\" : [\n                   {\n                       \"meTypes\":\"SERVICE\" ,\n                   \"tags\" : [\n                       {\n                           \"context\" : \"ENVIRONMENT\",\n                           \"key\": \"DEPLOYMENT_GROUP_NAME\",\n                           \"value\" : \"Staging\"    \n                       }\n                       ]\n                   }\n                   ]\n        }\n}\nEOF\n)\necho \"$postData\"\necho  $(Dynatrace_Tenant)\"/api/v1/events\"\nDynatrace_APIURL=\"$(Dynatrace_Tenant)\"\nDynatrace_APIURL=\"$Dynatrace_APIURL/api/v1/events\"\necho \"$Dynatrace_APIURL\"\ncurl --url \"$Dynatrace_APIURL\" -H \"Content-type: application/json\" -H \"Authorization: Api-Token \"$(Dynatrace_API_TOKEN) -X POST -d  \"$postData\"",
                 "workingDirectory": "",
                 "failOnStderr": "false"
               }
@@ -320,7 +319,6 @@
             "healthPercent": 0,
             "deploymentHealthOption": "Custom",
             "tags": [
-              "Production"
             ],
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
@@ -424,7 +422,7 @@
                 "targetType": "inline",
                 "filePath": "",
                 "arguments": "",
-                "script": "#!/bin/sh\npostData=$(cat <<EOF\n    {\n        \"eventType\" : \"CUSTOM_DEPLOYMENT\",\n        \"source\" : \"AzureDevops\" ,\n        \"deploymentName\" : \"$(Release.DefinitionName)\",\n        \"deploymentVersion\" : \"$(Release.ReleaseId)\"  ,\n        \"deploymentProject\" : \"$(System.TeamProject)\" ,\n        \"ciBackLink\" : \"$(System.TeamFoundationCollectionUri)\",\n        \"attachRules\" : {\n               \"tagRule\" : [\n                   {\n                       \"meTypes\":\"SERVICE\" ,\n                   \"tags\" : [\n                       {\n                           \"context\" : \"ENVIRONMENT\",\n                           \"key\": \"DEPLOYMENT_GROUP_NAME\",\n                           \"value\" : \"Production\"    \n                       }\n                       ]\n                   }\n                   ]\n        }\n}\nEOF\n)\necho \"$postData\"\necho  $(Dynatrace_Tenant)\"/api/v1/events\"\nDynatrace_APIURL=\"$(Dynatrace_Tenant)\"\nDynatrace_APIURL=\"$Dynatrace_APIURL/api/v1/events\"\necho \"$Dynatrace_APIURL\"\ncurl --url \"$Dynatrace_APIURL\" -H \"Content-type: application/json\" -H \"Authorization: Api-Token \"$(Dynatrace_API_TOKEN) -X POST -d  \"$postData\"",
+                "script": "#!/bin/sh\npostData=$(cat <<EOF\n    {\n        \"eventType\" : \"CUSTOM_DEPLOYMENT\",\n        \"source\" : \"VSTS \" ,\n        \"deploymentName\" : \"$(Release.DefinitionName)\",\n        \"deploymentVersion\" : \"$(Release.ReleaseId)\"  ,\n        \"deploymentProject\" : \"$(System.TeamProject)\" ,\n        \"ciBackLink\" : \"$(System.TeamFoundationCollectionUri)\",\n        \"attachRules\" : {\n               \"tagRule\" : [\n                   {\n                       \"meTypes\":\"SERVICE\" ,\n                   \"tags\" : [\n                       {\n                           \"context\" : \"ENVIRONMENT\",\n                           \"key\": \"DEPLOYMENT_GROUP_NAME\",\n                           \"value\" : \"Production\"    \n                       }\n                       ]\n                   }\n                   ]\n        }\n}\nEOF\n)\necho \"$postData\"\necho  $(Dynatrace_Tenant)\"/api/v1/events\"\nDynatrace_APIURL=\"$(Dynatrace_Tenant)\"\nDynatrace_APIURL=\"$Dynatrace_APIURL/api/v1/events\"\necho \"$Dynatrace_APIURL\"\ncurl --url \"$Dynatrace_APIURL\" -H \"Content-type: application/json\" -H \"Authorization: Api-Token \"$(Dynatrace_API_TOKEN) -X POST -d  \"$postData\"",
                 "workingDirectory": "",
                 "failOnStderr": "false"
               }
