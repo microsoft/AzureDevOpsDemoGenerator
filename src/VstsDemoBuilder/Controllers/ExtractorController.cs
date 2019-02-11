@@ -445,13 +445,13 @@ namespace VstsDemoBuilder.Controllers
             teamArea = filePathToRead + "\\TeamArea.json";
             teamArea = System.IO.File.ReadAllText(teamArea);
             System.IO.File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
-            AddMessage(model.id, "Team Areas Definition");
+            AddMessage(model.id, "Team Areas");
 
             ExportWorkItems(ProjectConfigurationDetails.AppConfig.WorkItemConfig);
-            AddMessage(model.id, "Work Items Definition");
+            AddMessage(model.id, "Work Items");
 
             ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
-            AddMessage(model.id, "Repository and Service Endpoint Definition");
+            AddMessage(model.id, "Repository and Service Endpoint");
 
             int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
             if (count >= 1)
@@ -496,7 +496,7 @@ namespace VstsDemoBuilder.Controllers
             _team = nodes.ExportTeamList(defaultTeamID);
             if (_team.value != null)
             {
-                AddMessage(con.Id, "Teams Definition");
+                AddMessage(con.Id, "Teams");
 
                 string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
                 if (fetchedJson != "")
@@ -552,7 +552,7 @@ namespace VstsDemoBuilder.Controllers
                                     agileColumns.BoardName = boardType;
                                     columnResponsesAgile.Add(agileColumns);
                                 }
-                                AddMessage(con.Id, "Board Columns Definition");
+                                AddMessage(con.Id, "Board Columns");
                                 Thread.Sleep(2000);
                             }
                             else
@@ -569,7 +569,7 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 rows.BoardName = boardType;
                                 boardRows.Add(rows);
-                                AddMessage(con.Id, "Board Rows Definition");
+                                AddMessage(con.Id, "Board Rows");
                                 Thread.Sleep(2000);
                             }
                             else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
@@ -609,7 +609,7 @@ namespace VstsDemoBuilder.Controllers
                                 style["url"] = "";
                                 style["_links"] = "{}";
                                 jObjcardStyleList.Add(jObj);
-                                AddMessage(con.Id, "Card style Definition");
+                                AddMessage(con.Id, "Card style");
 
                             }
                             else
