@@ -909,6 +909,7 @@
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\CardStyles.json" />
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\TeamSetting.json" />
     <Content Include="Templates\Dynatrace\WorkItems\Feature.json" />
+    <Content Include="Templates\Dynatrace\DeploymentGroups\CreateDeploymentGroup.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

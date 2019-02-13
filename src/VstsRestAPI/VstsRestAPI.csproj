@@ -65,6 +65,7 @@
     <Compile Include="Build\BuildDefinition.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="DeliveryPlans\Plans.cs" />
+    <Compile Include="DeploymentGRoup\DeploymentGroup.cs" />
     <Compile Include="Extractor\ClassificationNodes.cs" />
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
