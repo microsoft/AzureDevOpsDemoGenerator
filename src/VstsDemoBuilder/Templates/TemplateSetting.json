@@ -5,12 +5,27 @@
     "Private"
   ],
   "PrivateGroups": [
-    "PrivateTemp"
+    "PrivateTemplates"
   ],
   "GroupwiseTemplates": [
     {
       "Groups": "General",
-      "Template": [       
+      "Template": [
+        {
+          "Name": "Tailwind Traders",
+          "TemplateFolder": "Tailwind Traders Web",
+          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
+          "Tags": [ "Agile", "DotNet", "React", "Docker" ],
+          "Image": "/Templates/TemplateImages/TailwindTraders.png"
+        },
+        {
+          "Key": "77389",
+          "Name": "ContosoAir",
+          "TemplateFolder": "ContosoAir_Ready",
+          "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
+          "Tags": [ "Agile", " Node.js", "User stories" ],
+          "Image": "/Templates/TemplateImages/ContosAir.png"
+        },
         {
           "Key": "77383",
           "Name": "SmartHotel360",
@@ -43,15 +58,6 @@
           "Description": "This template contains work items and source code for  MyShuttle, a sample Java application backed by a MySQL database. This template also contains pipeline definitions to build the maven project and deploy the app to Tomcat server on Azure app service. <br />Lab URL: <a href='https://www.azuredevopslabs.com/labs/vstsextend/tomcat/' target='_blank'> Deploying a Java application on Tomcat</a> ",
           "Tags": [ "Scrum", "java", "application", "azure web app", "MySQL" ],
           "Image": "/Templates/TemplateImages/MyShuttle.png"
-        },
-        {
-          "Key": "77384",
-          "Name": "ContosoAir",
-          "TemplateFolder": "ContosoAir",
-          "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
-          "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
-          "Tags": [ "Agile", " Node.js", "User stories" ],
-          "Image": "/Templates/TemplateImages/ContosAir.png"
         }
       ]
     },
@@ -176,14 +182,16 @@
       ]
     },
     {
-      "Groups": "PrivateTemp",
+      "Groups": "PrivateTemplates",
       "Template": [
         {
-          "Name": "Tailwind Traders",
-          "TemplateFolder": "Tailwind Traders Web",
-          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
-          "Tags": [ "Agile", "DotNet", "React", "Docker" ],
-          "Image": "/Templates/TemplateImages/TailwindTraders.png"
+          "Key": "77384",
+          "Name": "ContosoAir-Old",
+          "TemplateFolder": "ContosoAir",
+          "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
+          "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
+          "Tags": [ "Agile", " Node.js", "User stories" ],
+          "Image": "/Templates/TemplateImages/ContosAir.png"
         },
         {
           "Key": "77387",

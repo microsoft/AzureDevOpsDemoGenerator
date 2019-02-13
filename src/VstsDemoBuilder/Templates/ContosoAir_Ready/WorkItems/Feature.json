@@ -1,0 +1,303 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 4878,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "contosoair1",
+        "System.TeamProject": "contosoair1",
+        "System.IterationPath": "contosoair1\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-02-07T09:42:31.443Z",
+        "System.CreatedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.ChangedDate": "2019-02-07T09:46:10.357Z",
+        "System.ChangedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.Title": "Online ticket booking",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Online ticket booking",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4883",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4882",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4890",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4891",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4878"
+    },
+    {
+      "id": 4877,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "contosoair1",
+        "System.TeamProject": "contosoair1",
+        "System.IterationPath": "contosoair1\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-02-07T09:42:31.223Z",
+        "System.CreatedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.ChangedDate": "2019-02-07T09:46:10.357Z",
+        "System.ChangedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.Title": "Itinerary listing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Itinerary listing",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4888",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4884",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4889",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4877"
+    },
+    {
+      "id": 4876,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "contosoair1",
+        "System.TeamProject": "contosoair1",
+        "System.IterationPath": "contosoair1\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-02-07T09:42:30.99Z",
+        "System.CreatedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.ChangedDate": "2019-02-07T09:46:10.357Z",
+        "System.ChangedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.Title": "Package Recommendations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Package Recommendations",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4885",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4876"
+    },
+    {
+      "id": 4875,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "contosoair1",
+        "System.TeamProject": "contosoair1",
+        "System.IterationPath": "contosoair1\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-02-07T09:42:30.303Z",
+        "System.CreatedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.ChangedDate": "2019-02-07T09:46:10.357Z",
+        "System.ChangedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.Title": "Security Policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Security Policies",
+        "System.AssignedTo": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4880",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4881",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4879",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4875"
+    },
+    {
+      "id": 4874,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "contosoair1",
+        "System.TeamProject": "contosoair1",
+        "System.IterationPath": "contosoair1\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-02-07T09:42:29.74Z",
+        "System.CreatedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.ChangedDate": "2019-02-07T09:46:10.357Z",
+        "System.ChangedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.Title": "Flight listing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Flight listing",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4887",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4874"
+    },
+    {
+      "id": 4873,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "contosoair1",
+        "System.TeamProject": "contosoair1",
+        "System.IterationPath": "contosoair1\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-02-07T09:42:29.07Z",
+        "System.CreatedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.ChangedDate": "2019-02-07T09:46:10.357Z",
+        "System.ChangedBy": "Akshay Hosur <akshayhosur.infonyasa@gmail.com>",
+        "System.Title": "Customer Profile",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Customer Profile",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4886",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/EastAsiaAksh/_apis/wit/workItems/4873"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
