@@ -4,12 +4,12 @@
   },
   "name": "UnbreakablePipelineDemo-code",
   "type": "git",
-  "url": "https://vstsdemodata.visualstudio.com/Dynatrace/_git/UnbreakablePipelineDemo",
+  "url": "https://github.com/safia-habib/UnbreakablePipelineAzureHOTDay.git",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "$username$",
-      "password": "$password$"
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
     }
   },
   "isReady": true
