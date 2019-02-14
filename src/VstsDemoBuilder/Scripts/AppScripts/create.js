@@ -921,7 +921,7 @@ function LoadTemplates(grpSelected) {
                                 }
                                 var imgLists = MatchedGroup.Template[i].PreviewImages ? MatchedGroup.Template[i].PreviewImages.join(',') : '';
 
-                                grp += '<div class="template__block selected" data-images="' + imgList + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '" data-author="' + MatchedGroup.Template[i].Author + '" data-lastupdated="' + MatchedGroup.Template[i].LastUpdatedDate + '">';
+                                grp += '<div class="template__block selected" data-images="' + imgLists + '" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-description="' + MatchedGroup.Template[i].Description + '" data-author="' + MatchedGroup.Template[i].Author + '" data-lastupdated="' + MatchedGroup.Template[i].LastUpdatedDate + '">';
 
                                 grp += '<div class="d-flex align-items-center">';
                                 grp += '<div class="template__logo">';
