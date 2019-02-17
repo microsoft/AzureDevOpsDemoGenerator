@@ -291,9 +291,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "name": "Hosted VS2017",
+    "name": "Hosted Ubuntu 1604",
     "pool": {
-      "name": "Hosted VS2017",
+      "name": "Hosted Ubuntu 1604",
       "isHosted": true
     }
   }
