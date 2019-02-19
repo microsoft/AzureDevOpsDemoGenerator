@@ -170,6 +170,21 @@ namespace VstsDemoBuilder.Controllers
             {
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
+                foreach (var Group in templates.GroupwiseTemplates)
+                {
+                    if (Group.Groups != "Private" && Group.Groups != "PrivateTemp")
+                    {
+                        foreach (var template in Group.Template)
+                        {
+                            string templateFolder = template.TemplateFolder;
+                            if (!string.IsNullOrEmpty(templateFolder))
+                            {
+                                DateTime dateTime = System.IO.Directory.GetLastWriteTime(templatesPath + "\\" + templateFolder);
+                                template.LastUpdatedDate = dateTime.ToShortDateString();
+                            }
+                        }
+                    }
+                }
             }
             return Json(templates, JsonRequestBehavior.AllowGet);
         }
