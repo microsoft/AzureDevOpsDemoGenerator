@@ -171,6 +171,21 @@ namespace VstsDemoBuilder.Controllers
             {
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
+                foreach (var Group in templates.GroupwiseTemplates)
+                {
+                    if (Group.Groups != "Private" && Group.Groups != "PrivateTemp")
+                    {
+                        foreach (var template in Group.Template)
+                        {
+                            string templateFolder = template.TemplateFolder;
+                            if (!string.IsNullOrEmpty(templateFolder))
+                            {
+                                DateTime dateTime = System.IO.Directory.GetLastWriteTime(templatesPath + "\\" + templateFolder);
+                                template.LastUpdatedDate = dateTime.ToShortDateString();
+                            }
+                        }
+                    }
+                }
                 enableExtractor = Session["EnableExtractor"] != null ? Session["EnableExtractor"].ToString() : string.Empty;
                 if (!string.IsNullOrEmpty(enableExtractor) && enableExtractor == "false")
                 {
@@ -288,7 +303,6 @@ namespace VstsDemoBuilder.Controllers
                                             model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
                                             model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
                                             model.Message = template.Message == null ? string.Empty : template.Message;
-                                            model.selectedTemplateDescription = template.Description;
                                         }
                                     }
                                 }
@@ -343,7 +357,7 @@ namespace VstsDemoBuilder.Controllers
                     //AccessDetails.access_token = "";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
-                    return RedirectToAction("CreateProject", "Environment");
+                    return RedirectToAction("createproject", "Environment");
                 }
                 else
                 {

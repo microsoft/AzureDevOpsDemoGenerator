@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-namespace VstsDemoBuilder.Models
+﻿namespace VstsDemoBuilder.Models
 {
     public class LoginModel
     {
