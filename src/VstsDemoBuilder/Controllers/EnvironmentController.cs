@@ -186,7 +186,7 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
-                    }
+                }
 
                 enableExtractor = Session["EnableExtractor"] != null ? Session["EnableExtractor"].ToString() : string.Empty;
                 if (!string.IsNullOrEmpty(enableExtractor) && enableExtractor == "false")
