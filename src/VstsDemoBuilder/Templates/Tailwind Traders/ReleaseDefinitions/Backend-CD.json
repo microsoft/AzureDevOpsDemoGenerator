@@ -1,0 +1,672 @@
+{
+  "source": "userInterface",
+  "revision": 16,
+  "description": null,
+  "isDeleted": false,
+  "variables": {
+    "acrLogin": {
+      "value": ""
+    },
+    "acrName": {
+      "value": ""
+    },
+    "aksHost": {
+      "value": ""
+    },
+    "aksName": {
+      "value": ""
+    },
+    "resourcegroup": {
+      "value": "TailwindTradersBackend"
+    },
+    "servicePrincipalId": {
+      "value": ""
+    },
+    "servicePrincipalSecret": {
+      "value": ""
+    },
+    "tag": {
+      "value": "prod"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "id": 3,
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 7
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "beforeGates"
+        }
+      },
+      "deployStep": {
+        "id": 8
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 9
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "afterSuccessfulGates"
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Hosted Ubuntu 1604$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Agent job",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "068d5909-43e6-48c5-9e01-7c8a94816220",
+              "version": "0.*",
+              "name": "Install Helm 2.9.1",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "helmVersion": "2.9.1",
+                "checkLatestHelmVersion": "true",
+                "installKubeCtl": "true",
+                "kubectlVersion": "1.10.3",
+                "checkLatestKubeCtl": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "1.*",
+              "name": "Azure CLI to get AKS credentials",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "az aks get-credentials -n $(aksName) -g $(resourcegroup)",
+                "args": "",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+              "version": "3.*",
+              "name": "Bash Script to install tiller",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "filePath",
+                "filePath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/add-tiller.sh",
+                "arguments": "",
+                "script": "echo \"------------------------------------------------------------\"\necho \"Configuring RBAC for Tiller\"\necho \"------------------------------------------------------------\"\nkubectl create serviceaccount --namespace kube-system tiller\nkubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller\nkubectl patch deploy --namespace kube-system tiller-deploy -p '{\"spec\":{\"template\":{\"spec\":{\"serviceAccount\":\"tiller\"}}}}'      \necho \"------------------------------------------------------------\"\necho \"Installing Helm\"\necho \"------------------------------------------------------------\"\nhelm init --service-account tiller\n",
+                "workingDirectory": "",
+                "failOnStderr": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "1.*",
+              "name": "Azure CLI to Create secrets on the AKS",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "",
+                "scriptLocation": "scriptPath",
+                "scriptPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/create-secret.sh",
+                "inlineScript": "-g TailwindTradersBackend  --acr-name ttacrwuh4r5fleek4q --clientid 682afe77-9f64-4905-8814-cf50587a4d49 --password P2SSWORD",
+                "args": "-g $(resourcegroup) --acr-name $(acrName) --clientid $(servicePrincipalId) --password $(servicePrincipalSecret)",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm init",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "init",
+                "chartType": "Name",
+                "chartName": "",
+                "chartPath": "",
+                "version": "",
+                "releaseName": "",
+                "overrideValues": "",
+                "valueFile": "",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "false",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Coupons.api",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/coupons-api",
+                "version": "",
+                "releaseName": "coupons",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/coupon.api,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Popular-product.api",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/popular-products-api",
+                "version": "",
+                "releaseName": "popularproducts",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/popular-product.api,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Products.api",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/products-api",
+                "version": "",
+                "releaseName": "products",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/product.api,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Profiles.api ",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/profiles-api",
+                "version": "",
+                "releaseName": "profiles",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/profile.api,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Cart.api",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/cart-api",
+                "version": "",
+                "releaseName": "cart",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/cart.api,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Webapigw",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/webbff",
+                "version": "",
+                "releaseName": "webapigw",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/webapigw,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "helm upgrade Stock.api",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "",
+                "azureResourceGroup": "$(resourcegroup)",
+                "kubernetesCluster": "$(aksName)",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "default",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "",
+                "chartPath": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/stock-api",
+                "version": "",
+                "releaseName": "stock",
+                "overrideValues": "ingress.hosts={$(aksHost)},image.repository=$(acrLogin)/stock.api,image.tag=$(tag)",
+                "valueFile": "$(System.DefaultWorkingDirectory)/_Backend-CI/HelmScripts/helm/gvalues.yaml",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "true",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {},
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "environmentTriggers": []
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$Backend-CI-id$",
+      "type": "Build",
+      "alias": "_Backend-CI",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "selectDuringReleaseCreationType",
+          "name": "Specify at the time of release creation"
+        },
+        "definition": {
+          "id": "$Backend-CI-id$",
+          "name": "Backend-CI"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "comment": "",
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "Other"
+    }
+  },
+  "name": "Backend-CD",
+  "path": "\\"
+}

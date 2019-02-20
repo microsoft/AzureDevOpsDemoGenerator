@@ -1,4 +1,4 @@
-﻿@model VstsDemoBuilder.Models.Project
+@model VstsDemoBuilder.Models.Project
 @{
     ViewBag.Title = "Azure DevOps Demo Generator";
 }
@@ -121,13 +121,14 @@
                                     </p>
                                 </div>
                                 <div class="selected__desc mt-3"></div>
-                                <div class="p-3 template-footer">
-                                    <button class="btn btn-primary" id="selecttmplate">Select Template</button>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="template-footer p-3 bg-white text-right">
+                <button class="btn btn-primary" id="selecttmplate">Apply</button>
             </div>
         </div>
     </div>
@@ -188,10 +189,11 @@
             if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
             {
                 <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                    <a href="../Extractor/Index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+                    <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
                 </div>
             }
         }
+
     </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">

@@ -55,6 +55,7 @@ namespace VstsDemoBuilder.Controllers
         private AccessDetails AccessDetails = new AccessDetails();
         private string logPath = "";
         private string templateVersion = string.Empty;
+        private string enableExtractor = "";
         private static Dictionary<string, string> StatusMessages
         {
             get
@@ -170,6 +171,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
+
                 foreach (var Group in templates.GroupwiseTemplates)
                 {
                     if (Group.Groups != "Private" && Group.Groups != "PrivateTemp")
@@ -184,6 +186,22 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                     }
+                    }
+
+                enableExtractor = Session["EnableExtractor"] != null ? Session["EnableExtractor"].ToString() : string.Empty;
+                if (!string.IsNullOrEmpty(enableExtractor) && enableExtractor == "false")
+                {
+                    TemplateSelection.Templates _templates = new TemplateSelection.Templates();
+                    _templates.Groups = new List<string>();
+                    foreach (var group in templates.Groups)
+                    {
+                        if (group.ToLower() != "private")
+                        {
+                            _templates.Groups.Add(group);
+                        }
+                    }
+                    templates.Groups = _templates.Groups;
+
                 }
             }
             return Json(templates, JsonRequestBehavior.AllowGet);
@@ -209,6 +227,8 @@ namespace VstsDemoBuilder.Controllers
                     if (Session["EnableExtractor"] != null)
                     {
                         model.EnableExtractor = Session["EnableExtractor"].ToString();
+
+                        enableExtractor = model.EnableExtractor.ToLower();
                     }
                     if (Session["templateName"] != null && Session["templateName"].ToString() != "")
                     {
@@ -271,10 +291,7 @@ namespace VstsDemoBuilder.Controllers
                         }
                         //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-                        if (!string.IsNullOrEmpty(model.TemplateName))
-                        {
-                            TemplateSelected = model.TemplateName;
-                        }
+
                         if (!string.IsNullOrEmpty(TemplateSelected))
                         {
                             foreach (var grpTemplate in templates.GroupwiseTemplates)
@@ -290,6 +307,7 @@ namespace VstsDemoBuilder.Controllers
                                             model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
                                             model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
                                             model.Message = template.Message == null ? string.Empty : template.Message;
+                                            model.selectedTemplateDescription = template.Description;
                                         }
                                     }
                                 }
@@ -437,7 +455,7 @@ namespace VstsDemoBuilder.Controllers
                     return Json("Folder already exist. Please rename the folder and upload it.");
                 }
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
-
+                System.IO.File.Delete(zipPath);
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
@@ -497,10 +515,6 @@ namespace VstsDemoBuilder.Controllers
                                 //Create a tempprary directory
                                 string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
                                 System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
-
-                                DirectoryInfo info = new DirectoryInfo(backupDirectoryRandom);
-
-                                System.IO.File.AppendAllText(logPath, "Info:" + JsonConvert.SerializeObject(info) + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
@@ -837,7 +851,7 @@ namespace VstsDemoBuilder.Controllers
                     string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId);
+                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
                     }
                 }
             }
@@ -1133,6 +1147,16 @@ namespace VstsDemoBuilder.Controllers
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
                     foreach (var jteam in jTeams)
                     {
+                        string _teamName = string.Empty;
+                        string isDefault = jteam["isDefault"] != null ? jteam["isDefault"].ToString() : string.Empty;
+                        if (isDefault == "true")
+                        {
+                            _teamName = model.ProjectName + " Team";
+                        }
+                        else
+                        {
+                            _teamName = jteam["name"].ToString();
+                        }
                         string teamFolderPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
                         if (System.IO.Directory.Exists(teamFolderPath))
                         {
@@ -1149,7 +1173,7 @@ namespace VstsDemoBuilder.Controllers
                                 List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
                                 foreach (var board in importRows)
                                 {
-                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, jteam["name"].ToString());
+                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, _teamName);
                                 }
                             }
 
@@ -1160,7 +1184,7 @@ namespace VstsDemoBuilder.Controllers
                             if (System.IO.File.Exists(teamSettingJson))
                             {
                                 teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
-                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, jteam["name"].ToString());
+                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, _teamName);
                             }
 
                             // updating board columns for each teams each board
@@ -1173,7 +1197,7 @@ namespace VstsDemoBuilder.Controllers
                                 List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
                                 foreach (var board in importBoardCols)
                                 {
-                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, jteam["name"].ToString());
+                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, _teamName);
                                 }
                             }
 
@@ -1188,7 +1212,7 @@ namespace VstsDemoBuilder.Controllers
                                 cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
                                 foreach (var card in cardFields)
                                 {
-                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, jteam["name"].ToString());
+                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
                                 }
                             }
 
@@ -1205,14 +1229,16 @@ namespace VstsDemoBuilder.Controllers
                                 {
                                     if (cardStyle.rules.fill != null)
                                     {
-                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, jteam["name"].ToString());
+                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, _teamName);
                                     }
                                 }
                             }
                         }
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
+                    UpdateSprintItems(model, _boardVersion, settings);
                     UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
+                    RenameIterations(model, _boardVersion, settings.renameIterations);
                 }
             }
 
@@ -1267,8 +1293,8 @@ namespace VstsDemoBuilder.Controllers
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
 
             //Create WIKI
-            SetUpWiki(templatesFolder, model, _wikiVersion);
-
+            CreateProjetWiki(templatesFolder, model, _wikiVersion);
+            CreateCodeWiki(templatesFolder, model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = templatesFolder + model.SelectedTemplate + @"\PullRequests";
@@ -1528,43 +1554,47 @@ namespace VstsDemoBuilder.Controllers
 
                     foreach (var jTeam in jTeams)
                     {
-                        GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
-                        if (!(string.IsNullOrEmpty(teamResponse.id)))
+                        string isDefault = jTeam["isDefault"] != null ? jTeam["isDefault"].ToString() : string.Empty;
+                        if (isDefault == "false" || isDefault == "")
                         {
-                            string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
-                            string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
-                            if (System.IO.File.Exists(updateAreaJSON))
+                            GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
+                            if (!(string.IsNullOrEmpty(teamResponse.id)))
                             {
-                                updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
-                                updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
-                                bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
-                            }
-                            bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
-                            if (iterations.count > 0)
-                            {
-                                foreach (var iteration in iterations.value)
+                                string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
+                                string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
+                                if (System.IO.File.Exists(updateAreaJSON))
                                 {
-                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                    updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                    updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
+                                    bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
+                                }
+                                bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
+                                if (iterations.count > 0)
+                                {
+                                    foreach (var iteration in iterations.value)
+                                    {
+                                        bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                    }
                                 }
                             }
                         }
-                    }
-                    if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
-                    {
-                        AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
-                    }
-                    else
-                    {
-                        AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
-                    }
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360")
-                    {
-                        string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
-                        if (System.IO.File.Exists(updateAreaJSON))
+                        if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
                         {
-                            updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
-                            updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
-                            bool isUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                            AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
+                        }
+                        else
+                        {
+                            AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
+                        }
+                        if (model.SelectedTemplate.ToLower() == "smarthotel360")
+                        {
+                            string updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
+                            if (System.IO.File.Exists(updateAreaJSON))
+                            {
+                                updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
+                                bool isUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                            }
                         }
                     }
                 }
@@ -3057,78 +3087,120 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="templatesFolder"></param>
         /// <param name="model"></param>
         /// <param name="_wikiConfiguration"></param>
-        public void SetUpWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
+        public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
         {
-            try
+            ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
+            string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
+            if (Directory.Exists(projectWikiFolderPath))
             {
-                ManageWiki wiki = new ManageWiki(_wikiConfiguration);
-                if (model.SelectedTemplate.ToLower() == "partsunlimited")
+                string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
+                if (System.IO.File.Exists(createWiki))
                 {
-                    string createWiki = string.Format(templatesFolder + @"{0}\Wiki\ProjectWiki\CreateWiki.json", model.SelectedTemplate);
-                    if (System.IO.File.Exists(createWiki))
+                    string jsonString = System.IO.File.ReadAllText(createWiki);
+                    jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
+                        .Replace("$Name$", model.Environment.ProjectName);
+                    ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                    string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
+                    foreach (var dir in subDirectories)
                     {
-                        ProjectwikiResponse.Projectwiki projectwiki = new ProjectwikiResponse.Projectwiki();
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
-                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId);
-                        projectwiki = wiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
-                        if (projectwiki.id != null)
+                        //dirName==parentName//
+                        string[] dirSplit = dir.Split('\\');
+                        string dirName = dirSplit[dirSplit.Length - 1];
+                        string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                        sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
+                        bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
+
+                        if (isPage)
                         {
-
-                            string mainPage = templatesFolder + model.SelectedTemplate + @"\Wiki\ProjectWiki\AboutPartsUnlimited.json";
-
-                            string jsonPageString = System.IO.File.ReadAllText(mainPage);
-                            string fileName = System.IO.Path.GetFileName(mainPage);
-                            string[] wikipath = fileName.Split('.');
-                            wiki.CreatePages(jsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0]);
-
-
-                            List<string> listWikiPagePAths = new List<string>();
-
-                            string wikiPages = templatesFolder + model.SelectedTemplate + @"\Wiki\ProjectWiki\PartsUnlimitedWiki";
-                            if (System.IO.Directory.Exists(wikiPages))
+                            string[] getFiles = System.IO.Directory.GetFiles(dir);
+                            if (getFiles.Length > 0)
                             {
-                                System.IO.Directory.GetFiles(wikiPages).ToList().ForEach(i => listWikiPagePAths.Add(i));
-                            }
-
-                            if (listWikiPagePAths.Count > 0)
-                            {
-                                foreach (string pages in listWikiPagePAths)
+                                List<string> childFileNames = new List<string>();
+                                foreach (var file in getFiles)
                                 {
-                                    string subjsonPageString = System.IO.File.ReadAllText(pages);
-                                    string subfileName = System.IO.Path.GetFileName(pages);
-                                    string[] subwikipath = subfileName.Split('.');
-
-                                    wiki.CreatePages(subjsonPageString, model.Environment.ProjectName, projectwiki.id, wikipath[0] + "/" + subwikipath[0]);
-                                    AddMessage(model.id, "Created Wiki");
-
+                                    string[] fileNameExtension = file.Split('\\');
+                                    string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
+                                    string fileContent = model.ReadJsonFile(file);
+                                    bool isCreated = false;
+                                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                                    dic.Add("content", fileContent);
+                                    string newContent = JsonConvert.SerializeObject(dic);
+                                    if (fileName == dirName)
+                                    {
+                                        manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                    }
+                                    else
+                                    {
+                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                    }
+                                    if (isCreated)
+                                    {
+                                        childFileNames.Add(fileName);
+                                    }
+                                }
+                                if (childFileNames.Count > 0)
+                                {
+                                    foreach (var child in childFileNames)
+                                    {
+                                        if (child != dirName)
+                                        {
+                                            string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
+                                            if (!string.IsNullOrEmpty(movePages))
+                                            {
+                                                movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
+                                                manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                            }
+                                        }
+                                    }
                                 }
                             }
-
                         }
                     }
                 }
-                if (model.SelectedTemplate.ToLower() == "myhealthclinic")
+            }
+        }
+        public void CreateCodeWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
+        {
+            try
+            {
+                string wikiFolder = templatesFolder + model.SelectedTemplate + "\\Wiki";
+                if (Directory.Exists(wikiFolder))
                 {
-                    string createWiki = string.Format(templatesFolder + @"{0}\Wiki\CodeWiki\CreateWiki.json", model.SelectedTemplate);
-                    if (System.IO.File.Exists(createWiki))
+                    string[] wikiFilePaths = Directory.GetFiles(wikiFolder);
+                    if (wikiFilePaths.Length > 0)
                     {
-                        CodewikiResponse.Projectwiki projectwiki = new CodewikiResponse.Projectwiki();
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
-                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
-                            .Replace("$RepoID$", model.Environment.repositoryIdList.Any(i => i.Key.ToLower().Contains("myhealthclinic")) ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myhealthclinic").FirstOrDefault().Value : string.Empty);
-                        wiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                        ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
 
-                        AddMessage(model.id, "Created Wiki");
-
+                        foreach (string wiki in wikiFilePaths)
+                        {
+                            string[] nameExtension = wiki.Split('\\');
+                            string name = (nameExtension[nameExtension.Length - 1]).Split('.')[0];
+                            string json = model.ReadJsonFile(wiki);
+                            foreach (string repository in model.Environment.repositoryIdList.Keys)
+                            {
+                                string placeHolder = string.Format("${0}$", repository);
+                                json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
+                                    .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                            }
+                            bool isWiki = manageWiki.CreateCodeWiki(json);
+                            if (isWiki)
+                            {
+                                AddMessage(model.id, "Created Wiki");
+                            }
+                            else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
+                            {
+                                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                            }
+                        }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
-
         [AllowAnonymous]
         [HttpPost]
         public string GetTemplateMessage(string TemplateName)

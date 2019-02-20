@@ -1,11 +1,11 @@
 ﻿{
   "Groups": [
     "General",
-    "DevOps Labs"
+    "DevOps Labs",
+    "Private"
   ],
   "PrivateGroups": [
-    "PrivateTemp",
-    "Private"
+    "PrivateTemplates"
   ],
   "GroupwiseTemplates": [
     {
@@ -90,7 +90,7 @@
           "PreviewImages": [ "/Templates/Ansible/Images/browseweb.png", "/Templates/Ansible/Images/ci-queue.gif", "/Templates/Ansible/Images/cd-queue.gif", "/Templates/Ansible/Images/logintosite.png" ]
         },
         {
-          "key": "77385",
+          "Key": "77385",
           "Name": "Azure Machine Learning",
           "TemplateFolder": "MachineLearning",
           "Description": "This template contains code and pipeline definition for a machine learning project demonstrating how to automate the end to end ML/AI project. The build pipelines include DevOps tasks for data sanity test, unit test, model training on different compute targets, model version management, model evaluation/model selection, model deployment as realtime web service, staged deployment to QA/prod, integration testing and functional testing.",
@@ -118,6 +118,14 @@
           "Image": "/Templates/TemplateImages/kubernetes.png",
           "Author": "Microsoft",
           "PreviewImages": [ "/Templates/AKS/Images/AKS.png", "/Templates/AKS/Images/aksdashboard.png", "/Templates/AKS/Images/update_CD3.png", "/Templates/AKS/Images/updateprocessbd.png" ]
+        },
+        {
+          "Key": "77366",
+          "Name": "GitHub",
+          "TemplateFolder": "GitHub",
+          "Description": "Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <br /> Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure DevOps</a>",
+          "Image": "/Templates/TemplateImages/GitHub.png"
+          "Author": "Microsoft"
         },
         {
           "Key": "77370",
@@ -148,6 +156,7 @@
           "Image": "/Templates/TemplateImages/AzureDevOps.png",
           "Author": "Microsoft",
           "PreviewImages": [ "/Templates/DeploymentGroups/Images/application.png", "/Templates/DeploymentGroups/Images/dgscript.png", "/Templates/DeploymentGroups/Images/differentphases.png" ]
+          "Image": "/Templates/TemplateImages/AzureDevOps.png"
         },
         {
           "Key": "77364",
@@ -216,6 +225,7 @@
           "Description": "Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <br /> Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure DevOps</a>",
           "Image": "/Templates/TemplateImages/GitHub.png",
           "Author": "Microsoft"
+          "Image": "/Templates/TemplateImages/AzureFunction.png"
         }
       ]
     },
@@ -229,11 +239,20 @@
       ]
     },
     {
-      "Groups": "PrivateTemp",
+      "Groups": "PrivateTemplates",
       "Template": [
         {
-          "Key": "77386",
-          "Name": "Tailwind Traders",
+          "Key": "77384",
+          "Name": "ContosoAir",
+          "TemplateFolder": "ContosoAir",
+          "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
+          "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
+          "Tags": [ "Agile", " Node.js", "User stories" ],
+          "Image": "/Templates/TemplateImages/ContosAir.png"
+        },
+        {
+          "Key": "77387",
+         "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders",
           "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
           "Tags": [ "Agile", "Data and AI", "React" ],
@@ -250,6 +269,12 @@
           "Name": "LaunchDarkly",
           "TemplateFolder": "LaunchDarkly",
           "Description": "Use this template to learn how to implement a very simple feature flag for an ASP.NET MVC application using LaunchDarkly and how we can integrate LaunchDarkly with Azure DevOps release pipelines"
+        },
+        {
+          "Key": "77388",
+          "Name": "Dynatrace",
+          "TemplateFolder": "Dynatrace",
+          "Description": "This template uses tools to create a high performant, resilient, self- healing pipeline: Azure Repos: Source control repository for the application"
         },
         {
           "Name": "devops-mobile",

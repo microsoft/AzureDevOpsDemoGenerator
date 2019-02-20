@@ -10,6 +10,7 @@ namespace VstsRestAPI
         protected readonly IConfiguration _configuration;
         protected readonly string _credentials;
         protected readonly string Project;
+        protected readonly string ProjectId;
         protected readonly string Account;
         protected readonly string Team;
 
@@ -21,6 +22,7 @@ namespace VstsRestAPI
             Project = configuration.Project;
             Account = configuration.AccountName;
             Team = configuration.Team;
+            ProjectId = configuration.ProjectId;
         }
 
         protected HttpClient GetHttpClient()

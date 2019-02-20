@@ -34,7 +34,6 @@ namespace VstsDemoBuilder.Controllers
             {
                 Session["EnableExtractor"] = model.EnableExtractor;
             }
-
             var browser = Request.Browser.Type;
             if (browser.Contains("InternetExplorer"))
             {

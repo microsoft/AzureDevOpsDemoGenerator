@@ -9,14 +9,14 @@ namespace VstsRestAPI.WorkItemAndTracking
         private Configuration con = new Configuration();
 
         // Create Issue Work Items
-        public void CreateIssueWI(string credential, string version, string url, string issueName, string description, string projectId)
+        public void CreateIssueWI(string credential, string version, string url, string issueName, string description, string projectId, string tag)
         {
             try
             {
                 Object[] patchDocument = new Object[3];
                 patchDocument[0] = new { op = "add", path = "/fields/System.Title", value = issueName };
                 patchDocument[1] = new { op = "add", path = "/fields/System.Description", value = description };
-                patchDocument[2] = new { op = "add", path = "/fields/System.Tags", value = "Extractor" };
+                patchDocument[2] = new { op = "add", path = "/fields/System.Tags", value = tag };
 
 
                 con.UriString = url;
