@@ -334,6 +334,9 @@
     <Content Include="Templates\Docker\Images\buildtasks.png" />
     <Content Include="Templates\Docker\Images\finalresult.png" />
     <Content Include="Templates\Docker\Images\release.png" />
+    <Content Include="Templates\LaunchDarkly\Images\browseapp.png" />
+    <Content Include="Templates\LaunchDarkly\Images\buildandrelease.gif" />
+    <Content Include="Templates\LaunchDarkly\Images\CD.png" />
     <Content Include="Templates\MachineLearning\Images\aml.png" />
     <Content Include="Templates\MachineLearning\Images\CI.png" />
     <Content Include="Templates\MachineLearning\Images\Items.png" />
@@ -383,6 +386,7 @@
     <Content Include="Templates\TemplateImages\Docker.png" />
     <Content Include="Templates\TemplateImages\GitHub.png" />
     <Content Include="Templates\TemplateImages\kubernetes.png" />
+    <Content Include="Templates\TemplateImages\launchdarkly.png" />
     <Content Include="Templates\TemplateImages\MachineLearning.png" />
     <Content Include="Templates\TemplateImages\MyHealthClinic.png" />
     <Content Include="Templates\TemplateImages\MyShuttle.png" />
@@ -981,9 +985,7 @@
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\CardStyles.json" />
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\TeamSetting.json" />
     <Content Include="Templates\Dynatrace\WorkItems\Feature.json" />
-
     <Content Include="Templates\Dynatrace\DeploymentGroups\CreateDeploymentGroup.json" />
-
     <Content Include="Templates\ContosoAir_Ready\Extensions.json" />
     <Content Include="Templates\ContosoAir_Ready\Iterations.json" />
     <Content Include="Templates\ContosoAir_Ready\ProjectSettings.json" />
@@ -1007,7 +1009,6 @@
     <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\TeamSetting.json" />
     <Content Include="Templates\ContosoAir_Ready\WorkItems\Feature.json" />
     <Content Include="Templates\ContosoAir_Ready\WorkItems\User Story.json" />
-
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
