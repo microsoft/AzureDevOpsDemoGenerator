@@ -38,7 +38,6 @@ namespace VstsDemoBuilder.Controllers
             {
                 return RedirectToAction("Unsupported_browser", "Account");
             }
-            
             try
             {
                 if (!string.IsNullOrEmpty(model.name))

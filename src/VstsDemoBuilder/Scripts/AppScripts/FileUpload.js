@@ -91,5 +91,5 @@ function disableButton() {
     $('#btnUpload').attr('disabled', 'disabled').removeClass('btn-primary');
 }
 function enableButton() {
-    $('#btnUpload').attr('disabled', false).addClass('btn-primary');;
+    $('#btnUpload').attr('disabled', false).addClass('btn-primary');
 }
