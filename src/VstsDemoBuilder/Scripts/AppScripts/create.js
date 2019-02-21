@@ -98,6 +98,101 @@ $(document).ready(function (event) {
     });
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION - ON CLICK OF Select Template BUTTOON
+    $('body').on('dblclick', '.template__block', function () {
+        $('#lblDefaultDescription').hide();
+        var templateFolderSelected = $(".template__block.selected").data('folder'); // taking template folder name - appended from JSON
+        var groputempSelected = $(".template__block.selected").data('template'); // taking template name - appended from JSON
+        var selectedTemplateDescription = $(".template__block.selected").data('description'); // taking template description  - appended from JSON
+        var infoMsg = $(".description.descSelected").data('message'); // taking info message - appended from JSON
+
+        if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
+            $('#InfoMessage').html('');
+            $('#InfoMessage').removeClass('d-block').addClass('d-none');
+        }
+        else {
+            $('#InfoMessage').html(infoMsg);
+            $('#InfoMessage').removeClass('d-none').addClass('d-block');
+        }
+        if (selectedTemplateDescription !== "") {
+            $('#descContainer').html(selectedTemplateDescription);
+        }
+        else {
+            $('#descContainer').html("Azure DevOps Demo Generator");
+        }
+        if (groputempSelected !== "") {
+            templateFolder = templateFolderSelected;
+            $('#ddlTemplates').val(groputempSelected);
+            $(".VSTemplateSelection").fadeOut('fast');
+        }
+        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none'); // hiding Popup
+        //till here
+        $('#status-messages').empty().hide();
+        $('#textMuted').removeClass("d-block").addClass("d-none");
+        $('#dvProgress').removeClass("d-block").addClass("d-none");
+        $('#accountLink').empty();
+        $('#finalLink').removeClass("d-block").addClass("d-none");
+        $('#errorNotify').removeClass("d-block").addClass("d-none");
+        //Added
+        $("#projectParameters").hide();
+        $("#projectParameters").html('');
+        $("#extensionError").html('');
+        $("#extensionError").hide();
+        $("#lblextensionError").removeClass("d-block").addClass("d-none");
+        var TemplateName = templateFolder; // COPYING TEMPLATE FOLDER NAME FROM GLOBAL VARIABLE TO LOCAL VARIABLE
+
+        if (TemplateName === "SonarQube") {
+            $("#SoanrQubeDiv").show();
+        }
+        else {
+            $("#SoanrQubeDiv").hide();
+        }
+        // binding projecct parameters
+        GetTemplateParameters(TemplateName);
+        if (TemplateName !== "") {
+            checkForInstalledExtensions(TemplateName, function callBack(extensions) {
+                if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== undefined && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
+
+                    $("#extensionError").empty().append(extensions.message);
+                    $("#extensionError").show();
+                    $("#lblextensionError").removeClass("d-none").addClass("d-block");
+
+                    if (extensions.status !== "true") {
+                        $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+                        isExtensionNeeded = true;
+                        microsoft = $('#agreeTermsConditions').attr('placeholder');
+                        if (microsoft !== "microsoft") {
+                            microsoft = "";
+                        }
+                        ThirdParty = $('#ThirdPartyagreeTermsConditions').attr('placeholder');
+                        if (ThirdParty !== "thirdparty") {
+                            ThirdParty = "";
+                        }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+                }
+                else {
+                    $("#extensionError").html('');
+                    $("#extensionError").hide();
+                    $("#lblextensionError").removeClass("d-block").addClass("d-none");
+                    $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                }
+
+            });
+        }
+        // taking accout name to check for installed extension.
+        var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
+        var checkExtensionsForSelectedTemplate = templateFolder;
+        ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
+        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "--select organiaztion--") {
+            return false;
+        }
+        else if (checkExtensionsForSelectedTemplate === "") {
+            return;
+        }
+        else {
+            GetRequiredExtension();
+        }
+    });
+
     $('#selecttmplate').click(function () {
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template__block.selected").data('folder'); // taking template folder name - appended from JSON
@@ -326,7 +421,7 @@ $(document).ready(function (event) {
         }
     });
 
-  
+
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
@@ -896,7 +991,7 @@ function openImportPopUp() {
 }
 
 function AppendMessage() {
-    debugger;
+
     privateTemplateMsg = $('#infoMessageTxt').val(); // taking infor message form model
 
     if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
