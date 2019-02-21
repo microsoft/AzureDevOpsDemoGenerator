@@ -981,6 +981,9 @@
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\CardStyles.json" />
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\TeamSetting.json" />
     <Content Include="Templates\Dynatrace\WorkItems\Feature.json" />
+
+    <Content Include="Templates\Dynatrace\DeploymentGroups\CreateDeploymentGroup.json" />
+
     <Content Include="Templates\ContosoAir_Ready\Extensions.json" />
     <Content Include="Templates\ContosoAir_Ready\Iterations.json" />
     <Content Include="Templates\ContosoAir_Ready\ProjectSettings.json" />
@@ -1004,6 +1007,7 @@
     <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\TeamSetting.json" />
     <Content Include="Templates\ContosoAir_Ready\WorkItems\Feature.json" />
     <Content Include="Templates\ContosoAir_Ready\WorkItems\User Story.json" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

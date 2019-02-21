@@ -19,6 +19,7 @@ using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsRestAPI;
 using VstsRestAPI.Build;
+using VstsRestAPI.DeploymentGRoup;
 using VstsRestAPI.Git;
 using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.QueriesAndWidgets;
@@ -879,6 +880,7 @@ namespace VstsDemoBuilder.Controllers
             string testPlanVersion = System.Configuration.ConfigurationManager.AppSettings["TestPlanVersion"];
             string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string deploymentGroup = System.Configuration.ConfigurationManager.AppSettings["DeloymentGroup"];
 
 
             string processTemplateId = Default.SCRUM;
@@ -924,6 +926,7 @@ namespace VstsDemoBuilder.Controllers
             Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
 
             string templatesFolder = Server.MapPath("~") + @"\Templates\";
@@ -1236,6 +1239,8 @@ namespace VstsDemoBuilder.Controllers
                     RenameIterations(model, _boardVersion, settings.renameIterations);
                 }
             }
+            //Create Deployment Group
+            //CreateDeploymentGroup(templatesFolder, model, _deploymentGroup);
 
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
@@ -3194,6 +3199,21 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
+            }
+        }
+
+        public void CreateDeploymentGroup(string templateFolder, Project model, Configuration _deploymentGroup)
+        {
+            string path = templateFolder + model.SelectedTemplate + "\\DeploymentGroups\\CreateDeploymentGroup.json";
+            if (System.IO.File.Exists(path))
+            {
+                string json = model.ReadJsonFile(path);
+                if (!string.IsNullOrEmpty(json))
+                {
+                    DeploymentGroup deploymentGroup = new DeploymentGroup(_deploymentGroup);
+                    bool isCreated = deploymentGroup.CreateDeploymentGroup(json);
+                    if(isCreated){ } else if(!string.IsNullOrEmpty(deploymentGroup.LastFailureMessage)){ AddMessage(model.id.ErrorId(), "Error while creating deployment group: " + deploymentGroup.LastFailureMessage); }
+                }
             }
         }
         [AllowAnonymous]

@@ -254,7 +254,7 @@
           "deploymentInput": {
             "healthPercent": 0,
             "deploymentHealthOption": "Custom",
-            "tags": [ "Staging", "Production" ],
+            "tags": [],
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": [
