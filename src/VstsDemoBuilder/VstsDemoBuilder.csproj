@@ -374,6 +374,8 @@
     <Content Include="Templates\SonarQube\Images\bug_details.png" />
     <Content Include="Templates\SonarQube\Images\build_configure.png" />
     <Content Include="Templates\SonarQube\Images\build_summary.png" />
+    <Content Include="Templates\Tailwind Traders\Images\Architecture.png" />
+    <Content Include="Templates\Tailwind Traders\Images\Website.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
     <Content Include="Templates\TemplateImages\CodeFile.png" />
