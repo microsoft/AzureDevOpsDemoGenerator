@@ -1,7 +1,7 @@
 {
   "parameters": {
     "gitSource": {
-      "url": "https://vstsdemodata.visualstudio.com/Dynatrace/_git/UnbreakablePipelineDemo"
+      "url": "https://github.com/safia-habib/UnbreakablePipelineAzureHOTDay.git"
     },
     "serviceEndpointId": "$UnbreakablePipelineDemo-code$",
     "deleteServiceEndpointAfterImportIsDone": true
