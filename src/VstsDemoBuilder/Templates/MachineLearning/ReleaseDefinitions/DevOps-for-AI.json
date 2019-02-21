@@ -293,7 +293,7 @@
                 }
               ]
             },
-            "queueId": 16,
+            "queueId": "$Hosted Ubuntu 1604$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
