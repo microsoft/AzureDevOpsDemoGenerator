@@ -23,22 +23,10 @@ $(document).ready(function () {
 
     ga('send', 'event', 'Create page', 'visited');
 });
-
-$(function () {
-    $("#Default").prop("checked", "checked");
-    $("input").on("keypress", function (e) {
-        if (e.which === 32 && !this.value.length)
-            e.preventDefault();
-    });
-});
-
 var messageList = [];
 /**/
 /**/
 var ID = function () {
-    // Math.random should be unique because of its seeding algorithm.
-    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-    // after the decimal.
     return '_' + Math.random().toString(36).substr(2, 9);
 };
 var uniqueId = "";
@@ -108,7 +96,6 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
-        //Added
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
