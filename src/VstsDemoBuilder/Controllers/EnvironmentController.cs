@@ -188,7 +188,7 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
                 enableExtractor = Session["EnableExtractor"] != null ? Session["EnableExtractor"].ToString() : string.Empty;
-                if (!string.IsNullOrEmpty(enableExtractor) && enableExtractor == "false")
+                if (string.IsNullOrEmpty(enableExtractor) || enableExtractor == "false")
                 {
                     TemplateSelection.Templates _templates = new TemplateSelection.Templates();
                     _templates.Groups = new List<string>();
