@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="~/content/assets/css/custom.min.css">
-    <link href="~/assets/templategrouping/templateSelection.custom.min.css" rel="stylesheet" />
+    <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
     <title>Create Project</title>
@@ -21,7 +21,7 @@
         }
 
         .templateImage {
-            max-width: 70px;
+            max-width: 36px;
         }
 
         .newFeature {
@@ -90,48 +90,18 @@
                 <span>Choose a template</span>
                 <div class="template-close">X</div>
             </div>
-            <div class="template-group d-flex p-2 border">
-                <ul class="nav nav-pills w-100" role="tablist" id="modtemplateGroup"></ul>
+            <div class="template-group bg-primary d-flex align-items-center p-3">
+                <ul class="nav nav-pills w-100 justify-content-center" role="tablist" id="modtemplateGroup"></ul>
             </div>
-            <div class="template-body">
-                <div class="container-fluid h-100">
-                    <div class="row h-100">
-                        <div class="col-md-3 p-0 templates__list">
-                            <!--Preview Images-->
-                            <div class="section" id="templates__list">
-                            </div>
-                        </div>
-                        <div class="col-md-9 bg-light p-3 h-100 d-block details__section" id="list_templates">
-                            <div class="preview__image d-none h-100">
-                                <p>
-                                    <img class="img__preview">
-                                </p>
-                            </div>
-                            <div class="template__details h-100 bg-white p-2 rounded">
-                                <div class="d-flex mb-3 justify-content-between">
-                                    <h5 class="selected__title"></h5>
-                                </div>
-                                <div>
-                                    <label id="author"></label>&nbsp; &bull; &nbsp;
-                                    <label id="lastupdated"></label>
-                                </div>
-                                <div class="selected__preview d-none">
-                                    <p>
-                                        <small class="text-light">Preview</small>
-                                    </p>
-                                </div>
-                                <div class="selected__desc mt-3"></div>
-                                <div class="p-3 template-footer">
-                                    <button class="btn btn-primary" id="selecttmplate">Apply</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="template-body vstsScroll bg-light p-3">
+                <div class="tab-content" id="pills-tabContent">
                 </div>
+            </div>
+            <div class="template-footer p-3 bg-white text-right">
+                <button class="btn btn-primary" id="selecttmplate">Select Template</button>
             </div>
         </div>
     </div>
-
     <!--/TEMPLATEgROUPING-->
     <!-- MODAL -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
