@@ -89,7 +89,7 @@
           "Author": "Microsoft",
           "PreviewImages": [ "/Templates/Terraform/Images/Terraform.png", "/Templates/Terraform/Images/queuebuild.gif", "/Templates/Terraform/Images/releasetasks.png", "/Templates/Terraform/Images/releasetrigger.gif" ]
         },
-        
+       
         {
           "Key": "77386",
           "Name": "Ansible",
