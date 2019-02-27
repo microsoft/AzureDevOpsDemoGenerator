@@ -62,9 +62,16 @@
             },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
-              "downloadInputs": []
+              "downloadInputs": [
+                {
+                  "artifactItems": [],
+                  "alias": "_devops-for-ai-CI",
+                  "artifactType": "Build",
+                  "artifactDownloadMode": "All"
+                }
+              ]
             },
-            "queueId": "$Hosted VS2017$",
+            "queueId": "$Hosted Ubuntu 1604$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -79,9 +86,9 @@
           "workflowTasks": [
             {
               "environment": {},
-              "taskId": "03dd16c3-43e0-4667-ba84-40515d27a410",
+              "taskId": "33c63b11-352b-45a2-ba1b-54cb568a29ca",
               "version": "0.*",
-              "name": "Conda Environment ",
+              "name": "Use Python 3.6",
               "refName": "",
               "enabled": true,
               "alwaysRun": false,
@@ -91,11 +98,9 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
-                "environmentName": "azuremlsdk",
-                "packageSpecs": "python=3.6",
-                "updateConda": "true",
-                "createOptions": "cython numpy",
-                "cleanEnvironment": "false"
+                "versionSpec": "3.6",
+                "addToPath": "true",
+                "architecture": "x64"
               }
             },
             {
@@ -288,7 +293,7 @@
                 }
               ]
             },
-            "queueId": "$Hosted VS2017$",
+            "queueId": "$Hosted Ubuntu 1604$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -303,9 +308,9 @@
           "workflowTasks": [
             {
               "environment": {},
-              "taskId": "03dd16c3-43e0-4667-ba84-40515d27a410",
+              "taskId": "33c63b11-352b-45a2-ba1b-54cb568a29ca",
               "version": "0.*",
-              "name": "Conda Environment azuremlsdk",
+              "name": "Use Python 3.6",
               "refName": "",
               "enabled": true,
               "alwaysRun": false,
@@ -315,11 +320,9 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
-                "environmentName": "azuremlsdk",
-                "packageSpecs": "python=3.6",
-                "updateConda": "true",
-                "createOptions": "cython numpy",
-                "cleanEnvironment": "false"
+                "versionSpec": "3.6",
+                "addToPath": "true",
+                "architecture": "x64"
               }
             },
             {
@@ -491,10 +494,8 @@
     }
   ],
   "releaseNameFormat": "Release-$(rev:r)",
+  "comment": "",
   "tags": [],
-  "pipelineProcess": {
-    "type": "designer"
-  },
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",

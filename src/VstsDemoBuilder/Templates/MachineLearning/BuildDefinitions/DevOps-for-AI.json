@@ -19,7 +19,7 @@
         "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
       },
       "inputs": {
-        "workItemType": "1045708",
+        "workItemType": "",
         "assignToRequestor": "true",
         "additionalFields": "{}"
       }
@@ -34,7 +34,23 @@
       "batchChanges": false,
       "maxConcurrentBuildsPerBranch": 1,
       "pollingInterval": 0,
-      "triggerType": "continuousIntegration"
+      "triggerType": 2
+    },
+    {
+      "schedules": [
+        {
+          "branchFilters": [
+            "+refs/heads/master"
+          ],
+          "timeZoneId": "UTC",
+          "startHours": 1,
+          "startMinutes": 0,
+          "daysToBuild": 31,
+          "scheduleJobId": "97679be0-0e39-485b-b318-aad1f0da48fa",
+          "scheduleOnlyWithChanges": false
+        }
+      ],
+      "triggerType": 8
     }
   ],
   "variables": {
@@ -61,7 +77,7 @@
   ],
   "properties": {},
   "tags": [],
-  "jobAuthorizationScope": "projectCollection",
+  "jobAuthorizationScope": 1,
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
   "process": {
@@ -73,19 +89,18 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "Conda Environment azuremlsdk-0619",
+            "displayName": "Use Python 3.6",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
-              "id": "03dd16c3-43e0-4667-ba84-40515d27a410",
+              "id": "33c63b11-352b-45a2-ba1b-54cb568a29ca",
               "versionSpec": "0.*",
               "definitionType": "task"
             },
             "inputs": {
-              "environmentName": "azuremlsdk-0619",
-              "packageSpecs": "python=3.6",
-              "updateConda": "false",
-              "createOptions": "cython numpy",
-              "cleanEnvironment": "false"
+              "versionSpec": "3.6",
+              "addToPath": "true",
+              "architecture": "x64"
             }
           },
           {
@@ -95,6 +110,7 @@
             "alwaysRun": false,
             "displayName": "Install Requirements",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
               "versionSpec": "2.*",
@@ -115,6 +131,7 @@
             "alwaysRun": false,
             "displayName": "Create or Get Workspace",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
               "versionSpec": "1.*",
@@ -126,6 +143,8 @@
               "scriptPath": "",
               "inlineScript": "python aml_service/00-WorkSpace.py",
               "args": "",
+              "addSpnToEnvironment": "false",
+              "useGlobalConfig": "false",
               "cwd": "",
               "failOnStandardError": "false"
             }
@@ -137,6 +156,7 @@
             "alwaysRun": false,
             "displayName": "Start Training on Local",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
               "versionSpec": "1.*",
@@ -148,6 +168,8 @@
               "scriptPath": "",
               "inlineScript": "python aml_service/10-TrainOnLocal.py\n",
               "args": "",
+              "addSpnToEnvironment": "false",
+              "useGlobalConfig": "false",
               "cwd": "",
               "failOnStandardError": "false"
             }
@@ -159,6 +181,7 @@
             "alwaysRun": false,
             "displayName": "Evaluate Production Model with Newly trained model",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
               "versionSpec": "1.*",
@@ -170,6 +193,8 @@
               "scriptPath": "",
               "inlineScript": "python aml_service/15-EvaluateModel.py\n",
               "args": "",
+              "addSpnToEnvironment": "false",
+              "useGlobalConfig": "false",
               "cwd": "",
               "failOnStandardError": "false"
             }
@@ -181,6 +206,7 @@
             "alwaysRun": false,
             "displayName": "Register Model",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
               "versionSpec": "1.*",
@@ -192,6 +218,8 @@
               "scriptPath": "",
               "inlineScript": "python aml_service/20-RegisterModel.py",
               "args": "",
+              "addSpnToEnvironment": "false",
+              "useGlobalConfig": "false",
               "cwd": "",
               "failOnStandardError": "false"
             }
@@ -203,6 +231,7 @@
             "alwaysRun": false,
             "displayName": "Create Scoring Docker Image",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
               "versionSpec": "1.*",
@@ -214,6 +243,8 @@
               "scriptPath": "",
               "inlineScript": "python aml_service/30-CreateScoringImage.py",
               "args": "",
+              "addSpnToEnvironment": "false",
+              "useGlobalConfig": "false",
               "cwd": "",
               "failOnStandardError": "false"
             }
@@ -225,6 +256,7 @@
             "alwaysRun": false,
             "displayName": "Copy Files to: $(Build.ArtifactStagingDirectory)",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
               "versionSpec": "2.*",
@@ -246,6 +278,7 @@
             "alwaysRun": false,
             "displayName": "Publish Artifact: Repo",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
               "versionSpec": "1.*",
@@ -263,6 +296,7 @@
         ],
         "name": "Phase 1",
         "refName": "Phase_1",
+        "condition": "succeeded()",
         "jobAuthorizationScope": "projectCollection",
         "jobCancelTimeoutInMinutes": 1
       }
@@ -288,7 +322,7 @@
     "checkoutSubmodules": false
   },
   "processParameters": {},
-  "quality": "definition",
+  "quality": 1,
   "drafts": [],
   "queue": {
     "name": "Hosted Ubuntu 1604",
