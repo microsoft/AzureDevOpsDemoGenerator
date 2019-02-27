@@ -384,6 +384,7 @@
     <Content Include="Templates\TemplateImages\CodeFile.png" />
     <Content Include="Templates\TemplateImages\ContosAir.png" />
     <Content Include="Templates\TemplateImages\Docker.png" />
+    <Content Include="Templates\TemplateImages\Dynatrace.png" />
     <Content Include="Templates\TemplateImages\GitHub.png" />
     <Content Include="Templates\TemplateImages\kubernetes.png" />
     <Content Include="Templates\TemplateImages\launchdarkly.png" />
