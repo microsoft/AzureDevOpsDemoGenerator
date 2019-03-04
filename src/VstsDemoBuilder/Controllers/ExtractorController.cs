@@ -417,11 +417,11 @@ namespace VstsDemoBuilder.Controllers
         public string[] GenerateTemplateArifacts(Project model)
         {
             extractedTemplatePath = Server.MapPath("~") + @"ExtractedTemplate\";
+            AddMessage(model.id, "");
 
             GetInstalledExtensions(ProjectConfigurationDetails.AppConfig.ExtensionConfig);
 
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
-            AddMessage(model.id, "");
             ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
 
             if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
