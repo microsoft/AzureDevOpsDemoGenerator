@@ -354,7 +354,7 @@ namespace VstsDemoBuilder.Controllers
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
                     AccessDetails = GetAccessToken(accessRequestBody);
 
-                    // add your access token here for local debugging
+                    // add your access token here for local debugging                 
                     //AccessDetails.access_token = "";
                     model.accessToken = AccessDetails.access_token;
                     Session["PAT"] = AccessDetails.access_token;
