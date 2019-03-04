@@ -898,7 +898,7 @@ namespace VstsDemoBuilder.Controllers
             websiteUrl = model.websiteUrl;
             templateUsed = model.SelectedTemplate;
             projectName = model.ProjectName;
-
+                        
             string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
             if (logWIT == "true")
             {
@@ -2449,7 +2449,7 @@ namespace VstsDemoBuilder.Controllers
                 //GetDashBoardDetails
                 string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
                 Thread.Sleep(2000); // Adding delay to get the existing dashboard ID 
-
+                
                 if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                 {
                     AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
@@ -2740,14 +2740,14 @@ namespace VstsDemoBuilder.Controllers
                                 .Replace("$BacklogBoardWI$", backlogBoardWI.id != null ? backlogBoardWI.id : string.Empty)
                                 .Replace("$StateofTestCases$", stateofTestCase.id != null ? stateofTestCase.id : string.Empty)
                                 .Replace("$Feedback$", feedback.id != null ? feedback.id : string.Empty)
-                                .Replace("$RepoPublicWeb$", model.Environment.repositoryIdList["PublicWeb"])
+                                .Replace("$RepoPublicWeb$", model.Environment.repositoryIdList.ContainsKey("PublicWeb") ? model.Environment.repositoryIdList["PublicWeb"] : string.Empty)
                                 .Replace("$MobileTeamWork$", mobileTeamWork.id != null ? mobileTeamWork.id : string.Empty).Replace("$WebTeamWork$", webTeamWork.id != null ? webTeamWork.id : string.Empty)
                                 .Replace("$Bugs$", bugs.id != null ? bugs.id : string.Empty)
                                 .Replace("$sprint2$", sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault().id : string.Empty)
                                 .Replace("$sprint3$", sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault().id : string.Empty)
                                 .Replace("$startDate$", startdate)
                                 .Replace("$BugswithoutRepro$", bugsWithoutReproSteps.id != null ? bugsWithoutReproSteps.id : string.Empty).Replace("$UnfinishedWork$", unfinishedWork.id != null ? unfinishedWork.id : string.Empty)
-                                .Replace("$RepoSmartHotel360$", model.Environment.repositoryIdList["SmartHotel360"])
+                                .Replace("$RepoSmartHotel360$", model.Environment.repositoryIdList.ContainsKey("SmartHotel360") ? model.Environment.repositoryIdList["SmartHotel360"] : string.Empty)
                                 .Replace("$PublicWebSiteCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault().Id : string.Empty);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2823,26 +2823,26 @@ namespace VstsDemoBuilder.Controllers
                     accountName = account;
                     pat = token;
                     string templatesFolder = Server.MapPath("~") + @"\Templates\";
-                    string projTemplateFile = string.Format(templatesFolder + @"{0}\Extensions.json", selectedTemplate);
-                    if (!(System.IO.File.Exists(projTemplateFile)))
+                    string extensionJsonFile = string.Format(templatesFolder + @"{0}\Extensions.json", selectedTemplate);
+                    if (!(System.IO.File.Exists(extensionJsonFile)))
                     {
                         return Json(new { message = "Template not found", status = "false" }, JsonRequestBehavior.AllowGet);
                     }
 
-                    string templateItems = System.IO.File.ReadAllText(projTemplateFile);
-                    var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(templateItems);
+                    string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
+                    var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
                     string requiresExtensionNames = string.Empty;
                     string requiredMicrosoftExt = string.Empty;
                     string requiredThirdPartyExt = string.Empty;
                     string finalExtensionString = string.Empty;
 
                     //Check for existing extensions
-                    if (template.Extensions.Length > 0)
+                    if (template.Extensions.Count > 0)
                     {
                         Dictionary<string, bool> dict = new Dictionary<string, bool>();
                         foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                         {
-                            dict.Add(ext.name, false);
+                            dict.Add(ext.extensionName, false);
                         }
 
                         var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(pat));// VssOAuthCredential(PAT));
@@ -2861,9 +2861,9 @@ namespace VstsDemoBuilder.Controllers
                         {
                             foreach (var extension in template.Extensions)
                             {
-                                if (extension.name.ToLower() == ext.ExtensionDisplayName.ToLower())
+                                if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
                                 {
-                                    dict[extension.name] = true;
+                                    dict[extension.extensionName] = true;
                                 }
                             }
                         }
@@ -2876,32 +2876,32 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var ins in installedExtensions)
                                 {
-                                    string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.name == ins.Key).FirstOrDefault().link;
+                                    string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/><br/>";
                                 }
                             }
                             foreach (var req in required)
                             {
-                                string publisher = template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().Publisher;
-                                if (publisher == "microsoft")
+                                string publisher = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().publisherName;
+                                if (publisher == "Microsoft")
                                 {
-                                    string link = "<img src=\"/Images/cross10_new.png\"/> " + template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().link;
+                                    string link = "<img src=\"/Images/cross10_new.png\"/> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
 
                                     string lincense = "";
-                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().License))
+                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License))
                                     {
-                                        lincense = " - " + template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().License;
+                                        lincense = " - " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License;
                                     }
                                     requiredMicrosoftExt = requiredMicrosoftExt + link + lincense + "<br/>";
                                 }
                                 else
                                 {
-                                    string link = "<img src=\"/Images/cross10_new.png\"/> " + template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().link;
+                                    string link = "<img src=\"/Images/cross10_new.png\"/> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
                                     string lincense = "";
-                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().License))
+                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License))
                                     {
-                                        lincense = " - " + template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().License;
+                                        lincense = " - " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License;
                                     }
                                     requiredThirdPartyExt = requiredThirdPartyExt + link + lincense + "<br/>";
                                 }
@@ -2925,7 +2925,7 @@ namespace VstsDemoBuilder.Controllers
                                 requiresExtensionNames = "All required extensions are installed/enabled in your Azure DevOps Organization.<br/><br/><b>";
                                 foreach (var ins in installedExtensions)
                                 {
-                                    string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.name == ins.Key).FirstOrDefault().link;
+                                    string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/>";
                                 }
@@ -2970,12 +2970,12 @@ namespace VstsDemoBuilder.Controllers
                 string requiresExtensionNames = string.Empty;
 
                 //Check for existing extensions
-                if (template.Extensions.Length > 0)
+                if (template.Extensions.Count > 0)
                 {
                     Dictionary<string, bool> dict = new Dictionary<string, bool>();
                     foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                     {
-                        dict.Add(ext.name, false);
+                        dict.Add(ext.extensionName, false);
                     }
                     var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(PAT));// VssOAuthCredential(PAT));
                     var client = connection.GetClient<ExtensionManagementHttpClient>();
@@ -2991,9 +2991,9 @@ namespace VstsDemoBuilder.Controllers
                     {
                         foreach (var extension in template.Extensions)
                         {
-                            if (extension.name.ToLower() == ext.ExtensionDisplayName.ToLower())
+                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
                             {
-                                dict[extension.name] = true;
+                                dict[extension.extensionName] = true;
                             }
                         }
                     }
@@ -3003,8 +3003,8 @@ namespace VstsDemoBuilder.Controllers
                     {
                         Parallel.ForEach(required, async req =>
                         {
-                            string publisherName = template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().PublisherId;
-                            string extensionName = template.Extensions.Where(x => x.name == req.Key).FirstOrDefault().ExtensionId;
+                            string publisherName = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().publisherId;
+                            string extensionName = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().extensionId;
                             try
                             {
                                 InstalledExtension extension = null;
@@ -3212,7 +3212,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     DeploymentGroup deploymentGroup = new DeploymentGroup(_deploymentGroup);
                     bool isCreated = deploymentGroup.CreateDeploymentGroup(json);
-                    if(isCreated){ } else if(!string.IsNullOrEmpty(deploymentGroup.LastFailureMessage)){ AddMessage(model.id.ErrorId(), "Error while creating deployment group: " + deploymentGroup.LastFailureMessage); }
+                    if (isCreated) { } else if (!string.IsNullOrEmpty(deploymentGroup.LastFailureMessage)) { AddMessage(model.id.ErrorId(), "Error while creating deployment group: " + deploymentGroup.LastFailureMessage); }
                 }
             }
         }

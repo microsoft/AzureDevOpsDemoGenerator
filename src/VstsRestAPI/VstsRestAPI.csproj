@@ -65,7 +65,8 @@
     <Compile Include="Build\BuildDefinition.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="DeliveryPlans\Plans.cs" />
-    <Compile Include="DeploymentGRoup\DeploymentGroup.cs" />
+    <Compile Include="DeploymentGroup\DeploymentGroup.cs" />
+    <Compile Include="ExtensionManagement\GetListExtenison.cs" />
     <Compile Include="Extractor\ClassificationNodes.cs" />
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Viewmodel\Extractor\BuildDefinitions.cs" />
     <Compile Include="Viewmodel\Extractor\ExportBoardRows.cs" />
     <Compile Include="Viewmodel\Extractor\GetBuildDefResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\GetExtensions.cs" />
     <Compile Include="Viewmodel\Extractor\GetINumIteration.cs" />
     <Compile Include="Extractor\GetWorkItemsCount.cs" />
     <Compile Include="Viewmodel\Extractor\GetProcessTemplate.cs" />
@@ -164,6 +166,7 @@
     <None Include="JSON\WorkItemNew.json" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,10 +1,10 @@
 ﻿{
   "Extensions": [
     {
-      "name": "Octopus Deploy Integration",
+      "extensionName": "Octopus Deploy Integration",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=octopusdeploy.octopus-deploy-build-release-tasks' target='_blank'>Octopus Deploy Integration</a>",
-      "PublisherId": "octopusdeploy",
-      "ExtensionId": "octopus-deploy-build-release-tasks",
+      "publisherId": "octopusdeploy",
+      "extensionId": "octopus-deploy-build-release-tasks",
       "License": ""
     }
   ]

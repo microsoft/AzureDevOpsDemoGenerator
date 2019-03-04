@@ -1,26 +1,26 @@
 ﻿{
   "Extensions": [
     {
-      "name": "Analytics",
+      "extensionName": "Analytics",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-analytics' target='_blank'><b>Analytics</b></a>",
-      "PublisherId": "ms",
-      "ExtensionId": "vss-analytics",
-      "publisher": "microsoft",
+      "publisherId": "ms",
+      "extensionId": "vss-analytics",
+      "publisherName": "microsoft",
       "License": ""
     },
     {
-      "name": "ARM Outputs",
+      "extensionName": "ARM Outputs",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
-      "PublisherId": "keesschollaart",
-      "ExtensionId": "arm-outputs",
+      "publisherId": "keesschollaart",
+      "extensionId": "arm-outputs",
       "License": "<a href='https://marketplace.visualstudio.com/items/keesschollaart.arm-outputs/license' target='_blank'>License Terms</a>"
     },
     {
-      "name": "Team Project Health",
+      "extensionName": "Team Project Health",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.TeamProjectHealth' target='_blank'><b>Team Project Health</b></a>",
-      "PublisherId": "ms-devlabs",
-      "ExtensionId": "TeamProjectHealth",
-      "publisher": "microsoft",
+      "publisherId": "ms-devlabs",
+      "extensionId": "TeamProjectHealth",
+      "publisherName": "microsoft",
       "License": "<a href='https://marketplace.visualstudio.com/items/ms-devlabs.TeamProjectHealth/license' target='_blank'>License Terms</a>"
     }
   ]
