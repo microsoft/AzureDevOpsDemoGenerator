@@ -1,19 +1,19 @@
 ﻿{
   "Extensions": [
     {
-      "name": "Terraform",
+      "extensionName": "Terraform",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=petergroenewegen.PeterGroenewegen-Xpirit-Vsts-Release-Terraform' target='_blank'><b>Terraform</b></a>",
-      "PublisherId": "petergroenewegen",
-      "ExtensionId": "PeterGroenewegen-Xpirit-Vsts-Release-Terraform",
-      "publisher": "Peter Groenewegen (Xpirit)",
+      "publisherId": "petergroenewegen",
+      "extensionId": "PeterGroenewegen-Xpirit-Vsts-Release-Terraform",
+      "publisherName": "Peter Groenewegen (Xpirit)",
       "License": "<a href='https://marketplace.visualstudio.com/items/petergroenewegen.PeterGroenewegen-Xpirit-Vsts-Release-Terraform/license' target='_blank'>License Terms</a>"
     },
     {
-      "name": "Replace Tokens",
+      "extensionName": "Replace Tokens",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'><b>Replace Tokens</b></a>",
-      "PublisherId": "qetza",
-      "ExtensionId": "replacetokens",
-      "publisher": "Guillaume Rouchon",
+      "publisherId": "qetza",
+      "extensionId": "replacetokens",
+      "publisherName": "Guillaume Rouchon",
       "License": "<a href='https://marketplace.visualstudio.com/items/qetza.replacetokens/license' target='_blank'>License Terms</a>"
 
     }

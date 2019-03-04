@@ -10,6 +10,7 @@ using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.ExtractorModels;
 using VstsDemoBuilder.Models;
 using VstsRestAPI;
+using VstsRestAPI.ExtensionManagement;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.Viewmodel.Extractor;
@@ -262,8 +263,10 @@ namespace VstsDemoBuilder.Controllers
             string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
             string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string extensionHost = System.Configuration.ConfigurationManager.AppSettings["ExtensionHost"];
             string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+            string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
             projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
@@ -274,6 +277,7 @@ namespace VstsDemoBuilder.Controllers
             projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
             projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
             projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+            projectConfig.ExtensionConfig = new Configuration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
 
             return projectConfig;
         }
@@ -413,6 +417,8 @@ namespace VstsDemoBuilder.Controllers
         public string[] GenerateTemplateArifacts(Project model)
         {
             extractedTemplatePath = Server.MapPath("~") + @"ExtractedTemplate\";
+
+            GetInstalledExtensions(ProjectConfigurationDetails.AppConfig.ExtensionConfig);
 
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             AddMessage(model.id, "");
@@ -1059,6 +1065,44 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
+        public JsonResult GetInstalledExtensions(Configuration con)
+        {
+            GetListExtenison listExtenison = new GetListExtenison(con);
+            List<RequiredExtensions.ExtensionWithLink> extensionList = new List<RequiredExtensions.ExtensionWithLink>();
+            GetExtensions.ExtensionsList returnExtensionsList = listExtenison.GetInstalledExtensions();
+
+            if (returnExtensionsList != null && returnExtensionsList.count > 0)
+            {
+                var builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
+                var trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
+                builtInExtensions.AddRange(trustedExtensions);
+                returnExtensionsList.value = builtInExtensions;
+
+                foreach (var data in returnExtensionsList.value)
+                {
+                    RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
+
+                    extension.extensionId = data.extensionId;
+                    extension.extensionName = data.extensionName;
+                    extension.publisherId = data.publisherId;
+                    extension.publisherName = data.publisherName;
+                    extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
+                    extensionList.Add(extension);
+                }
+                RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
+                listExtension.Extensions = extensionList;
+                if (!Directory.Exists(extractedTemplatePath + con.Project))
+                {
+                    Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                }
+                string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
+
+                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+
+            }
+            return Json(extensionList, JsonRequestBehavior.AllowGet);
+
+        }
         #endregion end extract template
         // Remove the template folder after zipping it
         [AllowAnonymous]

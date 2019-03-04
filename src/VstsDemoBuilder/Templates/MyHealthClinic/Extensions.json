@@ -1,18 +1,18 @@
 ﻿{
   "Extensions": [
     {
-      "name": "Release Management Utility tasks",
+      "extensionName": "Release Management Utility tasks",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.utilitytasks' target='_blank'><b>Release Management Utility tasks</b></a>",
-      "PublisherId": "ms-devlabs",
-      "ExtensionId": "utilitytasks",
-      "publisher": "microsoft",
+      "publisherId": "ms-devlabs",
+      "extensionId": "utilitytasks",
+      "publisherName": "microsoft",
       "License": ""
     },
     {
-      "name": "Bower",
+      "extensionName": "Bower",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=touchify.vsts-bower' target='_blank'><b>Bower</b></a>",
-      "PublisherId": "touchify",
-      "ExtensionId": "vsts-bower",
+      "publisherId": "touchify",
+      "extensionId": "vsts-bower",
       "License": "<a href='https://marketplace.visualstudio.com/items/touchify.vsts-bower/license' target='_blank'>License Terms</a>"
     }
   ]
