@@ -1105,7 +1105,6 @@ namespace VstsDemoBuilder.Controllers
                     string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
 
                     System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
-                    AddMessage(con.Id, "Extensions");
                 }
             }
             return Json(extensionList, JsonRequestBehavior.AllowGet);
