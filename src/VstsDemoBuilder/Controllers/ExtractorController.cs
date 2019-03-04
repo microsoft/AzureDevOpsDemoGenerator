@@ -867,9 +867,14 @@ namespace VstsDemoBuilder.Controllers
                             string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                             endPointString = endPointString.Replace("$GitHubURL$", url);
                             Guid g = Guid.NewGuid();
-                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                            string randStr = g.ToString().Substring(0, 8);
+                            if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
                             {
                                 Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                            }
+                            else
+                            {
                                 System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                             }
                         }
@@ -1090,15 +1095,18 @@ namespace VstsDemoBuilder.Controllers
                     extensionList.Add(extension);
                 }
                 RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
-                listExtension.Extensions = extensionList;
-                if (!Directory.Exists(extractedTemplatePath + con.Project))
+                if (extensionList.Count > 0)
                 {
-                    Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                    listExtension.Extensions = extensionList;
+                    if (!Directory.Exists(extractedTemplatePath + con.Project))
+                    {
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                    }
+                    string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
+
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+                    AddMessage(con.Id, "Extensions");
                 }
-                string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
-
-                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
-
             }
             return Json(extensionList, JsonRequestBehavior.AllowGet);
 
