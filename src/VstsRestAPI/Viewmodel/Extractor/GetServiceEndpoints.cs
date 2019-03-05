@@ -23,7 +23,8 @@ namespace VstsRestAPI.Viewmodel.Extractor
         public class Parameters
         {
             public string username { get; set; }
-            public string tenantid { get; set; }
+            public string certificate { get; set; }
+            public string apitoken { get; set; }            
             public string password { get; set; }
             public string email { get; set; }
             public string registry { get; set; }
@@ -31,6 +32,10 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string tenantId { get; set; }
             public string servicePrincipalId { get; set; }
             public string authenticationType { get; set; }
+            public string serviceBusConnectionString { get; set; }
+            public string servicePrincipalKey { get; set; }
+            public string nugetkey { get; set; }
+
         }
 
         public class Authorization

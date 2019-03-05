@@ -898,7 +898,7 @@ namespace VstsDemoBuilder.Controllers
             websiteUrl = model.websiteUrl;
             templateUsed = model.SelectedTemplate;
             projectName = model.ProjectName;
-                        
+
             string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
             if (logWIT == "true")
             {
@@ -2449,7 +2449,7 @@ namespace VstsDemoBuilder.Controllers
                 //GetDashBoardDetails
                 string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
                 Thread.Sleep(2000); // Adding delay to get the existing dashboard ID 
-                
+
                 if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                 {
                     AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
