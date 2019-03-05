@@ -13,6 +13,7 @@ using VstsRestAPI;
 using VstsRestAPI.ExtensionManagement;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.ProjectsAndTeams;
+using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
@@ -267,6 +268,7 @@ namespace VstsDemoBuilder.Controllers
             string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
             string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
+            string endpointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
             projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
@@ -278,6 +280,7 @@ namespace VstsDemoBuilder.Controllers
             projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
             projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
             projectConfig.ExtensionConfig = new Configuration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
+            projectConfig.EndpointConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
 
             return projectConfig;
         }
@@ -458,6 +461,8 @@ namespace VstsDemoBuilder.Controllers
 
             ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint");
+
+            GetServiceEndpoints(ProjectConfigurationDetails.AppConfig.EndpointConfig);
 
             int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
             if (count >= 1)
@@ -1107,7 +1112,38 @@ namespace VstsDemoBuilder.Controllers
                     System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
                 }
             }
+            else if (!string.IsNullOrEmpty(listExtenison.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Some error occured while fetching extensions");
+            }
             return Json(extensionList, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public void GetServiceEndpoints(Configuration con)
+        {
+            ServiceEndPoint serviceEndPoint = new ServiceEndPoint(con);
+            GetServiceEndpoints.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
+            if (getServiceEndPoint.count > 0)
+            {
+                foreach (var endpoint in getServiceEndPoint.value)
+                {
+                    string endpointString = JsonConvert.SerializeObject(endpoint);
+                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                    {
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                    }
+                    else
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty(serviceEndPoint.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
+            }
 
         }
         #endregion end extract template
