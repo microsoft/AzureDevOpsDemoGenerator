@@ -71,6 +71,7 @@
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
     <Compile Include="Services\HttpServices.cs" />
+    <Compile Include="Service\ServiceEndPoint.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseAgile.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseScrum.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitionResponse.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Extractor\GetWorkItemsCount.cs" />
     <Compile Include="Viewmodel\Extractor\GetProcessTemplate.cs" />
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\GetServiceEndpoints.cs" />
     <Compile Include="Viewmodel\Extractor\GetTeamSetting.cs" />
     <Compile Include="Viewmodel\Extractor\GetWorkItemsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\Iterations.cs" />
@@ -101,7 +103,6 @@
     <Compile Include="QueriesAndWidgets\Queries.cs" />
     <Compile Include="Queues\Queue.cs" />
     <Compile Include="Release\ReleaseDefinition.cs" />
-    <Compile Include="Service\ServiceEndPoint.cs" />
     <Compile Include="TestManagement\TestManagement.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Viewmodel\BaseViewModel.cs" />
