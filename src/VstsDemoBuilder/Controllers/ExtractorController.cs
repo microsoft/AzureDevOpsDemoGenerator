@@ -17,6 +17,7 @@ using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
+using Parameters = VstsRestAPI.Viewmodel.Extractor.GetServiceEndpoints;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -1126,8 +1127,87 @@ namespace VstsDemoBuilder.Controllers
             GetServiceEndpoints.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
             if (getServiceEndPoint.count > 0)
             {
-                foreach (var endpoint in getServiceEndPoint.value)
+                foreach (Parameters.Value endpoint in getServiceEndPoint.value)
                 {
+                    if (endpoint.authorization.scheme == "UsernamePassword")
+                    {
+                        endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                        endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                    }
+                    else if (endpoint.authorization.scheme == "ManagedServiceIdentity")
+                    {
+                        if (endpoint.authorization.parameters == null)
+                        {
+                            endpoint.authorization.parameters = new Parameters.Parameters();
+                            endpoint.authorization.parameters.tenantId = Guid.NewGuid().ToString();
+                        }
+                        else
+                        {
+                            endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                        }
+                    }
+                    else if (endpoint.authorization.scheme == "ServicePrincipal")
+                    {
+                        endpoint.authorization.parameters.url = endpoint.authorization.parameters.url ?? endpoint.url;
+                        endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                        endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                        endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                        if (endpoint.type == "devCenter")
+                        {
+                            endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                        }
+                    }
+                    else if (endpoint.authorization.scheme == "Certificate")
+                    {
+                        if (endpoint.authorization.parameters == null)
+                        {
+                            endpoint.authorization.parameters = new Parameters.Parameters();
+                            endpoint.authorization.parameters.certificate = "certificate";
+                        }
+                        else
+                        {
+                            endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
+                        }
+                    }
+                    else if (endpoint.authorization.scheme == "Token")
+                    {
+                        if (endpoint.authorization.parameters == null)
+                        {
+                            endpoint.authorization.parameters = new Parameters.Parameters();
+                            endpoint.authorization.parameters.apitoken = "apitoken";
+                        }
+                        else
+                        {
+                            endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
+                        }
+                    }
+                    else if (endpoint.authorization.scheme == "None")
+                    {
+                        if (endpoint.type == "AzureServiceBus")
+                        {
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters();
+                                endpoint.authorization.parameters.serviceBusConnectionString = "connectionstring";
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
+                            }
+                        }
+                        if (endpoint.type == "externalnugetfeed")
+                        {
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters();
+                                endpoint.authorization.parameters.nugetkey = "nugetkey";
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
+                            }
+                        }
+                    }
                     string endpointString = JsonConvert.SerializeObject(endpoint);
                     if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
                     {
