@@ -1084,12 +1084,12 @@ namespace VstsDemoBuilder.Controllers
 
             if (returnExtensionsList != null && returnExtensionsList.count > 0)
             {
-                var builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
-                var trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
+                List<GetExtensions.Value> builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
+                List<GetExtensions.Value> trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
                 builtInExtensions.AddRange(trustedExtensions);
                 returnExtensionsList.value = builtInExtensions;
 
-                foreach (var data in returnExtensionsList.value)
+                foreach (GetExtensions.Value data in returnExtensionsList.value)
                 {
                     RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
 
@@ -1098,6 +1098,7 @@ namespace VstsDemoBuilder.Controllers
                     extension.publisherId = data.publisherId;
                     extension.publisherName = data.publisherName;
                     extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
+                    extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
                     extensionList.Add(extension);
                 }
                 RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
@@ -1124,89 +1125,97 @@ namespace VstsDemoBuilder.Controllers
         public void GetServiceEndpoints(Configuration con)
         {
             ServiceEndPoint serviceEndPoint = new ServiceEndPoint(con);
-            GetServiceEndpoints.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
+            Parameters.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
             if (getServiceEndPoint.count > 0)
             {
                 foreach (Parameters.Value endpoint in getServiceEndPoint.value)
                 {
-                    if (endpoint.authorization.scheme == "UsernamePassword")
+                    switch (endpoint.authorization.scheme)
                     {
-                        endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
-                        endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
-                    }
-                    else if (endpoint.authorization.scheme == "ManagedServiceIdentity")
-                    {
-                        if (endpoint.authorization.parameters == null)
-                        {
-                            endpoint.authorization.parameters = new Parameters.Parameters();
-                            endpoint.authorization.parameters.tenantId = Guid.NewGuid().ToString();
-                        }
-                        else
-                        {
+                        case "UsernamePassword":
+                            endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                            endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                            break;
+                        case "ManagedServiceIdentity":
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    tenantId = Guid.NewGuid().ToString()
+                                };
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                            }
+                            break;
+                        case "ServicePrincipal":
+                            endpoint.authorization.parameters.url = endpoint.authorization.parameters.url ?? endpoint.url;
+                            endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                            endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
                             endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                        }
-                    }
-                    else if (endpoint.authorization.scheme == "ServicePrincipal")
-                    {
-                        endpoint.authorization.parameters.url = endpoint.authorization.parameters.url ?? endpoint.url;
-                        endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
-                        endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
-                        endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                        if (endpoint.type == "devCenter")
-                        {
-                            endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
-                        }
-                    }
-                    else if (endpoint.authorization.scheme == "Certificate")
-                    {
-                        if (endpoint.authorization.parameters == null)
-                        {
-                            endpoint.authorization.parameters = new Parameters.Parameters();
-                            endpoint.authorization.parameters.certificate = "certificate";
-                        }
-                        else
-                        {
-                            endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
-                        }
-                    }
-                    else if (endpoint.authorization.scheme == "Token")
-                    {
-                        if (endpoint.authorization.parameters == null)
-                        {
-                            endpoint.authorization.parameters = new Parameters.Parameters();
-                            endpoint.authorization.parameters.apitoken = "apitoken";
-                        }
-                        else
-                        {
-                            endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
-                        }
-                    }
-                    else if (endpoint.authorization.scheme == "None")
-                    {
-                        if (endpoint.type == "AzureServiceBus")
-                        {
+                            if (endpoint.type == "devCenter")
+                            {
+                                endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                            }
+                            break;
+                        case "Certificate":
                             if (endpoint.authorization.parameters == null)
                             {
-                                endpoint.authorization.parameters = new Parameters.Parameters();
-                                endpoint.authorization.parameters.serviceBusConnectionString = "connectionstring";
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    certificate = "certificate"
+                                };
                             }
                             else
                             {
-                                endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
+                                endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
                             }
-                        }
-                        if (endpoint.type == "externalnugetfeed")
-                        {
+                            break;
+                        case "Token":
                             if (endpoint.authorization.parameters == null)
                             {
-                                endpoint.authorization.parameters = new Parameters.Parameters();
-                                endpoint.authorization.parameters.nugetkey = "nugetkey";
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    apitoken = "apitoken"
+                                };
                             }
                             else
                             {
-                                endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
+                                endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
                             }
-                        }
+                            break;
+                        case "None":
+                            switch (endpoint.type)
+                            {
+                                case "AzureServiceBus":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            serviceBusConnectionString = "connectionstring"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
+                                    }
+                                    break;
+                                case "externalnugetfeed":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            nugetkey = "nugetkey"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
+                                    }
+                                    break;
+                            }
+                            break;
                     }
                     string endpointString = JsonConvert.SerializeObject(endpoint);
                     if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
