@@ -1216,6 +1216,23 @@ namespace VstsDemoBuilder.Controllers
                                     break;
                             }
                             break;
+                        case "dockerhost":
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    cacert = endpoint.authorization.parameters.cacert ?? "cacert",
+                                    cert = endpoint.authorization.parameters.cert ?? "cert",
+                                    key = endpoint.authorization.parameters.key ?? "key"
+                                };
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                            }
+                            break;
                     }
                     string endpointString = JsonConvert.SerializeObject(endpoint);
                     if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))

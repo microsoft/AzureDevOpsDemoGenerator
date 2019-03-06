@@ -2876,7 +2876,8 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var ins in installedExtensions)
                                 {
-                                    string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
+                                    
+                                    string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/><br/>";
                                 }
@@ -2886,7 +2887,7 @@ namespace VstsDemoBuilder.Controllers
                                 string publisher = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().publisherName;
                                 if (publisher == "Microsoft")
                                 {
-                                    string link = "<img src=\"/Images/cross10_new.png\"/> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
+                                    string link = "<i class='fa fa-times-circle'></i> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
 
                                     string lincense = "";
                                     if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License))
@@ -2897,7 +2898,7 @@ namespace VstsDemoBuilder.Controllers
                                 }
                                 else
                                 {
-                                    string link = "<img src=\"/Images/cross10_new.png\"/> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
+                                    string link = "<i class='fa fa-times-circle'></i> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
                                     string lincense = "";
                                     if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License))
                                     {
@@ -2925,7 +2926,7 @@ namespace VstsDemoBuilder.Controllers
                                 requiresExtensionNames = "All required extensions are installed/enabled in your Azure DevOps Organization.<br/><br/><b>";
                                 foreach (var ins in installedExtensions)
                                 {
-                                    string link = "<img src=\"/Images/check-10.png\"/> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
+                                    string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/>";
                                 }

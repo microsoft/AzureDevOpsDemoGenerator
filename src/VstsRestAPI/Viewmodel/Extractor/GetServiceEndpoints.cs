@@ -35,6 +35,9 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string serviceBusConnectionString { get; set; }
             public string servicePrincipalKey { get; set; }
             public string nugetkey { get; set; }
+            public string cacert { get; set; }
+            public string cert { get; set; }
+            public string key { get; set; }
 
         }
 
