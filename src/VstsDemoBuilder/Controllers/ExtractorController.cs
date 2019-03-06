@@ -1160,17 +1160,39 @@ namespace VstsDemoBuilder.Controllers
                             }
                             break;
                         case "Certificate":
-                            if (endpoint.authorization.parameters == null)
+                            switch (endpoint.type)
                             {
-                                endpoint.authorization.parameters = new Parameters.Parameters
-                                {
-                                    certificate = "certificate"
-                                };
+                                case "dockerhost":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters();
+                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                    }
+                                    break;
+
+                                case "azure":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            certificate = "certificate"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
+                                    }
+                                    break;
                             }
-                            else
-                            {
-                                endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
-                            }
+
                             break;
                         case "Token":
                             if (endpoint.authorization.parameters == null)
@@ -1216,23 +1238,7 @@ namespace VstsDemoBuilder.Controllers
                                     break;
                             }
                             break;
-                        case "dockerhost":
-                            if (endpoint.authorization.parameters == null)
-                            {
-                                endpoint.authorization.parameters = new Parameters.Parameters
-                                {
-                                    cacert = endpoint.authorization.parameters.cacert ?? "cacert",
-                                    cert = endpoint.authorization.parameters.cert ?? "cert",
-                                    key = endpoint.authorization.parameters.key ?? "key"
-                                };
-                            }
-                            else
-                            {
-                                endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
-                            }
-                            break;
+
                     }
                     string endpointString = JsonConvert.SerializeObject(endpoint);
                     if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
