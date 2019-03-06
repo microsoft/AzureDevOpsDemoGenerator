@@ -29,6 +29,7 @@ namespace VstsDemoBuilder.Controllers
         {
             Session.Clear();
             // check to enable extractor
+            model.EnableExtractor = "true";
             if (!string.IsNullOrEmpty(model.EnableExtractor))
             {
                 Session["EnableExtractor"] = model.EnableExtractor;
