@@ -620,6 +620,11 @@ namespace VstsDemoBuilder.Controllers
                                 var style = jObj;
                                 style["url"] = "";
                                 style["_links"] = "{}";
+                                var tagStyle = style["rules"]["tagStyle"];
+                                if (tagStyle == null)
+                                {
+                                    style["rules"]["tagStyle"] = new JArray();
+                                }
                                 jObjcardStyleList.Add(jObj);
                                 AddMessage(con.Id, "Card style");
 
@@ -1132,6 +1137,24 @@ namespace VstsDemoBuilder.Controllers
                 {
                     switch (endpoint.authorization.scheme)
                     {
+                        case "OAuth":
+                            switch (endpoint.type)
+                            {
+                                case "GitHub":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            AccessToken = "AccessToken"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
+                                    }
+                                    break;
+                            }
+                            break;
                         case "UsernamePassword":
                             endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
                             endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
@@ -1150,13 +1173,18 @@ namespace VstsDemoBuilder.Controllers
                             }
                             break;
                         case "ServicePrincipal":
-                            endpoint.authorization.parameters.url = endpoint.authorization.parameters.url ?? endpoint.url;
-                            endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
-                            endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
-                            endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                            if (endpoint.type == "devCenter")
+                            switch (endpoint.type)
                             {
-                                endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                                case "devCenter":
+                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                                    break;
+                                case "azurerm":
+                                    endpoint.authorization.parameters.url = null;
+                                    endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                                    endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                                    endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                    break;
                             }
                             break;
                         case "Certificate":
@@ -1192,7 +1220,6 @@ namespace VstsDemoBuilder.Controllers
                                     }
                                     break;
                             }
-
                             break;
                         case "Token":
                             if (endpoint.authorization.parameters == null)
