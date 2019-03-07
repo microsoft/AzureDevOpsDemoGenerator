@@ -622,7 +622,7 @@ namespace VstsDemoBuilder.Controllers
                                 style["_links"] = "{}";
                                 var tagStyle = style["rules"]["tagStyle"];
                                 if (tagStyle == null)
-                                {
+                                {   
                                     style["rules"]["tagStyle"] = new JArray();
                                 }
                                 jObjcardStyleList.Add(jObj);
