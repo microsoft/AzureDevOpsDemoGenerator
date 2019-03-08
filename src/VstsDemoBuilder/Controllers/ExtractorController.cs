@@ -945,11 +945,11 @@ namespace VstsDemoBuilder.Controllers
                         if (!(Directory.Exists(templatePath + "\\BuildDefinitions")))
                         {
                             Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + repoName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + repoName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
                         }
                         count = count + 1;
                     }
