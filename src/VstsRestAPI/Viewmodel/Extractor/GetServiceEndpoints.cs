@@ -18,7 +18,6 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string privateKey { get; set; }
             public string realmName { get; set; }
             public string acceptUntrustedCerts { get; set; }
-            public string creationMode { get; set; }
         }
 
         public class Parameters

@@ -441,11 +441,6 @@ namespace VstsDemoBuilder.Controllers
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
-            string Extensions = "";
-            Extensions = filePathToRead + "\\DemoExtensions.json";
-            Extensions = System.IO.File.ReadAllText(Extensions);
-            System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
-
             string projectTemplate = "";
             projectTemplate = filePathToRead + "\\ProjectTemplate.json";
             projectTemplate = System.IO.File.ReadAllText(projectTemplate);
@@ -622,7 +617,7 @@ namespace VstsDemoBuilder.Controllers
                                 style["_links"] = "{}";
                                 var tagStyle = style["rules"]["tagStyle"];
                                 if (tagStyle == null)
-                                {   
+                                {
                                     style["rules"]["tagStyle"] = new JArray();
                                 }
                                 jObjcardStyleList.Add(jObj);
@@ -802,79 +797,106 @@ namespace VstsDemoBuilder.Controllers
         // Get the Build definitions to write into file
         public int GetBuildDefinitions(Configuration con, Configuration repoCon)
         {
-            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
-            List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
-            BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(repoCon);
-            RepositoryList.Repository repo = repoDefs.GetRepoList();
-            if (builds.Count > 0)
+            try
             {
-                int count = 1;
-                //creating ImportCode Json file
-                string templatePath = extractedTemplatePath + con.Project;
-                foreach (JObject def in builds)
+                BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
+                List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
+                BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(repoCon);
+                RepositoryList.Repository repo = repoDefs.GetRepoList();
+                string esr = JsonConvert.SerializeObject(builds);
+                if (builds.Count > 0)
                 {
-                    string repoID = "";
-                    var repoName = def["repository"]["name"];
-                    foreach (var re in repo.value)
+                    int count = 1;
+                    //creating ImportCode Json file
+                    string templatePath = extractedTemplatePath + con.Project;
+                    foreach (JObject def in builds)
                     {
-                        if (re.name == repoName.ToString())
+                        string repoID = "";
+                        var repoName = def["repository"]["name"];
+                        foreach (var re in repo.value)
                         {
-                            repoID = re.id;
-                        }
-                    }
-                    def["authoredBy"] = "{}";
-                    def["project"] = "{}";
-                    def["url"] = "";
-                    def["uri"] = "";
-                    def["id"] = "";
-                    def["queue"]["id"] = "";
-                    def["queue"]["url"] = "";
-                    def["queue"]["_links"] = "{}";
-                    def["queue"]["pool"]["id"] = "";
-                    def["_links"] = "{}";
-                    def["createdDate"] = "";
-
-                    var process = def["process"];
-                    if (process != null)
-                    {
-                        var phases = process["phases"];
-                        if (phases != null)
-                        {
-                            foreach (var phase in phases)
+                            if (re.name == repoName.ToString())
                             {
-                                phase["target"]["queue"] = "{}";
-                                var steps = phase["steps"];
-                                if (steps != null)
+                                repoID = re.id;
+                            }
+                        }
+                        var yamalfilename = def["process"]["yamlFilename"];
+                        if (yamalfilename != null)
+                        {
+                            AddMessage(con.Id.ErrorId(), "Not supporting yml pipelines");
+                            return count = 0;
+                        }
+                        def["authoredBy"] = "{}";
+                        def["project"] = "{}";
+                        def["url"] = "";
+                        def["uri"] = "";
+                        def["id"] = "";
+                        def["queue"]["id"] = "";
+                        def["queue"]["url"] = "";
+                        def["queue"]["_links"] = "{}";
+                        def["queue"]["pool"]["id"] = "";
+                        def["_links"] = "{}";
+                        def["createdDate"] = "";
+
+                        var process = def["process"];
+                        if (process != null)
+                        {
+                            var phases = process["phases"];
+                            if (phases != null)
+                            {
+                                foreach (var phase in phases)
                                 {
-                                    foreach (var step in steps)
+                                    phase["target"]["queue"] = "{}";
+                                    var steps = phase["steps"];
+                                    if (steps != null)
                                     {
-                                        string keyConfig = System.IO.File.ReadAllText(Server.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
-                                        KeyConfig.Keys keyC = new KeyConfig.Keys();
-                                        keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                        foreach (var key in keyC.keys)
+                                        foreach (var step in steps)
                                         {
-                                            string keyVal = step[key] != null ? step[key].ToString() : "";
-                                            if (!string.IsNullOrEmpty(keyVal))
+                                            string keyConfig = System.IO.File.ReadAllText(Server.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                            KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                            keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
+                                            foreach (var key in keyC.keys)
                                             {
-                                                step[key] = "";
+                                                string keyVal = step[key] != null ? step[key].ToString() : "";
+                                                if (!string.IsNullOrEmpty(keyVal))
+                                                {
+                                                    step[key] = "";
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    var type = def["repository"]["type"];
-                    if (type.ToString().ToLower() == "github")
-                    {
-                        def["repository"]["type"] = "Git";
-                        def["repository"]["properties"]["fullName"] = "repository";
-                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                        def["repository"]["name"] = "repository";
-                        string url = def["repository"]["url"].ToString();
-                        if (url != "")
+                        var type = def["repository"]["type"];
+                        if (type.ToString().ToLower() == "github")
                         {
+                            def["repository"]["type"] = "Git";
+                            def["repository"]["properties"]["fullName"] = "repository";
+                            def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                            def["repository"]["name"] = "repository";
+                            string url = def["repository"]["url"].ToString();
+                            if (url != "")
+                            {
+                                string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                                endPointString = endPointString.Replace("$GitHubURL$", url);
+                                Guid g = Guid.NewGuid();
+                                string randStr = g.ToString().Substring(0, 8);
+                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                                {
+                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                }
+                                else
+                                {
+                                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                }
+                            }
+                        }
+                        else if (type.ToString().ToLower() == "git")
+                        {
+                            string url = def["repository"]["url"].ToString();
                             string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                             endPointString = endPointString.Replace("$GitHubURL$", url);
                             Guid g = Guid.NewGuid();
@@ -888,68 +910,54 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                             }
-                        }
-                    }
-                    else if (type.ToString().ToLower() == "git")
-                    {
-                        string url = def["repository"]["url"].ToString();
-                        string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                        endPointString = endPointString.Replace("$GitHubURL$", url);
-                        Guid g = Guid.NewGuid();
-                        string randStr = g.ToString().Substring(0, 8);
-                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
-                        {
-                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                            def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                            def["repository"]["id"] = "$" + repoName + "$";
+                            def["repository"]["url"] = "";
+                            def["repository"]["properties"]["connectedServiceId"] = "";
                         }
-                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                    }
-                    else
-                    {
-                        def["repository"]["id"] = "$" + repoName + "$";
-                        def["repository"]["url"] = "";
-                        def["repository"]["properties"]["connectedServiceId"] = "";
-                    }
-                    var input = def["processParameters"]["inputs"];
-                    if (input != null)
-                    {
-                        if (input.HasValues)
+                        var input = def["processParameters"]["inputs"];
+                        if (input != null)
                         {
-                            foreach (var i in input)
+                            if (input.HasValues)
                             {
-                                i["defaultValue"] = "";
+                                foreach (var i in input)
+                                {
+                                    i["defaultValue"] = "";
 
+                                }
                             }
                         }
-                    }
-                    var build = def["build"];
-                    if (build != null)
-                    {
-                        if (build.HasValues)
+                        var build = def["build"];
+                        if (build != null)
                         {
-                            foreach (var b in build)
+                            if (build.HasValues)
                             {
-                                b["inputs"]["serverEndpoint"] = "";
+                                foreach (var b in build)
+                                {
+                                    b["inputs"]["serverEndpoint"] = "";
+                                }
                             }
                         }
-                    }
 
-                    if (!(Directory.Exists(templatePath + "\\BuildDefinitions")))
-                    {
-                        Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                        System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                        if (!(Directory.Exists(templatePath + "\\BuildDefinitions")))
+                        {
+                            Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                        }
+                        else
+                        {
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                        }
+                        count = count + 1;
                     }
-                    else
-                    {
-                        System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
-                    }
-                    count = count + 1;
+                    return count;
                 }
-                return count;
+            }
+            catch (Exception)
+            {
             }
             return 0;
         }
