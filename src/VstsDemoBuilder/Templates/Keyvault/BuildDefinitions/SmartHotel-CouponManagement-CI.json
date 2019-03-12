@@ -1,0 +1,242 @@
+{
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "Bug",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "badgeEnabled": true,
+  "process": {
+    "phases": [
+      {
+        "steps": [
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build Maven",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "ac4ee482-65da-4485-a532-7b085873e532",
+              "versionSpec": "3.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "mavenPOMFile": "pom.xml",
+              "goals": "package",
+              "options": "",
+              "publishJUnitResults": "true",
+              "testResultsFiles": "**/surefire-reports/TEST-*.xml",
+              "testRunTitle": "",
+              "codeCoverageTool": "None",
+              "classFilter": "",
+              "classFilesDirectories": "",
+              "srcDirectories": "",
+              "failIfCoverageEmpty": "false",
+              "javaHomeSelection": "JDKVersion",
+              "jdkVersion": "default",
+              "jdkUserInputPath": "",
+              "jdkArchitecture": "x64",
+              "mavenVersionSelection": "Default",
+              "mavenPath": "",
+              "mavenSetM2Home": "false",
+              "mavenOpts": "-Xmx1024m",
+              "mavenFeedAuthenticate": "false",
+              "sqAnalysisEnabled": "false",
+              "sqMavenPluginVersionChoice": "latest",
+              "checkstyleAnalysisEnabled": "false",
+              "pmdAnalysisEnabled": "false",
+              "findbugsAnalysisEnabled": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy files to staging folder",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "SourceFolder": "$(build.sourcesdirectory)",
+              "Contents": "**/*.war\n*.json\n",
+              "TargetFolder": "$(build.artifactstagingdirectory)",
+              "CleanTargetFolder": "false",
+              "OverWrite": "false",
+              "flattenFolders": "$(Parameters.flattenFolders)"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish artifacts ",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          }
+        ],
+        "name": "Agent job 1",
+        "refName": "Job_1",
+        "condition": "succeeded()",
+        "target": {
+          "executionOptions": {
+            "type": 0
+          },
+          "allowScriptsAuthAccessOption": false,
+          "type": 1,
+          "queue": "{}"
+        },
+        "jobAuthorizationScope": "projectCollection"
+      }
+    ],
+    "type": 1
+  },
+  "repository": {
+    "properties": {
+      "apiUrl": "https://api.github.com/repos/hsachinraj/SmartHotel360-CouponManagement",
+      "branchesUrl": "https://api.github.com/repos/hsachinraj/SmartHotel360-CouponManagement/branches",
+      "cloneUrl": "https://github.com/hsachinraj/SmartHotel360-CouponManagement.git",
+      "connectedServiceId": "$GitHub$",
+      "defaultBranch": "master",
+      "fullName": "repository",
+      "hasAdminPermissions": "False",
+      "isFork": "True",
+      "isPrivate": "False",
+      "lastUpdated": "02/26/2019 20:40:37",
+      "manageUrl": "https://github.com/hsachinraj/SmartHotel360-CouponManagement",
+      "nodeId": "MDEwOlJlcG9zaXRvcnkxNzE3ODQ0ODY=",
+      "ownerId": "12976154",
+      "orgName": "hsachinraj",
+      "refsUrl": "https://api.github.com/repos/hsachinraj/SmartHotel360-CouponManagement/git/refs",
+      "shortName": "SmartHotel360-CouponManagement",
+      "ownerAvatarUrl": "https://avatars1.githubusercontent.com/u/12976154?v=4",
+      "archived": "False",
+      "safeId": "3802E7CA4683A3B4FC47EB87F435099597436B91165B14E570B3285CBCE5F4885BEECCBDC1869EE0912B9B9B4A32EEC8CDE6EB696AD6C5924438F658EBD5/SmartHotel360-CouponManagement",
+      "safeOwnerId": "3802E7CA4683A3B4FC47EB87F435099597436B91165B14E570B3285CBCE5F4885BEECCBDC1869EE0912B9B9B4A32EEC8CDE6EB696AD6C5924438F658EBD5",
+      "safeRepository": "SmartHotel360-CouponManagement",
+      "ownerIsAUser": "True",
+      "checkoutNestedSubmodules": "false",
+      "cleanOptions": "0",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "reportBuildStatus": "true",
+      "skipSyncSource": "false",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "labelSources": "0"
+    },
+    "id": "hsachinraj/SmartHotel360-CouponManagement",
+    "type": "Git",
+    "name": "repository",
+    "url": "https://github.com/hsachinraj/SmartHotel360-CouponManagement.git",
+    "defaultBranch": "master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+    "inputs": [
+      {
+        "aliases": [],
+        "options": {},
+        "properties": {},
+        "name": "flattenFolders",
+        "label": "Flatten Folders",
+        "defaultValue": "",
+        "type": "boolean",
+        "helpMarkDown": "Flatten the folder structure and copy all files into the specified target folder.",
+        "visibleRule": "",
+        "groupName": ""
+      }
+    ]
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": "{}",
+    "id": "",
+    "name": "Hosted Ubuntu 1604",
+    "url": "",
+    "pool": {
+      "id": "",
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "SmartHotel-CouponManagement-CI",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 7,
+  "createdDate": "",
+  "project": "{}"
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "cards": {
+      "Epic": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Epics"
+  },
+  {
+    "cards": {
+      "Feature": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Features"
+  },
+  {
+    "cards": {
+      "User Story": [
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Common.Priority"
+        },
+        {
+          "fieldIdentifier": "System.IterationPath"
+        },
+        {
+          "fieldIdentifier": "System.Id",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Scheduling.StoryPoints",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "System.Tags",
+          "displayType": "CORE"
+        },
+        {
+          "showEmptyFields": "true"
+        }
+      ]
+    },
+    "BoardName": "Stories"
+  }
+]

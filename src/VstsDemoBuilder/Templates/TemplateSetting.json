@@ -35,6 +35,16 @@
         },
         {
           "Key": "77380",
+          "Name": "Azure Key Vault",
+          "TemplateFolder": "Keyvault",
+          "Description": "This template contains Smart Hotel Coupon web application using Spring Boot",
+          "Tags": [ "JPA ", "MySQL ", "azureappservice" ],
+          "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
+          "Author": "Microsoft",
+          "LastUpdatedDate": ""
+        },
+        {
+          "Key": "77380",
           "Name": "MyHealthClinic",
           "TemplateFolder": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
