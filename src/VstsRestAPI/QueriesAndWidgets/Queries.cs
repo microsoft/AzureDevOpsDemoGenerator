@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
+using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.QueriesAndWidgets;
 
 namespace VstsRestAPI.QueriesAndWidgets
@@ -184,6 +186,29 @@ namespace VstsRestAPI.QueriesAndWidgets
                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                     this.LastFailureMessage = error;
                     return string.Empty;
+                }
+            }
+        }
+
+        public GetQueries.Queries GetQueriesWiql()
+        {
+            //https://dev.azure.com/balajida/sss12/_apis/wit/queries?$expand=wiql&$depth=2&api-version=4.1
+            using (var client = GetHttpClient())
+            {
+                string request = string.Format("{0}{1}/_apis/wit/queries?$expand=wiql&$depth=2&{2}", _configuration.UriString, Project, _configuration.VersionNumber);
+                HttpResponseMessage response = client.GetAsync(request).Result;
+                if (response.IsSuccessStatusCode && response.StatusCode ==  System.Net.HttpStatusCode.OK)
+                {
+                    string res = response.Content.ReadAsStringAsync().Result;
+                    GetQueries.Queries getQueries = JsonConvert.DeserializeObject<GetQueries.Queries>(res);
+                    return getQueries;
+                }
+                else
+                {
+                    var errorMessage = response.Content.ReadAsStringAsync();
+                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                    LastFailureMessage = error;
+                    return new GetQueries.Queries();
                 }
             }
         }

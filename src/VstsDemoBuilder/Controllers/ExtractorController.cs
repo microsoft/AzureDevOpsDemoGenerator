@@ -13,6 +13,7 @@ using VstsRestAPI;
 using VstsRestAPI.ExtensionManagement;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.ProjectsAndTeams;
+using VstsRestAPI.QueriesAndWidgets;
 using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
@@ -270,6 +271,7 @@ namespace VstsDemoBuilder.Controllers
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
             string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
             string endpointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
+            string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
             projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
@@ -282,6 +284,7 @@ namespace VstsDemoBuilder.Controllers
             projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
             projectConfig.ExtensionConfig = new Configuration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
             projectConfig.EndpointConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
+            projectConfig.QueriesConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
 
             return projectConfig;
         }
@@ -424,7 +427,7 @@ namespace VstsDemoBuilder.Controllers
             AddMessage(model.id, "");
 
             GetInstalledExtensions(ProjectConfigurationDetails.AppConfig.ExtensionConfig);
-
+            //ExportQuries(ProjectConfigurationDetails.AppConfig.QueriesConfig);
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
 
@@ -812,6 +815,7 @@ namespace VstsDemoBuilder.Controllers
                     foreach (JObject def in builds)
                     {
                         string repoID = "";
+                        var buildName = def["name"];
                         var repoName = def["repository"]["name"];
                         foreach (var re in repo.value)
                         {
@@ -820,6 +824,7 @@ namespace VstsDemoBuilder.Controllers
                                 repoID = re.id;
                             }
                         }
+
                         var yamalfilename = def["process"]["yamlFilename"];
                         if (yamalfilename != null)
                         {
@@ -945,11 +950,11 @@ namespace VstsDemoBuilder.Controllers
                         if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
                         {
                             Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + repoName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + repoName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
                         }
                         count = count + 1;
                     }
@@ -978,6 +983,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     foreach (JObject rel in releases)
                     {
+                        var name = rel["name"];
                         rel["id"] = "";
                         rel["url"] = "";
                         rel["_links"] = "{}";
@@ -1071,11 +1077,11 @@ namespace VstsDemoBuilder.Controllers
                         if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
                         {
                             Directory.CreateDirectory(templatePath + "\\ReleaseDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + releasecount + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + releasecount + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         releasecount++;
                     }
@@ -1292,6 +1298,75 @@ namespace VstsDemoBuilder.Controllers
                 AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
             }
 
+        }
+
+        public void ExportQuries(Configuration con)
+        {
+            Queries queries = new Queries(con);
+            GetQueries.Queries listQueries = queries.GetQueriesWiql();
+            if (listQueries.count > 0)
+            {
+                foreach (var _queries in listQueries.value)
+                {
+                    if (_queries.hasChildren)
+                    {
+                        foreach (var query in _queries.children)
+                        {
+                            if (!query.hasChildren)
+                            {
+                                if (query.wiql != null)
+                                {
+                                    query.wiql = query.wiql.Replace(con.Project, "$projectId$");
+                                    JObject jobj = new JObject();
+                                    jobj["name"] = query.name;
+                                    jobj["wiql"] = query.wiql;
+                                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                    {
+                                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard");
+                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
+                                    }
+                                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                    {
+                                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
+                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                    }
+                                    else
+                                    {
+                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                foreach (var child1 in query.children)
+                                {
+                                    if (child1.wiql != null)
+                                    {
+                                        child1.wiql = child1.wiql.Replace(con.Project, "$projectId$");
+                                        JObject jobj = new JObject();
+                                        jobj["name"] = child1.name;
+                                        jobj["wiql"] = child1.wiql;
+                                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                        {
+                                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
+
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                        }
+                                        else
+                                        {
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty(queries.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Error while fetching queries");
+            }
         }
         #endregion end extract template
         // Remove the template folder after zipping it
