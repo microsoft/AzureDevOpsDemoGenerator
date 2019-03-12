@@ -31,6 +31,7 @@ namespace VstsRestAPI
         public Configuration GetReleaseConfig { get; set; }
         public Configuration ExtensionConfig { get; set; }
         public Configuration EndpointConfig { get; set; }
+        public Configuration QueriesConfig { get; set; }
 
     }
 

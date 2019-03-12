@@ -82,6 +82,7 @@
     <Compile Include="Viewmodel\Extractor\GetINumIteration.cs" />
     <Compile Include="Extractor\GetWorkItemsCount.cs" />
     <Compile Include="Viewmodel\Extractor\GetProcessTemplate.cs" />
+    <Compile Include="Viewmodel\Extractor\GetQueries.cs" />
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\GetServiceEndpoints.cs" />
     <Compile Include="Viewmodel\Extractor\GetTeamSetting.cs" />
