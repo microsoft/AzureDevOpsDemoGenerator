@@ -1154,6 +1154,7 @@ namespace VstsDemoBuilder.Controllers
                         case "OAuth":
                             switch (endpoint.type)
                             {
+                                case "github":
                                 case "GitHub":
                                     if (endpoint.authorization.parameters == null)
                                     {
