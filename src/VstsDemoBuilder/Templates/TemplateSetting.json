@@ -35,17 +35,6 @@
         },
         {
           "Key": "77380",
-          "Name": "Azure Key Vault",
-          "TemplateFolder": "Keyvault",
-          "Image": "/Templates/TemplateImages/key-vault.png",
-          "Description": "This template illustrates how you can read a secret from an Azure Key Vault in a pipeline ",
-          "Tags": [ "JPA ", "key vault", "azureappservice" ],
-          "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
-          "Author": "Microsoft",
-          "LastUpdatedDate": "12/3/2019"
-        },
-        {
-          "Key": "77380",
           "Name": "MyHealthClinic",
           "TemplateFolder": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
@@ -129,6 +118,17 @@
           "Tags": [ "Agile", "Machine Learning", "AI" ],
           "Author": "<a href='mailto:prsol@microsoft.com'>Praneet Singh Solanki</a>",
           "PreviewImages": [ "/Templates/MachineLearning/Images/aml.png", "/Templates/MachineLearning/Images/CI.png", "/Templates/MachineLearning/Images/Items.png" ]
+        },
+        {
+          "Key": "77380",
+          "Name": "Azure Key Vault",
+          "TemplateFolder": "Keyvault",
+          "Image": "/Templates/TemplateImages/key-vault.png",
+          "Description": "Use this template to learn how you can read a secret from an Azure Key Vault in a CI/CD pipeline. <br/> Lab URL:<a href='https://azuredevopslabs.com/labs/vstsextend/keyvault/' target='_blank'>Using secrets from Azure Key Vault in a pipeline</a>",
+          "Tags": [ "JPA ", "key vault", "azureappservice" ],
+          "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
+          "Author": "Microsoft",
+          "LastUpdatedDate": "12/3/2019"
         },
         {
           "Key": "77363",
