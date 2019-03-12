@@ -37,11 +37,12 @@
           "Key": "77380",
           "Name": "Azure Key Vault",
           "TemplateFolder": "Keyvault",
-          "Description": "This template contains Smart Hotel Coupon web application using Spring Boot",
-          "Tags": [ "JPA ", "MySQL ", "azureappservice" ],
+          "Image": "/Templates/TemplateImages/key-vault.png",
+          "Description": "This template illustrates how you can read a secret from an Azure Key Vault in a pipeline ",
+          "Tags": [ "JPA ", "key vault", "azureappservice" ],
           "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
           "Author": "Microsoft",
-          "LastUpdatedDate": ""
+          "LastUpdatedDate": "12/3/2019"
         },
         {
           "Key": "77380",
