@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "GitHub",
+  "type": "git",
+  "url": "https://github.com/hsachinraj/SmartHotel360-CouponManagement.git",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
+    }
+  },
+  "isReady": true
+}
