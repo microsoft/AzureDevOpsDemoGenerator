@@ -1152,6 +1152,7 @@ namespace VstsDemoBuilder.Controllers
                     switch (endpoint.authorization.scheme)
                     {
                         case "OAuth":
+                        case "InstallationToken":
                             switch (endpoint.type)
                             {
                                 case "github":
