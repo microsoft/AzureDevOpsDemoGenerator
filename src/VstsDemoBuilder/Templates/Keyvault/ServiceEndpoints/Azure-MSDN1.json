@@ -1,0 +1,23 @@
+{
+  "data": {
+    "environment": "AzureCloud",
+    "subscriptionId": "3fc1987f-3b9d-4339-b3d6-72411a3f0306",
+    "subscriptionName": "Windows Azure MSDN - Visual Studio Ultimate",
+    "scopeLevel": "Subscription"
+  },
+  "name": "Azure-Connection",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "tenantId": "17942a11-2d83-4d4f-8484-c97ba80738df",
+      "servicePrincipalId": "a40ce25b-cb96-4441-aea6-4c61ffd97fde",
+      "authenticationType": "spnKey",
+      "servicePrincipalKey": "spnKey"
+    },
+    "scheme": "ServicePrincipal"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

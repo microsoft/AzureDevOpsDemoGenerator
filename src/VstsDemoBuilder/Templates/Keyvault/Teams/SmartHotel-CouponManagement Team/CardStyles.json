@@ -1,0 +1,82 @@
+[
+  {
+    "url": "",
+    "rules": {
+      "tagStyle": []
+    },
+    "_links": "{}",
+    "BoardName": "Epics"
+  },
+  {
+    "url": "",
+    "rules": {
+      "tagStyle": []
+    },
+    "_links": "{}",
+    "BoardName": "Features"
+  },
+  {
+    "url": "",
+    "rules": {
+      "fill": [
+        {
+          "name": "Last Sprint",
+          "isEnabled": "True",
+          "filter": "[System.IterationPath] = @CurrentIteration - 1",
+          "clauses": [
+            {
+              "fieldName": "System.IterationPath",
+              "index": 1,
+              "logicalOperator": "",
+              "operator": "=",
+              "value": "@CurrentIteration - 1"
+            }
+          ],
+          "settings": {
+            "background-color": "#efffdc",
+            "title-color": "#000000"
+          }
+        },
+        {
+          "name": "Current Sprint",
+          "isEnabled": "True",
+          "filter": "[System.IterationPath] = @currentIteration",
+          "clauses": [
+            {
+              "fieldName": "System.IterationPath",
+              "index": 1,
+              "logicalOperator": "",
+              "operator": "=",
+              "value": "@currentIteration"
+            }
+          ],
+          "settings": {
+            "background-color": "#fff8d7",
+            "title-color": "#000000"
+          }
+        },
+        {
+          "name": "High Priority",
+          "isEnabled": "True",
+          "filter": "[Microsoft.VSTS.Common.Priority] = '1'",
+          "clauses": [
+            {
+              "fieldName": "Microsoft.VSTS.Common.Priority",
+              "index": 1,
+              "logicalOperator": "",
+              "operator": "=",
+              "value": "1"
+            }
+          ],
+          "settings": {
+            "background-color": "#ffebd7",
+            "title-color": "#000000"
+          }
+        }
+      ],
+      "tagStyle": []
+    },
+    "_links": "{}",
+    "BoardName": "Stories"
+  }
+]
