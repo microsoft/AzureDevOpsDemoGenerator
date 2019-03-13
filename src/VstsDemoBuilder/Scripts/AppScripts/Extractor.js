@@ -48,6 +48,8 @@ $(document).ready(function () {
     });
 
     $('#ddlAcccountName').change(function () {
+        $('#analyseDiv').addClass('d-none'); $('#analytics').html("");
+
         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
         $("#errorNotify").hide();
         var accSelected = $('#ddlAcccountName').val();
@@ -78,8 +80,6 @@ $(document).ready(function () {
                 success: function (da) {
                     if (da.count > 0) {
                         $('#Analyse').addClass('btn-primary').attr('disabled', false);
-
-                        console.log(da);
                         $('#projectSelect').empty();
                         var opt = "";
                         opt += ' <option value="0" selected="selected">Select Project</option>';
@@ -235,6 +235,7 @@ $(document).ready(function () {
                     $('#templateError').empty().append(er);
                 }
                 $('#analyseDiv').removeClass('d-none');
+                $('#collapseOne').addClass('show');
                 $('#analytics').empty().append(row);
                 $('#imgLoading').addClass('d-none');
                 $('#Analyse').addClass('btn-primary').attr('disabled', false);
@@ -271,14 +272,14 @@ $(document).ready(function () {
         }
         var projects = {
             ProjectName: projectName,
-            accountName: SourceAcc, accessToken: key, id: uniqueId, ProcessTemplate: processTemplate, ProjectId:project
+            accountName: SourceAcc, accessToken: key, id: uniqueId, ProcessTemplate: processTemplate, ProjectId: project
         };
         $('#ExStatus-messages').html('');
         $('#ExStatus-messages').show();
         $('#GenerateArtifact').removeClass('d-none');
         $('#ExdvProgress').removeClass('d-none');
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
-
+        $('#collapseTwo').addClass('show');
         $.ajax({
             url: '../Extractor/StartEnvironmentSetupProcess',
             type: 'POST',
@@ -287,11 +288,11 @@ $(document).ready(function () {
             success: function (res) {
                 if (res === "True") {
                     getStatus();
+                    console.log("called");
                 }
             },
             error: function (er) {
                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
-
             }
         });
     });
@@ -338,10 +339,8 @@ function getStatus() {
                             $('#ExdvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
-                            //var link = "../ExtractedTemplate/" + finalprojectName + ".zip";
                             $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
                             $('.genArtifacts').removeClass('show');
-                            //$('<b style="display: block;">Congratulations! Your template is ready. Click <a href="' + link + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
 
                             $('#ExtractorProgressBar').width(currentPercentage++ + '%');
                             $("#finalLink").removeClass("d-none").addClass("d-block");
@@ -362,10 +361,8 @@ function getStatus() {
                                 $('#artifactProgress').removeClass('d-none');
 
                                 currentPercentage = 0;
-                                //var links = "../ExtractedTemplate/" + finalprojectName + ".zip";
                                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
                                 $('.genArtifacts').removeClass('show');
-                                //$('<b style="display: block;"> Click <a href="' + links + '" target="_blank" style="font-weight:700;text-decoration:underline;" download>here</a> to download the Zip file</b>').appendTo("#accountLink");
 
                                 $("#projCreateMsg").hide();
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
