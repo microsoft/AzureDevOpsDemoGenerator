@@ -130,6 +130,18 @@
           "PreviewImages": [ "/Templates/MachineLearning/Images/aml.png", "/Templates/MachineLearning/Images/CI.png", "/Templates/MachineLearning/Images/Items.png" ]
         },
         {
+          "Key": "77380",
+          "Name": "Azure Key Vault",
+          "TemplateFolder": "Keyvault",
+          "ShortName": "Keyvault",
+          "Image": "/Templates/TemplateImages/key-vault.png",
+          "Description": "Use this template to learn how you can read a secret from an Azure Key Vault in a CI/CD pipeline. <br/> Lab URL:<a href='https://azuredevopslabs.com/labs/vstsextend/keyvault/' target='_blank'>Using secrets from Azure Key Vault in a pipeline</a>",
+          "Tags": [ "JPA ", "key vault", "azureappservice" ],
+          "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
+          "Author": "Microsoft",
+          "LastUpdatedDate": "12/3/2019"
+        },
+        {
           "Key": "77363",
           "Name": "Docker",
           "TemplateFolder": "Docker",

@@ -1010,6 +1010,23 @@
     <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\TeamSetting.json" />
     <Content Include="Templates\ContosoAir_Ready\WorkItems\Feature.json" />
     <Content Include="Templates\ContosoAir_Ready\WorkItems\User Story.json" />
+    <Content Include="Templates\Keyvault\BuildDefinitions\SmartHotel-CouponManagement-CI.json" />
+    <Content Include="Templates\Keyvault\Extensions.json" />
+    <Content Include="Templates\Keyvault\Iterations.json" />
+    <Content Include="Templates\Keyvault\ProjectSettings.json" />
+    <Content Include="Templates\Keyvault\ProjectTemplate.json" />
+    <Content Include="Templates\Keyvault\ReleaseDefinitions\SmartHotel-CouponManagement-CD.json" />
+    <Content Include="Templates\Keyvault\ServiceEndpoints\Azure-MSDN1.json" />
+    <Content Include="Templates\Keyvault\ServiceEndpoints\GitHub-EndPoint.json" />
+    <Content Include="Templates\Keyvault\ServiceEndpoints\GitHubConnection.json" />
+    <Content Include="Templates\Keyvault\TeamArea.json" />
+    <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\BoardColumns.json" />
+    <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\BoardRows.json" />
+    <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\CardFields.json" />
+    <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\CardStyles.json" />
+    <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\TeamSetting.json" />
+    <Content Include="Templates\Keyvault\Teams\Teams.json" />
+    <Content Include="Templates\Keyvault\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
