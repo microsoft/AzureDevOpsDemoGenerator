@@ -10,11 +10,15 @@ using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.ExtractorModels;
 using VstsDemoBuilder.Models;
 using VstsRestAPI;
+using VstsRestAPI.ExtensionManagement;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.ProjectsAndTeams;
+using VstsRestAPI.QueriesAndWidgets;
+using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
+using Parameters = VstsRestAPI.Viewmodel.Extractor.GetServiceEndpoints;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -262,8 +266,12 @@ namespace VstsDemoBuilder.Controllers
             string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
             string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string extensionHost = System.Configuration.ConfigurationManager.AppSettings["ExtensionHost"];
             string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
             string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+            string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
+            string endpointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
+            string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
             projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
@@ -274,6 +282,9 @@ namespace VstsDemoBuilder.Controllers
             projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
             projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
             projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+            projectConfig.ExtensionConfig = new Configuration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
+            projectConfig.EndpointConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
+            projectConfig.QueriesConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
 
             return projectConfig;
         }
@@ -413,9 +424,11 @@ namespace VstsDemoBuilder.Controllers
         public string[] GenerateTemplateArifacts(Project model)
         {
             extractedTemplatePath = Server.MapPath("~") + @"ExtractedTemplate\";
-
-            ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             AddMessage(model.id, "");
+
+            GetInstalledExtensions(ProjectConfigurationDetails.AppConfig.ExtensionConfig);
+            //ExportQuries(ProjectConfigurationDetails.AppConfig.QueriesConfig);
+            ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
 
             if (ExportIterations(ProjectConfigurationDetails.AppConfig.BoardConfig))
@@ -430,11 +443,6 @@ namespace VstsDemoBuilder.Controllers
             projectSetting = System.IO.File.ReadAllText(projectSetting);
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
             System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
-
-            string Extensions = "";
-            Extensions = filePathToRead + "\\DemoExtensions.json";
-            Extensions = System.IO.File.ReadAllText(Extensions);
-            System.IO.File.WriteAllText(extractedFolderName + "\\DemoExtensions.json", Extensions);
 
             string projectTemplate = "";
             projectTemplate = filePathToRead + "\\ProjectTemplate.json";
@@ -452,6 +460,8 @@ namespace VstsDemoBuilder.Controllers
 
             ExportRepositoryList(ProjectConfigurationDetails.AppConfig.RepoConfig);
             AddMessage(model.id, "Repository and Service Endpoint");
+
+            GetServiceEndpoints(ProjectConfigurationDetails.AppConfig.EndpointConfig);
 
             int count = GetBuildDefinitions(ProjectConfigurationDetails.AppConfig.BuildDefinitionConfig, ProjectConfigurationDetails.AppConfig.RepoConfig);
             if (count >= 1)
@@ -608,6 +618,11 @@ namespace VstsDemoBuilder.Controllers
                                 var style = jObj;
                                 style["url"] = "";
                                 style["_links"] = "{}";
+                                var tagStyle = style["rules"]["tagStyle"];
+                                if (tagStyle == null)
+                                {
+                                    style["rules"]["tagStyle"] = new JArray();
+                                }
                                 jObjcardStyleList.Add(jObj);
                                 AddMessage(con.Id, "Card style");
 
@@ -785,149 +800,169 @@ namespace VstsDemoBuilder.Controllers
         // Get the Build definitions to write into file
         public int GetBuildDefinitions(Configuration con, Configuration repoCon)
         {
-            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
-            List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
-            BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(repoCon);
-            RepositoryList.Repository repo = repoDefs.GetRepoList();
-            if (builds.Count > 0)
+            try
             {
-                int count = 1;
-                //creating ImportCode Json file
-                string templatePath = extractedTemplatePath + con.Project;
-                foreach (JObject def in builds)
+                BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(con);
+                List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
+                BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(repoCon);
+                RepositoryList.Repository repo = repoDefs.GetRepoList();
+                string esr = JsonConvert.SerializeObject(builds);
+                if (builds.Count > 0)
                 {
-                    string repoID = "";
-                    var repoName = def["repository"]["name"];
-                    foreach (var re in repo.value)
+                    int count = 1;
+                    //creating ImportCode Json file
+                    string templatePath = extractedTemplatePath + con.Project;
+                    foreach (JObject def in builds)
                     {
-                        if (re.name == repoName.ToString())
+                        string repoID = "";
+                        var buildName = def["name"];
+                        var repoName = def["repository"]["name"];
+                        foreach (var re in repo.value)
                         {
-                            repoID = re.id;
-                        }
-                    }
-                    def["authoredBy"] = "{}";
-                    def["project"] = "{}";
-                    def["url"] = "";
-                    def["uri"] = "";
-                    def["id"] = "";
-                    def["queue"]["id"] = "";
-                    def["queue"]["url"] = "";
-                    def["queue"]["_links"] = "{}";
-                    def["queue"]["pool"]["id"] = "";
-                    def["_links"] = "{}";
-                    def["createdDate"] = "";
-
-                    var process = def["process"];
-                    if (process != null)
-                    {
-                        var phases = process["phases"];
-                        if (phases != null)
-                        {
-                            foreach (var phase in phases)
+                            if (re.name == repoName.ToString())
                             {
-                                phase["target"]["queue"] = "{}";
-                                var steps = phase["steps"];
-                                if (steps != null)
+                                repoID = re.id;
+                            }
+                        }
+
+                        var yamalfilename = def["process"]["yamlFilename"];
+                        if (yamalfilename != null)
+                        {
+                            AddMessage(con.Id.ErrorId(), "Not supporting yml pipelines");
+                            return count = 0;
+                        }
+                        def["authoredBy"] = "{}";
+                        def["project"] = "{}";
+                        def["url"] = "";
+                        def["uri"] = "";
+                        def["id"] = "";
+                        def["queue"]["id"] = "";
+                        def["queue"]["url"] = "";
+                        def["queue"]["_links"] = "{}";
+                        def["queue"]["pool"]["id"] = "";
+                        def["_links"] = "{}";
+                        def["createdDate"] = "";
+
+                        var process = def["process"];
+                        if (process != null)
+                        {
+                            var phases = process["phases"];
+                            if (phases != null)
+                            {
+                                foreach (var phase in phases)
                                 {
-                                    foreach (var step in steps)
+                                    phase["target"]["queue"] = "{}";
+                                    var steps = phase["steps"];
+                                    if (steps != null)
                                     {
-                                        string keyConfig = System.IO.File.ReadAllText(Server.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
-                                        KeyConfig.Keys keyC = new KeyConfig.Keys();
-                                        keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                        foreach (var key in keyC.keys)
+                                        foreach (var step in steps)
                                         {
-                                            string keyVal = step[key] != null ? step[key].ToString() : "";
-                                            if (!string.IsNullOrEmpty(keyVal))
+                                            string keyConfig = System.IO.File.ReadAllText(Server.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                            KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                            keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
+                                            foreach (var key in keyC.keys)
                                             {
-                                                step[key] = "";
+                                                string keyVal = step[key] != null ? step[key].ToString() : "";
+                                                if (!string.IsNullOrEmpty(keyVal))
+                                                {
+                                                    step[key] = "";
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    var type = def["repository"]["type"];
-                    if (type.ToString().ToLower() == "github")
-                    {
-                        def["repository"]["type"] = "Git";
-                        def["repository"]["properties"]["fullName"] = "repository";
-                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                        def["repository"]["name"] = "repository";
-                        string url = def["repository"]["url"].ToString();
-                        if (url != "")
+                        var type = def["repository"]["type"];
+                        if (type.ToString().ToLower() == "github")
                         {
+                            def["repository"]["type"] = "Git";
+                            def["repository"]["properties"]["fullName"] = "repository";
+                            def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                            def["repository"]["name"] = "repository";
+                            string url = def["repository"]["url"].ToString();
+                            if (url != "")
+                            {
+                                string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                                endPointString = endPointString.Replace("$GitHubURL$", url);
+                                Guid g = Guid.NewGuid();
+                                string randStr = g.ToString().Substring(0, 8);
+                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                                {
+                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                }
+                                else
+                                {
+                                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                }
+                            }
+                        }
+                        else if (type.ToString().ToLower() == "git")
+                        {
+                            string url = def["repository"]["url"].ToString();
                             string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                             endPointString = endPointString.Replace("$GitHubURL$", url);
                             Guid g = Guid.NewGuid();
-                            string randStr = g.ToString().Substring(0, 8); if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                            string randStr = g.ToString().Substring(0, 8);
+                            if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
                             {
                                 Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
                                 System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                             }
-                        }
-                    }
-                    else if (type.ToString().ToLower() == "git")
-                    {
-                        string url = def["repository"]["url"].ToString();
-                        string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                        endPointString = endPointString.Replace("$GitHubURL$", url);
-                        Guid g = Guid.NewGuid();
-                        string randStr = g.ToString().Substring(0, 8);
-                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
-                        {
-                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                            else
+                            {
+                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                            }
+                            def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                            def["repository"]["id"] = "$" + repoName + "$";
+                            def["repository"]["url"] = "";
+                            def["repository"]["properties"]["connectedServiceId"] = "";
                         }
-                        def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                    }
-                    else
-                    {
-                        def["repository"]["id"] = "$" + repoName + "$";
-                        def["repository"]["url"] = "";
-                        def["repository"]["properties"]["connectedServiceId"] = "";
-                    }
-                    var input = def["processParameters"]["inputs"];
-                    if (input != null)
-                    {
-                        if (input.HasValues)
+                        var input = def["processParameters"]["inputs"];
+                        if (input != null)
                         {
-                            foreach (var i in input)
+                            if (input.HasValues)
                             {
-                                i["defaultValue"] = "";
+                                foreach (var i in input)
+                                {
+                                    i["defaultValue"] = "";
 
+                                }
                             }
                         }
-                    }
-                    var build = def["build"];
-                    if (build != null)
-                    {
-                        if (build.HasValues)
+                        var build = def["build"];
+                        if (build != null)
                         {
-                            foreach (var b in build)
+                            if (build.HasValues)
                             {
-                                b["inputs"]["serverEndpoint"] = "";
+                                foreach (var b in build)
+                                {
+                                    b["inputs"]["serverEndpoint"] = "";
+                                }
                             }
                         }
-                    }
 
-                    if (!(Directory.Exists(templatePath + "\\BuildDefinitions")))
-                    {
-                        Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                        System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                        if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                        {
+                            Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                        }
+                        else
+                        {
+                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                        }
+                        count = count + 1;
                     }
-                    else
-                    {
-                        System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\BuildDef" + count + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
-                    }
-                    count = count + 1;
+                    return count;
                 }
-                return count;
+            }
+            catch (Exception)
+            {
             }
             return 0;
         }
@@ -948,6 +983,7 @@ namespace VstsDemoBuilder.Controllers
                 {
                     foreach (JObject rel in releases)
                     {
+                        var name = rel["name"];
                         rel["id"] = "";
                         rel["url"] = "";
                         rel["_links"] = "{}";
@@ -1041,11 +1077,11 @@ namespace VstsDemoBuilder.Controllers
                         if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
                         {
                             Directory.CreateDirectory(templatePath + "\\ReleaseDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + releasecount + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\ReleaseDef" + releasecount + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         releasecount++;
                     }
@@ -1059,6 +1095,281 @@ namespace VstsDemoBuilder.Controllers
             return 0;
         }
 
+        public JsonResult GetInstalledExtensions(Configuration con)
+        {
+            GetListExtenison listExtenison = new GetListExtenison(con);
+            List<RequiredExtensions.ExtensionWithLink> extensionList = new List<RequiredExtensions.ExtensionWithLink>();
+            GetExtensions.ExtensionsList returnExtensionsList = listExtenison.GetInstalledExtensions();
+
+            if (returnExtensionsList != null && returnExtensionsList.count > 0)
+            {
+                List<GetExtensions.Value> builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
+                List<GetExtensions.Value> trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
+                builtInExtensions.AddRange(trustedExtensions);
+                returnExtensionsList.value = builtInExtensions;
+
+                foreach (GetExtensions.Value data in returnExtensionsList.value)
+                {
+                    RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
+
+                    extension.extensionId = data.extensionId;
+                    extension.extensionName = data.extensionName;
+                    extension.publisherId = data.publisherId;
+                    extension.publisherName = data.publisherName;
+                    extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
+                    extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
+                    extensionList.Add(extension);
+                }
+                RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
+                if (extensionList.Count > 0)
+                {
+                    listExtension.Extensions = extensionList;
+                    if (!Directory.Exists(extractedTemplatePath + con.Project))
+                    {
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                    }
+                    string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
+
+                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+                }
+            }
+            else if (!string.IsNullOrEmpty(listExtenison.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Some error occured while fetching extensions");
+            }
+            return Json(extensionList, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public void GetServiceEndpoints(Configuration con)
+        {
+            ServiceEndPoint serviceEndPoint = new ServiceEndPoint(con);
+            Parameters.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
+            if (getServiceEndPoint.count > 0)
+            {
+                foreach (Parameters.Value endpoint in getServiceEndPoint.value)
+                {
+                    switch (endpoint.authorization.scheme)
+                    {
+                        case "OAuth":
+                        case "InstallationToken":
+                            switch (endpoint.type)
+                            {
+                                case "github":
+                                case "GitHub":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            AccessToken = "AccessToken"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
+                                    }
+                                    break;
+                            }
+                            break;
+                        case "UsernamePassword":
+                            endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                            endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                            break;
+                        case "ManagedServiceIdentity":
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    tenantId = Guid.NewGuid().ToString()
+                                };
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                            }
+                            break;
+                        case "ServicePrincipal":
+                            switch (endpoint.type)
+                            {
+                                case "devCenter":
+                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                                    break;
+                                case "azurerm":
+                                    endpoint.authorization.parameters.url = null;
+                                    endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                                    endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                                    endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                    break;
+                            }
+                            break;
+                        case "Certificate":
+                            switch (endpoint.type)
+                            {
+                                case "dockerhost":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters();
+                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                    }
+                                    break;
+
+                                case "azure":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            certificate = "certificate"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
+                                    }
+                                    break;
+                            }
+                            break;
+                        case "Token":
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    apitoken = "apitoken"
+                                };
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
+                            }
+                            break;
+                        case "None":
+                            switch (endpoint.type)
+                            {
+                                case "AzureServiceBus":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            serviceBusConnectionString = "connectionstring"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
+                                    }
+                                    break;
+                                case "externalnugetfeed":
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            nugetkey = "nugetkey"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
+                                    }
+                                    break;
+                            }
+                            break;
+
+                    }
+                    string endpointString = JsonConvert.SerializeObject(endpoint);
+                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                    {
+                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                    }
+                    else
+                    {
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty(serviceEndPoint.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
+            }
+
+        }
+
+        public void ExportQuries(Configuration con)
+        {
+            Queries queries = new Queries(con);
+            GetQueries.Queries listQueries = queries.GetQueriesWiql();
+            if (listQueries.count > 0)
+            {
+                foreach (var _queries in listQueries.value)
+                {
+                    if (_queries.hasChildren)
+                    {
+                        foreach (var query in _queries.children)
+                        {
+                            if (!query.hasChildren)
+                            {
+                                if (query.wiql != null)
+                                {
+                                    query.wiql = query.wiql.Replace(con.Project, "$projectId$");
+                                    JObject jobj = new JObject();
+                                    jobj["name"] = query.name;
+                                    jobj["wiql"] = query.wiql;
+                                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                    {
+                                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard");
+                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
+                                    }
+                                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                    {
+                                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
+                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                    }
+                                    else
+                                    {
+                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                foreach (var child1 in query.children)
+                                {
+                                    if (child1.wiql != null)
+                                    {
+                                        child1.wiql = child1.wiql.Replace(con.Project, "$projectId$");
+                                        JObject jobj = new JObject();
+                                        jobj["name"] = child1.name;
+                                        jobj["wiql"] = child1.wiql;
+                                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                        {
+                                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
+
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                        }
+                                        else
+                                        {
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty(queries.LastFailureMessage))
+            {
+                AddMessage(con.Id.ErrorId(), "Error while fetching queries");
+            }
+        }
         #endregion end extract template
         // Remove the template folder after zipping it
         [AllowAnonymous]

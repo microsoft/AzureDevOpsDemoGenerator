@@ -136,16 +136,20 @@ namespace VstsDemoBuilder.Models
     {
         public class ExtensionWithLink
         {
-            public string name { get; set; }
+            public string extensionName { get; set; }
             public string link { get; set; }
-            public string PublisherId { get; set; }
-            public string ExtensionId { get; set; }
-            public string Publisher { get; set; }
+            public string publisherId { get; set; }
+            public string extensionId { get; set; }
+            public string publisherName { get; set; }
             public string License { get; set; }
         }
         public class Extension
         {
-            public ExtensionWithLink[] Extensions { get; set; }
+            public List<ExtensionWithLink> Extensions { get; set; }
+        }
+        public class listExtension
+        {
+           public List<ExtensionWithLink> Extensions { get; set; }
         }
     }
     public class TestSuite

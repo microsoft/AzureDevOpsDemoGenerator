@@ -1,7 +1,7 @@
-﻿{
+{
   "Extensions": [
     {
-      "extensionName": "ARM Outputs",
+      "name": "ARM Outputs",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
       "publisherId": "keesschollaart",
       "extensionId": "arm-outputs",

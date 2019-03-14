@@ -65,21 +65,26 @@
     <Compile Include="Build\BuildDefinition.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="DeliveryPlans\Plans.cs" />
-    <Compile Include="DeploymentGRoup\DeploymentGroup.cs" />
+    <Compile Include="DeploymentGroup\DeploymentGroup.cs" />
+    <Compile Include="ExtensionManagement\GetListExtenison.cs" />
     <Compile Include="Extractor\ClassificationNodes.cs" />
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
     <Compile Include="Services\HttpServices.cs" />
+    <Compile Include="Service\ServiceEndPoint.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseAgile.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseScrum.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitionResponse.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitions.cs" />
     <Compile Include="Viewmodel\Extractor\ExportBoardRows.cs" />
     <Compile Include="Viewmodel\Extractor\GetBuildDefResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\GetExtensions.cs" />
     <Compile Include="Viewmodel\Extractor\GetINumIteration.cs" />
     <Compile Include="Extractor\GetWorkItemsCount.cs" />
     <Compile Include="Viewmodel\Extractor\GetProcessTemplate.cs" />
+    <Compile Include="Viewmodel\Extractor\GetQueries.cs" />
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\GetServiceEndpoints.cs" />
     <Compile Include="Viewmodel\Extractor\GetTeamSetting.cs" />
     <Compile Include="Viewmodel\Extractor\GetWorkItemsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\Iterations.cs" />
@@ -99,7 +104,6 @@
     <Compile Include="QueriesAndWidgets\Queries.cs" />
     <Compile Include="Queues\Queue.cs" />
     <Compile Include="Release\ReleaseDefinition.cs" />
-    <Compile Include="Service\ServiceEndPoint.cs" />
     <Compile Include="TestManagement\TestManagement.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Viewmodel\BaseViewModel.cs" />
@@ -164,6 +168,7 @@
     <None Include="JSON\WorkItemNew.json" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
