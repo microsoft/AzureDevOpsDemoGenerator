@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace VstsDemoBuilder.Models
 {
@@ -8,6 +9,7 @@ namespace VstsDemoBuilder.Models
         {
             public string Key { get; set; }
             public string Name { get; set; }
+            public string ShortName { get; set; }
             public string Description { get; set; }
             public string[] Tags { get; set; }
             public string Image { get; set; }
