@@ -9,10 +9,10 @@
   "isDeleted": false,
   "variables": {
     "resourcegroup": {
-      "value": "sachin-sampletest"
+      "value": "AzureKeyVaultLab"
     },
     "webappName": {
-      "value": "hotel-coupon-mgmt"
+      "value": "hotel-coupon-mgmt$UUID$"
     }
   },
   "variableGroups": [],
@@ -29,56 +29,6 @@
         "uniqueName": "$OwnerUniqueName$",
         "imageUrl": "",
         "descriptor": ""
-      },
-      "variables": {
-        "assignmentDescription": {
-          "value": "Allow HTTPS Only1",
-          "allowOverride": true
-        },
-        "assignmentDisplayName": {
-          "value": "Allow HTTPS Only1",
-          "allowOverride": true
-        },
-        "assignmentName": {
-          "value": "AllowHTTPSOnly1",
-          "allowOverride": true
-        },
-        "managementGroupName": {
-          "value": "",
-          "allowOverride": true
-        },
-        "policyDescription": {
-          "value": "",
-          "allowOverride": true
-        },
-        "policyDisplayName": {
-          "value": "Allow HTTPS Only1",
-          "allowOverride": true
-        },
-        "policyName": {
-          "value": "AllowHTTPSOnly1",
-          "allowOverride": true
-        },
-        "policyParameters": {
-          "value": "",
-          "allowOverride": true
-        },
-        "policyRule": {
-          "value": "$(System.DefaultWorkingDirectory)/_SmartHotel-CouponManagement-Docker container-CI/drop/azurepolicy.json",
-          "allowOverride": true
-        },
-        "policySetName": {
-          "value": "",
-          "allowOverride": true
-        },
-        "resourceGroupName": {
-          "value": "",
-          "allowOverride": true
-        },
-        "subscriptionId": {
-          "value": "3fc1987f-3b9d-4339-b3d6-72411a3f0306",
-          "allowOverride": true
-        }
       },
       "variableGroups": [],
       "preDeployApprovals": {
@@ -228,7 +178,7 @@
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/_SmartHotel-CouponManagement-Docker container-CI/drop/ROOT.war",
+                "Package": "$(System.DefaultWorkingDirectory)/**/*.war",
                 "RuntimeStack": "",
                 "RuntimeStackFunction": "",
                 "StartupCommand": "",
