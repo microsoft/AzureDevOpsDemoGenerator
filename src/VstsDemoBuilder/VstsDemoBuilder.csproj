@@ -386,6 +386,7 @@
     <Content Include="Templates\TemplateImages\Docker.png" />
     <Content Include="Templates\TemplateImages\Dynatrace.png" />
     <Content Include="Templates\TemplateImages\GitHub.png" />
+    <Content Include="Templates\TemplateImages\key-vault.png" />
     <Content Include="Templates\TemplateImages\kubernetes.png" />
     <Content Include="Templates\TemplateImages\launchdarkly.png" />
     <Content Include="Templates\TemplateImages\MachineLearning.png" />
