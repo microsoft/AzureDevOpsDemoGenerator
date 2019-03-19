@@ -2457,13 +2457,15 @@ namespace VstsDemoBuilder.Controllers
 
                 foreach (string query in listQueries)
                 {
+                    Queries objQuery1 = new Queries(_queriesVersion);
+
                     //create query
                     string json = model.ReadJsonFile(query);
                     json = json.Replace("$projectId$", model.Environment.ProjectName);
-                    QueryResponse response = objQuery.CreateQuery(model.ProjectName, json);
+                    QueryResponse response = objQuery1.CreateQuery(model.ProjectName, json);
                     queryResults.Add(response);
 
-                    if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
+                    if (!string.IsNullOrEmpty(objQuery1.LastFailureMessage))
                     {
                         AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
                     }

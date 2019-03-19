@@ -427,7 +427,6 @@ namespace VstsDemoBuilder.Controllers
             AddMessage(model.id, "");
 
             GetInstalledExtensions(ProjectConfigurationDetails.AppConfig.ExtensionConfig);
-            //ExportQuries(ProjectConfigurationDetails.AppConfig.QueriesConfig);
             ProjectConfigurationDetails.AppConfig = ProjectConfiguration(model);
             ExportTeams(ProjectConfigurationDetails.AppConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
 
@@ -474,6 +473,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 AddMessage(model.id, "Release Definition");
             }
+            ExportQuries(ProjectConfigurationDetails.AppConfig.QueriesConfig);
 
             //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
 
