@@ -9,7 +9,7 @@
   "isDeleted": false,
   "variables": {
     "resourcegroup": {
-      "value": "AzureKeyVaultLab"
+      "value": "azurekeyvaultlab"
     },
     "webappName": {
       "value": "hotel-coupon-mgmt$UUID$"
