@@ -839,7 +839,12 @@ namespace VstsDemoBuilder.Controllers
                         def["queue"]["id"] = "";
                         def["queue"]["url"] = "";
                         def["queue"]["_links"] = "{}";
-                        def["queue"]["pool"]["id"] = "";
+                        var poolId = def["queue"]["pool"];
+                        if (poolId.ToString() != "")
+                        {
+                            def["queue"]["pool"]["id"] = "";
+                        }
+                        def["queue"]["id"] = "";
                         def["_links"] = "{}";
                         def["createdDate"] = "";
 
@@ -961,8 +966,9 @@ namespace VstsDemoBuilder.Controllers
                     return count;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                AddMessage(con.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return 0;
         }
@@ -1172,8 +1178,19 @@ namespace VstsDemoBuilder.Controllers
                             }
                             break;
                         case "UsernamePassword":
-                            endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
-                            endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                            if (endpoint.authorization.parameters == null)
+                            {
+                                endpoint.authorization.parameters = new Parameters.Parameters
+                                {
+                                    username = "username",
+                                    password = "password"
+                                };
+                            }
+                            else
+                            {
+                                endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                                endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                            }
                             break;
                         case "ManagedServiceIdentity":
                             if (endpoint.authorization.parameters == null)
@@ -1195,14 +1212,29 @@ namespace VstsDemoBuilder.Controllers
                                     endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
                                     break;
                                 case "azurerm":
-                                    endpoint.authorization.parameters.url = null;
-                                    endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
-                                    endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
-                                    endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                    if (endpoint.authorization.parameters == null)
+                                    {
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            url = null,
+                                            servicePrincipalId = Guid.NewGuid().ToString(),
+                                            authenticationType = "spnKey",
+                                            tenantId = Guid.NewGuid().ToString(),
+                                            servicePrincipalKey = "spnKey"
+                                        };
+                                    }
+                                    else
+                                    {
+                                        endpoint.authorization.parameters.url = null;
+                                        endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                                        endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                                        endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                    }
                                     break;
                             }
                             break;
+
                         case "Certificate":
                             switch (endpoint.type)
                             {
