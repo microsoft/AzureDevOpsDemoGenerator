@@ -872,6 +872,15 @@ namespace VstsDemoBuilder.Controllers
                                                 {
                                                     step[key] = "";
                                                 }
+                                                var stepsInput = step["inputs"];
+                                                if (stepsInput != null)
+                                                {
+                                                    string stepsInputkeyVal = stepsInput[key] != null ? stepsInput[key].ToString() : "";
+                                                    if (!string.IsNullOrEmpty(stepsInputkeyVal))
+                                                    {
+                                                        stepsInput[key] = "";
+                                                    }
+                                                }
                                             }
                                         }
                                     }

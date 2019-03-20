@@ -355,8 +355,15 @@ $(document).ready(function (event) {
                         grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
                 }
                 $('#modtemplateGroup').empty().append(grp);
-
             }
+            else {
+                alert("Sesson expired");
+                window.location = window.location.href;
+            }
+        },
+        error: function (er) {
+            alert("Session expired!");
+            window.location = window.location.href;
         }
     });
 
@@ -1018,6 +1025,14 @@ function getGroups(grpSelected) {
                 }
 
             }
+            else {
+                alert("Session expired!");
+                window.location = window.location.href;
+            }
+        },
+        error: function (er) {
+            alert("Session expired!");
+            window.location = window.location.href;
         }
     });
 }
