@@ -40,7 +40,7 @@
     ],
     "tagStyle": [
       {
-        "name": "Blocked",
+        "name": "Mobile",
         "isEnabled": "True",
         "settings": {
           "title-color": "",
