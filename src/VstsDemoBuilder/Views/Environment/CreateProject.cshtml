@@ -171,6 +171,13 @@
         }
 
     </div>
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <div class="col-sm-12" style="background-color:#ffaeae">
+            <span style="color:#b71616">@ViewBag.ErrorMessage</span>
+        </div>
+    }
+
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
             <!--
