@@ -309,6 +309,7 @@ namespace VstsDemoBuilder.Controllers
                                 }
                             }
                         }
+
                         return View(model);
                     }
                     return Redirect("../Account/Verify");
@@ -319,8 +320,15 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+                System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss"), ex.Message);
+                ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
         }
@@ -2876,7 +2884,7 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 foreach (var ins in installedExtensions)
                                 {
-                                    
+
                                     string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/><br/>";
