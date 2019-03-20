@@ -327,7 +327,7 @@ namespace VstsDemoBuilder.Controllers
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
                 }
                 logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss"), ex.Message);
+                System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message);
                 ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
