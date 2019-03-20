@@ -22,7 +22,7 @@
     ],
     "tagStyle": [
       {
-        "name": "blocked",
+        "name": "Mobile",
         "isEnabled": "True",
         "settings": {
           "title-color": null,
