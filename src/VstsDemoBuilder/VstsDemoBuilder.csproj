@@ -474,7 +474,6 @@
     <Content Include="Templates\DeploymentGroups\TeamArea.json" />
     <Content Include="Templates\DeploymentGroups\Teams.json" />
     <Content Include="Templates\DeploymentGroups\UpdateCardFields.json" />
-    <Content Include="Templates\DeploymentGroups\UpdateCardStyles.json" />
     <Content Include="Templates\Events.json" />
     <Content Include="Templates\GitHub\BoardColumns.json" />
     <Content Include="Templates\GitHub\BoardRowsFromTemplate.json" />
@@ -528,7 +527,6 @@
     <Content Include="Templates\MyHealthClinic\Teams.json" />
     <Content Include="Templates\MyHealthClinic\TestCasefromTemplate.json" />
     <Content Include="Templates\MyHealthClinic\UpdateCardFields.json" />
-    <Content Include="Templates\MyHealthClinic\UpdateCardStyles.json" />
     <Content Include="Templates\MyShuttle\BoardColumns.json" />
     <Content Include="Templates\MyShuttle\BoardRowsFromTemplate.json" />
     <Content Include="Templates\MyShuttle\BugfromTemplate.json" />
@@ -582,7 +580,6 @@
     <Content Include="Templates\Octopus\TeamArea.json" />
     <Content Include="Templates\Octopus\Teams.json" />
     <Content Include="Templates\Octopus\UpdateCardFields.json" />
-    <Content Include="Templates\Octopus\UpdateCardStyles.json" />
     <Content Include="Templates\PartsUnlimited\BoardColumns.json" />
     <Content Include="Templates\PartsUnlimited\BoardRowsFromTemplate.json" />
     <Content Include="Templates\PartsUnlimited\BugfromTemplate.json" />
@@ -616,7 +613,6 @@
     <Content Include="Templates\PartsUnlimited\TestPlans\TestPlan1.json" />
     <Content Include="Templates\PartsUnlimited\TestPlans\TestSuites\TestPlan1.json" />
     <Content Include="Templates\PartsUnlimited\UpdateCardFields.json" />
-    <Content Include="Templates\PartsUnlimited\UpdateCardStyles.json" />
     <Content Include="Templates\PHP\BoardColumns.json" />
     <Content Include="Templates\PHP\BoardRowsFromTemplate.json" />
     <Content Include="Templates\PHP\BuildDefinitions\PHP.json" />
@@ -640,7 +636,6 @@
     <Content Include="Templates\PHP\TeamArea.json" />
     <Content Include="Templates\PHP\Teams.json" />
     <Content Include="Templates\PHP\UpdateCardFields.json" />
-    <Content Include="Templates\PHP\UpdateCardStyles.json" />
     <Content Include="Templates\Python\BoardColumns.json" />
     <Content Include="Templates\Python\BoardRowsFromTemplate.json" />
     <Content Include="Templates\Python\BuildDefinitions\Python.json" />
@@ -700,7 +695,6 @@
     <Content Include="Templates\SonarQube\TaskfromTemplate.json" />
     <Content Include="Templates\SonarQube\Teams.json" />
     <Content Include="Templates\SonarQube\UpdateCardFields.json" />
-    <Content Include="Templates\SonarQube\UpdateCardStyles.json" />
     <Content Include="Templates\TemplateSetting.json" />
     <Content Include="Templates\WhiteSource-Bolt\BugfromTemplate.json" />
     <Content Include="Templates\WhiteSource-Bolt\BuildDefinitions\WhiteSourceBolt.json" />
@@ -766,7 +760,6 @@
     <Content Include="Templates\Docker\TeamArea.json" />
     <Content Include="Templates\Docker\Teams.json" />
     <Content Include="Templates\Docker\UpdateCardFields.json" />
-    <Content Include="Templates\Docker\UpdateCardStyles.json" />
     <Content Include="Templates\ReleaseGates\BugfromTemplate.json" />
     <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI.json" />
     <Content Include="Templates\ReleaseGates\Dashboard\Queries\Bugs.json" />
@@ -799,7 +792,6 @@
     <Content Include="Templates\SmartHotel360\TeamArea.json" />
     <Content Include="Templates\SmartHotel360\Teams.json" />
     <Content Include="Templates\SmartHotel360\UpdateCardFields.json" />
-    <Content Include="Templates\SmartHotel360\UpdateCardStyles.json" />
     <Content Include="Templates\SmartHotel360\PullRequests\PullRequest1.json" />
     <Content Include="Templates\SmartHotel360\PullRequests\PullRequest2.json" />
     <Content Include="Templates\SmartHotel360\PullRequests\Comments\PullRequest1.json" />
@@ -896,7 +888,6 @@
     <Content Include="Templates\ContosoAir\TaskfromTemplate.json" />
     <Content Include="Templates\ContosoAir\TeamArea.json" />
     <Content Include="Templates\ContosoAir\Teams.json" />
-    <Content Include="Templates\ContosoAir\UpdateCardStyles.json" />
     <Content Include="Templates\ContosoAir\UserStoriesfromTemplate.json" />
     <Content Include="Templates\ContosoAir\ServiceEndpoints\ContosoAir.json" />
     <Content Include="Templates\ContosoAir\BoardColumns.json" />
