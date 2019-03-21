@@ -241,11 +241,6 @@ namespace VstsDemoBuilder.Controllers
                     {
                         AccessDetails.access_token = Session["PAT"].ToString();
                         ProfileDetails profile = GetProfile(AccessDetails);
-                        if (profile == null)
-                        {
-                            ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
-                            return View(model);
-                        }
                         if (profile.displayName != null || profile.emailAddress != null)
                         {
                             Session["User"] = profile.displayName ?? string.Empty;
