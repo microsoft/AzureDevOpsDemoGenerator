@@ -294,7 +294,6 @@ namespace VstsDemoBuilder.Controllers
                         }
                         //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
                         //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-
                         if (!string.IsNullOrEmpty(TemplateSelected))
                         {
                             foreach (var grpTemplate in templates.GroupwiseTemplates)
@@ -328,15 +327,8 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
-                {
-                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
-                }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
-
             }
         }
 
@@ -367,14 +359,10 @@ namespace VstsDemoBuilder.Controllers
                     string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
-                    if (!string.IsNullOrEmpty(accessRequestBody))
-                    {
-                        AccessDetails = GetAccessToken(accessRequestBody);
-                    }
+                    AccessDetails = GetAccessToken(accessRequestBody);
                     if (!string.IsNullOrEmpty(AccessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
-
                         //AccessDetails.access_token = "";
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
@@ -387,15 +375,8 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
-                {
-                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
-                }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_Create_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
-                ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
         }
@@ -670,12 +651,6 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
-                {
-                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
-                }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_GetToken_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
                 ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -718,12 +693,6 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
-                    {
-                        Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
-                    }
-                    logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                    System.IO.File.WriteAllText(logPath + "Error_GetProfile_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
                     profile.ErrorMessage = ex.Message;
                 }
             }
@@ -1491,15 +1460,15 @@ namespace VstsDemoBuilder.Controllers
                 {
                     if (model.SelectedTemplate == "MyHealthClinic")
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList["MyHealthClinic"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("MyHealthClinic") ? model.Environment.repositoryIdList["MyHealthClinic"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
                     else if (model.SelectedTemplate == "SmartHotel360")
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList["PublicWeb"], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("PublicWeb") ? model.Environment.repositoryIdList["PublicWeb"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
                     else
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList[model.SelectedTemplate], model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey(model.SelectedTemplate) ? model.Environment.repositoryIdList[model.SelectedTemplate] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
                 }
                 else
@@ -2518,15 +2487,17 @@ namespace VstsDemoBuilder.Controllers
 
                 foreach (string query in listQueries)
                 {
+                    Queries _newobjQuery = new Queries(_queriesVersion);
+
                     //create query
                     string json = model.ReadJsonFile(query);
                     json = json.Replace("$projectId$", model.Environment.ProjectName);
-                    QueryResponse response = objQuery.CreateQuery(model.ProjectName, json);
+                    QueryResponse response = _newobjQuery.CreateQuery(model.ProjectName, json);
                     queryResults.Add(response);
 
-                    if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
+                    if (!string.IsNullOrEmpty(_newobjQuery.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while creating query: " + _newobjQuery.LastFailureMessage + Environment.NewLine);
                     }
 
                 }
