@@ -1024,6 +1024,8 @@ namespace VstsDemoBuilder.Controllers
             {
                 AddMessage(model.id, string.Format("Project {0} created", model.ProjectName));
             }
+            // waiting to add first message
+            Thread.Sleep(2000);
 
             //Check for project state 
             Stopwatch watch = new Stopwatch();
