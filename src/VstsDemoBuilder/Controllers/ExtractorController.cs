@@ -98,8 +98,16 @@ namespace VstsDemoBuilder.Controllers
             {
                 accessDetails.access_token = pat;
                 ProfileDetails profile = con.GetProfile(accessDetails);
-                Session["User"] = profile.displayName;
-                Session["PAT"] = pat;
+                if (profile == null)
+                {
+                    ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
+                    return View(model);
+                }
+                if (profile.displayName != null && profile.emailAddress != null)
+                {
+                    Session["User"] = profile.displayName;
+                    Session["Email"] = profile.emailAddress.ToLower();
+                }
                 AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
                 model.accessToken = accessDetails.access_token;
                 model.accountsForDropdown = new List<string>();

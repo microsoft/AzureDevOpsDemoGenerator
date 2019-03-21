@@ -241,8 +241,16 @@ namespace VstsDemoBuilder.Controllers
                     {
                         AccessDetails.access_token = Session["PAT"].ToString();
                         ProfileDetails profile = GetProfile(AccessDetails);
-                        Session["User"] = profile.displayName;
-                        Session["Email"] = profile.emailAddress.ToLower();
+                        if (profile == null)
+                        {
+                            ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
+                            return View(model);
+                        }
+                        if (profile.displayName!=null && profile.emailAddress != null)
+                        {
+                            Session["User"] = profile.displayName;
+                            Session["Email"] = profile.emailAddress.ToLower();
+                        }
                         AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
@@ -667,7 +675,7 @@ namespace VstsDemoBuilder.Controllers
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
                 }
                 logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
+                System.IO.File.WriteAllText(logPath + "Error_GetToken_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
                 ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -710,6 +718,12 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
+                    if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                    }
+                    logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+                    System.IO.File.WriteAllText(logPath + "Error_GetProfile_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
                     profile.ErrorMessage = ex.Message;
                 }
             }
