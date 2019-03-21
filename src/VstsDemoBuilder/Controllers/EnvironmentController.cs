@@ -246,7 +246,7 @@ namespace VstsDemoBuilder.Controllers
                             ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
                             return View(model);
                         }
-                        if (profile.displayName != null && profile.emailAddress != null)
+                        if (profile.displayName != null || profile.emailAddress != null)
                         {
                             Session["User"] = profile.displayName ?? string.Empty;
                             Session["Email"] = profile.emailAddress ?? profile.displayName.ToLower();
