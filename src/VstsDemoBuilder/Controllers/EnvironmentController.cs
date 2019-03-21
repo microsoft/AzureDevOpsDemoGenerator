@@ -246,19 +246,17 @@ namespace VstsDemoBuilder.Controllers
                             ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
                             return View(model);
                         }
-                        if (profile.displayName!=null && profile.emailAddress != null)
+                        if (profile.displayName != null && profile.emailAddress != null)
                         {
-                            Session["User"] = profile.displayName;
-                            Session["Email"] = profile.emailAddress.ToLower();
+                            Session["User"] = profile.displayName ?? string.Empty;
+                            Session["Email"] = profile.emailAddress ?? profile.displayName.ToLower();
                         }
                         AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
 
                         //New Feature Enabling
-                        model.accessToken = AccessDetails.access_token;
+                        model.accessToken = Session["PAT"].ToString();
                         model.refreshToken = AccessDetails.refresh_token;
                         Session["PAT"] = AccessDetails.access_token;
-                        model.Email = profile.emailAddress.ToLower();
-                        model.Name = profile.displayName;
                         model.MemberID = profile.id;
                         List<string> accList = new List<string>();
                         if (accountList.count > 0)
@@ -337,7 +335,8 @@ namespace VstsDemoBuilder.Controllers
                 logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
                 System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
                 ViewBag.ErrorMessage = ex.Message;
-                return View();
+                return Redirect("../Account/Verify");
+
             }
         }
 
@@ -374,7 +373,7 @@ namespace VstsDemoBuilder.Controllers
                     }
                     if (!string.IsNullOrEmpty(AccessDetails.access_token))
                     {
-                        // add your access token here for local debugging                 
+                        //add your access token here for local debugging                 
                         //AccessDetails.access_token = "";
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
