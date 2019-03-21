@@ -69,10 +69,10 @@
 </head>
 <body class="pb-3">
     <input type="hidden" id="hidnUID" />
-    @Html.HiddenFor(model => model.IsAuthenticated, new { id = "hidIsAuthenticated" })
-    @Html.HiddenFor(model => model.accessToken, new { id = "hiddenAccessToken" })
-    @Html.HiddenFor(model => model.MemberID, new { id = "hiddenMemberID" })
-    @Html.HiddenFor(model => model.Email, new { id = "emailID" })
+    @if (!string.IsNullOrEmpty(Model.accessToken))
+    {
+        <input type="hidden" value="@Model.accessToken" id="hiddenAccessToken" />
+    }
     @if (!string.IsNullOrEmpty(Model.selectedTemplateDescription))
     {
         <input type="hidden" value="@Model.selectedTemplateDescription" id="selectedTemplateDescription" />
