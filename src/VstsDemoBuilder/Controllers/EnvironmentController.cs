@@ -360,12 +360,17 @@ namespace VstsDemoBuilder.Controllers
                     string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
-                    AccessDetails = GetAccessToken(accessRequestBody);
-
-                    // add your access token here for local debugging                 
-                    //AccessDetails.access_token = "";
-                    model.accessToken = AccessDetails.access_token;
-                    Session["PAT"] = AccessDetails.access_token;
+                    if (!string.IsNullOrEmpty(accessRequestBody))
+                    {
+                        AccessDetails = GetAccessToken(accessRequestBody);
+                    }
+                    if (!string.IsNullOrEmpty(AccessDetails.access_token))
+                    {
+                        // add your access token here for local debugging                 
+                        //AccessDetails.access_token = "";
+                        model.accessToken = AccessDetails.access_token;
+                        Session["PAT"] = AccessDetails.access_token;
+                    }
                     return RedirectToAction("createproject", "Environment");
                 }
                 else
@@ -374,8 +379,15 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+                System.IO.File.WriteAllText(logPath + "Error_Create_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
+                ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
         }
@@ -599,11 +611,25 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public string GenerateRequestPostData(string appSecret, string authCode, string callbackUrl)
         {
-            return String.Format("client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&client_assertion={0}&grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion={1}&redirect_uri={2}",
-                        HttpUtility.UrlEncode(appSecret),
-                        HttpUtility.UrlEncode(authCode),
-                        callbackUrl
-                 );
+            try
+            {
+                return String.Format("client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&client_assertion={0}&grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion={1}&redirect_uri={2}",
+                            HttpUtility.UrlEncode(appSecret),
+                            HttpUtility.UrlEncode(authCode),
+                            callbackUrl
+                     );
+            }
+            catch (Exception ex)
+            {
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+                System.IO.File.WriteAllText(logPath + "Error_FormatPostData_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
+                ViewBag.ErrorMessage = ex.Message;
+            }
+            return string.Empty;
         }
 
         /// <summary>
@@ -613,23 +639,36 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public AccessDetails GetAccessToken(string body)
         {
-            string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
-            var client = new HttpClient
+            try
             {
-                BaseAddress = new Uri(baseAddress)
-            };
+                string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+                var client = new HttpClient
+                {
+                    BaseAddress = new Uri(baseAddress)
+                };
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "/oauth2/token");
+                var request = new HttpRequestMessage(HttpMethod.Post, "/oauth2/token");
 
-            var requestContent = body;
-            request.Content = new StringContent(requestContent, Encoding.UTF8, "application/x-www-form-urlencoded");
+                var requestContent = body;
+                request.Content = new StringContent(requestContent, Encoding.UTF8, "application/x-www-form-urlencoded");
 
-            var response = client.SendAsync(request).Result;
-            if (response.IsSuccessStatusCode)
+                var response = client.SendAsync(request).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    AccessDetails details = Newtonsoft.Json.JsonConvert.DeserializeObject<AccessDetails>(result);
+                    return details;
+                }
+            }
+            catch (Exception ex)
             {
-                string result = response.Content.ReadAsStringAsync().Result;
-                AccessDetails details = Newtonsoft.Json.JsonConvert.DeserializeObject<AccessDetails>(result);
-                return details;
+                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
+                System.IO.File.WriteAllText(logPath + "Error_LoadTime_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
+                ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
         }
