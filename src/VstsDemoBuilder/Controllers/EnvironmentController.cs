@@ -373,7 +373,8 @@ namespace VstsDemoBuilder.Controllers
                     }
                     if (!string.IsNullOrEmpty(AccessDetails.access_token))
                     {
-                        //add your access token here for local debugging                 
+                        // add your access token here for local debugging                 
+
                         //AccessDetails.access_token = "";
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
