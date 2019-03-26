@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+﻿using log4net;
+using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -46,6 +47,7 @@ namespace VstsDemoBuilder.Controllers
         #region Variables & Properties
         private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
+        private ILog logger = LogManager.GetLogger("ErrorLog");
 
         private delegate string[] ProcessEnvironment(Project model, string PAT, string accountName);
         public bool isDefaultRepoTodetele = true;
@@ -322,6 +324,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
             }
@@ -370,8 +373,9 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
                 return View();
             }
         }
@@ -421,6 +425,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
+                    logger.Debug(ex + Environment.NewLine);
                     return Json("Error occurred. Error details: " + ex.Message);
                 }
             }
@@ -577,6 +582,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(ex + Environment.NewLine);
                 Directory.Delete(extractPath, true);
                 System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
@@ -605,12 +611,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
-                {
-                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
-                }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_FormatPostData_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
+                logger.Debug(ex + Environment.NewLine);
                 ViewBag.ErrorMessage = ex.Message;
             }
             return string.Empty;
@@ -646,6 +647,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(ex + Environment.NewLine);
                 ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -688,6 +690,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
+                    logger.Debug(ex + Environment.NewLine);
                     profile.ErrorMessage = ex.Message;
                 }
             }
@@ -730,8 +733,9 @@ namespace VstsDemoBuilder.Controllers
                         return null;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    logger.Debug(ex + Environment.NewLine);
                     return null;
                 }
             }
@@ -771,8 +775,9 @@ namespace VstsDemoBuilder.Controllers
                     accounts = null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(ex + Environment.NewLine);
                 return accounts;
             }
             return accounts;
@@ -807,8 +812,9 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(ex + Environment.NewLine);
                 return null;
             }
             return Json(mod, JsonRequestBehavior.AllowGet);
@@ -822,13 +828,20 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Session["PAT"] = model.accessToken;
-            Session["AccountName"] = model.accountName;
-            AddMessage(model.id, string.Empty);
-            AddMessage(model.id.ErrorId(), string.Empty);
+            try
+            {
+                Session["PAT"] = model.accessToken;
+                Session["AccountName"] = model.accountName;
+                AddMessage(model.id, string.Empty);
+                AddMessage(model.id.ErrorId(), string.Empty);
 
-            ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-            processTask.BeginInvoke(model, model.accessToken, model.accountName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                processTask.BeginInvoke(model, model.accessToken, model.accountName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex + Environment.NewLine);
+            }
             return true;
         }
 
@@ -868,6 +881,7 @@ namespace VstsDemoBuilder.Controllers
 
                     errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
                     errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
+                    logger.Error("Error: " + errorMessages);
 
                     string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
@@ -887,6 +901,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model, string pat, string accountName)
         {
+            logger.Info(" Project Name: " + model.ProjectName + " Template Selected: " + model.SelectedTemplate);
             pat = model.accessToken;
             //define versions to be use
             string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
