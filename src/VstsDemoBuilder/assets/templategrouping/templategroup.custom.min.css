@@ -8619,10 +8619,10 @@ html, body {
 
     .template-body .template {
         padding: 16px;
-        padding-right:0px;
+        padding-right: 0px;
         background-color: #fff;
-        min-width: 250px;
-        max-width: 350px;
+        /*min-width: 250px;*/
+        max-width: 23%;
         margin: 8px;
         opacity: 0;
         border-radius: 8px;
@@ -8631,7 +8631,6 @@ html, body {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         width: 420px;
-     
         height: 220px;
         max-height: 220px;
         overflow-y: auto;
@@ -8703,5 +8702,9 @@ html, body {
         transform: translate3d(0, 0, 0);
         opacity: 1;
     }
+}
+.cloud__bg {
+    background: url(https://azuretfsextension.hosting.portal.azure.net/azuretfsextension/Content/17.148.28722.1/Icons/azurePortal-headerRibbonBackground-1x.png);
+    background-size: cover;
 }
 /*# sourceMappingURL=custom.min.css.map */

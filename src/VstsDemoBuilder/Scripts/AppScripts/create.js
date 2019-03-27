@@ -350,9 +350,9 @@ $(document).ready(function (event) {
             if (groups.Groups.length > 0) {
                 for (var g = 0; g < groups.Groups.length; g++) {
                     if (g === 0)
-                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
+                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>';
                     else
-                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
+                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>';
                 }
                 $('#modtemplateGroup').empty().append(grp);
 
@@ -985,7 +985,8 @@ function getGroups(grpSelected) {
                                         }
                                         grp += '</p>';
                                     }
-                                    grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                    let desc = (MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' : MatchedGroup.Template[i].Description;
+                                    grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
                                     grp += '</div>';
                                 }
                                 else {
@@ -1005,7 +1006,8 @@ function getGroups(grpSelected) {
                                         }
                                         grp += '</p>';
                                     }
-                                    grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                    let desc = (MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' : MatchedGroup.Template[i].Description;
+                                    grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
                                     grp += '</div>';
                                 }
                             }
