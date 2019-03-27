@@ -444,15 +444,11 @@ namespace VstsDemoBuilder.Controllers
                 {
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
                 }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
 
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
-                logPath += "Log_" + folder + DateTime.Now.ToString("ddMMyymmss") + ".txt";
 
                 extractPath = Server.MapPath("~/Templates/" + folder);
-                System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
-                System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
 
                 if (Directory.Exists(extractPath))
                 {
@@ -464,8 +460,6 @@ namespace VstsDemoBuilder.Controllers
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
-                System.IO.File.AppendAllText(logPath, "settingFileOut :" + settingFile + "\r\n" + "projectFileOut :" + projectFile + "\r\n");
-
 
                 if (settingFile && projectFile)
                 {
@@ -480,7 +474,6 @@ namespace VstsDemoBuilder.Controllers
                     {
                         Directory.Delete(extractPath, true);
                         return Json("ISPRIVATEERROR");
-
                     }
                 }
                 else if (!settingFile && !projectFile)
@@ -495,14 +488,11 @@ namespace VstsDemoBuilder.Controllers
                     {
                         return Json("Could not find required preoject setting and project template file.");
                     }
-                    System.IO.File.AppendAllText(logPath, "SubDir Path :" + subDir + "\r\n");
+
                     if (subDir != "")
                     {
-
                         bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
                         bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
-                        System.IO.File.AppendAllText(logPath, "settingFileIn :" + settingFile1 + "\r\n" + "projectFileIn :" + projectFile1 + "\r\n");
-
                         if (settingFile1 && projectFile1)
                         {
                             string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
@@ -519,29 +509,23 @@ namespace VstsDemoBuilder.Controllers
                                 }
                                 //Create a tempprary directory
                                 string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
-                                System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
-                                    System.IO.File.AppendAllText(logPath, "sourceDirectory Path :" + sourceDirectory + "\r\n");
 
                                     if (Directory.Exists(targetDirectory))
                                     {
-                                        System.IO.File.AppendAllText(logPath, "targetDirectory Path :" + targetDirectory + "\r\n");
-                                        //copy the content of source directory to temp directory
 
+                                        //copy the content of source directory to temp directory
                                         Directory.Move(sourceDirectory, backupDirectoryRandom);
-                                        System.IO.File.AppendAllText(logPath, "Copied to temp dir" + "\r\n");
 
                                         //Delete the target directory
                                         Directory.Delete(targetDirectory);
-                                        System.IO.File.AppendAllText(logPath, "Deleted Target dir" + "\r\n");
 
                                         //Target Directory should not be exist, it will create a new directory
                                         Directory.Move(backupDirectoryRandom, targetDirectory);
-                                        System.IO.File.AppendAllText(logPath, "Movied Target dir" + "\r\n");
 
-                                        System.IO.DirectoryInfo di = new DirectoryInfo(backupDirectory);
+                                        DirectoryInfo di = new DirectoryInfo(backupDirectory);
 
                                         foreach (FileInfo file in di.GetFiles())
                                         {
@@ -584,10 +568,8 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 Directory.Delete(extractPath, true);
-                System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
             }
-
             return Json("0");
         }
 
@@ -611,7 +593,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(ex + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
             }
             return string.Empty;
@@ -851,45 +833,52 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="result"></param>
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
-            ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
-            string[] strResult = processTask.EndInvoke(result);
-
-            RemoveKey(strResult[0]);
-            if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
+            try
             {
-                string errorMessages = statusMessages[strResult[0] + "_Errors"];
-                if (errorMessages != "")
+                ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
+                string[] strResult = processTask.EndInvoke(result);
+
+                RemoveKey(strResult[0]);
+                if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
                 {
-                    //also, log message to file system
-                    string logPath = Server.MapPath("~") + @"\Log";
-                    string accountName = strResult[1];
-                    string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-
-                    if (!Directory.Exists(logPath))
+                    string errorMessages = statusMessages[strResult[0] + "_Errors"];
+                    if (errorMessages != "")
                     {
-                        Directory.CreateDirectory(logPath);
-                    }
+                        //also, log message to file system
+                        string logPath = Server.MapPath("~") + @"\Log";
+                        string accountName = strResult[1];
+                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                        if (!Directory.Exists(logPath))
+                        {
+                            Directory.CreateDirectory(logPath);
+                        }
 
-                    //Create ISSUE work item with error details in VSTSProjectgenarator account
-                    string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                    string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                    string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                    IssueWI objIssue = new IssueWI();
+                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                    errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
-                    errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
+                        //Create ISSUE work item with error details in VSTSProjectgenarator account
+                        string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                        string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                        string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        IssueWI objIssue = new IssueWI();
 
-                    logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
 
-                    string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                    if (logWIT == "true")
-                    {
-                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                        logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+
+                        string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                        if (logWIT == "true")
+                        {
+                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
         }
 
@@ -975,40 +964,46 @@ namespace VstsDemoBuilder.Controllers
             string projectSettingsFile = string.Empty;
 
             //initialize project template and settings
-            if (System.IO.File.Exists(projTemplateFile))
+            try
             {
-                string templateItems = model.ReadJsonFile(projTemplateFile);
-                template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
-
-                projectSettingsFile = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.ProjectSettings);
-                if (System.IO.File.Exists(projectSettingsFile))
+                if (System.IO.File.Exists(projTemplateFile))
                 {
-                    settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
+                    string templateItems = model.ReadJsonFile(projTemplateFile);
+                    template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
 
-                    if (!string.IsNullOrWhiteSpace(settings.type))
+                    projectSettingsFile = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.ProjectSettings);
+                    if (System.IO.File.Exists(projectSettingsFile))
                     {
-                        if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                        settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
+
+                        if (!string.IsNullOrWhiteSpace(settings.type))
                         {
-                            processTemplateId = Default.SCRUM;
-                        }
-                        else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
-                        {
-                            processTemplateId = Default.Agile;
-                        }
-                        else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
-                        {
-                            processTemplateId = Default.CMMI;
+                            if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                            {
+                                processTemplateId = Default.SCRUM;
+                            }
+                            else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
+                            {
+                                processTemplateId = Default.Agile;
+                            }
+                            else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
+                            {
+                                processTemplateId = Default.CMMI;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    AddMessage(model.id.ErrorId(), "Project Template not found");
+                    StatusMessages[model.id] = "100";
+                    return new string[] { model.id, accountName };
+                }
             }
-            else
+            catch (Exception ex)
             {
-                AddMessage(model.id.ErrorId(), "Project Template not found");
-                StatusMessages[model.id] = "100";
-                return new string[] { model.id, accountName };
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
-
             //create team project
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
