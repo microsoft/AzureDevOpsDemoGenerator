@@ -324,7 +324,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
             }
@@ -375,7 +375,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return View();
             }
         }
@@ -425,7 +425,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex + Environment.NewLine);
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                     return Json("Error occurred. Error details: " + ex.Message);
                 }
             }
@@ -582,7 +582,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(ex + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 Directory.Delete(extractPath, true);
                 System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
@@ -647,7 +647,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(ex + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -690,7 +690,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex + Environment.NewLine);
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                     profile.ErrorMessage = ex.Message;
                 }
             }
@@ -735,7 +735,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex + Environment.NewLine);
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                     return null;
                 }
             }
@@ -777,7 +777,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(ex + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return accounts;
             }
             return accounts;
@@ -814,7 +814,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(ex + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return null;
             }
             return Json(mod, JsonRequestBehavior.AllowGet);
@@ -840,7 +840,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(ex + Environment.NewLine);
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
             return true;
         }
@@ -881,7 +881,8 @@ namespace VstsDemoBuilder.Controllers
 
                     errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
                     errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
-                    logger.Error("Error: " + errorMessages);
+
+                    logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
                     string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
@@ -901,7 +902,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model, string pat, string accountName)
         {
-            logger.Info(" Project Name: " + model.ProjectName + " Template Selected: " + model.SelectedTemplate);
+            logger.Info("Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
             pat = model.accessToken;
             //define versions to be use
             string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];

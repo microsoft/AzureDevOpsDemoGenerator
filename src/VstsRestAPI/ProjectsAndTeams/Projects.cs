@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace VstsRestAPI.ProjectsAndTeams
     public class Projects : ApiServiceBase
     {
         public Projects(IConfiguration configuration) : base(configuration) { }
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Check for the existance of project
         /// </summary>
@@ -39,20 +40,28 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public ProjectsResponse.ProjectResult GetListOfProjects()
         {
-            ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
-            using (var client = GetHttpClient())
+            try
             {
-                // connect to the REST endpoint            
-                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
-                // check to see if we have a succesfull respond
-                if (response.IsSuccessStatusCode)
+                ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
+                using (var client = GetHttpClient())
                 {
-                    // set the viewmodel from the content in the response
-                    viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+                    // connect to the REST endpoint            
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
+                    // check to see if we have a succesfull respond
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // set the viewmodel from the content in the response
+                        viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+                    }
+                    viewModel.HttpStatusCode = response.StatusCode;
+                    return viewModel;
                 }
-                viewModel.HttpStatusCode = response.StatusCode;
-                return viewModel;
             }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return new ProjectsResponse.ProjectResult();
         }
 
         /// <summary>
