@@ -1993,6 +1993,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2015,6 +2016,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2071,9 +2073,8 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message + ex.StackTrace + Environment.NewLine);
-
             }
         }
 
@@ -2134,6 +2135,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2221,6 +2223,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2294,6 +2297,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2349,6 +2353,7 @@ namespace VstsDemoBuilder.Controllers
 
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             return flag;
@@ -2382,6 +2387,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2465,10 +2471,10 @@ namespace VstsDemoBuilder.Controllers
                     flag = true;
                 }
                 return flag;
-
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             flag = false;
@@ -2843,10 +2849,12 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (OperationCanceledException oce)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n" + oce.StackTrace + Environment.NewLine);
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2993,8 +3001,9 @@ namespace VstsDemoBuilder.Controllers
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
             }
         }
@@ -3075,36 +3084,11 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
                 return false;
             }
         }
-        /// <summary>
-        /// Mail Configuration
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public JsonResult SendEmail(Email model)
-        {
-            Email objEmail = new Email();
-            string subject = "Azure Devops Demo Generator error detail";
-
-            var bodyContent = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/EmailTemplates/ErrorDetail.html"));
-
-            bodyContent = bodyContent.Replace("$body$", model.ErrorLog);
-            bodyContent = bodyContent.Replace("$AccountName$", model.AccountName);
-            bodyContent = bodyContent.Replace("$Email$", model.EmailAddress);
-            string toEmail = System.Configuration.ConfigurationManager.AppSettings["toEmail"];
-            bool isMailSent = objEmail.SendEmail(toEmail, bodyContent, subject);
-            if (isMailSent)
-            {
-                return Json(new { sent = "true" }, JsonRequestBehavior.AllowGet);
-            }
-            return Json(new { sent = "false" }, JsonRequestBehavior.AllowGet);
-
-        }
-
         /// <summary>
         /// Get Session data
         /// </summary>
@@ -3139,67 +3123,70 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_wikiConfiguration"></param>
         public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
         {
-            ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
-            string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
-            if (Directory.Exists(projectWikiFolderPath))
+            try
             {
-                string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
-                if (System.IO.File.Exists(createWiki))
+                ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
+                string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
+                if (Directory.Exists(projectWikiFolderPath))
                 {
-                    string jsonString = System.IO.File.ReadAllText(createWiki);
-                    jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
-                        .Replace("$Name$", model.Environment.ProjectName);
-                    ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
-                    string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
-                    foreach (var dir in subDirectories)
+                    string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
+                    if (System.IO.File.Exists(createWiki))
                     {
-                        //dirName==parentName//
-                        string[] dirSplit = dir.Split('\\');
-                        string dirName = dirSplit[dirSplit.Length - 1];
-                        string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
-                        sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
-                        bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
-
-                        if (isPage)
+                        string jsonString = System.IO.File.ReadAllText(createWiki);
+                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
+                            .Replace("$Name$", model.Environment.ProjectName);
+                        ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                        string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
+                        foreach (var dir in subDirectories)
                         {
-                            string[] getFiles = System.IO.Directory.GetFiles(dir);
-                            if (getFiles.Length > 0)
+                            //dirName==parentName//
+                            string[] dirSplit = dir.Split('\\');
+                            string dirName = dirSplit[dirSplit.Length - 1];
+                            string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                            sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
+                            bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
+
+                            if (isPage)
                             {
-                                List<string> childFileNames = new List<string>();
-                                foreach (var file in getFiles)
+                                string[] getFiles = System.IO.Directory.GetFiles(dir);
+                                if (getFiles.Length > 0)
                                 {
-                                    string[] fileNameExtension = file.Split('\\');
-                                    string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
-                                    string fileContent = model.ReadJsonFile(file);
-                                    bool isCreated = false;
-                                    Dictionary<string, string> dic = new Dictionary<string, string>();
-                                    dic.Add("content", fileContent);
-                                    string newContent = JsonConvert.SerializeObject(dic);
-                                    if (fileName == dirName)
+                                    List<string> childFileNames = new List<string>();
+                                    foreach (var file in getFiles)
                                     {
-                                        manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                    }
-                                    else
-                                    {
-                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                    }
-                                    if (isCreated)
-                                    {
-                                        childFileNames.Add(fileName);
-                                    }
-                                }
-                                if (childFileNames.Count > 0)
-                                {
-                                    foreach (var child in childFileNames)
-                                    {
-                                        if (child != dirName)
+                                        string[] fileNameExtension = file.Split('\\');
+                                        string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
+                                        string fileContent = model.ReadJsonFile(file);
+                                        bool isCreated = false;
+                                        Dictionary<string, string> dic = new Dictionary<string, string>();
+                                        dic.Add("content", fileContent);
+                                        string newContent = JsonConvert.SerializeObject(dic);
+                                        if (fileName == dirName)
                                         {
-                                            string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
-                                            if (!string.IsNullOrEmpty(movePages))
+                                            manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        }
+                                        else
+                                        {
+                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        }
+                                        if (isCreated)
+                                        {
+                                            childFileNames.Add(fileName);
+                                        }
+                                    }
+                                    if (childFileNames.Count > 0)
+                                    {
+                                        foreach (var child in childFileNames)
+                                        {
+                                            if (child != dirName)
                                             {
-                                                movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
-                                                manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                                string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
+                                                if (!string.IsNullOrEmpty(movePages))
+                                                {
+                                                    movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
+                                                    manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                                }
                                             }
                                         }
                                     }
@@ -3208,6 +3195,10 @@ namespace VstsDemoBuilder.Controllers
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
         }
         public void CreateCodeWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
@@ -3248,6 +3239,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
@@ -3288,10 +3280,12 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+            }
             return string.Empty;
         }
-
         #endregion
     }
 }
