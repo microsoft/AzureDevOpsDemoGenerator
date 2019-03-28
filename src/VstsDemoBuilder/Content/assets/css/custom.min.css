@@ -7983,8 +7983,9 @@ html, body {
 }
 
 .jumbotron {
-    background: url('../images/vsts_header_image.png'), #106ebe;
-    background-size: 1500px;
+    background: url(../images/bg.jpg), #106ebe;
+    background-size: cover;
+    background-position: center;
 }
 
 .custom-radio button {

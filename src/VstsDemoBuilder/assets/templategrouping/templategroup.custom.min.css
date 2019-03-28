@@ -8707,4 +8707,54 @@ html, body {
     background: url(https://azuretfsextension.hosting.portal.azure.net/azuretfsextension/Content/17.148.28722.1/Icons/azurePortal-headerRibbonBackground-1x.png);
     background-size: cover;
 }
+.VSTS-create-page-feedback:hover {
+    opacity: 1;
+    
+}
+.VSTS-create-page-feedback a {
+    color: #fff !important;
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+}
+.VSTS-create-page-feedback a:hover {
+    color: #fff !important;
+    letter-spacing: 2px;
+}
+
+.VSTS-create-page-feedback {
+    font-size: 0.8rem;
+    background: linear-gradient(to right,#1F4AB8, #0f6ebe);
+    padding: 10px;
+    color: #fff;
+    opacity: 0.7;
+    transition: 0.3s all ease-in-out;
+    animation: 1s attract infinite ease-in-out;
+    border-radius: 4px;
+}
+
+
+@keyframes attract {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(15,110,190,0.5);
+    }
+
+    100% {
+        box-shadow: 0px 0px 10px 10px rgba(15,110,190,0);
+    }
+}
+
+-webkit-@keyframes attract {
+    0%
+
+{
+    box-shadow: 0px 0px 0px 0px rgba(15,110,190,0.5);
+}
+
+100% {
+    box-shadow: 0px 0px 10px 10px rgba(15,110,190,0);
+}
+
+}
+
 /*# sourceMappingURL=custom.min.css.map */
