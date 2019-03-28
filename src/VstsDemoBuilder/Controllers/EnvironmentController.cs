@@ -1002,7 +1002,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
             //create team project
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
@@ -1580,7 +1580,7 @@ namespace VstsDemoBuilder.Controllers
                 string jsonTeams = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamsJSON);
                 if (System.IO.File.Exists(jsonTeams))
                 {
-                    VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
+                    Teams objTeam = new Teams(_projectConfig);
                     jsonTeams = model.ReadJsonFile(jsonTeams);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
@@ -1639,6 +1639,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1667,6 +1668,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1706,6 +1708,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1738,6 +1741,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             return result;
@@ -1766,6 +1770,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1793,6 +1798,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1821,6 +1827,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1857,6 +1864,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1903,6 +1911,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }

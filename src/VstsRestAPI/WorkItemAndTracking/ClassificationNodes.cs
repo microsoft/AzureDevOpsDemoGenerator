@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -11,7 +12,7 @@ namespace VstsRestAPI.WorkItemAndTracking
     public partial class ClassificationNodes : ApiServiceBase
     {
         public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Get Iteration
         /// </summary>
@@ -19,23 +20,29 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public GetNodesResponse.Nodes GetIterations(string projectName)
         {
-            GetNodesResponse.Nodes viewModel = new GetNodesResponse.Nodes();
-
-            using (var client = GetHttpClient())
+            try
             {
-                HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, projectName)).Result;
-                if (response.IsSuccessStatusCode)
+                GetNodesResponse.Nodes viewModel = new GetNodesResponse.Nodes();
+                using (var client = GetHttpClient())
                 {
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, projectName)).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        viewModel = response.Content.ReadAsAsync<GetNodesResponse.Nodes>().Result;
-                    }
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetNodesResponse.Nodes>().Result;
+                            return viewModel;
+                        }
 
-                    viewModel.HttpStatusCode = response.StatusCode;
+                        viewModel.HttpStatusCode = response.StatusCode;
+                    }
                 }
             }
-
-            return viewModel;
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return new GetNodesResponse.Nodes();
         }
 
         /// <summary>
