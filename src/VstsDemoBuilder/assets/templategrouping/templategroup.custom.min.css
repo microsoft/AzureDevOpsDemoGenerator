@@ -8712,7 +8712,7 @@ html, body {
     
 }
 .VSTS-create-page-feedback a {
-    color: #fff !important;
+    /*color: #fff !important;*/
     text-decoration: underline;
     transition: all 0.3s ease-in-out;
     font-weight: 700;
@@ -8724,9 +8724,9 @@ html, body {
 
 .VSTS-create-page-feedback {
     font-size: 0.8rem;
-    background: linear-gradient(to right,#1F4AB8, #0f6ebe);
+    /*background: linear-gradient(to right,#1F4AB8, #0f6ebe);*/
     padding: 10px;
-    color: #fff;
+    /*color: #fff;*/
     opacity: 0.7;
     transition: 0.3s all ease-in-out;
     animation: 1s attract infinite ease-in-out;

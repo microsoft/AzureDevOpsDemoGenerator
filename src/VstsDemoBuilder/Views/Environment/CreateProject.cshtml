@@ -161,6 +161,12 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
+        <p class="m-0">
+            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+        </p>
         @{
             if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
             {
@@ -211,7 +217,6 @@
                 <div class="form-group row">
                     <div class="col-lg-12">
                         <label for="ddlAcccountName" class="d-block col-form-label" style="font-weight: 700;">Select Organization :</label>
-
                         @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
                         <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
                         </div>
@@ -220,21 +225,7 @@
                         </div>
                     </div>
                 </div>
-                @*<div class="form-group row" id="">
-                        <div class="col-lg-12">
-                            <label for="Template" class="d-block col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
-                            <div class="row align-items-center ml-0">
-                                <input type="text" class="form-control col mr-3 mt-lg-0" id="ddlTemplates" disabled />
-                                <div class="template-invoke col-2" style="padding-left:0px;">
-                                    <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; font-size:12px;width: auto">
-                                        Choose template
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
-                            </div>
-                        </div>
-                    </div>*@
+               
                 <div class="form-group row" id="">
                     <div class="col-lg-12 mt-1">
                         <label for="Template" class="d-block col-form-label " style="font-weight:700">Choose template  :</label>
@@ -270,17 +261,7 @@
                         </div>
                     </div>
                 </div>
-                @*<div class="form-group row">
-                        <div class="col-lg-12">
-                            <label for="inputPassword" class="d-block col-form-label" style="font-weight: 400;">New Project Name :</label>
-                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
-                            </div>
-                        </div>
-                    </div>*@
 
-                <!--SELECT TEMPLATE BUTTON-->
-                <!--/SELECT TEMPLATE BUTTON-->
                 <!-- PROJECT PARAMETERS -->
                 <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
                     <label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">SonarQube URL:</label>
@@ -295,9 +276,7 @@
                 </div>
                 <!-- PROJECT PARAMETERS -->
                 <!--EXTENSIONS -->
-                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border d-block p-3">
-
-                </div>
+               
                 <div class="mt-4 border p-3 d-none " id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">
@@ -305,16 +284,6 @@
                     </div>
                 </div>
                 <!--/EXTENSIONS -->
-                @*<div class="form-group row" id="">
-                        <div class="col-lg-9  mb-3 mt-1">
-                        </div>
-                        <div class="col-lg-3  mb-3 mt-3" style="padding-left:9px; ">
-                            <button class="btn btn-primary submitBtn btnUpdate" id="btnSubmit" style=" width: 73%; font-size: 12px; margin-left: -12px">
-                                Create Project
-                            </button>
-                            <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
-                        </div>
-                    </div>*@
                 <div class="card mt-3 d-none col-lg-11" id="finalLink">
                     <div class="card-body" id="accountLink" style="color: green;font-weight: 300; padding-left:0px; padding-right:0px;">
                     </div>
@@ -346,6 +315,9 @@
 
                         </p>
                     </div>
+                </div>
+                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border d-block p-3">
+
                 </div>
                 <div class="card bg-primary mb-3 mt-auto" id="errorNotify" style="display:none;">
                     <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
