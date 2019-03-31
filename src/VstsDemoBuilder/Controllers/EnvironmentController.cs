@@ -891,7 +891,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model, string pat, string accountName)
         {
-            logger.Info("Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
+            logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
             pat = model.accessToken;
             //define versions to be use
             string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
@@ -1511,7 +1511,7 @@ namespace VstsDemoBuilder.Controllers
             bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
             if (isBuild)
             {
-                //AddMessage(model.id, "Build definition created");
+                AddMessage(model.id, "Build definition created");
             }
 
             //Queue a Build
@@ -1531,7 +1531,7 @@ namespace VstsDemoBuilder.Controllers
             bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
             if (isReleased)
             {
-                //AddMessage(model.id, "Release definition created");
+                AddMessage(model.id, "Release definition created");
             }
 
             //Create query and widgets
