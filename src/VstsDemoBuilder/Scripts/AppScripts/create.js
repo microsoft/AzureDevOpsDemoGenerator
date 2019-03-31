@@ -985,7 +985,7 @@ function getGroups(grpSelected) {
                                         }
                                         grp += '</p>';
                                     }
-                                    let desc = (MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' : MatchedGroup.Template[i].Description;
+                                    let desc = MatchedGroup.Template[i].Description; /*(MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' :*/
                                     grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
                                     grp += '</div>';
                                 }
@@ -1006,7 +1006,7 @@ function getGroups(grpSelected) {
                                         }
                                         grp += '</p>';
                                     }
-                                    let desc = (MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' : MatchedGroup.Template[i].Description;
+                                    let desc = MatchedGroup.Template[i].Description;
                                     grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
                                     grp += '</div>';
                                 }

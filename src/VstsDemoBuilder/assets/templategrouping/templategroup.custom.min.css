@@ -8639,7 +8639,14 @@ html, body {
         .template-body .template:hover {
             transform: translate3d(0, -5px, 0);
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.09);
+            background-color: #f1fdff
         }
+
+            .template-body .template:hover p i {
+                background-color: #ffffff;
+                /*border: 1px solid black;*/
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.09);
+            }
 
         .template-body .template .description {
             font-size: 12px;
@@ -8662,6 +8669,20 @@ html, body {
 
 .template-dialog-title {
     position: relative;
+}
+.template p i {
+    font-size: 11px !important;
+    color: #1d2124 !important;
+    line-height: 16px;
+    display: inline-block;
+    margin: 0 3px 6px 0;
+    padding: 1px 9px;
+    border:none;
+    text-decoration: none !important;
+    transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -webkit-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
 }
 
 .template-close {
@@ -8703,24 +8724,27 @@ html, body {
         opacity: 1;
     }
 }
+
 .cloud__bg {
     background: url(https://azuretfsextension.hosting.portal.azure.net/azuretfsextension/Content/17.148.28722.1/Icons/azurePortal-headerRibbonBackground-1x.png);
     background-size: cover;
 }
+
 .VSTS-create-page-feedback:hover {
     opacity: 1;
-    
 }
+
 .VSTS-create-page-feedback a {
     /*color: #fff !important;*/
     text-decoration: underline;
     transition: all 0.3s ease-in-out;
     font-weight: 700;
 }
-.VSTS-create-page-feedback a:hover {
-    color: #fff !important;
-    letter-spacing: 2px;
-}
+
+    .VSTS-create-page-feedback a:hover {
+        color: #fff !important;
+        letter-spacing: 2px;
+    }
 
 .VSTS-create-page-feedback {
     font-size: 0.8rem;
