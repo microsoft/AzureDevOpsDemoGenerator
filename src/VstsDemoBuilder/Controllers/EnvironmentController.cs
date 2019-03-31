@@ -324,7 +324,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
             }
@@ -375,7 +375,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return View();
             }
         }
@@ -425,7 +425,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                     return Json("Error occurred. Error details: " + ex.Message);
                 }
             }
@@ -566,7 +566,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 Directory.Delete(extractPath, true);
                 return Json(ex.Message);
             }
@@ -593,7 +593,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
             }
             return string.Empty;
@@ -629,7 +629,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -672,7 +672,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                     profile.ErrorMessage = ex.Message;
                 }
             }
@@ -717,7 +717,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                     return null;
                 }
             }
@@ -759,7 +759,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return accounts;
             }
             return accounts;
@@ -796,7 +796,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return null;
             }
             return Json(mod, JsonRequestBehavior.AllowGet);
@@ -822,7 +822,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
             return true;
         }
@@ -878,7 +878,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
         }
 
@@ -1002,7 +1002,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
             //create team project
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
@@ -1639,7 +1639,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1668,7 +1668,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1708,7 +1708,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1741,7 +1741,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             return result;
@@ -1770,7 +1770,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1798,7 +1798,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1827,7 +1827,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1864,7 +1864,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1911,7 +1911,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1993,7 +1993,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2016,7 +2016,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2073,7 +2073,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2135,7 +2135,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2223,7 +2223,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2297,7 +2297,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2353,7 +2353,7 @@ namespace VstsDemoBuilder.Controllers
 
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             return flag;
@@ -2387,7 +2387,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2474,7 +2474,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             flag = false;
@@ -2849,12 +2849,12 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (OperationCanceledException oce)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n" + oce.StackTrace + Environment.NewLine);
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -3003,7 +3003,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
             }
         }
@@ -3084,7 +3084,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
                 return false;
             }
@@ -3198,7 +3198,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
         }
         public void CreateCodeWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
@@ -3239,7 +3239,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
@@ -3282,7 +3282,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }

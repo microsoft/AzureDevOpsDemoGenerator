@@ -35,6 +35,7 @@ namespace VstsRestAPI.Service
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<ServiceEndpointModel>().Result;
+                        return viewModel;
                     }
                     else
                     {
