@@ -47,7 +47,7 @@ namespace VstsRestAPI.Service
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateServiceEndPoint" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateServiceEndPoint" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new ServiceEndpointModel();
         }
@@ -77,7 +77,7 @@ namespace VstsRestAPI.Service
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetServiceEndPoints" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetServiceEndPoints" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new GetServiceEndpoints.ServiceEndPoint();
         }

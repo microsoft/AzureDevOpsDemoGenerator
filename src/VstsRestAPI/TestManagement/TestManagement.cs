@@ -47,7 +47,7 @@ namespace VstsRestAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -90,7 +90,7 @@ namespace VstsRestAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -130,7 +130,7 @@ namespace VstsRestAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddTestCasesToSuite" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddTestCasesToSuite" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }

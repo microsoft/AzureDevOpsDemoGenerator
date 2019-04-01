@@ -50,7 +50,7 @@ namespace VstsRestAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -81,7 +81,7 @@ namespace VstsRestAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRelease" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRelease" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -117,7 +117,7 @@ namespace VstsRestAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetEnvironmentIdsByName" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetEnvironmentIdsByName" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return environmentIds;
         }

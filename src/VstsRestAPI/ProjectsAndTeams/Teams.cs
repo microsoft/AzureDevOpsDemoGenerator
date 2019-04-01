@@ -48,7 +48,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new GetTeamResponse.Team();
         }
@@ -83,7 +83,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new TeamMemberResponse.TeamMembers();
         }
@@ -128,7 +128,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -167,7 +167,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -198,7 +198,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -236,7 +236,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -267,7 +267,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new TeamIterationsResponse.Iterations();
         }
@@ -307,7 +307,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetIterationsForTeam \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetIterationsForTeam \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -342,7 +342,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new TeamResponse();
         }
@@ -379,7 +379,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch(Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }

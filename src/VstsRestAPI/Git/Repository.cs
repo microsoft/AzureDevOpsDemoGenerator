@@ -45,7 +45,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -79,7 +79,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetRepositoryToDelete" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetRepositoryToDelete" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
 
             return string.Empty;
@@ -119,7 +119,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetDefaultRepository" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetDefaultRepository" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -151,7 +151,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetAllRepositories" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetAllRepositories" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new GetAllRepositoriesResponse.Repositories();
         }
@@ -198,7 +198,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRepository" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRepository" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -225,7 +225,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "DeleteRepository" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "DeleteRepository" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -269,7 +269,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreatePullRequest" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreatePullRequest" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -311,7 +311,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateCommentThread" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateCommentThread" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -350,7 +350,7 @@ namespace VstsRestAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddCommentToThread" + "\t" + ex.Message + "\t" + ex.InnerException.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddCommentToThread" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
         }
     }
