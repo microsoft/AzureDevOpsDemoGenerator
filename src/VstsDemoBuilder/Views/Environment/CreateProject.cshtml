@@ -165,8 +165,8 @@
             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
             <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
             <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
-            <a href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com" target="_blank"><img src="~/Images/email.png" style="width:20px;" /></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>
+            <a class="nav-link fa fa-envelope" style="color:white" href="#" data-toggle="tooltip" title="Send Feedback" onclick="javascript:window.location='mailto:AzureDevOpsDemoGenerator@service.microsoft.com?subject=Azure DevOps Demo Generator Feedback &amp;body=I have some feedback about the Azure DevOps Demo Generator: ' + window.location.href;"></a>
         </p>
         @{
             if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
@@ -249,16 +249,13 @@
                         <div class="row align-items-center ml-0">
                             @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
                             <div class="template-invoke pr-3 " style="padding-left:0px;">
-                                @*<button type="button" class="btn btn-primary" id="" style="padding-left:5px; padding-right:5px; font-size:12px;width: auto">
-                                        Choose template
-                                    </button>*@
                                 <button class="btn btn-primary submitBtn btnUpdate" id="btnSubmit" style="padding-left:5px; padding-right:5px; font-size:13px;width: auto">
                                     &nbsp;&nbsp;Create Project &nbsp;&nbsp;
                                 </button>
                                 <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
                             </div>
                         </div>
-                        <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
+                        <div class="alert alert-danger d-none col-md-12" role="alert" id="txtProjectName_Error">
                         </div>
                     </div>
                 </div>
@@ -309,8 +306,8 @@
                     <div class="card-header bg-primary ">About this Template</div>
                     <div class="card-body" style="background-color:white; color:black">
                         <div class="align-items-center d-flex mb-3">
-                            <img class="mr-3" style="width: 20px;" src="/Templates/TemplateImages/MyHealthClinic.png" alt="logo" />
-                            <p class="aboutTitle font-weight-bold m-0">Azure DevOps</p>
+                            @*<img class="mr-3" id="templateIcon" style="width: 20px;" src="/Templates/TemplateImages/MyHealthClinic.png" alt="logo" />
+                            <p class="aboutTitle font-weight-bold m-0" id="templateName"></p>*@
                         </div>
                         <p class="card-text" id="descContainer">
 

@@ -73,7 +73,7 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-
+        $('#templateselection').removeClass("btn-primary").prop("disabled", true);
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
 
@@ -100,6 +100,10 @@ $(document).ready(function (event) {
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
+        var templateIcon = $(".template.selected").data('image');
+        var templateName = $(".template.selected").data('template');
+        $('#templateIcon').attr('src', templateIcon);
+        $('#templateName').innerHTML = templateName;
 
         var infoMsg = $(".description.descSelected").data('message');
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -494,7 +498,7 @@ $('#btnSubmit').click(function () {
 
         $("#ddlAcccountName").attr("disabled", "disabled");
         $("#txtProjectName").attr("disabled", "disabled");
-        $("#templateselection").prop("disabled", true);
+        $("#templateselection").prop("disabled", true).removeClass('btn-primary');
         $("input.terms").attr("disabled", true);
         $("#txtALertContainer").hide();
         $("#accountLink").html('');
@@ -539,7 +543,7 @@ function getStatus() {
                 $('#ddlAcccountName').prop('selectedIndex', 0);
 
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                $("#templateselection").prop("disabled", false);
+                $("#templateselection").prop("disabled", false).addClass('btn-primary');
                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                 $('#textMuted').removeClass("d-block").addClass("d-none");
                 return;
@@ -571,7 +575,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false);
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             return;
@@ -585,7 +589,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             return;
@@ -603,7 +607,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
 
@@ -647,7 +651,7 @@ function getStatus() {
                                     $("#txtProjectName").val("");
 
                                     $('#ddlAcccountName').prop('selectedIndex', 0);
-                                    $("#templateselection").prop("disabled", false);
+                                    $("#templateselection").prop("disabled", false).addClass('btn-primary');
 
                                     $('#ddlGroups').removeAttr("disabled");
                                     $("#ddlAcccountName").removeAttr("disabled");
@@ -677,7 +681,7 @@ function getStatus() {
                             $("#txtProjectName").val("");
 
                             $('#ddlAcccountName').prop('selectedIndex', 0);
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
@@ -711,7 +715,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
     var Oauthtoken = $('#hiddenAccessToken').val();
     if (accountNam !== "" && selectedTemplate !== "") {
         $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-
+        $('#templateselection').removeClass("btn-primary").prop("disabled", true);
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
@@ -753,6 +757,7 @@ function GetRequiredExtension() {
             $("#imgLoading").hide();
             $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
+            $('#templateselection').addClass("btn-primary").prop("disabled", false);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").prop('disabled', false);
@@ -770,7 +775,7 @@ function GetRequiredExtension() {
                 }
             } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = ""; }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = ""; }
+        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = ""; $('#templateselection').addClass("btn-primary").prop("disabled", false); }
 
     });
 }
@@ -973,7 +978,7 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -994,7 +999,7 @@ function getGroups(grpSelected) {
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
