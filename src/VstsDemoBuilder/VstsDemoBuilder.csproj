@@ -1022,6 +1022,17 @@
     <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\TeamSetting.json" />
     <Content Include="Templates\Keyvault\Teams\Teams.json" />
     <Content Include="Templates\Keyvault\WorkItems\User Story.json" />
+    <Content Include="Templates\ContosoShuttle\Dashboard\Dashboard.json" />
+    <Content Include="Templates\ContosoShuttle\EnableEpic.json" />
+    <Content Include="Templates\ContosoShuttle\EpicfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ImportSourceCode\ContosoShuttle.json" />
+    <Content Include="Templates\ContosoShuttle\PBIfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectSettings.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ServiceEndpoints\ContosoShuttle-code.json" />
+    <Content Include="Templates\ContosoShuttle\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\TeamArea.json" />
+    <Content Include="Templates\ContosoShuttle\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
