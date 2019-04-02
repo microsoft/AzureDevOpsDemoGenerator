@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace VstsRestAPI.ProjectsAndTeams
     public class Projects : ApiServiceBase
     {
         public Projects(IConfiguration configuration) : base(configuration) { }
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Check for the existance of project
         /// </summary>
@@ -39,20 +40,28 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public ProjectsResponse.ProjectResult GetListOfProjects()
         {
-            ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
-            using (var client = GetHttpClient())
+            try
             {
-                // connect to the REST endpoint            
-                HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
-                // check to see if we have a succesfull respond
-                if (response.IsSuccessStatusCode)
+                ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
+                using (var client = GetHttpClient())
                 {
-                    // set the viewmodel from the content in the response
-                    viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+                    // connect to the REST endpoint            
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
+                    // check to see if we have a succesfull respond
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // set the viewmodel from the content in the response
+                        viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+                    }
+                    viewModel.HttpStatusCode = response.StatusCode;
+                    return viewModel;
                 }
-                viewModel.HttpStatusCode = response.StatusCode;
-                return viewModel;
             }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
+            return new ProjectsResponse.ProjectResult();
         }
 
         /// <summary>
@@ -62,35 +71,44 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public string CreateTeamProject(string json)
         {
-            using (var client = GetHttpClient())
+            try
             {
-                var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var method = new HttpMethod("POST");
+                using (var client = GetHttpClient())
+                {
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
 
-                var request = new HttpRequestMessage(method, "_apis/projects?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                var response = client.SendAsync(request).Result;
-                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.Accepted)
-                {
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    string projectId = JObject.Parse(result)["id"].ToString();
-                    return projectId;
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = string.Empty;
-                    if (response.StatusCode.ToString() == "Unauthorized")
+                    var request = new HttpRequestMessage(method, "_apis/projects?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var response = client.SendAsync(request).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.Accepted)
                     {
-                        error = errorMessage.Result;
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        string projectId = JObject.Parse(result)["id"].ToString();
+                        return projectId;
                     }
                     else
                     {
-                        error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = string.Empty;
+                        if (response.StatusCode.ToString() == "Unauthorized")
+                        {
+                            error = errorMessage.Result;
+                        }
+                        else
+                        {
+                            error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        }
+                        LastFailureMessage = error;
+                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + error + "\n");
+                        return "-1";
                     }
-                    this.LastFailureMessage = error;
-                    return "-1";
                 }
             }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
+            return "-1";
         }
 
         /// <summary>
@@ -100,24 +118,31 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetProjectIdByName(string projectName)
         {
-            using (var client = GetHttpClient())
+            try
             {
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "?includeCapabilities=false&api-version=" + _configuration.VersionNumber).Result;
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "?includeCapabilities=false&api-version=" + _configuration.VersionNumber).Result;
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    string projectId = JObject.Parse(result)["id"].ToString();
-                    return projectId;
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                    return Guid.Empty.ToString();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        string projectId = JObject.Parse(result)["id"].ToString();
+                        return projectId;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
+            return Guid.Empty.ToString();
         }
 
         /// <summary>
@@ -127,24 +152,31 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetProjectStateByName(string project)
         {
-            using (var client = GetHttpClient())
+            try
             {
-                HttpResponseMessage response = client.GetAsync("_apis/projects/" + project + "?includeCapabilities=true&api-version=" + _configuration.VersionNumber).Result;
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + project + "?includeCapabilities=true&api-version=" + _configuration.VersionNumber).Result;
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    string projectStatus = JObject.Parse(result)["state"].ToString();
-                    return projectStatus;
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                    return string.Empty;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        string projectStatus = JObject.Parse(result)["state"].ToString();
+                        return projectStatus;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
+            return string.Empty;
         }
 
         public ProjectProperties.Properties GetProjectProperties()
@@ -197,7 +229,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                this.LastFailureMessage = ex.Message;
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
             return new ProjectProperties.Properties();
         }

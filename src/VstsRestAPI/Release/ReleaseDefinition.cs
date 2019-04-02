@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using log4net;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Net.Http;
@@ -10,7 +11,7 @@ namespace VstsRestAPI.Release
     public class ReleaseDefinition : ApiServiceBase
     {
         public ReleaseDefinition(IConfiguration configuration) : base(configuration) { }
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create Release Definition
         /// </summary>
@@ -19,55 +20,70 @@ namespace VstsRestAPI.Release
         /// <returns></returns>
         public string[] CreateReleaseDefinition(string json, string project)
         {
-            string[] releaseDef = new string[2];
-            using (var client = GetHttpClient())
+            try
             {
-                var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var method = new HttpMethod("POST");
-
-                var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                var response = client.SendAsync(request).Result;
-
-                if (response.IsSuccessStatusCode)
+                string[] releaseDef = new string[2];
+                using (var client = GetHttpClient())
                 {
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    releaseDef[0] = JObject.Parse(result)["id"].ToString();
-                    releaseDef[1] = JObject.Parse(result)["name"].ToString();
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
 
-                    return releaseDef;
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                    return releaseDef;
+                    var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var response = client.SendAsync(request).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        releaseDef[0] = JObject.Parse(result)["id"].ToString();
+                        releaseDef[1] = JObject.Parse(result)["name"].ToString();
+
+                        return releaseDef;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                        return releaseDef;
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
+            return new string[] { };
         }
         public bool CreateRelease(string json, string project)
         {
-            using (var client = GetHttpClient())
+            try
             {
-                var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var method = new HttpMethod("POST");
-
-                var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                var response = client.SendAsync(request).Result;
-
-                if (response.IsSuccessStatusCode)
+                using (var client = GetHttpClient())
                 {
-                    return true;
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                    return false;
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
+
+                    var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var response = client.SendAsync(request).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                        return false;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRelease" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
+            return false;
         }
         public int[] GetEnvironmentIdsByName(string project, string definitionName, string environment1, string environment2)
         {
@@ -99,7 +115,10 @@ namespace VstsRestAPI.Release
                     }
                 }
             }
-            catch (Exception) { return environmentIds; }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetEnvironmentIdsByName" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+            }
             return environmentIds;
         }
     }

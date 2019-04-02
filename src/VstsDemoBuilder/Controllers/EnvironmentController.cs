@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+﻿using log4net;
+using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -46,6 +47,7 @@ namespace VstsDemoBuilder.Controllers
         #region Variables & Properties
         private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
+        private ILog logger = LogManager.GetLogger("ErrorLog");
 
         private delegate string[] ProcessEnvironment(Project model, string PAT, string accountName);
         public bool isDefaultRepoTodetele = true;
@@ -309,7 +311,6 @@ namespace VstsDemoBuilder.Controllers
                                 }
                             }
                         }
-
                         return View(model);
                     }
                     return Redirect("../Account/Verify");
@@ -322,6 +323,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
             }
@@ -370,8 +372,9 @@ namespace VstsDemoBuilder.Controllers
                     return Redirect("../Account/Verify");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return View();
             }
         }
@@ -421,6 +424,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     return Json("Error occurred. Error details: " + ex.Message);
                 }
             }
@@ -439,15 +443,11 @@ namespace VstsDemoBuilder.Controllers
                 {
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
                 }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
 
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
-                logPath += "Log_" + folder + DateTime.Now.ToString("ddMMyymmss") + ".txt";
 
                 extractPath = Server.MapPath("~/Templates/" + folder);
-                System.IO.File.AppendAllText(logPath, "Zip Path :" + zipPath + "\r\n");
-                System.IO.File.AppendAllText(logPath, "Extract Path :" + extractPath + "\r\n");
 
                 if (Directory.Exists(extractPath))
                 {
@@ -459,8 +459,6 @@ namespace VstsDemoBuilder.Controllers
 
                 bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
                 bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
-                System.IO.File.AppendAllText(logPath, "settingFileOut :" + settingFile + "\r\n" + "projectFileOut :" + projectFile + "\r\n");
-
 
                 if (settingFile && projectFile)
                 {
@@ -475,7 +473,6 @@ namespace VstsDemoBuilder.Controllers
                     {
                         Directory.Delete(extractPath, true);
                         return Json("ISPRIVATEERROR");
-
                     }
                 }
                 else if (!settingFile && !projectFile)
@@ -490,14 +487,11 @@ namespace VstsDemoBuilder.Controllers
                     {
                         return Json("Could not find required preoject setting and project template file.");
                     }
-                    System.IO.File.AppendAllText(logPath, "SubDir Path :" + subDir + "\r\n");
+
                     if (subDir != "")
                     {
-
                         bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
                         bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
-                        System.IO.File.AppendAllText(logPath, "settingFileIn :" + settingFile1 + "\r\n" + "projectFileIn :" + projectFile1 + "\r\n");
-
                         if (settingFile1 && projectFile1)
                         {
                             string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
@@ -514,29 +508,23 @@ namespace VstsDemoBuilder.Controllers
                                 }
                                 //Create a tempprary directory
                                 string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
-                                System.IO.File.AppendAllText(logPath, "BackUp Path :" + backupDirectoryRandom + "\r\n");
 
                                 if (Directory.Exists(sourceDirectory))
                                 {
-                                    System.IO.File.AppendAllText(logPath, "sourceDirectory Path :" + sourceDirectory + "\r\n");
 
                                     if (Directory.Exists(targetDirectory))
                                     {
-                                        System.IO.File.AppendAllText(logPath, "targetDirectory Path :" + targetDirectory + "\r\n");
-                                        //copy the content of source directory to temp directory
 
+                                        //copy the content of source directory to temp directory
                                         Directory.Move(sourceDirectory, backupDirectoryRandom);
-                                        System.IO.File.AppendAllText(logPath, "Copied to temp dir" + "\r\n");
 
                                         //Delete the target directory
                                         Directory.Delete(targetDirectory);
-                                        System.IO.File.AppendAllText(logPath, "Deleted Target dir" + "\r\n");
 
                                         //Target Directory should not be exist, it will create a new directory
                                         Directory.Move(backupDirectoryRandom, targetDirectory);
-                                        System.IO.File.AppendAllText(logPath, "Movied Target dir" + "\r\n");
 
-                                        System.IO.DirectoryInfo di = new DirectoryInfo(backupDirectory);
+                                        DirectoryInfo di = new DirectoryInfo(backupDirectory);
 
                                         foreach (FileInfo file in di.GetFiles())
                                         {
@@ -577,11 +565,10 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 Directory.Delete(extractPath, true);
-                System.IO.File.AppendAllText(logPath, "Error :" + ex.Message + ex.StackTrace + "\r\n");
                 return Json(ex.Message);
             }
-
             return Json("0");
         }
 
@@ -605,12 +592,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
-                {
-                    Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
-                }
-                logPath = System.Web.HttpContext.Current.Server.MapPath("~/Logs/");
-                System.IO.File.WriteAllText(logPath + "Error_FormatPostData_" + DateTime.Now.ToString("ddMMMyyyy_HHmmss") + ".txt", ex.Message + Environment.NewLine + ex.StackTrace);
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
             }
             return string.Empty;
@@ -646,6 +628,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -688,6 +671,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     profile.ErrorMessage = ex.Message;
                 }
             }
@@ -730,8 +714,9 @@ namespace VstsDemoBuilder.Controllers
                         return null;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     return null;
                 }
             }
@@ -771,8 +756,9 @@ namespace VstsDemoBuilder.Controllers
                     accounts = null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return accounts;
             }
             return accounts;
@@ -807,8 +793,9 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return null;
             }
             return Json(mod, JsonRequestBehavior.AllowGet);
@@ -822,13 +809,20 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public bool StartEnvironmentSetupProcess(Project model)
         {
-            Session["PAT"] = model.accessToken;
-            Session["AccountName"] = model.accountName;
-            AddMessage(model.id, string.Empty);
-            AddMessage(model.id.ErrorId(), string.Empty);
+            try
+            {
+                Session["PAT"] = model.accessToken;
+                Session["AccountName"] = model.accountName;
+                AddMessage(model.id, string.Empty);
+                AddMessage(model.id.ErrorId(), string.Empty);
 
-            ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-            processTask.BeginInvoke(model, model.accessToken, model.accountName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                processTask.BeginInvoke(model, model.accessToken, model.accountName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
             return true;
         }
 
@@ -838,43 +832,52 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="result"></param>
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
-            ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
-            string[] strResult = processTask.EndInvoke(result);
-
-            RemoveKey(strResult[0]);
-            if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
+            try
             {
-                string errorMessages = statusMessages[strResult[0] + "_Errors"];
-                if (errorMessages != "")
+                ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
+                string[] strResult = processTask.EndInvoke(result);
+
+                RemoveKey(strResult[0]);
+                if (StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
                 {
-                    //also, log message to file system
-                    string logPath = Server.MapPath("~") + @"\Log";
-                    string accountName = strResult[1];
-                    string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-
-                    if (!Directory.Exists(logPath))
+                    string errorMessages = statusMessages[strResult[0] + "_Errors"];
+                    if (errorMessages != "")
                     {
-                        Directory.CreateDirectory(logPath);
-                    }
+                        //also, log message to file system
+                        string logPath = Server.MapPath("~") + @"\Log";
+                        string accountName = strResult[1];
+                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                    System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                        if (!Directory.Exists(logPath))
+                        {
+                            Directory.CreateDirectory(logPath);
+                        }
 
-                    //Create ISSUE work item with error details in VSTSProjectgenarator account
-                    string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                    string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                    string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                    IssueWI objIssue = new IssueWI();
+                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                    errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
-                    errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
+                        //Create ISSUE work item with error details in VSTSProjectgenarator account
+                        string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                        string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                        string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        IssueWI objIssue = new IssueWI();
 
-                    string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                    if (logWIT == "true")
-                    {
-                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
+
+                        logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+
+                        string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                        if (logWIT == "true")
+                        {
+                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
 
@@ -887,6 +890,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model, string pat, string accountName)
         {
+            logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
             pat = model.accessToken;
             //define versions to be use
             string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
@@ -959,40 +963,46 @@ namespace VstsDemoBuilder.Controllers
             string projectSettingsFile = string.Empty;
 
             //initialize project template and settings
-            if (System.IO.File.Exists(projTemplateFile))
+            try
             {
-                string templateItems = model.ReadJsonFile(projTemplateFile);
-                template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
-
-                projectSettingsFile = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.ProjectSettings);
-                if (System.IO.File.Exists(projectSettingsFile))
+                if (System.IO.File.Exists(projTemplateFile))
                 {
-                    settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
+                    string templateItems = model.ReadJsonFile(projTemplateFile);
+                    template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
 
-                    if (!string.IsNullOrWhiteSpace(settings.type))
+                    projectSettingsFile = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.ProjectSettings);
+                    if (System.IO.File.Exists(projectSettingsFile))
                     {
-                        if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                        settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
+
+                        if (!string.IsNullOrWhiteSpace(settings.type))
                         {
-                            processTemplateId = Default.SCRUM;
-                        }
-                        else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
-                        {
-                            processTemplateId = Default.Agile;
-                        }
-                        else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
-                        {
-                            processTemplateId = Default.CMMI;
+                            if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                            {
+                                processTemplateId = Default.SCRUM;
+                            }
+                            else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
+                            {
+                                processTemplateId = Default.Agile;
+                            }
+                            else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
+                            {
+                                processTemplateId = Default.CMMI;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    AddMessage(model.id.ErrorId(), "Project Template not found");
+                    StatusMessages[model.id] = "100";
+                    return new string[] { model.id, accountName };
+                }
             }
-            else
+            catch (Exception ex)
             {
-                AddMessage(model.id.ErrorId(), "Project Template not found");
-                StatusMessages[model.id] = "100";
-                return new string[] { model.id, accountName };
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
-
             //create team project
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
@@ -1500,7 +1510,7 @@ namespace VstsDemoBuilder.Controllers
             bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
             if (isBuild)
             {
-                //AddMessage(model.id, "Build definition created");
+                AddMessage(model.id, "Build definition created");
             }
 
             //Queue a Build
@@ -1520,7 +1530,7 @@ namespace VstsDemoBuilder.Controllers
             bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
             if (isReleased)
             {
-                //AddMessage(model.id, "Release definition created");
+                AddMessage(model.id, "Release definition created");
             }
 
             //Create query and widgets
@@ -1569,7 +1579,7 @@ namespace VstsDemoBuilder.Controllers
                 string jsonTeams = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamsJSON);
                 if (System.IO.File.Exists(jsonTeams))
                 {
-                    VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
+                    Teams objTeam = new Teams(_projectConfig);
                     jsonTeams = model.ReadJsonFile(jsonTeams);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
@@ -1628,6 +1638,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1656,6 +1667,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1695,6 +1707,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1727,6 +1740,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             return result;
@@ -1755,6 +1769,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1782,6 +1797,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1810,6 +1826,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
 
@@ -1846,6 +1863,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1892,6 +1910,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1973,6 +1992,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -1995,6 +2015,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2051,9 +2072,8 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message + ex.StackTrace + Environment.NewLine);
-
             }
         }
 
@@ -2114,6 +2134,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2201,6 +2222,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2230,7 +2252,7 @@ namespace VstsDemoBuilder.Controllers
                     string[] testPlanResponse = new string[2];
                     testPlanResponse = objTest.CreateTestPlan(testPlanJson, model.ProjectName);
 
-                    if (testPlanResponse != null)
+                    if (testPlanResponse.Length > 0)
                     {
                         string testSuiteJson = string.Format(templateFolder + @"{0}\TestPlans\TestSuites\{1}", model.SelectedTemplate, fileName);
                         if (System.IO.File.Exists(testSuiteJson))
@@ -2274,6 +2296,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2329,6 +2352,7 @@ namespace VstsDemoBuilder.Controllers
 
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             return flag;
@@ -2362,6 +2386,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2445,10 +2470,10 @@ namespace VstsDemoBuilder.Controllers
                     flag = true;
                 }
                 return flag;
-
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
             flag = false;
@@ -2823,10 +2848,12 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (OperationCanceledException oce)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n" + oce.StackTrace + Environment.NewLine);
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message + ex.StackTrace + Environment.NewLine);
             }
         }
@@ -2973,8 +3000,9 @@ namespace VstsDemoBuilder.Controllers
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
             }
         }
@@ -3055,36 +3083,11 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
                 return false;
             }
         }
-        /// <summary>
-        /// Mail Configuration
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        public JsonResult SendEmail(Email model)
-        {
-            Email objEmail = new Email();
-            string subject = "Azure Devops Demo Generator error detail";
-
-            var bodyContent = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/EmailTemplates/ErrorDetail.html"));
-
-            bodyContent = bodyContent.Replace("$body$", model.ErrorLog);
-            bodyContent = bodyContent.Replace("$AccountName$", model.AccountName);
-            bodyContent = bodyContent.Replace("$Email$", model.EmailAddress);
-            string toEmail = System.Configuration.ConfigurationManager.AppSettings["toEmail"];
-            bool isMailSent = objEmail.SendEmail(toEmail, bodyContent, subject);
-            if (isMailSent)
-            {
-                return Json(new { sent = "true" }, JsonRequestBehavior.AllowGet);
-            }
-            return Json(new { sent = "false" }, JsonRequestBehavior.AllowGet);
-
-        }
-
         /// <summary>
         /// Get Session data
         /// </summary>
@@ -3119,67 +3122,70 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="_wikiConfiguration"></param>
         public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
         {
-            ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
-            string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
-            if (Directory.Exists(projectWikiFolderPath))
+            try
             {
-                string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
-                if (System.IO.File.Exists(createWiki))
+                ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
+                string projectWikiFolderPath = templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
+                if (Directory.Exists(projectWikiFolderPath))
                 {
-                    string jsonString = System.IO.File.ReadAllText(createWiki);
-                    jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
-                        .Replace("$Name$", model.Environment.ProjectName);
-                    ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
-                    string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
-                    foreach (var dir in subDirectories)
+                    string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
+                    if (System.IO.File.Exists(createWiki))
                     {
-                        //dirName==parentName//
-                        string[] dirSplit = dir.Split('\\');
-                        string dirName = dirSplit[dirSplit.Length - 1];
-                        string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
-                        sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
-                        bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
-
-                        if (isPage)
+                        string jsonString = System.IO.File.ReadAllText(createWiki);
+                        jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
+                            .Replace("$Name$", model.Environment.ProjectName);
+                        ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
+                        string[] subDirectories = Directory.GetDirectories(projectWikiFolderPath);
+                        foreach (var dir in subDirectories)
                         {
-                            string[] getFiles = System.IO.Directory.GetFiles(dir);
-                            if (getFiles.Length > 0)
+                            //dirName==parentName//
+                            string[] dirSplit = dir.Split('\\');
+                            string dirName = dirSplit[dirSplit.Length - 1];
+                            string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                            sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
+                            bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
+
+                            if (isPage)
                             {
-                                List<string> childFileNames = new List<string>();
-                                foreach (var file in getFiles)
+                                string[] getFiles = System.IO.Directory.GetFiles(dir);
+                                if (getFiles.Length > 0)
                                 {
-                                    string[] fileNameExtension = file.Split('\\');
-                                    string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
-                                    string fileContent = model.ReadJsonFile(file);
-                                    bool isCreated = false;
-                                    Dictionary<string, string> dic = new Dictionary<string, string>();
-                                    dic.Add("content", fileContent);
-                                    string newContent = JsonConvert.SerializeObject(dic);
-                                    if (fileName == dirName)
+                                    List<string> childFileNames = new List<string>();
+                                    foreach (var file in getFiles)
                                     {
-                                        manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                    }
-                                    else
-                                    {
-                                        isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                    }
-                                    if (isCreated)
-                                    {
-                                        childFileNames.Add(fileName);
-                                    }
-                                }
-                                if (childFileNames.Count > 0)
-                                {
-                                    foreach (var child in childFileNames)
-                                    {
-                                        if (child != dirName)
+                                        string[] fileNameExtension = file.Split('\\');
+                                        string fileName = (fileNameExtension[fileNameExtension.Length - 1].Split('.'))[0];
+                                        string fileContent = model.ReadJsonFile(file);
+                                        bool isCreated = false;
+                                        Dictionary<string, string> dic = new Dictionary<string, string>();
+                                        dic.Add("content", fileContent);
+                                        string newContent = JsonConvert.SerializeObject(dic);
+                                        if (fileName == dirName)
                                         {
-                                            string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
-                                            if (!string.IsNullOrEmpty(movePages))
+                                            manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        }
+                                        else
+                                        {
+                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                        }
+                                        if (isCreated)
+                                        {
+                                            childFileNames.Add(fileName);
+                                        }
+                                    }
+                                    if (childFileNames.Count > 0)
+                                    {
+                                        foreach (var child in childFileNames)
+                                        {
+                                            if (child != dirName)
                                             {
-                                                movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
-                                                manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                                string movePages = System.IO.File.ReadAllText(templatesFolder + "\\MovePages.json");
+                                                if (!string.IsNullOrEmpty(movePages))
+                                                {
+                                                    movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
+                                                    manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                                }
                                             }
                                         }
                                     }
@@ -3188,6 +3194,10 @@ namespace VstsDemoBuilder.Controllers
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
         public void CreateCodeWiki(string templatesFolder, Project model, VstsRestAPI.Configuration _wikiConfiguration)
@@ -3228,6 +3238,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
@@ -3268,10 +3279,12 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
             return string.Empty;
         }
-
         #endregion
     }
 }

@@ -8704,4 +8704,55 @@ html, body {
         opacity: 1;
     }
 }
+.fa-times-circle {
+    color: red;
+}
+
+.fa-check-circle {
+    color: green;
+}
+
+.msgColor {
+    color: red;
+    padding: 6px;
+}
+
+.templateImage {
+    max-width: 36px;
+}
+
+.newFeature {
+    background-color: #DEECF9;
+    line-height: 1.2;
+    color: black;
+}
+
+.vstsScroll {
+    margin-right: 6px;
+}
+
+.template {
+    margin-right: 6px;
+}
+
+    .template:hover::-webkit-scrollbar, .vstsScroll:hover::-webkit-scrollbar {
+        display: block;
+    }
+
+::-webkit-scrollbar {
+    width: 5px;
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 /*# sourceMappingURL=custom.min.css.map */
