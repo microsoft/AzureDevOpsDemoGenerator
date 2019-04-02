@@ -220,9 +220,6 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                int a = 1, b = 0;
-                int c = a / b;
-
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {
@@ -314,7 +311,6 @@ namespace VstsDemoBuilder.Controllers
                                 }
                             }
                         }
-
                         return View(model);
                     }
                     return Redirect("../Account/Verify");
@@ -327,7 +323,6 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Info(ex.Message);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
