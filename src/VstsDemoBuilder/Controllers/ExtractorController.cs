@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace VstsDemoBuilder.Controllers
 
     public class ExtractorController : Controller
     {
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         private AccessDetails accessDetails = new AccessDetails();
         private EnvironmentController con = new EnvironmentController();
         private static readonly object objLock = new object();
@@ -76,56 +78,64 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Index(ProjectList.ProjectDetails model)
         {
-            string pat = "";
-            string email = "";
-            if (Session["PAT"] != null)
+            try
             {
-                pat = Session["PAT"].ToString();
-            }
-            if (Session["Email"] != null)
-            {
-                email = Session["PAT"].ToString();
-            }
-            if (Session["EnableExtractor"] == null || Session["EnableExtractor"].ToString().ToLower() == "false")
-            {
-                return RedirectToAction("NotFound");
-            }
-            if (string.IsNullOrEmpty(pat))
-            {
-                return Redirect("../Account/Verify");
-            }
-            else
-            {
-                accessDetails.access_token = pat;
-                ProfileDetails profile = con.GetProfile(accessDetails);
-                if (profile == null)
+                string pat = "";
+                string email = "";
+                if (Session["PAT"] != null)
                 {
-                    ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
-                    return View(model);
+                    pat = Session["PAT"].ToString();
                 }
-                if (profile.displayName != null && profile.emailAddress != null)
+                if (Session["Email"] != null)
                 {
-                    Session["User"] = profile.displayName;
-                    Session["Email"] = profile.emailAddress.ToLower();
+                    email = Session["PAT"].ToString();
                 }
-                AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
-                model.accessToken = accessDetails.access_token;
-                model.accountsForDropdown = new List<string>();
-                if (accountList.count > 0)
+                if (Session["EnableExtractor"] == null || Session["EnableExtractor"].ToString().ToLower() == "false")
                 {
-                    foreach (var account in accountList.value)
-                    {
-                        model.accountsForDropdown.Add(account.accountName);
-                    }
-                    model.accountsForDropdown.Sort();
+                    return RedirectToAction("NotFound");
+                }
+                if (string.IsNullOrEmpty(pat))
+                {
+                    return Redirect("../Account/Verify");
                 }
                 else
                 {
-                    model.accountsForDropdown.Add("Select Organization");
-                    ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                    accessDetails.access_token = pat;
+                    ProfileDetails profile = con.GetProfile(accessDetails);
+                    if (profile == null)
+                    {
+                        ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
+                        return View(model);
+                    }
+                    if (profile.displayName != null && profile.emailAddress != null)
+                    {
+                        Session["User"] = profile.displayName;
+                        Session["Email"] = profile.emailAddress.ToLower();
+                    }
+                    AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
+                    model.accessToken = accessDetails.access_token;
+                    model.accountsForDropdown = new List<string>();
+                    if (accountList.count > 0)
+                    {
+                        foreach (var account in accountList.value)
+                        {
+                            model.accountsForDropdown.Add(account.accountName);
+                        }
+                        model.accountsForDropdown.Sort();
+                    }
+                    else
+                    {
+                        model.accountsForDropdown.Add("Select Organization");
+                        ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                    }
+                    return View(model);
                 }
-                return View(model);
             }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return View(model);
         }
 
         // Get the current progress of work done
@@ -195,6 +205,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 projectResult.errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
             }
@@ -205,20 +216,27 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public JsonResult GetProjectProperties(string accname, string project, string _credentials)
         {
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
-
-            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
-
-            ProjectProperties.Properties load = new ProjectProperties.Properties();
-            Projects projects = new Projects(config);
-            load = projects.GetProjectProperties();
-            if (load.count > 0)
+            try
             {
-                if (load.TypeClass != null)
+                string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+                string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+
+                Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
+
+                ProjectProperties.Properties load = new ProjectProperties.Properties();
+                Projects projects = new Projects(config);
+                load = projects.GetProjectProperties();
+                if (load.count > 0)
                 {
-                    return Json(load, JsonRequestBehavior.AllowGet);
+                    if (load.TypeClass != null)
+                    {
+                        return Json(load, JsonRequestBehavior.AllowGet);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new JsonResult();
 
@@ -253,7 +271,7 @@ namespace VstsDemoBuilder.Controllers
                     string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
-
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Extractor_" + errorMessages + "\n");
                     string logWIT = "true"; //System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
                     {
@@ -483,222 +501,220 @@ namespace VstsDemoBuilder.Controllers
                 AddMessage(model.id, "Release Definition");
             }
 
-            //string startPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName);
-
-            //string zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            //if (System.IO.File.Exists(zipPath))
-            //{
-            //    System.IO.File.Delete(zipPath);
-            //}
-            //zipPath = Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName + ".zip");
-            //ZipFile.CreateFromDirectory(startPath, zipPath);
-            //Directory.Delete(Path.Combine(Server.MapPath("~") + @"ExtractedTemplate\", model.ProjectName), true);
             StatusMessages[model.id] = "100";
             return new string[] { model.id, "" };
         }
         // Get Team List to write into file
         public bool ExportTeams(Configuration con, string processTemplate, string projectID)
         {
-            string defaultTeamID = string.Empty;
-            VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-            TeamList _team = new TeamList();
-            string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
-            con.VersionNumber = ProjectPropertyVersion;
-            con.ProjectId = projectID;
-            Projects projects = new Projects(con);
-            ProjectProperties.Properties projectProperties = projects.GetProjectProperties();
-            if (projectProperties.count > 0)
+            try
             {
-                defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
-            }
-            _team = nodes.ExportTeamList(defaultTeamID);
-            if (_team.value != null)
-            {
-                AddMessage(con.Id, "Teams");
-
-                string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
-                if (fetchedJson != "")
+                string defaultTeamID = string.Empty;
+                VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                TeamList _team = new TeamList();
+                string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+                con.VersionNumber = ProjectPropertyVersion;
+                con.ProjectId = projectID;
+                Projects projects = new Projects(con);
+                ProjectProperties.Properties projectProperties = projects.GetProjectProperties();
+                if (projectProperties.count > 0)
                 {
-                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Teams"))
+                    defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
+                }
+                _team = nodes.ExportTeamList(defaultTeamID);
+                if (_team.value != null)
+                {
+                    AddMessage(con.Id, "Teams");
+
+                    string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
+                    if (fetchedJson != "")
                     {
-                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Teams");
-                    }
-                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
-
-                    List<string> boardTypes = new List<string>();
-                    boardTypes.Add("Epics"); boardTypes.Add("Features");
-
-                    if (processTemplate.ToLower() == "agile")
-                    { boardTypes.Add("Stories"); }
-                    else { boardTypes.Add("Backlog Items"); }
-
-                    foreach (var team in _team.value)
-                    {
-                        List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
-                        List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
-                        List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
-
-                        ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
-
-                        List<JObject> jObjCardFieldList = new List<JObject>();
-                        List<JObject> jObjcardStyleList = new List<JObject>();
-                        string teamFolderPath = extractedTemplatePath + con.Project + "\\Teams\\" + team.name;
-                        if (!Directory.Exists(teamFolderPath))
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Teams"))
                         {
-                            Directory.CreateDirectory(teamFolderPath);
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Teams");
                         }
-                        //Export Board Colums for each team
-                        con.Team = team.name;
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
 
-                        VstsRestAPI.Extractor.ClassificationNodes teamNodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
-                        foreach (var boardType in boardTypes)
+                        List<string> boardTypes = new List<string>();
+                        boardTypes.Add("Epics"); boardTypes.Add("Features");
+
+                        if (processTemplate.ToLower() == "agile")
+                        { boardTypes.Add("Stories"); }
+                        else { boardTypes.Add("Backlog Items"); }
+
+                        foreach (var team in _team.value)
                         {
-                            var response = teamNodes.ExportBoardColums(boardType);
-                            if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                            {
-                                if (processTemplate.ToLower() == "scrum")
-                                {
-                                    string res = response.Content.ReadAsStringAsync().Result;
-                                    BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
-                                    scrumColumns.BoardName = boardType;
-                                    columnResponsesScrum.Add(scrumColumns);
-                                }
-                                else if (processTemplate.ToLower() == "agile")
-                                {
-                                    string res = response.Content.ReadAsStringAsync().Result;
-                                    BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
-                                    agileColumns.BoardName = boardType;
-                                    columnResponsesAgile.Add(agileColumns);
-                                }
-                                AddMessage(con.Id, "Board Columns");
-                                Thread.Sleep(2000);
-                            }
-                            else
-                            {
-                                var errorMessage = response.Content.ReadAsStringAsync();
-                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                teamNodes.LastFailureMessage = error;
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Columns: " + teamNodes.LastFailureMessage);
-                            }
+                            List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
+                            List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
+                            List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
 
-                            //Export board rows for each team
-                            ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
-                            if (rows.value != null && rows.value.Count > 0)
+                            ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
+
+                            List<JObject> jObjCardFieldList = new List<JObject>();
+                            List<JObject> jObjcardStyleList = new List<JObject>();
+                            string teamFolderPath = extractedTemplatePath + con.Project + "\\Teams\\" + team.name;
+                            if (!Directory.Exists(teamFolderPath))
                             {
-                                rows.BoardName = boardType;
-                                boardRows.Add(rows);
-                                AddMessage(con.Id, "Board Rows");
-                                Thread.Sleep(2000);
+                                Directory.CreateDirectory(teamFolderPath);
+                            }
+                            //Export Board Colums for each team
+                            con.Team = team.name;
+
+                            VstsRestAPI.Extractor.ClassificationNodes teamNodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                            foreach (var boardType in boardTypes)
+                            {
+                                var response = teamNodes.ExportBoardColums(boardType);
+                                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                                {
+                                    if (processTemplate.ToLower() == "scrum")
+                                    {
+                                        string res = response.Content.ReadAsStringAsync().Result;
+                                        BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
+                                        scrumColumns.BoardName = boardType;
+                                        columnResponsesScrum.Add(scrumColumns);
+                                    }
+                                    else if (processTemplate.ToLower() == "agile")
+                                    {
+                                        string res = response.Content.ReadAsStringAsync().Result;
+                                        BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
+                                        agileColumns.BoardName = boardType;
+                                        columnResponsesAgile.Add(agileColumns);
+                                    }
+                                    AddMessage(con.Id, "Board Columns");
+                                    Thread.Sleep(2000);
+                                }
+                                else
+                                {
+                                    var errorMessage = response.Content.ReadAsStringAsync();
+                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                    teamNodes.LastFailureMessage = error;
+                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Columns: " + teamNodes.LastFailureMessage);
+                                }
+
+                                //Export board rows for each team
+                                ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
+                                if (rows.value != null && rows.value.Count > 0)
+                                {
+                                    rows.BoardName = boardType;
+                                    boardRows.Add(rows);
+                                    AddMessage(con.Id, "Board Rows");
+                                    Thread.Sleep(2000);
+                                }
+                                else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
+                                {
+                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
+                                }
+
+
+                                //Export Card Fields for each team
+                                var cardFieldResponse = teamNodes.ExportCardFields(boardType);
+                                if (cardFieldResponse.IsSuccessStatusCode && cardFieldResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                                {
+                                    string res = cardFieldResponse.Content.ReadAsStringAsync().Result;
+                                    JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                                    jObj["BoardName"] = boardType;
+                                    jObjCardFieldList.Add(jObj);
+                                    AddMessage(con.Id, "Card fields Definition");
+
+                                }
+                                else
+                                {
+                                    var errorMessage = cardFieldResponse.Content.ReadAsStringAsync();
+                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                    teamNodes.LastFailureMessage = error;
+                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
+                                }
+
+                                //// Export card styles for each team
+                                var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
+                                if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                                {
+                                    string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
+                                    res = res.Replace(con.Project, "$ProjectName$");
+                                    JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                                    jObj["BoardName"] = boardType;
+                                    var style = jObj;
+                                    style["url"] = "";
+                                    style["_links"] = "{}";
+                                    var tagStyle = style["rules"]["tagStyle"];
+                                    if (tagStyle == null)
+                                    {
+                                        style["rules"]["tagStyle"] = new JArray();
+                                    }
+                                    jObjcardStyleList.Add(jObj);
+                                    AddMessage(con.Id, "Card style");
+
+                                }
+                                else
+                                {
+                                    var errorMessage = cardStyleResponse.Content.ReadAsStringAsync();
+                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                    teamNodes.LastFailureMessage = error;
+                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
+                                }
+                            }
+                            //Export Team Setting for each team
+                            ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                            if (teamSetting.backlogVisibilities != null)
+                            {
+                                listTeamSetting = teamSetting;
+                                AddMessage(con.Id, "Team Settings Definition");
                             }
                             else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
                             {
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
+                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
                             }
 
-
-                            //Export Card Fields for each team
-                            var cardFieldResponse = teamNodes.ExportCardFields(boardType);
-                            if (cardFieldResponse.IsSuccessStatusCode && cardFieldResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                            if (columnResponsesAgile.Count > 0)
                             {
-                                string res = cardFieldResponse.Content.ReadAsStringAsync().Result;
-                                JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
-                                jObj["BoardName"] = boardType;
-                                jObjCardFieldList.Add(jObj);
-                                AddMessage(con.Id, "Card fields Definition");
-
+                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
-                            else
+                            if (columnResponsesScrum.Count > 0)
                             {
-                                var errorMessage = cardFieldResponse.Content.ReadAsStringAsync();
-                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                teamNodes.LastFailureMessage = error;
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
+                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
-
-                            //// Export card styles for each team
-                            var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
-                            if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                            if (boardRows.Count > 0)
                             {
-                                string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
-                                res = res.Replace(con.Project, "$ProjectName$");
-                                JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
-                                jObj["BoardName"] = boardType;
-                                var style = jObj;
-                                style["url"] = "";
-                                style["_links"] = "{}";
-                                var tagStyle = style["rules"]["tagStyle"];
-                                if (tagStyle == null)
-                                {
-                                    style["rules"]["tagStyle"] = new JArray();
-                                }
-                                jObjcardStyleList.Add(jObj);
-                                AddMessage(con.Id, "Card style");
-
+                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                             }
-                            else
+                            if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
                             {
-                                var errorMessage = cardStyleResponse.Content.ReadAsStringAsync();
-                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                teamNodes.LastFailureMessage = error;
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
+                                System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                            }
+                            if (jObjCardFieldList.Count > 0)
+                            {
+                                System.IO.File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                            }
+                            if (jObjcardStyleList.Count > 0)
+                            {
+                                System.IO.File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
                             }
                         }
-                        //Export Team Setting for each team
-                        ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
-                        if (teamSetting.backlogVisibilities != null)
-                        {
-                            listTeamSetting = teamSetting;
-                            AddMessage(con.Id, "Team Settings Definition");
-                        }
-                        else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
-                        {
-                            AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
-                        }
 
-                        if (columnResponsesAgile.Count > 0)
-                        {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                        }
-                        if (columnResponsesScrum.Count > 0)
-                        {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                        }
-                        if (boardRows.Count > 0)
-                        {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
-                        }
-                        if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
-                        {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
-                        }
-                        if (jObjCardFieldList.Count > 0)
-                        {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
-                        }
-                        if (jObjcardStyleList.Count > 0)
-                        {
-                            System.IO.File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
-                        }
+                        return true;
                     }
-
-                    return true;
-                }
-                else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-                {
-                    AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
-                    string error = nodes.LastFailureMessage;
-                    return false;
+                    else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
+                    {
+                        AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
+                        string error = nodes.LastFailureMessage;
+                        return false;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
+                    AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
                     return false;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
-                return false;
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
+            return false;
         }
 
         //Export Iterations
@@ -726,8 +742,9 @@ namespace VstsDemoBuilder.Controllers
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -969,8 +986,9 @@ namespace VstsDemoBuilder.Controllers
                     return count;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return 0;
         }
@@ -1098,6 +1116,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(con.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return 0;
@@ -1105,266 +1124,282 @@ namespace VstsDemoBuilder.Controllers
 
         public JsonResult GetInstalledExtensions(Configuration con)
         {
-            GetListExtenison listExtenison = new GetListExtenison(con);
-            List<RequiredExtensions.ExtensionWithLink> extensionList = new List<RequiredExtensions.ExtensionWithLink>();
-            GetExtensions.ExtensionsList returnExtensionsList = listExtenison.GetInstalledExtensions();
-
-            if (returnExtensionsList != null && returnExtensionsList.count > 0)
+            try
             {
-                List<GetExtensions.Value> builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
-                List<GetExtensions.Value> trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
-                builtInExtensions.AddRange(trustedExtensions);
-                returnExtensionsList.value = builtInExtensions;
+                GetListExtenison listExtenison = new GetListExtenison(con);
+                List<RequiredExtensions.ExtensionWithLink> extensionList = new List<RequiredExtensions.ExtensionWithLink>();
+                GetExtensions.ExtensionsList returnExtensionsList = listExtenison.GetInstalledExtensions();
 
-                foreach (GetExtensions.Value data in returnExtensionsList.value)
+                if (returnExtensionsList != null && returnExtensionsList.count > 0)
                 {
-                    RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
+                    List<GetExtensions.Value> builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
+                    List<GetExtensions.Value> trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
+                    builtInExtensions.AddRange(trustedExtensions);
+                    returnExtensionsList.value = builtInExtensions;
 
-                    extension.extensionId = data.extensionId;
-                    extension.extensionName = data.extensionName;
-                    extension.publisherId = data.publisherId;
-                    extension.publisherName = data.publisherName;
-                    extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
-                    extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
-                    extensionList.Add(extension);
-                }
-                RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
-                if (extensionList.Count > 0)
-                {
-                    listExtension.Extensions = extensionList;
-                    if (!Directory.Exists(extractedTemplatePath + con.Project))
+                    foreach (GetExtensions.Value data in returnExtensionsList.value)
                     {
-                        Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                        RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
+
+                        extension.extensionId = data.extensionId;
+                        extension.extensionName = data.extensionName;
+                        extension.publisherId = data.publisherId;
+                        extension.publisherName = data.publisherName;
+                        extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
+                        extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
+                        extensionList.Add(extension);
                     }
-                    string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
+                    RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
+                    if (extensionList.Count > 0)
+                    {
+                        listExtension.Extensions = extensionList;
+                        if (!Directory.Exists(extractedTemplatePath + con.Project))
+                        {
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project);
+                        }
+                        string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
 
-                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+                    }
                 }
+                else if (!string.IsNullOrEmpty(listExtenison.LastFailureMessage))
+                {
+                    AddMessage(con.Id.ErrorId(), "Some error occured while fetching extensions");
+                }
+                return Json(extensionList, JsonRequestBehavior.AllowGet);
             }
-            else if (!string.IsNullOrEmpty(listExtenison.LastFailureMessage))
+            catch (Exception ex)
             {
-                AddMessage(con.Id.ErrorId(), "Some error occured while fetching extensions");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
-            return Json(extensionList, JsonRequestBehavior.AllowGet);
-
+            return new JsonResult();
         }
 
         public void GetServiceEndpoints(Configuration con)
         {
-            ServiceEndPoint serviceEndPoint = new ServiceEndPoint(con);
-            Parameters.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
-            if (getServiceEndPoint.count > 0)
+            try
             {
-                foreach (Parameters.Value endpoint in getServiceEndPoint.value)
+                ServiceEndPoint serviceEndPoint = new ServiceEndPoint(con);
+                Parameters.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
+                if (getServiceEndPoint.count > 0)
                 {
-                    switch (endpoint.authorization.scheme)
+                    foreach (Parameters.Value endpoint in getServiceEndPoint.value)
                     {
-                        case "OAuth":
-                        case "InstallationToken":
-                            switch (endpoint.type)
-                            {
-                                case "github":
-                                case "GitHub":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters
-                                        {
-                                            AccessToken = "AccessToken"
-                                        };
-                                    }
-                                    else
-                                    {
-                                        endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
-                                    }
-                                    break;
-                            }
-                            break;
-                        case "UsernamePassword":
-                            endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
-                            endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
-                            break;
-                        case "ManagedServiceIdentity":
-                            if (endpoint.authorization.parameters == null)
-                            {
-                                endpoint.authorization.parameters = new Parameters.Parameters
+                        switch (endpoint.authorization.scheme)
+                        {
+                            case "OAuth":
+                            case "InstallationToken":
+                                switch (endpoint.type)
                                 {
-                                    tenantId = Guid.NewGuid().ToString()
-                                };
-                            }
-                            else
-                            {
-                                endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                            }
-                            break;
-                        case "ServicePrincipal":
-                            switch (endpoint.type)
-                            {
-                                case "devCenter":
-                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
-                                    break;
-                                case "azurerm":
-                                    endpoint.authorization.parameters.url = null;
-                                    endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
-                                    endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                                    case "github":
+                                    case "GitHub":
+                                        if (endpoint.authorization.parameters == null)
+                                        {
+                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            {
+                                                AccessToken = "AccessToken"
+                                            };
+                                        }
+                                        else
+                                        {
+                                            endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
+                                        }
+                                        break;
+                                }
+                                break;
+                            case "UsernamePassword":
+                                endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                                endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                                break;
+                            case "ManagedServiceIdentity":
+                                if (endpoint.authorization.parameters == null)
+                                {
+                                    endpoint.authorization.parameters = new Parameters.Parameters
+                                    {
+                                        tenantId = Guid.NewGuid().ToString()
+                                    };
+                                }
+                                else
+                                {
                                     endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
-                                    break;
-                            }
-                            break;
-                        case "Certificate":
-                            switch (endpoint.type)
-                            {
-                                case "dockerhost":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters();
-                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
-                                    }
-                                    else
-                                    {
-                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
-                                    }
-                                    break;
-
-                                case "azure":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters
-                                        {
-                                            certificate = "certificate"
-                                        };
-                                    }
-                                    else
-                                    {
-                                        endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
-                                    }
-                                    break;
-                            }
-                            break;
-                        case "Token":
-                            if (endpoint.authorization.parameters == null)
-                            {
-                                endpoint.authorization.parameters = new Parameters.Parameters
+                                }
+                                break;
+                            case "ServicePrincipal":
+                                switch (endpoint.type)
                                 {
-                                    apitoken = "apitoken"
-                                };
-                            }
-                            else
-                            {
-                                endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
-                            }
-                            break;
-                        case "None":
-                            switch (endpoint.type)
-                            {
-                                case "AzureServiceBus":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                    case "devCenter":
+                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                                        break;
+                                    case "azurerm":
+                                        endpoint.authorization.parameters.url = null;
+                                        endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                                        endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                                        endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                        break;
+                                }
+                                break;
+                            case "Certificate":
+                                switch (endpoint.type)
+                                {
+                                    case "dockerhost":
+                                        if (endpoint.authorization.parameters == null)
                                         {
-                                            serviceBusConnectionString = "connectionstring"
-                                        };
-                                    }
-                                    else
-                                    {
-                                        endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
-                                    }
-                                    break;
-                                case "externalnugetfeed":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                            endpoint.authorization.parameters = new Parameters.Parameters();
+                                            endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                            endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                            endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                        }
+                                        else
                                         {
-                                            nugetkey = "nugetkey"
-                                        };
-                                    }
-                                    else
-                                    {
-                                        endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
-                                    }
-                                    break;
-                            }
-                            break;
+                                            endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                            endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                            endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                        }
+                                        break;
 
-                    }
-                    string endpointString = JsonConvert.SerializeObject(endpoint);
-                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
-                    {
-                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                    }
-                    else
-                    {
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                    case "azure":
+                                        if (endpoint.authorization.parameters == null)
+                                        {
+                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            {
+                                                certificate = "certificate"
+                                            };
+                                        }
+                                        else
+                                        {
+                                            endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
+                                        }
+                                        break;
+                                }
+                                break;
+                            case "Token":
+                                if (endpoint.authorization.parameters == null)
+                                {
+                                    endpoint.authorization.parameters = new Parameters.Parameters
+                                    {
+                                        apitoken = "apitoken"
+                                    };
+                                }
+                                else
+                                {
+                                    endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
+                                }
+                                break;
+                            case "None":
+                                switch (endpoint.type)
+                                {
+                                    case "AzureServiceBus":
+                                        if (endpoint.authorization.parameters == null)
+                                        {
+                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            {
+                                                serviceBusConnectionString = "connectionstring"
+                                            };
+                                        }
+                                        else
+                                        {
+                                            endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
+                                        }
+                                        break;
+                                    case "externalnugetfeed":
+                                        if (endpoint.authorization.parameters == null)
+                                        {
+                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            {
+                                                nugetkey = "nugetkey"
+                                            };
+                                        }
+                                        else
+                                        {
+                                            endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
+                                        }
+                                        break;
+                                }
+                                break;
+
+                        }
+                        string endpointString = JsonConvert.SerializeObject(endpoint);
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                        {
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
+                        else
+                        {
+                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                        }
                     }
                 }
+                else if (!string.IsNullOrEmpty(serviceEndPoint.LastFailureMessage))
+                {
+                    AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
+                }
             }
-            else if (!string.IsNullOrEmpty(serviceEndPoint.LastFailureMessage))
+            catch (Exception ex)
             {
-                AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
-
         }
 
         public void ExportQuries(Configuration con)
         {
-            Queries queries = new Queries(con);
-            GetQueries.Queries listQueries = queries.GetQueriesWiql();
-            if (listQueries.count > 0)
+            try
             {
-                foreach (var _queries in listQueries.value)
+                Queries queries = new Queries(con);
+                GetQueries.Queries listQueries = queries.GetQueriesWiql();
+                if (listQueries.count > 0)
                 {
-                    if (_queries.hasChildren)
+                    foreach (var _queries in listQueries.value)
                     {
-                        foreach (var query in _queries.children)
+                        if (_queries.hasChildren)
                         {
-                            if (!query.hasChildren)
+                            foreach (var query in _queries.children)
                             {
-                                if (query.wiql != null)
+                                if (!query.hasChildren)
                                 {
-                                    query.wiql = query.wiql.Replace(con.Project, "$projectId$");
-                                    JObject jobj = new JObject();
-                                    jobj["name"] = query.name;
-                                    jobj["wiql"] = query.wiql;
-                                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                    if (query.wiql != null)
                                     {
-                                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard");
-                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
-                                    }
-                                    if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
-                                    {
-                                        Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
-                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
-                                    }
-                                    else
-                                    {
-                                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                foreach (var child1 in query.children)
-                                {
-                                    if (child1.wiql != null)
-                                    {
-                                        child1.wiql = child1.wiql.Replace(con.Project, "$projectId$");
+                                        query.wiql = query.wiql.Replace(con.Project, "$projectId$");
                                         JObject jobj = new JObject();
-                                        jobj["name"] = child1.name;
-                                        jobj["wiql"] = child1.wiql;
+                                        jobj["name"] = query.name;
+                                        jobj["wiql"] = query.wiql;
+                                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                        {
+                                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard");
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
+                                        }
                                         if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
                                         {
                                             Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
-
-                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                         else
                                         {
-                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (var child1 in query.children)
+                                    {
+                                        if (child1.wiql != null)
+                                        {
+                                            child1.wiql = child1.wiql.Replace(con.Project, "$projectId$");
+                                            JObject jobj = new JObject();
+                                            jobj["name"] = child1.name;
+                                            jobj["wiql"] = child1.wiql;
+                                            if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Dashboard\\Queries"))
+                                            {
+                                                Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Dashboard\\Queries");
+
+                                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            }
+                                            else
+                                            {
+                                                System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            }
                                         }
                                     }
                                 }
@@ -1372,10 +1407,14 @@ namespace VstsDemoBuilder.Controllers
                         }
                     }
                 }
+                else if (!string.IsNullOrEmpty(queries.LastFailureMessage))
+                {
+                    AddMessage(con.Id.ErrorId(), "Error while fetching queries");
+                }
             }
-            else if (!string.IsNullOrEmpty(queries.LastFailureMessage))
+            catch (Exception ex)
             {
-                AddMessage(con.Id.ErrorId(), "Error while fetching queries");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
         }
         #endregion end extract template
@@ -1395,141 +1434,144 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
-            string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
-            CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
-            if (System.IO.Directory.Exists(filePath))
+            try
             {
-                string[] files = Directory.GetFiles(filePath);
-                string[] subDirs = Directory.GetDirectories(filePath);
-                if (files.Length > 0)
+                string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
+                CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
+                if (System.IO.Directory.Exists(filePath))
                 {
-                    sfiles.Files = new List<CreateZips.FileInfo>();
-
-                    foreach (var f in files)
+                    string[] files = Directory.GetFiles(filePath);
+                    string[] subDirs = Directory.GetDirectories(filePath);
+                    if (files.Length > 0)
                     {
-                        CreateZips.FileInfo fileInfo = new CreateZips.FileInfo();
+                        sfiles.Files = new List<CreateZips.FileInfo>();
 
-                        string[] fSplit = f.Split('\\');
-                        string splitLength = fSplit[fSplit.Length - 1];
-                        fSplit = splitLength.Split('.');
-
-                        fileInfo.Name = fSplit[0];
-                        fileInfo.Extension = fSplit[1];
-                        fileInfo.FileBytes = System.IO.File.ReadAllBytes(f);
-                        sfiles.Files.Add(fileInfo);
-                    }
-                }
-
-                if (subDirs.Length > 0)
-                {
-                    sfiles.Folder = new List<CreateZips.Folder>();
-
-                    foreach (var dir in subDirs)
-                    {
-                        string[] subDirFiles = System.IO.Directory.GetFiles(dir);
-                        string[] subDirsLevel2 = Directory.GetDirectories(dir);
-
-                        if (subDirFiles.Length > 0)
+                        foreach (var f in files)
                         {
-                            CreateZips.Folder folder = new CreateZips.Folder();
-                            string[] getFolderName = dir.Split('\\');
-                            string subFolderName = getFolderName[getFolderName.Length - 1];
-                            folder.FolderName = subFolderName;
-                            folder.FolderItems = new List<CreateZips.FolderItem>();
+                            CreateZips.FileInfo fileInfo = new CreateZips.FileInfo();
 
-                            foreach (var sdf in subDirFiles)
-                            {
-                                CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
-                                string[] fSplit = sdf.Split('\\');
-                                string splitLength = fSplit[fSplit.Length - 1];
-                                fSplit = splitLength.Split('.');
+                            string[] fSplit = f.Split('\\');
+                            string splitLength = fSplit[fSplit.Length - 1];
+                            fSplit = splitLength.Split('.');
 
-                                folderItem.Name = fSplit[0];
-                                folderItem.Extension = fSplit[1];
-                                folderItem.FileBytes = System.IO.File.ReadAllBytes(sdf);
-                                folder.FolderItems.Add(folderItem);
-                            }
-                            if (subDirsLevel2.Length > 0)
+                            fileInfo.Name = fSplit[0];
+                            fileInfo.Extension = fSplit[1];
+                            fileInfo.FileBytes = System.IO.File.ReadAllBytes(f);
+                            sfiles.Files.Add(fileInfo);
+                        }
+                    }
+
+                    if (subDirs.Length > 0)
+                    {
+                        sfiles.Folder = new List<CreateZips.Folder>();
+
+                        foreach (var dir in subDirs)
+                        {
+                            string[] subDirFiles = System.IO.Directory.GetFiles(dir);
+                            string[] subDirsLevel2 = Directory.GetDirectories(dir);
+
+                            if (subDirFiles.Length > 0)
                             {
-                                folder.FolderL2 = new List<CreateZips.FolderL2>();
-                                foreach (var dirL2 in subDirsLevel2)
+                                CreateZips.Folder folder = new CreateZips.Folder();
+                                string[] getFolderName = dir.Split('\\');
+                                string subFolderName = getFolderName[getFolderName.Length - 1];
+                                folder.FolderName = subFolderName;
+                                folder.FolderItems = new List<CreateZips.FolderItem>();
+
+                                foreach (var sdf in subDirFiles)
                                 {
-                                    string[] subDirFilesL2 = System.IO.Directory.GetFiles(dirL2);
-                                    if (subDirFilesL2.Length > 0)
+                                    CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
+                                    string[] fSplit = sdf.Split('\\');
+                                    string splitLength = fSplit[fSplit.Length - 1];
+                                    fSplit = splitLength.Split('.');
+
+                                    folderItem.Name = fSplit[0];
+                                    folderItem.Extension = fSplit[1];
+                                    folderItem.FileBytes = System.IO.File.ReadAllBytes(sdf);
+                                    folder.FolderItems.Add(folderItem);
+                                }
+                                if (subDirsLevel2.Length > 0)
+                                {
+                                    folder.FolderL2 = new List<CreateZips.FolderL2>();
+                                    foreach (var dirL2 in subDirsLevel2)
                                     {
-                                        CreateZips.FolderL2 folderFL2 = new CreateZips.FolderL2();
-                                        string[] getFolderNameL2 = dirL2.Split('\\');
-                                        string subFolderNameL2 = getFolderNameL2[getFolderNameL2.Length - 1];
-                                        folderFL2.FolderName = subFolderNameL2;
-                                        folderFL2.FolderItems = new List<CreateZips.FolderItem>();
-
-                                        foreach (var sdfL2 in subDirFilesL2)
+                                        string[] subDirFilesL2 = System.IO.Directory.GetFiles(dirL2);
+                                        if (subDirFilesL2.Length > 0)
                                         {
-                                            CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
-                                            string[] fSplit = sdfL2.Split('\\');
-                                            string splitLength = fSplit[fSplit.Length - 1];
-                                            fSplit = splitLength.Split('.');
+                                            CreateZips.FolderL2 folderFL2 = new CreateZips.FolderL2();
+                                            string[] getFolderNameL2 = dirL2.Split('\\');
+                                            string subFolderNameL2 = getFolderNameL2[getFolderNameL2.Length - 1];
+                                            folderFL2.FolderName = subFolderNameL2;
+                                            folderFL2.FolderItems = new List<CreateZips.FolderItem>();
 
-                                            folderItem.Name = fSplit[0];
-                                            folderItem.Extension = fSplit[1];
-                                            folderItem.FileBytes = System.IO.File.ReadAllBytes(sdfL2);
-                                            folderFL2.FolderItems.Add(folderItem);
+                                            foreach (var sdfL2 in subDirFilesL2)
+                                            {
+                                                CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
+                                                string[] fSplit = sdfL2.Split('\\');
+                                                string splitLength = fSplit[fSplit.Length - 1];
+                                                fSplit = splitLength.Split('.');
+
+                                                folderItem.Name = fSplit[0];
+                                                folderItem.Extension = fSplit[1];
+                                                folderItem.FileBytes = System.IO.File.ReadAllBytes(sdfL2);
+                                                folderFL2.FolderItems.Add(folderItem);
+                                            }
+                                            folder.FolderL2.Add(folderFL2);
                                         }
-                                        folder.FolderL2.Add(folderFL2);
                                     }
                                 }
+                                sfiles.Folder.Add(folder);
                             }
-                            sfiles.Folder.Add(folder);
                         }
                     }
                 }
-            }
-            // ...
+                // ...
 
-            // the output bytes of the zip
-            byte[] fileBytes = null;
+                // the output bytes of the zip
+                byte[] fileBytes = null;
 
-            //create a working memory stream
-            using (System.IO.MemoryStream memoryStream = new System.IO.MemoryStream())
-            {
-                // create a zip
-                using (System.IO.Compression.ZipArchive zip = new System.IO.Compression.ZipArchive(memoryStream, System.IO.Compression.ZipArchiveMode.Create, true))
+                //create a working memory stream
+                using (System.IO.MemoryStream memoryStream = new System.IO.MemoryStream())
                 {
-                    // interate through the source files
-                    if (sfiles.Folder != null && sfiles.Folder.Count > 0)
+                    // create a zip
+                    using (System.IO.Compression.ZipArchive zip = new System.IO.Compression.ZipArchive(memoryStream, System.IO.Compression.ZipArchiveMode.Create, true))
                     {
-                        //each folder in source file [depth 1]
-                        foreach (var folder in sfiles.Folder)
+                        // interate through the source files
+                        if (sfiles.Folder != null && sfiles.Folder.Count > 0)
                         {
-                            // add the item name to the zip
-                            // each file in the folder
-                            foreach (var file in folder.FolderItems)
+                            //each folder in source file [depth 1]
+                            foreach (var folder in sfiles.Folder)
                             {
-                                // folder items - file name, extension, and file bytes or content in bytes
-                                // zip.CreateEntry can create folder or the file. If you just provide a name, it will create a folder (if it doesn't not exist). If you provide with extension, it will create file 
-                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension); // Creating folder and create file inside that folder
+                                // add the item name to the zip
+                                // each file in the folder
+                                foreach (var file in folder.FolderItems)
+                                {
+                                    // folder items - file name, extension, and file bytes or content in bytes
+                                    // zip.CreateEntry can create folder or the file. If you just provide a name, it will create a folder (if it doesn't not exist). If you provide with extension, it will create file 
+                                    System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(folder.FolderName + "/" + file.Name + "." + file.Extension); // Creating folder and create file inside that folder
 
-                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes)) // adding file bytes to memory stream object
-                                {
-                                    using (System.IO.Stream entryStream = zipItem.Open()) // opening the folder/file
+                                    using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(file.FileBytes)) // adding file bytes to memory stream object
                                     {
-                                        originalFileMemoryStream.CopyTo(entryStream); // copy memory stream dat bytes to file created
-                                    }
-                                }
-                                // for second level of folder like /Template/Teams/BoardColums.json
-                                //each folder in source file [depth 2]
-                                if (folder.FolderL2 != null && folder.FolderL2.Count > 0)
-                                {
-                                    foreach (var folder2 in folder.FolderL2)
-                                    {
-                                        foreach (var file2 in folder2.FolderItems)
+                                        using (System.IO.Stream entryStream = zipItem.Open()) // opening the folder/file
                                         {
-                                            System.IO.Compression.ZipArchiveEntry zipItem2 = zip.CreateEntry(folder.FolderName + "/" + folder2.FolderName + "/" + file2.Name + "." + file2.Extension);
-                                            using (System.IO.MemoryStream originalFileMemoryStreamL2 = new System.IO.MemoryStream(file2.FileBytes))
+                                            originalFileMemoryStream.CopyTo(entryStream); // copy memory stream dat bytes to file created
+                                        }
+                                    }
+                                    // for second level of folder like /Template/Teams/BoardColums.json
+                                    //each folder in source file [depth 2]
+                                    if (folder.FolderL2 != null && folder.FolderL2.Count > 0)
+                                    {
+                                        foreach (var folder2 in folder.FolderL2)
+                                        {
+                                            foreach (var file2 in folder2.FolderItems)
                                             {
-                                                using (System.IO.Stream entryStreamL2 = zipItem2.Open())
+                                                System.IO.Compression.ZipArchiveEntry zipItem2 = zip.CreateEntry(folder.FolderName + "/" + folder2.FolderName + "/" + file2.Name + "." + file2.Extension);
+                                                using (System.IO.MemoryStream originalFileMemoryStreamL2 = new System.IO.MemoryStream(file2.FileBytes))
                                                 {
-                                                    originalFileMemoryStreamL2.CopyTo(entryStreamL2);
+                                                    using (System.IO.Stream entryStreamL2 = zipItem2.Open())
+                                                    {
+                                                        originalFileMemoryStreamL2.CopyTo(entryStreamL2);
+                                                    }
                                                 }
                                             }
                                         }
@@ -1537,30 +1579,36 @@ namespace VstsDemoBuilder.Controllers
                                 }
                             }
                         }
-                    }
-                    if (sfiles.Files != null && sfiles.Files.Count > 0)
-                    {
-                        foreach (var outerFile in sfiles.Files)
+                        if (sfiles.Files != null && sfiles.Files.Count > 0)
                         {
-                            // add the item name to the zip
-                            System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(outerFile.Name + "." + outerFile.Extension);
-                            // add the item bytes to the zip entry by opening the original file and copying the bytes 
-                            using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(outerFile.FileBytes))
+                            foreach (var outerFile in sfiles.Files)
                             {
-                                using (System.IO.Stream entryStream = zipItem.Open())
+                                // add the item name to the zip
+                                System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(outerFile.Name + "." + outerFile.Extension);
+                                // add the item bytes to the zip entry by opening the original file and copying the bytes 
+                                using (System.IO.MemoryStream originalFileMemoryStream = new System.IO.MemoryStream(outerFile.FileBytes))
                                 {
-                                    originalFileMemoryStream.CopyTo(entryStream);
+                                    using (System.IO.Stream entryStream = zipItem.Open())
+                                    {
+                                        originalFileMemoryStream.CopyTo(entryStream);
+                                    }
                                 }
                             }
                         }
                     }
+                    fileBytes = memoryStream.ToArray();
                 }
-                fileBytes = memoryStream.ToArray();
+                // download the constructed zip
+                System.IO.Directory.Delete(filePath, true);
+                Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
+                return File(fileBytes, "application/zip");
             }
-            // download the constructed zip
-            System.IO.Directory.Delete(filePath, true);
-            Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
-            return File(fileBytes, "application/zip");
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            ViewBag.Error = "File not found";
+            return RedirectToAction("Index", "Extractor");
         }
     }
 }

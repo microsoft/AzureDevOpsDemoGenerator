@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -10,7 +11,7 @@ namespace VstsRestAPI.Extractor
     public class ClassificationNodes : ApiServiceBase
     {
         public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         // Get Iteration Count
         public GetINumIteration.Iterations GetiterationCount()
         {
@@ -33,9 +34,9 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new GetINumIteration.Iterations();
         }
@@ -76,6 +77,7 @@ namespace VstsRestAPI.Extractor
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new TeamList();
@@ -95,9 +97,9 @@ namespace VstsRestAPI.Extractor
                     return response;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return response;
         }
@@ -128,6 +130,7 @@ namespace VstsRestAPI.Extractor
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new ExportBoardRows.Rows();
@@ -159,6 +162,7 @@ namespace VstsRestAPI.Extractor
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new ExportTeamSetting.Setting();
@@ -228,8 +232,9 @@ namespace VstsRestAPI.Extractor
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new ExportedIterations.Iterations();
         }

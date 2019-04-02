@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         private string repositoryId = string.Empty;
         private string projectId = string.Empty;
         private Dictionary<string, string> pullRequests = new Dictionary<string, string>();
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         public ImportWorkItems(IConfiguration configuration, string rowFieldName) : base(configuration)
         {
             boardRowFieldName = rowFieldName;
@@ -114,8 +115,9 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 return wiData;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return wiData;
             }
 
@@ -130,131 +132,138 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool PrepareAndUpdateTarget(string workItemType, string workImport, string projectName, string selectedTemplate)
         {
-            workImport = workImport.Replace("$ProjectName$", projectName);
-            ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
-
-            if (fetchedWIs.count > 0)
+            try
             {
-                foreach (ImportWorkItemModel.Value newWI in fetchedWIs.value)
+                workImport = workImport.Replace("$ProjectName$", projectName);
+                ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
+
+                if (fetchedWIs.count > 0)
                 {
-                    newWI.fields.SystemCreatedDate = DateTime.Now.AddDays(-3);
-                    Dictionary<string, object> dicWIFields = new Dictionary<string, object>();
-                    string assignToUser = string.Empty;
-                    if (listAssignToUsers.Count > 0)
+                    foreach (ImportWorkItemModel.Value newWI in fetchedWIs.value)
                     {
-                        assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)];
-                    }
-
-                    //Test cases have different fields compared to other items like bug, Epics, etc.                     
-                    if ((workItemType == "Test Case"))
-                    {
-                        //replacing null values with Empty strngs; creation fails if the fields are null
-                        if (newWI.fields.MicrosoftVSTSTCMParameters == null)
+                        newWI.fields.SystemCreatedDate = DateTime.Now.AddDays(-3);
+                        Dictionary<string, object> dicWIFields = new Dictionary<string, object>();
+                        string assignToUser = string.Empty;
+                        if (listAssignToUsers.Count > 0)
                         {
-                            newWI.fields.MicrosoftVSTSTCMParameters = string.Empty;
+                            assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)];
                         }
 
-                        if (newWI.fields.MicrosoftVSTSTCMSteps == null)
+                        //Test cases have different fields compared to other items like bug, Epics, etc.                     
+                        if ((workItemType == "Test Case"))
                         {
-                            newWI.fields.MicrosoftVSTSTCMSteps = string.Empty;
-                        }
+                            //replacing null values with Empty strngs; creation fails if the fields are null
+                            if (newWI.fields.MicrosoftVSTSTCMParameters == null)
+                            {
+                                newWI.fields.MicrosoftVSTSTCMParameters = string.Empty;
+                            }
 
-                        if (newWI.fields.MicrosoftVSTSTCMLocalDataSource == null)
-                        {
-                            newWI.fields.MicrosoftVSTSTCMLocalDataSource = string.Empty;
-                        }
+                            if (newWI.fields.MicrosoftVSTSTCMSteps == null)
+                            {
+                                newWI.fields.MicrosoftVSTSTCMSteps = string.Empty;
+                            }
 
-                        dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                        dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
-                        dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.TCM.LocalDataSource", newWI.fields.MicrosoftVSTSTCMLocalDataSource);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.TCM.AutomationStatus", newWI.fields.MicrosoftVSTSTCMAutomationStatus);
+                            if (newWI.fields.MicrosoftVSTSTCMLocalDataSource == null)
+                            {
+                                newWI.fields.MicrosoftVSTSTCMLocalDataSource = string.Empty;
+                            }
 
-                        if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
-                        {
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
-                        }
-
-                        if (newWI.fields.SystemTags != null)
-                        {
-                            dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
-                        }
-
-                        dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
-
-                    }
-                    else
-                    {
-                        string iterationPath = projectName;
-                        string boardRowField = string.Empty;
-
-                        if (newWI.fields.SystemIterationPath.Contains("\\"))
-                        {
-                            iterationPath = string.Format(@"{0}\{1}", projectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
-
-                        }
-
-                        if (!string.IsNullOrWhiteSpace(boardRowFieldName))
-                        {
-                            boardRowField = string.Format("/fields/{0}", boardRowFieldName);
-                        }
-
-                        if (newWI.fields.SystemDescription == null)
-                        {
-                            newWI.fields.SystemDescription = newWI.fields.SystemTitle;
-                        }
-
-                        if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane))
-                        {
-                            newWI.fields.SystemBoardLane = string.Empty;
-                        }
-
-                        dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                        if (selectedTemplate.ToLower() == "smarthotel360")
-                        {
-                            dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
-                        }
-                        dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
-                        dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
-                        dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
-                        dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
-                        dicWIFields.Add("/fields/System.IterationPath", iterationPath);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
-                        dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.Effort", newWI.fields.MicrosoftVSTSSchedulingEffort);
-
-                        if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
-                        {
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
-                        }
-
-                        if (newWI.fields.SystemTags != null)
-                        {
-                            dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
-                        }
-
-                        if (newWI.fields.MicrosoftVSTSTCMParameters != null)
-                        {
-                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
-                        }
-
-                        if (newWI.fields.MicrosoftVSTSTCMSteps != null)
-                        {
+                            dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
+                            dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
+                            dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
                             dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
-                        }
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.LocalDataSource", newWI.fields.MicrosoftVSTSTCMLocalDataSource);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.AutomationStatus", newWI.fields.MicrosoftVSTSTCMAutomationStatus);
 
-                        if (!string.IsNullOrWhiteSpace(boardRowField))
+                            if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
+                            {
+                                dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
+                            }
+
+                            if (newWI.fields.SystemTags != null)
+                            {
+                                dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                            }
+
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
+
+                        }
+                        else
                         {
-                            dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
-                        }
-                    }
-                    UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), projectName, dicWIFields);
-                }
+                            string iterationPath = projectName;
+                            string boardRowField = string.Empty;
 
-                return true;
+                            if (newWI.fields.SystemIterationPath.Contains("\\"))
+                            {
+                                iterationPath = string.Format(@"{0}\{1}", projectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
+
+                            }
+
+                            if (!string.IsNullOrWhiteSpace(boardRowFieldName))
+                            {
+                                boardRowField = string.Format("/fields/{0}", boardRowFieldName);
+                            }
+
+                            if (newWI.fields.SystemDescription == null)
+                            {
+                                newWI.fields.SystemDescription = newWI.fields.SystemTitle;
+                            }
+
+                            if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane))
+                            {
+                                newWI.fields.SystemBoardLane = string.Empty;
+                            }
+
+                            dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
+                            if (selectedTemplate.ToLower() == "smarthotel360")
+                            {
+                                dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
+                            }
+                            dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
+                            dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
+                            dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
+                            dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
+                            dicWIFields.Add("/fields/System.IterationPath", iterationPath);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.Effort", newWI.fields.MicrosoftVSTSSchedulingEffort);
+
+                            if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
+                            {
+                                dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
+                            }
+
+                            if (newWI.fields.SystemTags != null)
+                            {
+                                dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                            }
+
+                            if (newWI.fields.MicrosoftVSTSTCMParameters != null)
+                            {
+                                dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
+                            }
+
+                            if (newWI.fields.MicrosoftVSTSTCMSteps != null)
+                            {
+                                dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
+                            }
+
+                            if (!string.IsNullOrWhiteSpace(boardRowField))
+                            {
+                                dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
+                            }
+                        }
+                        UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), projectName, dicWIFields);
+                    }
+
+                    return true;
+                }
+            }
+            catch(Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -269,40 +278,48 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateWorkIteminTarget(string workItemType, string old_wi_ID, string projectName, Dictionary<string, object> dictionaryWIFields)
         {
-            List<WorkItemPatch.Field> listFields = new List<WorkItemPatch.Field>();
-            WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
-            // change some values on a few fields
-            foreach (string key in dictionaryWIFields.Keys)
+            try
             {
-                listFields.Add(new WorkItemPatch.Field() { op = "add", path = key, value = dictionaryWIFields[key] });
+                List<WorkItemPatch.Field> listFields = new List<WorkItemPatch.Field>();
+                WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
+                // change some values on a few fields
+                foreach (string key in dictionaryWIFields.Keys)
+                {
+                    listFields.Add(new WorkItemPatch.Field() { op = "add", path = key, value = dictionaryWIFields[key] });
+                }
+                WorkItemPatch.Field[] fields = listFields.ToArray();
+                using (var client = GetHttpClient())
+                {
+                    var postValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
+                                                                                                                                          // set the httpmethod to Patch
+                    var method = new HttpMethod("PATCH");
+
+                    // send the request               
+                    var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
+                    var response = client.SendAsync(request).Result;
+
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
+                        wiData.Add(new WIMapData() { OldID = old_wi_ID, NewID = viewModel.id.ToString(), WIType = workItemType });
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
+
+                    return response.IsSuccessStatusCode;
+
+                }
             }
-            WorkItemPatch.Field[] fields = listFields.ToArray();
-            using (var client = GetHttpClient())
+            catch(Exception ex)
             {
-                var postValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-                // set the httpmethod to Patch
-                var method = new HttpMethod("PATCH");
-
-                // send the request               
-                var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
-                var response = client.SendAsync(request).Result;
-
-
-                if (response.IsSuccessStatusCode)
-                {
-                    viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
-                    wiData.Add(new WIMapData() { OldID = old_wi_ID, NewID = viewModel.id.ToString(), WIType = workItemType });
-                }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                }
-
-                return response.IsSuccessStatusCode;
-
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
+            return false;
         }
         /// <summary>
         /// Update work items links - parent child- Hyperlinks-artifact links-attachments
@@ -311,124 +328,131 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateWorkItemLinks(string workItemTemplateJson)
         {
-            ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
-            string wiToUpdate = "";
-            WIMapData findIDforUpdate;
-            if (fetchedPBIs.count > 0)
+            try
             {
-
-                foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.value)
+                ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
+                string wiToUpdate = "";
+                WIMapData findIDforUpdate;
+                if (fetchedPBIs.count > 0)
                 {
-                    //continue next iteration if there is no relation
-                    if (newWI.relations == null)
-                    {
-                        continue;
-                    }
 
-                    int relCount = newWI.relations.Length;
-                    string oldWIID = newWI.id.ToString();
-
-                    findIDforUpdate = wiData.Find(t => t.OldID == oldWIID);
-                    if (findIDforUpdate != null)
+                    foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.value)
                     {
-                        wiToUpdate = findIDforUpdate.NewID;
-                        foreach (ImportWorkItemModel.Relations rel in newWI.relations)
+                        //continue next iteration if there is no relation
+                        if (newWI.relations == null)
                         {
-                            if (relTypes.Contains(rel.rel.Trim()))
-                            {
-                                oldWIID = rel.url.Substring(rel.url.LastIndexOf("/") + 1);
-                                WIMapData findIDforlink = wiData.Find(t => t.OldID == oldWIID);
+                            continue;
+                        }
 
-                                if (findIDforlink != null)
+                        int relCount = newWI.relations.Length;
+                        string oldWIID = newWI.id.ToString();
+
+                        findIDforUpdate = wiData.Find(t => t.OldID == oldWIID);
+                        if (findIDforUpdate != null)
+                        {
+                            wiToUpdate = findIDforUpdate.NewID;
+                            foreach (ImportWorkItemModel.Relations rel in newWI.relations)
+                            {
+                                if (relTypes.Contains(rel.rel.Trim()))
                                 {
-                                    string newWIID = findIDforlink.NewID;
+                                    oldWIID = rel.url.Substring(rel.url.LastIndexOf("/") + 1);
+                                    WIMapData findIDforlink = wiData.Find(t => t.OldID == oldWIID);
+
+                                    if (findIDforlink != null)
+                                    {
+                                        string newWIID = findIDforlink.NewID;
+                                        Object[] patchWorkItem = new Object[1];
+                                        // change some values on a few fields
+                                        patchWorkItem[0] = new
+                                        {
+                                            op = "add",
+                                            path = "/relations/-",
+                                            value = new
+                                            {
+                                                rel = rel.rel,
+                                                url = _configuration.UriString + "/_apis/wit/workitems/" + newWIID,
+                                                attributes = new
+                                                {
+                                                    comment = "Making a new link for the dependency"
+                                                }
+                                            }
+                                        };
+                                        if (UpdateLink("Product Backlog Item", wiToUpdate, patchWorkItem))
+                                        {
+                                        }
+                                    }
+                                }
+                                if (rel.rel == "Hyperlink")
+                                {
                                     Object[] patchWorkItem = new Object[1];
-                                    // change some values on a few fields
                                     patchWorkItem[0] = new
                                     {
                                         op = "add",
                                         path = "/relations/-",
                                         value = new
                                         {
-                                            rel = rel.rel,
-                                            url = _configuration.UriString + "/_apis/wit/workitems/" + newWIID,
+                                            rel = "Hyperlink",
+                                            url = rel.url
+                                        }
+                                    };
+                                    bool isHyperLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
+                                }
+                                if (rel.rel == "AttachedFile")
+                                {
+                                    Object[] patchWorkItem = new Object[1];
+                                    string filPath = string.Format(attachmentFolder + @"\{0}{1}", rel.attributes["id"], rel.attributes["name"]);
+                                    string fileName = rel.attributes["name"];
+                                    string attchmentURl = UploadAttchment(filPath, fileName);
+                                    if (!string.IsNullOrEmpty(attchmentURl))
+                                    {
+                                        patchWorkItem[0] = new
+                                        {
+                                            op = "add",
+                                            path = "/relations/-",
+                                            value = new
+                                            {
+                                                rel = "AttachedFile",
+                                                url = attchmentURl
+                                            }
+                                        };
+                                        bool isAttachmemntCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
+                                    }
+                                }
+                                if (rel.rel == "ArtifactLink")
+                                {
+                                    rel.url = rel.url.Replace("$projectId$", projectId).Replace("$RepositoryId$", repositoryId);
+                                    foreach (var pullReqest in pullRequests)
+                                    {
+                                        string key = string.Format("${0}$", pullReqest.Key);
+                                        rel.url = rel.url.Replace(key, pullReqest.Value);
+                                    }
+                                    Object[] patchWorkItem = new Object[1];
+                                    patchWorkItem[0] = new
+                                    {
+                                        op = "add",
+                                        path = "/relations/-",
+                                        value = new
+                                        {
+                                            rel = "ArtifactLink",
+                                            url = rel.url,
                                             attributes = new
                                             {
-                                                comment = "Making a new link for the dependency"
+                                                name = rel.attributes["name"]
                                             }
                                         }
-                                    };
-                                    if (UpdateLink("Product Backlog Item", wiToUpdate, patchWorkItem))
-                                    {
-                                    }
-                                }
-                            }
-                            if (rel.rel == "Hyperlink")
-                            {
-                                Object[] patchWorkItem = new Object[1];
-                                patchWorkItem[0] = new
-                                {
-                                    op = "add",
-                                    path = "/relations/-",
-                                    value = new
-                                    {
-                                        rel = "Hyperlink",
-                                        url = rel.url
-                                    }
-                                };
-                                bool isHyperLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
-                            }
-                            if (rel.rel == "AttachedFile")
-                            {
-                                Object[] patchWorkItem = new Object[1];
-                                string filPath = string.Format(attachmentFolder + @"\{0}{1}", rel.attributes["id"], rel.attributes["name"]);
-                                string fileName = rel.attributes["name"];
-                                string attchmentURl = UploadAttchment(filPath, fileName);
-                                if (!string.IsNullOrEmpty(attchmentURl))
-                                {
-                                    patchWorkItem[0] = new
-                                    {
-                                        op = "add",
-                                        path = "/relations/-",
-                                        value = new
-                                        {
-                                            rel = "AttachedFile",
-                                            url = attchmentURl
-                                        }
-                                    };
-                                    bool isAttachmemntCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
-                                }
-                            }
-                            if (rel.rel == "ArtifactLink")
-                            {
-                                rel.url = rel.url.Replace("$projectId$", projectId).Replace("$RepositoryId$", repositoryId);
-                                foreach (var pullReqest in pullRequests)
-                                {
-                                    string key = string.Format("${0}$", pullReqest.Key);
-                                    rel.url = rel.url.Replace(key, pullReqest.Value);
-                                }
-                                Object[] patchWorkItem = new Object[1];
-                                patchWorkItem[0] = new
-                                {
-                                    op = "add",
-                                    path = "/relations/-",
-                                    value = new
-                                    {
-                                        rel = "ArtifactLink",
-                                        url = rel.url,
-                                        attributes = new
-                                        {
-                                            name = rel.attributes["name"]
-                                        }
-                                    }
 
-                                };
-                                bool isArtifactLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
+                                    };
+                                    bool isArtifactLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
+                                }
                             }
                         }
                     }
+                    return true;
                 }
-                return true;
+            }
+            catch(Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -441,21 +465,29 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateLink(string workItemType, string witoUpdate, object[] patchWorkItem)
         {
-            using (var client = GetHttpClient())
+            try
             {
-                // serialize the fields array into a json string          
-                var patchValue = new StringContent(JsonConvert.SerializeObject(patchWorkItem), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-
-                var method = new HttpMethod("PATCH");
-                var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + witoUpdate + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = patchValue };
-                var response = client.SendAsync(request).Result;
-
-                if (response.IsSuccessStatusCode)
+                using (var client = GetHttpClient())
                 {
-                }
+                    // serialize the fields array into a json string          
+                    var patchValue = new StringContent(JsonConvert.SerializeObject(patchWorkItem), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
 
-                return response.IsSuccessStatusCode;
+                    var method = new HttpMethod("PATCH");
+                    var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + witoUpdate + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                    var response = client.SendAsync(request).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                    }
+
+                    return response.IsSuccessStatusCode;
+                }
             }
+            catch(Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            return false;
         }
         /// <summary>
         /// Upload attachments to VSTS server
@@ -490,8 +522,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return string.Empty;
             }
             return string.Empty;
