@@ -1,0 +1,11 @@
+{
+  "parameters":
+    {
+      "gitSource":
+        {
+          "url": "https://jsmcbr.visualstudio.com/_git/ContosoShuttle"
+        },
+      "serviceEndpointId": "$ContosoShuttle-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}
