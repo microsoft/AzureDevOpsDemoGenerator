@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using System;
 using VstsRestAPI.Services;
 
@@ -7,6 +8,7 @@ namespace VstsRestAPI.WorkItemAndTracking
     public class IssueWI
     {
         private Configuration con = new Configuration();
+        private ILog logger = LogManager.GetLogger("ErrorLog");
 
         // Create Issue Work Items
         public void CreateIssueWI(string credential, string version, string url, string issueName, string description, string projectId, string tag)
@@ -28,8 +30,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                 HttpServices httpServices = new HttpServices(con);
                 var response = httpServices.PatchBasic();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
         }
 
@@ -60,9 +63,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                 HttpServices httpServices = new HttpServices(con);
                 var response = httpServices.PatchBasic();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
         }
     }

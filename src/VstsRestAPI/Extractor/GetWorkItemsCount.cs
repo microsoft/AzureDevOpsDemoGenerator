@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -13,6 +14,7 @@ namespace VstsRestAPI.Extractor
         {
 
         }
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         public class WIMapData
         {
             public string oldID { get; set; }
@@ -76,6 +78,7 @@ namespace VstsRestAPI.Extractor
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 string error = ex.Message;
                 LastFailureMessage = error;
             }
@@ -108,6 +111,7 @@ namespace VstsRestAPI.Extractor
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 string error = ex.Message;
                 LastFailureMessage = error;
             }

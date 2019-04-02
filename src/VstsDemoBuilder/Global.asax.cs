@@ -24,7 +24,7 @@ namespace VstsDemoBuilder
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             GlobalFilters.Filters.Add(new System.Web.Mvc.AuthorizeAttribute());
-           
+            log4net.Config.XmlConfigurator.Configure();
         }
     }
 }
