@@ -31,7 +31,10 @@ namespace VstsRestAPI.QueriesAndWidgets
                     if (response.IsSuccessStatusCode)
                     {
                         DashboardResponse.Dashboard dashBoard = response.Content.ReadAsAsync<DashboardResponse.Dashboard>().Result;
-                        dashBoardId = dashBoard.dashboardEntries[0].id;
+                        if (dashBoard.dashboardEntries.Length >= 0)
+                        {
+                            dashBoardId = dashBoard.dashboardEntries[0].id;
+                        }
                         return dashBoardId;
                     }
                     else
@@ -92,6 +95,10 @@ namespace VstsRestAPI.QueriesAndWidgets
                     }
                 }
                 return result;
+            }
+            catch (OperationCanceledException opr)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
             }
             catch (Exception ex)
             {
@@ -172,25 +179,28 @@ namespace VstsRestAPI.QueriesAndWidgets
         {
             try
             {
-                using (var client = GetHttpClient())
+                if (dashBoardId != "")
                 {
-                    var method = new HttpMethod("DELETE");
-                    var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber);
-                    var response = client.SendAsync(request).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        var method = new HttpMethod("DELETE");
+                        var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber);
+                        var response = client.SendAsync(request).Result;
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        dynamic responseForInvalidStatusCode = response.Content.ReadAsAsync<dynamic>();
-                        Newtonsoft.Json.Linq.JContainer msg = responseForInvalidStatusCode.Result;
-                        return false;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            dynamic responseForInvalidStatusCode = response.Content.ReadAsAsync<dynamic>();
+                            Newtonsoft.Json.Linq.JContainer msg = responseForInvalidStatusCode.Result;
+                            return false;
+                        }
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
@@ -262,7 +272,7 @@ namespace VstsRestAPI.QueriesAndWidgets
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
