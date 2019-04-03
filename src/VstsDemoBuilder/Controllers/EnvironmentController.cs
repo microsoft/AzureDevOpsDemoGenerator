@@ -248,70 +248,73 @@ namespace VstsDemoBuilder.Controllers
                             Session["User"] = profile.displayName ?? string.Empty;
                             Session["Email"] = profile.emailAddress ?? profile.displayName.ToLower();
                         }
-                        AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
-
-                        //New Feature Enabling
-                        model.accessToken = Session["PAT"].ToString();
-                        model.refreshToken = AccessDetails.refresh_token;
-                        Session["PAT"] = AccessDetails.access_token;
-                        model.MemberID = profile.id;
-                        List<string> accList = new List<string>();
-                        if (accountList.count > 0)
+                        if (profile.id != null)
                         {
-                            foreach (var account in accountList.value)
+                            AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
+
+                            //New Feature Enabling
+                            model.accessToken = Session["PAT"].ToString();
+                            model.refreshToken = AccessDetails.refresh_token;
+                            Session["PAT"] = AccessDetails.access_token;
+                            model.MemberID = profile.id;
+                            List<string> accList = new List<string>();
+                            if (accountList.count > 0)
                             {
-                                accList.Add(account.accountName);
-                            }
-                            accList.Sort();
-                            model.accountsForDropdown = accList;
-                            model.hasAccount = true;
-                        }
-                        else
-                        {
-                            model.accountsForDropdown.Add("Select Organization");
-                            ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
-                        }
-
-                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
-                        model.Templates = new List<string>();
-                        model.accountUsersForDdl = new List<SelectListItem>();
-                        TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                        string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
-
-                        //Taking all the template folder and adding to list
-                        foreach (string template in dirTemplates)
-                        {
-                            model.Templates.Add(Path.GetFileName(template));
-                        }
-                        // Reading Template setting file to check for private templates
-                        if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
-                        {
-                            string templateSetting = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
-                        }
-                        //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
-                        //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-                        if (!string.IsNullOrEmpty(TemplateSelected))
-                        {
-                            foreach (var grpTemplate in templates.GroupwiseTemplates)
-                            {
-                                foreach (var template in grpTemplate.Template)
+                                foreach (var account in accountList.value)
                                 {
-                                    if (template.Name != null)
+                                    accList.Add(account.accountName);
+                                }
+                                accList.Sort();
+                                model.accountsForDropdown = accList;
+                                model.hasAccount = true;
+                            }
+                            else
+                            {
+                                model.accountsForDropdown.Add("Select Organization");
+                                ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                            }
+
+                            model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
+                            model.Templates = new List<string>();
+                            model.accountUsersForDdl = new List<SelectListItem>();
+                            TemplateSelection.Templates templates = new TemplateSelection.Templates();
+                            string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
+
+                            //Taking all the template folder and adding to list
+                            foreach (string template in dirTemplates)
+                            {
+                                model.Templates.Add(Path.GetFileName(template));
+                            }
+                            // Reading Template setting file to check for private templates
+                            if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
+                            {
+                                string templateSetting = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
+                                templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
+                            }
+                            //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
+                            //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
+                            if (!string.IsNullOrEmpty(TemplateSelected))
+                            {
+                                foreach (var grpTemplate in templates.GroupwiseTemplates)
+                                {
+                                    foreach (var template in grpTemplate.Template)
                                     {
-                                        if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                        if (template.Name != null)
                                         {
-                                            model.SelectedTemplate = template.Name;
-                                            model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
-                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
-                                            model.Message = template.Message == null ? string.Empty : template.Message;
+                                            if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                            {
+                                                model.SelectedTemplate = template.Name;
+                                                model.Templates.Add(template.Name);
+                                                model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                                model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                                model.Message = template.Message == null ? string.Empty : template.Message;
+                                            }
                                         }
                                     }
                                 }
                             }
+                            return View(model);
                         }
-                        return View(model);
                     }
                     return Redirect("../Account/Verify");
                 }
@@ -662,20 +665,21 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         profile = JsonConvert.DeserializeObject<ProfileDetails>(result);
+                        return profile;
                     }
                     else
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
-                        profile = null;
+                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Profile :" + errorMessage + "\n");
+                        profile = new ProfileDetails();
                     }
                 }
                 catch (Exception ex)
                 {
                     logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                    profile.ErrorMessage = ex.Message;
                 }
             }
-            return profile;
+            return new ProfileDetails();
         }
 
 
@@ -728,7 +732,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="memberID"></param>
         /// <param name="details"></param>
         /// <returns></returns>
-        public Models.AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
+        public AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
         {
             Models.AccountsResponse.AccountList accounts = new Models.AccountsResponse.AccountList();
             var client = new HttpClient();
@@ -749,19 +753,20 @@ namespace VstsDemoBuilder.Controllers
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
                     accounts = JsonConvert.DeserializeObject<Models.AccountsResponse.AccountList>(result);
+                    return accounts;
                 }
                 else
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
-                    accounts = null;
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Accounts :" + errorMessage + "\t" + "\n");
+                    accounts = new AccountsResponse.AccountList();
                 }
             }
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                return accounts;
             }
-            return accounts;
+            return new AccountsResponse.AccountList();
         }
 
         /// <summary>
