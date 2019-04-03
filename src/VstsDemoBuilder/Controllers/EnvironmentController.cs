@@ -1645,6 +1645,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message);
+
             }
         }
 
@@ -1714,6 +1715,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message);
+
             }
         }
 
@@ -1776,6 +1778,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message );
+
             }
 
         }
@@ -1869,7 +1872,9 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+
                 AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message);
+
             }
         }
 
@@ -1916,6 +1921,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+
                 AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message);
             }
         }
@@ -1999,6 +2005,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message);
+
             }
         }
 

@@ -297,8 +297,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                     // send the request               
                     var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
                     var response = client.SendAsync(request).Result;
-
-
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
@@ -312,7 +310,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                     }
 
                     return response.IsSuccessStatusCode;
-
                 }
             }
             catch (OperationCanceledException opr)
