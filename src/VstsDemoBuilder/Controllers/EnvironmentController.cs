@@ -1644,7 +1644,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message);
             }
         }
 
@@ -1673,7 +1673,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message );
             }
 
             return new TeamMemberResponse.TeamMembers();
@@ -1713,7 +1713,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message);
             }
         }
 
@@ -1746,7 +1746,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message );
             }
             return result;
         }
@@ -1775,7 +1775,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message );
             }
 
         }
@@ -1803,7 +1803,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message);
             }
 
         }
@@ -1832,7 +1832,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message);
             }
 
         }
@@ -1869,7 +1869,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message);
             }
         }
 
@@ -1916,7 +1916,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message);
             }
         }
 
@@ -1998,7 +1998,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message);
             }
         }
 
@@ -2021,7 +2021,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message);
             }
         }
 
@@ -2145,7 +2145,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message );
             }
         }
 
@@ -2233,7 +2233,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message);
             }
         }
 
@@ -2307,7 +2307,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message);
             }
         }
 
@@ -2363,7 +2363,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message);
             }
             return flag;
         }
@@ -2397,7 +2397,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message);
             }
         }
 
@@ -2484,7 +2484,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message);
             }
             flag = false;
             return flag;
@@ -2859,12 +2859,12 @@ namespace VstsDemoBuilder.Controllers
             catch (OperationCanceledException oce)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n" + oce.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n");
             }
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message );
             }
         }
 
@@ -3080,11 +3080,11 @@ namespace VstsDemoBuilder.Controllers
                             }
                             catch (OperationCanceledException cancelException)
                             {
-                                AddMessage(model.id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + cancelException.StackTrace + Environment.NewLine);
+                                AddMessage(model.id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + Environment.NewLine);
                             }
                             catch (Exception exc)
                             {
-                                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + exc.Message + exc.StackTrace + Environment.NewLine);
+                                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + exc.Message);
                             }
                         });
                     }
@@ -3094,7 +3094,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message);
                 return false;
             }
         }
