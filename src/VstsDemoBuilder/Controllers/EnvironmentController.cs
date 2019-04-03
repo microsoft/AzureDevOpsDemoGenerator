@@ -2352,8 +2352,11 @@ namespace VstsDemoBuilder.Controllers
                         {
                             AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.LastFailureMessage + Environment.NewLine);
                         }
-                        buildDef.Id = buildResult[0];
-                        buildDef.Name = buildResult[1];
+                        if (buildResult.Length > 0)
+                        {
+                            buildDef.Id = buildResult[0];
+                            buildDef.Name = buildResult[1];
+                        }
                     }
                     flag = true;
                 }
@@ -2461,8 +2464,11 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 jsonReleaseDefinition = jsonReleaseDefinition.Replace("3.*", "4.*");
                                 releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
-                                relDef.Id = releaseDef[0];
-                                relDef.Name = releaseDef[1];
+                                if (releaseDef.Length > 0)
+                                {
+                                    relDef.Id = releaseDef[0];
+                                    relDef.Name = releaseDef[1];
+                                }                                
                                 if (!string.IsNullOrEmpty(relDef.Name))
                                 {
                                     objRelease.LastFailureMessage = string.Empty;

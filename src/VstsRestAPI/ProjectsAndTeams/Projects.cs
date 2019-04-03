@@ -59,7 +59,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new ProjectsResponse.ProjectResult();
         }
@@ -106,7 +106,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return "-1";
         }
@@ -140,7 +140,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return Guid.Empty.ToString();
         }
@@ -172,9 +172,17 @@ namespace VstsRestAPI.ProjectsAndTeams
                     }
                 }
             }
+            catch (TimeoutException timeout)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Time out: " + timeout.Message + "\t" + "\n" + timeout.StackTrace + "\n");
+            }
+            catch (OperationCanceledException opcan)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Operation Cancelled: " + opcan.Message + "\t" + "\n" + opcan.StackTrace + "\n");
+            }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -229,7 +237,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new ProjectProperties.Properties();
         }
