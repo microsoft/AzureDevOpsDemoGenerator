@@ -2053,7 +2053,10 @@ namespace VstsDemoBuilder.Controllers
                     {
                         repositoryDetail = objRepository.CreateRepository(repositoryName, model.Environment.ProjectId);
                     }
-                    model.Environment.repositoryIdList[repositoryDetail[1]] = repositoryDetail[0];
+                    if (repositoryDetail.Length > 0)
+                    {
+                        model.Environment.repositoryIdList[repositoryDetail[1]] = repositoryDetail[0];
+                    }
 
                     string jsonSourceCode = model.ReadJsonFile(sourceCodeJSON);
 
@@ -2078,7 +2081,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message);
             }
         }
 
@@ -2107,27 +2110,29 @@ namespace VstsDemoBuilder.Controllers
                     string[] pullReqResponse = new string[2];
 
                     pullReqResponse = objRepository.CreatePullRequest(pullRequestJsonPath, repositoryId);
-
-                    if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
+                    if (pullReqResponse.Length > 0)
                     {
-                        model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
-                        commentFile = string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
-                        if (System.IO.File.Exists(commentFile))
+                        if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
                         {
-                            commentFile = model.ReadJsonFile(commentFile);
-                            PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
-                            if (commentsList.count > 0)
+                            model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
+                            commentFile = string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
+                            if (System.IO.File.Exists(commentFile))
                             {
-                                foreach (PullRequestComments.Value thread in commentsList.value)
+                                commentFile = model.ReadJsonFile(commentFile);
+                                PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
+                                if (commentsList.count > 0)
                                 {
-                                    string threadID = objRepository.CreateCommentThread(repositoryId, pullReqResponse[0], JsonConvert.SerializeObject(thread));
-                                    if (!string.IsNullOrEmpty(threadID))
+                                    foreach (PullRequestComments.Value thread in commentsList.value)
                                     {
-                                        if (thread.Replies != null && thread.Replies.Count > 0)
+                                        string threadID = objRepository.CreateCommentThread(repositoryId, pullReqResponse[0], JsonConvert.SerializeObject(thread));
+                                        if (!string.IsNullOrEmpty(threadID))
                                         {
-                                            foreach (var reply in thread.Replies)
+                                            if (thread.Replies != null && thread.Replies.Count > 0)
                                             {
-                                                objRepository.AddCommentToThread(repositoryId, pullReqResponse[0], threadID, JsonConvert.SerializeObject(reply));
+                                                foreach (var reply in thread.Replies)
+                                                {
+                                                    objRepository.AddCommentToThread(repositoryId, pullReqResponse[0], threadID, JsonConvert.SerializeObject(reply));
+                                                }
                                             }
                                         }
                                     }
