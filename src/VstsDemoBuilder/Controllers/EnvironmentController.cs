@@ -248,70 +248,73 @@ namespace VstsDemoBuilder.Controllers
                             Session["User"] = profile.displayName ?? string.Empty;
                             Session["Email"] = profile.emailAddress ?? profile.displayName.ToLower();
                         }
-                        AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
-
-                        //New Feature Enabling
-                        model.accessToken = Session["PAT"].ToString();
-                        model.refreshToken = AccessDetails.refresh_token;
-                        Session["PAT"] = AccessDetails.access_token;
-                        model.MemberID = profile.id;
-                        List<string> accList = new List<string>();
-                        if (accountList.count > 0)
+                        if (profile.id != null)
                         {
-                            foreach (var account in accountList.value)
+                            AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
+
+                            //New Feature Enabling
+                            model.accessToken = Session["PAT"].ToString();
+                            model.refreshToken = AccessDetails.refresh_token;
+                            Session["PAT"] = AccessDetails.access_token;
+                            model.MemberID = profile.id;
+                            List<string> accList = new List<string>();
+                            if (accountList.count > 0)
                             {
-                                accList.Add(account.accountName);
-                            }
-                            accList.Sort();
-                            model.accountsForDropdown = accList;
-                            model.hasAccount = true;
-                        }
-                        else
-                        {
-                            model.accountsForDropdown.Add("Select Organization");
-                            ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
-                        }
-
-                        model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
-                        model.Templates = new List<string>();
-                        model.accountUsersForDdl = new List<SelectListItem>();
-                        TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                        string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
-
-                        //Taking all the template folder and adding to list
-                        foreach (string template in dirTemplates)
-                        {
-                            model.Templates.Add(Path.GetFileName(template));
-                        }
-                        // Reading Template setting file to check for private templates
-                        if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
-                        {
-                            string templateSetting = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                            templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
-                        }
-                        //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
-                        //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
-                        if (!string.IsNullOrEmpty(TemplateSelected))
-                        {
-                            foreach (var grpTemplate in templates.GroupwiseTemplates)
-                            {
-                                foreach (var template in grpTemplate.Template)
+                                foreach (var account in accountList.value)
                                 {
-                                    if (template.Name != null)
+                                    accList.Add(account.accountName);
+                                }
+                                accList.Sort();
+                                model.accountsForDropdown = accList;
+                                model.hasAccount = true;
+                            }
+                            else
+                            {
+                                model.accountsForDropdown.Add("Select Organization");
+                                ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                            }
+
+                            model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
+                            model.Templates = new List<string>();
+                            model.accountUsersForDdl = new List<SelectListItem>();
+                            TemplateSelection.Templates templates = new TemplateSelection.Templates();
+                            string[] dirTemplates = Directory.GetDirectories(Server.MapPath("~") + @"\Templates");
+
+                            //Taking all the template folder and adding to list
+                            foreach (string template in dirTemplates)
+                            {
+                                model.Templates.Add(Path.GetFileName(template));
+                            }
+                            // Reading Template setting file to check for private templates
+                            if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
+                            {
+                                string templateSetting = model.ReadJsonFile(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
+                                templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
+                            }
+                            //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
+                            //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
+                            if (!string.IsNullOrEmpty(TemplateSelected))
+                            {
+                                foreach (var grpTemplate in templates.GroupwiseTemplates)
+                                {
+                                    foreach (var template in grpTemplate.Template)
                                     {
-                                        if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                        if (template.Name != null)
                                         {
-                                            model.SelectedTemplate = template.Name;
-                                            model.Templates.Add(template.Name);
-                                            model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
-                                            model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
-                                            model.Message = template.Message == null ? string.Empty : template.Message;
+                                            if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                            {
+                                                model.SelectedTemplate = template.Name;
+                                                model.Templates.Add(template.Name);
+                                                model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                                model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                                model.Message = template.Message == null ? string.Empty : template.Message;
+                                            }
                                         }
                                     }
                                 }
                             }
+                            return View(model);
                         }
-                        return View(model);
                     }
                     return Redirect("../Account/Verify");
                 }
@@ -662,20 +665,21 @@ namespace VstsDemoBuilder.Controllers
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         profile = JsonConvert.DeserializeObject<ProfileDetails>(result);
+                        return profile;
                     }
                     else
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
-                        profile = null;
+                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Profile :" + errorMessage + "\n");
+                        profile = new ProfileDetails();
                     }
                 }
                 catch (Exception ex)
                 {
                     logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                    profile.ErrorMessage = ex.Message;
                 }
             }
-            return profile;
+            return new ProfileDetails();
         }
 
 
@@ -728,7 +732,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="memberID"></param>
         /// <param name="details"></param>
         /// <returns></returns>
-        public Models.AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
+        public AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
         {
             Models.AccountsResponse.AccountList accounts = new Models.AccountsResponse.AccountList();
             var client = new HttpClient();
@@ -749,19 +753,20 @@ namespace VstsDemoBuilder.Controllers
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
                     accounts = JsonConvert.DeserializeObject<Models.AccountsResponse.AccountList>(result);
+                    return accounts;
                 }
                 else
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
-                    accounts = null;
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Accounts :" + errorMessage + "\t" + "\n");
+                    accounts = new AccountsResponse.AccountList();
                 }
             }
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                return accounts;
             }
-            return accounts;
+            return new AccountsResponse.AccountList();
         }
 
         /// <summary>
@@ -1639,7 +1644,8 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message);
+
             }
         }
 
@@ -1668,7 +1674,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message );
             }
 
             return new TeamMemberResponse.TeamMembers();
@@ -1708,7 +1714,8 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message);
+
             }
         }
 
@@ -1741,7 +1748,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message );
             }
             return result;
         }
@@ -1770,7 +1777,8 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message );
+
             }
 
         }
@@ -1798,7 +1806,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message);
             }
 
         }
@@ -1827,7 +1835,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message);
             }
 
         }
@@ -1864,7 +1872,9 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message + ex.StackTrace + Environment.NewLine);
+
+                AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message);
+
             }
         }
 
@@ -1911,7 +1921,8 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message + ex.StackTrace + Environment.NewLine);
+
+                AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message);
             }
         }
 
@@ -1993,7 +2004,8 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message);
+
             }
         }
 
@@ -2016,7 +2028,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message);
             }
         }
 
@@ -2048,7 +2060,10 @@ namespace VstsDemoBuilder.Controllers
                     {
                         repositoryDetail = objRepository.CreateRepository(repositoryName, model.Environment.ProjectId);
                     }
-                    model.Environment.repositoryIdList[repositoryDetail[1]] = repositoryDetail[0];
+                    if (repositoryDetail.Length > 0)
+                    {
+                        model.Environment.repositoryIdList[repositoryDetail[1]] = repositoryDetail[0];
+                    }
 
                     string jsonSourceCode = model.ReadJsonFile(sourceCodeJSON);
 
@@ -2073,7 +2088,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message);
             }
         }
 
@@ -2102,27 +2117,29 @@ namespace VstsDemoBuilder.Controllers
                     string[] pullReqResponse = new string[2];
 
                     pullReqResponse = objRepository.CreatePullRequest(pullRequestJsonPath, repositoryId);
-
-                    if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
+                    if (pullReqResponse.Length > 0)
                     {
-                        model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
-                        commentFile = string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
-                        if (System.IO.File.Exists(commentFile))
+                        if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
                         {
-                            commentFile = model.ReadJsonFile(commentFile);
-                            PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
-                            if (commentsList.count > 0)
+                            model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
+                            commentFile = string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
+                            if (System.IO.File.Exists(commentFile))
                             {
-                                foreach (PullRequestComments.Value thread in commentsList.value)
+                                commentFile = model.ReadJsonFile(commentFile);
+                                PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
+                                if (commentsList.count > 0)
                                 {
-                                    string threadID = objRepository.CreateCommentThread(repositoryId, pullReqResponse[0], JsonConvert.SerializeObject(thread));
-                                    if (!string.IsNullOrEmpty(threadID))
+                                    foreach (PullRequestComments.Value thread in commentsList.value)
                                     {
-                                        if (thread.Replies != null && thread.Replies.Count > 0)
+                                        string threadID = objRepository.CreateCommentThread(repositoryId, pullReqResponse[0], JsonConvert.SerializeObject(thread));
+                                        if (!string.IsNullOrEmpty(threadID))
                                         {
-                                            foreach (var reply in thread.Replies)
+                                            if (thread.Replies != null && thread.Replies.Count > 0)
                                             {
-                                                objRepository.AddCommentToThread(repositoryId, pullReqResponse[0], threadID, JsonConvert.SerializeObject(reply));
+                                                foreach (var reply in thread.Replies)
+                                                {
+                                                    objRepository.AddCommentToThread(repositoryId, pullReqResponse[0], threadID, JsonConvert.SerializeObject(reply));
+                                                }
                                             }
                                         }
                                     }
@@ -2135,7 +2152,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message );
             }
         }
 
@@ -2223,7 +2240,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message);
             }
         }
 
@@ -2297,7 +2314,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message);
             }
         }
 
@@ -2342,8 +2359,11 @@ namespace VstsDemoBuilder.Controllers
                         {
                             AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.LastFailureMessage + Environment.NewLine);
                         }
-                        buildDef.Id = buildResult[0];
-                        buildDef.Name = buildResult[1];
+                        if (buildResult.Length > 0)
+                        {
+                            buildDef.Id = buildResult[0];
+                            buildDef.Name = buildResult[1];
+                        }
                     }
                     flag = true;
                 }
@@ -2353,7 +2373,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message);
             }
             return flag;
         }
@@ -2387,7 +2407,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message);
             }
         }
 
@@ -2451,8 +2471,11 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 jsonReleaseDefinition = jsonReleaseDefinition.Replace("3.*", "4.*");
                                 releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
-                                relDef.Id = releaseDef[0];
-                                relDef.Name = releaseDef[1];
+                                if (releaseDef.Length > 0)
+                                {
+                                    relDef.Id = releaseDef[0];
+                                    relDef.Name = releaseDef[1];
+                                }                                
                                 if (!string.IsNullOrEmpty(relDef.Name))
                                 {
                                     objRelease.LastFailureMessage = string.Empty;
@@ -2474,7 +2497,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message);
             }
             flag = false;
             return flag;
@@ -2849,12 +2872,12 @@ namespace VstsDemoBuilder.Controllers
             catch (OperationCanceledException oce)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n" + oce.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n");
             }
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message );
             }
         }
 
@@ -3070,11 +3093,11 @@ namespace VstsDemoBuilder.Controllers
                             }
                             catch (OperationCanceledException cancelException)
                             {
-                                AddMessage(model.id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + cancelException.StackTrace + Environment.NewLine);
+                                AddMessage(model.id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + Environment.NewLine);
                             }
                             catch (Exception exc)
                             {
-                                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + exc.Message + exc.StackTrace + Environment.NewLine);
+                                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + exc.Message);
                             }
                         });
                     }
@@ -3084,7 +3107,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message + ex.StackTrace + Environment.NewLine);
+                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message);
                 return false;
             }
         }

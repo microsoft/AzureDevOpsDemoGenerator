@@ -50,7 +50,7 @@ namespace VstsRestAPI.Build
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         this.LastFailureMessage = error;
-                        return new string[] { string.Empty, string.Empty };
+                        return new string[] { };
                     }
                 }
             }

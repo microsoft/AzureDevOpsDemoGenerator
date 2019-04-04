@@ -42,7 +42,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="userMethod"></param>
         /// <param name="accountUsers"></param>
         /// <returns></returns>
-        
+
         public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string selectedTemplate)
         {
             try
@@ -261,7 +261,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     return true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
@@ -297,8 +297,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                     // send the request               
                     var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
                     var response = client.SendAsync(request).Result;
-
-
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
@@ -312,10 +310,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                     }
 
                     return response.IsSuccessStatusCode;
-
                 }
             }
-            catch(Exception ex)
+            catch (OperationCanceledException opr)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\t" + "\n" + opr.StackTrace + "\n");
+            }
+            catch (Exception ex)
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
@@ -450,7 +451,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     return true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
@@ -483,7 +484,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     return response.IsSuccessStatusCode;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
