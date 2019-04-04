@@ -823,6 +823,7 @@
     <Content Include="PreSetting\GitHubEndPoint.json" />
     <Content Include="PreSetting\DemoExtensions.json" />
     <Content Include="assets\templategrouping\templateSelection.custom.min.css" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
@@ -866,6 +867,13 @@
     <Content Include="Templates\Terraform\ProjectTemplate.json" />
     <Content Include="Templates\Terraform\ReleaseDefinitions\Terraform.json" />
     <Content Include="Templates\Terraform\ServiceEndpoints\Terraform-code.json" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\demogenapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demogenapi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />

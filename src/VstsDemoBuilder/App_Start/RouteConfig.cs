@@ -19,6 +19,7 @@ namespace VstsDemoBuilder
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Account", action = "Verify", id = UrlParameter.Optional }
             );
+           
         }
     }
 }

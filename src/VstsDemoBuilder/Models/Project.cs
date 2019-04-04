@@ -42,6 +42,7 @@ namespace VstsDemoBuilder.Models
         public string selectedTemplateFolder { get; set; }
         public string Message { get; set; }
         public string EnableExtractor { get; set; }
+        public string tokenType { get; set; }
 
     }
     public class EnvironmentValues

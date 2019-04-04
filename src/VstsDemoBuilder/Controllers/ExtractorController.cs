@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
@@ -74,70 +75,6 @@ namespace VstsDemoBuilder.Controllers
             return View();
         }
 
-        // Extractor index page
-        [AllowAnonymous]
-        public ActionResult Index(ProjectList.ProjectDetails model)
-        {
-            try
-            {
-                string pat = "";
-                string email = "";
-                if (Session["PAT"] != null)
-                {
-                    pat = Session["PAT"].ToString();
-                }
-                if (Session["Email"] != null)
-                {
-                    email = Session["PAT"].ToString();
-                }
-                if (Session["EnableExtractor"] == null || Session["EnableExtractor"].ToString().ToLower() == "false")
-                {
-                    return RedirectToAction("NotFound");
-                }
-                if (string.IsNullOrEmpty(pat))
-                {
-                    return Redirect("../Account/Verify");
-                }
-                else
-                {
-                    accessDetails.access_token = pat;
-                    ProfileDetails profile = con.GetProfile(accessDetails);
-                    if (profile == null)
-                    {
-                        ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
-                        return View(model);
-                    }
-                    if (profile.displayName != null && profile.emailAddress != null)
-                    {
-                        Session["User"] = profile.displayName;
-                        Session["Email"] = profile.emailAddress.ToLower();
-                    }
-                    AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
-                    model.accessToken = accessDetails.access_token;
-                    model.accountsForDropdown = new List<string>();
-                    if (accountList.count > 0)
-                    {
-                        foreach (var account in accountList.value)
-                        {
-                            model.accountsForDropdown.Add(account.accountName);
-                        }
-                        model.accountsForDropdown.Sort();
-                    }
-                    else
-                    {
-                        model.accountsForDropdown.Add("Select Organization");
-                        ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
-                    }
-                    return View(model);
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
-            }
-            return View(model);
-        }
-
         // Get the current progress of work done
         [HttpGet]
         [AllowAnonymous]
@@ -191,7 +128,13 @@ namespace VstsDemoBuilder.Controllers
 
             Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
             Projects projects = new Projects(config);
-            ProjectsResponse.ProjectResult projectResult = projects.GetListOfProjects();
+            HttpResponseMessage response = projects.GetListOfProjects();
+            ProjectsResponse.ProjectResult projectResult = new ProjectsResponse.ProjectResult();
+            if (response.IsSuccessStatusCode)
+            {
+                // set the viewmodel from the content in the response
+                projectResult = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+            }
             try
             {
                 if (string.IsNullOrEmpty(projectResult.errmsg))
