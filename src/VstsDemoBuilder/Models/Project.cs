@@ -177,4 +177,23 @@ namespace VstsDemoBuilder.Models
             public int count { get; set; }
         }
     }
+
+    public class User
+    {
+        public string email { get; set; }
+        public string alias { get; set; }
+        public string ProjectName { get; set; }
+        public string TrackId { get; set; }
+    }
+
+    public class BulkData
+    {
+        public string id { get; set; }
+        public string accessToken { get; set; }
+        public string organizationName { get; set; }
+        public string templateName { get; set; }
+        public IList<User> users { get; set; }
+    }
+
+
 }
