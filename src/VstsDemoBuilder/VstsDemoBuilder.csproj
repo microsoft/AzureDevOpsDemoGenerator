@@ -257,6 +257,7 @@
     <Content Include="assets\images\VS_logo_1.png" />
     <Content Include="assets\templategrouping\templategroup.custom.min.css" />
     <Content Include="Content\assets\css\custom.min.css" />
+    <Content Include="Content\assets\images\bg-old.jpg" />
     <Content Include="Content\assets\images\bg.jpg" />
     <Content Include="Content\assets\images\VSTS-demoGen-image.png" />
     <Content Include="Content\assets\images\VSTS-menu.svg" />

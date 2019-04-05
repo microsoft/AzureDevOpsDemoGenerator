@@ -979,6 +979,7 @@ function getGroups(grpSelected) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
                                     grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template-box">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -993,6 +994,7 @@ function getGroups(grpSelected) {
                                     let desc = MatchedGroup.Template[i].Description; /*(MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' :*/
                                     grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
                                     grp += '</div>';
+                                    grp += '</div>';
                                 }
                                 else {
                                     var templateImgs = MatchedGroup.Template[i].Image;
@@ -1000,12 +1002,13 @@ function getGroups(grpSelected) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
                                     grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template-box">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
                                     if (MatchedGroup.Template[i].Tags !== null) {
                                         grp += '<p></p>';
-                                        grp += '<p>';
+                                        grp += '<p class="tagz">';
                                         for (var x = 0; x < MatchedGroup.Template[i].Tags.length; x++) {
                                             grp += '<i>' + MatchedGroup.Template[i].Tags[x] + '</i>';
                                         }
@@ -1013,6 +1016,7 @@ function getGroups(grpSelected) {
                                     }
                                     let desc = MatchedGroup.Template[i].Description;
                                     grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
+                                    grp += '</div>';
                                     grp += '</div>';
                                 }
                             }
