@@ -47,7 +47,7 @@ namespace VstsDemoBuilder.Controllers
         private static Dictionary<string, string> statusMessages;
         private ILog logger = LogManager.GetLogger("ErrorLog");
 
-        private delegate string[] ProcessEnvironment(BulkData model, string PAT, string accountName);
+        private delegate string[] ProcessEnvironment(BulkData pmodel, string email, string alias, string projectName, string trackId);
         public bool isDefaultRepoTodetele = true;
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
@@ -169,6 +169,8 @@ namespace VstsDemoBuilder.Controllers
                         {
                             user.ProjectName = user.alias + "_" + model.templateName;
                             user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
+                            ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                            processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                         }
                         else
                         {
@@ -177,8 +179,8 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
 
-                ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                processTask.BeginInvoke(model, model.accessToken, model.organizationName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                //ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                //processTask.BeginInvoke(model, model.accessToken, model.organizationName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             }
             catch (Exception ex)
             {
@@ -255,695 +257,692 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="pat"></param>
         /// <param name="accountName"></param>
         /// <returns></returns>
-        public string[] CreateProjectEnvironment(BulkData pmodel, string pat, string accountName)
+        public string[] CreateProjectEnvironment(BulkData pmodel, string email, string alias, string projectName, string trackId)
         {
             Project model = new Project();
-            foreach (var user in pmodel.users)
+            string accountName = pmodel.organizationName;
+            model.SelectedTemplate = pmodel.templateName;
+            model.accessToken = pmodel.accessToken;
+            model.accountName = pmodel.organizationName;
+            model.Email = email;
+            model.Name = alias;
+            model.ProjectName = projectName;
+            model.id = trackId;
+            logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
+            string pat = model.accessToken;
+            //define versions to be use
+            string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
+            string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
+            string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
+            string releaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
+            string wikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
+            string boardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
+            string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
+            string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
+            string endPointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
+            string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
+            string dashboardVersion = System.Configuration.ConfigurationManager.AppSettings["DashboardVersion"];
+            string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
+            string getSourceCodeVersion = System.Configuration.ConfigurationManager.AppSettings["GetSourceCodeVersion"];
+            string testPlanVersion = System.Configuration.ConfigurationManager.AppSettings["TestPlanVersion"];
+            string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
+            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
+            string deploymentGroup = System.Configuration.ConfigurationManager.AppSettings["DeloymentGroup"];
+            string graphApiVersion = System.Configuration.ConfigurationManager.AppSettings["GraphApiVersion"];
+            string graphAPIHost = System.Configuration.ConfigurationManager.AppSettings["GraphAPIHost"];
+
+
+            string processTemplateId = Default.SCRUM;
+            model.Environment = new EnvironmentValues
             {
-                model.SelectedTemplate = pmodel.templateName;
-                model.accessToken = pmodel.accessToken;
-                model.accountName = pmodel.organizationName;
-                model.Email = user.email;
-                model.Name = user.alias;
-                model.ProjectName = user.ProjectName;
-                model.id = user.TrackId;
+                serviceEndpoints = new Dictionary<string, string>(),
+                repositoryIdList = new Dictionary<string, string>(),
+                pullRequests = new Dictionary<string, string>()
+            };
+            ProjectTemplate template = null;
+            ProjectSettings settings = null;
+            List<WIMapData> wiMapping = new List<WIMapData>();
+            AccountMembers.Account accountMembers = new AccountMembers.Account();
+            model.accountUsersForWi = new List<string>();
+            websiteUrl = model.websiteUrl;
+            templateUsed = model.SelectedTemplate;
+            projectName = model.ProjectName;
 
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
-                pat = model.accessToken;
-                //define versions to be use
-                string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
-                string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
-                string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
-                string releaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
-                string wikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
-                string boardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
-                string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
-                string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
-                string endPointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
-                string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
-                string dashboardVersion = System.Configuration.ConfigurationManager.AppSettings["DashboardVersion"];
-                string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
-                string getSourceCodeVersion = System.Configuration.ConfigurationManager.AppSettings["GetSourceCodeVersion"];
-                string testPlanVersion = System.Configuration.ConfigurationManager.AppSettings["TestPlanVersion"];
-                string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
-                string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-                string deploymentGroup = System.Configuration.ConfigurationManager.AppSettings["DeloymentGroup"];
-                string graphApiVersion = System.Configuration.ConfigurationManager.AppSettings["GraphApiVersion"];
-                string graphAPIHost = System.Configuration.ConfigurationManager.AppSettings["GraphAPIHost"];
+            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+            if (logWIT == "true")
+            {
+                string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                string reportName = string.Format("{0}", "AzureDevOps_Analytics-DemoGenerator");
+                IssueWI objIssue = new IssueWI();
+                objIssue.CreateReportWI(patBase64, "1.0", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
+            }
+            //configuration setup
+            string _credentials = model.accessToken;
+            Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+
+            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
 
-                string processTemplateId = Default.SCRUM;
-                model.Environment = new EnvironmentValues
+            string templatesFolder = HostingEnvironment.MapPath("~") + @"\Templates\";
+            string projTemplateFile = string.Format(templatesFolder + @"{0}\ProjectTemplate.json", model.SelectedTemplate);
+            string projectSettingsFile = string.Empty;
+
+            //initialize project template and settings
+            try
+            {
+                if (System.IO.File.Exists(projTemplateFile))
                 {
-                    serviceEndpoints = new Dictionary<string, string>(),
-                    repositoryIdList = new Dictionary<string, string>(),
-                    pullRequests = new Dictionary<string, string>()
-                };
-                ProjectTemplate template = null;
-                ProjectSettings settings = null;
-                List<WIMapData> wiMapping = new List<WIMapData>();
-                AccountMembers.Account accountMembers = new AccountMembers.Account();
-                model.accountUsersForWi = new List<string>();
-                websiteUrl = model.websiteUrl;
-                templateUsed = model.SelectedTemplate;
-                projectName = model.ProjectName;
+                    string templateItems = model.ReadJsonFile(projTemplateFile);
+                    template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
 
-                string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                if (logWIT == "true")
-                {
-                    string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                    string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                    string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                    string reportName = string.Format("{0}", "AzureDevOps_Analytics-DemoGenerator");
-                    IssueWI objIssue = new IssueWI();
-                    objIssue.CreateReportWI(patBase64, "1.0", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
-                }
-                //configuration setup
-                string _credentials = model.accessToken;
-                Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-
-                Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-                Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-
-
-                string templatesFolder = HostingEnvironment.MapPath("~") + @"\Templates\";
-                string projTemplateFile = string.Format(templatesFolder + @"{0}\ProjectTemplate.json", model.SelectedTemplate);
-                string projectSettingsFile = string.Empty;
-
-                //initialize project template and settings
-                try
-                {
-                    if (System.IO.File.Exists(projTemplateFile))
+                    projectSettingsFile = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.ProjectSettings);
+                    if (System.IO.File.Exists(projectSettingsFile))
                     {
-                        string templateItems = model.ReadJsonFile(projTemplateFile);
-                        template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
+                        settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
 
-                        projectSettingsFile = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.ProjectSettings);
-                        if (System.IO.File.Exists(projectSettingsFile))
+                        if (!string.IsNullOrWhiteSpace(settings.type))
                         {
-                            settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
-
-                            if (!string.IsNullOrWhiteSpace(settings.type))
+                            if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
                             {
-                                if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
-                                {
-                                    processTemplateId = Default.SCRUM;
-                                }
-                                else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
-                                {
-                                    processTemplateId = Default.Agile;
-                                }
-                                else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
-                                {
-                                    processTemplateId = Default.CMMI;
-                                }
+                                processTemplateId = Default.SCRUM;
+                            }
+                            else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
+                            {
+                                processTemplateId = Default.Agile;
+                            }
+                            else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
+                            {
+                                processTemplateId = Default.CMMI;
                             }
                         }
                     }
-                    else
-                    {
-                        AddMessage(model.id.ErrorId(), "Project Template not found");
-                        StatusMessages[model.id] = "100";
-                        return new string[] { model.id, accountName };
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                }
-                //create team project
-                string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
-                jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
-
-                Projects proj = new Projects(_projectCreationVersion);
-                string projectID = proj.CreateTeamProject(jsonProject);
-
-                if (projectID == "-1")
-                {
-                    if (!string.IsNullOrEmpty(proj.LastFailureMessage))
-                    {
-                        if (proj.LastFailureMessage.Contains("TF400813"))
-                        {
-                            AddMessage(model.id, "OAUTHACCESSDENIED");
-                        }
-                        else if (proj.LastFailureMessage.Contains("TF50309"))
-                        {
-                            AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
-                        }
-                        else
-                        {
-                            AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
-                        }
-                    }
-                    Thread.Sleep(2000); // Adding Delay to Get Error message
-                    return new string[] { model.id, accountName };
                 }
                 else
                 {
-                    AddMessage(model.id, string.Format("Project {0} created", model.ProjectName));
+                    AddMessage(model.id.ErrorId(), "Project Template not found");
+                    StatusMessages[model.id] = "100";
+                    return new string[] { model.id, accountName };
                 }
-                // waiting to add first message
-                Thread.Sleep(2000);
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            //create team project
+            string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
+            jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
 
-                //Check for project state 
-                Stopwatch watch = new Stopwatch();
-                watch.Start();
-                string projectStatus = string.Empty;
-                Projects objProject = new Projects(_projectCreationVersion);
-                while (projectStatus.ToLower() != "wellformed")
+            Projects proj = new Projects(_projectCreationVersion);
+            string projectID = proj.CreateTeamProject(jsonProject);
+
+            if (projectID == "-1")
+            {
+                if (!string.IsNullOrEmpty(proj.LastFailureMessage))
                 {
-                    projectStatus = objProject.GetProjectStateByName(model.ProjectName);
-                    if (watch.Elapsed.Minutes >= 5)
+                    if (proj.LastFailureMessage.Contains("TF400813"))
                     {
-                        return new string[] { model.id, accountName };
+                        AddMessage(model.id, "OAUTHACCESSDENIED");
                     }
-                }
-                watch.Stop();
-
-                //get project id after successfull in VSTS
-                model.Environment.ProjectId = objProject.GetProjectIdByName(model.ProjectName);
-                model.Environment.ProjectName = model.ProjectName;
-
-                //Add user as project admin
-                bool isAdded = AddUserAsAdmin(_graphApiVersion, model);
-                if (isAdded)
-                {
-                    AddMessage(model.id, string.Format("Added user {0} as project admin ", model.Email));
-                }
-
-                //Install required extensions
-                if (model.isExtensionNeeded && model.isAgreeTerms)
-                {
-                    bool isInstalled = InstallExtensions(model, model.accountName, model.accessToken);
-                    if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
-                }
-
-                //current user Details
-                string teamName = model.ProjectName + " team";
-                TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
-
-                var teamMember = teamMembers.value.FirstOrDefault();
-                if (teamMember != null)
-                {
-                    model.Environment.UserUniquename = teamMember.identity.uniqueName;
-                }
-                if (teamMember != null)
-                {
-                    model.Environment.UserUniqueId = teamMember.identity.id;
-                }
-
-                //update board columns and rows
-                // Checking for template version
-                string projectTemplate = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectTemplate.json"));
-                if (!string.IsNullOrEmpty(projectTemplate))
-                {
-                    JObject jObject = JsonConvert.DeserializeObject<JObject>(projectTemplate);
-                    templateVersion = jObject["TemplateVersion"] == null ? string.Empty : jObject["TemplateVersion"].ToString();
-                }
-                if (templateVersion != "2.0")
-                {
-                    //create teams
-                    CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
-
-                    // for older templates
-                    string projectSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
-                    JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
-                    string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
-                    string boardType = string.Empty;
-                    if (processType == "" || processType == "Scrum")
+                    else if (proj.LastFailureMessage.Contains("TF50309"))
                     {
-                        processType = "Scrum";
-                        boardType = "Backlog%20items";
+                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
                     }
                     else
                     {
-                        boardType = "Stories";
+                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
                     }
-                    BoardColumn objBoard = new BoardColumn(_boardVersion);
-                    string updateSwimLanesJSON = "";
-                    if (template.BoardRows != null)
-                    {
-                        updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
-                        SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
-                        if (System.IO.File.Exists(updateSwimLanesJSON))
-                        {
-                            updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
-                            bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType, model.ProjectName + " Team");
-                        }
-                    }
-                    if (template.SetEpic != null)
-                    {
-                        string team = model.ProjectName + " Team";
-                        string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.SetEpic);
-                        if (System.IO.File.Exists(json))
-                        {
-                            json = model.ReadJsonFile(json);
-                            EnableEpic(templatesFolder, model, json, _boardVersion, model.id, team);
-                        }
-                    }
+                }
+                Thread.Sleep(2000); // Adding Delay to Get Error message
+                return new string[] { model.id, accountName };
+            }
+            else
+            {
+                AddMessage(model.id, string.Format("Project {0} created", model.ProjectName));
+            }
+            // waiting to add first message
+            Thread.Sleep(2000);
 
-                    if (template.BoardColumns != null)
+            //Check for project state 
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            string projectStatus = string.Empty;
+            Projects objProject = new Projects(_projectCreationVersion);
+            while (projectStatus.ToLower() != "wellformed")
+            {
+                projectStatus = objProject.GetProjectStateByName(model.ProjectName);
+                if (watch.Elapsed.Minutes >= 5)
+                {
+                    return new string[] { model.id, accountName };
+                }
+            }
+            watch.Stop();
+
+            //get project id after successfull in VSTS
+            model.Environment.ProjectId = objProject.GetProjectIdByName(model.ProjectName);
+            model.Environment.ProjectName = model.ProjectName;
+
+            //Add user as project admin
+            bool isAdded = AddUserAsAdmin(_graphApiVersion, model);
+            if (isAdded)
+            {
+                AddMessage(model.id, string.Format("Added user {0} as project admin ", model.Email));
+            }
+
+            //Install required extensions
+            if (model.isExtensionNeeded && model.isAgreeTerms)
+            {
+                bool isInstalled = InstallExtensions(model, model.accountName, model.accessToken);
+                if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
+            }
+
+            //current user Details
+            string teamName = model.ProjectName + " team";
+            TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
+
+            var teamMember = teamMembers.value != null ? teamMembers.value.FirstOrDefault() : new TeamMemberResponse.Value();
+            if (teamMember != null)
+            {
+                model.Environment.UserUniquename = teamMember.identity.uniqueName;
+            }
+            if (teamMember != null)
+            {
+                model.Environment.UserUniqueId = teamMember.identity.id;
+            }
+
+            //update board columns and rows
+            // Checking for template version
+            string projectTemplate = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectTemplate.json"));
+            if (!string.IsNullOrEmpty(projectTemplate))
+            {
+                JObject jObject = JsonConvert.DeserializeObject<JObject>(projectTemplate);
+                templateVersion = jObject["TemplateVersion"] == null ? string.Empty : jObject["TemplateVersion"].ToString();
+            }
+            if (templateVersion != "2.0")
+            {
+                //create teams
+                CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+
+                // for older templates
+                string projectSetting = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
+                JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
+                string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
+                string boardType = string.Empty;
+                if (processType == "" || processType == "Scrum")
+                {
+                    processType = "Scrum";
+                    boardType = "Backlog%20items";
+                }
+                else
+                {
+                    boardType = "Stories";
+                }
+                BoardColumn objBoard = new BoardColumn(_boardVersion);
+                string updateSwimLanesJSON = "";
+                if (template.BoardRows != null)
+                {
+                    updateSwimLanesJSON = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
+                    SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                    if (System.IO.File.Exists(updateSwimLanesJSON))
                     {
-                        string team = model.ProjectName + " Team";
-                        string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.BoardColumns);
-                        if (System.IO.File.Exists(json))
+                        updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                        bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType, model.ProjectName + " Team");
+                    }
+                }
+                if (template.SetEpic != null)
+                {
+                    string team = model.ProjectName + " Team";
+                    string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.SetEpic);
+                    if (System.IO.File.Exists(json))
+                    {
+                        json = model.ReadJsonFile(json);
+                        EnableEpic(templatesFolder, model, json, _boardVersion, model.id, team);
+                    }
+                }
+
+                if (template.BoardColumns != null)
+                {
+                    string team = model.ProjectName + " Team";
+                    string json = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.BoardColumns);
+                    if (System.IO.File.Exists(json))
+                    {
+                        json = model.ReadJsonFile(json);
+                        bool success = UpdateBoardColumn(templatesFolder, model, json, _boardVersion, model.id, boardType, team);
+                        if (success)
                         {
-                            json = model.ReadJsonFile(json);
-                            bool success = UpdateBoardColumn(templatesFolder, model, json, _boardVersion, model.id, boardType, team);
-                            if (success)
+                            //update Card Fields
+                            if (template.CardField != null)
                             {
-                                //update Card Fields
-                                if (template.CardField != null)
+                                string cardFieldJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardField);
+                                if (System.IO.File.Exists(cardFieldJson))
                                 {
-                                    string cardFieldJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardField);
-                                    if (System.IO.File.Exists(cardFieldJson))
+                                    cardFieldJson = model.ReadJsonFile(cardFieldJson);
+                                    UpdateCardFields(templatesFolder, model, cardFieldJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                }
+                            }
+                            //Update card styles
+                            if (template.CardStyle != null)
+                            {
+                                string cardStyleJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardStyle);
+                                if (System.IO.File.Exists(cardStyleJson))
+                                {
+                                    cardStyleJson = model.ReadJsonFile(cardStyleJson);
+                                    UpdateCardStyles(templatesFolder, model, cardStyleJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                }
+                            }
+                            //Enable Epic Backlog
+                            AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                        }
+                    }
+                }
+
+                //update sprint dates
+                UpdateSprintItems(model, _boardVersion, settings);
+                UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
+                RenameIterations(model, _boardVersion, settings.renameIterations);
+            }
+            else
+            {
+                // for newer version of templates
+                string teamsJsonPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
+                if (System.IO.File.Exists(teamsJsonPath))
+                {
+                    template.Teams = "Teams\\Teams.json";
+                    template.TeamArea = "TeamArea.json";
+                    CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+                    string jsonTeams = model.ReadJsonFile(teamsJsonPath);
+                    JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
+                    JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
+                    foreach (var jteam in jTeams)
+                    {
+                        string _teamName = string.Empty;
+                        string isDefault = jteam["isDefault"] != null ? jteam["isDefault"].ToString() : string.Empty;
+                        if (isDefault == "true")
+                        {
+                            _teamName = model.ProjectName + " Team";
+                        }
+                        else
+                        {
+                            _teamName = jteam["name"].ToString();
+                        }
+                        string teamFolderPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
+                        if (System.IO.Directory.Exists(teamFolderPath))
+                        {
+                            BoardColumn objBoard = new BoardColumn(_boardVersion);
+
+                            // updating swimlanes for each teams each board(epic, feature, PBI, Stories) 
+                            string updateSwimLanesJSON = "";
+                            SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                            template.BoardRows = "BoardRows.json";
+                            updateSwimLanesJSON = System.IO.Path.Combine(teamFolderPath, template.BoardRows);
+                            if (System.IO.File.Exists(updateSwimLanesJSON))
+                            {
+                                updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                                List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
+                                foreach (var board in importRows)
+                                {
+                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, _teamName);
+                                }
+                            }
+
+                            // updating team setting for each team
+                            string teamSettingJson = "";
+                            template.SetEpic = "TeamSetting.json";
+                            teamSettingJson = System.IO.Path.Combine(teamFolderPath, template.SetEpic);
+                            if (System.IO.File.Exists(teamSettingJson))
+                            {
+                                teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
+                                EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, _teamName);
+                            }
+
+                            // updating board columns for each teams each board
+                            string teamBoardColumns = "";
+                            template.BoardColumns = "BoardColumns.json";
+                            teamBoardColumns = System.IO.Path.Combine(teamFolderPath, template.BoardColumns);
+                            if (System.IO.File.Exists(teamBoardColumns))
+                            {
+                                teamBoardColumns = System.IO.File.ReadAllText(teamBoardColumns);
+                                List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
+                                foreach (var board in importBoardCols)
+                                {
+                                    bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, _teamName);
+                                }
+                            }
+
+                            // updating card fields for each team and each board
+                            string teamCardFields = "";
+                            template.CardField = "CardFields.json";
+                            teamCardFields = System.IO.Path.Combine(teamFolderPath, template.CardField);
+                            if (System.IO.File.Exists(teamCardFields))
+                            {
+                                teamCardFields = System.IO.File.ReadAllText(teamCardFields);
+                                List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
+                                cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
+                                foreach (var card in cardFields)
+                                {
+                                    UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
+                                }
+                            }
+
+                            // updating card styles for each team and each board
+                            string teamCardStyle = "";
+                            template.CardStyle = "CardStyles.json";
+                            teamCardStyle = System.IO.Path.Combine(teamFolderPath, template.CardStyle);
+                            if (System.IO.File.Exists(teamCardStyle))
+                            {
+                                teamCardStyle = System.IO.File.ReadAllText(teamCardStyle);
+                                List<CardStyle.Style> cardStyles = new List<CardStyle.Style>();
+                                cardStyles = JsonConvert.DeserializeObject<List<CardStyle.Style>>(teamCardStyle);
+                                foreach (var cardStyle in cardStyles)
+                                {
+                                    if (cardStyle.rules.fill != null)
                                     {
-                                        cardFieldJson = model.ReadJsonFile(cardFieldJson);
-                                        UpdateCardFields(templatesFolder, model, cardFieldJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                        UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, _teamName);
                                     }
                                 }
-                                //Update card styles
-                                if (template.CardStyle != null)
-                                {
-                                    string cardStyleJson = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardStyle);
-                                    if (System.IO.File.Exists(cardStyleJson))
-                                    {
-                                        cardStyleJson = model.ReadJsonFile(cardStyleJson);
-                                        UpdateCardStyles(templatesFolder, model, cardStyleJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
-                                    }
-                                }
-                                //Enable Epic Backlog
-                                AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                             }
                         }
+                        AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
-
-                    //update sprint dates
                     UpdateSprintItems(model, _boardVersion, settings);
                     UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
                     RenameIterations(model, _boardVersion, settings.renameIterations);
                 }
-                else
+            }
+            //Create Deployment Group
+            //CreateDeploymentGroup(templatesFolder, model, _deploymentGroup);
+
+            //create service endpoint
+            List<string> listEndPointsJsonPath = new List<string>();
+            string serviceEndPointsPath = templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
+            if (System.IO.Directory.Exists(serviceEndPointsPath))
+            {
+                System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
+            }
+            CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
+            //create agent queues on demand
+            Queue queue = new Queue(_agentQueueVersion);
+            model.Environment.AgentQueues = queue.GetQueues();
+            if (settings.queues != null && settings.queues.Count > 0)
+            {
+                foreach (string aq in settings.queues)
                 {
-                    // for newer version of templates
-                    string teamsJsonPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
-                    if (System.IO.File.Exists(teamsJsonPath))
+                    if (model.Environment.AgentQueues.ContainsKey(aq))
                     {
-                        template.Teams = "Teams\\Teams.json";
-                        template.TeamArea = "TeamArea.json";
-                        CreateTeams(templatesFolder, model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
-                        string jsonTeams = model.ReadJsonFile(teamsJsonPath);
-                        JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
-                        JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
-                        foreach (var jteam in jTeams)
+                        continue;
+                    }
+
+                    var id = queue.CreateQueue(aq);
+                    if (id > 0)
+                    {
+                        model.Environment.AgentQueues[aq] = id;
+                    }
+                }
+            }
+
+            //import source code from GitHub
+
+            List<string> listImportSourceCodeJsonPaths = new List<string>();
+            string importSourceCodePath = templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
+            if (System.IO.Directory.Exists(importSourceCodePath))
+            {
+                System.IO.Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
+            }
+            foreach (string importSourceCode in listImportSourceCodeJsonPaths)
+            {
+                ImportSourceCode(templatesFolder, model, importSourceCode, _repoVersion, model.id, _getSourceCodeVersion);
+            }
+            if (isDefaultRepoTodetele)
+            {
+                Repository objRepository = new Repository(_repoVersion);
+                string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
+                bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
+            }
+
+            //Create Pull request
+            Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
+
+            //Create WIKI
+            CreateProjetWiki(templatesFolder, model, _wikiVersion);
+            CreateCodeWiki(templatesFolder, model, _wikiVersion);
+
+            List<string> listPullRequestJsonPaths = new List<string>();
+            string pullRequestFolder = templatesFolder + model.SelectedTemplate + @"\PullRequests";
+            if (System.IO.Directory.Exists(pullRequestFolder))
+            {
+                System.IO.Directory.GetFiles(pullRequestFolder).ToList().ForEach(i => listPullRequestJsonPaths.Add(i));
+            }
+            foreach (string pullReq in listPullRequestJsonPaths)
+            {
+                CreatePullRequest(templatesFolder, model, pullReq, _workItemsVersion);
+            }
+
+            //Configure account users
+            if (model.UserMethod == "Select")
+            {
+                model.selectedUsers = model.selectedUsers.TrimEnd(',');
+                model.accountUsersForWi = model.selectedUsers.Split(',').ToList();
+            }
+            else if (model.UserMethod == "Random")
+            {
+                //GetAccount Members
+                VstsRestAPI.ProjectsAndTeams.Accounts objAccount = new VstsRestAPI.ProjectsAndTeams.Accounts(_projectCreationVersion);
+                //accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
+                foreach (var member in accountMembers.value)
+                {
+                    model.accountUsersForWi.Add(member.member.mailAddress);
+                }
+            }
+            Dictionary<string, string> workItems = new Dictionary<string, string>();
+
+            if (templateVersion != "2.0")
+            {
+
+                //import work items
+                string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
+                string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
+                string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
+                string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
+                string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
+                string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
+                string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
+                string testPlansPath = string.Empty;
+                string testSuitesPath = string.Empty;
+                if (model.SelectedTemplate.ToLower() == "myshuttle2")
+                {
+                    testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                }
+
+                if (model.SelectedTemplate.ToLower() == "myshuttle")
+                {
+                    testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                }
+
+                if (System.IO.File.Exists(featuresFilePath))
+                {
+                    workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
+                }
+
+                if (System.IO.File.Exists(productBackLogPath))
+                {
+                    workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
+                }
+
+                if (System.IO.File.Exists(taskPath))
+                {
+                    workItems.Add("Task", model.ReadJsonFile(taskPath));
+                }
+
+                if (System.IO.File.Exists(testCasePath))
+                {
+                    workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
+                }
+
+                if (System.IO.File.Exists(bugPath))
+                {
+                    workItems.Add("Bug", model.ReadJsonFile(bugPath));
+                }
+
+                if (System.IO.File.Exists(userStoriesPath))
+                {
+                    workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
+                }
+
+                if (System.IO.File.Exists(epicPath))
+                {
+                    workItems.Add("Epic", model.ReadJsonFile(epicPath));
+                }
+
+                if (System.IO.File.Exists(testPlansPath))
+                {
+                    workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
+                }
+
+                if (System.IO.File.Exists(testSuitesPath))
+                {
+                    workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
+                }
+            }
+            //// Modified Work Item import logic
+            else
+            {
+                string _WitPath = Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
+                if (System.IO.Directory.Exists(_WitPath))
+                {
+                    string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
+                    if (workItemFilePaths.Length > 0)
+                    {
+                        foreach (var workItem in workItemFilePaths)
                         {
-                            string _teamName = string.Empty;
-                            string isDefault = jteam["isDefault"] != null ? jteam["isDefault"].ToString() : string.Empty;
-                            if (isDefault == "true")
+                            string[] workItemPatSplit = workItem.Split('\\');
+                            if (workItemPatSplit.Length > 0)
                             {
-                                _teamName = model.ProjectName + " Team";
-                            }
-                            else
-                            {
-                                _teamName = jteam["name"].ToString();
-                            }
-                            string teamFolderPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
-                            if (System.IO.Directory.Exists(teamFolderPath))
-                            {
-                                BoardColumn objBoard = new BoardColumn(_boardVersion);
-
-                                // updating swimlanes for each teams each board(epic, feature, PBI, Stories) 
-                                string updateSwimLanesJSON = "";
-                                SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
-                                template.BoardRows = "BoardRows.json";
-                                updateSwimLanesJSON = System.IO.Path.Combine(teamFolderPath, template.BoardRows);
-                                if (System.IO.File.Exists(updateSwimLanesJSON))
+                                string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
+                                if (!string.IsNullOrEmpty(workItemName))
                                 {
-                                    updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
-                                    List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
-                                    foreach (var board in importRows)
-                                    {
-                                        bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, _teamName);
-                                    }
-                                }
-
-                                // updating team setting for each team
-                                string teamSettingJson = "";
-                                template.SetEpic = "TeamSetting.json";
-                                teamSettingJson = System.IO.Path.Combine(teamFolderPath, template.SetEpic);
-                                if (System.IO.File.Exists(teamSettingJson))
-                                {
-                                    teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
-                                    EnableEpic(templatesFolder, model, teamSettingJson, _boardVersion, model.id, _teamName);
-                                }
-
-                                // updating board columns for each teams each board
-                                string teamBoardColumns = "";
-                                template.BoardColumns = "BoardColumns.json";
-                                teamBoardColumns = System.IO.Path.Combine(teamFolderPath, template.BoardColumns);
-                                if (System.IO.File.Exists(teamBoardColumns))
-                                {
-                                    teamBoardColumns = System.IO.File.ReadAllText(teamBoardColumns);
-                                    List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
-                                    foreach (var board in importBoardCols)
-                                    {
-                                        bool success = UpdateBoardColumn(templatesFolder, model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, _teamName);
-                                    }
-                                }
-
-                                // updating card fields for each team and each board
-                                string teamCardFields = "";
-                                template.CardField = "CardFields.json";
-                                teamCardFields = System.IO.Path.Combine(teamFolderPath, template.CardField);
-                                if (System.IO.File.Exists(teamCardFields))
-                                {
-                                    teamCardFields = System.IO.File.ReadAllText(teamCardFields);
-                                    List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
-                                    cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
-                                    foreach (var card in cardFields)
-                                    {
-                                        UpdateCardFields(templatesFolder, model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
-                                    }
-                                }
-
-                                // updating card styles for each team and each board
-                                string teamCardStyle = "";
-                                template.CardStyle = "CardStyles.json";
-                                teamCardStyle = System.IO.Path.Combine(teamFolderPath, template.CardStyle);
-                                if (System.IO.File.Exists(teamCardStyle))
-                                {
-                                    teamCardStyle = System.IO.File.ReadAllText(teamCardStyle);
-                                    List<CardStyle.Style> cardStyles = new List<CardStyle.Style>();
-                                    cardStyles = JsonConvert.DeserializeObject<List<CardStyle.Style>>(teamCardStyle);
-                                    foreach (var cardStyle in cardStyles)
-                                    {
-                                        if (cardStyle.rules.fill != null)
-                                        {
-                                            UpdateCardStyles(templatesFolder, model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, _teamName);
-                                        }
-                                    }
-                                }
-                            }
-                            AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
-                        }
-                        UpdateSprintItems(model, _boardVersion, settings);
-                        UpdateIterations(model, _boardVersion, templatesFolder, "Iterations.json");
-                        RenameIterations(model, _boardVersion, settings.renameIterations);
-                    }
-                }
-                //Create Deployment Group
-                //CreateDeploymentGroup(templatesFolder, model, _deploymentGroup);
-
-                //create service endpoint
-                List<string> listEndPointsJsonPath = new List<string>();
-                string serviceEndPointsPath = templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
-                if (System.IO.Directory.Exists(serviceEndPointsPath))
-                {
-                    System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
-                }
-                CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
-                //create agent queues on demand
-                Queue queue = new Queue(_agentQueueVersion);
-                model.Environment.AgentQueues = queue.GetQueues();
-                if (settings.queues != null && settings.queues.Count > 0)
-                {
-                    foreach (string aq in settings.queues)
-                    {
-                        if (model.Environment.AgentQueues.ContainsKey(aq))
-                        {
-                            continue;
-                        }
-
-                        var id = queue.CreateQueue(aq);
-                        if (id > 0)
-                        {
-                            model.Environment.AgentQueues[aq] = id;
-                        }
-                    }
-                }
-
-                //import source code from GitHub
-
-                List<string> listImportSourceCodeJsonPaths = new List<string>();
-                string importSourceCodePath = templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
-                if (System.IO.Directory.Exists(importSourceCodePath))
-                {
-                    System.IO.Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
-                }
-                foreach (string importSourceCode in listImportSourceCodeJsonPaths)
-                {
-                    ImportSourceCode(templatesFolder, model, importSourceCode, _repoVersion, model.id, _getSourceCodeVersion);
-                }
-                if (isDefaultRepoTodetele)
-                {
-                    Repository objRepository = new Repository(_repoVersion);
-                    string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
-                    bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
-                }
-
-                //Create Pull request
-                Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
-
-                //Create WIKI
-                CreateProjetWiki(templatesFolder, model, _wikiVersion);
-                CreateCodeWiki(templatesFolder, model, _wikiVersion);
-
-                List<string> listPullRequestJsonPaths = new List<string>();
-                string pullRequestFolder = templatesFolder + model.SelectedTemplate + @"\PullRequests";
-                if (System.IO.Directory.Exists(pullRequestFolder))
-                {
-                    System.IO.Directory.GetFiles(pullRequestFolder).ToList().ForEach(i => listPullRequestJsonPaths.Add(i));
-                }
-                foreach (string pullReq in listPullRequestJsonPaths)
-                {
-                    CreatePullRequest(templatesFolder, model, pullReq, _workItemsVersion);
-                }
-
-                //Configure account users
-                if (model.UserMethod == "Select")
-                {
-                    model.selectedUsers = model.selectedUsers.TrimEnd(',');
-                    model.accountUsersForWi = model.selectedUsers.Split(',').ToList();
-                }
-                else if (model.UserMethod == "Random")
-                {
-                    //GetAccount Members
-                    VstsRestAPI.ProjectsAndTeams.Accounts objAccount = new VstsRestAPI.ProjectsAndTeams.Accounts(_projectCreationVersion);
-                    //accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
-                    foreach (var member in accountMembers.value)
-                    {
-                        model.accountUsersForWi.Add(member.member.mailAddress);
-                    }
-                }
-                Dictionary<string, string> workItems = new Dictionary<string, string>();
-
-                if (templateVersion != "2.0")
-                {
-
-                    //import work items
-                    string featuresFilePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
-                    string productBackLogPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
-                    string taskPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
-                    string testCasePath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
-                    string bugPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
-                    string epicPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
-                    string userStoriesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
-                    string testPlansPath = string.Empty;
-                    string testSuitesPath = string.Empty;
-                    if (model.SelectedTemplate.ToLower() == "myshuttle2")
-                    {
-                        testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                        testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
-                    }
-
-                    if (model.SelectedTemplate.ToLower() == "myshuttle")
-                    {
-                        testPlansPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                        testSuitesPath = System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
-                    }
-
-                    if (System.IO.File.Exists(featuresFilePath))
-                    {
-                        workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
-                    }
-
-                    if (System.IO.File.Exists(productBackLogPath))
-                    {
-                        workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
-                    }
-
-                    if (System.IO.File.Exists(taskPath))
-                    {
-                        workItems.Add("Task", model.ReadJsonFile(taskPath));
-                    }
-
-                    if (System.IO.File.Exists(testCasePath))
-                    {
-                        workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
-                    }
-
-                    if (System.IO.File.Exists(bugPath))
-                    {
-                        workItems.Add("Bug", model.ReadJsonFile(bugPath));
-                    }
-
-                    if (System.IO.File.Exists(userStoriesPath))
-                    {
-                        workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
-                    }
-
-                    if (System.IO.File.Exists(epicPath))
-                    {
-                        workItems.Add("Epic", model.ReadJsonFile(epicPath));
-                    }
-
-                    if (System.IO.File.Exists(testPlansPath))
-                    {
-                        workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
-                    }
-
-                    if (System.IO.File.Exists(testSuitesPath))
-                    {
-                        workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
-                    }
-                }
-                //// Modified Work Item import logic
-                else
-                {
-                    string _WitPath = Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
-                    if (System.IO.Directory.Exists(_WitPath))
-                    {
-                        string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
-                        if (workItemFilePaths.Length > 0)
-                        {
-                            foreach (var workItem in workItemFilePaths)
-                            {
-                                string[] workItemPatSplit = workItem.Split('\\');
-                                if (workItemPatSplit.Length > 0)
-                                {
-                                    string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
-                                    if (!string.IsNullOrEmpty(workItemName))
-                                    {
-                                        string[] nameExtension = workItemName.Split('.');
-                                        string name = nameExtension[0];
-                                        workItems.Add(name, model.ReadJsonFile(workItem));
-                                    }
+                                    string[] nameExtension = workItemName.Split('.');
+                                    string name = nameExtension[0];
+                                    workItems.Add(name, model.ReadJsonFile(workItem));
                                 }
                             }
                         }
                     }
                 }
+            }
 
-                ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
-                if (System.IO.File.Exists(projectSettingsFile))
+            ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
+            if (System.IO.File.Exists(projectSettingsFile))
+            {
+                string attchmentFilesFolder = string.Format(templatesFolder + @"{0}\WorkItemAttachments", model.SelectedTemplate);
+                if (listPullRequestJsonPaths.Count > 0)
                 {
-                    string attchmentFilesFolder = string.Format(templatesFolder + @"{0}\WorkItemAttachments", model.SelectedTemplate);
-                    if (listPullRequestJsonPaths.Count > 0)
+                    if (model.SelectedTemplate == "MyHealthClinic")
                     {
-                        if (model.SelectedTemplate == "MyHealthClinic")
-                        {
-                            wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("MyHealthClinic") ? model.Environment.repositoryIdList["MyHealthClinic"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
-                        }
-                        else if (model.SelectedTemplate == "SmartHotel360")
-                        {
-                            wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("PublicWeb") ? model.Environment.repositoryIdList["PublicWeb"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
-                        }
-                        else
-                        {
-                            wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey(model.SelectedTemplate) ? model.Environment.repositoryIdList[model.SelectedTemplate] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
-                        }
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("MyHealthClinic") ? model.Environment.repositoryIdList["MyHealthClinic"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
+                    }
+                    else if (model.SelectedTemplate == "SmartHotel360")
+                    {
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("PublicWeb") ? model.Environment.repositoryIdList["PublicWeb"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
                     else
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey(model.SelectedTemplate) ? model.Environment.repositoryIdList[model.SelectedTemplate] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                     }
-                    AddMessage(model.id, "Work Items created");
                 }
-                //Creat TestPlans and TestSuites
-                List<string> listTestPlansJsonPaths = new List<string>();
-                string testPlansFolder = templatesFolder + model.SelectedTemplate + @"\TestPlans";
-                if (Directory.Exists(testPlansFolder))
+                else
                 {
-                    Directory.GetFiles(testPlansFolder).ToList().ForEach(i => listTestPlansJsonPaths.Add(i));
+                    wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, model.SelectedTemplate);
                 }
-                foreach (string testPlan in listTestPlansJsonPaths)
-                {
-                    CreateTestManagement(wiMapping, model, testPlan, templatesFolder, _testPlanVersion);
-                }
-                if (listTestPlansJsonPaths.Count > 0)
-                {
-                    //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
-                }
+                AddMessage(model.id, "Work Items created");
+            }
+            //Creat TestPlans and TestSuites
+            List<string> listTestPlansJsonPaths = new List<string>();
+            string testPlansFolder = templatesFolder + model.SelectedTemplate + @"\TestPlans";
+            if (Directory.Exists(testPlansFolder))
+            {
+                Directory.GetFiles(testPlansFolder).ToList().ForEach(i => listTestPlansJsonPaths.Add(i));
+            }
+            foreach (string testPlan in listTestPlansJsonPaths)
+            {
+                CreateTestManagement(wiMapping, model, testPlan, templatesFolder, _testPlanVersion);
+            }
+            if (listTestPlansJsonPaths.Count > 0)
+            {
+                //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
+            }
 
-                //create build Definition
-                string buildDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
-                model.BuildDefinitions = new List<BuildDef>();
-                if (Directory.Exists(buildDefinitionsPath))
-                {
-                    Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new Models.BuildDef() { FilePath = i }));
-                }
-                bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
-                if (isBuild)
-                {
-                    AddMessage(model.id, "Build definition created");
-                }
+            //create build Definition
+            string buildDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
+            model.BuildDefinitions = new List<BuildDef>();
+            if (Directory.Exists(buildDefinitionsPath))
+            {
+                Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new Models.BuildDef() { FilePath = i }));
+            }
+            bool isBuild = CreateBuildDefinition(templatesFolder, model, _buildVersion, model.id);
+            if (isBuild)
+            {
+                AddMessage(model.id, "Build definition created");
+            }
 
-                //Queue a Build
-                string buildJson = string.Format(templatesFolder + @"{0}\QueueBuild.json", model.SelectedTemplate);
-                if (System.IO.File.Exists(buildJson))
-                {
-                    QueueABuild(model, buildJson, _buildVersion);
-                }
+            //Queue a Build
+            string buildJson = string.Format(templatesFolder + @"{0}\QueueBuild.json", model.SelectedTemplate);
+            if (System.IO.File.Exists(buildJson))
+            {
+                QueueABuild(model, buildJson, _buildVersion);
+            }
 
-                //create release Definition
-                string releaseDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\ReleaseDefinitions";
-                model.ReleaseDefinitions = new List<ReleaseDef>();
-                if (Directory.Exists(releaseDefinitionsPath))
-                {
-                    Directory.GetFiles(releaseDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.ReleaseDefinitions.Add(new Models.ReleaseDef() { FilePath = i }));
-                }
-                bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
-                if (isReleased)
-                {
-                    AddMessage(model.id, "Release definition created");
-                }
+            //create release Definition
+            string releaseDefinitionsPath = templatesFolder + model.SelectedTemplate + @"\ReleaseDefinitions";
+            model.ReleaseDefinitions = new List<ReleaseDef>();
+            if (Directory.Exists(releaseDefinitionsPath))
+            {
+                Directory.GetFiles(releaseDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.ReleaseDefinitions.Add(new Models.ReleaseDef() { FilePath = i }));
+            }
+            bool isReleased = CreateReleaseDefinition(templatesFolder, model, _releaseVersion, model.id, teamMembers);
+            if (isReleased)
+            {
+                AddMessage(model.id, "Release definition created");
+            }
 
-                //Create query and widgets
-                List<string> listDashboardQueriesPath = new List<string>();
-                string dashboardQueriesPath = templatesFolder + model.SelectedTemplate + @"\Dashboard\Queries";
-                string dashboardPath = templatesFolder + model.SelectedTemplate + @"\Dashboard";
+            //Create query and widgets
+            List<string> listDashboardQueriesPath = new List<string>();
+            string dashboardQueriesPath = templatesFolder + model.SelectedTemplate + @"\Dashboard\Queries";
+            string dashboardPath = templatesFolder + model.SelectedTemplate + @"\Dashboard";
 
-                if (Directory.Exists(dashboardQueriesPath))
+            if (Directory.Exists(dashboardQueriesPath))
+            {
+                Directory.GetFiles(dashboardQueriesPath).ToList().ForEach(i => listDashboardQueriesPath.Add(i));
+            }
+            if (Directory.Exists(dashboardPath))
+            {
+                CreateQueryAndWidgets(templatesFolder, model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
+                AddMessage(model.id, "Queries, Widgets and Charts created");
+            }
+            string _checkIsPrivate = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
+            if (_checkIsPrivate != "")
+            {
+                ProjectSetting setting = new ProjectSetting();
+                setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
+                if (setting.IsPrivate == "true")
                 {
-                    Directory.GetFiles(dashboardQueriesPath).ToList().ForEach(i => listDashboardQueriesPath.Add(i));
-                }
-                if (Directory.Exists(dashboardPath))
-                {
-                    CreateQueryAndWidgets(templatesFolder, model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
-                    AddMessage(model.id, "Queries, Widgets and Charts created");
-                }
-                string _checkIsPrivate = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
-                if (_checkIsPrivate != "")
-                {
-                    ProjectSetting setting = new ProjectSetting();
-                    setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
-                    if (setting.IsPrivate == "true")
-                    {
-                        Directory.Delete(Path.Combine(templatesFolder, model.SelectedTemplate), true);
-                    }
+                    Directory.Delete(Path.Combine(templatesFolder, model.SelectedTemplate), true);
                 }
             }
             StatusMessages[model.id] = "100";

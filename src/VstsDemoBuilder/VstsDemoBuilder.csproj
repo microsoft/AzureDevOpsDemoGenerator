@@ -1041,6 +1041,7 @@
     <Content Include="Templates\ContosoShuttle\TaskfromTemplate.json" />
     <Content Include="Templates\ContosoShuttle\TeamArea.json" />
     <Content Include="Templates\ContosoShuttle\Teams.json" />
+    <Content Include="Templates\ContosoShuttle\Dashboard\Queries\Work in Progress.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
