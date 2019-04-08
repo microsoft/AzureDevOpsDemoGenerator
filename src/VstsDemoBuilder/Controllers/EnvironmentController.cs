@@ -55,7 +55,7 @@ namespace VstsDemoBuilder.Controllers
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
         private string extractPath = string.Empty;
-        private AccessDetails AccessDetails = new AccessDetails();
+        private AccessDetails _accessDetails = new AccessDetails();
         private string logPath = "";
         private string templateVersion = string.Empty;
         private string enableExtractor = "";
@@ -241,8 +241,8 @@ namespace VstsDemoBuilder.Controllers
 
                     if (Session["PAT"] != null)
                     {
-                        AccessDetails.access_token = Session["PAT"].ToString();
-                        ProfileDetails profile = GetProfile(AccessDetails);
+                        _accessDetails.access_token = Session["PAT"].ToString();
+                        ProfileDetails profile = GetProfile(_accessDetails);
                         if (profile.displayName != null || profile.emailAddress != null)
                         {
                             Session["User"] = profile.displayName ?? string.Empty;
@@ -250,12 +250,12 @@ namespace VstsDemoBuilder.Controllers
                         }
                         if (profile.id != null)
                         {
-                            AccountsResponse.AccountList accountList = GetAccounts(profile.id, AccessDetails);
+                            AccountsResponse.AccountList accountList = GetAccounts(profile.id, _accessDetails);
 
                             //New Feature Enabling
                             model.accessToken = Session["PAT"].ToString();
-                            model.refreshToken = AccessDetails.refresh_token;
-                            Session["PAT"] = AccessDetails.access_token;
+                            model.refreshToken = _accessDetails.refresh_token;
+                            Session["PAT"] = _accessDetails.access_token;
                             model.MemberID = profile.id;
                             List<string> accList = new List<string>();
                             if (accountList.count > 0)
@@ -274,7 +274,6 @@ namespace VstsDemoBuilder.Controllers
                                 ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
                             }
 
-                            model.SupportEmail = System.Configuration.ConfigurationManager.AppSettings["SupportEmail"];
                             model.Templates = new List<string>();
                             model.accountUsersForDdl = new List<SelectListItem>();
                             TemplateSelection.Templates templates = new TemplateSelection.Templates();
@@ -359,13 +358,13 @@ namespace VstsDemoBuilder.Controllers
                     string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
-                    AccessDetails = GetAccessToken(accessRequestBody);
-                    if (!string.IsNullOrEmpty(AccessDetails.access_token))
+                    _accessDetails = GetAccessToken(accessRequestBody);
+                    if (!string.IsNullOrEmpty(_accessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
                         //AccessDetails.access_token = "";
-                        model.accessToken = AccessDetails.access_token;
-                        Session["PAT"] = AccessDetails.access_token;
+                        model.accessToken = _accessDetails.access_token;
+                        Session["PAT"] = _accessDetails.access_token;
                     }
                     return RedirectToAction("createproject", "Environment");
                 }
@@ -656,12 +655,7 @@ namespace VstsDemoBuilder.Controllers
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessDetails.access_token);
                     HttpResponseMessage response = client.GetAsync("_apis/profile/profiles/me?api-version=4.1").Result;
-                    if (response.StatusCode == HttpStatusCode.NonAuthoritativeInformation)
-                    {
-                        AccessDetails = Refresh_AccessToken(accessDetails.refresh_token);
-                        GetProfile(AccessDetails);
-                    }
-                    else if (response.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
                         profile = JsonConvert.DeserializeObject<ProfileDetails>(result);
@@ -671,15 +665,14 @@ namespace VstsDemoBuilder.Controllers
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Profile :" + errorMessage + "\n");
-                        profile = new ProfileDetails();
                     }
                 }
                 catch (Exception ex)
                 {
                     logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 }
+                return profile;
             }
-            return new ProfileDetails();
         }
 
 
@@ -715,13 +708,13 @@ namespace VstsDemoBuilder.Controllers
                     }
                     else
                     {
-                        return null;
+                        return new AccessDetails();
                     }
                 }
                 catch (Exception ex)
                 {
                     logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                    return null;
+                    return new AccessDetails();
                 }
             }
         }
@@ -734,7 +727,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         public AccountsResponse.AccountList GetAccounts(string memberID, AccessDetails details)
         {
-            Models.AccountsResponse.AccountList accounts = new Models.AccountsResponse.AccountList();
+            AccountsResponse.AccountList accounts = new AccountsResponse.AccountList();
             var client = new HttpClient();
             string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
 
@@ -744,12 +737,7 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 var response = client.SendAsync(request).Result;
-                if (response.StatusCode == HttpStatusCode.NonAuthoritativeInformation)
-                {
-                    details = Refresh_AccessToken(details.refresh_token);
-                    return GetAccounts(memberID, details);
-                }
-                else if (response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
                     accounts = JsonConvert.DeserializeObject<Models.AccountsResponse.AccountList>(result);
@@ -759,14 +747,13 @@ namespace VstsDemoBuilder.Controllers
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
                     logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Accounts :" + errorMessage + "\t" + "\n");
-                    accounts = new AccountsResponse.AccountList();
                 }
             }
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
-            return new AccountsResponse.AccountList();
+            return accounts;
         }
 
         /// <summary>
@@ -867,8 +854,8 @@ namespace VstsDemoBuilder.Controllers
                         string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                         IssueWI objIssue = new IssueWI();
 
-                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
-                        errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + projectName;
+                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + "\t" + "ProjectCreated : " + projectName;
 
                         logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
@@ -1674,7 +1661,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message );
+                AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message);
             }
 
             return new TeamMemberResponse.TeamMembers();
@@ -1748,7 +1735,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message );
+                AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message);
             }
             return result;
         }
@@ -1777,7 +1764,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message );
+                AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message);
 
             }
 
@@ -2152,7 +2139,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message );
+                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message);
             }
         }
 
@@ -2475,7 +2462,7 @@ namespace VstsDemoBuilder.Controllers
                                 {
                                     relDef.Id = releaseDef[0];
                                     relDef.Name = releaseDef[1];
-                                }                                
+                                }
                                 if (!string.IsNullOrEmpty(relDef.Name))
                                 {
                                     objRelease.LastFailureMessage = string.Empty;
@@ -2877,7 +2864,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message );
+                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message);
             }
         }
 
