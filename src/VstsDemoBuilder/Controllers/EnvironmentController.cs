@@ -464,7 +464,8 @@ namespace VstsDemoBuilder.Controllers
             {
                 model.Environment.UserUniqueId = teamMember.identity.id;
             }
-
+            model.Environment.UserUniqueId = model.Email;
+            model.Environment.UserUniquename = model.Email;
             //update board columns and rows
             // Checking for template version
             string projectTemplate = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectTemplate.json"));

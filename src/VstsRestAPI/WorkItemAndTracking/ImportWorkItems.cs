@@ -97,10 +97,10 @@ namespace VstsRestAPI.WorkItemAndTracking
                     {
                         listAssignToUsers.Add(uniqueUser);
                     }
-                    foreach (var data in userList.Values())
-                    {
-                        listAssignToUsers.Add(data.ToString());
-                    }
+                    //foreach (var data in userList.Values())
+                    //{
+                    //    listAssignToUsers.Add(data.ToString());
+                    //}
                 }
 
                 foreach (string wiType in dicWITypes.Keys)
