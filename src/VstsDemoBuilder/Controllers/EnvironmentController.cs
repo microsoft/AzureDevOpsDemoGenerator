@@ -167,7 +167,7 @@ namespace VstsDemoBuilder.Controllers
                     {
                         if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.alias))
                         {
-                            user.ProjectName = user.alias + "_" + model.templateName;
+                            user.ProjectName = user.alias + "-" + model.templateName;
                             user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
                             ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
                             processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
