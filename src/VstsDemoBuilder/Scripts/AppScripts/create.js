@@ -985,7 +985,7 @@ function getGroups(grpSelected) {
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
                                     if (MatchedGroup.Template[i].Tags !== null) {
                                         grp += '<p></p>';
-                                        grp += '<p>';
+                                        grp += '<p class="tagz">';
                                         for (var rx = 0; rx < MatchedGroup.Template[i].Tags.length; rx++) {
                                             grp += '<i>' + MatchedGroup.Template[i].Tags[rx] + '</i>';
                                         }
