@@ -474,7 +474,7 @@ namespace VstsDemoBuilder.Controllers
             model.Environment.ProjectName = model.ProjectName;
 
             //Add user as project admin
-            bool isAdded = AddUserAsAdmin(_graphApiVersion, model);
+            bool isAdded = AddUserToProject(_graphApiVersion, model);
             if (isAdded)
             {
                 AddMessage(model.id, string.Format("Added user {0} as project admin ", model.Email));
@@ -500,7 +500,8 @@ namespace VstsDemoBuilder.Controllers
             {
                 model.Environment.UserUniqueId = teamMember.identity.id;
             }
-
+            model.Environment.UserUniqueId = model.Email;
+            model.Environment.UserUniquename = model.Email;
             //update board columns and rows
             // Checking for template version
             string projectTemplate = System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectTemplate.json"));
@@ -2574,7 +2575,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
 
-        private bool AddUserAsAdmin(Configuration con, Project model)
+        private bool AddUserToProject(Configuration con, Project model)
         {
             try
             {
@@ -2598,9 +2599,15 @@ namespace VstsDemoBuilder.Controllers
                                 string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.descriptor), con.VersionNumber);
                                 var json = CreatePrincipalReqBody(model.Email);
                                 var response = httpService.Post(json, urpParams);
-                                return true;
+                            }
+                            if (group.displayName.ToLower() == model.ProjectName.ToLower() + " team")
+                            {
+                                string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.descriptor), con.VersionNumber);
+                                var json = CreatePrincipalReqBody(model.Email);
+                                var response = httpService.Post(json, urpParams);
                             }
                         }
+                        return true;
                     }
                 }
             }
