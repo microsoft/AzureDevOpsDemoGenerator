@@ -184,6 +184,8 @@ namespace VstsDemoBuilder.Models
         public string alias { get; set; }
         public string ProjectName { get; set; }
         public string TrackId { get; set; }
+
+        public string status { get; set; }
     }
 
     public class BulkData
