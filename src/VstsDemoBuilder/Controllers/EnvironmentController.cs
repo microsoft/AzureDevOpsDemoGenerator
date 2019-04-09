@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Hosting;
@@ -142,7 +143,7 @@ namespace VstsDemoBuilder.Controllers
                     return Request.CreateResponse(HttpStatusCode.Unauthorized, "Token of type Basic must be provided");
                 }
                 else
-                {
+                {                   
                     HttpResponseMessage response = GetprojectList(model.organizationName, model.accessToken);
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
@@ -173,25 +174,43 @@ namespace VstsDemoBuilder.Controllers
                 {
                     foreach (var user in model.users)
                     {
-                        if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.alias))
+                        if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.ProjectName))
                         {
-                            user.ProjectName = user.alias + "-" + model.templateName;
+                            //user.ProjectName = user.alias + "-" + model.templateName;
                             user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
-                            var result = ListOfExistedProjects.Contains(user.ProjectName);
-                            if (result == true)
+
+                            string pattern = @"^(?!_)(?![.])[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'"",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$";
+
+                            bool isProjectNameValid = Regex.IsMatch(user.ProjectName, pattern);
+                            List<string> restrictedNames = new List<string>() { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "PRN", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LTP", "LTP8", "LTP9", "NUL", "CON", "AUX", "SERVER", "SignalR", "DefaultCollection", "Web", "App_code", "App_Browesers", "App_Data", "App_GlobalResources", "App_LocalResources", "App_Themes", "App_WebResources", "bin", "web.config" };
+
+                            if (!isProjectNameValid)
                             {
-                                user.status = user.ProjectName + " is already exist";
+                                user.status = "project creation is failed because of invalid projectName";
                             }
+                            else if(restrictedNames.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.Trim().ToLower()))
+                            {
+                                user.status = "project creation is failed because of reserved name in the projectName";
+                            }                           
                             else
                             {
-                                user.status ="project creation is initiated..";
-                                ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                                processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                                var result = ListOfExistedProjects.Contains(user.ProjectName);
+                                if (result == true)
+                                {
+                                    user.status = user.ProjectName + " is already exist";
+                                }
+                                else
+                                {
+                                    user.status = "project creation is initiated..";
+                                    ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                                    processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                                }
                             }
                         }
                         else
                         {
-                            return Request.CreateResponse(HttpStatusCode.Forbidden, "emailId or alias is not found");
+                            //return Request.CreateResponse(HttpStatusCode.Forbidden, "emailId or ProjectName is not found");
+                            user.status = "emailId or ProjectName is not found";
                         }
                     }
                 }
