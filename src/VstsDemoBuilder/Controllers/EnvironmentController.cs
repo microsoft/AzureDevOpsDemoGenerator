@@ -132,7 +132,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-
+                List<string> ListOfExistedProjects = new List<string>();
                 if (string.IsNullOrEmpty(model.organizationName))
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Provide a valid account name");
@@ -147,6 +147,14 @@ namespace VstsDemoBuilder.Controllers
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
                         return Request.CreateResponse(response.StatusCode);
+                    }
+                    else
+                    {
+                        var projectResult = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+                        foreach (var project in projectResult.value)
+                        {
+                            ListOfExistedProjects.Add(project.name);
+                        }
                     }
                 }
                 if (string.IsNullOrEmpty(model.templateName))
@@ -169,8 +177,17 @@ namespace VstsDemoBuilder.Controllers
                         {
                             user.ProjectName = user.alias + "-" + model.templateName;
                             user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
-                            ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                            processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                            var result = ListOfExistedProjects.Contains(user.ProjectName);
+                            if (result == true)
+                            {
+                                user.status = user.ProjectName + " is already exist";
+                            }
+                            else
+                            {
+                                user.status ="project creation is initiated..";
+                                ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                                processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                            }
                         }
                         else
                         {
