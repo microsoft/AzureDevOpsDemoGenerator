@@ -177,7 +177,7 @@ namespace VstsDemoBuilder.Controllers
                         if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.ProjectName))
                         {
                             //user.ProjectName = user.alias + "-" + model.templateName;
-                            user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
+                            //user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
 
                             string pattern = @"^(?!_)(?![.])[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'"",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$";
 
@@ -186,31 +186,34 @@ namespace VstsDemoBuilder.Controllers
 
                             if (!isProjectNameValid)
                             {
-                                user.status = "Invalid project name";
+                                user.status = "Invalid Project name";
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                             }
                             else if (restrictedNames.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.Trim().ToLower()))
                             {
                                 user.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
-                            }
-                            else
-                            {
-                                var result = ListOfExistedProjects.Contains(user.ProjectName);
-                                if (result == true)
-                                {
-                                    user.status = user.ProjectName + " is already exist";
-                                }
-                                else
-                                {
-                                    user.status = "project creation is initiated..";
-                                    ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                                    processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
-                                }
-                            }
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, user);
+                            }                          
                         }
                         else
                         {
-                            //return Request.CreateResponse(HttpStatusCode.Forbidden, "emailId or ProjectName is not found");
-                            user.status = "emailId or ProjectName is not found";
+                            user.status = "EmailId or ProjectName is not found";
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, user);                           
+                        }
+                    }
+                    foreach (var user in model.users)
+                    {                        
+                        var result = ListOfExistedProjects.Contains(user.ProjectName);
+                        if (result == true)
+                        {
+                            user.status = user.ProjectName + " is already exist";
+                        }
+                        else
+                        {
+                            user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
+                            user.status = "Project creation is initiated..";
+                            ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                            processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                         }
                     }
                 }
