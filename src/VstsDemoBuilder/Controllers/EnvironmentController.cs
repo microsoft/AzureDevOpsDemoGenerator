@@ -143,7 +143,7 @@ namespace VstsDemoBuilder.Controllers
                     return Request.CreateResponse(HttpStatusCode.Unauthorized, "Token of type Basic must be provided");
                 }
                 else
-                {                   
+                {
                     HttpResponseMessage response = GetprojectList(model.organizationName, model.accessToken);
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
@@ -186,12 +186,12 @@ namespace VstsDemoBuilder.Controllers
 
                             if (!isProjectNameValid)
                             {
-                                user.status = "project creation is failed because of invalid projectName";
+                                user.status = "Invalid project name";
                             }
-                            else if(restrictedNames.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.Trim().ToLower()))
+                            else if (restrictedNames.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.Trim().ToLower()))
                             {
-                                user.status = "project creation is failed because of reserved name in the projectName";
-                            }                           
+                                user.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
+                            }
                             else
                             {
                                 var result = ListOfExistedProjects.Contains(user.ProjectName);
@@ -214,7 +214,6 @@ namespace VstsDemoBuilder.Controllers
                         }
                     }
                 }
-
                 //ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
                 //processTask.BeginInvoke(model, model.accessToken, model.organizationName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             }
