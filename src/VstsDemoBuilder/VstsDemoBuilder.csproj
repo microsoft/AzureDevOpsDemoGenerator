@@ -248,7 +248,7 @@
   <ItemGroup>
     <Content Include="assets\css\custom.min.css" />
     <Content Include="assets\images\error.png" />
-    <Content Include="assets\images\info-icon.png" />
+    <Content Include="assets\images\info.png" />
     <Content Include="assets\images\NotFound.png" />
     <Content Include="assets\images\VSTS_cover_image_3.png" />
     <Content Include="assets\images\VSTS_cover_image_5.png" />

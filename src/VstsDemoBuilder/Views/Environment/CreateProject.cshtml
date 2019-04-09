@@ -133,31 +133,41 @@
         </div>
     </div>
     <!-- /MODAL -->
-        <nav class="navbar demo-nav-bar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
-            <a class="navbar-brand p-0 mr-auto" href="../Account/Verify">
-                <img src="~/content/assets/images/VS_logo.png" alt="">
-                <span class="navbar-brand-text ml-1">
-                    Azure DevOps Demo Generator
-                </span>
-            </a>
-            <ul class="navbar-nav demo_nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
-                        <img src="~/content/assets/images/VSTS-user-image.svg" alt="Azure DevOps Demo Generator">
-                        @if (Session["User"] != null)
-                        {
-                            <span class="VSTS-username ml-1">@Session["User"].ToString()</span>
-                        }
-                        <span class="sr-only">(current)</span>
-                    </a>
+    <nav class="navbar demo-nav-bar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
+        <a class="navbar-brand p-0 mr-auto" href="../Account/Verify">
+            <img src="~/content/assets/images/VS_logo.png" alt="">
+            <span class="navbar-brand-text ml-1">
+                Azure DevOps Demo Generator
+            </span>
+        </a>
+        @{
+            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
+            {
+                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+                    <a href="../extractor/index" target="_blank" class="createtemplate" >Build your template</a>
+                </div>
+            }
+        }
+        <ul class="navbar-nav demo_nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="Azure DevOps Demo Generator">
+                    @if (Session["User"] != null)
+                    {
+                        <span class="VSTS-username ml-1">@Session["User"].ToString()</span>
+                    }
+                    <span class="sr-only">(current)</span>
+                </a>
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
    
         
         <div class="jumbotron createDemoContainer mb-0" style="padding-bottom: 25px; padding-top: 25px;">
@@ -171,14 +181,7 @@
             <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:17px" /></a>
             <a class="nav-link fa fa-envelope" style="color:white" href="#" data-toggle="tooltip" title="Send Feedback" onclick="javascript:window.location='mailto:AzureDevOpsDemoGenerator@service.microsoft.com?subject=Azure DevOps Demo Generator Feedback &amp;body=I have some feedback about the Azure DevOps Demo Generator: ' + window.location.href;"></a>
         </p>
-        @{
-            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
-            {
-                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                    <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
-                </div>
-            }
-        }
+       
 
     </div>
     @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
@@ -325,7 +328,8 @@
                     </div>
                 </div>
                 <div id="InfoMessage" class="d-block pl-4 pr-4 pb-4 pt-4 info_msg">
-
+                    <h5 class="informIcon">Information</h5>
+                   
                 </div>
                 <div class="card bg-primary mb-3 mt-auto  about_template" id="errorNotify" style="display:none;">
                     <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>

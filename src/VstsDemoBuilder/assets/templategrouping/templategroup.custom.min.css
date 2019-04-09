@@ -8667,21 +8667,30 @@ html, body {
     overflow:hidden;
     vertical-align :middle;
     margin-bottom: 0;
-    border: 1px solid #0078d7;
-    border-radius: 6px;
-    background: #fff;
 }
 
 
-  .template_tab li 
-   { list-style:none;
-     padding:00px;
-   }
-  .template_tab li a.active {
-       background: #0078D7;
-       color: #fff !important;
-       font-weight:600;
-  }
+    .template_tab li {
+        list-style: none;
+        padding: 00px;
+        background: #fff;
+        margin: 0 1px;
+        border-radius: 6px 6px 0px 0px;
+        overflow: hidden;
+        background:#f8f9fa !important
+    }
+        .template_tab li a.active {
+            color: #fff !important;
+            font-weight: 600;
+            background: rgba(0,24,143,1);
+            background: -moz-linear-gradient(top, rgba(0,24,143,1) 0%, rgba(0,120,215,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,24,143,1)), color-stop(100%, rgba(0,120,215,1)));
+            background: -webkit-linear-gradient(top, rgba(0,24,143,1) 0%, rgba(0,120,215,1) 100%);
+            background: -o-linear-gradient(top, rgba(0,24,143,1) 0%, rgba(0,120,215,1) 100%);
+            background: -ms-linear-gradient(top, rgba(0,24,143,1) 0%, rgba(0,120,215,1) 100%);
+            background: linear-gradient(to bottom, rgba(0,24,143,1) 0%, rgba(0,120,215,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00188f', endColorstr='#0078d7', GradientType=0 );
+        }
 
    .template_tab li a {
     padding: 0;
@@ -8746,22 +8755,60 @@ html, body {
 }
 
 .createDemoContainer {
-    height:186px;
+    height:146px;
     position:relative;
 }
 .demo-nav-bar { padding:0 30px
 }
 .demo_nav li .VSTS-username {
     color: #fff;
-    font-size:14px;
+    font-size:13px;
+    letter-spacing:.5px;
 }
 .demo_nav {
-    border-radius: 8px;
+    border-radius: 4px;
     background: #BAD80A;
     color: #fff;
     /* border: 2px solid #fff; */
     padding: 2px 8px;
-    box-shadow: -1px 1px 15px 0px rgba(0, 0, 0, 0.49);
+    box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.33);
+}
+.demo_nav li a{
+    padding: 0 0 5px 0;
+}
+
+
+.createtemplate{
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    float: right;
+    background: #FFB900;
+    box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.33);
+}
+.createtemplate:hover {
+        border: 1px solid #FFB900;
+        background:#fff;
+        text-decoration:none;
+    }
+.demo_nav:hover {
+    border: 1px solid #BAD80A;
+    background: #fff;
+    color: #BAD80A;
+}
+    .demo_nav:hover li .VSTS-username {
+        color: #BAD80A
+    }
+.demo_nav .dropdown-menu.show {
+    right: -7px !important;
+    background: #eaeaea;
+    border: none;
+    border-radius: 4px;
+    text-align: right;
+    margin-top: 2px;
+    padding: 5px;
 }
 
 .social-icons{
@@ -8809,7 +8856,18 @@ html, body {
     border: .5px solid #dee2e6 !important;
     line-height: 23px;
 }
-.info_msg a{
+    .info_msg p {
+        margin-bottom:0
+    }
+.informIcon {
+    background: url("../images/info.png");
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    padding: 0px 0 7px 25px;
+    background-size: 22px;
+    color: #0078D7;
+}
+.info_msg a {
     background: #ffffffde;
     padding: 0 5px;
     border-radius: 4px;
@@ -8849,7 +8907,6 @@ html, body {
 
 .select-button {
     border: none;
-    min-width: 130px;
     border-radius: 4px;
     height: 35px;
     padding: 0 13px;
@@ -8932,7 +8989,7 @@ html, body {
 .template-dialog-title {
     position: relative;
     color: #fff !important;
-    padding: 3px 112px 3px 23px;
+    padding: 8px 112px 0px 23px;
     width: 100%;
     display: block;
     float: left;

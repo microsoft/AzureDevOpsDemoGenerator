@@ -7950,23 +7950,87 @@ html, body {
 
             .section-1 main .VSTS-hero-image .VSTS-hero {
                 flex: 1;
-                background: url(../images/VSTS_cover_image_3.png) top left/ 1000px, #EBF5FF;
+                /* background: url(../images/VSTS_cover_image_6.png) top left/ 1000px, #EBF5FF;*/
                 background-repeat: no-repeat;
-                background-size:contain;
+                background-size: contain;
             }
 
                 .section-1 main .VSTS-hero-image .VSTS-hero img {
                     width: 60px
                 }
+.select-button {
+    border: none;
+    border-radius: 4px;
+    height: 35px;
+    font-size:13px;
+    padding: 0 13px;
+    background: rgba(77,176,255,1);
+    background: -moz-linear-gradient(left, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(77,176,255,1)), color-stop(100%, rgba(0,120,215,1)));
+    background: -webkit-linear-gradient(left, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    background: -o-linear-gradient(left, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    background: linear-gradient(to right, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    box-shadow: -1px 1px 9px 0px rgba(0, 0, 0, 0.22);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4db0ff', endColorstr='#0078d7', GradientType=1 );
+}
+.select-button:hover{
+    background: #fff;
+    border: 1px solid #00BCF2;
+    color: #00BCF2;
+}
+.select-button:focus { outline:none;
+                       box-shadow:none;
+    }
 
-@media (min-width: 768px) {
-    .section-1 main .VSTS-details {
+a.select-button{
+    line-height: 34px;
+}
+    .mainbanner {
+        background: url(../images/VSTS_cover_image_6.png) top left/ 1000px, #fff;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: 67%;
+    }
+.azuretitle {
+    font-weight: 100;
+    font-size: 22px;
+    color: #0078D7;
+}
+    .azuretitle:hover {
+        color: #00BCF2;
+        text-decoration:none;
+    }
+.VSTS-details p{ font-weight:100;
+                 line-height:23px;
+}
+.readmore {
+    color: #0078D7;
+    font-weight: 400;
+}
+    .readmore:hover {
+        color: #00BCF2;
+        text-decoration: none
+    }
+.section-1 main .VSTS-details {
+    max-width: 600px;
+}
+.footer {
+    padding: 8px 7em !important;
+    font-weight:100;
+    font-size:13px;
+}
+.footer a {
+        color: #0078D7 !important;
+    }
+
+    @media (min-width: 768px) {
+        .section-1 main .VSTS-details {
         max-width: 550px
     }
 }
 
 .section-1 main .VSTS-details .demo-generator-details-logo {
-    width: 210px
+    width:172px
 }
 
 .section-1 main .VSTS-details p {
