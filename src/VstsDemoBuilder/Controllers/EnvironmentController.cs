@@ -2564,7 +2564,7 @@ namespace VstsDemoBuilder.Controllers
                                 var json = CreatePrincipalReqBody(model.Email);
                                 var response = httpService.Post(json, urpParams);
                             }
-                            if (group.displayName.ToLower() == model.ProjectName + " team")
+                            if (group.displayName.ToLower() == model.ProjectName.ToLower() + " team")
                             {
                                 string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.descriptor), con.VersionNumber);
                                 var json = CreatePrincipalReqBody(model.Email);
