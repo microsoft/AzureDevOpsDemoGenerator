@@ -231,7 +231,9 @@ namespace VstsDemoBuilder.Controllers.Apis
                 StatusMessages.Remove(id);
             }
         }
+        #endregion
 
+        #region Project Setup Operations
         /// <summary>
         /// End the process
         /// </summary>
@@ -986,9 +988,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
         }
-        #endregion
-
-        #region Project Setup Operations
+        
         /// <summary>
         /// Create Teams
         /// </summary>
