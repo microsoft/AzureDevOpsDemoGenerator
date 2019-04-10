@@ -363,7 +363,7 @@ namespace VstsDemoBuilder.Controllers
                     if (!string.IsNullOrEmpty(AccessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
-                        AccessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiIxZTk1OTNlNC0wM2ViLTY1MjktOWFlNy1lY2M1ZmUyN2QyNWEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMDViNTQ0ZTAtZmMwNC00ZGY1LTk1MTctMzIwYTRmOTQxYzgzIiwiYXBwaWQiOiI1MDE4NzdkMy05YmNjLTRiZTYtYThjZC04MGFkOTk5YTY5NmEiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTU0ODkxNTg0LCJleHAiOjE1NTQ4OTUxODR9.MJgY4z773fmU8JihL92LnLtfsVwN15KP6-vlCljJ9lP969p2aeydehHzbPr9Ky55EWtZvDldBJgfqiEGxuH_uYPLBIjtDgUi4jJZwW5v36PsJ0R5mwhCfvjsFpPNrhHe_33bHKUBbVJHWX-l_AmbETDiRxahFxSwnx-f8otlY2mAwJb0q2G0LlLEVfc-8kB9ZPqxpcex_u-p8z5g-II5zP0ZgyZA1FKgjEpFU0NLpt96Nj43v2wPfbL0YvnjRKTy2JSNoxMm7kJMz9GBKcqH0mKCrIrFSJLczhrVTx026SSxSOq-D29YFYpeb8GNipPpOqOPG4wCU0P3m6A1G9xWSg";
+                        //AccessDetails.access_token = "";
                         model.accessToken = AccessDetails.access_token;
                         Session["PAT"] = AccessDetails.access_token;
                     }
