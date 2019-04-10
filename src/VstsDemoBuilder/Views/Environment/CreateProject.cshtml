@@ -100,7 +100,7 @@
             </div>
             @*<div class="template-group  d-flex align-items-center p-2 ">
 
-        </div>*@
+                </div>*@
             <div class="template-body vstsScroll bg-light p-3">
                 <div class="tab-content" id="pills-tabContent">
                 </div>
@@ -108,7 +108,7 @@
             <div class="template-footer p-3 bg-white text-right">
                 <button class="btn btn-primary select-button" id="selecttmplate">Select Template</button>
             </div>
-        </div> 
+        </div>
     </div>
     <!--/TEMPLATEgROUPING-->
     <!-- MODAL -->
@@ -140,14 +140,7 @@
                 Azure DevOps Demo Generator
             </span>
         </a>
-        @{
-            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
-            {
-                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                    <a href="../extractor/index" target="_blank" class="createtemplate" >Build your template</a>
-                </div>
-            }
-        }
+
         <ul class="navbar-nav demo_nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -168,22 +161,30 @@
         </ul>
 
     </nav>
-   
-        
-        <div class="jumbotron createDemoContainer mb-0" style="padding-bottom: 25px; padding-top: 25px;">
+
+
+    <div class="jumbotron createDemoContainer mb-0" style="padding-bottom: 25px; padding-top: 25px;">
         @*<div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>*@
         <p class="m-0 social-icons">
             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:10px"  /></a>&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:17px"  /></a>&nbsp;&nbsp;
+            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:10px" /></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:17px" /></a>&nbsp;&nbsp;
             <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:17px" /></a>
             <a class="nav-link fa fa-envelope" style="color:white" href="#" data-toggle="tooltip" title="Send Feedback" onclick="javascript:window.location='mailto:AzureDevOpsDemoGenerator@service.microsoft.com?subject=Azure DevOps Demo Generator Feedback &amp;body=I have some feedback about the Azure DevOps Demo Generator: ' + window.location.href;"></a>
         </p>
-       
+        @{
+            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
+            {
+                <div class="text-center display-4 templte_create p-3" id="greeting" style="line-height: 1.2;">
+                    <a href="../extractor/index" target="_blank" class="createtemplate">Build your template</a>
+                </div>
+            }
+        }
 
     </div>
+ 
     @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
     {
         <div class="col-sm-12" style="background-color:#ffaeae">
@@ -194,125 +195,125 @@
     <div class="container mt-3">
         <div class="row VSTS-mh-100 create-new-project" style="align-items:flex-start">
             <!--
-          COL 1
-          Image and Feedback section
-    -->
+                  COL 1
+                  Image and Feedback section
+            -->
             @*<div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
-        <div class="d-flex flex-column VSTS-mh-100 demo_gen_img">
-            <img class="img-fluid img-demo" src="~/Images/sideImage2.png" >
-           <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
-                <h6>Feedback&colon;</h6>
-                <p class="mb-0">
-                    To provide feedback, you can email us
-                    <a class="text-primary" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com">here </a>.
-                <p>Like our tool? We would appreciate if you share feedback on social</p>
+                <div class="d-flex flex-column VSTS-mh-100 demo_gen_img">
+                    <img class="img-fluid img-demo" src="~/Images/sideImage2.png" >
+                   <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
+                        <h6>Feedback&colon;</h6>
+                        <p class="mb-0">
+                            To provide feedback, you can email us
+                            <a class="text-primary" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com">here </a>.
+                        <p>Like our tool? We would appreciate if you share feedback on social</p>
 
-                <p class="m-0">
-                    <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-                    <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                    <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                </p>
-            </div>
-        </div>
-            </div>*@
+                        <p class="m-0">
+                            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+                            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
+                        </p>
+                    </div>
+                </div>
+                    </div>*@
             <!--
-        COL 2
-        Create section
-    -->
+                COL 2
+                Create section
+            -->
             <div class="col-md-8 order-1 order-md-2">
-               
+
                 <div class="demo_form">
                     <div class="demo-header"><h5>Create New Project</h5></div>
                     <div class="demo-content">
-                    <div class="form-group row ">
-                        <div class="col-lg-12">
-                            <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
-                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                            </div>
-                            <div style="color:red">
-                                @ViewBag.AccDDError
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row" id="">
-                        <div class="col-lg-12 mt-1">
-                            <label for="Template" class="d-block col-form-label ">Choose template  :</label>
-                            <div class="row align-items-center ml-0">
-                                <input type="text" class="form-control col mr-3 mt-lg-0 form-input" id="ddlTemplates" disabled />
-                                <div class="template-invoke pr-3" style="padding-left:0px;">
-                                    <button class="btn btn-primary demo-button" id="templateselection">
-                                        Choose template
-                                    </button>
+                        <div class="form-group row ">
+                            <div class="col-lg-12">
+                                <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
+                                @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                                <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                                </div>
+                                <div style="color:red">
+                                    @ViewBag.AccDDError
                                 </div>
                             </div>
-                            <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
-                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group row" id="">
-                        <div class="col-lg-12 mt-1">
-                            <label for="Template" class="d-block col-form-label ">New Project Name  :</label>
-                            <div class="row align-items-center ml-0">
-                                @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverror form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                                <div class="template-invoke pr-3 " style="padding-left:0px;">
-                                    <button class="btn btn-primary submitBtn btnUpdate demo-button" id="btnSubmit" style="padding-left:5px; padding-right:5px; font-size:13px;width: auto">
-                                        &nbsp;&nbsp;Create Project &nbsp;&nbsp;
-                                    </button>
-                                    <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
+                        <div class="form-group row" id="">
+                            <div class="col-lg-12 mt-1">
+                                <label for="Template" class="d-block col-form-label ">Choose template  :</label>
+                                <div class="row align-items-center ml-0">
+                                    <input type="text" class="form-control col mr-3 mt-lg-0 form-input" id="ddlTemplates" disabled />
+                                    <div class="template-invoke pr-3" style="padding-left:0px;">
+                                        <button class="btn btn-primary rd-4" id="templateselection">
+                                            Choose template
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
                                 </div>
                             </div>
-                            <div class="alert alert-danger d-none col-md-12" role="alert" id="txtProjectName_Error">
+                        </div>
+
+                        <div class="form-group row" id="">
+                            <div class="col-lg-12 mt-1">
+                                <label for="Template" class="d-block col-form-label ">New Project Name  :</label>
+                                <div class="row align-items-center ml-0">
+                                    @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverror form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                                    <div class="template-invoke pr-3 " style="padding-left:0px;">
+                                        <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" style="padding-left:5px; padding-right:5px; font-size:13px;width: auto">
+                                            &nbsp;&nbsp;Create Project &nbsp;&nbsp;
+                                        </button>
+                                        <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger d-none col-md-12" role="alert" id="txtProjectName_Error">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- PROJECT PARAMETERS -->
-                    <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
-                        <label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">SonarQube URL:</label>
-                        <div class="col-lg-8">
-                            <input type="text" class="form-control project-parameters rmverror" id="txtSonarServerDNSName" placeholder="SonarQube URL">
-                            <div class="alert alert-danger d-none" role="alert" id="txtSonarServerDNSName_Error">
+                        <!-- PROJECT PARAMETERS -->
+                        <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
+                            <label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">SonarQube URL:</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control project-parameters rmverror" id="txtSonarServerDNSName" placeholder="SonarQube URL">
+                                <div class="alert alert-danger d-none" role="alert" id="txtSonarServerDNSName_Error">
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="projectParameters" style="display:none">
-                    </div>
-                    <!-- PROJECT PARAMETERS -->
-                    <!--EXTENSIONS -->
-
-                    <div class="mt-4 border p-3 d-none " id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
-                        <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
-                        <div class="extensionError boldText">
-                            <p style="display:none;" id="extensionError"></p>
+                        <div id="projectParameters" style="display:none">
                         </div>
-                    </div>
-                    <!--/EXTENSIONS -->
-                    <div class="card mt-3 d-none col-lg-11" id="finalLink">
-                        <div class="card-body" id="accountLink" style="color: green;font-weight: 300; padding-left:0px; padding-right:0px;">
-                        </div>
-                    </div>
-                    <!-- PROGRESS BAR -->
-                    <div class="progress mt-3 d-none" id="dvProgress" style="padding-left:0px;">
-                        <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
+                        <!-- PROJECT PARAMETERS -->
+                        <!--EXTENSIONS -->
 
-                    <!-- PROGRESS BAR -->
-                    <div id="status-messages" class="border p-3 mt-3" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                        <div class="mt-4 border p-3 d-none " id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                            <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
+                            <div class="extensionError boldText">
+                                <p style="display:none;" id="extensionError"></p>
+                            </div>
+                        </div>
+                        <!--/EXTENSIONS -->
+                        <div class="card mt-3 d-none col-lg-11" id="finalLink">
+                            <div class="card-body" id="accountLink" style="color: green;font-weight: 300; padding-left:0px; padding-right:0px;">
+                            </div>
+                        </div>
+                        <!-- PROGRESS BAR -->
+                        <div class="progress mt-3 d-none" id="dvProgress" style="padding-left:0px;">
+                            <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
+
+                        <!-- PROGRESS BAR -->
+                        <div id="status-messages" class="border p-3 mt-3" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                        </div>
                     </div>
                 </div>
-                    </div>
-                
+
             </div>
             <!--
-       COL 3
-       Notification section
-    -->
+               COL 3
+               Notification section
+            -->
             <div class="col-md-4 order-3 order-md-3">
                 <!-- Description card -->
                 <div class="card text-white mb-3 vstsScroll about_template" id="lblDescription">
@@ -320,7 +321,7 @@
                     <div class="card-body" style="background-color:white; color:black">
                         <div class="align-items-center d-flex">
                             @*<img class="mr-3" id="templateIcon" style="width: 20px;" src="/Templates/TemplateImages/MyHealthClinic.png" alt="logo" />
-                        <p class="aboutTitle font-weight-bold m-0" id="templateName"></p>*@
+                                <p class="aboutTitle font-weight-bold m-0" id="templateName"></p>*@
                         </div>
                         <p class="card-text" id="descContainer">
 
@@ -329,7 +330,7 @@
                 </div>
                 <div id="InfoMessage" class="d-block pl-4 pr-4 pb-4 pt-4 info_msg">
                     <h5 class="informIcon">Information</h5>
-                   
+
                 </div>
                 <div class="card bg-primary mb-3 mt-auto  about_template" id="errorNotify" style="display:none;">
                     <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>

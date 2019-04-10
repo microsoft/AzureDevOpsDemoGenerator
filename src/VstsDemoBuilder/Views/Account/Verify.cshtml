@@ -17,7 +17,18 @@
 </head>
 <body>
     <section class="section-1 mainbanner d-flex flex-column">
-        <main class="d-flex pl-5">
+        <main class="d-flex pr-5">
+            <div class="VSTS-hero-image d-none d-sm-flex flex-column" style="position:relative;">
+                <div class="VSTS-hero p-4">
+                    <div class="display-4 mr-5 text-white text-left" style="font-weight: 400; font-size:18px;">
+                        <img src="~/assets/images/VS_logo.png" alt="" width="48px" class="p-2">
+                        Azure DevOps Demo Generator
+                    </div>
+                </div>
+
+                <div class="VSTS-hero-text text-primary p-5" style="position: absolute; bottom: 0;width: 100%;">
+                </div>
+            </div>
             <div class="VSTS-details p-3 pl-5 d-flex flex-column">
                 <img class="d-block demo-generator-details-logo mt-2 mt-md-5" src="~/assets/images/VSTS_full_logo.png" alt="">
                 <h6 class="h6 text-primary mt-3 text-uppercase text-left"><a href="https://docs.microsoft.com/azure/devops/demo-gen/?view=vsts" class="azuretitle" target="_blank">Azure DevOps Demo Generator</a></h6>
@@ -27,44 +38,47 @@
                 <p class="text-left mb-0">
                     The purpose of this system is to simplify working with the <a href="https://www.azuredevopslabs.com" class="readmore" target="_blank"> Azure Devops hands-on-labs</a>, demos and other education material provided by the Microsoft Azure Marketing team.
                 </p>
-                <div class="text-left mt-4">
-                    <button class="btn btn-primary select-button" id="signInWithVSTS">Sign In</button>
+                <div class="row ml-1">
+                    <div class="text-left ml-3">
+                        <p class="transparent text-left mt-3 mb-1">Sign in here</p>
+                        <a aria-label="Get started with Azure DevOps for free" id="signInWithVSTS" class="btn btn-primary">
+                            Sign In
+                        </a>
+                        @*<button class="btn btn-primary select-button" id="signInWithVSTS"></button>*@
+                    </div>
                 </div>
-                <p class="text-left mt-3 mb-0">Don’t have an Azure DevOps Organization?</p>
-                <div class="text-left">
-                    <a target="_blank" aria-label="Get started with Azure DevOps for free" class="btn select-button btn-primary mt-2" href="https://app.vsaex.visualstudio.com">
-                        Get started for free
-                        
-                    </a>
+                <div class="row ml-1">
+                    <div class="text-left ml-3">
+                        <p class="text-left mt-3 mb-1">Don’t have an Azure DevOps Organization?</p>
+                        <a target="_blank" aria-label="Get started with Azure DevOps for free" class="btn select-button btn-primary" href="https://app.vsaex.visualstudio.com">
+                            Get started for free
+                        </a>
+                    </div>
+                    <div class="text-left mt-3">
+                        <p>
+                            <a href="" class="backlink appcenter_icon">AppCenter Demo Generator</a>
+                            <a href="#" class="backlink tfs_icon">TFS Demo Generator</a>
+                        </p>
+                    </div>
                 </div>
 
                 <!--div class="demo-generator-feedback mt-auto text-center text-sm-left">
-            <p>
-                <ul>
-                    <li>
-                        Looking to populate your TFS projects? Checkout the
-                        <a href="https://github.com/Microsoft/TFSDemoGenerator" target="_blank">TFS Demo Generator</a>
-                    </li>
-                    <li>
-                        Looking for Mobile DevOps projects? Checkout the
-                        <a href="https://appcenterdemobuilder.azurewebsites.net/" target="_blank">App Center Demo Builder</a>
-                    </li>
+                    <p>
+                        <ul>
+                            <li>
+                                Looking to populate your TFS projects? Checkout the
+                                <a href="https://github.com/Microsoft/TFSDemoGenerator" target="_blank">TFS Demo Generator</a>
+                            </li>
+                            <li>
+                                Looking for Mobile DevOps projects? Checkout the
+                                <a href="https://appcenterdemobuilder.azurewebsites.net/" target="_blank">App Center Demo Builder</a>
+                            </li>
 
-                </ul>
-            </p>
-        </div-->
+                        </ul>
+                    </p>
+                </div-->
             </div>
-            <div class="VSTS-hero-image d-none d-sm-flex flex-column" style="position:relative;">
-                @*<div class="VSTS-hero p-4">
-            <div class="display-4 ml-5 text-white text-center" style="font-weight: 400;">
-                <img src="~/assets/images/VS_logo.png" alt="" width="60px" class="p-2">
-                Azure DevOps Demo Generator
-            </div>
-        </div>*@
 
-                <div class="VSTS-hero-text text-primary p-5" style="position: absolute; bottom: 0;width: 100%;">
-                </div>
-            </div>
 
         </main>
         <footer class="footer text-sm p-2 text-center d-flex flex-column flex-sm-row text-sm-left">

@@ -299,6 +299,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Images\appcenter.png" />
     <Content Include="Images\background-verify.png" />
     <Content Include="Images\bg_new.png" />
     <Content Include="Images\check-10.png" />

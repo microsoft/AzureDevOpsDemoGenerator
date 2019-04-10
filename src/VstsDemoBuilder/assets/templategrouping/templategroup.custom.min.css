@@ -2946,15 +2946,22 @@ tbody.collapse.show {
 }
 
 .dropdown-menu {
+    display: block;
+    width: 110px;
+    min-width: 50px !important;
+    text-align: center !important;
+    border-radius: 4px;
+    border: 0;
+    border-top: 2px solid #ccc0;
     position: absolute;
     top: 100%;
-    right: 0 !important;
+    right: -9px !important;
     left: auto;
     z-index: 1000;
     display: none;
     float: left;
     min-width: 10rem;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     margin: 0.125rem 0 0;
     font-size: 1rem;
     color: #212529;
@@ -3008,11 +3015,11 @@ tbody.collapse.show {
     border: 0;
 }
 
-    .dropdown-item:hover, .dropdown-item:focus {
+    /* .dropdown-item:hover, .dropdown-item:focus {
         color: #16181b;
         text-decoration: none;
         background-color: #f8f9fa;
-    }
+    }*/
 
     .dropdown-item.active, .dropdown-item:active {
         color: #fff;
@@ -8590,7 +8597,7 @@ html, body {
     backface-visibility: hidden;
 }
 
-    .VSTemplateSelection .template-holder {
+    /*.VSTemplateSelection .template-holder {
         position: absolute;
         max-width: 86%;
         width: calc(100% - 32px);
@@ -8599,6 +8606,21 @@ html, body {
         border-radius: 8px;
         overflow: hidden;
         transform: translate3d(-50%, -50%, 0);
+    }*/
+
+
+    .VSTemplateSelection .template-holder {
+        position: absolute;
+        right: 0;
+        max-width: 86%;
+        width: calc(100% - 32px);
+        margin: 0 auto;
+        top: 23px;
+        /* display: -webkit-box; */
+        left: 0;
+        border-radius: 8px;
+        vertical-align: middle;
+        overflow: hidden;
     }
 
     .VSTemplateSelection .template-group .template-group-container {
@@ -8653,8 +8675,9 @@ html, body {
     height: 450px;
     width:100%;
     overflow: auto;
-    padding: 0 10px 10px 10px !important;
+    padding: 7px 10px 10px 10px !important;
 }
+
 
 .template_tab {
     width: auto;
@@ -8753,7 +8776,12 @@ html, body {
     text-align: left;
     padding: 15px 30px;
 }
-
+.templte_create {
+    line-height: 1.2;
+    position: absolute;
+    bottom: 0;
+    right: 13px
+}
 .createDemoContainer {
     height:146px;
     position:relative;
@@ -8789,27 +8817,19 @@ html, body {
     box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.33);
 }
 .createtemplate:hover {
-        border: 1px solid #FFB900;
-        background:#fff;
-        text-decoration:none;
-    }
-.demo_nav:hover {
+    text-decoration:none;
+    color:#fff;
+}
+.rd-4 {
+    border-radius: 4px;
+    min-width: 130px;
+    height: 35px;
+}
+/*.demo_nav:hover {
     border: 1px solid #BAD80A;
     background: #fff;
     color: #BAD80A;
-}
-    .demo_nav:hover li .VSTS-username {
-        color: #BAD80A
-    }
-.demo_nav .dropdown-menu.show {
-    right: -7px !important;
-    background: #eaeaea;
-    border: none;
-    border-radius: 4px;
-    text-align: right;
-    margin-top: 2px;
-    padding: 5px;
-}
+}*/
 
 .social-icons{
     display: inline;
@@ -8878,7 +8898,8 @@ html, body {
     border-radius: 8px;
 }
 .demo_form .form-group label {
-    font-weight: 400;
+    font-weight: 500;
+    color: #505050;
 }
 .create-new-project {
     padding:30px 0;
@@ -8922,16 +8943,16 @@ html, body {
 .form-select {
     border: .5px solid #D2D2D2;
     border-radius: 4px;
-    font-size: 11px;
-    height:35px;
-    color: #737373;
+    font-size: 13px;
+    height: 35px;
+    color: #505050;
 }
 .form-input {
     border: .5px solid #D2D2D2;
     border-radius: 4px;
-    height:35px;
-    font-size: 11px;
-    color: #737373;
+    height: 35px;
+    font-size: 13px;
+    color: #505050;
 }
 
 .template-box p {

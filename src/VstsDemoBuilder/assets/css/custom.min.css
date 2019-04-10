@@ -7987,10 +7987,42 @@ a.select-button{
 }
     .mainbanner {
         background: url(../images/VSTS_cover_image_6.png) top left/ 1000px, #fff;
-        background-position: right top;
+        background-position: left top;
         background-repeat: no-repeat;
-        background-size: 67%;
+        background-size: 72%;
     }
+.tab_nonactive{
+    background: white;
+    color: #000 !important;
+}
+.transparent { color:transparent
+}
+.backlink {
+    text-decoration: none;
+    padding: 10px 10px 10px 41px;
+    font-size: 13px;
+    color: #505050;
+    border: .5px solid #ccc;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+    .backlink:hover {
+        text-decoration:none;
+    } 
+    .appcenter_icon {
+        background: url(../../Images/appcenter.png);
+        background-repeat: no-repeat;
+        background-size: 12%;
+        background-position: left center;
+    }
+.tfs_icon {
+    background: url(../../Images/tfs.png);
+    background-repeat: no-repeat;
+    background-size: 22%;
+    background-position: left center;
+}
+
 .azuretitle {
     font-weight: 100;
     font-size: 22px;

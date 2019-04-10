@@ -343,7 +343,9 @@ $(document).ready(function (event) {
     $(document.body).on('click', '.nav-link', function () {
         grpSelected = this.text;
         getGroups(grpSelected);
-    });
+        $(".nav-link").removeClass("active");           
+        $(this).addClass("active");
+ });
 
     //Group load
     $.ajax({
@@ -1032,3 +1034,4 @@ function getGroups(grpSelected) {
         }
     });
 }
+
