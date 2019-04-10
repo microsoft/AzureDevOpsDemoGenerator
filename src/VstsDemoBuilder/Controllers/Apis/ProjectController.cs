@@ -38,12 +38,12 @@ using VstsRestAPI.Viewmodel.Wiki;
 using VstsRestAPI.Viewmodel.WorkItem;
 using VstsRestAPI.Wiki;
 using VstsRestAPI.WorkItemAndTracking;
-namespace VstsDemoBuilder.Controllers
-{
-    
-    public class EnvironmentController : ApiController
-    {
 
+namespace VstsDemoBuilder.Controllers.Apis
+{
+    [RoutePrefix("api/environment")]
+    public class ProjectController : ApiController
+    {
         #region Variables & Properties
         private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
@@ -77,60 +77,9 @@ namespace VstsDemoBuilder.Controllers
         }
         #endregion
 
-        #region Manage Status Messages
-        public void AddMessage(string id, string message)
-        {
-            lock (objLock)
-            {
-                if (id.EndsWith("_Errors"))
-                {
-                    StatusMessages[id] = (StatusMessages.ContainsKey(id) ? StatusMessages[id] : string.Empty) + message;
-                }
-                else
-                {
-                    StatusMessages[id] = message;
-                }
-            }
-        }
-        public HttpResponseMessage GetCurrentProgress(string id)
-        {
-            var currentProgress = GetStatusMessage(id);
-            JObject dynObj = JsonConvert.DeserializeObject<JObject>(currentProgress.Content.ReadAsStringAsync().Result);
-            return Request.CreateResponse(HttpStatusCode.OK, dynObj["status"]);
-        }
-        public HttpResponseMessage GetStatusMessage(string id)
-        {
-            lock (objLock)
-            {
-                string message = string.Empty;
-                JObject obj = new JObject();
-                if (id.EndsWith("_Errors"))
-                {
-                    RemoveKey(id);
-                    obj["status"] = "Error: \t" + StatusMessages[id]; ;
-                    return Request.CreateResponse(HttpStatusCode.Created, obj);
-                }
-                if (StatusMessages.Keys.Count(x => x == id) == 1)
-                {
-                    obj["status"] = StatusMessages[id];
-                    return Request.CreateResponse(HttpStatusCode.OK, obj);
-                }
-                else
-                {
-                    obj["status"] = "Successfully Created";
-                    return Request.CreateResponse(HttpStatusCode.Created, obj);
-                }
-            }
-        }
-        public void RemoveKey(string id)
-        {
-            lock (objLock)
-            {
-                StatusMessages.Remove(id);
-            }
-        }
         [HttpPost]
-        public HttpResponseMessage createproject(BulkData model)
+        [Route("create")]
+        public HttpResponseMessage create(BulkData model)
         {
             try
             {
@@ -194,16 +143,16 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 user.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
                                 return Request.CreateResponse(HttpStatusCode.BadRequest, user);
-                            }                          
+                            }
                         }
                         else
                         {
                             user.status = "EmailId or ProjectName is not found";
-                            return Request.CreateResponse(HttpStatusCode.BadRequest, user);                           
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                         }
                     }
                     foreach (var user in model.users)
-                    {                        
+                    {
                         var result = ListOfExistedProjects.Contains(user.ProjectName);
                         if (result == true)
                         {
@@ -226,12 +175,61 @@ namespace VstsDemoBuilder.Controllers
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
-            //model.ProjectName = model.Name + "_" + model.templateName;
-            //model.id = Guid.NewGuid().ToString().Split('-')[0];
-            //JObject proJobject = new JObject();
-            //proJobject["ProjectName"] = model.ProjectName;
-            //proJobject["TrackId"] = model.id;
+
             return Request.CreateResponse(HttpStatusCode.Accepted, model);
+        }
+
+        #region Manage Status Messages
+        public void AddMessage(string id, string message)
+        {
+            lock (objLock)
+            {
+                if (id.EndsWith("_Errors"))
+                {
+                    StatusMessages[id] = (StatusMessages.ContainsKey(id) ? StatusMessages[id] : string.Empty) + message;
+                }
+                else
+                {
+                    StatusMessages[id] = message;
+                }
+            }
+        }
+        public HttpResponseMessage GetCurrentProgress(string id)
+        {
+            var currentProgress = GetStatusMessage(id);
+            JObject dynObj = JsonConvert.DeserializeObject<JObject>(currentProgress.Content.ReadAsStringAsync().Result);
+            return Request.CreateResponse(HttpStatusCode.OK, dynObj["status"]);
+        }
+        public HttpResponseMessage GetStatusMessage(string id)
+        {
+            lock (objLock)
+            {
+                string message = string.Empty;
+                JObject obj = new JObject();
+                if (id.EndsWith("_Errors"))
+                {
+                    RemoveKey(id);
+                    obj["status"] = "Error: \t" + StatusMessages[id]; ;
+                    return Request.CreateResponse(HttpStatusCode.Created, obj);
+                }
+                if (StatusMessages.Keys.Count(x => x == id) == 1)
+                {
+                    obj["status"] = StatusMessages[id];
+                    return Request.CreateResponse(HttpStatusCode.OK, obj);
+                }
+                else
+                {
+                    obj["status"] = "Successfully Created";
+                    return Request.CreateResponse(HttpStatusCode.Created, obj);
+                }
+            }
+        }
+        public void RemoveKey(string id)
+        {
+            lock (objLock)
+            {
+                StatusMessages.Remove(id);
+            }
         }
 
         /// <summary>
@@ -2628,4 +2626,3 @@ namespace VstsDemoBuilder.Controllers
         #endregion
     }
 }
-

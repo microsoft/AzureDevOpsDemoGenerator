@@ -6,6 +6,9 @@ namespace VstsDemoBuilder
     {
         public static void Register(HttpConfiguration config)
         {
+            // Web API routes
+            config.MapHttpAttributeRoutes();
+
             config.Routes.MapHttpRoute(
               name: "ActionApi",
               routeTemplate: "api/{controller}/{Action}/{id}",
@@ -17,7 +20,7 @@ namespace VstsDemoBuilder
                 defaults: new { id = RouteParameter.Optional }
             );
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new
-System.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
+            System.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
         }
     }
 }

@@ -29,7 +29,7 @@ namespace VstsDemoBuilder.Controllers
     {
         private ILog logger = LogManager.GetLogger("ErrorLog");
         private AccessDetails accessDetails = new AccessDetails();
-        private EnvironmentController con = new EnvironmentController();
+        //private EnvironmentController con = new EnvironmentController();
         private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
         public List<string> errorMessages = new List<string>();
