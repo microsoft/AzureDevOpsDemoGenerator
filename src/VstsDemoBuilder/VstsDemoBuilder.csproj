@@ -694,7 +694,6 @@
     <Content Include="Templates\SonarQube\ProjectSettings.json" />
     <Content Include="Templates\SonarQube\ProjectTemplate.json" />
     <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube-code.json" />
-    <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube.json" />
     <Content Include="Templates\SonarQube\TaskfromTemplate.json" />
     <Content Include="Templates\SonarQube\Teams.json" />
     <Content Include="Templates\SonarQube\UpdateCardFields.json" />
