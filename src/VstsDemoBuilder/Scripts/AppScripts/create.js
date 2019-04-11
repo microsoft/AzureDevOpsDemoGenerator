@@ -343,8 +343,8 @@ $(document).ready(function (event) {
     $(document.body).on('click', '.nav-link', function () {
         grpSelected = this.text;
         getGroups(grpSelected);
-        $(".nav-link").removeClass("active");           
-        $(this).addClass("active");
+        $(".nav-link").removeClass("active_white");           
+        $(this).addClass("active_white");
  });
 
     //Group load
@@ -356,7 +356,7 @@ $(document).ready(function (event) {
             if (groups.Groups.length > 0) {
                 for (var g = 0; g < groups.Groups.length; g++) {
                     if (g === 0)
-                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>';
+                        grp += '<li class="nav-item"><a class="nav-link active_white text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>';
                     else
                         grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>';
                 }

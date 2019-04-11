@@ -8013,7 +8013,7 @@ a.select-button{
     .appcenter_icon {
         background: url(../../Images/appcenter.png);
         background-repeat: no-repeat;
-        background-size: 12%;
+        background-size: 15%;
         background-position: left center;
     }
 .tfs_icon {
@@ -8022,12 +8022,21 @@ a.select-button{
     background-size: 22%;
     background-position: left center;
 }
-
-.azuretitle {
-    font-weight: 100;
-    font-size: 22px;
-    color: #0078D7;
+.rd-4 {
+    border-radius: 4px;
+    min-width: 130px;
+    height: 35px;
+    color: #fff !important;
+    font-size: 13px;
 }
+.rd-4-w.rd-4 {
+    min-width: inherit;
+}
+    .azuretitle {
+        font-weight: 100;
+        font-size: 22px;
+        color: #0078D7;
+    }
     .azuretitle:hover {
         color: #00BCF2;
         text-decoration:none;
