@@ -168,6 +168,10 @@ namespace VstsRestAPI.WorkItemAndTracking
                 }
                 return true;
             }
+            catch (OperationCanceledException opr)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
+            }
             catch (Exception ex)
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
