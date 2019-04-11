@@ -122,6 +122,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 }
                 if (model.users.Count > 0)
                 {
+                    List<string> ListOfRequestedProjectNames = new List<string>();
                     foreach (var user in model.users)
                     {
                         if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.ProjectName))
@@ -144,6 +145,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 user.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
                                 return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                             }
+                            ListOfRequestedProjectNames.Add(user.ProjectName.ToLower());
                         }
                         else
                         {
@@ -151,21 +153,29 @@ namespace VstsDemoBuilder.Controllers.Apis
                             return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                         }
                     }
-                    foreach (var user in model.users)
-                    {
-                        var result = ListOfExistedProjects.Contains(user.ProjectName);
-                        if (result == true)
-                        {
-                            user.status = user.ProjectName + " is already exist";
-                        }
-                        else
-                        {
-                            user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
-                            user.status = "Project creation is initiated..";
-                            ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                            processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
-                        }
+                    bool anyDuplicateProjects= ListOfRequestedProjectNames.GroupBy(n => n).Any(c => c.Count() > 1);
+                    if (anyDuplicateProjects)
+                    {                        
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, "ProjectName must be unique");
                     }
+                    else
+                    {
+                        foreach (var user in model.users)
+                        {
+                            var result = ListOfExistedProjects.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.ToLower());
+                            if (result == true)
+                            {
+                                user.status = user.ProjectName + " is already exist";
+                            }
+                            else
+                            {
+                                user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
+                                user.status = "Project creation is initiated..";
+                                ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
+                                processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                            }
+                        }
+                    }                   
                 }
                 //ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
                 //processTask.BeginInvoke(model, model.accessToken, model.organizationName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
