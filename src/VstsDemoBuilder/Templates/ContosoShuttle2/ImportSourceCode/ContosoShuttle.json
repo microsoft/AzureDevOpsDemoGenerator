@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/contososhuttle/ContosoShuttle/_git/ContosoShuttle"
+    },
+    "serviceEndpointId": "$ContosoShuttle-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

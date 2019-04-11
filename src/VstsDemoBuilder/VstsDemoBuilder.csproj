@@ -1043,6 +1043,21 @@
     <Content Include="Templates\ContosoShuttle\TeamArea.json" />
     <Content Include="Templates\ContosoShuttle\Teams.json" />
     <Content Include="Templates\ContosoShuttle\Dashboard\Queries\Work in Progress.json" />
+    <Content Include="Templates\ContosoShuttle2\ImportSourceCode\ContosoShuttle.json" />
+    <Content Include="Templates\ContosoShuttle2\Iterations.json" />
+    <Content Include="Templates\ContosoShuttle2\ProjectSettings.json" />
+    <Content Include="Templates\ContosoShuttle2\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoShuttle2\ServiceEndpoints\ContosoShuttle-code.json" />
+    <Content Include="Templates\ContosoShuttle2\TeamArea.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\BoardColumns.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\BoardRows.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\CardFields.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\CardStyles.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\TeamSetting.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\Teams.json" />
+    <Content Include="Templates\ContosoShuttle2\WorkItems\Epic.json" />
+    <Content Include="Templates\ContosoShuttle2\WorkItems\Product Backlog Item.json" />
+    <Content Include="Templates\ContosoShuttle2\WorkItems\Task.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
