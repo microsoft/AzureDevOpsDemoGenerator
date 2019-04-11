@@ -29,7 +29,7 @@ namespace VstsDemoBuilder.Controllers
     {
         private ILog logger = LogManager.GetLogger("ErrorLog");
         private AccessDetails accessDetails = new AccessDetails();
-        //private EnvironmentController con = new EnvironmentController();
+        private EnvironmentController con = new EnvironmentController();
         private static readonly object objLock = new object();
         private static Dictionary<string, string> statusMessages;
         public List<string> errorMessages = new List<string>();
@@ -84,7 +84,68 @@ namespace VstsDemoBuilder.Controllers
             var currentProgress = GetStatusMessage(id).ToString();
             return Content(currentProgress);
         }
-
+        [AllowAnonymous]
+        public ActionResult Index(ProjectList.ProjectDetails model)
+        {
+            try
+            {
+                string pat = "";
+                string email = "";
+                if (Session["PAT"] != null)
+                {
+                    pat = Session["PAT"].ToString();
+                }
+                if (Session["Email"] != null)
+                {
+                    email = Session["PAT"].ToString();
+                }
+                if (Session["EnableExtractor"] == null || Session["EnableExtractor"].ToString().ToLower() == "false")
+                {
+                    return RedirectToAction("NotFound");
+                }
+                if (string.IsNullOrEmpty(pat))
+                {
+                    return Redirect("../Account/Verify");
+                }
+                else
+                {
+                    accessDetails.access_token = pat;
+                    ProfileDetails profile = con.GetProfile(accessDetails);
+                    if (profile == null)
+                    {
+                        ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
+                        return View(model);
+                    }
+                    if (profile.displayName != null && profile.emailAddress != null)
+                    {
+                        Session["User"] = profile.displayName;
+                        Session["Email"] = profile.emailAddress.ToLower();
+                    }
+                    AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
+                    model.accessToken = accessDetails.access_token;
+                    model.accountsForDropdown = new List<string>();
+                    if (accountList.count > 0)
+                    {
+                        foreach (var account in accountList.value)
+                        {
+                            model.accountsForDropdown.Add(account.accountName);
+                        }
+                        model.accountsForDropdown.Sort();
+                    }
+                    else
+                    {
+                        model.accountsForDropdown.Add("Select Organization");
+                        ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                    }
+                    return View(model);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return View(model);
+        }
         // Get status message to display
         [HttpGet]
         [AllowAnonymous]
