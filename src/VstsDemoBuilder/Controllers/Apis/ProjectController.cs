@@ -127,9 +127,6 @@ namespace VstsDemoBuilder.Controllers.Apis
                     {
                         if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.ProjectName))
                         {
-                            //user.ProjectName = user.alias + "-" + model.templateName;
-                            //user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
-
                             string pattern = @"^(?!_)(?![.])[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'"",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$";
 
                             bool isProjectNameValid = Regex.IsMatch(user.ProjectName, pattern);
@@ -177,8 +174,6 @@ namespace VstsDemoBuilder.Controllers.Apis
                         }
                     }                   
                 }
-                //ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                //processTask.BeginInvoke(model, model.accessToken, model.organizationName, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             }
             catch (Exception ex)
             {
