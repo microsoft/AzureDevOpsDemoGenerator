@@ -2275,7 +2275,7 @@ namespace VstsDemoBuilder.Controllers
                                     string[] testSuiteResponse = new string[2];
                                     string testSuiteJSON = JsonConvert.SerializeObject(TS);
                                     testSuiteResponse = objTest.CreatTestSuite(testSuiteJSON, testPlanResponse[0], model.ProjectName);
-                                    if (testSuiteResponse != null)
+                                    if (testSuiteResponse.Length > 0)
                                     {
                                         string testCasesToAdd = string.Empty;
                                         foreach (string id in TS.TestCases)
