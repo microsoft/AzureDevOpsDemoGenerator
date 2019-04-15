@@ -29,16 +29,7 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/7",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency"
-          }
-        }
-      ],
+      "relations": null,
       "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/21"
     },
     {
@@ -69,16 +60,7 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/7",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency"
-          }
-        }
-      ],
+      "relations": null,
       "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/20"
     },
     {
@@ -269,16 +251,7 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/9",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency"
-          }
-        }
-      ],
+      "relations": null,
       "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/15"
     },
     {

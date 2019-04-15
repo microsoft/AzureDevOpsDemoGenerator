@@ -73,10 +73,6 @@
           "fieldIdentifier": "System.Title"
         },
         {
-          "fieldIdentifier": "System.Id",
-          "displayType": "CORE"
-        },
-        {
           "fieldIdentifier": "System.AssignedTo",
           "displayFormat": "AvatarAndFullName",
           "displayType": "CORE"

@@ -1058,6 +1058,8 @@
     <Content Include="Templates\ContosoShuttle2\WorkItems\Epic.json" />
     <Content Include="Templates\ContosoShuttle2\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\ContosoShuttle2\WorkItems\Task.json" />
+    <Content Include="Templates\ContosoShuttle2\Dashboard\Dashboard.json" />
+    <Content Include="Templates\ContosoShuttle2\Dashboard\Queries\Work in Progress.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

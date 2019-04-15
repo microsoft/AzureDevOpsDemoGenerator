@@ -1,16 +1,16 @@
-{
+﻿{
   "data": {
-
-  },
-  "name": "ContosoShuttle-code",
-  "type": "git",
-  "url": "https://dev.azure.com/contososhuttle/ContosoShuttle/_git/ContosoShuttle",
+			
+		},		
+		"name": "ContosoShuttle-code",
+		"type": "git",
+		"url": "https://jsmcbr.visualstudio.com/_git/ContosoShuttle",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "$username$",
-      "password": "$password$"
+      "username": "$ContosoUserID$",
+      "password": "$ContosoPassword$"
     }
   },
-  "isReady": true
+		"isReady": true
 }

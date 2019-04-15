@@ -1627,7 +1627,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             string bikeSharing360password = System.Configuration.ConfigurationManager.AppSettings["BikeSharing360Password"];
                             jsonCreateService = jsonCreateService.Replace("$BikeSharing360username$", bikeSharing360username).Replace("$BikeSharing360password$", bikeSharing360password);
                         }
-                        else if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                        else if (model.SelectedTemplate.ToLower() == "contososhuttle"|| model.SelectedTemplate.ToLower() == "contososhuttle2")
                         {
                             string contosousername = System.Configuration.ConfigurationManager.AppSettings["ContosoUserID"];
                             string contosopassword = System.Configuration.ConfigurationManager.AppSettings["ContosoPassword"];
@@ -2258,7 +2258,7 @@ namespace VstsDemoBuilder.Controllers.Apis
 
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                    if (model.SelectedTemplate.ToLower() == "contososhuttle"|| model.SelectedTemplate.ToLower() == "contososhuttle2")
                     {
                         if (isDashboardDeleted)
                         {
