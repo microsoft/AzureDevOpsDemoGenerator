@@ -308,8 +308,10 @@
     <Content Include="Images\cross-10.png" />
     <Content Include="Images\cross10_new.png" />
     <Content Include="Images\email.png" />
+    <Content Include="Images\facebook-c.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\linkdin-c.png" />
     <Content Include="Images\sideImage1.png" />
     <Content Include="Images\sideImage2.png" />
     <Content Include="Images\image2.png" />
@@ -321,6 +323,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Images\twitter-c.png" />
     <Content Include="Templates\AKS\Images\AKS.png" />
     <Content Include="Templates\AKS\Images\aksdashboard.png" />
     <Content Include="Templates\AKS\Images\finalresult.png" />

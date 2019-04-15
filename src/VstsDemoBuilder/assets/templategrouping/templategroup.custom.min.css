@@ -4034,8 +4034,8 @@ tbody.collapse.show {
     overflow:hidden;
 }
 .card-text {
-    font-size:12.5px;
-    line-height:23px;
+    /* font-size:12.5px;*/
+    line-height: 23px;
 }
 card-body {
     max-height: 200px;
@@ -8876,8 +8876,8 @@ html, body {
 .info_msg {
     box-shadow: 0px 5px 20px #f2f2f2;
     background: #fff;
-    color:#000;
-    font-size: 12.5px;
+    color: #000;
+    /* font-size: 12.5px;*/
     border-radius: 8px;
     border: .5px solid #dee2e6 !important;
     line-height: 23px;
@@ -8949,7 +8949,6 @@ html, body {
 .form-select {
     border: .5px solid #D2D2D2;
     border-radius: 4px;
-    font-size: 13px;
     height: 35px;
     color: #505050;
 }
@@ -8982,7 +8981,7 @@ html, body {
             }*/
 .template-body .template .description {
     font-size: 12px;
-    font-weight: 100;
+    font-weight: 400;
     letter-spacing: .5px;
     margin-top: 2px;
 }
@@ -9034,7 +9033,7 @@ html, body {
     font-style: normal;
     background: #f3f3f3;
     letter-spacing: .5px;
-    font-weight: lighter;
+    /*font-weight: lighter;*/
     padding: 0px 6px;
     text-decoration: none !important;
     transition: background 0.2s linear;
@@ -9063,13 +9062,22 @@ html, body {
 .template {
     animation: down 0.5s 1 ease-in-out forwards;
 }
+@media (max-width: 768px) {
+    .template-body .template {
+        max-width:30%;
+    }
+}
 
-@media (max-width576px) {
-    .template-holder {
+    @media (max-width:576px) {
+        .template-body .template {
+            max-width: 100%;
+        }
+
+        /* .template-holder {
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
-    }
+    }*/
 }
 
 @keyframes down {
