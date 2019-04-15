@@ -2203,12 +2203,11 @@ namespace VstsDemoBuilder.Controllers
                         }
                         else if (model.SelectedTemplate.ToLower() == "octopus")
                         {
-                            var url = model.Parameters["OctopusURL"];
-                            var apiKey = model.Parameters["APIkey"];
+                            var url = model.Parameters.ContainsKey("OctopusURL") ? model.Parameters["OctopusURL"] : string.Empty;
+                            var apiKey = model.Parameters.ContainsKey("APIkey") ? model.Parameters["APIkey"] : string.Empty;
                             if (!string.IsNullOrEmpty(url.ToString()) && !string.IsNullOrEmpty(apiKey.ToString()))
                             {
                                 jsonCreateService = jsonCreateService.Replace("$URL$", url).Replace("$Apikey$", apiKey);
-
                             }
                         }
                         var endpoint = objService.CreateServiceEndPoint(jsonCreateService, model.ProjectName);
@@ -2276,7 +2275,7 @@ namespace VstsDemoBuilder.Controllers
                                     string[] testSuiteResponse = new string[2];
                                     string testSuiteJSON = JsonConvert.SerializeObject(TS);
                                     testSuiteResponse = objTest.CreatTestSuite(testSuiteJSON, testPlanResponse[0], model.ProjectName);
-                                    if (testSuiteResponse != null)
+                                    if (testSuiteResponse.Length > 0)
                                     {
                                         string testCasesToAdd = string.Empty;
                                         foreach (string id in TS.TestCases)
@@ -2452,26 +2451,15 @@ namespace VstsDemoBuilder.Controllers
                             }
                         }
                         string[] releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
-                        if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
+                        if (releaseDef.Length > 0)
                         {
-                            if (objRelease.LastFailureMessage.TrimEnd() == "Tasks with versions 'ARM Outputs:3.*' are not valid for deploy job 'Function' in stage Azure-Dev.")
-                            {
-                                jsonReleaseDefinition = jsonReleaseDefinition.Replace("3.*", "4.*");
-                                releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
-                                if (releaseDef.Length > 0)
-                                {
-                                    relDef.Id = releaseDef[0];
-                                    relDef.Name = releaseDef[1];
-                                }
-                                if (!string.IsNullOrEmpty(relDef.Name))
-                                {
-                                    objRelease.LastFailureMessage = string.Empty;
-                                }
-                            }
+                            relDef.Id = releaseDef[0];
+                            relDef.Name = releaseDef[1];
                         }
-                        relDef.Id = releaseDef[0];
-                        relDef.Name = releaseDef[1];
-
+                        if (!string.IsNullOrEmpty(relDef.Name))
+                        {
+                            objRelease.LastFailureMessage = string.Empty;
+                        }
                         if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
                         {
                             AddMessage(id.ErrorId(), "Error while creating release definition: " + objRelease.LastFailureMessage + Environment.NewLine);
@@ -2881,7 +2869,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                if (!string.IsNullOrEmpty(selectedTemplate) && !string.IsNullOrEmpty(account))
+                if (!string.IsNullOrEmpty(selectedTemplate) && !string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(token))
                 {
                     string accountName = string.Empty;
                     string pat = string.Empty;
