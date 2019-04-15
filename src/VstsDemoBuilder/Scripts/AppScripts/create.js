@@ -77,12 +77,12 @@ $(document).ready(function (event) {
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
 
-        if (checkExtensionForSelectedTemplate === "SonarQube") {
-            $("#SoanrQubeDiv").show();
-        }
-        else {
-            $("#SoanrQubeDiv").hide();
-        }
+        //if (checkExtensionForSelectedTemplate === "SonarQube") {
+        //    $("#SoanrQubeDiv").show();
+        //}
+        //else {
+        //    $("#SoanrQubeDiv").hide();
+        //}
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
             return false;
         }
@@ -139,12 +139,12 @@ $(document).ready(function (event) {
         if (TemplateName === "MyShuttle-Java") {
             $("#NotificationModal").modal('show');
         }
-        if (TemplateName === "SonarQube") {
-            $("#SoanrQubeDiv").show();
-        }
-        else {
-            $("#SoanrQubeDiv").hide();
-        }
+        //if (TemplateName === "SonarQube") {
+        //    $("#SoanrQubeDiv").show();
+        //}
+        //else {
+        //    $("#SoanrQubeDiv").hide();
+        //}
         var Url = 'GetTemplate/';
         $.get(Url, { "TemplateName": TemplateName }, function (data) {
             if (data !== "") {
@@ -263,12 +263,12 @@ $(document).ready(function (event) {
     if (selectedTemplate === "MyShuttle-Java") {
         $("#NotificationModal").modal('show');
     }
-    if (selectedTemplate === "SonarQube") {
-        $("#SoanrQubeDiv").show();
-    }
-    else {
-        $("#SoanrQubeDiv").hide();
-    }
+    //if (selectedTemplate === "SonarQube") {
+    //    $("#SoanrQubeDiv").show();
+    //}
+    //else {
+    //    $("#SoanrQubeDiv").hide();
+    //}
 
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();

@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using log4net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Web.Mvc;
 using VstsDemoBuilder.Models;
 
@@ -9,6 +12,7 @@ namespace VstsDemoBuilder.Controllers
     {
         private readonly AccessDetails accessDetails = new AccessDetails();
         private TemplateSelection.Templates templates = new TemplateSelection.Templates();
+        private ILog logger = LogManager.GetLogger("ErrorLog");
 
         [HttpGet]
         [AllowAnonymous]
@@ -87,7 +91,10 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
+            }
             return View(model);
         }
 
@@ -118,16 +125,21 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            Session["visited"] = "1";
-
-            //testing
-            string url = "https://app.vssps.visualstudio.com/oauth2/authorize?client_id={0}&response_type=Assertion&state=User1&scope={1}&redirect_uri={2}";
-
-            string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
-            string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientId"];
-            string AppScope = System.Configuration.ConfigurationManager.AppSettings["appScope"];
-            url = string.Format(url, clientId, AppScope, redirectUrl);
-            return Redirect(url);
+            try
+            {
+                Session["visited"] = "1";
+                string url = "https://app.vssps.visualstudio.com/oauth2/authorize?client_id={0}&response_type=Assertion&state=User1&scope={1}&redirect_uri={2}";
+                string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
+                string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientId"];
+                string AppScope = System.Configuration.ConfigurationManager.AppSettings["appScope"];
+                url = string.Format(url, clientId, AppScope, redirectUrl);
+                return Redirect(url);
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
+            }
+            return RedirectToAction("../shared/error");
         }
 
         /// <summary>
