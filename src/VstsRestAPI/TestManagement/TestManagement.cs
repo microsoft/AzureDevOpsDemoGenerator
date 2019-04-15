@@ -36,6 +36,7 @@ namespace VstsRestAPI.TestManagement
                         string result = response.Content.ReadAsStringAsync().Result;
                         testPlan[0] = JObject.Parse(result)["id"].ToString();
                         testPlan[1] = JObject.Parse(result)["name"].ToString();
+                        return testPlan;
                     }
                     else
                     {
@@ -78,6 +79,7 @@ namespace VstsRestAPI.TestManagement
                         string result = response.Content.ReadAsStringAsync().Result;
                         testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
                         testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                        return testSuite;
                     }
                     else
                     {

@@ -130,6 +130,11 @@ namespace VstsRestAPI.QueriesAndWidgets
                     {
                         return true;
                     }
+                    else
+                    {
+                        string msg = response.Content.ReadAsStringAsync().Result;
+                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + msg + "\n");
+                    }
                 }
             }
             catch (Exception ex)
