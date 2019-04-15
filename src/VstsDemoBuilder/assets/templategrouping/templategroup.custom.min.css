@@ -9091,7 +9091,6 @@ html, body {
         opacity: 1;
     }
 }
-
 .cloud__bg {
     background: url(https://azuretfsextension.hosting.portal.azure.net/azuretfsextension/Content/17.148.28722.1/Icons/azurePortal-headerRibbonBackground-1x.png);
     background-size: cover;
@@ -9147,5 +9146,6 @@ html, body {
 }
 
 }
+
 
 /*# sourceMappingURL=custom.min.css.map */

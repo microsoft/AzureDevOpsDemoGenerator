@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -9,41 +11,49 @@ namespace VstsRestAPI.Queues
     public class Queue : ApiServiceBase
     {
         public Queue(IConfiguration configuration) : base(configuration) { }
-
+        private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Get Agent queue
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, int> GetQueues()
         {
-            Dictionary<string, int> dicQueues = new Dictionary<string, int>();
-            QueueModel viewModel = new QueueModel();
-
-            using (var client = GetHttpClient())
+            try
             {
-                string req = _configuration.UriString + _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber;
-                HttpResponseMessage response = client.GetAsync(req).Result;
+                Dictionary<string, int> dicQueues = new Dictionary<string, int>();
+                QueueModel viewModel = new QueueModel();
 
-                if (response.IsSuccessStatusCode)
+                using (var client = GetHttpClient())
                 {
-                    viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
-                    if (viewModel != null && viewModel.value != null)
+                    string req = _configuration.UriString + _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber;
+                    HttpResponseMessage response = client.GetAsync(req).Result;
+
+                    if (response.IsSuccessStatusCode)
                     {
-                        foreach (AgentQueueModel aq in viewModel.value)
+                        viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
+                        if (viewModel != null && viewModel.value != null)
                         {
-                            dicQueues[aq.name] = aq.id;
+                            foreach (AgentQueueModel aq in viewModel.value)
+                            {
+                                dicQueues[aq.name] = aq.id;
+                            }
                         }
                     }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
                 }
-                else
-                {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
-                }
-            }
 
-            return dicQueues;
+                return dicQueues;
+            }
+            catch(Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            return new Dictionary<string, int>();
         }
         /// <summary>
         /// Create Agent Queue by queue name
@@ -52,33 +62,40 @@ namespace VstsRestAPI.Queues
         /// <returns></returns>
         public int CreateQueue(string name)
         {
-            AgentQueueModel viewModel = new AgentQueueModel
+            try
             {
-                name = name
-            };
-
-            using (var client = GetHttpClient())
-            {
-                var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
-                var method = new HttpMethod("POST");
-
-                var request = new HttpRequestMessage(method, _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                var response = client.SendAsync(request).Result;
-
-                if (response.IsSuccessStatusCode)
+                AgentQueueModel viewModel = new AgentQueueModel
                 {
-                    viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;
-                }
-                else
+                    name = name
+                };
+
+                using (var client = GetHttpClient())
                 {
-                    var errorMessage = response.Content.ReadAsStringAsync();
-                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                    this.LastFailureMessage = error;
+                    var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
+
+                    var request = new HttpRequestMessage(method, _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var response = client.SendAsync(request).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
                 }
+
+                return viewModel.id;
             }
-
-            return viewModel.id;
+            catch(Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            return 0;
         }
-
     }
 }

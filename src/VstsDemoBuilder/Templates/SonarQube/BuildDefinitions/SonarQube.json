@@ -1,9 +1,4 @@
 {
-  "name": "SonarQube",
-
-  "path": "\\",
-  "type": "build",
-  "queueStatus": "enabled",
   "options": [
     {
       "enabled": true,
@@ -63,6 +58,7 @@
   ],
   "properties": {},
   "tags": [],
+  "_links": "{}",
   "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
   "jobAuthorizationScope": "projectCollection",
   "jobTimeoutInMinutes": 60,
@@ -76,16 +72,45 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "Maven",
+            "displayName": "Prepare analysis on SonarQube",
             "timeoutInMinutes": 0,
-            "refName": "Maven1",
+            "condition": "succeeded()",
             "task": {
-              "id": "ac4ee482-65da-4485-a532-7b085873e532",
-              "versionSpec": "1.*",
+              "id": "15b84ca1-b62f-4a2a-a403-89b77a063157",
+              "versionSpec": "4.*",
               "definitionType": "task"
             },
             "inputs": {
-              "mavenPOMFile": "$(Parameters.mavenPOMFile)",
+              "SonarQube": "",
+              "scannerMode": "Other",
+              "configMode": "file",
+              "configFile": "",
+              "cliProjectKey": "",
+              "projectKey": "MyShuttle",
+              "cliProjectName": "",
+              "projectName": "MyShuttle",
+              "cliProjectVersion": "1.0",
+              "projectVersion": "1.0",
+              "cliSources": ".",
+              "extraProperties": "# Additional properties that will be passed to the scanner, \n# Put one key=value per line, example:\n# sonar.exclusions=**/*.bin\nsonar.projectName=MyShuttle\nsonar.projectKey=MyShuttle"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Maven",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "Maven1",
+            "task": {
+              "id": "ac4ee482-65da-4485-a532-7b085873e532",
+              "versionSpec": "3.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "mavenPOMFile": "pom.xml",
               "goals": "package",
               "options": "",
               "publishJUnitResults": "true",
@@ -106,16 +131,7 @@
               "mavenOpts": "-Xmx1024m",
               "mavenFeedAuthenticate": "true",
               "sqAnalysisEnabled": "true",
-              "sqConnectedServiceName": "",
-              "sqProjectName": "MyShuttle",
-              "sqProjectKey": "MyShuttle",
-              "sqProjectVersion": "",
-              "sqDbDetailsRequired": "false",
-              "sqDbUrl": "",
-              "sqDbUsername": "",
-              "sqDbPassword": "",
-              "sqAnalysisIncludeFullReport": "true",
-              "sqAnalysisBreakBuildIfQualityGateFailed": "true",
+              "sqMavenPluginVersionChoice": "latest",
               "checkstyleAnalysisEnabled": "false",
               "pmdAnalysisEnabled": "false",
               "findbugsAnalysisEnabled": "false"
@@ -126,8 +142,26 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
+            "displayName": "Publish Quality Gate Result",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "291ed61f-1ee4-45d3-b1b0-bf822d9095ef",
+              "versionSpec": "4.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "pollingTimeoutSec": "300"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
             "displayName": "Copy Files",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "CopyFiles2",
             "task": {
               "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
@@ -150,6 +184,7 @@
             "alwaysRun": false,
             "displayName": "Publish Artifact",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "PublishBuildArtifacts3",
             "task": {
               "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
@@ -174,7 +209,8 @@
             "type": 0
           },
           "allowScriptsAuthAccessOption": false,
-          "type": 1
+          "type": 1,
+          "queue": "{}"
         },
         "jobAuthorizationScope": "projectCollection",
         "jobCancelTimeoutInMinutes": 1
@@ -191,11 +227,13 @@
       "gitLfsSupport": "false",
       "skipSyncSource": "false",
       "checkoutNestedSubmodules": "false",
-      "fetchDepth": "0"
+      "fetchDepth": "0",
+      "connectedServiceId": ""
     },
     "id": "$MyShuttle$",
     "type": "TfsGit",
     "name": "MyShuttle",
+    "url": "",
     "defaultBranch": "refs/heads/master",
     "clean": "false",
     "checkoutSubmodules": false
@@ -208,7 +246,7 @@
         "properties": {},
         "name": "mavenPOMFile",
         "label": "Maven POM file",
-        "defaultValue": "pom.xml",
+        "defaultValue": "",
         "required": true,
         "type": "filePath",
         "helpMarkDown": ""
@@ -216,12 +254,27 @@
     ]
   },
   "quality": "definition",
+  "authoredBy": "{}",
   "drafts": [],
   "queue": {
-    "name": "Hosted",
+    "_links": "{}",
+    "id": "",
+    "name": "Hosted VS2017",
+    "url": "",
     "pool": {
-      "name": "Hosted",
+      "id": "",
+      "name": "Hosted VS2017",
       "isHosted": true
     }
-  }
+  },
+  "id": "",
+  "name": "SonarQube",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 4,
+  "createdDate": "",
+  "project": "{}"
 }

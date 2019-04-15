@@ -63,6 +63,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="LowercaseRoutesMVC, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LowercaseRoutesMVC.1.0.3\lib\LowercaseRoutesMVC.dll</HintPath>
     </Reference>
@@ -702,7 +705,6 @@
     <Content Include="Templates\SonarQube\ProjectSettings.json" />
     <Content Include="Templates\SonarQube\ProjectTemplate.json" />
     <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube-code.json" />
-    <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube.json" />
     <Content Include="Templates\SonarQube\TaskfromTemplate.json" />
     <Content Include="Templates\SonarQube\Teams.json" />
     <Content Include="Templates\SonarQube\UpdateCardFields.json" />
@@ -1030,6 +1032,17 @@
     <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\TeamSetting.json" />
     <Content Include="Templates\Keyvault\Teams\Teams.json" />
     <Content Include="Templates\Keyvault\WorkItems\User Story.json" />
+    <Content Include="Templates\ContosoShuttle\Dashboard\Dashboard.json" />
+    <Content Include="Templates\ContosoShuttle\EnableEpic.json" />
+    <Content Include="Templates\ContosoShuttle\EpicfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ImportSourceCode\ContosoShuttle.json" />
+    <Content Include="Templates\ContosoShuttle\PBIfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectSettings.json" />
+    <Content Include="Templates\ContosoShuttle\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\ServiceEndpoints\ContosoShuttle-code.json" />
+    <Content Include="Templates\ContosoShuttle\TaskfromTemplate.json" />
+    <Content Include="Templates\ContosoShuttle\TeamArea.json" />
+    <Content Include="Templates\ContosoShuttle\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
