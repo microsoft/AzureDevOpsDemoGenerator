@@ -1220,99 +1220,91 @@ namespace VstsDemoBuilder.Controllers
                                             endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
                                         }
                                         break;
+
+                                    case "UsernamePassword":
+                                        endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                                        endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                                        break;
                                 }
                                 break;
                             case "UsernamePassword":
-                                endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
-                                endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                                if (endpoint.authorization.parameters == null)
+                                {
+                                    endpoint.authorization.parameters = new Parameters.Parameters
+                                    {
+                                        username = "username",
+                                        password = "password"
+                                    };
+                                }
+                                else
+                                {
+                                    endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
+                                    endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                                }
                                 break;
                             case "ManagedServiceIdentity":
                                 if (endpoint.authorization.parameters == null)
                                 {
                                     endpoint.authorization.parameters = new Parameters.Parameters
                                     {
-                                        endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
-                                    }
-                                    break;
-                            }
-                            break;
-                        case "UsernamePassword":
-                            if (endpoint.authorization.parameters == null)
-                            {
-                                endpoint.authorization.parameters = new Parameters.Parameters
+                                        tenantId = Guid.NewGuid().ToString(),
+                                        AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken"
+                                    };
+                                }
+                                else
                                 {
-                                    username = "username",
-                                    password = "password"
-                                };
-                            }
-                            else
-                            {
-                                endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
-                                endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
-                            }
-                            break;
-                        case "ManagedServiceIdentity":
-                            if (endpoint.authorization.parameters == null)
-                            {
-                                endpoint.authorization.parameters = new Parameters.Parameters
+                                    endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                }
+                                break;
+                            case "ServicePrincipal":
+                                switch (endpoint.type)
                                 {
-                                    tenantId = Guid.NewGuid().ToString()
-                                };
-                            }
-                            else
-                            {
-                                endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                            }
-                            break;
-                        case "ServicePrincipal":
-                            switch (endpoint.type)
-                            {
-                                case "devCenter":
-                                    endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
-                                    break;
-                                case "azurerm":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                    case "devCenter":
+                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                                        break;
+                                    case "azurerm":
+                                        if (endpoint.authorization.parameters == null)
                                         {
-                                            url = null,
-                                            servicePrincipalId = Guid.NewGuid().ToString(),
-                                            authenticationType = "spnKey",
-                                            tenantId = Guid.NewGuid().ToString(),
-                                            servicePrincipalKey = "spnKey"
-                                        };
-                                    }
-                                    else
-                                    {
+                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            {
+                                                url = null,
+                                                servicePrincipalId = Guid.NewGuid().ToString(),
+                                                authenticationType = "spnKey",
+                                                tenantId = Guid.NewGuid().ToString(),
+                                                servicePrincipalKey = "spnKey"
+                                            };
+                                        }
+                                        else
+                                        {
 
-                                        endpoint.authorization.parameters.url = null;
-                                        endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
-                                        endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
-                                        endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
-                                    }
-                                    break;
-                            }
-                            break;
+                                            endpoint.authorization.parameters.url = null;
+                                            endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
+                                            endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
+                                            endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                            endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                        }
+                                        break;
+                                }
+                                break;
 
-                        case "Certificate":
-                            switch (endpoint.type)
-                            {
-                                case "dockerhost":
-                                    if (endpoint.authorization.parameters == null)
-                                    {
-                                        endpoint.authorization.parameters = new Parameters.Parameters();
-                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
-                                    }
-                                    else
-                                    {
-                                        endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                        endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                        endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
-                                    }
-                                    break;
+                            case "Certificate":
+                                switch (endpoint.type)
+                                {
+                                    case "dockerhost":
+                                        if (endpoint.authorization.parameters == null)
+                                        {
+                                            endpoint.authorization.parameters = new Parameters.Parameters();
+                                            endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                            endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                            endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                        }
+                                        else
+                                        {
+                                            endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
+                                            endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
+                                            endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                        }
+                                        break;
                                     case "azure":
                                         if (endpoint.authorization.parameters == null)
                                         {
@@ -1388,7 +1380,9 @@ namespace VstsDemoBuilder.Controllers
                 }
                 else if (!string.IsNullOrEmpty(serviceEndPoint.LastFailureMessage))
                 {
-                    AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
+                    {
+                        AddMessage(con.Id.ErrorId(), "Error occured while fetchin service endpoints");
+                    }
                 }
             }
             catch (Exception ex)

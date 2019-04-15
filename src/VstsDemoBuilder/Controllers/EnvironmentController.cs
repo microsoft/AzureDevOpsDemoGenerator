@@ -2518,7 +2518,7 @@ namespace VstsDemoBuilder.Controllers
                     if (!string.IsNullOrEmpty(objQuery1.LastFailureMessage))
 
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + _newobjQuery.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.id.ErrorId(), "Error while creating query: " + objQuery1.LastFailureMessage + Environment.NewLine);
                     }
 
                 }
