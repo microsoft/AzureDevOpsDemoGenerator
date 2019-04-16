@@ -194,6 +194,7 @@ namespace VstsDemoBuilder.Models
         public string accessToken { get; set; }
         public string organizationName { get; set; }
         public string templateName { get; set; }
+        public string templatePath { get; set; }
         public IList<User> users { get; set; }
     }
 

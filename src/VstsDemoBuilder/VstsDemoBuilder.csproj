@@ -1087,6 +1087,7 @@
     <Folder Include="assets\script\" />
     <Folder Include="Content\assets\script\" />
     <Folder Include="ExtractedTemplate\" />
+    <Folder Include="ExtractedZipFile\" />
     <Folder Include="Log\" />
     <Folder Include="TemplateBackUp\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />
