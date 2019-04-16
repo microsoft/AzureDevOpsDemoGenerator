@@ -194,51 +194,65 @@
                 <div class="demo_form">
                     <div class="demo-header"><h5>Create New Project</h5></div>
                     <div class="demo-content">
-                        <div class="form-group row ">
+                        <div class="form-group row">
                             <div class="col-lg-12">
-                                <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
-                                @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                                <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                                </div>
-                                <div style="color:red">
-                                    @ViewBag.AccDDError
+                                <div class="row">
+                                   
+                                    <div class="align-items-center ml-0 input_box">
+                                        <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
+                                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                                        </div>
+                                    </div>
+                                    <div style="color:red">
+                                        @ViewBag.AccDDError
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            </div>
 
                         <div class="form-group row" id="">
                             <div class="col-lg-12 mt-1">
-                                <label for="Template" class="d-block col-form-label ">Choose template  :</label>
-                                <div class="row align-items-center ml-0">
-                                    <input type="text" class="form-control col mr-3 mt-lg-0 form-input" id="ddlTemplates" disabled />
-                                    <div class="template-invoke pr-3" style="padding-left:0px;">
+                                
+                                <div class="row">
+                                    <label for="Template" class="d-block col-form-label ">Choose template  :</label>
+                                    <div class="align-items-center ml-0 input_box">
+                                        <input type="text" class="form-control col mr-3 mt-lg-0 form-input" id="ddlTemplates" disabled />
+                                        <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
+                                        </div>
+                                    </div>
+                                    <div class="template-invoke pl-3" style="padding-left:0px;">
                                         <button class="btn btn-primary rd-4" id="templateselection">
                                             Choose template
                                         </button>
                                     </div>
                                 </div>
-                                <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
+
+
                                 </div>
                             </div>
-                        </div>
 
                         <div class="form-group row" id="">
                             <div class="col-lg-12 mt-1">
-                                <label for="Template" class="d-block col-form-label ">New Project Name  :</label>
-                                <div class="row align-items-center ml-0">
-                                    @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverrorOn form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                                    <div class="template-invoke pr-3 " style="padding-left:0px;">
+                               
+                                <div class="row">
+                                    <label for="Template" class="d-block col-form-label ">New Project Name  :</label>
+                                    <div class="align-items-center ml-0 input_box">
+                                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverror form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                                        <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                                        </div>
+                                    </div>
+                                    <div class="template-invoke pl-3 " style="padding-left:0px;">
                                         <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" style="padding-left:5px; padding-right:5px; font-size:13px;width: auto">
                                             &nbsp;&nbsp;Create Project &nbsp;&nbsp;
                                         </button>
                                         <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
                                     </div>
                                 </div>
-                                <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
-                                </div>
 
                             </div>
-                        </div>
+                               
+                            </div>
 
                         <!-- PROJECT PARAMETERS -->
                         <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">

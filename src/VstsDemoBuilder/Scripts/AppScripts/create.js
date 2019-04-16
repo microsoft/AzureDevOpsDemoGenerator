@@ -51,8 +51,8 @@ var privateTemplateMsg = "";
 $(document).ready(function (event) {
     uniqueId = ID();
     $('.rmverror').click(function () {
-        var errID = this.nextElementSibling.getAttribute('id');
-        $('#' + errID).removeClass("d-block").addClass("d-none");
+        var errID = this.id;
+        $('#' + errID+'_Error').removeClass("d-block").addClass("d-none");
     });
     $('body').on('click', '.rmverrorOn', function () {
         var errID = this.closest('div').nextSibling.getAttribute('id');

@@ -8936,13 +8936,17 @@ html, body {
 .demo_form .form-group label {
     font-weight: 500;
     color: #505050;
+    width: 100%;
 }
 
 .create-new-project {
     padding: 30px 0;
 }
-
-
+.input_box { flex-grow:1;
+             position:relative;
+}
+    .input_box .alert-danger { border-radius:4px;
+    }
 .demo_form .demo-button {
     border: none;
     min-width: 130px;
