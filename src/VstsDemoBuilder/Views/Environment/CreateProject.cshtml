@@ -137,9 +137,9 @@
         </div>*@
         <p class="m-0 social-icons">
             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:10px" /></a>&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:17px" /></a>&nbsp;&nbsp;
-            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:17px" /></a>
+            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on Facebook"><img src="~/Images/facebook.png" style="width:10px" /></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on LinkedIn"><img src="~/Images/linkedin.png" style="width:17px" /></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank" title="Share on Twitter"><img src="~/Images/twitter.png" style="width:17px" /></a>
             <a class="nav-link fa fa-envelope" style="color:white" href="#" data-toggle="tooltip" title="Send Feedback" onclick="javascript:window.location='mailto:AzureDevOpsDemoGenerator@service.microsoft.com?subject=Azure DevOps Demo Generator Feedback &amp;body=I have some feedback about the Azure DevOps Demo Generator: ' + window.location.href;"></a>
         </p>
         @{
@@ -226,7 +226,7 @@
                             <div class="col-lg-12 mt-1">
                                 <label for="Template" class="d-block col-form-label ">New Project Name  :</label>
                                 <div class="row align-items-center ml-0">
-                                    @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverror form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                                    @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverrorOn form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
                                     <div class="template-invoke pr-3 " style="padding-left:0px;">
                                         <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" style="padding-left:5px; padding-right:5px; font-size:13px;width: auto">
                                             &nbsp;&nbsp;Create Project &nbsp;&nbsp;
@@ -234,8 +234,9 @@
                                         <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
                                     </div>
                                 </div>
-                                <div class="alert alert-danger d-none col-md-12" role="alert" id="txtProjectName_Error">
+                                <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
                                 </div>
+
                             </div>
                         </div>
 

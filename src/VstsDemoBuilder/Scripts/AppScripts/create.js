@@ -55,7 +55,7 @@ $(document).ready(function (event) {
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
     $('body').on('click', '.rmverrorOn', function () {
-        var errID = this.nextElementSibling.getAttribute('id');
+        var errID = this.closest('div').nextSibling.getAttribute('id');
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
 
@@ -76,13 +76,6 @@ $(document).ready(function (event) {
         $('#templateselection').removeClass("btn-primary").prop("disabled", true);
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
-
-        //if (checkExtensionForSelectedTemplate === "SonarQube") {
-        //    $("#SoanrQubeDiv").show();
-        //}
-        //else {
-        //    $("#SoanrQubeDiv").hide();
-        //}
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
             return false;
         }
@@ -99,13 +92,13 @@ $(document).ready(function (event) {
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
-        var selectedTemplateDescription = $(".description.descSelected").data('description');
+        var selectedTemplateDescription = $(".template.selected").data('description');
         var templateIcon = $(".template.selected").data('image');
         var templateName = $(".template.selected").data('template');
         $('#templateIcon').attr('src', templateIcon);
         $('#templateName').innerHTML = templateName;
 
-        var infoMsg = $(".description.descSelected").data('message');
+        var infoMsg = $(".template.selected").data('message');
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
             $('#InfoMessage').html('');
             $('#InfoMessage').removeClass('d-block').addClass('d-none');
@@ -143,12 +136,6 @@ $(document).ready(function (event) {
         if (TemplateName === "MyShuttle-Java") {
             $("#NotificationModal").modal('show');
         }
-        //if (TemplateName === "SonarQube") {
-        //    $("#SoanrQubeDiv").show();
-        //}
-        //else {
-        //    $("#SoanrQubeDiv").hide();
-        //}
         var Url = 'GetTemplate/';
         $.get(Url, { "TemplateName": TemplateName }, function (data) {
             if (data !== "") {
@@ -159,7 +146,8 @@ $(document).ready(function (event) {
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                            $('<div class="col-lg-12 mt-1"><label for="sonarqubeurl" class="d-block col-form-label" style="font-weight:500">' + value.label + '  :</label><div class="row align-items-center ml-0"><input type="text" class="form-control col mr-3 mt-lg-0 form-input project-parameters rmverrorOn" id="txt' + value.fieldName + '" proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '" /></div><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div></div>').appendTo("#projectParameters");
+                            //$('<div class="form-group row projParameters row align-items-center ml-0"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
@@ -267,13 +255,6 @@ $(document).ready(function (event) {
     if (selectedTemplate === "MyShuttle-Java") {
         $("#NotificationModal").modal('show');
     }
-    //if (selectedTemplate === "SonarQube") {
-    //    $("#SoanrQubeDiv").show();
-    //}
-    //else {
-    //    $("#SoanrQubeDiv").hide();
-    //}
-
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
@@ -665,14 +646,6 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-
-                            //if (selectedTemplate == "SmartHotel360") {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                            //}
-                            //else {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                            //}
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
@@ -980,7 +953,7 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                     grp += '<div class="template-box">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
@@ -994,7 +967,7 @@ function getGroups(grpSelected) {
                                         grp += '</p>';
                                     }
                                     let desc = MatchedGroup.Template[i].Description; /*(MatchedGroup.Template[i].Description.length > 70) ? MatchedGroup.Template[i].Description.substr(0, 70) + '...' :*/
-                                    grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
+                                    grp += '<p class="description descSelected">' + desc + '</p>';
                                     grp += '</div>';
                                     grp += '</div>';
                                 }
@@ -1003,7 +976,7 @@ function getGroups(grpSelected) {
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                     grp += '<div class="template-box">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
@@ -1017,7 +990,7 @@ function getGroups(grpSelected) {
                                         grp += '</p>';
                                     }
                                     let desc = MatchedGroup.Template[i].Description;
-                                    grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + desc + '</p>';
+                                    grp += '<p class="description">' + desc + '</p>';
                                     grp += '</div>';
                                     grp += '</div>';
                                 }
