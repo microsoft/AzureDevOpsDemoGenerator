@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -56,6 +57,8 @@ namespace VstsDemoBuilder.Controllers.Apis
         public string projectName = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
         private string logPath = "";
+        static string ExtractedTemplate = "";
+        static int usercount = 0;
         private string extractPath = string.Empty;
         private string templateVersion = string.Empty;
         private string enableExtractor = "";
@@ -86,7 +89,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 List<string> ListOfExistedProjects = new List<string>();
                 if (string.IsNullOrEmpty(model.organizationName))
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Provide a valid account name");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Provide a valid Account name");
                 }
                 if (string.IsNullOrEmpty(model.accessToken))
                 {
@@ -106,18 +109,6 @@ namespace VstsDemoBuilder.Controllers.Apis
                         {
                             ListOfExistedProjects.Add(project.name);
                         }
-                    }
-                }
-                if (string.IsNullOrEmpty(model.templateName))
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Name must be specified");
-                }
-                else
-                {
-                    HttpResponseMessage response = GetTemplate(model.templateName);
-                    if (response.StatusCode != HttpStatusCode.OK)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Not Found!");
                     }
                 }
                 if (model.users.Count > 0)
@@ -150,13 +141,46 @@ namespace VstsDemoBuilder.Controllers.Apis
                             return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                         }
                     }
-                    bool anyDuplicateProjects= ListOfRequestedProjectNames.GroupBy(n => n).Any(c => c.Count() > 1);
+                    bool anyDuplicateProjects = ListOfRequestedProjectNames.GroupBy(n => n).Any(c => c.Count() > 1);
                     if (anyDuplicateProjects)
-                    {                        
+                    {
                         return Request.CreateResponse(HttpStatusCode.BadRequest, "ProjectName must be unique");
                     }
                     else
                     {
+                        if (string.IsNullOrEmpty(model.templateName))
+                        {
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Name should not be empty");
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(model.templatePath))
+                            {
+                                string fileName = Path.GetFileName(model.templatePath);
+                                string extension = Path.GetExtension(model.templatePath);
+                                if (extension.ToLower() == ".zip")
+                                {
+                                    ExtractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                                    model.templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                                    if (!GetTemplateFromPath(model.templatePath, ExtractedTemplate))
+                                    {
+                                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path");
+                                    }
+                                }
+                                else
+                                {
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "TemplatePath should have .zip extension file name at the end of the url");
+                                }
+                            }
+                            else
+                            {
+                                HttpResponseMessage response = GetTemplate(model.templateName);
+                                if (response.StatusCode != HttpStatusCode.OK)
+                                {
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Not Found!");
+                                }
+                            }
+                        }
                         foreach (var user in model.users)
                         {
                             var result = ListOfExistedProjects.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.ToLower());
@@ -166,13 +190,20 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                             else
                             {
+                                usercount++;
                                 user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
                                 user.status = "Project creation is initiated..";
                                 ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
                                 processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
                         }
-                    }                   
+                        if (!string.IsNullOrEmpty(model.templatePath) && usercount == 0)
+                        {
+                            var templatepath = HostingEnvironment.MapPath("~") + @"\Templates\" + ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                            if (Directory.Exists(templatepath))
+                                Directory.Delete(templatepath, true);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -184,6 +215,135 @@ namespace VstsDemoBuilder.Controllers.Apis
             return Request.CreateResponse(HttpStatusCode.Accepted, model);
         }
 
+        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate)
+        {
+            bool isvalidFile = false;
+            try
+            {
+                //var githubToken = "[token]";
+                //TemplateUrl = "https://www.ecanarys.com/Portals/0/Downloads/Devops-CaseStudy.pdf";
+                string fileName = Path.GetFileName(TemplateUrl);
+                string extension = Path.GetExtension(fileName);
+
+                string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
+                //Uri remoteFilePathUri = new Uri(TemplateUrl);
+                //using (WebClient client = new WebClient())
+                //{
+                //    client.DownloadFileAsync(remoteFilePathUri, path);
+                //    //client.DownloadFile(TemplateUrl, path);
+                //}
+
+                Uri remoteFilePathUri = new Uri(TemplateUrl);
+                string remoteFilePathWithoutQuery = remoteFilePathUri.GetLeftPart(UriPartial.Path);
+                WebClient webClient = new WebClient();
+                webClient.DownloadFile(TemplateUrl, path);
+                webClient.Dispose();
+
+                //var client = new System.Net.Http.HttpClient();
+                ////var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
+                ////credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
+                ////client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
+                //var contents = client.GetByteArrayAsync(TemplateUrl).Result;
+                //System.IO.File.WriteAllBytes(path, contents);
+
+                if (File.Exists(path))
+                {
+                    var Extractedpath = HostingEnvironment.MapPath("~") + @"\ExtractedTemplate\" + templateName;
+                    System.IO.Compression.ZipFile.ExtractToDirectory(path, Extractedpath);
+                    var zippath = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
+                    if (File.Exists(zippath))
+                        File.Delete(zippath);
+
+                    isvalidFile = checkTemplateDirectory(Extractedpath);
+                    if (isvalidFile)
+                    {
+                        string[] subdirs = Directory.GetDirectories(Extractedpath);
+                        foreach (string subdirectory in subdirs)
+                        {
+                            DirectoryInfo di = new DirectoryInfo(subdirectory);
+                            FileInfo[] TXTFiles = di.GetFiles("*.json");
+                            string destinationFolder = HostingEnvironment.MapPath("~") + @"\Templates\" + templateName;
+                            bool exists = System.IO.Directory.Exists(destinationFolder);
+                            if (TXTFiles.Length > 0 && !exists)
+                            {
+                                System.IO.Directory.CreateDirectory(destinationFolder);
+                                //Copy(targetPath, destinationFolder);
+                                foreach (var filename in TXTFiles)
+                                {
+                                    string file = filename.ToString();
+                                    string str = destinationFolder + @"\" + file.ToString();
+                                    if (!File.Exists(str))
+                                    {
+                                        filename.CopyTo(str);
+                                    }
+                                }
+                                LoadSubDirs(subdirectory, true);
+                            }
+                        }
+                    }
+                    if (Directory.Exists(Extractedpath))
+                        Directory.Delete(Extractedpath, true);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return isvalidFile;
+        }
+
+        private bool checkTemplateDirectory(string dir)
+        {
+            string[] filepaths = Directory.GetFiles(dir);
+            foreach (var file in filepaths)
+            {
+                if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                {
+                    return false;
+                }
+            }
+            string[] subdirectoryEntries = Directory.GetDirectories(dir);
+            foreach (string subdirectory in subdirectoryEntries)
+            {
+                checkTemplateDirectory(subdirectory);
+            }
+            return true;
+        }
+
+        private void LoadSubDirs(string dir, bool FirstRecursive = false)
+        {
+            if (!FirstRecursive)
+            {
+                DirectoryInfo di = new DirectoryInfo(dir);
+                FileInfo[] TXTFiles = di.GetFiles("*.json");
+                string[] PathValues = dir.Split('\\');
+                string destinationFolder = HostingEnvironment.MapPath("~") + @"\Templates\" + ExtractedTemplate.ToLower().Replace(".zip", "").Trim() + @"\" + PathValues[PathValues.Length - 1];
+                bool exists = System.IO.Directory.Exists(destinationFolder);
+
+                if (!exists)
+                {
+                    System.IO.Directory.CreateDirectory(destinationFolder);
+                    //Copy(targetPath, destinationFolder);
+                    foreach (var filename in TXTFiles)
+                    {
+                        string file = filename.ToString();
+                        string str = destinationFolder + @"\" + file.ToString();
+                        if (!File.Exists(str))
+                        {
+                            filename.CopyTo(str);
+                        }
+                    }
+                }
+            }
+            string[] subdirectoryEntries = Directory.GetDirectories(dir);
+            foreach (string subdirectory in subdirectoryEntries)
+            {
+                LoadSubDirs(subdirectory);
+            }
+        }
+        
         #region Manage Status Messages
         public void AddMessage(string id, string message)
         {
@@ -286,6 +446,14 @@ namespace VstsDemoBuilder.Controllers.Apis
                             objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
                         }
                     }
+                }
+                usercount--;
+                if (usercount == 0)
+                {
+                    var templatepath = HostingEnvironment.MapPath("~") + @"\Templates\" + ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                    if (Directory.Exists(templatepath))
+                        Directory.Delete(templatepath, true);
+
                 }
             }
             catch (Exception ex)
@@ -993,7 +1161,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
         }
-        
+
         /// <summary>
         /// Create Teams
         /// </summary>
