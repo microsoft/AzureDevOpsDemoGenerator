@@ -162,7 +162,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 {
                                     ExtractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
                                     model.templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                                    if (!GetTemplateByPath(model.templatePath, ExtractedTemplate))
+                                    if (!GetTemplateFromPath(model.templatePath, ExtractedTemplate))
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path");
                                     }
@@ -215,7 +215,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             return Request.CreateResponse(HttpStatusCode.Accepted, model);
         }
 
-        public bool GetTemplateByPath(string TemplateUrl, string ExtractedTemplate)
+        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate)
         {
             bool isvalidFile = false;
             try
