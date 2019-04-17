@@ -226,6 +226,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Apis\ProjectController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\ExtractorController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
@@ -822,6 +823,7 @@
     <Content Include="PreSetting\GitHubEndPoint.json" />
     <Content Include="PreSetting\DemoExtensions.json" />
     <Content Include="assets\templategrouping\templateSelection.custom.min.css" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - Web Deploy.pubxml" />
@@ -865,6 +867,13 @@
     <Content Include="Templates\Terraform\ProjectTemplate.json" />
     <Content Include="Templates\Terraform\ReleaseDefinitions\Terraform.json" />
     <Content Include="Templates\Terraform\ServiceEndpoints\Terraform-code.json" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\demogenapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demogenapi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />
@@ -1032,6 +1041,24 @@
     <Content Include="Templates\ContosoShuttle\TaskfromTemplate.json" />
     <Content Include="Templates\ContosoShuttle\TeamArea.json" />
     <Content Include="Templates\ContosoShuttle\Teams.json" />
+    <Content Include="Templates\ContosoShuttle\Dashboard\Queries\Work in Progress.json" />
+    <Content Include="Templates\ContosoShuttle2\ImportSourceCode\ContosoShuttle.json" />
+    <Content Include="Templates\ContosoShuttle2\Iterations.json" />
+    <Content Include="Templates\ContosoShuttle2\ProjectSettings.json" />
+    <Content Include="Templates\ContosoShuttle2\ProjectTemplate.json" />
+    <Content Include="Templates\ContosoShuttle2\ServiceEndpoints\ContosoShuttle-code.json" />
+    <Content Include="Templates\ContosoShuttle2\TeamArea.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\BoardColumns.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\BoardRows.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\CardFields.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\CardStyles.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\ContosoShuttle Team\TeamSetting.json" />
+    <Content Include="Templates\ContosoShuttle2\Teams\Teams.json" />
+    <Content Include="Templates\ContosoShuttle2\WorkItems\Epic.json" />
+    <Content Include="Templates\ContosoShuttle2\WorkItems\Product Backlog Item.json" />
+    <Content Include="Templates\ContosoShuttle2\WorkItems\Task.json" />
+    <Content Include="Templates\ContosoShuttle2\Dashboard\Dashboard.json" />
+    <Content Include="Templates\ContosoShuttle2\Dashboard\Queries\Work in Progress.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

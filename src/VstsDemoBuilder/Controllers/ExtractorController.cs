@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
@@ -74,7 +75,15 @@ namespace VstsDemoBuilder.Controllers
             return View();
         }
 
-        // Extractor index page
+        // Get the current progress of work done
+        [HttpGet]
+        [AllowAnonymous]
+        public ContentResult GetCurrentProgress(string id)
+        {
+            this.ControllerContext.HttpContext.Response.AddHeader("cache-control", "no-cache");
+            var currentProgress = GetStatusMessage(id).ToString();
+            return Content(currentProgress);
+        }
         [AllowAnonymous]
         public ActionResult Index(ProjectList.ProjectDetails model)
         {
@@ -137,17 +146,6 @@ namespace VstsDemoBuilder.Controllers
             }
             return View(model);
         }
-
-        // Get the current progress of work done
-        [HttpGet]
-        [AllowAnonymous]
-        public ContentResult GetCurrentProgress(string id)
-        {
-            this.ControllerContext.HttpContext.Response.AddHeader("cache-control", "no-cache");
-            var currentProgress = GetStatusMessage(id).ToString();
-            return Content(currentProgress);
-        }
-
         // Get status message to display
         [HttpGet]
         [AllowAnonymous]
@@ -191,7 +189,13 @@ namespace VstsDemoBuilder.Controllers
 
             Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
             Projects projects = new Projects(config);
-            ProjectsResponse.ProjectResult projectResult = projects.GetListOfProjects();
+            HttpResponseMessage response = projects.GetListOfProjects();
+            ProjectsResponse.ProjectResult projectResult = new ProjectsResponse.ProjectResult();
+            if (response.IsSuccessStatusCode)
+            {
+                // set the viewmodel from the content in the response
+                projectResult = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+            }
             try
             {
                 if (string.IsNullOrEmpty(projectResult.errmsg))

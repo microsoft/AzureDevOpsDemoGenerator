@@ -18,7 +18,7 @@ namespace VstsRestAPI
         public ApiServiceBase(IConfiguration configuration)
         {
             _configuration = configuration;
-            _credentials = configuration.PersonalAccessToken;//Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));
+            _credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));//configuration.PersonalAccessToken;
             Project = configuration.Project;
             Account = configuration.AccountName;
             Team = configuration.Team;
@@ -33,7 +33,7 @@ namespace VstsRestAPI
             };
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _credentials);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", _credentials);
 
             return client;
         }
