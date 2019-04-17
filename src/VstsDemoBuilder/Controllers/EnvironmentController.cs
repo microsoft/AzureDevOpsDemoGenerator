@@ -1033,13 +1033,13 @@ namespace VstsDemoBuilder.Controllers
             }
             // waiting to add first message
             Thread.Sleep(2000);
+            Projects objProject = new Projects(_projectCreationVersion);
             try
             {
                 //Check for project state 
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
                 string projectStatus = string.Empty;
-                Projects objProject = new Projects(_projectCreationVersion);
                 projectStatus = objProject.GetProjectStateByName(model.ProjectName);
                 while (projectStatus.ToLower() != "wellformed")
                 {
