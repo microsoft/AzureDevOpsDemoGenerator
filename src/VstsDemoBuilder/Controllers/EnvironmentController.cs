@@ -993,57 +993,68 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t initialize project template and settings" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             //create team project
             string jsonProject = model.ReadJsonFile(templatesFolder + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
-
-            Projects proj = new Projects(_projectCreationVersion);
-            string projectID = proj.CreateTeamProject(jsonProject);
-
-            if (projectID == "-1")
+            try
             {
-                if (!string.IsNullOrEmpty(proj.LastFailureMessage))
+                Projects proj = new Projects(_projectCreationVersion);
+                string projectID = proj.CreateTeamProject(jsonProject);
+                if (projectID == "-1")
                 {
-                    if (proj.LastFailureMessage.Contains("TF400813"))
+                    if (!string.IsNullOrEmpty(proj.LastFailureMessage))
                     {
-                        AddMessage(model.id, "OAUTHACCESSDENIED");
+                        if (proj.LastFailureMessage.Contains("TF400813"))
+                        {
+                            AddMessage(model.id, "OAUTHACCESSDENIED");
+                        }
+                        else if (proj.LastFailureMessage.Contains("TF50309"))
+                        {
+                            AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
+                        }
+                        else
+                        {
+                            AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
+                        }
                     }
-                    else if (proj.LastFailureMessage.Contains("TF50309"))
-                    {
-                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
-                    }
-                    else
-                    {
-                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
-                    }
+                    Thread.Sleep(2000); // Adding Delay to Get Error message
+                    return new string[] { model.id, accountName };
                 }
-                Thread.Sleep(2000); // Adding Delay to Get Error message
-                return new string[] { model.id, accountName };
+                else
+                {
+                    AddMessage(model.id, string.Format("Project {0} created", model.ProjectName));
+                }
             }
-            else
+            catch (Exception ex)
             {
-                AddMessage(model.id, string.Format("Project {0} created", model.ProjectName));
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t at CreateTeamProject " + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             // waiting to add first message
             Thread.Sleep(2000);
-
-            //Check for project state 
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
-            string projectStatus = string.Empty;
             Projects objProject = new Projects(_projectCreationVersion);
-            while (projectStatus.ToLower() != "wellformed")
+            try
             {
+                //Check for project state 
+                Stopwatch watch = new Stopwatch();
+                watch.Start();
+                string projectStatus = string.Empty;
                 projectStatus = objProject.GetProjectStateByName(model.ProjectName);
-                if (watch.Elapsed.Minutes >= 5)
+                while (projectStatus.ToLower() != "wellformed")
                 {
-                    return new string[] { model.id, accountName };
+                    projectStatus = objProject.GetProjectStateByName(model.ProjectName);
+                    if (watch.Elapsed.Minutes >= 5)
+                    {
+                        return new string[] { model.id, accountName };
+                    }
                 }
+                watch.Stop();
             }
-            watch.Stop();
-
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t while waiting for project status " + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
             //get project id after successfull in VSTS
             model.Environment.ProjectId = objProject.GetProjectIdByName(model.ProjectName);
             model.Environment.ProjectName = model.ProjectName;
@@ -2188,7 +2199,7 @@ namespace VstsDemoBuilder.Controllers
                             string bikeSharing360password = System.Configuration.ConfigurationManager.AppSettings["BikeSharing360Password"];
                             jsonCreateService = jsonCreateService.Replace("$BikeSharing360username$", bikeSharing360username).Replace("$BikeSharing360password$", bikeSharing360password);
                         }
-                        else if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                        else if (model.SelectedTemplate.ToLower() == "contososhuttle" || model.SelectedTemplate.ToLower() == "contososhuttle2")
                         {
                             string contosousername = System.Configuration.ConfigurationManager.AppSettings["ContosoUserID"];
                             string contosopassword = System.Configuration.ConfigurationManager.AppSettings["ContosoPassword"];
@@ -2807,7 +2818,7 @@ namespace VstsDemoBuilder.Controllers
 
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "contososhuttle")
+                    if (model.SelectedTemplate.ToLower() == "contososhuttle" || model.SelectedTemplate.ToLower() == "contososhuttle2")
                     {
                         if (isDashboardDeleted)
                         {
