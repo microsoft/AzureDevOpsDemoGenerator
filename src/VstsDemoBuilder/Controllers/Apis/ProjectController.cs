@@ -56,13 +56,13 @@ namespace VstsDemoBuilder.Controllers.Apis
         public string templateUsed = string.Empty;
         public string projectName = string.Empty;
         private AccessDetails AccessDetails = new AccessDetails();
-        private string logPath = "";
+    
         static string ExtractedTemplate = "";
         static string PrivateTemplatePath = "";
         static int usercount = 0;
         private string extractPath = string.Empty;
         private string templateVersion = string.Empty;
-        private string enableExtractor = "";
+      
         private static Dictionary<string, string> StatusMessages
         {
             get
