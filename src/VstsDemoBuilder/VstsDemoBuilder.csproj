@@ -248,6 +248,12 @@
     <Compile Include="Models\ReadUser.cs" />
     <Compile Include="Models\TemplateSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\IAccountService.cs" />
+    <Compile Include="ServiceInterfaces\IProjectService.cs" />
+    <Compile Include="ServiceInterfaces\ITemplateService.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\TemplateService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\custom.min.css" />
