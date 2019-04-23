@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VstsDemoBuilder.ServiceInterfaces
 {
-    interface ITemplateService
+    public interface ITemplateService
     {
     }
 }
