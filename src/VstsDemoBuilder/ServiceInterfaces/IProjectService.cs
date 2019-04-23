@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VstsDemoBuilder.ServiceInterfaces
 {
-    interface IProjectService
+    public interface IProjectService
     {
+        string GetMessage();
     }
 }
