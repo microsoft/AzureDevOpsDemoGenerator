@@ -4,7 +4,7 @@
 		},		
 		"name": "ContosoShuttle-code",
 		"type": "git",
-		"url": "https://jsmcbr.visualstudio.com/_git/ContosoShuttle",
+		"url": "https://dev.azure.com/contososhuttle/_git/ContosoShuttle",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
