@@ -94,7 +94,7 @@
               "taskId": "ce85a08b-a538-4d2b-8589-1d37a9ab970f",
               "version": "1.*",
               "name": "Execute Azure SQL : DacpacTask",
-              "refName": "SqlAzureDacpacDeployment1",
+              "refName": "",
               "enabled": true,
               "alwaysRun": false,
               "continueOnError": false,
@@ -104,7 +104,7 @@
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                "ConnectedServiceName": "Azure Resource Manager",
+                "ConnectedServiceName": "",
                 "ConnectedServiceNameARM": "",
                 "ServerName": "$(SQLserver)",
                 "DatabaseName": "$(DatabaseName)",
