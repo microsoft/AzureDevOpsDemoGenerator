@@ -18,6 +18,7 @@ using System.Web;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
+using VstsDemoBuilder.ServiceInterfaces;
 using VstsRestAPI;
 using VstsRestAPI.Build;
 using VstsRestAPI.DeploymentGRoup;
@@ -59,6 +60,9 @@ namespace VstsDemoBuilder.Controllers
         private string logPath = "";
         private string templateVersion = string.Empty;
         private string enableExtractor = "";
+
+        private IProjectService projectService;
+
         private static Dictionary<string, string> StatusMessages
         {
             get
