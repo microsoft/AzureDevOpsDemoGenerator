@@ -8788,13 +8788,13 @@ html, body {
 }
 
 .demo-content {
-    padding: 12px 30px;
+    padding: 12px 15px;
 }
 
 .demo-header {
     background: linear-gradient(to right, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
     text-align: left;
-    padding: 15px 30px;
+    padding: 10px 15px;
 }
 
 .templte_create {
@@ -8891,7 +8891,7 @@ html, body {
     }
 
 .about_template .card-header {
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 .card-header h5, .demo-header h5 {
@@ -8936,6 +8936,7 @@ html, body {
 .demo_form .form-group label {
     font-weight: 500;
     color: #505050;
+    padding-left:0;
     width: 100%;
 }
 
