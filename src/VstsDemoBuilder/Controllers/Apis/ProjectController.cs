@@ -1,4 +1,5 @@
 ﻿using log4net;
+using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
@@ -81,6 +82,63 @@ namespace VstsDemoBuilder.Controllers.Apis
         }
         #endregion
 
+        #region Manage Status Messages
+        public void AddMessage(string id, string message)
+        {
+            lock (objLock)
+            {
+                if (id.EndsWith("_Errors"))
+                {
+                    StatusMessages[id] = (StatusMessages.ContainsKey(id) ? StatusMessages[id] : string.Empty) + message;
+                }
+                else
+                {
+                    StatusMessages[id] = message;
+                }
+            }
+        }
+
+        [HttpGet]
+        [Route("CurrentProgress")]
+        public HttpResponseMessage GetCurrentProgress(string id)
+        {
+            var currentProgress = GetStatusMessage(id);
+            JObject dynObj = JsonConvert.DeserializeObject<JObject>(currentProgress.Content.ReadAsStringAsync().Result);
+            return Request.CreateResponse(HttpStatusCode.OK, dynObj["status"]);
+        }
+        public HttpResponseMessage GetStatusMessage(string id)
+        {
+            lock (objLock)
+            {
+                string message = string.Empty;
+                JObject obj = new JObject();
+                if (id.EndsWith("_Errors"))
+                {
+                    RemoveKey(id);
+                    obj["status"] = "Error: \t" + StatusMessages[id]; ;
+                    return Request.CreateResponse(HttpStatusCode.Created, obj);
+                }
+                if (StatusMessages.Keys.Count(x => x == id) == 1)
+                {
+                    obj["status"] = StatusMessages[id];
+                    return Request.CreateResponse(HttpStatusCode.OK, obj);
+                }
+                else
+                {
+                    obj["status"] = "Successfully Created";
+                    return Request.CreateResponse(HttpStatusCode.Created, obj);
+                }
+            }
+        }
+        public void RemoveKey(string id)
+        {
+            lock (objLock)
+            {
+                StatusMessages.Remove(id);
+            }
+        }
+        #endregion
+
         [HttpPost]
         [Route("create")]
         public HttpResponseMessage create(BulkData model)
@@ -149,6 +207,8 @@ namespace VstsDemoBuilder.Controllers.Apis
                     }
                     else
                     {
+                        string templateName = string.Empty;
+
                         if (string.IsNullOrEmpty(model.templateName))
                         {
                             return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Name should not be empty");
@@ -162,12 +222,12 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 if (extension.ToLower() == ".zip")
                                 {
                                     ExtractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                                    templateName = ExtractedTemplate;
                                     model.templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                                    if (!GetTemplateFromPath(model.templatePath, ExtractedTemplate))
+                                    if (!GetTemplateFromPath(model.templatePath, ExtractedTemplate, model.GitHubToken))
                                     {
-                                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path");
+                                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path and Check File is public or private, If Private please provide GithubToken in request body");
                                     }
-
                                 }
                                 else
                                 {
@@ -181,8 +241,32 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 {
                                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Not Found!");
                                 }
+                                templateName = model.templateName;
                             }
                         }
+                        string extensionJsonFile = GetJsonFilePath(PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
+                        if (File.Exists(extensionJsonFile))
+                        {
+                            if (CheckForInstalledExtensions(extensionJsonFile, model.accessToken, model.organizationName))
+                            {
+                                if (model.IsExtensionRequired)
+                                {
+                                    Project pmodel = new Project();
+                                    pmodel.SelectedTemplate = model.templateName;
+                                    pmodel.accessToken = model.accessToken;
+                                    pmodel.accountName = model.organizationName;
+                                    pmodel.ProjectName = projectName;
+                                    bool isextensionInstalled = InstallExtensions(pmodel, model.organizationName, model.accessToken);
+                                }
+                                else
+                                {
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsrequiredExtension: true in the request body");
+                                }
+                               
+                            }
+                            
+                        }
+
                         foreach (var user in model.users)
                         {
                             var result = ListOfExistedProjects.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.ToLower());
@@ -214,7 +298,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
 
-            return Request.CreateResponse(HttpStatusCode.Accepted, model);
+            return Request.CreateResponse(HttpStatusCode.Accepted, model.users);
         }
 
         /// <summary>
@@ -222,7 +306,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         /// </summary>
         /// <param name="TemplateUrl"></param>
         /// <param name="ExtractedTemplate"></param>
-        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate)
+        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken)
         {
             bool isvalidFile = false;
             try
@@ -233,18 +317,23 @@ namespace VstsDemoBuilder.Controllers.Apis
                 string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
                 var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
 
-                Uri FilePathUri = new Uri(TemplateUrl);
-                string FilePathWithoutQuery = FilePathUri.GetLeftPart(UriPartial.Path);
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(TemplateUrl, path);
-                webClient.Dispose();
+                //Uri FilePathUri = new Uri(TemplateUrl);
+                //string FilePathWithoutQuery = FilePathUri.GetLeftPart(UriPartial.Path);
+                //WebClient webClient = new WebClient();
+                //webClient.DownloadFile(TemplateUrl, path);
+                //webClient.Dispose();
 
-                //var client = new System.Net.Http.HttpClient();
-                ////var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
-                ////credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
-                ////client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
-                //var contents = client.GetByteArrayAsync(TemplateUrl).Result;
-                //System.IO.File.WriteAllBytes(path, contents);
+                var githubToken = GithubToken;
+                var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
+
+                using (var client = new System.Net.Http.HttpClient())
+                {
+                    var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
+                    credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
+                    var contents = client.GetByteArrayAsync(url).Result;
+                    System.IO.File.WriteAllBytes(path, contents);
+                }
 
                 if (File.Exists(path))
                 {
@@ -292,42 +381,6 @@ namespace VstsDemoBuilder.Controllers.Apis
         }
 
         /// <summary>
-        /// loading the extracted template files to the main public template folder. 
-        /// </summary>
-        /// <param name="dir"></param>
-        private void LoadSubDirs(string dir, bool FirstRecursive = false)
-        {
-            if (!FirstRecursive)
-            {
-                DirectoryInfo di = new DirectoryInfo(dir);
-                FileInfo[] TXTFiles = di.GetFiles("*.json");
-                string[] PathValues = dir.Split('\\');
-                string destinationFolder = HostingEnvironment.MapPath("~") + @"\Templates\" + ExtractedTemplate.ToLower().Replace(".zip", "").Trim() + @"\" + PathValues[PathValues.Length - 1];
-                bool exists = System.IO.Directory.Exists(destinationFolder);
-
-                if (!exists)
-                {
-                    System.IO.Directory.CreateDirectory(destinationFolder);
-                    //Copy(targetPath, destinationFolder);
-                    foreach (var filename in TXTFiles)
-                    {
-                        string file = filename.ToString();
-                        string str = destinationFolder + @"\" + file.ToString();
-                        if (!File.Exists(str))
-                        {
-                            filename.CopyTo(str);
-                        }
-                    }
-                }
-            }
-            string[] subdirectoryEntries = Directory.GetDirectories(dir);
-            foreach (string subdirectory in subdirectoryEntries)
-            {
-                LoadSubDirs(subdirectory);
-            }
-        }
-
-        /// <summary>
         /// Get the private template path from the private template folder 
         /// </summary>
         /// <param name="privateTemplatePath"></param>
@@ -368,59 +421,6 @@ namespace VstsDemoBuilder.Controllers.Apis
             return filePath;
         }
 
-        #region Manage Status Messages
-        public void AddMessage(string id, string message)
-        {
-            lock (objLock)
-            {
-                if (id.EndsWith("_Errors"))
-                {
-                    StatusMessages[id] = (StatusMessages.ContainsKey(id) ? StatusMessages[id] : string.Empty) + message;
-                }
-                else
-                {
-                    StatusMessages[id] = message;
-                }
-            }
-        }
-        public HttpResponseMessage GetCurrentProgress(string id)
-        {
-            var currentProgress = GetStatusMessage(id);
-            JObject dynObj = JsonConvert.DeserializeObject<JObject>(currentProgress.Content.ReadAsStringAsync().Result);
-            return Request.CreateResponse(HttpStatusCode.OK, dynObj["status"]);
-        }
-        public HttpResponseMessage GetStatusMessage(string id)
-        {
-            lock (objLock)
-            {
-                string message = string.Empty;
-                JObject obj = new JObject();
-                if (id.EndsWith("_Errors"))
-                {
-                    RemoveKey(id);
-                    obj["status"] = "Error: \t" + StatusMessages[id]; ;
-                    return Request.CreateResponse(HttpStatusCode.Created, obj);
-                }
-                if (StatusMessages.Keys.Count(x => x == id) == 1)
-                {
-                    obj["status"] = StatusMessages[id];
-                    return Request.CreateResponse(HttpStatusCode.OK, obj);
-                }
-                else
-                {
-                    obj["status"] = "Successfully Created";
-                    return Request.CreateResponse(HttpStatusCode.Created, obj);
-                }
-            }
-        }
-        public void RemoveKey(string id)
-        {
-            lock (objLock)
-            {
-                StatusMessages.Remove(id);
-            }
-        }
-        #endregion
 
         #region Project Setup Operations
         /// <summary>
@@ -577,7 +577,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
-        
+
             string projTemplateFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
 
@@ -683,12 +683,14 @@ namespace VstsDemoBuilder.Controllers.Apis
                 AddMessage(model.id, string.Format("Added user {0} as project admin ", model.Email));
             }
 
-            //Install required extensions
-            if (model.isExtensionNeeded && model.isAgreeTerms)
-            {
-                bool isInstalled = InstallExtensions(model, model.accountName, model.accessToken);
-                if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
-            }
+            ////Install required extensions
+            //model.isExtensionNeeded = true;
+            //model.isAgreeTerms = true;
+            //if (model.isExtensionNeeded && model.isAgreeTerms)
+            //{
+            //    bool isInstalled = InstallExtensions(model, model.accountName, model.accessToken);
+            //    if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
+            //}
 
             //current user Details
             string teamName = model.ProjectName + " team";
@@ -2533,10 +2535,75 @@ namespace VstsDemoBuilder.Controllers.Apis
             }
         }
 
+        public bool CheckForInstalledExtensions(string extensionJsonFile, string token, string account)
+        {
+            bool ExtensionRequired = false;
+            try
+            {
+                string accountName = account;
+                string pat = token;
+                string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
+                var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
+                string requiresExtensionNames = string.Empty;
+                string requiredMicrosoftExt = string.Empty;
+                string requiredThirdPartyExt = string.Empty;
+                string finalExtensionString = string.Empty;
+
+                //Check for existing extensions
+                if (template.Extensions.Count > 0)
+                {
+                    Dictionary<string, bool> dict = new Dictionary<string, bool>();
+                    foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
+                    {
+                        dict.Add(ext.extensionName, false);
+                    }
+                    //pat = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "", pat)));//configuration.PersonalAccessToken;
+
+                    //var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(pat));// VssOAuthCredential(PAT));
+                    var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new VssBasicCredential(string.Empty, pat));// VssOAuthCredential(PAT));
+
+                    var client = connection.GetClient<ExtensionManagementHttpClient>();
+                    var installed = client.GetInstalledExtensionsAsync().Result;
+                    var extensions = installed.Where(x => x.Flags == 0).ToList();
+
+                    var trustedFlagExtensions = installed.Where(x => x.Flags == ExtensionFlags.Trusted).ToList();
+                    var builtInExtensions = installed.Where(x => x.Flags.ToString() == "BuiltIn, Trusted").ToList();
+
+                    extensions.AddRange(trustedFlagExtensions);
+                    extensions.AddRange(builtInExtensions);
+
+                    foreach (var ext in extensions)
+                    {
+                        foreach (var extension in template.Extensions)
+                        {
+                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
+                            {
+                                dict[extension.extensionName] = true;
+                            }
+                        }
+                    }
+                    var required = dict.Where(x => x.Value == false).ToList();
+                    if (required.Count > 0)
+                    {
+                        ExtensionRequired = true;
+                    }   
+                }                
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                //return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
+                ExtensionRequired = false;
+            }
+            return ExtensionRequired;
+        }
+
         public bool InstallExtensions(Project model, string accountName, string PAT)
         {
             try
-            {
+            {                               
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
+                string pat = model.accessToken;
                 //string templatesFolder = HostingEnvironment.MapPath("~") + @"\Templates\";
                 string projTemplateFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "Extensions.json");
                 //string.Format(templatesFolder + @"{0}\Extensions.json", model.SelectedTemplate);
@@ -2556,7 +2623,9 @@ namespace VstsDemoBuilder.Controllers.Apis
                     {
                         dict.Add(ext.extensionName, false);
                     }
-                    var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(PAT));// VssOAuthCredential(PAT));
+                    //var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(PAT));// VssOAuthCredential(PAT));
+                    var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new VssBasicCredential(string.Empty, pat));// VssOAuthCredential(PAT));
+
                     var client = connection.GetClient<ExtensionManagementHttpClient>();
                     var installed = client.GetInstalledExtensionsAsync().Result;
                     var extensions = installed.Where(x => x.Flags == 0).ToList();
@@ -2754,8 +2823,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 }
             }
         }
-        [AllowAnonymous]
-        [HttpPost]
+
         public string GetTemplateMessage(string TemplateName)
         {
             try

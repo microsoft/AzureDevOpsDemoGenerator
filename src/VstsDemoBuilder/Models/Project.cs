@@ -184,7 +184,6 @@ namespace VstsDemoBuilder.Models
         public string alias { get; set; }
         public string ProjectName { get; set; }
         public string TrackId { get; set; }
-
         public string status { get; set; }
     }
 
@@ -195,6 +194,8 @@ namespace VstsDemoBuilder.Models
         public string organizationName { get; set; }
         public string templateName { get; set; }
         public string templatePath { get; set; }
+        public string GitHubToken { get; set; }
+        public bool IsExtensionRequired { get; set; }
         public IList<User> users { get; set; }
     }
 
