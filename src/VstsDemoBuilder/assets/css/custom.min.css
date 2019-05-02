@@ -7973,12 +7973,12 @@ html, body {
 a.select-button{
     line-height: 34px;
 }
-    .mainbanner {
-        background: url(../images/VSTS_cover_image_6.png) top left/ 1000px, #fff;
-        background-position: left top;
-        background-repeat: no-repeat;
-        background-size: 72%;
-    }
+.mainbanner {
+    background: url(../images/VSTS_cover_image_6.png), url(../images/VSTS_cover_image_7.png);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 70%, 12%;
+}
 .tab_nonactive{
     background: white;
     color: #000 !important;
