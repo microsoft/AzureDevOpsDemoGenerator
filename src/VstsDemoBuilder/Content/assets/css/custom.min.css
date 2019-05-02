@@ -1692,6 +1692,17 @@ pre {
 }
 
 @media (max-width: 767.98px) {
+    .azuretitle {
+        font-size: 13px !important;
+    }
+
+    .navbar {
+        height: 100px !important;
+    }
+
+    .navbar-brand {
+        white-space: normal !important;
+    }
     .table-responsive-md {
         display: block;
         width: 100%;
@@ -7984,6 +7995,12 @@ html, body {
 
 .jumbotron {
     background: url(../images/bg.jpg), #106ebe;
+    background-size: cover;
+    background-position: center;
+  
+}
+.build_temp {
+    background: url(../images/2.png), #106ebe;
     background-size: cover;
     background-position: center;
 }

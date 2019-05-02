@@ -1688,19 +1688,7 @@ pre {
         }
 }
 
-@media (max-width: 767.98px) {
-    .table-responsive-md {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar
-    }
 
-        .table-responsive-md > .table-bordered {
-            border: 0
-        }
-}
 
 @media (max-width: 991.98px) {
     .table-responsive-lg {
@@ -8064,6 +8052,9 @@ a.select-button{
         color: #0078D7 !important;
     }
 
+.accordion-opened { width:10px; height:10px; background:red;
+}
+.mob_logo{ display:none !important;}
 @media (min-width: 768px) {
     .section-1 main .VSTS-details {
         max-width: 550px
@@ -8072,16 +8063,17 @@ a.select-button{
 
 
     @media (max-width: 768px) {
-        .mainbanner {
-            background-size: 60%;
+        .section-1 main .VSTS-details p {
+            font-size: 13px !important;
         }
+        .mainbanner{ background-size:67%;}
 
         .mob-p0 {
             padding: 0 !important;
         }
 
         .VSTS-hero-image {
-            min-width: 300px;
+            min-width: 349px;
         }
 
         .footer {
@@ -8154,3 +8146,34 @@ a.select-button{
         background-color: #f5f5f5
     }
     /*# sourceMappingURL=custom.min.css.map */
+    
+@media (max-width: 767.98px) {
+    .mainbanner {
+        background: url(../images/mob_bg.png) top left/ 1000px, #fff;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .desk_logo {
+        display: none !important;
+    }
+
+    .azuretitle {
+        font-size: 13px !important;
+    }
+    .mob_logo{ display:block !important;}
+    .table-responsive-md {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar
+    }
+
+        .table-responsive-md > .table-bordered {
+            border: 0
+        }
+    .VSTS-details h6.h6.text-primary.mt-3.text-uppercase.text-left {
+        margin-top: 49px !important;
+    }
+}
