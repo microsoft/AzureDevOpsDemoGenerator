@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "PartsUnlimited-code",
+  "type": "git",
+  "url": "https://dev.azure.com/vstsdemodata/PartsUnlimited_YAML/_git/PartsUnlimited",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

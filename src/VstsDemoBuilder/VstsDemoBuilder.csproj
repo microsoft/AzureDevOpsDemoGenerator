@@ -1059,6 +1059,36 @@
     <Content Include="Templates\ContosoShuttle2\WorkItems\Task.json" />
     <Content Include="Templates\ContosoShuttle2\Dashboard\Dashboard.json" />
     <Content Include="Templates\ContosoShuttle2\Dashboard\Queries\Work in Progress.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\BuildDefinitions\PartsUnlimited.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\ImportSourceCode\PartsUnlimited.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Iterations.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\ProjectSettings.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\ProjectTemplate.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\ReleaseDefinitions\PartsUnlimitedE2E.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\ServiceEndpoints\PartsUnlimited-code.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\TeamArea.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PartsUnlimited_YAML Team\BoardColumns.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PartsUnlimited_YAML Team\BoardRows.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PartsUnlimited_YAML Team\CardFields.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PartsUnlimited_YAML Team\CardStyles.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PartsUnlimited_YAML Team\TeamSetting.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL-DB\BoardColumns.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL-DB\BoardRows.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL-DB\CardFields.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL-DB\CardStyles.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL-DB\TeamSetting.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL\BoardColumns.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL\BoardRows.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL\CardFields.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL\CardStyles.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\PUL\TeamSetting.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\Teams\Teams.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Bug.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Epic.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Feature.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Product Backlog Item.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Task.json" />
+    <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Test Case.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

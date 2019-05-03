@@ -2335,7 +2335,8 @@ namespace VstsDemoBuilder.Controllers
                         BuildDefinition objBuild = new BuildDefinition(_buildConfig);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
-                                             .Replace("$ProjectId$", model.Environment.ProjectId);
+                                                .Replace("$Organization$", model.accountName)
+                                                .Replace("$ProjectId$", model.Environment.ProjectId);
                         //update repositoryId 
                         foreach (string repository in model.Environment.repositoryIdList.Keys)
                         {
@@ -2348,6 +2349,13 @@ namespace VstsDemoBuilder.Controllers
                         {
                             string placeHolder = string.Format("${0}$", endpoint);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
+                        }
+
+                        // update Queue Ids
+                        foreach (string queue in model.Environment.AgentQueues.Keys)
+                        {
+                            string placeHolder = string.Format("${0}$", queue);
+                            jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.AgentQueues[queue].ToString());
                         }
 
                         string[] buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);

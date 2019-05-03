@@ -59,6 +59,17 @@
           "PreviewImages": [ "/Templates/PartsUnlimited/Images/boards.png", "/Templates/PartsUnlimited/Images/pulwebsite.png", "/Templates/PartsUnlimited/Images/dashboard.png" ]
         },
         {
+          "Key": "77387",
+          "Name": "PartsUnlimited-YAML",
+          "TemplateFolder": "PartsUnlimited-YAML",
+          "ShortName": "PartsUnlimited",
+          "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> ",
+          "Tags": [ "scrum", "aspdotnet", "azureappservice" ],
+          "Image": "/Templates/TemplateImages/Partunlimited.png",
+          "Author": "Microsoft",
+          "PreviewImages": [ "/Templates/PartsUnlimited/Images/boards.png", "/Templates/PartsUnlimited/Images/pulwebsite.png", "/Templates/PartsUnlimited/Images/dashboard.png" ]
+        },
+        {
           "Key": "77371",
           "Name": "MyShuttle",
           "TemplateFolder": "MyShuttle",
