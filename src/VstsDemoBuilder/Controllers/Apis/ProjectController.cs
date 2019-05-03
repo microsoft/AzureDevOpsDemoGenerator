@@ -215,7 +215,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 JObject obj = new JObject();
                 if (id.EndsWith("_Errors"))
                 {
-                    RemoveKey(id);
+                    //RemoveKey(id);
                     obj["status"] = "Error: \t" + StatusMessages[id]; ;
                     return Request.CreateResponse(HttpStatusCode.Created, obj);
                 }
