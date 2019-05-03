@@ -51,7 +51,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         private static Dictionary<string, string> statusMessages;
         private ILog logger = LogManager.GetLogger("ErrorLog");
 
-        private delegate string[] ProcessEnvironment(BulkData pmodel, string email, string alias, string projectName, string trackId);
+        private delegate string[] ProcessEnvironment(BulkData pmodel, string email, string projectName, string trackId);
         public bool isDefaultRepoTodetele = true;
         public string websiteUrl = string.Empty;
         public string templateUsed = string.Empty;
@@ -143,6 +143,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("create")]
         public HttpResponseMessage create(BulkData model)
         {
+            List<ResponseUser> userList = new List<ResponseUser>();
             try
             {
                 List<string> ListOfExistedProjects = new List<string>();
@@ -175,28 +176,31 @@ namespace VstsDemoBuilder.Controllers.Apis
                     List<string> ListOfRequestedProjectNames = new List<string>();
                     foreach (var user in model.users)
                     {
+                        ResponseUser respUser = new ResponseUser();                        
+                        respUser.ProjectName = user.ProjectName;
+                        respUser.email = user.email;
                         if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.ProjectName))
                         {
                             string pattern = @"^(?!_)(?![.])[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'"",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$";
 
                             bool isProjectNameValid = Regex.IsMatch(user.ProjectName, pattern);
                             List<string> restrictedNames = new List<string>() { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "PRN", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LTP", "LTP8", "LTP9", "NUL", "CON", "AUX", "SERVER", "SignalR", "DefaultCollection", "Web", "App_code", "App_Browesers", "App_Data", "App_GlobalResources", "App_LocalResources", "App_Themes", "App_WebResources", "bin", "web.config" };
-
+                           
                             if (!isProjectNameValid)
                             {
-                                user.status = "Invalid Project name";
-                                return Request.CreateResponse(HttpStatusCode.BadRequest, user);
+                                respUser.status = "Invalid Project name";
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, respUser);
                             }
                             else if (restrictedNames.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.Trim().ToLower()))
                             {
-                                user.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
-                                return Request.CreateResponse(HttpStatusCode.BadRequest, user);
+                                respUser.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
+                                return Request.CreateResponse(HttpStatusCode.BadRequest, respUser);
                             }
                             ListOfRequestedProjectNames.Add(user.ProjectName.ToLower());
                         }
                         else
                         {
-                            user.status = "EmailId or ProjectName is not found";
+                            respUser.status = "EmailId or ProjectName is not found";
                             return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                         }
                     }
@@ -254,34 +258,35 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     Project pmodel = new Project();
                                     pmodel.SelectedTemplate = model.templateName;
                                     pmodel.accessToken = model.accessToken;
-                                    pmodel.accountName = model.organizationName;
-                                    pmodel.ProjectName = projectName;
+                                    pmodel.accountName = model.organizationName;                                   
                                     bool isextensionInstalled = InstallExtensions(pmodel, model.organizationName, model.accessToken);
                                 }
                                 else
                                 {
                                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsrequiredExtension: true in the request body");
-                                }
-                               
-                            }
-                            
+                                }                               
+                            }                            
                         }
 
                         foreach (var user in model.users)
-                        {
+                        {                           
+                            ResponseUser respUser = new ResponseUser();
+                            respUser.ProjectName = user.ProjectName;
+                            respUser.email = user.email;
                             var result = ListOfExistedProjects.ConvertAll(d => d.ToLower()).Contains(user.ProjectName.ToLower());
                             if (result == true)
                             {
-                                user.status = user.ProjectName + " is already exist";
+                                respUser.status = user.ProjectName + " is already exist";
                             }
                             else
                             {
                                 usercount++;
-                                user.TrackId = Guid.NewGuid().ToString().Split('-')[0];
-                                user.status = "Project creation is initiated..";
+                                respUser.TrackId = Guid.NewGuid().ToString().Split('-')[0];
+                                respUser.status = "Project creation is initiated..";
                                 ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
-                                processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                                processTask.BeginInvoke(model, user.email, user.ProjectName, respUser.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
+                            userList.Add(respUser);
                         }
                         if (!string.IsNullOrEmpty(model.templatePath) && usercount == 0)
                         {
@@ -298,7 +303,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
 
-            return Request.CreateResponse(HttpStatusCode.Accepted, model.users);
+            return Request.CreateResponse(HttpStatusCode.Accepted, userList);
         }
 
         /// <summary>
@@ -496,7 +501,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         /// <param name="pat"></param>
         /// <param name="accountName"></param>
         /// <returns></returns>
-        public string[] CreateProjectEnvironment(BulkData pmodel, string email, string alias, string projectName, string trackId)
+        public string[] CreateProjectEnvironment(BulkData pmodel, string email, string projectName, string trackId)
         {
             Project model = new Project();
             string accountName = pmodel.organizationName;
@@ -504,7 +509,6 @@ namespace VstsDemoBuilder.Controllers.Apis
             model.accessToken = pmodel.accessToken;
             model.accountName = pmodel.organizationName;
             model.Email = email;
-            model.Name = alias;
             model.ProjectName = projectName;
             model.id = trackId;
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
