@@ -9368,15 +9368,20 @@ img#projectloader {
     margin-right: 6px;
 }
 
-    .template:hover::-webkit-scrollbar, .vstsScroll:hover::-webkit-scrollbar {
-        display: block;
-    }
-
-::-webkit-scrollbar {
-    width: 5px;
-   
+.template-box:hover::-webkit-scrollbar, .vstsScroll:hover::-webkit-scrollbar {
+    display: block;
 }
 
+::-webkit-scrollbar, -moz-scrollbar {
+    width: 5px;
+    display: none;
+}
+
+@-moz-document url-prefix() {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
