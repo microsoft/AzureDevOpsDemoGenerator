@@ -8,5 +8,13 @@ namespace VstsDemoBuilder.ServiceInterfaces
 {
     public interface ITemplateService
     {
+        string GetTemplate(string TemplateName);
+
+        bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken);
+
+        bool checkTemplateDirectory(string dir);
+
+        string FindPrivateTemplatePath(string privateTemplatePath);
+
     }
 }
