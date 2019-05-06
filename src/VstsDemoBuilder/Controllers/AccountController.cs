@@ -39,7 +39,6 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult Verify(LoginModel model, string id)
         {
             Session.Clear();
-            string message = projectService.GetMessage();
             // check to enable extractor
             //model.EnableExtractor = "true";
             if (!string.IsNullOrEmpty(model.EnableExtractor))

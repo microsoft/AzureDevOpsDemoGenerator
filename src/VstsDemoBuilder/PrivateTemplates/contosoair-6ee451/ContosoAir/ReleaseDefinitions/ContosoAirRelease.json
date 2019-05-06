@@ -1,0 +1,514 @@
+{
+  "source": "userInterface",
+  "revision": 5,
+  "description": null,
+  "isDeleted": false,
+  "variables": {
+    "location": {
+      "value": "westus2"
+    },
+    "resourcegroup": {
+      "value": "contosoair"
+    },
+    "web": {
+      "value": "contosoair$UUID$"
+    }
+  },
+  "variableGroups": [
+
+  ],
+  "environments": [
+    {
+      "name": "Stage 1",
+      "rank": 1,
+      "owner": {
+        "id": "$OwnerId$",
+        "displayName": "$OwnerDisplayName$",
+        "uniqueName": "$OwnerUniqueName$"
+      },
+      "variables": {
+
+      },
+      "variableGroups": [
+
+      ],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 4
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "beforeGates"
+        }
+      },
+      "deployStep": {
+        "id": 5
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 6
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "afterSuccessfulGates"
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+
+              ]
+            },
+            "queueId": "$Hosted VS2017$",
+            "demands": [
+
+            ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {
+
+            }
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {
+
+              },
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Azure Deployment:Create Or Update Resource Group action on $(resourcegroup)",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(resourcegroup)",
+                "location": "West US",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/ContosoAir-CI/drop/Templates/azuredeploy.json",
+                "csmParametersFile": "$(System.DefaultWorkingDirectory)/ContosoAir-CI/drop/Templates/azuredeploy.parameters.json",
+                "overrideParameters": "-p_site_web_name $(web) -p_environment dev77",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "runAgentServiceAsUser": "false",
+                "userName": "",
+                "password": "",
+                "outputVariable": "",
+                "deploymentOutputs": "web"
+              }
+            },
+            {
+              "environment": {
+
+              },
+              "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
+              "version": "4.*",
+              "name": "ARM Outputs",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceNameSelector": "",
+                "ConnectedServiceNameARM": "",
+                "resourceGroupName": "$(resourcegroup)",
+                "prefix": "",
+                "outputNames": "",
+                "whenLastDeploymentIsFailed": "fail",
+                "deploymentNameFilter": ""
+              }
+            },
+            {
+              "environment": {
+
+              },
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Deploy Azure App Service",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {
+
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "WebAppKind": "$(Parameters.WebAppKind)",
+                "WebAppName": "$(Parameters.WebAppName)",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "ImageSource": "$(Parameters.ImageSource)",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "$(Parameters.DockerNamespace)",
+                "DockerRepository": "$(Parameters.DockerRepository)",
+                "DockerImageTag": "$(Build.BuildId)",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/ContosoAir-CI/drop/ContosoAir*.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "$(Parameters.RuntimeStack)",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": "",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "ConfigurationSettings": "",
+                "TakeAppOfflineFlag": "true",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "true",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [
+
+      ],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [
+
+      ],
+      "currentRelease": {
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "aliases": [
+
+            ],
+            "options": {
+
+            },
+            "properties": {
+
+            },
+            "name": "",
+            "label": "Azure subscription",
+            "defaultValue": "",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+              "app": "Web App",
+              "applinux": "Linux App",
+              "functionapp": "Function App",
+              "api": "API App",
+              "mobileapp": "Mobile App"
+            },
+            "properties": {
+              "EditableOptions": "false"
+            },
+            "name": "WebAppKind",
+            "label": "App type",
+            "defaultValue": "app",
+            "type": "pickList",
+            "helpMarkDown": "",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+
+            },
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(web)",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+              "Registry": "Container Registry",
+              "Builtin": "Built-in Image"
+            },
+            "properties": {
+
+            },
+            "name": "ImageSource",
+            "label": "Image Source",
+            "defaultValue": "Registry",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "App Service on Linux offers two different options to publish your application <br/> Custom image deployment or App deployment with a built-in platform image. [Learn More](https://go.microsoft.com/fwlink/?linkid=862490)",
+            "visibleRule": "WebAppKind = applinux",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+
+            },
+            "properties": {
+
+            },
+            "name": "DockerNamespace",
+            "label": "Registry or Namespace",
+            "defaultValue": "",
+            "required": true,
+            "type": "string",
+            "helpMarkDown": "A globally unique top-level domain name for your specific registry or namespace.<br/> Note: Fully qualified image name will be of the format: '<b>`<registry or namespace`></b>/`<repository`>:`<tag`>'. For example, '<b>myregistry.azurecr.io</b>/nginx:latest'.",
+            "visibleRule": "WebAppKind = applinux && ImageSource = Registry",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+
+            },
+            "properties": {
+
+            },
+            "name": "DockerRepository",
+            "label": "Repository",
+            "defaultValue": "",
+            "required": true,
+            "type": "string",
+            "helpMarkDown": "Name of the repository where the container images are stored.<br/> Note: Fully qualified image name will be of the format: '`<registry or namespace`>/<b>`<repository`></b>:`<tag`>'. For example, 'myregistry.azurecr.io/<b>nginx</b>:latest'.",
+            "visibleRule": "WebAppKind = applinux && ImageSource = Registry",
+            "groupName": ""
+          },
+          {
+            "aliases": [
+
+            ],
+            "options": {
+              "node|4.4": "Node.js 4.4",
+              "node|4.5": "Node.js 4.5",
+              "node|6.2": "Node.js 6.2",
+              "node|6.6": "Node.js 6.6",
+              "node|6.9": "Node.js 6.9",
+              "node|6.10": "Node.js 6.10",
+              "node|6.11": "Node.js 6.11",
+              "node|8.0": "Node.js 8.0",
+              "node|8.1": "Node.js 8.1",
+              "php|5.6": "PHP 5.6",
+              "php|7.0": "PHP 7.0",
+              "dotnetcore|1.0": ".NET Core 1.0",
+              "dotnetcore|1.1": ".NET Core 1.1",
+              "dotnetcore|2.0": ".NET Core 2.0",
+              "ruby|2.3": "Ruby 2.3"
+            },
+            "properties": {
+
+            },
+            "name": "RuntimeStack",
+            "label": "Runtime Stack",
+            "defaultValue": "",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Select the framework and version.",
+            "visibleRule": "WebAppKind = applinux && ImageSource = Builtin"
+          }
+        ],
+        "dataSourceBindings": [
+          {
+            "dataSourceName": "AzureRMWebAppNamesByType",
+            "parameters": {
+              "WebAppKind": "$(WebAppKind)"
+            },
+            "endpointId": "$(ConnectedServiceName)",
+            "target": "WebAppName"
+          }
+        ]
+      },
+      "properties": {
+
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": [
+
+        ]
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": [
+
+        ]
+      },
+      "environmentTriggers": [
+
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$ContosoAirWebCI-id$",
+      "type": "Build",
+      "alias": "ContosoAirWebCI",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$ContosoAirWebCI-id$",
+          "name": "ContosoAirWebCI"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        }
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "ContosoAirWebCI",
+      "triggerConditions": [
+
+      ],
+      "triggerType": "artifactSource"
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [
+
+  ],
+  "pipelineProcess": {
+    "type": "designer"
+  },
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "Other"
+    }
+  },
+  "name": "ContosoAir-Web-CD",
+  "path": "\\"
+}

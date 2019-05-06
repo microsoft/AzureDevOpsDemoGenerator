@@ -1,0 +1,290 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 5,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "ContosoAir",
+        "System.TeamProject": "ContosoAir",
+        "System.IterationPath": "ContosoAir\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-11-03T22:48:56.777Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2018-11-03T22:48:57.12Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Customer Profile",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/5"
+    },
+    {
+      "id": 4,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "ContosoAir",
+        "System.TeamProject": "ContosoAir",
+        "System.IterationPath": "ContosoAir\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-11-03T22:48:45.887Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2018-11-03T22:48:46.213Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Flight listing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/4"
+    },
+    {
+      "id": 19,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "ContosoAir",
+        "System.TeamProject": "ContosoAir",
+        "System.IterationPath": "ContosoAir\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-11-03T23:04:04.823Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2018-11-03T23:04:09.027Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Security Policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/18",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/17",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/19"
+    },
+    {
+      "id": 3,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "ContosoAir",
+        "System.TeamProject": "ContosoAir",
+        "System.IterationPath": "ContosoAir\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-11-03T22:47:50.883Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2018-11-03T22:47:51.323Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Package Recommendations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/12",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/3"
+    },
+    {
+      "id": 2,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "ContosoAir",
+        "System.TeamProject": "ContosoAir",
+        "System.IterationPath": "ContosoAir\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-11-03T22:47:37.323Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2018-11-03T22:47:37.557Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Itinerary listing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/10",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/9",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/15",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/2"
+    },
+    {
+      "id": 1,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "ContosoAir",
+        "System.TeamProject": "ContosoAir",
+        "System.IterationPath": "ContosoAir\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2018-11-03T22:46:55.29Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2018-11-03T22:46:55.773Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Online ticket booking",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/7",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/14",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Contoso-Air/_apis/wit/workItems/1"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
