@@ -336,7 +336,6 @@
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
     <Content Include="Images\twitter-c.png" />
-    <Content Include="Scripts\scrollBar.js" />
     <Content Include="Templates\AKS\Images\AKS.png" />
     <Content Include="Templates\AKS\Images\aksdashboard.png" />
     <Content Include="Templates\AKS\Images\finalresult.png" />
