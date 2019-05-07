@@ -114,7 +114,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 JObject obj = new JObject();
                 if (id.EndsWith("_Errors"))
                 {
-                    RemoveKey(id);
+                    //RemoveKey(id);
                     obj["status"] = "Error: \t" + StatusMessages[id]; ;
                     return Request.CreateResponse(HttpStatusCode.Created, obj);
                 }
@@ -143,6 +143,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("create")]
         public HttpResponseMessage create(BulkData model)
         {
+            ResponseBulkData returnObj = new ResponseBulkData();
             List<ResponseUser> userList = new List<ResponseUser>();
             try
             {
@@ -173,7 +174,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 }
                 if (model.users.Count > 0)
                 {
-                    List<string> ListOfRequestedProjectNames = new List<string>();
+                    List<string> ListOfRequestedProjectNames = new List<string>();                   
                     foreach (var user in model.users)
                     {
                         ResponseUser respUser = new ResponseUser();                        
@@ -213,9 +214,9 @@ namespace VstsDemoBuilder.Controllers.Apis
                     {
                         string templateName = string.Empty;
 
-                        if (string.IsNullOrEmpty(model.templateName))
+                        if (string.IsNullOrEmpty(model.templateName) && string.IsNullOrEmpty(model.templatePath))
                         {
-                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Name should not be empty");
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Please provide TemplateName or Template Path");
                         }
                         else
                         {
@@ -268,6 +269,8 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }                            
                         }
 
+                        returnObj.templateName = model.templateName;
+                        returnObj.templatePath = model.templatePath;
                         foreach (var user in model.users)
                         {                           
                             ResponseUser respUser = new ResponseUser();
@@ -286,8 +289,9 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 ProcessEnvironment processTask = new ProcessEnvironment(CreateProjectEnvironment);
                                 processTask.BeginInvoke(model, user.email, user.ProjectName, respUser.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
-                            userList.Add(respUser);
+                            userList.Add(respUser);                            
                         }
+                        returnObj.users = userList;
                         if (!string.IsNullOrEmpty(model.templatePath) && usercount == 0)
                         {
                             var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
@@ -303,7 +307,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
 
-            return Request.CreateResponse(HttpStatusCode.Accepted, userList);
+            return Request.CreateResponse(HttpStatusCode.Accepted, returnObj);
         }
 
         /// <summary>

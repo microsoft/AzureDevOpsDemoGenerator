@@ -192,6 +192,13 @@ namespace VstsDemoBuilder.Models
         public string status { get; set; }
     }
 
+    public class ResponseBulkData
+    {
+        public string templateName { get; set; }
+        public string templatePath { get; set; }
+        public IList<ResponseUser> users { get; set; }
+    }
+
     public class BulkData
     {
         public string accessToken { get; set; }
