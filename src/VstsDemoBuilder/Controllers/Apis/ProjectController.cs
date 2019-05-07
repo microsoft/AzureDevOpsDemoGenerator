@@ -140,7 +140,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             else
                             {
                                 string response = templateService.GetTemplate(model.templateName);
-                                if (response != "Template Not Found!")
+                                if (response == "Template Not Found!")
                                 {
                                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Not Found!");
                                 }
@@ -220,15 +220,6 @@ namespace VstsDemoBuilder.Controllers.Apis
             return Request.CreateResponse(HttpStatusCode.OK, currentProgress["status"]);
         }
 
-        public HttpResponseMessage GetMessages()
-        {
-            List<string> strList = new List<string>();
-            strList.Add("message 1");
-            strList.Add("message 2");
-            strList.Add("message 3");
-            return Request.CreateResponse(HttpStatusCode.OK, strList);
-
-        }
         /// <summary>
         /// End the process
         /// </summary>
