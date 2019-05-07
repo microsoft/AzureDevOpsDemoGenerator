@@ -241,6 +241,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                             else
                             {
+                                PrivateTemplatePath = "";
                                 HttpResponseMessage response = GetTemplate(model.templateName);
                                 if (response.StatusCode != HttpStatusCode.OK)
                                 {
