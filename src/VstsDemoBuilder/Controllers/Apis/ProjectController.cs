@@ -357,6 +357,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             }
             catch (Exception ex)
             {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
             }
             finally
