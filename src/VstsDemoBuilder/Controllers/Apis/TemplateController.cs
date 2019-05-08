@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Common.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,8 @@ namespace VstsDemoBuilder.Controllers.Apis
     [RoutePrefix("api/templates")]
     public class TemplateController : ApiController
     {
+        private ILog logger = LogManager.GetLogger("ErrorLog");
+
         [HttpGet]
         [Route("AllTemplates")]
         public HttpResponseMessage GetTemplates()
@@ -53,9 +56,9 @@ namespace VstsDemoBuilder.Controllers.Apis
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return templates;
         }
@@ -102,7 +105,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     if (tmp.Tags.Contains(str))
                                     {
                                         Selectedtemplates.Add(tmp);
-
+                                        break;
                                     }
                                 }
                             }
@@ -113,9 +116,9 @@ namespace VstsDemoBuilder.Controllers.Apis
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return Selectedtemplates;
         }
