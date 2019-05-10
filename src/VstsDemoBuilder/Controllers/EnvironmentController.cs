@@ -359,6 +359,7 @@ namespace VstsDemoBuilder.Controllers
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = GenerateRequestPostData(clientId, code, redirectUrl);
                     _accessDetails = GetAccessToken(accessRequestBody);
+                    //_accessDetails.access_token = "";
                     if (!string.IsNullOrEmpty(_accessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
@@ -1550,7 +1551,7 @@ namespace VstsDemoBuilder.Controllers
                 CreateQueryAndWidgets(templatesFolder, model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
                 AddMessage(model.id, "Queries, Widgets and Charts created");
             }
-            string _checkIsPrivate = System.IO.File.ReadAllText(Server.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
+            string _checkIsPrivate = System.IO.File.ReadAllText(Server.MapPath("~") + @"\Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
             if (_checkIsPrivate != "")
             {
                 ProjectSetting setting = new ProjectSetting();
