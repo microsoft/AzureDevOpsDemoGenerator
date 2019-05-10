@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/vstsdemodata/PartsUnlimited_YAML/_git/PartsUnlimited"
+    },
+    "serviceEndpointId": "$PartsUnlimited-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
