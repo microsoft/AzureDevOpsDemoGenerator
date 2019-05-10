@@ -27,10 +27,10 @@ namespace VstsDemoBuilder.Controllers.Apis
         }
 
         [HttpGet]
-        [Route("TemplatesByPlatforms")]
-        public HttpResponseMessage templatesbyPlatforms(string platforms)
+        [Route("TemplatesByTags")]
+        public HttpResponseMessage templatesbyTags(string Tags)
         {
-            var templates = GetTemplatesByPlatforms(platforms);
+            var templates = GetTemplatesByTags(Tags);
             return Request.CreateResponse(HttpStatusCode.OK, templates);
         }       
 
@@ -63,12 +63,12 @@ namespace VstsDemoBuilder.Controllers.Apis
             return templates;
         }
                
-        public List<Template> GetTemplatesByPlatforms(string platforms)
+        public List<Template> GetTemplatesByTags(string Tags)
         {
             var templates = new TemplateSelection.Templates();
             var Selectedtemplates = new List<Template>();
             char delimiter = ',';
-            string[] strComponents = platforms.Split(delimiter);
+            string[] strComponents = Tags.Split(delimiter);
             try
             {
                 Project model = new Project();
