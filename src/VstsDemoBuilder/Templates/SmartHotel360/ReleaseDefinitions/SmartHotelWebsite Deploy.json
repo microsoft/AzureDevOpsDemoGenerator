@@ -1,5 +1,6 @@
 {
-  "source": "userInterface",
+  "source": 2,
+  "revision": 2,
   "description": null,
   "isDeleted": false,
   "variables": {
@@ -13,7 +14,7 @@
   "variableGroups": [],
   "environments": [
     {
-      "id": 2,
+      "id": 3,
       "name": "Stage 1",
       "rank": 1,
       "owner": {
@@ -37,10 +38,11 @@
           "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
           "enforceIdentityRevalidation": false,
           "timeoutInMinutes": 0,
-          "executionOrder": "beforeGates"
+          "executionOrder": 1
         }
       },
-      "deployStep": {},
+      "deployStep": {
+      },
       "postDeployApprovals": {
         "approvals": [
           {
@@ -55,15 +57,16 @@
           "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
           "enforceIdentityRevalidation": false,
           "timeoutInMinutes": 0,
-          "executionOrder": "afterSuccessfulGates"
+          "executionOrder": 2
         }
       },
       "deployPhases": [
         {
           "deploymentInput": {
             "parallelExecution": {
-              "parallelExecutionType": "none"
+              "parallelExecutionType": 0
             },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
@@ -77,8 +80,9 @@
             "overrideInputs": {}
           },
           "rank": 1,
-          "phaseType": "agentBasedDeployment",
+          "phaseType": 1,
           "name": "Agent job",
+          "refName": null,
           "workflowTasks": [
             {
               "environment": {},
@@ -101,7 +105,7 @@
                 "templateLocation": "Linked artifact",
                 "csmFileLink": "",
                 "csmParametersFileLink": "",
-                "csmFile": "$(System.DefaultWorkingDirectory)/SmartHotel Petchecker Web/arm/smarthote360.website.deployment.json",
+                "csmFile": "$(System.DefaultWorkingDirectory)/_SmartHotel_Petchecker-Web/arm/deployment.json",
                 "csmParametersFile": "",
                 "overrideParameters": "",
                 "deploymentMode": "Incremental",
@@ -114,13 +118,15 @@
                 "userName": "",
                 "password": "",
                 "outputVariable": "",
-                "deploymentOutputs": ""
+                "deploymentName": "",
+                "deploymentOutputs": "",
+                "addSpnToEnvironment": "false"
               }
             },
             {
               "environment": {},
               "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
-              "version": "4.*",
+              "version": "5.*",
               "name": "ARM Outputs",
               "refName": "",
               "enabled": true,
@@ -131,7 +137,7 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
-                "ConnectedServiceNameSelector": "",
+                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
                 "ConnectedServiceNameARM": "",
                 "resourceGroupName": "$(ResourceGroup)",
                 "prefix": "",
@@ -143,7 +149,7 @@
             {
               "environment": {},
               "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
-              "version": "3.*",
+              "version": "4.*",
               "name": "Deploy Azure Function",
               "refName": "",
               "enabled": true,
@@ -154,39 +160,32 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
+                "ConnectionType": "AzureRM",
                 "ConnectedServiceName": "",
-                "WebAppKind": "functionapp",
+                "PublishProfilePath": "$(System.DefaultWorkingDirectory)/**/*.pubxml",
+                "PublishProfilePassword": "",
+                "WebAppKind": "functionApp",
                 "WebAppName": "$(function)",
-                "DeployToSlotFlag": "false",
+                "DeployToSlotOrASEFlag": "false",
                 "ResourceGroupName": "",
-                "SlotName": "",
-                "ImageSource": "Registry",
-                "AzureContainerRegistry": "",
-                "AzureContainerRegistryLoginServer": "",
-                "AzureContainerRegistryImage": "",
-                "AzureContainerRegistryTag": "",
-                "DockerRepositoryAccess": "public",
-                "RegistryConnectedServiceName": "",
-                "PrivateRegistryImage": "",
-                "PrivateRegistryTag": "",
+                "SlotName": "production",
                 "DockerNamespace": "",
                 "DockerRepository": "",
                 "DockerImageTag": "$(Build.BuildId)",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/SmartHotel Petchecker Web/Function-app/SmartHotel360.WebsiteFunction.zip",
-                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/_SmartHotel_Petchecker-Web/Function-app/SmartHotel360.WebsiteFunction.zip",
                 "RuntimeStack": "",
+                "RuntimeStackFunction": "",
                 "StartupCommand": "",
-                "WebAppUri": "",
                 "ScriptType": "",
                 "InlineScript": "",
                 "ScriptPath": "",
-                "GenerateWebConfig": "false",
                 "WebConfigParameters": "",
                 "AppSettings": "",
                 "ConfigurationSettings": "",
-                "TakeAppOfflineFlag": "true",
                 "UseWebDeploy": "false",
+                "DeploymentType": "webDeploy",
+                "TakeAppOfflineFlag": "true",
                 "SetParametersFile": "",
                 "RemoveAdditionalFilesFlag": "false",
                 "ExcludeFilesFromAppDataFlag": "false",
@@ -200,7 +199,7 @@
             {
               "environment": {},
               "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
-              "version": "3.*",
+              "version": "4.*",
               "name": "Deploy SmartHotel Website",
               "refName": "",
               "enabled": true,
@@ -211,39 +210,32 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
+                "ConnectionType": "AzureRM",
                 "ConnectedServiceName": "",
+                "PublishProfilePath": "$(System.DefaultWorkingDirectory)/**/*.pubxml",
+                "PublishProfilePassword": "",
                 "WebAppKind": "webApp",
                 "WebAppName": "$(web)",
-                "DeployToSlotFlag": "false",
+                "DeployToSlotOrASEFlag": "false",
                 "ResourceGroupName": "",
                 "SlotName": "production",
-                "ImageSource": "Registry",
-                "AzureContainerRegistry": "",
-                "AzureContainerRegistryLoginServer": "",
-                "AzureContainerRegistryImage": "",
-                "AzureContainerRegistryTag": "",
-                "DockerRepositoryAccess": "public",
-                "RegistryConnectedServiceName": "",
-                "PrivateRegistryImage": "",
-                "PrivateRegistryTag": "",
                 "DockerNamespace": "",
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/SmartHotel Petchecker Web/web/SmartHotel360.Website.zip",
-                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/_SmartHotel_Petchecker-Web/web/SmartHotel360.Website.zip",
                 "RuntimeStack": "",
+                "RuntimeStackFunction": "",
                 "StartupCommand": "",
-                "WebAppUri": "",
                 "ScriptType": "",
                 "InlineScript": ":: You can provide your deployment commands here. One command per line.",
                 "ScriptPath": "",
-                "GenerateWebConfig": "false",
                 "WebConfigParameters": "",
                 "AppSettings": "",
                 "ConfigurationSettings": "",
-                "TakeAppOfflineFlag": "true",
                 "UseWebDeploy": "true",
+                "DeploymentType": "webDeploy",
+                "TakeAppOfflineFlag": "true",
                 "SetParametersFile": "",
                 "RemoveAdditionalFilesFlag": "true",
                 "ExcludeFilesFromAppDataFlag": "false",
@@ -272,7 +264,7 @@
       "conditions": [
         {
           "name": "ReleaseStarted",
-          "conditionType": "event",
+          "conditionType": 1,
           "value": ""
         }
       ],
@@ -281,7 +273,8 @@
         "queueDepthCount": 0
       },
       "schedules": [],
-      "currentRelease": {},
+      "currentRelease": {
+      },
       "retentionPolicy": {
         "daysToKeep": 30,
         "releasesToKeep": 3,
@@ -306,7 +299,7 @@
     {
       "sourceId": "$ProjectId$:$SmartHotel_Petchecker-Web-id$",
       "type": "Build",
-      "alias": "SmartHotel Petchecker Web",
+      "alias": "_SmartHotel_Petchecker-Web",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -321,11 +314,11 @@
           "name": ""
         },
         "defaultVersionType": {
-          "id": "selectDuringReleaseCreationType",
-          "name": "Specify at the time of release creation"
+          "id": "latestType",
+          "name": "Latest"
         },
         "definition": {
-          "id": "$SmartHotel_Petchecker-Web-id$",
+          "id": "96",
           "name": "SmartHotel_Petchecker-Web"
         },
         "definitions": {
@@ -339,8 +332,11 @@
         "project": {
           "id": "$ProjectId$",
           "name": "$ProjectName$"
+        },
+        "repository": {
+          "id": "",
+          "name": ""
         }
-
       },
       "isPrimary": true,
       "isRetained": false

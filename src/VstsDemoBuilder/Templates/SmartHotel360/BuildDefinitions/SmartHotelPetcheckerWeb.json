@@ -58,7 +58,7 @@
   "properties": {},
   "tags": [],
   "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
-  "jobAuthorizationScope": "projectCollection",
+  "jobAuthorizationScope": 1,
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
   "process": {
@@ -80,7 +80,10 @@
             },
             "inputs": {
               "packageType": "sdk",
-              "version": "2.1.403"
+              "version": "2.1.403",
+              "includePreviewVersions": "false",
+              "installationPath": "$(Agent.ToolsDirectory)/dotnet",
+              "performMultiLevelLookup": "false"
             }
           },
           {
@@ -90,6 +93,7 @@
             "alwaysRun": false,
             "displayName": "Restore",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
               "versionSpec": "",
@@ -98,10 +102,11 @@
             "inputs": {
               "command": "restore",
               "publishWebProjects": "true",
-              "projects": "$(Parameters.RestoreBuildProjects)",
+              "projects": "Source/SmartHotel360.Website/SmartHotel360.Website.csproj ",
               "custom": "",
               "arguments": "",
               "publishTestResults": "true",
+              "testRunTitle": "",
               "zipAfterPublish": "true",
               "modifyOutputPath": "true",
               "selectOrConfig": "select",
@@ -115,6 +120,7 @@
               "searchPatternPush": "$(Build.ArtifactStagingDirectory)/*.nupkg",
               "nuGetFeedType": "internal",
               "feedPublish": "",
+              "publishPackageMetadata": "true",
               "externalEndpoint": "",
               "searchPatternPack": "**/*.csproj",
               "configurationToPack": "$(BuildConfiguration)",
@@ -137,6 +143,7 @@
             "alwaysRun": false,
             "displayName": "Build",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
               "versionSpec": "",
@@ -145,10 +152,11 @@
             "inputs": {
               "command": "build",
               "publishWebProjects": "true",
-              "projects": "$(Parameters.RestoreBuildProjects)",
+              "projects": "Source/SmartHotel360.Website/SmartHotel360.Website.csproj ",
               "custom": "",
               "arguments": "--configuration $(BuildConfiguration)",
               "publishTestResults": "true",
+              "testRunTitle": "",
               "zipAfterPublish": "true",
               "modifyOutputPath": "true",
               "selectOrConfig": "select",
@@ -162,6 +170,7 @@
               "searchPatternPush": "$(Build.ArtifactStagingDirectory)/*.nupkg",
               "nuGetFeedType": "internal",
               "feedPublish": "",
+              "publishPackageMetadata": "true",
               "externalEndpoint": "",
               "searchPatternPack": "**/*.csproj",
               "configurationToPack": "$(BuildConfiguration)",
@@ -184,6 +193,7 @@
             "alwaysRun": false,
             "displayName": "Publish",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
               "versionSpec": "",
@@ -192,10 +202,11 @@
             "inputs": {
               "command": "publish",
               "publishWebProjects": "True",
-              "projects": "$(Parameters.RestoreBuildProjects)",
+              "projects": "Source/SmartHotel360.Website/SmartHotel360.Website.csproj ",
               "custom": "",
               "arguments": "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)",
               "publishTestResults": "true",
+              "testRunTitle": "",
               "zipAfterPublish": "True",
               "modifyOutputPath": "true",
               "selectOrConfig": "select",
@@ -209,6 +220,7 @@
               "searchPatternPush": "$(Build.ArtifactStagingDirectory)/*.nupkg",
               "nuGetFeedType": "internal",
               "feedPublish": "",
+              "publishPackageMetadata": "true",
               "externalEndpoint": "",
               "searchPatternPack": "**/*.csproj",
               "configurationToPack": "$(BuildConfiguration)",
@@ -229,11 +241,12 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "Publish Artifact",
+            "displayName": "Publish Artifact- Website package",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "task": {
               "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
-              "versionSpec": "",
+              "versionSpec": "1.*",
               "definitionType": "task"
             },
             "inputs": {
@@ -250,7 +263,7 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": true,
-            "displayName": "Publish Artifact copy",
+            "displayName": "Publish Artifact- ARM Template",
             "timeoutInMinutes": 0,
             "condition": "succeededOrFailed()",
             "task": {
@@ -259,7 +272,7 @@
               "definitionType": "task"
             },
             "inputs": {
-              "PathtoPublish": "$(Build.SourcesDirectory)/Source/SmartHotel360.WebsiteARM",
+              "PathtoPublish": "$(Build.SourcesDirectory)/Deploy",
               "ArtifactName": "arm",
               "ArtifactType": "Container",
               "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
@@ -272,17 +285,13 @@
         "refName": "Phase_1",
         "condition": "succeeded()",
         "target": {
-          "queue": {
-            "id": "$Hosted VS2017$",
-            "pool": null
-          },
           "executionOptions": {
             "type": 0
           },
           "allowScriptsAuthAccessOption": false,
           "type": 1
         },
-        "jobAuthorizationScope": "projectCollection",
+        "jobAuthorizationScope": 1,
         "jobCancelTimeoutInMinutes": 1
       },
       {
@@ -333,6 +342,7 @@
               "searchPatternPush": "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg",
               "nuGetFeedType": "internal",
               "feedPublish": "",
+              "publishPackageMetadata": "true",
               "allowPackageConflicts": "false",
               "externalEndpoint": "",
               "verbosityPush": "Detailed",
@@ -378,7 +388,8 @@
               "restoreNugetPackages": "false",
               "msbuildArchitecture": "x86",
               "logProjectEvents": "true",
-              "createLogFile": "false"
+              "createLogFile": "false",
+              "logFileVerbosity": "normal"
             }
           },
           {
@@ -391,7 +402,7 @@
             "condition": "succeeded()",
             "task": {
               "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
-              "versionSpec": "",
+              "versionSpec": "1.*",
               "definitionType": "task"
             },
             "inputs": {
@@ -414,7 +425,7 @@
           "allowScriptsAuthAccessOption": false,
           "type": 1
         },
-        "jobAuthorizationScope": "projectCollection",
+        "jobAuthorizationScope": 1,
         "jobCancelTimeoutInMinutes": 1
       }
     ],
@@ -447,23 +458,8 @@
     "clean": "false",
     "checkoutSubmodules": false
   },
-  "processParameters": {
-    "inputs": [
-      {
-        "aliases": [],
-        "options": {},
-        "properties": {},
-        "name": "RestoreBuildProjects",
-        "label": "Project(s) to restore and build",
-        "defaultValue": "Source/SmartHotel360.Website/SmartHotel360.Website.csproj ",
-        "type": "multiline",
-        "helpMarkDown": "Relative path of the .csproj file(s) from repo root. Wildcards can be used. For example, **/*.csproj for all .csproj files in all the subfolders.",
-        "visibleRule": "",
-        "groupName": ""
-      }
-    ]
-  },
-  "quality": "definition",
+  "processParameters": {},
+  "quality": 1,
   "drafts": [],
   "queue": {
     "name": "Hosted VS2017",

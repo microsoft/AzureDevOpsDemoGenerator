@@ -150,9 +150,9 @@ namespace VstsDemoBuilder.Controllers.Apis
                             return Request.CreateResponse(HttpStatusCode.BadRequest, user);
                         }
                     }
-                    bool anyDuplicateProjects= ListOfRequestedProjectNames.GroupBy(n => n).Any(c => c.Count() > 1);
+                    bool anyDuplicateProjects = ListOfRequestedProjectNames.GroupBy(n => n).Any(c => c.Count() > 1);
                     if (anyDuplicateProjects)
-                    {                        
+                    {
                         return Request.CreateResponse(HttpStatusCode.BadRequest, "ProjectName must be unique");
                     }
                     else
@@ -172,7 +172,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 processTask.BeginInvoke(model, user.email, user.alias, user.ProjectName, user.TrackId, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
                         }
-                    }                   
+                    }
                 }
             }
             catch (Exception ex)
@@ -199,6 +199,8 @@ namespace VstsDemoBuilder.Controllers.Apis
                 }
             }
         }
+        [HttpGet]
+        [Route("currentprogress")]
         public HttpResponseMessage GetCurrentProgress(string id)
         {
             var currentProgress = GetStatusMessage(id);
@@ -213,7 +215,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 JObject obj = new JObject();
                 if (id.EndsWith("_Errors"))
                 {
-                    RemoveKey(id);
+                    //RemoveKey(id);
                     obj["status"] = "Error: \t" + StatusMessages[id]; ;
                     return Request.CreateResponse(HttpStatusCode.Created, obj);
                 }
@@ -993,7 +995,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
         }
-        
+
         /// <summary>
         /// Create Teams
         /// </summary>
@@ -1627,7 +1629,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             string bikeSharing360password = System.Configuration.ConfigurationManager.AppSettings["BikeSharing360Password"];
                             jsonCreateService = jsonCreateService.Replace("$BikeSharing360username$", bikeSharing360username).Replace("$BikeSharing360password$", bikeSharing360password);
                         }
-                        else if (model.SelectedTemplate.ToLower() == "contososhuttle"|| model.SelectedTemplate.ToLower() == "contososhuttle2")
+                        else if (model.SelectedTemplate.ToLower() == "contososhuttle" || model.SelectedTemplate.ToLower() == "contososhuttle2")
                         {
                             string contosousername = System.Configuration.ConfigurationManager.AppSettings["ContosoUserID"];
                             string contosopassword = System.Configuration.ConfigurationManager.AppSettings["ContosoPassword"];
@@ -2258,7 +2260,7 @@ namespace VstsDemoBuilder.Controllers.Apis
 
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "contososhuttle"|| model.SelectedTemplate.ToLower() == "contososhuttle2")
+                    if (model.SelectedTemplate.ToLower() == "contososhuttle" || model.SelectedTemplate.ToLower() == "contososhuttle2")
                     {
                         if (isDashboardDeleted)
                         {
