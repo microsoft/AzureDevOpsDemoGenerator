@@ -100,9 +100,9 @@ namespace VstsDemoBuilder.Controllers.Apis
 
         [HttpGet]
         [Route("CurrentProgress")]
-        public HttpResponseMessage GetCurrentProgress(string id)
+        public HttpResponseMessage GetCurrentProgress(string TrackId)
         {
-            var currentProgress = GetStatusMessage(id);
+            var currentProgress = GetStatusMessage(TrackId);
             JObject dynObj = JsonConvert.DeserializeObject<JObject>(currentProgress.Content.ReadAsStringAsync().Result);
             return Request.CreateResponse(HttpStatusCode.OK, dynObj["status"]);
         }
