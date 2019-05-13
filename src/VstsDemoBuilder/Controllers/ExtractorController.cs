@@ -1707,7 +1707,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 // download the constructed zip
                 System.IO.Directory.Delete(filePath, true);
-                Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
+                Response.AddHeader("Content-Disposition", "attachment; filename="+ fileName + ".zip");
                 return File(fileBytes, "application/zip");
             }
             catch (Exception ex)
