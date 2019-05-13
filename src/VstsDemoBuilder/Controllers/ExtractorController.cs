@@ -865,8 +865,34 @@ namespace VstsDemoBuilder.Controllers
                         var yamalfilename = def["process"]["yamlFilename"];
                         if (yamalfilename != null)
                         {
-                            def["repository"]["id"] = "$" + def["repository"]["name"] + "$";
+                            def["triggers"] = new JArray();
+                            var type = def["repository"]["type"];
+                            if (type.ToString().ToLower() == "github")
+                            {
+                                //def["repository"]["type"] = "Git";
+                                def["repository"]["properties"]["fullName"] = "repository";
+                                def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                                def["repository"]["name"] = "repository";
+                            }
+                            //def["repository"]["id"] = "$" + def["repository"]["name"] + "$";
+
                             var ymlRepoUrl = def["repository"]["url"].ToString();
+                            if (ymlRepoUrl != "")
+                            {
+                                string endPointString = System.IO.File.ReadAllText(Server.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                                endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl);
+                                Guid g = Guid.NewGuid();
+                                string randStr = g.ToString().Substring(0, 8);
+                                if (!Directory.Exists(extractedTemplatePath + con.Project + "\\ServiceEndpoints"))
+                                {
+                                    Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\ServiceEndpoints");
+                                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                }
+                                else
+                                {
+                                    System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                }
+                            }
                             string[] splitYmlRepoUrl = ymlRepoUrl.Split('/');
                             if (splitYmlRepoUrl.Length > 0)
                             {
@@ -892,7 +918,7 @@ namespace VstsDemoBuilder.Controllers
                         }
                         else
                         {
-                            
+
                             def["queue"]["id"] = "";
                             def["queue"]["url"] = "";
                             def["queue"]["_links"] = "{}";
@@ -923,6 +949,14 @@ namespace VstsDemoBuilder.Controllers
                                                     if (!string.IsNullOrEmpty(keyVal))
                                                     {
                                                         step[key] = "";
+                                                    }
+                                                }
+                                                foreach (var key in keyC.keys)
+                                                {
+                                                    string keyVal = step["inputs"][key] != null ? step["inputs"][key].ToString() : "";
+                                                    if (!string.IsNullOrEmpty(keyVal))
+                                                    {
+                                                        step["inputs"][key] = "";
                                                     }
                                                 }
                                             }
@@ -1310,12 +1344,53 @@ namespace VstsDemoBuilder.Controllers
                                 {
                                     endpoint.authorization.parameters = new Parameters.Parameters
                                     {
-                                        apitoken = "apitoken"
+                                        apitoken = "apitoken",
+                                    };
+                                    if (endpoint.type == "kubernetes")
+                                    {
+                                        endpoint.data = new Parameters.Data
+                                        {
+                                            authorizationType = endpoint.data.authorizationType ?? "ServiceAccount"
+                                        };
+                                        endpoint.authorization.parameters = new Parameters.Parameters
+                                        {
+                                            apitoken = "apitoken",
+                                            serviceAccountCertificate = "serviceAccountCertificate"
+                                        };
+                                    }
+                                }
+                                else
+                                {
+                                    endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
+                                    if (endpoint.type == "kubernetes")
+                                    {
+                                        endpoint.authorization.parameters.serviceAccountCertificate = endpoint.authorization.parameters.serviceAccountCertificate ?? "serviceAccountCertificate";
+                                    }
+                                }
+                                break;
+                            case "Kubernetes":
+                                if (endpoint.authorization.parameters == null)
+                                {
+                                    endpoint.authorization.parameters = new Parameters.Parameters
+                                    {
+                                        apitoken = "apitoken",
+                                        azureTenantId = new Guid().ToString(),
+                                        azureEnvironment = "AzureCloud",
+                                        secretName = "secret",
+                                        azureAccessToken = "azureAccessToken",
+                                        serviceAccountCertificate = "serviceAccountCertificate",
+                                        serviceAccountName = "serviceAccountName"
                                     };
                                 }
                                 else
                                 {
                                     endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
+                                    endpoint.authorization.parameters.azureTenantId = endpoint.authorization.parameters.azureTenantId ?? new Guid().ToString();
+                                    endpoint.authorization.parameters.azureEnvironment = endpoint.authorization.parameters.azureEnvironment ?? "azureEnvironment";
+                                    endpoint.authorization.parameters.secretName = endpoint.authorization.parameters.secretName ?? "secretName";
+                                    endpoint.authorization.parameters.azureAccessToken = endpoint.authorization.parameters.azureAccessToken ?? "azureAccessToken";
+                                    endpoint.authorization.parameters.serviceAccountCertificate = endpoint.authorization.parameters.serviceAccountCertificate ?? "serviceAccountCertificate";
+                                    endpoint.authorization.parameters.serviceAccountName = endpoint.authorization.parameters.serviceAccountName ?? "serviceAccountName";
                                 }
                                 break;
                             case "None":
