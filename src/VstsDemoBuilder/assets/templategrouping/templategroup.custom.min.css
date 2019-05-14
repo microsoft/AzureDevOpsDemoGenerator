@@ -8767,7 +8767,7 @@ html, body {
 }
 
 .template-body {
-    height: 450px;
+    height: 400px;
     width: 100%;
     overflow: auto;
     padding: 7px 10px 10px 10px !important;
@@ -8792,8 +8792,8 @@ html, body {
         list-style: none;
         padding: 00px;
         background: #fff;
-        margin: 0 1px;
-        border-radius: 6px 6px 0px 0px;
+        margin: 0 5px;
+        border-radius: 6px 6px 6px 6px;
         overflow: hidden;
         background: #f8f9fa !important
     }
@@ -8801,6 +8801,7 @@ html, body {
         .template_tab li a {
             font-weight: 600;
             font-size: 13px;
+            border-radius: 6px;
             color: #fff !important;
             background: rgba(0,24,143,1);
             background: -moz-linear-gradient(top, rgba(0,24,143,1) 0%, rgba(0,120,215,1) 100%);
@@ -8815,6 +8816,9 @@ html, body {
 .active_white, .nav-link.active_white.text-white {
     background: #fff !important;
     color: #000 !important;
+    border: 1px solid #0069cc;
+    overflow: hidden;
+    border-radius: 6px;
 }
 
     .nav-link.active_white.text-white
@@ -9209,11 +9213,11 @@ img#projectloader {
 .template-dialog-title {
     position: relative;
     color: #fff !important;
-    padding: 8px 112px 0px 23px;
+    padding: 8px 34px 8px 34px;
     width: 100%;
     display: block;
     float: left;
-    text-align: left !important;
+    
     background: linear-gradient(to right, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
 }
 
@@ -9243,9 +9247,9 @@ img#projectloader {
 
 .template-close {
     position: absolute;
-    right: 8px;
-    top: 8px;
-    border: 2px solid #fff;
+    right: 13px;
+    top: -34px;
+    border: 2px solid #6f6f6f;
     height: 23px;
     width: 23px;
     line-height: 16px;
@@ -9254,7 +9258,7 @@ img#projectloader {
     border-radius: 50%;
     cursor: pointer;
     /* background-color: #222; */
-    color: #fff;
+    color: #6f6f6f;
 }
 
 .template {
@@ -9327,7 +9331,13 @@ img#projectloader {
     border-radius: 4px;
 }
 
-
+.templateAlign {
+    display: block;
+    padding: 12px 10px;
+    text-align: center;
+    font-weight: bold;
+    text-transform:capitalize;
+}
 @keyframes attract {
     0% {
         box-shadow: 0px 0px 0px 0px rgba(15,110,190,0.5);

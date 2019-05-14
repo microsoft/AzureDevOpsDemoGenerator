@@ -7977,7 +7977,7 @@ a.select-button{
     background: url(../images/VSTS_cover_image_6.png), url(../images/VSTS_cover_image_7.png);
     background-position: left top, right bottom;
     background-repeat: no-repeat, no-repeat;
-    background-size: 70%, 12%;
+    background-size: 70%, 17%;
 }
 .tab_nonactive{
     background: white;
@@ -8044,7 +8044,7 @@ a.select-button{
     max-width: 600px;
 }
 .footer {
-    padding: 8px 7em !important;
+    padding: 8px 11em !important;
    
     font-size:13px;
 }
@@ -8061,12 +8061,20 @@ a.select-button{
     }
 }
 
+@media (max-width: 1024px) {
+    .mainbanner {
+        background: url(../images/VSTS_cover_image_6_tab.png);
+        background-size: 63%;
+        background-repeat: no-repeat;
+    }
+}
 
     @media (max-width: 768px) {
         .section-1 main .VSTS-details p {
             font-size: 13px !important;
         }
-        .mainbanner{ background-size:67%;}
+
+       
 
         .mob-p0 {
             padding: 0 !important;
@@ -8089,8 +8097,14 @@ a.select-button{
         .section-1 main .VSTS-hero-image .VSTS-hero img {
             width: 42px;
         }
-        .mob-p-16{padding:16px !important}
-        .mob_mt_10{ margin-top:10px;}
+
+        .mob-p-16 {
+            padding: 16px !important
+        }
+
+        .mob_mt_10 {
+            margin-top: 10px;
+        }
     }
 
 
@@ -8146,34 +8160,39 @@ a.select-button{
         background-color: #f5f5f5
     }
     /*# sourceMappingURL=custom.min.css.map */
-    
-@media (max-width: 767.98px) {
-    .mainbanner {
-        background: url(../images/mob_bg.png) top left/ 1000px, #fff;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
 
-    .desk_logo {
-        display: none !important;
-    }
-
-    .azuretitle {
-        font-size: 13px !important;
-    }
-    .mob_logo{ display:block !important;}
-    .table-responsive-md {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar
-    }
-
-        .table-responsive-md > .table-bordered {
-            border: 0
+    @media (max-width: 767.98px) {
+        .mainbanner {
+            background: url(../images/mob_bg.png) top left/ 1000px, #fff;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
-    .VSTS-details h6.h6.text-primary.mt-3.text-uppercase.text-left {
-        margin-top: 49px !important;
+
+        .desk_logo {
+            display: none !important;
+        }
+
+        .azuretitle {
+            font-size: 13px !important;
+        }
+
+        .mob_logo {
+            display: block !important;
+        }
+
+        .table-responsive-md {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar
+        }
+
+            .table-responsive-md > .table-bordered {
+                border: 0
+            }
+
+        .VSTS-details h6.h6.text-primary.mt-3.text-uppercase.text-left {
+            margin-top: 49px !important;
+        }
     }
-}
