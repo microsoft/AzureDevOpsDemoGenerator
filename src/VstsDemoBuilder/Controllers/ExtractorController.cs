@@ -11,6 +11,8 @@ using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.ExtractorModels;
 using VstsDemoBuilder.Models;
+using VstsDemoBuilder.ServiceInterfaces;
+using VstsDemoBuilder.Services;
 using VstsRestAPI;
 using VstsRestAPI.ExtensionManagement;
 using VstsRestAPI.Extractor;
@@ -39,6 +41,12 @@ namespace VstsDemoBuilder.Controllers
 
         private string projectSelectedToExtract = string.Empty;
         private string extractedTemplatePath = string.Empty;
+
+        private IAccountService accountService;
+        public ExtractorController()
+        {
+            accountService = new AccountService();
+        }
         public void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -110,7 +118,7 @@ namespace VstsDemoBuilder.Controllers
                 else
                 {
                     accessDetails.access_token = pat;
-                    ProfileDetails profile = con.GetProfile(accessDetails);
+                    ProfileDetails profile = accountService.GetProfile(accessDetails);
                     if (profile == null)
                     {
                         ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
@@ -121,7 +129,7 @@ namespace VstsDemoBuilder.Controllers
                         Session["User"] = profile.displayName;
                         Session["Email"] = profile.emailAddress.ToLower();
                     }
-                    AccountsResponse.AccountList accountList = con.GetAccounts(profile.id, accessDetails);
+                    AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, accessDetails);
                     model.accessToken = accessDetails.access_token;
                     model.accountsForDropdown = new List<string>();
                     if (accountList.count > 0)

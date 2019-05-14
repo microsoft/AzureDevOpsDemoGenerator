@@ -150,7 +150,7 @@ namespace VstsDemoBuilder.Models
         }
         public class listExtension
         {
-           public List<ExtensionWithLink> Extensions { get; set; }
+            public List<ExtensionWithLink> Extensions { get; set; }
         }
     }
     public class TestSuite
@@ -181,7 +181,6 @@ namespace VstsDemoBuilder.Models
     public class User
     {
         public string email { get; set; }
-        public string alias { get; set; }
         public string ProjectName { get; set; }
         public string TrackId { get; set; }
 
@@ -194,6 +193,16 @@ namespace VstsDemoBuilder.Models
         public string accessToken { get; set; }
         public string organizationName { get; set; }
         public string templateName { get; set; }
+        public string templatePath { get; set; }
+        public string GithubToken { get; set; }
+        public bool IsExtensionRequired { get; set; }
+        public IList<User> users { get; set; }
+    }
+
+    public class ResponseObject
+    {
+        public string templateName { get; set; }
+        public string templatePath { get; set; }
         public IList<User> users { get; set; }
     }
 
