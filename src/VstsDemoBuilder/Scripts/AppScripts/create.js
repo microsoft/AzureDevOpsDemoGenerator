@@ -618,7 +618,7 @@ function getStatus() {
                                     var accountName = $('#ddlAcccountName option:selected').val();
                                     var projectNameForLink = $("#txtProjectName").val();
                                     var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
+                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn rd-4 btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
                                     var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Like the tool? Share your feedback &nbsp;";
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
@@ -953,6 +953,7 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
+                                    grp += '<div class="col-lg-3 col-md-3 p-p8">';
                                     grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
                                     grp += '<div class="template-box">';
                                     grp += '<div class="template-header">';
@@ -970,13 +971,15 @@ function getGroups(grpSelected) {
                                     grp += '<p class="description descSelected">' + desc + '</p>';
                                     grp += '</div>';
                                     grp += '</div>';
+                                     grp += '</div>';
                                 }
                                 else {
                                     var templateImgs = MatchedGroup.Template[i].Image;
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="col-lg-3 col-md-3 p-p8">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '" data-image="' + templateImg + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';                                    
                                     grp += '<div class="template-box">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
@@ -991,6 +994,7 @@ function getGroups(grpSelected) {
                                     }
                                     let desc = MatchedGroup.Template[i].Description;
                                     grp += '<p class="description">' + desc + '</p>';
+                                    grp += '</div>';
                                     grp += '</div>';
                                     grp += '</div>';
                                 }

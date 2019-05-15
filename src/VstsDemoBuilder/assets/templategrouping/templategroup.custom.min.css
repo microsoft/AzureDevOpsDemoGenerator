@@ -4121,7 +4121,7 @@ tbody.collapse.show {
 
 .about_template {
     border-radius: 8px;
-    border: .5px solid #dee2e6 !important;
+    border: .5px solid #9bcdff !important;
     overflow: hidden;
 }
 
@@ -8788,17 +8788,15 @@ html, body {
 }
 
 
-    .template_tab li {
+.template_tab li {
         list-style: none;
         padding: 00px;
-        background: #fff;
         margin: 0 5px;
         border-radius: 6px 6px 6px 6px;
         overflow: hidden;
-        background: #f8f9fa !important
     }
 
-        .template_tab li a {
+.template_tab li a {
             font-weight: 600;
             font-size: 13px;
             border-radius: 6px;
@@ -8832,7 +8830,6 @@ html, body {
     }
 
 .template-body .templates {
-    max-width: 1100px;
     margin: 0 auto;
     display: none;
 }
@@ -8842,8 +8839,7 @@ html, body {
     /*padding-right: 0px;*/
     background-color: #fff;
     /*min-width: 250px;*/
-    max-width: 23%;
-    margin: 8px;
+    max-width: 100%;
     opacity: 0;
     position: relative;
     border-radius: 8px;
@@ -8870,7 +8866,8 @@ html, body {
 
 .demo_form {
     width: 100%;
-    border: .5px solid #dee2e6 !important;
+    border: .5px solid #9bcdff !important;
+    min-height: 365px;
     width: 100%;
     margin: 0 auto;
     border-radius: 8px;
@@ -8891,9 +8888,10 @@ html, body {
     -moz-box-shadow: -1px 1px 15px 0px rgba(0,0,0,0.13);
     box-shadow: -1px 1px 15px 0px rgba(0,0,0,0.13);
     border-radius: 8px;
-    background:#fff;
-    padding:0;
-    overflow:hidden;
+    background: #fff;
+    border: .5px solid #9bcdff !important;
+    padding: 0;
+    overflow: hidden;
 }
 .lab_img {
     background-color: #049ad6;
@@ -8916,10 +8914,10 @@ html, body {
     font-size: 30px;
     line-height: 46px;
 }
-.box_shadw .demo-header{ background:#fff;}
+/*.box_shadw .demo-header{ background:#fff;}
 .box_shadw .demo-header h5{
     color:#0078D7;
-}
+}*/
 
 
 
@@ -8999,7 +8997,7 @@ img#projectloader {
     box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.33);
 }
 
-    .createtemplate:hover {
+.createtemplate:hover {
         text-decoration: none;
         color: #fff;
     }
@@ -9018,7 +9016,7 @@ img#projectloader {
 .social-icons {
     display: inline;
     position: absolute;
-    bottom: 20px;
+    bottom: 8px;
     left: 35px;
 }
 
@@ -9060,7 +9058,7 @@ img#projectloader {
     color: #000;
     /* font-size: 12.5px;*/
     border-radius: 8px;
-    border: .5px solid #dee2e6 !important;
+    border: .5px solid #9bcdff;
     line-height: 23px;
 }
 
@@ -9264,42 +9262,39 @@ img#projectloader {
 .template {
     animation: down 0.5s 1 ease-in-out forwards;
 }
-
-@media (max-width: 768px) {
-    .template-body .template {
-        max-width: 30%;
-    }
+.p-p8 {
+    padding: .8rem !important;
 }
 
-@media (max-width:576px) {
-    .template-body .template {
-        max-width: 100%;
-    }
+    @media (max-width:576px) {
+        .template-body .template {
+            max-width: 100%;
+        }
 
-    /* .template-holder {
+        /* .template-holder {
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
     }*/
-    .infoLabel {
-        width: 128px;
-        font-size: 10px;
-    }
-}
-
-@keyframes down {
-    0% {
-        transform: translate3d(0, 5px, 0);
-        opacity: 0;
+        .infoLabel {
+            width: 128px;
+            font-size: 10px;
+        }
     }
 
-    100% {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-    }
-}
+    @keyframes down {
+        0% {
+            transform: translate3d(0, 5px, 0);
+            opacity: 0;
+        }
 
-.cloud__bg {
+        100% {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    .cloud__bg {
     background: url(https://azuretfsextension.hosting.portal.azure.net/azuretfsextension/Content/17.148.28722.1/Icons/azurePortal-headerRibbonBackground-1x.png);
     background-size: cover;
 }
