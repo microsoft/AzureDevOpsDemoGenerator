@@ -18,6 +18,7 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string privateKey { get; set; }
             public string realmName { get; set; }
             public string acceptUntrustedCerts { get; set; }
+            public string authorizationType { get; set; }
         }
 
         public class Parameters
@@ -39,6 +40,13 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string cert { get; set; }
             public string key { get; set; }
             public string AccessToken { get; set; }
+            public string azureTenantId { get; set; }
+            public string azureEnvironment { get; set; }
+            public string roleBindingName { get; set; }
+            public string secretName { get; set; }
+            public string serviceAccountName { get; set; }
+            public string azureAccessToken { get; set; }
+            public string serviceAccountCertificate { get; set; }
 
         }
 
