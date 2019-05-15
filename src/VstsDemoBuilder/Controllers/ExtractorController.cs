@@ -283,7 +283,6 @@ namespace VstsDemoBuilder.Controllers
             processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             return true;
         }
-
         #endregion end extract template
         // Remove the template folder after zipping it
         [AllowAnonymous]
@@ -467,7 +466,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 // download the constructed zip
                 System.IO.Directory.Delete(filePath, true);
-                Response.AddHeader("Content-Disposition", "attachment; filename=DemoGeneratorTemplate.zip");
+                Response.AddHeader("Content-Disposition", "attachment; filename="+ fileName + ".zip");
                 return File(fileBytes, "application/zip");
             }
             catch (Exception ex)
