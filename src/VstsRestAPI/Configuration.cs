@@ -14,11 +14,11 @@ namespace VstsRestAPI
         public string Id { get; set; }
         public string Team { get; set; }
     }
-    public class ProjectConfigurationDetails
-    {
-        public static ProjectConfigurations AppConfig { get; set; }
+    //public class ProjectConfigurationDetails
+    //{
+    //    public static ProjectConfigurations AppConfig { get; set; }
 
-    }
+    //}
     public class ProjectConfigurations
     {
         public Configuration AgentQueueConfig { get; set; }

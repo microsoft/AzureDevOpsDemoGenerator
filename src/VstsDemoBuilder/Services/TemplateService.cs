@@ -15,7 +15,6 @@ namespace VstsDemoBuilder.Services
     public class TemplateService :ITemplateService
     {
 
-
         public string GetTemplate(string TemplateName)
         {
             string templatesPath = HostingEnvironment.MapPath("~") + @"\Templates\";
