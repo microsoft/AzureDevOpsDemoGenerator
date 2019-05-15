@@ -331,7 +331,7 @@ namespace VstsDemoBuilder.Controllers
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = accountService.GenerateRequestPostData(clientId, code, redirectUrl);
                     _accessDetails = accountService.GetAccessToken(accessRequestBody);
-                    _accessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiIxZTk1OTNlNC0wM2ViLTY1MjktOWFlNy1lY2M1ZmUyN2QyNWEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMDlhNjkyMzQtNzZkMy00OTg2LTgyZTgtZTQ2ZThiZDAwNzNjIiwiYXBwaWQiOiI1MDE4NzdkMy05YmNjLTRiZTYtYThjZC04MGFkOTk5YTY5NmEiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTU3MTM2NTY3LCJleHAiOjE1NTcxNDAxNjd9.B13OjKMGxcbhJhxw-EtQw4PozbijjsiT-1z5Q-L8_qa83_dXsqPBxINJq2MAeFUPRfJb2ElzFoLj0Jr0WB_tS4f1qS1R-6059IAz_yRae1WvQUJlAgfmwCD7k82TxAt8_fTqAWjtlFLSMQx_cvGVM-8qF_FRqudkRHDMXFaxjGso0JNqAe8smBeqMIAcPmU_0TmtOAUhK16V2ov2O79V5AqgjlAf_FV8ID8j8eH-Xkwl5ZaEPEoHyH-9IadH-A5iWE3OzRJpgg8pXwmuRUL4tYtaGOW_YFkF_afz6sqLV_pqpN6F98JCQd2TsAc9ZvxjIwkhA7T5D67dt1mM13AoAA";
+                    //_accessDetails.access_token = "";
                     if (!string.IsNullOrEmpty(_accessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
