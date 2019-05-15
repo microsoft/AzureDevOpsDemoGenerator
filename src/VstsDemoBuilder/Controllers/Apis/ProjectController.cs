@@ -110,9 +110,9 @@ namespace VstsDemoBuilder.Controllers.Apis
                     {
                         string templateName = string.Empty;
 
-                        if (string.IsNullOrEmpty(model.templateName))
+                        if (string.IsNullOrEmpty(model.templateName) && string.IsNullOrEmpty(model.templatePath))
                         {
-                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Name should not be empty");
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Please provide templateName or templatePath(GitHub)");
                         }
                         else
                         {
@@ -129,7 +129,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
                                     if (!templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.GithubToken))
                                     {
-                                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path and Check File is public or private, If Private please provide GithubToken in request body");
+                                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body");
                                     }
                                 }
                                 else
@@ -165,7 +165,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 }
                                 else
                                 {
-                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsrequiredExtension: true in the request body");
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsRequiredExtension: true in the request body");
                                 }
                             }
                         }
