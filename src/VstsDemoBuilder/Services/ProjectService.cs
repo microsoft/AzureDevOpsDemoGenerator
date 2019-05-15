@@ -2290,9 +2290,9 @@ namespace VstsDemoBuilder.Services
                 if (Directory.Exists(projectWikiFolderPath))
                 {
                     string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
-                    if (System.IO.File.Exists(createWiki))
+                    if (File.Exists(createWiki))
                     {
-                        string jsonString = System.IO.File.ReadAllText(createWiki);
+                        string jsonString = File.ReadAllText(createWiki);
                         jsonString = jsonString.Replace("$ProjectID$", model.Environment.ProjectId)
                             .Replace("$Name$", model.Environment.ProjectName);
                         ProjectwikiResponse.Projectwiki projectWikiResponse = manageWiki.CreateProjectWiki(jsonString, model.Environment.ProjectId);
@@ -2302,13 +2302,13 @@ namespace VstsDemoBuilder.Services
                             //dirName==parentName//
                             string[] dirSplit = dir.Split('\\');
                             string dirName = dirSplit[dirSplit.Length - 1];
-                            string sampleContent = System.IO.File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                            string sampleContent = File.ReadAllText(templatesFolder + "\\SampleContent.json");
                             sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
                             bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
 
                             if (isPage)
                             {
-                                string[] getFiles = System.IO.Directory.GetFiles(dir);
+                                string[] getFiles = Directory.GetFiles(dir);
                                 if (getFiles.Length > 0)
                                 {
                                     List<string> childFileNames = new List<string>();
@@ -2341,7 +2341,7 @@ namespace VstsDemoBuilder.Services
                                         {
                                             if (child != dirName)
                                             {
-                                                string movePages = System.IO.File.ReadAllText(templatesFolder + @"\MovePages.json");
+                                                string movePages = File.ReadAllText(templatesFolder + @"\MovePages.json");
                                                 if (!string.IsNullOrEmpty(movePages))
                                                 {
                                                     movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
