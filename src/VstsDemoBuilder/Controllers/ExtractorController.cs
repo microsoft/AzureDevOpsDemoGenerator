@@ -266,8 +266,6 @@ namespace VstsDemoBuilder.Controllers
             analysis.ErrorMessages = ExtractorService.errorMessages;
             return Json(analysis, JsonRequestBehavior.AllowGet);
         }
-
-        
         #endregion
 
         #region Extract Template
@@ -300,9 +298,9 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
+            string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
             try
             {
-                string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
                 CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
                 if (System.IO.Directory.Exists(filePath))
                 {
@@ -465,13 +463,20 @@ namespace VstsDemoBuilder.Controllers
                     fileBytes = memoryStream.ToArray();
                 }
                 // download the constructed zip
-                System.IO.Directory.Delete(filePath, true);
-                Response.AddHeader("Content-Disposition", "attachment; filename="+ fileName + ".zip");
+                Directory.Delete(filePath, true);
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName + ".zip");
                 return File(fileBytes, "application/zip");
             }
             catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            finally
+            {
+                if (Directory.Exists(filePath))
+                {
+                    Directory.Delete(filePath, true);
+                }
             }
             ViewBag.Error = "File not found";
             return RedirectToAction("Index", "Extractor");

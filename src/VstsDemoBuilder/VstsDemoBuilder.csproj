@@ -242,6 +242,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Apis\ProjectController.cs" />
+    <Compile Include="Controllers\Apis\TemplateController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\ExtractorController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
