@@ -116,6 +116,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                         }
                         else
                         {
+                            ProjectService.PrivateTemplatePath = "";
                             //check for Private template path provided in request body
                             if (!string.IsNullOrEmpty(model.templatePath))
                             {
@@ -165,7 +166,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 }
                                 else
                                 {
-                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsRequiredExtension: true in the request body");
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsExtensionRequired: true in the request body");
                                 }
                             }
                         }

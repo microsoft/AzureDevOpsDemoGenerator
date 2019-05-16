@@ -140,15 +140,9 @@ namespace VstsDemoBuilder.Services
                 string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
                 var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
 
-                //Uri FilePathUri = new Uri(TemplateUrl);
-                //string FilePathWithoutQuery = FilePathUri.GetLeftPart(UriPartial.Path);
-                //WebClient webClient = new WebClient();
-                //webClient.DownloadFile(TemplateUrl, path);
-                //webClient.Dispose();
-
                 var githubToken = GithubToken;
-                var url = TemplateUrl+ "?raw=true";//.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
-
+                var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
+                
                 using (var client = new System.Net.Http.HttpClient())
                 {
                     var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
@@ -157,6 +151,7 @@ namespace VstsDemoBuilder.Services
                     var contents = client.GetByteArrayAsync(url).Result;
                     System.IO.File.WriteAllBytes(path, contents);
                 }
+
                 if (File.Exists(path))
                 {
                     var Extractedpath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName;
@@ -169,6 +164,7 @@ namespace VstsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
             }
             finally
