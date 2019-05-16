@@ -178,16 +178,15 @@ namespace VstsDemoBuilder.Models
         }
     }
 
-    public class User
+    public class RequestedProject
     {
         public string email { get; set; }
         public string ProjectName { get; set; }
         public string TrackId { get; set; }
-
         public string status { get; set; }
     }
 
-    public class BulkData
+    public class MultiProjects
     {
         public string id { get; set; }
         public string accessToken { get; set; }
@@ -196,14 +195,14 @@ namespace VstsDemoBuilder.Models
         public string templatePath { get; set; }
         public string GithubToken { get; set; }
         public bool IsExtensionRequired { get; set; }
-        public IList<User> users { get; set; }
+        public IList<RequestedProject> users { get; set; }
     }
 
-    public class ResponseObject
+    public class ProjectResponse
     {
         public string templateName { get; set; }
         public string templatePath { get; set; }
-        public IList<User> users { get; set; }
+        public IList<RequestedProject> users { get; set; }
     }
 
 
