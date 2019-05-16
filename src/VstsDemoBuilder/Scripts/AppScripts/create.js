@@ -324,10 +324,11 @@ $(document).ready(function (event) {
     $(document.body).on('click', '.nav-link', function () {
         grpSelected = this.text;
         getGroups(grpSelected);
-        $(".nav-link").removeClass("active_white");           
+    });
+    $(document.body).on('click', '.nav-item', function () {
+        $(".nav-item").removeClass("active_white");
         $(this).addClass("active_white");
- });
-
+    });
     //Group load
     $.ajax({
         url: "../Environment/GetGroups",
@@ -337,7 +338,7 @@ $(document).ready(function (event) {
             if (groups.Groups.length > 0) {
                 for (var g = 0; g < groups.Groups.length; g++) {
                     if (g === 0)
-                        grp += '<li class="nav-item"><a class="nav-link active_white text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>';
+                        grp += '<li class="nav-item active_white"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>';
                     else
                         grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>';
                 }
@@ -618,7 +619,7 @@ function getStatus() {
                                     var accountName = $('#ddlAcccountName option:selected').val();
                                     var projectNameForLink = $("#txtProjectName").val();
                                     var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn rd-4 btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
+                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='mt-4 mb-4 btn rd-4 btn-primary btn-sm' id = 'proceedOrg' > Navigate to project</button></a>";
                                     var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Like the tool? Share your feedback &nbsp;";
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
