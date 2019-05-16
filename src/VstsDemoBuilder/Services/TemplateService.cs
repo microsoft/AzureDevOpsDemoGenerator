@@ -102,7 +102,7 @@ namespace VstsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return Selectedtemplates;
         }
@@ -147,7 +147,7 @@ namespace VstsDemoBuilder.Services
                 //webClient.Dispose();
 
                 var githubToken = GithubToken;
-                var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
+                var url = TemplateUrl+ "?raw=true";//.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
 
                 using (var client = new System.Net.Http.HttpClient())
                 {
