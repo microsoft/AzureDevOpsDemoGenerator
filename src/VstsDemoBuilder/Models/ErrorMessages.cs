@@ -20,14 +20,14 @@ namespace VstsDemoBuilder.Models
 
     public class AccountMessages
     {
-        public string AccountName { get; set; }
-        public string AccessToken { get; set; }
+        public string InvalidAccountName { get; set; }
+        public string InvalidAccessToken { get; set; }
     }
 
     public class ProjectMessages
     {
         public string InvalidProjectName { get; set; }
-        public string ProjectNameReservedKeyword { get; set; }
+        public string ProjectNameWithReservedKeyword { get; set; }
         public string ProjectNameOrEmailID { get; set; }
         public string DuplicateProject { get; set; }
         public string ExtensionNotInstalled { get; set; }

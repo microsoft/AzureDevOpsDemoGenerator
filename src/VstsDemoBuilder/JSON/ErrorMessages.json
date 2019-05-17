@@ -3,8 +3,8 @@
     {
       "accountMessages":
         {
-          "AccountName": "Provide a valid Account name",
-          "AccessToken": "Token of type Basic must be provided"
+          "InvalidAccountName": "Provide a valid Organization name",
+          "InvalidAccessToken": "Token of type Basic must be provided"
         },
       "projectMessages": 
         {
