@@ -24,8 +24,8 @@ namespace VstsDemoBuilder.Services
     public class ExtractorService : IExtractorService
     {
         #region STATIC DECLARATIONS
-        private static ILog logger = LogManager.GetLogger("ErrorLog");
-        private static readonly object objLock = new object();
+        public static ILog logger = LogManager.GetLogger("ErrorLog");
+        public static readonly object objLock = new object();
         public static Dictionary<string, string> statusMessages;
         public static List<string> errorMessages = new List<string>();
         public static string extractedTemplatePath = string.Empty;

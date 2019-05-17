@@ -45,25 +45,25 @@ namespace VstsDemoBuilder.Controllers.Apis
             {
 
                 string ReadErrorMessages = System.IO.File.ReadAllText(string.Format(HostingEnvironment.MapPath("~") + @"\JSON\" + @"{0}", "ErrorMessages.json"));
-                var ErrorMessages = JsonConvert.DeserializeObject<Messages>(ReadErrorMessages);
-
+                var Messages = JsonConvert.DeserializeObject<Messages>(ReadErrorMessages);
+                var errormessages = Messages.ErrorMessages;
                 List<string> ListOfExistedProjects = new List<string>();
                 //check for Organization Name
                 if (string.IsNullOrEmpty(model.organizationName))
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Provide a valid Account name");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.AccountMessages.InvalidAccountName); //"Provide a valid Account name"
                 }
                 //Check for AccessToken
                 if (string.IsNullOrEmpty(model.accessToken))
                 {
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized, "Token of type Basic must be provided");
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized, errormessages.AccountMessages.InvalidAccessToken ); //"Token of type Basic must be provided"
                 }
                 else
                 {
                     HttpResponseMessage response = projectService.GetprojectList(model.organizationName, model.accessToken);
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
-                        return Request.CreateResponse(response.StatusCode);
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.AccountMessages.InvalidAccountName);
                     }
                     else
                     {
@@ -89,19 +89,19 @@ namespace VstsDemoBuilder.Controllers.Apis
 
                             if (!isProjectNameValid)
                             {
-                                project.status = "Invalid Project name";
+                                project.status = errormessages.ProjectMessages.InvalidProjectName; //"Invalid Project name";
                                 return Request.CreateResponse(HttpStatusCode.BadRequest, project);
                             }
                             else if (restrictedNames.ConvertAll(d => d.ToLower()).Contains(project.ProjectName.Trim().ToLower()))
                             {
-                                project.status = "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
+                                project.status = errormessages.ProjectMessages.ProjectNameWithReservedKeyword;//"Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
                                 return Request.CreateResponse(HttpStatusCode.BadRequest, project);
                             }
                             ListOfRequestedProjectNames.Add(project.ProjectName.ToLower());
                         }
                         else
                         {
-                            project.status = "EmailId or ProjectName is not found";
+                            project.status = errormessages.ProjectMessages.ProjectNameOrEmailID;//"EmailId or ProjectName is not found";
                             return Request.CreateResponse(HttpStatusCode.BadRequest, project);
                         }
                     }
@@ -109,7 +109,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     bool anyDuplicateProjects = ListOfRequestedProjectNames.GroupBy(n => n).Any(c => c.Count() > 1);
                     if (anyDuplicateProjects)
                     {
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, "ProjectName must be unique");
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.ProjectMessages.DuplicateProject); //"ProjectName must be unique"
                     }
                     else
                     {
@@ -117,7 +117,7 @@ namespace VstsDemoBuilder.Controllers.Apis
 
                         if (string.IsNullOrEmpty(model.templateName) && string.IsNullOrEmpty(model.templatePath))
                         {
-                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Please provide templateName or templatePath(GitHub)");
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.TemplateNameOrTemplatePath); //"Please provide templateName or templatePath(GitHub)"
                         }
                         else
                         {
@@ -135,12 +135,12 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
                                     if (!templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.GithubToken))
                                     {
-                                        return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body");
+                                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
                                     }
                                 }
                                 else
                                 {
-                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "TemplatePath should have .zip extension file name at the end of the url");
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.PrivateTemplateFileExtension);//"TemplatePath should have .zip extension file name at the end of the url"
                                 }
                             }
                             else
@@ -148,7 +148,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 string response = templateService.GetTemplate(model.templateName);
                                 if (response == "Template Not Found!")
                                 {
-                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Template Not Found!");
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.TemplateNotFound);
                                 }
                                 templateName = model.templateName;
                             }
@@ -171,7 +171,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 }
                                 else
                                 {
-                                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Extension is not installed for the selected Template, Please provide IsExtensionRequired: true in the request body");
+                                    return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.ProjectMessages.ExtensionNotInstalled); //"Extension is not installed for the selected Template, Please provide IsExtensionRequired: true in the request body"
                                 }
                             }
                         }
