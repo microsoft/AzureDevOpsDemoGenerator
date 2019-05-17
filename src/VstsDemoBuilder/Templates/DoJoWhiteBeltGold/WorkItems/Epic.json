@@ -1,0 +1,118 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 26309,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2019-05-14T17:30:12.977Z",
+        "System.CreatedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:30:12.977Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Classroom Challenges",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>This is the epic which lists all potential challenges students would do in the dojo room.</span></div>",
+        "System.AssignedTo": "Kan Tang <kantan@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26309"
+    },
+    {
+      "id": 26308,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2019-05-14T17:09:48.65Z",
+        "System.CreatedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:30:50.23Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "SH360 Booking App",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>This is the epic for Smart Hotel Booking App</span></div>",
+        "System.AssignedTo": "Aakanksha . <aak@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26300",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26308"
+    },
+    {
+      "id": 26307,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2019-05-14T17:08:43.63Z",
+        "System.CreatedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:31:15.827Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "SH360 Coupon App",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>This is the epic used for Smart Hotel 360 Coupon Java App</span></div>",
+        "System.AssignedTo": "Swathi G <swathg@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26299",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26307"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

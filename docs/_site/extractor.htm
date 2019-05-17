@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Building your own template | Azure DevOps Demo Generator</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Building your own template" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Azure DevOps Demo Generator" />
+<meta property="og:description" content="Azure DevOps Demo Generator" />
+<link rel="canonical" href="http://localhost:4000/extractor.htm" />
+<meta property="og:url" content="http://localhost:4000/extractor.htm" />
+<meta property="og:site_name" content="Azure DevOps Demo Generator" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/extractor.htm","headline":"Building your own template","description":"Azure DevOps Demo Generator","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=71de869d35c4585adaf0b064bf89fd3929f3aa6a">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="using-the-extractor">Using the Extractor</h1>
+
+<p>Azure DevOps Generator provides a number of templates, out of the box, that supports a wide variety of scenarios, from different project types to different programming languages, deployment platforms, etc., In addition to this, the generator also allows users to make their own templates. Users can convert their existing projects into templates and then provision new projects using that template. The ability to have custom templates can be useful in many scenarios, such as building custom training materials, provision only certain artifacts, etc.,</p>
+
+<p>This document walks you through the steps on how you can use the extractor.</p>
+
+<h2 id="before-you-start">Before you start</h2>
+
+<p>Setup an Azure DevOps project and make sure it is ready to be extracted. The extractor will capture the contents of the project and save them as JSON files  which will be archived into a zip file.</p>
+
+<h2 id="building-a-new-custom-template">Building a new custom template</h2>
+
+<ol>
+  <li>
+    <p>Access the generator with the query parameter <strong>“enableextractor=true”</strong> added to the URL: <a href="https://azuredevopsdemogenerator.azurewebsites.net/?enableextractor=true">https://azuredevopsdemogenerator.azurewebsites.net/?enableextractor=true</a></p>
+
+    <p><img src="images/homepage.png" alt="Azure DevOps Generator Home Page" /></p>
+  </li>
+  <li>
+    <p>After you sign in, on the main page, you will see a new link labelled <strong>“Build your own template”</strong></p>
+
+    <p><img src="images/buildyourtemplatelink.png" alt="Build your template link on main page" /></p>
+  </li>
+  <li>
+    <p>Selecting that will open the <strong>extractor</strong> main page in a new tab.</p>
+
+    <p><img src="images/extractorhomepage.png" alt="Extractor Home Page" /></p>
+  </li>
+  <li>
+    <p>Select the organization and then the project that you want to turn into a template.</p>
+  </li>
+  <li>
+    <p>Click <strong>Analyze</strong>. This will validate if the project is one of the supported types (only Agile and Scrum based projects are supported for the time-being) and that all of the contents can be read.At the end of the analysis, you will see the artifacts and count of items for you to confirm if the extractor has read all items correctly.</p>
+
+    <p><img src="images/analyze.png" alt="Analyzing the project" /></p>
+  </li>
+  <li>
+    <p>If it is correct and you wish to proceed, select the <strong>Generate</strong> button. This will again read all the items from the project but this time, the contents will be saved as JSON data. After all the items have been extracted, the folder will be archived into a zip file.</p>
+  </li>
+  <li>
+    <p>Select the link to download the zip file. Note that the zip file is not stored on the server side - so, make sure you download the file.  It will not be available after you close the page.</p>
+
+    <p><img src="images/generatedfile.png" alt="Downloadin the generated template" /></p>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> The Extractor does not support all item types and so it should not be considered as a migration tool for moving projects from one server to another. For what’s supported and what’s not supported, see the <a href="">limitations</a> section</p>
+
+<h2 id="provisioning-your-project-from-your-custom-template">Provisioning your project from your custom template</h2>
+
+<ol>
+  <li>
+    <p>Return back to the generator page  or re-open it again if you have already closed it. You should use the <strong>enableextractor=true</strong> query parameter in the URL.</p>
+  </li>
+  <li>
+    <p>Select <strong>Choose Template</strong></p>
+  </li>
+  <li>
+    <p>You will see a new tab labelled <strong>Private</strong>. Select the tab.</p>
+  </li>
+  <li>
+    <p>Select <strong>Browse</strong> and select the zip file you downloaded zip file.</p>
+  </li>
+  <li>
+    <p>Click <strong>OK</strong> to close the dialog. Choose <strong>Create Project</strong> to start provisioning a project</p>
+  </li>
+</ol>
+
+<hr />
+
+<p>Previous: <a href="/About-Azure-DevOps-Demo-Generator/Using-the-Generator">Using the Generator</a></p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
