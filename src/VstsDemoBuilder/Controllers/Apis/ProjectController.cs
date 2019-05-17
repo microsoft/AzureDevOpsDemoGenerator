@@ -26,6 +26,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         private IProjectService projectService;
         public delegate string[] ProcessEnvironment(Project model, bool IsAPI);
 
+
         public ProjectController()
         {
             templateService = new TemplateService();
@@ -42,6 +43,10 @@ namespace VstsDemoBuilder.Controllers.Apis
             List<RequestedProject> returnProjects = new List<RequestedProject>();
             try
             {
+
+                string ReadErrorMessages = System.IO.File.ReadAllText(string.Format(HostingEnvironment.MapPath("~") + @"\JSON\" + @"{0}", "ErrorMessages.json"));
+                var ErrorMessages = JsonConvert.DeserializeObject<Messages>(ReadErrorMessages);
+
                 List<string> ListOfExistedProjects = new List<string>();
                 //check for Organization Name
                 if (string.IsNullOrEmpty(model.organizationName))
@@ -217,6 +222,10 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("GetCurrentProgress")]
         public HttpResponseMessage GetCurrentProgress(string TrackId)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            // Use SecurityProtocolType.Ssl3 if needed for compatibility reasons
+
             var currentProgress = projectService.GetStatusMessage(TrackId);
             return Request.CreateResponse(HttpStatusCode.OK, currentProgress["status"]);
         }
