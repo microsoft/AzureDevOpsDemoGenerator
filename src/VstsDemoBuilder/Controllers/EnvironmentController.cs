@@ -65,11 +65,11 @@ namespace VstsDemoBuilder.Controllers
         private IProjectService projectService;
         private ITemplateService templateService;
         private IAccountService accountService;
-        public EnvironmentController()
+        public EnvironmentController(IProjectService _ProjectService,IAccountService _accountService,ITemplateService _templateService)
         {
-            projectService = new ProjectService();
-            accountService = new AccountService();
-            templateService = new TemplateService();
+            projectService = _ProjectService;
+            accountService = _accountService;
+            templateService = _templateService;
         }
 
         [HttpGet]
