@@ -467,6 +467,11 @@ $('#btnSubmit').click(function () {
         }
     }
 
+    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
+    var forkGitHub = false;
+    if (gitHubFork === "on") {
+        forkGitHub = true;
+    }
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -476,7 +481,7 @@ $('#btnSubmit').click(function () {
     });
     selectedTemplate = template;
     var websiteUrl = window.location.href;
-    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email };
+    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
         if (data !== "True") {
