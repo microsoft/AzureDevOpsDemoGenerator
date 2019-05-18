@@ -245,7 +245,7 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$SmartHotel360.Registration-CI-id$",
+      "sourceId": "$ProjectId$:$Bookings-CI-id$",
       "type": "Build",
       "alias": "_Bookings-CI",
       "definitionReference": {
@@ -267,8 +267,8 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$SmartHotel360.Registration-CI-id$",
-          "name": "SmartHotel360.Registration-CI"
+          "id": "$Bookings-CI-id$",
+          "name": "Bookings-CI"
         },
         "definitions": {
           "id": "",
