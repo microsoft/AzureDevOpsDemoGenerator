@@ -245,6 +245,7 @@
     <Compile Include="Controllers\Apis\TemplateController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\ExtractorController.cs" />
+    <Compile Include="Controllers\GitHubController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Extensions\Extension.cs" />
     <Compile Include="ExtractorModels\ExtractorAnalysis.cs" />
@@ -256,6 +257,7 @@
     <Compile Include="Models\CreateZips.cs" />
     <Compile Include="Models\Default.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\GitHubAccessDetails.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProfileDetails.cs" />
     <Compile Include="Models\Project.cs" />
@@ -341,6 +343,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Scripts\AppScripts\GitHubAuth.js" />
     <Content Include="Templates\AKS\Images\AKS.png" />
     <Content Include="Templates\AKS\Images\aksdashboard.png" />
     <Content Include="Templates\AKS\Images\finalresult.png" />
@@ -1113,6 +1116,10 @@
     <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Task.json" />
     <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Test Case.json" />
+    <Content Include="Views\GitHub\Oauth.cshtml" />
+    <Content Include="Views\GitHub\Redirect.cshtml" />
+    <Content Include="Views\GitHub\Status.cshtml" />
+    <Content Include="Templates\SmartHotel360\ForkRepo\GitRepository.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1188,9 +1195,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>30543</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/VstsDemoBuilder</IISUrl>
+          <IISUrl>https://azuredevopsdemogen-dev.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

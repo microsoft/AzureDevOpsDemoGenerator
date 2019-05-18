@@ -1,44 +1,18 @@
-﻿using log4net;
-using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
+﻿using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsDemoBuilder.Services;
-using VstsRestAPI;
-using VstsRestAPI.Build;
-using VstsRestAPI.DeploymentGRoup;
-using VstsRestAPI.Git;
-using VstsRestAPI.ProjectsAndTeams;
-using VstsRestAPI.QueriesAndWidgets;
-using VstsRestAPI.Queues;
-using VstsRestAPI.Release;
-using VstsRestAPI.Service;
-using VstsRestAPI.TestManagement;
 using VstsRestAPI.Viewmodel.Extractor;
-using VstsRestAPI.Viewmodel.Importer;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
-using VstsRestAPI.Viewmodel.QueriesAndWidgets;
-using VstsRestAPI.Viewmodel.Repository;
-using VstsRestAPI.Viewmodel.Sprint;
-using VstsRestAPI.Viewmodel.Wiki;
-using VstsRestAPI.Viewmodel.WorkItem;
-using VstsRestAPI.Wiki;
 using VstsRestAPI.WorkItemAndTracking;
 
 namespace VstsDemoBuilder.Controllers
@@ -600,6 +574,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 Session["PAT"] = model.accessToken;
                 Session["AccountName"] = model.accountName;
+                model.GitHubToken = Session["GitHubToken"].ToString();
                 projectService.AddMessage(model.id, string.Empty);
                 projectService.AddMessage(model.id.ErrorId(), string.Empty);
 
