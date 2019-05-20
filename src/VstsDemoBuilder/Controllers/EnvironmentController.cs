@@ -39,11 +39,11 @@ namespace VstsDemoBuilder.Controllers
         private IProjectService projectService;
         private ITemplateService templateService;
         private IAccountService accountService;
-        public EnvironmentController()
+        public EnvironmentController(IProjectService _ProjectService,IAccountService _accountService,ITemplateService _templateService)
         {
-            projectService = new ProjectService();
-            accountService = new AccountService();
-            templateService = new TemplateService();
+            projectService = _ProjectService;
+            accountService = _accountService;
+            templateService = _templateService;
         }
 
         [HttpGet]
@@ -306,7 +306,7 @@ namespace VstsDemoBuilder.Controllers
                     string accessRequestBody = accountService.GenerateRequestPostData(clientId, code, redirectUrl);
                     _accessDetails = accountService.GetAccessToken(accessRequestBody);
                     //_accessDetails.access_token = "";
-                    //_accessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiIxZTk1OTNlNC0wM2ViLTY1MjktOWFlNy1lY2M1ZmUyN2QyNWEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiM2I1OTRkOTktNzJmYi00M2I3LWEyNzItYjAzOGJlNGY0OThkIiwiYXBwaWQiOiI1MDE4NzdkMy05YmNjLTRiZTYtYThjZC04MGFkOTk5YTY5NmEiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTU3OTg3OTIwLCJleHAiOjE1NTc5OTE1MjB9.VRdfrMtgQ_-BeCCzVaB7ZfrbTAHzys4zIAoaZUs-9rBAjOQEZ2ZvTd2_3aUjTNxlPEI7Hz0XFvddRm0aJS_86PU14JxVxgeGk5JCVGPv9VN0dAfuiaA9FuphQ2FTYeuJgTHTJHM0lKdRJH5zu3_GnzcOopXGRca0ZnDmQNoC_5R7z_pdJ1n4cIO2-Xm04FRsh4VAEK1qktLWdAIAQCTJUS88haUQtuWaS_7uaxctkTWorB2ruGfk2i8YgfevpbTIgMU7WYH5Q025ZS3i_IY5pnUAck5KdzII-0Q5ifUcHy-jTiZtcsi3PxZFk3Q5d4whtokrWTa3mIE4x1iyC8dZng";
+                    //_accessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiIxZTk1OTNlNC0wM2ViLTY1MjktOWFlNy1lY2M1ZmUyN2QyNWEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMjZjZDc3NDQtNTBlMS00MWVkLTgzZDgtZDUwNjFhOGM1NDIyIiwiYXBwaWQiOiI1MDE4NzdkMy05YmNjLTRiZTYtYThjZC04MGFkOTk5YTY5NmEiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTU4MDg4Nzk3LCJleHAiOjE1NTgwOTIzOTd9.sIBT2PvGwebk0rSvpDO7Ogk6z5-cuMQN8ABvrz06Tfktn_J8Sx93U-IAxWBSBVIEsdHNa-JljHgreTPU94wm2vxZMK7wHJ4gAW2G4zC_c6uDPIt81ftRJP3Uxa_6co2X-clCB_6dX4tc5mFot9qTKaAY6sMZJ1EnvyXnEfkQ9nTqI2cc1bIqtyByyr_W8x_j5EaHWghII4s3t1ikuPssaxoIooSekdV7XHrxgNIFN8WtYj7WpfF_t2ZFFFe84FNmxDhDK99ZVDwHnINmMHquiMCVdaMEk5jNddH9slAuxl5Ojku3YfRZOjr-XkBNrQhbjixZMGO0AdNMOyyMsmc6Dg";
                     if (!string.IsNullOrEmpty(_accessDetails.access_token))
                     {
                         // add your access token here for local debugging                 

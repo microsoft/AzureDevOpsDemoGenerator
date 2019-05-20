@@ -21,13 +21,10 @@ namespace VstsDemoBuilder.Controllers
 
     public class ExtractorController : Controller
     {
-        private AccessDetails accessDetails = new AccessDetails();
-        private EnvironmentController con = new EnvironmentController();
-        private delegate string[] ProcessEnvironment(Project model);
-        private ExtractorAnalysis analysis = new ExtractorAnalysis();
+        
+        private delegate string[] ProcessEnvironment(Project model);        
         private IExtractorService extractorService;
         private IAccountService accountService;
-        private static ILog logger = LogManager.GetLogger("ErrorLog");
         public ExtractorController()
         {
             accountService = new AccountService();
@@ -54,6 +51,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                AccessDetails accessDetails = new AccessDetails();
                 string pat = "";
                 string email = "";
                 if (Session["PAT"] != null)
@@ -107,7 +105,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return View(model);
         }
@@ -141,7 +139,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 projectResult.errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
             }
@@ -172,7 +170,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new JsonResult();
 
@@ -207,7 +205,7 @@ namespace VstsDemoBuilder.Controllers
                     string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
-                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Extractor_" + errorMessages + "\n");
+                    ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Extractor_" + errorMessages + "\n");
                     string logWIT = "true"; //System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                     if (logWIT == "true")
                     {
@@ -256,6 +254,7 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public JsonResult AnalyzeProject(Project model)
         {
+            ExtractorAnalysis analysis = new ExtractorAnalysis();
             ProjectConfigurations appConfig = extractorService.ProjectConfiguration(model);
             analysis.teamCount = extractorService.GetTeamsCount(appConfig);
             analysis.IterationCount = extractorService.GetIterationsCount(appConfig);
@@ -469,7 +468,7 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             finally
             {
