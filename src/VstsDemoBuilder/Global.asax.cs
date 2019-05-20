@@ -22,7 +22,6 @@ namespace VstsDemoBuilder
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            UnityConfig.RegisterComponents();
             GlobalFilters.Filters.Add(new System.Web.Mvc.AuthorizeAttribute());
             log4net.Config.XmlConfigurator.Configure();
         }

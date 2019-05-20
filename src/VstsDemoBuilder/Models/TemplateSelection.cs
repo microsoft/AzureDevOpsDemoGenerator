@@ -34,5 +34,15 @@ namespace VstsDemoBuilder.Models
             public IList<GroupwiseTemplate> GroupwiseTemplates { get; set; }
             public IList<string> privateTemplates { get; set; }
         }
+
+        public class TemplateDetails
+        {
+         
+            public string Name { get; set; }
+            public string ShortName { get; set; }
+            public string Description { get; set; }
+            public string[] Tags { get; set; }
+            public string TemplateFolder { get; set; }
+        }
     }
 }

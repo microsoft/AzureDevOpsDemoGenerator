@@ -18,9 +18,10 @@ namespace VstsDemoBuilder.Services
     {
 
 
-        public TemplateSelection.Templates GetAllTemplates()
+        public List<TemplateDetails> GetAllTemplates()
         {
             var templates = new TemplateSelection.Templates();
+            var TemplateDetails = new List<TemplateDetails>();
             try
             {
                 Project model = new Project();
@@ -38,19 +39,34 @@ namespace VstsDemoBuilder.Services
                     string templateSetting = model.ReadJsonFile(System.Web.Hosting.HostingEnvironment.MapPath("~") + @"\Templates\TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
 
+                    foreach(var templateList in templates.GroupwiseTemplates)
+                    {
+                        foreach(var template in templateList.Template)
+                        {
+                            TemplateDetails tmp = new TemplateDetails();
+                            
+                            tmp.Name = template.Name;
+                            tmp.ShortName = template.ShortName;
+                            tmp.Tags = template.Tags;
+                            tmp.Description = template.Description;
+                            tmp.TemplateFolder = template.TemplateFolder;
+                            TemplateDetails.Add(tmp);
+                        }
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
-            return templates;
+            return TemplateDetails;
         }
 
-        public List<Template> GetTemplatesByTags(string Tags)
+        public List<TemplateDetails> GetTemplatesByTags(string Tags)
         {
             var templates = new TemplateSelection.Templates();
-            var Selectedtemplates = new List<Template>();
+            var Selectedtemplates = new List<TemplateDetails>();
             char delimiter = ',';
             string[] strComponents = Tags.Split(delimiter);
             try
@@ -69,17 +85,9 @@ namespace VstsDemoBuilder.Services
                 {
                     string templateSetting = model.ReadJsonFile(System.Web.Hosting.HostingEnvironment.MapPath("~") + @"\Templates\TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
-                    //Selectedtemplates.Groups = templates.Groups;
-                    //Selectedtemplates.GroupwiseTemplates = new List<TemplateSelection.GroupwiseTemplate>();
-                    int groupWiseIndex = 0;
-
+                 
                     foreach (var groupwiseTemplates in templates.GroupwiseTemplates)
                     {
-                        //Selectedtemplates.GroupwiseTemplates.Add(new TemplateSelection.GroupwiseTemplate()
-                        //{
-                        //    Groups = groupwiseTemplates.Groups,
-                        //    Template = new List<TemplateSelection.Template>()
-                        //});
                         foreach (var tmp in groupwiseTemplates.Template)
                         {
                             if (tmp.Tags != null)
@@ -88,16 +96,20 @@ namespace VstsDemoBuilder.Services
                                 {
                                     if (tmp.Tags.Contains(str))
                                     {
-                                        Selectedtemplates.Add(tmp);
+                                        TemplateDetails template = new TemplateDetails();
+
+                                        template.Name = tmp.Name;
+                                        template.ShortName = tmp.ShortName;
+                                        template.Tags = tmp.Tags;
+                                        template.Description = tmp.Description;
+                                        template.TemplateFolder = tmp.TemplateFolder;
+                                        Selectedtemplates.Add(template);
                                         break;
                                     }
                                 }
                             }
-
                         }
-                        groupWiseIndex++;
                     }
-
                 }
             }
             catch (Exception ex)

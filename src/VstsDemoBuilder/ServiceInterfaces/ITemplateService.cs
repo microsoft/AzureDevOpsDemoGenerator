@@ -10,9 +10,9 @@ namespace VstsDemoBuilder.ServiceInterfaces
 {
     public interface ITemplateService
     {
-        TemplateSelection.Templates GetAllTemplates();
+        List<TemplateDetails> GetAllTemplates();
 
-        List<Template> GetTemplatesByTags(string Tags);
+        List<TemplateDetails> GetTemplatesByTags(string Tags);
 
         string GetTemplate(string TemplateName);
 
