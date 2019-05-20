@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/extractor.htm</loc>
+</url>
+<url>
+<loc>http://localhost:4000/using.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/About-Azure-DevOps-Demo-Generator/Known-Issues-and-FAQ/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%252D-Call-API-with-powershell/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/Get-status-of-project-creation-using-TrackId/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Features-Timeline/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Features-Timeline/Dashboard-creation/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Features-Timeline/YAML-Pipeline-Support/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+</urlset>

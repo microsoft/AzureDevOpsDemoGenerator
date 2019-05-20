@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Using the Demo Generator | Azure DevOps Demo Generator</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Using the Demo Generator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Azure DevOps Demo Generator" />
+<meta property="og:description" content="Azure DevOps Demo Generator" />
+<link rel="canonical" href="http://localhost:4000/using.html" />
+<meta property="og:url" content="http://localhost:4000/using.html" />
+<meta property="og:site_name" content="Azure DevOps Demo Generator" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/using.html","headline":"Using the Demo Generator","description":"Azure DevOps Demo Generator","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=71de869d35c4585adaf0b064bf89fd3929f3aa6a">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="using-the-azure-devops-demo-generator">Using the Azure DevOps Demo Generator</h1>
+<hr />
+
+<ol>
+  <li>
+    <p>Browse to the <a href="https://azuredevopsdemogenerator.azurewebsites.net/">Azure DevOps Demo Generator site</a> by click the link, or copy <code class="highlighter-rouge">https://azuredevopsdemogenerator.azurewebsites.net/</code> into your browser’s URL field.</p>
+  </li>
+  <li>
+    <p>Click <strong>Sign In</strong> and provide the Microsoft or Azure AD account credentials associated with an organization in Azure DevOps Services. If you don’t have an organization, click on <strong>Get Started for Free</strong> to create one and then log in with your credentials.</p>
+  </li>
+</ol>
+
+<p><img src="/About-Azure-DevOps-Demo-Generator/images/homepage.png" alt="Image of VSTS Demo Generator V2 login" /></p>
+
+<ol>
+  <li>
+    <p>After you sign in, select <strong>Accept</strong> to grant the Demo Generator permissions to access your Azure DevOps account.</p>
+  </li>
+  <li>
+    <p>Select the organization you will use to host the project created by the Azure DevOps Demo Generator. (You may have multiple accounts of which you are a member, and which are associated with your login, so choose carefully.) Provide a name for your project (such as “MyProjectDemo” ) that you and other contributors can use to identify it as a demo project.</p>
+  </li>
+</ol>
+
+<p><img src="/About-Azure-DevOps-Demo-Generator/images/mainpage.png" alt="Image of the generator main page" /></p>
+
+<p>Lastly, select the demo project template you want to provision by clicking <strong>…</strong> (Browse) button.</p>
+
+<p><img src="/About-Azure-DevOps-Demo-Generator/images/templateselection.png" alt="Image of VSTS Demo Generator template selection screen" /></p>
+
+<blockquote>
+  <p>The default template is <strong>SmartHotel360</strong>, which contains complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers. Other templates include <strong>MyHealthClinic</strong>, which defines a team project for an ASP.NET Core app that deploys to Azure App Service; <strong>PartsUnlimited</strong>, which defines an ASP.NET app with customized CI/CD pipelines; and <strong>MyShuttle</strong>, which defines a Java app and Azure App service deployment.</p>
+</blockquote>
+
+<blockquote>
+  <p>All four templates provide fictional Azure DevOps users and pre-populated Agile planning and tracking work items and data, along with source code in an Azure Repos Git repo, as well as access to Azure Pipelines.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>Some templates may require additional extensions to be installed to your organization. The demo generation process checks to see if these extensions are already installed. If the extension is already installed, a green check will be displayed in front of the extension name. If the extension is <strong>not</strong> installed, select the empty check boxes to install the extension(s) to your account. When ready, click on <strong>Create Project</strong> button.</p>
+
+    <blockquote>
+      <p>If you want to manually install the extensions,  click on the provided link for a specific extension, which takes you to the extension’s page on Azure DevOps Marketplace. From there, you can install the extension.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Your project may take a couple of minutes for the Demo Generator to provision. When it completes, you will be provided with a link to the demo project.</p>
+  </li>
+</ol>
+
+<p><img src="_img/projectcreated.png" alt="Image of Azure DevOps Demo Generator project created screen" /></p>
+
+<ol>
+  <li>Select the link to go to the new demo Azure DevOps Services project and confirm it was successfully provisioned.</li>
+</ol>
+
+<p><img src="_img/projecthomepage.png" alt="Image of Azure DevOps Demo Generator provision confirmation screen" /></p>
+
+<blockquote>
+  <p>You must provide your own information such as URLs, logins, password, and others for the configuration of demo endpoints that use Azure resources.</p>
+</blockquote>
+
+<hr />
+
+<p>Next: <a href="/About-Azure-DevOps-Demo-Generator/Build-your-own-template">Building your own template</a></p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
