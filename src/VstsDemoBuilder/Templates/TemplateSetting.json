@@ -340,7 +340,7 @@
           "ShortName": "DoJoWhiteBeltGold",
           "TemplateFolder": "DoJoWhiteBeltGold",
           "Image": "/Templates/TemplateImages/devopsdojo.png",
-          "Description": "A DevOps dōjō a space where cross-functional feature teams practice agile, continuous, collaborative & automation principles of DevOps to find the best path to deliver software from idea to production with quality. More details: <a href="https://servicescode.visualstudio.com/DevOps-Dojo/_wiki/wikis/1Microsoft%20DevOps%20Dojo?wikiVersion=GBmaster&pageId=701&pagePath=%2FOverview" target="_blank">1Microsoft – DevOps Dojo</a>"
+          "Description": "A DevOps dōjō a space where cross-functional feature teams practice agile, continuous, collaborative & automation principles of DevOps to find the best path to deliver software from idea to production with quality. More details: <a href='https://servicescode.visualstudio.com/DevOps-Dojo/_wiki/wikis/1Microsoft%20DevOps%20Dojo?wikiVersion=GBmaster&pageId=701&pagePath=%2FOverview' target='_blank'>1Microsoft – DevOps Dojo</a>"
         }
       ]
     }
