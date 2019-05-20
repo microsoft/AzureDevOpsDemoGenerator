@@ -73,6 +73,7 @@
     <Compile Include="Extractor\ClassificationNodes.cs" />
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
+    <Compile Include="Git\GitHubImportRepo.cs" />
     <Compile Include="ProjectsAndTeams\GetAllGroups.cs" />
     <Compile Include="Services\HttpServices.cs" />
     <Compile Include="Service\ServiceEndPoint.cs" />
@@ -113,6 +114,8 @@
     <Compile Include="Viewmodel\BaseViewModel.cs" />
     <Compile Include="Viewmodel\Build\BuildGetListofBuildDefinitionsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\WorkItemFetchResponse.cs" />
+    <Compile Include="Viewmodel\GitHub\ForkRepos.cs" />
+    <Compile Include="Viewmodel\GitHub\GitHubRepoResponse.cs" />
     <Compile Include="Viewmodel\Importer\ImportBoardRows.cs" />
     <Compile Include="Viewmodel\Importer\ImpotCardStyle.cs" />
     <Compile Include="Viewmodel\Importer\ImportBoardColumns.cs" />
