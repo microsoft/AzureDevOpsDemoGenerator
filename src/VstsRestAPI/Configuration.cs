@@ -13,12 +13,12 @@ namespace VstsRestAPI
         public string VersionNumber { get; set; }
         public string Id { get; set; }
         public string Team { get; set; }
+        public string _gitcredential { get; set; }
+        public string _gitbaseAddress { get; set; }
+        public string _mediaType { get; set; }
+        public string _scheme { get; set; }
+        public string userName { get; set; }
     }
-    //public class ProjectConfigurationDetails
-    //{
-    //    public static ProjectConfigurations AppConfig { get; set; }
-
-    //}
     public class ProjectConfigurations
     {
         public Configuration AgentQueueConfig { get; set; }

@@ -8,11 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Hosting;
@@ -32,6 +29,7 @@ using VstsRestAPI.Service;
 using VstsRestAPI.Services;
 using VstsRestAPI.TestManagement;
 using VstsRestAPI.Viewmodel.Extractor;
+using VstsRestAPI.Viewmodel.GitHub;
 using VstsRestAPI.Viewmodel.Importer;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.Viewmodel.QueriesAndWidgets;
@@ -62,8 +60,6 @@ namespace VstsDemoBuilder.Services
         public static int usercount = 0;
         public string templateVersion = string.Empty;
         public static string enableExtractor = "";
-
-
 
         public static Dictionary<string, string> StatusMessages
         {
@@ -136,7 +132,7 @@ namespace VstsDemoBuilder.Services
             HttpResponseMessage response = projects.GetListOfProjects();
             return response;
         }
-             
+
         /// <summary>
         /// Get the path where we can file template related json files for selected template
         /// </summary>
@@ -157,7 +153,6 @@ namespace VstsDemoBuilder.Services
             return filePath;
         }
 
-
         #region Project Setup Operations
 
         /// <summary>
@@ -167,9 +162,9 @@ namespace VstsDemoBuilder.Services
         /// <param name="pat"></param>
         /// <param name="accountName"></param>
         /// <returns></returns>
-        public string[] CreateProjectEnvironment(Project model, bool IsAPI=false)
+        public string[] CreateProjectEnvironment(Project model, bool IsAPI = false)
         {
-            string accountName = model.accountName;          
+            string accountName = model.accountName;
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + model.SelectedTemplate + "\t Organization Selected: " + accountName);
             string pat = model.accessToken;
             //define versions to be use
@@ -192,7 +187,7 @@ namespace VstsDemoBuilder.Services
             string deploymentGroup = System.Configuration.ConfigurationManager.AppSettings["DeloymentGroup"];
             string graphApiVersion = System.Configuration.ConfigurationManager.AppSettings["GraphApiVersion"];
             string graphAPIHost = System.Configuration.ConfigurationManager.AppSettings["GraphAPIHost"];
-
+            string gitHubBaseAddress = System.Configuration.ConfigurationManager.AppSettings["GitHubBaseAddress"];
 
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
@@ -220,26 +215,39 @@ namespace VstsDemoBuilder.Services
                 IssueWI objIssue = new IssueWI();
                 objIssue.CreateReportWI(patBase64, "1.0", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
             }
+
+            Configuration _gitHubConfig = new Configuration() { _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken, _mediaType = "application/json", _scheme = "Bearer" };
+
+            if (model.GitHubFork && model.GitHubToken != null)
+            {
+                GitHubImportRepo gitHubImport = new GitHubImportRepo(_gitHubConfig);
+                HttpResponseMessage userResponse = gitHubImport.GetUserDetail();
+                GitHubUserDetail userDetail = new GitHubUserDetail();
+                if (userResponse.IsSuccessStatusCode)
+                {
+                    userDetail = JsonConvert.DeserializeObject<GitHubUserDetail>(userResponse.Content.ReadAsStringAsync().Result);
+                    _gitHubConfig.userName = userDetail.login;
+                }
+            }
             //configuration setup
             string _credentials = model.accessToken;
             Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
             Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
             Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
 
-            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
             Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-
 
             string projTemplateFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
@@ -608,14 +616,51 @@ namespace VstsDemoBuilder.Services
                 }
             }
 
+            // Fork Repo
+
+            if (model.GitHubFork)
+            {
+                List<string> listRepoFiles = new List<string>();
+                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ForkRepo");
+                if (Directory.Exists(repoFilePath))
+                {
+                    Directory.GetFiles(repoFilePath).ToList().ForEach(i => listRepoFiles.Add(i));
+                    foreach (var repofile in listRepoFiles)
+                    {
+                        string readRepoFile = model.ReadJsonFile(repofile);
+                        if (!string.IsNullOrEmpty(readRepoFile))
+                        {
+                            ForkRepos.Fork forkRepos = new ForkRepos.Fork();
+                            forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
+                            if (forkRepos.repositories.Count > 0)
+                            {
+                                foreach (var repo in forkRepos.repositories)
+                                {
+                                    GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
+                                    GitHubUserDetail userDetail = new GitHubUserDetail();
+                                    GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
+                                    //HttpResponseMessage listForks = user.ListForks(repo.fullName);
+                                    HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
+                                    if (forkResponse.IsSuccessStatusCode)
+                                    {
+                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", repo.fullName, _gitHubConfig.userName));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
             //import source code from GitHub
 
             List<string> listImportSourceCodeJsonPaths = new List<string>();
             string importSourceCodePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode");
             //templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
-            if (System.IO.Directory.Exists(importSourceCodePath))
+            if (Directory.Exists(importSourceCodePath))
             {
-                System.IO.Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
+                Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
             }
             foreach (string importSourceCode in listImportSourceCodeJsonPaths)
             {
@@ -638,9 +683,9 @@ namespace VstsDemoBuilder.Services
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests");
             //templatesFolder + model.SelectedTemplate + @"\PullRequests";
-            if (System.IO.Directory.Exists(pullRequestFolder))
+            if (Directory.Exists(pullRequestFolder))
             {
-                System.IO.Directory.GetFiles(pullRequestFolder).ToList().ForEach(i => listPullRequestJsonPaths.Add(i));
+                Directory.GetFiles(pullRequestFolder).ToList().ForEach(i => listPullRequestJsonPaths.Add(i));
             }
             foreach (string pullReq in listPullRequestJsonPaths)
             {
@@ -1364,6 +1409,10 @@ namespace VstsDemoBuilder.Services
             try
             {
                 string[] repositoryDetail = new string[2];
+                if (model.GitHubFork)
+                {
+
+                }
                 if (System.IO.File.Exists(sourceCodeJSON))
                 {
                     Repository objRepository = new Repository(_repo);
@@ -1398,7 +1447,6 @@ namespace VstsDemoBuilder.Services
                     {
                         AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.LastFailureMessage + Environment.NewLine);
                     }
-
                 }
 
             }
