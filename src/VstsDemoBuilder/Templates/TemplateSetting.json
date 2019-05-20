@@ -333,6 +333,14 @@
           "Name": "bikesharing360",
           "TemplateFolder": "bikesharing360",
           "Description": "BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence."
+        },
+        {
+          "Name": "DevOps Dojo – White Belt",
+          "Key": "836ce6eb-8f20-4096-9186-b7ff0946c9c9",
+          "ShortName": "DoJoWhiteBeltGold",
+          "TemplateFolder": "DoJoWhiteBeltGold",
+          "Image": "/Templates/TemplateImages/devopsdojo.png",
+          "Description": "A DevOps dōjō a space where cross-functional feature teams practice agile, continuous, collaborative & automation principles of DevOps to find the best path to deliver software from idea to production with quality. More details: <a href='https://servicescode.visualstudio.com/DevOps-Dojo/_wiki/wikis/1Microsoft%20DevOps%20Dojo?wikiVersion=GBmaster&pageId=701&pagePath=%2FOverview' target='_blank'>1Microsoft – DevOps Dojo</a>"
         }
       ]
     }

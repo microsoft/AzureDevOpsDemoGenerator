@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Azure DevOps Demo Generator | Azure DevOps Demo Generator</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Azure DevOps Demo Generator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Azure DevOps Demo Generator" />
+<meta property="og:description" content="Azure DevOps Demo Generator" />
+<link rel="canonical" href="http://localhost:4000/About-Azure-DevOps-Demo-Generator/Known-Issues-and-FAQ/" />
+<meta property="og:url" content="http://localhost:4000/About-Azure-DevOps-Demo-Generator/Known-Issues-and-FAQ/" />
+<meta property="og:site_name" content="Azure DevOps Demo Generator" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/About-Azure-DevOps-Demo-Generator/Known-Issues-and-FAQ/","headline":"Azure DevOps Demo Generator","description":"Azure DevOps Demo Generator","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=71de869d35c4585adaf0b064bf89fd3929f3aa6a">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <p>[[<em>TOC</em>]]</p>
+
+<h1 id="known-issues">Known Issues:</h1>
+
+<h2 id="issue-error-while-creating-release-definition"><strong>Issue:</strong> Error while creating release definition:</h2>
+<p>Tasks with versions ‘ARM Outputs:4.*’ are not valid for deploy job ‘Agent job’ in stage Stage 1</p>
+
+<p><strong>Cause:</strong> This is usually caused by one of the third-party extensions not enabled or installed in your Azure DevOps org. Usually installation of extensions are quick but sometimes, it  can take a few minutes (or even hours!) for an extension to be available to use, after it is installed in the marketplace.</p>
+
+<p><strong>Workaround:</strong> You can try waiting for a few minutes and confirm whether the extension is available to use, and then run the generator again.</p>
+
+<hr />
+<h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+
+<h2 id="q-is-the-generator-open-source-can-i-get-access-to-the-code">Q: Is the Generator open-source? Can I get access to the code?</h2>
+
+<p>Azure DevOps Generator is not open-sourced yet. While we plan to make this open source, it is being evaluated by the product and legal teams</p>
+
+<hr />
+
+<h2 id="q-how-can-i-build-my-own-template">Q: How can I build my own template?</h2>
+
+<p>Yes, you can take a snapshot of your project and turn into a template and use it for provisioning future projects using the <strong>Extractor</strong> - See <a href="/About-Azure-DevOps-Demo-Generator/Build-your-own-template">Build-your-own-template</a></p>
+
+<hr />
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>

@@ -1,0 +1,155 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 26300,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2019-05-14T14:55:17.14Z",
+        "System.CreatedBy": "Aakanksha . <aak@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:24:08.797Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Checkin in Booking Management ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">As a user,&nbsp;</span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">I can check in so I can complete my registration in booking management system</span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">The existing app does not do anything when Check In button is clicked as the feature is not yet implemented. The newly implemented feature should be able to update the customer details that are editable and also update the Room type which comes as dropdown back into the database. Once the update of associated booking is complet, success message saying &quot;Customer details are updated successfully!&quot; should pop-up and redirect to default home page.</span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><br></span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">If there is any error, during customer details update on registration screen, user should be redirected to Error Screen describing proper error message with details should appear saying &quot;Oops... Some error occurred! Please try again later.&quot;</span></div><br></span></div>",
+        "System.AssignedTo": "Aakanksha . <aak@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": "<div><span><br><a href=\"#\" data-vss-mention=\"version:2.0,cb9715f6-e4a0-6958-99d4-f54dba591bb5\">@Aakanksha .</a> this is the Application Business User Story, not the student user story, so I made changes in description.&nbsp; I should move it under Booking App Epic.</span></div>"
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26301",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26308",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26300"
+    },
+    {
+      "id": 26299,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2019-05-14T14:18:51.92Z",
+        "System.CreatedBy": "Swathi G <swathg@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:28:08.417Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Printing Coupon for Discount",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgba(255, 255, 255, 1);\">As a student, I should be able to implement Print Coupon feature<br></span></span></div><div><span><span style=\"display:inline !important;background-color:rgba(255, 255, 255, 1);\"><br></span></span></div><div><span><span style=\"display:inline !important;background-color:rgba(255, 255, 255, 1);\">This use story will include a feature to print coupons post QR Code generation on the Generate Coupons screen.</span><br></span></div>",
+        "System.AssignedTo": "Swathi G <swathg@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": "<div><span>sorry should be <a href=\"#\" data-vss-mention=\"version:2.0,d3e8ce72-5a35-689e-b035-29cd59698d84\">@Swathi G</a>&nbsp;</span></div>"
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26307",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26299"
+    },
+    {
+      "id": 22788,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo\\Sprint 1",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Removed",
+        "System.Reason": "Removed from the backlog",
+        "System.CreatedDate": "2019-05-01T17:25:24.533Z",
+        "System.CreatedBy": "Ron Vincent <rovin@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:14:02.76Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Cultural Documentation",
+        "Microsoft.VSTS.Scheduling.Effort": 7.0,
+        "System.Description": "<div>Write overview document that describes the many different ways to can change behavior.&nbsp;</div>",
+        "System.AssignedTo": "Ron Vincent <rovin@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/24273",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/22789",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/5f64706a-c618-4444-8fec-a037e2197618%2Fefafe663-30fa-4087-9895-1f48198f8437%2Ff9362717135f8c9c8002b95634f86baa0157a103",
+          "attributes": {
+            "authorizedDate": "2019-05-02T15:46:47.137Z",
+            "id": "4498760",
+            "resourceCreatedDate": "2019-05-02T15:46:47.137Z",
+            "resourceModifiedDate": "2019-05-02T15:46:47.137Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/22788"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

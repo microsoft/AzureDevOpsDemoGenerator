@@ -387,6 +387,7 @@
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
     <Content Include="Templates\TemplateImages\CodeFile.png" />
     <Content Include="Templates\TemplateImages\ContosAir.png" />
+    <Content Include="Templates\TemplateImages\devopsdojo.png" />
     <Content Include="Templates\TemplateImages\Docker.png" />
     <Content Include="Templates\TemplateImages\Dynatrace.png" />
     <Content Include="Templates\TemplateImages\GitHub.png" />
@@ -1089,6 +1090,36 @@
     <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Task.json" />
     <Content Include="Templates\PartsUnlimited-YAML\WorkItems\Test Case.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\BuildDefinitions\Bookings-CI.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\BuildDefinitions\Bookings-Nightly.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\BuildDefinitions\Coupons-CI.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\BuildDefinitions\Coupons-Nightly.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Extensions.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ImportSourceCode\DevOps-Dojo-Booking.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ImportSourceCode\DevOps-Dojo-Coupons.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ImportSourceCode\DevOps-Dojo-Setup.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ImportSourceCode\DevOps-Dojo.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Iterations.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ProjectSettings.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ProjectTemplate.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ReleaseDefinitions\Bookings-CD manual.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ReleaseDefinitions\Bookings-CD.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ReleaseDefinitions\Coupon-CD.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ServiceEndpoints\DevOps-Dojo-Booking-code.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ServiceEndpoints\DevOps-Dojo-code.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ServiceEndpoints\DevOps-Dojo-Coupons-code.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ServiceEndpoints\DevOps-Dojo-Setup-code.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\ServiceEndpoints\ES-INT-DOJO-DEV-DOJOWB-Conn.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\TeamArea.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Teams\DevOps-Dojo Team\BoardColumns.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Teams\DevOps-Dojo Team\BoardRows.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Teams\DevOps-Dojo Team\CardFields.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Teams\DevOps-Dojo Team\CardStyles.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Teams\DevOps-Dojo Team\TeamSetting.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\Teams\Teams.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Epic.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Product Backlog Item.json" />
+    <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Task.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

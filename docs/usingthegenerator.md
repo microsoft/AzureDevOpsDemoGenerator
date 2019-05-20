@@ -1,3 +1,7 @@
+---
+title: Using the Demo Generator
+permalink: using.html
+---
 
 # Using the Azure DevOps Demo Generator
 ------

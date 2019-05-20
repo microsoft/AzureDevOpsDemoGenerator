@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Here is the details on how to call an API to create project using powershell | Azure DevOps Demo Generator</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Here is the details on how to call an API to create project using powershell" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Azure DevOps Demo Generator" />
+<meta property="og:description" content="Azure DevOps Demo Generator" />
+<link rel="canonical" href="http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%252D-Call-API-with-powershell/" />
+<meta property="og:url" content="http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%252D-Call-API-with-powershell/" />
+<meta property="og:site_name" content="Azure DevOps Demo Generator" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%252D-Call-API-with-powershell/","headline":"Here is the details on how to call an API to create project using powershell","description":"Azure DevOps Demo Generator","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=71de869d35c4585adaf0b064bf89fd3929f3aa6a">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h2 id="here-is-the-details-on-how-to-call-an-api-to-create-project-using-powershell">Here is the details on how to call an API to create project using powershell</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$pat = "_PAT_"
+$encodedPat = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$pat"))
+
+$body = @"
+{
+    "accessToken": "_PAT_",
+    "organizationName": "_ORG_",
+    "templateName": "_TEMPLATENAME_",
+    "users": [{
+        "email":  "_EMAIL_",
+        "ProjectName":  "_PROJECTNAME_"
+    }]
+}
+"@
+
+Write-Host "Provisioning project ..." -ForegroundColor Blue -BackgroundColor Cyan
+$resp = Invoke-WebRequest -Uri "https://demogenapi.azurewebsites.net/api/environment/create" -Method "POST" -ContentType application/json -Body $body
+
+$returnCode = $resp.StatusCode
+$returnStatus = $resp.StatusDescription
+
+if ($returnCode -ne "202") {
+    Write-Host "Create project failed - $returnCode $returnStatus" -ForegroundColor White -BackgroundColor Red
+    break
+}
+Write-Host "Project queued ... awaiting completion ..." -ForegroundColor Blue -BackgroundColor Cyan
+
+$method = "GET"
+$listurl = "https://dev.azure.com/culater/_apis/projects?api-version=5.1-preview.4"
+$resp = Invoke-RestMethod -Uri $listurl -Method $method -Headers @{Authorization = "Basic $encodedPat"}
+
+#Wait till project is finished deploying
+while (1 -eq 1)
+{
+    $resp = Invoke-RestMethod -Uri $listurl -Method $method -Headers @{Authorization = "Basic $encodedPat"}
+
+    foreach ($project in $resp.value)
+    {
+        $projname = $project.name
+        $projStatus = $project.state
+        #Write-Host "Inspecting project $projname - $projStatus" -ForegroundColor Blue -BackgroundColor Cyan
+        if ($projname -eq "davesvab-ContosoShuttle1" -and $projStatus -eq "wellFormed")
+        {
+            break 
+        }
+        Start-Sleep -seconds 1
+    }
+
+    if ($projname -eq "davesvab-ContosoShuttle1" -and $projStatus -eq "wellFormed")
+    {
+        break 
+    }
+}
+Write-Host "Project provisioned successfully" -ForegroundColor Blue -BackgroundColor Cyan
+
+</code></pre></div></div>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
