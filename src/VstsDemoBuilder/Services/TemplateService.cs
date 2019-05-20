@@ -17,7 +17,6 @@ namespace VstsDemoBuilder.Services
     public class TemplateService :ITemplateService
     {
 
-
         public List<TemplateDetails> GetAllTemplates()
         {
             var templates = new TemplateSelection.Templates();
