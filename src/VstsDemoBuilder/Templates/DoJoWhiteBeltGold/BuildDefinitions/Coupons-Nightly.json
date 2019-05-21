@@ -203,7 +203,7 @@
         "properties": {},
         "name": "mavenPOMFile",
         "label": "Maven POM file",
-        "defaultValue": "",
+        "defaultValue": "pom.xml",
         "required": true,
         "type": "filePath",
         "helpMarkDown": ""
