@@ -39,7 +39,7 @@ namespace VstsDemoBuilder.Controllers
         private IProjectService projectService;
         private ITemplateService templateService;
         private IAccountService accountService;
-        public EnvironmentController(IProjectService _ProjectService,IAccountService _accountService,ITemplateService _templateService)
+        public EnvironmentController(IProjectService _ProjectService, IAccountService _accountService, ITemplateService _templateService)
         {
             projectService = _ProjectService;
             accountService = _accountService;
@@ -789,6 +789,19 @@ namespace VstsDemoBuilder.Controllers
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [AllowAnonymous]
+        public string CheckSession()
+        {
+            if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "")
+            {
+                return Session["GitHubToken"].ToString();
+            }
+            else
+            {
+                return string.Empty;
             }
         }
     }

@@ -13,3 +13,23 @@
         }
     });
 });
+
+function checkSession() {
+    $.ajax({
+        url: '../Environment/CheckSession',
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            if (res !== "") {
+                alert(res);
+                $('#ghkey').val(res);
+            }
+            else {
+                alert("Please authenticate github to fork repo");
+            }
+        },
+        error: function (er) {
+        }
+
+    });
+}
