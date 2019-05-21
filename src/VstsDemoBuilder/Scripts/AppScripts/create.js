@@ -383,6 +383,16 @@ $(document).ready(function (event) {
 
 });
 $('#btnSubmit').click(function () {
+
+
+
+    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
+    var forkGitHub = false;
+    if (gitHubFork === "on") {
+        forkGitHub = true;
+        checkSession();
+    }
+
     statusCount = 0;
     $("#txtALertContainer").hide();
     $('#status-messages').hide();
@@ -417,6 +427,7 @@ $('#btnSubmit').click(function () {
         $("#ddlTemplates_Error").removeClass("d-none").addClass("d-block");
         return false;
     }
+
     if (template === "Octopus") {
         var octopusURL = $('#txtOctopusURL').val();
         var octopusAPIkey = $('#txtAPIkey').val();
@@ -467,11 +478,7 @@ $('#btnSubmit').click(function () {
         }
     }
 
-    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
-    var forkGitHub = false;
-    if (gitHubFork === "on") {
-        forkGitHub = true;
-    }
+
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -1024,5 +1031,24 @@ function getGroups(grpSelected) {
 
             }
         }
+    });
+}
+
+function checkSession() {
+    $.ajax({
+        url: '../Environment/CheckSession',
+        type: "GET",
+        success: function (res) {
+            console.log(res);
+            if (res !== "")
+                alert(res);
+            else
+                alert("Please authenticate github to fork repo");
+            return;
+
+        },
+        error: function (er) {
+        }
+
     });
 }
