@@ -160,7 +160,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             //check for Extension installed or not from selected template in selected organization
                             if (projectService.CheckForInstalledExtensions(extensionJsonFile, model.accessToken, model.organizationName))
                             {
-                                if (model.IsExtensionRequired)
+                                if (model.InstallExtensions)
                                 {
                                     Project pmodel = new Project();
                                     pmodel.SelectedTemplate = model.templateName;
