@@ -864,6 +864,8 @@
     <Content Include="PreSetting\DemoExtensions.json" />
     <Content Include="assets\templategrouping\templateSelection.custom.min.css" />
     <Content Include="JSON\ErrorMessages.json" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-api - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />

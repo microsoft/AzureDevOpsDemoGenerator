@@ -42,7 +42,6 @@ namespace VstsDemoBuilder.Models
             public string ShortName { get; set; }
             public string Description { get; set; }
             public string[] Tags { get; set; }
-            public string TemplateFolder { get; set; }
         }
     }
 }

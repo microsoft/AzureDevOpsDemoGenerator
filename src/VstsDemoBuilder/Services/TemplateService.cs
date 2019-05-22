@@ -48,7 +48,7 @@ namespace VstsDemoBuilder.Services
                             tmp.ShortName = template.ShortName;
                             tmp.Tags = template.Tags;
                             tmp.Description = template.Description;
-                            tmp.TemplateFolder = template.TemplateFolder;
+                            //tmp.TemplateFolder = template.TemplateFolder;
                             TemplateDetails.Add(tmp);
                         }
                     }
@@ -101,7 +101,7 @@ namespace VstsDemoBuilder.Services
                                         template.ShortName = tmp.ShortName;
                                         template.Tags = tmp.Tags;
                                         template.Description = tmp.Description;
-                                        template.TemplateFolder = tmp.TemplateFolder;
+                                        //template.TemplateFolder = tmp.TemplateFolder;
                                         Selectedtemplates.Add(template);
                                         break;
                                     }
