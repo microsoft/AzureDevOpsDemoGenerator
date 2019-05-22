@@ -2,6 +2,7 @@
   "Groups": [
     "General",
     "DevOps Labs",
+    "MS Learn",
     "Private"
   ],
   "PrivateGroups": [
@@ -343,6 +344,17 @@
           "Description": "A DevOps dōjō a space where cross-functional feature teams practice agile, continuous, collaborative & automation principles of DevOps to find the best path to deliver software from idea to production with quality. More details: <a href='https://servicescode.visualstudio.com/DevOps-Dojo/_wiki/wikis/1Microsoft%20DevOps%20Dojo?wikiVersion=GBmaster&pageId=701&pagePath=%2FOverview' target='_blank'>1Microsoft – DevOps Dojo</a>"
         }
       ]
-    }
+    },
+    "Groups": "MS Learn",
+      "Template": [
+        {
+          "Key": "77738738",
+          "Name": "Create a build pipeline with Azure Pipelines",
+          "TemplateFolder": "mslearn1",
+          "ShortName": "mslearn1",
+          "Tags": [ "MSLearn", "Pipelines" ],
+          "Image": "",
+          "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+        }
   ]
 }
