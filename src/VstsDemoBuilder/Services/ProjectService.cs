@@ -227,6 +227,7 @@ namespace VstsDemoBuilder.Services
                 {
                     userDetail = JsonConvert.DeserializeObject<GitHubUserDetail>(userResponse.Content.ReadAsStringAsync().Result);
                     _gitHubConfig.userName = userDetail.login;
+                    model.GitHubUserName = userDetail.login;
                 }
             }
             //configuration setup
@@ -587,35 +588,6 @@ namespace VstsDemoBuilder.Services
             //Create Deployment Group
             //CreateDeploymentGroup(templatesFolder, model, _deploymentGroup);
 
-            //create service endpoint
-            List<string> listEndPointsJsonPath = new List<string>();
-            string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
-            //templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
-            if (System.IO.Directory.Exists(serviceEndPointsPath))
-            {
-                System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
-            }
-            CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
-            //create agent queues on demand
-            Queue queue = new Queue(_agentQueueVersion);
-            model.Environment.AgentQueues = queue.GetQueues();
-            if (settings.queues != null && settings.queues.Count > 0)
-            {
-                foreach (string aq in settings.queues)
-                {
-                    if (model.Environment.AgentQueues.ContainsKey(aq))
-                    {
-                        continue;
-                    }
-
-                    var id = queue.CreateQueue(aq);
-                    if (id > 0)
-                    {
-                        model.Environment.AgentQueues[aq] = id;
-                    }
-                }
-            }
-
             // Fork Repo
 
             if (model.GitHubFork)
@@ -645,14 +617,47 @@ namespace VstsDemoBuilder.Services
                                     {
                                         string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
                                         dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                        string name = fr.full_name;
-                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", name, _gitHubConfig.userName));
+                                        model.GitRepoName = fr.full_name;
+                                        model.GitRepoURL = fr.html_url;
+                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
                                     }
                                 }
                             }
                         }
                     }
 
+                }
+            }
+            //create service endpoint
+            List<string> listEndPointsJsonPath = new List<string>();
+            string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
+            if (model.GitHubFork == true && !string.IsNullOrEmpty(model.GitHubToken))
+            {
+                serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\GitHubEndpoint");
+            }
+            //templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
+            if (System.IO.Directory.Exists(serviceEndPointsPath))
+            {
+                System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
+            }
+            CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
+            //create agent queues on demand
+            Queue queue = new Queue(_agentQueueVersion);
+            model.Environment.AgentQueues = queue.GetQueues();
+            if (settings.queues != null && settings.queues.Count > 0)
+            {
+                foreach (string aq in settings.queues)
+                {
+                    if (model.Environment.AgentQueues.ContainsKey(aq))
+                    {
+                        continue;
+                    }
+
+                    var id = queue.CreateQueue(aq);
+                    if (id > 0)
+                    {
+                        model.Environment.AgentQueues[aq] = id;
+                    }
                 }
             }
 
@@ -867,6 +872,10 @@ namespace VstsDemoBuilder.Services
 
             //create build Definition
             string buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+            if (!string.IsNullOrEmpty(model.GitHubToken) && model.GitHubFork)
+            {
+                buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
+            }
             //templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
             model.BuildDefinitions = new List<BuildDef>();
             if (Directory.Exists(buildDefinitionsPath))
@@ -1562,6 +1571,7 @@ namespace VstsDemoBuilder.Services
                             jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password).Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword);
+                            jsonCreateService = jsonCreateService.Replace("$GitHubRepoURL$", model.GitRepoURL).Replace("$GitUserID$", model.GitHubUserName).Replace("$GitToken$", model.GitHubToken);
                         }
                         if (model.SelectedTemplate.ToLower() == "bikesharing360")
                         {
@@ -1711,12 +1721,13 @@ namespace VstsDemoBuilder.Services
                         {
                             string placeHolder = string.Format("${0}$", repository);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
+                            jsonBuildDefinition = jsonBuildDefinition.Replace("$GitHubRepoURL$", model.GitRepoURL).Replace("$GitHubRepoName$", model.GitRepoName);
                         }
 
                         //update endpoint ids
                         foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
                         {
-                            string placeHolder = string.Format("${0}$", endpoint);
+                            string placeHolder = string.Format("${0}$", endpoint);  
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
                         }
 
