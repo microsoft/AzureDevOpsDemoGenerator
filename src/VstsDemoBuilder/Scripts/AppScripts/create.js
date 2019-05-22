@@ -383,6 +383,16 @@ $(document).ready(function (event) {
 
 });
 $('#btnSubmit').click(function () {
+
+    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
+    var forkGitHub = false;
+    if (gitHubFork === "on") {
+        forkGitHub = true;
+        checkSession();
+        setTimeout(function () {
+        }, 2000);
+    }
+
     statusCount = 0;
     $("#txtALertContainer").hide();
     $('#status-messages').hide();
@@ -417,6 +427,7 @@ $('#btnSubmit').click(function () {
         $("#ddlTemplates_Error").removeClass("d-none").addClass("d-block");
         return false;
     }
+
     if (template === "Octopus") {
         var octopusURL = $('#txtOctopusURL').val();
         var octopusAPIkey = $('#txtAPIkey').val();
@@ -467,11 +478,7 @@ $('#btnSubmit').click(function () {
         }
     }
 
-    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
-    var forkGitHub = false;
-    if (gitHubFork === "on") {
-        forkGitHub = true;
-    }
+
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
