@@ -643,7 +643,10 @@ namespace VstsDemoBuilder.Services
                                     HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
                                     if (forkResponse.IsSuccessStatusCode)
                                     {
-                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", repo.fullName, _gitHubConfig.userName));
+                                        string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
+                                        dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
+                                        string name = fr.full_name;
+                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", name, _gitHubConfig.userName));
                                     }
                                 }
                             }

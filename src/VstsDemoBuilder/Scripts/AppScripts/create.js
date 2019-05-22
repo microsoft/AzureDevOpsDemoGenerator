@@ -384,13 +384,13 @@ $(document).ready(function (event) {
 });
 $('#btnSubmit').click(function () {
 
-
-
     var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
     var forkGitHub = false;
     if (gitHubFork === "on") {
         forkGitHub = true;
         checkSession();
+        setTimeout(function () {
+        }, 2000);
     }
 
     statusCount = 0;
@@ -1031,24 +1031,5 @@ function getGroups(grpSelected) {
 
             }
         }
-    });
-}
-
-function checkSession() {
-    $.ajax({
-        url: '../Environment/CheckSession',
-        type: "GET",
-        success: function (res) {
-            console.log(res);
-            if (res !== "")
-                alert(res);
-            else
-                alert("Please authenticate github to fork repo");
-            return;
-
-        },
-        error: function (er) {
-        }
-
     });
 }
