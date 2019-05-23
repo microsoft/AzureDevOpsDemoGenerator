@@ -1107,6 +1107,10 @@ namespace VstsDemoBuilder.Controllers
                     processType = "Scrum";
                     boardType = "Backlog%20items";
                 }
+                else if (processType == "Basic")
+                {
+                    boardType = "Issue";
+                }
                 else
                 {
                     boardType = "Stories";

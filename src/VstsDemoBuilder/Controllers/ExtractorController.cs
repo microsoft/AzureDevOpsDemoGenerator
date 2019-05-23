@@ -372,7 +372,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Work Items Details
         public Dictionary<string, int> GetWorkItemsCount(Configuration con)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan","Issue" };
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
             if (workItemtypes.Length > 0)
@@ -540,16 +540,29 @@ namespace VstsDemoBuilder.Controllers
                         System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
 
                         List<string> boardTypes = new List<string>();
-                        boardTypes.Add("Epics"); boardTypes.Add("Features");
-
                         if (processTemplate.ToLower() == "agile")
-                        { boardTypes.Add("Stories"); }
-                        else { boardTypes.Add("Backlog Items"); }
+                        {
+                            boardTypes.Add("Stories");
+                            boardTypes.Add("Epics");
+                            boardTypes.Add("Features");
+                        }
+                        else if (processTemplate.ToLower() == "basic")
+                        {
+                            boardTypes.Add("Epics");
+                            boardTypes.Add("Issues");
+                        }
+                        else
+                        {
+                            boardTypes.Add("Epics");
+                            boardTypes.Add("Features");
+                            boardTypes.Add("Backlog Items");
+                        }
 
                         foreach (var team in _team.value)
                         {
                             List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
                             List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
+                            List<BoardColumnResponseBasic.ColumnResponse> columnResponsesBasic = new List<BoardColumnResponseBasic.ColumnResponse>();
                             List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
 
                             ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
@@ -583,6 +596,13 @@ namespace VstsDemoBuilder.Controllers
                                         BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
                                         agileColumns.BoardName = boardType;
                                         columnResponsesAgile.Add(agileColumns);
+                                    }
+                                    else if (processTemplate.ToLower() == "basic")
+                                    {
+                                        string res = response.Content.ReadAsStringAsync().Result;
+                                        BoardColumnResponseBasic.ColumnResponse basicColumns = JsonConvert.DeserializeObject<BoardColumnResponseBasic.ColumnResponse>(res);
+                                        basicColumns.BoardName = boardType;
+                                        columnResponsesBasic.Add(basicColumns);
                                     }
                                     AddMessage(con.Id, "Board Columns");
                                     Thread.Sleep(2000);
@@ -658,17 +678,19 @@ namespace VstsDemoBuilder.Controllers
                                 }
                             }
                             //Export Team Setting for each team
-                            ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
-                            if (teamSetting.backlogVisibilities != null)
+                            if (processTemplate.ToLower() != "basic")
                             {
-                                listTeamSetting = teamSetting;
-                                AddMessage(con.Id, "Team Settings Definition");
+                                ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                                if (teamSetting.backlogVisibilities != null)
+                                {
+                                    listTeamSetting = teamSetting;
+                                    AddMessage(con.Id, "Team Settings Definition");
+                                }
+                                else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
+                                {
+                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
+                                }
                             }
-                            else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
-                            {
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
-                            }
-
                             if (columnResponsesAgile.Count > 0)
                             {
                                 System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
@@ -676,6 +698,10 @@ namespace VstsDemoBuilder.Controllers
                             if (columnResponsesScrum.Count > 0)
                             {
                                 System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            }
+                            if (columnResponsesBasic.Count > 0)
+                            {
+                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesBasic, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (boardRows.Count > 0)
                             {
@@ -769,6 +795,7 @@ namespace VstsDemoBuilder.Controllers
                     GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(con);
                     WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
                     string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
+                    workItemJson = workItemJson.Replace(con.Project, "$ProjectName$");
                     if (fetchedWorkItem.count > 0)
                     {
                         string item = WIT;
