@@ -2,7 +2,7 @@
   "Groups": [
     "General",
     "DevOps Labs",
-    "MS Learn",
+    "Microsoft Learn",
     "Private"
   ],
   "PrivateGroups": [
@@ -524,7 +524,7 @@
       ]
     },
     {
-      "Groups": "MS Learn",
+      "Groups": "Microsoft Learn",
       "Template": [
         {
           "Key": "77738738",
