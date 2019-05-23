@@ -1,9 +1,10 @@
 ﻿$(document).ready(function () {
+    var mywindown;
     $('#githubAuth').click(function () {
-        checkSession();
         var reqorigon = window.location.origin;
-        var mywindown = window.open(reqorigon + "/GitHub/GitOauth", "Azure DevOps Demo Generator", "width=500,height=500",
+        mywindown = window.open(reqorigon + "/GitHub/GitOauth", "Azure DevOps Demo Generator", "width=500,height=500",
             "width=300,height=400,scrollbars=yes");
+        checkSession(mywindown);
     });
     $('input[id="gitHubCheckbox"]').click(function () {
         if ($(this).prop("checked") === true) {
@@ -17,7 +18,7 @@
     });
 });
 
-function checkSession() {
+function checkSession(mywindown) {
     $.ajax({
         url: '../Environment/CheckSession',
         type: "GET",
