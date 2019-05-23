@@ -981,6 +981,10 @@ namespace VstsDemoBuilder.Controllers
                             {
                                 processTemplateId = Default.CMMI;
                             }
+                            else if (settings.type.ToLower() == TemplateType.Basic.ToString().ToLower())
+                            {
+                                processTemplateId = Default.BASIC;
+                            }
                         }
                     }
                 }

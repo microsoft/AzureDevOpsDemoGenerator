@@ -1,0 +1,14 @@
+[
+  {
+    "id": "83f13779-2223-4fe8-b260-8c572d1fb0f3",
+    "name": "Space Game - web Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "c83133b8-3373-4dba-bceb-1b37cbe68a77",
+    "name": "Web development",
+    "description": "The Tailspin web development team",
+    "isDefault": "false"
+  }
+]

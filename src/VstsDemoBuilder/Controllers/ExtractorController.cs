@@ -372,7 +372,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Work Items Details
         public Dictionary<string, int> GetWorkItemsCount(Configuration con)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan","Issue" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(con);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
             if (workItemtypes.Length > 0)
@@ -756,7 +756,7 @@ namespace VstsDemoBuilder.Controllers
         // Get Work items to write into file
         public void ExportWorkItems(Configuration con)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             if (!Directory.Exists(extractedTemplatePath + con.Project))
             {
                 Directory.CreateDirectory(extractedTemplatePath + con.Project);

@@ -152,6 +152,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                         sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                     }
                 }
+                else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
+                {
+                    for (int i = 1; i <= 1; i++)
+                    {
+                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                    }
+                }
                 else
                 {
                     for (int i = 1; i <= 3; i++)
