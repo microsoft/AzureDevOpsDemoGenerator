@@ -535,9 +535,81 @@
                         "MSLearn",
                         "Pipelines"
                     ],
-                    "Image": "",
+                    "Image": "/Templates/TemplateImages/mslearn/create-a-build-pipeline-azure-pipelines.png",
                     "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
-                }
+                },
+                {
+                    "Key": "77738739",
+                    "Name": "Implement a code workflow in your build pipeline using Git and GitHub",
+                    "TemplateFolder": "mslearn2",
+                    "ShortName": "mslearn1",
+                    "Tags": [
+                        "MSLearn",
+                        "Pipelines"
+                    ],
+                    "Image": "/Templates/TemplateImages/mslearn/host-your-own-build-server-in-your-build-pipeline.png",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+                },
+                {
+                    "Key": "77738740",
+                    "Name": "Run quality tests in your build pipeline",
+                    "TemplateFolder": "mslearn3",
+                    "ShortName": "mslearn1",
+                    "Tags": [
+                        "MSLearn",
+                        "Pipelines"
+                    ],
+                    "Image": "/Templates/TemplateImages/mslearn/implement-a-code-workflow-in-your-build-pipeline.png",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+                },
+                {
+                    "Key": "77738741",
+                    "Name": "Scan code for vulnerabilities in your build pipeline",
+                    "TemplateFolder": "mslearn4",
+                    "ShortName": "mslearn1",
+                    "Tags": [
+                        "MSLearn",
+                        "Pipelines"
+                    ],
+                    "Image": "/Templates/TemplateImages/mslearn/manage-dependencies-in-your-build-pipeline.png",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+                },
+                {
+                    "Key": "77738742",
+                    "Name": "Manage security and compliance in your build pipeline",
+                    "TemplateFolder": "mslearn5",
+                    "ShortName": "mslearn1",
+                    "Tags": [
+                        "MSLearn",
+                        "Pipelines"
+                    ],
+                    "Image": "/Templates/TemplateImages/mslearn/manage-security-and-compliance-in-your-build-pipeline.png",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+                },
+                {
+                    "Key": "77738743",
+                    "Name": "Manage dependencies in your build pipeline",
+                    "TemplateFolder": "mslearn6",
+                    "ShortName": "mslearn1",
+                    "Tags": [
+                        "MSLearn",
+                        "Pipelines"
+                    ],
+                    "Image": "/Templates/TemplateImages/mslearn/run-quality-tests-when-your-application-builds.png",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+                },
+                {
+                    "Key": "77738744",
+                    "Name": "Host your own build agent in Azure Pipelines",
+                    "TemplateFolder": "mslearn7",
+                    "ShortName": "mslearn1",
+                    "Tags": [
+                        "MSLearn",
+                        "Pipelines"
+                    ],
+                    "Image": "/Templates/TemplateImages/mslearn/scan-code-for-vulnerabilities-in-your-build-pipeline.png",
+                    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+                },
             ]
         }
     ]
