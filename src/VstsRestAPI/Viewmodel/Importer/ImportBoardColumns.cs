@@ -20,6 +20,8 @@ namespace VstsRestAPI.Viewmodel.Importer
             public string Bug { get; set; }
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
+            [JsonProperty(PropertyName = "Issue")]
+            public string Issue { get; set; }
         }
 
         public class Value
