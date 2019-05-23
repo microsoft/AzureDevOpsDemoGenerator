@@ -144,7 +144,7 @@ $(document).ready(function () {
                     $('#TemplateClass').empty().val(res.TypeClass);
                     $('#processTemplateLoader').addClass('d-none');
                     var p = res.value[4].value;
-                    if (p !== "Scrum" && p !== "Agile") {
+                    if (p !== "Scrum" && p !== "Agile" && p !== "Basic") {
                         $('#processTemplateLoader').addClass('d-none');
                         $("#projectSelect_Error").text("Note: Please select a project that uses the standard Scrum or Agile process template.");
                         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');

@@ -1127,6 +1127,20 @@
     <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Epic.json" />
     <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Task.json" />
+    <Content Include="Templates\Space Game - web\Iterations.json" />
+    <Content Include="Templates\Space Game - web\ProjectSettings.json" />
+    <Content Include="Templates\Space Game - web\ProjectTemplate.json" />
+    <Content Include="Templates\Space Game - web\TeamArea.json" />
+    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\BoardRows.json" />
+    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\CardFields.json" />
+    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\CardStyles.json" />
+    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\TeamSetting.json" />
+    <Content Include="Templates\Space Game - web\Teams\Teams.json" />
+    <Content Include="Templates\Space Game - web\Teams\Web development\BoardRows.json" />
+    <Content Include="Templates\Space Game - web\Teams\Web development\CardFields.json" />
+    <Content Include="Templates\Space Game - web\Teams\Web development\CardStyles.json" />
+    <Content Include="Templates\Space Game - web\Teams\Web development\TeamSetting.json" />
+    <Content Include="Templates\Space Game - web\WorkItems\Issue.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
