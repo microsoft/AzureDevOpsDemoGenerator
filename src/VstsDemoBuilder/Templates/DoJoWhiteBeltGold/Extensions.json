@@ -1,0 +1,84 @@
+{
+  "Extensions": [
+    {
+      "extensionName": "ARM Outputs",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
+      "publisherId": "keesschollaart",
+      "extensionId": "arm-outputs",
+      "publisherName": "Kees Schollaart",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Component Governance Build Task",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-buildtask' target='_blank'><b>Component Governance Build Task</b></a>",
+      "publisherId": "ms",
+      "extensionId": "vss-governance-buildtask",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-buildtask' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Microsoft Component Policies",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-compliance.microsoft-component-policies' target='_blank'><b>Microsoft Component Policies</b></a>",
+      "publisherId": "ms-compliance",
+      "extensionId": "microsoft-component-policies",
+      "publisherName": "Compliance Partners",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-compliance.microsoft-component-policies' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Component Governance",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-web' target='_blank'><b>Component Governance</b></a>",
+      "publisherId": "ms",
+      "extensionId": "vss-governance-web",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-web' target='_blank'>License Terms</a>"
+    },
+	{
+      "extensionName": "Secure DevOps Kit (AzSK) CICD Extensions for Azure",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=azsdktm.AzSDK-task' target='_blank'><b>Secure DevOps Kit (AzSK) CICD Extensions for Azure</b></a>",
+      "publisherId": "azsdktm",
+      "extensionId": "AzSDK-task",
+      "publisherName": "Microsoft DevLabs",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=azsdktm.AzSDK-task' target='_blank'>License Terms</a>"
+    },
+{
+      "extensionName": "Replace Tokens",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'><b>Replace Tokens</b></a>",
+      "publisherId": "qetza",
+      "extensionId": "replacetokens",
+      "publisherName": "Guillaume Rouchon",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Secure Development Tools",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=securedevelopmentteam.vss-secure-development-tools' target='_blank'><b>Secure Development Tools</b></a>",
+      "publisherId": "securedevelopmentteam",
+      "extensionId": "vss-secure-development-tools",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=securedevelopmentteam.vss-secure-development-tools' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "SonarCloud",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud' target='_blank'><b>SonarCloud</b></a>",
+      "publisherId": "SonarSource",
+      "extensionId": "sonarcloud",
+      "publisherName": "SonarSource",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "WhiteSource Bolt",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt' target='_blank'><b>WhiteSource Bolt</b></a>",
+      "publisherId": "whitesource",
+      "extensionId": "ws-bolt",
+      "publisherName": "WhiteSource",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Analytics",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-analytics' target='_blank'><b>Analytics</b></a>",
+      "publisherId": "ms",
+      "extensionId": "vss-analytics",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-analytics' target='_blank'>License Terms</a>"
+    }
+  ]
+}

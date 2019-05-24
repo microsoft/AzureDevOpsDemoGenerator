@@ -1,10 +1,7 @@
 {
-  "name": "WhiteSourceBolt",
-  "path": "\\",
-  "type": "build",
   "options": [
     {
-      "enabled": false,
+      "enabled": true,
       "definition": {
         "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
       },
@@ -19,22 +16,10 @@
         "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
       },
       "inputs": {
-        "workItemType": "722186",
+        "workItemType": "2193090",
         "assignToRequestor": "true",
         "additionalFields": "{}"
       }
-    }
-  ],
-  "triggers": [
-    {
-      "branchFilters": [
-        "+refs/heads/master"
-      ],
-      "pathFilters": [],
-      "batchChanges": false,
-      "maxConcurrentBuildsPerBranch": 1,
-      "pollingInterval": 0,
-      "triggerType": "continuousIntegration"
     }
   ],
   "variables": {
@@ -61,6 +46,8 @@
   ],
   "properties": {},
   "tags": [],
+  "_links": "{}",
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
   "jobAuthorizationScope": "projectCollection",
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
@@ -73,46 +60,20 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "npm install",
+            "displayName": "Maven pom.xml",
             "timeoutInMinutes": 0,
-            "refName": "Npm1",
-            "task": {
-              "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
-              "versionSpec": "1.*",
-              "definitionType": "task"
-            },
-            "inputs": {
-              "command": "install",
-              "workingDir": "",
-              "verbose": "false",
-              "customCommand": "",
-              "customRegistry": "useNpmrc",
-              "customFeed": "",
-              "customEndpoint": "",
-              "publishRegistry": "useExternalRegistry",
-              "publishFeed": "",
-              "publishEndpoint": ""
-            }
-          },
-          {
-            "environment": {},
-            "enabled": true,
-            "continueOnError": false,
-            "alwaysRun": false,
-            "displayName": "Maven",
-            "timeoutInMinutes": 0,
-            "refName": "Maven2",
+            "condition": "succeeded()",
             "task": {
               "id": "ac4ee482-65da-4485-a532-7b085873e532",
-              "versionSpec": "1.*",
+              "versionSpec": "3.*",
               "definitionType": "task"
             },
             "inputs": {
-              "mavenPOMFile": "pom.xml",
+              "mavenPOMFile": "$(Parameters.mavenPOMFile)",
               "goals": "package",
               "options": "",
               "publishJUnitResults": "true",
-              "testResultsFiles": "**/TEST-*.xml",
+              "testResultsFiles": "**/surefire-reports/TEST-*.xml",
               "testRunTitle": "",
               "codeCoverageTool": "None",
               "classFilter": "",
@@ -122,23 +83,14 @@
               "javaHomeSelection": "JDKVersion",
               "jdkVersion": "default",
               "jdkUserInputPath": "",
-              "jdkArchitecture": "x86",
+              "jdkArchitecture": "x64",
               "mavenVersionSelection": "Default",
               "mavenPath": "",
               "mavenSetM2Home": "false",
               "mavenOpts": "-Xmx1024m",
-              "mavenFeedAuthenticate": "true",
+              "mavenFeedAuthenticate": "false",
               "sqAnalysisEnabled": "false",
-              "sqConnectedServiceName": "",
-              "sqProjectName": "",
-              "sqProjectKey": "",
-              "sqProjectVersion": "",
-              "sqDbDetailsRequired": "false",
-              "sqDbUrl": "",
-              "sqDbUsername": "",
-              "sqDbPassword": "",
-              "sqAnalysisIncludeFullReport": "true",
-              "sqAnalysisBreakBuildIfQualityGateFailed": "false",
+              "sqMavenPluginVersionChoice": "latest",
               "checkstyleAnalysisEnabled": "false",
               "pmdAnalysisEnabled": "false",
               "findbugsAnalysisEnabled": "false"
@@ -148,38 +100,18 @@
             "environment": {},
             "enabled": true,
             "continueOnError": false,
-            "alwaysRun": false,
-            "displayName": "WhiteSource Bolt",
+            "alwaysRun": true,
+            "displayName": "Copy Files to: $(build.artifactstagingdirectory)",
             "timeoutInMinutes": 0,
-            "refName": "WhiteSourceBolt3",
-            "task": {
-              "id": "521d1e00-f5fb-4b73-a93b-b2fe88a9af91",
-              "versionSpec": "",
-              "definitionType": "task"
-            },
-            "inputs": {
-              "cwd": "WebGoat",
-              "advance": "false",
-              "exclude": "",
-              "extraFolders": ""
-            }
-          },
-          {
-            "environment": {},
-            "enabled": true,
-            "continueOnError": false,
-            "alwaysRun": false,
-            "displayName": "Copy Files",
-            "timeoutInMinutes": 0,
-            "refName": "CopyFiles4",
+            "condition": "succeededOrFailed()",
             "task": {
               "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
               "versionSpec": "2.*",
               "definitionType": "task"
             },
             "inputs": {
-              "SourceFolder": "$(build.sourcesdirectory)",
-              "Contents": "**/*.jar",
+              "SourceFolder": "$(system.defaultworkingdirectory)",
+              "Contents": "**/*.war\n**/*.json",
               "TargetFolder": "$(build.artifactstagingdirectory)",
               "CleanTargetFolder": "false",
               "OverWrite": "false",
@@ -190,10 +122,10 @@
             "environment": {},
             "enabled": true,
             "continueOnError": false,
-            "alwaysRun": false,
-            "displayName": "Publish Artifact",
+            "alwaysRun": true,
+            "displayName": "Publish Artifact: drop",
             "timeoutInMinutes": 0,
-            "refName": "PublishBuildArtifacts5",
+            "condition": "succeededOrFailed()",
             "task": {
               "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
               "versionSpec": "1.*",
@@ -203,24 +135,24 @@
               "PathtoPublish": "$(build.artifactstagingdirectory)",
               "ArtifactName": "drop",
               "ArtifactType": "Container",
-              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "TargetPath": "",
               "Parallel": "false",
               "ParallelCount": "8"
             }
           }
         ],
-        "name": "Phase 1",
-        "refName": "Phase_1",
+        "name": "Agent job 1",
+        "refName": "Job_1",
         "condition": "succeeded()",
         "target": {
           "executionOptions": {
             "type": 0
           },
           "allowScriptsAuthAccessOption": false,
-          "type": 1
+          "type": 1,
+          "queue": "{}"
         },
-        "jobAuthorizationScope": "projectCollection",
-        "jobCancelTimeoutInMinutes": 1
+        "jobAuthorizationScope": "projectCollection"
       }
     ],
     "type": 1
@@ -234,23 +166,54 @@
       "gitLfsSupport": "false",
       "skipSyncSource": "false",
       "checkoutNestedSubmodules": "false",
-      "fetchDepth": "0"
+      "fetchDepth": "0",
+      "connectedServiceId": ""
     },
-    "id": "$WebGoat$",
+    "id": "$DevOps-Dojo-Coupons$",
     "type": "TfsGit",
-    "name": "WSBolt",
+    "name": "DevOps-Dojo-Coupons",
+    "url": "",
     "defaultBranch": "refs/heads/master",
     "clean": "false",
     "checkoutSubmodules": false
   },
-  "processParameters": {},
+  "processParameters": {
+    "inputs": [
+      {
+        "aliases": [],
+        "options": {},
+        "properties": {},
+        "name": "mavenPOMFile",
+        "label": "Maven POM file",
+        "defaultValue": "pom.xml",
+        "required": true,
+        "type": "filePath",
+        "helpMarkDown": ""
+      }
+    ]
+  },
   "quality": "definition",
+  "authoredBy": "{}",
   "drafts": [],
   "queue": {
-    "name": "Hosted VS2017",
+    "_links": "{}",
+    "id": "",
+    "name": "Hosted Ubuntu 1604",
+    "url": "",
     "pool": {
-      "name": "Hosted VS2017",
+      "id": "",
+      "name": "Hosted Ubuntu 1604",
       "isHosted": true
     }
-  }
+  },
+  "id": "",
+  "name": "Coupons-CI",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 1,
+  "createdDate": "",
+  "project": "{}"
 }
