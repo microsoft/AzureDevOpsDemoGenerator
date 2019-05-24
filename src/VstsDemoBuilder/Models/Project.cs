@@ -195,6 +195,8 @@ namespace VstsDemoBuilder.Models
         public string templateName { get; set; }
         public string templatePath { get; set; }
         public string GithubToken { get; set; }
+        public string UserId { get; set; }
+        public string Password { get; set; }
         public bool InstallExtensions { get; set; }
         public IList<RequestedProject> users { get; set; }
     }
