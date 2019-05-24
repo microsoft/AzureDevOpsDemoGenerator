@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Web.Mvc;
 using VstsDemoBuilder.Models;
+using VstsDemoBuilder.ServiceInterfaces;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -13,6 +14,12 @@ namespace VstsDemoBuilder.Controllers
         private readonly AccessDetails accessDetails = new AccessDetails();
         private TemplateSelection.Templates templates = new TemplateSelection.Templates();
         private ILog logger = LogManager.GetLogger("ErrorLog");
+        private IProjectService projectService;
+
+        public AccountController(IProjectService _projectService)
+        {
+            projectService = _projectService;
+        }
 
         [HttpGet]
         [AllowAnonymous]

@@ -43,7 +43,12 @@ namespace VstsDemoBuilder.Models
         public string Message { get; set; }
         public string EnableExtractor { get; set; }
         public string tokenType { get; set; }
-
+        public string GitHubUserName { get; set; }
+        public string GitHubToken { get; set; }
+        public bool GitHubFork { get; set; }
+        public string GitRepoName { get; set; }
+        public string GitRepoURL { get; set; }
+        public string ForkGitHubRepo { get; set; }
     }
     public class EnvironmentValues
     {
@@ -150,7 +155,7 @@ namespace VstsDemoBuilder.Models
         }
         public class listExtension
         {
-           public List<ExtensionWithLink> Extensions { get; set; }
+            public List<ExtensionWithLink> Extensions { get; set; }
         }
     }
     public class TestSuite
@@ -178,23 +183,31 @@ namespace VstsDemoBuilder.Models
         }
     }
 
-    public class User
+    public class RequestedProject
     {
         public string email { get; set; }
-        public string alias { get; set; }
         public string ProjectName { get; set; }
         public string TrackId { get; set; }
-
         public string status { get; set; }
     }
 
-    public class BulkData
+    public class MultiProjects
     {
         public string id { get; set; }
         public string accessToken { get; set; }
         public string organizationName { get; set; }
         public string templateName { get; set; }
-        public IList<User> users { get; set; }
+        public string templatePath { get; set; }
+        public string GithubToken { get; set; }
+        public bool InstallExtensions { get; set; }
+        public IList<RequestedProject> users { get; set; }
+    }
+
+    public class ProjectResponse
+    {
+        public string templateName { get; set; }
+        public string templatePath { get; set; }
+        public IList<RequestedProject> users { get; set; }
     }
 
 

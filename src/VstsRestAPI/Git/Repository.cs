@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using VstsRestAPI.Viewmodel.Repository;
@@ -353,5 +354,6 @@ namespace VstsRestAPI.Git
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddCommentToThread" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
             }
         }
+
     }
 }
