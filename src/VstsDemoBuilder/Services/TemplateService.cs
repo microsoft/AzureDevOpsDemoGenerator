@@ -14,7 +14,7 @@ using static VstsDemoBuilder.Models.TemplateSelection;
 
 namespace VstsDemoBuilder.Services
 {
-    public class TemplateService :ITemplateService
+    public class TemplateService : ITemplateService
     {
 
         public List<TemplateDetails> GetAllTemplates()
@@ -38,12 +38,12 @@ namespace VstsDemoBuilder.Services
                     string templateSetting = model.ReadJsonFile(System.Web.Hosting.HostingEnvironment.MapPath("~") + @"\Templates\TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
 
-                    foreach(var templateList in templates.GroupwiseTemplates)
+                    foreach (var templateList in templates.GroupwiseTemplates)
                     {
-                        foreach(var template in templateList.Template)
+                        foreach (var template in templateList.Template)
                         {
                             TemplateDetails tmp = new TemplateDetails();
-                            
+
                             tmp.Name = template.Name;
                             tmp.ShortName = template.ShortName;
                             tmp.Tags = template.Tags;
@@ -84,7 +84,7 @@ namespace VstsDemoBuilder.Services
                 {
                     string templateSetting = model.ReadJsonFile(System.Web.Hosting.HostingEnvironment.MapPath("~") + @"\Templates\TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
-                 
+
                     foreach (var groupwiseTemplates in templates.GroupwiseTemplates)
                     {
                         foreach (var tmp in groupwiseTemplates.Template)
@@ -140,43 +140,48 @@ namespace VstsDemoBuilder.Services
         /// </summary>
         /// <param name="TemplateUrl"></param>
         /// <param name="ExtractedTemplate"></param>
-        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken)
+        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "")
         {
             bool isvalidFile = false;
             try
             {
+                Uri uri = new Uri(TemplateUrl);
                 string fileName = Path.GetFileName(TemplateUrl);
                 string extension = Path.GetExtension(fileName);
 
                 string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
                 var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
 
-                var githubToken = GithubToken;
-                var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
-                
-                using (var client = new System.Net.Http.HttpClient())
+                //Downloading template from source of type github
+                if (uri.Host == "github.com")
                 {
-                    var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
-                    credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
-                    var contents = client.GetByteArrayAsync(url).Result;
-                    System.IO.File.WriteAllBytes(path, contents);
+                    var githubToken = GithubToken;
+                    var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
+
+                    using (var client = new System.Net.Http.HttpClient())
+                    {
+                        var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
+                        credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
+                        var contents = client.GetByteArrayAsync(url).Result;
+                        System.IO.File.WriteAllBytes(path, contents);
+                    }
+                }
+                //Downloading file from other source type (ftp or https)
+                else
+                {
+                    WebClient webClient = new WebClient();
+                    if (UserID != null && Password != null)
+                        webClient.Credentials = new NetworkCredential(UserID, Password);
+                    webClient.DownloadFile(TemplateUrl, path);
+                    webClient.Dispose();
                 }
 
-                if (File.Exists(path))
-                {
-                    var Extractedpath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName;
-                    System.IO.Compression.ZipFile.ExtractToDirectory(path, Extractedpath);
-
-                    isvalidFile = checkTemplateDirectory(Extractedpath);
-                    if (isvalidFile)
-                        ProjectService.PrivateTemplatePath = FindPrivateTemplatePath(Extractedpath);
-                }
+                isvalidFile = ExtractZipFile(path, templateName);
             }
             catch (Exception ex)
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-
             }
             finally
             {
@@ -185,6 +190,29 @@ namespace VstsDemoBuilder.Services
                     File.Delete(zippath);
             }
             return isvalidFile;
+        }
+
+        public bool ExtractZipFile(string path, string templateName)
+        {
+            bool isExtracted = false;
+            try
+            {
+                if (File.Exists(path))
+                {
+                    var Extractedpath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName;
+                    System.IO.Compression.ZipFile.ExtractToDirectory(path, Extractedpath);
+
+                    isExtracted = checkTemplateDirectory(Extractedpath);
+                    if (isExtracted)
+                        ProjectService.PrivateTemplatePath = FindPrivateTemplatePath(Extractedpath);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            return isExtracted;
+
         }
 
         /// <summary>
