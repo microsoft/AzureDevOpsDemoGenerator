@@ -25,7 +25,6 @@ function checkSession() {
         async: false,
         cache: false,
         success: function (res) {
-            console.log("calling " + res);
             if (res !== "") {
                 $('#hdnGToken').val(res);
                 $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
@@ -50,7 +49,6 @@ function checkTokenInSession() {
         async: false,
         cache: false,
         success: function (res) {
-            console.log("calling " + res);
             if (res !== "") {
                 $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);

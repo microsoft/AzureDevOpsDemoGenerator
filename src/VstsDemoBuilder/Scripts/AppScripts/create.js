@@ -380,6 +380,14 @@ $(document).ready(function (event) {
     $('#ddlTemplates').val(defaultTemplate);
 });
 $('#btnSubmit').click(function () {
+    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
+    var forkGitHub = false;
+    if (gitHubFork === "on") {
+        forkGitHub = true;
+        checkSession();
+        setTimeout(function () {
+        }, 2000);
+    }
     statusCount = 0;
     $("#txtALertContainer").hide();
     $('#status-messages').hide();
