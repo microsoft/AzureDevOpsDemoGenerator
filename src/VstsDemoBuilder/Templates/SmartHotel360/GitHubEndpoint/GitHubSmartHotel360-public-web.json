@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "GitHubSmartHotel360-web",
+  "type": "github",
+  "url": "$GitHubRepoURL$",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$GitUserID$",
+      "password": "$GitToken$"
+    }
+  },
+  "isReady": true
+}

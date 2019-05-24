@@ -1,14 +1,6 @@
 ﻿{
   "Extensions": [
     {
-      "extensionName": "Analytics",
-      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-analytics' target='_blank'><b>Analytics</b></a>",
-      "publisherId": "ms",
-      "extensionId": "vss-analytics",
-      "publisherName": "microsoft",
-      "License": ""
-    },
-    {
       "extensionName": "ARM Outputs",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
       "publisherId": "keesschollaart",
