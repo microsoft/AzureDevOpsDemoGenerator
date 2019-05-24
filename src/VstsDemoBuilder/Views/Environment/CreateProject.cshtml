@@ -57,8 +57,9 @@
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
     }
+    <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
-    <input type="hidden" id="hdnMessage" />
+    <input type="hidden" id="hdnGToken" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -211,7 +212,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="form-group row" id="">
+                <div class="form-group row d-none" id="gitHubCheckboxDiv">
                     <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">
                     </label>
                     <div class="col-lg-6  mb-3 mt-1">
@@ -233,7 +234,7 @@
                             Authorize
                         </button>
                     </div>
-                   
+
                 </div>
                 <div id="projectParameters" style="display:none">
                 </div>

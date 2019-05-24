@@ -47,6 +47,7 @@ var AccountNameForLink;
 var templateFolder = "";
 var publicTemplateMsg = "";
 var privateTemplateMsg = "";
+var gitFork = "";
 
 $(document).ready(function (event) {
     uniqueId = ID();
@@ -77,12 +78,6 @@ $(document).ready(function (event) {
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
 
-        //if (checkExtensionForSelectedTemplate === "SonarQube") {
-        //    $("#SoanrQubeDiv").show();
-        //}
-        //else {
-        //    $("#SoanrQubeDiv").hide();
-        //}
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
             return false;
         }
@@ -96,12 +91,27 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
+        $('input[id="gitHubCheckbox"]').prop('checked', false);
+        $('#gitHubAuthDiv').addClass('d-none');
+
+        $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
 
         var infoMsg = $(".description.descSelected").data('message');
+        //If the template enabled for GitHub fork
+        var forkGitHub = $(".template.selected").data('gitfork');
+        if (forkGitHub === true) {
+            $('#gitHubCheckboxDiv').removeClass('d-none');
+            $('input[id="gitHubCheckbox"]').prop('checked', false);
+        }
+        else {
+            $('#gitHubCheckboxDiv').addClass('d-none');
+            $('#gitHubAuthDiv').addClass('d-none');
+        }
+        //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
             $('#InfoMessage').html('');
             $('#InfoMessage').removeClass('d-block').addClass('d-none');
@@ -139,12 +149,6 @@ $(document).ready(function (event) {
         if (TemplateName === "MyShuttle-Java") {
             $("#NotificationModal").modal('show');
         }
-        //if (TemplateName === "SonarQube") {
-        //    $("#SoanrQubeDiv").show();
-        //}
-        //else {
-        //    $("#SoanrQubeDiv").hide();
-        //}
         var Url = 'GetTemplate/';
         $.get(Url, { "TemplateName": TemplateName }, function (data) {
             if (data !== "") {
@@ -207,7 +211,6 @@ $(document).ready(function (event) {
         else {
             GetRequiredExtension();
         }
-
     });
 
     $("body").on("click", "#EmailPopup", function () {
@@ -263,12 +266,6 @@ $(document).ready(function (event) {
     if (selectedTemplate === "MyShuttle-Java") {
         $("#NotificationModal").modal('show');
     }
-    //if (selectedTemplate === "SonarQube") {
-    //    $("#SoanrQubeDiv").show();
-    //}
-    //else {
-    //    $("#SoanrQubeDiv").hide();
-    //}
 
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
@@ -380,19 +377,8 @@ $(document).ready(function (event) {
     AppendMessage();
     var defaultTemplate = $('#selectedTemplate').val();
     $('#ddlTemplates').val(defaultTemplate);
-
 });
 $('#btnSubmit').click(function () {
-
-    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
-    var forkGitHub = false;
-    if (gitHubFork === "on") {
-        forkGitHub = true;
-        checkSession();
-        setTimeout(function () {
-        }, 2000);
-    }
-
     statusCount = 0;
     $("#txtALertContainer").hide();
     $('#status-messages').hide();
@@ -477,7 +463,6 @@ $('#btnSubmit').click(function () {
             return false;
         }
     }
-
 
     $('#status-messages').html('');
     $('#status-messages').show();
@@ -780,10 +765,15 @@ function GetRequiredExtension() {
                 if (ThirdParty !== "thirdparty") {
                     ThirdParty = "";
                 }
-            } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = ""; }
+            } else {
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
+                checkGitAuth();
+            }
         }
-        else { $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = ""; }
-
+        else {
+            $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
+            checkGitAuth();
+        }
     });
 }
 
@@ -834,7 +824,6 @@ function createTemplates() {
 
 
 $("#txtProjectName").keyup(function () {
-
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
     if (projectName !== "") {
@@ -845,7 +834,7 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
             $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
-            return false;
+            //return false;
         }
         else {
             validateExtensionCheckbox();
@@ -856,17 +845,20 @@ $("#txtProjectName").keyup(function () {
             $("#txtProjectName_Error").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").focus();
             $('#btnSubmit').removeClass('btn-primary').attr('disabled', 'disabled');
-            return false;
+            //return false;
         }
         else {
             validateExtensionCheckbox();
-            return false;
+            //return false;
         }
+        checkGitAuth();
     }
     else {
         $("#txtProjectName_Error").text("");
         $("#txtProjectName_Error").removeClass("d-block").addClass("d-none");
         $('#btnSubmit').addClass('btn-primary').attr('disabled', false);
+
+        checkGitAuth();
         return false;
     }
 });
@@ -918,6 +910,8 @@ function validateExtensionCheckbox() {
     else {
         $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
     }
+
+    checkGitAuth();
 }
 
 function GetTemplates(selectedTemplate) {
@@ -946,9 +940,8 @@ function openImportPopUp() {
 }
 
 function AppendMessage() {
-
     privateTemplateMsg = $('#infoMessageTxt').val();
-
+    gitFork = $('#forkGitRepo').val();
     if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
         $('#InfoMessage').html(privateTemplateMsg);
         $('#InfoMessage').removeClass('d-none').addClass('d-block');
@@ -956,6 +949,14 @@ function AppendMessage() {
     else {
         $('#InfoMessage').html('');
         $('#InfoMessage').removeClass('d-block').addClass('d-none');
+    }
+    if (gitFork === "True") {
+        $('#gitHubCheckboxDiv').removeClass('d-none');
+        $('input[id="gitHubCheckbox"]').prop('checked', false);
+    }
+    else {
+        $('#gitHubCheckboxDiv').addClass('d-none');
+        $('#gitHubAuthDiv').addClass('d-none');
     }
 }
 
@@ -985,7 +986,7 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1005,7 +1006,7 @@ function getGroups(grpSelected) {
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1032,4 +1033,12 @@ function getGroups(grpSelected) {
             }
         }
     });
+}
+
+function checkGitAuth() {
+    var gToken = $('#hdnGToken').val();
+    var isChecked = $('input[id="gitHubCheckbox"]').prop('checked');
+    if (gToken === "" && isChecked === true) {
+        $('#btnSubmit').removeClass('btn-primary').prop('disabled', true);
+    }
 }
