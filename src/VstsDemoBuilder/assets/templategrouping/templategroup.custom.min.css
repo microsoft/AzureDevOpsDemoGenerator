@@ -1793,6 +1793,7 @@ select {
         .table-responsive-sm > .table-bordered {
             border: 0;
         }
+
 }
 
 @media (max-width: 767.98px) {
@@ -1835,63 +1836,39 @@ select {
         .table-responsive-md > .table-bordered {
             border: 0;
         }
-
     .template-dialog-title {
         padding: 12px 0px 0px 0px;
     }
-
-    .template_tab {
-        display: block;
-        max-width: 100%;
+    .template_tab{ display:block;
+                   max-width:100%;
     }
-
         .template_tab li {
             padding: 1px 9px;
         }
-
             .nav-item.active_white a, .template_tab li a {
                 font-size: 9px;
             }
-
-    .navbar-brand img {
-        width: 20px !important;
+    .navbar-brand img{ width:20px !important;}
+    .navbar-brand-text{    font-size: 13px !important;}
+    .jumbotron{ background-size:auto;}
+    .template-invoke.pl-3{ padding-left:0 !important; 
+                           width:100%;
+                           padding-top:10px;
     }
-
-    .navbar-brand-text {
-        font-size: 13px !important;
-    }
-
-    .jumbotron {
-        background-size: auto;
-    }
-
-    .template-invoke.pl-3 {
-        padding-left: 0 !important;
-        width: 100%;
-        padding-top: 10px;
-    }
-
-    .vstsScroll.about_template {
-        margin-left: 0;
-        margin-top: 10px
-    }
-
+   .vstsScroll.about_template{ margin-left:0; margin-top:10px}
     .template-invoke.pl-3 button {
         width: 100% !important
     }
-
     .templte_create {
         bottom: auto;
         right: 13px;
         top: 46px;
     }
+ 
 }
 
 @media (max-width: 991.98px) {
-    .template-invoke.imp_btn.pl-3 {
-        padding-left: 0 !important;
-    }
-
+    .template-invoke.imp_btn.pl-3{ padding-left:0 !important;}
     .table-responsive-lg {
         display: block;
         width: 100%;
@@ -8744,7 +8721,6 @@ html, body {
 .custom-radio button {
     letter-spacing: 2px;
 }
-
 .chbox {
     display: inline-block;
     position: relative;
@@ -8756,7 +8732,7 @@ html, body {
     -ms-user-select: none;
     width: 30px !important;
     user-select: none;
-    margin: 4px 0 10px 9px;
+    margin:4px 0 10px 9px;
 }
 
     /* Hide the browser's default checkbox */
@@ -8814,7 +8790,6 @@ html, body {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
 .check_cnt {
     font-weight: 500;
     color: #505050;
@@ -9560,15 +9535,14 @@ img#projectloader {
     padding: .8rem !important;
 }
 
-@media (max-width:576px) {
-    .chbox {
-        margin: 4px 0 12px 0;
-        width: 19px !important;
-    }
-
-    .template-body .template {
-        max-width: 100%;
-    }
+    @media (max-width:576px) {
+        .chbox {
+            margin: 4px 0 12px 0;
+            width: 19px !important;
+        }
+        .template-body .template {
+            max-width: 100%;
+        }
 
     /* .template-holder {
         top: 50%;

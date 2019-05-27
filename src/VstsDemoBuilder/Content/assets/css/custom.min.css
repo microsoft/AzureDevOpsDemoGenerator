@@ -1714,9 +1714,13 @@ pre {
         .table-responsive-md > .table-bordered {
             border: 0
         }
-}
+ 
+    }
 
 @media (max-width: 991.98px) {
+    .jumbotron {
+        background: url(../images/bg_tab.jpg), #106ebe !important;
+    }
     .table-responsive-lg {
         display: block;
         width: 100%;
