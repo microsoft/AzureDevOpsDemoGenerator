@@ -575,7 +575,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 Session["PAT"] = model.accessToken;
                 Session["AccountName"] = model.accountName;
-                model.GitHubToken = Session["GitHubToken"].ToString();
+                if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "")
+                {
+                    model.GitHubToken = Session["GitHubToken"].ToString();
+                }
                 projectService.AddMessage(model.id, string.Empty);
                 projectService.AddMessage(model.id.ErrorId(), string.Empty);
 
