@@ -308,6 +308,7 @@
     <Content Include="Content\assets\images\2.png" />
     <Content Include="Content\assets\images\bg-old.jpg" />
     <Content Include="Content\assets\images\bg.jpg" />
+    <Content Include="Content\assets\images\github-icon.png" />
     <Content Include="Content\assets\images\bg_tab.jpg" />
     <Content Include="Content\assets\images\github-icon.png" />
     <Content Include="Content\assets\images\mob_bg.png" />
