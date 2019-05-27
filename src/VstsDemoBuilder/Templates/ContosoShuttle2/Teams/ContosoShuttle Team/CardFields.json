@@ -1,0 +1,95 @@
+[
+  {
+    "cards": {
+      "Epic": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Epics"
+  },
+  {
+    "cards": {
+      "Feature": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Features"
+  },
+  {
+    "cards": {
+      "Bug": [
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "System.Tags",
+          "displayType": "CORE"
+        },
+        {
+          "showEmptyFields": "false"
+        }
+      ],
+      "Product Backlog Item": [
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort",
+          "displayType": "CORE"
+        },
+        {
+          "fieldIdentifier": "System.Tags",
+          "displayType": "CORE"
+        },
+        {
+          "showEmptyFields": "false"
+        }
+      ]
+    },
+    "BoardName": "Backlog Items"
+  }
+]

@@ -38,7 +38,7 @@ namespace VstsRestAPI.ProjectsAndTeams
         /// Get List of project
         /// </summary>
         /// <returns></returns>
-        public ProjectsResponse.ProjectResult GetListOfProjects()
+        public HttpResponseMessage GetListOfProjects()
         {
             try
             {
@@ -48,20 +48,14 @@ namespace VstsRestAPI.ProjectsAndTeams
                     // connect to the REST endpoint            
                     HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
                     // check to see if we have a succesfull respond
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // set the viewmodel from the content in the response
-                        viewModel = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
-                    }
-                    viewModel.HttpStatusCode = response.StatusCode;
-                    return viewModel;
+                    return response;
                 }
             }
             catch (Exception ex)
             {
                 logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
-            return new ProjectsResponse.ProjectResult();
+            return new HttpResponseMessage(HttpStatusCode.InternalServerError);
         }
 
         /// <summary>
@@ -241,6 +235,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             }
             return new ProjectProperties.Properties();
         }
+
 
     }
 }

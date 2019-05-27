@@ -284,6 +284,7 @@ namespace VstsRestAPI.ProjectsAndTeams
             try
             {
                 object objJSON = new { id = IterationId };
+
                 using (var client = GetHttpClient())
                 {
                     var jsonContent = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
@@ -298,7 +299,6 @@ namespace VstsRestAPI.ProjectsAndTeams
                     }
                     else
                     {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetIterationsForTeam \t" + response.Content.ReadAsStringAsync().Result);
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         this.LastFailureMessage = error;

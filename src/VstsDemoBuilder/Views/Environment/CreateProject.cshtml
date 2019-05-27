@@ -57,7 +57,9 @@
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
     }
+    <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
+    <input type="hidden" id="hdnGToken" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-2 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -231,7 +233,24 @@
 
                             </div>
                         </div>
-
+                        <div class="form-group mb-1" id="">
+                            <div class="col-lg-12 mt-1">
+                                <div class="row">
+                                    <div class="align-items-center ml-0 input_box  d-none" id="gitHubCheckboxDiv">
+                                        <label class="check_cnt"> Do you want to fork repository to your account? </label>
+                                        <label class="chbox">
+                                            <input type="checkbox"  id="gitHubCheckbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-invoke imp_btn pl-3" style="padding-left:0px;" id="gitHubAuthDiv">
+                                        <button class="btn btn-primary importgit rd-4" id="githubAuth">
+                                            Authorize
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group" id="">
                             <div class="col-lg-12 mt-1">
 
@@ -255,15 +274,6 @@
                         </div>
 
                         <!-- PROJECT PARAMETERS -->
-                        <div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
-                            <label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">SonarQube URL:</label>
-                            <div class="col-lg-8">
-                                <input type="text" class="form-control project-parameters rmverror" id="txtSonarServerDNSName" placeholder="SonarQube URL">
-                                <div class="alert alert-danger d-none" role="alert" id="txtSonarServerDNSName_Error">
-
-                                </div>
-                            </div>
-                        </div>
                         <div id="projectParameters" style="display:none">
                         </div>
                         <!-- PROJECT PARAMETERS -->
@@ -340,6 +350,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/Scripts/AppScripts/create.js"></script>
     <script src="~/Scripts/AppScripts/FileUpload.js"></script>
+    <script src="~/Scripts/AppScripts/GitHubAuth.js"></script>
     <script src="~/Scripts/tooltip.js"></script>
 </body>
 </html>
