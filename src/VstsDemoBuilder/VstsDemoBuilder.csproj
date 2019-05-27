@@ -938,9 +938,6 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
-    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP1.pubxml" />
-    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />
     <Content Include="Templates\MyShuttle\ReleaseDefinitions\MyShuttleDockerRelease.json" />
     <Content Include="Templates\AKS\TaskfromTemplate.json" />
@@ -1188,9 +1185,11 @@
     <Content Include="Views\GitHub\Redirect.cshtml" />
     <Content Include="Views\GitHub\Status.cshtml" />
     <Content Include="Templates\SmartHotel360\ForkRepo\GitRepository.json" />
-    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy1.pubxml" />
     <Content Include="Templates\SmartHotel360\GitHubEndpoint\GitHubSmartHotel360-public-web.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitionGitHub\SmartHotelPetcheckerWeb.json" />
+    <Content Include="Views\GitHub\Issue.cshtml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

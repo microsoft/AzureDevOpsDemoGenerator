@@ -5,14 +5,16 @@ using System.Net.Http;
 using System.Web.Mvc;
 using VstsDemoBuilder.Models;
 using System.Web;
+using log4net;
 
 namespace VstsDemoBuilder.Controllers
 {
     public class GitHubController : Controller
     {
-
+        public static ILog logger = LogManager.GetLogger("ErrorLog");
         private GitHubAccessDetails accessDetails = new GitHubAccessDetails();
         public static string state = Guid.NewGuid().ToString().Split('-')[0];
+        public static string failureMessage = string.Empty;
         [AllowAnonymous]
         public ActionResult GitOauth()
         {
@@ -46,7 +48,11 @@ namespace VstsDemoBuilder.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("index", "home");
+                    if (!string.IsNullOrEmpty(failureMessage))
+                    {
+                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t While Redirecting :" + failureMessage);
+                    }
+                    return RedirectToAction("Issue");
                 }
             }
             return RedirectToAction("index", "home");
@@ -81,6 +87,7 @@ namespace VstsDemoBuilder.Controllers
                     }
                     else
                     {
+                        failureMessage = response.Content.ReadAsStringAsync().Result;
                         return new GitHubAccessDetails();
                     }
                 }
@@ -92,6 +99,11 @@ namespace VstsDemoBuilder.Controllers
         }
         [AllowAnonymous]
         public ActionResult Status()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public ActionResult Issue()
         {
             return View();
         }
