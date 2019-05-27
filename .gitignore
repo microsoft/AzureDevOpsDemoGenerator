@@ -147,3 +147,5 @@ UpgradeLog.htm
 .vs/
 .cr/
 /src/VstsDemoBuilder/Logs
+/src/VstsDemoBuilder/Log
+/src/VstsDemoBuilder/Properties/PublishProfiles
