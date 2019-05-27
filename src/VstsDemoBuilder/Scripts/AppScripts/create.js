@@ -91,7 +91,7 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
-        $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled',false);
+        $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
         $('#gitHubAuthDiv').addClass('d-none');
         $('#githubAuth').addClass('btn-primary').prop('disabled', false);
 
@@ -380,13 +380,10 @@ $(document).ready(function (event) {
     $('#ddlTemplates').val(defaultTemplate);
 });
 $('#btnSubmit').click(function () {
-    var gitHubFork = $('input[id="gitHubCheckbox"]:checked').val();
     var forkGitHub = false;
-    if (gitHubFork === "on") {
+    var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked')
+    if (gitHubFork === true) {
         forkGitHub = true;
-        checkSession();
-        setTimeout(function () {
-        }, 2000);
     }
     statusCount = 0;
     $("#txtALertContainer").hide();
