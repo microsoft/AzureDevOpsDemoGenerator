@@ -9511,4 +9511,93 @@ img#projectloader {
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+
+
+.chbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 30px !important;
+    user-select: none;
+    margin: 4px 0 10px 9px;
+}
+
+    /* Hide the browser's default checkbox */
+    .chbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #0078d7;
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.chbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.chbox input:checked ~ .checkmark {
+    background-color: #0078d7;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.chbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.chbox .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.check_cnt {
+    font-weight: 500;
+    color: #505050;
+    display: inline-block;
+    width: auto !important;
+    vertical-align: -webkit-baseline-middle;
+    margin-bottom: 0;
+    padding: 6px 0;
+}
+.importgit {
+    background-image: url('../../Content/assets/images/github-icon.png') !important;
+    background-repeat: no-repeat;
+    background-position: 92% 50%;
+    background-size: 23px;
+    text-align: left;
+}
+
 /*# sourceMappingURL=custom.min.css.map */
