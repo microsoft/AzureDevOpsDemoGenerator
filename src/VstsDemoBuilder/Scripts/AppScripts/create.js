@@ -74,7 +74,7 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-        //$('#templateselection').removeClass("btn-primary").prop("disabled", true);
+        $('#templateselection').removeClass("btn-primary").prop("disabled", true);
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
@@ -314,13 +314,17 @@ $(document).ready(function (event) {
                             ThirdParty = "";
                         }
 
-                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+                    } else {
+                        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                        $("#templateselection").prop("disabled", false).addClass('btn-primary');
+                    }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
                     $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    $("#templateselection").prop("disabled", false).addClass('btn-primary');
                 }
 
             });
@@ -773,12 +777,17 @@ function GetRequiredExtension() {
                 }
             } else {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                $("#templateselection").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
+                $("#templateselection").prop("disabled", false).addClass('btn-primary');
+                microsoft = ""; ThirdParty = "";
                 checkGitAuth();
             }
         }
         else {
-            $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
+            $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html('');
+            $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none");
+            $("#btnSubmit").addClass('btn-primary').prop("disabled", false);
+            $("#templateselection").prop("disabled", false).addClass('btn-primary');
+            $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
             checkGitAuth();
         }
     });
