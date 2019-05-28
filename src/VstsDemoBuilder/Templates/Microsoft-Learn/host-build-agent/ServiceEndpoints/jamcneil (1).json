@@ -1,0 +1,15 @@
+{
+  "data": {},
+  "name": "jamcneil (1)",
+  "type": "GitHub",
+  "url": "https://github.com",
+  "authorization": {
+    "parameters": {
+      "AccessToken": "AccessToken"
+    },
+    "scheme": "InstallationToken"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
