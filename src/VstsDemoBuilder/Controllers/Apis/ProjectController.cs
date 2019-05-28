@@ -63,7 +63,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     HttpResponseMessage response = projectService.GetprojectList(model.organizationName, model.accessToken);
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.AccountMessages.InvalidAccountName);
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.AccountMessages.CheckaccountDetails);
                     }
                     else
                     {
