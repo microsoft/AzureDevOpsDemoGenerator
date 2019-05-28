@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     $('body').on('click', '#btnUpload', function () {
-
+        ga('send', 'event', 'upload', 'clicked');
         $("#fileError").remove();
         disableButton();
         // Checking whether FormData is available in browser

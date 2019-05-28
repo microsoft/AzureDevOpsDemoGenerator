@@ -74,7 +74,7 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-        $('#templateselection').removeClass("btn-primary").prop("disabled", true);
+        //$('#templateselection').removeClass("btn-primary").prop("disabled", true);
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
@@ -772,7 +772,8 @@ function GetRequiredExtension() {
                     ThirdParty = "";
                 }
             } else {
-                $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                $("#templateselection").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
                 checkGitAuth();
             }
         }

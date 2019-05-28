@@ -16,7 +16,7 @@ namespace VstsDemoBuilder.ServiceInterfaces
 
         string GetTemplate(string TemplateName);
 
-        bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken);
+        bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "");
 
         bool checkTemplateDirectory(string dir);
 

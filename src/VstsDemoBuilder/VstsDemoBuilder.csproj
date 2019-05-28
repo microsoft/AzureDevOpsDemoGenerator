@@ -888,6 +888,10 @@
     <Content Include="PreSetting\DemoExtensions.json" />
     <Content Include="assets\templategrouping\templateSelection.custom.min.css" />
     <Content Include="JSON\ErrorMessages.json" />
+    <Content Include="ExtractedZipFile\abc.json" />
+    <Content Include="PrivateTemplates\abc.json" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-api - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-api - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-extractor - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azuredevopsdemogenerator-staging - FTP.pubxml" />
@@ -1221,9 +1225,7 @@
     <Folder Include="assets\script\" />
     <Folder Include="Content\assets\script\" />
     <Folder Include="ExtractedTemplate\" />
-    <Folder Include="ExtractedZipFile\" />
     <Folder Include="Log\" />
-    <Folder Include="PrivateTemplates\" />
     <Folder Include="TemplateBackUp\" />
     <Folder Include="Templates\GitHub\Dashboard\Charts\" />
     <Folder Include="Templates\GitHub\Dashboard\Widgets\" />
