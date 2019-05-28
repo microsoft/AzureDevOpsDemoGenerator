@@ -529,19 +529,19 @@
         {
           "Key": "77738738",
           "Name": "Create a build pipeline with Azure Pipelines",
-          "TemplateFolder": "create-build-pipeline",
+          "TemplateFolder": "Microsoft-Learn/create-build-pipeline",
           "ShortName": "create-build-pipeline",
           "Tags": [
             "Microsoft Learn",
             "Azure Pipelines"
           ],
           "Image": "/Templates/TemplateImages/mslearn/create-a-build-pipeline-azure-pipelines.png",
-          "Description": "Set up a continuous integration (CI) pipeline that automates the process of building your application. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": "Set up a continuous integration (CI) pipeline that automates the process of building your application. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
           "Key": "77738739",
           "Name": "Implement a code workflow in your build pipeline using Git and GitHub",
-          "TemplateFolder": "implement-code-workflow",
+          "TemplateFolder": "Microsoft-Learn/implement-code-workflow",
           "ShortName": "implement-code-workflow",
           "Tags": [
             "Microsoft Learn",
@@ -550,24 +550,24 @@
             "GitHub"
           ],
           "Image": "/Templates/TemplateImages/mslearn/host-your-own-build-server-in-your-build-pipeline.png",
-          "Description": "Collaborate with others and merge only the highest quality code. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": "Collaborate with others and merge only the highest quality code. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
           "Key": "77738740",
           "Name": "Run quality tests in your build pipeline",
-          "TemplateFolder": "run-quality-tests",
+          "TemplateFolder": "Microsoft-Learn/run-quality-tests",
           "ShortName": "run-quality-tests",
           "Tags": [
             "Microsoft Learn",
             "Azure Pipelines"
           ],
           "Image": "/Templates/TemplateImages/mslearn/implement-a-code-workflow-in-your-build-pipeline.png",
-          "Description": "Set up automated testing in your pipeline to improve code quality. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": "Set up automated testing in your pipeline to improve code quality. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
           "Key": "77738741",
           "Name": "Scan code for vulnerabilities in Azure Pipelines",
-          "TemplateFolder": "scan-for-vulnerabilities",
+          "TemplateFolder": "Microsoft-Learn/scan-for-vulnerabilities",
           "ShortName": "scan-for-vulnerabilities",
           "Tags": [
             "Microsoft Learn",
@@ -575,12 +575,12 @@
             "SonarCloud"
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-dependencies-in-your-build-pipeline.png",
-          "Description": " Scan for potential vulnerabilities in your source code during the build process. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": " Scan for potential vulnerabilities in your source code during the build process. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
           "Key": "77738742",
           "Name": "Scan open source components for vulnerabilities and license ratings in Azure Pipelines",
-          "TemplateFolder": "scan-open-source",
+          "TemplateFolder": "Microsoft-Learn/scan-open-source",
           "ShortName": "scan-open-source",
           "Tags": [
             "Microsoft Learn",
@@ -588,12 +588,12 @@
             "WhiteSource Bolt"
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-security-and-compliance-in-your-build-pipeline.png",
-          "Description": "Scan open-source components for security vulnerabilities and assess their license ratings when your application builds. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": "Scan open-source components for security vulnerabilities and assess their license ratings when your application builds. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
           "Key": "77738743",
           "Name": "Manage build dependencies with Azure Artifacts",
-          "TemplateFolder": "manage-build-dependencies",
+          "TemplateFolder": "Microsoft-Learn/manage-build-dependencies",
           "ShortName": "manage-build-dependencies",
           "Tags": [
             "Microsoft Learn",
@@ -601,19 +601,19 @@
             "Azure Artifacts"
           ],
           "Image": "/Templates/TemplateImages/mslearn/run-quality-tests-when-your-application-builds.png",
-          "Description": "Manage your application and the packages it uses across build pipelines. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": "Manage your application and the packages it uses across build pipelines. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
           "Key": "77738744",
           "Name": "Host your own build agent in Azure Pipelines",
-          "TemplateFolder": "host-build-agent",
+          "TemplateFolder": "Microsoft-Learn/host-build-agent",
           "ShortName": "host-build-agent",
           "Tags": [
             "Microsoft Learn",
             "Azure Pipelines"
           ],
           "Image": "/Templates/TemplateImages/mslearn/scan-code-for-vulnerabilities-in-your-build-pipeline.png",
-          "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
+          "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         }
       ]
     }
