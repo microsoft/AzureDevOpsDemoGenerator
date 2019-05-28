@@ -4,7 +4,8 @@
       "accountMessages":
         {
           "InvalidAccountName": "Provide a valid Organization name",
-          "InvalidAccessToken": "Token of type Basic must be provided"
+          "InvalidAccessToken": "Token of type Basic must be provided",
+          "CheckaccountDetails" :  "Please check your account details(Organization Name or Access Token)"
         },
       "projectMessages": {
 

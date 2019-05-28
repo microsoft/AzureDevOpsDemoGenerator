@@ -22,6 +22,8 @@ namespace VstsDemoBuilder.Models
     {
         public string InvalidAccountName { get; set; }
         public string InvalidAccessToken { get; set; }
+
+        public string CheckaccountDetails { get; set; }
     }
 
     public class ProjectMessages
