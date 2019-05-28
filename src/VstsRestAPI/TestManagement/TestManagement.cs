@@ -1,4 +1,5 @@
 ﻿using log4net;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
@@ -25,7 +26,7 @@ namespace VstsRestAPI.TestManagement
 
                 using (var client = GetHttpClient())
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    StringContent jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                     var method = new HttpMethod("POST");
 
                     var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/test/plans?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
@@ -68,8 +69,8 @@ namespace VstsRestAPI.TestManagement
                 parentTestSuite = parentTestSuite + 1;
                 using (var client = GetHttpClient())
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    StringContent jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpMethod method = new HttpMethod("POST");
 
                     var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + parentTestSuite + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                     var response = client.SendAsync(request).Result;
@@ -77,8 +78,12 @@ namespace VstsRestAPI.TestManagement
                     if (response.IsSuccessStatusCode)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
-                        testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                        dynamic dynamicString = JsonConvert.DeserializeObject<dynamic>(result);
+                        if(dynamicString.count > 0)
+                        {
+                            testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
+                            testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                        }                        
                         return testSuite;
                     }
                     else
@@ -111,7 +116,7 @@ namespace VstsRestAPI.TestManagement
                 object json = new { };
                 using (var client = GetHttpClient())
                 {
-                    var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
+                    StringContent jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
                     var method = new HttpMethod("POST");
 
                     var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + testSuite + "/testcases/" + testCases + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };

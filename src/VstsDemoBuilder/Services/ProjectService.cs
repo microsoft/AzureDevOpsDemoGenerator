@@ -1667,7 +1667,7 @@ namespace VstsDemoBuilder.Services
                                     string[] testSuiteResponse = new string[2];
                                     string testSuiteJSON = JsonConvert.SerializeObject(TS);
                                     testSuiteResponse = objTest.CreatTestSuite(testSuiteJSON, testPlanResponse[0], model.ProjectName);
-                                    if (testSuiteResponse != null)
+                                    if (testSuiteResponse[0] != null && testSuiteResponse[1] != null)
                                     {
                                         string testCasesToAdd = string.Empty;
                                         foreach (string id in TS.TestCases)
@@ -1727,7 +1727,7 @@ namespace VstsDemoBuilder.Services
                         //update endpoint ids
                         foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
                         {
-                            string placeHolder = string.Format("${0}$", endpoint);  
+                            string placeHolder = string.Format("${0}$", endpoint);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
                         }
 
