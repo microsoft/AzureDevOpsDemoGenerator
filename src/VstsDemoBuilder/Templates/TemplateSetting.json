@@ -529,7 +529,7 @@
         {
           "Key": "77738738",
           "Name": "Create a build pipeline with Azure Pipelines",
-          "TemplateFolder": "Microsoft-Learn/create-build-pipeline",
+          "TemplateFolder": "create-build-pipeline",
           "ShortName": "create-build-pipeline",
           "Tags": [
             "Microsoft Learn",
@@ -541,7 +541,7 @@
         {
           "Key": "77738739",
           "Name": "Implement a code workflow in your build pipeline using Git and GitHub",
-          "TemplateFolder": "Microsoft-Learn/implement-code-workflow",
+          "TemplateFolder": "implement-code-workflow",
           "ShortName": "implement-code-workflow",
           "Tags": [
             "Microsoft Learn",
@@ -555,7 +555,7 @@
         {
           "Key": "77738740",
           "Name": "Run quality tests in your build pipeline",
-          "TemplateFolder": "Microsoft-Learn/run-quality-tests",
+          "TemplateFolder": "run-quality-tests",
           "ShortName": "run-quality-tests",
           "Tags": [
             "Microsoft Learn",
@@ -567,7 +567,7 @@
         {
           "Key": "77738741",
           "Name": "Scan code for vulnerabilities in Azure Pipelines",
-          "TemplateFolder": "Microsoft-Learn/scan-for-vulnerabilities",
+          "TemplateFolder": "scan-for-vulnerabilities",
           "ShortName": "scan-for-vulnerabilities",
           "Tags": [
             "Microsoft Learn",
@@ -580,7 +580,7 @@
         {
           "Key": "77738742",
           "Name": "Scan open source components for vulnerabilities and license ratings in Azure Pipelines",
-          "TemplateFolder": "Microsoft-Learn/scan-open-source",
+          "TemplateFolder": "scan-open-source",
           "ShortName": "scan-open-source",
           "Tags": [
             "Microsoft Learn",
@@ -593,7 +593,7 @@
         {
           "Key": "77738743",
           "Name": "Manage build dependencies with Azure Artifacts",
-          "TemplateFolder": "Microsoft-Learn/manage-build-dependencies",
+          "TemplateFolder": "manage-build-dependencies",
           "ShortName": "manage-build-dependencies",
           "Tags": [
             "Microsoft Learn",
@@ -606,7 +606,7 @@
         {
           "Key": "77738744",
           "Name": "Host your own build agent in Azure Pipelines",
-          "TemplateFolder": "Microsoft-Learn/host-build-agent",
+          "TemplateFolder": "host-build-agent",
           "ShortName": "host-build-agent",
           "Tags": [
             "Microsoft Learn",
