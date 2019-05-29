@@ -626,10 +626,6 @@ namespace VstsDemoBuilder.Services
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
             string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
-            //if (model.GitHubFork == true && !string.IsNullOrEmpty(model.GitHubToken))
-            //{
-            //    serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\GitHubEndpoint");
-            //}
             //templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
             if (System.IO.Directory.Exists(serviceEndPointsPath))
             {
@@ -1562,19 +1558,20 @@ namespace VstsDemoBuilder.Services
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
                         }
-                        else if (fileName.Contains("GitHub_"))
+                        // File contains "GitHub_" means - it contains GitHub URL, user wanted to fork repo to his github
+                        else if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
                         {
                             jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             JObject jsonToCreate = JObject.Parse(jsonCreateService);
                             string type = jsonToCreate["type"].ToString();
-                            // Endpoint type is Git(External Git) and user wanted to fork repo to his github account, so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
-                            if (type.ToLower() == "git" && model.GitHubFork && model.GitHubToken != null)
+                            // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
+                            if (type.ToLower() == "git")
                             {
                                 jsonToCreate["type"] = "GitHub"; //Changing endpoint type
                                 jsonToCreate["url"] = model.GitRepoURL; // updating endpoint URL with User forked repo URL
                             }
-                            // Endpoint type is GitHub(Public) and user wanted to fork repo to his github account, so we should point the build def to his repo by updating the URL
-                            else if (type.ToLower() == "github" && model.GitHubFork && model.GitHubToken != null)
+                            // Endpoint type is GitHub(Public), so we should point the build def to his repo by updating the URL
+                            else if (type.ToLower() == "github")
                             {
                                 jsonToCreate["url"] = model.GitRepoURL; // Updating repo URL to user repo
                             }
@@ -1585,12 +1582,13 @@ namespace VstsDemoBuilder.Services
                             jsonCreateService = jsonToCreate.ToString();
                             jsonCreateService = jsonCreateService.Replace("$GitUserName$", model.GitHubUserName).Replace("$GitUserPassword$", model.GitHubToken);
                         }
+                        // user doesn't want to fork repo
                         else
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
-                            jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
-                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password).Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword);
-                            jsonCreateService = jsonCreateService.Replace("$GitHubRepoURL$", model.GitRepoURL).Replace("$GitUserID$", model.GitHubUserName).Replace("$GitToken$", model.GitHubToken);
+                            jsonCreateService = model.ReadJsonFile(jsonCreateService); // read the JSON
+                            jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName); // Replaces the Place holder with project name if exists
+                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password) // Replaces user name and password with app setting username and password if require[to import soure code to Azure Repos]
+                                .Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword); // Replaces GitUser name and passwords with Demo gen username and password [Just to point build def to respective repo]
                         }
                         if (model.SelectedTemplate.ToLower() == "bikesharing360")
                         {
@@ -1686,7 +1684,7 @@ namespace VstsDemoBuilder.Services
                                     string[] testSuiteResponse = new string[2];
                                     string testSuiteJSON = JsonConvert.SerializeObject(TS);
                                     testSuiteResponse = objTest.CreatTestSuite(testSuiteJSON, testPlanResponse[0], model.ProjectName);
-                                    if (testSuiteResponse != null)
+                                    if (testSuiteResponse[0] != null && testSuiteResponse[1] != null)
                                     {
                                         string testCasesToAdd = string.Empty;
                                         foreach (string id in TS.TestCases)
@@ -1746,7 +1744,7 @@ namespace VstsDemoBuilder.Services
                         //update endpoint ids
                         foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
                         {
-                            string placeHolder = string.Format("${0}$", endpoint);  
+                            string placeHolder = string.Format("${0}$", endpoint);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
                         }
 
@@ -2241,29 +2239,6 @@ namespace VstsDemoBuilder.Services
                         }
                     }
                 }
-                //Update WorkInProgress ,UnfinishedWork Queries,Test Cases,Blocked Tasks queries.
-                string updateQueryString = string.Empty;
-
-                updateQueryString = "SELECT [System.Id],[System.Title],[Microsoft.VSTS.Common.BacklogPriority],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork],[Microsoft.VSTS.CMMI.Blocked],[System.WorkItemType] FROM workitemLinks WHERE ([Source].[System.TeamProject] = @project AND [Source].[System.IterationPath] UNDER '$Project$\\Sprint 2' AND ([Source].[System.WorkItemType] IN GROUP 'Microsoft.RequirementCategory' OR [Source].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' ) AND [Source].[System.State] <> 'Removed' AND [Source].[System.State] <> 'Done') AND ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward')  AND ([Target].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [Target].[System.State] <> 'Done' AND [Target].[System.State] <> 'Removed') ORDER BY [Microsoft.VSTS.Common.BacklogPriority],[Microsoft.VSTS.Scheduling.Effort], [Microsoft.VSTS.Scheduling.RemainingWork],[System.Id] MODE (Recursive)";
-                dynamic queryObject = new System.Dynamic.ExpandoObject();
-                updateQueryString = updateQueryString.Replace("$Project$", model.Environment.ProjectName);
-                queryObject.wiql = updateQueryString;
-                bool isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Unfinished Work", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
-                updateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER '$Project$\\Sprint 2' AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [System.State] = 'In Progress' ORDER BY [System.AssignedTo],[Microsoft.VSTS.Common.BacklogPriority],[System.Id]";
-                updateQueryString = updateQueryString.Replace("$Project$", model.Environment.ProjectName);
-                queryObject.wiql = updateQueryString;
-                isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Work in Progress", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
-
-                updateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.State],[Microsoft.VSTS.Common.Priority] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER @currentIteration AND [System.WorkItemType] IN GROUP 'Microsoft.TestCaseCategory' ORDER BY [Microsoft.VSTS.Common.Priority],[System.Id] ";
-                queryObject.wiql = updateQueryString;
-                isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Test Cases", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
-                updateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[Microsoft.VSTS.Common.BacklogPriority],[System.AssignedTo],[System.State],[Microsoft.VSTS.CMMI.Blocked] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER @currentIteration AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [Microsoft.VSTS.CMMI.Blocked] = 'Yes' AND [System.State] <> 'Removed' ORDER BY [Microsoft.VSTS.Common.BacklogPriority], [System.Id]";
-                queryObject.wiql = updateQueryString;
-                isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Blocked Tasks", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
             }
             catch (OperationCanceledException oce)
             {

@@ -16,7 +16,7 @@
     <AssemblyName>VstsDemoBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -1164,10 +1164,9 @@
     <Content Include="Views\GitHub\Oauth.cshtml" />
     <Content Include="Views\GitHub\Redirect.cshtml" />
     <Content Include="Views\GitHub\Status.cshtml" />
-    <Content Include="Templates\SmartHotel360\ForkRepo\GitRepository.json" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy1.pubxml" />
-    <Content Include="Templates\SmartHotel360\GitHubEndpoint\GitHubSmartHotel360-public-web.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitionGitHub\SmartHotelPetcheckerWeb.json" />
+    <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1245,7 +1244,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://azuredevopsdemogen-dev.com</IISUrl>
+          <IISUrl>http://localhost:60671/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
