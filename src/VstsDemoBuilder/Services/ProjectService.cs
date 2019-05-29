@@ -590,51 +590,46 @@ namespace VstsDemoBuilder.Services
 
             // Fork Repo
 
-            if (model.GitHubFork)
+            if (model.GitHubFork && model.GitHubToken != null)
             {
                 List<string> listRepoFiles = new List<string>();
-                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ForkRepo");
-                if (Directory.Exists(repoFilePath))
+                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+                if (File.Exists(repoFilePath))
                 {
-                    Directory.GetFiles(repoFilePath).ToList().ForEach(i => listRepoFiles.Add(i));
-                    foreach (var repofile in listRepoFiles)
+                    string readRepoFile = model.ReadJsonFile(repoFilePath);
+                    if (!string.IsNullOrEmpty(readRepoFile))
                     {
-                        string readRepoFile = model.ReadJsonFile(repofile);
-                        if (!string.IsNullOrEmpty(readRepoFile))
+                        ForkRepos.Fork forkRepos = new ForkRepos.Fork();
+                        forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
+                        if (forkRepos.repositories.Count > 0)
                         {
-                            ForkRepos.Fork forkRepos = new ForkRepos.Fork();
-                            forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                            if (forkRepos.repositories.Count > 0)
+                            foreach (var repo in forkRepos.repositories)
                             {
-                                foreach (var repo in forkRepos.repositories)
+                                GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
+                                GitHubUserDetail userDetail = new GitHubUserDetail();
+                                GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
+                                //HttpResponseMessage listForks = user.ListForks(repo.fullName);
+                                HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
+                                if (forkResponse.IsSuccessStatusCode)
                                 {
-                                    GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
-                                    GitHubUserDetail userDetail = new GitHubUserDetail();
-                                    GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
-                                    //HttpResponseMessage listForks = user.ListForks(repo.fullName);
-                                    HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
-                                    if (forkResponse.IsSuccessStatusCode)
-                                    {
-                                        string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
-                                        dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                        model.GitRepoName = fr.full_name;
-                                        model.GitRepoURL = fr.html_url;
-                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
-                                    }
+                                    string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
+                                    dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
+                                    model.GitRepoName = fr.full_name;
+                                    model.GitRepoURL = fr.html_url;
+                                    AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
                                 }
                             }
                         }
                     }
-
                 }
             }
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
             string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
-            if (model.GitHubFork == true && !string.IsNullOrEmpty(model.GitHubToken))
-            {
-                serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\GitHubEndpoint");
-            }
+            //if (model.GitHubFork == true && !string.IsNullOrEmpty(model.GitHubToken))
+            //{
+            //    serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\GitHubEndpoint");
+            //}
             //templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
             if (System.IO.Directory.Exists(serviceEndPointsPath))
             {
@@ -1546,6 +1541,7 @@ namespace VstsDemoBuilder.Services
                 string serviceEndPointId = string.Empty;
                 foreach (string jsonPath in jsonPaths)
                 {
+                    string fileName = Path.GetFileName(jsonPath);
                     string jsonCreateService = jsonPath;
                     if (System.IO.File.Exists(jsonCreateService))
                     {
@@ -1565,6 +1561,29 @@ namespace VstsDemoBuilder.Services
                             jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
+                        }
+                        else if (fileName.Contains("GitHub_"))
+                        {
+                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
+                            JObject jsonToCreate = JObject.Parse(jsonCreateService);
+                            string type = jsonToCreate["type"].ToString();
+                            // Endpoint type is Git(External Git) and user wanted to fork repo to his github account, so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
+                            if (type.ToLower() == "git" && model.GitHubFork && model.GitHubToken != null)
+                            {
+                                jsonToCreate["type"] = "GitHub"; //Changing endpoint type
+                                jsonToCreate["url"] = model.GitRepoURL; // updating endpoint URL with User forked repo URL
+                            }
+                            // Endpoint type is GitHub(Public) and user wanted to fork repo to his github account, so we should point the build def to his repo by updating the URL
+                            else if (type.ToLower() == "github" && model.GitHubFork && model.GitHubToken != null)
+                            {
+                                jsonToCreate["url"] = model.GitRepoURL; // Updating repo URL to user repo
+                            }
+                            else
+                            {
+
+                            }
+                            jsonCreateService = jsonToCreate.ToString();
+                            jsonCreateService = jsonCreateService.Replace("$GitUserName$", model.GitHubUserName).Replace("$GitUserPassword$", model.GitHubToken);
                         }
                         else
                         {
