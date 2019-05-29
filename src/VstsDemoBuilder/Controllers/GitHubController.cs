@@ -46,7 +46,7 @@ namespace VstsDemoBuilder.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("Issue");
                 }
             }
             return RedirectToAction("index", "home");
