@@ -63,7 +63,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     HttpResponseMessage response = projectService.GetprojectList(model.organizationName, model.accessToken);
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
-                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.AccountMessages.InvalidAccountName);
+                        return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.AccountMessages.CheckaccountDetails);
                     }
                     else
                     {
@@ -79,7 +79,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     List<string> ListOfRequestedProjectNames = new List<string>();
                     foreach (var project in model.users)
                     {
-                        //check for Email and Valida project name
+                        //check for Email and Validate project name
                         if (!string.IsNullOrEmpty(project.email) && !string.IsNullOrEmpty(project.ProjectName))
                         {
                             string pattern = @"^(?!_)(?![.])[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'"",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$";
@@ -133,7 +133,8 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     templateName = ProjectService.ExtractedTemplate;
                                     model.templateName = ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
-                                    if (!templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.GithubToken))
+                                    bool IsDownloadableTemplate = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.GithubToken, model.UserId, model.Password);
+                                    if (!IsDownloadableTemplate)
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
                                     }
