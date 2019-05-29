@@ -1167,6 +1167,7 @@
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy1.pubxml" />
     <Content Include="Templates\SmartHotel360\BuildDefinitionGitHub\SmartHotelPetcheckerWeb.json" />
     <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
+    <Content Include="Views\GitHub\Issue.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
