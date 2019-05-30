@@ -57,7 +57,9 @@
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
     }
+    <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
+    <input type="hidden" id="hdnGToken" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -210,18 +212,33 @@
                         </button>
                     </div>
                 </div>
-                <!--SELECT TEMPLATE BUTTON-->
-                <!--/SELECT TEMPLATE BUTTON-->
-                <!-- PROJECT PARAMETERS -->
-                <!--<div class="form-group row projParameters" id="SoanrQubeDiv" style="display:none">
-                    <label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">SonarQube URL:</label>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control project-parameters rmverror" id="txtSonarServerDNSName" placeholder="SonarQube URL">
-                        <div class="alert alert-danger d-none" role="alert" id="txtSonarServerDNSName_Error">
-
-                        </div>
+                <div class="form-group row d-none" id="gitHubCheckboxDiv">
+                    <div class="col-lg-6  mb-3 mt-1">
+                        <p>Fork repository on GitHub</p>
                     </div>
-                </div>-->
+                    <div class="template-invoke mb-3 mt-1 col-lg-3" style="padding-left:0px;">
+                        <input type="checkbox" id="gitHubCheckbox" />
+                    </div>
+                    <div class="template-invoke mb-3 mt-1 col-lg-2 d-none" id="gitHubAuthDiv" style="padding-left:0px;">
+                        <button type="button" class="btn btn-primary" id="githubAuth" style="padding-left:5px; padding-right:5px; font-size:12px;width: 100%">
+                            Authorize
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group row d-none" id="">
+                    <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">
+                    </label>
+                    <div class="col-lg-6  mb-3 mt-1">
+                        <p>Authenticate GitHub to import source code.</p>
+                    </div>
+
+                    <div class="template-invoke mb-3 mt-1 col-lg-2" style="padding-left:0px;">
+                        <button type="button" class="btn btn-primary" id="githubAuth" style="padding-left:5px; padding-right:5px; font-size:12px;width: 100%">
+                            Authorize
+                        </button>
+                    </div>
+
+                </div>
                 <div id="projectParameters" style="display:none">
                 </div>
                 <!-- PROJECT PARAMETERS -->
@@ -297,6 +314,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/Scripts/AppScripts/create.js"></script>
     <script src="~/Scripts/AppScripts/FileUpload.js"></script>
+    <script src="~/Scripts/AppScripts/GitHubAuth.js"></script>
     <script src="~/Scripts/tooltip.js"></script>
 </body>
 </html>
