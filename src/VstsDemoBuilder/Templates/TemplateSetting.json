@@ -33,7 +33,7 @@
           "Message": "Note that the code for the SmartHotel 360 Website hosted on <a href='https://github.com/Microsoft/SmartHotel360-Website' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
           "PreviewImages": [ "/Templates/SmartHotel360/Images/dashboard.png", "/Templates/SmartHotel360/Images/Diagram.png", "/Templates/SmartHotel360/Images/Screens.png" ],
           "Author": "Microsoft",
-          "LastUpdatedDate": "20/12/2018"
+          "ForkGitHubRepo": true
         },
         {
           "Key": "77380",
@@ -44,8 +44,7 @@
           "Tags": [ "scrum", "aspnetcore", "azureappservice" ],
           "Image": "/Templates/TemplateImages/MyHealthClinic.png",
           "PreviewImages": [ "/Templates/MyHealthClinic/Images/boards.png", "/Templates/MyHealthClinic/Images/CI.png", "/Templates/MyHealthClinic/Images/dashboard.png", "/Templates/MyHealthClinic/Images/site.png" ],
-          "Author": "Microsoft",
-          "LastUpdatedDate": "20/12/2018"
+          "Author": "Microsoft"
         },
         {
           "Key": "77379",
