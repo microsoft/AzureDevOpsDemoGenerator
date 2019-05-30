@@ -153,17 +153,17 @@ namespace VstsDemoBuilder.Services
                 var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
 
                 //Downloading template from source of type github
-                if (uri.Host == "github.com")
+                if (uri.Host == "raw.githubusercontent.com")
                 {
                     var githubToken = GithubToken;
-                    var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
+                    //var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
 
                     using (var client = new System.Net.Http.HttpClient())
                     {
                         var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
                         credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
                         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
-                        var contents = client.GetByteArrayAsync(url).Result;
+                        var contents = client.GetByteArrayAsync(TemplateUrl).Result;
                         System.IO.File.WriteAllBytes(path, contents);
                     }
                 }
