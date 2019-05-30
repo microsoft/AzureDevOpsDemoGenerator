@@ -687,7 +687,10 @@ namespace VstsDemoBuilder.Controllers
                         Dictionary<string, bool> dict = new Dictionary<string, bool>();
                         foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                         {
-                            dict.Add(ext.extensionName, false);
+                            if (!dict.ContainsKey(ext.extensionName))
+                            {
+                                dict.Add(ext.extensionName, false);
+                            }
                         }
 
                         var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(pat));// VssOAuthCredential(PAT));
