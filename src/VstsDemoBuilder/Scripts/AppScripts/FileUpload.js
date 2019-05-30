@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     $('body').on('click', '#btnUpload', function () {
+     
 
         $("#fileError").remove();
         disableButton();
@@ -22,6 +23,9 @@
             for (var i = 0; i < files.length; i++) {
                 fileData.append(files[i].name, files[i]);
             }
+
+            $('#gitHubCheckboxDiv').addClass('d-none');
+            $('input[id="gitHubCheckbox"]').prop('checked', false);
 
             $.ajax({
                 url: '/Environment/UploadFiles',
