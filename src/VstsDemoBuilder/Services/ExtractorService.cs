@@ -732,6 +732,7 @@ namespace VstsDemoBuilder.Services
 
                         string repoID = "";
                         var buildName = def["name"];
+                        string fileName = buildName.ToString().Replace(".", "") + ".json";
                         var repoName = def["repository"]["name"];
                         var type = def["repository"]["type"];
                         foreach (var re in repo.value)
@@ -746,10 +747,14 @@ namespace VstsDemoBuilder.Services
                         def["url"] = "";
                         def["uri"] = "";
                         def["id"] = "";
-                        def["queue"]["pool"]["id"] = "";
+                        if (def["queue"]["pool"].HasValues)
+                        {
+                            def["queue"]["pool"]["id"] = "";
+                        }
                         def["_links"] = "{}";
                         def["createdDate"] = "";
                         var yamalfilename = def["process"]["yamlFilename"];
+
                         #region YML PIPELINES OF TYPE AZURE REPOS
                         if (yamalfilename != null && type.ToString().ToLower() == "tfsgit")
                         {
@@ -770,11 +775,11 @@ namespace VstsDemoBuilder.Services
                                 if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
                                 {
                                     Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
-                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
                                 }
                                 else
                                 {
-                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
                                 }
                             }
                             string[] splitYmlRepoUrl = ymlRepoUrl.Split('/');
@@ -786,7 +791,6 @@ namespace VstsDemoBuilder.Services
                                 ymlRepoUrl = string.Join("/", splitYmlRepoUrl);
                                 def["repository"]["url"] = ymlRepoUrl;
                             }
-                            //["_links"]["self"]["href"].ToString();
                             var queueHref = def["queue"]["_links"]["self"]["href"].ToString();
                             if (queueHref != "")
                             {
@@ -804,15 +808,62 @@ namespace VstsDemoBuilder.Services
                             if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
                             {
                                 Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                             }
                             else
                             {
-                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                             }
 
                         }
                         #endregion
+
+                        #region YML PIPELINE WITH GITHUB
+                        else if (yamalfilename != null && type.ToString().ToLower() == "github")
+                        {
+                            def["triggers"] = new JArray();
+                            if (type.ToString().ToLower() == "github")
+                            {
+                                def["repository"]["properties"]["apiUrl"] = "https://api.github.com/repos/$GitHubRepoName$";
+                                def["repository"]["properties"]["branchesUrl"] = "https://api.github.com/repos/$GitHubRepoName$/branches";
+                                def["repository"]["properties"]["cloneUrl"] = "https://github.com/$GitHubRepoName$.git";
+                                def["repository"]["properties"]["fullName"] = "repository";
+                                def["repository"]["properties"]["manageUrl"] = "https://github.com/$GitHubRepoName$";
+                                def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
+                                def["repository"]["name"] = "$GitHubRepoName$";
+                                def["repository"]["url"] = "https://github.com/$GitHubRepoName$.git";
+                                def["repository"]["id"] = "$GitHubRepoName$";
+                            }
+                            var ymlRepoUrl = def["repository"]["url"].ToString();
+                            if (ymlRepoUrl != "")
+                            {
+                                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                                endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl);
+                                Guid g = Guid.NewGuid();
+                                string randStr = g.ToString().Substring(0, 8);
+                                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
+                                {
+                                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
+                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                                }
+                                else
+                                {
+                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                                }
+                            }
+                            count = count + 1;
+                            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                            {
+                                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                            }
+                            else
+                            {
+                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                            }
+                        }
+                        #endregion
+
                         #region OTHER
                         else if (yamalfilename == null)
                         {
@@ -879,11 +930,11 @@ namespace VstsDemoBuilder.Services
                                     if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
                                     {
                                         Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
                                     }
                                     else
                                     {
-                                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
                                     }
                                 }
                             }
@@ -897,11 +948,11 @@ namespace VstsDemoBuilder.Services
                                 if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
                                 {
                                     Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
                                 }
                                 else
                                 {
-                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
                                 }
                                 def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
                             }
@@ -938,11 +989,11 @@ namespace VstsDemoBuilder.Services
                             if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
                             {
                                 Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                             }
                             else
                             {
-                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                             }
                         }
                         #endregion
