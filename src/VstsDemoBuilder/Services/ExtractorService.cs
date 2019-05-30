@@ -721,7 +721,6 @@ namespace VstsDemoBuilder.Services
                 List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
                 BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(appConfig.RepoConfig);
                 RepositoryList.Repository repo = repoDefs.GetRepoList();
-                string esr = JsonConvert.SerializeObject(builds);
                 if (builds.Count > 0)
                 {
                     int count = 1;
@@ -729,9 +728,12 @@ namespace VstsDemoBuilder.Services
                     string templatePath = extractedTemplatePath + appConfig.BuildDefinitionConfig.Project;
                     foreach (JObject def in builds)
                     {
+                        string esr = JsonConvert.SerializeObject(def);
+
                         string repoID = "";
                         var buildName = def["name"];
                         var repoName = def["repository"]["name"];
+                        var type = def["repository"]["type"];
                         foreach (var re in repo.value)
                         {
                             if (re.name == repoName.ToString())
@@ -744,26 +746,20 @@ namespace VstsDemoBuilder.Services
                         def["url"] = "";
                         def["uri"] = "";
                         def["id"] = "";
-                        def["queue"]["id"] = "";
-                        def["queue"]["url"] = "";
-                        def["queue"]["_links"] = "{}";
                         def["queue"]["pool"]["id"] = "";
                         def["_links"] = "{}";
                         def["createdDate"] = "";
                         var yamalfilename = def["process"]["yamlFilename"];
-                        if (yamalfilename != null)
+                        #region YML PIPELINES OF TYPE AZURE REPOS
+                        if (yamalfilename != null && type.ToString().ToLower() == "tfsgit")
                         {
                             def["triggers"] = new JArray();
-                            var type = def["repository"]["type"];
                             if (type.ToString().ToLower() == "github")
                             {
-                                //def["repository"]["type"] = "Git";
                                 def["repository"]["properties"]["fullName"] = "repository";
                                 def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
                                 def["repository"]["name"] = "repository";
                             }
-                            //def["repository"]["id"] = "$" + def["repository"]["name"] + "$";
-
                             var ymlRepoUrl = def["repository"]["url"].ToString();
                             if (ymlRepoUrl != "")
                             {
@@ -790,21 +786,35 @@ namespace VstsDemoBuilder.Services
                                 ymlRepoUrl = string.Join("/", splitYmlRepoUrl);
                                 def["repository"]["url"] = ymlRepoUrl;
                             }
-
+                            //["_links"]["self"]["href"].ToString();
                             var queueHref = def["queue"]["_links"]["self"]["href"].ToString();
-                            string[] splitQhref = queueHref.Split('/');
-                            if (splitQhref.Length > 0)
+                            if (queueHref != "")
                             {
-                                splitQhref[3] = "$Organization$";
-                                splitQhref[splitQhref.Length - 1] = "$" + def["queue"]["name"].ToString() + "$";
-                                def["queue"]["_links"]["self"]["href"] = string.Join("/", splitQhref);
+                                string[] splitQhref = queueHref.Split('/');
+                                if (splitQhref.Length > 0)
+                                {
+                                    splitQhref[3] = "$Organization$";
+                                    splitQhref[splitQhref.Length - 1] = "$" + def["queue"]["name"].ToString() + "$";
+                                    def["queue"]["_links"]["self"]["href"] = string.Join("/", splitQhref);
+                                }
+                                def["queue"]["id"] = "$" + def["queue"]["name"] + "$";
+                                def["queue"]["url"] = string.Join("/", splitQhref);
                             }
-                            def["queue"]["id"] = "$" + def["queue"]["name"] + "$";
-                            def["queue"]["url"] = string.Join("/", splitQhref);
-                            //AddMessage(con.Id.ErrorId(), "Not supporting yml pipelines");
-                            //return count = 0;
+                            count = count + 1;
+                            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                            {
+                                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            }
+                            else
+                            {
+                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            }
+
                         }
-                        else
+                        #endregion
+                        #region OTHER
+                        else if (yamalfilename == null)
                         {
 
                             def["queue"]["id"] = "";
@@ -853,7 +863,6 @@ namespace VstsDemoBuilder.Services
                                 }
                             }
 
-                            var type = def["repository"]["type"];
                             if (type.ToString().ToLower() == "github")
                             {
                                 def["repository"]["type"] = "Git";
@@ -925,17 +934,18 @@ namespace VstsDemoBuilder.Services
                                     }
                                 }
                             }
+                            count++;
+                            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                            {
+                                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            }
+                            else
+                            {
+                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
+                            }
                         }
-                        if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
-                        {
-                            Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
-                        }
-                        else
-                        {
-                            System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + buildName + ".json", JsonConvert.SerializeObject(def, Formatting.Indented));
-                        }
-                        count = count + 1;
+                        #endregion
                     }
                     return count;
                 }
@@ -971,6 +981,7 @@ namespace VstsDemoBuilder.Services
                         rel["createdOn"] = "";
                         rel["modifiedBy"] = "{}";
                         rel["modifiedOn"] = "";
+                        rel["variableGroups"] = new JArray();
                         var env = rel["environments"];
                         foreach (var e in env)
                         {
@@ -1046,12 +1057,26 @@ namespace VstsDemoBuilder.Services
                             foreach (var art in artifact)
                             {
                                 string buildName = art["definitionReference"]["definition"]["name"].ToString();
-
-                                art["sourceId"] = "$ProjectId$:" + "$" + buildName + "-id$";
-                                art["definitionReference"]["definition"]["id"] = "$" + buildName + "-id$";
-                                art["definitionReference"]["project"]["id"] = "$ProjectId$";
-                                art["definitionReference"]["project"]["name"] = "$ProjectName$";
-                                art["definitionReference"]["artifactSourceDefinitionUrl"] = "{}";
+                                string type = art["type"].ToString();
+                                if (type.ToLower() == "build")
+                                {
+                                    art["sourceId"] = "$ProjectId$:" + "$" + buildName + "-id$";
+                                    art["definitionReference"]["definition"]["id"] = "$" + buildName + "-id$";
+                                    art["definitionReference"]["project"]["id"] = "$ProjectId$";
+                                    art["definitionReference"]["project"]["name"] = "$ProjectName$";
+                                    art["definitionReference"]["artifactSourceDefinitionUrl"] = "{}";
+                                }
+                                if (type.ToLower() == "azurecontainerrepository")
+                                {
+                                    art["sourceId"] = "$ProjectId$:" + "$" + buildName + "-id$";
+                                    art["definitionReference"]["connection"]["id"] = "";
+                                    art["definitionReference"]["definition"]["id"] = "";
+                                    art["definitionReference"]["definition"]["name"] = "";
+                                    art["definitionReference"]["registryurl"]["id"] = "";
+                                    art["definitionReference"]["registryurl"]["name"] = "";
+                                    art["definitionReference"]["resourcegroup"]["id"] = "";
+                                    art["definitionReference"]["resourcegroup"]["name"] = "";
+                                }
                             }
                         }
                         if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
