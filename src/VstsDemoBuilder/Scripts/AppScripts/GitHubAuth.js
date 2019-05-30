@@ -1,5 +1,5 @@
-﻿$(document).ready(function () {
-    var mywindown;
+﻿var mywindown;
+$(document).ready(function () {
     $('#githubAuth').click(function () {
         var reqorigon = window.location.origin;
         mywindown = window.open(reqorigon + "/GitHub/GitOauth", "Azure DevOps Demo Generator", "width=500,height=500",
@@ -30,6 +30,7 @@ function checkSession() {
                 $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
                 $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
+                mywindown.close();
             }
             else {
                 window.setTimeout("checkSession()", 500);
