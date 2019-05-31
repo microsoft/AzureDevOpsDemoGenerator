@@ -49,7 +49,7 @@
             "/Templates/SmartHotel360/Images/Screens.png"
           ],
           "Author": "Microsoft",
-          "LastUpdatedDate": "20/12/2018"
+          "ForkGitHubRepo": true
         },
         {
           "Key": "77380",

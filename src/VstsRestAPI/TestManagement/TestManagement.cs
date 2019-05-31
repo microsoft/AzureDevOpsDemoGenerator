@@ -1,4 +1,5 @@
 ﻿using log4net;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
@@ -48,7 +49,7 @@ namespace VstsRestAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -77,8 +78,12 @@ namespace VstsRestAPI.TestManagement
                     if (response.IsSuccessStatusCode)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
-                        testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                        dynamic resSerialize = JsonConvert.DeserializeObject<dynamic>(result);
+                        if (resSerialize.count > 0)
+                        {
+                            testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
+                            testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                        }
                         return testSuite;
                     }
                     else
@@ -92,7 +97,7 @@ namespace VstsRestAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -132,7 +137,7 @@ namespace VstsRestAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddTestCasesToSuite" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddTestCasesToSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
