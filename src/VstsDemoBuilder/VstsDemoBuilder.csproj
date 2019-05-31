@@ -347,6 +347,7 @@
     <Content Include="Images\cross10_new.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\github-icon.png" />
     <Content Include="Images\image2.png" />
     <Content Include="Images\img_verify2.jpg" />
     <Content Include="Images\linkedin.png" />
