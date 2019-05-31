@@ -1,0 +1,26 @@
+{
+  "ErrorMessages": 
+    {
+      "accountMessages":
+        {
+          "InvalidAccountName": "Provide a valid Organization name",
+          "InvalidAccessToken": "Token of type Basic must be provided",
+          "CheckaccountDetails" :  "Please check your account details(Organization Name or Access Token)"
+        },
+      "projectMessages": {
+
+        "InvalidProjectName": "Invalid Project name",
+        "ProjectNameWithReservedKeyword": "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web",
+        "ProjectNameOrEmailID": "EmailId or ProjectName is not found",
+        "DuplicateProject": "ProjectName must be unique",
+        "ExtensionNotInstalled": "Extension is not installed for the selected Template, Please provide InstallExtensions : true in the request body"
+      },
+      "templateMessages": 
+        {
+          "TemplateNameOrTemplatePath": "Please provide templateName or templatePath(GitHub)",
+          "TemplateNotFound": "Template Not Found!",
+          "FailedTemplate": "Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body",
+          "PrivateTemplateFileExtension": "TemplatePath should have .zip extension file name at the end of the url"
+        }
+    } 
+}
