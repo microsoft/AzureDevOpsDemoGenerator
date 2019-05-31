@@ -281,6 +281,10 @@ namespace VstsDemoBuilder.Services
                             {
                                 processTemplateId = Default.CMMI;
                             }
+                            else if (settings.type.ToLower() == TemplateType.Basic.ToString().ToLower())
+                            {
+                                processTemplateId = Default.BASIC;
+                            }
                         }
                     }
                 }
@@ -401,6 +405,10 @@ namespace VstsDemoBuilder.Services
                 {
                     processType = "Scrum";
                     boardType = "Backlog%20items";
+                }
+                else if (processType == "Basic")
+                {
+                    boardType = "Issue";
                 }
                 else
                 {

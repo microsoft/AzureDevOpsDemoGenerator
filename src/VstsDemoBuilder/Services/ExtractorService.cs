@@ -250,7 +250,7 @@ namespace VstsDemoBuilder.Services
 
         public Dictionary<string, int> GetWorkItemsCount(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
             if (workItemtypes.Length > 0)
@@ -432,16 +432,27 @@ namespace VstsDemoBuilder.Services
                         System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
 
                         List<string> boardTypes = new List<string>();
-                        boardTypes.Add("Epics"); boardTypes.Add("Features");
-
+                        boardTypes.Add("Epics"); 
                         if (processTemplate.ToLower() == "agile")
-                        { boardTypes.Add("Stories"); }
-                        else { boardTypes.Add("Backlog Items"); }
+                        {
+                            boardTypes.Add("Features");
+                            boardTypes.Add("Stories");
+                        }
+                        else if (processTemplate.ToLower() == "basic")
+                        {
+                            boardTypes.Add("Issues");
+                        }
+                        else
+                        {
+                            boardTypes.Add("Features");
+                            boardTypes.Add("Backlog Items");
+                        }
 
                         foreach (var team in _team.value)
                         {
                             List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
                             List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
+                            List<BoardColumnResponseBasic.ColumnResponse> columnResponsesBasic = new List<BoardColumnResponseBasic.ColumnResponse>();
                             List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
 
                             ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
@@ -456,7 +467,7 @@ namespace VstsDemoBuilder.Services
                             //Export Board Colums for each team
                             con.Team = team.name;
 
-                            VstsRestAPI.Extractor.ClassificationNodes teamNodes = new VstsRestAPI.Extractor.ClassificationNodes(con);
+                            ClassificationNodes teamNodes = new ClassificationNodes(con);
                             foreach (var boardType in boardTypes)
                             {
                                 var response = teamNodes.ExportBoardColums(boardType);
@@ -475,6 +486,13 @@ namespace VstsDemoBuilder.Services
                                         BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
                                         agileColumns.BoardName = boardType;
                                         columnResponsesAgile.Add(agileColumns);
+                                    }
+                                    else if (processTemplate.ToLower() == "basic")
+                                    {
+                                        string res = response.Content.ReadAsStringAsync().Result;
+                                        BoardColumnResponseBasic.ColumnResponse basicColumns = JsonConvert.DeserializeObject<BoardColumnResponseBasic.ColumnResponse>(res);
+                                        basicColumns.BoardName = boardType;
+                                        columnResponsesBasic.Add(basicColumns);
                                     }
                                     AddMessage(con.Id, "Board Columns");
                                     Thread.Sleep(2000);
@@ -550,11 +568,14 @@ namespace VstsDemoBuilder.Services
                                 }
                             }
                             //Export Team Setting for each team
-                            ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
-                            if (teamSetting.backlogVisibilities != null)
+                            if (processTemplate.ToLower() != "basic")
                             {
-                                listTeamSetting = teamSetting;
-                                AddMessage(con.Id, "Team Settings Definition");
+                                ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                                if (teamSetting.backlogVisibilities != null)
+                                {
+                                    listTeamSetting = teamSetting;
+                                    AddMessage(con.Id, "Team Settings Definition");
+                                }
                             }
                             else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
                             {
@@ -563,27 +584,31 @@ namespace VstsDemoBuilder.Services
 
                             if (columnResponsesAgile.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (columnResponsesScrum.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            }
+                            if (columnResponsesBasic.Count > 0)
+                            {
+                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesBasic, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (boardRows.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                             }
                             if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
                             }
                             if (jObjCardFieldList.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
                             }
                             if (jObjcardStyleList.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
                             }
                         }
 
@@ -645,7 +670,7 @@ namespace VstsDemoBuilder.Services
 
         public void ExportWorkItems(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project))
             {
                 Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project);
@@ -660,6 +685,7 @@ namespace VstsDemoBuilder.Services
                     string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
                     if (fetchedWorkItem.count > 0)
                     {
+                        workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project, "$ProjectName$");
                         string item = WIT;
                         if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems"))
                         {
