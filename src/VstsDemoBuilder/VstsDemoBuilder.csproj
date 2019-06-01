@@ -1202,8 +1202,6 @@
     <Content Include="Templates\implement-code-workflow\Iterations.json" />
     <Content Include="Templates\implement-code-workflow\ProjectSettings.json" />
     <Content Include="Templates\implement-code-workflow\ProjectTemplate.json" />
-    <Content Include="Templates\implement-code-workflow\ServiceEndpoints\jamcneil %281%29.json" />
-    <Content Include="Templates\implement-code-workflow\ServiceEndpoints\jamcneil.json" />
     <Content Include="Templates\implement-code-workflow\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\implement-code-workflow\TeamArea.json" />
     <Content Include="Templates\implement-code-workflow\Teams\Space Game - web Team\BoardColumns.json" />
@@ -1280,6 +1278,15 @@
     <Content Include="Templates\create-build-pipeline\Teams\Space Game - web Team\CardStyles.json" />
     <Content Include="Templates\create-build-pipeline\Teams\Teams.json" />
     <Content Include="Templates\create-build-pipeline\WorkItems\Issue.json" />
+    <Content Include="Templates\implement-code-workflow\ServiceEndpoints\GitHub_Jamcneil_code.json" />
+    <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SmartHotel360\BuildDefinitionGitHub\SmartHotelPetcheckerWeb.json" />
+    <Content Include="Templates\implement-code-workflow\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\manage-build-dependencies\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\run-quality-tests\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\scan-for-vulnerabilities\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\scan-open-source\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\implement-code-workflow\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -42,7 +42,6 @@
             "azureappservice"
           ],
           "Image": "/Templates/TemplateImages/SmartHotel.png",
-          "Message": "Note that the code for the SmartHotel 360 Website hosted on <a href='https://github.com/Microsoft/SmartHotel360-Website' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
           "PreviewImages": [
             "/Templates/SmartHotel360/Images/dashboard.png",
             "/Templates/SmartHotel360/Images/Diagram.png",
@@ -550,6 +549,7 @@
             "GitHub"
           ],
           "Image": "/Templates/TemplateImages/mslearn/host-your-own-build-server-in-your-build-pipeline.png",
+          "ForkGitHubRepo": true,
           "Description": "Collaborate with others and merge only the highest quality code. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
