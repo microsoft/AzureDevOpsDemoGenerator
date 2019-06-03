@@ -60,6 +60,7 @@ namespace VstsDemoBuilder.Models
         public Dictionary<string, int> AgentQueues { get; set; }
         public Dictionary<string, string> serviceEndpoints { get; set; }
         public Dictionary<string, string> pullRequests { get; set; }
+        public Dictionary<string, string> GitHubRepos { get; set; }
         public string BoardRowFieldName { get; set; }
     }
     public class BuildDef
