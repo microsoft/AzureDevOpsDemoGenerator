@@ -5,6 +5,7 @@ $(document).ready(function () {
         mywindown = window.open(reqorigon + "/GitHub/GitOauth", "Azure DevOps Demo Generator", "width=500,height=500",
             "width=300,height=400,scrollbars=yes");
         checkSession();
+        ga('send', 'event', 'GitHubAuthorize', 'clicked');
     });
     $('input[id="gitHubCheckbox"]').click(function () {
         if ($(this).prop("checked") === true) {
@@ -31,6 +32,7 @@ function checkSession() {
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
                 $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
                 mywindown.close();
+                $('#githubAuth').css('border-color', 'initial');
             }
             else {
                 window.setTimeout("checkSession()", 500);
@@ -54,6 +56,7 @@ function checkTokenInSession() {
                 $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
                 $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
+                $('#githubAuth').css('border-color', 'initial');
             }
             else {
                 $('#btnSubmit').prop('disabled', true).removeClass('btn-primary');

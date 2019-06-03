@@ -347,10 +347,13 @@
     <Content Include="Images\cross10_new.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\github-icon.png" />
     <Content Include="Images\image2.png" />
     <Content Include="Images\img_verify2.jpg" />
     <Content Include="Images\linkedin.png" />
+    <Content Include="Images\loader_trans_1.gif" />
     <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading_trans.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\MSimgae.png" />
     <Content Include="Images\next.png" />
@@ -919,7 +922,6 @@
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP1.pubxml" />
-    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />
     <Content Include="Templates\MyShuttle\ReleaseDefinitions\MyShuttleDockerRelease.json" />
     <Content Include="Templates\AKS\TaskfromTemplate.json" />
@@ -1166,6 +1168,7 @@
     <Content Include="Views\GitHub\Oauth.cshtml" />
     <Content Include="Views\GitHub\Redirect.cshtml" />
     <Content Include="Views\GitHub\Status.cshtml" />
+    <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - Web Deploy1.pubxml" />
     <Content Include="Templates\SmartHotel360\BuildDefinitionGitHub\SmartHotelPetcheckerWeb.json" />
     <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />

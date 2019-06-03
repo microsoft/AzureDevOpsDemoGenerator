@@ -94,7 +94,7 @@ $(document).ready(function (event) {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
         $('#gitHubAuthDiv').addClass('d-none');
         $('#githubAuth').addClass('btn-primary').prop('disabled', false);
-
+        $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template.selected").data('folder');
@@ -187,13 +187,17 @@ $(document).ready(function (event) {
                         if (ThirdParty !== "thirdparty") {
                             ThirdParty = "";
                         }
-                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+                    } else {
+                        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                        $("#templateselection").addClass('btn-primary').prop("disabled", false);
+                    }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
                     $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    $("#templateselection").addClass('btn-primary').prop("disabled", false);
                 }
 
             });
@@ -228,6 +232,7 @@ $(document).ready(function (event) {
             if (isMicrosoftAgreement === "on" && isThirdparty === "on") {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
+                checkGitAuth();
             }
             else {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -240,6 +245,7 @@ $(document).ready(function (event) {
             if (isMicrosoftAgreement === "on") {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
+                checkGitAuth();
             }
             else {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -253,6 +259,7 @@ $(document).ready(function (event) {
             if (isThirdparty === "on") {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
+                checkGitAuth();
             }
             else {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -310,13 +317,14 @@ $(document).ready(function (event) {
                             ThirdParty = "";
                         }
 
-                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); $("#templateselection").addClass('btn-primary').prop("disabled", false); }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
                     $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    $("#templateselection").addClass('btn-primary').prop("disabled", false);
                 }
 
             });
@@ -542,7 +550,7 @@ function getStatus() {
                 $('#ddlAcccountName').prop('selectedIndex', 0);
 
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                $("#templateselection").prop("disabled", false);
+                $("#templateselection").prop("disabled", false).addClass('btn-primary');
                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                 $('#textMuted').removeClass("d-block").addClass("d-none");
                 return;
@@ -574,7 +582,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false);
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             return;
@@ -588,7 +596,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             return;
@@ -606,7 +614,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
 
@@ -650,7 +658,7 @@ function getStatus() {
                                     $("#txtProjectName").val("");
 
                                     $('#ddlAcccountName').prop('selectedIndex', 0);
-                                    $("#templateselection").prop("disabled", false);
+                                    $("#templateselection").prop("disabled", false).addClass('btn-primary');
 
                                     $('#ddlGroups').removeAttr("disabled");
                                     $("#ddlAcccountName").removeAttr("disabled");
@@ -680,7 +688,7 @@ function getStatus() {
                             $("#txtProjectName").val("");
 
                             $('#ddlAcccountName').prop('selectedIndex', 0);
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
@@ -733,8 +741,10 @@ function checkForExtensions(callBack) {
     var Oauthtoken = $('#hiddenAccessToken').val();
     var selectedTemplate = templateFolder;
     if (selectedTemplate !== "" && accountNam !== "") {
-        $("#imgLoading").show();
+        $('#btnSubmit').addClass('lodergif');
+        //$("#imgLoading").show();
         $("#btnSubmit").removeClass('btn-primary').prop("disabled", true);
+        $("#templateselection").removeClass('btn-primary').prop("disabled", true);
         $("#ddlAcccountName").prop("disabled", true);
         $("#txtProjectName").prop('disabled', 'disabled');
 
@@ -753,7 +763,9 @@ function checkForExtensions(callBack) {
 function GetRequiredExtension() {
     checkForExtensions(function callBack(extensions) {
         if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== "undefined" && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
-            $("#imgLoading").hide();
+            $("#templateselection").prop("disabled", false).addClass('btn-primary');
+            $('#btnSubmit').removeClass('lodergif');
+            //$("#imgLoading").hide();
             $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
@@ -772,12 +784,13 @@ function GetRequiredExtension() {
                     ThirdParty = "";
                 }
             } else {
-                $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); $("#templateselection").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
                 checkGitAuth();
             }
         }
         else {
-            $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
+            /*$("#imgLoading").hide();*/ $('#btnSubmit').removeClass('lodergif');
+            $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#templateselection").prop("disabled", false).addClass('btn-primary'); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
             checkGitAuth();
         }
     });
@@ -870,6 +883,7 @@ $("#txtProjectName").keyup(function () {
 });
 
 function validateExtensionCheckbox() {
+    $("#templateselection").prop("disabled", false).addClass('btn-primary');
     var checkboxMicrosoft = "";
     var checkboxTrirdparty = "";
 
@@ -916,7 +930,6 @@ function validateExtensionCheckbox() {
     else {
         $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
     }
-
     checkGitAuth();
 }
 
@@ -1043,8 +1056,13 @@ function getGroups(grpSelected) {
 
 function checkGitAuth() {
     var gToken = $('#hdnGToken').val();
+    console.log("GH " + gToken);
     var isChecked = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gToken === "" && isChecked === true) {
         $('#btnSubmit').removeClass('btn-primary').prop('disabled', true);
+        $('#githubAuth').css('border-color', 'red');
+    }
+    else {
+        $('#githubAuth').css('border-color', 'initial');
     }
 }
