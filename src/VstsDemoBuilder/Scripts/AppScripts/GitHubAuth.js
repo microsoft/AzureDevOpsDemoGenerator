@@ -31,6 +31,7 @@ function checkSession() {
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
                 $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
                 mywindown.close();
+                $('#githubAuth').css('border-color', 'initial');
             }
             else {
                 window.setTimeout("checkSession()", 500);
@@ -54,6 +55,7 @@ function checkTokenInSession() {
                 $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
                 $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
+                $('#githubAuth').css('border-color', 'initial');
             }
             else {
                 $('#btnSubmit').prop('disabled', true).removeClass('btn-primary');

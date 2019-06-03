@@ -8769,11 +8769,11 @@ html, body {
     background-size: 17px;
 }
 .lodergif {
-    background-image: url(/Images/loading.gif);
+    background-image: url(/Images/loader_trans_1.gif);
     background-repeat: no-repeat;
     background-position: 93% 50%;
     padding: 5px 18px 5px 5px !important;
-    background-size: 17px;
+    background-size: 22px;
 }
 .inlinestyle { display:block; float:left; margin-left:3px;
 }
