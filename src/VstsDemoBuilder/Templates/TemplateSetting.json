@@ -562,6 +562,7 @@
             "Azure Pipelines"
           ],
           "Image": "/Templates/TemplateImages/mslearn/implement-a-code-workflow-in-your-build-pipeline.png",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Set up automated testing in your pipeline to improve code quality. <br /><br />Lab URL: <a href='https://review.docs.microsoft.com/en-us/learn/paths/build-applications-with-azure-devops/?branch=pr-en-us-3586' target='_blank'>Create a build pipeline with Azure Pipelines</a>"
         },
         {
