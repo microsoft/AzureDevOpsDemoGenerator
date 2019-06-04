@@ -35,10 +35,7 @@
         "system.debug": {
             "value": "false",
             "allowOverride": true
-        },
-      "useremail": {
-        "value": "rimman@microsoft.com"
-      }
+        }
     },
     "retentionRules": [
         {
@@ -87,7 +84,7 @@
                             "csmParametersFileLink": "",
                             "csmFile": "Deploy/deployment.json",
                             "csmParametersFile": "",
-                            "overrideParameters": "-userEmail $(useremail)",
+                            "overrideParameters": "",
                             "deploymentMode": "Incremental",
                             "enableDeploymentPrerequisites": "None",
                             "deploymentGroupEndpoint": "",
@@ -141,7 +138,7 @@
                         "azureSubscriptionEndpoint": "",
                         "azureContainerRegistry": "$(acr).azurecr.io",
                         "command": "Build an image",
-                        "dockerFile": "Source/Dockerfile",
+                        "dockerFile": "Source/Tailwind.Traders.Web/Dockerfile",
                         "arguments": "-t $(acr).azurecr.io/$(ImageName):$(Build.BuildId)",
                         "useDefaultContext": "true",
                         "buildContext": "",
