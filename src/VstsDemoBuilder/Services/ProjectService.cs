@@ -352,6 +352,12 @@ namespace VstsDemoBuilder.Services
             model.Environment.ProjectId = objProject.GetProjectIdByName(model.ProjectName);
             model.Environment.ProjectName = model.ProjectName;
 
+            // Fork Repo
+            if (model.GitHubFork && model.GitHubToken != null)
+            {
+                ForkGitHubRepository(model, _gitHubConfig);
+            }
+
             //Add user as project admin
             bool isAdded = AddUserToProject(_graphApiVersion, model);
             if (isAdded)
@@ -371,16 +377,17 @@ namespace VstsDemoBuilder.Services
             TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
 
             var teamMember = teamMembers.value != null ? teamMembers.value.FirstOrDefault() : new TeamMemberResponse.Value();
+            //model.Environment.UserUniqueId = model.Email;
+            //model.Environment.UserUniquename = model.Email;
             if (teamMember != null)
             {
-                model.Environment.UserUniquename = teamMember.identity.uniqueName;
+                model.Environment.UserUniquename = model.Environment.UserUniquename ?? teamMember.identity.uniqueName;
             }
             if (teamMember != null)
             {
-                model.Environment.UserUniqueId = teamMember.identity.id;
+                model.Environment.UserUniqueId = model.Environment.UserUniqueId ?? teamMember.identity.id;
             }
-            model.Environment.UserUniqueId = model.Email;
-            model.Environment.UserUniquename = model.Email;
+
             //update board columns and rows
             // Checking for template version
             string projectTemplate = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
@@ -596,41 +603,7 @@ namespace VstsDemoBuilder.Services
             //Create Deployment Group
             //CreateDeploymentGroup(templatesFolder, model, _deploymentGroup);
 
-            // Fork Repo
 
-            if (model.GitHubFork && model.GitHubToken != null)
-            {
-                List<string> listRepoFiles = new List<string>();
-                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
-                if (File.Exists(repoFilePath))
-                {
-                    string readRepoFile = model.ReadJsonFile(repoFilePath);
-                    if (!string.IsNullOrEmpty(readRepoFile))
-                    {
-                        ForkRepos.Fork forkRepos = new ForkRepos.Fork();
-                        forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                        if (forkRepos.repositories.Count > 0)
-                        {
-                            foreach (var repo in forkRepos.repositories)
-                            {
-                                GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
-                                GitHubUserDetail userDetail = new GitHubUserDetail();
-                                GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
-                                //HttpResponseMessage listForks = user.ListForks(repo.fullName);
-                                HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
-                                if (forkResponse.IsSuccessStatusCode)
-                                {
-                                    string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
-                                    dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                    model.GitRepoName = fr.full_name;
-                                    model.GitRepoURL = fr.html_url;
-                                    AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
             string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
@@ -938,6 +911,40 @@ namespace VstsDemoBuilder.Services
             }
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
+        }
+
+        private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)
+        {
+            List<string> listRepoFiles = new List<string>();
+            string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+            if (File.Exists(repoFilePath))
+            {
+                string readRepoFile = model.ReadJsonFile(repoFilePath);
+                if (!string.IsNullOrEmpty(readRepoFile))
+                {
+                    ForkRepos.Fork forkRepos = new ForkRepos.Fork();
+                    forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
+                    if (forkRepos.repositories.Count > 0)
+                    {
+                        foreach (var repo in forkRepos.repositories)
+                        {
+                            GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
+                            GitHubUserDetail userDetail = new GitHubUserDetail();
+                            GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
+                            //HttpResponseMessage listForks = user.ListForks(repo.fullName);
+                            HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
+                            if (forkResponse.IsSuccessStatusCode)
+                            {
+                                string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
+                                dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
+                                model.GitRepoName = fr.full_name;
+                                model.GitRepoURL = fr.html_url;
+                                AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
