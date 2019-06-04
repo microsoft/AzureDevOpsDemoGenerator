@@ -758,62 +758,7 @@ namespace VstsDemoBuilder.Services
                         #region YML PIPELINES OF TYPE AZURE REPOS
                         if (yamalfilename != null && type.ToString().ToLower() == "tfsgit")
                         {
-                            def["triggers"] = new JArray();
-                            if (type.ToString().ToLower() == "github")
-                            {
-                                def["repository"]["properties"]["fullName"] = "repository";
-                                def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                                def["repository"]["name"] = "repository";
-                            }
-                            var ymlRepoUrl = def["repository"]["url"].ToString();
-                            if (ymlRepoUrl != "")
-                            {
-                                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                                endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl);
-                                Guid g = Guid.NewGuid();
-                                string randStr = g.ToString().Substring(0, 8);
-                                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
-                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                }
-                                else
-                                {
-                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                }
-                            }
-                            string[] splitYmlRepoUrl = ymlRepoUrl.Split('/');
-                            if (splitYmlRepoUrl.Length > 0)
-                            {
-                                splitYmlRepoUrl[2] = "$Organization$@dev.azure.com";
-                                splitYmlRepoUrl[3] = "$Organization$";
-                                splitYmlRepoUrl[4] = "$ProjectName$";
-                                ymlRepoUrl = string.Join("/", splitYmlRepoUrl);
-                                def["repository"]["url"] = ymlRepoUrl;
-                            }
-                            var queueHref = def["queue"]["_links"]["self"]["href"].ToString();
-                            if (queueHref != "")
-                            {
-                                string[] splitQhref = queueHref.Split('/');
-                                if (splitQhref.Length > 0)
-                                {
-                                    splitQhref[3] = "$Organization$";
-                                    splitQhref[splitQhref.Length - 1] = "$" + def["queue"]["name"].ToString() + "$";
-                                    def["queue"]["_links"]["self"]["href"] = string.Join("/", splitQhref);
-                                }
-                                def["queue"]["id"] = "$" + def["queue"]["name"] + "$";
-                                def["queue"]["url"] = string.Join("/", splitQhref);
-                            }
-                            count = count + 1;
-                            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
-                            {
-                                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
-                            }
-                            else
-                            {
-                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
-                            }
+                            count = ymlWithAzureRepos(appConfig, count, templatePath, def, fileName, type);
 
                         }
                         #endregion
@@ -821,180 +766,14 @@ namespace VstsDemoBuilder.Services
                         #region YML PIPELINE WITH GITHUB
                         else if (yamalfilename != null && type.ToString().ToLower() == "github")
                         {
-                            def["triggers"] = new JArray();
-                            if (type.ToString().ToLower() == "github")
-                            {
-                                def["repository"]["properties"]["apiUrl"] = "https://api.github.com/repos/$GitHubRepoName$";
-                                def["repository"]["properties"]["branchesUrl"] = "https://api.github.com/repos/$GitHubRepoName$/branches";
-                                def["repository"]["properties"]["cloneUrl"] = "https://github.com/$GitHubRepoName$.git";
-                                def["repository"]["properties"]["fullName"] = "repository";
-                                def["repository"]["properties"]["manageUrl"] = "https://github.com/$GitHubRepoName$";
-                                def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                                def["repository"]["name"] = "$GitHubRepoName$";
-                                def["repository"]["url"] = "https://github.com/$GitHubRepoName$.git";
-                                def["repository"]["id"] = "$GitHubRepoName$";
-                            }
-                            var ymlRepoUrl = def["repository"]["url"].ToString();
-                            if (ymlRepoUrl != "")
-                            {
-                                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                                endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl);
-                                Guid g = Guid.NewGuid();
-                                string randStr = g.ToString().Substring(0, 8);
-                                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
-                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                }
-                                else
-                                {
-                                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                }
-                            }
-                            count = count + 1;
-                            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
-                            {
-                                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
-                            }
-                            else
-                            {
-                                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
-                            }
+                            count = ymlWithGitHub(appConfig, count, templatePath, def, fileName, type);
                         }
                         #endregion
 
                         #region OTHER
                         else if (yamalfilename == null)
                         {
-
-                            def["queue"]["id"] = "";
-                            def["queue"]["url"] = "";
-                            def["queue"]["_links"] = "{}";
-                            def["queue"]["pool"]["id"] = "";
-                            def["_links"] = "{}";
-                            def["createdDate"] = "";
-
-                            var process = def["process"];
-                            if (process != null)
-                            {
-                                var phases = process["phases"];
-                                if (phases != null)
-                                {
-                                    foreach (var phase in phases)
-                                    {
-                                        phase["target"]["queue"] = "{}";
-                                        var steps = phase["steps"];
-                                        if (steps != null)
-                                        {
-                                            foreach (var step in steps)
-                                            {
-                                                string keyConfig = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
-                                                KeyConfig.Keys keyC = new KeyConfig.Keys();
-                                                keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                                foreach (var key in keyC.keys)
-                                                {
-                                                    string keyVal = step[key] != null ? step[key].ToString() : "";
-                                                    if (!string.IsNullOrEmpty(keyVal))
-                                                    {
-                                                        step[key] = "";
-                                                    }
-                                                }
-                                                foreach (var key in keyC.keys)
-                                                {
-                                                    string keyVal = step["inputs"][key] != null ? step["inputs"][key].ToString() : "";
-                                                    if (!string.IsNullOrEmpty(keyVal))
-                                                    {
-                                                        step["inputs"][key] = "";
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                            if (type.ToString().ToLower() == "github")
-                            {
-                                def["repository"]["type"] = "Git";
-                                def["repository"]["properties"]["fullName"] = "repository";
-                                def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                                def["repository"]["name"] = "repository";
-                                string url = def["repository"]["url"].ToString();
-                                if (url != "")
-                                {
-                                    string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                                    endPointString = endPointString.Replace("$GitHubURL$", url);
-                                    Guid g = Guid.NewGuid();
-                                    string randStr = g.ToString().Substring(0, 8);
-                                    if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
-                                    {
-                                        Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                    }
-                                    else
-                                    {
-                                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                    }
-                                }
-                            }
-                            else if (type.ToString().ToLower() == "git")
-                            {
-                                string url = def["repository"]["url"].ToString();
-                                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                                endPointString = endPointString.Replace("$GitHubURL$", url);
-                                Guid g = Guid.NewGuid();
-                                string randStr = g.ToString().Substring(0, 8);
-                                if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
-                                {
-                                    Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                }
-                                else
-                                {
-                                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
-                                }
-                                def["repository"]["properties"]["connectedServiceId"] = "$GitHub$";
-                            }
-                            else
-                            {
-                                def["repository"]["id"] = "$" + repoName + "$";
-                                def["repository"]["url"] = "";
-                                def["repository"]["properties"]["connectedServiceId"] = "";
-                            }
-                            var input = def["processParameters"]["inputs"];
-                            if (input != null)
-                            {
-                                if (input.HasValues)
-                                {
-                                    foreach (var i in input)
-                                    {
-                                        i["defaultValue"] = "";
-
-                                    }
-                                }
-                            }
-                            var build = def["build"];
-                            if (build != null)
-                            {
-                                if (build.HasValues)
-                                {
-                                    foreach (var b in build)
-                                    {
-                                        b["inputs"]["serverEndpoint"] = "";
-                                    }
-                                }
-                            }
-                            count++;
-                            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
-                            {
-                                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
-                            }
-                            else
-                            {
-                                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
-                            }
+                            count = normalPipeline(appConfig, count, templatePath, def, fileName, repoName, type);
                         }
                         #endregion
                     }
@@ -1006,6 +785,256 @@ namespace VstsDemoBuilder.Services
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return 0;
+        }
+
+        private static int normalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
+        {
+            def["queue"]["id"] = "";
+            def["queue"]["url"] = "";
+            def["queue"]["_links"] = "{}";
+            def["queue"]["pool"]["id"] = "";
+            def["_links"] = "{}";
+            def["createdDate"] = "";
+
+            var process = def["process"];
+            if (process != null)
+            {
+                var phases = process["phases"];
+                if (phases != null)
+                {
+                    foreach (var phase in phases)
+                    {
+                        phase["target"]["queue"] = "{}";
+                        var steps = phase["steps"];
+                        if (steps != null)
+                        {
+                            foreach (var step in steps)
+                            {
+                                string keyConfig = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
+                                foreach (var key in keyC.keys)
+                                {
+                                    string keyVal = step[key] != null ? step[key].ToString() : "";
+                                    if (!string.IsNullOrEmpty(keyVal))
+                                    {
+                                        step[key] = "";
+                                    }
+                                }
+                                foreach (var key in keyC.keys)
+                                {
+                                    string keyVal = step["inputs"][key] != null ? step["inputs"][key].ToString() : "";
+                                    if (!string.IsNullOrEmpty(keyVal))
+                                    {
+                                        step["inputs"][key] = "";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (type.ToString().ToLower() == "github")
+            {
+
+                Guid g = Guid.NewGuid();
+                string randStr = g.ToString().Substring(0, 8);
+                def["repository"]["type"] = "Git";
+                def["repository"]["properties"]["fullName"] = "repository";
+                def["repository"]["properties"]["connectedServiceId"] = "$GitHub_" + randStr + "$";
+                def["repository"]["name"] = "repository";
+                string url = def["repository"]["url"].ToString();
+                if (url != "")
+                {
+                    string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                    endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
+
+                    if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
+                    {
+                        Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
+                        File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                    }
+                    else
+                    {
+                        File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                    }
+                }
+            }
+            else if (type.ToString().ToLower() == "git")
+            {
+                Guid g = Guid.NewGuid();
+                string randStr = g.ToString().Substring(0, 8);
+                string url = def["repository"]["url"].ToString();
+                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
+
+                if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
+                {
+                    Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
+                    File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                }
+                else
+                {
+                    File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                }
+                def["repository"]["properties"]["connectedServiceId"] = "$GitHub_" + randStr + "$";
+            }
+            else
+            {
+                def["repository"]["id"] = "$" + repoName + "$";
+                def["repository"]["url"] = "";
+                def["repository"]["properties"]["connectedServiceId"] = "";
+            }
+            var input = def["processParameters"]["inputs"];
+            if (input != null)
+            {
+                if (input.HasValues)
+                {
+                    foreach (var i in input)
+                    {
+                        i["defaultValue"] = "";
+
+                    }
+                }
+            }
+            var build = def["build"];
+            if (build != null)
+            {
+                if (build.HasValues)
+                {
+                    foreach (var b in build)
+                    {
+                        b["inputs"]["serverEndpoint"] = "";
+                    }
+                }
+            }
+            count++;
+            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+            {
+                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+            }
+            else
+            {
+                System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+            }
+
+            return count;
+        }
+
+        private static int ymlWithGitHub(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
+        {
+            Guid g = Guid.NewGuid();
+            string randStr = g.ToString().Substring(0, 8);
+            def["triggers"] = new JArray();
+            if (type.ToString().ToLower() == "github")
+            {
+                string gitHubRepo = def["repository"]["id"].ToString();
+                string[] gitHubIdSplit = gitHubRepo.Split('/');
+                gitHubIdSplit[0] = "$UserName$";
+                gitHubRepo = string.Join("/", gitHubIdSplit);
+
+                def["repository"]["properties"]["apiUrl"] = "https://api.github.com/repos/" + gitHubRepo;
+                def["repository"]["properties"]["branchesUrl"] = "https://api.github.com/repos/" + gitHubRepo + "/branches";
+                def["repository"]["properties"]["cloneUrl"] = "https://github.com/" + gitHubRepo + ".git";
+                def["repository"]["properties"]["fullName"] = "repository";
+                def["repository"]["properties"]["manageUrl"] = "https://github.com/" + gitHubRepo;
+                def["repository"]["properties"]["connectedServiceId"] = "$GitHub_" + randStr + "$";
+                def["repository"]["name"] = gitHubRepo;
+                def["repository"]["url"] = "https://github.com/" + gitHubRepo + ".git";
+                def["repository"]["id"] = gitHubRepo;
+            }
+            var ymlRepoUrl = def["repository"]["url"].ToString();
+            if (ymlRepoUrl != "")
+            {
+                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
+
+                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
+                {
+                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
+                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                }
+                else
+                {
+                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                }
+            }
+            count = count + 1;
+            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+            {
+                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+            }
+            else
+            {
+                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+            }
+
+            return count;
+        }
+
+        private static int ymlWithAzureRepos(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
+        {
+            Guid g = Guid.NewGuid();
+            string randStr = g.ToString().Substring(0, 8);
+            def["triggers"] = new JArray();
+            if (type.ToString().ToLower() == "github")
+            {
+                def["repository"]["properties"]["fullName"] = "repository";
+                def["repository"]["properties"]["connectedServiceId"] = "$GitHub_" + randStr + "$";
+                def["repository"]["name"] = "repository";
+            }
+            var ymlRepoUrl = def["repository"]["url"].ToString();
+            if (ymlRepoUrl != "")
+            {
+                string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl);
+                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
+                {
+                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
+                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                }
+                else
+                {
+                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                }
+            }
+            string[] splitYmlRepoUrl = ymlRepoUrl.Split('/');
+            if (splitYmlRepoUrl.Length > 0)
+            {
+                splitYmlRepoUrl[2] = "$Organization$@dev.azure.com";
+                splitYmlRepoUrl[3] = "$Organization$";
+                splitYmlRepoUrl[4] = "$ProjectName$";
+                ymlRepoUrl = string.Join("/", splitYmlRepoUrl);
+                def["repository"]["url"] = ymlRepoUrl;
+            }
+            var queueHref = def["queue"]["_links"]["self"]["href"].ToString();
+            if (queueHref != "")
+            {
+                string[] splitQhref = queueHref.Split('/');
+                if (splitQhref.Length > 0)
+                {
+                    splitQhref[3] = "$Organization$";
+                    splitQhref[splitQhref.Length - 1] = "$" + def["queue"]["name"].ToString() + "$";
+                    def["queue"]["_links"]["self"]["href"] = string.Join("/", splitQhref);
+                }
+                def["queue"]["id"] = "$" + def["queue"]["name"] + "$";
+                def["queue"]["url"] = string.Join("/", splitQhref);
+            }
+            count = count + 1;
+            if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+            {
+                Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
+                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+            }
+            else
+            {
+                File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+            }
+
+            return count;
         }
 
         // Generalizing the release definition method to make it work for All kind of Release definition
