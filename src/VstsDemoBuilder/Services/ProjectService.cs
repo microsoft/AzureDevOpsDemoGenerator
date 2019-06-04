@@ -377,8 +377,7 @@ namespace VstsDemoBuilder.Services
             TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
 
             var teamMember = teamMembers.value != null ? teamMembers.value.FirstOrDefault() : new TeamMemberResponse.Value();
-            //model.Environment.UserUniqueId = model.Email;
-            //model.Environment.UserUniquename = model.Email;
+            
             if (teamMember != null)
             {
                 model.Environment.UserUniquename = model.Environment.UserUniquename ?? teamMember.identity.uniqueName;
@@ -387,7 +386,8 @@ namespace VstsDemoBuilder.Services
             {
                 model.Environment.UserUniqueId = model.Environment.UserUniqueId ?? teamMember.identity.id;
             }
-
+            model.Environment.UserUniqueId = model.Email;
+            model.Environment.UserUniquename = model.Email;
             //update board columns and rows
             // Checking for template version
             string projectTemplate = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
