@@ -1017,7 +1017,7 @@ function getGroups(grpSelected) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
                                     grp += '<div class="col-lg-3 col-md-3 p-8">';
-                                    grp += '<div class="template template-box" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
                                     grp += '<div class="template-box ">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';

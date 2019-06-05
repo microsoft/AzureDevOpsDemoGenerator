@@ -8041,7 +8041,7 @@ a.select-button{
         text-decoration: none
     }
 .section-1 main .VSTS-details {
-    max-width: 600px;
+    padding-left: 8% !important;
 }
 .footer {
     padding: 8px 11em !important;
@@ -8057,7 +8057,7 @@ a.select-button{
 .mob_logo{ display:none !important;}
 @media (min-width: 768px) {
     .section-1 main .VSTS-details {
-        max-width: 550px
+      padding-left:10%
     }
 }
 
@@ -8079,12 +8079,23 @@ a.select-button{
         .mob-p0 {
             padding: 0 !important;
         }
-
-        .VSTS-hero-image {
-            min-width: 349px;
+        .azuretitle {
+            font-size: 16px;
         }
+        .section-1 main .VSTS-details {
+            padding-left: 2% !important;
+        }
+        .logo_container {
+            position: absolute;
+            left: 0;
+        }
+        .logo_text {
+            font-weight: bold;
+            font-size: 15px;
+            white-space: nowrap;
 
-        .footer {
+        }
+            .footer {
             padding: 8px 1.2em !important;
             font-weight: 100;
             font-size: 11px;
@@ -8160,8 +8171,16 @@ a.select-button{
         background-color: #f5f5f5
     }
     /*# sourceMappingURL=custom.min.css.map */
+.logo_text { 
+    font-weight:bold; 
+    font-size:18px;
+}
+.logo_container {
+    position: absolute;
+}
 
     @media (max-width: 767.98px) {
+        .logo_text{ display:none}
         .mainbanner {
             background: url(../images/mob_bg.png) top left/ 1000px, #fff;
             background-size: contain;
@@ -8194,5 +8213,214 @@ a.select-button{
 
         .VSTS-details h6.h6.text-primary.mt-3.text-uppercase.text-left {
             margin-top: 49px !important;
+        }
+    }
+
+    @media only screen and (min-width: 1500px) {
+        .logo_container {
+            position: absolute;
+            left: 50px;
+            top: 30px;
+        }
+
+        .logo_text {
+            font-size: 23px;
+        }
+
+            .logo_text img {
+                width: 56px;
+            }
+
+        .container {
+            max-width: 1350px;
+        }
+
+        .section-1 main .VSTS-details p {
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        .rd-4 {
+            height: 40px;
+            font-size: 16px
+        }
+    }
+
+@media only screen and (min-width: 1800px) {
+
+    .container {
+        max-width: 1650px;
+    }
+
+    .section-1 main .VSTS-details p {
+        font-size: 20px;
+        line-height: 42px;
+    }
+
+    .rd-4 {
+        height: 45px;
+        font-size: 18px
+    }
+
+    .backlink {
+        padding: 12px 10px 14px 48px;
+        font-size: 18px;
+    }
+
+    .template-body {
+        height: 620px;
+    }
+    .footer {
+ 
+        font-size: 19px;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    .container {
+        max-width: 1700px;
+    }
+
+    .logo_text {
+        font-size: 26px;
+    }
+
+        .logo_text img {
+            width: 65px;
+        }
+
+    .section-1 main .VSTS-details {
+        padding-top: 2%;
+    }
+
+        .section-1 main .VSTS-details p {
+            font-size: 20px;
+        }
+
+    .VSTS-details p {
+        line-height: 38px;
+    }
+
+    .section-1 main .VSTS-details .demo-generator-details-logo {
+        width: 234px;
+    }
+
+    .rd-4 {
+        font-size: 20px;
+        height: 52px;
+    }
+
+    .backlink {
+        font-size: 20px;
+        padding: 19px 10px 18px 46px;
+        border: 1px solid #585858;
+    }
+
+    .azuretitle {
+        font-size: 32px;
+    }
+
+    
+}
+
+@media only screen and (min-width: 2300px) {
+    .logo_text {
+        font-size: 28px;
+    }
+
+        .logo_text img {
+            width: 75px;
+        }
+
+    .rd-4 {
+        border-radius: 10px;
+    }
+
+    .section-1 main .VSTS-details .demo-generator-details-logo {
+        width: 297px;
+    }
+
+    .container {
+        max-width: 2000px;
+    }
+
+    .section-1 main .VSTS-details {
+        padding-top: 3% !important;
+    }
+
+
+    .mainbanner {
+        background-size: 63%, 17%;
+    }
+
+    .section-1 main .VSTS-details p {
+        font-size: 26px;
+    }
+
+    .VSTS-details p {
+        line-height: 50px;
+    }
+
+    .rd-4 {
+        font-size: 27px;
+        height: 66px;
+    }
+
+    .backlink {
+        font-size: 22px;
+        padding: 19px 10px 18px 46px;
+        border-radius: 10px;
+        border: 1px solid #585858;
+    }
+
+    .azuretitle {
+        font-size: 41px;
+    }
+
+    .footer {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 2800px) {
+    .container {
+        max-width: 2400px;
+    }
+
+    .section-1 main .VSTS-details p {
+        font-size: 32px;
+        line-height: 54px;
+    }
+
+    .rd-4 {
+        font-size: 33px;
+        height: 87px;
+        line-height: 62px;
+        padding: 7px 44px;
+    }
+
+    .backlink {
+        font-size: 30px;
+        padding: 19px 10px 18px 77px;
+        border: 1px solid #585858;
+        border-radius: 9px;
+    }
+
+    .template-body {
+        height: 800px;
+        padding: 30px !important;
+    }
+}
+    
+
+    @media only screen and (min-width: 3000px) {
+        .section-1 main .VSTS-details p {
+            font-size: 34px;
+        }
+
+        .azuretitle {
+            font-size: 49px;
+        }
+        .footer {
+             font-size:30px;
         }
     }
