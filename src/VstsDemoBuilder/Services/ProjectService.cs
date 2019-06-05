@@ -386,8 +386,8 @@ namespace VstsDemoBuilder.Services
             {
                 model.Environment.UserUniqueId = model.Environment.UserUniqueId ?? teamMember.identity.id;
             }
-            model.Environment.UserUniqueId = model.Email;
-            model.Environment.UserUniquename = model.Email;
+            //model.Environment.UserUniqueId = model.Email;
+            //model.Environment.UserUniquename = model.Email;
             //update board columns and rows
             // Checking for template version
             string projectTemplate = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
