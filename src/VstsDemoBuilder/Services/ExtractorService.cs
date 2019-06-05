@@ -758,22 +758,21 @@ namespace VstsDemoBuilder.Services
                         #region YML PIPELINES OF TYPE AZURE REPOS
                         if (yamalfilename != null && type.ToString().ToLower() == "tfsgit")
                         {
-                            count = ymlWithAzureRepos(appConfig, count, templatePath, def, fileName, type);
-
+                            count = YmlWithAzureRepos(appConfig, count, templatePath, def, fileName, type);
                         }
                         #endregion
 
                         #region YML PIPELINE WITH GITHUB
                         else if (yamalfilename != null && type.ToString().ToLower() == "github")
                         {
-                            count = ymlWithGitHub(appConfig, count, templatePath, def, fileName, type);
+                            count = YmlWithGitHub(appConfig, count, templatePath, def, fileName, type);
                         }
                         #endregion
 
                         #region OTHER
                         else if (yamalfilename == null)
                         {
-                            count = normalPipeline(appConfig, count, templatePath, def, fileName, repoName, type);
+                            count = NormalPipeline(appConfig, count, templatePath, def, fileName, repoName, type);
                         }
                         #endregion
                     }
@@ -787,12 +786,10 @@ namespace VstsDemoBuilder.Services
             return 0;
         }
 
-        private static int normalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
+        private static int NormalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
         {
             try
             {
-
-
                 def["queue"]["id"] = "";
                 def["queue"]["url"] = "";
                 def["queue"]["_links"] = "{}";
@@ -933,7 +930,7 @@ namespace VstsDemoBuilder.Services
             return count;
         }
 
-        private static int ymlWithGitHub(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
+        private static int YmlWithGitHub(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
         {
             try
             {
@@ -993,7 +990,7 @@ namespace VstsDemoBuilder.Services
             return count;
         }
 
-        private static int ymlWithAzureRepos(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
+        private static int YmlWithAzureRepos(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
         {
             try
             {
@@ -1010,7 +1007,7 @@ namespace VstsDemoBuilder.Services
                 if (ymlRepoUrl != "")
                 {
                     string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
-                    endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl);
+                    endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
                     if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
                     {
                         Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
