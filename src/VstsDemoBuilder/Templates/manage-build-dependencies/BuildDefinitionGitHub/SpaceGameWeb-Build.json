@@ -1,0 +1,70 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    },
+    {
+      "settingsSourceType": 2,
+      "branchFilters": [
+        "+master"
+      ],
+      "forks": {
+        "enabled": true,
+        "allowSecrets": false
+      },
+      "pathFilters": [],
+      "requireCommentsForNonTeamMembersOnly": false,
+      "isCommentRequiredForPullRequest": false,
+      "triggerType": "pullRequest"
+    }
+  ],
+  "properties": {},
+  "tags": [],
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "apiUrl": "https://api.github.com/repos/$GitHubRepoName$",
+      "branchesUrl": "https://api.github.com/repos/$GitHubRepoName$/branches",
+      "cloneUrl": "https://github.com/$GitHubRepoName$.git",
+      "connectedServiceId": "$spacegame-web$",
+      "defaultBranch": "master",
+      "fullName": "$GitHubRepoName$",
+      "hasAdminPermissions": "False",
+      "isFork": "True",
+      "isPrivate": "False",
+      "lastUpdated": "2019-05-28T15:25:30Z",
+      "manageUrl": "https://github.com/$GitHubRepoName$"
+    },
+    "id": "$GitHubRepoName$",
+    "type": "GitHub",
+    "name": "$GitHubRepoName$",
+    "url": "https://github.com/$GitHubRepoName$.git",
+    "defaultBranch": "master",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "drafts": [],
+  "queue": {
+    "id": 8,
+    "name": "Hosted Ubuntu 1604",
+    "pool": {
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "name": "jamcneil_mslearn-tailspin-spacegame-web",
+  "type": "build",
+  "queueStatus": "enabled"
+}
