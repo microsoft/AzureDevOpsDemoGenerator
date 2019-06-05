@@ -9102,9 +9102,9 @@ html, body {
     border: .5px solid #dee2e6 !important;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-    width: 420px;
-    height: 138px;
-    max-height: 220px;
+    width:100%;
+    min-height: 142px;
+    max-height: 142px;
     overflow-y: hidden;
 }
 
@@ -9771,3 +9771,881 @@ img#projectloader {
 .p-8 { padding:.8em;
 }
 /*# sourceMappingURL=custom.min.css.map */
+
+.rd-4.Diagno_btn { width:100%
+}
+@media only screen and (min-width: 1500px) {
+    .container {
+        max-width: 1350px;
+    }
+
+    .card-header h5, .demo-header h5 {
+        font-size: 22px
+    }
+
+    .demo_form .form-group label {
+        font-size: 18px;
+    }
+
+    .demo_form select, .demo_form input {
+        height: 46px !important;
+        background-position: 99% 50%;
+    }
+
+    .card-text, .info_msg {
+        font-size: 17px !important;
+        line-height: 32px;
+    }
+
+    .rd-4 {
+        height: 45px;
+        font-size: 17px;
+    }
+
+    .createDemoContainer {
+        height: 185px;
+    }
+
+    .template-body .template {
+        min-height: 210px;
+        max-height: 210px;
+    }
+
+    .template-box {
+        height: 184px
+    }
+
+    .template-body .template .description {
+        font-size: 15px;
+        line-height: 26px;
+    }
+
+    .templateAlign {
+        padding: 14px 10px;
+        font-size: 19px;
+    }
+
+    .template_tab li a {
+        font-size: 16px;
+        padding: 9px 10px;
+    }
+
+    .template p i {
+        font-size: 12px !important;
+    }
+
+    div#lblextensionError .boldText strong {
+        font-size: 18px;
+    }
+
+    div#lblextensionError .boldText p {
+        font-size: 18px;
+    }
+
+    #status-messages, #accountLink {
+        font-size: 17px;
+    }
+
+    .text-muted {
+        font-size: 15px;
+    }
+
+    .input_box .alert-danger {
+        font-size: 17px;
+    }
+
+    .template-body {
+        height: 550px;
+    }
+}
+@media only screen and (min-width: 1800px) {
+    .container {
+        max-width: 1650px;
+    }
+
+    .card-header h5, .demo-header h5 {
+        font-size: 24px
+    }
+
+    .demo_form .form-group label {
+        font-size: 20px;
+    }
+
+    .demo_form select, .demo_form input {
+        height: 48px !important;
+        background-position: 99% 50%;
+        border-radius: 7px;
+        font-size: 20px;
+    }
+
+    .card-text, .info_msg {
+        font-size: 19px !important;
+            border-radius: 7px;
+            line-height:36px;
+    }
+
+    .rd-4 {
+        height: 48px;
+        font-size: 19px;
+        border-radius: 7px;
+        min-width: 180px;
+    }
+
+    .createDemoContainer {
+        height: 200px;
+    }
+
+    .demo-content, .card-body, .info_msg {
+        padding: 30px !important;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 22px;
+    }
+    .template-body .template .description {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .template_tab li a {
+        font-size: 20px;
+    }
+    .template p i {
+        font-size: 14px !important;
+    }
+    .template-body .template {
+
+    border: 1px solid #d6d6d6 !important;
+}
+    .input_box .alert-danger {
+        font-size: 18px;
+    }
+  }
+
+
+@media only screen and (min-width: 2000px) {
+    .container {
+        max-width: 1700px;
+    }
+
+    .card-header h5, .demo-header h5 {
+        font-size: 26px
+    }
+
+    .demo_form .form-group label {
+        font-size: 22px;
+    }
+
+    .demo_form select, .demo_form input {
+        height: 55px !important;
+        background-position: 99% 50%;
+        font-size: 22px;
+        border-radius: 7px;
+    }
+
+    .card-text, .info_msg {
+        font-size: 22px !important;
+        line-height: 32px;
+    }
+
+    .rd-4 {
+        height: 55px;
+        font-size: 21px;
+        border-radius: 7px;
+        width: 270px;
+    }
+
+    .demo-header, .about_template .card-header {
+        padding: 16px 30px;
+    }
+
+    .createDemoContainer {
+        height: 250px;
+    }
+
+    .demo-content {
+        padding: 36px;
+    }
+
+    .navbar-brand-text {
+        font-size: 27px;
+        line-height: 46px;
+        vertical-align: middle;
+    }
+
+    .navbar-brand img {
+        width: 40px;
+    }
+
+    .navbar .nav-item img {
+        width: 20px;
+    }
+
+    .navbar {
+        height: 80px;
+    }
+
+    .checkmark {
+        height: 28px;
+        width: 28px;
+        border: 3px solid #0078d7;
+    }
+
+    .demo_form, .about_template, .info_msg {
+        border-radius: 14px;
+    }
+
+    .chbox .checkmark:after {
+        left: 6px;
+        top: 0px;
+        width: 9px;
+        height: 18px;
+    }
+
+    .importgit {
+        background-size: 38px;
+    }
+
+    .template-body .template {
+        min-height: 254px;
+        max-height: 254px;
+    }
+
+    .template-box {
+        height: 227px;
+    }
+
+        .template-box .template-header .templateImage {
+            width: 68px;
+        }
+
+    .template-body .template-header .title {
+        font-size: 22px;
+    }
+
+    .template-body {
+        height: 666px;
+        padding: 25px !important;
+    }
+
+    .template-close {
+        right: 24px;
+        top: -54px;
+        border: 2px solid #6f6f6f;
+        font-size: 20px;
+        height: 34px;
+        width: 34px; 
+        line-height: 28px;
+    }
+
+    div#lblextensionError .boldText strong {
+        font-size: 20px;
+    }
+
+    div#lblextensionError .boldText p {
+        font-size: 20px;
+    }
+
+    #status-messages, #accountLink {
+        font-size: 20px;
+    }
+
+    .text-muted {
+        font-size: 17px;
+    }
+    .templateAlign {
+        padding: 14px 10px;
+        font-size: 26px;
+    }
+
+}
+@media only screen and (min-width: 2300px) {
+    .container {
+        max-width: 2000px;
+    }
+
+    .card-header h5, .demo-header h5 {
+        font-size: 28px
+    }
+
+    .demo_form .form-group label {
+        font-size: 25px;
+    }
+
+    .demo_form select, .demo_form input {
+        height: 68px !important;
+        background-position: 99% 50%;
+        font-size: 25px;
+        border-radius: 10px;
+    }
+
+    .card-text, .info_msg {
+        font-size: 25px !important;
+        line-height: 38px;
+    }
+
+    .rd-4 {
+        height: 68px;
+        font-size: 24px;
+        border-radius: 10px;
+        min-width: 202px;
+    }
+
+    .demo-header, .about_template .card-header {
+        padding: 18px 32px;
+    }
+
+    .createDemoContainer {
+        height: 250px;
+    }
+
+    .demo-content, .card-body, .info_msg {
+        padding: 38px !important;
+    }
+
+    .form-select, .form-input {
+        border: .5px solid #929394;
+        background-size: 20px;
+    }
+
+    button#templateselection {
+        margin-bottom: 20px;
+    }
+
+    create-new-project {
+        padding: 54px 0;
+    }
+
+
+
+        .template-body .template .description {
+            font-size: 23px;
+            line-height: 37px;
+        }
+
+    .template-box {
+        height: 257px;
+    }
+
+        .template-box .template-header .templateImage {
+            width: 68px;
+        }
+
+
+
+
+    .templateAlign {
+        padding: 20px 10px;
+        font-size: 26px;
+    }
+
+    .template_tab li a {
+        font-size: 24px;
+        padding: 14px 10px;
+    }
+
+    .template-body {
+        height: 800px;
+        padding: 30px !important;
+    }
+        .template-body .template {
+            min-height: 290px;
+            max-height: 290px;
+            border: 1px solid #b3b3b3 !important;
+        }
+        
+        .template-body .template-header .title {
+            font-size: 28px;
+        }
+
+    .template p i {
+        font-size: 21px !important;
+        background: #d6d6d6;
+        padding: 6px;
+        margin: 0 5px 4px 0;
+    }
+
+    div#lblextensionError .boldText strong {
+        font-size: 24px;
+    }
+
+    div#lblextensionError .boldText p {
+        font-size: 24px;
+    }
+
+    #status-messages, #accountLink {
+        font-size: 22px;
+    }
+
+    .text-muted {
+        font-size: 22px;
+    }
+    #accountLink p {
+        font-size: 27px;
+    }
+    .input_box .alert-danger {
+        font-size: 23px;
+        border-radius: 9px;
+    }
+    .social-icons a:first-of-type img {
+        transform: translate(0, 24%);
+        width: 22px !important;
+    }
+
+    .social-icons a:nth-of-type(2) img {
+        transform: translate(0, 42%);
+        width: 35px !important;
+    }
+
+    .social-icons a:nth-of-type(3) img {
+        transform: translate(0, 70%);
+        width: 35px !important;
+    }
+
+    .social-icons a:nth-of-type(4) img {
+        transform: translate(0, 70%);
+        width: 35px !important;
+    }
+
+    .social-icons .fa-envelope:before {
+        font-size: 27px;
+        top: 32%;
+    }
+
+    .social-icons a {
+        width: 60px !important;
+        height: 60px;
+        border: 2px solid #fff;
+    }
+     
+}
+@media only screen and (min-width: 2600px) {
+    .container {
+        max-width: 2350px;
+    }
+    input#ThirdPartyagreeTermsConditions {
+        width: 35px;
+        height: 35px !important;
+    }
+    .card-header h5, .demo-header h5 {
+        font-size: 30px
+    }
+
+    .demo_form .form-group label {
+        font-size: 31px;
+    }
+
+    .demo_form select, .demo_form input {
+        height: 80px !important;
+        background-position: 99% 50%;
+        font-size: 30px;
+        border-radius: 10px;
+    }
+
+    .card-text, .info_msg {
+        font-size: 28px !important;
+        line-height: 50px;
+    }
+
+    .rd-4 {
+        height: 80px;
+        font-size: 30px;
+        border-radius: 10px;
+    }
+
+    .demo-header, .about_template .card-header {
+        padding: 26px 48px;
+    }
+
+    .createDemoContainer {
+        height: 267px;
+    }
+
+    .demo-content, .card-body, .info_msg {
+        padding: 48px !important;
+    }
+
+    .form-select, .form-input {
+        border: .5px solid #929394;
+        background-size: 20px;
+    }
+
+    .demo_form, .about_template, .info_msg {
+        border-radius: 18px;
+    }
+
+    .checkmark {
+        height: 32px;
+        width: 32px;
+        background-color: #fff;
+        border: 4px solid #0078d7;
+    }
+
+    .chbox .checkmark:after {
+        left: 8px;
+        top: 0px;
+        width: 10px;
+        height: 19px;
+        border: solid white;
+        border-width: 0 4px 4px 0;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 30px;
+    }
+
+    .navbar .nav-item img {
+        width: 26px;
+    }
+
+    .navbar-brand-text {
+        font-size: 30px;
+    }
+
+    .navbar-brand img {
+        width: 46px;
+    }
+
+    .card-text, .info_msg {
+        font-size: 30px !important;
+        line-height: 56px;
+    }
+
+    .importgit {
+        background-size: 46px;
+    }
+
+    .create-new-project {
+        padding: 54px 0;
+    }
+
+    .checkmark {
+        height: 35px;
+        width: 35px;
+        border-radius:8px;
+    }
+    .chbox {
+        margin: 4px 0 16px 9px;
+    }
+    .template_tab li a {
+        font-size: 27px;
+    }
+    .template-body .template {
+        min-height: 328px;
+        max-height: 328px;
+        border-radius: 12px;
+        border: 2px solid #b3b3b3 !important;
+    }
+        .template-body .template .description {
+            font-size: 26px;
+            line-height: 43px;
+        }
+    .template-body {
+        height:900px;
+    }
+    .template p i {
+        font-size: 21px !important;
+        background: #d6d6d6;
+        padding: 6px;
+        margin: 0 5px 4px 0;
+    }
+    .template-box {
+        height: 286px;
+    }
+    .templateAlign {
+        padding: 24px 10px;
+        font-size: 32px;
+    }
+    .template-close{top:-67px}
+    .footer {
+        padding: 8px 11em !important;
+        font-size: 27px;
+    }
+    div#lblextensionError .boldText strong {
+        font-size: 30px;
+    }
+    div#lblextensionError .boldText p {
+        font-size: 28px;
+    }
+    #status-messages, #accountLink {
+        font-size: 27px;
+    }
+    .input_box .alert-danger {
+        font-size: 30px;
+        border-radius: 9px;
+        padding: 15px 20px;
+    }
+    }
+    @media only screen and (min-width: 2800px) {
+        .container {
+            max-width: 2400px;
+        }
+        div#lblextensionError .boldText p {
+            font-size: 30px;
+        }
+        .card-header h5, .demo-header h5 {
+            font-size: 36px;
+        }
+        .demo_form .form-group label {
+            font-size: 33px;
+        }
+        .navbar-brand-text {
+            font-size: 32px;
+        }
+        .navbar-brand img {
+            width: 62px;
+        }
+        create-new-project {
+            padding: 54px 0;
+        }
+        .checkmark {
+            height: 45px;
+            width: 45px;
+        }
+
+        .chbox .checkmark:after {
+            left: 11px;
+            top: 3px;
+            width: 14px;
+            height: 27px;
+            border: solid white;
+            border-width: 0 5px 5px 0;
+        }
+        .chbox {
+            margin-bottom: 20px;
+        }
+        .footer {
+            padding: 8px 11em !important;
+            font-size: 29px;
+        }
+        .about_template, .demo_form, .info_msg {
+            border: 2px solid #9bcdff !important;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            font-size: 25px;
+        }
+        .navbar .nav-item img {
+            width: 24px;
+        }
+        rd-4{font-size:26px;}
+        .mb-3{
+            margin-bottom: 3rem !important;
+        }
+        .importgit {
+            padding-left: 49px;
+        }
+        .social-icons a:first-of-type img {
+            transform: translate(0, 24%);
+            width: 22px !important;
+        }
+
+        .social-icons a:nth-of-type(2) img {
+            transform: translate(0, 42%);
+            width: 35px !important;
+        }
+
+        .social-icons a:nth-of-type(3) img {
+            transform: translate(0, 70%);
+            width: 35px !important;
+        }
+
+        .social-icons a:nth-of-type(4) img {
+            transform: translate(0, 70%);
+            width: 35px !important;
+        }
+
+        .social-icons .fa-envelope:before {
+            font-size: 27px;
+            top: 32%;
+        }
+        .social-icons a {
+            width: 66px !important;
+            height: 66px;
+            border: 2px solid #fff;
+        }
+     
+    }
+
+
+@media only screen and (min-width: 3000px) {
+
+    .social-icons a {
+        width: 66px !important;
+        height: 66px;
+        border: 2px solid #fff;
+    }
+        .social-icons a:first-of-type img {
+            transform: translate(0, 24%);
+            width: 22px !important;
+        }
+        .social-icons a:nth-of-type(2) img {
+            transform: translate(0, 42%);
+            width: 35px !important;
+        }
+        .social-icons a:nth-of-type(3) img {
+            transform: translate(0, 70%);
+            width: 35px !important;
+        }
+        .social-icons a:nth-of-type(4) img {
+            transform: translate(0, 70%);
+            width: 35px !important;
+        }
+    .social-icons .fa-envelope:before {
+        font-size: 27px;
+        top: 32%;
+    }
+    div#lblextensionError .boldText strong {
+        font-size: 32px;
+    }
+    div#lblextensionError .boldText p {
+        font-size: 32px;
+    }
+    .demo_form select, .demo_form input {
+        height: 90px !important;
+        font-size: 33px;
+    }
+        .card-text, .info_msg {
+        font-size: 33px !important;
+        line-height: 52px;
+    }
+    .social-icons img {
+        width:30px;
+    }
+    .about_template, .demo_form, .info_msg {
+        border: 2px solid #9bcdff !important;
+    }
+    .createDemoContainer {
+        height: 350px;
+    }
+    .progress{ height:2em}
+    div#progressBar {
+        height:30px !important;
+    }
+    .template-body .template {
+        border-radius: 20px;
+    }
+    .text-muted {
+        font-size: 29px;
+    }
+    #status-messages, #accountLink {
+        font-size: 29px;
+        line-height: 45px;
+    }
+    .rd-4 {
+        height: 90px !important;
+        font-size: 35px;
+        width: 305px;
+    }
+    .card-header h5, .demo-header h5 {
+        font-size: 38px;
+    }
+    .demo_form .form-group label {
+        font-size: 35px;
+    }
+
+    .chbox {
+        margin-bottom: 20px;
+    }
+
+    .template-body .template {
+        min-height: 400px;
+    }
+
+    .template-box {
+        height: 378px;
+    }
+
+    .template-body {
+        height: 1077px;
+    }
+
+        .template-body .template .description {
+            font-size: 30px;
+            line-height: 48px;
+        }
+
+    .template p i {
+        font-size: 26px !important;
+        line-height: 26px;
+    }
+
+    template-body .template .description {
+        font-size: 32px;
+        line-height: 25px;
+    }
+
+    .template-body .template-header .title {
+        font-size: 34px;
+    }
+    .template_tab li a {
+        font-size: 33px;
+    }
+    .navbar-brand-text {
+        font-size: 37px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 35px;
+    }
+    .navbar .nav-item img {
+        width: 35px;
+    }
+    img#imgLoading {
+        width: 72px;
+    }
+    input#ThirdPartyagreeTermsConditions {
+        width: 43px;
+        height: 42px !important;
+    }
+}
+option {
+    font-size: 14px;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@media only screen and (min-width: 3500px) {
+    .container {
+        max-width: 2850px;
+    }
+
+    .createDemoContainer {
+        height: 400px;
+    }
+
+    .demo-header, .about_template .card-header {
+        padding: 36px 48px;
+    }
+
+        .card-header h5, .demo-header h5 {
+            font-size: 45px;
+        }
+
+    .demo_form .form-group label {
+        font-size: 39px;
+    }
+
+    .demo_form select, .demo_form input {
+        height: 100px !important;
+        background-position: 99% 50%;
+        font-size: 35px;
+        border-radius: 10px;
+    }
+
+    .rd-4 {
+        height: 100px;
+        font-size: 39px;
+        width: 362px;
+    }
+    .card-text, .info_msg {
+        font-size: 39px !important;
+        line-height: 55px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 40px;
+    }
+    .navbar .nav-item img {
+        width: 35px;
+    }
+    .demo_form select, .demo_form input {
+        padding:0 48px;
+    }
+}

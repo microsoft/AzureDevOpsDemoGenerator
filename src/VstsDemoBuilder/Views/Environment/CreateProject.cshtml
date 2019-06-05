@@ -278,7 +278,7 @@
                                         </div>
                                     </div>
                                     <div class="template-invoke pl-3 " style="padding-left:0px;">
-                                        <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" style="padding-left:5px; padding-right:5px; font-size:13px;width: auto">
+                                        <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" >
                                             &nbsp;&nbsp;Create Project &nbsp;&nbsp;
                                         </button>
                                         <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
@@ -296,7 +296,7 @@
                         <!--EXTENSIONS -->
 
 
-                        <div class="mt-4 border p-3 d-none " id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                        <div class="mt-4 border p-3 d-none varifying_container" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                             <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                             <div class="extensionError boldText">
                                 <p style="display:none;" id="extensionError"></p>
@@ -344,13 +344,13 @@
 
                 </div>
                 <div class="card bg-primary mb-3 mt-auto  about_template" id="errorNotify" style="display:none;">
-                    <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
+                    <div class="card-header" style="color:white"><h5>Sorry….We ran into an issue!</h5></div>
                     <div class="card-body" style="background-color:white">
                         <p class="card-text" id="errorDescription">
                         </p>
                     </div>
                     <div class="card-footer" style="background-color:white">
-                        <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        <button class="btn rd-4 Diagno_btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
                             View Diagnostics
                         </button>
                     </div>
