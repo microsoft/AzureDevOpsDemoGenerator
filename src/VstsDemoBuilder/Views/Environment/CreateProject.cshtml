@@ -57,8 +57,9 @@
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
     }
+    <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
-    <input type="hidden" id="hdnMessage" />
+    <input type="hidden" id="hdnGToken" />
     <!--TEMPLATE GROUPING-->
     <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
@@ -153,9 +154,9 @@
                   COL 1
                   Image and Feedback section
             -->
-            <div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
+            <div class="col-md-3 order-3 order-md-1 VSTS-mh-100">
                 <div class="d-flex flex-column VSTS-mh-100">
-                    <img class="img-fluid" src="~/content/assets/images/VSTS-demoGen-image.png" alt="" style="max-width: 88%; opacity:0.3">
+                    <img class="img-fluid mob_d" src="~/content/assets/images/VSTS-demoGen-image.png" alt="" style="max-width: 88%; opacity:0.3">
                     <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
                         <h6>Feedback&colon;</h6>
                         <p class="mb-0">
@@ -199,41 +200,34 @@
                 </div>
                 <div class="form-group row" id="">
                     <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
-                    <div class="col-lg-6  mb-3 mt-1">
+                    <div class="col-lg-5  mb-3 mt-1">
                         <input type="text" class="form-control" id="ddlTemplates" disabled />
                         <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
 
                         </div>
                     </div>
-                    <div class="template-invoke mb-3 mt-1 col-lg-2" style="padding-left:0px;">
-                        <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; font-size:12px;width: 100%">
+                    <div class="template-invoke mb-3 mt-1 col-lg-3">
+                        <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
                             Choose template
                         </button>
                     </div>
                 </div>
-                <div class="form-group row" id="">
-                    <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">
+                <div class="form-group row d-none" id="gitHubCheckboxDiv">
+                    <label for="Template" class="col-lg-3 col-form-label mt-1 mob_d">
                     </label>
-                    <div class="col-lg-6  mb-3 mt-1">
-                        <p>Do you want to fork repository to your GitHub?</p>
-                    </div>
-                    <div class="template-invoke mb-3 mt-1 col-lg-2" style="padding-left:0px;">
-                        <input type="checkbox" id="gitHubCheckbox" />
-                    </div>
-                </div>
-                <div class="form-group row d-none" id="gitHubAuthDiv">
-                    <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">
-                    </label>
-                    <div class="col-lg-6  mb-3 mt-1">
-                        <p>Authenticate GitHub to import source code.</p>
-                    </div>
 
-                    <div class="template-invoke mb-3 mt-1 col-lg-2" style="padding-left:0px;">
-                        <button type="button" class="btn btn-primary" id="githubAuth" style="padding-left:5px; padding-right:5px; font-size:12px;width: 100%">
+                    <div class="col-lg-5  mb-3 mt-1">
+                        <div class="template-invoke mb-3 mt-1 inlinestyle">
+                            <input type="checkbox" id="gitHubCheckbox" />
+                        </div>
+                        <p class="inlinestyle">Fork repository on GitHub</p>
+                    </div>
+                    <div class="template-invoke mb-3 mt-1 col-lg-3 d-none" id="gitHubAuthDiv">
+                        <button type="button" class="btn btn-primary githubIcon" id="githubAuth" style="padding-left:5px; padding-right:5px; width: 100%">
                             Authorize
                         </button>
                     </div>
-                   
+
                 </div>
                 <div id="projectParameters" style="display:none">
                 </div>
@@ -242,7 +236,7 @@
                 <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border col-lg-11 d-block mt-4 p-3">
 
                 </div>
-                <div class="mt-4 border p-3 d-none col-lg-11" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                <div class="mt-4 mb-3 border p-3 d-none col-lg-11" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">
                         <p style="display:none;" id="extensionError"></p>
@@ -250,13 +244,13 @@
                 </div>
                 <!--/EXTENSIONS -->
                 <div class="form-group row" id="">
-                    <div class="col-lg-9  mb-3 mt-1">
+                    <div class="col-lg-8  mb-3 mt-1 mob_d m-0">
                     </div>
-                    <div class="col-lg-3  mb-3 mt-3" style="padding-left:9px; ">
-                        <button class="btn btn-primary submitBtn btnUpdate" id="btnSubmit" style=" width: 73%; font-size: 12px; margin-left: -12px">
+                    <div class="col-lg-3  mb-3 mt-3 m-0">
+                        <button class="btn btn-primary submitBtn btnUpdate " id="btnSubmit" style=" width: 100%;">
                             Create Project
                         </button>
-                        <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
+                        @*<img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />*@
                     </div>
                 </div>
                 <div class="card mt-3 d-none col-lg-11" id="finalLink">
@@ -277,7 +271,7 @@
                COL 3
                Notification section
             -->
-            <div class="col-md-3 order-3 order-md-3">
+            <div class="col-md-3 order-2 order-md-3">
                 <!-- Description card -->
                 <div class="card text-white mb-3 vstsScroll" id="lblDescription" style="max-height:250px;overflow-y:auto;">
                     <div class="card-header bg-primary ">About this Template</div>

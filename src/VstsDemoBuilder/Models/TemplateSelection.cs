@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace VstsDemoBuilder.Models
 {
@@ -18,8 +17,7 @@ namespace VstsDemoBuilder.Models
             public List<string> PreviewImages { get; set; }
             public string Author { get; set; }
             public string LastUpdatedDate { get; set; }
-            
-
+            public bool ForkGitHubRepo { get; set; }
         }
 
         public class GroupwiseTemplate
@@ -37,7 +35,7 @@ namespace VstsDemoBuilder.Models
 
         public class TemplateDetails
         {
-         
+
             public string Name { get; set; }
             public string ShortName { get; set; }
             public string Description { get; set; }

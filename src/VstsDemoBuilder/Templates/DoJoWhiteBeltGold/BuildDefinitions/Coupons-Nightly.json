@@ -1,0 +1,237 @@
+{
+  "options": [
+    {
+      "enabled": true,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "2193090",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+    {
+      "schedules": [
+        {
+          "branchFilters": [
+            "+refs/heads/master"
+          ],
+          "timeZoneId": "UTC",
+          "startHours": 6,
+          "startMinutes": 0,
+          "daysToBuild": 31,
+          "scheduleJobId": "a894019e-1452-4382-a660-1daeb1306e70",
+          "scheduleOnlyWithChanges": true
+        }
+      ],
+      "triggerType": "schedule"
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "phases": [
+      {
+        "steps": [
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Maven pom.xml",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "ac4ee482-65da-4485-a532-7b085873e532",
+              "versionSpec": "3.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "mavenPOMFile": "$(Parameters.mavenPOMFile)",
+              "goals": "package",
+              "options": "",
+              "publishJUnitResults": "true",
+              "testResultsFiles": "**/surefire-reports/TEST-*.xml",
+              "testRunTitle": "",
+              "codeCoverageTool": "None",
+              "classFilter": "",
+              "classFilesDirectories": "",
+              "srcDirectories": "",
+              "failIfCoverageEmpty": "false",
+              "javaHomeSelection": "JDKVersion",
+              "jdkVersion": "default",
+              "jdkUserInputPath": "",
+              "jdkArchitecture": "x64",
+              "mavenVersionSelection": "Default",
+              "mavenPath": "",
+              "mavenSetM2Home": "false",
+              "mavenOpts": "-Xmx1024m",
+              "mavenFeedAuthenticate": "false",
+              "sqAnalysisEnabled": "false",
+              "sqMavenPluginVersionChoice": "latest",
+              "checkstyleAnalysisEnabled": "false",
+              "pmdAnalysisEnabled": "false",
+              "findbugsAnalysisEnabled": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": true,
+            "displayName": "Copy Files to: $(build.artifactstagingdirectory)",
+            "timeoutInMinutes": 0,
+            "condition": "succeededOrFailed()",
+            "task": {
+              "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "SourceFolder": "$(system.defaultworkingdirectory)",
+              "Contents": "**/*.war\n**/*.json",
+              "TargetFolder": "$(build.artifactstagingdirectory)",
+              "CleanTargetFolder": "false",
+              "OverWrite": "false",
+              "flattenFolders": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": true,
+            "displayName": "Publish Artifact: drop",
+            "timeoutInMinutes": 0,
+            "condition": "succeededOrFailed()",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(build.artifactstagingdirectory)",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          }
+        ],
+        "name": "Agent job 1",
+        "refName": "Job_1",
+        "condition": "succeeded()",
+        "target": {
+          "executionOptions": {
+            "type": 0
+          },
+          "allowScriptsAuthAccessOption": false,
+          "type": 1,
+          "queue": "{}"
+        },
+        "jobAuthorizationScope": "projectCollection"
+      }
+    ],
+    "type": 1
+  },
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0",
+      "connectedServiceId": ""
+    },
+    "id": "$DevOps-Dojo-Coupons$",
+    "type": "TfsGit",
+    "name": "DevOps-Dojo-Coupons",
+    "url": "",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+    "inputs": [
+      {
+        "aliases": [],
+        "options": {},
+        "properties": {},
+        "name": "mavenPOMFile",
+        "label": "Maven POM file",
+        "defaultValue": "pom.xml",
+        "required": true,
+        "type": "filePath",
+        "helpMarkDown": ""
+      }
+    ]
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": "{}",
+    "id": "",
+    "name": "Hosted Ubuntu 1604",
+    "url": "",
+    "pool": {
+      "id": "",
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "Coupons-Nightly",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 1,
+  "createdDate": "",
+  "project": "{}"
+}

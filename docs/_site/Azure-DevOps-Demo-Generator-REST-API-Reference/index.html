@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to the Azure DevOps Services REST API Reference | Azure DevOps Demo Generator</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Welcome to the Azure DevOps Services REST API Reference" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Azure DevOps Demo Generator" />
+<meta property="og:description" content="Azure DevOps Demo Generator" />
+<link rel="canonical" href="http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/" />
+<meta property="og:url" content="http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/" />
+<meta property="og:site_name" content="Azure DevOps Demo Generator" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Azure-DevOps-Demo-Generator-REST-API-Reference/","headline":"Welcome to the Azure DevOps Services REST API Reference","description":"Azure DevOps Demo Generator","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=71de869d35c4585adaf0b064bf89fd3929f3aa6a">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="welcome-to-the-azure-devops-services-rest-api-reference">Welcome to the Azure DevOps Services REST API Reference</h1>
+<hr />
+<p>We have added API support to the Azure DevOps Demo Generator so that it can be invoked externally. This page has all the instructions that you need to know how to call the API.</p>
+
+<ul>
+  <li>Calling the API from a <a href="/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%2D-Call-API-with-powershell">PowerShell Script</a></li>
+</ul>
+
+<h2 id="create-a-project">Create a Project</h2>
+
+<p><code class="highlighter-rouge">POST https://azuredevopsdemogenerator.azurewebsites.net/api/environment/create</code></p>
+
+<h2 id="sample-request-body">Sample Request Body</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"accessToken": "********************************",
+	"organizationName": "DemoProjects",
+	"templateName": "contososhuttle2",
+	"users": [		
+		{
+			"email": "abc@outlook.com",
+			"ProjectName": "TestProject1"
+		},
+	{
+			"email": "abc@outlook.com",
+			"ProjectName": "TestProject2"
+		}
+    	]
+}
+</code></pre></div></div>
+<h3 id="parameters">Parameters</h3>
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>accessToken</td>
+    <td>PAT for the Azure DevOps Org. Note that the projects will be created under the user name in which the PAT is created. The PAT should be created with the following scopes 
+<li><b>read, write and manage </b> projects and teams and </li>
+<li><b>read and write</b> permissions for Work Item, Code, Build, Wiki, Dashboard, Extensions, etc.,</li></td>
+  </tr>
+<tr>
+<td> Organization name </td><td>Name of the Azure DevOps org in which the project will be created
+</td>
+</tr>
+<tr><td> templatName</td><td>The short name of the template</td></tr>
+<tr><td> users</td><td>Users information. You can specify any number of users.<br /><li>Email address of the user</li>&lt;li&lt;&gt;Name of the project </td></tr>
+</table>
+
+<h2 id="sample-response">Sample Response</h2>
+
+<h2 id="validation-messages">Validation Messages</h2>
+<table>
+<tr><td>Validation for account based on provided Organisation name</td><td>If Organisation Name is empty, then message will be "Provide a valid Account name" with status code 402 Bad Request</td></tr>
+<tr><td>Validation for access token</td><td>If access token is empty, then message will be "Token of type Basic must be provided" with status code 402 Bad Request</td></tr>
+<tr><td>Validation for Project Name</td><td>If the Project Name is invalid, then message will be "Invalid Project name" with status code 402 Bad Request
+If the Project Name is same as reserved keywords, then message will be "Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web" with status code 402 Bad request</td></tr>
+<tr><td>Check for Duplicate Project Name in Request body</td><td>If the Project Name duplicate in the request body, then message will be "ProjectName must be unique" with status code 402 Bad Request</td></tr>
+<tr><td>Validation for TemplateName</td><td>If templateName is empty, then message will be 
+"Template Name should not be empty" with status code 402 Bad Request.
+If the given template name not found in the source, then message will be "Template Not Found!" with status code 402 Bad Request</td></tr>
+<tr><td>Validation for Email ID and Project Name</td><td>"EmailId or ProjectName is not found" with status code 402 Bad Request</td></tr>
+</table>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "children": [
+    {
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 4",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 5",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 6",
+      "structureType": "iteration",
+      "hasChildren": false
+    }
+  ],
+  "name": "DevOps-Dojo",
+  "structureType": "iteration",
+  "hasChildren": true
+}

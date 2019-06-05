@@ -252,6 +252,7 @@ namespace VstsDemoBuilder.Controllers
                                                 model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
                                                 model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
                                                 model.Message = template.Message == null ? string.Empty : template.Message;
+                                                model.ForkGitHubRepo = template.ForkGitHubRepo.ToString();
                                             }
                                         }
                                     }
@@ -574,7 +575,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 Session["PAT"] = model.accessToken;
                 Session["AccountName"] = model.accountName;
-                model.GitHubToken = Session["GitHubToken"].ToString();
+                if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "")
+                {
+                    model.GitHubToken = Session["GitHubToken"].ToString();
+                }
                 projectService.AddMessage(model.id, string.Empty);
                 projectService.AddMessage(model.id.ErrorId(), string.Empty);
 
@@ -683,7 +687,10 @@ namespace VstsDemoBuilder.Controllers
                         Dictionary<string, bool> dict = new Dictionary<string, bool>();
                         foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                         {
-                            dict.Add(ext.extensionName, false);
+                            if (!dict.ContainsKey(ext.extensionName))
+                            {
+                                dict.Add(ext.extensionName, false);
+                            }
                         }
 
                         var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(pat));// VssOAuthCredential(PAT));

@@ -227,6 +227,7 @@ namespace VstsDemoBuilder.Services
                 {
                     userDetail = JsonConvert.DeserializeObject<GitHubUserDetail>(userResponse.Content.ReadAsStringAsync().Result);
                     _gitHubConfig.userName = userDetail.login;
+                    model.GitHubUserName = userDetail.login;
                 }
             }
             //configuration setup
@@ -587,6 +588,41 @@ namespace VstsDemoBuilder.Services
             //Create Deployment Group
             //CreateDeploymentGroup(templatesFolder, model, _deploymentGroup);
 
+            // Fork Repo
+
+            if (model.GitHubFork && model.GitHubToken != null)
+            {
+                List<string> listRepoFiles = new List<string>();
+                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+                if (File.Exists(repoFilePath))
+                {
+                    string readRepoFile = model.ReadJsonFile(repoFilePath);
+                    if (!string.IsNullOrEmpty(readRepoFile))
+                    {
+                        ForkRepos.Fork forkRepos = new ForkRepos.Fork();
+                        forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
+                        if (forkRepos.repositories.Count > 0)
+                        {
+                            foreach (var repo in forkRepos.repositories)
+                            {
+                                GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
+                                GitHubUserDetail userDetail = new GitHubUserDetail();
+                                GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
+                                //HttpResponseMessage listForks = user.ListForks(repo.fullName);
+                                HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
+                                if (forkResponse.IsSuccessStatusCode)
+                                {
+                                    string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
+                                    dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
+                                    model.GitRepoName = fr.full_name;
+                                    model.GitRepoURL = fr.html_url;
+                                    AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
             string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
@@ -613,46 +649,6 @@ namespace VstsDemoBuilder.Services
                     {
                         model.Environment.AgentQueues[aq] = id;
                     }
-                }
-            }
-
-            // Fork Repo
-
-            if (model.GitHubFork)
-            {
-                List<string> listRepoFiles = new List<string>();
-                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ForkRepo");
-                if (Directory.Exists(repoFilePath))
-                {
-                    Directory.GetFiles(repoFilePath).ToList().ForEach(i => listRepoFiles.Add(i));
-                    foreach (var repofile in listRepoFiles)
-                    {
-                        string readRepoFile = model.ReadJsonFile(repofile);
-                        if (!string.IsNullOrEmpty(readRepoFile))
-                        {
-                            ForkRepos.Fork forkRepos = new ForkRepos.Fork();
-                            forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                            if (forkRepos.repositories.Count > 0)
-                            {
-                                foreach (var repo in forkRepos.repositories)
-                                {
-                                    GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
-                                    GitHubUserDetail userDetail = new GitHubUserDetail();
-                                    GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
-                                    //HttpResponseMessage listForks = user.ListForks(repo.fullName);
-                                    HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
-                                    if (forkResponse.IsSuccessStatusCode)
-                                    {
-                                        string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
-                                        dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                        string name = fr.full_name;
-                                        AddMessage(model.id, string.Format("Forked {0} repository to {1} user", name, _gitHubConfig.userName));
-                                    }
-                                }
-                            }
-                        }
-                    }
-
                 }
             }
 
@@ -867,6 +863,10 @@ namespace VstsDemoBuilder.Services
 
             //create build Definition
             string buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+            if (!string.IsNullOrEmpty(model.GitHubToken) && model.GitHubFork)
+            {
+                buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
+            }
             //templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
             model.BuildDefinitions = new List<BuildDef>();
             if (Directory.Exists(buildDefinitionsPath))
@@ -1537,6 +1537,7 @@ namespace VstsDemoBuilder.Services
                 string serviceEndPointId = string.Empty;
                 foreach (string jsonPath in jsonPaths)
                 {
+                    string fileName = Path.GetFileName(jsonPath);
                     string jsonCreateService = jsonPath;
                     if (System.IO.File.Exists(jsonCreateService))
                     {
@@ -1557,11 +1558,37 @@ namespace VstsDemoBuilder.Services
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
                         }
-                        else
+                        // File contains "GitHub_" means - it contains GitHub URL, user wanted to fork repo to his github
+                        else if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
                         {
                             jsonCreateService = model.ReadJsonFile(jsonCreateService);
-                            jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
-                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password).Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword);
+                            JObject jsonToCreate = JObject.Parse(jsonCreateService);
+                            string type = jsonToCreate["type"].ToString();
+                            // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
+                            if (type.ToLower() == "git")
+                            {
+                                jsonToCreate["type"] = "GitHub"; //Changing endpoint type
+                                jsonToCreate["url"] = model.GitRepoURL; // updating endpoint URL with User forked repo URL
+                            }
+                            // Endpoint type is GitHub(Public), so we should point the build def to his repo by updating the URL
+                            else if (type.ToLower() == "github")
+                            {
+                                jsonToCreate["url"] = model.GitRepoURL; // Updating repo URL to user repo
+                            }
+                            else
+                            {
+
+                            }
+                            jsonCreateService = jsonToCreate.ToString();
+                            jsonCreateService = jsonCreateService.Replace("$GitUserName$", model.GitHubUserName).Replace("$GitUserPassword$", model.GitHubToken);
+                        }
+                        // user doesn't want to fork repo
+                        else
+                        {
+                            jsonCreateService = model.ReadJsonFile(jsonCreateService); // read the JSON
+                            jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName); // Replaces the Place holder with project name if exists
+                            jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password) // Replaces user name and password with app setting username and password if require[to import soure code to Azure Repos]
+                                .Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword); // Replaces GitUser name and passwords with Demo gen username and password [Just to point build def to respective repo]
                         }
                         if (model.SelectedTemplate.ToLower() == "bikesharing360")
                         {
@@ -1657,7 +1684,7 @@ namespace VstsDemoBuilder.Services
                                     string[] testSuiteResponse = new string[2];
                                     string testSuiteJSON = JsonConvert.SerializeObject(TS);
                                     testSuiteResponse = objTest.CreatTestSuite(testSuiteJSON, testPlanResponse[0], model.ProjectName);
-                                    if (testSuiteResponse != null)
+                                    if (testSuiteResponse[0] != null && testSuiteResponse[1] != null)
                                     {
                                         string testCasesToAdd = string.Empty;
                                         foreach (string id in TS.TestCases)
@@ -1711,6 +1738,7 @@ namespace VstsDemoBuilder.Services
                         {
                             string placeHolder = string.Format("${0}$", repository);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
+                            jsonBuildDefinition = jsonBuildDefinition.Replace("$GitHubRepoURL$", model.GitRepoURL).Replace("$GitHubRepoName$", model.GitRepoName);
                         }
 
                         //update endpoint ids
@@ -2211,29 +2239,6 @@ namespace VstsDemoBuilder.Services
                         }
                     }
                 }
-                //Update WorkInProgress ,UnfinishedWork Queries,Test Cases,Blocked Tasks queries.
-                string updateQueryString = string.Empty;
-
-                updateQueryString = "SELECT [System.Id],[System.Title],[Microsoft.VSTS.Common.BacklogPriority],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork],[Microsoft.VSTS.CMMI.Blocked],[System.WorkItemType] FROM workitemLinks WHERE ([Source].[System.TeamProject] = @project AND [Source].[System.IterationPath] UNDER '$Project$\\Sprint 2' AND ([Source].[System.WorkItemType] IN GROUP 'Microsoft.RequirementCategory' OR [Source].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' ) AND [Source].[System.State] <> 'Removed' AND [Source].[System.State] <> 'Done') AND ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward')  AND ([Target].[System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [Target].[System.State] <> 'Done' AND [Target].[System.State] <> 'Removed') ORDER BY [Microsoft.VSTS.Common.BacklogPriority],[Microsoft.VSTS.Scheduling.Effort], [Microsoft.VSTS.Scheduling.RemainingWork],[System.Id] MODE (Recursive)";
-                dynamic queryObject = new System.Dynamic.ExpandoObject();
-                updateQueryString = updateQueryString.Replace("$Project$", model.Environment.ProjectName);
-                queryObject.wiql = updateQueryString;
-                bool isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Unfinished Work", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
-                updateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER '$Project$\\Sprint 2' AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [System.State] = 'In Progress' ORDER BY [System.AssignedTo],[Microsoft.VSTS.Common.BacklogPriority],[System.Id]";
-                updateQueryString = updateQueryString.Replace("$Project$", model.Environment.ProjectName);
-                queryObject.wiql = updateQueryString;
-                isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Work in Progress", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
-
-                updateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.State],[Microsoft.VSTS.Common.Priority] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER @currentIteration AND [System.WorkItemType] IN GROUP 'Microsoft.TestCaseCategory' ORDER BY [Microsoft.VSTS.Common.Priority],[System.Id] ";
-                queryObject.wiql = updateQueryString;
-                isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Test Cases", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
-                updateQueryString = "SELECT [System.Id],[System.WorkItemType],[System.Title],[Microsoft.VSTS.Common.BacklogPriority],[System.AssignedTo],[System.State],[Microsoft.VSTS.CMMI.Blocked] FROM workitems WHERE [System.TeamProject] = @project AND [System.IterationPath] UNDER @currentIteration AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory' AND [Microsoft.VSTS.CMMI.Blocked] = 'Yes' AND [System.State] <> 'Removed' ORDER BY [Microsoft.VSTS.Common.BacklogPriority], [System.Id]";
-                queryObject.wiql = updateQueryString;
-                isUpdated = objQuery.UpdateQuery("Shared%20Queries/Current%20Sprint/Blocked Tasks", model.Environment.ProjectName, Newtonsoft.Json.JsonConvert.SerializeObject(queryObject));
-
             }
             catch (OperationCanceledException oce)
             {
@@ -2268,7 +2273,10 @@ namespace VstsDemoBuilder.Services
                     Dictionary<string, bool> dict = new Dictionary<string, bool>();
                     foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                     {
-                        dict.Add(ext.extensionName, false);
+                        if (!dict.ContainsKey(ext.extensionName))
+                        {
+                            dict.Add(ext.extensionName, false);
+                        }
                     }
                     //var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(PAT));// VssOAuthCredential(PAT));
                     var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new VssBasicCredential(string.Empty, PAT));// VssOAuthCredential(PAT));
