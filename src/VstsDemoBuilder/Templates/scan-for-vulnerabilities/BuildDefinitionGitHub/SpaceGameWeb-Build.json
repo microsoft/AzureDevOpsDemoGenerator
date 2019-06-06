@@ -64,7 +64,7 @@
       "isHosted": true
     }
   },
-  "name": "jamcneil_mslearn-tailspin-spacegame-web",
+  "name": "mslearn-tailspin-spacegame-web",
   "type": "build",
   "queueStatus": "enabled"
 }

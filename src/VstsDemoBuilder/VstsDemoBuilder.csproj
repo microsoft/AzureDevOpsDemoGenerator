@@ -1287,6 +1287,11 @@
     <Content Include="Templates\scan-for-vulnerabilities\ImportSourceCode\GitRepository.json" />
     <Content Include="Templates\scan-open-source\ImportSourceCode\GitRepository.json" />
     <Content Include="Templates\implement-code-workflow\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
+    <Content Include="Templates\host-build-agent\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
+    <Content Include="Templates\manage-build-dependencies\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
+    <Content Include="Templates\run-quality-tests\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
+    <Content Include="Templates\scan-for-vulnerabilities\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
+    <Content Include="Templates\scan-open-source\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
