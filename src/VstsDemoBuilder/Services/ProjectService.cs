@@ -593,7 +593,7 @@ namespace VstsDemoBuilder.Services
             if (model.GitHubFork && model.GitHubToken != null)
             {
                 List<string> listRepoFiles = new List<string>();
-                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"ImportSourceCode\GitRepository.json");
                 if (File.Exists(repoFilePath))
                 {
                     string readRepoFile = model.ReadJsonFile(repoFilePath);
@@ -625,8 +625,7 @@ namespace VstsDemoBuilder.Services
             }
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
-            string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
-            //templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
+            string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"ServiceEndpoints");
             if (System.IO.Directory.Exists(serviceEndPointsPath))
             {
                 System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
@@ -863,15 +862,20 @@ namespace VstsDemoBuilder.Services
 
             //create build Definition
             string buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+            model.BuildDefinitions = new List<BuildDef>();
+            if (Directory.Exists(buildDefinitionsPath))
+            {
+                Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
+            }
             if (!string.IsNullOrEmpty(model.GitHubToken) && model.GitHubFork)
             {
                 buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
             }
             //templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
-            model.BuildDefinitions = new List<BuildDef>();
+            
             if (Directory.Exists(buildDefinitionsPath))
             {
-                Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new Models.BuildDef() { FilePath = i }));
+                Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
             }
             bool isBuild = CreateBuildDefinition(model, _buildVersion, model.id);
             if (isBuild)
@@ -1539,7 +1543,7 @@ namespace VstsDemoBuilder.Services
                 {
                     string fileName = Path.GetFileName(jsonPath);
                     string jsonCreateService = jsonPath;
-                    if (System.IO.File.Exists(jsonCreateService))
+                    if (File.Exists(jsonCreateService))
                     {
                         string username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
                         string password = System.Configuration.ConfigurationManager.AppSettings["Password"];
@@ -1551,17 +1555,16 @@ namespace VstsDemoBuilder.Services
                         string gitUserName = System.Configuration.ConfigurationManager.AppSettings["GitUserName"];
                         string gitUserPassword = System.Configuration.ConfigurationManager.AppSettings["GitUserPassword"];
 
+                        jsonCreateService = model.ReadJsonFile(jsonCreateService);
 
                         if (!string.IsNullOrEmpty(settings.IsPrivate))
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
                         }
                         // File contains "GitHub_" means - it contains GitHub URL, user wanted to fork repo to his github
-                        else if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
+                        if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             JObject jsonToCreate = JObject.Parse(jsonCreateService);
                             string type = jsonToCreate["type"].ToString();
                             // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
@@ -1585,7 +1588,6 @@ namespace VstsDemoBuilder.Services
                         // user doesn't want to fork repo
                         else
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService); // read the JSON
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName); // Replaces the Place holder with project name if exists
                             jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password) // Replaces user name and password with app setting username and password if require[to import soure code to Azure Repos]
                                 .Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword); // Replaces GitUser name and passwords with Demo gen username and password [Just to point build def to respective repo]
@@ -1727,7 +1729,7 @@ namespace VstsDemoBuilder.Services
             {
                 foreach (BuildDef buildDef in model.BuildDefinitions)
                 {
-                    if (System.IO.File.Exists(buildDef.FilePath))
+                    if (File.Exists(buildDef.FilePath))
                     {
                         BuildDefinition objBuild = new BuildDefinition(_buildConfig);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);

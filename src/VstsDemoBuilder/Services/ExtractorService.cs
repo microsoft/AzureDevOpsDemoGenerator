@@ -17,6 +17,7 @@ using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.QueriesAndWidgets;
 using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
+using VstsRestAPI.Viewmodel.GitHub;
 using Parameters = VstsRestAPI.Viewmodel.Extractor.GetServiceEndpoints;
 
 namespace VstsDemoBuilder.Services
@@ -209,19 +210,19 @@ namespace VstsDemoBuilder.Services
 
             string projectSetting = "";
             projectSetting = filePathToRead + "\\ProjectSettings.json";
-            projectSetting = System.IO.File.ReadAllText(projectSetting);
+            projectSetting = File.ReadAllText(projectSetting);
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
-            System.IO.File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
+            File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
             string projectTemplate = "";
             projectTemplate = filePathToRead + "\\ProjectTemplate.json";
-            projectTemplate = System.IO.File.ReadAllText(projectTemplate);
-            System.IO.File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
+            projectTemplate = File.ReadAllText(projectTemplate);
+            File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
 
             string teamArea = "";
             teamArea = filePathToRead + "\\TeamArea.json";
-            teamArea = System.IO.File.ReadAllText(teamArea);
-            System.IO.File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
+            teamArea = File.ReadAllText(teamArea);
+            File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas");
 
             ExportWorkItems(appConfig);
@@ -308,7 +309,7 @@ namespace VstsDemoBuilder.Services
                         }
                         string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
 
-                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.ExtensionConfig.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+                        File.WriteAllText(extractedTemplatePath + appConfig.ExtensionConfig.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
                     }
                 }
                 else if (!string.IsNullOrEmpty(listExtenison.LastFailureMessage))
@@ -349,16 +350,16 @@ namespace VstsDemoBuilder.Services
                                         if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries"))
                                         {
                                             Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard");
-                                            System.IO.File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
                                         }
                                         if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries"))
                                         {
                                             Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries");
-                                            System.IO.File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                         else
                                         {
-                                            System.IO.File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                     }
                                 }
@@ -429,7 +430,7 @@ namespace VstsDemoBuilder.Services
                         {
                             Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Teams");
                         }
-                        System.IO.File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
+                        File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
 
                         List<string> boardTypes = new List<string>();
                         boardTypes.Add("Epics"); boardTypes.Add("Features");
@@ -563,27 +564,27 @@ namespace VstsDemoBuilder.Services
 
                             if (columnResponsesAgile.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (columnResponsesScrum.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (boardRows.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                             }
                             if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
                             }
                             if (jObjCardFieldList.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
                             }
                             if (jObjcardStyleList.Count > 0)
                             {
-                                System.IO.File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
                             }
                         }
 
@@ -626,7 +627,7 @@ namespace VstsDemoBuilder.Services
                     {
                         Directory.CreateDirectory(extractedTemplatePath + appConfig.BoardConfig.Project);
                     }
-                    System.IO.File.WriteAllText(extractedTemplatePath + appConfig.BoardConfig.Project + "\\Iterations.json", fetchedJson);
+                    File.WriteAllText(extractedTemplatePath + appConfig.BoardConfig.Project + "\\Iterations.json", fetchedJson);
                     return true;
                 }
                 else
@@ -665,7 +666,7 @@ namespace VstsDemoBuilder.Services
                         {
                             Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems");
                         }
-                        System.IO.File.WriteAllText(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems\\" + item + ".json", workItemJson);
+                        File.WriteAllText(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems\\" + item + ".json", workItemJson);
                     }
                     else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
                     {
@@ -686,27 +687,27 @@ namespace VstsDemoBuilder.Services
                     string preSettingPath = HostingEnvironment.MapPath("~") + @"PreSetting";
                     string templateFolderPath = extractedTemplatePath + appConfig.RepoConfig.Project;
                     string host = appConfig.RepoConfig.UriString + appConfig.RepoConfig.Project;
-                    string sourceCodeJson = System.IO.File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
+                    string sourceCodeJson = File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
                     sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                    string endPointJson = System.IO.File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
+                    string endPointJson = File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
                     endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
                     if (!Directory.Exists(templateFolderPath + "\\ImportSourceCode"))
                     {
                         Directory.CreateDirectory(templateFolderPath + "\\ImportSourceCode");
-                        System.IO.File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                        File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
                     }
                     else
                     {
-                        System.IO.File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                        File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
                     }
                     if (!Directory.Exists(templateFolderPath + "\\ServiceEndpoints"))
                     {
                         Directory.CreateDirectory(templateFolderPath + "\\ServiceEndpoints");
-                        System.IO.File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                        File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
                     }
                     else
                     {
-                        System.IO.File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                        File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
                     }
                 }
             }
@@ -811,7 +812,7 @@ namespace VstsDemoBuilder.Services
                             {
                                 foreach (var step in steps)
                                 {
-                                    string keyConfig = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                    string keyConfig = File.ReadAllText(HostingEnvironment.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
                                     KeyConfig.Keys keyC = new KeyConfig.Keys();
                                     keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                     foreach (var key in keyC.keys)
@@ -848,7 +849,7 @@ namespace VstsDemoBuilder.Services
                     string url = def["repository"]["url"].ToString();
                     if (url != "")
                     {
-                        string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                        string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                         endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
 
                         if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
@@ -867,7 +868,7 @@ namespace VstsDemoBuilder.Services
                     Guid g = Guid.NewGuid();
                     string randStr = g.ToString().Substring(0, 8);
                     string url = def["repository"]["url"].ToString();
-                    string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
 
                     if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
@@ -914,11 +915,11 @@ namespace VstsDemoBuilder.Services
                 if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
                 {
                     Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                    System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
                 else
                 {
-                    System.IO.File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
 
                 return count;
@@ -937,12 +938,32 @@ namespace VstsDemoBuilder.Services
                 Guid g = Guid.NewGuid();
                 string randStr = g.ToString().Substring(0, 8);
                 def["triggers"] = new JArray();
+                var ymlRepoUrl = def["repository"]["url"].ToString();
+                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode"))
+                {
+                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode");
+                }
                 if (type.ToString().ToLower() == "github")
                 {
                     string gitHubRepo = def["repository"]["id"].ToString();
                     string[] gitHubIdSplit = gitHubRepo.Split('/');
                     gitHubIdSplit[0] = "$UserName$";
                     gitHubRepo = string.Join("/", gitHubIdSplit);
+
+                    ForkRepos.Fork gitHubRepoList = new ForkRepos.Fork();
+                    gitHubRepoList.repositories = new List<ForkRepos.Repository>();
+                    if (File.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode\\GitRepository.json"))
+                    {
+                        string readrepo = File.ReadAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode\\GitRepository.json");
+                        gitHubRepoList = JsonConvert.DeserializeObject<ForkRepos.Fork>(readrepo);
+                    }
+                    ForkRepos.Repository repoName = new ForkRepos.Repository
+                    {
+                        fullName = def["repository"]["id"].ToString()
+                    };
+                    gitHubRepoList.repositories.Add(repoName);
+
+                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode\\GitRepository.json", JsonConvert.SerializeObject(gitHubRepoList, Formatting.Indented));
 
                     def["repository"]["properties"]["apiUrl"] = "https://api.github.com/repos/" + gitHubRepo;
                     def["repository"]["properties"]["branchesUrl"] = "https://api.github.com/repos/" + gitHubRepo + "/branches";
@@ -954,10 +975,9 @@ namespace VstsDemoBuilder.Services
                     def["repository"]["url"] = "https://github.com/" + gitHubRepo + ".git";
                     def["repository"]["id"] = gitHubRepo;
                 }
-                var ymlRepoUrl = def["repository"]["url"].ToString();
                 if (ymlRepoUrl != "")
                 {
-                    string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
 
                     if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
@@ -971,14 +991,14 @@ namespace VstsDemoBuilder.Services
                     }
                 }
                 count = count + 1;
-                if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                if (!Directory.Exists(templatePath + "\\BuildDefinitionGitHub"))
                 {
-                    Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    Directory.CreateDirectory(templatePath + "\\BuildDefinitionGitHub");
+                    File.WriteAllText(templatePath + "\\BuildDefinitionGitHub\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
                 else
                 {
-                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    File.WriteAllText(templatePath + "\\BuildDefinitionGitHub\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
 
                 return count;
@@ -1006,7 +1026,7 @@ namespace VstsDemoBuilder.Services
                 var ymlRepoUrl = def["repository"]["url"].ToString();
                 if (ymlRepoUrl != "")
                 {
-                    string endPointString = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
                     if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
                     {
@@ -1137,7 +1157,7 @@ namespace VstsDemoBuilder.Services
                                         foreach (var flow in workflow)
                                         {
                                             var input = flow["inputs"];
-                                            string keyConfig = System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
+                                            string keyConfig = File.ReadAllText(HostingEnvironment.MapPath("~") + @"\\Templates\EndpointKeyConfig.json");
                                             KeyConfig.Keys keyC = new KeyConfig.Keys();
                                             keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                             foreach (var key in keyC.keys)
@@ -1185,11 +1205,11 @@ namespace VstsDemoBuilder.Services
                         if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
                         {
                             Directory.CreateDirectory(templatePath + "\\ReleaseDefinitions");
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         else
                         {
-                            System.IO.File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         releasecount++;
                     }

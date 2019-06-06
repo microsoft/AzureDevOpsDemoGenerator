@@ -11,7 +11,7 @@ namespace VstsRestAPI.Viewmodel.GitHub
 
         public class Fork
         {
-            public IList<Repository> repositories { get; set; }
+            public List<Repository> repositories { get; set; }
         }
     }
 }

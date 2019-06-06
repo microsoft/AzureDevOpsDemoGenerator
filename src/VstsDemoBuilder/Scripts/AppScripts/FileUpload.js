@@ -24,8 +24,8 @@
                 fileData.append(files[i].name, files[i]);
             }
 
-            $('#gitHubCheckboxDiv').addClass('d-none');
-            $('input[id="gitHubCheckbox"]').prop('checked', false);
+            //$('#gitHubCheckboxDiv').addClass('d-none');
+            //$('input[id="gitHubCheckbox"]').prop('checked', false);
 
             $.ajax({
                 url: '/Environment/UploadFiles',
