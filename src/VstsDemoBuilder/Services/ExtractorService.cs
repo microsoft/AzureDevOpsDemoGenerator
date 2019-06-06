@@ -855,11 +855,11 @@ namespace VstsDemoBuilder.Services
                         if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
                         {
                             Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub" + randStr + "-EndPoint.json", endPointString);
                         }
                         else
                         {
-                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub" + randStr + "-EndPoint.json", endPointString);
                         }
                     }
                 }
@@ -947,7 +947,7 @@ namespace VstsDemoBuilder.Services
                 {
                     string gitHubRepo = def["repository"]["id"].ToString();
                     string[] gitHubIdSplit = gitHubRepo.Split('/');
-                    gitHubIdSplit[0] = "$UserName$";
+                    gitHubIdSplit[0] = "$username$";
                     gitHubRepo = string.Join("/", gitHubIdSplit);
 
                     ForkRepos.Fork gitHubRepoList = new ForkRepos.Fork();
@@ -959,7 +959,8 @@ namespace VstsDemoBuilder.Services
                     }
                     ForkRepos.Repository repoName = new ForkRepos.Repository
                     {
-                        fullName = def["repository"]["id"].ToString()
+                        fullName = def["repository"]["id"].ToString(),
+                        endPointName = "GitHub_" + randStr
                     };
                     gitHubRepoList.repositories.Add(repoName);
 
@@ -1031,11 +1032,11 @@ namespace VstsDemoBuilder.Services
                     if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
                     {
                         Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
-                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                     }
                     else
                     {
-                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
                     }
                 }
                 string[] splitYmlRepoUrl = ymlRepoUrl.Split('/');

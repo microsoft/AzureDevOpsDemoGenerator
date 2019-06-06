@@ -631,9 +631,9 @@ namespace VstsDemoBuilder.Services
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
             string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"ServiceEndpoints");
-            if (System.IO.Directory.Exists(serviceEndPointsPath))
+            if (Directory.Exists(serviceEndPointsPath))
             {
-                System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
+                Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
             }
             CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
             //create agent queues on demand
@@ -877,7 +877,7 @@ namespace VstsDemoBuilder.Services
                 buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
             }
             //templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
-            
+
             if (Directory.Exists(buildDefinitionsPath))
             {
                 Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -1539,7 +1539,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="jsonPaths"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, VstsRestAPI.Configuration _endpointConfig)
+        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, Configuration _endpointConfig)
         {
             try
             {
@@ -1572,20 +1572,28 @@ namespace VstsDemoBuilder.Services
                         {
                             JObject jsonToCreate = JObject.Parse(jsonCreateService);
                             string type = jsonToCreate["type"].ToString();
+                            string url = jsonToCreate["url"].ToString();
+                            string repoNameInUrl = Path.GetFileName(url);
                             // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
-                            if (type.ToLower() == "git")
+                            foreach (var repo in model.Environment.GitHubRepos.Keys)
                             {
-                                jsonToCreate["type"] = "GitHub"; //Changing endpoint type
-                                jsonToCreate["url"] = model.GitRepoURL; // updating endpoint URL with User forked repo URL
-                            }
-                            // Endpoint type is GitHub(Public), so we should point the build def to his repo by updating the URL
-                            else if (type.ToLower() == "github")
-                            {
-                                jsonToCreate["url"] = model.GitRepoURL; // Updating repo URL to user repo
-                            }
-                            else
-                            {
+                                if (repoNameInUrl.Contains(repo))
+                                {
+                                    if (type.ToLower() == "git")
+                                    {
+                                        jsonToCreate["type"] = "GitHub"; //Changing endpoint type
+                                        jsonToCreate["url"] = model.Environment.GitHubRepos[repo].ToString(); // updating endpoint URL with User forked repo URL
+                                    }
+                                    // Endpoint type is GitHub(Public), so we should point the build def to his repo by updating the URL
+                                    else if (type.ToLower() == "github")
+                                    {
+                                        jsonToCreate["url"] = model.Environment.GitHubRepos[repo].ToString(); // Updating repo URL to user repo
+                                    }
+                                    else
+                                    {
 
+                                    }
+                                }
                             }
                             jsonCreateService = jsonToCreate.ToString();
                             jsonCreateService = jsonCreateService.Replace("$GitUserName$", model.GitHubUserName).Replace("$GitUserPassword$", model.GitHubToken);

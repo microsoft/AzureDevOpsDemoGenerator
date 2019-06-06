@@ -7,6 +7,7 @@ namespace VstsRestAPI.Viewmodel.GitHub
         public class Repository
         {
             public string fullName { get; set; }
+            public string endPointName { get; set; }
         }
 
         public class Fork
