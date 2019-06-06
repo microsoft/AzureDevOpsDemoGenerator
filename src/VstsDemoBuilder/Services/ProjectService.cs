@@ -194,7 +194,8 @@ namespace VstsDemoBuilder.Services
             {
                 serviceEndpoints = new Dictionary<string, string>(),
                 repositoryIdList = new Dictionary<string, string>(),
-                pullRequests = new Dictionary<string, string>()
+                pullRequests = new Dictionary<string, string>(),
+                GitHubRepos = new Dictionary<string, string>()
             };
             ProjectTemplate template = null;
             ProjectSettings settings = null;
@@ -614,8 +615,12 @@ namespace VstsDemoBuilder.Services
                                 {
                                     string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
                                     dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                    model.GitRepoName = fr.full_name;
-                                    model.GitRepoURL = fr.html_url;
+                                    model.GitRepoName = fr.name; //username/repo
+                                    model.GitRepoURL = fr.html_url; // https://github.com/username/reponame
+                                    if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                                    {
+                                        model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                                    }
                                     AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
                                 }
                             }
@@ -1734,15 +1739,14 @@ namespace VstsDemoBuilder.Services
                         BuildDefinition objBuild = new BuildDefinition(_buildConfig);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
-                                             .Replace("$ProjectId$", model.Environment.ProjectId);
+                                             .Replace("$ProjectId$", model.Environment.ProjectId)
+                                             .Replace("$username$", model.GitHubUserName);
                         //update repositoryId 
                         foreach (string repository in model.Environment.repositoryIdList.Keys)
                         {
                             string placeHolder = string.Format("${0}$", repository);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
-                            jsonBuildDefinition = jsonBuildDefinition.Replace("$GitHubRepoURL$", model.GitRepoURL).Replace("$GitHubRepoName$", model.GitRepoName);
                         }
-
                         //update endpoint ids
                         foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
                         {

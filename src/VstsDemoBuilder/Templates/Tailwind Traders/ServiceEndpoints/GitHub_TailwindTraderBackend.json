@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "Backend",
+  "type": "git",
+  "url": "https://github.com/Microsoft/TailwindTraders-Backend",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
+    }
+  },
+  "isReady": true
+}

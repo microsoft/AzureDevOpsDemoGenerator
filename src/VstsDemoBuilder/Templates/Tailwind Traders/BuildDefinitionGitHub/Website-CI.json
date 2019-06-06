@@ -234,19 +234,20 @@
   },
   "repository": {
     "properties": {
-      "cleanOptions": "0",
-      "labelSources": "0",
-      "labelSourcesFormat": "$(build.buildNumber)",
-      "reportBuildStatus": "true",
-      "gitLfsSupport": "false",
-      "skipSyncSource": "false",
-      "checkoutNestedSubmodules": "false",
-      "fetchDepth": "0"
+      "apiUrl": "$username$/TailwindTraders-Website",
+      "branchesUrl": "https://api.github.com/repos/$username$/TailwindTraders-Website/branches",
+      "cloneUrl": "https://github.com/$username$/TailwindTraders-Website.git",
+      "connectedServiceId": "$Website$",
+      "defaultBranch": "master",
+      "fullName": "$username$/TailwindTraders-Website",
+      "manageUrl": "https://github.com/$username$/TailwindTraders-Website",
+      "safeRepository": "TailwindTraders-Website"
     },
-    "id": "$Tailwind Traders$",
-    "type": "TfsGit",
-    "name": "Tailwind Traders",
-    "defaultBranch": "refs/heads/master",
+    "id": "$username$/TailwindTraders-Website",
+    "type": "GitHub",
+    "name": "$username$/TailwindTraders-Website",
+    "url": "https://github.com/$username$/TailwindTraders-Website",
+    "defaultBranch": "master",
     "clean": "false",
     "checkoutSubmodules": false
   },
