@@ -203,6 +203,9 @@ $(document).ready(function () {
         $('#ExStatus-messages').empty();
         //$('#accountLink').empty();
         $('#finalLink').addClass('d-none');
+        $("#ddlAcccountName").prop('disabled', true);
+        $("#projectSelect").prop('disabled', true);
+
         $.ajax({
             url: '../Extractor/AnalyzeProject',
             type: 'POST',
@@ -253,11 +256,16 @@ $(document).ready(function () {
 
                 $('#genArtDiv').removeClass('d-none');
                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                $("#ddlAcccountName").prop('disabled', false);
+                $("#projectSelect").prop('disabled', false);
+
             },
             error: function (er) {
                 $('#Analyse').addClass('btn-primary').attr('disabled', false);
                 //$('#imgLoading').addClass('d-none');
                 $('#Analyse').removeClass('lodergif');
+                $("#ddlAcccountName").prop('disabled', false);
+                $("#projectSelect").prop('disabled', false);
             }
         });
         $('#generatebtnloader').removeClass('d-none');
@@ -292,7 +300,10 @@ $(document).ready(function () {
         //$('#ExdvProgress').removeClass('d-none');
         $('#GenerateArtifacts').addClass('lodergif');
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
+        $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
         $('#collapseTwo').addClass('show');
+        $("#ddlAcccountName").prop('disabled', true);
+        $("#projectSelect").prop('disabled', true);
         $.ajax({
             url: '../Extractor/StartEnvironmentSetupProcess',
             type: 'POST',
@@ -301,11 +312,13 @@ $(document).ready(function () {
             success: function (res) {
                 if (res === "True") {
                     getStatus();
-                    console.log("called");
                 }
             },
             error: function (er) {
                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                $('#Analyse').addClass('btn-primary').attr('disabled', false);
+                $("#ddlAcccountName").prop('disabled', false);
+                $("#projectSelect").prop('disabled', false);
             }
         });
     });
@@ -353,6 +366,7 @@ function getStatus() {
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
                             $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                            $('#Analyse').addClass('btn-primary').attr('disabled', false);
                             $('.genArtifacts').removeClass('show');
 
                             $('#ExtractorProgressBar').width(currentPercentage++ + '%');
@@ -366,15 +380,16 @@ function getStatus() {
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
-
+                            $("#ddlAcccountName").prop('disabled', false);
+                            $("#projectSelect").prop('disabled', false);
                         }
                         else {
                             ErrorData = response;
                             if (ErrorData !== '') {
                                 $('#artifactProgress').removeClass('d-none');
-
                                 currentPercentage = 0;
                                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                                $('#Analyse').addClass('btn-primary').attr('disabled', false);
                                 $('.genArtifacts').removeClass('show');
 
                                 $("#projCreateMsg").hide();
@@ -392,6 +407,8 @@ function getStatus() {
                                 $('#ddlAcccountName').prop('selectedIndex', 0);
                                 $('#ddlGroups').removeAttr("disabled");
                                 $("#ddlAcccountName").removeAttr("disabled");
+                                $("#ddlAcccountName").prop('disabled', false);
+                                $("#projectSelect").prop('disabled', false);
                             }
                         }
                     });

@@ -146,7 +146,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         string assignToUser = string.Empty;
                         if (listAssignToUsers.Count > 0)
                         {
-                            assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)];
+                            assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)]??string.Empty;
                         }
 
                         //Test cases have different fields compared to other items like bug, Epics, etc.                     
