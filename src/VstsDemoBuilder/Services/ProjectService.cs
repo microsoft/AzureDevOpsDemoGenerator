@@ -663,7 +663,6 @@ namespace VstsDemoBuilder.Services
             }
 
             //import source code from GitHub
-
             List<string> listImportSourceCodeJsonPaths = new List<string>();
             string importSourceCodePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode");
             //templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
@@ -675,12 +674,12 @@ namespace VstsDemoBuilder.Services
             {
                 ImportSourceCode(model, importSourceCode, _repoVersion, model.id, _getSourceCodeVersion);
             }
-            //if (isDefaultRepoTodetele)
-            //{
-            Repository objRepository = new Repository(_repoVersion);
-            string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
-            bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
-            // }
+            if (isDefaultRepoTodetele)
+            {
+                Repository objRepository = new Repository(_repoVersion);
+                string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
+                bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
+            }
 
             //Create Pull request
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
@@ -1458,7 +1457,6 @@ namespace VstsDemoBuilder.Services
                     if (model.ProjectName.ToLower() == repositoryName.ToLower())
                     {
                         repositoryDetail = objRepository.GetDefaultRepository(model.ProjectName);
-                        isDefaultRepoTodetele = false;
                     }
                     else
                     {

@@ -67,7 +67,6 @@ namespace VstsRestAPI.Git
                     {
                         viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
                         string repository = viewModel.value.Where(x => x.name == project).FirstOrDefault().id;
-                        logger.Debug("Repository to delete " + repository);
                         return repository;
                     }
                     else
@@ -213,7 +212,6 @@ namespace VstsRestAPI.Git
         {
             try
             {
-                logger.Debug("Deleting Repository " + repositoryId);
                 using (var client = GetHttpClient())
                 {
                     var method = new HttpMethod("DELETE");
@@ -221,7 +219,6 @@ namespace VstsRestAPI.Git
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        logger.Debug("Repository Deleted " + repositoryId);
                         return true;
                     }
                 }
