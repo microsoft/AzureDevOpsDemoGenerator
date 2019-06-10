@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="~/content/assets/css/custom.min.css">
+    <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <script type="text/javascript">
         var appInsights = window.appInsights || function (config) {
@@ -193,8 +194,8 @@
                             <div class="alert alert-danger d-none pl-0" role="alert" id="projectSelect_Error">
                             </div>
                         </div>
-                        <div class="template-invoke mt-1 col-lg-1">
-                            <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="projectloader" />
+                        <div class="template-invoke mt-1 col-lg-1" id="projecctDiv">
+                            @*<img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="projectloader" />*@
                         </div>
                     </div>
 
@@ -205,14 +206,14 @@
 
                         </div>
                     </div>
-                    <div class="mr-3 text-right listDivs1" style="padding:0px">
+                    <div class="mr-3 text-right listDivs1 btn_analyz" style="padding:0px">
                         <button class="btn btn-primary submitBtn btnUpdate" id="Analyse">
                             Analyze
                         </button>
                         <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="imgLoading" />
                     </div>
 
-                    <div class="form-group d-none listDivs1 p-3" id="analyseDiv">
+                    <div class="form-group d-none listDivs1 col-lg-11 artifact" id="analyseDiv">
                         <div class="accordion" id="accordionExample">
                             <div class="card rounded">
                                 <div class="card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne" style="padding:0px; background-color:white; cursor:pointer;">
@@ -235,16 +236,16 @@
                         </div>
                     </div>
 
-                    <div class="text-right mt-3 mr-3 d-none listDivs1" style="padding:0px" id="genArtDiv">
-                        <button class="btn btn-primary" id="GenerateArtifacts" disabled>
+                    <div class="text-right mt-3 mr-3 d-none btn_analyz" style="padding:0px" id="genArtDiv">
+                        <button class="btn btn-primary " id="GenerateArtifacts" disabled>
                             Generate Artifacts
                         </button>
-                        <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="ExdvProgress" />
+                        @*<img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="ExdvProgress" />*@
                     </div>
 
                     <!--EXTENSIONS -->
                     <!--/EXTENSIONS -->
-                    <div class="order-md-2 p-3 d-none" id="GenerateArtifact">
+                    <div class="order-md-2 d-none col-lg-11 artifact" id="GenerateArtifact">
                         <!-- PROGRESS BAR -->
                         <div class="accordion">
                             <div class="card">
