@@ -669,12 +669,12 @@ namespace VstsDemoBuilder.Services
             {
                 ImportSourceCode(model, importSourceCode, _repoVersion, model.id, _getSourceCodeVersion);
             }
-            if (isDefaultRepoTodetele)
-            {
-                Repository objRepository = new Repository(_repoVersion);
-                string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
-                bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
-            }
+            //if (isDefaultRepoTodetele)
+            //{
+            Repository objRepository = new Repository(_repoVersion);
+            string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
+            bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
+            // }
 
             //Create Pull request
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
