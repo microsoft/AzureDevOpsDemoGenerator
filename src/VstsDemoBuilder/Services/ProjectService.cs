@@ -194,7 +194,8 @@ namespace VstsDemoBuilder.Services
             {
                 serviceEndpoints = new Dictionary<string, string>(),
                 repositoryIdList = new Dictionary<string, string>(),
-                pullRequests = new Dictionary<string, string>()
+                pullRequests = new Dictionary<string, string>(),
+                GitHubRepos = new Dictionary<string, string>()
             };
             ProjectTemplate template = null;
             ProjectSettings settings = null;
@@ -253,17 +254,23 @@ namespace VstsDemoBuilder.Services
             string projTemplateFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
 
+            ProjectSetting setting = new ProjectSetting();
+            string _checkIsPrivate = File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ProjectTemplate.json"));
+            if (_checkIsPrivate != "")
+            {
+                setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
+            }
 
             //initialize project template and settings
             try
             {
-                if (System.IO.File.Exists(projTemplateFile))
+                if (File.Exists(projTemplateFile))
                 {
                     string templateItems = model.ReadJsonFile(projTemplateFile);
                     template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
                     projectSettingsFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.ProjectSettings);
 
-                    if (System.IO.File.Exists(projectSettingsFile))
+                    if (File.Exists(projectSettingsFile))
                     {
                         settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
 
@@ -379,7 +386,7 @@ namespace VstsDemoBuilder.Services
             model.Environment.UserUniquename = model.Email;
             //update board columns and rows
             // Checking for template version
-            string projectTemplate = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
+            string projectTemplate = File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
 
             if (!string.IsNullOrEmpty(projectTemplate))
             {
@@ -392,8 +399,8 @@ namespace VstsDemoBuilder.Services
                 CreateTeams(model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
 
                 // for older templates
-                string projectSetting = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectSettings.json"));
-                //System.IO.File.ReadAllText(System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
+                string projectSetting = File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectSettings.json"));
+                // File.ReadAllText( Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
                 JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
                 string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
                 string boardType = string.Empty;
@@ -411,11 +418,11 @@ namespace VstsDemoBuilder.Services
                 if (template.BoardRows != null)
                 {
                     updateSwimLanesJSON = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.BoardRows);
-                    //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
+                    // Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
                     SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
-                    if (System.IO.File.Exists(updateSwimLanesJSON))
+                    if (File.Exists(updateSwimLanesJSON))
                     {
-                        updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                        updateSwimLanesJSON = File.ReadAllText(updateSwimLanesJSON);
                         bool isUpdated = objSwimLanes.UpdateSwimLanes(updateSwimLanesJSON, model.ProjectName, boardType, model.ProjectName + " Team");
                     }
                 }
@@ -424,7 +431,7 @@ namespace VstsDemoBuilder.Services
                     string team = model.ProjectName + " Team";
                     string json = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.SetEpic);
                     //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.SetEpic);
-                    if (System.IO.File.Exists(json))
+                    if (File.Exists(json))
                     {
                         json = model.ReadJsonFile(json);
                         EnableEpic(model, json, _boardVersion, model.id, team);
@@ -436,7 +443,7 @@ namespace VstsDemoBuilder.Services
                     string team = model.ProjectName + " Team";
                     string json = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.BoardColumns);
                     //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.BoardColumns);
-                    if (System.IO.File.Exists(json))
+                    if (File.Exists(json))
                     {
                         json = model.ReadJsonFile(json);
                         bool success = UpdateBoardColumn(model, json, _boardVersion, model.id, boardType, team);
@@ -447,7 +454,7 @@ namespace VstsDemoBuilder.Services
                             {
                                 string cardFieldJson = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.CardField);
                                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardField);
-                                if (System.IO.File.Exists(cardFieldJson))
+                                if (File.Exists(cardFieldJson))
                                 {
                                     cardFieldJson = model.ReadJsonFile(cardFieldJson);
                                     UpdateCardFields(model, cardFieldJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
@@ -458,7 +465,7 @@ namespace VstsDemoBuilder.Services
                             {
                                 string cardStyleJson = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.CardStyle);
                                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardStyle);
-                                if (System.IO.File.Exists(cardStyleJson))
+                                if (File.Exists(cardStyleJson))
                                 {
                                     cardStyleJson = model.ReadJsonFile(cardStyleJson);
                                     UpdateCardStyles(model, cardStyleJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
@@ -479,8 +486,8 @@ namespace VstsDemoBuilder.Services
             {
                 // for newer version of templates
                 string teamsJsonPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "Teams\\Teams.json");
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
-                if (System.IO.File.Exists(teamsJsonPath))
+                // Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
+                if (File.Exists(teamsJsonPath))
                 {
                     template.Teams = "Teams\\Teams.json";
                     template.TeamArea = "TeamArea.json";
@@ -501,8 +508,8 @@ namespace VstsDemoBuilder.Services
                             _teamName = jteam["name"].ToString();
                         }
                         string teamFolderPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"Teams\" + jteam["name"].ToString());
-                        //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
-                        if (System.IO.Directory.Exists(teamFolderPath))
+                        // Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
+                        if (Directory.Exists(teamFolderPath))
                         {
                             BoardColumn objBoard = new BoardColumn(_boardVersion);
 
@@ -510,10 +517,10 @@ namespace VstsDemoBuilder.Services
                             string updateSwimLanesJSON = "";
                             SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
                             template.BoardRows = "BoardRows.json";
-                            updateSwimLanesJSON = System.IO.Path.Combine(teamFolderPath, template.BoardRows);
-                            if (System.IO.File.Exists(updateSwimLanesJSON))
+                            updateSwimLanesJSON = Path.Combine(teamFolderPath, template.BoardRows);
+                            if (File.Exists(updateSwimLanesJSON))
                             {
-                                updateSwimLanesJSON = System.IO.File.ReadAllText(updateSwimLanesJSON);
+                                updateSwimLanesJSON = File.ReadAllText(updateSwimLanesJSON);
                                 List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
                                 foreach (var board in importRows)
                                 {
@@ -524,20 +531,20 @@ namespace VstsDemoBuilder.Services
                             // updating team setting for each team
                             string teamSettingJson = "";
                             template.SetEpic = "TeamSetting.json";
-                            teamSettingJson = System.IO.Path.Combine(teamFolderPath, template.SetEpic);
-                            if (System.IO.File.Exists(teamSettingJson))
+                            teamSettingJson = Path.Combine(teamFolderPath, template.SetEpic);
+                            if (File.Exists(teamSettingJson))
                             {
-                                teamSettingJson = System.IO.File.ReadAllText(teamSettingJson);
+                                teamSettingJson = File.ReadAllText(teamSettingJson);
                                 EnableEpic(model, teamSettingJson, _boardVersion, model.id, _teamName);
                             }
 
                             // updating board columns for each teams each board
                             string teamBoardColumns = "";
                             template.BoardColumns = "BoardColumns.json";
-                            teamBoardColumns = System.IO.Path.Combine(teamFolderPath, template.BoardColumns);
-                            if (System.IO.File.Exists(teamBoardColumns))
+                            teamBoardColumns = Path.Combine(teamFolderPath, template.BoardColumns);
+                            if (File.Exists(teamBoardColumns))
                             {
-                                teamBoardColumns = System.IO.File.ReadAllText(teamBoardColumns);
+                                teamBoardColumns = File.ReadAllText(teamBoardColumns);
                                 List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
                                 foreach (var board in importBoardCols)
                                 {
@@ -548,10 +555,10 @@ namespace VstsDemoBuilder.Services
                             // updating card fields for each team and each board
                             string teamCardFields = "";
                             template.CardField = "CardFields.json";
-                            teamCardFields = System.IO.Path.Combine(teamFolderPath, template.CardField);
-                            if (System.IO.File.Exists(teamCardFields))
+                            teamCardFields = Path.Combine(teamFolderPath, template.CardField);
+                            if (File.Exists(teamCardFields))
                             {
-                                teamCardFields = System.IO.File.ReadAllText(teamCardFields);
+                                teamCardFields = File.ReadAllText(teamCardFields);
                                 List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
                                 cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
                                 foreach (var card in cardFields)
@@ -563,10 +570,10 @@ namespace VstsDemoBuilder.Services
                             // updating card styles for each team and each board
                             string teamCardStyle = "";
                             template.CardStyle = "CardStyles.json";
-                            teamCardStyle = System.IO.Path.Combine(teamFolderPath, template.CardStyle);
-                            if (System.IO.File.Exists(teamCardStyle))
+                            teamCardStyle = Path.Combine(teamFolderPath, template.CardStyle);
+                            if (File.Exists(teamCardStyle))
                             {
-                                teamCardStyle = System.IO.File.ReadAllText(teamCardStyle);
+                                teamCardStyle = File.ReadAllText(teamCardStyle);
                                 List<CardStyle.Style> cardStyles = new List<CardStyle.Style>();
                                 cardStyles = JsonConvert.DeserializeObject<List<CardStyle.Style>>(teamCardStyle);
                                 foreach (var cardStyle in cardStyles)
@@ -593,7 +600,7 @@ namespace VstsDemoBuilder.Services
             if (model.GitHubFork && model.GitHubToken != null)
             {
                 List<string> listRepoFiles = new List<string>();
-                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+                string repoFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"ImportSourceCode\GitRepository.json");
                 if (File.Exists(repoFilePath))
                 {
                     string readRepoFile = model.ReadJsonFile(repoFilePath);
@@ -614,8 +621,12 @@ namespace VstsDemoBuilder.Services
                                 {
                                     string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
                                     dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                    model.GitRepoName = fr.full_name;
-                                    model.GitRepoURL = fr.html_url;
+                                    model.GitRepoName = fr.name; //username/repo
+                                    model.GitRepoURL = fr.html_url; // https://github.com/username/reponame
+                                    if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                                    {
+                                        model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                                    }
                                     AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
                                 }
                             }
@@ -625,11 +636,10 @@ namespace VstsDemoBuilder.Services
             }
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
-            string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ServiceEndpoints");
-            //templatesFolder + model.SelectedTemplate + @"\ServiceEndpoints";
-            if (System.IO.Directory.Exists(serviceEndPointsPath))
+            string serviceEndPointsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"ServiceEndpoints");
+            if (Directory.Exists(serviceEndPointsPath))
             {
-                System.IO.Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
+                Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
             }
             CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
             //create agent queues on demand
@@ -653,7 +663,6 @@ namespace VstsDemoBuilder.Services
             }
 
             //import source code from GitHub
-
             List<string> listImportSourceCodeJsonPaths = new List<string>();
             string importSourceCodePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode");
             //templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
@@ -714,78 +723,78 @@ namespace VstsDemoBuilder.Services
 
                 //import work items
                 string featuresFilePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
                 string productBackLogPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
                 string taskPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
                 string testCasePath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
                 string bugPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
                 string epicPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
                 string userStoriesPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
-                //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
+                // Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
                 string testPlansPath = string.Empty;
                 string testSuitesPath = string.Empty;
                 if (model.SelectedTemplate.ToLower() == "myshuttle2")
                 {
                     testPlansPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.TestPlanfromTemplate);
-                    //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
                     testSuitesPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.TestSuitefromTemplate);
-                    //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                    // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
                 }
 
                 if (model.SelectedTemplate.ToLower() == "myshuttle")
                 {
                     testPlansPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.TestPlanfromTemplate);
-                    //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
+                    // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
                     testSuitesPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, template.TestSuitefromTemplate);
-                    //System.IO.Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
+                    // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
                 }
 
-                if (System.IO.File.Exists(featuresFilePath))
+                if (File.Exists(featuresFilePath))
                 {
                     workItems.Add("Feature", model.ReadJsonFile(featuresFilePath));
                 }
 
-                if (System.IO.File.Exists(productBackLogPath))
+                if (File.Exists(productBackLogPath))
                 {
                     workItems.Add("Product Backlog Item", model.ReadJsonFile(productBackLogPath));
                 }
 
-                if (System.IO.File.Exists(taskPath))
+                if (File.Exists(taskPath))
                 {
                     workItems.Add("Task", model.ReadJsonFile(taskPath));
                 }
 
-                if (System.IO.File.Exists(testCasePath))
+                if (File.Exists(testCasePath))
                 {
                     workItems.Add("Test Case", model.ReadJsonFile(testCasePath));
                 }
 
-                if (System.IO.File.Exists(bugPath))
+                if (File.Exists(bugPath))
                 {
                     workItems.Add("Bug", model.ReadJsonFile(bugPath));
                 }
 
-                if (System.IO.File.Exists(userStoriesPath))
+                if (File.Exists(userStoriesPath))
                 {
                     workItems.Add("User Story", model.ReadJsonFile(userStoriesPath));
                 }
 
-                if (System.IO.File.Exists(epicPath))
+                if (File.Exists(epicPath))
                 {
                     workItems.Add("Epic", model.ReadJsonFile(epicPath));
                 }
 
-                if (System.IO.File.Exists(testPlansPath))
+                if (File.Exists(testPlansPath))
                 {
                     workItems.Add("Test Plan", model.ReadJsonFile(testPlansPath));
                 }
 
-                if (System.IO.File.Exists(testSuitesPath))
+                if (File.Exists(testSuitesPath))
                 {
                     workItems.Add("Test Suite", model.ReadJsonFile(testSuitesPath));
                 }
@@ -795,9 +804,9 @@ namespace VstsDemoBuilder.Services
             {
                 string _WitPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\WorkItems");
                 //Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
-                if (System.IO.Directory.Exists(_WitPath))
+                if (Directory.Exists(_WitPath))
                 {
-                    string[] workItemFilePaths = System.IO.Directory.GetFiles(_WitPath);
+                    string[] workItemFilePaths = Directory.GetFiles(_WitPath);
                     if (workItemFilePaths.Length > 0)
                     {
                         foreach (var workItem in workItemFilePaths)
@@ -819,7 +828,7 @@ namespace VstsDemoBuilder.Services
             }
 
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
-            if (System.IO.File.Exists(projectSettingsFile))
+            if (File.Exists(projectSettingsFile))
             {
                 string attchmentFilesFolder = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\WorkItemAttachments");
                 //string.Format(templatesFolder + @"{0}\WorkItemAttachments", model.SelectedTemplate);
@@ -862,16 +871,48 @@ namespace VstsDemoBuilder.Services
             }
 
             //create build Definition
-            string buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
-            if (!string.IsNullOrEmpty(model.GitHubToken) && model.GitHubFork)
+            string buildDefinitionsPath = string.Empty;
+            model.BuildDefinitions = new List<BuildDef>();
+            // if the template is private && agreed to GitHubFork && GitHub Token is not null
+            if (setting.IsPrivate == "true" && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
+            {
+                buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+                if (Directory.Exists(buildDefinitionsPath))
+                {
+                    Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
+                }
+                buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
+                if (Directory.Exists(buildDefinitionsPath))
+                {
+                    Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
+                }
+            }
+            // if the template is private && not agreed to GitHubFork && GitHub Token is null
+            else if (setting.IsPrivate == "true" && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
+            {
+                buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+                if (Directory.Exists(buildDefinitionsPath))
+                {
+                    Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
+                }
+            }
+            // if the template is not private && agreed to GitHubFork && GitHub Token is not null
+            else if (string.IsNullOrEmpty(setting.IsPrivate) && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
                 buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
+                if (Directory.Exists(buildDefinitionsPath))
+                {
+                    Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
+                }
             }
-            //templatesFolder + model.SelectedTemplate + @"\BuildDefinitions";
-            model.BuildDefinitions = new List<BuildDef>();
-            if (Directory.Exists(buildDefinitionsPath))
+            // if the template is not private && not agreed to GitHubFork && GitHub Token is null
+            else if (string.IsNullOrEmpty(setting.IsPrivate) && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
-                Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new Models.BuildDef() { FilePath = i }));
+                buildDefinitionsPath = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+                if (Directory.Exists(buildDefinitionsPath))
+                {
+                    Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
+                }
             }
             bool isBuild = CreateBuildDefinition(model, _buildVersion, model.id);
             if (isBuild)
@@ -882,7 +923,7 @@ namespace VstsDemoBuilder.Services
             //Queue a Build
             string buildJson = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "QueueBuild.json");
             //string.Format(templatesFolder + @"{0}\QueueBuild.json", model.SelectedTemplate);
-            if (System.IO.File.Exists(buildJson))
+            if (File.Exists(buildJson))
             {
                 QueueABuild(model, buildJson, _buildVersion);
             }
@@ -917,16 +958,9 @@ namespace VstsDemoBuilder.Services
                 CreateQueryAndWidgets(model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
                 AddMessage(model.id, "Queries, Widgets and Charts created");
             }
-            string _checkIsPrivate = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\ProjectTemplate.json"));
-            //System.IO.File.ReadAllText(HostingEnvironment.MapPath("~") + @"Templates\" + model.SelectedTemplate + "\\ProjectTemplate.json");
-            if (_checkIsPrivate != "")
+            if (setting.IsPrivate == "true")
             {
-                ProjectSetting setting = new ProjectSetting();
-                setting = JsonConvert.DeserializeObject<ProjectSetting>(_checkIsPrivate);
-                if (setting.IsPrivate == "true")
-                {
-                    Directory.Delete(Path.Combine(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate)), true);
-                }
+                Directory.Delete(Path.Combine(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate)), true);
             }
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
@@ -945,7 +979,7 @@ namespace VstsDemoBuilder.Services
             try
             {
                 string jsonTeams = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, teamsJSON);
-                if (System.IO.File.Exists(jsonTeams))
+                if (File.Exists(jsonTeams))
                 {
                     Teams objTeam = new Teams(_projectConfig);
                     jsonTeams = model.ReadJsonFile(jsonTeams);
@@ -971,7 +1005,7 @@ namespace VstsDemoBuilder.Services
                                 //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
 
 
-                                if (System.IO.File.Exists(updateAreaJSON))
+                                if (File.Exists(updateAreaJSON))
                                 {
                                     updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
                                     updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
@@ -1000,7 +1034,7 @@ namespace VstsDemoBuilder.Services
                             string updateAreaJSON = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "UpdateTeamArea.json");
 
                             //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
-                            if (System.IO.File.Exists(updateAreaJSON))
+                            if (File.Exists(updateAreaJSON))
                             {
                                 updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
                                 updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
@@ -1062,7 +1096,7 @@ namespace VstsDemoBuilder.Services
             {
                 string jsonWorkItems = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, workItemJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, workItemJSON);
-                if (System.IO.File.Exists(jsonWorkItems))
+                if (File.Exists(jsonWorkItems))
                 {
                     WorkItem objWorkItem = new WorkItem(_defaultConfiguration);
                     jsonWorkItems = model.ReadJsonFile(jsonWorkItems);
@@ -1222,7 +1256,7 @@ namespace VstsDemoBuilder.Services
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, workItemUpdateJSON);
                 string jsonProjectSettings = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, projectSettingsJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, projectSettingsJSON);
-                if (System.IO.File.Exists(jsonWorkItemsUpdate))
+                if (File.Exists(jsonWorkItemsUpdate))
                 {
                     WorkItem objWorkItem = new WorkItem(_defaultConfiguration);
                     jsonWorkItemsUpdate = model.ReadJsonFile(jsonWorkItemsUpdate);
@@ -1256,7 +1290,7 @@ namespace VstsDemoBuilder.Services
             {
                 string jsonIterations = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, iterationsJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, iterationsJSON);
-                if (System.IO.File.Exists(jsonIterations))
+                if (File.Exists(jsonIterations))
                 {
                     iterationsJSON = model.ReadJsonFile(jsonIterations);
                     ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
@@ -1416,14 +1450,13 @@ namespace VstsDemoBuilder.Services
                 {
 
                 }
-                if (System.IO.File.Exists(sourceCodeJSON))
+                if (File.Exists(sourceCodeJSON))
                 {
                     Repository objRepository = new Repository(_repo);
                     string repositoryName = Path.GetFileName(sourceCodeJSON).Replace(".json", "");
                     if (model.ProjectName.ToLower() == repositoryName.ToLower())
                     {
                         repositoryDetail = objRepository.GetDefaultRepository(model.ProjectName);
-                        isDefaultRepoTodetele = false;
                     }
                     else
                     {
@@ -1470,7 +1503,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                if (System.IO.File.Exists(pullRequestJsonPath))
+                if (File.Exists(pullRequestJsonPath))
                 {
                     string commentFile = Path.GetFileName(pullRequestJsonPath);
                     string repositoryId = string.Empty;
@@ -1491,7 +1524,7 @@ namespace VstsDemoBuilder.Services
                             model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
                             commentFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests\Comments\" + commentFile);
                             //string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
-                            if (System.IO.File.Exists(commentFile))
+                            if (File.Exists(commentFile))
                             {
                                 commentFile = model.ReadJsonFile(commentFile);
                                 PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
@@ -1530,7 +1563,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="jsonPaths"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, VstsRestAPI.Configuration _endpointConfig)
+        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, Configuration _endpointConfig)
         {
             try
             {
@@ -1539,45 +1572,52 @@ namespace VstsDemoBuilder.Services
                 {
                     string fileName = Path.GetFileName(jsonPath);
                     string jsonCreateService = jsonPath;
-                    if (System.IO.File.Exists(jsonCreateService))
+                    if (File.Exists(jsonCreateService))
                     {
                         string username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
                         string password = System.Configuration.ConfigurationManager.AppSettings["Password"];
                         //string extractPath = HostingEnvironment.MapPath("~/Templates/" + model.SelectedTemplate);
-                        string projectFileData = System.IO.File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
+                        string projectFileData = File.ReadAllText(GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
                         ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
                         ServiceEndPoint objService = new ServiceEndPoint(_endpointConfig);
 
                         string gitUserName = System.Configuration.ConfigurationManager.AppSettings["GitUserName"];
                         string gitUserPassword = System.Configuration.ConfigurationManager.AppSettings["GitUserPassword"];
 
+                        jsonCreateService = model.ReadJsonFile(jsonCreateService);
 
                         if (!string.IsNullOrEmpty(settings.IsPrivate))
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
                         }
                         // File contains "GitHub_" means - it contains GitHub URL, user wanted to fork repo to his github
-                        else if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
+                        if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService);
                             JObject jsonToCreate = JObject.Parse(jsonCreateService);
                             string type = jsonToCreate["type"].ToString();
+                            string url = jsonToCreate["url"].ToString();
+                            string repoNameInUrl = Path.GetFileName(url);
                             // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
-                            if (type.ToLower() == "git")
+                            foreach (var repo in model.Environment.GitHubRepos.Keys)
                             {
-                                jsonToCreate["type"] = "GitHub"; //Changing endpoint type
-                                jsonToCreate["url"] = model.GitRepoURL; // updating endpoint URL with User forked repo URL
-                            }
-                            // Endpoint type is GitHub(Public), so we should point the build def to his repo by updating the URL
-                            else if (type.ToLower() == "github")
-                            {
-                                jsonToCreate["url"] = model.GitRepoURL; // Updating repo URL to user repo
-                            }
-                            else
-                            {
+                                if (repoNameInUrl.Contains(repo))
+                                {
+                                    if (type.ToLower() == "git")
+                                    {
+                                        jsonToCreate["type"] = "GitHub"; //Changing endpoint type
+                                        jsonToCreate["url"] = model.Environment.GitHubRepos[repo].ToString(); // updating endpoint URL with User forked repo URL
+                                    }
+                                    // Endpoint type is GitHub(Public), so we should point the build def to his repo by updating the URL
+                                    else if (type.ToLower() == "github")
+                                    {
+                                        jsonToCreate["url"] = model.Environment.GitHubRepos[repo].ToString(); // Updating repo URL to user repo
+                                    }
+                                    else
+                                    {
 
+                                    }
+                                }
                             }
                             jsonCreateService = jsonToCreate.ToString();
                             jsonCreateService = jsonCreateService.Replace("$GitUserName$", model.GitHubUserName).Replace("$GitUserPassword$", model.GitHubToken);
@@ -1585,7 +1625,6 @@ namespace VstsDemoBuilder.Services
                         // user doesn't want to fork repo
                         else
                         {
-                            jsonCreateService = model.ReadJsonFile(jsonCreateService); // read the JSON
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName); // Replaces the Place holder with project name if exists
                             jsonCreateService = jsonCreateService.Replace("$username$", username).Replace("$password$", password) // Replaces user name and password with app setting username and password if require[to import soure code to Azure Repos]
                                 .Replace("$GitUserName$", gitUserName).Replace("$GitUserPassword$", gitUserPassword); // Replaces GitUser name and passwords with Demo gen username and password [Just to point build def to respective repo]
@@ -1650,7 +1689,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                if (System.IO.File.Exists(testPlanJson))
+                if (File.Exists(testPlanJson))
                 {
                     List<WIMapData> testCaseMap = new List<WIMapData>();
                     testCaseMap = wiMapping.Where(x => x.WIType == "Test Case").ToList();
@@ -1667,7 +1706,7 @@ namespace VstsDemoBuilder.Services
                     {
                         string testSuiteJson = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\TestPlans\TestSuites\" + fileName);
                         //string.Format(templateFolder + @"{0}\TestPlans\TestSuites\{1}", model.SelectedTemplate, fileName);
-                        if (System.IO.File.Exists(testSuiteJson))
+                        if (File.Exists(testSuiteJson))
                         {
                             testSuiteJson = model.ReadJsonFile(testSuiteJson);
                             testSuiteJson = testSuiteJson.Replace("$planID$", testPlanResponse[0]).Replace("$planName$", testPlanResponse[1]);
@@ -1727,20 +1766,19 @@ namespace VstsDemoBuilder.Services
             {
                 foreach (BuildDef buildDef in model.BuildDefinitions)
                 {
-                    if (System.IO.File.Exists(buildDef.FilePath))
+                    if (File.Exists(buildDef.FilePath))
                     {
                         BuildDefinition objBuild = new BuildDefinition(_buildConfig);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
-                                             .Replace("$ProjectId$", model.Environment.ProjectId);
+                                             .Replace("$ProjectId$", model.Environment.ProjectId)
+                                             .Replace("$username$", model.GitHubUserName);
                         //update repositoryId 
                         foreach (string repository in model.Environment.repositoryIdList.Keys)
                         {
                             string placeHolder = string.Format("${0}$", repository);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
-                            jsonBuildDefinition = jsonBuildDefinition.Replace("$GitHubRepoURL$", model.GitRepoURL).Replace("$GitHubRepoName$", model.GitRepoName);
                         }
-
                         //update endpoint ids
                         foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
                         {
@@ -1784,7 +1822,7 @@ namespace VstsDemoBuilder.Services
             try
             {
                 string jsonQueueABuild = json;
-                if (System.IO.File.Exists(jsonQueueABuild))
+                if (File.Exists(jsonQueueABuild))
                 {
                     string buildId = model.BuildDefinitions.FirstOrDefault().Id;
 
@@ -1823,7 +1861,7 @@ namespace VstsDemoBuilder.Services
                 var teamMember = teamMembers.value.FirstOrDefault();
                 foreach (ReleaseDef relDef in model.ReleaseDefinitions)
                 {
-                    if (System.IO.File.Exists(relDef.FilePath))
+                    if (File.Exists(relDef.FilePath))
                     {
                         ReleaseDefinition objRelease = new ReleaseDefinition(_releaseConfiguration);
                         string jsonReleaseDefinition = model.ReadJsonFile(relDef.FilePath);
@@ -1942,7 +1980,7 @@ namespace VstsDemoBuilder.Services
                 //Create DashBoards
                 string dashBoardTemplate = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Dashboard.json");
                 //string.Format(templatesFolder + @"{0}\Dashboard\Dashboard.json", model.SelectedTemplate);
-                if (System.IO.File.Exists(dashBoardTemplate))
+                if (File.Exists(dashBoardTemplate))
                 {
                     dynamic dashBoard = new System.Dynamic.ExpandoObject();
                     dashBoard.name = "Working";
@@ -2259,11 +2297,11 @@ namespace VstsDemoBuilder.Services
                 //string templatesFolder = HostingEnvironment.MapPath("~") + @"\Templates\";
                 string projTemplateFile = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, "Extensions.json");
                 //string.Format(templatesFolder + @"{0}\Extensions.json", model.SelectedTemplate);
-                if (!(System.IO.File.Exists(projTemplateFile)))
+                if (!(File.Exists(projTemplateFile)))
                 {
                     return false;
                 }
-                string templateItems = System.IO.File.ReadAllText(projTemplateFile);
+                string templateItems = File.ReadAllText(projTemplateFile);
                 var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(templateItems);
                 string requiresExtensionNames = string.Empty;
 
@@ -2467,7 +2505,7 @@ namespace VstsDemoBuilder.Services
         {
             string path = GetJsonFilePath(PrivateTemplatePath, model.SelectedTemplate, @"\DeploymentGroups\CreateDeploymentGroup.json");
             //templateFolder + model.SelectedTemplate + "\\DeploymentGroups\\CreateDeploymentGroup.json";
-            if (System.IO.File.Exists(path))
+            if (File.Exists(path))
             {
                 string json = model.ReadJsonFile(path);
                 if (!string.IsNullOrEmpty(json))
@@ -2487,9 +2525,9 @@ namespace VstsDemoBuilder.Services
                 string groupDetails = "";
                 TemplateSelection.Templates templates = new TemplateSelection.Templates();
                 string templatesPath = ""; templatesPath = HostingEnvironment.MapPath("~") + @"\Templates\";
-                if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
+                if (File.Exists(templatesPath + "TemplateSetting.json"))
                 {
-                    groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
+                    groupDetails = File.ReadAllText(templatesPath + @"\TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
                     foreach (var template in templates.GroupwiseTemplates.FirstOrDefault().Template)
                     {
@@ -2563,7 +2601,7 @@ namespace VstsDemoBuilder.Services
             {
                 string accountName = account;
                 string pat = token;
-                string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
+                string listedExtension = File.ReadAllText(extensionJsonFile);
                 var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
                 string requiresExtensionNames = string.Empty;
                 string requiredMicrosoftExt = string.Empty;

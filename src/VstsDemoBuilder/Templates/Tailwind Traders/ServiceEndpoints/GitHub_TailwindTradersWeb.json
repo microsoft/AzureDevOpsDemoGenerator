@@ -1,10 +1,10 @@
-{
+﻿{
   "data": {
 
   },
-  "name": "$Name$",
+  "name": "Website",
   "type": "git",
-  "url": "$GitHubURL$",
+  "url": "https://github.com/Microsoft/TailwindTraders-Website",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {

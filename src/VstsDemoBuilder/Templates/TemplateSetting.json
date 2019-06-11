@@ -20,7 +20,8 @@
           "Tags": [ "Agile", "Data and AI", "React" ],
           "PreviewImages": [ "/Templates/Tailwind Traders/Images/Architecture.png", "/Templates/Tailwind Traders/Images/Website.png" ],
           "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/TailwindTraders.png"
+          "Image": "/Templates/TemplateImages/TailwindTraders.png",
+          "ForkGitHubRepo": true
         },
         {
           "Key": "77383",
