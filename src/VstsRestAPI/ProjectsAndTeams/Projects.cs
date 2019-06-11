@@ -209,6 +209,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                                 string templateData = response1.Content.ReadAsStringAsync().Result;
                                 template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
                                 load.TypeClass = template.properties.Class;
+                                load.value.Where(x => x.name == "System.Process Template").FirstOrDefault().value = template.name;
                                 return load;
                             }
                             else

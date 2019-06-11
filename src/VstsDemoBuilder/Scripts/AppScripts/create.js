@@ -389,7 +389,7 @@ $(document).ready(function (event) {
 });
 $('#btnSubmit').click(function () {
     var forkGitHub = false;
-    var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked')
+    var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gitHubFork === true) {
         forkGitHub = true;
     }
@@ -481,6 +481,7 @@ $('#btnSubmit').click(function () {
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+    $("#templateselection").prop("disabled", true).removeClass('btn-primary');
     var Parameters = {};
     $.each($('.project-parameters'), function (index, item) {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
@@ -495,7 +496,7 @@ $('#btnSubmit').click(function () {
             window.location.href = "~/Account/Verify?template=" + queryTemplate;
             return;
         }
-
+        $('input[id="gitHubCheckbox"]').prop('disabled', true);
         appInsights.trackEvent("Create button clicked");
         appInsights.trackEvent("Created project using" + selectedTemplate + " template");
         ga('send', 'event', selectedTemplate, 'selected');
@@ -663,6 +664,8 @@ function getStatus() {
                                     $('#ddlGroups').removeAttr("disabled");
                                     $("#ddlAcccountName").removeAttr("disabled");
                                     $("#txtProjectName").removeAttr("disabled");
+                                    $('input[id="gitHubCheckbox"]').prop('disabled', false);
+
                                 }
                             });
                         }
@@ -670,14 +673,7 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-
-                            //if (selectedTemplate == "SmartHotel360") {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                            //}
-                            //else {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                            //}
+                           
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
@@ -692,6 +688,7 @@ function getStatus() {
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
+                            $('input[id="gitHubCheckbox"]').prop('disabled', false);
                             if (ErrorData !== '') {
                                 $("#projCreateMsg").hide(); $("#errorDescription").html("");
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");

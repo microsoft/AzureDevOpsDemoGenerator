@@ -164,6 +164,8 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                Session["EnableExtractor"] = true;
+
                 AccessDetails _accessDetails = ProjectService.AccessDetails;
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
@@ -306,12 +308,9 @@ namespace VstsDemoBuilder.Controllers
                     string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
                     string accessRequestBody = accountService.GenerateRequestPostData(clientId, code, redirectUrl);
                     _accessDetails = accountService.GetAccessToken(accessRequestBody);
-                    //_accessDetails.access_token = "";
-                    //_accessDetails.access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJuYW1laWQiOiIxZTk1OTNlNC0wM2ViLTY1MjktOWFlNy1lY2M1ZmUyN2QyNWEiLCJzY3AiOiJ2c28uYWdlbnRwb29sc19tYW5hZ2UgdnNvLmJ1aWxkX2V4ZWN1dGUgdnNvLmNvZGVfbWFuYWdlIHZzby5kYXNoYm9hcmRzX21hbmFnZSB2c28uZXh0ZW5zaW9uX21hbmFnZSB2c28uaWRlbnRpdHkgdnNvLnByb2plY3RfbWFuYWdlIHZzby5yZWxlYXNlX21hbmFnZSB2c28uc2VydmljZWVuZHBvaW50X21hbmFnZSB2c28udGVzdF93cml0ZSB2c28ud2lraV93cml0ZSB2c28ud29ya19mdWxsIiwiYXVpIjoiMjZjZDc3NDQtNTBlMS00MWVkLTgzZDgtZDUwNjFhOGM1NDIyIiwiYXBwaWQiOiI1MDE4NzdkMy05YmNjLTRiZTYtYThjZC04MGFkOTk5YTY5NmEiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTU4MDg4Nzk3LCJleHAiOjE1NTgwOTIzOTd9.sIBT2PvGwebk0rSvpDO7Ogk6z5-cuMQN8ABvrz06Tfktn_J8Sx93U-IAxWBSBVIEsdHNa-JljHgreTPU94wm2vxZMK7wHJ4gAW2G4zC_c6uDPIt81ftRJP3Uxa_6co2X-clCB_6dX4tc5mFot9qTKaAY6sMZJ1EnvyXnEfkQ9nTqI2cc1bIqtyByyr_W8x_j5EaHWghII4s3t1ikuPssaxoIooSekdV7XHrxgNIFN8WtYj7WpfF_t2ZFFFe84FNmxDhDK99ZVDwHnINmMHquiMCVdaMEk5jNddH9slAuxl5Ojku3YfRZOjr-XkBNrQhbjixZMGO0AdNMOyyMsmc6Dg";
                     if (!string.IsNullOrEmpty(_accessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
-                        //AccessDetails.access_token = "";
                         model.accessToken = _accessDetails.access_token;
                         Session["PAT"] = _accessDetails.access_token;
                     }
