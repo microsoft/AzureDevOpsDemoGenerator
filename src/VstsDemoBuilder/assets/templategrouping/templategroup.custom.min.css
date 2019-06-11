@@ -8816,5 +8816,8 @@ html, body {
     .m-0 {
         margin: 0 !important;
     }
+    .lb_m {
+        padding: 0% 4% 0% 2% !important;
+    }
 }
     /*# sourceMappingURL=custom.min.css.map */
