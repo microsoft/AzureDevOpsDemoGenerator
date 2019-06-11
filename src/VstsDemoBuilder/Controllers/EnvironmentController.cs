@@ -164,8 +164,6 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                Session["EnableExtractor"] = true;
-
                 AccessDetails _accessDetails = ProjectService.AccessDetails;
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)

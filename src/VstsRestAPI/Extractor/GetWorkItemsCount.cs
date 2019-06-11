@@ -50,7 +50,7 @@ namespace VstsRestAPI.Extractor
                     var method = new HttpMethod("POST");
 
                     // send the request               
-                    var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/wit/wiql?api-version=4.1") { Content = postValue };
+                    var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/wit/wiql?api-version=" + _configuration.VersionNumber) { Content = postValue };
                     var response = client.SendAsync(request).Result;
 
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -96,7 +96,7 @@ namespace VstsRestAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/wit/workitems?api-version=4.1&ids=" + workitemstoFetch + "&$expand=relations").Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/wit/workitems?api-version=" + _configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
@@ -116,6 +116,36 @@ namespace VstsRestAPI.Extractor
                 LastFailureMessage = error;
             }
             return viewModel;
+        }
+        /// <summary>
+        /// Get All work item names
+        /// </summary>
+        /// <returns></returns>
+        public WorkItemNames.Names GetAllWorkItemNames()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/_apis/wit/workitemtypes?api-version={2}", _configuration.UriString, _configuration.Project ,_configuration.VersionNumber)).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        WorkItemNames.Names workItemNames = JsonConvert.DeserializeObject<WorkItemNames.Names>(response.Content.ReadAsStringAsync().Result);
+                        return workItemNames;
+                    }
+                    else
+                    {
+                        return new WorkItemNames.Names();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                string error = ex.Message;
+                LastFailureMessage = error;
+            }
+            return new WorkItemNames.Names();
         }
     }
 }

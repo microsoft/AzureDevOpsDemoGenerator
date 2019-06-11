@@ -348,6 +348,7 @@
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\github-icon.png" />
+    <Content Include="Images\GitHub-Mark.png" />
     <Content Include="Images\image2.png" />
     <Content Include="Images\img_verify2.jpg" />
     <Content Include="Images\linkedin.png" />
@@ -1231,7 +1232,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60671</IISUrl>
+          <IISUrl>http://localhost:60671/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
