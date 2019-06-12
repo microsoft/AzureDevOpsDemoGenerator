@@ -8171,9 +8171,10 @@ a.select-button{
         background-color: #f5f5f5
     }
     /*# sourceMappingURL=custom.min.css.map */
-.logo_text { 
-    font-weight:bold; 
-    font-size:18px;
+.logo_text {
+    font-weight: bold;
+    font-size: 18px;
+   white-space:nowrap
 }
 .logo_container {
     position: absolute;
@@ -8422,5 +8423,8 @@ a.select-button{
         }
         .footer {
              font-size:30px;
+        }
+        .mainbanner {
+            background-size: 56%, 17%;
         }
     }
