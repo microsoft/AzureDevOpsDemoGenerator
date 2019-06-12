@@ -270,11 +270,6 @@ $(document).ready(function (event) {
 
     $("#projectParameters").html('');
     var selectedTemplate = templateFolder;
-
-    if (selectedTemplate === "MyShuttle-Java") {
-        $("#NotificationModal").modal('show');
-    }
-
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
@@ -522,18 +517,20 @@ $('#btnSubmit').click(function () {
 });
 
 // if the user uploading his exported template (zip file), we will take that template name as folder name
-$('body').on('click', '#btnUpload', function () {
-    var fileUpload = $("#FileUpload1").get(0);
-    var files = fileUpload.files;
-    $('#InfoMessage').removeClass('d-block').addClass('d-none');
-    // Create FormData object
-    var fileData = new FormData();
-    // Looping over all files and add it to FormData object
-    for (var i = 0; i < files.length; i++) {
-        fileData.append(files[i].name, files[i]);
-    }
-    templateFolder = files[0].name.replace(".zip", "");
-});
+//$('#myiFrame body').on('click', '#btnUpload', function () {
+//    alert();
+//    debugger;
+//    var fileUpload = $("#FileUpload1").get(0);
+//    var files = fileUpload.files;
+//    $('#InfoMessage').removeClass('d-block').addClass('d-none');
+//    // Create FormData object
+//    var fileData = new FormData();
+//    // Looping over all files and add it to FormData object
+//    for (var i = 0; i < files.length; i++) {
+//        fileData.append(files[i].name, files[i]);
+//    }
+//    templateFolder = files[0].name.replace(".zip", "");
+//});
 
 function getStatus() {
 
@@ -794,9 +791,6 @@ function GetRequiredExtension() {
 }
 
 //TEMPLATE GROUP CREATION
-$(document).ready(function () {
-
-});
 
 $(function () {
 
@@ -808,6 +802,7 @@ $(function () {
     // CLOSE MODAL ON EVENT
     $(".template-close").on("click", function () {
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+        templateFolder = $('#selectedTemplateFolder').val();
     });
 
     // TOGGLING ACTIVE CLASS TO TEMPLATE GROUP
@@ -1046,6 +1041,10 @@ function getGroups(grpSelected) {
                     }
                 }
 
+            }
+            if (grpSelected === "Private") {
+                var iframe = $("#myiFrame");
+                iframe.attr("src", iframe.data("src"));
             }
         }
     });
