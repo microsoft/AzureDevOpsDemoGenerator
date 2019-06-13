@@ -187,22 +187,21 @@ namespace VstsDemoBuilder.Models
     public class RequestedProject
     {
         public string email { get; set; }
-        public string ProjectName { get; set; }
-        public string TrackId { get; set; }
+        public string projectName { get; set; }
+        public string trackId { get; set; }
         public string status { get; set; }
     }
 
     public class MultiProjects
-    {
-        public string id { get; set; }
+    {       
         public string accessToken { get; set; }
         public string organizationName { get; set; }
         public string templateName { get; set; }
         public string templatePath { get; set; }
-        public string GithubToken { get; set; }
-        public string UserId { get; set; }
-        public string Password { get; set; }
-        public bool InstallExtensions { get; set; }
+        public string gitHubToken { get; set; }
+        public string userId { get; set; }
+        public string password { get; set; }
+        public bool installExtensions { get; set; }
         public IList<RequestedProject> users { get; set; }
     }
 
