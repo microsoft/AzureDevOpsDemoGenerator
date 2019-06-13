@@ -276,6 +276,18 @@ namespace VstsDemoBuilder.Controllers
                 return Redirect("../Account/Verify");
             }
         }
+        [AllowAnonymous]
+        public ActionResult PrivateTemplate()
+        {
+            if (Session["visited"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("../Account/Verify");
+            }
+        }
 
         /// <summary>
         /// Call to Create View()

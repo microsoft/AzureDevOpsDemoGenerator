@@ -1,7 +1,5 @@
 ﻿$(document).ready(function () {
     $('body').on('click', '#btnUpload', function () {
-     
-
         $("#fileError").remove();
         disableButton();
         // Checking whether FormData is available in browser
@@ -43,12 +41,14 @@
                                 console.log("succesfully unzipped file: " + files[0].name);
 
                                 var NewTemplateName = files[0].name.replace(".zip", "");
-                                $('#ddlTemplates').val(NewTemplateName);
-                                $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
-                                $("#lblextensionError").removeClass('d-block').addClass('d-none');
-                                $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
-                                $("#lblDescription").removeClass('d-block').addClass('d-none');
-                                $("#ddlAcccountName").prop('selectedIndex', 0);
+                                $('#ddlTemplates', parent.document).val(NewTemplateName);
+                                $('#selectedTemplateFolder', parent.document).val(NewTemplateName);
+                                $(".template-close", parent.document).click();
+                                $(".VSTemplateSelection", parent.document).removeClass('d-block').addClass('d-none');
+                                $("#lblextensionError", parent.document).removeClass('d-block').addClass('d-none');
+                                $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
+                                $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
+                                $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
                                 enableButton();
 
                             }
@@ -73,7 +73,7 @@
                                 enableButton();
                                 return;
                             }
-                            else {                                
+                            else {
                                 $("#btnContainer").append('<span id="fileError" class="msgColor">' + respose + "\r\n" + '</span>');
                                 enableButton();
                                 return;
@@ -87,6 +87,44 @@
             });
         } else {
             alert("FormData is not supported.");
+        }
+    });
+
+    $('body').on('click', '#importFromURL', function () {
+        var isUrlValid = false;
+        var fileurl = $('#FileUpload2').val();
+        var regexURL = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+        console.log(fileurl);
+
+        if (!regexURL.test(fileurl)) {
+            $("#urlerror").empty().append('Please enter a valid URL'); isUrlValid = false;
+        }
+        else {
+            $("#urlerror").html('');
+            isUrlValid = true;
+        }
+        if (isUrlValid) {
+            var fileurlSplit = fileurl.split('/');
+            var filename = fileurlSplit[fileurlSplit.length - 1];
+            filename = filename.split('.');
+            if (filename.length === 2) {
+                if (filename[1].toLowerCase() !== "zip") {
+                    $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
+                }
+            }
+            else {
+                $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
+            }
+        }
+        if (isUrlValid) {
+            $('#ddlTemplates', parent.document).val(filename[0]);
+            templateFolder = filename[0];
+            $(".VSTemplateSelection", parent.document).removeClass('d-block').addClass('d-none');
+            $("#lblextensionError", parent.document).removeClass('d-block').addClass('d-none');
+            $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
+            $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
+            $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
+            enableButton();
         }
     });
 });
