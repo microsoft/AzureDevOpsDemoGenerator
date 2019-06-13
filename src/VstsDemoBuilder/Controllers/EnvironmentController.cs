@@ -25,7 +25,7 @@ namespace VstsDemoBuilder.Controllers
         //private static Dictionary<string, string> statusMessages;
         //private ILog logger = LogManager.GetLogger("ErrorLog");
 
-        private delegate string[] ProcessEnvironment(Project model, bool IsAPI = false);
+        private delegate string[] ProcessEnvironment(Project model);
         //public bool isDefaultRepoTodetele = true;
         //public string websiteUrl = string.Empty;
         //public string templateUsed = string.Empty;
@@ -580,7 +580,7 @@ namespace VstsDemoBuilder.Controllers
                 projectService.AddMessage(model.id.ErrorId(), string.Empty);
 
                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
-                processTask.BeginInvoke(model, false, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             }
             catch (Exception ex)
             {

@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,8 +11,6 @@ using System.Web.Http;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsDemoBuilder.Services;
-using VstsRestAPI;
-using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
 
@@ -24,7 +21,7 @@ namespace VstsDemoBuilder.Controllers.Apis
     {
         private ITemplateService templateService;
         private IProjectService projectService;
-        public delegate string[] ProcessEnvironment(Project model, bool IsAPI);
+        public delegate string[] ProcessEnvironment(Project model);
 
 
         public ProjectController()
@@ -114,7 +111,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     else
                     {
                         string templateName = string.Empty;
-
+                        bool isPrivate = false;
                         if (string.IsNullOrEmpty(model.templateName) && string.IsNullOrEmpty(model.templatePath))
                         {
                             return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.TemplateNameOrTemplatePath); //"Please provide templateName or templatePath(GitHub)"
@@ -138,6 +135,10 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
                                     }
+                                    else
+                                    {
+                                        isPrivate = true;
+                                    }
                                 }
                                 else
                                 {
@@ -155,7 +156,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                         }
                         //check for Extension file from selected template(public or private template)
-                        string extensionJsonFile = projectService.GetJsonFilePath(ProjectService.PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
+                        string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, ProjectService.PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
                         if (File.Exists(extensionJsonFile))
                         {
                             //check for Extension installed or not from selected template in selected organization
@@ -196,8 +197,11 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 pmodel.ProjectName = project.projectName;
                                 pmodel.Email = project.email;
                                 pmodel.id = project.trackId;
+                                pmodel.IsApi = true;
+                                if (model.templatePath != "")
+                                    pmodel.IsPrivatePath = true;
                                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
-                                processTask.BeginInvoke(pmodel, true, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                                processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
                             returnProjects.Add(project);
                         }

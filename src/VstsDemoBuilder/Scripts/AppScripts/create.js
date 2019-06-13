@@ -92,7 +92,7 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-        //$('#gitHubAuthDiv').addClass('d-none');
+      
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
@@ -110,7 +110,7 @@ $(document).ready(function (event) {
         }
         else {
             $('#gitHubCheckboxDiv').addClass('d-none');
-            $('#gitHubAuthDiv').addClass('d-none');
+           
         }
         //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -971,8 +971,7 @@ function AppendMessage() {
         $('input[id="gitHubCheckbox"]').prop('checked', false);
     }
     else {
-        $('#gitHubCheckboxDiv').addClass('d-none');
-        $('#gitHubAuthDiv').addClass('d-none');
+        $('#gitHubCheckboxDiv').addClass('d-none');       
     }
 }
 
