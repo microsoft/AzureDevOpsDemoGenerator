@@ -92,8 +92,8 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-        $('#gitHubAuthDiv').addClass('d-none');
-        $('#githubAuth').addClass('btn-primary').prop('disabled', false);
+        //$('#gitHubAuthDiv').addClass('d-none');
+        $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
         $('#lblDefaultDescription').hide();
@@ -673,7 +673,7 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                           
+
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;

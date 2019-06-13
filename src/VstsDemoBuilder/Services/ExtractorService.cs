@@ -29,6 +29,7 @@ namespace VstsDemoBuilder.Services
         public static readonly object objLock = new object();
         public static Dictionary<string, string> statusMessages;
         public static List<string> errorMessages = new List<string>();
+        public static string[] workItemTypes = new string[] { };
         public static string extractedTemplatePath = string.Empty;
         public static void AddMessage(string id, string message)
         {
@@ -251,12 +252,13 @@ namespace VstsDemoBuilder.Services
 
         public Dictionary<string, int> GetWorkItemsCount(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            workItemTypes = GetAllWorkItemsName(appConfig);
+            //{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
-            if (workItemtypes.Length > 0)
+            if (workItemTypes.Length > 0)
             {
-                foreach (var workItem in workItemtypes)
+                foreach (var workItem in workItemTypes)
                 {
                     WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
                     if (WITCount.count > 0)
@@ -646,15 +648,16 @@ namespace VstsDemoBuilder.Services
 
         public void ExportWorkItems(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
+            //workItemTypes = GetAllWorkItemsName(appConfig);
+            //{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan" };
             if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project))
             {
                 Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project);
             }
 
-            if (workItemtypes.Length > 0)
+            if (workItemTypes.Length > 0)
             {
-                foreach (var WIT in workItemtypes)
+                foreach (var WIT in workItemTypes)
                 {
                     GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
                     WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
@@ -713,7 +716,11 @@ namespace VstsDemoBuilder.Services
             }
         }
 
-        // Get the Build definitions to write into file
+        /// <summary>
+        /// Get the Build definitions to write into file
+        /// </summary>
+        /// <param name="appConfig"></param>
+        /// <returns></returns>
         public int GetBuildDefinitions(ProjectConfigurations appConfig)
         {
             try
@@ -786,7 +793,17 @@ namespace VstsDemoBuilder.Services
             }
             return 0;
         }
-
+        /// <summary>
+        /// Normal Build pipeline, which could be either pointing from Azure Repos or GitHub
+        /// </summary>
+        /// <param name="appConfig"></param>
+        /// <param name="count"></param>
+        /// <param name="templatePath"></param>
+        /// <param name="def"></param>
+        /// <param name="fileName"></param>
+        /// <param name="repoName"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private static int NormalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
         {
             try
@@ -930,7 +947,16 @@ namespace VstsDemoBuilder.Services
             }
             return count;
         }
-
+        /// <summary>
+        /// YAML pipeline which is pointing to GitHub
+        /// </summary>
+        /// <param name="appConfig"></param>
+        /// <param name="count"></param>
+        /// <param name="templatePath"></param>
+        /// <param name="def"></param>
+        /// <param name="fileName"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private static int YmlWithGitHub(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
         {
             try
@@ -1010,7 +1036,16 @@ namespace VstsDemoBuilder.Services
             }
             return count;
         }
-
+        /// <summary>
+        /// YAML pipeline which is pointing to Azure Repos
+        /// </summary>
+        /// <param name="appConfig"></param>
+        /// <param name="count"></param>
+        /// <param name="templatePath"></param>
+        /// <param name="def"></param>
+        /// <param name="fileName"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private static int YmlWithAzureRepos(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
         {
             try
@@ -1080,8 +1115,11 @@ namespace VstsDemoBuilder.Services
             }
             return count;
         }
-
-        // Generalizing the release definition method to make it work for All kind of Release definition
+        /// <summary>
+        /// Generalizing the release definition method to make it work for All kind of Release definition
+        /// </summary>
+        /// <param name="appConfig"></param>
+        /// <returns></returns>
         public int GeneralizingGetReleaseDefinitions(ProjectConfigurations appConfig)
         {
             try
@@ -1224,7 +1262,10 @@ namespace VstsDemoBuilder.Services
             }
             return 0;
         }
-
+        /// <summary>
+        /// Get different kinds of service endpoints and format it into POST json format
+        /// </summary>
+        /// <param name="appConfig"></param>
         public void GetServiceEndpoints(ProjectConfigurations appConfig)
         {
             try
@@ -1391,7 +1432,25 @@ namespace VstsDemoBuilder.Services
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
         }
-
+        /// <summary>
+        /// Get All work item names
+        /// </summary>
+        /// <param name="appConfig"></param>
+        /// <returns></returns>
+        private string[] GetAllWorkItemsName(ProjectConfigurations appConfig)
+        {
+            GetWorkItemsCount getWorkItems = new GetWorkItemsCount(appConfig.WorkItemConfig);
+            WorkItemNames.Names workItems = getWorkItems.GetAllWorkItemNames();
+            List<string> workItemNames = new List<string>();
+            if (workItems.count > 0)
+            {
+                foreach (var workItem in workItems.value)
+                {
+                    workItemNames.Add(workItem.name);
+                }
+            }
+            return workItemNames.ToArray();
+        }
         #endregion END GENERATE ARTIFACTS
     }
 }

@@ -8764,9 +8764,15 @@ html, body {
 .githubIcon {
     background-image: url(/Images/github-icon.png);
     background-repeat: no-repeat;
-    background-position: 93% 50%;
+    background-position: 6% 50%;
     padding: 5px 18px 5px 5px !important;
     background-size: 17px;
+}
+.githubPng {
+    background-image: url(/Images/GitHub-Mark.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 0% 4% 0% 12%;
 }
 .lodergif {
     background-image: url(/Images/loader_trans_1.gif);
@@ -8809,6 +8815,9 @@ html, body {
 
     .m-0 {
         margin: 0 !important;
+    }
+    .lb_m {
+        padding: 0% 4% 0% 2% !important;
     }
 }
     /*# sourceMappingURL=custom.min.css.map */
