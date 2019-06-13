@@ -92,7 +92,7 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-        //$('#gitHubAuthDiv').addClass('d-none');
+      
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
@@ -106,11 +106,13 @@ $(document).ready(function (event) {
         var forkGitHub = $(".template.selected").data('gitfork');
         if (forkGitHub === true) {
             $('#gitHubCheckboxDiv').removeClass('d-none');
+            $('#gitHubLabelDiv').removeClass('d-none');
             $('input[id="gitHubCheckbox"]').prop('checked', false);
         }
         else {
             $('#gitHubCheckboxDiv').addClass('d-none');
-            $('#gitHubAuthDiv').addClass('d-none');
+            $('#gitHubLabelDiv').addClass('d-none');
+           
         }
         //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -968,11 +970,12 @@ function AppendMessage() {
     }
     if (gitFork === "True") {
         $('#gitHubCheckboxDiv').removeClass('d-none');
+        $('#gitHubLabelDiv').removeClass('d-none');
         $('input[id="gitHubCheckbox"]').prop('checked', false);
     }
     else {
-        $('#gitHubCheckboxDiv').addClass('d-none');
-        $('#gitHubAuthDiv').addClass('d-none');
+        $('#gitHubCheckboxDiv').addClass('d-none');       
+        $('#gitHubLabelDiv').addClass('d-none');       
     }
 }
 

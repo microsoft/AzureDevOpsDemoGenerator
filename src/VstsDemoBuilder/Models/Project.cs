@@ -49,6 +49,9 @@ namespace VstsDemoBuilder.Models
         public string GitRepoName { get; set; }
         public string GitRepoURL { get; set; }
         public string ForkGitHubRepo { get; set; }
+
+        public bool IsApi { get; set; }
+        public bool IsPrivatePath { get; set; }
     }
     public class EnvironmentValues
     {
