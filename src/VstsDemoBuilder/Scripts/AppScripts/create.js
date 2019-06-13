@@ -106,10 +106,12 @@ $(document).ready(function (event) {
         var forkGitHub = $(".template.selected").data('gitfork');
         if (forkGitHub === true) {
             $('#gitHubCheckboxDiv').removeClass('d-none');
+            $('#gitHubLabelDiv').removeClass('d-none');
             $('input[id="gitHubCheckbox"]').prop('checked', false);
         }
         else {
             $('#gitHubCheckboxDiv').addClass('d-none');
+            $('#gitHubLabelDiv').addClass('d-none');
            
         }
         //
@@ -968,10 +970,12 @@ function AppendMessage() {
     }
     if (gitFork === "True") {
         $('#gitHubCheckboxDiv').removeClass('d-none');
+        $('#gitHubLabelDiv').removeClass('d-none');
         $('input[id="gitHubCheckbox"]').prop('checked', false);
     }
     else {
         $('#gitHubCheckboxDiv').addClass('d-none');       
+        $('#gitHubLabelDiv').addClass('d-none');       
     }
 }
 

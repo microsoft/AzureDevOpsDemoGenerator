@@ -8771,8 +8771,8 @@ html, body {
 .githubPng {
     background-image: url(/Images/GitHub-Mark.png);
     background-repeat: no-repeat;
-    background-size: 20px;
-    padding: 0% 4% 0% 12%;
+    background-size: 36px;
+    padding: 2% 4% 4% 6%;
 }
 .lodergif {
     background-image: url(/Images/loader_trans_1.gif);
