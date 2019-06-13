@@ -114,6 +114,7 @@
     <Compile Include="Viewmodel\BaseViewModel.cs" />
     <Compile Include="Viewmodel\Build\BuildGetListofBuildDefinitionsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\WorkItemFetchResponse.cs" />
+    <Compile Include="Viewmodel\Extractor\WorkItemNames.cs" />
     <Compile Include="Viewmodel\GitHub\ForkRepos.cs" />
     <Compile Include="Viewmodel\GitHub\GitHubRepoResponse.cs" />
     <Compile Include="Viewmodel\Importer\ImportBoardRows.cs" />
