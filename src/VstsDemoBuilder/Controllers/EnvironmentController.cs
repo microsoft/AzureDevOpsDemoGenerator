@@ -572,7 +572,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 Session["PAT"] = model.accessToken;
                 Session["AccountName"] = model.accountName;
-                if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "")
+                if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "" && model.GitHubFork)
                 {
                     model.GitHubToken = Session["GitHubToken"].ToString();
                 }
