@@ -15,7 +15,9 @@
                 <select class="form-control" id="fileMode">
                     <option value="0">Select private template location</option>
                     <option value="1">Local drive</option>
-                    <option value="2">Https URL</option>
+                    <option value="2">GitHub raw URL</option>
+                    <option value="3">Public https or ftp URL</option>
+                    <option value="4">private https or ftp URL</option>
                 </select>
             </div>
             <div class="col-sm-8 col-lg-8 d-none" id="zipUpload">
@@ -23,9 +25,18 @@
                 <div class="form-group"><label>Upload archive file:</label><input class="form-control" type="file" id="FileUpload1" accept=".zip" /></div>
                 <div id="btnContainer"><button class="btn btn-primary" id="btnUpload">Select this template</button></div>
             </div>
+            <div class="col-sm-8 col-lg-8 d-none" id="GitHubUpload">
+                <p>Upload the template file that you have generated earlier for generating your demo. If you do not have the template file, you can create the template using the <a href="../Extractor/Index" target="_blank"> Template Builder</a></p>
+                <div class="form-group"><label>Upload archive file:</label><input class="form-control" type="file" id="FileUpload1" accept=".zip" /></div>
+                <div id="btnContainer"><button class="btn btn-primary" id="btnUpload">Select this template</button></div>
+            </div>
             <div class="col-sm-8 col-lg-8 d-none" id="urlUpload">
                 <p>Upload the template file that you have generated earlier for generating your demo. If you do not have the template file, you can create the template using the <a href="../Extractor/Index" target="_blank"> Template Builder</a></p>
                 <div class="form-group"><label>Zip file URL:</label><input class="form-control" type="text" id="FileUpload2" placeholder="https://raw.githubusercontent.com/templatefile.zip" /></div>
+                <div class="form-group d-none" id="divGitHubToken"><label> If the Repository is private then provide GitHub Token:</label><input class="form-control" type="text" id="GitHubToken" placeholder="GitHub Access Token" /></div>
+                <div class="form-group d-none" id="divUserId"><label>User Id:</label><input class="form-control" type="text" id="UserId" placeholder="UserId" /></div>
+                <div class="form-group d-none" id="divPassword"><label>Password:</label><input class="form-control" type="text" id="Password" placeholder="Password" /></div>
+
                 <div id="urlbtnContainer"><button class="btn btn-primary" id="importFromURL">Import from here</button><span style="color:red" id="urlerror"></span></div>
             </div>
         </div>
@@ -39,6 +50,9 @@
             if (selectedVal === "0") {
                 $('#zipUpload').addClass('d-none');
                 $('#urlUpload').addClass('d-none');
+                $("#divUserId").addClass('d-none');
+                $("#divPassword").addClass('d-none');
+                $("#divGitHubToken").addClass('d-none');
             }
             else if (selectedVal === "1") {
                 $('#zipUpload').removeClass('d-none');
@@ -47,6 +61,23 @@
             else if (selectedVal === "2") {
                 $('#zipUpload').addClass('d-none');
                 $('#urlUpload').removeClass('d-none');
+                $("#divGitHubToken").removeClass('d-none');
+                $("#divUserId").addClass('d-none');
+                $("#divPassword").addClass('d-none');
+            }
+            else if (selectedVal === "3") {
+                $('#zipUpload').addClass('d-none');
+                $('#urlUpload').removeClass('d-none');
+                $("#divUserId").addClass('d-none');
+                $("#divPassword").addClass('d-none');
+                $("#divGitHubToken").addClass('d-none');
+            }
+            else if (selectedVal === "4") {
+                $('#zipUpload').addClass('d-none');
+                $('#urlUpload').removeClass('d-none');
+                $("#divUserId").removeClass('d-none');
+                $("#divPassword").removeClass('d-none');
+                $("#divGitHubToken").addClass('d-none');
             }
         });
     });

@@ -91,6 +91,7 @@
     });
 
     $('body').on('click', '#importFromURL', function () {
+        debugger;
         var isUrlValid = false;
         var fileurl = $('#FileUpload2').val();
         var regexURL = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
@@ -110,6 +111,17 @@
             if (filename.length === 2) {
                 if (filename[1].toLowerCase() !== "zip") {
                     $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
+                }
+                else if (fileurlSplit[2] === "raw.githubusercontent.com") {
+                    $("#divUserId").addClass('d-none');
+                    $("#divPassword").addClass('d-none');
+                    $("#divGitHubToken").removeClass('d-none');
+                    isUrlValid = false;
+                } else if (fileurlSplit[0] === "https:" || fileurlSplit[0] === "ftp:" ) {
+                    $("#divUserId").removeClass('d-none');
+                    $("#divPassword").removeClass('d-none');
+                    $("#divGitHubToken").addClass('d-none');
+                    isUrlValid = false;
                 }
             }
             else {
