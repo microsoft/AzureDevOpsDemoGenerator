@@ -375,13 +375,18 @@ $(document).ready(function (event) {
         }
     });
 
-
+    // appending selected template name, description and icon to the info section
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
         if (templateTxt !== "")
             $("#descContainer").html(privateTemplateDescription);
     }
+
+    var selectedTemplateIcon = $('#selectedTemplateImage').val();
+    var selectedTemplate_Name = $('#selectedTemplate').val();
+    $('#templatePreviewName')[0].innerHTML = selectedTemplate_Name;
+    $('#templatePreviewImage').prop('src', selectedTemplateIcon);
     //If User comes with lab url(private), we will check for PrivatetemplateFolderName in the field
     var publicTemplate = $('#ddlTemplates').val();
     var privateTemplate = $('#selectedTemplateFolder').val();
