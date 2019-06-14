@@ -56,7 +56,6 @@ namespace VstsDemoBuilder.Services
         public static AccessDetails AccessDetails = new AccessDetails();
 
         public static string ExtractedTemplate = "";
-        public static string PrivateTemplatePath = "";
         public static int usercount = 0;
         public string templateVersion = string.Empty;
         public static string enableExtractor = "";
@@ -142,7 +141,7 @@ namespace VstsDemoBuilder.Services
         public string GetJsonFilePath(bool IsPrivate, string TemplateFolder, string TemplateName, string FileName = "")
         {
             string filePath = string.Empty;
-            if (IsPrivate && !string.IsNullOrEmpty(PrivateTemplatePath))
+            if (IsPrivate && !string.IsNullOrEmpty(TemplateFolder))
             {
                 filePath = string.Format(TemplateFolder + @"{0}", FileName);
             }
@@ -251,7 +250,7 @@ namespace VstsDemoBuilder.Services
             Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
-            string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json");
+            string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
             string _checkIsPrivate = string.Empty;
             ProjectSetting setting = new ProjectSetting();
@@ -271,7 +270,7 @@ namespace VstsDemoBuilder.Services
                 {
                     string templateItems = model.ReadJsonFile(projTemplateFile);
                     template = JsonConvert.DeserializeObject<ProjectTemplate>(templateItems);
-                    projectSettingsFile = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.ProjectSettings);
+                    projectSettingsFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.ProjectSettings);
 
                     if (File.Exists(projectSettingsFile))
                     {
@@ -389,7 +388,7 @@ namespace VstsDemoBuilder.Services
             model.Environment.UserUniquename = model.Email;
             //update board columns and rows
             // Checking for template version
-            string projectTemplate = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
+            string projectTemplate = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
 
             if (!string.IsNullOrEmpty(projectTemplate))
             {
@@ -402,7 +401,7 @@ namespace VstsDemoBuilder.Services
                 CreateTeams(model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
 
                 // for older templates
-                string projectSetting = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "ProjectSettings.json"));
+                string projectSetting = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "ProjectSettings.json"));
                 // File.ReadAllText( Path.Combine(templatesFolder + model.SelectedTemplate, "ProjectSettings.json"));
                 JObject projectObj = JsonConvert.DeserializeObject<JObject>(projectSetting);
                 string processType = projectObj["type"] == null ? string.Empty : projectObj["type"].ToString();
@@ -420,7 +419,7 @@ namespace VstsDemoBuilder.Services
                 string updateSwimLanesJSON = "";
                 if (template.BoardRows != null)
                 {
-                    updateSwimLanesJSON = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.BoardRows);
+                    updateSwimLanesJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.BoardRows);
                     // Path.Combine(templatesFolder + model.SelectedTemplate, template.BoardRows);
                     SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
                     if (File.Exists(updateSwimLanesJSON))
@@ -432,7 +431,7 @@ namespace VstsDemoBuilder.Services
                 if (template.SetEpic != null)
                 {
                     string team = model.ProjectName + " Team";
-                    string json = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.SetEpic);
+                    string json = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.SetEpic);
                     //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.SetEpic);
                     if (File.Exists(json))
                     {
@@ -444,7 +443,7 @@ namespace VstsDemoBuilder.Services
                 if (template.BoardColumns != null)
                 {
                     string team = model.ProjectName + " Team";
-                    string json = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.BoardColumns);
+                    string json = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.BoardColumns);
                     //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.BoardColumns);
                     if (File.Exists(json))
                     {
@@ -455,7 +454,7 @@ namespace VstsDemoBuilder.Services
                             //update Card Fields
                             if (template.CardField != null)
                             {
-                                string cardFieldJson = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.CardField);
+                                string cardFieldJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.CardField);
                                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardField);
                                 if (File.Exists(cardFieldJson))
                                 {
@@ -466,7 +465,7 @@ namespace VstsDemoBuilder.Services
                             //Update card styles
                             if (template.CardStyle != null)
                             {
-                                string cardStyleJson = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.CardStyle);
+                                string cardStyleJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.CardStyle);
                                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, template.CardStyle);
                                 if (File.Exists(cardStyleJson))
                                 {
@@ -488,7 +487,7 @@ namespace VstsDemoBuilder.Services
             else
             {
                 // for newer version of templates
-                string teamsJsonPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "Teams\\Teams.json");
+                string teamsJsonPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "Teams\\Teams.json");
                 // Path.Combine(templatesFolder + model.SelectedTemplate, "Teams\\Teams.json");
                 if (File.Exists(teamsJsonPath))
                 {
@@ -510,7 +509,7 @@ namespace VstsDemoBuilder.Services
                         {
                             _teamName = jteam["name"].ToString();
                         }
-                        string teamFolderPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"Teams\" + jteam["name"].ToString());
+                        string teamFolderPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"Teams\" + jteam["name"].ToString());
                         // Path.Combine(templatesFolder + model.SelectedTemplate, "Teams", jteam["name"].ToString());
                         if (Directory.Exists(teamFolderPath))
                         {
@@ -603,7 +602,7 @@ namespace VstsDemoBuilder.Services
             if (model.GitHubFork && model.GitHubToken != null)
             {
                 List<string> listRepoFiles = new List<string>();
-                string repoFilePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"ImportSourceCode\GitRepository.json");
+                string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"ImportSourceCode\GitRepository.json");
                 if (File.Exists(repoFilePath))
                 {
                     string readRepoFile = model.ReadJsonFile(repoFilePath);
@@ -639,7 +638,7 @@ namespace VstsDemoBuilder.Services
             }
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
-            string serviceEndPointsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"ServiceEndpoints");
+            string serviceEndPointsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"ServiceEndpoints");
             if (Directory.Exists(serviceEndPointsPath))
             {
                 Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
@@ -667,7 +666,7 @@ namespace VstsDemoBuilder.Services
 
             //import source code from GitHub
             List<string> listImportSourceCodeJsonPaths = new List<string>();
-            string importSourceCodePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode");
+            string importSourceCodePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode");
             //templatesFolder + model.SelectedTemplate + @"\ImportSourceCode";
             if (Directory.Exists(importSourceCodePath))
             {
@@ -692,7 +691,7 @@ namespace VstsDemoBuilder.Services
             CreateCodeWiki(model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
-            string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests");
+            string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests");
             //templatesFolder + model.SelectedTemplate + @"\PullRequests";
             if (Directory.Exists(pullRequestFolder))
             {
@@ -725,35 +724,35 @@ namespace VstsDemoBuilder.Services
             {
 
                 //import work items
-                string featuresFilePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
+                string featuresFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.FeaturefromTemplate == null ? string.Empty : template.FeaturefromTemplate);
-                string productBackLogPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
+                string productBackLogPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.PBIfromTemplate == null ? string.Empty : template.PBIfromTemplate);
-                string taskPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
+                string taskPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.TaskfromTemplate == null ? string.Empty : template.TaskfromTemplate);
-                string testCasePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
+                string testCasePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestCasefromTemplate == null ? string.Empty : template.TestCasefromTemplate);
-                string bugPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
+                string bugPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.BugfromTemplate == null ? string.Empty : template.BugfromTemplate);
-                string epicPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
+                string epicPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.EpicfromTemplate == null ? string.Empty : template.EpicfromTemplate);
-                string userStoriesPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
+                string userStoriesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
                 // Path.Combine(templatesFolder + model.SelectedTemplate, template.UserStoriesFromTemplate == null ? string.Empty : template.UserStoriesFromTemplate);
                 string testPlansPath = string.Empty;
                 string testSuitesPath = string.Empty;
                 if (model.SelectedTemplate.ToLower() == "myshuttle2")
                 {
-                    testPlansPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testPlansPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.TestPlanfromTemplate);
                     // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                    testSuitesPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.TestSuitefromTemplate);
+                    testSuitesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.TestSuitefromTemplate);
                     // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
                 }
 
                 if (model.SelectedTemplate.ToLower() == "myshuttle")
                 {
-                    testPlansPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.TestPlanfromTemplate);
+                    testPlansPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.TestPlanfromTemplate);
                     // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestPlanfromTemplate);
-                    testSuitesPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, template.TestSuitefromTemplate);
+                    testSuitesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, template.TestSuitefromTemplate);
                     // Path.Combine(templatesFolder + model.SelectedTemplate, template.TestSuitefromTemplate);
                 }
 
@@ -805,7 +804,7 @@ namespace VstsDemoBuilder.Services
             //// Modified Work Item import logic
             else
             {
-                string _WitPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\WorkItems");
+                string _WitPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\WorkItems");
                 //Path.Combine(templatesFolder + model.SelectedTemplate + "\\WorkItems");
                 if (Directory.Exists(_WitPath))
                 {
@@ -833,7 +832,7 @@ namespace VstsDemoBuilder.Services
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (File.Exists(projectSettingsFile))
             {
-                string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\WorkItemAttachments");
+                string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\WorkItemAttachments");
                 //string.Format(templatesFolder + @"{0}\WorkItemAttachments", model.SelectedTemplate);
                 if (listPullRequestJsonPaths.Count > 0)
                 {
@@ -858,7 +857,7 @@ namespace VstsDemoBuilder.Services
             }
             //Creat TestPlans and TestSuites
             List<string> listTestPlansJsonPaths = new List<string>();
-            string testPlansFolder = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\TestPlans");
+            string testPlansFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\TestPlans");
             //templatesFolder + model.SelectedTemplate + @"\TestPlans";
             if (Directory.Exists(testPlansFolder))
             {
@@ -879,12 +878,12 @@ namespace VstsDemoBuilder.Services
             // if the template is private && agreed to GitHubFork && GitHub Token is not null
             if (setting.IsPrivate == "true" && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
                 }
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -893,7 +892,7 @@ namespace VstsDemoBuilder.Services
             // if the template is private && not agreed to GitHubFork && GitHub Token is null
             else if (setting.IsPrivate == "true" && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -902,7 +901,7 @@ namespace VstsDemoBuilder.Services
             // if the template is not private && agreed to GitHubFork && GitHub Token is not null
             else if (string.IsNullOrEmpty(setting.IsPrivate) && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitionGitHub");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -911,7 +910,7 @@ namespace VstsDemoBuilder.Services
             // if the template is not private && not agreed to GitHubFork && GitHub Token is null
             else if (string.IsNullOrEmpty(setting.IsPrivate) && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -924,7 +923,7 @@ namespace VstsDemoBuilder.Services
             }
 
             //Queue a Build
-            string buildJson = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "QueueBuild.json");
+            string buildJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "QueueBuild.json");
             //string.Format(templatesFolder + @"{0}\QueueBuild.json", model.SelectedTemplate);
             if (File.Exists(buildJson))
             {
@@ -932,7 +931,7 @@ namespace VstsDemoBuilder.Services
             }
 
             //create release Definition
-            string releaseDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\ReleaseDefinitions");
+            string releaseDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ReleaseDefinitions");
             //templatesFolder + model.SelectedTemplate + @"\ReleaseDefinitions";
             model.ReleaseDefinitions = new List<ReleaseDef>();
             if (Directory.Exists(releaseDefinitionsPath))
@@ -947,9 +946,9 @@ namespace VstsDemoBuilder.Services
 
             //Create query and widgets
             List<string> listDashboardQueriesPath = new List<string>();
-            string dashboardQueriesPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Queries");
+            string dashboardQueriesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Queries");
             //templatesFolder + model.SelectedTemplate + @"\Dashboard\Queries";
-            string dashboardPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard");
+            string dashboardPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard");
             //templatesFolder + model.SelectedTemplate + @"\Dashboard";
 
             if (Directory.Exists(dashboardQueriesPath))
@@ -963,7 +962,7 @@ namespace VstsDemoBuilder.Services
             }
             if (setting.IsPrivate == "true")
             {
-                Directory.Delete(Path.Combine(GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate)), true);
+                Directory.Delete(Path.Combine(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate)), true);
             }
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName };
@@ -981,7 +980,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string jsonTeams = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, teamsJSON);
+                string jsonTeams = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamsJSON);
                 if (File.Exists(jsonTeams))
                 {
                     Teams objTeam = new Teams(_projectConfig);
@@ -1003,7 +1002,7 @@ namespace VstsDemoBuilder.Services
                             if (!(string.IsNullOrEmpty(teamResponse.id)))
                             {
                                 string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
-                                string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
+                                string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
 
                                 //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
 
@@ -1034,7 +1033,7 @@ namespace VstsDemoBuilder.Services
                         }
                         if (model.SelectedTemplate.ToLower() == "smarthotel360")
                         {
-                            string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "UpdateTeamArea.json");
+                            string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "UpdateTeamArea.json");
 
                             //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
                             if (File.Exists(updateAreaJSON))
@@ -1097,7 +1096,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string jsonWorkItems = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, workItemJSON);
+                string jsonWorkItems = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, workItemJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, workItemJSON);
                 if (File.Exists(jsonWorkItems))
                 {
@@ -1255,9 +1254,9 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string jsonWorkItemsUpdate = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, workItemUpdateJSON);
+                string jsonWorkItemsUpdate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, workItemUpdateJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, workItemUpdateJSON);
-                string jsonProjectSettings = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, projectSettingsJSON);
+                string jsonProjectSettings = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, projectSettingsJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, projectSettingsJSON);
                 if (File.Exists(jsonWorkItemsUpdate))
                 {
@@ -1291,7 +1290,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string jsonIterations = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, iterationsJSON);
+                string jsonIterations = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, iterationsJSON);
                 //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, iterationsJSON);
                 if (File.Exists(jsonIterations))
                 {
@@ -1525,7 +1524,7 @@ namespace VstsDemoBuilder.Services
                         if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
                         {
                             model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
-                            commentFile = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests\Comments\" + commentFile);
+                            commentFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests\Comments\" + commentFile);
                             //string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
                             if (File.Exists(commentFile))
                             {
@@ -1580,7 +1579,7 @@ namespace VstsDemoBuilder.Services
                         string username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
                         string password = System.Configuration.ConfigurationManager.AppSettings["Password"];
                         //string extractPath = HostingEnvironment.MapPath("~/Templates/" + model.SelectedTemplate);
-                        string projectFileData = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
+                        string projectFileData = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
                         ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
                         ServiceEndPoint objService = new ServiceEndPoint(_endpointConfig);
 
@@ -1707,7 +1706,7 @@ namespace VstsDemoBuilder.Services
 
                     if (testPlanResponse.Length > 0)
                     {
-                        string testSuiteJson = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\TestPlans\TestSuites\" + fileName);
+                        string testSuiteJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\TestPlans\TestSuites\" + fileName);
                         //string.Format(templateFolder + @"{0}\TestPlans\TestSuites\{1}", model.SelectedTemplate, fileName);
                         if (File.Exists(testSuiteJson))
                         {
@@ -1981,7 +1980,7 @@ namespace VstsDemoBuilder.Services
 
                 }
                 //Create DashBoards
-                string dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Dashboard.json");
+                string dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Dashboard.json");
                 //string.Format(templatesFolder + @"{0}\Dashboard\Dashboard.json", model.SelectedTemplate);
                 if (File.Exists(dashBoardTemplate))
                 {
@@ -2298,7 +2297,7 @@ namespace VstsDemoBuilder.Services
             try
             {
                 //string templatesFolder = HostingEnvironment.MapPath("~") + @"\Templates\";
-                string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, "Extensions.json");
+                string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "Extensions.json");
                 //string.Format(templatesFolder + @"{0}\Extensions.json", model.SelectedTemplate);
                 if (!(File.Exists(projTemplateFile)))
                 {
@@ -2385,7 +2384,7 @@ namespace VstsDemoBuilder.Services
             try
             {
                 ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
-                string projectWikiFolderPath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\Wiki\ProjectWiki");
+                string projectWikiFolderPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Wiki\ProjectWiki");
                 //templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
                 if (Directory.Exists(projectWikiFolderPath))
                 {
@@ -2465,7 +2464,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string wikiFolder = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\Wiki");
+                string wikiFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Wiki");
                 //templatesFolder + model.SelectedTemplate + "\\Wiki";
                 if (Directory.Exists(wikiFolder))
                 {
@@ -2506,7 +2505,7 @@ namespace VstsDemoBuilder.Services
         }
         public void CreateDeploymentGroup(string templateFolder, Project model, Configuration _deploymentGroup)
         {
-            string path = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\DeploymentGroups\CreateDeploymentGroup.json");
+            string path = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\DeploymentGroups\CreateDeploymentGroup.json");
             //templateFolder + model.SelectedTemplate + "\\DeploymentGroups\\CreateDeploymentGroup.json";
             if (File.Exists(path))
             {

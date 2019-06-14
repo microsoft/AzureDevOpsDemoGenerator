@@ -140,9 +140,9 @@ namespace VstsDemoBuilder.Services
         /// </summary>
         /// <param name="TemplateUrl"></param>
         /// <param name="ExtractedTemplate"></param>
-        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "")
+        public string GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "")
         {
-            bool isvalidFile = false;
+            string templatePath = string.Empty;         
             try
             {
                 Uri uri = new Uri(TemplateUrl);
@@ -177,7 +177,8 @@ namespace VstsDemoBuilder.Services
                     webClient.Dispose();
                 }
 
-                isvalidFile = ExtractZipFile(path, templateName);
+               templatePath = ExtractZipFile(path, templateName);
+                
             }
             catch (Exception ex)
             {
@@ -189,11 +190,12 @@ namespace VstsDemoBuilder.Services
                 if (File.Exists(zippath))
                     File.Delete(zippath);
             }
-            return isvalidFile;
+            return templatePath;
         }
 
-        public bool ExtractZipFile(string path, string templateName)
+        public string ExtractZipFile(string path, string templateName)
         {
+            string templatePath = string.Empty;
             bool isExtracted = false;
             try
             {
@@ -204,14 +206,14 @@ namespace VstsDemoBuilder.Services
 
                     isExtracted = checkTemplateDirectory(Extractedpath);
                     if (isExtracted)
-                        ProjectService.PrivateTemplatePath = FindPrivateTemplatePath(Extractedpath);
+                        templatePath = FindPrivateTemplatePath(Extractedpath);
                 }
             }
             catch (Exception ex)
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
-            return isExtracted;
+            return templatePath;
 
         }
 

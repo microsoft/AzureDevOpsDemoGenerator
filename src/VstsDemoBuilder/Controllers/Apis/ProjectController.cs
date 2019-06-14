@@ -37,6 +37,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             ProjectResponse returnObj = new ProjectResponse();
             returnObj.templatePath = model.templatePath;
             returnObj.templateName = model.templateName;
+            string PrivateTemplatePath = string.Empty;
             List<RequestedProject> returnProjects = new List<RequestedProject>();
             try
             {
@@ -118,7 +119,6 @@ namespace VstsDemoBuilder.Controllers.Apis
                         }
                         else
                         {
-                            ProjectService.PrivateTemplatePath = "";
                             //check for Private template path provided in request body
                             if (!string.IsNullOrEmpty(model.templatePath))
                             {
@@ -130,8 +130,8 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     templateName = ProjectService.ExtractedTemplate;
                                     model.templateName = ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
-                                    bool IsDownloadableTemplate = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.gitHubToken, model.userId, model.password);
-                                    if (!IsDownloadableTemplate)
+                                    PrivateTemplatePath = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.gitHubToken, model.userId, model.password);
+                                    if (string.IsNullOrEmpty(PrivateTemplatePath))
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
                                     }
@@ -156,7 +156,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                         }
                         //check for Extension file from selected template(public or private template)
-                        string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, ProjectService.PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
+                        string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
                         if (File.Exists(extensionJsonFile))
                         {
                             //check for Extension installed or not from selected template in selected organization
@@ -199,7 +199,11 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 pmodel.id = project.trackId;
                                 pmodel.IsApi = true;
                                 if (model.templatePath != "")
+                                {
+                                    pmodel.PrivateTemplatePath = PrivateTemplatePath;
                                     pmodel.IsPrivatePath = true;
+                                }
+                                    
                                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
                                 processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
