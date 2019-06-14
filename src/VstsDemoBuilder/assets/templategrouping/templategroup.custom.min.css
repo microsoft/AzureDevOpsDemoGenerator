@@ -1767,8 +1767,11 @@ pre {
     .mob_d {
         display: none !important;
     }
-    .m-0 { margin:0 !important;
+
+    .m-0 {
+        margin: 0 !important;
     }
+
     .table-responsive-md {
         display: block;
         width: 100%;
@@ -8504,7 +8507,30 @@ html, body {
                     width: 60px;
                 }
 
+.git_support {
+    background: #e9ecef;
+    padding: 15px;
+}
+
+    .git_support .githubPng {
+        padding: 1% 2% 1% 6%;
+    }
+
+@media (max-width: 768px) {
+    .git_support .githubPng {
+        padding: 1% 2% 1% 14%;
+    }
+}
+
+@media (min-width: 2000px) {
+    .git_support .githubPng {
+        padding: 8px 0 5px 44px;
+    }
+}
+
 @media (min-width: 768px) {
+
+
     .section-1 main .VSTS-details {
         max-width: 550px;
     }
@@ -8624,7 +8650,7 @@ html, body {
 
     .template-body .template {
         padding: 16px;
-        padding-right:0px;
+        padding-right: 0px;
         background-color: #fff;
         min-width: 250px;
         max-width: 350px;
@@ -8636,7 +8662,6 @@ html, body {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         width: 420px;
-     
         height: 220px;
         max-height: 220px;
         overflow-y: auto;
@@ -8709,6 +8734,7 @@ html, body {
         opacity: 1;
     }
 }
+
 .fa-times-circle {
     color: red;
 }
@@ -8768,12 +8794,15 @@ html, body {
     padding: 5px 18px 5px 5px !important;
     background-size: 17px;
 }
+
 .githubPng {
     background-image: url(/Images/GitHub-Mark.png);
     background-repeat: no-repeat;
     background-size: 36px;
     padding: 1% 4% 4% 4%;
 }
+
+
 .lodergif {
     background-image: url(/Images/loader_trans_1.gif);
     background-repeat: no-repeat;
@@ -8781,34 +8810,42 @@ html, body {
     padding: 5px 18px 5px 5px !important;
     background-size: 22px;
 }
+
     .lodergif#Analyse, .lodergif#GenerateArtifacts {
         background-position: 100% 50%;
         padding: 5px 33px 5px 5px !important;
         background-size: 32px;
     }
 
-    .lodergif_div {
-        background-image: url(/Images/loader_trans_1.gif);
-        background-repeat: no-repeat;
-        background-position: 93% 50%;
-        padding: 0;
-        background-size: 41px;
-        height: 30px;
-        width: 30px;
-    }
+.lodergif_div {
+    background-image: url(/Images/loader_trans_1.gif);
+    background-repeat: no-repeat;
+    background-position: 93% 50%;
+    padding: 0;
+    background-size: 41px;
+    height: 30px;
+    width: 30px;
+}
+
 .inlinestyle {
     display: block;
     float: left;
     margin-left: 3px;
 }
+
 .artifact {
-    padding:15px 0 !important;
+    padding: 15px 0 !important;
 }
+
 .btn_analyz {
     padding-right: 6.4555% !important
 }
+
 @media (max-width: 767.98px) {
-    .btn_analyz{ padding:0;}
+    .btn_analyz {
+        padding: 0;
+    }
+
     .mob_d {
         display: none !important;
     }
@@ -8816,8 +8853,9 @@ html, body {
     .m-0 {
         margin: 0 !important;
     }
+
     .lb_m {
         padding: 0% 4% 0% 2% !important;
     }
 }
-    /*# sourceMappingURL=custom.min.css.map */
+/*# sourceMappingURL=custom.min.css.map */

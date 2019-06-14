@@ -49,9 +49,9 @@ namespace VstsDemoBuilder.Models
         public string GitRepoName { get; set; }
         public string GitRepoURL { get; set; }
         public string ForkGitHubRepo { get; set; }
-
         public bool IsApi { get; set; }
         public bool IsPrivatePath { get; set; }
+        public string templateImage { get; set; }
     }
     public class EnvironmentValues
     {
@@ -196,7 +196,7 @@ namespace VstsDemoBuilder.Models
     }
 
     public class MultiProjects
-    {       
+    {
         public string accessToken { get; set; }
         public string organizationName { get; set; }
         public string templateName { get; set; }

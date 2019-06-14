@@ -92,7 +92,7 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-      
+
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
@@ -100,6 +100,13 @@ $(document).ready(function (event) {
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
+
+        var selectedTemplateName = $('.template.selected').data('template');
+        $('#templatePreviewName')[0].innerHTML = selectedTemplateName;
+        console.log("Name " + selectedTemplateName);
+        var selectedTemplateImage = $('.template.selected').data('templateimage');
+        $('#templatePreviewImage').prop('src', selectedTemplateImage);
+        console.log("Image " + selectedTemplateImage);
 
         var infoMsg = $(".description.descSelected").data('message');
         //If the template enabled for GitHub fork
@@ -112,7 +119,7 @@ $(document).ready(function (event) {
         else {
             $('#gitHubCheckboxDiv').addClass('d-none');
             $('#gitHubLabelDiv').addClass('d-none');
-           
+
         }
         //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -368,13 +375,18 @@ $(document).ready(function (event) {
         }
     });
 
-
+    // appending selected template name, description and icon to the info section
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
         if (templateTxt !== "")
             $("#descContainer").html(privateTemplateDescription);
     }
+
+    var selectedTemplateIcon = $('#selectedTemplateImage').val();
+    var selectedTemplate_Name = $('#selectedTemplate').val();
+    $('#templatePreviewName')[0].innerHTML = selectedTemplate_Name;
+    $('#templatePreviewImage').prop('src', selectedTemplateIcon);
     //If User comes with lab url(private), we will check for PrivatetemplateFolderName in the field
     var publicTemplate = $('#ddlTemplates').val();
     var privateTemplate = $('#selectedTemplateFolder').val();
@@ -840,7 +852,6 @@ function createTemplates() {
 
 //Project name validtaion on keyup
 
-
 $("#txtProjectName").keyup(function () {
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
@@ -974,8 +985,8 @@ function AppendMessage() {
         $('input[id="gitHubCheckbox"]').prop('checked', false);
     }
     else {
-        $('#gitHubCheckboxDiv').addClass('d-none');       
-        $('#gitHubLabelDiv').addClass('d-none');       
+        $('#gitHubCheckboxDiv').addClass('d-none');
+        $('#gitHubLabelDiv').addClass('d-none');
     }
 }
 
@@ -1005,7 +1016,7 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1025,7 +1036,7 @@ function getGroups(grpSelected) {
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
