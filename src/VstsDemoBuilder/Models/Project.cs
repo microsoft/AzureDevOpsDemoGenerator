@@ -52,6 +52,8 @@ namespace VstsDemoBuilder.Models
 
         public bool IsApi { get; set; }
         public bool IsPrivatePath { get; set; }
+
+        public string PrivateTemplatePath { get; set; }
     }
     public class EnvironmentValues
     {

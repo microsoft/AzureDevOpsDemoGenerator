@@ -19,26 +19,11 @@ namespace VstsDemoBuilder.Controllers
 {
     public class EnvironmentController : Controller
     {
-
-        //#region Variables & Properties
-        //private static readonly object objLock = new object();
-        //private static Dictionary<string, string> statusMessages;
-        //private ILog logger = LogManager.GetLogger("ErrorLog");
-
         private delegate string[] ProcessEnvironment(Project model);
-        //public bool isDefaultRepoTodetele = true;
-        //public string websiteUrl = string.Empty;
-        //public string templateUsed = string.Empty;
-        //public string projectName = string.Empty;
-        //private string ProjectService.extractPath = string.Empty;
-        //private AccessDetails _accessDetails = new AccessDetails();
-        //private string logPath = "";
-        //private string templateVersion = string.Empty;
-        //private string enableExtractor = "";
-
         private IProjectService projectService;
         private ITemplateService templateService;
         private IAccountService accountService;
+
         public EnvironmentController(IProjectService _ProjectService, IAccountService _accountService, ITemplateService _templateService)
         {
             projectService = _ProjectService;
