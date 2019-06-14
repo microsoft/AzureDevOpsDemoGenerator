@@ -56,6 +56,9 @@
     @if (!string.IsNullOrEmpty(Model.SelectedTemplate))
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
+    }@if (!string.IsNullOrEmpty(Model.templateImage))
+    {
+        <input type="hidden" value="@Model.templateImage" id="selectedTemplateImage" />
     }
     <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
@@ -178,96 +181,110 @@
                 Create section
             -->
             <div class="col-md-6 order-1 order-md-2">
-                <div class="form-group row">
-                    <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
-                    <div class="col-lg-8">
+                <div style="border:1px solid #ccc; padding:15px;">
+                    <div class="form-group row">
+                        <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
+                        <div class="col-lg-8">
 
-                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                        </div>
-                        <div style="color:red">
-                            @ViewBag.AccDDError
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
-                    <div class="col-lg-8">
-                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                        <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                            </div>
+                            <div style="color:red">
+                                @ViewBag.AccDDError
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row" id="">
-                    <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
-                    <div class="col-lg-5  mb-3 mt-1">
-                        <input type="text" class="form-control" id="ddlTemplates" disabled />
-                        <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="">
+                        <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
+                        <div class="col-lg-5  mb-3 mt-1">
+                            <input type="text" class="form-control" id="ddlTemplates" disabled />
+                            <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
 
+                            </div>
+                        </div>
+                        <div class="template-invoke mb-3 mt-1 col-lg-3">
+                            <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
+                                Choose template
+                            </button>
                         </div>
                     </div>
-                    <div class="template-invoke mb-3 mt-1 col-lg-3">
-                        <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
-                            Choose template
-                        </button>
-                    </div>
                 </div>
-                <div class="form-group row" id="gitHubCheckboxDiv" style="/* border-radius: 4px; *//* box-shadow: 0px 5px 20px #f2f2f2; */">
-                    <div class="col-lg-12">
-                        <label for="Template" class="col-lg-12 col-sm-8">
-                            <i class="githubPng"></i>Azure DevOps Demo Generator now supports GitHub forking
-                        </label>
-                    </div>
-                    <label for="Template" class="col-lg-3 ">
-                    </label>
-                    <div class="col-lg-5  mb-3 mt-3 " style="">
-                        <div class="template-invoke mb-3 mt-1 inlinestyle">
-                            <input type="checkbox" id="gitHubCheckbox">
+
+                <div style="border:1px solid #ccc; margin-top:15px;" id="gitHubCheckboxDiv">
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <div class="git_support">
+                                <div for="Template" class="col-lg-12 col-sm-12 p-0">
+                                    <p class="githubPng"><b>Azure DevOps Demo Generator now supports GitHub forking!</b></p>
+                                    <p class="m-2">
+                                        The selected template includes a GitHub repository. You can choose to fork it or use the existing
+                                        repo. If you fork, all pipelines will be updated to point to the forked repo.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 float-left"></div>
+                            <div class="col-lg-5  mb-3 mt-3 float-left" style="">
+                                <div class="template-invoke mb-3 mt-1 inlinestyle">
+                                    <input type="checkbox" id="gitHubCheckbox">
+
+                                </div>
+                                <p class="inlinestyle mt-1">Yes, I want to fork this repository</p>
+                            </div>
+                            <div class="template-invoke mb-3 mt-3 col-lg-3 float-left" id="gitHubAuthDiv">
+                                <button type="button" class="btn githubIcon" id="githubAuth" style="padding-left:5px; padding-right:5px; width: 100%" disabled="">
+                                    Authorize
+                                </button>
+                            </div>
                         </div>
-                        <p class="inlinestyle mt-1">Fork this repository on GitHub</p>
-                    </div>
-                    <div class="template-invoke mb-3 mt-3 col-lg-3" id="gitHubAuthDiv">
-                        <button type="button" class="btn githubIcon" id="githubAuth" style="padding-left:5px; padding-right:5px; width: 100%" disabled="">
-                            Authorize
-                        </button>
                     </div>
                 </div>
+
                 <div id="projectParameters" style="display:none">
                 </div>
                 <!-- PROJECT PARAMETERS -->
                 <!--EXTENSIONS -->
-                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border col-lg-11 d-block mt-4 p-3">
+                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border col-lg-12 d-block mt-4 p-3">
 
                 </div>
-                <div class="mt-4 mb-3 border p-3 d-none col-lg-11" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                <div class="mt-4 mb-3 border p-3 d-none col-lg-12" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                     <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
                     <div class="extensionError boldText">
                         <p style="display:none;" id="extensionError"></p>
                     </div>
                 </div>
                 <!--/EXTENSIONS -->
-                <div class="form-group row" id="">
-                    <div class="col-lg-8  mb-3 mt-1 mob_d m-0">
-                    </div>
-                    <div class="col-lg-3  mb-3 mt-3 m-0">
-                        <button class="btn btn-primary submitBtn btnUpdate " id="btnSubmit" style=" width: 100%;">
-                            Create Project
-                        </button>
-                        @*<img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />*@
+                <div class="col-lg-12">
+                    <div class="form-group row" id="">
+                        <div class="col-lg-3 float-left"></div>
+                        <div class="col-lg-5  mb-3 mt-3 float-left" style=""></div>
+                        <div class="col-lg-3  mb-3 mt-3 m-0">
+                            <button class="btn btn-primary submitBtn btnUpdate " id="btnSubmit" style=" width: 100%;">
+                                Create Project
+                            </button>
+                            @*<img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />*@
+                        </div>
                     </div>
                 </div>
-                <div class="card mt-3 d-none col-lg-11" id="finalLink">
+                <div class="card mt-3 d-none col-lg-12" id="finalLink">
                     <div class="card-body" id="accountLink" style="color: green;font-weight: 300; padding-left:0px; padding-right:0px;">
                     </div>
                 </div>
                 <!-- PROGRESS BAR -->
-                <div class="progress mt-3 d-none col-lg-11" id="dvProgress" style="padding-left:0px;">
+                <div class="progress mt-3 d-none col-lg-12" id="dvProgress" style="padding-left:0px;">
                     <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
 
                 <!-- PROGRESS BAR -->
-                <div id="status-messages" class="border p-3 mt-3 col-lg-11" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                <div id="status-messages" class="border p-3 mt-3 col-lg-12" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                 </div>
             </div>
             <!--
@@ -279,6 +296,14 @@
                 <div class="card text-white mb-3 vstsScroll" id="lblDescription" style="max-height:250px;overflow-y:auto;">
                     <div class="card-header bg-primary ">About this Template</div>
                     <div class="card-body" style="background-color:white; color:black">
+                        <div class="row">
+                            <div class="column">
+                                <img src="" style="width:50px;" class="pl-3" id="templatePreviewImage" />
+                            </div>
+                            <div class="column">
+                                <p class="pt-2 pl-2" id="templatePreviewName"></p>
+                            </div>
+                        </div>
                         <p class="card-text" id="descContainer">
 
                         </p>

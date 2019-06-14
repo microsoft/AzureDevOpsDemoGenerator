@@ -253,6 +253,7 @@ namespace VstsDemoBuilder.Controllers
                                                 model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
                                                 model.Message = template.Message == null ? string.Empty : template.Message;
                                                 model.ForkGitHubRepo = template.ForkGitHubRepo.ToString();
+                                                model.templateImage = template.Image ?? "/Templates/TemplateImages/CodeFile.png";
                                             }
                                         }
                                     }
