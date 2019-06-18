@@ -9451,6 +9451,10 @@ img#projectloader {
 }
 
     @media (max-width:576px) {
+        label.check_cnt {
+            width: 100% !important;
+            margin-bottom: 10px;
+        }
         .chbox {
             margin: 4px 0 12px 0;
             width: 19px !important;
