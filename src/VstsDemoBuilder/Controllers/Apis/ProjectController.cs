@@ -260,43 +260,47 @@ namespace VstsDemoBuilder.Controllers.Apis
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 string[] strResult = processTask.EndInvoke(result);
-                ID = strResult[0];
-                accName = strResult[1];
-                templateUsed = strResult[2];
-                projectService.RemoveKey(ID);
-                if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
+                if (strResult != null && strResult.Length > 0)
                 {
-                    string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
-                    if (errorMessages != "")
+                    ID = strResult[0];
+                    accName = strResult[1];
+                    templateUsed = strResult[2];
+                    projectService.RemoveKey(ID);
+
+                    if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
                     {
-                        //also, log message to file system
-                        string logPath = HostingEnvironment.MapPath("~") + @"\Log";
-                        string accountName = strResult[1];
-                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-
-                        if (!Directory.Exists(logPath))
+                        string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
+                        if (errorMessages != "")
                         {
-                            Directory.CreateDirectory(logPath);
-                        }
+                            //also, log message to file system
+                            string logPath = HostingEnvironment.MapPath("~") + @"\Log";
+                            string accountName = strResult[1];
+                            string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                            if (!Directory.Exists(logPath))
+                            {
+                                Directory.CreateDirectory(logPath);
+                            }
 
-                        //Create ISSUE work item with error details in VSTSProjectgenarator account
-                        string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                        string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                        string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                        IssueWI objIssue = new IssueWI();
+                            System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
-                        errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
+                            //Create ISSUE work item with error details in VSTSProjectgenarator account
+                            string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                            string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                            string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                            string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                            IssueWI objIssue = new IssueWI();
 
-                        ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+                            errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
+                            errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
 
-                        string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                        if (logWIT == "true")
-                        {
-                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+
+                            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                            if (logWIT == "true")
+                            {
+                                objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            }
                         }
                     }
                 }
