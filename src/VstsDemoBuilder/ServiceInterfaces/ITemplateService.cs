@@ -22,5 +22,6 @@ namespace VstsDemoBuilder.ServiceInterfaces
 
         string FindPrivateTemplatePath(string privateTemplatePath);
 
+        bool checkSelectedTemplateIsPrivate(string templatePath);
     }
 }

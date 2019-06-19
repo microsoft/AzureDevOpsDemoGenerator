@@ -10,6 +10,7 @@ using System.Web.Hosting;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
+using VstsRestAPI.Viewmodel.Extractor;
 using static VstsDemoBuilder.Models.TemplateSelection;
 
 namespace VstsDemoBuilder.Services
@@ -260,5 +261,22 @@ namespace VstsDemoBuilder.Services
             return templatePath;
         }
 
+        public bool checkSelectedTemplateIsPrivate( string templatePath)
+        {
+            bool isPrivate = false;
+            bool settingFile = (System.IO.File.Exists(templatePath + "\\ProjectSettings.json") ? true : false);
+            bool projectFile = (System.IO.File.Exists(templatePath + "\\ProjectTemplate.json") ? true : false);
+            if (settingFile && projectFile)
+            {
+                string projectFileData = System.IO.File.ReadAllText(templatePath + "\\ProjectTemplate.json");
+                ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
+
+                if (!string.IsNullOrEmpty(settings.IsPrivate))
+                {
+                    isPrivate = true;
+                }
+            }
+            return isPrivate;
+        }
     }
 }

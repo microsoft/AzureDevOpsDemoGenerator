@@ -53,6 +53,7 @@ namespace VstsDemoBuilder.Models
         public bool IsApi { get; set; }
         public bool IsPrivatePath { get; set; }
 
+        public string PrivateTemplateName { get; set; }
         public string PrivateTemplatePath { get; set; }
     }
     public class EnvironmentValues
@@ -217,5 +218,11 @@ namespace VstsDemoBuilder.Models
         public IList<RequestedProject> users { get; set; }
     }
 
+    public class PrivateTemplate
+    {
+        public string privateTemplateName { get; set; }
+        public string privateTemplatePath { get; set; }
+        public string responseMessage { get; set; }
+    }
 
 }

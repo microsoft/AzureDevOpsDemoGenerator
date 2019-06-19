@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     $('body').on('click', '#btnUpload', function () {
+        debugger;
         $("#fileError").remove();
         disableButton();
         // Checking whether FormData is available in browser
@@ -90,55 +91,75 @@
         }
     });
 
-    $('body').on('click', '#importFromURL', function () {
+    $('body').on('click', '#btnURLUpload, #btnGitHubUpload', function () {
         debugger;
         var isUrlValid = false;
-        var fileurl = $('#FileUpload2').val();
-        var regexURL = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
-        console.log(fileurl);
-
-        if (!regexURL.test(fileurl)) {
-            $("#urlerror").empty().append('Please enter a valid URL'); isUrlValid = false;
+        var URL = '';
+        if ($('#GitHubUrl').val() !== '') {
+            URL = $('#GitHubUrl').val();
+        } else if ($('#FileURL').val() !== '') {
+            URL = $('#FileURL').val();
         }
-        else {
-            $("#urlerror").html('');
-            isUrlValid = true;
+        if (URL === '') {
+            $("#urlerror").empty().append('URL should not be empty');
+            return false;
         }
-        if (isUrlValid) {
-            var fileurlSplit = fileurl.split('/');
-            var filename = fileurlSplit[fileurlSplit.length - 1];
-            filename = filename.split('.');
-            if (filename.length === 2) {
-                if (filename[1].toLowerCase() !== "zip") {
-                    $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
-                }
-                else if (fileurlSplit[2] === "raw.githubusercontent.com") {
-                    $("#divUserId").addClass('d-none');
-                    $("#divPassword").addClass('d-none');
-                    $("#divGitHubToken").removeClass('d-none');
-                    isUrlValid = false;
-                } else if (fileurlSplit[0] === "https:" || fileurlSplit[0] === "ftp:" ) {
-                    $("#divUserId").removeClass('d-none');
-                    $("#divPassword").removeClass('d-none');
-                    $("#divGitHubToken").addClass('d-none');
-                    isUrlValid = false;
-                }
-            }
-            else {
+        var GitHubtoken = $('#GitHubToken').val();
+        var userId = $('#UserId').val();
+        var password = $('#Password').val();
+        $("#urlerror").empty();
+        var fileurlSplit = URL.split('/');
+        var filename = fileurlSplit[fileurlSplit.length - 1];
+        filename = filename.split('.');
+        if (filename.length === 2) {
+            if (filename[1].toLowerCase() !== "zip") {
                 $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
+            } else {
+                isUrlValid = true;
             }
         }
         if (isUrlValid) {
-            $('#ddlTemplates', parent.document).val(filename[0]);
-            templateFolder = filename[0];
-            $(".VSTemplateSelection", parent.document).removeClass('d-block').addClass('d-none');
-            $("#lblextensionError", parent.document).removeClass('d-block').addClass('d-none');
-            $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
-            $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
-            $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
-            enableButton();
+            $.ajax({
+                url: "../Environment/UploadPrivateTemplateFromURL",
+                type: "GET",
+                data: { TemplateURL: URL, token: GitHubtoken, userId: userId, password: password },
+                success: function (Data) {
+                    if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
+                        console.log(Data);
+                        if (Data.responseMessage !== null && Data.responseMessage !== "") {
+                            $("#urlerror").empty().append(Data.responseMessage);
+                            return false;
+                        }
+                        $('#PrivateTemplateName', parent.document).val(Data.privateTemplateName);
+                        $('#PrivateTemplatePath', parent.document).val(Data.privateTemplatePath);
+                        var NewTemplateName = filename[0];
+                        $('#ddlTemplates', parent.document).val(NewTemplateName);
+                        $('#selectedTemplateFolder', parent.document).val(NewTemplateName);
+                        $(".template-close", parent.document).click();
+                        $(".VSTemplateSelection", parent.document).removeClass('d-block').addClass('d-none');
+                        $("#lblextensionError", parent.document).removeClass('d-block').addClass('d-none');
+                        $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
+                        $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
+                        $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
+
+                        //$('#PrivateTemplateName', parent.document).val(Data.privateTemplateName);
+                        //templateFolder = Data.privateTemplateName;
+                        //$('#PrivateTemplatePath', parent.document).val(Data.privateTemplatePath);
+                        //$('#ddlTemplates', parent.document).val(filename[0]);
+                        //$('#selectedTemplateFolder', parent.document).val(filename[0]);
+                        //$(".template-close", parent.document).click();
+                        //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
+                        ////$("#lblextensionError", parent.document).removeClass("d-block").addClass("d-none");
+                        //$("#btnSubmit", parent.document).prop("disabled", false).addClass('btn-primary');
+                        //$("#templateselection", parent.document).addClass('btn-primary').prop("disabled", false);
+                    }
+                    else {
+                        $("#urlerror").empty().append('unable to download template, please check the template URL and authentication details'); isUrlValid = false;
+                    }
+                }
+            });
         }
-    });
+    });  
 });
 
 function disableButton() {

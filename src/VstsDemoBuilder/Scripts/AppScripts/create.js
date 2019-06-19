@@ -91,8 +91,10 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
+        debugger;       
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-      
+        $('#PrivateTemplateName', parent.document).val('');
+        $('#PrivateTemplatePath', parent.document).val('');
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
@@ -112,7 +114,7 @@ $(document).ready(function (event) {
         else {
             $('#gitHubCheckboxDiv').addClass('d-none');
             $('#gitHubLabelDiv').addClass('d-none');
-           
+
         }
         //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -149,6 +151,9 @@ $(document).ready(function (event) {
         $("#extensionError").hide();
         $("#lblextensionError").removeClass("d-block").addClass("d-none");
         var TemplateName = templateFolder;
+        if ($('#PrivateTemplateName').val() !== "") {
+            TemplateName = $('#PrivateTemplateName').val();
+        }
         if (TemplateName === "MyShuttle-Java") {
             $("#NotificationModal").modal('show');
         }
@@ -484,8 +489,12 @@ $('#btnSubmit').click(function () {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
     });
     selectedTemplate = template;
+    var privateTemplateName = $('#PrivateTemplateName').val();
+    var privateTemplatePath = $('#PrivateTemplatePath').val();
     var websiteUrl = window.location.href;
-    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub };
+    var projData = {
+        "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
+    };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
         if (data !== "True") {
@@ -715,6 +724,7 @@ function DisplayErrors() {
 
 function checkForInstalledExtensions(selectedTemplate, callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
+    var privatePath = $('#PrivateTemplatePath').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
     if (accountNam !== "" && selectedTemplate !== "") {
         $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -722,7 +732,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
-            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam },
+            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath:privatePath },
             success: function (InstalledExtensions) {
 
                 callBack(InstalledExtensions);
@@ -735,7 +745,11 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
 function checkForExtensions(callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
+    var privatePath = $('#PrivateTemplatePath').val();
     var selectedTemplate = templateFolder;
+    if ($('#PrivateTemplateName').val() !== "") {
+        selectedTemplate = $('#PrivateTemplateName').val();
+    }
     if (selectedTemplate !== "" && accountNam !== "") {
         $('#btnSubmit').addClass('lodergif');
         //$("#imgLoading").show();
@@ -747,7 +761,7 @@ function checkForExtensions(callBack) {
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
-            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam },
+            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
                 callBack(InstalledExtensions);
             }
@@ -969,8 +983,8 @@ function AppendMessage() {
         $('input[id="gitHubCheckbox"]').prop('checked', false);
     }
     else {
-        $('#gitHubCheckboxDiv').addClass('d-none');       
-        $('#gitHubLabelDiv').addClass('d-none');       
+        $('#gitHubCheckboxDiv').addClass('d-none');
+        $('#gitHubLabelDiv').addClass('d-none');
     }
 }
 

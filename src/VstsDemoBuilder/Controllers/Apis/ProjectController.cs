@@ -137,7 +137,14 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     }
                                     else
                                     {
-                                        isPrivate = true;
+                                        isPrivate = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
+                                        if (!isPrivate)
+                                        {
+                                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                                            if (Directory.Exists(templatepath))
+                                                Directory.Delete(templatepath, true);
+                                            return Request.CreateResponse(HttpStatusCode.BadRequest,"Please check the selected template for Isprivate flag is true");//"TemplatePath should have .zip extension file name at the end of the url"
+                                        }
                                     }
                                 }
                                 else
@@ -165,7 +172,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 if (model.installExtensions)
                                 {
                                     Project pmodel = new Project();
-                                    pmodel.SelectedTemplate = model.templateName;
+                                    pmodel.SelectedTemplate = model.templateName;                                   
                                     pmodel.accessToken = model.accessToken;
                                     pmodel.accountName = model.organizationName;
 
@@ -201,6 +208,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 if (model.templatePath != "")
                                 {
                                     pmodel.PrivateTemplatePath = PrivateTemplatePath;
+                                    pmodel.PrivateTemplateName = model.templateName;
                                     pmodel.IsPrivatePath = true;
                                 }
                                     
