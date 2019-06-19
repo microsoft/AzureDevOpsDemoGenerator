@@ -53,7 +53,7 @@ $(document).ready(function (event) {
     uniqueId = ID();
     $('.rmverror').click(function () {
         var errID = this.id;
-        $('#' + errID+'_Error').removeClass("d-block").addClass("d-none");
+        $('#' + errID + '_Error').removeClass("d-block").addClass("d-none");
     });
     $('body').on('click', '.rmverrorOn', function () {
         var errID = this.closest('div').nextSibling.getAttribute('id');
@@ -72,6 +72,7 @@ $(document).ready(function (event) {
         $('#textMuted').removeClass("d-block").addClass("d-none");
         $('#dvProgress').removeClass("d-block").addClass("d-none");
         $('#accountLink').empty();
+        $('#btnSubmit').addClass('lodergif');
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
         $('#templateselection').removeClass("btn-primary").prop("disabled", true);
@@ -91,7 +92,6 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
@@ -1024,11 +1024,13 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
+                                    grp += '<div class="col-sm-3 col-lg-3 p-2">';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
                                     grp += '<div class="template-box ">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                    grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
+                                    grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong>';
+                                    grp += '</div >';
                                     if (MatchedGroup.Template[i].Tags !== null) {
                                         grp += '<p></p>';
                                         grp += '<p>';
@@ -1047,11 +1049,13 @@ function getGroups(grpSelected) {
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
+                                    grp += '<div class="col-sm-3 col-lg-3 p-2">';
                                     grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
                                     grp += '<div class="template-box ">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                    grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
+                                    grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong>';
+                                    grp += '</div >';
                                     if (MatchedGroup.Template[i].Tags !== null) {
                                         grp += '<p></p>';
                                         grp += '<p>';
@@ -1064,8 +1068,6 @@ function getGroups(grpSelected) {
                                     grp += '</div>';
                                     grp += '</div>';
                                     grp += '</div>';
-
-
                                 }
                             }
                             $('#selecttmplate').show();

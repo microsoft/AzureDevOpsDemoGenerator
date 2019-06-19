@@ -9457,6 +9457,7 @@ img#projectloader {
     }
 
 .template-close {
+    background-color: black;
     position: absolute;
     right: 13px;
     top: -34px;
@@ -9469,7 +9470,7 @@ img#projectloader {
     border-radius: 50%;
     cursor: pointer;
     /* background-color: #222; */
-    color: #6f6f6f;
+    color: #f8f9fa;
 }
 
 .template {
@@ -9756,6 +9757,23 @@ img#projectloader {
     background-size: 23px;
     text-align: center;
     padding-left: 28px;
+}
+.lodergif {
+    background-image: url(/Images/loader_trans_1.gif);
+    background-repeat: no-repeat;
+    background-position: 93% 50%;
+    padding: 5px 18px 5px 5px !important;
+    background-size: 22px;
+}
+
+.lodergif_div {
+    background-image: url(/Images/loader_trans_1.gif);
+    background-repeat: no-repeat;
+    background-position: 93% 50%;
+    padding: 0;
+    background-size: 41px;
+    height: 30px;
+    width: 30px;
 }
 
 
@@ -10682,4 +10700,5 @@ option {
     .github_forking_text p {
         font-size: 36px;
     }
+   
 }

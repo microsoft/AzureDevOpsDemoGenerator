@@ -73,7 +73,7 @@
             </div>
             @*<div class="template-group  d-flex align-items-center p-2 ">
 
-        </div>*@
+                </div>*@
             <div class="template-body vstsScroll p-3">
                 <div class="tab-content" id="pills-tabContent">
                 </div>
@@ -137,9 +137,6 @@
 
 
     <div class="jumbotron createDemoContainer mb-0" style="padding-bottom: 25px; padding-top: 25px;">
-        @*<div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
-                Create New Project
-            </div>*@
         <p class="m-0 social-icons">
             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
             <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on Facebook"><img src="~/Images/facebook.png" style="width:10px" /></a>&nbsp;&nbsp;
@@ -171,25 +168,6 @@
                   COL 1
                   Image and Feedback section
             -->
-            @*<div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
-                <div class="d-flex flex-column VSTS-mh-100 demo_gen_img">
-                    <img class="img-fluid img-demo" src="~/Images/sideImage2.png" >
-                   <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
-                        <h6>Feedback&colon;</h6>
-                        <p class="mb-0">
-                            To provide feedback, you can email us
-                            <a class="text-primary" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com">here </a>.
-                        <p>Like our tool? We would appreciate if you share feedback on social</p>
-
-                        <p class="m-0">
-                            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-                            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                        </p>
-                    </div>
-                </div>
-                    </div>*@
             <!--
                 COL 2
                 Create section
@@ -199,23 +177,6 @@
                 <div class="demo_form">
                     <div class="demo-header"><h5>Create New Project</h5></div>
                     <div class="demo-content">
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <div class="row">
-
-                                    <div class="align-items-center ml-0 input_box">
-                                        <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
-                                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                                        </div>
-                                    </div>
-                                    <div style="color:red">
-                                        @ViewBag.AccDDError
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="form-group" id="">
                             <div class="col-lg-12 mt-1">
 
@@ -234,7 +195,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-1" id="">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div class="row">
+
+                                    <div class="align-items-center ml-0 input_box">
+                                        <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
+                                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                                        </div>
+                                    </div>
+                                    <div style="color:red">
+                                        @ViewBag.AccDDError
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-1" id="gitHubCheckboxDiv">
                             <div class="col-lg-12 mt-1">
                                 <div class="row">
                                     <div class="github_forking_text">
@@ -245,7 +223,7 @@
                                         </p>
                                     </div>
 
-                                    <div class="align-items-center ml-0 input_box git_option" id="gitHubCheckboxDiv">
+                                    <div class="align-items-center ml-0 input_box git_option">
                                         <label class="chbox">
                                             <label class="check_txt">
                                                 Yes, I want to fork this repository
@@ -254,27 +232,8 @@
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
-                                    <div class="template-invoke imp_btn pl-3 d-none" style="padding-left:0px;" id="gitHubAuthDiv">
-                                        <button class="btn btn-primary importgit rd-4" id="githubAuth">
-                                            Authorize
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group mb-1" id="">
-                            <div class="col-lg-12 mt-1">
-                                <div class="row">
-                                    <div class="align-items-center ml-0 input_box d-none" id="gitHubCheckboxDiv">
-                                        <label></label>
-                                        <label class="check_cnt"> Do you want to fork repository to your account? </label>
-                                        <label class="chbox">
-                                            <input type="checkbox"  id="gitHubCheckbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        </div>
-                                        <div class="template-invoke imp_btn pl-3 d-none" style="padding-left:0px;" id="gitHubAuthDiv">
-                                        <button class="btn btn-primary importgit rd-4" id="githubAuth">
+                                    <div class="template-invoke imp_btn pl-3" style="padding-left:0px;" id="gitHubAuthDiv">
+                                        <button class="btn importgit rd-4" id="githubAuth" disabled>
                                             Authorize
                                         </button>
                                     </div>
@@ -291,10 +250,9 @@
                                         </div>
                                     </div>
                                     <div class="template-invoke pl-3 " style="padding-left:0px;">
-                                        <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" >
+                                        <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit">
                                             &nbsp;&nbsp;Create Project &nbsp;&nbsp;
                                         </button>
-                                        <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
                                     </div>
                                 </div>
 
@@ -344,8 +302,14 @@
                     <div class="card-header"><h5>About this Template</h5></div>
                     <div class="card-body" style="background-color:white; color:black">
                         <div class="align-items-center d-flex">
-                            @*<img class="mr-3" id="templateIcon" style="width: 20px;" src="/Templates/TemplateImages/MyHealthClinic.png" alt="logo" />
-                                <p class="aboutTitle font-weight-bold m-0" id="templateName"></p>*@
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <img src="" style="width:50px;" class="pl-3" id="templatePreviewImage">
+                            </div>
+                            <div class="column">
+                                <p class="pt-2 pl-2" id="templatePreviewName"></p>
+                            </div>
                         </div>
                         <p class="card-text" id="descContainer">
 
