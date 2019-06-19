@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('#buildYourTemplate').click(function () {
         ga('send', 'event', 'Build Your Template', 'visited');
     });
-
+    $(this).scrollTop(0);
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 50) {
