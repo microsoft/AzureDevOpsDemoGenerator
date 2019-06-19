@@ -1688,19 +1688,7 @@ pre {
         }
 }
 
-@media (max-width: 767.98px) {
-    .table-responsive-md {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar
-    }
 
-        .table-responsive-md > .table-bordered {
-            border: 0
-        }
-}
 
 @media (max-width: 991.98px) {
     .table-responsive-lg {
@@ -7950,70 +7938,493 @@ html, body {
 
             .section-1 main .VSTS-hero-image .VSTS-hero {
                 flex: 1;
-                background: url(../images/VSTS_cover_image_3.png) top left/ 1000px, #EBF5FF;
+                /* background: url(../images/VSTS_cover_image_6.png) top left/ 1000px, #EBF5FF;*/
                 background-repeat: no-repeat;
-                background-size:contain;
+                background-size: contain;
             }
 
                 .section-1 main .VSTS-hero-image .VSTS-hero img {
                     width: 60px
                 }
+.select-button {
+    border: none;
+    border-radius: 4px;
+    height: 35px;
+    font-size:13px;
+    padding: 0 13px;
+    background: rgba(77,176,255,1);
+    background: -moz-linear-gradient(left, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(77,176,255,1)), color-stop(100%, rgba(0,120,215,1)));
+    background: -webkit-linear-gradient(left, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    background: -o-linear-gradient(left, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    background: linear-gradient(to right, rgba(77,176,255,1) 0%, rgba(0,120,215,1) 100%);
+    box-shadow: -1px 1px 9px 0px rgba(0, 0, 0, 0.22);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4db0ff', endColorstr='#0078d7', GradientType=1 );
+}
+.select-button:hover{
+    background: #fff;
+    border: 1px solid #00BCF2;
+    color: #00BCF2;
+}
+.select-button:focus { outline:none;
+                       box-shadow:none;
+    }
 
+a.select-button{
+    line-height: 34px;
+}
+.mainbanner {
+    background: url(../images/VSTS_cover_image_6.png), url(../images/VSTS_cover_image_7.png);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 70%, 17%;
+}
+.tab_nonactive{
+    background: white;
+    color: #000 !important;
+}
+.transparent { color:transparent
+}
+.backlink {
+    text-decoration: none;
+    padding: 10px 10px 10px 41px;
+    font-size: 13px;
+    color: #505050;
+    border: .5px solid #ccc;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+    .backlink:hover {
+        text-decoration:none;
+    } 
+    .appcenter_icon {
+        background: url(../../Images/appcenter.png);
+        background-repeat: no-repeat;
+        background-size: 15%;
+        background-position: left center;
+    }
+.tfs_icon {
+    background: url(../../Images/tfs.png);
+    background-repeat: no-repeat;
+    background-size: 22%;
+    background-position: left center;
+}
+.rd-4 {
+    border-radius: 4px;
+    min-width: 130px;
+    height: 35px;
+    color: #fff !important;
+    font-size: 13px;
+}
+.rd-4-w.rd-4 {
+    min-width: inherit;
+}
+    .azuretitle {
+        
+        font-size: 22px;
+        color: #0078D7;
+    }
+    .azuretitle:hover {
+        color: #00BCF2;
+        text-decoration:none;
+    }
+.VSTS-details p{ 
+                 line-height:23px;
+}
+.readmore {
+    color: #0078D7;
+    font-weight: 400;
+}
+    .readmore:hover {
+        color: #00BCF2;
+        text-decoration: none
+    }
+.section-1 main .VSTS-details {
+    padding-left: 8% !important;
+}
+.footer {
+    padding: 8px 11em !important;
+   
+    font-size:13px;
+}
+.footer a {
+        color: #0078D7 !important;
+    }
+
+.accordion-opened { width:10px; height:10px; background:red;
+}
+.mob_logo{ display:none !important;}
 @media (min-width: 768px) {
     .section-1 main .VSTS-details {
-        max-width: 550px
+      padding-left:10%
     }
 }
 
-.section-1 main .VSTS-details .demo-generator-details-logo {
-    width: 210px
+@media (max-width: 1024px) {
+    .mainbanner {
+        background: url(../images/VSTS_cover_image_6_tab.png);
+        background-size: 63%;
+        background-repeat: no-repeat;
+    }
 }
 
-.section-1 main .VSTS-details p {
-    font-size: .87566rem
-}
+    @media (max-width: 768px) {
+        .section-1 main .VSTS-details p {
+            font-size: 13px !important;
+        }
 
-.navbar {
-    height: 46px
-}
+       
 
-    .navbar .nav-item img {
-        width: 18px
+        .mob-p0 {
+            padding: 0 !important;
+        }
+        .azuretitle {
+            font-size: 16px;
+        }
+        .section-1 main .VSTS-details {
+            padding-left: 2% !important;
+        }
+        .logo_container {
+            position: absolute;
+            left: 0;
+        }
+        .logo_text {
+            font-weight: bold;
+            font-size: 15px;
+            white-space: nowrap;
+
+        }
+            .footer {
+            padding: 8px 1.2em !important;
+            font-weight: 100;
+            font-size: 11px;
+        }
+
+        .backlink {
+            font-size: 10px;
+        }
+
+        .section-1 main .VSTS-hero-image .VSTS-hero img {
+            width: 42px;
+        }
+
+        .mob-p-16 {
+            padding: 16px !important
+        }
+
+        .mob_mt_10 {
+            margin-top: 10px;
+        }
     }
 
-.navbar-brand img {
-    width: 18px;
-    font-size: inherit
+
+    .section-1 main .VSTS-details .demo-generator-details-logo {
+        width: 172px
+    }
+
+    .section-1 main .VSTS-details p {
+        font-size: .87566rem
+    }
+
+    .navbar {
+        height: 46px
+    }
+
+        .navbar .nav-item img {
+            width: 18px
+        }
+
+    .navbar-brand img {
+        width: 18px;
+        font-size: inherit
+    }
+
+    .navbar-brand-text {
+        font-size: 1rem
+    }
+
+    .jumbotron {
+        background: url('../images/vsts_header_image.png'),#0061ae;
+        background-size: 1500px;
+        margin-top: 46px
+    }
+
+    .custom-radio button {
+        letter-spacing: 2px
+    }
+
+    .VSTS-mh-100 {
+        min-height: 100%
+    }
+
+    .VSTS-create-page-feedback {
+        font-size: 0.8rem
+    }
+
+    .footer.VSTS-create-page-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        background-color: #f5f5f5
+    }
+    /*# sourceMappingURL=custom.min.css.map */
+.logo_text {
+    font-weight: bold;
+    font-size: 18px;
+   white-space:nowrap
+}
+.logo_container {
+    position: absolute;
 }
 
-.navbar-brand-text {
-    font-size: 1rem
+    @media (max-width: 767.98px) {
+        .logo_text{ display:none}
+        .mainbanner {
+            background: url(../images/mob_bg.png) top left/ 1000px, #fff;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .desk_logo {
+            display: none !important;
+        }
+
+        .azuretitle {
+            font-size: 13px !important;
+        }
+
+        .mob_logo {
+            display: block !important;
+        }
+
+        .table-responsive-md {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar
+        }
+
+            .table-responsive-md > .table-bordered {
+                border: 0
+            }
+
+        .VSTS-details h6.h6.text-primary.mt-3.text-uppercase.text-left {
+            margin-top: 49px !important;
+        }
+    }
+
+    @media only screen and (min-width: 1500px) {
+        .logo_container {
+            position: absolute;
+            left: 50px;
+            top: 30px;
+        }
+
+        .logo_text {
+            font-size: 23px;
+        }
+
+            .logo_text img {
+                width: 56px;
+            }
+
+        .container {
+            max-width: 1350px;
+        }
+
+        .section-1 main .VSTS-details p {
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        .rd-4 {
+            height: 40px;
+            font-size: 16px
+        }
+    }
+
+@media only screen and (min-width: 1800px) {
+
+    .container {
+        max-width: 1650px;
+    }
+
+    .section-1 main .VSTS-details p {
+        font-size: 20px;
+        line-height: 42px;
+    }
+
+    .rd-4 {
+        height: 45px;
+        font-size: 18px
+    }
+
+    .backlink {
+        padding: 12px 10px 14px 48px;
+        font-size: 18px;
+    }
+
+    .template-body {
+        height: 620px;
+    }
+    .footer {
+ 
+        font-size: 19px;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    .container {
+        max-width: 1700px;
+    }
+
+    .logo_text {
+        font-size: 26px;
+    }
+
+        .logo_text img {
+            width: 65px;
+        }
+
+    .section-1 main .VSTS-details {
+        padding-top: 2%;
+    }
+
+        .section-1 main .VSTS-details p {
+            font-size: 20px;
+        }
+
+    .VSTS-details p {
+        line-height: 38px;
+    }
+
+    .section-1 main .VSTS-details .demo-generator-details-logo {
+        width: 234px;
+    }
+
+    .rd-4 {
+        font-size: 20px;
+        height: 52px;
+    }
+
+    .backlink {
+        font-size: 20px;
+        padding: 19px 10px 18px 46px;
+        border: 1px solid #585858;
+    }
+
+    .azuretitle {
+        font-size: 32px;
+    }
+
+    
 }
 
-.jumbotron {
-    background: url('../images/vsts_header_image.png') ,#0061ae;
-    background-size: 1500px;
-    margin-top: 46px
+@media only screen and (min-width: 2300px) {
+    .logo_text {
+        font-size: 28px;
+    }
+
+        .logo_text img {
+            width: 75px;
+        }
+
+    .rd-4 {
+        border-radius: 10px;
+    }
+
+    .section-1 main .VSTS-details .demo-generator-details-logo {
+        width: 297px;
+    }
+
+    .container {
+        max-width: 2000px;
+    }
+
+    .section-1 main .VSTS-details {
+        padding-top: 3% !important;
+    }
+
+
+    .mainbanner {
+        background-size: 63%, 17%;
+    }
+
+    .section-1 main .VSTS-details p {
+        font-size: 26px;
+    }
+
+    .VSTS-details p {
+        line-height: 50px;
+    }
+
+    .rd-4 {
+        font-size: 27px;
+        height: 66px;
+    }
+
+    .backlink {
+        font-size: 22px;
+        padding: 19px 10px 18px 46px;
+        border-radius: 10px;
+        border: 1px solid #585858;
+    }
+
+    .azuretitle {
+        font-size: 41px;
+    }
+
+    .footer {
+        font-size: 24px;
+    }
 }
 
-.custom-radio button {
-    letter-spacing: 2px
-}
+@media only screen and (min-width: 2800px) {
+    .container {
+        max-width: 2400px;
+    }
 
-.VSTS-mh-100 {
-    min-height: 100%
-}
+    .section-1 main .VSTS-details p {
+        font-size: 32px;
+        line-height: 54px;
+    }
 
-.VSTS-create-page-feedback {
-    font-size: 0.8rem
-}
+    .rd-4 {
+        font-size: 33px;
+        height: 87px;
+        line-height: 62px;
+        padding: 7px 44px;
+    }
 
-.footer.VSTS-create-page-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    background-color: #f5f5f5
+    .backlink {
+        font-size: 30px;
+        padding: 19px 10px 18px 77px;
+        border: 1px solid #585858;
+        border-radius: 9px;
+    }
+
+    .template-body {
+        height: 800px;
+        padding: 30px !important;
+    }
 }
-/*# sourceMappingURL=custom.min.css.map */
+    
+
+    @media only screen and (min-width: 3000px) {
+        .section-1 main .VSTS-details p {
+            font-size: 34px;
+        }
+
+        .azuretitle {
+            font-size: 49px;
+        }
+        .footer {
+             font-size:30px;
+        }
+        .mainbanner {
+            background-size: 56%, 17%;
+        }
+    }

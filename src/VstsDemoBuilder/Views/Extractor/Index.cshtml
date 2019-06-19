@@ -52,10 +52,10 @@
         }
 
         body {
-            background: url('../../../Images/bg_new.png'),#fff;
+            background-image: url('../../assets/images/VSTS_cover_image_7.png');
             background-repeat: no-repeat !important;
-            background-size: contain;
-            background-position: top right;
+            background-size: 12%;
+            background-position: bottom right;
         }
 
         .tooltip {
@@ -104,8 +104,8 @@
     <!-- MODAL -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content demo_form">
+                <div class="modal-header demo-header">
                     <h5 class="modal-title" id="exampleModalLabel">Copy Diagnostic Log</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary rd-4" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
         <a class="navbar-brand p-0 mr-auto" href="#">
             <img src="~/content/assets/images/VS_logo.png" alt="">
             <span class="navbar-brand-text ml-1">
-                Azure DevOps Demo Generator - Template Builder
+                Azure DevOps Demo Generator
             </span>
         </a>
         <ul class="navbar-nav">
@@ -146,158 +146,181 @@
             </li>
         </ul>
     </nav>
-    <div class="jumbotron mb-0" style="padding-bottom: 25px; padding-top: 25px;">
-        <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
-            Create New Template
-        </div>
+    <div class="build_temp createDemoContainer mb-0" style="padding-bottom: 25px; padding-top: 25px;">
+        <!--<div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
+        Create New Template
+    </div>-->
+        <p class="m-0 social-icons">
+            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on Facebook"><img src="~/Images/facebook.png" style="width:10px" /></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on LinkedIn"><img src="~/Images/linkedin.png" style="width:17px" /></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank" title="Share on Twitter"><img src="~/Images/twitter.png" style="width:17px" /></a>
+            <a class="nav-link fa fa-envelope" style="color:white" href="#" data-toggle="tooltip" title="Send Feedback" onclick="javascript:window.location='mailto:AzureDevOpsDemoGenerator@service.microsoft.com?subject=Azure DevOps Demo Generator Feedback &amp;body=I have some feedback about the Azure DevOps Demo Generator: ' + window.location.href;"></a>
+        </p>
     </div>
     <div class="container-fluid mt-3">
-        <div class="row VSTS-mh-100">
+        <div class="row VSTS-mh-100 d-flex justify-content-center">
             <!--
-                  COL 1
-                  Image and Feedback section
-            -->
-            <div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
-                <div class="d-flex flex-column VSTS-mh-100">
-                    <img class="img-fluid" src="~/Images/theme_img_3.png" alt="side" />
-                </div>
-            </div>
-            <!--
-                COL 2
-                Create section
-            -->
-            <div class="col-md-6 order-1 order-md-2 listDivs1 ">
-                <div class="center_portion">
-                    <div class="form-group row listDivs1">
-                        <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Select Organization :</label>
-                        <div class="col-lg-7 mt-1">
-                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "Organization" })
-                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                            </div>
-                            <div style="color:red">
-                                @ViewBag.AccDDError
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row ">
-                        <label for="inputPassword" class="col-lg-4 col-form-label" style="font-weight: 400;">
-                            Select Project :  <i class="fas fa-info-circle bl" id="info"></i>
-                            <span class="d-none" id="infoData" style="font-weight:500">
-                                Please select a project that uses the standard Scrum or Agile process template
-                            </span>
-                        </label>
-                        <div class="col-lg-7 mt-1">
-                            <select class="form-control rmverror" id="projectSelect">
-                                <option value="0">Select Project</option>
-                            </select>
-                            <div class="alert alert-danger d-none pl-0" role="alert" id="projectSelect_Error">
-                            </div>
-                        </div>
-                        <div class="template-invoke mt-1 col-lg-1" id="projecctDiv">
-                            @*<img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="projectloader" />*@
-                        </div>
-                    </div>
-
-                    <div class="form-group row listDivs1" id="">
-                        <div class="col-sm-6" style="width:70%;">
-                            <input type="hidden" id="processtemplate" />
-                            <input type="hidden" id="TemplateClass" />
-
-                        </div>
-                    </div>
-                    <div class="mr-3 text-right listDivs1 btn_analyz" style="padding:0px">
-                        <button class="btn btn-primary submitBtn btnUpdate" id="Analyse">
-                            Analyze
-                        </button>
-                        <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="imgLoading" />
-                    </div>
-
-                    <div class="form-group d-none listDivs1 col-lg-11 artifact" id="analyseDiv">
-                        <div class="accordion" id="accordionExample">
-                            <div class="card rounded">
-                                <div class="card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne" style="padding:0px; background-color:white; cursor:pointer;">
-                                    <h5 class="mb-0">
-                                        <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>
-                                        <button class="btn" type="button">
-                                            <b>Artifacts Analysis</b>
-                                        </button>
-                                    </h5>
-                                </div>
-
-                                <div id="collapseOne" class="collapse show accorDetails" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div id="analytics">
-                                        </div>
-                                        <p id="templateError"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-right mt-3 mr-3 d-none btn_analyz" style="padding:0px" id="genArtDiv">
-                        <button class="btn btn-primary " id="GenerateArtifacts" disabled>
-                            Generate Artifacts
-                        </button>
-                        @*<img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="ExdvProgress" />*@
-                    </div>
-
-                    <!--EXTENSIONS -->
-                    <!--/EXTENSIONS -->
-                    <div class="order-md-2 d-none col-lg-11 artifact" id="GenerateArtifact">
-                        <!-- PROGRESS BAR -->
-                        <div class="accordion">
-                            <div class="card">
-                                <div class="card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="headingTwo" style="padding:0px; background-color:white; cursor:pointer;">
-                                    <h5 class="mb-0">
-                                        <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>
-                                        <button class="btn" type="button">
-                                            <b>Artifact Summary</b>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse show genArtifacts" aria-labelledby="headingTwo" data-parent="#GenerateArtifact">
-                                    <div class="card-body">
-                                        <div id="artifactProgress" class="d-none">
-                                        </div>
-                                        <div id="ExStatus-messages" class="mt-3" style="display:none;">
+          COL 1
+          Image and Feedback section
+    -->
+            <div class="col-md-6 d-flex d-flex justify-content-center box_shadw mt-4">
+                <!--<div class="col-md-4 order-2 order-md-1 VSTS-mh-100 p-0 lab_img">
+        <div class="d-flex flex-column VSTS-mh-100">
+            <img class="img-fluid" src="~/Images/computer_lab2.png" alt="side" />
+            <div class="build_template ">Build <br />Your Template</div>
+        </div>
+        </div>-->
+                <!--
+        COL 2
+        Create section
+    -->
+                <div class="col-md-12 order-1 order-md-2 listDivs1 p-0">
+                    <div class="demo_form creat_temp ">
+                        <div class="demo-header"><h5>Build your template</h5></div>
+                        <div class="demo-content">
+                            <div class="form-group listDivs1">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="row">
+                                        <div class="align-items-center ml-0 input_box">
+                                            <label for="ddlAcccountName" class="col-lg-4 col-form-label">Select Organization :</label>
+                                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "Organization" })
+                                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                                            </div>
+                                            <div style="color:red">
+                                                @ViewBag.AccDDError
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card mt-3 d-none" id="finalLink" style="border: 0px">
-                            <div class="card-body" id="accountLink" style="color: green;font-weight: 300;box-shadow: 0px 3px 10px #e0e0e0;">
-                                <form action="~/Extractor/ZipAndDownloadFiles" method="post">
-                                    <input type="hidden" name="fileName" id="hdnProjecName">
-                                    Click <button type="submit" class="btn btn-link" id="fileDownload" style="padding:0px; vertical-align: baseline;">here</button>to download your file
-                                    <p style="font-weight:600">Note: Folder will be deleted from the server once you click on download button.</p>
-                                </form>
+
+                            <div class="form-group">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="row">
+                                        <label for="inputPassword" class="col-lg-12 col-form-label">
+                                            Select Project :  <i class="fas fa-info-circle bl" id="info"></i>
+                                            <span class="d-none infoLabel" id="infoData" style="font-weight:500">
+                                                Please select a project that uses the standard Scrum or Agile process template
+                                            </span>
+                                        </label>
+                                        <div class="align-items-center ml-0 input_box">
+                                            <select class="form-control rmverror form-select" id="projectSelect">
+                                                <option value="0">Select Project</option>
+                                            </select>
+                                            <div class="alert alert-danger d-none" role="alert" id="projectSelect_Error">
+                                            </div>
+
+
+                                        </div>
+                                        <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="projectloader" />
+                                        <!--<div class="template-invoke mt-1 col-lg-1">-->
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row listDivs1" id="">
+                                <div class="col-sm-6" style="width:70%;">
+                                    <input type="hidden" class="form-input" id="processtemplate" />
+                                    <input type="hidden" class="form-input" id="TemplateClass" />
+
+                                </div>
+                            </div>
+                            <div class="text-right listDivs1" style="padding:0px">
+                                <button class="btn btn-primary rd-4 submitBtn btnUpdate" id="Analyse">
+                                    Analyze
+                                </button>
+                                <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="imgLoading" />
+                            </div>
+
+                            <div class="form-group d-none listDivs1 pt-3" id="analyseDiv">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="">
+                                        <div class="card-header accordion-heading" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne" style="padding:0px; background-color:white; cursor:pointer;">
+                                            <h5 class="mb-0">
+                                                <!--<i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>-->
+                                                <button class="btn accordiontittle" type="button">
+                                                    <b>Artifacts Analysis</b>
+                                                </button>
+                                            </h5>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show accorDetails" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div id="analytics">
+                                                </div>
+                                                <p id="templateError"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right mt-3 mb-3 d-none listDivs1" style="padding:0px" id="genArtDiv">
+                                <button class="btn btn-primary rd-4" id="GenerateArtifacts" disabled>
+                                    Generate Artifacts
+                                </button>
+                                <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="ExdvProgress" />
+                            </div>
+
+                            <!--EXTENSIONS -->
+                            <!--/EXTENSIONS -->
+                            <div class="order-md-2 p-0 d-none" id="GenerateArtifact">
+
+                                <!-- PROGRESS BAR -->
+                                <div class="accordion">
+                                    <div class="">
+                                        <div class="card-header accordion-heading" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="headingTwo" style="padding:0px; background-color:white; cursor:pointer;">
+                                            <h5 class="mb-0">
+                                                <!-- <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>-->
+                                                <button class="btn accordiontittle" type="button">
+                                                    <b>Artifact Summary</b>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse show genArtifacts" aria-labelledby="headingTwo" data-parent="#GenerateArtifact">
+                                            <div class="card-body">
+                                                <div id="artifactProgress" class="d-none">
+                                                </div>
+                                                <div id="ExStatus-messages" style="display:none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mt-3 d-none round-4 " id="finalLink" style="border: 0px">
+                                    <div class="card-body" id="accountLink" style="color: green;font-weight: 300;box-shadow: 0px 3px 10px #e0e0e0;">
+                                        <form action="~/Extractor/ZipAndDownloadFiles" method="post">
+                                            <input type="hidden" class="form-input" name="fileName" id="hdnProjecName">
+                                            Click <button type="submit" class="btn btn-link" id="fileDownload" style="padding:0px; vertical-align: baseline;">here</button>to download your file
+                                            <p style="font-weight:600">Note: Folder will be deleted from the server once you click on download button.</p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-primary mb-3 mt-auto d-none" id="errorNotify">
+                                <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
+                                <div class="card-body" style="background-color:white">
+                                    <p class="card-text" id="errorDescription">
+                                    </p>
+                                </div>
+                                <div class="card-footer" style="background-color:white">
+                                    <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                        View Diagnostics
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="card bg-primary mb-3 mt-auto d-none" id="errorNotify">
-                        <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
-                        <div class="card-body" style="background-color:white">
-                            <p class="card-text" id="errorDescription">
-                            </p>
-                        </div>
-                        <div class="card-footer" style="background-color:white">
-                            <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
-                                View Diagnostics
-                            </button>
-                        </div>
-                    </div>
                 </div>
+                <!--
+       COL 3
+       Notification section
+    -->
+
             </div>
-            <!--
-               COL 3
-               Notification section
-            -->
-
-
         </div>
     </div>
 
@@ -313,5 +336,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="~/Scripts/tooltip.js"></script>
     <script src="~/Scripts/AppScripts/Extractor.js"></script>
+ 
 </body>
 </html>

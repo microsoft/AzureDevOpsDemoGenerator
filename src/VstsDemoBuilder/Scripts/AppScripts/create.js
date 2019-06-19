@@ -52,11 +52,11 @@ var gitFork = "";
 $(document).ready(function (event) {
     uniqueId = ID();
     $('.rmverror').click(function () {
-        var errID = this.nextElementSibling.getAttribute('id');
-        $('#' + errID).removeClass("d-block").addClass("d-none");
+        var errID = this.id;
+        $('#' + errID+'_Error').removeClass("d-block").addClass("d-none");
     });
     $('body').on('click', '.rmverrorOn', function () {
-        var errID = this.nextElementSibling.getAttribute('id');
+        var errID = this.closest('div').nextSibling.getAttribute('id');
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
 
@@ -74,10 +74,9 @@ $(document).ready(function (event) {
         $('#accountLink').empty();
         $('#finalLink').removeClass("d-block").addClass("d-none");
         $('#errorNotify').removeClass("d-block").addClass("d-none");
-
+        $('#templateselection').removeClass("btn-primary").prop("disabled", true);
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
-
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
             return false;
         }
@@ -99,7 +98,11 @@ $(document).ready(function (event) {
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
-        var selectedTemplateDescription = $(".description.descSelected").data('description');
+        var selectedTemplateDescription = $(".template.selected").data('description');
+        var templateIcon = $(".template.selected").data('image');
+        var templateName = $(".template.selected").data('template');
+        $('#templateIcon').attr('src', templateIcon);
+        $('#templateName').innerHTML = templateName;
 
         var selectedTemplateName = $('.template.selected').data('template');
         $('#templatePreviewName')[0].innerHTML = selectedTemplateName;
@@ -169,7 +172,8 @@ $(document).ready(function (event) {
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
                         $.each(parameters, function (key, value) {
-                            $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
+                            $('<div class="col-lg-12 mt-1"><label for="sonarqubeurl" class="d-block col-form-label" style="font-weight:500">' + value.label + '  :</label><div class="row align-items-center ml-0"><input type="text" class="form-control col mr-3 mt-lg-0 form-input project-parameters rmverrorOn" id="txt' + value.fieldName + '" proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '" /></div><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div></div>').appendTo("#projectParameters");
+                            //$('<div class="form-group row projParameters row align-items-center ml-0"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
                     }
@@ -355,7 +359,10 @@ $(document).ready(function (event) {
         grpSelected = this.text;
         getGroups(grpSelected);
     });
-
+    $(document.body).on('click', '.nav-item', function () {
+        $(".nav-item").removeClass("active_white");
+        $(this).addClass("active_white");
+    });
     //Group load
     $.ajax({
         url: "../Environment/GetGroups",
@@ -365,9 +372,9 @@ $(document).ready(function (event) {
             if (groups.Groups.length > 0) {
                 for (var g = 0; g < groups.Groups.length; g++) {
                     if (g === 0)
-                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
+                        grp += '<li class="nav-item active_white"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>';
                     else
-                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
+                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>';
                 }
                 $('#modtemplateGroup').empty().append(grp);
 
@@ -520,7 +527,7 @@ $('#btnSubmit').click(function () {
 
         $("#ddlAcccountName").attr("disabled", "disabled");
         $("#txtProjectName").attr("disabled", "disabled");
-        $("#templateselection").prop("disabled", true);
+        $("#templateselection").prop("disabled", true).removeClass('btn-primary');
         $("input.terms").attr("disabled", true);
         $("#txtALertContainer").hide();
         $("#accountLink").html('');
@@ -657,10 +664,10 @@ function getStatus() {
                                     var accountName = $('#ddlAcccountName option:selected').val();
                                     var projectNameForLink = $("#txtProjectName").val();
                                     var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
-                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='btn btn-primary btn-sm' id = 'proceedOrg' style = 'margin: 5px;'> Navigate to project</button></a>";
+                                    var proceedOrg = "<a href='" + link + "' target='_blank'><button type = 'button' class='mt-4 mb-4 btn rd-4 btn-primary btn-sm' id = 'proceedOrg' > Navigate to project</button></a>";
                                     var social = "<p style='color: black; font-weight: 500; margin: 0px;'>Like the tool? Share your feedback &nbsp;";
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
-                                    var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
+                                    var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter-c.png' style='width:20px;'></a>&nbsp;&nbsp;";
                                     social += twitter;
                                     $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + social).appendTo("#accountLink");
                                     $('#dvProgress').removeClass("d-block").addClass("d-none");
@@ -733,7 +740,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
     var Oauthtoken = $('#hiddenAccessToken').val();
     if (accountNam !== "" && selectedTemplate !== "") {
         $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
-
+        $('#templateselection').removeClass("btn-primary").prop("disabled", true);
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
@@ -779,6 +786,7 @@ function GetRequiredExtension() {
             //$("#imgLoading").hide();
             $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
+            $('#templateselection').addClass("btn-primary").prop("disabled", false);
             $("#extensionError").show();
             $("#lblextensionError").removeClass("d-none").addClass("d-block");
             $("#txtProjectName").prop('disabled', false);
@@ -1017,6 +1025,7 @@ function getGroups(grpSelected) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
                                     grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
+                                    grp += '<div class="template-box ">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1030,6 +1039,8 @@ function getGroups(grpSelected) {
                                     }
                                     grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                     grp += '</div>';
+                                    grp += '</div>';
+                                    grp += '</div>';
                                 }
                                 else {
                                     var templateImgs = MatchedGroup.Template[i].Image;
@@ -1037,6 +1048,7 @@ function getGroups(grpSelected) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
                                     grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
+                                    grp += '<div class="template-box ">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1050,6 +1062,10 @@ function getGroups(grpSelected) {
                                     }
                                     grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
                                     grp += '</div>';
+                                    grp += '</div>';
+                                    grp += '</div>';
+
+
                                 }
                             }
                             $('#selecttmplate').show();
@@ -1064,7 +1080,6 @@ function getGroups(grpSelected) {
         }
     });
 }
-
 function checkGitAuth() {
     var gToken = $('#hdnGToken').val();
     console.log("GH " + gToken);

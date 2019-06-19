@@ -1692,6 +1692,17 @@ pre {
 }
 
 @media (max-width: 767.98px) {
+    .azuretitle {
+        font-size: 13px !important;
+    }
+
+    .navbar {
+        height: 100px !important;
+    }
+
+    .navbar-brand {
+        white-space: normal !important;
+    }
     .table-responsive-md {
         display: block;
         width: 100%;
@@ -1703,9 +1714,13 @@ pre {
         .table-responsive-md > .table-bordered {
             border: 0
         }
-}
+ 
+    }
 
 @media (max-width: 991.98px) {
+    .jumbotron {
+        background: url(../images/bg_tab.jpg), #106ebe !important;
+    }
     .table-responsive-lg {
         display: block;
         width: 100%;
@@ -7983,8 +7998,15 @@ html, body {
 }
 
 .jumbotron {
-    background: url('../images/vsts_header_image.png'), #106ebe;
-    background-size: 1500px;
+    background: url(../images/bg.jpg), #106ebe;
+    background-size: cover;
+    background-position: center;
+  
+}
+.build_temp {
+    background: url(../images/2.png), #106ebe;
+    background-size: cover;
+    background-position: center;
 }
 
 .custom-radio button {
@@ -8022,10 +8044,10 @@ html, body {
 }
 
 .template p i {
-    font-size: 13px !important;
+    font-size: 11px !important;
     color: #1d2124 !important;
     line-height: 22px;
-    background-color: #e9ecef;
+    /*background-color: #e9ecef;*/
     display: inline-block;
     margin: 0 3px 6px 0;
     padding: 1px 9px;

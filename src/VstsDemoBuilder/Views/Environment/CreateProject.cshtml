@@ -64,21 +64,22 @@
     <input type="hidden" id="hdnMessage" />
     <input type="hidden" id="hdnGToken" />
     <!--TEMPLATE GROUPING-->
-    <div class="VSTemplateSelection p-3 d-none" aria-hidden="true">
+    <div class="VSTemplateSelection p-2 d-none" aria-hidden="true">
         <div class="template-holder bg-white ">
-            <div class="template-dialog-title text-primary p-3 text-center">
-                <span>Choose a template</span>
+            <span class="templateAlign">Choose a template</span>
+            <div class="template-dialog-title text-primary text-center">
+                <ul class="template_tab" role="tablist" id="modtemplateGroup"></ul>
                 <div class="template-close">X</div>
             </div>
-            <div class="template-group bg-primary d-flex align-items-center p-3">
-                <ul class="nav nav-pills w-100 justify-content-center" role="tablist" id="modtemplateGroup"></ul>
-            </div>
-            <div class="template-body vstsScroll bg-light p-3">
+            @*<div class="template-group  d-flex align-items-center p-2 ">
+
+        </div>*@
+            <div class="template-body vstsScroll p-3">
                 <div class="tab-content" id="pills-tabContent">
                 </div>
             </div>
             <div class="template-footer p-3 bg-white text-right">
-                <button class="btn btn-primary" id="selecttmplate">Select Template</button>
+                <button class="btn btn-primary rd-4" id="selecttmplate">Select Template</button>
             </div>
         </div>
     </div>
@@ -86,8 +87,8 @@
     <!-- MODAL -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content demo_form">
+                <div class="modal-header demo-header">
                     <h5 class="modal-title" id="exampleModalLabel">Copy Diagnostic Log</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -98,20 +99,21 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary rd-4" data-dismiss="modal">Close</button>
                     @*<button type="button" class="btn btn-primary" id="sendEmail">Send Email</button>*@
                 </div>
             </div>
         </div>
     </div>
     <!-- /MODAL -->
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
+    <nav class="navbar demo-nav-bar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
         <a class="navbar-brand p-0 mr-auto" href="../Account/Verify">
             <img src="~/content/assets/images/VS_logo.png" alt="">
             <span class="navbar-brand-text ml-1">
                 Azure DevOps Demo Generator
             </span>
         </a>
+
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -119,7 +121,7 @@
                     <img src="~/content/assets/images/VSTS-user-image.svg" alt="Azure DevOps Demo Generator">
                     @if (Session["User"] != null)
                     {
-                        <span class="VSTS-username ml-1" style="font-size:16px">@Session["User"].ToString()</span>
+                        <span class="VSTS-username ml-1">@Session["User"].ToString()</span>
                     }
                     <span class="sr-only">(current)</span>
                 </a>
@@ -128,22 +130,34 @@
                     <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
                 </div>
             </li>
+
         </ul>
+
     </nav>
-    <div class="jumbotron mb-0" style="padding-bottom: 25px; padding-top: 25px;">
-        <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
-            Create New Project
-        </div>
+
+
+    <div class="jumbotron createDemoContainer mb-0" style="padding-bottom: 25px; padding-top: 25px;">
+        @*<div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
+                Create New Project
+            </div>*@
+        <p class="m-0 social-icons">
+            <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
+            <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on Facebook"><img src="~/Images/facebook.png" style="width:10px" /></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank" title="Share on LinkedIn"><img src="~/Images/linkedin.png" style="width:17px" /></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank" title="Share on Twitter"><img src="~/Images/twitter.png" style="width:17px" /></a>
+            <a class="fa fa-envelope" style="color:white;padding-top: 7px;" href="#" data-toggle="tooltip" title="Send Feedback" onclick="javascript:window.location='mailto:AzureDevOpsDemoGenerator@service.microsoft.com?subject=Azure DevOps Demo Generator Feedback &amp;body=I have some feedback about the Azure DevOps Demo Generator: ' + window.location.href;"></a>
+        </p>
         @{
             if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
             {
-                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                    <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+                <div class="text-center display-4 templte_create p-3" id="greeting" style="line-height: 1.2;">
+                    <a href="../extractor/index" target="_blank" class="createtemplate">Build your template</a>
                 </div>
             }
         }
 
     </div>
+
     @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
     {
         <div class="col-sm-12" style="background-color:#ffaeae">
@@ -151,23 +165,23 @@
         </div>
     }
 
-    <div class="container-fluid mt-3">
-        <div class="row VSTS-mh-100">
+    <div class="container mt-3">
+        <div class="row VSTS-mh-100 create-new-project" style="align-items:flex-start">
             <!--
                   COL 1
                   Image and Feedback section
             -->
-            <div class="col-md-3 order-3 order-md-1 VSTS-mh-100">
-                <div class="d-flex flex-column VSTS-mh-100">
-                    <img class="img-fluid mob_d" src="~/content/assets/images/VSTS-demoGen-image.png" alt="" style="max-width: 88%; opacity:0.3">
-                    <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
+            @*<div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
+                <div class="d-flex flex-column VSTS-mh-100 demo_gen_img">
+                    <img class="img-fluid img-demo" src="~/Images/sideImage2.png" >
+                   <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
                         <h6>Feedback&colon;</h6>
                         <p class="mb-0">
                             To provide feedback, you can email us
                             <a class="text-primary" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com">here </a>.
                         <p>Like our tool? We would appreciate if you share feedback on social</p>
 
-                        <p>
+                        <p class="m-0">
                             <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
                             <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
                             <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+Devops+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
@@ -175,148 +189,181 @@
                         </p>
                     </div>
                 </div>
-            </div>
+                    </div>*@
             <!--
                 COL 2
                 Create section
             -->
-            <div class="col-md-6 order-1 order-md-2">
-                <div style="border:1px solid #ccc; padding:15px;">
-                    <div class="form-group row">
-                        <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
-                        <div class="col-lg-8">
+            <div class="col-md-8 order-1 order-md-2">
 
-                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                            </div>
-                            <div style="color:red">
-                                @ViewBag.AccDDError
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
-                        <div class="col-lg-8">
-                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row" id="">
-                        <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
-                        <div class="col-lg-5  mb-3 mt-1">
-                            <input type="text" class="form-control" id="ddlTemplates" disabled />
-                            <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
+                <div class="demo_form">
+                    <div class="demo-header"><h5>Create New Project</h5></div>
+                    <div class="demo-content">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div class="row">
 
-                            </div>
-                        </div>
-                        <div class="template-invoke mb-3 mt-1 col-lg-3">
-                            <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
-                                Choose template
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="border:1px solid #ccc; margin-top:15px;" id="gitHubCheckboxDiv">
-                    <div class="form-group row">
-                        <div class="col-lg-12">
-                            <div class="git_support">
-                                <div for="Template" class="col-lg-12 col-sm-12 p-0">
-                                    <p class="githubPng"><b>Azure DevOps Demo Generator now supports GitHub forking!</b></p>
-                                    <p class="m-2">
-                                        The selected template includes a GitHub repository. You can choose to fork it or use the existing
-                                        repo. If you fork, all pipelines will be updated to point to the forked repo.
-                                    </p>
+                                    <div class="align-items-center ml-0 input_box">
+                                        <label for="ddlAcccountName" class="d-block col-form-label">Select Organization :</label>
+                                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror form-select", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                                        </div>
+                                    </div>
+                                    <div style="color:red">
+                                        @ViewBag.AccDDError
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 float-left"></div>
-                            <div class="col-lg-5  mb-3 mt-3 float-left" style="">
-                                <div class="template-invoke mb-3 mt-1 inlinestyle">
-                                    <input type="checkbox" id="gitHubCheckbox">
+                        </div>
 
+                        <div class="form-group" id="">
+                            <div class="col-lg-12 mt-1">
+
+                                <div class="row">
+                                    <label for="Template" class="d-block col-form-label ">Choose template  :</label>
+                                    <div class="align-items-center ml-0 input_box">
+                                        <input type="text" class="form-control col mr-3 mt-lg-0 form-input" id="ddlTemplates" disabled />
+                                        <div class="alert alert-danger d-none col-md-12" role="alert" id="ddlTemplates_Error">
+                                        </div>
+                                    </div>
+                                    <div class="template-invoke pl-3" style="padding-left:0px;">
+                                        <button class="btn btn-primary rd-4" id="templateselection">
+                                            Choose template
+                                        </button>
+                                    </div>
                                 </div>
-                                <p class="inlinestyle mt-1">Yes, I want to fork this repository</p>
                             </div>
-                            <div class="template-invoke mb-3 mt-3 col-lg-3 float-left" id="gitHubAuthDiv">
-                                <button type="button" class="btn githubIcon" id="githubAuth" style="padding-left:5px; padding-right:5px; width: 100%" disabled="">
-                                    Authorize
-                                </button>
+                        </div>
+                        <div class="form-group mb-1" id="">
+                            <div class="col-lg-12 mt-1">
+                                <div class="row">
+                                    <div class="github_forking_text">
+                                        <p class="check_cnt">Azure DevOps Demo Generator now supports GitHub forking! </p>
+                                        <p>
+                                            The selected template includes a GitHub repository. You can choose to fork it or use the existing repo.
+                                            If you fork, all pipelines will be updated to point to the forked repo.
+                                        </p>
+                                    </div>
+
+                                    <div class="align-items-center ml-0 input_box git_option" id="gitHubCheckboxDiv">
+                                        <label class="chbox">
+                                            <label class="check_txt">
+                                                Yes, I want to fork this repository
+                                            </label>
+                                            <input type="checkbox" id="gitHubCheckbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-invoke imp_btn pl-3 d-none" style="padding-left:0px;" id="gitHubAuthDiv">
+                                        <button class="btn btn-primary importgit rd-4" id="githubAuth">
+                                            Authorize
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="form-group mb-1" id="">
+                            <div class="col-lg-12 mt-1">
+                                <div class="row">
+                                    <div class="align-items-center ml-0 input_box d-none" id="gitHubCheckboxDiv">
+                                        <label></label>
+                                        <label class="check_cnt"> Do you want to fork repository to your account? </label>
+                                        <label class="chbox">
+                                            <input type="checkbox"  id="gitHubCheckbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        </div>
+                                        <div class="template-invoke imp_btn pl-3 d-none" style="padding-left:0px;" id="gitHubAuthDiv">
+                                        <button class="btn btn-primary importgit rd-4" id="githubAuth">
+                                            Authorize
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="">
+                            <div class="col-lg-12 mt-1">
+                                <div class="row">
+                                    <label for="Template" class="d-block col-form-label ">New Project Name  :</label>
+                                    <div class="align-items-center ml-0 input_box">
+                                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control col mr-3 mt-lg-0 rmverror form-input ", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                                        <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                                        </div>
+                                    </div>
+                                    <div class="template-invoke pl-3 " style="padding-left:0px;">
+                                        <button class="btn btn-primary submitBtn btnUpdate rd-4" id="btnSubmit" >
+                                            &nbsp;&nbsp;Create Project &nbsp;&nbsp;
+                                        </button>
+                                        <img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- PROJECT PARAMETERS -->
+                        <div id="projectParameters" style="display:none">
+                        </div>
+                        <!-- PROJECT PARAMETERS -->
+                        <!--EXTENSIONS -->
+
+
+                        <div class="mt-4 border p-3 d-none varifying_container" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                            <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
+                            <div class="extensionError boldText">
+                                <p style="display:none;" id="extensionError"></p>
+                            </div>
+                        </div>
+                        <!--/EXTENSIONS -->
+                        <div class="card mt-3 d-none col-lg-12" id="finalLink" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
+                            <div class="card-body" id="accountLink" style="color: green;font-weight: 300; padding-left:0px; padding-right:0px;">
+                            </div>
+                        </div>
+                        <!-- PROGRESS BAR -->
+                        <div class="progress mt-3 d-none" id="dvProgress" style="padding-left:0px;">
+                            <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
+
+
+                        <!-- PROGRESS BAR -->
+                        <div id="status-messages" class="border p-3 mt-3" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
                         </div>
                     </div>
                 </div>
 
-                <div id="projectParameters" style="display:none">
-                </div>
-                <!-- PROJECT PARAMETERS -->
-                <!--EXTENSIONS -->
-                <div id="InfoMessage" style="border-radius: 4px;box-shadow: 0px 5px 20px #f2f2f2;" class="border col-lg-12 d-block mt-4 p-3">
-
-                </div>
-                <div class="mt-4 mb-3 border p-3 d-none col-lg-12" id="lblextensionError" style="border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
-                    <div style="margin-bottom: 6px;" class="boldText"><strong>Verifying if all required extension(s) are installed and enabled</strong></div>
-                    <div class="extensionError boldText">
-                        <p style="display:none;" id="extensionError"></p>
-                    </div>
-                </div>
-                <!--/EXTENSIONS -->
-                <div class="col-lg-12">
-                    <div class="form-group row" id="">
-                        <div class="col-lg-3 float-left"></div>
-                        <div class="col-lg-5  mb-3 mt-3 float-left" style=""></div>
-                        <div class="col-lg-3  mb-3 mt-3 m-0">
-                            <button class="btn btn-primary submitBtn btnUpdate " id="btnSubmit" style=" width: 100%;">
-                                Create Project
-                            </button>
-                            @*<img src="~/Images/loading.gif" alt="loading" class="img-circle" id="imgLoading" style="display:none;" />*@
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-3 d-none col-lg-12" id="finalLink">
-                    <div class="card-body" id="accountLink" style="color: green;font-weight: 300; padding-left:0px; padding-right:0px;">
-                    </div>
-                </div>
-                <!-- PROGRESS BAR -->
-                <div class="progress mt-3 d-none col-lg-12" id="dvProgress" style="padding-left:0px;">
-                    <div class="progress-bar progress-bar-striped bg-primary" id="progressBar" role="progressbar" style="width: 0%; height: 15px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <h6 class="text-muted d-none" id="textMuted">Your project is being created...</h6>
-
-                <!-- PROGRESS BAR -->
-                <div id="status-messages" class="border p-3 mt-3 col-lg-12" style="display:none; border-radius: 4px; box-shadow: 0px 5px 20px #f2f2f2;">
-                </div>
             </div>
             <!--
                COL 3
                Notification section
             -->
-            <div class="col-md-3 order-2 order-md-3">
+            <div class="col-md-4 order-3 order-md-3">
                 <!-- Description card -->
-                <div class="card text-white mb-3 vstsScroll" id="lblDescription" style="max-height:250px;overflow-y:auto;">
-                    <div class="card-header bg-primary ">About this Template</div>
+                <div class="card text-white mb-3 vstsScroll about_template" id="lblDescription">
+                    <div class="card-header"><h5>About this Template</h5></div>
                     <div class="card-body" style="background-color:white; color:black">
-                        <div class="row">
-                            <div class="column">
-                                <img src="" style="width:50px;" class="pl-3" id="templatePreviewImage" />
-                            </div>
-                            <div class="column">
-                                <p class="pt-2 pl-2" id="templatePreviewName"></p>
-                            </div>
+                        <div class="align-items-center d-flex">
+                            @*<img class="mr-3" id="templateIcon" style="width: 20px;" src="/Templates/TemplateImages/MyHealthClinic.png" alt="logo" />
+                                <p class="aboutTitle font-weight-bold m-0" id="templateName"></p>*@
                         </div>
                         <p class="card-text" id="descContainer">
 
                         </p>
                     </div>
                 </div>
-                <div class="card bg-primary mb-3 mt-auto" id="errorNotify" style="display:none;">
-                    <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
+                <div id="InfoMessage" class="d-block pl-4 pr-4 pb-4 pt-4 info_msg">
+                    <h5 class="informIcon">Information</h5>
+
+                </div>
+                <div class="card bg-primary mb-3 mt-auto  about_template" id="errorNotify" style="display:none;">
+                    <div class="card-header" style="color:white"><h5>Sorry….We ran into an issue!</h5></div>
                     <div class="card-body" style="background-color:white">
                         <p class="card-text" id="errorDescription">
                         </p>
                     </div>
                     <div class="card-footer" style="background-color:white">
-                        <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        <button class="btn rd-4 Diagno_btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
                             View Diagnostics
                         </button>
                     </div>
