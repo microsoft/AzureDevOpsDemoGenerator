@@ -22,7 +22,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         private ITemplateService templateService;
         private IProjectService projectService;
         public delegate string[] ProcessEnvironment(Project model);
-
+        public int usercount = 0;
 
         public ProjectController()
         {
@@ -38,6 +38,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             returnObj.templatePath = model.templatePath;
             returnObj.templateName = model.templateName;
             string PrivateTemplatePath = string.Empty;
+            string extractedTemplate = string.Empty;
             List<RequestedProject> returnProjects = new List<RequestedProject>();
             try
             {
@@ -54,7 +55,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 //Check for AccessToken
                 if (string.IsNullOrEmpty(model.accessToken))
                 {
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized, errormessages.AccountMessages.InvalidAccessToken ); //"Token of type Basic must be provided"
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized, errormessages.AccountMessages.InvalidAccessToken); //"Token of type Basic must be provided"
                 }
                 else
                 {
@@ -124,13 +125,14 @@ namespace VstsDemoBuilder.Controllers.Apis
                             {
                                 string fileName = Path.GetFileName(model.templatePath);
                                 string extension = Path.GetExtension(model.templatePath);
+
                                 if (extension.ToLower() == ".zip")
                                 {
-                                    ProjectService.ExtractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
-                                    templateName = ProjectService.ExtractedTemplate;
-                                    model.templateName = ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                                    extractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                                    templateName = extractedTemplate;
+                                    model.templateName = extractedTemplate.ToLower().Replace(".zip", "").Trim();
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
-                                    PrivateTemplatePath = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.gitHubToken, model.userId, model.password);
+                                    PrivateTemplatePath = templateService.GetTemplateFromPath(model.templatePath, extractedTemplate, model.gitHubToken, model.userId, model.password);
                                     if (string.IsNullOrEmpty(PrivateTemplatePath))
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
@@ -140,10 +142,10 @@ namespace VstsDemoBuilder.Controllers.Apis
                                         isPrivate = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
                                         if (!isPrivate)
                                         {
-                                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + extractedTemplate.ToLower().Replace(".zip", "").Trim();
                                             if (Directory.Exists(templatepath))
                                                 Directory.Delete(templatepath, true);
-                                            return Request.CreateResponse(HttpStatusCode.BadRequest,"Please check the selected template for Isprivate flag is true");//"TemplatePath should have .zip extension file name at the end of the url"
+                                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Please check the selected template for Isprivate flag is true");//"TemplatePath should have .zip extension file name at the end of the url"
                                         }
                                     }
                                 }
@@ -172,7 +174,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 if (model.installExtensions)
                                 {
                                     Project pmodel = new Project();
-                                    pmodel.SelectedTemplate = model.templateName;                                   
+                                    pmodel.SelectedTemplate = model.templateName;
                                     pmodel.accessToken = model.accessToken;
                                     pmodel.accountName = model.organizationName;
 
@@ -194,7 +196,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                             else
                             {
-                                ProjectService.usercount++;
+                                usercount++;
                                 project.trackId = Guid.NewGuid().ToString().Split('-')[0];
                                 project.status = "Project creation is initiated..";
                                 Project pmodel = new Project();
@@ -211,17 +213,15 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     pmodel.PrivateTemplateName = model.templateName;
                                     pmodel.IsPrivatePath = true;
                                 }
-                                    
+
                                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
                                 processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
                             returnProjects.Add(project);
                         }
-                        if (!string.IsNullOrEmpty(model.templatePath) && ProjectService.usercount == 0)
+                        if (!string.IsNullOrEmpty(model.templatePath) && usercount == 0 && string.IsNullOrEmpty(extractedTemplate))
                         {
-                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                            if (Directory.Exists(templatepath))
-                                Directory.Delete(templatepath, true);
+                            templateService.deletePrivateTemplate(extractedTemplate);
                         }
                     }
                 }
@@ -253,21 +253,26 @@ namespace VstsDemoBuilder.Controllers.Apis
         /// <param name="result"></param>
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
+            string templateUsed = string.Empty;
+            string ID = string.Empty;
+            string accName = string.Empty;
             try
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 string[] strResult = processTask.EndInvoke(result);
-
-                projectService.RemoveKey(strResult[0]);
-                if (ProjectService.StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
+                ID = strResult[0];
+                accName = strResult[1];
+                templateUsed = strResult[2];
+                projectService.RemoveKey(ID);
+                if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
                 {
-                    string errorMessages = ProjectService.statusMessages[strResult[0] + "_Errors"];
+                    string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
                     if (errorMessages != "")
                     {
                         //also, log message to file system
                         string logPath = HostingEnvironment.MapPath("~") + @"\Log";
                         string accountName = strResult[1];
-                        string fileName = string.Format("{0}_{1}.txt", ProjectService.templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                         if (!Directory.Exists(logPath))
                         {
@@ -280,10 +285,10 @@ namespace VstsDemoBuilder.Controllers.Apis
                         string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
                         string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
                         string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                        string issueName = string.Format("{0}_{1}", ProjectService.templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                         IssueWI objIssue = new IssueWI();
 
-                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + ProjectService.templateUsed;
+                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
                         errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
 
                         ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
@@ -295,7 +300,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                         }
                     }
                 }
-                ProjectService.usercount--;
+                usercount--;
             }
             catch (Exception ex)
             {
@@ -303,12 +308,9 @@ namespace VstsDemoBuilder.Controllers.Apis
             }
             finally
             {
-                if (ProjectService.usercount == 0 && !string.IsNullOrEmpty(ProjectService.ExtractedTemplate))
+                if (usercount == 0 && !string.IsNullOrEmpty(templateUsed))
                 {
-                    var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                    if (Directory.Exists(templatepath))
-                        Directory.Delete(templatepath, true);
-
+                    templateService.deletePrivateTemplate(templateUsed);
                 }
             }
         }

@@ -64,6 +64,16 @@ $(document).ready(function (event) {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
         ga('send', 'event', 'Choose Template Button', 'Clicked');
+        var privateTemplate = $('#PrivateTemplateName', parent.document).val(); 
+        if (privateTemplate !== "") {
+            $.ajax({
+                url: "../Environment/DeletePrivateTemplate",
+                type: "POST",
+                data: { TemplateName: privateTemplate },
+                success: function (Data) {
+                }
+            });
+        }         
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -91,8 +101,10 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
-        debugger;       
+        debugger;
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
+
+        var privateTemplate = $('#PrivateTemplateName', parent.document).val();
         $('#PrivateTemplateName', parent.document).val('');
         $('#PrivateTemplatePath', parent.document).val('');
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
@@ -223,6 +235,16 @@ $(document).ready(function (event) {
         else {
             GetRequiredExtension();
         }
+
+        if (privateTemplate !== "") {
+            $.ajax({
+                url: "../Environment/DeletePrivateTemplate",
+                type: "POST",
+                data: { TemplateName: privateTemplate },
+                success: function (Data) {
+                }
+            });
+        }       
     });
 
     $("body").on("click", "#EmailPopup", function () {
@@ -732,7 +754,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
-            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath:privatePath },
+            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
 
                 callBack(InstalledExtensions);

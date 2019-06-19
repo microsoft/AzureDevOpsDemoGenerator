@@ -278,5 +278,17 @@ namespace VstsDemoBuilder.Services
             }
             return isPrivate;
         }
+
+        public void deletePrivateTemplate(string Template)
+        {
+            if (!string.IsNullOrEmpty(Template))
+            {
+                var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + Template;
+                if (Directory.Exists(templatepath))
+                {
+                    Directory.Delete(templatepath, true);
+                }
+            }
+        }
     }
 }

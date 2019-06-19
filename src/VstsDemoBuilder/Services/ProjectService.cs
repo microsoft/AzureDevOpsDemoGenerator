@@ -48,14 +48,12 @@ namespace VstsDemoBuilder.Services
         public static Dictionary<string, string> statusMessages;
         public static ILog logger = LogManager.GetLogger("ErrorLog");
 
-        public static bool isDefaultRepoTodetele = true;
-        public static string websiteUrl = string.Empty;
-        public static string templateUsed = string.Empty;
+        public  bool isDefaultRepoTodetele = true;
+        public  string websiteUrl = string.Empty;
+        public  string templateUsed = string.Empty;
         public static string projectName = string.Empty;
         public static AccessDetails AccessDetails = new AccessDetails();
-
-        public static string ExtractedTemplate = "";
-        public static int usercount = 0;
+       
         public string templateVersion = string.Empty;
         public static string enableExtractor = "";
 
@@ -162,6 +160,7 @@ namespace VstsDemoBuilder.Services
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model)
         {
+
             string accountName = model.accountName;
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
             string pat = model.accessToken;
@@ -971,7 +970,7 @@ namespace VstsDemoBuilder.Services
                 Directory.Delete(Path.Combine(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed)), true);
             }
             StatusMessages[model.id] = "100";
-            return new string[] { model.id, accountName };
+            return new string[] { model.id, accountName ,templateUsed};
         }
 
         /// <summary>
@@ -2663,7 +2662,7 @@ namespace VstsDemoBuilder.Services
                 ExtensionRequired = false;
             }
             return ExtensionRequired;
-        }
+        }       
 
     }
 }

@@ -118,11 +118,12 @@
                 isUrlValid = true;
             }
         }
+        var oldTemplate = $('#PrivateTemplateName', parent.document).val();
         if (isUrlValid) {
             $.ajax({
                 url: "../Environment/UploadPrivateTemplateFromURL",
                 type: "GET",
-                data: { TemplateURL: URL, token: GitHubtoken, userId: userId, password: password },
+                data: { TemplateURL: URL, token: GitHubtoken, userId: userId, password: password, OldPrivateTemplate: oldTemplate },
                 success: function (Data) {
                     if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
                         console.log(Data);
@@ -141,17 +142,8 @@
                         $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
                         $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
                         $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
+                        $('#gitHubCheckboxDiv', parent.document).addClass('d-none');
 
-                        //$('#PrivateTemplateName', parent.document).val(Data.privateTemplateName);
-                        //templateFolder = Data.privateTemplateName;
-                        //$('#PrivateTemplatePath', parent.document).val(Data.privateTemplatePath);
-                        //$('#ddlTemplates', parent.document).val(filename[0]);
-                        //$('#selectedTemplateFolder', parent.document).val(filename[0]);
-                        //$(".template-close", parent.document).click();
-                        //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
-                        ////$("#lblextensionError", parent.document).removeClass("d-block").addClass("d-none");
-                        //$("#btnSubmit", parent.document).prop("disabled", false).addClass('btn-primary');
-                        //$("#templateselection", parent.document).addClass('btn-primary').prop("disabled", false);
                     }
                     else {
                         $("#urlerror").empty().append('unable to download template, please check the template URL and authentication details'); isUrlValid = false;
