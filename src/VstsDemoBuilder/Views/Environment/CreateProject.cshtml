@@ -234,13 +234,22 @@
                         <div class="form-group mb-1" id="">
                             <div class="col-lg-12 mt-1">
                                 <div class="row">
+                                    <div class="github_forking_text">
+                                        <p class="check_cnt">Azure DevOps Demo Generator now supports GitHub forking! </p>
+                                        <p>
+                                            The selected template includes a GitHub repository. You can choose to fork it or use the existing repo.
+                                            If you fork, all pipelines will be updated to point to the forked repo.
+                                        </p>
+                                    </div>
+
                                     <div class="align-items-center ml-0 input_box git_option" id="gitHubCheckboxDiv">
-                                        <label class="check_cnt">Supporting GitHub : </label>
                                         <label class="chbox">
-                                            <label class="check_txt">Fork repository</label>
-                                            <input type="checkbox"  id="gitHubCheckbox">
+                                            <label class="check_txt">
+                                                Yes, I want to fork this repository
+                                            </label>
+                                            <input type="checkbox" id="gitHubCheckbox">
                                             <span class="checkmark"></span>
-                                        </label>                                      
+                                        </label>
                                     </div>
                                     <div class="template-invoke imp_btn pl-3 d-none" style="padding-left:0px;" id="gitHubAuthDiv">
                                         <button class="btn btn-primary importgit rd-4" id="githubAuth">
@@ -254,7 +263,7 @@
                             <div class="col-lg-12 mt-1">
                                 <div class="row">
                                     <div class="align-items-center ml-0 input_box d-none" id="gitHubCheckboxDiv">
-                                        <label>12123</label>
+                                        <label></label>
                                         <label class="check_cnt"> Do you want to fork repository to your account? </label>
                                         <label class="chbox">
                                             <input type="checkbox"  id="gitHubCheckbox">

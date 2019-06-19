@@ -3826,6 +3826,13 @@ tbody.collapse.show {
         padding-right: 0;
         padding-left: 0;
     }
+    .check_cnt {
+        padding-left: 48px !important;
+        background-size: 39px !important;
+    }
+    .demo_form .form-group .git_option label {
+        float: left !important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -9330,7 +9337,7 @@ img#projectloader {
     border: .5px solid #D2D2D2;
     border-radius: 4px;
     height: 35px;
-    font-size: 13px;
+    font-size: 14px;
     color: #505050;
 }
 
@@ -9651,12 +9658,9 @@ img#projectloader {
 .demo_form .form-group .git_option label {
     width: auto;
     white-space: nowrap;
-    float: left;
+    float: right;
 }
-    .demo_form .form-group .git_option label:first-of-type {
-        margin-right: 18px;
-       
-    }
+
     /* On mouse-over, add a grey background color */
     .chbox:hover input ~ .checkmark {
         background-color: #ccc;
@@ -9698,18 +9702,30 @@ img#projectloader {
 
 .check_cnt {
     display: inline-block;
-    width: auto !important;
+    width: 100% !important;
     vertical-align: -webkit-baseline-middle;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     background-image: url(../../Content/assets/images/GitHub-black.png) !important;
     background-repeat: no-repeat;
     background-size: contain;
     padding-left: 24px;
+    font-weight:bold;
 }
-.forkrepos {
-    font-size: 15px;
-    display: inherit;
+.github_forking_text {
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 8px;
+    margin: 18px 0;
 }
+
+.github_forking_text p {
+    font-size: 14px;
+}
+    .github_forking_text p:nth-child(2){ margin-bottom:0;}
+    .forkrepos {
+        font-size: 15px;
+        display: inherit;
+    }
 .importgit {
     background-image: url('../../Content/assets/images/github-icon.png') !important;
     background-repeat: no-repeat;
@@ -10014,6 +10030,9 @@ img#projectloader {
         padding: 14px 10px;
         font-size: 26px;
     }
+    .github_forking_text p {
+        font-size: 22px;
+    }
 
 }
 @media only screen and (min-width: 2300px) {
@@ -10173,6 +10192,9 @@ img#projectloader {
         width: 60px !important;
         height: 60px;
         border: 2px solid #fff;
+    }
+    .github_forking_text p {
+        font-size: 24px;
     }
      
 }
@@ -10338,6 +10360,15 @@ img#projectloader {
         border-radius: 9px;
         padding: 15px 20px;
     }
+    .github_forking_text p {
+        font-size: 27px;
+    }
+    .github_forking_text {
+        padding: 34px;
+        border-radius: 12px;
+        margin-bottom: 26px;
+    }
+
     }
     @media only screen and (min-width: 2800px) {
         ::-webkit-scrollbar, -moz-scrollbar {
@@ -10429,6 +10460,10 @@ img#projectloader {
             height: 66px;
             border: 2px solid #fff;
         }
+        .github_forking_text p {
+            font-size: 30px;
+        }
+        .check_cnt{ margin-bottom:16px;}
      
     }
 
@@ -10563,6 +10598,9 @@ img#projectloader {
         width: 43px;
         height: 42px !important;
     }
+    .github_forking_text p {
+        font-size: 32px;
+    }
    
 }
 option {
@@ -10617,5 +10655,8 @@ option {
     }
     .demo_form select, .demo_form input {
         padding:0 48px;
+    }
+    .github_forking_text p {
+        font-size: 36px;
     }
 }
