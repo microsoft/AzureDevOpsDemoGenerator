@@ -10,6 +10,7 @@ using System.Web.Hosting;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
+using VstsRestAPI.Viewmodel.Extractor;
 using static VstsDemoBuilder.Models.TemplateSelection;
 
 namespace VstsDemoBuilder.Services
@@ -140,9 +141,9 @@ namespace VstsDemoBuilder.Services
         /// </summary>
         /// <param name="TemplateUrl"></param>
         /// <param name="ExtractedTemplate"></param>
-        public bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "")
+        public string GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "")
         {
-            bool isvalidFile = false;
+            string templatePath = string.Empty;         
             try
             {
                 Uri uri = new Uri(TemplateUrl);
@@ -177,7 +178,8 @@ namespace VstsDemoBuilder.Services
                     webClient.Dispose();
                 }
 
-                isvalidFile = ExtractZipFile(path, templateName);
+               templatePath = ExtractZipFile(path, templateName);
+                
             }
             catch (Exception ex)
             {
@@ -189,11 +191,12 @@ namespace VstsDemoBuilder.Services
                 if (File.Exists(zippath))
                     File.Delete(zippath);
             }
-            return isvalidFile;
+            return templatePath;
         }
 
-        public bool ExtractZipFile(string path, string templateName)
+        public string ExtractZipFile(string path, string templateName)
         {
+            string templatePath = string.Empty;
             bool isExtracted = false;
             try
             {
@@ -204,14 +207,14 @@ namespace VstsDemoBuilder.Services
 
                     isExtracted = checkTemplateDirectory(Extractedpath);
                     if (isExtracted)
-                        ProjectService.PrivateTemplatePath = FindPrivateTemplatePath(Extractedpath);
+                        templatePath = FindPrivateTemplatePath(Extractedpath);
                 }
             }
             catch (Exception ex)
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
-            return isExtracted;
+            return templatePath;
 
         }
 
@@ -258,5 +261,34 @@ namespace VstsDemoBuilder.Services
             return templatePath;
         }
 
+        public bool checkSelectedTemplateIsPrivate( string templatePath)
+        {
+            bool isPrivate = false;
+            bool settingFile = (System.IO.File.Exists(templatePath + "\\ProjectSettings.json") ? true : false);
+            bool projectFile = (System.IO.File.Exists(templatePath + "\\ProjectTemplate.json") ? true : false);
+            if (settingFile && projectFile)
+            {
+                string projectFileData = System.IO.File.ReadAllText(templatePath + "\\ProjectTemplate.json");
+                ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
+
+                if (!string.IsNullOrEmpty(settings.IsPrivate))
+                {
+                    isPrivate = true;
+                }
+            }
+            return isPrivate;
+        }
+
+        public void deletePrivateTemplate(string Template)
+        {
+            if (!string.IsNullOrEmpty(Template))
+            {
+                var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + Template;
+                if (Directory.Exists(templatepath))
+                {
+                    Directory.Delete(templatepath, true);
+                }
+            }
+        }
     }
 }

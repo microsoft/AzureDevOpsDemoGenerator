@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
@@ -19,26 +20,11 @@ namespace VstsDemoBuilder.Controllers
 {
     public class EnvironmentController : Controller
     {
-
-        //#region Variables & Properties
-        //private static readonly object objLock = new object();
-        //private static Dictionary<string, string> statusMessages;
-        //private ILog logger = LogManager.GetLogger("ErrorLog");
-
         private delegate string[] ProcessEnvironment(Project model);
-        //public bool isDefaultRepoTodetele = true;
-        //public string websiteUrl = string.Empty;
-        //public string templateUsed = string.Empty;
-        //public string projectName = string.Empty;
-        //private string ProjectService.extractPath = string.Empty;
-        //private AccessDetails _accessDetails = new AccessDetails();
-        //private string logPath = "";
-        //private string templateVersion = string.Empty;
-        //private string enableExtractor = "";
-
         private IProjectService projectService;
         private ITemplateService templateService;
         private IAccountService accountService;
+
         public EnvironmentController(IProjectService _ProjectService, IAccountService _accountService, ITemplateService _templateService)
         {
             projectService = _ProjectService;
@@ -277,6 +263,18 @@ namespace VstsDemoBuilder.Controllers
                 return Redirect("../Account/Verify");
             }
         }
+        [AllowAnonymous]
+        public ActionResult PrivateTemplate()
+        {
+            if (Session["visited"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("../Account/Verify");
+            }
+        }
 
         /// <summary>
         /// Call to Create View()
@@ -388,6 +386,7 @@ namespace VstsDemoBuilder.Controllers
         [HttpPost]
         public ActionResult UnzipFile(string fineName)
         {
+            string extractPath = string.Empty;
             try
             {
                 if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
@@ -398,22 +397,22 @@ namespace VstsDemoBuilder.Controllers
                 string zipPath = Server.MapPath("~/Templates/" + fineName);
                 string folder = fineName.Replace(".zip", "");
 
-                ProjectService.extractPath = Server.MapPath("~/Templates/" + folder);
+                extractPath = Server.MapPath("~/Templates/" + folder);
 
-                if (Directory.Exists(ProjectService.extractPath))
+                if (Directory.Exists(extractPath))
                 {
                     System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
                     return Json("Folder already exist. Please rename the folder and upload it.");
                 }
-                System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, ProjectService.extractPath);
+                System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
 
-                bool settingFile = (System.IO.File.Exists(ProjectService.extractPath + "\\ProjectSettings.json") ? true : false);
-                bool projectFile = (System.IO.File.Exists(ProjectService.extractPath + "\\ProjectTemplate.json") ? true : false);
+                bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
+                bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
 
                 if (settingFile && projectFile)
                 {
-                    string projectFileData = System.IO.File.ReadAllText(ProjectService.extractPath + "\\ProjectTemplate.json");
+                    string projectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
                     ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
 
                     if (!string.IsNullOrEmpty(settings.IsPrivate))
@@ -422,13 +421,13 @@ namespace VstsDemoBuilder.Controllers
                     }
                     else
                     {
-                        Directory.Delete(ProjectService.extractPath, true);
+                        Directory.Delete(extractPath, true);
                         return Json("ISPRIVATEERROR");
                     }
                 }
                 else if (!settingFile && !projectFile)
                 {
-                    string[] folderName = System.IO.Directory.GetDirectories(ProjectService.extractPath);
+                    string[] folderName = System.IO.Directory.GetDirectories(extractPath);
                     string subDir = "";
                     if (folderName.Length > 0)
                     {
@@ -451,7 +450,7 @@ namespace VstsDemoBuilder.Controllers
                             if (!string.IsNullOrEmpty(settings1.IsPrivate))
                             {
                                 string sourceDirectory = subDir;
-                                string targetDirectory = ProjectService.extractPath;
+                                string targetDirectory = extractPath;
                                 string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
                                 if (!Directory.Exists(backupDirectory))
                                 {
@@ -492,24 +491,24 @@ namespace VstsDemoBuilder.Controllers
                             }
                             else
                             {
-                                Directory.Delete(ProjectService.extractPath, true);
+                                Directory.Delete(extractPath, true);
                                 return Json("ISPRIVATEERROR");
                             }
                         }
                     }
-                    Directory.Delete(ProjectService.extractPath, true);
+                    Directory.Delete(extractPath, true);
                     return Json("PROJECTANDSETTINGNOTFOUND");
                 }
                 else
                 {
                     if (!settingFile)
                     {
-                        Directory.Delete(ProjectService.extractPath, true);
+                        Directory.Delete(extractPath, true);
                         return Json("SETTINGNOTFOUND");
                     }
                     if (!projectFile)
                     {
-                        Directory.Delete(ProjectService.extractPath, true);
+                        Directory.Delete(extractPath, true);
                         return Json("PROJECTFILENOTFOUND");
                     }
                 }
@@ -517,7 +516,7 @@ namespace VstsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                Directory.Delete(ProjectService.extractPath, true);
+                Directory.Delete(extractPath, true);
                 return Json(ex.Message);
             }
             return Json("0");
@@ -579,7 +578,10 @@ namespace VstsDemoBuilder.Controllers
                 }
                 projectService.AddMessage(model.id, string.Empty);
                 projectService.AddMessage(model.id.ErrorId(), string.Empty);
-
+                if (!string.IsNullOrEmpty(model.PrivateTemplatePath))
+                {
+                    model.IsPrivatePath = true;
+                }
                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
                 processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             }
@@ -596,45 +598,53 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="result"></param>
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
+            string templateUsed = string.Empty;
+            string ID = string.Empty;
+            string accName = string.Empty;
             try
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 string[] strResult = processTask.EndInvoke(result);
-
-                projectService.RemoveKey(strResult[0]);
-                if (ProjectService.StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
+                if (strResult != null && strResult.Length > 0)
                 {
-                    string errorMessages = ProjectService.statusMessages[strResult[0] + "_Errors"];
-                    if (errorMessages != "")
+                    ID = strResult[0];
+                    accName = strResult[1];
+                    templateUsed = strResult[2];
+                    projectService.RemoveKey(ID);
+                    if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
                     {
-                        //also, log message to file system
-                        string logPath = Server.MapPath("~") + @"\Log";
-                        string accountName = strResult[1];
-                        string fileName = string.Format("{0}_{1}.txt", ProjectService.templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-
-                        if (!Directory.Exists(logPath))
+                        string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
+                        if (errorMessages != "")
                         {
-                            Directory.CreateDirectory(logPath);
-                        }
+                            //also, log message to file system
+                            string logPath = Server.MapPath("~") + @"\Log";
+                            string accountName = strResult[1];
+                            string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                            if (!Directory.Exists(logPath))
+                            {
+                                Directory.CreateDirectory(logPath);
+                            }
 
-                        //Create ISSUE work item with error details in VSTSProjectgenarator account
-                        string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                        string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                        string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                        string issueName = string.Format("{0}_{1}", ProjectService.templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                        IssueWI objIssue = new IssueWI();
+                            System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + ProjectService.templateUsed;
-                        errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
+                            //Create ISSUE work item with error details in VSTSProjectgenarator account
+                            string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                            string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                            string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                            string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                            IssueWI objIssue = new IssueWI();
 
-                        ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+                            errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+                            errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
 
-                        string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                        if (logWIT == "true")
-                        {
-                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+
+                            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                            if (logWIT == "true")
+                            {
+                                objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            }
                         }
                     }
                 }
@@ -643,7 +653,12 @@ namespace VstsDemoBuilder.Controllers
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
+            finally
+            {
+                DeletePrivateTemplate(templateUsed);
+            }
         }
+
 
         /// <summary>
         /// Checking for Extenison in the account
@@ -654,7 +669,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public JsonResult CheckForInstalledExtensions(string selectedTemplate, string token, string account)
+        public JsonResult CheckForInstalledExtensions(string selectedTemplate, string token, string account, string PrivatePath = "")
         {
             try
             {
@@ -665,8 +680,21 @@ namespace VstsDemoBuilder.Controllers
 
                     accountName = account;
                     pat = token;
-                    string templatesFolder = Server.MapPath("~") + @"\Templates\";
-                    string extensionJsonFile = string.Format(templatesFolder + @"{0}\Extensions.json", selectedTemplate);
+                    string templatesFolder = string.Empty;
+                    string extensionJsonFile = string.Empty;
+                    if (string.IsNullOrEmpty(PrivatePath))
+                    {
+                        templatesFolder = Server.MapPath("~") + @"\Templates\";
+                        extensionJsonFile = string.Format(templatesFolder + @"\{0}\Extensions.json", selectedTemplate);
+                    }
+                    else
+                    {
+                        templatesFolder = PrivatePath;
+                        extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
+                    }
+
+
+
                     if (!(System.IO.File.Exists(extensionJsonFile)))
                     {
                         return Json(new { message = "Template not found", status = "false" }, JsonRequestBehavior.AllowGet);
@@ -808,6 +836,50 @@ namespace VstsDemoBuilder.Controllers
             {
                 return string.Empty;
             }
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public JsonResult UploadPrivateTemplateFromURL(string TemplateURL, string token, string userId, string password, string OldPrivateTemplate = "")
+        {
+            if (!string.IsNullOrEmpty(OldPrivateTemplate))
+            {
+                templateService.deletePrivateTemplate(OldPrivateTemplate);
+            }
+            PrivateTemplate privateTemplate = new PrivateTemplate();
+            string templatePath = string.Empty;
+            try
+            {
+                string templateName = "";
+                string fileName = Path.GetFileName(TemplateURL);
+                string extension = Path.GetExtension(TemplateURL);
+                templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
+                privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
+
+                bool isPrivate = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                if (!isPrivate)
+                {
+                    var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
+                    if (Directory.Exists(templatepath))
+                        Directory.Delete(templatepath, true);
+
+                    privateTemplate.responseMessage = "Please check the selected template for Isprivate flag is true";
+                }
+            }
+            catch (Exception ex)
+            {
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(privateTemplate, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public void DeletePrivateTemplate(string TemplateName)
+        {
+            templateService.deletePrivateTemplate(TemplateName);
         }
     }
 

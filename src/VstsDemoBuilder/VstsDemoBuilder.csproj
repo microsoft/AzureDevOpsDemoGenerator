@@ -1155,6 +1155,7 @@
     <Content Include="Templates\Tailwind Traders\ServiceEndpoints\GitHub_TailwindTraderBackend.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitionGitHub\Backend-CI.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitionGitHub\Website-CI.json" />
+    <Content Include="Views\Environment\PrivateTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
