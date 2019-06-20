@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,8 +11,6 @@ using System.Web.Http;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsDemoBuilder.Services;
-using VstsRestAPI;
-using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.WorkItemAndTracking;
 
@@ -24,7 +21,7 @@ namespace VstsDemoBuilder.Controllers.Apis
     {
         private ITemplateService templateService;
         private IProjectService projectService;
-        public delegate string[] ProcessEnvironment(Project model, bool IsAPI);
+        public delegate string[] ProcessEnvironment(Project model);
 
 
         public ProjectController()
@@ -80,11 +77,11 @@ namespace VstsDemoBuilder.Controllers.Apis
                     foreach (var project in model.users)
                     {
                         //check for Email and Validate project name
-                        if (!string.IsNullOrEmpty(project.email) && !string.IsNullOrEmpty(project.ProjectName))
+                        if (!string.IsNullOrEmpty(project.email) && !string.IsNullOrEmpty(project.projectName))
                         {
                             string pattern = @"^(?!_)(?![.])[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'"",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$";
 
-                            bool isProjectNameValid = Regex.IsMatch(project.ProjectName, pattern);
+                            bool isProjectNameValid = Regex.IsMatch(project.projectName, pattern);
                             List<string> restrictedNames = new List<string>() { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "PRN", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LTP", "LTP8", "LTP9", "NUL", "CON", "AUX", "SERVER", "SignalR", "DefaultCollection", "Web", "App_code", "App_Browesers", "App_Data", "App_GlobalResources", "App_LocalResources", "App_Themes", "App_WebResources", "bin", "web.config" };
 
                             if (!isProjectNameValid)
@@ -92,12 +89,12 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 project.status = errormessages.ProjectMessages.InvalidProjectName; //"Invalid Project name";
                                 return Request.CreateResponse(HttpStatusCode.BadRequest, project);
                             }
-                            else if (restrictedNames.ConvertAll(d => d.ToLower()).Contains(project.ProjectName.Trim().ToLower()))
+                            else if (restrictedNames.ConvertAll(d => d.ToLower()).Contains(project.projectName.Trim().ToLower()))
                             {
                                 project.status = errormessages.ProjectMessages.ProjectNameWithReservedKeyword;//"Project name must not be a system-reserved name such as PRN, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, NUL, CON, AUX, SERVER, SignalR, DefaultCollection, or Web";
                                 return Request.CreateResponse(HttpStatusCode.BadRequest, project);
                             }
-                            ListOfRequestedProjectNames.Add(project.ProjectName.ToLower());
+                            ListOfRequestedProjectNames.Add(project.projectName.ToLower());
                         }
                         else
                         {
@@ -114,7 +111,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     else
                     {
                         string templateName = string.Empty;
-
+                        bool isPrivate = false;
                         if (string.IsNullOrEmpty(model.templateName) && string.IsNullOrEmpty(model.templatePath))
                         {
                             return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.TemplateNameOrTemplatePath); //"Please provide templateName or templatePath(GitHub)"
@@ -133,10 +130,14 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     templateName = ProjectService.ExtractedTemplate;
                                     model.templateName = ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
-                                    bool IsDownloadableTemplate = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.GithubToken, model.UserId, model.Password);
+                                    bool IsDownloadableTemplate = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.gitHubToken, model.userId, model.password);
                                     if (!IsDownloadableTemplate)
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
+                                    }
+                                    else
+                                    {
+                                        isPrivate = true;
                                     }
                                 }
                                 else
@@ -155,13 +156,13 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                         }
                         //check for Extension file from selected template(public or private template)
-                        string extensionJsonFile = projectService.GetJsonFilePath(ProjectService.PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
+                        string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, ProjectService.PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
                         if (File.Exists(extensionJsonFile))
                         {
                             //check for Extension installed or not from selected template in selected organization
                             if (projectService.CheckForInstalledExtensions(extensionJsonFile, model.accessToken, model.organizationName))
                             {
-                                if (model.InstallExtensions)
+                                if (model.installExtensions)
                                 {
                                     Project pmodel = new Project();
                                     pmodel.SelectedTemplate = model.templateName;
@@ -179,25 +180,28 @@ namespace VstsDemoBuilder.Controllers.Apis
                         // continue to create project with async delegate method
                         foreach (var project in model.users)
                         {
-                            var result = ListOfExistedProjects.ConvertAll(d => d.ToLower()).Contains(project.ProjectName.ToLower());
+                            var result = ListOfExistedProjects.ConvertAll(d => d.ToLower()).Contains(project.projectName.ToLower());
                             if (result == true)
                             {
-                                project.status = project.ProjectName + " is already exist";
+                                project.status = project.projectName + " is already exist";
                             }
                             else
                             {
                                 ProjectService.usercount++;
-                                project.TrackId = Guid.NewGuid().ToString().Split('-')[0];
+                                project.trackId = Guid.NewGuid().ToString().Split('-')[0];
                                 project.status = "Project creation is initiated..";
                                 Project pmodel = new Project();
                                 pmodel.SelectedTemplate = model.templateName;
                                 pmodel.accessToken = model.accessToken;
                                 pmodel.accountName = model.organizationName;
-                                pmodel.ProjectName = project.ProjectName;
+                                pmodel.ProjectName = project.projectName;
                                 pmodel.Email = project.email;
-                                pmodel.id = project.TrackId;
+                                pmodel.id = project.trackId;
+                                pmodel.IsApi = true;
+                                if (model.templatePath != "")
+                                    pmodel.IsPrivatePath = true;
                                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
-                                processTask.BeginInvoke(pmodel, true, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                                processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
                             returnProjects.Add(project);
                         }

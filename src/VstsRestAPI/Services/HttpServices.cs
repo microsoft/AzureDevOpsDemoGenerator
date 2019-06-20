@@ -13,7 +13,7 @@ namespace VstsRestAPI.Services
         {
             oConfiguration.UriString = config.UriString;
             oConfiguration.Project = config.Project;
-            oConfiguration.PersonalAccessToken = config.PersonalAccessToken;// Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", config.PersonalAccessToken)));//configuration.PersonalAccessToken;
+            oConfiguration.PersonalAccessToken = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", config.PersonalAccessToken)));//configuration.PersonalAccessToken;
 
             oConfiguration.UriParams = config.UriParams;
             oConfiguration.RequestBody = config.RequestBody;

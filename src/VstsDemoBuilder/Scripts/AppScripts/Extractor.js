@@ -64,7 +64,8 @@ $(document).ready(function () {
             return;
         }
         else {
-            $('#projectloader').removeClass('d-none');
+            $('#projecctDiv').addClass('lodergif_div');
+            //$('#projectloader').removeClass('d-none');
             $('#analyseDiv').addClass('d-none'); $('#analytics').html("");
             $('#genArtDiv').addClass('d-none'); $('#artifactProgress').html("");
             $('#GenerateArtifact').addClass('d-none');
@@ -88,17 +89,20 @@ $(document).ready(function () {
                         }
                         $("#projectSelect").append(opt);
                         var options = $("#projectSelect option");
-                        $('#projectloader').addClass('d-none');
+                        $('#projecctDiv').removeClass('lodergif_div');
+                        //$('#projectloader').addClass('d-none');
                     }
                     else {
-                        $('#projectloader').addClass('d-none');
+                        $('#projecctDiv').removeClass('lodergif_div');
+                        //$('#projectloader').addClass('d-none');
                         $("#projectSelect_Error").text(da.errmsg);
                         $("#projectSelect_Error").removeClass('d-none');
                         return;
                     }
                 },
                 error: function () {
-                    $('#projectloader').addClass('d-none');
+                    $('#projecctDiv').removeClass('lodergif_div');
+                    //$('#projectloader').addClass('d-none');
                     $('#Analyse').attr('disabled', false);
                     $('#Analyse').addClass('btn-primary');
                 }
@@ -107,7 +111,8 @@ $(document).ready(function () {
     });
 
     $('#projectSelect').change(function () {
-        $('#projectloader').removeClass('d-none');
+        $('#projecctDiv').addClass('lodergif_div');
+        //$('#projectloader').removeClass('d-none');
         $('#analyseDiv').addClass('d-none'); $('#analytics').html("");
         $('#genArtDiv').addClass('d-none'); $('#artifactProgress').html("");
         $('#GenerateArtifact').addClass('d-none');
@@ -121,13 +126,15 @@ $(document).ready(function () {
         if (project === "0" || project === "" || project === 'Select Project') {
             $('#Analyse').attr('disabled', 'disabled');
             $('#Analyse').removeClass('btn-primary');
-            $('#projectloader').addClass('d-none');
+            $('#projecctDiv').removeClass('lodergif_div');
+            //$('#projectloader').addClass('d-none');
             return;
         }
         if (accSelected === '' || accSelected === 'Select Organization') {
             $('#Analyse').attr('disabled', 'disabled');
             $('#Analyse').removeClass('btn-primary');
-            $('#projectloader').addClass('d-none');
+            $('#projecctDiv').removeClass('lodergif_div');
+            //$('#projectloader').addClass('d-none');
             return;
         }
         else {
@@ -139,7 +146,8 @@ $(document).ready(function () {
                 type: 'GET',
                 data: { accname: accSelected, project: project, _credentials: key },
                 success: function (res) {
-                    $('#projectloader').addClass('d-none');
+                    $('#projecctDiv').removeClass('lodergif_div');
+                    //$('#projectloader').addClass('d-none');
                     $('#processtemplate').empty().val(res.value[4].value);
                     $('#TemplateClass').empty().val(res.TypeClass);
                     $('#processTemplateLoader').addClass('d-none');
@@ -157,7 +165,8 @@ $(document).ready(function () {
                     $('#processTemplateLoader').addClass('d-none');
                     $("#projectSelect_Error").text(e);
                     $("#projectSelect_Error").removeClass('d-none');
-                    $('#projectloader').addClass('d-none');
+                    $('#projecctDiv').removeClass('lodergif_div');
+                    //$('#projectloader').addClass('d-none');
                     $('#Analyse').addClass('btn-primary').attr('disabled', false);
                 }
             });
@@ -185,7 +194,8 @@ $(document).ready(function () {
             accountName: SourceAcc, accessToken: key
         };
         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
-        $('#imgLoading').removeClass('d-none');
+        //$('#imgLoading').removeClass('d-none');
+        $('#Analyse').addClass('lodergif');
 
         $('#genArtDiv').addClass('d-none');
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
@@ -193,6 +203,9 @@ $(document).ready(function () {
         $('#ExStatus-messages').empty();
         //$('#accountLink').empty();
         $('#finalLink').addClass('d-none');
+        $("#ddlAcccountName").prop('disabled', true);
+        $("#projectSelect").prop('disabled', true);
+
         $.ajax({
             url: '../Extractor/AnalyzeProject',
             type: 'POST',
@@ -237,15 +250,22 @@ $(document).ready(function () {
                 $('#analyseDiv').removeClass('d-none');
                 $('#collapseOne').addClass('show');
                 $('#analytics').empty().append(row);
-                $('#imgLoading').addClass('d-none');
+                //$('#imgLoading').addClass('d-none');
+                $('#Analyse').removeClass('lodergif');
                 $('#Analyse').addClass('btn-primary').attr('disabled', false);
 
                 $('#genArtDiv').removeClass('d-none');
                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                $("#ddlAcccountName").prop('disabled', false);
+                $("#projectSelect").prop('disabled', false);
+
             },
             error: function (er) {
                 $('#Analyse').addClass('btn-primary').attr('disabled', false);
-                $('#imgLoading').addClass('d-none');
+                //$('#imgLoading').addClass('d-none');
+                $('#Analyse').removeClass('lodergif');
+                $("#ddlAcccountName").prop('disabled', false);
+                $("#projectSelect").prop('disabled', false);
             }
         });
         $('#generatebtnloader').removeClass('d-none');
@@ -277,9 +297,13 @@ $(document).ready(function () {
         $('#ExStatus-messages').html('');
         $('#ExStatus-messages').show();
         $('#GenerateArtifact').removeClass('d-none');
-        $('#ExdvProgress').removeClass('d-none');
+        //$('#ExdvProgress').removeClass('d-none');
+        $('#GenerateArtifacts').addClass('lodergif');
         $('#GenerateArtifacts').removeClass('btn-primary').attr('disabled', 'disabled');
+        $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
         $('#collapseTwo').addClass('show');
+        $("#ddlAcccountName").prop('disabled', true);
+        $("#projectSelect").prop('disabled', true);
         $.ajax({
             url: '../Extractor/StartEnvironmentSetupProcess',
             type: 'POST',
@@ -288,11 +312,13 @@ $(document).ready(function () {
             success: function (res) {
                 if (res === "True") {
                     getStatus();
-                    console.log("called");
                 }
             },
             error: function (er) {
                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                $('#Analyse').addClass('btn-primary').attr('disabled', false);
+                $("#ddlAcccountName").prop('disabled', false);
+                $("#projectSelect").prop('disabled', false);
             }
         });
     });
@@ -335,11 +361,12 @@ function getStatus() {
                         console.log(response);
                         if (response === "100" || response === "") {
                             $('#artifactProgress').removeClass('d-none');
-
-                            $('#ExdvProgress').removeClass("d-block").addClass("d-none");
+                            $('#GenerateArtifacts').removeClass('lodergif');
+                            //$('#ExdvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
                             $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                            $('#Analyse').addClass('btn-primary').attr('disabled', false);
                             $('.genArtifacts').removeClass('show');
 
                             $('#ExtractorProgressBar').width(currentPercentage++ + '%');
@@ -353,20 +380,22 @@ function getStatus() {
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
-
+                            $("#ddlAcccountName").prop('disabled', false);
+                            $("#projectSelect").prop('disabled', false);
                         }
                         else {
                             ErrorData = response;
                             if (ErrorData !== '') {
                                 $('#artifactProgress').removeClass('d-none');
-
                                 currentPercentage = 0;
                                 $('#GenerateArtifacts').addClass('btn-primary').attr('disabled', false);
+                                $('#Analyse').addClass('btn-primary').attr('disabled', false);
                                 $('.genArtifacts').removeClass('show');
 
                                 $("#projCreateMsg").hide();
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
-                                $('#ExdvProgress').removeClass("d-block").addClass("d-none");
+                                $('#GenerateArtifacts').removeClass('lodergif');
+                                //$('#ExdvProgress').removeClass("d-block").addClass("d-none");
                                 $("#errorNotify").removeClass("d-none").addClass("d-block");
                                 $("#finalLink").removeClass("d-none").addClass("d-block");
 
@@ -378,6 +407,8 @@ function getStatus() {
                                 $('#ddlAcccountName').prop('selectedIndex', 0);
                                 $('#ddlGroups').removeAttr("disabled");
                                 $("#ddlAcccountName").removeAttr("disabled");
+                                $("#ddlAcccountName").prop('disabled', false);
+                                $("#projectSelect").prop('disabled', false);
                             }
                         }
                     });

@@ -92,25 +92,34 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-        $('#gitHubAuthDiv').addClass('d-none');
-        $('#githubAuth').addClass('btn-primary').prop('disabled', false);
 
+        $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
+        $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
         $('#lblDefaultDescription').hide();
         var templateFolderSelected = $(".template.selected").data('folder');
         var groputempSelected = $(".template.selected").data('template');
         var selectedTemplateDescription = $(".description.descSelected").data('description');
 
+        var selectedTemplateName = $('.template.selected').data('template');
+        $('#templatePreviewName')[0].innerHTML = selectedTemplateName;
+        console.log("Name " + selectedTemplateName);
+        var selectedTemplateImage = $('.template.selected').data('templateimage');
+        $('#templatePreviewImage').prop('src', selectedTemplateImage);
+        console.log("Image " + selectedTemplateImage);
+
         var infoMsg = $(".description.descSelected").data('message');
         //If the template enabled for GitHub fork
         var forkGitHub = $(".template.selected").data('gitfork');
         if (forkGitHub === true) {
             $('#gitHubCheckboxDiv').removeClass('d-none');
+            $('#gitHubLabelDiv').removeClass('d-none');
             $('input[id="gitHubCheckbox"]').prop('checked', false);
         }
         else {
             $('#gitHubCheckboxDiv').addClass('d-none');
-            $('#gitHubAuthDiv').addClass('d-none');
+            $('#gitHubLabelDiv').addClass('d-none');
+
         }
         //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
@@ -187,13 +196,17 @@ $(document).ready(function (event) {
                         if (ThirdParty !== "thirdparty") {
                             ThirdParty = "";
                         }
-                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+                    } else {
+                        $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                        $("#templateselection").addClass('btn-primary').prop("disabled", false);
+                    }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
                     $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    $("#templateselection").addClass('btn-primary').prop("disabled", false);
                 }
 
             });
@@ -228,6 +241,7 @@ $(document).ready(function (event) {
             if (isMicrosoftAgreement === "on" && isThirdparty === "on") {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
+                checkGitAuth();
             }
             else {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -240,6 +254,7 @@ $(document).ready(function (event) {
             if (isMicrosoftAgreement === "on") {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
+                checkGitAuth();
             }
             else {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -253,6 +268,7 @@ $(document).ready(function (event) {
             if (isThirdparty === "on") {
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 isAgreedTerms = true;
+                checkGitAuth();
             }
             else {
                 $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -310,13 +326,14 @@ $(document).ready(function (event) {
                             ThirdParty = "";
                         }
 
-                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); }
+                    } else { $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); $("#templateselection").addClass('btn-primary').prop("disabled", false); }
                 }
                 else {
                     $("#extensionError").html('');
                     $("#extensionError").hide();
                     $("#lblextensionError").removeClass("d-block").addClass("d-none");
                     $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
+                    $("#templateselection").addClass('btn-primary').prop("disabled", false);
                 }
 
             });
@@ -358,13 +375,18 @@ $(document).ready(function (event) {
         }
     });
 
-
+    // appending selected template name, description and icon to the info section
     var privateTemplateDescription = $('#selectedTemplateDescription').val();
     if (privateTemplateDescription !== "") {
         var templateTxt = $('#descContainer').text();
         if (templateTxt !== "")
             $("#descContainer").html(privateTemplateDescription);
     }
+
+    var selectedTemplateIcon = $('#selectedTemplateImage').val();
+    var selectedTemplate_Name = $('#selectedTemplate').val();
+    $('#templatePreviewName')[0].innerHTML = selectedTemplate_Name;
+    $('#templatePreviewImage').prop('src', selectedTemplateIcon);
     //If User comes with lab url(private), we will check for PrivatetemplateFolderName in the field
     var publicTemplate = $('#ddlTemplates').val();
     var privateTemplate = $('#selectedTemplateFolder').val();
@@ -381,7 +403,7 @@ $(document).ready(function (event) {
 });
 $('#btnSubmit').click(function () {
     var forkGitHub = false;
-    var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked')
+    var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gitHubFork === true) {
         forkGitHub = true;
     }
@@ -473,6 +495,7 @@ $('#btnSubmit').click(function () {
     $('#status-messages').html('');
     $('#status-messages').show();
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
+    $("#templateselection").prop("disabled", true).removeClass('btn-primary');
     var Parameters = {};
     $.each($('.project-parameters'), function (index, item) {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
@@ -487,7 +510,7 @@ $('#btnSubmit').click(function () {
             window.location.href = "~/Account/Verify?template=" + queryTemplate;
             return;
         }
-
+        $('input[id="gitHubCheckbox"]').prop('disabled', true);
         appInsights.trackEvent("Create button clicked");
         appInsights.trackEvent("Created project using" + selectedTemplate + " template");
         ga('send', 'event', selectedTemplate, 'selected');
@@ -542,7 +565,7 @@ function getStatus() {
                 $('#ddlAcccountName').prop('selectedIndex', 0);
 
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                $("#templateselection").prop("disabled", false);
+                $("#templateselection").prop("disabled", false).addClass('btn-primary');
                 $('#dvProgress').removeClass("d-block").addClass("d-none");
                 $('#textMuted').removeClass("d-block").addClass("d-none");
                 return;
@@ -574,7 +597,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false);
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             return;
@@ -588,7 +611,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             return;
@@ -606,7 +629,7 @@ function getStatus() {
                             $('#ddlAcccountName').prop('selectedIndex', 0);
 
                             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
 
@@ -650,11 +673,13 @@ function getStatus() {
                                     $("#txtProjectName").val("");
 
                                     $('#ddlAcccountName').prop('selectedIndex', 0);
-                                    $("#templateselection").prop("disabled", false);
+                                    $("#templateselection").prop("disabled", false).addClass('btn-primary');
 
                                     $('#ddlGroups').removeAttr("disabled");
                                     $("#ddlAcccountName").removeAttr("disabled");
                                     $("#txtProjectName").removeAttr("disabled");
+                                    $('input[id="gitHubCheckbox"]').prop('disabled', false);
+
                                 }
                             });
                         }
@@ -662,14 +687,7 @@ function getStatus() {
                             ErrorData = response;
                             var accountName = $('#ddlAcccountName option:selected').val();
                             $("#projCreateMsg").hide();
-                            //var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
 
-                            //if (selectedTemplate == "SmartHotel360") {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a><br><br><b>Note that the code for the SmartHotel360 project is not imported but being referred to the GitHub repo in the build definition. Before you run a release, you will first need to create an Azure service endpoint</b>').appendTo("#accountLink");
-                            //}
-                            //else {
-                            //    $('<b style="display: block;">Congratulations! Your project is successfully provisioned. Here is the URL to your project</b> <a href="' + link + '" target="_blank" style="font-weight:400;font-size:Medium;color:#0074d0">' + link + '</a>').appendTo("#accountLink");
-                            //}
                             $('#dvProgress').removeClass("d-block").addClass("d-none");
                             $('#textMuted').removeClass("d-block").addClass("d-none");
                             currentPercentage = 0;
@@ -680,10 +698,11 @@ function getStatus() {
                             $("#txtProjectName").val("");
 
                             $('#ddlAcccountName').prop('selectedIndex', 0);
-                            $("#templateselection").prop("disabled", false);
+                            $("#templateselection").prop("disabled", false).addClass('btn-primary');
                             $('#ddlGroups').removeAttr("disabled");
                             $("#ddlAcccountName").removeAttr("disabled");
                             $("#txtProjectName").removeAttr("disabled");
+                            $('input[id="gitHubCheckbox"]').prop('disabled', false);
                             if (ErrorData !== '') {
                                 $("#projCreateMsg").hide(); $("#errorDescription").html("");
                                 $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup"><i>devopsdemos@microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
@@ -733,8 +752,10 @@ function checkForExtensions(callBack) {
     var Oauthtoken = $('#hiddenAccessToken').val();
     var selectedTemplate = templateFolder;
     if (selectedTemplate !== "" && accountNam !== "") {
-        $("#imgLoading").show();
+        $('#btnSubmit').addClass('lodergif');
+        //$("#imgLoading").show();
         $("#btnSubmit").removeClass('btn-primary').prop("disabled", true);
+        $("#templateselection").removeClass('btn-primary').prop("disabled", true);
         $("#ddlAcccountName").prop("disabled", true);
         $("#txtProjectName").prop('disabled', 'disabled');
 
@@ -753,7 +774,9 @@ function checkForExtensions(callBack) {
 function GetRequiredExtension() {
     checkForExtensions(function callBack(extensions) {
         if (extensions.message !== "no extensions required" && extensions.message !== "" && typeof extensions.message !== "undefined" && extensions.message.indexOf("Error") === -1 && extensions.message !== "Template not found") {
-            $("#imgLoading").hide();
+            $("#templateselection").prop("disabled", false).addClass('btn-primary');
+            $('#btnSubmit').removeClass('lodergif');
+            //$("#imgLoading").hide();
             $("#ddlAcccountName").prop("disabled", false);
             $("#extensionError").empty().append(extensions.message);
             $("#extensionError").show();
@@ -772,12 +795,13 @@ function GetRequiredExtension() {
                     ThirdParty = "";
                 }
             } else {
-                $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
+                $("#btnSubmit").prop("disabled", false).addClass('btn-primary'); $("#templateselection").prop("disabled", false).addClass('btn-primary'); microsoft = ""; ThirdParty = "";
                 checkGitAuth();
             }
         }
         else {
-            $("#imgLoading").hide(); $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
+            /*$("#imgLoading").hide();*/ $('#btnSubmit').removeClass('lodergif');
+            $("#ddlAcccountName").prop("disabled", false); $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").removeClass("d-block").addClass("d-none"); $("#btnSubmit").addClass('btn-primary').prop("disabled", false); $("#templateselection").prop("disabled", false).addClass('btn-primary'); $("#txtProjectName").prop('disabled', false); microsoft = ""; ThirdParty = "";
             checkGitAuth();
         }
     });
@@ -828,7 +852,6 @@ function createTemplates() {
 
 //Project name validtaion on keyup
 
-
 $("#txtProjectName").keyup(function () {
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
@@ -870,6 +893,7 @@ $("#txtProjectName").keyup(function () {
 });
 
 function validateExtensionCheckbox() {
+    $("#templateselection").prop("disabled", false).addClass('btn-primary');
     var checkboxMicrosoft = "";
     var checkboxTrirdparty = "";
 
@@ -916,7 +940,6 @@ function validateExtensionCheckbox() {
     else {
         $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
     }
-
     checkGitAuth();
 }
 
@@ -958,11 +981,12 @@ function AppendMessage() {
     }
     if (gitFork === "True") {
         $('#gitHubCheckboxDiv').removeClass('d-none');
+        $('#gitHubLabelDiv').removeClass('d-none');
         $('input[id="gitHubCheckbox"]').prop('checked', false);
     }
     else {
         $('#gitHubCheckboxDiv').addClass('d-none');
-        $('#gitHubAuthDiv').addClass('d-none');
+        $('#gitHubLabelDiv').addClass('d-none');
     }
 }
 
@@ -992,7 +1016,7 @@ function getGroups(grpSelected) {
                                     if (templateImg === "" || templateImg === null) {
                                         templateImg = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
+                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImg + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1012,7 +1036,7 @@ function getGroups(grpSelected) {
                                     if (templateImgs === "" || templateImgs === null) {
                                         templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                     }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '">';
+                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
                                     grp += '<div class="template-header">';
                                     grp += '<img class="templateImage" src="' + templateImgs + '"/>';
                                     grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
@@ -1043,8 +1067,13 @@ function getGroups(grpSelected) {
 
 function checkGitAuth() {
     var gToken = $('#hdnGToken').val();
+    console.log("GH " + gToken);
     var isChecked = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gToken === "" && isChecked === true) {
         $('#btnSubmit').removeClass('btn-primary').prop('disabled', true);
+        $('#githubAuth').css('border-color', 'red');
+    }
+    else {
+        $('#githubAuth').css('border-color', 'initial');
     }
 }

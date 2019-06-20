@@ -1,12 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using VstsDemoBuilder.Models;
-using VstsRestAPI;
 
 namespace VstsDemoBuilder.ServiceInterfaces
 {
@@ -20,9 +14,9 @@ namespace VstsDemoBuilder.ServiceInterfaces
 
         HttpResponseMessage GetprojectList(string accname, string pat);
      
-        string GetJsonFilePath(string TemplateFolder, string TemplateName, string FileName = "");
+        string GetJsonFilePath(bool IsPrivate, string TemplateFolder, string TemplateName, string FileName = "");
 
-        string[] CreateProjectEnvironment(Project model, bool IsAPI = false);
+        string[] CreateProjectEnvironment(Project model);
 
         bool CheckForInstalledExtensions(string extensionJsonFile, string token, string account);
 

@@ -49,6 +49,9 @@ namespace VstsDemoBuilder.Models
         public string GitRepoName { get; set; }
         public string GitRepoURL { get; set; }
         public string ForkGitHubRepo { get; set; }
+        public bool IsApi { get; set; }
+        public bool IsPrivatePath { get; set; }
+        public string templateImage { get; set; }
     }
     public class EnvironmentValues
     {
@@ -60,6 +63,7 @@ namespace VstsDemoBuilder.Models
         public Dictionary<string, int> AgentQueues { get; set; }
         public Dictionary<string, string> serviceEndpoints { get; set; }
         public Dictionary<string, string> pullRequests { get; set; }
+        public Dictionary<string, string> GitHubRepos { get; set; }
         public string BoardRowFieldName { get; set; }
     }
     public class BuildDef
@@ -186,22 +190,21 @@ namespace VstsDemoBuilder.Models
     public class RequestedProject
     {
         public string email { get; set; }
-        public string ProjectName { get; set; }
-        public string TrackId { get; set; }
+        public string projectName { get; set; }
+        public string trackId { get; set; }
         public string status { get; set; }
     }
 
     public class MultiProjects
     {
-        public string id { get; set; }
         public string accessToken { get; set; }
         public string organizationName { get; set; }
         public string templateName { get; set; }
         public string templatePath { get; set; }
-        public string GithubToken { get; set; }
-        public string UserId { get; set; }
-        public string Password { get; set; }
-        public bool InstallExtensions { get; set; }
+        public string gitHubToken { get; set; }
+        public string userId { get; set; }
+        public string password { get; set; }
+        public bool installExtensions { get; set; }
         public IList<RequestedProject> users { get; set; }
     }
 
