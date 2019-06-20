@@ -139,13 +139,17 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     }
                                     else
                                     {
-                                        isPrivate = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
-                                        if (!isPrivate)
+                                        string privateErrorMessage = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
+                                        if (privateErrorMessage!="SUCCESS")
                                         {
-                                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + extractedTemplate.ToLower().Replace(".zip", "").Trim();
+                                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + model.templateName;
                                             if (Directory.Exists(templatepath))
                                                 Directory.Delete(templatepath, true);
-                                            return Request.CreateResponse(HttpStatusCode.BadRequest, "Please check the selected template for Isprivate flag is true");//"TemplatePath should have .zip extension file name at the end of the url"
+                                            return Request.CreateResponse(HttpStatusCode.BadRequest, privateErrorMessage);//"TemplatePath should have .zip extension file name at the end of the url"
+                                        }
+                                        else
+                                        {
+                                            isPrivate = true;
                                         }
                                     }
                                 }

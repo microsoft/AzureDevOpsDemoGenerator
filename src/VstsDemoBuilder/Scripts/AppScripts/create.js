@@ -63,17 +63,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
-        ga('send', 'event', 'Choose Template Button', 'Clicked');
-        var privateTemplate = $('#PrivateTemplateName', parent.document).val(); 
-        if (privateTemplate !== "") {
-            $.ajax({
-                url: "../Environment/DeletePrivateTemplate",
-                type: "POST",
-                data: { TemplateName: privateTemplate },
-                success: function (Data) {
-                }
-            });
-        }         
+        ga('send', 'event', 'Choose Template Button', 'Clicked');       
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION

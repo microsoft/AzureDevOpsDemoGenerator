@@ -965,10 +965,7 @@ namespace VstsDemoBuilder.Services
                 CreateQueryAndWidgets(model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
                 AddMessage(model.id, "Queries, Widgets and Charts created");
             }
-            if (setting.IsPrivate == "true")
-            {
-                Directory.Delete(Path.Combine(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed)), true);
-            }
+           
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName ,templateUsed};
         }

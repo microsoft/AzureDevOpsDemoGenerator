@@ -330,9 +330,13 @@ namespace VstsDemoBuilder.Controllers
         [HttpPost]
         public ActionResult UploadFiles()
         {
+            string[] strResult = new string[2];
+            string templateName = string.Empty;
+            strResult[0] = templateName;
+            strResult[1] = string.Empty;
             // Checking no of files injected in Request object  
             if (Request.Files.Count > 0)
-            {
+            {               
                 try
                 {
                     //  Get all files from Request object  
@@ -342,43 +346,49 @@ namespace VstsDemoBuilder.Controllers
 
                         HttpPostedFileBase file = files[i];
                         string fileName;
-
+                       
                         // Checking for Internet Explorer  
                         if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
                         {
                             string[] testFiles = file.FileName.Split(new char[] { '\\' });
                             fileName = testFiles[testFiles.Length - 1];
-                            if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/Templates/"), fileName)))
+                            templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + ".zip";
+
+                            if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName)))
                             {
-                                System.IO.File.Delete(Path.Combine(Server.MapPath("~/Templates/"), fileName));
+                                System.IO.File.Delete(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName));
                             }
                         }
                         else
                         {
                             fileName = file.FileName;
+                            templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + ".zip";
 
-                            if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/Templates/"), fileName)))
+                            if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName)))
                             {
-                                System.IO.File.Delete(Path.Combine(Server.MapPath("~/Templates/"), fileName));
+                                System.IO.File.Delete(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName));
                             }
                         }
 
                         // Get the complete folder path and store the file inside it.  
-                        fileName = Path.Combine(Server.MapPath("~/Templates/"), fileName);
+                        fileName = Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName);
                         file.SaveAs(fileName);
                     }
+                    strResult[0] = templateName;
                     // Returns message that successfully uploaded  
-                    return Json("1");
+                    return Json(strResult);
                 }
                 catch (Exception ex)
                 {
                     ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                    return Json("Error occurred. Error details: " + ex.Message);
+                    strResult[1] = "Error occurred. Error details: " + ex.Message;
+                    return Json(strResult);
                 }
             }
             else
             {
-                return Json("No files selected.");
+                strResult[1] = "No files selected.";
+                return Json(strResult);
             }
         }
 
@@ -386,6 +396,7 @@ namespace VstsDemoBuilder.Controllers
         [HttpPost]
         public ActionResult UnzipFile(string fineName)
         {
+            PrivateTemplate privateTemplate = new PrivateTemplate();
             string extractPath = string.Empty;
             try
             {
@@ -394,124 +405,23 @@ namespace VstsDemoBuilder.Controllers
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
                 }
 
-                string zipPath = Server.MapPath("~/Templates/" + fineName);
+                string zipPath = Server.MapPath("~/ExtractedZipFile/" + fineName);
                 string folder = fineName.Replace(".zip", "");
+                privateTemplate.privateTemplateName = folder;
 
-                extractPath = Server.MapPath("~/Templates/" + folder);
+                extractPath = Server.MapPath("~/PrivateTemplates/" + folder);
+                privateTemplate.privateTemplatePath = extractPath;
 
                 if (Directory.Exists(extractPath))
                 {
-                    System.IO.File.Delete(Server.MapPath("~/Templates/" + fineName));
-                    return Json("Folder already exist. Please rename the folder and upload it.");
+                    System.IO.File.Delete(Server.MapPath("~/PrivateTemplates/" + fineName));
+                    privateTemplate.responseMessage = "Folder already exist. Please rename the folder and upload it.";
+                    //return Json("Folder already exist. Please rename the folder and upload it.");
                 }
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
 
-                bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
-                bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
-
-                if (settingFile && projectFile)
-                {
-                    string projectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
-                    ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
-
-                    if (!string.IsNullOrEmpty(settings.IsPrivate))
-                    {
-                        return Json("SUCCESS");
-                    }
-                    else
-                    {
-                        Directory.Delete(extractPath, true);
-                        return Json("ISPRIVATEERROR");
-                    }
-                }
-                else if (!settingFile && !projectFile)
-                {
-                    string[] folderName = System.IO.Directory.GetDirectories(extractPath);
-                    string subDir = "";
-                    if (folderName.Length > 0)
-                    {
-                        subDir = folderName[0];
-                    }
-                    else
-                    {
-                        return Json("Could not find required preoject setting and project template file.");
-                    }
-
-                    if (subDir != "")
-                    {
-                        bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
-                        bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
-                        if (settingFile1 && projectFile1)
-                        {
-                            string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
-                            ProjectSetting settings1 = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData1);
-
-                            if (!string.IsNullOrEmpty(settings1.IsPrivate))
-                            {
-                                string sourceDirectory = subDir;
-                                string targetDirectory = extractPath;
-                                string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
-                                if (!Directory.Exists(backupDirectory))
-                                {
-                                    Directory.CreateDirectory(backupDirectory);
-                                }
-                                //Create a tempprary directory
-                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
-
-                                if (Directory.Exists(sourceDirectory))
-                                {
-
-                                    if (Directory.Exists(targetDirectory))
-                                    {
-
-                                        //copy the content of source directory to temp directory
-                                        Directory.Move(sourceDirectory, backupDirectoryRandom);
-
-                                        //Delete the target directory
-                                        Directory.Delete(targetDirectory);
-
-                                        //Target Directory should not be exist, it will create a new directory
-                                        Directory.Move(backupDirectoryRandom, targetDirectory);
-
-                                        DirectoryInfo di = new DirectoryInfo(backupDirectory);
-
-                                        foreach (FileInfo file in di.GetFiles())
-                                        {
-                                            file.Delete();
-                                        }
-                                        foreach (DirectoryInfo dir in di.GetDirectories())
-                                        {
-                                            dir.Delete(true);
-                                        }
-                                    }
-                                }
-
-                                return Json("SUCCESS");
-                            }
-                            else
-                            {
-                                Directory.Delete(extractPath, true);
-                                return Json("ISPRIVATEERROR");
-                            }
-                        }
-                    }
-                    Directory.Delete(extractPath, true);
-                    return Json("PROJECTANDSETTINGNOTFOUND");
-                }
-                else
-                {
-                    if (!settingFile)
-                    {
-                        Directory.Delete(extractPath, true);
-                        return Json("SETTINGNOTFOUND");
-                    }
-                    if (!projectFile)
-                    {
-                        Directory.Delete(extractPath, true);
-                        return Json("PROJECTFILENOTFOUND");
-                    }
-                }
+                privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
             }
             catch (Exception ex)
             {
@@ -519,7 +429,7 @@ namespace VstsDemoBuilder.Controllers
                 Directory.Delete(extractPath, true);
                 return Json(ex.Message);
             }
-            return Json("0");
+            return Json(privateTemplate, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -857,14 +767,16 @@ namespace VstsDemoBuilder.Controllers
                 privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
                 privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
 
-                bool isPrivate = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
-                if (!isPrivate)
+                string message = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                if ( message== "SUCCESS")
+                {
+                    privateTemplate.responseMessage = message;
+                }
+                else
                 {
                     var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
                     if (Directory.Exists(templatepath))
                         Directory.Delete(templatepath, true);
-
-                    privateTemplate.responseMessage = "Please check the selected template for Isprivate flag is true";
                 }
             }
             catch (Exception ex)

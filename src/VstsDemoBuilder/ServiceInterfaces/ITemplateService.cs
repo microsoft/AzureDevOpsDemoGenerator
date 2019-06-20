@@ -22,7 +22,7 @@ namespace VstsDemoBuilder.ServiceInterfaces
 
         string FindPrivateTemplatePath(string privateTemplatePath);
 
-        bool checkSelectedTemplateIsPrivate(string templatePath);
+        string checkSelectedTemplateIsPrivate(string templatePath);
 
         void deletePrivateTemplate(string Template);
     }
