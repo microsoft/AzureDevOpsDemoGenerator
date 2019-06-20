@@ -16,7 +16,7 @@
     <AssemblyName>VstsDemoBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -1020,29 +1020,6 @@
     <Content Include="Templates\Dynatrace\Teams\UnbreakablePipelineDemo Team\TeamSetting.json" />
     <Content Include="Templates\Dynatrace\WorkItems\Feature.json" />
     <Content Include="Templates\Dynatrace\DeploymentGroups\CreateDeploymentGroup.json" />
-    <Content Include="Templates\ContosoAir_Ready\Extensions.json" />
-    <Content Include="Templates\ContosoAir_Ready\Iterations.json" />
-    <Content Include="Templates\ContosoAir_Ready\ProjectSettings.json" />
-    <Content Include="Templates\ContosoAir_Ready\ProjectTemplate.json" />
-    <Content Include="Templates\ContosoAir_Ready\TeamArea.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\BoardColumns.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\BoardRows.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\CardFields.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\CardStyles.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\contosoair1 Team\TeamSetting.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\BoardColumns.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\BoardRows.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\CardFields.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\CardStyles.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\DB Team\TeamSetting.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\Teams.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\BoardColumns.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\BoardRows.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\CardFields.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\CardStyles.json" />
-    <Content Include="Templates\ContosoAir_Ready\Teams\Web Team\TeamSetting.json" />
-    <Content Include="Templates\ContosoAir_Ready\WorkItems\Feature.json" />
-    <Content Include="Templates\ContosoAir_Ready\WorkItems\User Story.json" />
     <Content Include="Templates\Keyvault\BuildDefinitions\SmartHotel-CouponManagement-CI.json" />
     <Content Include="Templates\Keyvault\Extensions.json" />
     <Content Include="Templates\Keyvault\Iterations.json" />
@@ -1149,27 +1126,10 @@
     <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Epic.json" />
     <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\DoJoWhiteBeltGold\WorkItems\Task.json" />
-    <Content Include="Templates\Space Game - web\Iterations.json" />
-    <Content Include="Templates\Space Game - web\ProjectSettings.json" />
-    <Content Include="Templates\Space Game - web\ProjectTemplate.json" />
-    <Content Include="Templates\Space Game - web\TeamArea.json" />
-    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\BoardRows.json" />
-    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\CardFields.json" />
-    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\CardStyles.json" />
-    <Content Include="Templates\Space Game - web\Teams\Space Game - web Team\TeamSetting.json" />
-    <Content Include="Templates\Space Game - web\Teams\Teams.json" />
-    <Content Include="Templates\Space Game - web\Teams\Web development\BoardRows.json" />
-    <Content Include="Templates\Space Game - web\Teams\Web development\CardFields.json" />
-    <Content Include="Templates\Space Game - web\Teams\Web development\CardStyles.json" />
-    <Content Include="Templates\Space Game - web\Teams\Web development\TeamSetting.json" />
-    <Content Include="Templates\Space Game - web\WorkItems\Issue.json" />
     <Content Include="Templates\host-build-agent\ImportSourceCode\Space Game - web.json" />
     <Content Include="Templates\host-build-agent\Iterations.json" />
     <Content Include="Templates\host-build-agent\ProjectSettings.json" />
     <Content Include="Templates\host-build-agent\ProjectTemplate.json" />
-    <Content Include="Templates\host-build-agent\ServiceEndpoints\jamcneil %281%29.json" />
-    <Content Include="Templates\host-build-agent\ServiceEndpoints\jamcneil.json" />
-    <Content Include="Templates\host-build-agent\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\host-build-agent\TeamArea.json" />
     <Content Include="Templates\host-build-agent\Teams\Space Game - web Team\BoardColumns.json" />
     <Content Include="Templates\host-build-agent\Teams\Space Game - web Team\BoardRows.json" />
@@ -1181,7 +1141,6 @@
     <Content Include="Templates\implement-code-workflow\Iterations.json" />
     <Content Include="Templates\implement-code-workflow\ProjectSettings.json" />
     <Content Include="Templates\implement-code-workflow\ProjectTemplate.json" />
-    <Content Include="Templates\implement-code-workflow\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\implement-code-workflow\TeamArea.json" />
     <Content Include="Templates\implement-code-workflow\Teams\Space Game - web Team\BoardColumns.json" />
     <Content Include="Templates\implement-code-workflow\Teams\Space Game - web Team\BoardRows.json" />
@@ -1193,9 +1152,6 @@
     <Content Include="Templates\manage-build-dependencies\Iterations.json" />
     <Content Include="Templates\manage-build-dependencies\ProjectSettings.json" />
     <Content Include="Templates\manage-build-dependencies\ProjectTemplate.json" />
-    <Content Include="Templates\manage-build-dependencies\ServiceEndpoints\jamcneil %281%29.json" />
-    <Content Include="Templates\manage-build-dependencies\ServiceEndpoints\jamcneil.json" />
-    <Content Include="Templates\manage-build-dependencies\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\manage-build-dependencies\TeamArea.json" />
     <Content Include="Templates\manage-build-dependencies\Teams\Space Game - web Team\BoardColumns.json" />
     <Content Include="Templates\manage-build-dependencies\Teams\Space Game - web Team\BoardRows.json" />
@@ -1207,9 +1163,6 @@
     <Content Include="Templates\run-quality-tests\Iterations.json" />
     <Content Include="Templates\run-quality-tests\ProjectSettings.json" />
     <Content Include="Templates\run-quality-tests\ProjectTemplate.json" />
-    <Content Include="Templates\run-quality-tests\ServiceEndpoints\jamcneil %281%29.json" />
-    <Content Include="Templates\run-quality-tests\ServiceEndpoints\jamcneil.json" />
-    <Content Include="Templates\run-quality-tests\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\run-quality-tests\TeamArea.json" />
     <Content Include="Templates\run-quality-tests\Teams\Space Game - web Team\BoardColumns.json" />
     <Content Include="Templates\run-quality-tests\Teams\Space Game - web Team\BoardRows.json" />
@@ -1221,9 +1174,6 @@
     <Content Include="Templates\scan-for-vulnerabilities\Iterations.json" />
     <Content Include="Templates\scan-for-vulnerabilities\ProjectSettings.json" />
     <Content Include="Templates\scan-for-vulnerabilities\ProjectTemplate.json" />
-    <Content Include="Templates\scan-for-vulnerabilities\ServiceEndpoints\jamcneil %281%29.json" />
-    <Content Include="Templates\scan-for-vulnerabilities\ServiceEndpoints\jamcneil.json" />
-    <Content Include="Templates\scan-for-vulnerabilities\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\scan-for-vulnerabilities\TeamArea.json" />
     <Content Include="Templates\scan-for-vulnerabilities\Teams\Space Game - web Team\BoardColumns.json" />
     <Content Include="Templates\scan-for-vulnerabilities\Teams\Space Game - web Team\BoardRows.json" />
@@ -1235,9 +1185,6 @@
     <Content Include="Templates\scan-open-source\Iterations.json" />
     <Content Include="Templates\scan-open-source\ProjectSettings.json" />
     <Content Include="Templates\scan-open-source\ProjectTemplate.json" />
-    <Content Include="Templates\scan-open-source\ServiceEndpoints\jamcneil %281%29.json" />
-    <Content Include="Templates\scan-open-source\ServiceEndpoints\jamcneil.json" />
-    <Content Include="Templates\scan-open-source\ServiceEndpoints\Space Game - web-code.json" />
     <Content Include="Templates\scan-open-source\TeamArea.json" />
     <Content Include="Templates\scan-open-source\Teams\Space Game - web Team\BoardColumns.json" />
     <Content Include="Templates\scan-open-source\Teams\Space Game - web Team\BoardRows.json" />
@@ -1283,6 +1230,12 @@
     <Content Include="Templates\Tailwind Traders\ServiceEndpoints\GitHub_TailwindTraderBackend.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitionGitHub\Backend-CI.json" />
     <Content Include="Templates\Tailwind Traders\BuildDefinitionGitHub\Website-CI.json" />
+    <Content Include="Templates\host-build-agent\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\host-build-agent\ServiceEndpoints\GitHub_Jamcneil_code.json" />
+    <Content Include="Templates\manage-build-dependencies\ServiceEndpoints\GitHub_Jamcneil_code.json" />
+    <Content Include="Templates\run-quality-tests\ServiceEndpoints\GitHub_Jamcneil_code.json" />
+    <Content Include="Templates\scan-for-vulnerabilities\ServiceEndpoints\GitHub_Jamcneil_code.json" />
+    <Content Include="Templates\scan-open-source\ServiceEndpoints\GitHub_Jamcneil_code.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1360,7 +1313,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60671/</IISUrl>
+          <IISUrl>https://azuredevopsdemogen-dev.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
