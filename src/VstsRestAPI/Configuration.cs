@@ -39,6 +39,7 @@ namespace VstsRestAPI
     {
         Agile,
         Scrum,
-        CMMI
+        CMMI,
+        Basic
     }
 }

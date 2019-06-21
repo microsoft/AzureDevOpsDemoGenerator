@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VstsDemoBuilder", "VstsDemoBuilder\VstsDemoBuilder.csproj", "{E1796A5C-DA7B-4077-86F3-B2C8626257B7}"
 EndProject
@@ -31,19 +31,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://vstsprojectgenerator.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = VstsDemoBuilder\\VstsDemoBuilder.csproj
-		SccProjectName1 = VstsDemoBuilder
-		SccLocalPath1 = VstsDemoBuilder
-		SccProjectUniqueName2 = VstsRestAPI\\VstsRestAPI.csproj
-		SccProjectName2 = VstsRestAPI
-		SccLocalPath2 = VstsRestAPI
-		SccProjectUniqueName3 = ExportWorkitemsTool\\TemplatesGeneratorTool.csproj
-		SccProjectName3 = ExportWorkitemsTool
-		SccLocalPath3 = ExportWorkitemsTool
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAC2A97D-0DA4-4109-BD2E-C25C4888743C}
 	EndGlobalSection
 EndGlobal

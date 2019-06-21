@@ -221,11 +221,16 @@ namespace VstsRestAPI.WorkItemAndTracking
                             {
                                 dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
                             }
+                            if (newWI.fields.SystemState == "Done")
+                            {
+                                dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
+                            }
+                            string areaPath = newWI.fields.SystemAreaPath ?? projectName;
+                            dicWIFields.Add("/fields/System.AreaPath", areaPath);
                             dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
                             dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
                             dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
                             dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
-                            dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                             dicWIFields.Add("/fields/System.IterationPath", iterationPath);
                             dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
                             dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.Effort", newWI.fields.MicrosoftVSTSSchedulingEffort);
