@@ -22,7 +22,11 @@ namespace VstsRestAPI.Viewmodel.Importer
             public string fieldIdentifier { get; set; }
             public string displayFormat { get; set; }
         }
-
+        public class Issue
+        {
+            public string fieldIdentifier { get; set; }
+            public string displayFormat { get; set; }
+        }
         public class Bug
         {
             public string fieldIdentifier { get; set; }
@@ -49,6 +53,8 @@ namespace VstsRestAPI.Viewmodel.Importer
 
             [JsonProperty("Bug")]
             public IList<Bug> Bug { get; set; }
+            [JsonProperty("Issue")]
+            public IList<Issue> Issue { get; set; }
         }
 
         public class CardFields

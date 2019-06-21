@@ -28,6 +28,8 @@ namespace VstsRestAPI.Viewmodel.WorkItem
             public string feature { get; set; }
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
+            [JsonProperty(PropertyName = "Issue")]
+            public string Issue { get; set; }
         }
     }
     public class Agile

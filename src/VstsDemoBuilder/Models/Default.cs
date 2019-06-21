@@ -14,6 +14,8 @@ namespace VstsDemoBuilder.Models
         public const string CMMI = "27450541-8e31-4150-9947-dc59f998fc01";
 
         public const string Queue = "Hosted";
+
+        public const string BASIC = "b8a3a935-7e91-48b8-a94c-606d37c3e9f2";
     }
 
 
