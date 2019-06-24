@@ -217,10 +217,6 @@ namespace VstsRestAPI.WorkItemAndTracking
                             }
 
                             dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                            if (selectedTemplate.ToLower() == "smarthotel360")
-                            {
-                                dicWIFields.Add("/fields/System.AreaPath", newWI.fields.SystemAreaPath);
-                            }
                             if (newWI.fields.SystemState == "Done")
                             {
                                 dicWIFields.Add("/fields/System.AssignedTo", assignToUser);

@@ -648,6 +648,10 @@ namespace VstsDemoBuilder.Services
             if (Directory.Exists(importSourceCodePath))
             {
                 Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
+                if (listImportSourceCodeJsonPaths.Contains(importSourceCodePath + "\\GitRepository.json"))
+                {
+                    listImportSourceCodeJsonPaths.Remove(importSourceCodePath + "\\GitRepository.json");
+                }
             }
             foreach (string importSourceCode in listImportSourceCodeJsonPaths)
             {
@@ -798,7 +802,10 @@ namespace VstsDemoBuilder.Services
                                 {
                                     string[] nameExtension = workItemName.Split('.');
                                     string name = nameExtension[0];
-                                    workItems.Add(name, model.ReadJsonFile(workItem));
+                                    if (!workItem.Contains(name))
+                                    {
+                                        workItems.Add(name, model.ReadJsonFile(workItem));
+                                    }
                                 }
                             }
                         }

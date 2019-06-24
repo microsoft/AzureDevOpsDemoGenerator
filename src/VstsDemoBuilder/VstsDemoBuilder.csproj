@@ -1205,7 +1205,6 @@
     <Content Include="Templates\create-build-pipeline\Teams\Teams.json" />
     <Content Include="Templates\create-build-pipeline\WorkItems\Issue.json" />
     <Content Include="Templates\implement-code-workflow\ServiceEndpoints\GitHub_Jamcneil_code.json" />
-    <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
     <Content Include="Views\GitHub\Oauth.cshtml" />
     <Content Include="Views\GitHub\Redirect.cshtml" />
     <Content Include="Views\GitHub\Status.cshtml" />
@@ -1223,7 +1222,6 @@
     <Content Include="Templates\run-quality-tests\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
     <Content Include="Templates\scan-for-vulnerabilities\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
     <Content Include="Templates\scan-open-source\BuildDefinitionGitHub\SpaceGameWeb-Build.json" />
-    <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
     <Content Include="Views\GitHub\Issue.cshtml" />
     <Content Include="Templates\Tailwind Traders\ImportSourceCode\GitRepository.json" />
     <Content Include="Templates\Tailwind Traders\ServiceEndpoints\GitHub_TailwindTradersWeb.json" />
@@ -1236,6 +1234,7 @@
     <Content Include="Templates\run-quality-tests\ServiceEndpoints\GitHub_Jamcneil_code.json" />
     <Content Include="Templates\scan-for-vulnerabilities\ServiceEndpoints\GitHub_Jamcneil_code.json" />
     <Content Include="Templates\scan-open-source\ServiceEndpoints\GitHub_Jamcneil_code.json" />
+    <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
