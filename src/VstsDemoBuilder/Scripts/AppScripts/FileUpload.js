@@ -115,9 +115,6 @@
         var userId = $('#UserId').val();
         var password = $('#Password').val();
         $("#urlerror").empty();
-        //$("#urluploaderror").empty().append('URL should not be empty');
-        //$("#urlgithuberror").empty().append('URL github should not be empty');
-        //$("#urlothererror").empty().append('URL other should not be empty');
         var fileurlSplit = URL.split('/');
         var filename = fileurlSplit[fileurlSplit.length - 1];
         filename = filename.split('.');
@@ -158,23 +155,29 @@
                             $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
                             $('#gitHubCheckboxDiv', parent.document).addClass('d-none');
                         }
-                        else if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
-                            msg = 'ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again';
-                        }
-                        else if (Data.responseMessage === "SETTINGNOTFOUND") {
-                            msg = 'ProjectSetting file not found! plase include the files in zip and try again';
-                        }
-                        else if (Data.responseMessage === "PROJECTFILENOTFOUND") {
-                            msg = 'ProjectTemplate file not found! plase include the files in zip and try again';
-                        }
-                        else if (Data.responseMessage === "ISPRIVATEERROR") {
-                            msg = 'IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.';
-                        }
-                        else {
-                            msg = Data.responseMessage;
-                        }
-                        if (msg !== '' && msg !== 'SUCCESS') {
+                        //else if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
+                        //    msg = 'Project setting and project template files not found! plase include the files in zip and try again';
+                        //}
+                        //else if (Data.responseMessage === "SETTINGNOTFOUND") {
+                        //    msg = 'Project setting file not found! plase include the files in zip and try again';
+                        //}
+                        //else if (Data.responseMessage === "PROJECTFILENOTFOUND") {
+                        //    msg = 'Project template file not found! plase include the files in zip and try again';
+                        //}
+                        //else if (Data.responseMessage === "ISPRIVATEERROR") {
+                        //    msg = '"IsPrivate" flag is not set to true in project template file, update the flag and try again.';
+                        //}
+                        //else {
+                        //    msg = Data.responseMessage;
+                        //}
+                        else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
                             $("#urlerror").empty().append(msg);
+                            return;
+                        }
+                    }
+                    else {
+                        if (Data.responseMessage !== null && Data.responseMessage !== 'SUCCESS') {
+                            $("#urlerror").empty().append(Data.responseMessage);
                             return;
                         }
                     }

@@ -305,7 +305,7 @@ namespace VstsDemoBuilder.Services
                     else
                     {
                         Directory.Delete(extractPath, true);
-                        response = "IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.";
+                        response = @"IsPrivate"+" flag is not set to true in project template file, update the flag and try again.";
                     }
                 }
                 else if (!settingFile && !projectFile)
@@ -376,13 +376,13 @@ namespace VstsDemoBuilder.Services
                             else
                             {
                                 Directory.Delete(extractPath, true);
-                                response = "IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.";
+                                response = @"IsPrivate"+" flag is not set to true in project template file, update the flag and try again.";
                                 //return Json("ISPRIVATEERROR");
                             }
                         }
                     }
                     Directory.Delete(extractPath, true);
-                    response = "ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again";
+                    response = "Project setting and project template files not found! plase include the files in zip and try again";
                     //return Json("PROJECTANDSETTINGNOTFOUND");
                 }
                 else
@@ -390,13 +390,13 @@ namespace VstsDemoBuilder.Services
                     if (!settingFile)
                     {
                         Directory.Delete(extractPath, true);
-                        response = "ProjectSetting file not found! plase include the files in zip and try again";
+                        response = "Project setting file not found! plase include the files in zip and try again";
                         //return Json("SETTINGNOTFOUND");
                     }
                     if (!projectFile)
                     {
                         Directory.Delete(extractPath, true);
-                        response = "ProjectTemplate file not found! plase include the files in zip and try again";
+                        response = "Project template file not found! plase include the files in zip and try again";
                         //return Json("PROJECTFILENOTFOUND");
                     }
                 }

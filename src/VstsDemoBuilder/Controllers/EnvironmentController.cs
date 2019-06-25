@@ -336,7 +336,7 @@ namespace VstsDemoBuilder.Controllers
             strResult[1] = string.Empty;
             // Checking no of files injected in Request object  
             if (Request.Files.Count > 0)
-            {               
+            {
                 try
                 {
                     //  Get all files from Request object  
@@ -346,7 +346,7 @@ namespace VstsDemoBuilder.Controllers
 
                         HttpPostedFileBase file = files[i];
                         string fileName;
-                       
+
                         // Checking for Internet Explorer  
                         if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
                         {
@@ -767,17 +767,21 @@ namespace VstsDemoBuilder.Controllers
                 privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
                 privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
 
-                string message = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
-                if ( message== "SUCCESS")
+                if (privateTemplate.privateTemplatePath != "")
                 {
-                    privateTemplate.responseMessage = message;
+                    privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                    if (privateTemplate.responseMessage != "SUCCESS")
+                    {
+                        var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
+                        if (Directory.Exists(templatepath))
+                            Directory.Delete(templatepath, true);
+                    }
                 }
                 else
                 {
-                    var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
-                    if (Directory.Exists(templatepath))
-                        Directory.Delete(templatepath, true);
+                    privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
                 }
+
             }
             catch (Exception ex)
             {
