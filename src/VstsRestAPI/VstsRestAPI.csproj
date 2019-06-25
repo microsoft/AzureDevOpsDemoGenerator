@@ -78,6 +78,7 @@
     <Compile Include="Services\HttpServices.cs" />
     <Compile Include="Service\ServiceEndPoint.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseAgile.cs" />
+    <Compile Include="Viewmodel\Extractor\BoardColumnResponseBasic.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseScrum.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitionResponse.cs" />
     <Compile Include="Viewmodel\Extractor\BuildDefinitions.cs" />

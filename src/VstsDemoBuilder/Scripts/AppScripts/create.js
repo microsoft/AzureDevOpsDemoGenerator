@@ -106,10 +106,8 @@ $(document).ready(function (event) {
 
         var selectedTemplateName = $('.template.selected').data('template');
         $('#templatePreviewName')[0].innerHTML = selectedTemplateName;
-        console.log("Name " + selectedTemplateName);
         var selectedTemplateImage = $('.template.selected').data('templateimage');
         $('#templatePreviewImage').prop('src', selectedTemplateImage);
-        console.log("Image " + selectedTemplateImage);
 
         var infoMsg = $(".description.descSelected").data('message');
         //If the template enabled for GitHub fork
@@ -1015,7 +1013,6 @@ function getGroups(grpSelected) {
         url: "../Environment/GetGroups",
         type: "GET",
         success: function (groups) {
-            console.log(groups);
             var grp = "";
             var isPrivate = "";
             if (groups.GroupwiseTemplates.length > 0) {
@@ -1091,7 +1088,6 @@ function getGroups(grpSelected) {
 
 function checkGitAuth() {
     var gToken = $('#hdnGToken').val();
-    console.log("GH " + gToken);
     var isChecked = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gToken === "" && isChecked === true) {
         $('#btnSubmit').removeClass('btn-primary').prop('disabled', true);
