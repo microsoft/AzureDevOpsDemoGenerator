@@ -42,7 +42,7 @@ namespace VstsDemoBuilder.Controllers
         }
 
         /// <summary>
-        /// Get status message to resplay
+        /// Get status message to reply
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

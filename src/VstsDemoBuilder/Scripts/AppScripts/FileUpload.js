@@ -1,14 +1,15 @@
 ﻿$(document).ready(function () {
     $('body').on('click', '#btnUpload', function () {
         $("#fileError").remove();
-        disableButton();
+        var controlID = this.id;
+        disableButton(controlID);
         // Checking whether FormData is available in browser
         if (window.FormData !== undefined) {
             var fileUpload = $("#FileUpload1").get(0);
             var files = fileUpload.files;
             if (files.length === 0) {
                 $("#btnContainer").append('<span id="fileError" class="msgColor">Please select a zip file.</span>');
-                enableButton();
+                enableButton(controlID);
                 return;
             }
             else {
@@ -58,31 +59,31 @@
                                 $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
                                 $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
                                 $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
-                                $('#gitHubCheckboxDiv', parent.document).addClass('d-none');
+                                //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
 
                                 $('#PrivateTemplateName', parent.document).val(NewTemplateName);
                                 $('#PrivateTemplatePath', parent.document).val(Data.privateTemplatePath);
-                                enableButton();
+                                enableButton(controlID);
                             }
                             else if (Data.responseMessage !== null && Data.responseMessage !== "") {
-                                var msg = '';
-                                if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
-                                    msg = 'ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again';
-                                }
-                                else if (Data.responseMessage === "SETTINGNOTFOUND") {
-                                    msg = 'ProjectSetting file not found! plase include the files in zip and try again';
-                                }
-                                else if (Data.responseMessage === "PROJECTFILENOTFOUND") {
-                                    msg = 'ProjectTemplate file not found! plase include the files in zip and try again';
-                                }
-                                else if (Data.responseMessage === "ISPRIVATEERROR") {
-                                    msg = 'IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.';
-                                }
-                                else {
-                                    msg = Data.responseMessage;
-                                }
-                                $("#urlerror").empty().append(msg);
-                                enableButton();
+                                //var msg = '';
+                                //if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
+                                //    msg = 'ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again';
+                                //}
+                                //else if (Data.responseMessage === "SETTINGNOTFOUND") {
+                                //    msg = 'ProjectSetting file not found! plase include the files in zip and try again';
+                                //}
+                                //else if (Data.responseMessage === "PROJECTFILENOTFOUND") {
+                                //    msg = 'ProjectTemplate file not found! plase include the files in zip and try again';
+                                //}
+                                //else if (Data.responseMessage === "ISPRIVATEERROR") {
+                                //    msg = 'IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.';
+                                //}
+                                //else {
+                                //    msg = Data.responseMessage;
+                                //}
+                                $("#urlerror").empty().append(Data.responseMessage);
+                                enableButton(controlID);
                                 return;
                             }
                         });
@@ -133,6 +134,7 @@
         }
         var oldTemplate = $('#PrivateTemplateName', parent.document).val();
         if (isUrlValid) {
+            disableButton(controlID);
             $.ajax({
                 url: "../Environment/UploadPrivateTemplateFromURL",
                 type: "GET",
@@ -153,7 +155,8 @@
                             $("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
                             $("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
                             $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
-                            $('#gitHubCheckboxDiv', parent.document).addClass('d-none');
+                            enableButton(controlID);
+                            //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
                         }
                         //else if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
                         //    msg = 'Project setting and project template files not found! plase include the files in zip and try again';
@@ -171,13 +174,15 @@
                         //    msg = Data.responseMessage;
                         //}
                         else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
-                            $("#urlerror").empty().append(msg);
+                            $("#urlerror").empty().append(Data.responseMessage);
+                            enableButton(controlID);
                             return;
                         }
                     }
                     else {
                         if (Data.responseMessage !== null && Data.responseMessage !== 'SUCCESS') {
                             $("#urlerror").empty().append(Data.responseMessage);
+                            enableButton(controlID);
                             return;
                         }
                     }
@@ -189,9 +194,13 @@
       
     });
 });
-function disableButton() {
-    $('#btnUpload').attr('disabled', 'disabled').removeClass('btn-primary');
+function disableButton(button) {
+    $('#'+button).attr('disabled', 'disabled').removeClass('btn-primary');
+    //$('#btnURLUpload').attr('disabled', 'disabled').removeClass('btn-primary');
+    //$('#btnGitHubUpload').attr('disabled', 'disabled').removeClass('btn-primary');
 }
-function enableButton() {
-    $('#btnUpload').attr('disabled', false).addClass('btn-primary');
+function enableButton(button) {
+    $('#'+button).attr('disabled', false).addClass('btn-primary');
+    //$('#btnURLUpload').attr('disabled', false).addClass('btn-primary');
+    //$('#btnURLUpload').attr('disabled', false).addClass('btn-primary');
 }

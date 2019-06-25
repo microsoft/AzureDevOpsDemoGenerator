@@ -94,6 +94,15 @@ $(document).ready(function (event) {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
 
         var privateTemplate = $('#PrivateTemplateName', parent.document).val();
+        if (privateTemplate !== "") {
+            $.ajax({
+                url: "../Environment/DeletePrivateTemplate",
+                type: "POST",
+                data: { TemplateName: privateTemplate },
+                success: function (Data) {
+                }
+            });
+        }     
         $('#PrivateTemplateName', parent.document).val('');
         $('#PrivateTemplatePath', parent.document).val('');
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
@@ -216,7 +225,7 @@ $(document).ready(function (event) {
             });
         }
         //Till here
-
+        
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
         ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
@@ -228,17 +237,8 @@ $(document).ready(function (event) {
         }
         else {
             GetRequiredExtension();
-        }
-
-        if (privateTemplate !== "") {
-            $.ajax({
-                url: "../Environment/DeletePrivateTemplate",
-                type: "POST",
-                data: { TemplateName: privateTemplate },
-                success: function (Data) {
-                }
-            });
         }       
+         
     });
 
     $("body").on("click", "#EmailPopup", function () {

@@ -305,7 +305,7 @@ namespace VstsDemoBuilder.Services
                     else
                     {
                         Directory.Delete(extractPath, true);
-                        response = @"IsPrivate"+" flag is not set to true in project template file, update the flag and try again.";
+                        response = "\"IsPrivate\" flag is not set to true in project template file, update the flag and try again.";
                     }
                 }
                 else if (!settingFile && !projectFile)
@@ -376,7 +376,7 @@ namespace VstsDemoBuilder.Services
                             else
                             {
                                 Directory.Delete(extractPath, true);
-                                response = @"IsPrivate"+" flag is not set to true in project template file, update the flag and try again.";
+                                response = "\"IsPrivate\" flag is not set to true in project template file, update the flag and try again.";
                                 //return Json("ISPRIVATEERROR");
                             }
                         }
