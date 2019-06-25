@@ -674,6 +674,9 @@ namespace VstsDemoBuilder.Controllers
 
                     string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
                     var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
+
+                    template.Extensions.RemoveAll(x => x.extensionName.ToLower() == "analytics");
+                    template.Extensions = template.Extensions.OrderBy(y => y.extensionName).ToList();
                     string requiresExtensionNames = string.Empty;
                     string requiredMicrosoftExt = string.Empty;
                     string requiredThirdPartyExt = string.Empty;
@@ -695,10 +698,10 @@ namespace VstsDemoBuilder.Controllers
 
                         var client = connection.GetClient<ExtensionManagementHttpClient>();
                         var installed = client.GetInstalledExtensionsAsync().Result;
-                        var extensions = installed.Where(x => x.Flags == 0).ToList();
+                        var extensions = installed.Where(x => x.Flags == 0 && x.ExtensionDisplayName.ToLower() != "analytics").ToList();
 
-                        var trustedFlagExtensions = installed.Where(x => x.Flags == ExtensionFlags.Trusted).ToList();
-                        var builtInExtensions = installed.Where(x => x.Flags.ToString() == "BuiltIn, Trusted").ToList();
+                        var trustedFlagExtensions = installed.Where(x => x.Flags == ExtensionFlags.Trusted && x.ExtensionDisplayName.ToLower() != "analytics").ToList();
+                        var builtInExtensions = installed.Where(x => x.Flags.ToString() == "BuiltIn, Trusted" && x.ExtensionDisplayName.ToLower() != "analytics").ToList();
 
                         extensions.AddRange(trustedFlagExtensions);
                         extensions.AddRange(builtInExtensions);
