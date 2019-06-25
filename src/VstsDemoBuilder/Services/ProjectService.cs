@@ -956,7 +956,7 @@ namespace VstsDemoBuilder.Services
         private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)
         {
             List<string> listRepoFiles = new List<string>();
-            string repoFilePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+            string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
             if (File.Exists(repoFilePath))
             {
                 string readRepoFile = model.ReadJsonFile(repoFilePath);
