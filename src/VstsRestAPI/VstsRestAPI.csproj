@@ -73,6 +73,7 @@
     <Compile Include="Extractor\ClassificationNodes.cs" />
     <Compile Include="Extractor\GetBuildandReleaseDefs.cs" />
     <Compile Include="Extractor\ProjectProperties.cs" />
+    <Compile Include="Extractor\VariableGroups.cs" />
     <Compile Include="Git\GitHubImportRepo.cs" />
     <Compile Include="ProjectsAndTeams\GetAllGroups.cs" />
     <Compile Include="Services\HttpServices.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Viewmodel\Extractor\GetReleaseDefResponse.cs" />
     <Compile Include="Viewmodel\Extractor\GetServiceEndpoints.cs" />
     <Compile Include="Viewmodel\Extractor\GetTeamSetting.cs" />
+    <Compile Include="Viewmodel\Extractor\GetVariableGroups.cs" />
     <Compile Include="Viewmodel\Extractor\GetWorkItemsResponse.cs" />
     <Compile Include="Viewmodel\Extractor\Iterations.cs" />
     <Compile Include="Viewmodel\Extractor\IterationtoSave.cs" />

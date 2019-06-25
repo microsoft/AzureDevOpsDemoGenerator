@@ -125,6 +125,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 // set the viewmodel from the content in the response
                 projectResult = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
+                projectResult.value = projectResult.value.OrderBy(x => x.name).ToList();
             }
             try
             {

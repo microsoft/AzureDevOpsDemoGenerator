@@ -111,6 +111,7 @@ namespace VstsDemoBuilder.Services
             string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
             string endpointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
             string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
+            string variableGroupsApiVersion = System.Configuration.ConfigurationManager.AppSettings["VariableGroupsApiVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
             projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
@@ -124,6 +125,7 @@ namespace VstsDemoBuilder.Services
             projectConfig.ExtensionConfig = new Configuration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
             projectConfig.EndpointConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
             projectConfig.QueriesConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
+            projectConfig.VariableGroupConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = variableGroupsApiVersion };
 
             return projectConfig;
         }
@@ -291,14 +293,16 @@ namespace VstsDemoBuilder.Services
                     foreach (GetExtensions.Value data in returnExtensionsList.value)
                     {
                         RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
-
-                        extension.extensionId = data.extensionId;
-                        extension.extensionName = data.extensionName;
-                        extension.publisherId = data.publisherId;
-                        extension.publisherName = data.publisherName;
-                        extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
-                        extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
-                        extensionList.Add(extension);
+                        if(data.extensionName.ToLower()!= "analytics")
+                        {
+                            extension.extensionId = data.extensionId;
+                            extension.extensionName = data.extensionName;
+                            extension.publisherId = data.publisherId;
+                            extension.publisherName = data.publisherName;
+                            extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
+                            extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
+                            extensionList.Add(extension);
+                        }                        
                     }
                     RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
                     if (extensionList.Count > 0)
@@ -434,7 +438,7 @@ namespace VstsDemoBuilder.Services
                         File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
 
                         List<string> boardTypes = new List<string>();
-                        boardTypes.Add("Epics"); 
+                        boardTypes.Add("Epics");
                         if (processTemplate.ToLower() == "agile")
                         {
                             boardTypes.Add("Features");
@@ -1151,7 +1155,7 @@ namespace VstsDemoBuilder.Services
                 BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
                 BuildandReleaseDefs agent = new BuildandReleaseDefs(appConfig.AgentQueueConfig);
-
+                //Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
                 int releasecount = 1;
@@ -1474,6 +1478,24 @@ namespace VstsDemoBuilder.Services
                 }
             }
             return workItemNames.ToArray();
+        }
+
+        private Dictionary<string, string> GetVariableGroups(ProjectConfigurations appConfig)
+        {
+            VariableGroups variableGroups = new VariableGroups(appConfig.VariableGroupConfig);
+            GetVariableGroups.Groups groups = variableGroups.GetVariableGroups();
+            Dictionary<string, string> varibaleGroupDictionary = new Dictionary<string, string>();
+            if (groups.count > 0)
+            {
+                foreach (var vg in groups.value)
+                {
+                    if (!varibaleGroupDictionary.ContainsKey(vg.name))
+                    {
+                        varibaleGroupDictionary.Add(vg.name, vg.id);
+                    }
+                }
+            }
+            return varibaleGroupDictionary;
         }
         #endregion END GENERATE ARTIFACTS
     }
