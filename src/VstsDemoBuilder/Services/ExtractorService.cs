@@ -293,14 +293,16 @@ namespace VstsDemoBuilder.Services
                     foreach (GetExtensions.Value data in returnExtensionsList.value)
                     {
                         RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
-
-                        extension.extensionId = data.extensionId;
-                        extension.extensionName = data.extensionName;
-                        extension.publisherId = data.publisherId;
-                        extension.publisherName = data.publisherName;
-                        extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
-                        extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
-                        extensionList.Add(extension);
+                        if(data.extensionName.ToLower()!= "analytics")
+                        {
+                            extension.extensionId = data.extensionId;
+                            extension.extensionName = data.extensionName;
+                            extension.publisherId = data.publisherId;
+                            extension.publisherName = data.publisherName;
+                            extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
+                            extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
+                            extensionList.Add(extension);
+                        }                        
                     }
                     RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
                     if (extensionList.Count > 0)
@@ -1153,7 +1155,7 @@ namespace VstsDemoBuilder.Services
                 BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
                 BuildandReleaseDefs agent = new BuildandReleaseDefs(appConfig.AgentQueueConfig);
-                Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
+                //Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
                 int releasecount = 1;

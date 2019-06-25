@@ -46,7 +46,7 @@ namespace VstsRestAPI.ProjectsAndTeams
                 using (var client = GetHttpClient())
                 {
                     // connect to the REST endpoint            
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=wellFormed&$top=1000&api-version=" + _configuration.VersionNumber).Result;
                     // check to see if we have a succesfull respond
                     return response;
                 }
