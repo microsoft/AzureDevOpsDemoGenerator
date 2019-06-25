@@ -802,7 +802,7 @@ namespace VstsDemoBuilder.Services
                                 {
                                     string[] nameExtension = workItemName.Split('.');
                                     string name = nameExtension[0];
-                                    if (!workItem.Contains(name))
+                                    if (!workItems.ContainsKey(name))
                                     {
                                         workItems.Add(name, model.ReadJsonFile(workItem));
                                     }
