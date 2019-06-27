@@ -964,7 +964,7 @@ namespace VstsDemoBuilder.Services
                 {
                     ForkRepos.Fork forkRepos = new ForkRepos.Fork();
                     forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                    if (forkRepos.repositories.Count > 0)
+                    if (forkRepos.repositories!=null && forkRepos.repositories.Count > 0)
                     {
                         foreach (var repo in forkRepos.repositories)
                         {

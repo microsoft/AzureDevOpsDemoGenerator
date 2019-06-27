@@ -33,10 +33,10 @@
                 processData: false, // Not to process data
                 data: fileData,
                 success: function (result) {
-                   
+
                     if (result[0] !== "") {
                         //alert("succesfully uploaded file: " + files[0].name);
-                        console.log("succesfully uploaded file: " + result[0]);                        
+                        console.log("succesfully uploaded file: " + result[0]);
                         $.post("UnzipFile", { "fineName": result[0] }, function (Data) {
                             if (Data.responseMessage === "SUCCESS") {
                                 //alert("succesfully unzipped file: " + files[0].name);
@@ -111,7 +111,7 @@
             return false;
         }
         var controlID = this.id;
-       
+
         var GitHubtoken = $('#GitHubToken').val();
         var userId = $('#UserId').val();
         var password = $('#Password').val();
@@ -127,10 +127,16 @@
             }
         }
         if (controlID === 'btnGitHubUpload') {
+           
             if (fileurlSplit[2].toLowerCase() !== "raw.githubusercontent.com") {
                 $("#urlerror").empty().append('Please provide GitHub raw URL, which should starts with domain name raw.githubusercontent.com '); isUrlValid = false;
-
             }
+            else if ($('#privateGitHubRepo').prop("checked") === true && GitHubtoken === '') {
+                $("#urlerror").empty().append('Please provide GitHub access token for authentication'); isUrlValid = false;
+            }
+        }
+        else if (controlID === 'btnURLUpload' && $('#privateurl').prop("checked") === true && userId === '' && password === '') {
+            $("#urlerror").empty().append('Please provide userId and password for authentication'); isUrlValid = false;
         }
         var oldTemplate = $('#PrivateTemplateName', parent.document).val();
         if (isUrlValid) {
@@ -191,16 +197,16 @@
 
             });
         }
-      
+
     });
 });
 function disableButton(button) {
-    $('#'+button).attr('disabled', 'disabled').removeClass('btn-primary');
+    $('#' + button).attr('disabled', 'disabled').removeClass('btn-primary');
     //$('#btnURLUpload').attr('disabled', 'disabled').removeClass('btn-primary');
     //$('#btnGitHubUpload').attr('disabled', 'disabled').removeClass('btn-primary');
 }
 function enableButton(button) {
-    $('#'+button).attr('disabled', false).addClass('btn-primary');
+    $('#' + button).attr('disabled', false).addClass('btn-primary');
     //$('#btnURLUpload').attr('disabled', false).addClass('btn-primary');
     //$('#btnURLUpload').attr('disabled', false).addClass('btn-primary');
 }
