@@ -138,6 +138,7 @@
 
         $('body').on('click', '#privateGitHubRepo, #privateurl', function () {
             var controlID = this.id;
+            $("#urlerror").empty();
             $('#UserId').val('');
             $('#GitHubToken').val('');
             $('#Password').val('');
