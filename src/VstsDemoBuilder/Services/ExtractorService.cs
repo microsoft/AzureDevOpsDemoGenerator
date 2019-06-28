@@ -254,12 +254,12 @@ namespace VstsDemoBuilder.Services
 
         public Dictionary<string, int> GetWorkItemsCount(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
+            string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
-            if (workItemTypes.Length > 0)
+            if (workItemtypes.Length > 0)
             {
-                foreach (var workItem in workItemTypes)
+                foreach (var workItem in workItemtypes)
                 {
                     WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
                     if (WITCount.count > 0)
@@ -293,7 +293,7 @@ namespace VstsDemoBuilder.Services
                     foreach (GetExtensions.Value data in returnExtensionsList.value)
                     {
                         RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
-                        if(data.extensionName.ToLower()!= "analytics")
+                        if (data.extensionName.ToLower() != "analytics")
                         {
                             extension.extensionId = data.extensionId;
                             extension.extensionName = data.extensionName;
@@ -302,7 +302,7 @@ namespace VstsDemoBuilder.Services
                             extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
                             extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
                             extensionList.Add(extension);
-                        }                        
+                        }
                     }
                     RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
                     if (extensionList.Count > 0)
@@ -676,15 +676,15 @@ namespace VstsDemoBuilder.Services
 
         public void ExportWorkItems(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
+            string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project))
             {
                 Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project);
             }
 
-            if (workItemTypes.Length > 0)
+            if (workItemtypes.Length > 0)
             {
-                foreach (var WIT in workItemTypes)
+                foreach (var WIT in workItemtypes)
                 {
                     GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
                     WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
