@@ -1906,7 +1906,7 @@ namespace VstsDemoBuilder.Services
                             foreach (var vGroupsId in model.Environment.VariableGroups)
                             {
                                 string placeHolder = string.Format("${0}$", vGroupsId.Value);
-                                jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.VariableGroups[vGroupsId.Key]);
+                                jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, vGroupsId.Key.ToString());
                             }
                         }
                         //Adding randon UUID to website name
@@ -2699,7 +2699,7 @@ namespace VstsDemoBuilder.Services
         {
             VariableGroups variableGroups = new VariableGroups(_variableGroups);
             model.Environment.VariableGroups = new Dictionary<int, string>();
-            string filePath = HostingEnvironment.MapPath("~") + @"\Templates\VariableGroups\VariableGroup.json";
+            string filePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\VariableGroups\VariableGroup.json");
             if (File.Exists(filePath))
             {
                 string jsonString = model.ReadJsonFile(filePath);
@@ -2709,7 +2709,7 @@ namespace VstsDemoBuilder.Services
                     foreach (var group in groups.value)
                     {
                         GetVariableGroups.VariableGroupsCreateResponse response = variableGroups.PostVariableGroups(JsonConvert.SerializeObject(group));
-                        if (string.IsNullOrEmpty(response.name))
+                        if (!string.IsNullOrEmpty(response.name))
                         {
                             model.Environment.VariableGroups.Add(response.id, response.name);
                         }
