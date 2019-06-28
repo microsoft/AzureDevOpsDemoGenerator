@@ -95,7 +95,7 @@
           "Key": "77387",
           "Name": "PartsUnlimited-YAML",
           "TemplateFolder": "PartsUnlimited-YAML",
-          "ShortName": "PartsUnlimited",
+          "ShortName": "yml",
           "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> ",
           "Tags": [
             "scrum",
