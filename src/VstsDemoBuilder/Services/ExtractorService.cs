@@ -254,12 +254,12 @@ namespace VstsDemoBuilder.Services
 
         public Dictionary<string, int> GetWorkItemsCount(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
+            string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             GetWorkItemsCount itemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
-            if (workItemTypes.Length > 0)
+            if (workItemtypes.Length > 0)
             {
-                foreach (var workItem in workItemTypes)
+                foreach (var workItem in workItemtypes)
                 {
                     WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
                     if (WITCount.count > 0)
@@ -676,15 +676,15 @@ namespace VstsDemoBuilder.Services
 
         public void ExportWorkItems(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = { "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
+            string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
             if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project))
             {
                 Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project);
             }
 
-            if (workItemTypes.Length > 0)
+            if (workItemtypes.Length > 0)
             {
-                foreach (var WIT in workItemTypes)
+                foreach (var WIT in workItemtypes)
                 {
                     GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
                     WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
