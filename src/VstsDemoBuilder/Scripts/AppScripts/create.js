@@ -63,7 +63,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
-        ga('send', 'event', 'Choose Template Button', 'Clicked');
+        ga('send', 'event', 'Choose Template Button', 'Clicked');       
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -93,6 +93,18 @@ $(document).ready(function (event) {
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
 
+        var privateTemplate = $('#PrivateTemplateName', parent.document).val();
+        if (privateTemplate !== "") {
+            $.ajax({
+                url: "../Environment/DeletePrivateTemplate",
+                type: "POST",
+                data: { TemplateName: privateTemplate },
+                success: function (Data) {
+                }
+            });
+        }     
+        $('#PrivateTemplateName', parent.document).val('');
+        $('#PrivateTemplatePath', parent.document).val('');
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         $('#githubAuth').css('border-color', 'initial');
         $('#btnSubmit').addClass('btn-primary').prop('disabled', false);
@@ -154,6 +166,9 @@ $(document).ready(function (event) {
         $("#extensionError").hide();
         $("#lblextensionError").removeClass("d-block").addClass("d-none");
         var TemplateName = templateFolder;
+        if ($('#PrivateTemplateName').val() !== "") {
+            TemplateName = $('#PrivateTemplateName').val();
+        }
         if (TemplateName === "MyShuttle-Java") {
             $("#NotificationModal").modal('show');
         }
@@ -210,7 +225,7 @@ $(document).ready(function (event) {
             });
         }
         //Till here
-
+        
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
         ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
@@ -222,7 +237,8 @@ $(document).ready(function (event) {
         }
         else {
             GetRequiredExtension();
-        }
+        }       
+         
     });
 
     $("body").on("click", "#EmailPopup", function () {
@@ -277,11 +293,6 @@ $(document).ready(function (event) {
 
     $("#projectParameters").html('');
     var selectedTemplate = templateFolder;
-
-    if (selectedTemplate === "MyShuttle-Java") {
-        $("#NotificationModal").modal('show');
-    }
-
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
@@ -499,8 +510,12 @@ $('#btnSubmit').click(function () {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
     });
     selectedTemplate = template;
+    var privateTemplateName = $('#PrivateTemplateName').val();
+    var privateTemplatePath = $('#PrivateTemplatePath').val();
     var websiteUrl = window.location.href;
-    var projData = { "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub };
+    var projData = {
+        "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
+    };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
         if (data !== "True") {
@@ -534,18 +549,20 @@ $('#btnSubmit').click(function () {
 });
 
 // if the user uploading his exported template (zip file), we will take that template name as folder name
-$('body').on('click', '#btnUpload', function () {
-    var fileUpload = $("#FileUpload1").get(0);
-    var files = fileUpload.files;
-    $('#InfoMessage').removeClass('d-block').addClass('d-none');
-    // Create FormData object
-    var fileData = new FormData();
-    // Looping over all files and add it to FormData object
-    for (var i = 0; i < files.length; i++) {
-        fileData.append(files[i].name, files[i]);
-    }
-    templateFolder = files[0].name.replace(".zip", "");
-});
+//$('#myiFrame body').on('click', '#btnUpload', function () {
+//    alert();
+//    debugger;
+//    var fileUpload = $("#FileUpload1").get(0);
+//    var files = fileUpload.files;
+//    $('#InfoMessage').removeClass('d-block').addClass('d-none');
+//    // Create FormData object
+//    var fileData = new FormData();
+//    // Looping over all files and add it to FormData object
+//    for (var i = 0; i < files.length; i++) {
+//        fileData.append(files[i].name, files[i]);
+//    }
+//    templateFolder = files[0].name.replace(".zip", "");
+//});
 
 function getStatus() {
 
@@ -728,6 +745,7 @@ function DisplayErrors() {
 
 function checkForInstalledExtensions(selectedTemplate, callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
+    var privatePath = $('#PrivateTemplatePath').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
     if (accountNam !== "" && selectedTemplate !== "") {
         $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
@@ -735,7 +753,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
-            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam },
+            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
 
                 callBack(InstalledExtensions);
@@ -748,7 +766,11 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
 function checkForExtensions(callBack) {
     var accountNam = $('#ddlAcccountName option:selected').val();
     var Oauthtoken = $('#hiddenAccessToken').val();
+    var privatePath = $('#PrivateTemplatePath').val();
     var selectedTemplate = templateFolder;
+    if ($('#PrivateTemplateName').val() !== "") {
+        selectedTemplate = $('#PrivateTemplateName').val();
+    }
     if (selectedTemplate !== "" && accountNam !== "") {
         $('#btnSubmit').addClass('lodergif');
         //$("#imgLoading").show();
@@ -760,7 +782,7 @@ function checkForExtensions(callBack) {
         $.ajax({
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
-            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam },
+            data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
                 callBack(InstalledExtensions);
             }
@@ -806,9 +828,6 @@ function GetRequiredExtension() {
 }
 
 //TEMPLATE GROUP CREATION
-$(document).ready(function () {
-
-});
 
 $(function () {
 
@@ -820,6 +839,7 @@ $(function () {
     // CLOSE MODAL ON EVENT
     $(".template-close").on("click", function () {
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+        templateFolder = $('#selectedTemplateFolder').val();
     });
 
     // TOGGLING ACTIVE CLASS TO TEMPLATE GROUP
@@ -1057,6 +1077,10 @@ function getGroups(grpSelected) {
                     }
                 }
 
+            }
+            if (grpSelected === "Private") {
+                var iframe = $("#myiFrame");
+                iframe.attr("src", iframe.data("src"));
             }
         }
     });
