@@ -12,7 +12,7 @@
     {
       "Groups": "General",
       "Template": [
-        {
+		{
           "Key": "77386",
           "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders",
@@ -523,6 +523,31 @@
         }
       ]
     },
+    {
+      "Groups": "Microsoft Cloud Adoption Framework",
+      "Template": [
+        {
+          "Key": "778000",
+          "Name": "Cloud Adoption Plan",
+          "TemplateFolder": "CloudAdoptionPlan",
+          "ShortName": "CloudAdoptionPlan",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+			"Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.png",
+          "ForkGitHubRepo": false
+        }
+		]
+	},
     {
       "Groups": "Microsoft Learn",
       "Template": [

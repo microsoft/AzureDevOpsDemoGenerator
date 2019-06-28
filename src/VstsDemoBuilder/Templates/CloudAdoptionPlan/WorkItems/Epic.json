@@ -1,0 +1,214 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 117,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T21:27:57.04Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:26.723Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Cloud Adoption Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/119",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/117"
+    },
+    {
+      "id": 118,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T21:28:04.537Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:26.723Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/120",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/118"
+    },
+    {
+      "id": 115,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-09T16:34:50.463Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:38.58Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Cloud Ready",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/121",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/115"
+    },
+    {
+      "id": 116,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2019-04-09T16:34:57.98Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T17:06:25.697Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Cloud Innovation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Innovation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/116"
+    },
+    {
+      "id": 82,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T21:27:07.543Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T16:01:59.14Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Cloud Migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migration",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/161",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/144",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/83",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/82"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

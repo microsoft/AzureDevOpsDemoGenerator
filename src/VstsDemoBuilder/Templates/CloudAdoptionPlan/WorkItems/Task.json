@@ -1,0 +1,2327 @@
+{
+  "count": 58,
+  "value": [
+    {
+      "id": 174,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:54:50.447Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Update the migration tooling decision tree to reflect VMWare migration options",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Download and modify the migration tool decision tree to align to your expanded migration processes&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/172",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/174"
+    },
+    {
+      "id": 173,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:53:10.503Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Evaluate migration options used to migrate the first host",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Determine which approaches are to be supported during iterative migration processes</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/172",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/173"
+    },
+    {
+      "id": 171,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:50:24.923Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate VMs using backup and disaster recovery tools",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-backup-and-disaster-recovery-tools\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-backup-and-disaster-recovery-tools</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/166",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/171"
+    },
+    {
+      "id": 170,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:49:56.723Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate VMs using NSX Layer 2 VPN",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-nsx-layer-2-vpn\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-nsx-layer-2-vpn</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/166",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/170"
+    },
+    {
+      "id": 169,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:49:33.953Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate VMs using PowerCLI",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-powercli\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-powercli</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/166",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/169"
+    },
+    {
+      "id": 168,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:49:11.203Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate ISOs and Templates",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-isos-and-templates\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-isos-and-templates</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/166",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/168"
+    },
+    {
+      "id": 167,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:48:46.137Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Prerequisites",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#prerequisites\">https://docs.azure.cloudsimple.com/migrate-workloads/#prerequisites</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/166",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/167"
+    },
+    {
+      "id": 165,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:46:38.147Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Configure workload DNS and DHCP setup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/dns-dhcp-setup/\">https://docs.azure.cloudsimple.com/dns-dhcp-setup/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/162",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/165"
+    },
+    {
+      "id": 164,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:46:06.69Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Configure on-premises DNS for private cloud",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/on-premises-dns-setup/\">https://docs.azure.cloudsimple.com/on-premises-dns-setup/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/162",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/164"
+    },
+    {
+      "id": 163,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-18T15:45:37.607Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Escalate private cloud privileges",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/escalate-privileges/\">https://docs.azure.cloudsimple.com/escalate-privileges/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/162",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/163"
+    },
+    {
+      "id": 159,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/159"
+    },
+    {
+      "id": 158,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/158"
+    },
+    {
+      "id": 157,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/157"
+    },
+    {
+      "id": 156,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/156"
+    },
+    {
+      "id": 155,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/155"
+    },
+    {
+      "id": 154,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/24",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/154"
+    },
+    {
+      "id": 153,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/24",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/153"
+    },
+    {
+      "id": 152,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/24",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/152"
+    },
+    {
+      "id": 151,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/24",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/151"
+    },
+    {
+      "id": 150,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T23:20:36.3Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/24",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/150"
+    },
+    {
+      "id": 149,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:56:52.237Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Update the adoption plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Update the migration plan with any process or task changes based on the first workload<br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/144",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/149"
+    },
+    {
+      "id": 148,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:56:05.847Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Review Best Practices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Review migration best practices to identify additional technical requirements that would aid in the success of your migration effort:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-best-practices/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-best-practices/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/144",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/148"
+    },
+    {
+      "id": 147,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:55:20.17Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Review Expanded Scope Checklist",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Review the expanded scope checklist to identify any scope requirements which would cause significant deviations from the Azure Migration Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/expanded-scope/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/expanded-scope/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/144",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/147"
+    },
+    {
+      "id": 146,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:54:15.147Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Select the first workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Select a first workload that is suitable as a trial run or pilot of your migration process.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/digital-estate/rationalize#selecting-the-first-workload\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/digital-estate/rationalize#selecting-the-first-workload</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/144",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/146"
+    },
+    {
+      "id": 145,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:52:31.247Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-18T15:59:31.08Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Azure Migration Guide",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Follow the Azure Migration Guide to deploy the first workload in the cloud adoption plan. <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/?tabs=Overview\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/?tabs=Overview</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/144",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/145"
+    },
+    {
+      "id": 143,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:45:20.517Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Change approval process",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Approve proposed changes with necessary change control mechanisms:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/134",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/143"
+    },
+    {
+      "id": 142,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:37:16.433Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migration tool choice(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Evaluate the approach to migrate the workload based on future state architecture decisions&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/134",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/142"
+    },
+    {
+      "id": 141,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:36:20.15Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Estimate Cloud Costs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Estimate cost of the proposed workload. Update the business justification and budget accordingly.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/134",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/141"
+    },
+    {
+      "id": 140,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:35:20.76Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Architect workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Define future state architecture for the workload:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/134",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/140"
+    },
+    {
+      "id": 139,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T22:34:46.023Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Evaluate workload and asset readiness",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/134",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/139"
+    },
+    {
+      "id": 138,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T21:56:13.047Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:26.723Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Create timelines",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/timelines\">Create timelines</a> to align expectations across the business and IT teams.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/129",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/138"
+    },
+    {
+      "id": 137,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T21:55:34.977Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:26.723Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Define iterations and releases",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/iteration-paths\">Update the iteration path</a> of each workload to define iterations of work and iterations of production workload releases.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/129",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/137"
+    },
+    {
+      "id": 136,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T21:52:49.437Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:26.723Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Align assets to workloads",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Ensure that all <a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/assets\">assets are aligned</a> to at least one workload</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/129",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/136"
+    },
+    {
+      "id": 135,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-06-11T21:52:17.09Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-27T18:10:26.723Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Prioritize workloads",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/workloads\">Define and prioritize workloads</a> in the backlog</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/129",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/135"
+    },
+    {
+      "id": 51,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Decommission",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Terminate or resuse the allocated resources&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/48",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/51"
+    },
+    {
+      "id": 50,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Workload monitoring period",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Monitor application performance for a period of time to validate that the application is free of unplanned dependencies on decommissioned assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/48",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/50"
+    },
+    {
+      "id": 49,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Power down assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Turn off existing VMs&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/48",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/49"
+    },
+    {
+      "id": 47,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Promotion",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Re-route production traffic to deployed assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/47"
+    },
+    {
+      "id": 46,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Final test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate availability of all assets before production",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/46"
+    },
+    {
+      "id": 45,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Governance Review",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate adherence to governance or compliance requirements&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/45"
+    },
+    {
+      "id": 44,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Security Review",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate adherence to security baseline&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/44"
+    },
+    {
+      "id": 43,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Network dependencies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate network traffic based on scale test to identify unplanned dependencies&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/43"
+    },
+    {
+      "id": 41,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Document change",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Record the change in sizing in the parent feature, along with the reason for change",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/37",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/41"
+    },
+    {
+      "id": 40,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Adjust sizing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Change the size of the deployed asset&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/37",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/40"
+    },
+    {
+      "id": 39,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Decide on optimization timing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Decide if testing is sufficient to optimize (Or if optimization should happen after promotion)&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/37",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/39"
+    },
+    {
+      "id": 38,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Review test results",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review results of the workload test to evaluate data and proper sizing&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/37",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/38"
+    },
+    {
+      "id": 36,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Scale Test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Execute the test at scale to test asset performance under load.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/32",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/36"
+    },
+    {
+      "id": 35,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Create/select automated test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Use an existing test or create a test script based on power user testing.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/32",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/35"
+    },
+    {
+      "id": 34,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Manual test with power users",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Observe power users from the business performing manual validation of the workload&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/32",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/34"
+    },
+    {
+      "id": 33,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Set up Azure Monitor to track performance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement Azure monitor to track CPU, Memory, and other performance metrics on VMs",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/32",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/33"
+    },
+    {
+      "id": 15,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/15"
+    },
+    {
+      "id": 14,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.</div><div>Guide: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/14"
+    },
+    {
+      "id": 13,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Test, measure performance, and optimize workloads. When ready promote the workload to production</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/13"
+    },
+    {
+      "id": 12,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.</div><div>Guide&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/12"
+    },
+    {
+      "id": 9,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Evaluate readiness, architecture, cost, and appropriate migration tooling</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess</a></div><div>Considerations: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/</a></div><div>Decision Tree:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/9"
+    },
+    {
+      "id": 6,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Environment readiness (Landing Zone)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Has the cloud migration target been established? Are the necessary migration tools in place? Has a resource organization and naming standard been set for this workload's assets?&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/3",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/6"
+    },
+    {
+      "id": 5,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Roles and Responsibilities",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The various functions required during this migration are represented by one or more members of the team.&nbsp;<a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity?branch=pr-en-us-47\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/3",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/5"
+    },
+    {
+      "id": 4,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-04-03T19:27:31.86Z",
+        "System.CreatedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.ChangedDate": "2019-06-28T16:56:27.07Z",
+        "System.ChangedBy": "Brian Blanchard <brblanch@microsoft.com>",
+        "System.Title": "Decisions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Evaluate decisions that impact migration efforts:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/3",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/CAFTemplate/_apis/wit/workItems/4"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
