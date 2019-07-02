@@ -1,0 +1,36 @@
+{
+  "Extensions": [
+    {
+      "extensionName": "Product Catalog",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.product-catalog' target='_blank'><b>Product Catalog</b></a>",
+      "publisherId": "ms",
+      "extensionId": "product-catalog",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.product-catalog' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Component Governance Build Task",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-buildtask' target='_blank'><b>Component Governance Build Task</b></a>",
+      "publisherId": "ms",
+      "extensionId": "vss-governance-buildtask",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-buildtask' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Microsoft Component Policies",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-compliance.microsoft-component-policies' target='_blank'><b>Microsoft Component Policies</b></a>",
+      "publisherId": "ms-compliance",
+      "extensionId": "microsoft-component-policies",
+      "publisherName": "Compliance Partners",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-compliance.microsoft-component-policies' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Component Governance",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-web' target='_blank'><b>Component Governance</b></a>",
+      "publisherId": "ms",
+      "extensionId": "vss-governance-web",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-governance-web' target='_blank'>License Terms</a>"
+    }
+  ]
+}

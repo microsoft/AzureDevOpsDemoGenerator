@@ -375,6 +375,8 @@
     <Content Include="Templates\AzureFunctions\Images\deploysite.png" />
     <Content Include="Templates\AzureFunctions\Images\projectcreation.png" />
     <Content Include="Templates\AzureFunctions\Images\pulwebsite.png" />
+    <Content Include="Templates\CloudAdoptionPlan\Images\Overview.png" />
+    <Content Include="Templates\CloudAdoptionPlan\Images\Website.PNG" />
     <Content Include="Templates\DeploymentGroups\Images\application.png" />
     <Content Include="Templates\DeploymentGroups\Images\dgscript.png" />
     <Content Include="Templates\DeploymentGroups\Images\differentphases.png" />
@@ -429,6 +431,7 @@
     <Content Include="Templates\Tailwind Traders\Images\Website.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
+    <Content Include="Templates\TemplateImages\CloudAdoptionFramework.jpg" />
     <Content Include="Templates\TemplateImages\CodeFile.png" />
     <Content Include="Templates\TemplateImages\ContosAir.png" />
     <Content Include="Templates\TemplateImages\devopsdojo.png" />
@@ -1235,6 +1238,27 @@
     <Content Include="Templates\scan-for-vulnerabilities\ServiceEndpoints\GitHub_Jamcneil_code.json" />
     <Content Include="Templates\scan-open-source\ServiceEndpoints\GitHub_Jamcneil_code.json" />
     <Content Include="Templates\SmartHotel360\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Dashboard\Queries\All items, all states.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Dashboard\Queries\Assigned to me.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Dashboard\Queries\Followed work items.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Dashboard\Queries\Workload Template.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Extensions.json" />
+    <Content Include="Templates\CloudAdoptionPlan\ImportSourceCode\Cloud Adoption Plan Master.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Iterations.json" />
+    <Content Include="Templates\CloudAdoptionPlan\ProjectSettings.json" />
+    <Content Include="Templates\CloudAdoptionPlan\ProjectTemplate.json" />
+    <Content Include="Templates\CloudAdoptionPlan\ServiceEndpoints\Cloud Adoption Plan Master-code.json" />
+    <Content Include="Templates\CloudAdoptionPlan\TeamArea.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Teams\Cloud Adoption Plan Master Team\BoardColumns.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Teams\Cloud Adoption Plan Master Team\BoardRows.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Teams\Cloud Adoption Plan Master Team\CardFields.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Teams\Cloud Adoption Plan Master Team\CardStyles.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Teams\Cloud Adoption Plan Master Team\TeamSetting.json" />
+    <Content Include="Templates\CloudAdoptionPlan\Teams\Teams.json" />
+    <Content Include="Templates\CloudAdoptionPlan\WorkItems\Epic.json" />
+    <Content Include="Templates\CloudAdoptionPlan\WorkItems\Feature.json" />
+    <Content Include="Templates\CloudAdoptionPlan\WorkItems\Task.json" />
+    <Content Include="Templates\CloudAdoptionPlan\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

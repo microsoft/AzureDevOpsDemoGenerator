@@ -1,0 +1,220 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 22278,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-02T06:26:01.253Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-02T06:26:01.253Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Cloud Migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Migration",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migration",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22281",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22280",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22279",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22278"
+    },
+    {
+      "id": 22277,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2019-07-02T06:26:01.05Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-02T06:26:01.05Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Cloud Innovation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Innovation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Innovation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22277"
+    },
+    {
+      "id": 22276,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-02T06:26:00.833Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-02T06:26:00.833Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Cloud Ready",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Ready",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22282",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22276"
+    },
+    {
+      "id": 22275,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-02T06:26:00.397Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-02T06:26:00.397Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Adoption Plan",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22283",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22275"
+    },
+    {
+      "id": 22274,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-02T06:25:59.86Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-02T06:25:59.86Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Cloud Adoption Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Adoption Strategy",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22284",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22274"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
