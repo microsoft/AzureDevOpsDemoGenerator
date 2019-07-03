@@ -2,8 +2,8 @@
   "count": 58,
   "value": [
     {
-      "id": 22326,
-      "rev": 3,
+      "id": 23806,
+      "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
         "System.TeamProject": "$ProjectName$",
@@ -11,50 +11,9 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:11.973Z",
+        "System.CreatedDate": "2019-07-03T07:10:44.437Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:14.623Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Network dependencies",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Validate network traffic based on scale test to identify unplanned dependencies&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22350",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22326"
-    },
-    {
-      "id": 22318,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:10.12Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:46.057Z",
+        "System.ChangedDate": "2019-07-03T07:20:24.087Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Prioritize workloads",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -73,7 +32,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22359",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23847",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -81,10 +40,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22318"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23806"
     },
     {
-      "id": 22321,
+      "id": 23805,
       "rev": 3,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -93,173 +52,9 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:10.77Z",
+        "System.CreatedDate": "2019-07-03T07:10:44.1Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:36.017Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Power down assets",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Turn off existing VMs&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22351",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22321"
-    },
-    {
-      "id": 22294,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:04.93Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:06.187Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Escalate private cloud privileges",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/escalate-privileges/\">https://docs.azure.cloudsimple.com/escalate-privileges/</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "First Host",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22354",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22294"
-    },
-    {
-      "id": 22320,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:10.547Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:33.257Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Workload monitoring period",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Monitor application performance for a period of time to validate that the application is free of unplanned dependencies on decommissioned assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22351",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22320"
-    },
-    {
-      "id": 22286,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:03.213Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:35.097Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Evaluate migration options used to migrate the first host",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Determine which approaches are to be supported during iterative migration processes</span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "First Host",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22352",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22286"
-    },
-    {
-      "id": 22317,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:09.897Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:42.23Z",
+        "System.ChangedDate": "2019-07-03T07:20:31.25Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Align assets to workloads",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -278,7 +73,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22359",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23847",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -286,10 +81,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22317"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23805"
     },
     {
-      "id": 22325,
+      "id": 23804,
       "rev": 3,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -298,173 +93,9 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:11.77Z",
+        "System.CreatedDate": "2019-07-03T07:10:43.747Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:17.367Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Security Review",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Validate adherence to security baseline&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22350",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22325"
-    },
-    {
-      "id": 22324,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:11.43Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:14.623Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Governance Review",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Validate adherence to governance or compliance requirements&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22350",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22324"
-    },
-    {
-      "id": 22342,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:15.453Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:22.44Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Decisions",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Evaluate decisions that impact migration efforts:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22343",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22342"
-    },
-    {
-      "id": 22293,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:04.723Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:06.187Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Configure on-premises DNS for private cloud",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/on-premises-dns-setup/\">https://docs.azure.cloudsimple.com/on-premises-dns-setup/</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "First Host",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22354",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22293"
-    },
-    {
-      "id": 22316,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:09.69Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:48.493Z",
+        "System.ChangedDate": "2019-07-03T07:20:28.823Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Define iterations and releases",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -483,7 +114,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22359",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23847",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -491,10 +122,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22316"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23804"
     },
     {
-      "id": 22330,
+      "id": 23803,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -503,993 +134,9 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:12.83Z",
+        "System.CreatedDate": "2019-07-03T07:10:43.43Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:55.57Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Review test results",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Review results of the workload test to evaluate data and proper sizing&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22349",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22330"
-    },
-    {
-      "id": 22334,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:13.647Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:23.187Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Set up Azure Monitor to track performance",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Implement Azure monitor to track CPU, Memory, and other performance metrics on VMs",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22348",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22334"
-    },
-    {
-      "id": 22333,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:13.447Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:31.107Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Manual test with power users",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Observe power users from the business performing manual validation of the workload&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22348",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22333"
-    },
-    {
-      "id": 22329,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:12.577Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:01.35Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Decide on optimization timing",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Decide if testing is sufficient to optimize (Or if optimization should happen after promotion)&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22349",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22329"
-    },
-    {
-      "id": 22339,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:14.813Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:16.23Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Assess",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Evaluate readiness, architecture, cost, and appropriate migration tooling</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess</a></div><div>Considerations: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/</a></div><div>Decision Tree:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22345",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22339"
-    },
-    {
-      "id": 22304,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:07.083Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:02.53Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Assess",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22347",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22304"
-    },
-    {
-      "id": 22299,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:05.99Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:43.31Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Assess",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22346",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22299"
-    },
-    {
-      "id": 22323,
-      "rev": 4,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:11.213Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:21.107Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Final test",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Validate availability of all assets before production",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22350",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22323"
-    },
-    {
-      "id": 22285,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:03Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:35.097Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Update the migration tooling decision tree to reflect VMWare migration options",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Download and modify the migration tool decision tree to align to your expanded migration processes&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "First Host",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22352",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22285"
-    },
-    {
-      "id": 22298,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:05.773Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:50.6Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Migrate",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22346",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22298"
-    },
-    {
-      "id": 22303,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:06.88Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:11.467Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Migrate",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22347",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22303"
-    },
-    {
-      "id": 22338,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:14.537Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:30.51Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Migrate",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.</div><div>Guide&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22345",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22338"
-    },
-    {
-      "id": 22328,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:12.38Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:58.527Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Adjust sizing",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Change the size of the deployed asset&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22349",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22328"
-    },
-    {
-      "id": 22332,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:13.233Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:27.753Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Create/select automated test",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Use an existing test or create a test script based on power user testing.",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22348",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22332"
-    },
-    {
-      "id": 22337,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:14.337Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:27.77Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Optimize workload(s)",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Test, measure performance, and optimize workloads. When ready promote the workload to production</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22345",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22337"
-    },
-    {
-      "id": 22302,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:06.657Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:08.07Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Optimize workload(s)",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22347",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22302"
-    },
-    {
-      "id": 22297,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:05.563Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:48.107Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Optimize workload(s)",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22346",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22297"
-    },
-    {
-      "id": 22292,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:04.52Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:06.187Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Configure workload DNS and DHCP setup",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/dns-dhcp-setup/\">https://docs.azure.cloudsimple.com/dns-dhcp-setup/</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "First Host",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22354",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22292"
-    },
-    {
-      "id": 22296,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:05.357Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:45.96Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Secure and Manage",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22346",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22296"
-    },
-    {
-      "id": 22301,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:06.447Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:05.943Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Secure and Manage",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22347",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22301"
-    },
-    {
-      "id": 22319,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:10.32Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:33.257Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Decommission",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Terminate or resuse the allocated resources&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22351",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22319"
-    },
-    {
-      "id": 22336,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:14.13Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:24.367Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Secure and Manage",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.</div><div>Guide: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/</a></div><div><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22345",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22336"
-    },
-    {
-      "id": 22341,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:15.24Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:22.44Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Roles and Responsibilities",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>The various functions required during this migration are represented by one or more members of the team.&nbsp;<a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity?branch=pr-en-us-47\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22343",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22341"
-    },
-    {
-      "id": 22340,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:15.03Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:24.267Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Environment readiness (Landing Zone)",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Has the cloud migration target been established? Are the necessary migration tools in place? Has a resource organization and naming standard been set for this workload's assets?&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22343",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22340"
-    },
-    {
-      "id": 22315,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:09.48Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:42.23Z",
+        "System.ChangedDate": "2019-07-03T07:20:24.087Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Create timelines",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -1508,7 +155,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22359",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23847",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1516,10 +163,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22315"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23803"
     },
     {
-      "id": 22331,
+      "id": 23818,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1528,13 +175,13 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:13.027Z",
+        "System.CreatedDate": "2019-07-03T07:10:48.977Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:23.187Z",
+        "System.ChangedDate": "2019-07-03T07:26:01.89Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Scale Test",
+        "System.Title": "Review test results",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Execute the test at scale to test asset performance under load.",
+        "System.Description": "<div>Review results of the workload test to evaluate data and proper sizing&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1549,7 +196,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22348",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23837",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1557,10 +204,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22331"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23818"
     },
     {
-      "id": 22327,
+      "id": 23822,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1569,13 +216,13 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:12.17Z",
+        "System.CreatedDate": "2019-07-03T07:10:50.577Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:55.57Z",
+        "System.ChangedDate": "2019-07-03T07:25:48.507Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Document change",
+        "System.Title": "Set up Azure Monitor to track performance",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Record the change in sizing in the parent feature, along with the reason for change",
+        "System.Description": "Implement Azure monitor to track CPU, Memory, and other performance metrics on VMs",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1590,7 +237,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22349",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23836",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1598,10 +245,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22327"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23822"
     },
     {
-      "id": 22335,
+      "id": 23827,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1610,13 +257,13 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:13.923Z",
+        "System.CreatedDate": "2019-07-03T07:10:52.43Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:16.23Z",
+        "System.ChangedDate": "2019-07-03T07:24:44.857Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Document configuration",
+        "System.Title": "Assess",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.Description": "<div>Evaluate readiness, architecture, cost, and appropriate migration tooling</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess</a></div><div>Considerations: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/</a></div><div>Decision Tree:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1631,7 +278,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22345",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23833",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1639,10 +286,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22335"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23827"
     },
     {
-      "id": 22300,
+      "id": 23830,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1651,13 +298,13 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:06.187Z",
+        "System.CreatedDate": "2019-07-03T07:10:53.567Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:47:02.53Z",
+        "System.ChangedDate": "2019-07-03T07:24:15.253Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Document configuration",
+        "System.Title": "Decisions",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.Description": "<div>Evaluate decisions that impact migration efforts:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions</a></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1672,7 +319,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22347",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23831",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1680,10 +327,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22300"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23830"
     },
     {
-      "id": 22295,
+      "id": 23809,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1692,13 +339,13 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:05.13Z",
+        "System.CreatedDate": "2019-07-03T07:10:45.46Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:46:43.31Z",
+        "System.ChangedDate": "2019-07-03T07:26:33.213Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Document configuration",
+        "System.Title": "Power down assets",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.Description": "<div>Turn off existing VMs&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1713,7 +360,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22346",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23839",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1721,10 +368,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22295"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23809"
     },
     {
-      "id": 22322,
+      "id": 23814,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1733,13 +380,13 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:10.99Z",
+        "System.CreatedDate": "2019-07-03T07:10:47.35Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:48:14.623Z",
+        "System.ChangedDate": "2019-07-03T07:26:15.463Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Promotion",
+        "System.Title": "Network dependencies",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Re-route production traffic to deployed assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.Description": "<div>Validate network traffic based on scale test to identify unplanned dependencies&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1754,7 +401,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22350",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23838",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1762,10 +409,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22322"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23814"
     },
     {
-      "id": 22314,
+      "id": 23797,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -1774,214 +421,9 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:09.14Z",
+        "System.CreatedDate": "2019-07-03T07:10:41.237Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:39.497Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Evaluate workload and asset readiness",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22344",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22314"
-    },
-    {
-      "id": 22313,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:08.93Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:59.4Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Architect workload",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Define future state architecture for the workload:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect</a></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22344",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22313"
-    },
-    {
-      "id": 22312,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:08.717Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:54.99Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Estimate Cloud Costs",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Estimate cost of the proposed workload. Update the business justification and budget accordingly.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate</a></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22344",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22312"
-    },
-    {
-      "id": 22311,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:08.523Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:49.293Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Migration tool choice(s)",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Evaluate the approach to migrate the workload based on future state architecture decisions&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22344",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22311"
-    },
-    {
-      "id": 22310,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:08.317Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:45:45.91Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Change approval process",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Approve proposed changes with necessary change control mechanisms:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve</a></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Workload Template",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22344",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22310"
-    },
-    {
-      "id": 22309,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:08.13Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:53:33.207Z",
+        "System.ChangedDate": "2019-07-03T07:21:44.45Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Azure Migration Guide",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2000,7 +442,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22279",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2008,10 +450,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22309"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23797"
     },
     {
-      "id": 22291,
+      "id": 23802,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2020,9 +462,132 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:04.31Z",
+        "System.CreatedDate": "2019-07-03T07:10:43.07Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:10.323Z",
+        "System.ChangedDate": "2019-07-03T07:24:25.1Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Evaluate workload and asset readiness",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23832",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23802"
+    },
+    {
+      "id": 23792,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:39.457Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:31.323Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23835",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23792"
+    },
+    {
+      "id": 23787,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:37.72Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:17.86Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23834",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23787"
+    },
+    {
+      "id": 23779,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:34.833Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:23:30.243Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Prerequisites",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2041,7 +606,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22353",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2049,10 +614,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22291"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23779"
     },
     {
-      "id": 22290,
+      "id": 23774,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2061,9 +626,132 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:04.1Z",
+        "System.CreatedDate": "2019-07-03T07:10:32.99Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:14.057Z",
+        "System.ChangedDate": "2019-07-03T07:23:48.933Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Evaluate migration options used to migrate the first host",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Determine which approaches are to be supported during iterative migration processes</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23840",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23774"
+    },
+    {
+      "id": 23782,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:35.883Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:23:20.637Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Escalate private cloud privileges",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/escalate-privileges/\">https://docs.azure.cloudsimple.com/escalate-privileges/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23842",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23782"
+    },
+    {
+      "id": 23781,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:35.533Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:23:23.52Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Configure on-premises DNS for private cloud",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/on-premises-dns-setup/\">https://docs.azure.cloudsimple.com/on-premises-dns-setup/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23842",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23781"
+    },
+    {
+      "id": 23778,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:34.48Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:23:34.4Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Migrate ISOs and Templates",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2082,7 +770,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22353",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2090,10 +778,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22290"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23778"
     },
     {
-      "id": 22308,
+      "id": 23786,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2102,9 +790,132 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:07.937Z",
+        "System.CreatedDate": "2019-07-03T07:10:37.34Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:53:38.787Z",
+        "System.ChangedDate": "2019-07-03T07:25:20.423Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23834",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23786"
+    },
+    {
+      "id": 23791,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:39.103Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:33.563Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23835",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23791"
+    },
+    {
+      "id": 23801,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:42.687Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:24:28.243Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Architect workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Define future state architecture for the workload:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23832",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23801"
+    },
+    {
+      "id": 23796,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:40.887Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:21:47.883Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Select the first workload",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2123,7 +934,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22279",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2131,10 +942,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22308"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23796"
     },
     {
-      "id": 22307,
+      "id": 23813,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2143,9 +954,419 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:07.72Z",
+        "System.CreatedDate": "2019-07-03T07:10:46.99Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:53:41.99Z",
+        "System.ChangedDate": "2019-07-03T07:26:18.087Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Security Review",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate adherence to security baseline&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23838",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23813"
+    },
+    {
+      "id": 23808,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:45.127Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:26:35.66Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Workload monitoring period",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Monitor application performance for a period of time to validate that the application is free of unplanned dependencies on decommissioned assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23839",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23808"
+    },
+    {
+      "id": 23829,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:53.2Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:24:16.847Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Roles and Responsibilities",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The various functions required during this migration are represented by one or more members of the team.&nbsp;<a href=\"https://review.docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity?branch=pr-en-us-47\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23831",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23829"
+    },
+    {
+      "id": 23826,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:52.08Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:24:53.063Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.</div><div>Guide&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23833",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23826"
+    },
+    {
+      "id": 23821,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:50.137Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:51.363Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Manual test with power users",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Observe power users from the business performing manual validation of the workload&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23836",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23821"
+    },
+    {
+      "id": 23817,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:48.587Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:26:04.093Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Decide on optimization timing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Decide if testing is sufficient to optimize (Or if optimization should happen after promotion)&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23837",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23817"
+    },
+    {
+      "id": 23816,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:48.257Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:26:06.367Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Adjust sizing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Change the size of the deployed asset&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23837",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23816"
+    },
+    {
+      "id": 23820,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:49.81Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:54.223Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Create/select automated test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Use an existing test or create a test script based on power user testing.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23836",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23820"
+    },
+    {
+      "id": 23825,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:51.697Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:24:56Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Test, measure performance, and optimize workloads. When ready promote the workload to production</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23833",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23825"
+    },
+    {
+      "id": 23812,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:46.583Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:26:20.983Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Governance Review",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate adherence to governance or compliance requirements&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23838",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23812"
+    },
+    {
+      "id": 23795,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:40.563Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:21:50.98Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Review Expanded Scope Checklist",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2164,7 +1385,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22279",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2172,10 +1393,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22307"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23795"
     },
     {
-      "id": 22289,
+      "id": 23800,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2184,9 +1405,132 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:03.877Z",
+        "System.CreatedDate": "2019-07-03T07:10:42.3Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:17.03Z",
+        "System.ChangedDate": "2019-07-03T07:24:31.24Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Estimate Cloud Costs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Estimate cost of the proposed workload. Update the business justification and budget accordingly.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23832",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23800"
+    },
+    {
+      "id": 23790,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:38.77Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:35.747Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23835",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23790"
+    },
+    {
+      "id": 23785,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:36.997Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:22.85Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23834",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23785"
+    },
+    {
+      "id": 23777,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:34.133Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:23:38.247Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Migrate VMs using PowerCLI",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2205,7 +1549,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22353",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2213,10 +1557,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22289"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23777"
     },
     {
-      "id": 22288,
+      "id": 23776,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2225,9 +1569,9 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:03.673Z",
+        "System.CreatedDate": "2019-07-03T07:10:33.8Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:51:19.71Z",
+        "System.ChangedDate": "2019-07-03T07:23:39.97Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Migrate VMs using NSX Layer 2 VPN",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2246,7 +1590,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22353",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2254,10 +1598,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22288"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23776"
     },
     {
-      "id": 22306,
+      "id": 23784,
       "rev": 2,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2266,9 +1610,132 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:07.483Z",
+        "System.CreatedDate": "2019-07-03T07:10:36.627Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:53:44.02Z",
+        "System.ChangedDate": "2019-07-03T07:25:25.157Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23834",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23784"
+    },
+    {
+      "id": 23789,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:38.46Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:25:37.837Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23835",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23789"
+    },
+    {
+      "id": 23799,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:41.94Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:24:37.177Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Migration tool choice(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Evaluate the approach to migrate the workload based on future state architecture decisions&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23832",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23799"
+    },
+    {
+      "id": 23794,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:40.18Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:21:53.437Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Review Best Practices",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2287,7 +1754,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22279",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2295,10 +1762,92 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22306"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23794"
     },
     {
-      "id": 22305,
+      "id": 23811,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:46.21Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:26:22.89Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Final test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate availability of all assets before production",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23838",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23811"
+    },
+    {
+      "id": 23824,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:51.297Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:24:58.73Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.</div><div>Guide: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23833",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23824"
+    },
+    {
+      "id": 23828,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2307,9 +1856,255 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:07.29Z",
+        "System.CreatedDate": "2019-07-03T07:10:52.827Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:26:07.29Z",
+        "System.ChangedDate": "2019-07-03T07:10:52.827Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Environment readiness (Landing Zone)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Has the cloud migration target been established? Are the necessary migration tools in place? Has a resource organization and naming standard been set for this workload's assets?&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23831",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23828"
+    },
+    {
+      "id": 23807,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:44.787Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:44.787Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Decommission",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Terminate or resuse the allocated resources&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23839",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23807"
+    },
+    {
+      "id": 23823,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:50.907Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:50.907Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23833",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23823"
+    },
+    {
+      "id": 23819,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:49.35Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:49.35Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Scale Test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Execute the test at scale to test asset performance under load.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23836",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23819"
+    },
+    {
+      "id": 23815,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:47.887Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:47.887Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Document change",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Record the change in sizing in the parent feature, along with the reason for change",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23837",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23815"
+    },
+    {
+      "id": 23810,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:45.817Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:45.817Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Promotion",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Re-route production traffic to deployed assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23838",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23810"
+    },
+    {
+      "id": 23793,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:39.82Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:39.82Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Update the adoption plan",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2328,7 +2123,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22279",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2336,10 +2131,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22305"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23793"
     },
     {
-      "id": 22287,
+      "id": 23798,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -2348,9 +2143,214 @@
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-02T06:26:03.453Z",
+        "System.CreatedDate": "2019-07-03T07:10:41.59Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-02T06:26:03.453Z",
+        "System.ChangedDate": "2019-07-03T07:10:41.59Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Change approval process",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Approve proposed changes with necessary change control mechanisms:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23832",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23798"
+    },
+    {
+      "id": 23788,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:38.107Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:38.107Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23835",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23788"
+    },
+    {
+      "id": 23783,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:36.24Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:36.24Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23834",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23783"
+    },
+    {
+      "id": 23780,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:35.173Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:35.173Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Configure workload DNS and DHCP setup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/dns-dhcp-setup/\">https://docs.azure.cloudsimple.com/dns-dhcp-setup/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23842",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23780"
+    },
+    {
+      "id": 23773,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:32.653Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:32.653Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Update the migration tooling decision tree to reflect VMWare migration options",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Download and modify the migration tool decision tree to align to your expanded migration processes&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23840",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23773"
+    },
+    {
+      "id": 23775,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:33.377Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:33.377Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "Migrate VMs using backup and disaster recovery tools",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
@@ -2369,7 +2369,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/22353",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -2377,7 +2377,7 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/22287"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23775"
     }
   ],
   "HttpStatusCode": 0,
