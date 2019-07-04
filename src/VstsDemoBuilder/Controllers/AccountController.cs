@@ -39,8 +39,6 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Verify(LoginModel model, string id)
         {
-            ProjectService.TrackFeature("Initialized Site");
-
             Session.Clear();
             // check to enable extractor
             //model.EnableExtractor = "true";
