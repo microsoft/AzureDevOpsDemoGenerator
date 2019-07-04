@@ -466,7 +466,7 @@
       "Template": [
         {
           "Name": "Private",
-          "TemplateFolder": "<div class='template-body bg-light p-3'><p>Upload the template file that you have generated earlier for generating your demo. If you do not have the template file, you can create the template using the <a href='../Extractor/Index' target='_blank'> Template Builder</a></p><div class='form-group'><label>Upload archive file:</label><input class='form-control' type='file' id='FileUpload1' accept='.zip'/></div><div id='btnContainer'><button class='btn btn-primary' id='btnUpload'>Select this template</button></div></div>"
+          "TemplateFolder": "<iframe id='myiFrame' data-src='../Environment/PrivateTemplate'  frameborder='0' border='0' width='100%' style='display:inline-block; min-height:500px'></iframe>"
         }
       ]
     },

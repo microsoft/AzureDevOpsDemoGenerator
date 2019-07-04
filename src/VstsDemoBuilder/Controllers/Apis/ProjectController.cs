@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using GoogleAnalyticsTracker.WebAPI2;
+using GoogleAnalyticsTracker.Simple;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +24,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         private ITemplateService templateService;
         private IProjectService projectService;
         public delegate string[] ProcessEnvironment(Project model);
-
+        public int usercount = 0;
 
         public ProjectController()
         {
@@ -34,9 +36,13 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("create")]
         public HttpResponseMessage create(MultiProjects model)
         {
+            ProjectService.TrackFeature("api/environment/create");
+
             ProjectResponse returnObj = new ProjectResponse();
             returnObj.templatePath = model.templatePath;
             returnObj.templateName = model.templateName;
+            string PrivateTemplatePath = string.Empty;
+            string extractedTemplate = string.Empty;
             List<RequestedProject> returnProjects = new List<RequestedProject>();
             try
             {
@@ -53,7 +59,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                 //Check for AccessToken
                 if (string.IsNullOrEmpty(model.accessToken))
                 {
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized, errormessages.AccountMessages.InvalidAccessToken ); //"Token of type Basic must be provided"
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized, errormessages.AccountMessages.InvalidAccessToken); //"Token of type Basic must be provided"
                 }
                 else
                 {
@@ -118,26 +124,37 @@ namespace VstsDemoBuilder.Controllers.Apis
                         }
                         else
                         {
-                            ProjectService.PrivateTemplatePath = "";
                             //check for Private template path provided in request body
                             if (!string.IsNullOrEmpty(model.templatePath))
                             {
                                 string fileName = Path.GetFileName(model.templatePath);
                                 string extension = Path.GetExtension(model.templatePath);
+
                                 if (extension.ToLower() == ".zip")
                                 {
-                                    ProjectService.ExtractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
-                                    templateName = ProjectService.ExtractedTemplate;
-                                    model.templateName = ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                                    extractedTemplate = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                                    templateName = extractedTemplate;
+                                    model.templateName = extractedTemplate.ToLower().Replace(".zip", "").Trim();
                                     //Get template  by extarcted the template from TemplatePath and returning boolean value for Valid template
-                                    bool IsDownloadableTemplate = templateService.GetTemplateFromPath(model.templatePath, ProjectService.ExtractedTemplate, model.gitHubToken, model.userId, model.password);
-                                    if (!IsDownloadableTemplate)
+                                    PrivateTemplatePath = templateService.GetTemplateFromPath(model.templatePath, extractedTemplate, model.gitHubToken, model.userId, model.password);
+                                    if (string.IsNullOrEmpty(PrivateTemplatePath))
                                     {
                                         return Request.CreateResponse(HttpStatusCode.BadRequest, errormessages.TemplateMessages.FailedTemplate);//"Failed to load the template from given template path. Check the repository URL and the file name.  If the repository is private then make sure that you have provided a GitHub token(PAT) in the request body"
                                     }
                                     else
                                     {
-                                        isPrivate = true;
+                                        string privateErrorMessage = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
+                                        if (privateErrorMessage!="SUCCESS")
+                                        {
+                                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + model.templateName;
+                                            if (Directory.Exists(templatepath))
+                                                Directory.Delete(templatepath, true);
+                                            return Request.CreateResponse(HttpStatusCode.BadRequest, privateErrorMessage);//"TemplatePath should have .zip extension file name at the end of the url"
+                                        }
+                                        else
+                                        {
+                                            isPrivate = true;
+                                        }
                                     }
                                 }
                                 else
@@ -156,7 +173,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                         }
                         //check for Extension file from selected template(public or private template)
-                        string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, ProjectService.PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
+                        string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
                         if (File.Exists(extensionJsonFile))
                         {
                             //check for Extension installed or not from selected template in selected organization
@@ -187,7 +204,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             }
                             else
                             {
-                                ProjectService.usercount++;
+                                usercount++;
                                 project.trackId = Guid.NewGuid().ToString().Split('-')[0];
                                 project.status = "Project creation is initiated..";
                                 Project pmodel = new Project();
@@ -199,17 +216,20 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 pmodel.id = project.trackId;
                                 pmodel.IsApi = true;
                                 if (model.templatePath != "")
+                                {
+                                    pmodel.PrivateTemplatePath = PrivateTemplatePath;
+                                    pmodel.PrivateTemplateName = model.templateName;
                                     pmodel.IsPrivatePath = true;
+                                }
+
                                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
                                 processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                             }
                             returnProjects.Add(project);
                         }
-                        if (!string.IsNullOrEmpty(model.templatePath) && ProjectService.usercount == 0)
+                        if (!string.IsNullOrEmpty(model.templatePath) && usercount == 0 && string.IsNullOrEmpty(extractedTemplate))
                         {
-                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                            if (Directory.Exists(templatepath))
-                                Directory.Delete(templatepath, true);
+                            templateService.deletePrivateTemplate(extractedTemplate);
                         }
                     }
                 }
@@ -227,6 +247,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("GetCurrentProgress")]
         public HttpResponseMessage GetCurrentProgress(string TrackId)
         {
+            ProjectService.TrackFeature("api/environment/GetCurrentProgress");
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             // Use SecurityProtocolType.Ssl3 if needed for compatibility reasons
@@ -241,49 +262,58 @@ namespace VstsDemoBuilder.Controllers.Apis
         /// <param name="result"></param>
         public void EndEnvironmentSetupProcess(IAsyncResult result)
         {
+            string templateUsed = string.Empty;
+            string ID = string.Empty;
+            string accName = string.Empty;
             try
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 string[] strResult = processTask.EndInvoke(result);
-
-                projectService.RemoveKey(strResult[0]);
-                if (ProjectService.StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
+                if (strResult != null && strResult.Length > 0)
                 {
-                    string errorMessages = ProjectService.statusMessages[strResult[0] + "_Errors"];
-                    if (errorMessages != "")
+                    ID = strResult[0];
+                    accName = strResult[1];
+                    templateUsed = strResult[2];
+                    projectService.RemoveKey(ID);
+
+                    if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
                     {
-                        //also, log message to file system
-                        string logPath = HostingEnvironment.MapPath("~") + @"\Log";
-                        string accountName = strResult[1];
-                        string fileName = string.Format("{0}_{1}.txt", ProjectService.templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-
-                        if (!Directory.Exists(logPath))
+                        string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
+                        if (errorMessages != "")
                         {
-                            Directory.CreateDirectory(logPath);
-                        }
+                            //also, log message to file system
+                            string logPath = HostingEnvironment.MapPath("~") + @"\Log";
+                            string accountName = strResult[1];
+                            string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                            if (!Directory.Exists(logPath))
+                            {
+                                Directory.CreateDirectory(logPath);
+                            }
 
-                        //Create ISSUE work item with error details in VSTSProjectgenarator account
-                        string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                        string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                        string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                        string issueName = string.Format("{0}_{1}", ProjectService.templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                        IssueWI objIssue = new IssueWI();
+                            System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                        errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + ProjectService.templateUsed;
-                        errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
+                            //Create ISSUE work item with error details in VSTSProjectgenarator account
+                            string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                            string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
+                            string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                            string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                            IssueWI objIssue = new IssueWI();
 
-                        ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+                            errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
+                            errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
 
-                        string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                        if (logWIT == "true")
-                        {
-                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+
+                            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                            if (logWIT == "true")
+                            {
+                                objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            }
                         }
                     }
                 }
-                ProjectService.usercount--;
+                usercount--;
             }
             catch (Exception ex)
             {
@@ -291,12 +321,9 @@ namespace VstsDemoBuilder.Controllers.Apis
             }
             finally
             {
-                if (ProjectService.usercount == 0 && !string.IsNullOrEmpty(ProjectService.ExtractedTemplate))
+                if (usercount == 0 && !string.IsNullOrEmpty(templateUsed))
                 {
-                    var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + ProjectService.ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                    if (Directory.Exists(templatepath))
-                        Directory.Delete(templatepath, true);
-
+                    templateService.deletePrivateTemplate(templateUsed);
                 }
             }
         }
