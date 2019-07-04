@@ -43,14 +43,7 @@
                                 console.log("succesfully unzipped file: " + files[0].name);
 
                                 var NewTemplateName = files[0].name.replace(".zip", "");
-                                //$('#ddlTemplates', parent.document).val(NewTemplateName);
-                                //$('#selectedTemplateFolder', parent.document).val(NewTemplateName);
-                                //$(".template-close", parent.document).click();
-                                //$(".VSTemplateSelection", parent.document).removeClass('d-block').addClass('d-none');
-                                //$("#lblextensionError", parent.document).removeClass('d-block').addClass('d-none');
-                                //$("#lblDefaultDescription", parent.document).removeClass('d-block').addClass('d-none');
-                                //$("#lblDescription", parent.document).removeClass('d-block').addClass('d-none');
-                                //$("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
+                               
                                 $('#ddlTemplates', parent.document).val(NewTemplateName);
                                 $('#selectedTemplateFolder', parent.document).val(Data.privateTemplateName);
                                 $(".template-close", parent.document).click();
@@ -66,22 +59,7 @@
                                 enableButton(controlID);
                             }
                             else if (Data.responseMessage !== null && Data.responseMessage !== "") {
-                                //var msg = '';
-                                //if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
-                                //    msg = 'ProjectSetting and ProjectTemplate files not found! plase include the files in zip and try again';
-                                //}
-                                //else if (Data.responseMessage === "SETTINGNOTFOUND") {
-                                //    msg = 'ProjectSetting file not found! plase include the files in zip and try again';
-                                //}
-                                //else if (Data.responseMessage === "PROJECTFILENOTFOUND") {
-                                //    msg = 'ProjectTemplate file not found! plase include the files in zip and try again';
-                                //}
-                                //else if (Data.responseMessage === "ISPRIVATEERROR") {
-                                //    msg = 'IsPrivate flag is not set to true inProjectTemplate file, update the flag and try again.';
-                                //}
-                                //else {
-                                //    msg = Data.responseMessage;
-                                //}
+                                
                                 $("#urlerror").empty().append(Data.responseMessage);
                                 enableButton(controlID);
                                 return;
@@ -102,9 +80,9 @@
         var isUrlValid = false;
         var URL = '';
         if ($('#GitHubUrl').val() !== '') {
-            URL = $('#GitHubUrl').val();
+            URL = $('#GitHubUrl').val().trim();
         } else if ($('#FileURL').val() !== '') {
-            URL = $('#FileURL').val();
+            URL = $('#FileURL').val().trim();
         }
         if (URL === '') {
             $("#urlerror").empty().append('URL should not be empty');
@@ -112,15 +90,15 @@
         }
         var controlID = this.id;
 
-        var GitHubtoken = $('#GitHubToken').val();
-        var userId = $('#UserId').val();
-        var password = $('#Password').val();
+        var GitHubtoken = $('#GitHubToken').val().trim();
+        var userId = $('#UserId').val().trim();
+        var password = $('#Password').val().trim();
         $("#urlerror").empty();
         var fileurlSplit = URL.split('/');
         var filename = fileurlSplit[fileurlSplit.length - 1];
         filename = filename.split('.');
         if (filename.length === 2) {
-            if (filename[1].toLowerCase() !== "zip") {
+            if (filename[filename.length-1].toLowerCase().trim() !== "zip") {
                 $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
             } else {
                 isUrlValid = true;
@@ -135,7 +113,7 @@
                 $("#urlerror").empty().append('Please provide GitHub access token for authentication'); isUrlValid = false;
             }
         }
-        else if (controlID === 'btnURLUpload' && $('#privateurl').prop("checked") === true && userId === '' && password === '') {
+        else if (controlID === 'btnURLUpload' && $('#privateurl').prop("checked") === true && (userId === '' || password === '')) {
             $("#urlerror").empty().append('Please provide userId and password for authentication'); isUrlValid = false;
         }
         var oldTemplate = $('#PrivateTemplateName', parent.document).val();
