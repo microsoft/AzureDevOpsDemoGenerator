@@ -419,6 +419,15 @@ namespace VstsDemoBuilder.Services
                     {
                         Directory.Delete(templatepath, true);
                     }
+                    string[] subdirs = Directory.GetDirectories(HostingEnvironment.MapPath("~") + @"\PrivateTemplates\")
+                            .Select(Path.GetFileName)
+                            .ToArray();
+                    foreach (string folderName in subdirs)
+                    {
+                        DirectoryInfo d = new DirectoryInfo(HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + folderName);
+                        if (d.CreationTime < DateTime.Now.AddHours(-1))
+                            Directory.Delete(HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + folderName, true);
+                    }
                 }
             }
             catch (Exception ex)
