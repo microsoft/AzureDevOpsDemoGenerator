@@ -16,11 +16,14 @@ namespace VstsDemoBuilder.ServiceInterfaces
 
         string GetTemplate(string TemplateName);
 
-        bool GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "");
+        string GetTemplateFromPath(string TemplateUrl, string ExtractedTemplate, string GithubToken, string UserID = "", string Password = "");
 
         bool checkTemplateDirectory(string dir);
 
         string FindPrivateTemplatePath(string privateTemplatePath);
 
+        string checkSelectedTemplateIsPrivate(string templatePath);
+
+        void deletePrivateTemplate(string Template);
     }
 }
