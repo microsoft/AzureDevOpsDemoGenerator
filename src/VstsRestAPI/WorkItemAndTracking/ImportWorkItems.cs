@@ -139,6 +139,10 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 if (fetchedWIs.count > 0)
                 {
+                    if(workItemType.ToLower()=="epic"|| workItemType.ToLower() == "feature")
+                    {
+                        fetchedWIs.value = fetchedWIs.value.OrderBy(x => x.id).ToArray();
+                    }
                     foreach (ImportWorkItemModel.Value newWI in fetchedWIs.value)
                     {
                         newWI.fields.SystemCreatedDate = DateTime.Now.AddDays(-3);

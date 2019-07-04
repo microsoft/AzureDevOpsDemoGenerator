@@ -3,6 +3,7 @@
     "General",
     "DevOps Labs",
     "Microsoft Learn",
+    "Microsoft Cloud Adoption Framework",
     "Private"
   ],
   "PrivateGroups": [
@@ -626,6 +627,31 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/host-build-agent/' target='_blank'>Host build agent</a>"
+        }
+      ]
+    },
+    {
+      "Groups": "Microsoft Cloud Adoption Framework",
+      "Template": [
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
+          "Name": "Cloud Adoption Plan",
+          "TemplateFolder": "CloudAdoptionPlan",
+          "ShortName": "CloudAdoptionPlan",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
         }
       ]
     }
