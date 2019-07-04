@@ -1,0 +1,4 @@
+{
+  "name": "Assigned to me",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AreaPath], [System.IterationPath], [System.Tags] from WorkItems where [System.TeamProject] = @project and [System.AssignedTo] = @me order by [System.ChangedDate] desc"
+}
