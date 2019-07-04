@@ -5,6 +5,7 @@ using System;
 using System.Web.Mvc;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
+using VstsDemoBuilder.Services;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -38,6 +39,8 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Verify(LoginModel model, string id)
         {
+            ProjectService.TrackFeature("Initialized Site");
+
             Session.Clear();
             // check to enable extractor
             //model.EnableExtractor = "true";

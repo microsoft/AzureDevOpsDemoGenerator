@@ -1,4 +1,6 @@
-﻿using log4net;
+﻿using GoogleAnalyticsTracker.Simple;
+using GoogleAnalyticsTracker.WebAPI2;
+using log4net;
 using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.VisualStudio.Services.WebApi;
@@ -48,15 +50,31 @@ namespace VstsDemoBuilder.Services
         public static Dictionary<string, string> statusMessages;
         public static ILog logger = LogManager.GetLogger("ErrorLog");
 
-        public  bool isDefaultRepoTodetele = true;
-        public  string websiteUrl = string.Empty;
-        public  string templateUsed = string.Empty;
+        public bool isDefaultRepoTodetele = true;
+        public string websiteUrl = string.Empty;
+        public string templateUsed = string.Empty;
         public static string projectName = string.Empty;
         public static AccessDetails AccessDetails = new AccessDetails();
-       
+
         public string templateVersion = string.Empty;
         public static string enableExtractor = "";
 
+        public static async void TrackFeature(string API)
+        {
+            SimpleTrackerEnvironment simpleTrackerEnvironment = new SimpleTrackerEnvironment(Environment.OSVersion.Platform.ToString(),
+                                                                        Environment.OSVersion.Version.ToString(),
+                                                                        Environment.OSVersion.VersionString);
+            string GAKey = System.Configuration.ConfigurationManager.AppSettings["AnalyticsKey"];
+            if (!string.IsNullOrEmpty(GAKey))
+            {
+                using (Tracker tracker = new Tracker(GAKey, simpleTrackerEnvironment))
+                {
+                    var response = await tracker.TrackPageViewAsync("My API - Create", API);
+                    bool issuccess = response.Success;
+                }
+            }
+
+        }
         public static Dictionary<string, string> StatusMessages
         {
             get
@@ -948,9 +966,9 @@ namespace VstsDemoBuilder.Services
                 CreateQueryAndWidgets(model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
                 AddMessage(model.id, "Queries, Widgets and Charts created");
             }
-           
+
             StatusMessages[model.id] = "100";
-            return new string[] { model.id, accountName ,templateUsed};
+            return new string[] { model.id, accountName, templateUsed };
         }
 
         private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)
@@ -964,7 +982,7 @@ namespace VstsDemoBuilder.Services
                 {
                     ForkRepos.Fork forkRepos = new ForkRepos.Fork();
                     forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                    if (forkRepos.repositories!=null && forkRepos.repositories.Count > 0)
+                    if (forkRepos.repositories != null && forkRepos.repositories.Count > 0)
                     {
                         foreach (var repo in forkRepos.repositories)
                         {
@@ -2680,7 +2698,7 @@ namespace VstsDemoBuilder.Services
                 ExtensionRequired = false;
             }
             return ExtensionRequired;
-        }       
+        }
 
     }
 }

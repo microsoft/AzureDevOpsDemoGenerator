@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using GoogleAnalyticsTracker.WebAPI2;
+using GoogleAnalyticsTracker.Simple;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +35,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [HttpPost]
         [Route("create")]
         public HttpResponseMessage create(MultiProjects model)
-        {
+        {           
             ProjectResponse returnObj = new ProjectResponse();
             returnObj.templatePath = model.templatePath;
             returnObj.templateName = model.templateName;
@@ -168,6 +170,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 templateName = model.templateName;
                             }
                         }
+                        ProjectService.TrackFeature("create project API is called with using template -"+model.templateName);
                         //check for Extension file from selected template(public or private template)
                         string extensionJsonFile = projectService.GetJsonFilePath(isPrivate, PrivateTemplatePath, templateName, "Extensions.json");//string.Format(templatesFolder + @"{ 0}\Extensions.json", selectedTemplate);
                         if (File.Exists(extensionJsonFile))
@@ -243,6 +246,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("GetCurrentProgress")]
         public HttpResponseMessage GetCurrentProgress(string TrackId)
         {
+            ProjectService.TrackFeature("project creation progress with trackId -" + TrackId);
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             // Use SecurityProtocolType.Ssl3 if needed for compatibility reasons
