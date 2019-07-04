@@ -409,17 +409,10 @@ namespace VstsDemoBuilder.Controllers
                 string folder = fineName.Replace(".zip", "");
                 privateTemplate.privateTemplateName = folder;
 
-                extractPath = Server.MapPath("~/PrivateTemplates/" + folder);
-                privateTemplate.privateTemplatePath = extractPath;
-
-                if (Directory.Exists(extractPath))
-                {
-                    System.IO.File.Delete(Server.MapPath("~/PrivateTemplates/" + fineName));
-                    privateTemplate.responseMessage = "Folder already exist. Please rename the folder and upload it.";
-                    //return Json("Folder already exist. Please rename the folder and upload it.");
-                }
+                extractPath = Server.MapPath("~/PrivateTemplates/" + folder);               
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
+                privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
 
                 privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
             }

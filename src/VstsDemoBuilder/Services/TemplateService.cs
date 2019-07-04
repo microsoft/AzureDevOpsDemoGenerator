@@ -297,16 +297,7 @@ namespace VstsDemoBuilder.Services
                 {
                     string projectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
                     ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
-
-                    if (!string.IsNullOrEmpty(settings.IsPrivate))
-                    {
-                        response = "SUCCESS";
-                    }
-                    else
-                    {
-                        Directory.Delete(extractPath, true);
-                        response = "\"IsPrivate\" flag is not set to true in project template file, update the flag and try again.";
-                    }
+                    response = "SUCCESS";
                 }
                 else if (!settingFile && !projectFile)
                 {
@@ -320,70 +311,15 @@ namespace VstsDemoBuilder.Services
                     {
                         response = "Could not find required preoject setting and project template file.";
                     }
-
                     if (subDir != "")
                     {
-                        bool settingFile1 = (System.IO.File.Exists(subDir + "\\ProjectSettings.json") ? true : false);
-                        bool projectFile1 = (System.IO.File.Exists(subDir + "\\ProjectTemplate.json") ? true : false);
-                        if (settingFile1 && projectFile1)
-                        {
-                            string projectFileData1 = System.IO.File.ReadAllText(subDir + "\\ProjectTemplate.json");
-                            ProjectSetting settings1 = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData1);
-
-                            if (!string.IsNullOrEmpty(settings1.IsPrivate))
-                            {
-                                string sourceDirectory = subDir;
-                                string targetDirectory = extractPath;
-                                string backupDirectory = System.Web.HttpContext.Current.Server.MapPath("~/TemplateBackUp/");
-                                if (!Directory.Exists(backupDirectory))
-                                {
-                                    Directory.CreateDirectory(backupDirectory);
-                                }
-                                //Create a tempprary directory
-                                string backupDirectoryRandom = backupDirectory + DateTime.Now.ToString("MMMdd_yyyy_HHmmss");
-
-                                if (Directory.Exists(sourceDirectory))
-                                {
-
-                                    if (Directory.Exists(targetDirectory))
-                                    {
-
-                                        //copy the content of source directory to temp directory
-                                        Directory.Move(sourceDirectory, backupDirectoryRandom);
-
-                                        //Delete the target directory
-                                        Directory.Delete(targetDirectory);
-
-                                        //Target Directory should not be exist, it will create a new directory
-                                        Directory.Move(backupDirectoryRandom, targetDirectory);
-
-                                        DirectoryInfo di = new DirectoryInfo(backupDirectory);
-
-                                        foreach (FileInfo file in di.GetFiles())
-                                        {
-                                            file.Delete();
-                                        }
-                                        foreach (DirectoryInfo dir in di.GetDirectories())
-                                        {
-                                            dir.Delete(true);
-                                        }
-                                    }
-                                }
-
-                                //return Json("SUCCESS");
-                                response = "SUCCESS";
-                            }
-                            else
-                            {
-                                Directory.Delete(extractPath, true);
-                                response = "\"IsPrivate\" flag is not set to true in project template file, update the flag and try again.";
-                                //return Json("ISPRIVATEERROR");
-                            }
-                        }
+                        response = checkSelectedTemplateIsPrivate(subDir);                     
                     }
-                    Directory.Delete(extractPath, true);
-                    response = "Project setting and project template files not found! plase include the files in zip and try again";
-                    //return Json("PROJECTANDSETTINGNOTFOUND");
+                    if (response != "SUCCESS")
+                    {
+                        Directory.Delete(extractPath, true);
+                        response = "Project setting and project template files not found! plase include the files in zip and try again";
+                    }
                 }
                 else
                 {

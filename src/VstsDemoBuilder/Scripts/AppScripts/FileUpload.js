@@ -163,22 +163,7 @@
                             $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
                             enableButton(controlID);
                             //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
-                        }
-                        //else if (Data.responseMessage === "PROJECTANDSETTINGNOTFOUND") {
-                        //    msg = 'Project setting and project template files not found! plase include the files in zip and try again';
-                        //}
-                        //else if (Data.responseMessage === "SETTINGNOTFOUND") {
-                        //    msg = 'Project setting file not found! plase include the files in zip and try again';
-                        //}
-                        //else if (Data.responseMessage === "PROJECTFILENOTFOUND") {
-                        //    msg = 'Project template file not found! plase include the files in zip and try again';
-                        //}
-                        //else if (Data.responseMessage === "ISPRIVATEERROR") {
-                        //    msg = '"IsPrivate" flag is not set to true in project template file, update the flag and try again.';
-                        //}
-                        //else {
-                        //    msg = Data.responseMessage;
-                        //}
+                        }                       
                         else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
                             $("#urlerror").empty().append(Data.responseMessage);
                             enableButton(controlID);
@@ -202,11 +187,7 @@
 });
 function disableButton(button) {
     $('#' + button).attr('disabled', 'disabled').removeClass('btn-primary');
-    //$('#btnURLUpload').attr('disabled', 'disabled').removeClass('btn-primary');
-    //$('#btnGitHubUpload').attr('disabled', 'disabled').removeClass('btn-primary');
 }
 function enableButton(button) {
     $('#' + button).attr('disabled', false).addClass('btn-primary');
-    //$('#btnURLUpload').attr('disabled', false).addClass('btn-primary');
-    //$('#btnURLUpload').attr('disabled', false).addClass('btn-primary');
 }
