@@ -3,8 +3,8 @@
     "General",
     "DevOps Labs",
     "Microsoft Learn",
-    "Private",
-    "Microsoft Cloud Adoption Framework"
+    "Microsoft Cloud Adoption Framework",
+    "Private"
   ],
   "PrivateGroups": [
     "PrivateTemplates"
