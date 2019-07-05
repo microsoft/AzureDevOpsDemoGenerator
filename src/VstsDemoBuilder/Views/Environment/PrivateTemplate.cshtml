@@ -10,10 +10,14 @@
 </head>
 <body class="mt-3 bg-light">
     <div class="container">
-        <div class="template-body bg-light p-3 col-lg-12 col-sm-12 row" style="
-    border: 1px solid grey;
-    height: fit-content;
-">
+        <div>
+            Azure DevOps Demo Generator also allows users to make their own templates. Users can convert their existing projects into templates and then provision new projects using that template. 
+            The ability to have custom templates can be useful in many scenarios, such as building custom training materials, provision only certain artifacts, etc., <br/>
+            You can refer the document 
+            <a href="https://vstsdemodata.visualstudio.com/AzureDevOpsDemoGenerator/_wiki/wikis/AzureDevOpsGenerator.wiki?pagePath=%2FAbout%20Azure%20DevOps%20Demo%20Generator%2FBuild%20your%20own%20template&pageId=58&wikiVersion=GBwikiMaster">here</a>
+            on how to use the extractor.
+        </div>
+        <div class="template-body bg-light p-3 col-lg-12 col-sm-12 row" style="border: 1px solid grey; height: fit-content;">
             <div class="col-lg-4 col-sm-4">
                 <label>Upload your template archive (zip) file from:</label>
                 <div style="border:1px solid #ccc; padding:15px;">
@@ -81,7 +85,7 @@
                     </div>
                 </div>
                 <div class="d-none" id="urlUpload">
-                    <p>Specify the URL to your private template. If the URL needs authentication, please provide UserId and Password </p>
+                    <p>Specify the URL to your private template. If the URL needs authentication, please provide username and password </p>
                     <div class="form-group"><input class="form-control" type="text" id="FileURL" placeholder="https://www.mysite.com/mytemplatefile.zip"></div>
                     <div class="col-lg-6">
                         <input type="checkbox" id="privateurl"><label for="privateurl" style="margin-left: 5px;">
