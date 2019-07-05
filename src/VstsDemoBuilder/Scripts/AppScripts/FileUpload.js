@@ -96,13 +96,17 @@
         $("#urlerror").empty();
         var fileurlSplit = URL.split('/');
         var filename = fileurlSplit[fileurlSplit.length - 1];
+
         filename = filename.split('.');
-        if (filename.length === 2) {
-            if (filename[filename.length-1].toLowerCase().trim() !== "zip") {
-                $("#urlerror").empty().append('Enter zip file URL'); isUrlValid = false;
+        if (filename.length > 1) {
+            if (filename[filename.length - 1].toLowerCase().trim() !== "zip") {
+                $("#urlerror").empty().append('Invalid URL, please provide the URL which ends with .zip extension'); isUrlValid = false;
             } else {
                 isUrlValid = true;
             }
+        }
+        else {
+            $("#urlerror").empty().append('Invalid URL, please provide the URL which ends with .zip extension'); isUrlValid = false;
         }
         if (controlID === 'btnGitHubUpload') {
            
@@ -114,7 +118,7 @@
             }
         }
         else if (controlID === 'btnURLUpload' && $('#privateurl').prop("checked") === true && (userId === '' || password === '')) {
-            $("#urlerror").empty().append('Please provide userId and password for authentication'); isUrlValid = false;
+            $("#urlerror").empty().append('Please provide username and password for authentication'); isUrlValid = false;
         }
         var oldTemplate = $('#PrivateTemplateName', parent.document).val();
         if (isUrlValid) {
