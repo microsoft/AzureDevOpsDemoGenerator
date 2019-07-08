@@ -561,8 +561,7 @@ namespace VstsDemoBuilder.Controllers
                 DeletePrivateTemplate(templateUsed);
             }
         }
-
-
+        
         /// <summary>
         /// Checking for Extenison in the account
         /// </summary>
