@@ -178,8 +178,15 @@ namespace VstsDemoBuilder.Services
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model)
         {
-
             string accountName = model.accountName;
+            if (model.IsPrivatePath)
+            {
+                templateUsed = model.PrivateTemplateName;
+            }
+            else
+            {
+                templateUsed = model.SelectedTemplate;
+            }
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
             string pat = model.accessToken;
             //define versions to be use
@@ -217,15 +224,7 @@ namespace VstsDemoBuilder.Services
             List<WIMapData> wiMapping = new List<WIMapData>();
             AccountMembers.Account accountMembers = new AccountMembers.Account();
             model.accountUsersForWi = new List<string>();
-            websiteUrl = model.websiteUrl;
-            if (model.IsPrivatePath)
-            {
-                templateUsed = model.PrivateTemplateName;
-            }
-            else
-            {
-                templateUsed = model.SelectedTemplate;
-            }
+            websiteUrl = model.websiteUrl;           
             projectName = model.ProjectName;
 
             string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
@@ -324,7 +323,7 @@ namespace VstsDemoBuilder.Services
                 {
                     AddMessage(model.id.ErrorId(), "Project Template not found");
                     StatusMessages[model.id] = "100";
-                    return new string[] { model.id, accountName };
+                    return new string[] { model.id, accountName, templateUsed };
                 }
             }
             catch (Exception ex)
@@ -356,7 +355,7 @@ namespace VstsDemoBuilder.Services
                     }
                 }
                 Thread.Sleep(2000); // Adding Delay to Get Error message
-                return new string[] { model.id, accountName };
+                return new string[] { model.id, accountName, templateUsed };
             }
             else
             {
@@ -375,7 +374,7 @@ namespace VstsDemoBuilder.Services
                 projectStatus = objProject.GetProjectStateByName(model.ProjectName);
                 if (watch.Elapsed.Minutes >= 5)
                 {
-                    return new string[] { model.id, accountName };
+                    return new string[] { model.id, accountName, templateUsed };
                 }
             }
             watch.Stop();
