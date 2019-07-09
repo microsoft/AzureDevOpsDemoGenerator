@@ -339,6 +339,10 @@ namespace VstsDemoBuilder.Controllers
             {
                 try
                 {
+                    if (!Directory.Exists(Server.MapPath("~") + @"\ExtractedZipFile"))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~") + @"\ExtractedZipFile");
+                    }
                     //  Get all files from Request object  
                     HttpFileCollectionBase files = Request.Files;
                     for (int i = 0; i < files.Count; i++)
@@ -353,7 +357,7 @@ namespace VstsDemoBuilder.Controllers
                             string[] testFiles = file.FileName.Split(new char[] { '\\' });
                             fileName = testFiles[testFiles.Length - 1];
                             templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + ".zip";
-
+                           
                             if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName)))
                             {
                                 System.IO.File.Delete(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName));
@@ -403,6 +407,10 @@ namespace VstsDemoBuilder.Controllers
                 if (!System.IO.Directory.Exists(Server.MapPath("~") + @"\Logs"))
                 {
                     Directory.CreateDirectory(Server.MapPath("~") + @"\Logs");
+                }
+                if (!Directory.Exists(Server.MapPath("~") + @"\PrivateTemplates"))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~") + @"\PrivateTemplates");
                 }
 
                 string zipPath = Server.MapPath("~/ExtractedZipFile/" + fineName);
