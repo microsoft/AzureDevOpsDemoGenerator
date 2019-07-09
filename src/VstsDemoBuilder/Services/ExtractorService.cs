@@ -448,7 +448,7 @@ namespace VstsDemoBuilder.Services
                         {
                             boardTypes.Add("Issues");
                         }
-                        else
+                        else if (processTemplate.ToLower() == "scrum")
                         {
                             boardTypes.Add("Features");
                             boardTypes.Add("Backlog Items");
