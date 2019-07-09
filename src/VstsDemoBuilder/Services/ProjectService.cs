@@ -224,7 +224,7 @@ namespace VstsDemoBuilder.Services
             List<WIMapData> wiMapping = new List<WIMapData>();
             AccountMembers.Account accountMembers = new AccountMembers.Account();
             model.accountUsersForWi = new List<string>();
-            websiteUrl = model.websiteUrl;           
+            websiteUrl = model.websiteUrl;
             projectName = model.ProjectName;
 
             string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
@@ -315,6 +315,16 @@ namespace VstsDemoBuilder.Services
                             else if (settings.type.ToLower() == TemplateType.Basic.ToString().ToLower())
                             {
                                 processTemplateId = Default.BASIC;
+                            }
+                            else if (!string.IsNullOrEmpty(settings.id))
+                            {
+                                processTemplateId = settings.id;
+                            }
+                            else
+                            {
+                                AddMessage(model.id.ErrorId(), "Could not recognize process template. Make sure that the exported project template is belog to standard process template or project setting file has valid process template id.");
+                                StatusMessages[model.id] = "100";
+                                return new string[] { model.id, accountName, templateUsed };
                             }
                         }
                     }
