@@ -1445,12 +1445,15 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
-                bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type);
-
-                if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
+                if (settings.type.ToLower() == "scrum" || settings.type.ToLower() == "agile" || settings.type.ToLower() == "basic")
                 {
-                    AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + objClassification.LastFailureMessage + Environment.NewLine);
+                    ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
+                    bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type);
+
+                    if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
+                    {
+                        AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + objClassification.LastFailureMessage + Environment.NewLine);
+                    }
                 }
             }
             catch (Exception ex)
