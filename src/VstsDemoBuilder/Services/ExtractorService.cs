@@ -1185,13 +1185,12 @@ namespace VstsDemoBuilder.Services
                             owner["_links"] = "{}";
                             owner["imageUrl"] = "";
                             owner["descriptor"] = "";
-
+                            e["variableGroups"] = new JArray();
                             var deployPhases = e["deployPhases"];
                             if (deployPhases.HasValues)
                             {
                                 foreach (var dep in deployPhases)
                                 {
-
                                     var deploymentInput = dep["deploymentInput"];
                                     var queueID = deploymentInput["queueId"];
                                     string queueName = "";
