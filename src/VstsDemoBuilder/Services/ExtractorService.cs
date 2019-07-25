@@ -1154,8 +1154,9 @@ namespace VstsDemoBuilder.Services
             {
                 BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
+                string rells = JsonConvert.SerializeObject(releases);
                 BuildandReleaseDefs agent = new BuildandReleaseDefs(appConfig.AgentQueueConfig);
-                //Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
+                Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
                 int releasecount = 1;
@@ -1171,11 +1172,35 @@ namespace VstsDemoBuilder.Services
                         rel["createdOn"] = "";
                         rel["modifiedBy"] = "{}";
                         rel["modifiedOn"] = "";
-                        rel["variableGroups"] = new JArray();
+
+                        var variableGroup = rel["variableGroups"].HasValues ? rel["variableGroups"].ToArray() : new JToken[0];
+                        if (variableGroup.Length > 0)
+                        {
+                            foreach (var groupId in variableGroup)
+                            {
+                                rel["variableGroups"] = new JArray("$" + variableGroupNameId.Where(x => x.Key == groupId.ToString()).FirstOrDefault().Value + "$");
+                            }
+                        }
+                        else
+                        {
+                            rel["variableGroups"] = new JArray();
+                        }
                         var env = rel["environments"];
                         foreach (var e in env)
                         {
                             e["badgeUrl"] = "";
+                            var envVariableGroup = e["variableGroups"].HasValues ? e["variableGroups"].ToArray() : new JToken[0];
+                            if (envVariableGroup.Length > 0)
+                            {
+                                foreach (var envgroupId in envVariableGroup)
+                                {
+                                    e["variableGroups"] = new JArray("$" + variableGroupNameId.Where(x => x.Key == envgroupId.ToString()).FirstOrDefault().Value + "$");
+                                }
+                            }
+                            else
+                            {
+                                e["variableGroups"] = new JArray();
+                            }
                             var owner = e["owner"];
                             owner["id"] = "$OwnerId$";
                             owner["displayName"] = "$OwnerDisplayName$";
@@ -1485,13 +1510,23 @@ namespace VstsDemoBuilder.Services
             VariableGroups variableGroups = new VariableGroups(appConfig.VariableGroupConfig);
             GetVariableGroups.Groups groups = variableGroups.GetVariableGroups();
             Dictionary<string, string> varibaleGroupDictionary = new Dictionary<string, string>();
+            string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
             if (groups.count > 0)
             {
+                if (!(Directory.Exists(templatePath + "\\VariableGroups")))
+                {
+                    Directory.CreateDirectory(templatePath + "\\VariableGroups");
+                    File.WriteAllText(templatePath + "\\VariableGroups\\VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
+                }
+                else
+                {
+                    File.WriteAllText(templatePath + "\\VariableGroups\\VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
+                }
                 foreach (var vg in groups.value)
                 {
-                    if (!varibaleGroupDictionary.ContainsKey(vg.name))
+                    if (!varibaleGroupDictionary.ContainsKey(vg.id))
                     {
-                        varibaleGroupDictionary.Add(vg.name, vg.id);
+                        varibaleGroupDictionary.Add(vg.id, vg.name);
                     }
                 }
             }

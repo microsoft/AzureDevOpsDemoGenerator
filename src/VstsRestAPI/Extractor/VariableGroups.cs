@@ -54,7 +54,6 @@ namespace VstsRestAPI.Extractor
                     {
                         string res1 = response.Content.ReadAsStringAsync().Result;
                         GetVariableGroups.VariableGroupsCreateResponse ress = JsonConvert.DeserializeObject<GetVariableGroups.VariableGroupsCreateResponse>(res1);
-                        Console.WriteLine(JsonConvert.SerializeObject(ress, Formatting.Indented));
                         return ress;
                     }
                 }

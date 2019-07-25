@@ -22,6 +22,7 @@ using VstsDemoBuilder.ServiceInterfaces;
 using VstsRestAPI;
 using VstsRestAPI.Build;
 using VstsRestAPI.DeploymentGRoup;
+using VstsRestAPI.Extractor;
 using VstsRestAPI.Git;
 using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.QueriesAndWidgets;
@@ -210,6 +211,7 @@ namespace VstsDemoBuilder.Services
             string graphApiVersion = System.Configuration.ConfigurationManager.AppSettings["GraphApiVersion"];
             string graphAPIHost = System.Configuration.ConfigurationManager.AppSettings["GraphAPIHost"];
             string gitHubBaseAddress = System.Configuration.ConfigurationManager.AppSettings["GitHubBaseAddress"];
+            string variableGroupsApiVersion = System.Configuration.ConfigurationManager.AppSettings["VariableGroupsApiVersion"];
 
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
@@ -271,6 +273,7 @@ namespace VstsDemoBuilder.Services
             Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _variableGroupApiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = variableGroupsApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
             string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
@@ -876,6 +879,9 @@ namespace VstsDemoBuilder.Services
             {
                 //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
             }
+            // create varibale groups
+
+            CreateVaribaleGroups(model, _variableGroupApiVersion);
 
             //create build Definition
             string buildDefinitionsPath = string.Empty;
@@ -1335,7 +1341,7 @@ namespace VstsDemoBuilder.Services
                 if (File.Exists(jsonIterations))
                 {
                     iterationsJSON = model.ReadJsonFile(jsonIterations);
-                    ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
+                    VstsRestAPI.WorkItemAndTracking.ClassificationNodes objClassification = new VstsRestAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig);
 
                     GetNodesResponse.Nodes nodes = objClassification.GetIterations(model.ProjectName);
 
@@ -1375,7 +1381,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="objClassification"></param>
         /// <param name="child"></param>
         /// <param name="currentIterations"></param>
-        private void CreateIterationNode(Project model, ClassificationNodes objClassification, GetNodesResponse.Child child, GetNodesResponse.Nodes currentIterations)
+        private void CreateIterationNode(Project model, VstsRestAPI.WorkItemAndTracking.ClassificationNodes objClassification, GetNodesResponse.Child child, GetNodesResponse.Nodes currentIterations)
         {
             string[] defaultSprints = new string[] { "Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4", "Sprint 5", "Sprint 6", };
             if (defaultSprints.Contains(child.name))
@@ -1408,7 +1414,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="objClassification"></param>
         /// <param name="child"></param>
-        private void MoveIterationNode(Project model, ClassificationNodes objClassification, GetNodesResponse.Child child)
+        private void MoveIterationNode(Project model, VstsRestAPI.WorkItemAndTracking.ClassificationNodes objClassification, GetNodesResponse.Child child)
         {
             if (child.hasChildren && child.children != null)
             {
@@ -1435,7 +1441,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
+                VstsRestAPI.WorkItemAndTracking.ClassificationNodes objClassification = new VstsRestAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig);
                 bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type);
 
                 if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
@@ -1463,7 +1469,7 @@ namespace VstsDemoBuilder.Services
             {
                 if (renameIterations != null && renameIterations.Count > 0)
                 {
-                    ClassificationNodes objClassification = new ClassificationNodes(_defaultConfiguration);
+                    VstsRestAPI.WorkItemAndTracking.ClassificationNodes objClassification = new VstsRestAPI.WorkItemAndTracking.ClassificationNodes(_defaultConfiguration);
                     bool IsRenamed = objClassification.RenameIteration(model.ProjectName, renameIterations);
                 }
             }
@@ -1913,6 +1919,14 @@ namespace VstsDemoBuilder.Services
                                              .Replace("$OwnerId$", teamMember.identity.id)
                                   .Replace("$OwnerDisplayName$", teamMember.identity.displayName);
 
+                        if (model.Environment.VariableGroups.Count > 0)
+                        {
+                            foreach (var vGroupsId in model.Environment.VariableGroups)
+                            {
+                                string placeHolder = string.Format("${0}$", vGroupsId.Value);
+                                jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, vGroupsId.Key.ToString());
+                            }
+                        }
                         //Adding randon UUID to website name
                         string uuid = Guid.NewGuid().ToString();
                         uuid = uuid.Substring(0, 8);
@@ -2269,7 +2283,7 @@ namespace VstsDemoBuilder.Services
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
                             VstsRestAPI.ProjectsAndTeams.Teams objTeam = new VstsRestAPI.ProjectsAndTeams.Teams(_projectConfig);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
-                            ClassificationNodes objnodes = new ClassificationNodes(_boardConfig);
+                            VstsRestAPI.WorkItemAndTracking.ClassificationNodes objnodes = new VstsRestAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig);
                             SprintResponse.Sprints sprints = objnodes.GetSprints(model.ProjectName);
                             QueryResponse allItems = objQuery.GetQueryByPathAndName(model.ProjectName, "All Items_WI", "Shared%20Queries");
                             QueryResponse backlogBoardWI = objQuery.GetQueryByPathAndName(model.ProjectName, "BacklogBoard WI", "Shared%20Queries");
@@ -2699,5 +2713,27 @@ namespace VstsDemoBuilder.Services
             return ExtensionRequired;
         }
 
+        private void CreateVaribaleGroups(Project model, Configuration _variableGroups)
+        {
+            VariableGroups variableGroups = new VariableGroups(_variableGroups);
+            model.Environment.VariableGroups = new Dictionary<int, string>();
+            string filePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\VariableGroups\VariableGroup.json");
+            if (File.Exists(filePath))
+            {
+                string jsonString = model.ReadJsonFile(filePath);
+                GetVariableGroups.Groups groups = JsonConvert.DeserializeObject<GetVariableGroups.Groups>(jsonString);
+                if (groups.count > 0)
+                {
+                    foreach (var group in groups.value)
+                    {
+                        GetVariableGroups.VariableGroupsCreateResponse response = variableGroups.PostVariableGroups(JsonConvert.SerializeObject(group));
+                        if (!string.IsNullOrEmpty(response.name))
+                        {
+                            model.Environment.VariableGroups.Add(response.id, response.name);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
