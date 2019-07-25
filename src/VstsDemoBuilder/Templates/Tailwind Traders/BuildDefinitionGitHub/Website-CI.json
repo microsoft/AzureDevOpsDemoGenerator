@@ -35,10 +35,7 @@
     "system.debug": {
       "value": "false",
       "allowOverride": true
-    },
-    "useremail": {
-      "value": "rimman@microsoft.com"
-    }
+    }   
   },
   "retentionRules": [
     {
@@ -87,7 +84,7 @@
               "csmParametersFileLink": "",
               "csmFile": "Deploy/deployment.json",
               "csmParametersFile": "",
-              "overrideParameters": "-userEmail $(useremail)",
+              "overrideParameters": "",
               "deploymentMode": "Incremental",
               "enableDeploymentPrerequisites": "None",
               "deploymentGroupEndpoint": "",

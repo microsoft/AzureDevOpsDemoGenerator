@@ -30,6 +30,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("AllTemplates")]
         public HttpResponseMessage GetTemplates()
         {
+            ProjectService.TrackFeature("api/templates/Alltemplates");
             var templates = templateService.GetAllTemplates();
             return Request.CreateResponse(HttpStatusCode.OK, templates);
         }
@@ -38,6 +39,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("TemplatesByTags")]
         public HttpResponseMessage templatesbyTags(string Tags)
         {
+            ProjectService.TrackFeature("api/templates/TemplateByTags");
             var templates = templateService.GetTemplatesByTags(Tags);
             return Request.CreateResponse(HttpStatusCode.OK, templates);
         }       
