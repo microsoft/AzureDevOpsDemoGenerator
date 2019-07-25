@@ -756,6 +756,7 @@ namespace VstsDemoBuilder.Services
                 BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig);
                 List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
                 BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(appConfig.RepoConfig);
+                Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 RepositoryList.Repository repo = repoDefs.GetRepoList();
                 if (builds.Count > 0)
                 {
@@ -789,6 +790,14 @@ namespace VstsDemoBuilder.Services
                         }
                         def["_links"] = "{}";
                         def["createdDate"] = "";
+                        var variableGroup = def["variableGroups"].HasValues ? def["variableGroups"].ToArray() : new JToken[0];
+                        if (variableGroup.Length > 0)
+                        {
+                            foreach (var groupId in variableGroup)
+                            {
+                                groupId["id"] = new JArray("$" + variableGroupNameId.Where(x => x.Key == groupId["id"].ToString()).FirstOrDefault().Value + "$");
+                            }
+                        }
                         var yamalfilename = def["process"]["yamlFilename"];
 
                         #region YML PIPELINES OF TYPE AZURE REPOS

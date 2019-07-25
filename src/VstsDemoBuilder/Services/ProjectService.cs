@@ -1821,6 +1821,16 @@ namespace VstsDemoBuilder.Services
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
                                              .Replace("$username$", model.GitHubUserName);
+
+                        if (model.Environment.VariableGroups.Count > 0)
+                        {
+                            foreach (var vGroupsId in model.Environment.VariableGroups)
+                            {
+                                string placeHolder = string.Format("${0}$", vGroupsId.Value);
+                                jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, vGroupsId.Key.ToString());
+                            }
+                        }
+
                         //update repositoryId 
                         foreach (string repository in model.Environment.repositoryIdList.Keys)
                         {
@@ -1918,7 +1928,7 @@ namespace VstsDemoBuilder.Services
                                              .Replace("$OwnerUniqueName$", teamMember.identity.uniqueName)
                                              .Replace("$OwnerId$", teamMember.identity.id)
                                   .Replace("$OwnerDisplayName$", teamMember.identity.displayName);
-
+                        
                         if (model.Environment.VariableGroups.Count > 0)
                         {
                             foreach (var vGroupsId in model.Environment.VariableGroups)
