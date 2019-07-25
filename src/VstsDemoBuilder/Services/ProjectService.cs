@@ -2717,7 +2717,7 @@ namespace VstsDemoBuilder.Services
         {
             VariableGroups variableGroups = new VariableGroups(_variableGroups);
             model.Environment.VariableGroups = new Dictionary<int, string>();
-            string filePath = GetJsonFilePath(model.IsPrivatePath, PrivateTemplatePath, model.SelectedTemplate, @"\VariableGroups\VariableGroup.json");
+            string filePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\VariableGroups\VariableGroup.json");
             if (File.Exists(filePath))
             {
                 string jsonString = model.ReadJsonFile(filePath);
