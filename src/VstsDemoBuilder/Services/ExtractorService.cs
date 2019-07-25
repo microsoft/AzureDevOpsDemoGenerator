@@ -795,7 +795,7 @@ namespace VstsDemoBuilder.Services
                         {
                             foreach (var groupId in variableGroup)
                             {
-                                groupId["id"] = new JArray("$" + variableGroupNameId.Where(x => x.Key == groupId["id"].ToString()).FirstOrDefault().Value + "$");
+                                groupId["id"] = "$" + variableGroupNameId.Where(x => x.Key == groupId["id"].ToString()).FirstOrDefault().Value + "$";
                             }
                         }
                         var yamalfilename = def["process"]["yamlFilename"];
