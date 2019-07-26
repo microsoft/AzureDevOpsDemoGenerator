@@ -140,6 +140,7 @@ namespace VstsDemoBuilder.Models
     public class ProjectSettings
     {
         public string type { get; set; }
+        public string id { get; set; }
         public List<string> users { get; set; }
         public List<string> tags { get; set; }
         public List<string> queues { get; set; }

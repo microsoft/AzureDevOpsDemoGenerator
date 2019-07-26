@@ -31,6 +31,7 @@ namespace VstsDemoBuilder.Services
         public static List<string> errorMessages = new List<string>();
         public static string[] workItemTypes = new string[] { };
         public static string extractedTemplatePath = string.Empty;
+        private ProjectProperties.Properties projectProperties = new ProjectProperties.Properties();
         public static void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -214,7 +215,7 @@ namespace VstsDemoBuilder.Services
             string projectSetting = "";
             projectSetting = filePathToRead + "\\ProjectSettings.json";
             projectSetting = File.ReadAllText(projectSetting);
-            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
+            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault().value);
             File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
             string projectTemplate = "";
@@ -418,7 +419,7 @@ namespace VstsDemoBuilder.Services
                 con.VersionNumber = ProjectPropertyVersion;
                 con.ProjectId = projectID;
                 Projects projects = new Projects(con);
-                ProjectProperties.Properties projectProperties = projects.GetProjectProperties();
+                projectProperties = projects.GetProjectProperties();
                 if (projectProperties.count > 0)
                 {
                     defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
@@ -448,7 +449,7 @@ namespace VstsDemoBuilder.Services
                         {
                             boardTypes.Add("Issues");
                         }
-                        else
+                        else if (processTemplate.ToLower() == "scrum")
                         {
                             boardTypes.Add("Features");
                             boardTypes.Add("Backlog Items");
