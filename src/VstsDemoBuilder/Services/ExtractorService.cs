@@ -791,12 +791,15 @@ namespace VstsDemoBuilder.Services
                         }
                         def["_links"] = "{}";
                         def["createdDate"] = "";
-                        var variableGroup = def["variableGroups"].HasValues ? def["variableGroups"].ToArray() : new JToken[0];
-                        if (variableGroup.Length > 0)
+                        if (def["variableGroups"] != null)
                         {
-                            foreach (var groupId in variableGroup)
+                            var variableGroup = def["variableGroups"].HasValues ? def["variableGroups"].ToArray() : new JToken[0];
+                            if (variableGroup.Length > 0)
                             {
-                                groupId["id"] = "$" + variableGroupNameId.Where(x => x.Key == groupId["id"].ToString()).FirstOrDefault().Value + "$";
+                                foreach (var groupId in variableGroup)
+                                {
+                                    groupId["id"] = "$" + variableGroupNameId.Where(x => x.Key == groupId["id"].ToString()).FirstOrDefault().Value + "$";
+                                }
                             }
                         }
                         var yamalfilename = def["process"]["yamlFilename"];
