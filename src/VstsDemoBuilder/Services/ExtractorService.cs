@@ -766,8 +766,6 @@ namespace VstsDemoBuilder.Services
                     string templatePath = extractedTemplatePath + appConfig.BuildDefinitionConfig.Project;
                     foreach (JObject def in builds)
                     {
-                        string esr = JsonConvert.SerializeObject(def);
-
                         string repoID = "";
                         var buildName = def["name"];
                         string fileName = buildName.ToString().Replace(".", "") + ".json";
