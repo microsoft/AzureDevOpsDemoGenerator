@@ -179,14 +179,14 @@ namespace VstsDemoBuilder.Services
         public string[] CreateProjectEnvironment(Project model)
         {
             string accountName = model.accountName;
-            if (model.IsPrivatePath)
-            {
-                templateUsed = model.PrivateTemplateName;
-            }
-            else
-            {
-                templateUsed = model.SelectedTemplate;
-            }
+            //if (model.IsPrivatePath)
+            //{
+            //    templateUsed = model.PrivateTemplateName;
+            //}
+            //else
+            //{
+            templateUsed = model.SelectedTemplate;
+            //}
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
             string pat = model.accessToken;
             //define versions to be use
@@ -224,7 +224,7 @@ namespace VstsDemoBuilder.Services
             List<WIMapData> wiMapping = new List<WIMapData>();
             AccountMembers.Account accountMembers = new AccountMembers.Account();
             model.accountUsersForWi = new List<string>();
-            websiteUrl = model.websiteUrl;           
+            websiteUrl = model.websiteUrl;
             projectName = model.ProjectName;
 
             string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
