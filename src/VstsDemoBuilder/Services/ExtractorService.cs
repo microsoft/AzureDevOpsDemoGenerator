@@ -31,6 +31,7 @@ namespace VstsDemoBuilder.Services
         public static List<string> errorMessages = new List<string>();
         public static string[] workItemTypes = new string[] { };
         public static string extractedTemplatePath = string.Empty;
+        private ProjectProperties.Properties projectProperties = new ProjectProperties.Properties();
         public static void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -214,7 +215,7 @@ namespace VstsDemoBuilder.Services
             string projectSetting = "";
             projectSetting = filePathToRead + "\\ProjectSettings.json";
             projectSetting = File.ReadAllText(projectSetting);
-            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate);
+            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault().value);
             File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
 
             string projectTemplate = "";
@@ -418,7 +419,7 @@ namespace VstsDemoBuilder.Services
                 con.VersionNumber = ProjectPropertyVersion;
                 con.ProjectId = projectID;
                 Projects projects = new Projects(con);
-                ProjectProperties.Properties projectProperties = projects.GetProjectProperties();
+                projectProperties = projects.GetProjectProperties();
                 if (projectProperties.count > 0)
                 {
                     defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
@@ -448,7 +449,7 @@ namespace VstsDemoBuilder.Services
                         {
                             boardTypes.Add("Issues");
                         }
-                        else
+                        else if (processTemplate.ToLower() == "scrum")
                         {
                             boardTypes.Add("Features");
                             boardTypes.Add("Backlog Items");
@@ -756,6 +757,7 @@ namespace VstsDemoBuilder.Services
                 BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig);
                 List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
                 BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(appConfig.RepoConfig);
+                Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 RepositoryList.Repository repo = repoDefs.GetRepoList();
                 if (builds.Count > 0)
                 {
@@ -764,8 +766,6 @@ namespace VstsDemoBuilder.Services
                     string templatePath = extractedTemplatePath + appConfig.BuildDefinitionConfig.Project;
                     foreach (JObject def in builds)
                     {
-                        string esr = JsonConvert.SerializeObject(def);
-
                         string repoID = "";
                         var buildName = def["name"];
                         string fileName = buildName.ToString().Replace(".", "") + ".json";
@@ -789,6 +789,17 @@ namespace VstsDemoBuilder.Services
                         }
                         def["_links"] = "{}";
                         def["createdDate"] = "";
+                        if (def["variableGroups"] != null)
+                        {
+                            var variableGroup = def["variableGroups"].HasValues ? def["variableGroups"].ToArray() : new JToken[0];
+                            if (variableGroup.Length > 0)
+                            {
+                                foreach (var groupId in variableGroup)
+                                {
+                                    groupId["id"] = "$" + variableGroupNameId.Where(x => x.Key == groupId["id"].ToString()).FirstOrDefault().Value + "$";
+                                }
+                            }
+                        }
                         var yamalfilename = def["process"]["yamlFilename"];
 
                         #region YML PIPELINES OF TYPE AZURE REPOS
@@ -1154,8 +1165,9 @@ namespace VstsDemoBuilder.Services
             {
                 BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
+                string rells = JsonConvert.SerializeObject(releases);
                 BuildandReleaseDefs agent = new BuildandReleaseDefs(appConfig.AgentQueueConfig);
-                //Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
+                Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
                 int releasecount = 1;
@@ -1171,11 +1183,35 @@ namespace VstsDemoBuilder.Services
                         rel["createdOn"] = "";
                         rel["modifiedBy"] = "{}";
                         rel["modifiedOn"] = "";
-                        rel["variableGroups"] = new JArray();
+
+                        var variableGroup = rel["variableGroups"].HasValues ? rel["variableGroups"].ToArray() : new JToken[0];
+                        if (variableGroup.Length > 0)
+                        {
+                            foreach (var groupId in variableGroup)
+                            {
+                                rel["variableGroups"] = new JArray("$" + variableGroupNameId.Where(x => x.Key == groupId.ToString()).FirstOrDefault().Value + "$");
+                            }
+                        }
+                        else
+                        {
+                            rel["variableGroups"] = new JArray();
+                        }
                         var env = rel["environments"];
                         foreach (var e in env)
                         {
                             e["badgeUrl"] = "";
+                            var envVariableGroup = e["variableGroups"].HasValues ? e["variableGroups"].ToArray() : new JToken[0];
+                            if (envVariableGroup.Length > 0)
+                            {
+                                foreach (var envgroupId in envVariableGroup)
+                                {
+                                    e["variableGroups"] = new JArray("$" + variableGroupNameId.Where(x => x.Key == envgroupId.ToString()).FirstOrDefault().Value + "$");
+                                }
+                            }
+                            else
+                            {
+                                e["variableGroups"] = new JArray();
+                            }
                             var owner = e["owner"];
                             owner["id"] = "$OwnerId$";
                             owner["displayName"] = "$OwnerDisplayName$";
@@ -1485,13 +1521,23 @@ namespace VstsDemoBuilder.Services
             VariableGroups variableGroups = new VariableGroups(appConfig.VariableGroupConfig);
             GetVariableGroups.Groups groups = variableGroups.GetVariableGroups();
             Dictionary<string, string> varibaleGroupDictionary = new Dictionary<string, string>();
+            string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
             if (groups.count > 0)
             {
+                if (!(Directory.Exists(templatePath + "\\VariableGroups")))
+                {
+                    Directory.CreateDirectory(templatePath + "\\VariableGroups");
+                    File.WriteAllText(templatePath + "\\VariableGroups\\VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
+                }
+                else
+                {
+                    File.WriteAllText(templatePath + "\\VariableGroups\\VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
+                }
                 foreach (var vg in groups.value)
                 {
-                    if (!varibaleGroupDictionary.ContainsKey(vg.name))
+                    if (!varibaleGroupDictionary.ContainsKey(vg.id))
                     {
-                        varibaleGroupDictionary.Add(vg.name, vg.id);
+                        varibaleGroupDictionary.Add(vg.id, vg.name);
                     }
                 }
             }

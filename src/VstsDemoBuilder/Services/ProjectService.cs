@@ -22,6 +22,7 @@ using VstsDemoBuilder.ServiceInterfaces;
 using VstsRestAPI;
 using VstsRestAPI.Build;
 using VstsRestAPI.DeploymentGRoup;
+using VstsRestAPI.Extractor;
 using VstsRestAPI.Git;
 using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.QueriesAndWidgets;
@@ -41,6 +42,7 @@ using VstsRestAPI.Viewmodel.Wiki;
 using VstsRestAPI.Viewmodel.WorkItem;
 using VstsRestAPI.Wiki;
 using VstsRestAPI.WorkItemAndTracking;
+using ClassificationNodes = VstsRestAPI.WorkItemAndTracking.ClassificationNodes;
 
 namespace VstsDemoBuilder.Services
 {
@@ -210,6 +212,7 @@ namespace VstsDemoBuilder.Services
             string graphApiVersion = System.Configuration.ConfigurationManager.AppSettings["GraphApiVersion"];
             string graphAPIHost = System.Configuration.ConfigurationManager.AppSettings["GraphAPIHost"];
             string gitHubBaseAddress = System.Configuration.ConfigurationManager.AppSettings["GitHubBaseAddress"];
+            string variableGroupsApiVersion = System.Configuration.ConfigurationManager.AppSettings["VariableGroupsApiVersion"];
 
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
@@ -271,6 +274,7 @@ namespace VstsDemoBuilder.Services
             Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            Configuration _variableGroupApiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = variableGroupsApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
             string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
@@ -315,6 +319,16 @@ namespace VstsDemoBuilder.Services
                             else if (settings.type.ToLower() == TemplateType.Basic.ToString().ToLower())
                             {
                                 processTemplateId = Default.BASIC;
+                            }
+                            else if (!string.IsNullOrEmpty(settings.id))
+                            {
+                                processTemplateId = settings.id;
+                            }
+                            else
+                            {
+                                AddMessage(model.id.ErrorId(), "Could not recognize process template. Make sure that the exported project template is belog to standard process template or project setting file has valid process template id.");
+                                StatusMessages[model.id] = "100";
+                                return new string[] { model.id, accountName, templateUsed };
                             }
                         }
                     }
@@ -876,6 +890,9 @@ namespace VstsDemoBuilder.Services
             {
                 //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
             }
+            // create varibale groups
+
+            CreateVaribaleGroups(model, _variableGroupApiVersion);
 
             //create build Definition
             string buildDefinitionsPath = string.Empty;
@@ -1435,12 +1452,15 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
-                bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type);
-
-                if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
+                if (settings.type.ToLower() == "scrum" || settings.type.ToLower() == "agile" || settings.type.ToLower() == "basic")
                 {
-                    AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + objClassification.LastFailureMessage + Environment.NewLine);
+                    ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
+                    bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type);
+
+                    if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
+                    {
+                        AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + objClassification.LastFailureMessage + Environment.NewLine);
+                    }
                 }
             }
             catch (Exception ex)
@@ -1815,6 +1835,16 @@ namespace VstsDemoBuilder.Services
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
                                              .Replace("$username$", model.GitHubUserName);
+
+                        if (model.Environment.VariableGroups.Count > 0)
+                        {
+                            foreach (var vGroupsId in model.Environment.VariableGroups)
+                            {
+                                string placeHolder = string.Format("${0}$", vGroupsId.Value);
+                                jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, vGroupsId.Key.ToString());
+                            }
+                        }
+
                         //update repositoryId 
                         foreach (string repository in model.Environment.repositoryIdList.Keys)
                         {
@@ -1912,7 +1942,15 @@ namespace VstsDemoBuilder.Services
                                              .Replace("$OwnerUniqueName$", teamMember.identity.uniqueName)
                                              .Replace("$OwnerId$", teamMember.identity.id)
                                   .Replace("$OwnerDisplayName$", teamMember.identity.displayName);
-
+                        
+                        if (model.Environment.VariableGroups.Count > 0)
+                        {
+                            foreach (var vGroupsId in model.Environment.VariableGroups)
+                            {
+                                string placeHolder = string.Format("${0}$", vGroupsId.Value);
+                                jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, vGroupsId.Key.ToString());
+                            }
+                        }
                         //Adding randon UUID to website name
                         string uuid = Guid.NewGuid().ToString();
                         uuid = uuid.Substring(0, 8);
@@ -2699,5 +2737,27 @@ namespace VstsDemoBuilder.Services
             return ExtensionRequired;
         }
 
+        private void CreateVaribaleGroups(Project model, Configuration _variableGroups)
+        {
+            VariableGroups variableGroups = new VariableGroups(_variableGroups);
+            model.Environment.VariableGroups = new Dictionary<int, string>();
+            string filePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\VariableGroups\VariableGroup.json");
+            if (File.Exists(filePath))
+            {
+                string jsonString = model.ReadJsonFile(filePath);
+                GetVariableGroups.Groups groups = JsonConvert.DeserializeObject<GetVariableGroups.Groups>(jsonString);
+                if (groups.count > 0)
+                {
+                    foreach (var group in groups.value)
+                    {
+                        GetVariableGroups.VariableGroupsCreateResponse response = variableGroups.PostVariableGroups(JsonConvert.SerializeObject(group));
+                        if (!string.IsNullOrEmpty(response.name))
+                        {
+                            model.Environment.VariableGroups.Add(response.id, response.name);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
