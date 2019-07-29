@@ -1942,7 +1942,7 @@ namespace VstsDemoBuilder.Services
                                              .Replace("$OwnerUniqueName$", teamMember.identity.uniqueName)
                                              .Replace("$OwnerId$", teamMember.identity.id)
                                   .Replace("$OwnerDisplayName$", teamMember.identity.displayName);
-                        
+
                         if (model.Environment.VariableGroups.Count > 0)
                         {
                             foreach (var vGroupsId in model.Environment.VariableGroups)
@@ -1956,25 +1956,25 @@ namespace VstsDemoBuilder.Services
                         uuid = uuid.Substring(0, 8);
                         jsonReleaseDefinition = jsonReleaseDefinition.Replace("$UUID$", uuid).Replace("$RandomNumber$", uuid).Replace("$AccountName$", model.accountName); ;
 
+                        //update agent queue ids
+                        foreach (string queue in model.Environment.AgentQueues.Keys)
+                        {
+                            string placeHolder = string.Format("${0}$", queue);
+                            jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.AgentQueues[queue].ToString());
+                        }
+
+                        //update endpoint ids
+                        foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
+                        {
+                            string placeHolder = string.Format("${0}$", endpoint);
+                            jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
+                        }
+
                         foreach (BuildDef objBuildDef in model.BuildDefinitions)
                         {
                             //update build ids
                             string placeHolder = string.Format("${0}-id$", objBuildDef.Name);
                             jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, objBuildDef.Id);
-
-                            //update agent queue ids
-                            foreach (string queue in model.Environment.AgentQueues.Keys)
-                            {
-                                placeHolder = string.Format("${0}$", queue);
-                                jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.AgentQueues[queue].ToString());
-                            }
-
-                            //update endpoint ids
-                            foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
-                            {
-                                placeHolder = string.Format("${0}$", endpoint);
-                                jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
-                            }
                         }
                         string[] releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
                         if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
