@@ -188,7 +188,7 @@
                 "configMapArguments": "",
                 "versionOrLocation": "version",
                 "versionSpec": "1.8.1",
-                "checkLatest": "false",
+                "checkLatest": "true",
                 "specifyLocation": "",
                 "cwd": "$(System.DefaultWorkingDirectory)",
                 "outputFormat": "json"
@@ -233,7 +233,7 @@
                 "configMapArguments": "",
                 "versionOrLocation": "version",
                 "versionSpec": "1.8.1",
-                "checkLatest": "false",
+                "checkLatest": "true",
                 "specifyLocation": "",
                 "cwd": "$(System.DefaultWorkingDirectory)",
                 "outputFormat": "json"
