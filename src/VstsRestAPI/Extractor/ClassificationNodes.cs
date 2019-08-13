@@ -44,7 +44,7 @@ namespace VstsRestAPI.Extractor
         // Get Team List to write to file
         public TeamList ExportTeamList(string defaultTeamId)
         {
-            TeamList teamObj = new TeamList();
+            _ = new TeamList();
             try
             {
                 using (var client = GetHttpClient())
@@ -59,7 +59,7 @@ namespace VstsRestAPI.Extractor
                     else
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        teamObj = JsonConvert.DeserializeObject<TeamList>(result);
+                        TeamList teamObj = JsonConvert.DeserializeObject<TeamList>(result);
                         foreach (var team in teamObj.value)
                         {
                             if (team.id==defaultTeamId)
@@ -140,7 +140,7 @@ namespace VstsRestAPI.Extractor
         //GET https://dev.azure.com/{organization}/{project}/{team}/_apis/work/teamsettings?api-version=4.1
         public ExportTeamSetting.Setting ExportTeamSetting()
         {
-            ExportTeamSetting.Setting setting = new ExportTeamSetting.Setting();
+            _ = new ExportTeamSetting.Setting();
             try
             {
                 using (var client = GetHttpClient())
@@ -149,7 +149,7 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;
-                        setting = JsonConvert.DeserializeObject<ExportTeamSetting.Setting>(result);
+                        ExportTeamSetting.Setting setting = JsonConvert.DeserializeObject<ExportTeamSetting.Setting>(result);
                         return setting;
                     }
                     else

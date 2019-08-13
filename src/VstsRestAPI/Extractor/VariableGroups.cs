@@ -43,7 +43,7 @@ namespace VstsRestAPI.Extractor
                 using (var client = GetHttpClient())
                 {
                     var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    string req = string.Format("https://dev.azure.com/{0}/{1}/_apis/distributedtask/variablegroups?api-version=5.0-preview.1", _configuration.AccountName, _configuration.Project, _configuration.VersionNumber);
+                    string req = string.Format("https://dev.azure.com/{0}/{1}/_apis/distributedtask/variablegroups?api-version={2}", _configuration.AccountName, _configuration.Project, _configuration.VersionNumber);
 
                     var method = new HttpMethod("POST");
 
