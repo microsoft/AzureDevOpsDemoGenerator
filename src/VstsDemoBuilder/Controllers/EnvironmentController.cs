@@ -409,7 +409,7 @@ namespace VstsDemoBuilder.Controllers
                 string folder = fineName.Replace(".zip", "");
                 privateTemplate.privateTemplateName = folder;
 
-                extractPath = Server.MapPath("~/PrivateTemplates/" + folder);               
+                extractPath = Server.MapPath("~/PrivateTemplates/" + folder);
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
                 privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
@@ -561,7 +561,7 @@ namespace VstsDemoBuilder.Controllers
                 DeletePrivateTemplate(templateUsed);
             }
         }
-        
+
         /// <summary>
         /// Checking for Extenison in the account
         /// </summary>
@@ -640,7 +640,7 @@ namespace VstsDemoBuilder.Controllers
                         {
                             foreach (var extension in template.Extensions)
                             {
-                                if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
+                                if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.publisherName.ToLower() == ext.PublisherDisplayName.ToLower())
                                 {
                                     dict[extension.extensionName] = true;
                                 }
