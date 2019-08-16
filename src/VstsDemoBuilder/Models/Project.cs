@@ -67,6 +67,7 @@ namespace VstsDemoBuilder.Models
         public Dictionary<string, string> serviceEndpoints { get; set; }
         public Dictionary<string, string> pullRequests { get; set; }
         public Dictionary<string, string> GitHubRepos { get; set; }
+        public Dictionary<int, string> VariableGroups { get; set; }
         public string BoardRowFieldName { get; set; }
     }
     public class BuildDef
@@ -139,6 +140,7 @@ namespace VstsDemoBuilder.Models
     public class ProjectSettings
     {
         public string type { get; set; }
+        public string id { get; set; }
         public List<string> users { get; set; }
         public List<string> tags { get; set; }
         public List<string> queues { get; set; }

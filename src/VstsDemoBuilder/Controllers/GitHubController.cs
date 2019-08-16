@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Mvc;
 using VstsDemoBuilder.Models;
 using System.Web;
+using VstsDemoBuilder.Services;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -79,16 +80,13 @@ namespace VstsDemoBuilder.Controllers
                         accessDetails = JsonConvert.DeserializeObject<GitHubAccessDetails>(response.Content.ReadAsStringAsync().Result);
                         return accessDetails;
                     }
-                    else
-                    {
-                        return new GitHubAccessDetails();
-                    }
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
+            return new GitHubAccessDetails();
         }
         [AllowAnonymous]
         public ActionResult Status()

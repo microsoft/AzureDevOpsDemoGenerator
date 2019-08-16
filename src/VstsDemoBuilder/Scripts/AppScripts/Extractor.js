@@ -152,13 +152,13 @@ $(document).ready(function () {
                     $('#TemplateClass').empty().val(res.TypeClass);
                     $('#processTemplateLoader').addClass('d-none');
                     var p = res.value[4].value;
-                    if (p !== "Scrum" && p !== "Agile" && p !== "Basic") {
-                        $('#processTemplateLoader').addClass('d-none');
-                        $("#projectSelect_Error").text("Note: Please select a project that uses the standard Scrum, Agile or Basic process template.");
-                        $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
-                        $("#projectSelect_Error").removeClass('d-none');
-                        return;
-                    }
+                    //if (p !== "Scrum" && p !== "Agile" && p !== "Basic") {
+                    //    $('#processTemplateLoader').addClass('d-none');
+                    //    $("#projectSelect_Error").text("Note: Please select a project that uses the standard Scrum, Agile or Basic process template.");
+                    //    $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
+                    //    $("#projectSelect_Error").removeClass('d-none');
+                    //    return;
+                    //}
                     $('#Analyse').addClass('btn-primary').attr('disabled', false);
                 },
                 error: function (e) {
@@ -217,8 +217,8 @@ $(document).ready(function () {
                     var processTemplate = $('#processtemplate').val();
                     var templaetClass = $('#TemplateClass').val();
                     if (templaetClass !== "system") {
-                        $('#GenerateArtifacts').hide();
-                        $('#templateError').empty().append("Tool doesn't support for projects based on custom or derived process templates");
+                        //$('#GenerateArtifacts').hide();
+                        //$('#templateError').empty().append("Tool doesn't support for projects based on custom or derived process templates");
                     }
                     else {
                         $('#templateError').empty().append("Everything looks good.Click the button below to proceed.");
