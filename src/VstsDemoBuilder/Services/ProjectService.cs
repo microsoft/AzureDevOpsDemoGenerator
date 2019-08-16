@@ -2374,7 +2374,7 @@ namespace VstsDemoBuilder.Services
                     {
                         foreach (var extension in template.Extensions)
                         {
-                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
+                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.publisherName.ToLower() == ext.PublisherDisplayName.ToLower())
                             {
                                 dict[extension.extensionName] = true;
                             }
