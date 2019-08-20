@@ -1346,7 +1346,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://dev.com</IISUrl>
+          <IISUrl>http://localhost:60671</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
