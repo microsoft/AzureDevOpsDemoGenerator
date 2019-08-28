@@ -8859,3 +8859,24 @@ html, body {
     }
 }
 /*# sourceMappingURL=custom.min.css.map */
+.icon2 {
+    float: right;
+    text-decoration: none;
+    /*background: #1ea6e9;*/
+    padding: 3px 6px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffc107;
+    line-height: 15px;
+    font-size: 12px;
+    animation: 1s attract infinite ease-in-out;
+}
+@keyframes attract {
+    0% {
+        box-shadow: 0px 0px 12px 0px rgb(255, 255, 255);
+    }
+
+    100% {
+        box-shadow: 0px 0px 10px 20px rgba(233,30,99,0);
+    }
+}

@@ -331,6 +331,11 @@ namespace VstsDemoBuilder.Services
                                 return new string[] { model.id, accountName, templateUsed };
                             }
                         }
+                        else
+                        {
+                            settings.type = "scrum";
+                            processTemplateId = Default.SCRUM;
+                        }
                     }
                 }
                 else
@@ -2412,7 +2417,7 @@ namespace VstsDemoBuilder.Services
                     {
                         foreach (var extension in template.Extensions)
                         {
-                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.publisherName.ToLower() == ext.PublisherDisplayName.ToLower())
+                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.extensionId.ToLower() == ext.ExtensionName.ToLower())
                             {
                                 dict[extension.extensionName] = true;
                             }
