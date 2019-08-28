@@ -181,14 +181,14 @@ namespace VstsDemoBuilder.Services
         public string[] CreateProjectEnvironment(Project model)
         {
             string accountName = model.accountName;
-            if (model.IsPrivatePath)
-            {
-                templateUsed = model.PrivateTemplateName;
-            }
-            else
-            {
-                templateUsed = model.SelectedTemplate;
-            }
+            //if (model.IsPrivatePath)
+            //{
+            //    templateUsed = model.PrivateTemplateName;
+            //}
+            //else
+            //{
+            templateUsed = model.SelectedTemplate;
+            //}
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
             string pat = model.accessToken;
             //define versions to be use
