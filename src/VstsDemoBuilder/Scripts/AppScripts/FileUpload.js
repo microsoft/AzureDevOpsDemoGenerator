@@ -43,7 +43,7 @@
                                 console.log("succesfully unzipped file: " + files[0].name);
 
                                 var NewTemplateName = files[0].name.replace(".zip", "");
-                               
+
                                 $('#ddlTemplates', parent.document).val(NewTemplateName);
                                 $('#selectedTemplateFolder', parent.document).val(Data.privateTemplateName);
                                 $(".template-close", parent.document).click();
@@ -59,7 +59,7 @@
                                 enableButton(controlID);
                             }
                             else if (Data.responseMessage !== null && Data.responseMessage !== "") {
-                                
+
                                 $("#urlerror").empty().append(Data.responseMessage);
                                 enableButton(controlID);
                                 return;
@@ -109,7 +109,7 @@
             $("#urlerror").empty().append('Invalid URL, please provide the URL which ends with .zip extension'); isUrlValid = false;
         }
         if (controlID === 'btnGitHubUpload') {
-           
+
             if (fileurlSplit[2].toLowerCase() !== "raw.githubusercontent.com") {
                 $("#urlerror").empty().append('Please provide GitHub raw URL, which should starts with domain name raw.githubusercontent.com '); isUrlValid = false;
             }
@@ -120,13 +120,18 @@
         else if (controlID === 'btnURLUpload' && $('#privateurl').prop("checked") === true && (userId === '' || password === '')) {
             $("#urlerror").empty().append('Please provide username and password for authentication'); isUrlValid = false;
         }
-        var oldTemplate = $('#PrivateTemplateName', parent.document).val();
+
         if (isUrlValid) {
+            var OldprivateTemplate = "";
+            var oldTemplate = $('#PrivateTemplatePath', parent.document).val().split("\\");
+            if (oldTemplate.length > 0) {
+                OldprivateTemplate = oldTemplate[oldTemplate.indexOf('PrivateTemplates') + 1];
+            }
             disableButton(controlID);
             $.ajax({
                 url: "../Environment/UploadPrivateTemplateFromURL",
                 type: "GET",
-                data: { TemplateURL: URL, token: GitHubtoken, userId: userId, password: password, OldPrivateTemplate: oldTemplate },
+                data: { TemplateURL: URL, token: GitHubtoken, userId: userId, password: password, OldPrivateTemplate: OldprivateTemplate },
                 success: function (Data) {
                     if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
                         console.log(Data);
@@ -145,7 +150,7 @@
                             $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
                             enableButton(controlID);
                             //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
-                        }                       
+                        }
                         else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
                             $("#urlerror").empty().append(Data.responseMessage);
                             enableButton(controlID);

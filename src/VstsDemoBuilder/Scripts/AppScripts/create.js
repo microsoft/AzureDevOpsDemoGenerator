@@ -93,12 +93,13 @@ $(document).ready(function (event) {
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
 
-        var privateTemplate = $('#PrivateTemplateName', parent.document).val();
+        var privateTemplate = $('#PrivateTemplatePath', parent.document).val();
+        var priTemplate = privateTemplate.split("\\");
         if (privateTemplate !== "") {
             $.ajax({
                 url: "../Environment/DeletePrivateTemplate",
                 type: "POST",
-                data: { TemplateName: privateTemplate },
+                data: { TemplateName: priTemplate[priTemplate.indexOf('PrivateTemplates')+1] },
                 success: function (Data) {
                 }
             });
@@ -509,12 +510,18 @@ $('#btnSubmit').click(function () {
     $.each($('.project-parameters'), function (index, item) {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
     });
-    selectedTemplate = template;
+   
     var privateTemplateName = $('#PrivateTemplateName').val();
     var privateTemplatePath = $('#PrivateTemplatePath').val();
+    if (privateTemplatePath !== '') {
+        selectedTemplate = privateTemplateName;
+    } else {
+        selectedTemplate = template;
+    }
+    
     var websiteUrl = window.location.href;
     var projData = {
-        "ProjectName": projectName, "SelectedTemplate": template, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
+        "ProjectName": projectName, "SelectedTemplate": selectedTemplate, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
     };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
 
