@@ -636,12 +636,12 @@ namespace VstsDemoBuilder.Controllers
 
                         extensions.AddRange(trustedFlagExtensions);
                         extensions.AddRange(builtInExtensions);
-
+                        string askld = JsonConvert.SerializeObject(extensions);
                         foreach (var ext in extensions)
                         {
                             foreach (var extension in template.Extensions)
                             {
-                                if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.publisherName.ToLower() == ext.PublisherDisplayName.ToLower())
+                                if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.extensionId.ToLower() == ext.ExtensionName.ToLower())
                                 {
                                     dict[extension.extensionName] = true;
                                 }

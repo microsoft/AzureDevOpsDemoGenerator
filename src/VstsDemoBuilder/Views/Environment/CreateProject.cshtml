@@ -34,6 +34,7 @@
         ga('send', 'pageview');
     </script>
     <title>Create Project</title>
+    
 </head>
 <body class="pb-3">
     <input type="hidden" id="hidnUID" />
@@ -138,7 +139,7 @@
             if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
             {
                 <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                    <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;">Build your template</a>
+                    <a href="../extractor/index" target="_blank" class="text-white icon2" style="font-size: 18px; float: right;" id="buildYourTemplate">Build your template *</a>
                 </div>
             }
         }
@@ -186,32 +187,32 @@
                         <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
                         <div class="col-lg-8">
 
-                        @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                        <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                        </div>
-                        <div style="color:red">
-                            @ViewBag.AccDDError
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
-                    <div class="col-lg-8">
-                        @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                        <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                            </div>
+                            <div style="color:red">
+                                @ViewBag.AccDDError
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row" id="">
-                    <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
-                    <div class="col-lg-5  mb-3 mt-1">
-                        <input type="text" class="form-control" id="ddlTemplates" disabled />
-                        <input type="hidden" id="PrivateTemplateName" />
-                        <input type="hidden" id="PrivateTemplatePath" />
-                        <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="">
+                        <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
+                        <div class="col-lg-5  mb-3 mt-1">
+                            <input type="text" class="form-control" id="ddlTemplates" disabled />
+                            <input type="hidden" id="PrivateTemplateName" />
+                            <input type="hidden" id="PrivateTemplatePath" />
+                            <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
 
+                            </div>
                         </div>
-                    </div>
                         <div class="template-invoke mb-3 mt-1 col-lg-3">
                             <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
                                 Choose template
@@ -304,6 +305,13 @@
                         </div>
                         <p class="card-text" id="descContainer">
                         </p>
+                    </div>
+                </div>
+                <div class="card text-white mb-3 vstsScroll" id="announcement" style="max-height:250px;overflow-y:auto;">
+                    <div class="card-header bg-primary">What's new</div>
+                    <div class="card-body" style="background-color:white; color:black">
+                        <p>Supporting variable groups</p>
+                        <p>Limited support for projects from custom process templates</p>
                     </div>
                 </div>
                 <div class="card bg-primary mb-3 mt-auto" id="errorNotify" style="display:none;">

@@ -19,6 +19,14 @@ $(document).ready(function () {
             $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         }
     });
+
+    //setTimeout(function () {
+    //    $('#buildYourTemplate').removeClass('icon2');
+    //}, 10000);
+
+    $('#buildYourTemplate').hover(function () {
+        $('#buildYourTemplate').removeClass('icon2');
+    });
 });
 
 function checkSession() {
