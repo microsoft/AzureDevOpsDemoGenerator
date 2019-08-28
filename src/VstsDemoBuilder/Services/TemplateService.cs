@@ -156,8 +156,11 @@ namespace VstsDemoBuilder.Services
                 Uri uri = new Uri(TemplateUrl);
                 string fileName = Path.GetFileName(TemplateUrl);
                 string extension = Path.GetExtension(fileName);
-
                 string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                if (!Directory.Exists(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile"))
+                {
+                    Directory.CreateDirectory(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile");
+                }
                 var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
 
                 //Downloading template from source of type github
@@ -209,6 +212,10 @@ namespace VstsDemoBuilder.Services
             {
                 if (File.Exists(path))
                 {
+                    if (!Directory.Exists(HostingEnvironment.MapPath("~") + @"\PrivateTemplates"))
+                    {
+                        Directory.CreateDirectory(HostingEnvironment.MapPath("~") + @"\PrivateTemplates");
+                    }
                     var Extractedpath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName;
                     System.IO.Compression.ZipFile.ExtractToDirectory(path, Extractedpath);
 
