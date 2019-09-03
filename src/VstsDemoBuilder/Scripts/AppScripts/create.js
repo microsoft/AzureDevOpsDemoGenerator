@@ -428,7 +428,7 @@ $('#btnSubmit').click(function () {
     var token = $('#hiddenAccessToken').val();
     var email = $('#emailID').val();
     var regex = /^[A-Za-z0-9 -_]*[A-Za-z0-9][A-Za-z0-9 -_]*$/;
-    if (accountName === "" || accountName === "Select Organiaztion") {
+    if (accountName === "" || accountName === "Select Organization") {
         $("#ddlAcccountName_Error").text("Please choose an organization first!");
         $("#ddlAcccountName_Error").removeClass("d-none").addClass("d-block");
         $("#ddlAcccountName").focus();
