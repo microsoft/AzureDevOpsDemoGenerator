@@ -48,8 +48,8 @@ namespace VstsRestAPI.Viewmodel.WorkItem
 
         public class Attributes
         {
-            public DateTime startDate { get; set; }
-            public DateTime finishDate { get; set; }
+            public DateTime? startDate { get; set; }
+            public DateTime? finishDate { get; set; }
         }
     }
 }
