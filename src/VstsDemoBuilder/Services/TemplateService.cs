@@ -222,6 +222,8 @@ namespace VstsDemoBuilder.Services
                     isExtracted = checkTemplateDirectory(Extractedpath);
                     if (isExtracted)
                         templatePath = FindPrivateTemplatePath(Extractedpath);
+                    else
+                        Directory.Delete(Extractedpath, true);
                 }
             }
             catch (Exception ex)
@@ -296,51 +298,58 @@ namespace VstsDemoBuilder.Services
             string response = string.Empty;
             try
             {
-
-                bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
-                bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
-
-                if (settingFile && projectFile)
+                bool isExtracted = checkTemplateDirectory(extractPath);
+                if (!isExtracted)
                 {
-                    string projectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
-                    ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
-                    response = "SUCCESS";
-                }
-                else if (!settingFile && !projectFile)
-                {
-                    string[] folderName = System.IO.Directory.GetDirectories(extractPath);
-                    string subDir = "";
-                    if (folderName.Length > 0)
-                    {
-                        subDir = folderName[0];
-                    }
-                    else
-                    {
-                        response = "Could not find required preoject setting and project template file.";
-                    }
-                    if (subDir != "")
-                    {
-                        response = checkSelectedTemplateIsPrivate(subDir);                     
-                    }
-                    if (response != "SUCCESS")
-                    {
-                        Directory.Delete(extractPath, true);
-                        response = "Project setting and project template files not found! plase include the files in zip and try again";
-                    }
+                    response = "File or the folder contains unwanted entries, so discarding the files, please try again";
                 }
                 else
                 {
-                    if (!settingFile)
+                    bool settingFile = (System.IO.File.Exists(extractPath + "\\ProjectSettings.json") ? true : false);
+                    bool projectFile = (System.IO.File.Exists(extractPath + "\\ProjectTemplate.json") ? true : false);
+
+                    if (settingFile && projectFile)
                     {
-                        Directory.Delete(extractPath, true);
-                        response = "Project setting file not found! plase include the files in zip and try again";
-                        //return Json("SETTINGNOTFOUND");
+                        string projectFileData = System.IO.File.ReadAllText(extractPath + "\\ProjectTemplate.json");
+                        ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
+                        response = "SUCCESS";
                     }
-                    if (!projectFile)
+                    else if (!settingFile && !projectFile)
                     {
-                        Directory.Delete(extractPath, true);
-                        response = "Project template file not found! plase include the files in zip and try again";
-                        //return Json("PROJECTFILENOTFOUND");
+                        string[] folderName = System.IO.Directory.GetDirectories(extractPath);
+                        string subDir = "";
+                        if (folderName.Length > 0)
+                        {
+                            subDir = folderName[0];
+                        }
+                        else
+                        {
+                            response = "Could not find required preoject setting and project template file.";
+                        }
+                        if (subDir != "")
+                        {
+                            response = checkSelectedTemplateIsPrivate(subDir);
+                        }
+                        if (response != "SUCCESS")
+                        {
+                            Directory.Delete(extractPath, true);
+                            response = "Project setting and project template files not found! plase include the files in zip and try again";
+                        }
+                    }
+                    else
+                    {
+                        if (!settingFile)
+                        {
+                            Directory.Delete(extractPath, true);
+                            response = "Project setting file not found! plase include the files in zip and try again";
+                            //return Json("SETTINGNOTFOUND");
+                        }
+                        if (!projectFile)
+                        {
+                            Directory.Delete(extractPath, true);
+                            response = "Project template file not found! plase include the files in zip and try again";
+                            //return Json("PROJECTFILENOTFOUND");
+                        }
                     }
                 }
             }

@@ -425,6 +425,12 @@ namespace VstsDemoBuilder.Controllers
                 privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
 
                 privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+
+                bool isExtracted = templateService.checkTemplateDirectory(privateTemplate.privateTemplatePath);
+                if (!isExtracted)
+                {
+                    Directory.Delete(extractPath, true);
+                }
             }
             catch (Exception ex)
             {
