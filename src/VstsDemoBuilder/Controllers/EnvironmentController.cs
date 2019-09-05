@@ -202,8 +202,9 @@ namespace VstsDemoBuilder.Controllers
                             }
                             else
                             {
-                                model.accountsForDropdown.Add("Select Organization");
-                                ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
+                                accList.Add("Select Organization");
+                                model.accountsForDropdown = accList;
+                                ViewBag.AccDDError = "Could not load your organizations. Please check if the logged in Id contains the Azure DevOps Organizations or change the directory in profile page and try again.";
                             }
 
                             model.Templates = new List<string>();
@@ -424,6 +425,12 @@ namespace VstsDemoBuilder.Controllers
                 privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
 
                 privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+
+                bool isExtracted = templateService.checkTemplateDirectory(privateTemplate.privateTemplatePath);
+                if (!isExtracted)
+                {
+                    Directory.Delete(extractPath, true);
+                }
             }
             catch (Exception ex)
             {

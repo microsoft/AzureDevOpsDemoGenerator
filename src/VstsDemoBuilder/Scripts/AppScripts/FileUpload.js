@@ -5,6 +5,7 @@
         disableButton(controlID);
         // Checking whether FormData is available in browser
         if (window.FormData !== undefined) {
+            $("#urlerror").empty();
             var fileUpload = $("#FileUpload1").get(0);
             var files = fileUpload.files;
             if (files.length === 0) {
@@ -35,11 +36,9 @@
                 success: function (result) {
 
                     if (result[0] !== "") {
-                        //alert("succesfully uploaded file: " + files[0].name);
                         console.log("succesfully uploaded file: " + result[0]);
                         $.post("UnzipFile", { "fineName": result[0] }, function (Data) {
                             if (Data.responseMessage === "SUCCESS") {
-                                //alert("succesfully unzipped file: " + files[0].name);
                                 console.log("succesfully unzipped file: " + files[0].name);
 
                                 var NewTemplateName = files[0].name.replace(".zip", "");
@@ -57,18 +56,19 @@
                                 $('#PrivateTemplateName', parent.document).val(NewTemplateName);
                                 $('#PrivateTemplatePath', parent.document).val(Data.privateTemplatePath);
                                 enableButton(controlID);
+                                $('#FileUpload1').val('');
                             }
                             else if (Data.responseMessage !== null && Data.responseMessage !== "") {
 
                                 $("#urlerror").empty().append(Data.responseMessage);
                                 enableButton(controlID);
+                                $('#FileUpload1').val('');
                                 return;
                             }
                         });
                     }
                 },
                 error: function (err) {
-                    alert(err.statusText);
                 }
             });
         } else {
