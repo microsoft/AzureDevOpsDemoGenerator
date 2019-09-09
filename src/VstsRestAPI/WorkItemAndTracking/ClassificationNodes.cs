@@ -70,6 +70,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
+                        return viewModel;
                     }
                     else
                     {
