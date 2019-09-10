@@ -245,45 +245,50 @@ $(document).ready(function (event) {
     $('#selecttmplateCommunity').click(function () {
         var URL = $(".template.selected").data('folder');
         $("#urlerror").empty();
-        $.ajax({
-            url: "../Environment/UploadPrivateTemplateFromURL",
-            type: "GET",
-            data: { TemplateURL: URL, token: "", userId: "", password: "", OldPrivateTemplate: "" },
-            success: function (Data) {
-                if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
-                    console.log(Data);
-                    var msg = '';
-                    if (Data.responseMessage === "SUCCESS") {
-                        $('#ddlTemplates').val(Data.privateTemplateName);
-                        $('#PrivateTemplateName').val(Data.privateTemplateName);
-                        $('#PrivateTemplatePath').val(Data.privateTemplatePath);
-                        $('#selectedTemplateFolder').val(Data.privateTemplateName);
-                        $(".template-close").click();
-                        $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
-                        $("#lblextensionError").removeClass('d-block').addClass('d-none');
-                        $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
-                        $("#lblDescription").removeClass('d-block').addClass('d-none');
-                        $("#ddlAcccountName").prop('selectedIndex', 0);
-                        //enableButton(controlID);
-                        //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
+        if (URL !== "") {
+            $.ajax({
+                url: "../Environment/UploadPrivateTemplateFromURL",
+                type: "GET",
+                data: { TemplateURL: URL, token: "", userId: "", password: "", OldPrivateTemplate: "" },
+                success: function (Data) {
+                    if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
+                        console.log(Data);
+                        var msg = '';
+                        if (Data.responseMessage === "SUCCESS") {
+                            $('#ddlTemplates').val(Data.privateTemplateName);
+                            $('#PrivateTemplateName').val(Data.privateTemplateName);
+                            $('#PrivateTemplatePath').val(Data.privateTemplatePath);
+                            $('#selectedTemplateFolder').val(Data.privateTemplateName);
+                            $(".template-close").click();
+                            $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+                            $("#lblextensionError").removeClass('d-block').addClass('d-none');
+                            $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
+                            $("#lblDescription").removeClass('d-block').addClass('d-none');
+                            $("#ddlAcccountName").prop('selectedIndex', 0);
+                            //enableButton(controlID);
+                            //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
+                        }
+                        else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
+                            $("#urlerror").empty().append(Data.responseMessage);
+                            enableButton(controlID);
+                            return;
+                        }
                     }
-                    else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
-                        $("#urlerror").empty().append(Data.responseMessage);
-                        enableButton(controlID);
-                        return;
+                    else {
+                        if (Data.responseMessage !== null && Data.responseMessage !== 'SUCCESS') {
+                            $("#urlerror").empty().append(Data.responseMessage);
+                            enableButton(controlID);
+                            return;
+                        }
                     }
-                }
-                else {
-                    if (Data.responseMessage !== null && Data.responseMessage !== 'SUCCESS') {
-                        $("#urlerror").empty().append(Data.responseMessage);
-                        enableButton(controlID);
-                        return;
-                    }
+
                 }
 
-            }
-
-        });
+            });
+        }
+        else {
+            $("#urlerror").empty().append("Template URL is missing!");
+        }
     });
 
     $("body").on("click", "#EmailPopup", function () {
@@ -415,6 +420,7 @@ $(document).ready(function (event) {
             $('#selecttmplate').removeClass('d-none');
             $('#selecttmplateCommunity').addClass('d-none');
         }
+        $('#urlerror').empty();
         getGroups(grpSelected);
     });
 
