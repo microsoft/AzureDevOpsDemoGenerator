@@ -116,8 +116,6 @@ namespace VstsDemoBuilder.Controllers
                             string templateFolder = template.TemplateFolder;
                             if (!string.IsNullOrEmpty(templateFolder))
                             {
-                                DateTime dateTime = System.IO.Directory.GetLastWriteTime(templatesPath + "\\" + templateFolder);
-                                template.LastUpdatedDate = dateTime.ToShortDateString();
                             }
                         }
                     }
