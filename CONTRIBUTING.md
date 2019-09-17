@@ -1,5 +1,9 @@
 # Contribute to the AzureDevOpsDemoGenerator
 
+Welcome, and thank you for your interest in contributing to our Microsoft Cloud Workshop!
+
+There are many ways that you can contribute, beyond writing or coding. The goal of this document is to provide a high-level overview of how you can get involved.
+
 The Azure DevOps Demo Generator is a service which helps you provision projects. Now we have enabled feature to [build custom template](https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?toc=/azure/devops/demo-gen/toc.json&bc=/azure/devops/demo-gen/breadcrumb/toc.json&view=azure-devops) and [provision your project](https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?toc=/azure/devops/demo-gen/toc.json&bc=/azure/devops/demo-gen/breadcrumb/toc.json&view=azure-devops#provisioning-your-project-from-your-custom-template) using generated template, also you can share your template to community.
 
 ## How to contribute
@@ -27,13 +31,10 @@ Once you successfully generate and test your template, you can share it with com
 We will communicate via Email once the template validated successfully.
 
 
-
+---
 
 # Contributing to a Microsoft Cloud Workshop
 
-Welcome, and thank you for your interest in contributing to our Microsoft Cloud Workshop!
-
-There are many ways that you can contribute, beyond writing or coding. The goal of this document is to provide a high-level overview of how you can get involved.
 
 ## Contributing
 
