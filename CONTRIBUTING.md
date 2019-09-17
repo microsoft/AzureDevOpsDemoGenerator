@@ -1,12 +1,24 @@
 # Contribute to the AzureDevOpsDemoGenerator
 
-Welcome, and thank you for your interest in contributing to our Microsoft Cloud Workshop!
+Welcome, and thank you for your interest in contributing to the Azure DevOps Demo Generator!
 
-There are many ways that you can contribute, beyond writing or coding. The goal of this document is to provide a high-level overview of how you can get involved.
+We welcome participation in a variety of ways, including providing and commenting on issues, issuing pull requests against the code base for new features and fixes, by updating and improving documentation, or by contributing community templates.  This document provides a high-level overview of how you can get involved.
 
-The Azure DevOps Demo Generator is a service which helps you provision projects. Now we have enabled feature to [build custom template](https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?toc=/azure/devops/demo-gen/toc.json&bc=/azure/devops/demo-gen/breadcrumb/toc.json&view=azure-devops) and [provision your project](https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?toc=/azure/devops/demo-gen/toc.json&bc=/azure/devops/demo-gen/breadcrumb/toc.json&view=azure-devops#provisioning-your-project-from-your-custom-template) using generated template, also you can share your template to community.
+## Contribution Guidelines
 
-## How to contribute
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
+
+When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## About this project
+
+The Azure DevOps Demo Generator is a service enabling you to provision Azure DevOps projects based on existing templates. It can be used to generate projects for hands-on-labs and learning, to setup a 'DevOps playground' to experiment and demonstrate, or to achieve other objectives (e.g., Microsoft Learning or the Microsoft Cloud Adoption Framework).  You can also [build custom templates]() to create templates for use in your own community or company.
+
+> Note: The Azure DevOps Demo Generate was not designed for "copying" projects and attempts to do so will most likely fail.
+
+# Comtributing Templates
 
 Once you successfully generate and test your template, you can share it with community. This can be done in three ways.
 
@@ -14,7 +26,7 @@ Once you successfully generate and test your template, you can share it with com
 1. Place the template zip file in any public repository and share the link in [Email](mailto:AzureDevOpsDemoGenerator@service.microsoft.com)
 1. Share the template directly through [Email](mailto:AzureDevOpsDemoGenerator@service.microsoft.com)
 
-    > If you have extensions installed in your organization, tempalte would be generated along with reference to all installed extensions in the ```Extensions.json``` file. You can edit this file and keep only the required extensions for the project. If extensions are not required, keep the file empty.
+> Note: If you have extensions installed in your organization, tempalte would be generated along with reference to all installed extensions in the ```Extensions.json``` file. You can edit this file and keep only the required extensions for the project. If extensions are not required, keep the file empty.
 
 ## Your template must contian following elements
 |Keys|Description| 
@@ -31,24 +43,7 @@ Once you successfully generate and test your template, you can share it with com
 We will communicate via Email once the template validated successfully.
 
 
----
-
-# Contributing to a Microsoft Cloud Workshop
-
-
-## Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+# Working with our maintainers
 
 ## Asking Questions
 
@@ -64,15 +59,11 @@ Your comments and feedback are welcome, and the project team is available via ha
 
 Have you identified a reproducible problem in a workshop? Have a feature request? We want to hear about it! Here's how you can make reporting your issue as effective as possible.
 
-### Identify Where to Report
-
-The MSW project is distributed across multiple repositories. Try to file the issue against the correct workshop. Check the list of [Related Projects](https://github.com/Microsoft/MSW/wiki/Related-Projects) if you aren't sure which repo is correct.
-
 ### Look For an Existing Issue
 
 Before you create a new issue, please do a search in [open issues](https://github.com/Microsoft/MSW/issues) to see if the issue or feature request has already been filed.
 
-Be sure to scan through the [most popular](https://github.com/Microsoft/MSW/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc) feature requests.
+Be sure to scan through the [most popular](https://github.com/Microsoft/etc...) feature requests.
 
 If you find your issue already exists, make relevant comments and add your [reaction](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments). Use a reaction in place of a "+1" comment:
 
