@@ -1,18 +1,11 @@
----
-title: Using the Demo Generator
-permalink: using.html
----
-
 # Using the Azure DevOps Demo Generator
 ------
-
 
 1. Browse to the [Azure DevOps Demo Generator site](https://azuredevopsdemogenerator.azurewebsites.net/) by click the link, or copy `https://azuredevopsdemogenerator.azurewebsites.net/` into your browser's URL field.
 
 2. Click **Sign In** and provide the Microsoft or Azure AD account credentials associated with an organization in Azure DevOps Services. If you don't have an organization, click on **Get Started for Free** to create one and then log in with your credentials.
-
  
-![Image of VSTS Demo Generator V2 login](/About-Azure-DevOps-Demo-Generator/images/homepage.png)
+![Image of VSTS Demo Generator V2 login](./About-Azure-DevOps-Demo-Generator/images/homepage.png)
 
 
 1. After you sign in, select **Accept** to grant the Demo Generator permissions to access your Azure DevOps account.
@@ -20,12 +13,12 @@ permalink: using.html
 
 1. Select the organization you will use to host the project created by the Azure DevOps Demo Generator. (You may have multiple accounts of which you are a member, and which are associated with your login, so choose carefully.) Provide a name for your project (such as "MyProjectDemo" ) that you and other contributors can use to identify it as a demo project. 
 
-![Image of the generator main page](/About-Azure-DevOps-Demo-Generator/images/mainpage.png)
+![Image of the generator main page](./About-Azure-DevOps-Demo-Generator/images/mainpage.png)
 
 
-Lastly, select the demo project template you want to provision by clicking **...** (Browse) button.
+Lastly, select the demo project template you want to provision by clicking the **Choose Template** button.
 
-![Image of VSTS Demo Generator template selection screen](/About-Azure-DevOps-Demo-Generator/images/templateselection.png)
+![Image of VSTS Demo Generator template selection screen](./About-Azure-DevOps-Demo-Generator/images/templateselection.png)
 
 
    >The default template is **SmartHotel360**, which contains complete ASP.NET 2 web mobile and desktop business apps for a hotel, and can be deployed using Docker containers. Other templates include **MyHealthClinic**, which defines a team project for an ASP.NET Core app that deploys to Azure App Service; **PartsUnlimited**, which defines an ASP.NET app with customized CI/CD pipelines; and **MyShuttle**, which defines a Java app and Azure App service deployment.
@@ -39,19 +32,16 @@ Lastly, select the demo project template you want to provision by clicking **...
 2. Your project may take a couple of minutes for the Demo Generator to provision. When it completes, you will be provided with a link to the demo project.
 
 
-![Image of Azure DevOps Demo Generator project created screen](_img/projectcreated.png)
+![Image of Azure DevOps Demo Generator project created screen](./About-Azure-DevOps-Demo-Generator/images/projectcreated.png)
 
-1. Select the link to go to the new demo Azure DevOps Services project and confirm it was successfully provisioned.
-
-
-![Image of Azure DevOps Demo Generator provision confirmation screen](_img/projecthomepage.png)
+1. Select the **Navigate to project** button to the new demo Azure DevOps Services project and confirm it was successfully provisioned.
 
 
-> You must provide your own information such as URLs, logins, password, and others for the configuration of demo endpoints that use Azure resources. 
+![Image of Azure DevOps Demo Generator provision confirmation screen](./About-Azure-DevOps-Demo-Generator/images/projecthomepage.png)
+
+
+> You must provide your own information such as URLs, logins, password, and others for the configuration of project endpoints that use Azure resources.
 
 -------------
 
-
-
-
-Next: [Building your own template](/About-Azure-DevOps-Demo-Generator/Build-your-own-template)
+Next: [Building your own template](./Using-The-Template-Extractor.md)
