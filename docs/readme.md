@@ -11,7 +11,3 @@ Table of contents
 * [Using the Azure DevOps Demo Generator](using.html)
     * Frequently asked questions and issues
 * [Building your own template](extractor.htm)
-
-
-
-
