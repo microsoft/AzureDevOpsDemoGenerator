@@ -7,7 +7,7 @@
 2. Click **Sign In** and provide the Microsoft or Azure AD account credentials associated with an organization in Azure DevOps Services. If you don't have an organization, click on **Get Started for Free** to create one and then log in with your credentials.
 
  
-![Image of VSTS Demo Generator V2 login](/About-Azure-DevOps-Demo-Generator/images/homepage.png)
+![Image of VSTS Demo Generator V2 login](./About-Azure-DevOps-Demo-Generator/images/homepage.png)
 
 
 1. After you sign in, select **Accept** to grant the Demo Generator permissions to access your Azure DevOps account.
