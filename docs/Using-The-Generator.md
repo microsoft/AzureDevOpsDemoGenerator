@@ -1,11 +1,9 @@
 # Using the Azure DevOps Demo Generator
 ------
 
-
 1. Browse to the [Azure DevOps Demo Generator site](https://azuredevopsdemogenerator.azurewebsites.net/) by click the link, or copy `https://azuredevopsdemogenerator.azurewebsites.net/` into your browser's URL field.
 
 2. Click **Sign In** and provide the Microsoft or Azure AD account credentials associated with an organization in Azure DevOps Services. If you don't have an organization, click on **Get Started for Free** to create one and then log in with your credentials.
-
  
 ![Image of VSTS Demo Generator V2 login](./About-Azure-DevOps-Demo-Generator/images/homepage.png)
 
@@ -18,7 +16,7 @@
 ![Image of the generator main page](./About-Azure-DevOps-Demo-Generator/images/mainpage.png)
 
 
-Lastly, select the demo project template you want to provision by clicking **...** (Browse) button.
+Lastly, select the demo project template you want to provision by clicking the **Choose Template** button.
 
 ![Image of VSTS Demo Generator template selection screen](./About-Azure-DevOps-Demo-Generator/images/templateselection.png)
 
@@ -34,15 +32,15 @@ Lastly, select the demo project template you want to provision by clicking **...
 2. Your project may take a couple of minutes for the Demo Generator to provision. When it completes, you will be provided with a link to the demo project.
 
 
-![Image of Azure DevOps Demo Generator project created screen](_img/projectcreated.png)
+![Image of Azure DevOps Demo Generator project created screen](./About-Azure-DevOps-Demo-Generator/images/projectcreated.png)
 
-1. Select the link to go to the new demo Azure DevOps Services project and confirm it was successfully provisioned.
-
-
-![Image of Azure DevOps Demo Generator provision confirmation screen](_img/projecthomepage.png)
+1. Select the **Navigate to project** button to the new demo Azure DevOps Services project and confirm it was successfully provisioned.
 
 
-> You must provide your own information such as URLs, logins, password, and others for the configuration of demo endpoints that use Azure resources. 
+![Image of Azure DevOps Demo Generator provision confirmation screen](./About-Azure-DevOps-Demo-Generator/images/projecthomepage.png)
+
+
+> You must provide your own information such as URLs, logins, password, and others for the configuration of project endpoints that use Azure resources.
 
 -------------
 
