@@ -63,7 +63,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
-        ga('send', 'event', 'Choose Template Button', 'Clicked');       
+        ga('send', 'event', 'Choose Template Button', 'Clicked');
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -99,11 +99,11 @@ $(document).ready(function (event) {
             $.ajax({
                 url: "../Environment/DeletePrivateTemplate",
                 type: "POST",
-                data: { TemplateName: priTemplate[priTemplate.indexOf('PrivateTemplates')+1] },
+                data: { TemplateName: priTemplate[priTemplate.indexOf('PrivateTemplates') + 1] },
                 success: function (Data) {
                 }
             });
-        }     
+        }
         $('#PrivateTemplateName', parent.document).val('');
         $('#PrivateTemplatePath', parent.document).val('');
         $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
@@ -226,7 +226,7 @@ $(document).ready(function (event) {
             });
         }
         //Till here
-        
+
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
         ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
@@ -238,8 +238,57 @@ $(document).ready(function (event) {
         }
         else {
             GetRequiredExtension();
-        }       
-         
+        }
+
+    });
+
+    $('#selecttmplateCommunity').click(function () {
+        var URL = $(".template.selected").data('folder');
+        $("#urlerror").empty();
+        if (URL !== "") {
+            $.ajax({
+                url: "../Environment/UploadPrivateTemplateFromURL",
+                type: "GET",
+                data: { TemplateURL: URL, token: "", userId: "", password: "", OldPrivateTemplate: "" },
+                success: function (Data) {
+                    if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
+                        console.log(Data);
+                        var msg = '';
+                        if (Data.responseMessage === "SUCCESS") {
+                            $('#ddlTemplates').val(Data.privateTemplateName);
+                            $('#PrivateTemplateName').val(Data.privateTemplateName);
+                            $('#PrivateTemplatePath').val(Data.privateTemplatePath);
+                            $('#selectedTemplateFolder').val(Data.privateTemplateName);
+                            $(".template-close").click();
+                            $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
+                            $("#lblextensionError").removeClass('d-block').addClass('d-none');
+                            $("#lblDefaultDescription").removeClass('d-block').addClass('d-none');
+                            $("#lblDescription").removeClass('d-block').addClass('d-none');
+                            $("#ddlAcccountName").prop('selectedIndex', 0);
+                            //enableButton(controlID);
+                            //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
+                        }
+                        else if (Data.responseMessage !== '' && Data.responseMessage !== 'SUCCESS') {
+                            $("#urlerror").empty().append(Data.responseMessage);
+                            enableButton(controlID);
+                            return;
+                        }
+                    }
+                    else {
+                        if (Data.responseMessage !== null && Data.responseMessage !== 'SUCCESS') {
+                            $("#urlerror").empty().append(Data.responseMessage);
+                            enableButton(controlID);
+                            return;
+                        }
+                    }
+
+                }
+
+            });
+        }
+        else {
+            $("#urlerror").empty().append("Template URL is missing!");
+        }
     });
 
     $("body").on("click", "#EmailPopup", function () {
@@ -363,6 +412,15 @@ $(document).ready(function (event) {
     // load other templates on tab click
     $(document.body).on('click', '.nav-link', function () {
         grpSelected = this.text;
+        if (grpSelected === "Community") {
+            $('#selecttmplate').addClass('d-none');
+            $('#selecttmplateCommunity').removeClass('d-none');
+        }
+        else {
+            $('#selecttmplate').removeClass('d-none');
+            $('#selecttmplateCommunity').addClass('d-none');
+        }
+        $('#urlerror').empty();
         getGroups(grpSelected);
     });
 
@@ -510,7 +568,7 @@ $('#btnSubmit').click(function () {
     $.each($('.project-parameters'), function (index, item) {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
     });
-   
+
     var privateTemplateName = $('#PrivateTemplateName').val();
     var privateTemplatePath = $('#PrivateTemplatePath').val();
     if (privateTemplatePath !== '') {
@@ -518,7 +576,7 @@ $('#btnSubmit').click(function () {
     } else {
         selectedTemplate = template;
     }
-    
+
     var websiteUrl = window.location.href;
     var projData = {
         "ProjectName": projectName, "SelectedTemplate": selectedTemplate, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
