@@ -4,6 +4,7 @@
     "DevOps Labs",
     "Microsoft Learn",
     "Microsoft Cloud Adoption Framework",
+    "Community",
     "Private"
   ],
   "PrivateGroups": [
@@ -648,6 +649,27 @@
           "PreviewImages": [
             "/Templates/CloudAdoptionPlan/Images/Overview.png",
             "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        }
+      ]
+    },
+    {
+      "Groups": "Community",
+      "Template": [
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
+          "Name": "Community T1",
+          "TemplateFolder": "https://raw.githubusercontent.com/aksh-h/PUL_YML/master/PHP.zip",
+          "ShortName": "CloudAdoptionPlan",
+          "Description": "<a href='https://raw.githubusercontent.com/aksh-h/PUL_YML/master/PHP.zip'>Template</a> The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
           ],
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
