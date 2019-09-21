@@ -78,7 +78,7 @@ $(document).ready(function (event) {
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionForSelectedTemplate = templateFolder;
 
-        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organiaztion") {
+        if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "Select Organization") {
             return false;
         }
         else if (checkExtensionForSelectedTemplate === "") {

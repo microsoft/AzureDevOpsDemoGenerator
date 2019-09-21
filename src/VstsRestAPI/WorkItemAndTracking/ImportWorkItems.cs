@@ -52,6 +52,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                 projectId = projectID;
                 pullRequests = dictPullRequests;
                 JArray userList = new JArray();
+                JToken userAssignment = null;
                 if (userMethod == "Select")
                 {
                     foreach (string user in accountUsers)
@@ -59,36 +60,11 @@ namespace VstsRestAPI.WorkItemAndTracking
                         listAssignToUsers.Add(user);
                     }
                 }
-                else if (userMethod == "Random")
-                {
-                    if (accountUsers.Count >= 2)
-                    {
-                        foreach (string user in accountUsers)
-                        {
-                            listAssignToUsers.Add(user);
-                        }
-                        if (listAssignToUsers.Count > 10) { listAssignToUsers.RemoveRange(9, listAssignToUsers.Count - 10); }
-                    }
-                    else
-                    {
-                        var jitems = JObject.Parse(projectSettingsJson);
-                        userList = jitems["users"].Value<JArray>();
-
-                        if (userList.Count > 0)
-                        {
-                            listAssignToUsers.Add(uniqueUser);
-                        }
-                        foreach (var data in userList.Values())
-                        {
-                            listAssignToUsers.Add(data.ToString());
-                        }
-                    }
-                }
                 else
                 {
                     var jitems = JObject.Parse(projectSettingsJson);
                     userList = jitems["users"].Value<JArray>();
-
+                    userAssignment = jitems["userAssignment"];
                     if (userList.Count > 0)
                     {
                         listAssignToUsers.Add(uniqueUser);
@@ -105,7 +81,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 foreach (string wiType in dicWITypes.Keys)
                 {
-                    PrepareAndUpdateTarget(wiType, dicWITypes[wiType], projectName, selectedTemplate);
+                    PrepareAndUpdateTarget(wiType, dicWITypes[wiType], projectName, selectedTemplate, userAssignment == null ? "" : userAssignment.ToString());
                 }
 
                 foreach (string wiType in dicWITypes.Keys)
@@ -130,7 +106,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="workImport"></param>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public bool PrepareAndUpdateTarget(string workItemType, string workImport, string projectName, string selectedTemplate)
+        public bool PrepareAndUpdateTarget(string workItemType, string workImport, string projectName, string selectedTemplate, string userAssignment)
         {
             try
             {
@@ -139,7 +115,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 
                 if (fetchedWIs.count > 0)
                 {
-                    if(workItemType.ToLower()=="epic"|| workItemType.ToLower() == "feature")
+                    if (workItemType.ToLower() == "epic" || workItemType.ToLower() == "feature")
                     {
                         fetchedWIs.value = fetchedWIs.value.OrderBy(x => x.id).ToArray();
                     }
@@ -150,7 +126,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                         string assignToUser = string.Empty;
                         if (listAssignToUsers.Count > 0)
                         {
-                            assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)]??string.Empty;
+                            assignToUser = listAssignToUsers[new Random().Next(0, listAssignToUsers.Count)] ?? string.Empty;
                         }
 
                         //Test cases have different fields compared to other items like bug, Epics, etc.                     
@@ -221,7 +197,14 @@ namespace VstsRestAPI.WorkItemAndTracking
                             }
 
                             dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                            if (newWI.fields.SystemState == "Done")
+                            if (userAssignment.ToLower() != "any")
+                            {
+                                if (newWI.fields.SystemState == "Done")
+                                {
+                                    dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
+                                }
+                            }
+                            else
                             {
                                 dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                             }
