@@ -38,9 +38,9 @@ Setup an Azure DevOps project and make sure it is ready to be extracted. The ext
 
 ## Provisioning your project from your custom template
 
-1. Return back to the generator page  or re-open it again if you have already closed it. You should use the **enableextractor=true** query parameter in the URL.
+1. Return back to the generator page  or re-open it again if you have already closed it.
 
-1. Select **Choose Template** 
+1. Select **Choose Template**
 
 1. You will see a new tab labelled **Private**. Select the tab.
 
@@ -48,8 +48,6 @@ Setup an Azure DevOps project and make sure it is ready to be extracted. The ext
 
 1. Click **OK** to close the dialog. Choose **Create Project** to start provisioning a project
 
-
-
 -------------
 
-Previous: [Using the Generator](/About-Azure-DevOps-Demo-Generator/Using-the-Generator) 
+Previous: [Using the Generator](./Using-the-Generator.md)
