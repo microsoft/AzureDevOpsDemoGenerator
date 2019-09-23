@@ -1,5 +1,4 @@
 # Using the Azure DevOps Demo Generator
-------
 
 1. Browse to the [Azure DevOps Demo Generator site](https://azuredevopsdemogenerator.azurewebsites.net/) by click the link, or copy `https://azuredevopsdemogenerator.azurewebsites.net/` into your browser's URL field.
 
