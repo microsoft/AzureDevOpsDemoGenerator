@@ -1,58 +1,28 @@
-# DevOps Demo Generator
+# Azure DevOps Demo Generator
 
    [![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
 
 ## About
-Azure DevOps Demo Generator helps you create projects on your Azure DevOps organization  with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.
 
-The purpose of this system is to simplify working with the hands-on-labs, demos and other education material provided by Azure Marketing team.
+The Azure DevOps Demo Generator can create projects in your Azure DevOps organization, prepopulated with template-based content including source code, work items, iterations, service endpoints, build and release definitions, and more!
 
-## How to Run this application locally?
+The original purpose of this system is to simplify working with the [Azure DevOps hands-on-labs](https://www.azuredevopslabs.com), demos and other education material. But it can also be used to drive your ownAzure DevOps automation utilities, provision your own custom templates, or as a reference for using the [Azure DevOps REST APIs](https://docs.microsoft.com/rest/api/azure/devops/).
 
-To run this locally, you will need:
- * Microsoft Visual Studio 2017 or higher;       
- * Internet Information Server and ASP.NET 4.5  or above installed;
- * SQL Server 2016 Express LocalDB
+## Getting Started
 
- 1. Clone the solution to your local repository  or fork it to your GitHub repo first and clone it from there. 
- 
- 1. Open the solution (src\VSTSDemoGeneratorV2.sln ) in Visual Studio and restore the required packages.
+The Azure DevOps Demo Generator is a hosted service that you can [access directly](https://azuredevopsdemogenerator.azurewebsites.net/) to create template-based projects, via [API](./docs/Azure-DevOps-Demo-Generator-REST-API-Reference.md) or as a side effect of the related [Azure DevOps hands-on-labs](https://www.azuredevopslabs.com).
 
- 1. This application uses **OAuth** for authorization. In order to register the app, you will need to provide a callback URL. However, App registration does not allow localhost (http) to be the hostname in your callback URL. You can edit the hosts file (C:\Windows\System32\Drivers\etc\hosts) on your local computer to map a hostname to 127.0.0.1. **Then use this hostname when you register your app**. 
+The following docs provide additional information:
+* [Using the Azure DevOps Demo Generator](./docs/Using-The-Generator.md)
+* [Running the Azure DevOps Demo Generator on your local machine](./docs/Local-Development.md)
+* [Creating custom templates](./docs/Using-The-Template-Extactor.md)
+* [Using the REST APIs](./docs/Azure-DevOps-Demo-Generator-REST-API-Reference.md)
+* [Contributing to this project](./CONTRIBUTING.md)
 
-1. Using an elevated command prompt, open the Hosts file on your machine and add a new mapping to your hostname. For instance, let's say we will use **azuredevopsdemogen-mylocal.com** domain name.
+## Contributions
 
-    > 127.0.0.1 azuredevopsdemogen-mylocal.com
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
-    ![](Images/hostfile.png)
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-1. You can register the app using this domain but you will need to provide a secure connection (https) for the callback URL. Create a new website **azuredevopsdemogen-mylocal.com** and enable HTTPS with a self-signed certificate on IIS by following the instructions provided in this [article](https://weblogs.asp.net/scottgu/tip-trick-enabling-ssl-on-iis7-using-self-signed-certificates)
-
-1. Next, go to (https://app.vsaex.visualstudio.com/app/register) to register your app. Specify the domain name (**azuredevopsdemogen-mylocal.com**) for the **Application website** and the **Application Callback URL** must be `https://<<domain name>>/Environment/Create`
-
-1. Select the following scopes and submit. If the submission is successful, the application settings page is displayed. You will need these information.
-
-   ![](Images/scopes.png)
-
-   ![](Images/AppSetting.png)
-
-1. Go to IIS Manager, select the wesbiste you created. Open the  **Configuration Editor** by double-clicking it. Open the **Collections**. Add the following entries to the collection ( **Note:** If you want to view the settings for the app that you registered, you can get it from [here](https://app.vssps.visualstudio.com/profile/view).:
-
-    * RedirectUri - `https://<<domain name>>/Environment/Create`
-    * ClientId - App ID from the application settings
-    * ClientSecret - Client Secret from the application settings
-    * AppScope - Authorized Scopes from the application settings (Encode the Authorized scopes and copy)
-
-    ![](Images/IIS_Appsettings.png)
-
-
-1.  Update the **Web \| Server** information in the Project properties file. Make sure you are running using the Local IIS and not IIS Express and your Project URL matches the web server name created in IIS.
-
-    ![](Images/local-debug.png)
-
-1. Save the file and run the application
-
-## Extractor
-When you are using extractor make sure you have given the Read & Write permissions for **IIS_IUSRS** group on the folder **ExtractedTemplate**
-
-   ![](Images/permissions.png)
+For more information on contributing, please visit the [contributor guide](./CONTRIBUTING.md).
