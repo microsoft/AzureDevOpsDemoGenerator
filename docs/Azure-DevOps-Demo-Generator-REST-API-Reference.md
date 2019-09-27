@@ -2,7 +2,7 @@
 -------------------------
 We have added API support to the Azure DevOps Demo Generator so that it can be invoked externally. This page has all the instructions that you need to know how to call the API.
 
-* Calling the API from a [PowerShell Script](/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%2D-Call-API-with-powershell)
+* Calling the API from a [PowerShell Script](/Azure-DevOps-Demo-Generator-REST-API-Reference/Azure-DevOps-REST-API-%252D-Call-API-with-powershell.md)
 
 
 ## Create a Project
