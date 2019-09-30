@@ -50,4 +50,4 @@ Setup an Azure DevOps project and make sure it is ready to be extracted. The ext
 
 -------------
 
-Previous: [Using the Generator](./Using-the-Generator.md)
+Previous: [Using the Generator](./Using-The-Generator.md)
