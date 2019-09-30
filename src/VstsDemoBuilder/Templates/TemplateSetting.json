@@ -628,6 +628,90 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/host-build-agent/' target='_blank'>Host build agent</a>"
+        },
+        {
+          "Key": "3456781",
+          "Name": "Space Game - web - Release",
+          "TemplateFolder": "SpaceGame-web-Release",
+          "ShortName": "create-release-pipeline",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Set up a continuous delivery (CD) pipeline that automates the process of deploying your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-release-pipeline' target='_blank'>create-release-pipeline</a>"
+        },
+        {
+          "Key": "3456782",
+          "Name": "Space Game - web - Multi-stage",
+          "TemplateFolder": "SpaceGame-web-Multi-stage",
+          "ShortName": "create-multi-stage-pipeline",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Create a multi-stage pipeline with Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-workflow' target='_blank'>create-multi-stage-pipeline</a>"
+        },
+        {
+          "Key": "3456783",
+          "Name": "Space Game - web - Deploy database",
+          "TemplateFolder": "SpaceGame-web-DeployDatabase",
+          "ShortName": "manage-database-changes",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Connect your webapp to an Azure SQL Database and manage database schema changes by using a release approval. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-database-changes-in-azure-pipelines' target='_blank'>manage-database-changes-in-azure-pipelines</a>"
+        },
+        {
+          "Key": "3456784",
+          "Name": "Space Game - web - Functional tests",
+          "TemplateFolder": "SpaceGame-web-FunctionalTests",
+          "ShortName": "run-functional-tests",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Run functional tests in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-functional-tests-azure-pipelines' target='_blank'>run-functional-tests-azure-pipelines</a>"
+        },
+        {
+          "Key": "3456785",
+          "Name": "Space Game - web - Non-functional tests",
+          "TemplateFolder": "SpaceGame-web-Non-functionalTests",
+          "ShortName": "run-non-functional-tests",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Run non-functional tests in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-non-functional-tests-azure-pipelines' target='_blank'>run-non-functional-tests-azure-pipelines</a>"
+        },
+        {
+          "Key": "3456786",
+          "Name": "Space Game - web - Deployment patterns",
+          "TemplateFolder": "SpaceGame-web-DeploymentPatterns",
+          "ShortName": "manage-release-cadence",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Choose an appropriate  deployment pattern for your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence' target='_blank'>manage-release-cadence</a>"
         }
       ]
     },
