@@ -1,0 +1,12 @@
+{
+  "children": [
+    {
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false
+    }
+  ],
+  "name": "Space Game - web - Non-functional tests",
+  "structureType": "iteration",
+  "hasChildren": true
+}

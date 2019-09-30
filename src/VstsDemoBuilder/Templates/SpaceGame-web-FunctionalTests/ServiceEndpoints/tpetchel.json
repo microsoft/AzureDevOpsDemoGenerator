@@ -1,0 +1,15 @@
+{
+  "data": {},
+  "name": "tpetchel",
+  "type": "GitHub",
+  "url": "https://github.com",
+  "authorization": {
+    "parameters": {
+      "AccessToken": "AccessToken"
+    },
+    "scheme": "OAuth"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
