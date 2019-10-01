@@ -4,7 +4,7 @@
   },
   "name": "GitHub_eb001d95",
   "type": "git",
-  "url": "https://github.com/tpetchel/mslearn-tailspin-spacegame-web-deploy.git",
+  "url": "https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy.git",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
