@@ -15,7 +15,7 @@ The Azure DevOps Demo Generator is a hosted service that you can [access directl
 The following docs provide additional information:
 * [Using the Azure DevOps Demo Generator](./docs/Using-The-Generator.md)
 * [Running the Azure DevOps Demo Generator on your local machine](./docs/Local-Development.md)
-* [Creating custom templates](./docs/Using-The-Template-Extactor.md)
+* [Creating custom templates](./docs/Using-The-Template-Extractor.md)
 * [Using the REST APIs](./docs/Azure-DevOps-Demo-Generator-REST-API-Reference.md)
 * [Contributing to this project](./CONTRIBUTING.md)
 
