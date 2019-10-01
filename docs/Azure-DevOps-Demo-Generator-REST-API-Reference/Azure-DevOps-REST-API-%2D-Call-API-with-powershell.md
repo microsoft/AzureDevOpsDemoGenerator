@@ -17,7 +17,7 @@ $body = @"
 "@
 
 Write-Host "Provisioning project ..." -ForegroundColor Blue -BackgroundColor Cyan
-$resp = Invoke-WebRequest -Uri "https://demogenapi.azurewebsites.net/api/environment/create" -Method "POST" -ContentType application/json -Body $body
+$resp = Invoke-WebRequest -Uri "https://azuredevopsdemogenerator.azurewebsites.net/api/environment/create" -Method "POST" -ContentType application/json -Body $body
 
 $returnCode = $resp.StatusCode
 $returnStatus = $resp.StatusDescription
