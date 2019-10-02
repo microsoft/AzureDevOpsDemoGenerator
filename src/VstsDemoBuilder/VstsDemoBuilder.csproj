@@ -16,7 +16,7 @@
     <AssemblyName>VstsDemoBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -1283,8 +1283,6 @@
     <Content Include="Templates\SpaceGame-web-DeployDatabase\ProjectSettings.json" />
     <Content Include="Templates\SpaceGame-web-DeployDatabase\ProjectTemplate.json" />
     <Content Include="Templates\SpaceGame-web-DeployDatabase\ServiceEndpoints\GitHub_c26ff2e9-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-DeployDatabase\ServiceEndpoints\Space Game - web - Deploy database-code.json" />
-    <Content Include="Templates\SpaceGame-web-DeployDatabase\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-DeployDatabase\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Space Game - web - Deploy database Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Space Game - web - Deploy database Team\BoardRows.json" />
@@ -1299,8 +1297,6 @@
     <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ProjectSettings.json" />
     <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ProjectTemplate.json" />
     <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ServiceEndpoints\GitHub_604d3592-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ServiceEndpoints\Space Game - web - Deployment patterns-code.json" />
-    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-DeploymentPatterns\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Space Game - web - Deployment patterns Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Space Game - web - Deployment patterns Team\BoardRows.json" />
@@ -1315,8 +1311,6 @@
     <Content Include="Templates\SpaceGame-web-FunctionalTests\ProjectSettings.json" />
     <Content Include="Templates\SpaceGame-web-FunctionalTests\ProjectTemplate.json" />
     <Content Include="Templates\SpaceGame-web-FunctionalTests\ServiceEndpoints\GitHub_8dceab94-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-FunctionalTests\ServiceEndpoints\Space Game - web - Functional tests-code.json" />
-    <Content Include="Templates\SpaceGame-web-FunctionalTests\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-FunctionalTests\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Space Game - web - Functional tests Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Space Game - web - Functional tests Team\BoardRows.json" />
@@ -1332,8 +1326,6 @@
     <Content Include="Templates\SpaceGame-web-Multi-stage\ProjectTemplate.json" />
     <Content Include="Templates\SpaceGame-web-Multi-stage\ServiceEndpoints\GitHub_93b35f8f-EndPoint.json" />
     <Content Include="Templates\SpaceGame-web-Multi-stage\ServiceEndpoints\GitHub_eb001d95-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-Multi-stage\ServiceEndpoints\Space Game - web - Release workflow-code.json" />
-    <Content Include="Templates\SpaceGame-web-Multi-stage\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-Multi-stage\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Space Game - web - Release workflow Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Space Game - web - Release workflow Team\BoardRows.json" />
@@ -1348,8 +1340,6 @@
     <Content Include="Templates\SpaceGame-web-Non-functionalTests\ProjectSettings.json" />
     <Content Include="Templates\SpaceGame-web-Non-functionalTests\ProjectTemplate.json" />
     <Content Include="Templates\SpaceGame-web-Non-functionalTests\ServiceEndpoints\GitHub_39e50711-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ServiceEndpoints\Space Game - web - Non-functional tests-code.json" />
-    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-Non-functionalTests\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Space Game - web - Non-functional tests Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Space Game - web - Non-functional tests Team\BoardRows.json" />
@@ -1364,8 +1354,6 @@
     <Content Include="Templates\SpaceGame-web-Release\ProjectSettings.json" />
     <Content Include="Templates\SpaceGame-web-Release\ProjectTemplate.json" />
     <Content Include="Templates\SpaceGame-web-Release\ServiceEndpoints\GitHub_70ec1fc5-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-Release\ServiceEndpoints\Space Game - web - Release-code.json" />
-    <Content Include="Templates\SpaceGame-web-Release\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-Release\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\BoardRows.json" />
@@ -1449,7 +1437,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60671</IISUrl>
+          <IISUrl>https://dev.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

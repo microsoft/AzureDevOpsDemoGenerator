@@ -654,7 +654,7 @@
           "Image": "/Templates/TemplateImages/mslearn/create-multi-stage-pipeline.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Build a pipeline that deploys an app to multiple development and testing stages. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-workflow' target='_blank'>Create a multi-stage pipeline</a>"
+          "Description": "Build a pipeline that deploys an app to multiple development and testing stages. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-multi-stage-pipeline/' target='_blank'>Create a multi-stage pipeline</a>"
         },
         {
           "Key": "3456783",
