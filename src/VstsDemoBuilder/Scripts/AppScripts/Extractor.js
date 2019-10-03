@@ -324,6 +324,9 @@ $(document).ready(function () {
             }
         });
     });
+    $('#fileDownload').click(function () {
+        ga('send', 'event', 'fileDownload', 'clicked');
+    });
 
 });
 
