@@ -3,6 +3,7 @@
     {
       "branchFilters": [],
       "pathFilters": [],
+      "settingsSourceType": 2,
       "batchChanges": false,
       "maxConcurrentBuildsPerBranch": 1,
       "triggerType": "continuousIntegration"
