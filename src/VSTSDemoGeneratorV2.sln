@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VstsDemoBuilder", "VstsDemo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VstsRestAPI", "VstsRestAPI\VstsRestAPI.csproj", "{720825C0-F4F3-44F3-9492-3BC4C967034D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatesGeneratorTool", "ExportWorkitemsTool\TemplatesGeneratorTool.csproj", "{7AB69A60-0D63-41D0-8FA8-0FC003C9F624}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
