@@ -1002,7 +1002,6 @@ namespace VstsDemoBuilder.Services
             {
                 Guid g = Guid.NewGuid();
                 string randStr = g.ToString().Substring(0, 8);
-                def["triggers"] = new JArray();
                 var ymlRepoUrl = def["repository"]["url"].ToString();
                 if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode"))
                 {
