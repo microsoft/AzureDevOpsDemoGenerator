@@ -18,7 +18,7 @@ namespace TemplatesGeneratorTool
             Console.WriteLine("Please enter Account Name");
             accountName = Console.ReadLine();
 
-            Console.WriteLine("Please enter Personel access token");
+            Console.WriteLine("Please enter Personal access token");
             PAT = Console.ReadLine();
 
             Console.WriteLine("Please enter project name");
@@ -88,7 +88,7 @@ namespace TemplatesGeneratorTool
             else
             {
                 Console.WriteLine("");
-                Console.WriteLine("Invalid Accountn name or PAT, re-run the application and try again!");
+                Console.WriteLine("Invalid Account name or PAT, re-run the application and try again!");
                 var wait = Console.ReadLine();
             }
         }
