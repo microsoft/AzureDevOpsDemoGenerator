@@ -174,6 +174,7 @@ $(document).ready(function () {
     });
 
     $('#Analyse').click(function () {
+        ga('send', 'event', 'Analyze Button', 'clicked');
         var SourceAcc = $("#ddlAcccountName").val();
         var project = $("#projectSelect").val();
         var projectName = $("#projectSelect option:selected").text();
@@ -273,6 +274,7 @@ $(document).ready(function () {
     });
 
     $('#GenerateArtifacts').click(function () {
+        ga('send', 'event', 'Generate Artifact', 'clicked');
         $('.accorDetails').removeClass('show');
         var SourceAcc = $("#ddlAcccountName").val();
         var project = $("#projectSelect").val();
