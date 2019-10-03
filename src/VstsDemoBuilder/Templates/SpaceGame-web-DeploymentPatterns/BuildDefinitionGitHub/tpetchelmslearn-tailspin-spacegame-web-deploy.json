@@ -1,39 +1,7 @@
 {
-  "options": [
-    {
-      "enabled": false,
-      "definition": {
-        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
-      },
-      "inputs": {
-        "branchFilters": "[\"+refs/heads/*\"]",
-        "additionalFields": "{}"
-      }
-    },
-    {
-      "enabled": false,
-      "definition": {
-        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
-      },
-      "inputs": {
-        "workItemType": "Issue",
-        "assignToRequestor": "true",
-        "additionalFields": "{}"
-      }
-    },
-    {
-      "enabled": false,
-      "definition": {
-        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
-      },
-      "inputs": {}
-    }
-  ],
   "triggers": [
     {
-      "branchFilters": [
-        "+master"
-      ],
+      "branchFilters": [],
       "pathFilters": [],
       "batchChanges": false,
       "maxConcurrentBuildsPerBranch": 1,
