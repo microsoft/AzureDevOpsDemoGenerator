@@ -53,7 +53,7 @@
                                 $("#ddlAcccountName", parent.document).prop('selectedIndex', 0);
                                 //$('#gitHubCheckboxDiv', parent.document).addClass('d-none');
 
-                                $('#PrivateTemplateName', parent.document).val(NewTemplateName);
+                                $('#PrivateTemplateName', parent.document).val(Data.privateTemplateName);
                                 $('#PrivateTemplatePath', parent.document).val(Data.privateTemplatePath);
                                 enableButton(controlID);
                                 $('#FileUpload1').val('');
