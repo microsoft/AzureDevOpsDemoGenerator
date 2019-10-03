@@ -16,7 +16,7 @@
     <AssemblyName>VstsDemoBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -454,10 +454,15 @@
     <Content Include="Templates\TemplateImages\launchdarkly.png" />
     <Content Include="Templates\TemplateImages\MachineLearning.png" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-build-pipeline-azure-pipelines.png" />
+    <Content Include="Templates\TemplateImages\mslearn\create-a-release-pipeline-with-azure-pipelines.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\create-multi-stage-pipeline.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\generic-badge.svg" />
     <Content Include="Templates\TemplateImages\mslearn\host-your-own-build-server-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\implement-a-code-workflow-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\manage-dependencies-in-your-build-pipeline.png" />
+    <Content Include="Templates\TemplateImages\mslearn\manage-release-cadence-using-deployment-patterns.svg" />
     <Content Include="Templates\TemplateImages\mslearn\manage-security-and-compliance-in-your-build-pipeline.png" />
+    <Content Include="Templates\TemplateImages\mslearn\run-functional-tests-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
     <Content Include="Templates\TemplateImages\mslearn\scan-code-for-vulnerabilities-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\MyHealthClinic.png" />
@@ -1271,6 +1276,90 @@
     <Content Include="Templates\CloudAdoptionPlan\WorkItems\Task.json" />
     <Content Include="Templates\CloudAdoptionPlan\WorkItems\User Story.json" />
     <Content Include="Views\Environment\PrivateTemplate.cshtml" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\ImportSourceCode\Space Game - web - Deploy database.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\ServiceEndpoints\GitHub_c26ff2e9-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Space Game - web - Deploy database Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Space Game - web - Deploy database Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Space Game - web - Deploy database Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Space Game - web - Deploy database Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-DeployDatabase\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ImportSourceCode\Space Game - web - Deployment patterns.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\ServiceEndpoints\GitHub_604d3592-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Space Game - web - Deployment patterns Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Space Game - web - Deployment patterns Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Space Game - web - Deployment patterns Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Space Game - web - Deployment patterns Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-DeploymentPatterns\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\ImportSourceCode\Space Game - web - Functional tests.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\ServiceEndpoints\GitHub_8dceab94-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Space Game - web - Functional tests Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Space Game - web - Functional tests Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Space Game - web - Functional tests Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Space Game - web - Functional tests Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-FunctionalTests\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\ImportSourceCode\Space Game - web - Release workflow.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\ServiceEndpoints\GitHub_93b35f8f-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\ServiceEndpoints\GitHub_eb001d95-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Space Game - web - Release workflow Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Space Game - web - Release workflow Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Space Game - web - Release workflow Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Space Game - web - Release workflow Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-Multi-stage\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ImportSourceCode\Space Game - web - Non-functional tests.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\ServiceEndpoints\GitHub_39e50711-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Space Game - web - Non-functional tests Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Space Game - web - Non-functional tests Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Space Game - web - Non-functional tests Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Space Game - web - Non-functional tests Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-Non-functionalTests\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-web-Release\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\SpaceGame-web-Release\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-Release\ImportSourceCode\Space Game - web - Release.json" />
+    <Content Include="Templates\SpaceGame-web-Release\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-Release\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-Release\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-Release\ServiceEndpoints\GitHub_70ec1fc5-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-Release\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-Release\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1348,7 +1437,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60671</IISUrl>
+          <IISUrl>http://localhost:60671/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
