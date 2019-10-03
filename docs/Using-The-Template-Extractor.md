@@ -12,27 +12,27 @@ Setup an Azure DevOps project and make sure it is ready to be extracted. The ext
 
 1. Access the generator with the query parameter **"enableextractor=true"** added to the URL: [https://azuredevopsdemogenerator.azurewebsites.net/?enableextractor=true](https://azuredevopsdemogenerator.azurewebsites.net/?enableextractor=true)
 
-    ![Azure DevOps Generator Home Page](images/homepage.png)
+    ![Azure DevOps Generator Home Page](./About-Azure-DevOps-Demo-Generator/images/homepage.png)
 
 1. After you sign in, on the main page, you will see a new link labelled **"Build your own template"**
 
-    ![Build your template link on main page](images/buildyourtemplatelink.png)
+    ![Build your template link on main page](./About-Azure-DevOps-Demo-Generator/images/buildyourtemplatelink.png)
 
 1. Selecting that will open the **extractor** main page in a new tab. 
 
-    ![Extractor Home Page](images/extractorhomepage.png)
+    ![Extractor Home Page](./About-Azure-DevOps-Demo-Generator/images/extractorhomepage.png)
 
 1. Select the organization and then the project that you want to turn into a template.
 
 1. Click **Analyze**. This will validate if the project is one of the supported types (only Agile and Scrum based projects are supported for the time-being) and that all of the contents can be read.At the end of the analysis, you will see the artifacts and count of items for you to confirm if the extractor has read all items correctly.
 
-    ![Analyzing the project](images/analyze.png)
+    ![Analyzing the project](./About-Azure-DevOps-Demo-Generator/images/analyze.png)
 
 1. If it is correct and you wish to proceed, select the **Generate** button. This will again read all the items from the project but this time, the contents will be saved as JSON data. After all the items have been extracted, the folder will be archived into a zip file.
 
 1. Select the link to download the zip file. Note that the zip file is not stored on the server side - so, make sure you download the file.  It will not be available after you close the page. 
 
-    ![Downloadin the generated template](images/generatedfile.png)
+    ![Downloadin the generated template](./About-Azure-DevOps-Demo-Generator/images/generatedfile.png)
 
 **Note:** The Extractor does not support all item types and so it should not be considered as a migration tool for moving projects from one server to another. For what's supported and what's not supported, see the [limitations]() section
 
@@ -50,4 +50,4 @@ Setup an Azure DevOps project and make sure it is ready to be extracted. The ext
 
 -------------
 
-Previous: [Using the Generator](./Using-the-Generator.md)
+Previous: [Using the Generator](./Using-The-Generator.md)
