@@ -197,6 +197,20 @@ namespace VstsDemoBuilder.Services
         public string[] GenerateTemplateArifacts(Project model)
         {
             extractedTemplatePath = HostingEnvironment.MapPath("~") + @"ExtractedTemplate\";
+
+            if (Directory.Exists(extractedTemplatePath))
+            {
+                string[] subdirs = Directory.GetDirectories(extractedTemplatePath)
+                               .Select(Path.GetFileName)
+                               .ToArray();
+                foreach (string folderName in subdirs)
+                {
+                    DirectoryInfo d = new DirectoryInfo(extractedTemplatePath + folderName);
+                    if (d.CreationTime < DateTime.Now.AddHours(-1))
+                        Directory.Delete(extractedTemplatePath + folderName, true);
+                }
+            }
+
             AddMessage(model.id, "");
             ProjectConfigurations appConfig = ProjectConfiguration(model);
 
@@ -1002,7 +1016,6 @@ namespace VstsDemoBuilder.Services
             {
                 Guid g = Guid.NewGuid();
                 string randStr = g.ToString().Substring(0, 8);
-                def["triggers"] = new JArray();
                 var ymlRepoUrl = def["repository"]["url"].ToString();
                 if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode"))
                 {
