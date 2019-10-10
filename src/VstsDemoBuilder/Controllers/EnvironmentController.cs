@@ -357,7 +357,7 @@ namespace VstsDemoBuilder.Controllers
                             string[] testFiles = file.FileName.Split(new char[] { '\\' });
                             fileName = testFiles[testFiles.Length - 1];
                             templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + ".zip";
-                           
+
                             if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName)))
                             {
                                 System.IO.File.Delete(Path.Combine(Server.MapPath("~/ExtractedZipFile/"), templateName));
@@ -411,6 +411,20 @@ namespace VstsDemoBuilder.Controllers
                 if (!Directory.Exists(Server.MapPath("~") + @"\PrivateTemplates"))
                 {
                     Directory.CreateDirectory(Server.MapPath("~") + @"\PrivateTemplates");
+                }
+                //Deleting uploaded zip files present from last one hour
+                string extractedZipFile = HostingEnvironment.MapPath("~") + @"ExtractedZipFile\";
+                if (Directory.Exists(extractedZipFile))
+                {
+                    string[] subdirs = Directory.GetFiles(extractedZipFile)
+                                   .Select(Path.GetFileName)
+                                   .ToArray();
+                    foreach (string _file in subdirs)
+                    {
+                        FileInfo d = new FileInfo(extractedZipFile + _file);
+                        if (d.CreationTime < DateTime.Now.AddHours(-1))
+                            System.IO.File.Delete(extractedZipFile + _file);
+                    }
                 }
 
                 string zipPath = Server.MapPath("~/ExtractedZipFile/" + fineName);
