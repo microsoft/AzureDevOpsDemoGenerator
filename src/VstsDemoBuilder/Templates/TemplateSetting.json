@@ -665,7 +665,7 @@
             "Microsoft Learn",
             "Azure Pipelines"
           ],
-          "Image": "/Templates/TemplateImages/mslearn/generic-badge.svg",
+          "Image": "/Templates/TemplateImages/mslearn/manage-database-changes-with-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Connect your webapp to an Azure SQL Database and manage database schema changes by using a release approval. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-database-changes-in-azure-pipelines' target='_blank'>Manage database changes</a>"
@@ -693,7 +693,7 @@
             "Microsoft Learn",
             "Azure Pipelines"
           ],
-          "Image": "/Templates/TemplateImages/mslearn/generic-badge.svg",
+          "Image": "/Templates/TemplateImages/mslearn/run-non-functional-tests-in-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Run load tests with Apache JMeter, a form of non-functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-non-functional-tests-azure-pipelines' target='_blank'>Run non-functional tests</a>"

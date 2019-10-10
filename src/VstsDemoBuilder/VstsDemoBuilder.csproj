@@ -459,10 +459,12 @@
     <Content Include="Templates\TemplateImages\mslearn\generic-badge.svg" />
     <Content Include="Templates\TemplateImages\mslearn\host-your-own-build-server-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\implement-a-code-workflow-in-your-build-pipeline.png" />
+    <Content Include="Templates\TemplateImages\mslearn\manage-database-changes-with-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\manage-dependencies-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\manage-release-cadence-using-deployment-patterns.svg" />
     <Content Include="Templates\TemplateImages\mslearn\manage-security-and-compliance-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\run-functional-tests-azure-pipelines.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
     <Content Include="Templates\TemplateImages\mslearn\scan-code-for-vulnerabilities-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\MyHealthClinic.png" />
