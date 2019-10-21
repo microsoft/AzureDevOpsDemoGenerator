@@ -164,5 +164,13 @@ namespace VstsDemoBuilder.Controllers
             Session.Clear();
             return Redirect("https://app.vssps.visualstudio.com/_signout");
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult SessionOutReturn()
+        {
+            var url = Request.Url.Host;
+            return Redirect(url);
+        }
     }
 }

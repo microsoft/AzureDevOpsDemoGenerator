@@ -34,6 +34,7 @@ namespace VstsDemoBuilder.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        [SessonTimeout]
         public ContentResult GetCurrentProgress(string id)
         {
             this.ControllerContext.HttpContext.Response.AddHeader("cache-control", "no-cache");
@@ -48,6 +49,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
+        [SessonTimeout]
         public string GetStatusMessage(string id)
         {
             lock (ProjectService.objLock)
@@ -78,6 +80,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
+        [SessonTimeout]
         public ContentResult GetTemplate(string TemplateName)
         {
             string templatesPath = Server.MapPath("~") + @"\Templates\";
@@ -97,6 +100,7 @@ namespace VstsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [AllowAnonymous]
+        [SessonTimeout]
         public JsonResult GetGroups()
         {
             string groupDetails = "";
@@ -264,6 +268,7 @@ namespace VstsDemoBuilder.Controllers
             }
         }
         [AllowAnonymous]
+        [SessonTimeout]
         public ActionResult PrivateTemplate()
         {
             if (Session["visited"] != null)
@@ -328,6 +333,7 @@ namespace VstsDemoBuilder.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [SessonTimeout]
         public ActionResult UploadFiles()
         {
             string[] strResult = new string[2];
@@ -398,6 +404,7 @@ namespace VstsDemoBuilder.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [SessonTimeout]
         public ActionResult UnzipFile(string fineName)
         {
             PrivateTemplate privateTemplate = new PrivateTemplate();
@@ -461,6 +468,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
+        [SessonTimeout]
         public JsonResult GetMembers(string accountName, string accessToken)
         {
             Project mod = new Project();
@@ -497,6 +505,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
+        [SessonTimeout]
         public bool StartEnvironmentSetupProcess(Project model)
         {
             try
@@ -599,6 +608,7 @@ namespace VstsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
+        [SessonTimeout]
         public JsonResult CheckForInstalledExtensions(string selectedTemplate, string token, string account, string PrivatePath = "")
         {
             try
@@ -759,6 +769,7 @@ namespace VstsDemoBuilder.Controllers
         }
 
         [AllowAnonymous]
+        [SessonTimeout]
         public string CheckSession()
         {
             if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "")
@@ -773,6 +784,7 @@ namespace VstsDemoBuilder.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        [SessonTimeout]
         public JsonResult UploadPrivateTemplateFromURL(string TemplateURL, string token, string userId, string password, string OldPrivateTemplate = "")
         {
             if (!string.IsNullOrEmpty(OldPrivateTemplate))
@@ -816,6 +828,7 @@ namespace VstsDemoBuilder.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [SessonTimeout]
         public void DeletePrivateTemplate(string TemplateName)
         {
             templateService.deletePrivateTemplate(TemplateName);
