@@ -106,8 +106,8 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
-            return RedirectToAction("../account/verify");
-            //return View(model);
+            //return RedirectToAction("../account/verify");
+            return View(model);
         }
 
         /// <summary>
