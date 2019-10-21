@@ -269,6 +269,7 @@
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\ExtractorController.cs" />
     <Compile Include="Controllers\GitHubController.cs" />
+    <Compile Include="Controllers\SessonTimeoutAttribute.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Extensions\Extension.cs" />
     <Compile Include="ExtractorModels\ExtractorAnalysis.cs" />
