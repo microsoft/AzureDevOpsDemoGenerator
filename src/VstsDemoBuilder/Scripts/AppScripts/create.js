@@ -848,8 +848,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
-
-                if (InstalledExtensions.includes("DOCTYPE")) {
+                if (InstalledExtensions.indexOf("DOCTYPE") !== -1) {
                     if (confirm("Session expired! click OK to reload")) {
                         window.location.href = "../account/index";
                     }
@@ -893,7 +892,7 @@ function checkForExtensions(callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
-                if (InstalledExtensions.includes("DOCTYPE")) {
+                if (InstalledExtensions.indexOf("DOCTYPE") !== -1) {
                     if (confirm("Session expired! click OK to reload")) {
                         window.location.href = "../account/index";
                     }
