@@ -858,6 +858,14 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
                     }
                 }
                 callBack(InstalledExtensions);
+            },
+            error: function (er) {
+                if (confirm("Something went wrong! click OK to reload")) {
+                    window.location.href = "../account/index";
+                }
+                else {
+                    window.location.href = "../";
+                }
             }
         });
     }
@@ -894,6 +902,14 @@ function checkForExtensions(callBack) {
                     }
                 }
                 callBack(InstalledExtensions);
+            },
+            error: function (er) {
+                if (confirm("Something went wrong! click OK to reload")) {
+                    window.location.href = "../account/index";
+                }
+                else {
+                    window.location.href = "../";
+                }
             }
         });
     }
