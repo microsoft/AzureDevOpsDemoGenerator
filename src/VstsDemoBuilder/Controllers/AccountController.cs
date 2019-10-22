@@ -170,8 +170,7 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult SessionOutReturn()
         {
-            var url = Request.Url.Host;
-            return Redirect("../Account/Verify");
+            return View();
         }
     }
 }

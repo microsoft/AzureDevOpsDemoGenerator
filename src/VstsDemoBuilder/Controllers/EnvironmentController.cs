@@ -510,20 +510,27 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                Session["PAT"] = model.accessToken;
-                Session["AccountName"] = model.accountName;
-                if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "" && model.GitHubFork)
+                if (Session["visited"] != null)
                 {
-                    model.GitHubToken = Session["GitHubToken"].ToString();
+                    Session["PAT"] = model.accessToken;
+                    Session["AccountName"] = model.accountName;
+                    if (Session["GitHubToken"] != null && Session["GitHubToken"].ToString() != "" && model.GitHubFork)
+                    {
+                        model.GitHubToken = Session["GitHubToken"].ToString();
+                    }
+                    projectService.AddMessage(model.id, string.Empty);
+                    projectService.AddMessage(model.id.ErrorId(), string.Empty);
+                    if (!string.IsNullOrEmpty(model.PrivateTemplatePath))
+                    {
+                        model.IsPrivatePath = true;
+                    }
+                    ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
+                    processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
                 }
-                projectService.AddMessage(model.id, string.Empty);
-                projectService.AddMessage(model.id.ErrorId(), string.Empty);
-                if (!string.IsNullOrEmpty(model.PrivateTemplatePath))
+                else
                 {
-                    model.IsPrivatePath = true;
+                    return false;
                 }
-                ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
-                processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             }
             catch (Exception ex)
             {
@@ -787,43 +794,51 @@ namespace VstsDemoBuilder.Controllers
         [SessonTimeout]
         public JsonResult UploadPrivateTemplateFromURL(string TemplateURL, string token, string userId, string password, string OldPrivateTemplate = "")
         {
-            if (!string.IsNullOrEmpty(OldPrivateTemplate))
+            if (Session["visited"] != null)
             {
-                templateService.deletePrivateTemplate(OldPrivateTemplate);
-            }
-            PrivateTemplate privateTemplate = new PrivateTemplate();
-            string templatePath = string.Empty;
-            try
-            {
-                string templateName = "";
-                string fileName = Path.GetFileName(TemplateURL);
-                string extension = Path.GetExtension(TemplateURL);
-                templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
-                privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
-                privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
-
-                if (privateTemplate.privateTemplatePath != "")
+                if (!string.IsNullOrEmpty(OldPrivateTemplate))
                 {
-                    privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
-                    if (privateTemplate.responseMessage != "SUCCESS")
+                    templateService.deletePrivateTemplate(OldPrivateTemplate);
+                }
+                PrivateTemplate privateTemplate = new PrivateTemplate();
+                string templatePath = string.Empty;
+                try
+                {
+                    string templateName = "";
+                    string fileName = Path.GetFileName(TemplateURL);
+                    string extension = Path.GetExtension(TemplateURL);
+                    templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                    privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
+                    privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
+
+                    if (privateTemplate.privateTemplatePath != "")
                     {
-                        var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
-                        if (Directory.Exists(templatepath))
-                            Directory.Delete(templatepath, true);
+                        privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                        if (privateTemplate.responseMessage != "SUCCESS")
+                        {
+                            var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
+                            if (Directory.Exists(templatepath))
+                                Directory.Delete(templatepath, true);
+                        }
                     }
-                }
-                else
-                {
-                    privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
-                }
+                    else
+                    {
+                        privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
+                }
+                return Json(privateTemplate, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception ex)
+            else
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
+                return Json("Session Expired", JsonRequestBehavior.AllowGet);
             }
-            return Json(privateTemplate, JsonRequestBehavior.AllowGet);
+
         }
 
         [HttpPost]
