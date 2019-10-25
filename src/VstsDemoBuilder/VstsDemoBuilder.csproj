@@ -269,6 +269,7 @@
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\ExtractorController.cs" />
     <Compile Include="Controllers\GitHubController.cs" />
+    <Compile Include="Controllers\SessonTimeoutAttribute.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Extensions\Extension.cs" />
     <Compile Include="ExtractorModels\ExtractorAnalysis.cs" />
@@ -1362,6 +1363,7 @@
     <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\CardFields.json" />
     <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\CardStyles.json" />
     <Content Include="Templates\SpaceGame-web-Release\Teams\Teams.json" />
+    <Content Include="Views\Account\SessionOutReturn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1435,16 +1437,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60671</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60671/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

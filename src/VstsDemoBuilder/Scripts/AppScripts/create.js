@@ -281,7 +281,9 @@ $(document).ready(function (event) {
                             return;
                         }
                     }
-
+                },
+                error: function (er) {
+                    console.log(er);
                 }
 
             });
@@ -430,16 +432,29 @@ $(document).ready(function (event) {
         type: "GET",
         success: function (groups) {
             var grp = "";
-            if (groups.Groups.length > 0) {
-                for (var g = 0; g < groups.Groups.length; g++) {
-                    if (g === 0)
-                        grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
-                    else
-                        grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
-                }
-                $('#modtemplateGroup').empty().append(grp);
+            if (typeof groups.Groups !== "undefined") {
+                if (groups.Groups.length > 0) {
+                    for (var g = 0; g < groups.Groups.length; g++) {
+                        if (g === 0)
+                            grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
+                        else
+                            grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
+                    }
+                    $('#modtemplateGroup').empty().append(grp);
 
+                }
             }
+            else {
+                if (confirm("Session expired! click OK to reload")) {
+                    window.location.href = "../account/index";
+                }
+                else {
+                    window.location.href = "../";
+                }
+            }
+        },
+        error: function (er) {
+            console.log(er);
         }
     });
 
@@ -582,11 +597,24 @@ $('#btnSubmit').click(function () {
         "ProjectName": projectName, "SelectedTemplate": selectedTemplate, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
     };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
-
         if (data !== "True") {
-            var queryTemplate = '@Request.QueryString["queryTemplate"]';
-            window.location.href = "~/Account/Verify?template=" + queryTemplate;
-            return;
+            //var queryTemplate = '@Request.QueryString["queryTemplate"]';
+            //window.location.href = "~/Account/Verify?template=" + queryTemplate;
+            //return;
+            if (confirm("Session expired! click OK to reload")) {
+                window.location.href = "../account/index";
+            }
+            else {
+                window.location.href = "../";
+            }
+        }
+        else if (data === false) {
+            if (confirm("Session expired! click OK to reload")) {
+                window.location.href = "../account/index";
+            }
+            else {
+                window.location.href = "../";
+            }
         }
         $('input[id="gitHubCheckbox"]').prop('disabled', true);
         appInsights.trackEvent("Create button clicked");
@@ -820,8 +848,23 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
-
+                if (InstalledExtensions.indexOf("DOCTYPE") !== -1) {
+                    if (confirm("Session expired! click OK to reload")) {
+                        window.location.href = "../account/index";
+                    }
+                    else {
+                        window.location.href = "../";
+                    }
+                }
                 callBack(InstalledExtensions);
+            },
+            error: function (er) {
+                if (confirm("Something went wrong! click OK to reload")) {
+                    window.location.href = "../account/index";
+                }
+                else {
+                    window.location.href = "../";
+                }
             }
         });
     }
@@ -849,7 +892,23 @@ function checkForExtensions(callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
+                if (InstalledExtensions.indexOf("DOCTYPE") !== -1) {
+                    if (confirm("Session expired! click OK to reload")) {
+                        window.location.href = "../account/index";
+                    }
+                    else {
+                        window.location.href = "../";
+                    }
+                }
                 callBack(InstalledExtensions);
+            },
+            error: function (er) {
+                if (confirm("Something went wrong! click OK to reload")) {
+                    window.location.href = "../account/index";
+                }
+                else {
+                    window.location.href = "../";
+                }
             }
         });
     }
@@ -1080,72 +1139,82 @@ function getGroups(grpSelected) {
         success: function (groups) {
             var grp = "";
             var isPrivate = "";
-            if (groups.GroupwiseTemplates.length > 0) {
-                grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
-                grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                    if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                        var MatchedGroup = groups.GroupwiseTemplates[g];
-                        if (MatchedGroup.Template[0].Name === "Private") {
-                            $('#selecttmplate').hide();
-                            isPrivate += MatchedGroup.Template[0].TemplateFolder;
-                            $('#pills-tabContent').html('').html(isPrivate);
-                        }
-                        else {
-                            for (var i = 0; i < MatchedGroup.Template.length; i++) {
-                                if (i === 0) {
-                                    var templateImg = MatchedGroup.Template[i].Image;
-                                    if (templateImg === "" || templateImg === null) {
-                                        templateImg = "/Templates/TemplateImages/CodeFile.png";
-                                    }
-                                    grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
-                                    grp += '<div class="template-header">';
-                                    grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                    grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                    if (MatchedGroup.Template[i].Tags !== null) {
-                                        grp += '<p></p>';
-                                        grp += '<p>';
-                                        for (var rx = 0; rx < MatchedGroup.Template[i].Tags.length; rx++) {
-                                            grp += '<i>' + MatchedGroup.Template[i].Tags[rx] + '</i>';
-                                        }
-                                        grp += '</p>';
-                                    }
-                                    grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                    grp += '</div>';
-                                }
-                                else {
-                                    var templateImgs = MatchedGroup.Template[i].Image;
-                                    if (templateImgs === "" || templateImgs === null) {
-                                        templateImgs = "/Templates/TemplateImages/CodeFile.png";
-                                    }
-                                    grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
-                                    grp += '<div class="template-header">';
-                                    grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                    grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                    if (MatchedGroup.Template[i].Tags !== null) {
-                                        grp += '<p></p>';
-                                        grp += '<p>';
-                                        for (var x = 0; x < MatchedGroup.Template[i].Tags.length; x++) {
-                                            grp += '<i>' + MatchedGroup.Template[i].Tags[x] + '</i>';
-                                        }
-                                        grp += '</p>';
-                                    }
-                                    grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
-                                    grp += '</div>';
-                                }
+            if (typeof groups.GroupwiseTemplates !== "undefined") {
+                if (groups.GroupwiseTemplates.length > 0) {
+                    grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
+                    grp += '<div class="templates d-flex align-items-center flex-wrap">';
+                    for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
+                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
+                            var MatchedGroup = groups.GroupwiseTemplates[g];
+                            if (MatchedGroup.Template[0].Name === "Private") {
+                                $('#selecttmplate').hide();
+                                isPrivate += MatchedGroup.Template[0].TemplateFolder;
+                                $('#pills-tabContent').html('').html(isPrivate);
                             }
-                            $('#selecttmplate').show();
+                            else {
+                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                                    if (i === 0) {
+                                        var templateImg = MatchedGroup.Template[i].Image;
+                                        if (templateImg === "" || templateImg === null) {
+                                            templateImg = "/Templates/TemplateImages/CodeFile.png";
+                                        }
+                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
+                                        grp += '<div class="template-header">';
+                                        grp += '<img class="templateImage" src="' + templateImg + '"/>';
+                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
+                                        if (MatchedGroup.Template[i].Tags !== null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var rx = 0; rx < MatchedGroup.Template[i].Tags.length; rx++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].Tags[rx] + '</i>';
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '</div>';
+                                    }
+                                    else {
+                                        var templateImgs = MatchedGroup.Template[i].Image;
+                                        if (templateImgs === "" || templateImgs === null) {
+                                            templateImgs = "/Templates/TemplateImages/CodeFile.png";
+                                        }
+                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
+                                        grp += '<div class="template-header">';
+                                        grp += '<img class="templateImage" src="' + templateImgs + '"/>';
+                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
+                                        if (MatchedGroup.Template[i].Tags !== null) {
+                                            grp += '<p></p>';
+                                            grp += '<p>';
+                                            for (var x = 0; x < MatchedGroup.Template[i].Tags.length; x++) {
+                                                grp += '<i>' + MatchedGroup.Template[i].Tags[x] + '</i>';
+                                            }
+                                            grp += '</p>';
+                                        }
+                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '</div>';
+                                    }
+                                }
+                                $('#selecttmplate').show();
 
-                            grp += '</div></div>';
-                            $('#pills-tabContent').html('').html(grp);
+                                grp += '</div></div>';
+                                $('#pills-tabContent').html('').html(grp);
+                            }
                         }
                     }
-                }
 
+                }
+                if (grpSelected === "Private") {
+                    var iframe = $("#myiFrame");
+                    iframe.attr("src", iframe.data("src"));
+                }
             }
-            if (grpSelected === "Private") {
-                var iframe = $("#myiFrame");
-                iframe.attr("src", iframe.data("src"));
+            else {
+                if (confirm("Session expired! click OK to reload")) {
+                    window.location.href = "../account/index";
+                }
+                else {
+                    window.location.href = "../";
+                }
             }
         }
     });

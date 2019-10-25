@@ -106,6 +106,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
+            //return RedirectToAction("../account/verify");
             return View(model);
         }
 
@@ -163,6 +164,13 @@ namespace VstsDemoBuilder.Controllers
         {
             Session.Clear();
             return Redirect("https://app.vssps.visualstudio.com/_signout");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult SessionOutReturn()
+        {
+            return View();
         }
     }
 }
