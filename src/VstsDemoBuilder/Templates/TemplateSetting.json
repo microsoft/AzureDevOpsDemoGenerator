@@ -15,7 +15,7 @@
       "Template": [
         {
           "Key": "77386",
-          "Name": "Tailwind Traders",
+          "Name": "Ability IoT service",
           "TemplateFolder": "Tailwind Traders",
           "ShortName": "TailwindTraders",
           "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
@@ -34,7 +34,7 @@
         },
         {
           "Key": "77383",
-          "Name": "SmartHotel360",
+          "Name": "DotNet WebApp - corpnet",
           "TemplateFolder": "SmartHotel360",
           "ShortName": "SmartHotel360",
           "Description": "This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>",
@@ -54,7 +54,7 @@
         },
         {
           "Key": "77380",
-          "Name": "MyHealthClinic",
+          "Name": "DotNet WebApp w/o corpnet",
           "TemplateFolder": "MyHealthClinic",
           "ShortName": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
