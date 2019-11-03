@@ -145,7 +145,7 @@ $(document).ready(function (event) {
             $('#descContainer').html(selectedTemplateDescription);
         }
         else {
-            $('#descContainer').html("Azure DevOps Demo Generator");
+            $('#descContainer').html("ABB DevOps Environment Generator");
         }
         if (groputempSelected !== "") {
             templateFolder = templateFolderSelected;

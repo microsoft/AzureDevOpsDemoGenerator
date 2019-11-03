@@ -74,13 +74,13 @@
     color:white;
 }
 
-.user-option-hdr{
+.user-option-hdr {
     text-align: center;
-    background: #106EBE;
+    background: #A4A4A4;
     color: #fff;
-padding: 15PX;
-font-weight: bold;
-margin-left: 15px;
+    padding: 15PX;
+    font-weight: bold;
+    margin-left: 15px;
 }
 
 input[type="radio"], input[type="checkbox"] {

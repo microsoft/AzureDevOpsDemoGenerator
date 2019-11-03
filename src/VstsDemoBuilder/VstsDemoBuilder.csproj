@@ -946,6 +946,7 @@
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\demogenapi - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\demogenapi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\devopsgenerator - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
