@@ -644,7 +644,7 @@ namespace VstsDemoBuilder.Controllers
 
                     if (!(System.IO.File.Exists(extensionJsonFile)))
                     {
-                        return Json(new { message = "NO EXTENSIONS FOUND", status = "false" }, JsonRequestBehavior.AllowGet);
+                        return Json(new { message = "Template not found", status = "false" }, JsonRequestBehavior.AllowGet);
                     }
 
                     string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);

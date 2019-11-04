@@ -851,7 +851,7 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
                 if (InstalledExtensions.message.indexOf("All required") === 0) {
                     callBack(InstalledExtensions);
                 }
-                else if (InstalledExtensions.message.indexOf("NO EXTENSIONS FOUND") === 0) {
+                else if (InstalledExtensions.message.indexOf("Template not found") === 0) {
                     callBack(InstalledExtensions);
                 }
                 else {
@@ -901,7 +901,7 @@ function checkForExtensions(callBack) {
                 if (InstalledExtensions.message.indexOf("All required") === 0) {
                     callBack(InstalledExtensions);
                 }
-                else if (InstalledExtensions.message.indexOf("NO EXTENSIONS FOUND") === 0) {
+                else if (InstalledExtensions.message.indexOf("Template not found") === 0) {
                     callBack(InstalledExtensions);
                 }
                 else {
