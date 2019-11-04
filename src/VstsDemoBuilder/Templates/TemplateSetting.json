@@ -713,7 +713,7 @@
           "Description": "Choose an appropriate  deployment pattern for your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence' target='_blank'>Manage release cadence</a>"
         },
         {
-          "Key": "3456786213",
+          "Key": "34567862",
           "Name": "Space Game - web - Terraform",
           "TemplateFolder": "SpaceGame-web-Terraform",
           "ShortName": "express-infrastructure-as-code",
