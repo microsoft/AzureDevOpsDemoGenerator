@@ -851,6 +851,9 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
                 if (InstalledExtensions.message.indexOf("All required") === 0) {
                     callBack(InstalledExtensions);
                 }
+                else if (InstalledExtensions.message.indexOf("NO EXTENSIONS FOUND") === 0) {
+                    callBack(InstalledExtensions);
+                }
                 else {
                     if (confirm("Session expired! click OK to reload")) {
                         window.location.href = "../account/index";
@@ -896,6 +899,9 @@ function checkForExtensions(callBack) {
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
                 if (InstalledExtensions.message.indexOf("All required") === 0) {
+                    callBack(InstalledExtensions);
+                }
+                else if (InstalledExtensions.message.indexOf("NO EXTENSIONS FOUND") === 0) {
                     callBack(InstalledExtensions);
                 }
                 else {
