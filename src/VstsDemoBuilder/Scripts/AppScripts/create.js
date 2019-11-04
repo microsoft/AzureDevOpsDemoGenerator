@@ -848,7 +848,13 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
-                if (InstalledExtensions.message.indexOf("All required") === 0) {
+                if (typeof (InstalledExtensions) === "object") {
+                    if (InstalledExtensions.message.indexOf("All required") === 0) {
+                        callBack(InstalledExtensions);
+                    }
+                    else if (InstalledExtensions.message.indexOf("Template not found") === 0) {
+                        callBack(InstalledExtensions);
+                    }
                     callBack(InstalledExtensions);
                 }
                 else {
@@ -859,7 +865,6 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
                         window.location.href = "../";
                     }
                 }
-                callBack(InstalledExtensions);
             },
             error: function (er) {
                 if (confirm("Something went wrong! click OK to reload")) {
@@ -895,7 +900,13 @@ function checkForExtensions(callBack) {
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
             success: function (InstalledExtensions) {
-                if (InstalledExtensions.message.indexOf("All required") === 0) {
+                if (typeof (InstalledExtensions) === "object") {
+                    if (InstalledExtensions.message.indexOf("All required") === 0) {
+                        callBack(InstalledExtensions);
+                    }
+                    else if (InstalledExtensions.message.indexOf("Template not found") === 0) {
+                        callBack(InstalledExtensions);
+                    }
                     callBack(InstalledExtensions);
                 }
                 else {
@@ -906,7 +917,6 @@ function checkForExtensions(callBack) {
                         window.location.href = "../";
                     }
                 }
-                callBack(InstalledExtensions);
             },
             error: function (er) {
                 if (confirm("Something went wrong! click OK to reload")) {
