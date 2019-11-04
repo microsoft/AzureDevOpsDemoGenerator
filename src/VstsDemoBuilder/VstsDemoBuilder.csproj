@@ -1366,14 +1366,10 @@
     <Content Include="Views\Account\SessionOutReturn.cshtml" />
     <Content Include="Templates\SpaceGame-web-Terraform\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-automate.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\ImportSourceCode\GitRepository.json" />
-    <Content Include="Templates\SpaceGame-web-Terraform\ImportSourceCode\Space Game - web - Terraform.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\Iterations.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\ProjectSettings.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\ProjectTemplate.json" />
-    <Content Include="Templates\SpaceGame-web-Terraform\ServiceEndpoints\Boards.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\ServiceEndpoints\GitHub_69cc250c-EndPoint.json" />
-    <Content Include="Templates\SpaceGame-web-Terraform\ServiceEndpoints\Space Game - web - Terraform-code.json" />
-    <Content Include="Templates\SpaceGame-web-Terraform\ServiceEndpoints\tpetchel.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\TeamArea.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\BoardColumns.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\BoardRows.json" />
