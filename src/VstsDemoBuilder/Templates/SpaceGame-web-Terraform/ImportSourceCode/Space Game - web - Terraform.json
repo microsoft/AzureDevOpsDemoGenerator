@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/thpetche-lp4-01/Space Game - web - Terraform/_git/Space Game - web - Terraform"
+    },
+    "serviceEndpointId": "$Space Game - web - Terraform-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
