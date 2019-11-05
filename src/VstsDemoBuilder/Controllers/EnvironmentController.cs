@@ -759,7 +759,7 @@ namespace VstsDemoBuilder.Controllers
                         }
 
                     }
-                    else { requiresExtensionNames = "no extensions required"; return Json(requiresExtensionNames, JsonRequestBehavior.AllowGet); }
+                    else { requiresExtensionNames = "no extensions required"; return Json(new { message = "no extensions required", status = "false" }, JsonRequestBehavior.AllowGet); }
                     return Json(new { message = requiresExtensionNames, status = "false" }, JsonRequestBehavior.AllowGet);
                 }
                 else
