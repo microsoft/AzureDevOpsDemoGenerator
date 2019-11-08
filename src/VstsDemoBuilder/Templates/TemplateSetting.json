@@ -711,6 +711,21 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Choose an appropriate  deployment pattern for your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence' target='_blank'>Manage release cadence</a>"
+        },
+        {
+          "Key": "34567862",
+          "Name": "Provision infrastructure in Azure Pipelines",
+          "TemplateFolder": "SpaceGame-web-Terraform",
+          "ShortName": "provision-infrastructure-azure-pipelines",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines",
+            "Terraform"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/manage-release-cadence-using-deployment-patterns.svg",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Run a Terraform plan in Azure Pipelines to automatically provision Azure resources. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-infrastructure-azure-pipelines ' target='_blank'>Provision infrastructure</a>"
         }
       ]
     },
