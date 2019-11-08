@@ -1364,6 +1364,19 @@
     <Content Include="Templates\SpaceGame-web-Release\Teams\Space Game - web - Release Team\CardStyles.json" />
     <Content Include="Templates\SpaceGame-web-Release\Teams\Teams.json" />
     <Content Include="Views\Account\SessionOutReturn.cshtml" />
+    <Content Include="Templates\SpaceGame-web-Terraform\BuildDefinitionGitHub\tpetchelmslearn-tailspin-spacegame-web-automate.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\ServiceEndpoints\GitHub_69cc250c-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-Terraform\WorkItems\Issue.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
