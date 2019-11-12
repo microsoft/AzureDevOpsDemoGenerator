@@ -29,12 +29,9 @@ namespace VstsDemoBuilder.Controllers
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
 
-        public EnvironmentController(IProjectService _ProjectService, IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment _host)
+        public EnvironmentController(IProjectService _ProjectService)
         {
-            HostingEnvironment = _host;
             projectService = _ProjectService;
-            accountService = _accountService;
-            templateService = _templateService;
         }
 
         [HttpGet]

@@ -6,8 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -17,15 +22,17 @@ namespace VstsDemoBuilder.Controllers
         private readonly AccessDetails accessDetails = new AccessDetails();
         private TemplateSelection.Templates templates = new TemplateSelection.Templates();
         private ILog logger = LogManager.GetLogger(typeof(AccountController));
-        private IProjectService projectService;
-        private  IWebHostEnvironment HostingEnvironment;
-        private ISession Session;
+        //private IProjectService projectService;
+        private IWebHostEnvironment HostingEnvironment;
+        //private ISession Session;
+        private IAccountService _accountService;
 
-        public AccountController(IProjectService _projectService, IWebHostEnvironment _host, ISession _session)
+        public IConfiguration AppKeyConfiguration { get; }
+
+        public AccountController(IAccountService accountService, IConfiguration configuration)
         {
-            Session = _session;
-            projectService = _projectService;
-            HostingEnvironment = _host;
+            _accountService = accountService;
+            AppKeyConfiguration = configuration;
         }
 
         [HttpGet]
@@ -45,7 +52,7 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Verify(LoginModel model, string id)
         {
-            Session.Clear();
+            //Session.Clear();
             // check to enable extractor
             if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
             {
@@ -122,7 +129,7 @@ namespace VstsDemoBuilder.Controllers
         [HttpGet]
         [AllowAnonymous]
         public string GetAccountName()
-        {            
+        {
             if (HttpContext.Session.GetString("AccountName") != null)
             {
                 string accountName = HttpContext.Session.GetString("AccountName").ToString();
@@ -146,9 +153,9 @@ namespace VstsDemoBuilder.Controllers
             {
                 HttpContext.Session.SetString("visited", "1");
                 string url = "https://app.vssps.visualstudio.com/oauth2/authorize?client_id={0}&response_type=Assertion&state=User1&scope={1}&redirect_uri={2}";
-                string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
-                string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientId"];
-                string AppScope = System.Configuration.ConfigurationManager.AppSettings["appScope"];
+                string redirectUrl = AppKeyConfiguration["RedirectUri"];
+                string clientId = AppKeyConfiguration["ClientId"];
+                string AppScope = AppKeyConfiguration["appScope"];
                 url = string.Format(url, clientId, AppScope, redirectUrl);
                 return Redirect(url);
             }
@@ -156,7 +163,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
-            return RedirectToAction("../shared/error");
+            return RedirectToAction("verify");
         }
 
         /// <summary>
@@ -167,8 +174,9 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult SignOut()
         {
-            Session.Clear();
+            HttpContext.Session.Clear();
             return Redirect("https://app.vssps.visualstudio.com/_signout");
         }
     }
+
 }
