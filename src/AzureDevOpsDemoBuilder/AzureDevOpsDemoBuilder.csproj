@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Folder Include="assets\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\css\custom.min.css" />
+    <None Include="wwwroot\css\custom.min.css.map" />
+    <None Include="wwwroot\css\custom.scss" />
+    <None Include="wwwroot\images\error.png" />
+    <None Include="wwwroot\images\NotFound.png" />
+    <None Include="wwwroot\images\VSTS_cover_image_3.png" />
+    <None Include="wwwroot\images\VSTS_cover_image_5.png" />
+    <None Include="wwwroot\images\VSTS_cover_image_t.png" />
+    <None Include="wwwroot\images\VSTS_full_logo.png" />
+    <None Include="wwwroot\images\VS_logo.png" />
+    <None Include="wwwroot\images\VS_logo_1.png" />
+    <None Include="wwwroot\Scripts\AppScripts\create.js" />
+    <None Include="wwwroot\Scripts\AppScripts\Extractor.js" />
+    <None Include="wwwroot\Scripts\AppScripts\FileUpload.js" />
+    <None Include="wwwroot\Scripts\AppScripts\GitHubAuth.js" />
+    <None Include="wwwroot\Scripts\bootstrap.js" />
+    <None Include="wwwroot\Scripts\bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.intellisense.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.min.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.min.map" />
+    <None Include="wwwroot\Scripts\knockout-2.2.0.debug.js" />
+    <None Include="wwwroot\Scripts\knockout-2.2.0.js" />
+    <None Include="wwwroot\Scripts\modernizr-2.6.2.js" />
+    <None Include="wwwroot\Scripts\npm.js" />
+    <None Include="wwwroot\Scripts\tooltip.js" />
+    <None Include="wwwroot\Scripts\_references.js" />
+    <None Include="wwwroot\templategrouping\templategroup.custom.min.css" />
+    <None Include="wwwroot\templategrouping\templateSelection.custom.min.css" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.ExtensionManagement.WebApi" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.Gallery.WebApi" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.InteractiveClient" Version="16.153.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzureDevOpsRestApi\AzureDevOpsRestApi.csproj" />
+  </ItemGroup>
+
+</Project>
