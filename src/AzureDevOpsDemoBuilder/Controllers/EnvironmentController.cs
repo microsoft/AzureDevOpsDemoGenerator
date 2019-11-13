@@ -29,9 +29,10 @@ namespace VstsDemoBuilder.Controllers
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
 
-        public EnvironmentController(IProjectService _ProjectService)
+        public EnvironmentController(IProjectService _ProjectService, IWebHostEnvironment _hostingEnvironment)
         {
             projectService = _ProjectService;
+            HostingEnvironment = _hostingEnvironment;
         }
 
         [HttpGet]
@@ -419,7 +420,7 @@ namespace VstsDemoBuilder.Controllers
                     Directory.CreateDirectory(HostingEnvironment.WebRootPath + @"\PrivateTemplates");
                 }
                 //Deleting uploaded zip files present from last one hour
-                string extractedZipFile = HostingEnvironment.MapPath("~") + @"ExtractedZipFile\";
+                string extractedZipFile = HostingEnvironment.WebRootPath + @"\ExtractedZipFile\";
                 if (Directory.Exists(extractedZipFile))
                 {
                     string[] subdirs = Directory.GetFiles(extractedZipFile)

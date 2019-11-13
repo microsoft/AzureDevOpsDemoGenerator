@@ -201,7 +201,7 @@ namespace VstsDemoBuilder.Services
         #region GENERATE ARTIFACTS
         public string[] GenerateTemplateArifacts(Project model)
         {
-            extractedTemplatePath = HostingEnvironment.MapPath("~") + @"ExtractedTemplate\";
+            extractedTemplatePath = HostingEnvironment.WebRootPath + @"\ExtractedTemplate\";
 
             if (Directory.Exists(extractedTemplatePath))
             {
