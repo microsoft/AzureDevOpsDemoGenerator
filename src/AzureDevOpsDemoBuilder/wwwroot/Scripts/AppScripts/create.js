@@ -1,13 +1,13 @@
 ﻿/// <reference path="../jquery-1.12.4.min.js" />
-$(document).ready(function () {
+$(document).ready(function() {
 
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
-    $('#buildYourTemplate').click(function () {
+    $('#buildYourTemplate').click(function() {
         ga('send', 'event', 'Build Your Template', 'visited');
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         if (scroll > 50) {
             $(".navbar").css("background-color", "#2279C3");
@@ -26,7 +26,7 @@ $(document).ready(function () {
 var messageList = [];
 /**/
 /**/
-var ID = function () {
+var ID = function() {
     return '_' + Math.random().toString(36).substr(2, 9);
 };
 var uniqueId = "";
@@ -49,25 +49,25 @@ var publicTemplateMsg = "";
 var privateTemplateMsg = "";
 var gitFork = "";
 
-$(document).ready(function (event) {
+$(document).ready(function(event) {
     uniqueId = ID();
-    $('.rmverror').click(function () {
+    $('.rmverror').click(function() {
         var errID = this.nextElementSibling.getAttribute('id');
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
-    $('body').on('click', '.rmverrorOn', function () {
+    $('body').on('click', '.rmverrorOn', function() {
         var errID = this.nextElementSibling.getAttribute('id');
         $('#' + errID).removeClass("d-block").addClass("d-none");
     });
 
-    $('#templateselection').click(function () {
+    $('#templateselection').click(function() {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
         ga('send', 'event', 'Choose Template Button', 'Clicked');
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
-    $('#ddlAcccountName').change(function () {
+    $('#ddlAcccountName').change(function() {
         $('#status-messages').empty().hide();
         $('#textMuted').removeClass("d-block").addClass("d-none");
         $('#dvProgress').removeClass("d-block").addClass("d-none");
@@ -90,7 +90,7 @@ $(document).ready(function (event) {
     });
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
-    $('#selecttmplate').click(function () {
+    $('#selecttmplate').click(function() {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
 
         var privateTemplate = $('#PrivateTemplatePath', parent.document).val();
@@ -100,7 +100,7 @@ $(document).ready(function (event) {
                 url: "../Environment/DeletePrivateTemplate",
                 type: "POST",
                 data: { TemplateName: priTemplate[priTemplate.indexOf('PrivateTemplates') + 1] },
-                success: function (Data) {
+                success: function(Data) {
                 }
             });
         }
@@ -174,15 +174,15 @@ $(document).ready(function (event) {
             $("#NotificationModal").modal('show');
         }
         var Url = 'GetTemplate/';
-        $.get(Url, { "TemplateName": TemplateName }, function (data) {
+        $.get(Url, { "TemplateName": TemplateName }, function(data) {
             if (data !== "") {
                 var ParsedData = JSON.parse(data);
-                var Description = ParsedData.Description;
+                var description = ParsedData.description;
                 var parameters = ParsedData.Parameters;
 
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
+                        $.each(parameters, function(key, value) {
                             $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
@@ -242,7 +242,7 @@ $(document).ready(function (event) {
 
     });
 
-    $('#selecttmplateCommunity').click(function () {
+    $('#selecttmplateCommunity').click(function() {
         var URL = $(".template.selected").data('folder');
         $("#urlerror").empty();
         if (URL !== "") {
@@ -250,9 +250,8 @@ $(document).ready(function (event) {
                 url: "../Environment/UploadPrivateTemplateFromURL",
                 type: "GET",
                 data: { TemplateURL: URL, token: "", userId: "", password: "", OldPrivateTemplate: "" },
-                success: function (Data) {
+                success: function(Data) {
                     if (Data.privateTemplatePath !== "" && Data.privateTemplatePath !== undefined) {
-                        console.log(Data);
                         var msg = '';
                         if (Data.responseMessage === "SUCCESS") {
                             $('#ddlTemplates').val(Data.privateTemplateName);
@@ -282,7 +281,7 @@ $(document).ready(function (event) {
                         }
                     }
                 },
-                error: function (er) {
+                error: function(er) {
                     console.log(er);
                 }
 
@@ -293,14 +292,14 @@ $(document).ready(function (event) {
         }
     });
 
-    $("body").on("click", "#EmailPopup", function () {
+    $("body").on("click", "#EmailPopup", function() {
         $("#EmailModal").modal('show');
     });
 
     //checking for extenisoin start
     var isMicrosoftAgreement = "";
     var isThirdparty = "";
-    $('#extensionError').click(function () {
+    $('#extensionError').click(function() {
         if (microsoft === "microsoft" && ThirdParty === "thirdparty") {
             isMicrosoftAgreement = $('input[id=agreeTermsConditions]:checked').val();
             isThirdparty = $('input[id=ThirdPartyagreeTermsConditions]:checked').val();
@@ -348,15 +347,15 @@ $(document).ready(function (event) {
     if (selectedTemplate !== "") {
         $("#extensionError").html(''); $("#extensionError").hide(); $("#lblextensionError").hide();
         var Url = 'GetTemplate/';
-        $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
+        $.get(Url, { "TemplateName": selectedTemplate }, function(data) {
             if (data !== "") {
                 var ParsedData = JSON.parse(data);
-                var Description = ParsedData.Description;
+                var Description = ParsedData.description;
                 var parameters = ParsedData.Parameters;
                 $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
                 if (typeof parameters !== "undefined") {
                     if (parameters.length > 0) {
-                        $.each(parameters, function (key, value) {
+                        $.each(parameters, function(key, value) {
                             $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                         });
                         $("#projectParameters").show();
@@ -401,7 +400,7 @@ $(document).ready(function (event) {
         }
     }
 
-    $(document).keypress(function (e) {
+    $(document).keypress(function(e) {
         if (e.which === 13) {
             $('#btnSubmit').click();
             return false;
@@ -412,7 +411,7 @@ $(document).ready(function (event) {
     createTemplates();
 
     // load other templates on tab click
-    $(document.body).on('click', '.nav-link', function () {
+    $(document.body).on('click', '.nav-link', function() {
         grpSelected = this.text;
         if (grpSelected === "Community") {
             $('#selecttmplate').addClass('d-none');
@@ -430,15 +429,15 @@ $(document).ready(function (event) {
     $.ajax({
         url: "../Environment/GetGroups",
         type: "GET",
-        success: function (groups) {
+        success: function(groups) {
             var grp = "";
-            if (typeof groups.Groups !== "undefined") {
-                if (groups.Groups.length > 0) {
-                    for (var g = 0; g < groups.Groups.length; g++) {
+            if (typeof groups.groups === "object") {
+                if (groups.groups.length > 0) {
+                    for (var g = 0; g < groups.groups.length; g++) {
                         if (g === 0)
-                            grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.Groups[g] + '-tab" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-selected="true">' + groups.Groups[g] + '</a></li>'
+                            grp += '<li class="nav-item"><a class="nav-link active text-white" id="pills-' + groups.groups[g] + '-tab" id="pills-' + groups.groups[g] + '-tab" data-toggle="pill" href="#' + groups.groups[g] + '" role="tab" aria-selected="true">' + groups.groups[g] + '</a></li>';
                         else
-                            grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.Groups[g] + '-tab" data-toggle="pill" href="#' + groups.Groups[g] + '" role="tab" aria-controls="pills-' + groups.Groups[g] + '" aria-selected="false">' + groups.Groups[g] + '</a></li>'
+                            grp += '<li class="nav-item"><a class="nav-link text-white" id="pills-' + groups.groups[g] + '-tab" data-toggle="pill" href="#' + groups.groups[g] + '" role="tab" aria-controls="pills-' + groups.groups[g] + '" aria-selected="false">' + groups.groups[g] + '</a></li>';
                     }
                     $('#modtemplateGroup').empty().append(grp);
 
@@ -453,7 +452,7 @@ $(document).ready(function (event) {
                 }
             }
         },
-        error: function (er) {
+        error: function(er) {
             console.log(er);
         }
     });
@@ -484,7 +483,7 @@ $(document).ready(function (event) {
     var defaultTemplate = $('#selectedTemplate').val();
     $('#ddlTemplates').val(defaultTemplate);
 });
-$('#btnSubmit').click(function () {
+$('#btnSubmit').click(function() {
     var forkGitHub = false;
     var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gitHubFork === true) {
@@ -562,7 +561,7 @@ $('#btnSubmit').click(function () {
     var SelectedUsers = '';
     var userMethod = $("input[type='radio']:checked").val();
     if (userMethod === "Select") {
-        $(".checkbox").each(function () {
+        $(".checkbox").each(function() {
             if (this.checked) {
                 SelectedUsers = SelectedUsers + this.value + ',';
             }
@@ -580,7 +579,7 @@ $('#btnSubmit').click(function () {
     $("#btnSubmit").prop("disabled", true).removeClass('btn-primary');
     $("#templateselection").prop("disabled", true).removeClass('btn-primary');
     var Parameters = {};
-    $.each($('.project-parameters'), function (index, item) {
+    $.each($('.project-parameters'), function(index, item) {
         Parameters[$("#" + item['id']).attr('proj-parameter-name')] = item["value"];
     });
 
@@ -596,8 +595,10 @@ $('#btnSubmit').click(function () {
     var projData = {
         "ProjectName": projectName, "SelectedTemplate": selectedTemplate, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
     };
-    $.post("StartEnvironmentSetupProcess", projData, function (data) {
-        if (data !== "True") {
+    $.post("StartEnvironmentSetupProcess", projData, function(data) {
+        console.log(data);
+        debugger;
+        if (data !== true) {
             //var queryTemplate = '@Request.QueryString["queryTemplate"]';
             //window.location.href = "~/Account/Verify?template=" + queryTemplate;
             //return;
@@ -662,7 +663,7 @@ function getStatus() {
     $.ajax({
         url: 'GetCurrentProgress/' + uniqueId,
         type: 'GET',
-        success: function (data) {
+        success: function(data) {
 
             if (data === "OAUTHACCESSDENIED") {
                 $('#progressBar').width(currentPercentage++ + '%');
@@ -755,13 +756,13 @@ function getStatus() {
                 if (messageList.length !== 3) {
                     var ID = uniqueId + "_Errors";
                     var url2 = 'GetCurrentProgress/' + ID;
-                    $.get(url2, function (response) {
+                    $.get(url2, function(response) {
                         if (response === "100" || response === "") {
                             $.ajax({
                                 url: "../Account/GetAccountName/",
                                 type: "GET",
                                 async: false,
-                                success: function (data) {
+                                success: function(data) {
                                     var accountName = $('#ddlAcccountName option:selected').val();
                                     var projectNameForLink = $("#txtProjectName").val();
                                     var link = "https://dev.azure.com/" + accountName + "/" + projectNameForLink;
@@ -824,7 +825,7 @@ function getStatus() {
                 }
             }
         },
-        error: function (xhr) {
+        error: function(xhr) {
             getStatus();
         }
     });
@@ -847,18 +848,22 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
-            success: function (InstalledExtensions) {
+            success: function(InstalledExtensions) {
+                console.log("CheckForInstalledExtensions " + InstalledExtensions);
                 if (typeof (InstalledExtensions) === "object") {
                     if (InstalledExtensions.message.indexOf("All required") === 0) {
                         callBack(InstalledExtensions);
                     }
                     else if (InstalledExtensions.message.indexOf("Template not found") === 0) {
                         callBack(InstalledExtensions);
-                    }
+                    }                   
+                    callBack(InstalledExtensions);
+                }
+                else if (InstalledExtensions.message.indexOf("no extensions") === 0) {
                     callBack(InstalledExtensions);
                 }
                 else {
-                    if (confirm("Session expired! click OK to reload")) {
+                    if (confirm("CheckForInstalledExtensions: Session expired! click OK to reload")) {
                         window.location.href = "../account/index";
                     }
                     else {
@@ -866,8 +871,8 @@ function checkForInstalledExtensions(selectedTemplate, callBack) {
                     }
                 }
             },
-            error: function (er) {
-                if (confirm("Something went wrong! click OK to reload")) {
+            error: function(er) {
+                if (confirm("CheckForInstalledExtensions: Something went wrong! click OK to reload")) {
                     window.location.href = "../account/index";
                 }
                 else {
@@ -899,7 +904,8 @@ function checkForExtensions(callBack) {
             url: "../Environment/CheckForInstalledExtensions",
             type: "GET",
             data: { selectedTemplate: selectedTemplate, token: Oauthtoken, Account: accountNam, PrivatePath: privatePath },
-            success: function (InstalledExtensions) {
+            success: function(InstalledExtensions) {
+                console.log("CheckForInstalledExtensions 2 " + InstalledExtensions);
                 if (typeof (InstalledExtensions) === "object") {
                     if (InstalledExtensions.message.indexOf("All required") === 0) {
                         callBack(InstalledExtensions);
@@ -909,17 +915,21 @@ function checkForExtensions(callBack) {
                     }
                     callBack(InstalledExtensions);
                 }
+                else if (InstalledExtensions.message.indexOf("no extensions") === 0) {
+                    callBack(InstalledExtensions);
+                }
                 else {
-                    if (confirm("Session expired! click OK to reload")) {
+                    if (confirm("CheckForInstalledExtensions: Session expired! click OK to reload")) {
                         window.location.href = "../account/index";
                     }
+                    
                     else {
                         window.location.href = "../";
                     }
                 }
             },
-            error: function (er) {
-                if (confirm("Something went wrong! click OK to reload")) {
+            error: function(er) {
+                if (confirm("CheckForInstalledExtensions: Something went wrong! click OK to reload")) {
                     window.location.href = "../account/index";
                 }
                 else {
@@ -969,21 +979,21 @@ function GetRequiredExtension() {
 
 //TEMPLATE GROUP CREATION
 
-$(function () {
+$(function() {
 
     // SHOW MODAL ON EVENT
-    $(".template-invoke").on("click", function () {
+    $(".template-invoke").on("click", function() {
         $(".VSTemplateSelection").fadeIn('fast');
     });
 
     // CLOSE MODAL ON EVENT
-    $(".template-close").on("click", function () {
+    $(".template-close").on("click", function() {
         $(".VSTemplateSelection").removeClass('d-block').addClass('d-none');
         templateFolder = $('#selectedTemplateFolder').val();
     });
 
     // TOGGLING ACTIVE CLASS TO TEMPLATE GROUP
-    $(".template-group-item").on('click', function (e) {
+    $(".template-group-item").on('click', function(e) {
         e.preventDefault();
         $(".template-group-item").removeClass('active');
         $(this).addClass('active');
@@ -991,7 +1001,7 @@ $(function () {
 
     // TOGGLING SELECTED CLASS TO TEMPLATE
 
-    $(document.body).on("click", '.template', function () {
+    $(document.body).on("click", '.template', function() {
         $(".template").removeClass("selected");
         $(this).addClass("selected");
         $('.description').removeClass('descSelected');
@@ -1010,7 +1020,7 @@ function createTemplates() {
 
 //Project name validtaion on keyup
 
-$("#txtProjectName").keyup(function () {
+$("#txtProjectName").keyup(function() {
     var projectName = $.trim(this.value);
     var regex = /^(?!_.)[a-zA-Z0-9!^\-`)(]*[a-zA-Z0-9_!^\.)( ]*[^.\/\\~@#$*%+=[\]{\}'",:;?<>|](?:[a-zA-Z!)(][a-zA-Z0-9!^\-` )(]+)?$/;
     if (projectName !== "") {
@@ -1103,15 +1113,15 @@ function validateExtensionCheckbox() {
 
 function GetTemplates(selectedTemplate) {
     var Url = 'GetTemplate/';
-    $.get(Url, { "TemplateName": selectedTemplate }, function (data) {
+    $.get(Url, { "TemplateName": selectedTemplate }, function(data) {
         if (data !== "") {
             var ParsedData = JSON.parse(data);
-            var Description = ParsedData.Description;
+            var Description = ParsedData.description;
             var parameters = ParsedData.Parameters;
             $("#btnSubmit").prop("disabled", false).addClass('btn-primary');
             if (typeof parameters !== "undefined") {
                 if (parameters.length > 0) {
-                    $.each(parameters, function (key, value) {
+                    $.each(parameters, function(key, value) {
                         $('<div class="form-group row projParameters"><label for="sonarqubeurl" class="col-lg-3 col-form-label" style="font-weight:400">' + value.label + ':</label><div class="col-lg-8"><input type="text" class="form-control project-parameters rmverrorOn" id="txt' + value.fieldName + '"  proj-parameter-name="' + value.fieldName + '" placeholder="' + value.fieldName + '"><div class="alert alert-danger d-none" role="alert" id="txt' + value.fieldName + '_Error"></div></div>').appendTo("#projectParameters");
                     });
                     $("#projectParameters").show();
@@ -1152,61 +1162,61 @@ function getGroups(grpSelected) {
     $.ajax({
         url: "../Environment/GetGroups",
         type: "GET",
-        success: function (groups) {
+        success: function(groups) {
             var grp = "";
             var isPrivate = "";
-            if (typeof groups.GroupwiseTemplates !== "undefined") {
-                if (groups.GroupwiseTemplates.length > 0) {
+            if (typeof groups.groupwiseTemplates === "object") {
+                if (groups.groupwiseTemplates.length > 0) {
                     grp += '<div class="tab-pane show active" id="' + grpSelected + '" role="tabpanel" aria-labelledby="pills-' + grpSelected + '-tab">';
                     grp += '<div class="templates d-flex align-items-center flex-wrap">';
-                    for (var g = 0; g < groups.GroupwiseTemplates.length; g++) {
-                        if (groups.GroupwiseTemplates[g].Groups === grpSelected) {
-                            var MatchedGroup = groups.GroupwiseTemplates[g];
-                            if (MatchedGroup.Template[0].Name === "Private") {
+                    for (var g = 0; g < groups.groupwiseTemplates.length; g++) {
+                        if (groups.groupwiseTemplates[g].groups === grpSelected) {
+                            var MatchedGroup = groups.groupwiseTemplates[g];
+                            if (MatchedGroup.template[0].name === "Private") {
                                 $('#selecttmplate').hide();
-                                isPrivate += MatchedGroup.Template[0].TemplateFolder;
+                                isPrivate += MatchedGroup.template[0].templateFolder;
                                 $('#pills-tabContent').html('').html(isPrivate);
                             }
                             else {
-                                for (var i = 0; i < MatchedGroup.Template.length; i++) {
+                                for (var i = 0; i < MatchedGroup.template.length; i++) {
                                     if (i === 0) {
-                                        var templateImg = MatchedGroup.Template[i].Image;
+                                        var templateImg = MatchedGroup.template[i].image;
                                         if (templateImg === "" || templateImg === null) {
                                             templateImg = "/Templates/TemplateImages/CodeFile.png";
                                         }
-                                        grp += '<div class="template selected" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
+                                        grp += '<div class="template selected" data-template="' + MatchedGroup.template[i].name + '" data-folder="' + MatchedGroup.template[i].templateFolder + '" data-gitfork="' + MatchedGroup.template[i].ForkGitHubRepo + '" data-templateimage="' + templateImg + '">';
                                         grp += '<div class="template-header">';
                                         grp += '<img class="templateImage" src="' + templateImg + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].Tags !== null) {
+                                        grp += '<strong class="title">' + MatchedGroup.template[i].name + '</strong></div >';
+                                        if (MatchedGroup.template[i].tags !== null) {
                                             grp += '<p></p>';
                                             grp += '<p>';
-                                            for (var rx = 0; rx < MatchedGroup.Template[i].Tags.length; rx++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].Tags[rx] + '</i>';
+                                            for (var rx = 0; rx < MatchedGroup.template[i].tags.length; rx++) {
+                                                grp += '<i>' + MatchedGroup.template[i].tags[rx] + '</i>';
                                             }
                                             grp += '</p>';
                                         }
-                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '<p class="description descSelected" data-description="' + MatchedGroup.template[i].description + '" data-message="' + MatchedGroup.template[i].message + '">' + MatchedGroup.template[i].description + '</p>';
                                         grp += '</div>';
                                     }
                                     else {
-                                        var templateImgs = MatchedGroup.Template[i].Image;
+                                        var templateImgs = MatchedGroup.template[i].image;
                                         if (templateImgs === "" || templateImgs === null) {
                                             templateImgs = "/Templates/TemplateImages/CodeFile.png";
                                         }
-                                        grp += '<div class="template" data-template="' + MatchedGroup.Template[i].Name + '" data-folder="' + MatchedGroup.Template[i].TemplateFolder + '" data-gitfork="' + MatchedGroup.Template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
+                                        grp += '<div class="template" data-template="' + MatchedGroup.template[i].name + '" data-folder="' + MatchedGroup.template[i].templateFolder + '" data-gitfork="' + MatchedGroup.template[i].ForkGitHubRepo + '" data-templateimage="' + templateImgs + '">';
                                         grp += '<div class="template-header">';
                                         grp += '<img class="templateImage" src="' + templateImgs + '"/>';
-                                        grp += '<strong class="title">' + MatchedGroup.Template[i].Name + '</strong></div >';
-                                        if (MatchedGroup.Template[i].Tags !== null) {
+                                        grp += '<strong class="title">' + MatchedGroup.template[i].name + '</strong></div >';
+                                        if (MatchedGroup.template[i].tags !== null) {
                                             grp += '<p></p>';
                                             grp += '<p>';
-                                            for (var x = 0; x < MatchedGroup.Template[i].Tags.length; x++) {
-                                                grp += '<i>' + MatchedGroup.Template[i].Tags[x] + '</i>';
+                                            for (var x = 0; x < MatchedGroup.template[i].tags.length; x++) {
+                                                grp += '<i>' + MatchedGroup.template[i].tags[x] + '</i>';
                                             }
                                             grp += '</p>';
                                         }
-                                        grp += '<p class="description" data-description="' + MatchedGroup.Template[i].Description + '" data-message="' + MatchedGroup.Template[i].Message + '">' + MatchedGroup.Template[i].Description + '</p>';
+                                        grp += '<p class="description" data-description="' + MatchedGroup.template[i].description + '" data-message="' + MatchedGroup.template[i].message + '">' + MatchedGroup.template[i].description + '</p>';
                                         grp += '</div>';
                                     }
                                 }
@@ -1225,7 +1235,7 @@ function getGroups(grpSelected) {
                 }
             }
             else {
-                if (confirm("Session expired! click OK to reload")) {
+                if (confirm("GetGroups: Session expired! click OK to reload")) {
                     window.location.href = "../account/index";
                 }
                 else {

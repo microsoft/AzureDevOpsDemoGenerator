@@ -9,7 +9,6 @@ using VstsDemoBuilder.ExtractorModels;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsDemoBuilder.Services;
-using AzureDevOpsAPI;
 using AzureDevOpsAPI.Extractor;
 using AzureDevOpsAPI.ProjectsAndTeams;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
@@ -18,6 +17,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using AzureDevOpsAPI;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -27,12 +28,17 @@ namespace VstsDemoBuilder.Controllers
 
         private delegate string[] ProcessEnvironment(Project model);
         private IExtractorService extractorService;
+
+        public IConfiguration AppKeyConfiguration { get; }
+
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
-        public ExtractorController(IWebHostEnvironment _hosting)
+        public ExtractorController(IConfiguration configuration, IAccountService _accountService, IExtractorService _extractorService, IWebHostEnvironment hostEnvironment)
         {
-            HostingEnvironment = _hosting;
-            accountService = new AccountService();
+            HostingEnvironment = hostEnvironment;
+            accountService = _accountService;
+            extractorService = _extractorService;
+            AppKeyConfiguration = configuration;
         }
 
         [AllowAnonymous]
@@ -118,10 +124,10 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public JsonResult GetprojectList(string accname, string pat)
         {
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
+            string defaultHost = AppKeyConfiguration["DefaultHost"];
+            string ProjectCreationVersion = AppKeyConfiguration["ProjectCreationVersion"];
 
-            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
+            AppConfiguration config = new AppConfiguration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
             Projects projects = new Projects(config);
             HttpResponseMessage response = projects.GetListOfProjects();
             ProjectsResponse.ProjectResult projectResult = new ProjectsResponse.ProjectResult();
@@ -157,10 +163,10 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-                string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+                string defaultHost = AppKeyConfiguration["DefaultHost"];
+                string ProjectPropertyVersion = AppKeyConfiguration["ProjectPropertyVersion"];
 
-                Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
+                AppConfiguration config = new AppConfiguration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
 
                 ProjectProperties.Properties load = new ProjectProperties.Properties();
                 Projects projects = new Projects(config);
@@ -205,13 +211,13 @@ namespace VstsDemoBuilder.Controllers
                     System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
                     //Create ISSUE work item with error details in VSTSProjectgenarator account
-                    string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                    string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                    string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                    string patBase64 = AppKeyConfiguration["PATBase64"];
+                    string url = AppKeyConfiguration["URL"];
+                    string projectId = AppKeyConfiguration["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
                     ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Extractor_" + errorMessages + "\n");
-                    string logWIT = "true"; //System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+                    string logWIT = "true"; //AppKeyConfiguration["LogWIT"];
                     if (logWIT == "true")
                     {
                         objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Extractor");
@@ -221,35 +227,35 @@ namespace VstsDemoBuilder.Controllers
         }
 
         //Analyze the selected project to know what all the artifacts it has
-        public static ProjectConfigurations ProjectConfiguration(Project model)
+        public ProjectConfigurations ProjectConfiguration(Project model)
         {
-            string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
-            string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
-            string releaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
-            string wikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
-            string boardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
-            string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
-            string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string extensionHost = System.Configuration.ConfigurationManager.AppSettings["ExtensionHost"];
-            string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
-            string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
-            string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
-            string endpointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
-            string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
+            string repoVersion = AppKeyConfiguration["RepoVersion"];
+            string buildVersion = AppKeyConfiguration["BuildVersion"];
+            string releaseVersion = AppKeyConfiguration["ReleaseVersion"];
+            string wikiVersion = AppKeyConfiguration["WikiVersion"];
+            string boardVersion = AppKeyConfiguration["BoardVersion"];
+            string workItemsVersion = AppKeyConfiguration["WorkItemsVersion"];
+            string releaseHost = AppKeyConfiguration["ReleaseHost"];
+            string defaultHost = AppKeyConfiguration["DefaultHost"];
+            string extensionHost = AppKeyConfiguration["ExtensionHost"];
+            string getReleaseVersion = AppKeyConfiguration["GetRelease"];
+            string agentQueueVersion = AppKeyConfiguration["AgentQueueVersion"];
+            string extensionVersion = AppKeyConfiguration["ExtensionVersion"];
+            string endpointVersion = AppKeyConfiguration["EndPointVersion"];
+            string queriesVersion = AppKeyConfiguration["QueriesVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
-            projectConfig.AgentQueueConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.WorkItemConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.BuildDefinitionConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
-            projectConfig.ReleaseDefinitionConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
-            projectConfig.RepoConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
-            projectConfig.BoardConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
-            projectConfig.Config = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            projectConfig.GetReleaseConfig = new Configuration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
-            projectConfig.ExtensionConfig = new Configuration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
-            projectConfig.EndpointConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
-            projectConfig.QueriesConfig = new Configuration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
+            projectConfig.AgentQueueConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.WorkItemConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
+            projectConfig.BuildDefinitionConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
+            projectConfig.ReleaseDefinitionConfig = new AppConfiguration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
+            projectConfig.RepoConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
+            projectConfig.BoardConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
+            projectConfig.Config = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
+            projectConfig.GetReleaseConfig = new AppConfiguration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
+            projectConfig.ExtensionConfig = new AppConfiguration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
+            projectConfig.EndpointConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
+            projectConfig.QueriesConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
 
             return projectConfig;
         }

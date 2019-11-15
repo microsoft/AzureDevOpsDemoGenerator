@@ -7,7 +7,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class SwimLanes : ApiServiceBase
     {
-        public SwimLanes(IConfiguration configuration) : base(configuration) { }
+        public SwimLanes(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(SwimLanes));
         /// <summary>
         /// Update swim lanes

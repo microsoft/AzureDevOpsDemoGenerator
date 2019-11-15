@@ -23,7 +23,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         private string projectId = string.Empty;
         private Dictionary<string, string> pullRequests = new Dictionary<string, string>();
         private ILog logger = LogManager.GetLogger(typeof(ImportWorkItems));
-        public ImportWorkItems(IConfiguration configuration, string rowFieldName) : base(configuration)
+        public ImportWorkItems(IAppConfiguration configuration, string rowFieldName) : base(configuration)
         {
             boardRowFieldName = rowFieldName;
         }

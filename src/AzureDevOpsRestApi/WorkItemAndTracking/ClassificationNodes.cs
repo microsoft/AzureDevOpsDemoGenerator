@@ -11,7 +11,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class ClassificationNodes : ApiServiceBase
     {
-        public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
+        public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(ClassificationNodes));
         /// <summary>
         /// Get Iteration

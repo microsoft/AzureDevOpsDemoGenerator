@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.DeliveryPlans
 {
     public class Plans : ApiServiceBase
     {
-        public Plans(IConfiguration configuration) : base(configuration) { }
+        public Plans(IAppConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create Delivery plans

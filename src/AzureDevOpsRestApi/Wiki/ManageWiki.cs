@@ -9,7 +9,7 @@ namespace AzureDevOpsAPI.Wiki
 {
     public class ManageWiki : ApiServiceBase
     {
-        public ManageWiki(IConfiguration configuration) : base(configuration) { }
+        public ManageWiki(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(ManageWiki));
         /// <summary>
         /// Create wiki

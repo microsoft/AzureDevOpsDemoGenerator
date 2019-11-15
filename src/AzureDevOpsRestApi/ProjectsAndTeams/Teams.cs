@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Teams : ApiServiceBase
     {
-        public Teams(IConfiguration configuration) : base(configuration) { }
+        public Teams(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(Teams));
         /// <summary>
         /// Create teams

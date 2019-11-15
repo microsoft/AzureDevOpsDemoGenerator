@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.Extractor
     public class GetWorkItemsCount : ApiServiceBase
     {
 
-        public GetWorkItemsCount(IConfiguration configuration) : base(configuration)
+        public GetWorkItemsCount(IAppConfiguration configuration) : base(configuration)
         {
 
         }

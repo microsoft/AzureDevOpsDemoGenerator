@@ -18,10 +18,10 @@ namespace VstsDemoBuilder.Services
     {
         private IWebHostEnvironment HostingEnvironment;
 
-        public TemplateService(IWebHostEnvironment _host)
-        {
-            HostingEnvironment = _host;
-        }
+        //public TemplateService(IWebHostEnvironment _host)
+        //{
+        //    HostingEnvironment = _host;
+        //}
 
         public List<TemplateDetails> GetAllTemplates()
         {

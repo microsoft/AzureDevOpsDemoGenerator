@@ -6,7 +6,7 @@ namespace AzureDevOpsAPI.Git
 {
     public class GitHubImportRepo : ApiServiceBase
     {
-        public GitHubImportRepo(IConfiguration configuration) : base(configuration)
+        public GitHubImportRepo(IAppConfiguration configuration) : base(configuration)
         {
         }
 

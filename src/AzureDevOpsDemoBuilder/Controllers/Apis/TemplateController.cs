@@ -13,17 +13,15 @@ namespace VstsDemoBuilder.Controllers.Apis
     public class TemplateController : Controller
     {
 
-        private ITemplateService templateService;
+        public ITemplateService templateService;
+        public ProjectService projectService;
 
-        public TemplateController()
-        {
-        }
 
         [HttpGet]
         [Route("AllTemplates")]
         public List<TemplateDetails> GetTemplates()
         {
-            ProjectService.TrackFeature("api/templates/Alltemplates");
+            projectService.TrackFeature("api/templates/Alltemplates");
             return templateService.GetAllTemplates();
         }
 
@@ -31,7 +29,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("TemplatesByTags")]
         public List<TemplateDetails> templatesbyTags(string Tags)
         {
-            ProjectService.TrackFeature("api/templates/TemplateByTags");
+            projectService.TrackFeature("api/templates/TemplateByTags");
             return templateService.GetTemplatesByTags(Tags);
         }
 

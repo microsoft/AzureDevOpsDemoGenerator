@@ -9,7 +9,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class Cards : ApiServiceBase
     {
-        public Cards(IConfiguration configuration) : base(configuration) { }
+        public Cards(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(Cards));
         /// <summary>
         /// Update Card fields

@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.Queues
 {
     public class Queue : ApiServiceBase
     {
-        public Queue(IConfiguration configuration) : base(configuration) { }
+        public Queue(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(Queue));
         /// <summary>
         /// Get Agent queue

@@ -7,7 +7,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class IssueWI
     {
-        private Configuration con = new Configuration();
+        private AppConfiguration con = new AppConfiguration();
         private ILog logger = LogManager.GetLogger(typeof(IssueWI));
 
         // Create Issue Work Items

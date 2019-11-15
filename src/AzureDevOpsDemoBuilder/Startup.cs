@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using AzureDevOpsDemoBuilder.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,22 +20,31 @@ namespace AzureDevOpsDemoBuilder
     public class Startup
     {
         public IConfiguration Configuration { get; }
-        public Startup(IConfiguration configuration)
+        public IWebHostEnvironment HostingEnvironment { get; }
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            HostingEnvironment = env;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
             services.AddSingleton<IAccountService, AccountService>();
-            //services.AddSingleton<IProjectService, ProjectService>();
+            services.AddSingleton<IProjectService, ProjectService>();
             services.AddDistributedMemoryCache();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);//You can set Time   
             });
-            //services.AddSingleton<IExtractorService, ExtractorService>();
-            //services.AddSingleton<ITemplateService, TemplateService>();
+            services.AddSingleton<IExtractorService, ExtractorService>();
+            services.AddSingleton<ITemplateService, TemplateService>();
+
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                options.HttpsPort = 444;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

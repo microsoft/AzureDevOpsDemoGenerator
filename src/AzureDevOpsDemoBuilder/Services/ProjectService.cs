@@ -45,6 +45,7 @@ using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using GoogleAnalyticsTracker.Simple;
 using GoogleAnalyticsTracker.WebApi;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace VstsDemoBuilder.Services
 {
@@ -63,21 +64,21 @@ namespace VstsDemoBuilder.Services
         public string templateVersion = string.Empty;
         public static string enableExtractor = "";
 
-        private static IHttpContextAccessor _httpContextAccessor;
+        public IHttpContextAccessor _httpContextAccessor;
+        public IConfiguration AppKeyConfiguration { get; }
+        public IWebHostEnvironment HostingEnvironment;
+        //public ProjectService(IWebHostEnvironment _host, IHttpContextAccessor httpContextAccessor)
+        //{
+        //    HostingEnvironment = _host;
+        //    _httpContextAccessor = httpContextAccessor;
+        //}
 
-        private static IWebHostEnvironment HostingEnvironment;
-        public ProjectService(IWebHostEnvironment _host, IHttpContextAccessor httpContextAccessor)
-        {
-            HostingEnvironment = _host;
-            _httpContextAccessor = httpContextAccessor;
-        }
-
-        public static async void TrackFeature(string API)
+        public void TrackFeature(string API)
         {
             SimpleTrackerEnvironment simpleTrackerEnvironment = new SimpleTrackerEnvironment(Environment.OSVersion.Platform.ToString(),
                                                                         Environment.OSVersion.Version.ToString(),
                                                                         Environment.OSVersion.VersionString);
-            string GAKey = System.Configuration.ConfigurationManager.AppSettings["AnalyticsKey"];
+            string GAKey = AppKeyConfiguration["AnalyticsKey"];
             if (!string.IsNullOrEmpty(GAKey))
             {
                 using (Tracker tracker = new Tracker(GAKey, simpleTrackerEnvironment))
@@ -117,7 +118,7 @@ namespace VstsDemoBuilder.Services
                     requestMessage.RequestUri = uri;
                     requestMessage.Method = new HttpMethod(request.Method);
 
-                    var response = await tracker.TrackPageViewAsync(requestMessage, API);
+                    var response = tracker.TrackPageViewAsync(requestMessage, API).Result;
                     bool issuccess = response.Success;
                 }
             }
@@ -186,10 +187,10 @@ namespace VstsDemoBuilder.Services
 
         public HttpResponseMessage GetprojectList(string accname, string pat)
         {
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
+            string defaultHost = AppKeyConfiguration["DefaultHost"];
+            string ProjectCreationVersion = AppKeyConfiguration["ProjectCreationVersion"];
 
-            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
+            AppConfiguration config = new AppConfiguration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
             Projects projects = new Projects(config);
             HttpResponseMessage response = projects.GetListOfProjects();
             return response;
@@ -238,27 +239,27 @@ namespace VstsDemoBuilder.Services
             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
             string pat = model.accessToken;
             //define versions to be use
-            string projectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
-            string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
-            string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
-            string releaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
-            string wikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
-            string boardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
-            string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
-            string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
-            string endPointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
-            string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
-            string dashboardVersion = System.Configuration.ConfigurationManager.AppSettings["DashboardVersion"];
-            string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
-            string getSourceCodeVersion = System.Configuration.ConfigurationManager.AppSettings["GetSourceCodeVersion"];
-            string testPlanVersion = System.Configuration.ConfigurationManager.AppSettings["TestPlanVersion"];
-            string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string deploymentGroup = System.Configuration.ConfigurationManager.AppSettings["DeloymentGroup"];
-            string graphApiVersion = System.Configuration.ConfigurationManager.AppSettings["GraphApiVersion"];
-            string graphAPIHost = System.Configuration.ConfigurationManager.AppSettings["GraphAPIHost"];
-            string gitHubBaseAddress = System.Configuration.ConfigurationManager.AppSettings["GitHubBaseAddress"];
-            string variableGroupsApiVersion = System.Configuration.ConfigurationManager.AppSettings["VariableGroupsApiVersion"];
+            string projectCreationVersion = AppKeyConfiguration["ProjectCreationVersion"];
+            string repoVersion = AppKeyConfiguration["RepoVersion"];
+            string buildVersion = AppKeyConfiguration["BuildVersion"];
+            string releaseVersion = AppKeyConfiguration["ReleaseVersion"];
+            string wikiVersion = AppKeyConfiguration["WikiVersion"];
+            string boardVersion = AppKeyConfiguration["BoardVersion"];
+            string workItemsVersion = AppKeyConfiguration["WorkItemsVersion"];
+            string queriesVersion = AppKeyConfiguration["QueriesVersion"];
+            string endPointVersion = AppKeyConfiguration["EndPointVersion"];
+            string extensionVersion = AppKeyConfiguration["ExtensionVersion"];
+            string dashboardVersion = AppKeyConfiguration["DashboardVersion"];
+            string agentQueueVersion = AppKeyConfiguration["AgentQueueVersion"];
+            string getSourceCodeVersion = AppKeyConfiguration["GetSourceCodeVersion"];
+            string testPlanVersion = AppKeyConfiguration["TestPlanVersion"];
+            string releaseHost = AppKeyConfiguration["ReleaseHost"];
+            string defaultHost = AppKeyConfiguration["DefaultHost"];
+            string deploymentGroup = AppKeyConfiguration["DeloymentGroup"];
+            string graphApiVersion = AppKeyConfiguration["GraphApiVersion"];
+            string graphAPIHost = AppKeyConfiguration["GraphAPIHost"];
+            string gitHubBaseAddress = AppKeyConfiguration["GitHubBaseAddress"];
+            string variableGroupsApiVersion = AppKeyConfiguration["VariableGroupsApiVersion"];
 
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
@@ -276,10 +277,10 @@ namespace VstsDemoBuilder.Services
             websiteUrl = model.websiteUrl;
             projectName = model.ProjectName;
 
-            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
+            string logWIT = AppKeyConfiguration["LogWIT"];
             if (logWIT == "true")
             {
-                string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
+                string patBase64 = AppKeyConfiguration["PATBase64"];
                 string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
                 string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
                 string reportName = string.Format("{0}", "AzureDevOps_Analytics-DemoGenerator");
@@ -287,7 +288,7 @@ namespace VstsDemoBuilder.Services
                 objIssue.CreateReportWI(patBase64, "4.1", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
             }
 
-            Configuration _gitHubConfig = new Configuration() { _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken, _mediaType = "application/json", _scheme = "Bearer" };
+            AppConfiguration _gitHubConfig = new AppConfiguration() { _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken, _mediaType = "application/json", _scheme = "Bearer" };
 
             if (model.GitHubFork && model.GitHubToken != null)
             {
@@ -303,24 +304,24 @@ namespace VstsDemoBuilder.Services
             }
             //configuration setup
             string _credentials = model.accessToken;
-            Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
-            Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
-            Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _projectCreationVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _releaseVersion = new AppConfiguration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _buildVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _workItemsVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _queriesVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _boardVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _wikiVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _endPointVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _extensionVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _dashboardVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _repoVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
 
-            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
-            Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _variableGroupApiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = variableGroupsApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _getSourceCodeVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _agentQueueVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _testPlanVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _deploymentGroup = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _graphApiVersion = new AppConfiguration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            AppConfiguration _variableGroupApiVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = variableGroupsApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
             string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
@@ -1038,7 +1039,7 @@ namespace VstsDemoBuilder.Services
             return new string[] { model.id, accountName, templateUsed };
         }
 
-        private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)
+        private void ForkGitHubRepository(Project model, AppConfiguration _gitHubConfig)
         {
             List<string> listRepoFiles = new List<string>();
             string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
@@ -1084,7 +1085,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <param name="teamAreaJSON"></param>
-        private void CreateTeams(Project model, string teamsJSON, AzureDevOpsAPI.Configuration _projectConfig, string id, string teamAreaJSON)
+        private void CreateTeams(Project model, string teamsJSON, AzureDevOpsAPI.AppConfiguration _projectConfig, string id, string teamAreaJSON)
         {
             try
             {
@@ -1170,7 +1171,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamName, AzureDevOpsAPI.Configuration _configuration, string id)
+        private TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamName, AzureDevOpsAPI.AppConfiguration _configuration, string id)
         {
             try
             {
@@ -1200,7 +1201,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="workItemJSON"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
-        private void CreateWorkItems(Project model, string workItemJSON, AzureDevOpsAPI.Configuration _defaultConfiguration, string id)
+        private void CreateWorkItems(Project model, string workItemJSON, AzureDevOpsAPI.AppConfiguration _defaultConfiguration, string id)
         {
             try
             {
@@ -1240,7 +1241,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(Project model, string BoardColumnsJSON, AzureDevOpsAPI.Configuration _BoardConfig, string id, string BoardType, string team)
+        private bool UpdateBoardColumn(Project model, string BoardColumnsJSON, AzureDevOpsAPI.AppConfiguration _BoardConfig, string id, string BoardType, string team)
         {
             bool result = false;
             try
@@ -1272,7 +1273,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardFields(Project model, string json, Configuration _configuration, string id, string boardType, string team)
+        private void UpdateCardFields(Project model, string json, AppConfiguration _configuration, string id, string boardType, string team)
         {
             try
             {
@@ -1301,7 +1302,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardStyles(Project model, string json, Configuration _configuration, string id, string boardType, string team)
+        private void UpdateCardStyles(Project model, string json, AppConfiguration _configuration, string id, string boardType, string team)
         {
             try
             {
@@ -1328,7 +1329,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="json"></param>
         /// <param name="_config3_0"></param>
         /// <param name="id"></param>
-        private void EnableEpic(Project model, string json, AzureDevOpsAPI.Configuration _boardVersion, string id, string team)
+        private void EnableEpic(Project model, string json, AzureDevOpsAPI.AppConfiguration _boardVersion, string id, string team)
         {
             try
             {
@@ -1358,7 +1359,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="id"></param>
         /// <param name="currentUser"></param>
         /// <param name="projectSettingsJSON"></param>
-        private void UpdateWorkItems(Project model, string workItemUpdateJSON, AzureDevOpsAPI.Configuration _defaultConfiguration, string id, string currentUser, string projectSettingsJSON)
+        private void UpdateWorkItems(Project model, string workItemUpdateJSON, AzureDevOpsAPI.AppConfiguration _defaultConfiguration, string id, string currentUser, string projectSettingsJSON)
         {
             try
             {
@@ -1394,7 +1395,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="iterationsJSON"></param>
-        private void UpdateIterations(Project model, AzureDevOpsAPI.Configuration _boardConfig, string iterationsJSON)
+        private void UpdateIterations(Project model, AzureDevOpsAPI.AppConfiguration _boardConfig, string iterationsJSON)
         {
             try
             {
@@ -1470,6 +1471,15 @@ namespace VstsDemoBuilder.Services
         }
 
         private string path = string.Empty;
+
+        public ProjectService(IConfiguration appKeyConfiguration, IWebHostEnvironment hostEnvironment)
+        {
+            AppKeyConfiguration = appKeyConfiguration;
+            HostingEnvironment = hostEnvironment;
+        }
+
+
+
         /// <summary>
         /// Move Iterations to nodes
         /// </summary>
@@ -1499,7 +1509,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="settings"></param>
-        private void UpdateSprintItems(Project model, AzureDevOpsAPI.Configuration _boardConfig, ProjectSettings settings)
+        private void UpdateSprintItems(Project model, AzureDevOpsAPI.AppConfiguration _boardConfig, ProjectSettings settings)
         {
             try
             {
@@ -1528,7 +1538,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="renameIterations"></param>
-        public void RenameIterations(Project model, AzureDevOpsAPI.Configuration _defaultConfiguration, Dictionary<string, string> renameIterations)
+        public void RenameIterations(Project model, AzureDevOpsAPI.AppConfiguration _defaultConfiguration, Dictionary<string, string> renameIterations)
         {
             try
             {
@@ -1553,7 +1563,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="importSourceConfiguration"></param>
         /// <param name="id"></param>
-        private void ImportSourceCode(Project model, string sourceCodeJSON, AzureDevOpsAPI.Configuration _repo, string id, AzureDevOpsAPI.Configuration _retSourceCodeVersion)
+        private void ImportSourceCode(Project model, string sourceCodeJSON, AzureDevOpsAPI.AppConfiguration _repo, string id, AzureDevOpsAPI.AppConfiguration _retSourceCodeVersion)
         {
 
             try
@@ -1612,7 +1622,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="pullRequestJsonPath"></param>
         /// <param name="_configuration3_0"></param>
-        private void CreatePullRequest(Project model, string pullRequestJsonPath, AzureDevOpsAPI.Configuration _workItemConfig)
+        private void CreatePullRequest(Project model, string pullRequestJsonPath, AzureDevOpsAPI.AppConfiguration _workItemConfig)
         {
             try
             {
@@ -1676,7 +1686,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="jsonPaths"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, Configuration _endpointConfig)
+        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, AppConfiguration _endpointConfig)
         {
             try
             {
@@ -1798,7 +1808,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="testPlanJson"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateTestManagement(List<WIMapData> wiMapping, Project model, string testPlanJson, AzureDevOpsAPI.Configuration _testPlanVersion)
+        private void CreateTestManagement(List<WIMapData> wiMapping, Project model, string testPlanJson, AzureDevOpsAPI.AppConfiguration _testPlanVersion)
         {
             try
             {
@@ -1872,7 +1882,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool CreateBuildDefinition(Project model, AzureDevOpsAPI.Configuration _buildConfig, string id)
+        private bool CreateBuildDefinition(Project model, AzureDevOpsAPI.AppConfiguration _buildConfig, string id)
         {
             bool flag = false;
             try
@@ -1940,7 +1950,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
-        private void QueueABuild(Project model, string json, AzureDevOpsAPI.Configuration _buildConfig)
+        private void QueueABuild(Project model, string json, AzureDevOpsAPI.AppConfiguration _buildConfig)
         {
             try
             {
@@ -1976,7 +1986,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="id"></param>
         /// <param name="teamMembers"></param>
         /// <returns></returns>
-        private bool CreateReleaseDefinition(Project model, AzureDevOpsAPI.Configuration _releaseConfiguration, string id, TeamMemberResponse.TeamMembers teamMembers)
+        private bool CreateReleaseDefinition(Project model, AzureDevOpsAPI.AppConfiguration _releaseConfiguration, string id, TeamMemberResponse.TeamMembers teamMembers)
         {
             bool flag = false;
             try
@@ -2075,7 +2085,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_configuration2"></param>
         /// <param name="_configuration3"></param>
         /// <param name="releaseConfig"></param>
-        public void CreateQueryAndWidgets(Project model, List<string> listQueries, AzureDevOpsAPI.Configuration _queriesVersion, AzureDevOpsAPI.Configuration _dashboardVersion, AzureDevOpsAPI.Configuration _releaseConfig, AzureDevOpsAPI.Configuration _projectConfig, AzureDevOpsAPI.Configuration _boardConfig)
+        public void CreateQueryAndWidgets(Project model, List<string> listQueries, AzureDevOpsAPI.AppConfiguration _queriesVersion, AzureDevOpsAPI.AppConfiguration _dashboardVersion, AzureDevOpsAPI.AppConfiguration _releaseConfig, AzureDevOpsAPI.AppConfiguration _projectConfig, AzureDevOpsAPI.AppConfiguration _boardConfig)
         {
             try
             {
@@ -2508,7 +2518,7 @@ namespace VstsDemoBuilder.Services
         /// </summary>
         /// <param name="model"></param>
         /// <param name="_wikiConfiguration"></param>
-        public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
+        public void CreateProjetWiki(string templatesFolder, Project model, AppConfiguration _wikiConfiguration)
         {
             try
             {
@@ -2589,7 +2599,7 @@ namespace VstsDemoBuilder.Services
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
-        public void CreateCodeWiki(Project model, AzureDevOpsAPI.Configuration _wikiConfiguration)
+        public void CreateCodeWiki(Project model, AzureDevOpsAPI.AppConfiguration _wikiConfiguration)
         {
             try
             {
@@ -2632,7 +2642,7 @@ namespace VstsDemoBuilder.Services
                 AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
-        public void CreateDeploymentGroup(string templateFolder, Project model, Configuration _deploymentGroup)
+        public void CreateDeploymentGroup(string templateFolder, Project model, AppConfiguration _deploymentGroup)
         {
             string path = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\DeploymentGroups\CreateDeploymentGroup.json");
             //templateFolder + model.SelectedTemplate + "\\DeploymentGroups\\CreateDeploymentGroup.json";
@@ -2676,7 +2686,7 @@ namespace VstsDemoBuilder.Services
             return string.Empty;
         }
 
-        private bool AddUserToProject(Configuration con, Project model)
+        private bool AddUserToProject(AppConfiguration con, Project model)
         {
             try
             {
@@ -2788,7 +2798,7 @@ namespace VstsDemoBuilder.Services
             return ExtensionRequired;
         }
 
-        private void CreateVaribaleGroups(Project model, Configuration _variableGroups)
+        private void CreateVaribaleGroups(Project model, AppConfiguration _variableGroups)
         {
             VariableGroups variableGroups = new VariableGroups(_variableGroups);
             model.Environment.VariableGroups = new Dictionary<int, string>();

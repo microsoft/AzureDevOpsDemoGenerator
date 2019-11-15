@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.VisualStudio.Services.WebApi;
 using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.Extensions.Configuration;
+using System.Threading.Tasks;
 
 namespace VstsDemoBuilder.Controllers
 {
@@ -25,14 +27,20 @@ namespace VstsDemoBuilder.Controllers
     {
         private delegate string[] ProcessEnvironment(Project model);
         private IProjectService projectService;
+
+        public IConfiguration AppKeyConfiguration { get; }
+
         private ITemplateService templateService;
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
 
-        public EnvironmentController(IProjectService _ProjectService, IWebHostEnvironment _hostingEnvironment)
+        public EnvironmentController(IProjectService _ProjectService, IConfiguration configuration, IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment hostEnvironment)
         {
             projectService = _ProjectService;
-            HostingEnvironment = _hostingEnvironment;
+            AppKeyConfiguration = configuration;
+            accountService = _accountService;
+            templateService = _templateService;
+            HostingEnvironment = hostEnvironment;
         }
 
         [HttpGet]
@@ -169,7 +177,7 @@ namespace VstsDemoBuilder.Controllers
                     }
                     else
                     {
-                        TemplateSelected = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
+                        TemplateSelected = AppKeyConfiguration["DefaultTemplate"];
                     }
 
                     if (HttpContext.Session.GetString("PAT") != null)
@@ -178,8 +186,8 @@ namespace VstsDemoBuilder.Controllers
                         ProfileDetails profile = accountService.GetProfile(_accessDetails);
                         if (profile.displayName != null || profile.emailAddress != null)
                         {
-                            HttpContext.Session.SetString("User", profile.displayName ?? string.Empty);
-                            HttpContext.Session.SetString("Email", profile.emailAddress ?? profile.displayName.ToLower());
+                            ViewData.Add("User", profile.displayName ?? string.Empty);
+                            ViewData.Add("Email", profile.emailAddress ?? profile.displayName.ToLower());
                         }
                         if (profile.id != null)
                         {
@@ -304,8 +312,8 @@ namespace VstsDemoBuilder.Controllers
                     }
                     string code = HttpContext.Request.Query["code"].ToString();
 
-                    string redirectUrl = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
-                    string clientId = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
+                    string redirectUrl = AppKeyConfiguration["RedirectUri"];
+                    string clientId = AppKeyConfiguration["ClientSecret"];
                     string accessRequestBody = accountService.GenerateRequestPostData(clientId, code, redirectUrl);
                     _accessDetails = accountService.GetAccessToken(accessRequestBody);
                     if (!string.IsNullOrEmpty(_accessDetails.access_token))
@@ -474,7 +482,7 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 AccountMembers.Account accountMembers = new AccountMembers.Account();
-                AzureDevOpsAPI.Configuration _defaultConfiguration = new AzureDevOpsAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = accessToken };
+                AzureDevOpsAPI.AppConfiguration _defaultConfiguration = new AzureDevOpsAPI.AppConfiguration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = accessToken };
                 AzureDevOpsAPI.ProjectsAndTeams.Accounts objAccount = new AzureDevOpsAPI.ProjectsAndTeams.Accounts(_defaultConfiguration);
                 accountMembers = objAccount.GetAccountMembers(accountName, accessToken);
                 if (accountMembers.count > 0)
@@ -510,6 +518,8 @@ namespace VstsDemoBuilder.Controllers
             {
                 HttpContext.Session.SetString("PAT", model.accessToken);
                 HttpContext.Session.SetString("AccountName", model.accountName);
+                HttpContext.Session.SetString("trackId", model.id);
+                HttpContext.Session.SetString("template", model.SelectedTemplate);
                 if (HttpContext.Session.GetString("GitHubToken") != null && HttpContext.Session.GetString("GitHubToken") != "" && model.GitHubFork)
                 {
                     model.GitHubToken = HttpContext.Session.GetString("GitHubToken");
@@ -521,7 +531,11 @@ namespace VstsDemoBuilder.Controllers
                     model.IsPrivatePath = true;
                 }
                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
-                processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                var workTask = Task.Run(() => processTask.Invoke(model));
+                workTask.ContinueWith((antecedent) =>
+                {
+                    EndEnvironmentSetupProcess(workTask, model);
+                });
             }
             catch (Exception ex)
             {
@@ -534,7 +548,7 @@ namespace VstsDemoBuilder.Controllers
         /// End the process
         /// </summary>
         /// <param name="result"></param>
-        public void EndEnvironmentSetupProcess(IAsyncResult result)
+        public string EndEnvironmentSetupProcess(IAsyncResult result, Project model)
         {
             string templateUsed = string.Empty;
             string ID = string.Empty;
@@ -542,47 +556,40 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
-                string[] strResult = processTask.EndInvoke(result);
-                if (strResult != null && strResult.Length > 0)
+                //string[] strResult = processTask.EndInvoke(result);
+                projectService.RemoveKey(model.id);
+                if (ProjectService.StatusMessages.Keys.Count(x => x == model.id + "_Errors") == 1)
                 {
-                    ID = strResult[0];
-                    accName = strResult[1];
-                    templateUsed = strResult[2];
-                    projectService.RemoveKey(ID);
-                    if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
+                    string errorMessages = ProjectService.statusMessages[model.id + "_Errors"];
+                    if (errorMessages != "")
                     {
-                        string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
-                        if (errorMessages != "")
+                        //also, log message to file system
+                        string logPath = HostingEnvironment.WebRootPath + @"\Log";
+                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+
+                        if (!Directory.Exists(logPath))
                         {
-                            //also, log message to file system
-                            string logPath = HostingEnvironment.WebRootPath + @"\Log";
-                            string accountName = strResult[1];
-                            string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                            Directory.CreateDirectory(logPath);
+                        }
 
-                            if (!Directory.Exists(logPath))
-                            {
-                                Directory.CreateDirectory(logPath);
-                            }
+                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                            System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                        //Create ISSUE work item with error details in VSTSProjectgenarator account
+                        string patBase64 = AppKeyConfiguration["PATBase64"];
+                        string url = AppKeyConfiguration["URL"];
+                        string projectId = AppKeyConfiguration["PROJECTID"];
+                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        IssueWI objIssue = new IssueWI();
 
-                            //Create ISSUE work item with error details in VSTSProjectgenarator account
-                            string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                            string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                            string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                            string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                            IssueWI objIssue = new IssueWI();
+                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
 
-                            errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
-                            errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
+                        ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
-                            ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
-
-                            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                            if (logWIT == "true")
-                            {
-                                objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
-                            }
+                        string logWIT = AppKeyConfiguration["LogWIT"];
+                        if (logWIT == "true")
+                        {
+                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
                         }
                     }
                 }
@@ -595,6 +602,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 DeletePrivateTemplate(templateUsed);
             }
+            return "";
         }
 
         /// <summary>
@@ -749,7 +757,7 @@ namespace VstsDemoBuilder.Controllers
                         }
 
                     }
-                    else { requiresExtensionNames = "no extensions required"; return Json(requiresExtensionNames); }
+                    else { requiresExtensionNames = "no extensions required"; return Json(new { message = "no extensions required", status = "false" }); }
                     return Json(new { message = requiresExtensionNames, status = "false" });
                 }
                 else

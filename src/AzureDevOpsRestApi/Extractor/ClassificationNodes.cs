@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.Extractor
 {
     public class ClassificationNodes : ApiServiceBase
     {
-        public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
+        public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(ClassificationNodes));
         // Get Iteration Count
         public GetINumIteration.Iterations GetiterationCount()

@@ -8,8 +8,8 @@ namespace AzureDevOpsAPI.Services
 {
     public class HttpServices
     {
-        private Configuration oConfiguration = new Configuration();
-        public HttpServices(Configuration config)
+        private AppConfiguration oConfiguration = new AppConfiguration();
+        public HttpServices(AppConfiguration config)
         {
             oConfiguration.UriString = config.UriString;
             oConfiguration.Project = config.Project;

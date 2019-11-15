@@ -11,7 +11,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
     public partial class BoardColumn : ApiServiceBase
     {
         public string rowFieldName;
-        public BoardColumn(IConfiguration configuration) : base(configuration) { }
+        public BoardColumn(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(BoardColumn));
         /// <summary>
         /// Update kanban board colums styles

@@ -11,7 +11,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class WorkItem : ApiServiceBase
     {
-        public WorkItem(IConfiguration configuration) : base(configuration) { }
+        public WorkItem(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(WorkItem));
         /// <summary>
         /// Method to create the workItems

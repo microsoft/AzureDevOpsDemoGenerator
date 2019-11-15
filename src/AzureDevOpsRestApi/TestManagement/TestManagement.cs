@@ -9,7 +9,7 @@ namespace AzureDevOpsAPI.TestManagement
 {
     public class TestManagement : ApiServiceBase
     {
-        public TestManagement(IConfiguration configuration) : base(configuration) { }
+        public TestManagement(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(TestManagement));
         /// <summary>
         /// Create test plans

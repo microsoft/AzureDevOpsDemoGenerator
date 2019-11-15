@@ -6,7 +6,7 @@ namespace AzureDevOpsAPI.ExtensionManagement
 {
     public class GetListExtenison : ApiServiceBase
     {
-        public GetListExtenison(IConfiguration configuration) : base(configuration)
+        public GetListExtenison(IAppConfiguration configuration) : base(configuration)
         {
         }
 

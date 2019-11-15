@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.Service
 {
     public class ServiceEndPoint : ApiServiceBase
     {
-        public ServiceEndPoint(IConfiguration configuration) : base(configuration) { }
+        public ServiceEndPoint(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(ServiceEndPoint));
         /// <summary>
         /// Create service endpoints

@@ -7,7 +7,7 @@ namespace AzureDevOpsAPI
     public abstract class ApiServiceBase
     {
         public string LastFailureMessage { get; set; }
-        protected readonly IConfiguration _configuration;
+        protected readonly IAppConfiguration _configuration;
         protected readonly string _credentials;
         protected readonly string Project;
         protected readonly string ProjectId;
@@ -20,7 +20,7 @@ namespace AzureDevOpsAPI
         protected readonly string userName;
 
 
-        public ApiServiceBase(IConfiguration configuration)
+        public ApiServiceBase(IAppConfiguration configuration)
         {
             _configuration = configuration;
             _credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));//configuration.PersonalAccessToken;

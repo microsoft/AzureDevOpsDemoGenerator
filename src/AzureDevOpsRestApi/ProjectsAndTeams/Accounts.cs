@@ -7,7 +7,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Accounts : ApiServiceBase
     {
-        public Accounts(IConfiguration configuration) : base(configuration) { }
+        public Accounts(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(Accounts));
         /// <summary>
         /// Get Account members

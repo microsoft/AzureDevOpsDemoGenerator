@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using VstsDemoBuilder.Models;
 
@@ -21,5 +22,6 @@ namespace VstsDemoBuilder.ServiceInterfaces
         bool CheckForInstalledExtensions(string extensionJsonFile, string token, string account);
 
         bool InstallExtensions(Project model, string accountName, string PAT);
+
     }
 }

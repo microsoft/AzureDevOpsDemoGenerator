@@ -38,7 +38,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("create")]
         public ActionResult create(MultiProjects model)
         {
-            ProjectService.TrackFeature("api/environment/create");
+            projectService.TrackFeature("api/environment/create");
 
             ProjectResponse returnObj = new ProjectResponse();
             returnObj.templatePath = model.templatePath;
@@ -249,7 +249,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("GetCurrentProgress")]
         public IActionResult GetCurrentProgress(string TrackId)
         {
-            ProjectService.TrackFeature("api/environment/GetCurrentProgress");
+            projectService.TrackFeature("api/environment/GetCurrentProgress");
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             // Use SecurityProtocolType.Ssl3 if needed for compatibility reasons

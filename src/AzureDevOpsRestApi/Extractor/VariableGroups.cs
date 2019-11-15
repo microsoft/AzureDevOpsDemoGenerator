@@ -9,7 +9,7 @@ namespace AzureDevOpsAPI.Extractor
 {
     public class VariableGroups : ApiServiceBase
     {
-        public VariableGroups(IConfiguration configuration) : base(configuration)
+        public VariableGroups(IAppConfiguration configuration) : base(configuration)
         {
         }
         private ILog logger = LogManager.GetLogger(typeof(VariableGroups));

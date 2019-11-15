@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace VstsDemoBuilder.Services
 {
     public class AccountService :IAccountService
     {
+        public IConfiguration AppKeyConfiguration { get; }
+
+        public AccountService(IConfiguration configuration )
+        {
+            AppKeyConfiguration = configuration;
+        }
         /// <summary>
         /// Formatting the request for OAuth
         /// </summary>
@@ -48,7 +55,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+                string baseAddress = AppKeyConfiguration["BaseAddress"];
                 var client = new HttpClient
                 {
                     BaseAddress = new Uri(baseAddress)
@@ -87,7 +94,7 @@ namespace VstsDemoBuilder.Services
             {
                 try
                 {
-                    string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+                    string baseAddress = AppKeyConfiguration["BaseAddress"];
 
                     client.BaseAddress = new Uri(baseAddress);
                     client.DefaultRequestHeaders.Accept.Clear();
@@ -124,9 +131,9 @@ namespace VstsDemoBuilder.Services
         {
             using (var client = new HttpClient())
             {
-                string redirectUri = System.Configuration.ConfigurationManager.AppSettings["RedirectUri"];
-                string cientSecret = System.Configuration.ConfigurationManager.AppSettings["ClientSecret"];
-                string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+                string redirectUri = AppKeyConfiguration["RedirectUri"];
+                string cientSecret = AppKeyConfiguration["ClientSecret"];
+                string baseAddress = AppKeyConfiguration["BaseAddress"];
 
                 var request = new HttpRequestMessage(HttpMethod.Post, baseAddress + "/oauth2/token");
                 var requestContent = string.Format(
@@ -168,7 +175,7 @@ namespace VstsDemoBuilder.Services
         {
             AccountsResponse.AccountList accounts = new AccountsResponse.AccountList();
             var client = new HttpClient();
-            string baseAddress = System.Configuration.ConfigurationManager.AppSettings["BaseAddress"];
+            string baseAddress = AppKeyConfiguration["BaseAddress"];
 
             string requestContent = baseAddress + "/_apis/Accounts?memberId=" + memberID + "&api-version=4.1";
             var request = new HttpRequestMessage(HttpMethod.Get, requestContent);

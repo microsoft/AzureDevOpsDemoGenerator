@@ -12,7 +12,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
 {
     public class Queries : ApiServiceBase
     {
-        public Queries(IConfiguration configuration) : base(configuration) { }
+        public Queries(IAppConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger(typeof(Queries));
 
         /// <summary>
