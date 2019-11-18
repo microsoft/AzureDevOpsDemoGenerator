@@ -29,10 +29,11 @@ namespace VstsDemoBuilder.Controllers
 
         public IConfiguration AppKeyConfiguration { get; }
 
-        public AccountController(IAccountService accountService, IConfiguration configuration)
+        public AccountController(IAccountService accountService, IConfiguration configuration, IWebHostEnvironment _webHostEnvironment)
         {
             _accountService = accountService;
             AppKeyConfiguration = configuration;
+            HostingEnvironment = _webHostEnvironment;
         }
 
         [HttpGet]

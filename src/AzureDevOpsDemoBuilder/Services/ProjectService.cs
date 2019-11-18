@@ -42,8 +42,8 @@ using Microsoft.VisualStudio.Services.WebApi;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
-using GoogleAnalyticsTracker.Simple;
-using GoogleAnalyticsTracker.WebApi;
+//using GoogleAnalyticsTracker.Simple;
+//using GoogleAnalyticsTracker.WebApi;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
@@ -73,7 +73,7 @@ namespace VstsDemoBuilder.Services
         //    _httpContextAccessor = httpContextAccessor;
         //}
 
-        public void TrackFeature(string API)
+    /*  public void TrackFeature(string API)
         {
             SimpleTrackerEnvironment simpleTrackerEnvironment = new SimpleTrackerEnvironment(Environment.OSVersion.Platform.ToString(),
                                                                         Environment.OSVersion.Version.ToString(),
@@ -123,7 +123,7 @@ namespace VstsDemoBuilder.Services
                 }
             }
 
-        }
+        }  */
         public static Dictionary<string, string> StatusMessages
         {
             get

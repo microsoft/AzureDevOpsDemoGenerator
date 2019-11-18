@@ -46,7 +46,7 @@ namespace VstsDemoBuilder.Controllers
         [HttpGet]
         [AllowAnonymous]
         public ContentResult GetCurrentProgress(string id)
-        {
+         {
             this.ControllerContext.HttpContext.Response.Headers.Add("cache-control", "no-cache");
             var currentProgress = GetStatusMessage(id).ToString();
             return Content(currentProgress);

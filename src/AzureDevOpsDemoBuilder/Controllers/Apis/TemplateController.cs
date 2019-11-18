@@ -21,7 +21,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("AllTemplates")]
         public List<TemplateDetails> GetTemplates()
         {
-            projectService.TrackFeature("api/templates/Alltemplates");
+            //projectService.TrackFeature("api/templates/Alltemplates");
             return templateService.GetAllTemplates();
         }
 
@@ -29,7 +29,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         [Route("TemplatesByTags")]
         public List<TemplateDetails> templatesbyTags(string Tags)
         {
-            projectService.TrackFeature("api/templates/TemplateByTags");
+            //projectService.TrackFeature("api/templates/TemplateByTags");
             return templateService.GetTemplatesByTags(Tags);
         }
 
