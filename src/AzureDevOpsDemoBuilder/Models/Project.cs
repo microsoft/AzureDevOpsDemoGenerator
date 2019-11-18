@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 
-namespace VstsDemoBuilder.Models
+namespace AzureDevOpsDemoBuilder.Models
 {
     public class Project
     {

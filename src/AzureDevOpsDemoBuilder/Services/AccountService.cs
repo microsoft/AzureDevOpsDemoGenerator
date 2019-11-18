@@ -8,16 +8,17 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Web;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Services;
 
-namespace VstsDemoBuilder.Services
+namespace AzureDevOpsDemoBuilder.Services
 {
-    public class AccountService :IAccountService
+    public class AccountService : IAccountService
     {
         public IConfiguration AppKeyConfiguration { get; }
 
-        public AccountService(IConfiguration configuration )
+        public AccountService(IConfiguration configuration)
         {
             AppKeyConfiguration = configuration;
         }

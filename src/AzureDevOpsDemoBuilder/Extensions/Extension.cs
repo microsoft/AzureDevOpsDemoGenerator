@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.IO;
-using VstsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.Models;
 
-namespace VstsDemoBuilder.Extensions
+namespace AzureDevOpsDemoBuilder.Extensions
 {
     public static class Extension
     {

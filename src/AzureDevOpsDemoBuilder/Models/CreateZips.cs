@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VstsDemoBuilder.Models
+namespace AzureDevOpsDemoBuilder.Models
 {
     public class CreateZips
     {

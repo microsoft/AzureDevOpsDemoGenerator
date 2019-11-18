@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
-using VstsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.Models;
 
-namespace VstsDemoBuilder.ServiceInterfaces
+namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 {
     public interface IProjectService
     {

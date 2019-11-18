@@ -6,11 +6,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-
-  <ItemGroup>
     <None Include="wwwroot\Scripts\AppScripts\create.js" />
     <None Include="wwwroot\Scripts\AppScripts\Extractor.js" />
     <None Include="wwwroot\Scripts\AppScripts\FileUpload.js" />
@@ -150,10 +145,17 @@
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="16.153.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.ExtensionManagement.WebApi" Version="16.153.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.Gallery.WebApi" Version="16.153.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.InteractiveClient" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 

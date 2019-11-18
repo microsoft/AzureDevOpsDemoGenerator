@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using VstsDemoBuilder.Extensions;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Extensions;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using AzureDevOpsAPI;
 using AzureDevOpsAPI.ExtensionManagement;
 using AzureDevOpsAPI.Extractor;
@@ -20,7 +20,7 @@ using Parameters = AzureDevOpsAPI.Viewmodel.Extractor.GetServiceEndpoints;
 using log4net;
 using Microsoft.AspNetCore.Hosting;
 
-namespace VstsDemoBuilder.Services
+namespace AzureDevOpsDemoBuilder.Services
 {
     public class ExtractorService : IExtractorService
     {

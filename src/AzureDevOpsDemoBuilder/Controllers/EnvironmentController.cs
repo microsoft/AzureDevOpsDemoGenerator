@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using VstsDemoBuilder.Extensions;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
-using VstsDemoBuilder.Services;
+using AzureDevOpsDemoBuilder.Extensions;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
-namespace VstsDemoBuilder.Controllers
+namespace AzureDevOpsDemoBuilder.Controllers
 {
     public class EnvironmentController : Controller
     {

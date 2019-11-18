@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using VstsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.Models;
 
-namespace VstsDemoBuilder.ServiceInterfaces
+namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 {
     public interface IAccountService
     {

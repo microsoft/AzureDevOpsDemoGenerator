@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using VstsDemoBuilder.Extensions;
-using VstsDemoBuilder.ExtractorModels;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
-using VstsDemoBuilder.Services;
+using AzureDevOpsDemoBuilder.Extensions;
+using AzureDevOpsDemoBuilder.ExtractorModels;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Services;
 using AzureDevOpsAPI.Extractor;
 using AzureDevOpsAPI.ProjectsAndTeams;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using AzureDevOpsAPI;
 
-namespace VstsDemoBuilder.Controllers
+namespace AzureDevOpsDemoBuilder.Controllers
 {
 
     public class ExtractorController : Controller

@@ -9,12 +9,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
-namespace VstsDemoBuilder.Controllers
+namespace AzureDevOpsDemoBuilder.Controllers
 {
 
     public class AccountController : Controller

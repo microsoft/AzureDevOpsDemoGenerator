@@ -1,4 +1,4 @@
-﻿namespace VstsDemoBuilder.Models
+﻿namespace AzureDevOpsDemoBuilder.Models
 {
     public class Default
     {

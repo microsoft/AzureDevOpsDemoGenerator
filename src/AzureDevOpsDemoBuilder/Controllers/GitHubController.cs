@@ -2,14 +2,14 @@
 using System;
 using System.Net;
 using System.Net.Http;
-using VstsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.Models;
 using System.Web;
-using VstsDemoBuilder.Services;
+using AzureDevOpsDemoBuilder.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 
-namespace VstsDemoBuilder.Controllers
+namespace AzureDevOpsDemoBuilder.Controllers
 {
     public class GitHubController : Controller
     {

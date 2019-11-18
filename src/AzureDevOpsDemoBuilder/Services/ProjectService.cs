@@ -9,9 +9,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using VstsDemoBuilder.Extensions;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Extensions;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using AzureDevOpsAPI;
 using AzureDevOpsAPI.Build;
 using AzureDevOpsAPI.DeploymentGRoup;
@@ -47,7 +47,7 @@ using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
-namespace VstsDemoBuilder.Services
+namespace AzureDevOpsDemoBuilder.Services
 {
     public class ProjectService : IProjectService
     {
@@ -1010,7 +1010,7 @@ namespace VstsDemoBuilder.Services
             model.ReleaseDefinitions = new List<ReleaseDef>();
             if (Directory.Exists(releaseDefinitionsPath))
             {
-                Directory.GetFiles(releaseDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.ReleaseDefinitions.Add(new Models.ReleaseDef() { FilePath = i }));
+                Directory.GetFiles(releaseDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.ReleaseDefinitions.Add(new ReleaseDef() { FilePath = i }));
             }
             bool isReleased = CreateReleaseDefinition(model, _releaseVersion, model.id, teamMembers);
             if (isReleased)

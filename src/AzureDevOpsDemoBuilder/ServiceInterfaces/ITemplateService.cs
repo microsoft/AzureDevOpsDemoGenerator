@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VstsDemoBuilder.Models;
-using static VstsDemoBuilder.Models.TemplateSelection;
+using AzureDevOpsDemoBuilder.Models;
+using static AzureDevOpsDemoBuilder.Models.TemplateSelection;
 
-namespace VstsDemoBuilder.ServiceInterfaces
+namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 {
     public interface ITemplateService
     {

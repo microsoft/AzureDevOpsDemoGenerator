@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 
-using VstsDemoBuilder.ServiceInterfaces;
-using VstsDemoBuilder.Services;
-using static VstsDemoBuilder.Models.TemplateSelection;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Services;
+using static AzureDevOpsDemoBuilder.Models.TemplateSelection;
 
 namespace VstsDemoBuilder.Controllers.Apis
 {
@@ -14,7 +14,7 @@ namespace VstsDemoBuilder.Controllers.Apis
     {
 
         public ITemplateService templateService;
-        public ProjectService projectService;
+        public IProjectService projectService;
 
 
         [HttpGet]

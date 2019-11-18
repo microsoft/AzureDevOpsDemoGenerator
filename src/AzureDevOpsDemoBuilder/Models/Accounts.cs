@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace VstsDemoBuilder.Models
+namespace AzureDevOpsDemoBuilder.Models
 {
     public class AccountsResponse
     {

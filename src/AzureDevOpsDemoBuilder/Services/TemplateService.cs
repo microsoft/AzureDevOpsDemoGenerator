@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using VstsDemoBuilder.Extensions;
-using VstsDemoBuilder.Models;
-using VstsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Extensions;
+using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using AzureDevOpsAPI.Viewmodel.Extractor;
-using static VstsDemoBuilder.Models.TemplateSelection;
+using static AzureDevOpsDemoBuilder.Models.TemplateSelection;
 using Microsoft.VisualStudio.Services.Gallery.WebApi;
 using Microsoft.AspNetCore.Hosting;
+using AzureDevOpsDemoBuilder.Services;
 
-namespace VstsDemoBuilder.Services
+namespace AzureDevOpsDemoBuilder.Services
 {
     public class TemplateService : ITemplateService
     {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using VstsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsAPI;
 
-namespace VstsDemoBuilder.ServiceInterfaces
+namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 {
     public interface IExtractorService
     {

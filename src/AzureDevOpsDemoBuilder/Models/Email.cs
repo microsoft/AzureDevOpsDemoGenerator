@@ -8,7 +8,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
 
-namespace VstsDemoBuilder.Models
+namespace AzureDevOpsDemoBuilder.Models
 {
 	public class Email
 	{
