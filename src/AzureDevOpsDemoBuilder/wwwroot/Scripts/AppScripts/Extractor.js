@@ -190,7 +190,7 @@ $(document).ready(function () {
             $("#projectSelect_Error").removeClass('d-none');
             return;
         }
-        var projectN = {
+        var Project = {
             ProjectName: projectName,
             accountName: SourceAcc, accessToken: key
         };
@@ -206,13 +206,14 @@ $(document).ready(function () {
         $('#finalLink').addClass('d-none');
         $("#ddlAcccountName").prop('disabled', true);
         $("#projectSelect").prop('disabled', true);
-
         $.ajax({
             url: '../Extractor/AnalyzeProject',
             type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(projectN),
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(Project),
             success: function (res) {
+                console.log(res);
                 var row = "";
                 if (res !== "") {
                     var processTemplate = $('#processtemplate').val();
@@ -230,20 +231,20 @@ $(document).ready(function () {
                     if (res.teamCount !== 0 && res.teamCount !== null)
                         row += '<i class="fas fa-check-circle"></i>' + ' Teams: ' + res.teamCount + '<br />';
 
-                    if (res.IterationCount !== 0 && res.IterationCount !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Iteration: ' + res.IterationCount + '<br />';
+                    if (res.iterationCount !== 0 && res.iterationCount !== null)
+                        row += '<i class="fas fa-check-circle" ></i >' + ' Iteration: ' + res.iterationCount + '<br />';
 
-                    if (res.BuildDefCount !== 0 && res.BuildDefCount !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Build Definitions: ' + res.BuildDefCount + '<br />';
+                    if (res.buildDefCount !== 0 && res.buildDefCount !== null)
+                        row += '<i class="fas fa-check-circle" ></i >' + ' Build Definitions: ' + res.buildDefCount + '<br />';
 
-                    if (res.ReleaseDefCount !== 0 && res.ReleaseDefCount !== null)
-                        row += '<i class="fas fa-check-circle" ></i >' + ' Release Definitions: ' + res.ReleaseDefCount + '<br />';
+                    if (res.releaseDefCount !== 0 && res.releaseDefCount !== null)
+                        row += '<i class="fas fa-check-circle" ></i >' + ' Release Definitions: ' + res.releaseDefCount + '<br />';
 
-                    $.each(res.WorkItemCounts, function (x, y) {
+                    $.each(res.workItemCounts, function (x, y) {
                         row += '<i class="fas fa-check-circle" ></i >' + x + ': ' + y + ' <br /> ';
                     });
                     var er = "";
-                    $.each(res.ErrorMessages, function (x, y) {
+                    $.each(res.errorMessages, function (x, y) {
                         er += '<p>' + y + '</p >';
                     });
                     $('#templateError').empty().append(er);

@@ -1,7 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Http
 @model AzureDevOpsDemoBuilder.Models.ProjectList.ProjectDetails
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
-
 @{
     ViewBag.Title = "Azure DevOps Demo Generator - Template Builder";
 }
@@ -137,9 +135,9 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
                     <img src="~/content/assets/images/VSTS-user-image.svg" alt="AzureDevOpsDemogenerator">
-                    @if (HttpContextAccessor.HttpContext.Session.GetString("User") != null)
+                    @if (ViewData["User"] != null)
                     {
-                        <span class="VSTS-username ml-1" style="font-size:16px">@HttpContextAccessor.HttpContext.Session.GetString("User")</span>
+                        <span class="VSTS-username ml-1" style="font-size:16px">@ViewData["User"]</span>
                     }
                     <span class="sr-only">(current)</span>
                 </a>

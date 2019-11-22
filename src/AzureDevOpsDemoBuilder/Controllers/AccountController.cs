@@ -51,7 +51,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             // check to enable extractor
             if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
             {
-                model.EnableExtractor = System.Configuration.ConfigurationManager.AppSettings["EnableExtractor"];
+                model.EnableExtractor = AppKeyConfiguration["EnableExtractor"];
             }
             if (!string.IsNullOrEmpty(model.EnableExtractor))
             {

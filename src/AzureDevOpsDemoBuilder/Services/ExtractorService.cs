@@ -19,6 +19,7 @@ using AzureDevOpsAPI.Viewmodel.GitHub;
 using Parameters = AzureDevOpsAPI.Viewmodel.Extractor.GetServiceEndpoints;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace AzureDevOpsDemoBuilder.Services
 {
@@ -34,10 +35,13 @@ namespace AzureDevOpsDemoBuilder.Services
         private static IWebHostEnvironment HostingEnvironment;
         private ILogger<ExtractorService> logger;
 
-        public ExtractorService(IWebHostEnvironment _host, ILogger<ExtractorService> _logger)
+        public IConfiguration AppKeyConfiguration { get; }
+
+        public ExtractorService(IWebHostEnvironment _host, ILogger<ExtractorService> _logger, IConfiguration configuration)
         {
             HostingEnvironment = _host;
             logger = _logger;
+            AppKeyConfiguration = configuration;
         }
         public static void AddMessage(string id, string message)
         {
@@ -105,21 +109,21 @@ namespace AzureDevOpsDemoBuilder.Services
         #region ANALYSIS - GET COUNTS
         public ProjectConfigurations ProjectConfiguration(Project model)
         {
-            string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
-            string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];
-            string releaseVersion = System.Configuration.ConfigurationManager.AppSettings["ReleaseVersion"];
-            string wikiVersion = System.Configuration.ConfigurationManager.AppSettings["WikiVersion"];
-            string boardVersion = System.Configuration.ConfigurationManager.AppSettings["BoardVersion"];
-            string workItemsVersion = System.Configuration.ConfigurationManager.AppSettings["WorkItemsVersion"];
-            string releaseHost = System.Configuration.ConfigurationManager.AppSettings["ReleaseHost"];
-            string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
-            string extensionHost = System.Configuration.ConfigurationManager.AppSettings["ExtensionHost"];
-            string getReleaseVersion = System.Configuration.ConfigurationManager.AppSettings["GetRelease"];
-            string agentQueueVersion = System.Configuration.ConfigurationManager.AppSettings["AgentQueueVersion"];
-            string extensionVersion = System.Configuration.ConfigurationManager.AppSettings["ExtensionVersion"];
-            string endpointVersion = System.Configuration.ConfigurationManager.AppSettings["EndPointVersion"];
-            string queriesVersion = System.Configuration.ConfigurationManager.AppSettings["QueriesVersion"];
-            string variableGroupsApiVersion = System.Configuration.ConfigurationManager.AppSettings["VariableGroupsApiVersion"];
+            string repoVersion = AppKeyConfiguration["RepoVersion"];
+            string buildVersion = AppKeyConfiguration["BuildVersion"];
+            string releaseVersion = AppKeyConfiguration["ReleaseVersion"];
+            string wikiVersion = AppKeyConfiguration["WikiVersion"];
+            string boardVersion = AppKeyConfiguration["BoardVersion"];
+            string workItemsVersion = AppKeyConfiguration["WorkItemsVersion"];
+            string releaseHost = AppKeyConfiguration["ReleaseHost"];
+            string defaultHost = AppKeyConfiguration["DefaultHost"];
+            string extensionHost = AppKeyConfiguration["ExtensionHost"];
+            string getReleaseVersion = AppKeyConfiguration["GetRelease"];
+            string agentQueueVersion = AppKeyConfiguration["AgentQueueVersion"];
+            string extensionVersion = AppKeyConfiguration["ExtensionVersion"];
+            string endpointVersion = AppKeyConfiguration["EndPointVersion"];
+            string queriesVersion = AppKeyConfiguration["QueriesVersion"];
+            string variableGroupsApiVersion = AppKeyConfiguration["VariableGroupsApiVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
             projectConfig.AgentQueueConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
@@ -436,7 +440,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 string defaultTeamID = string.Empty;
                 AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(con);
                 TeamList _team = new TeamList();
-                string ProjectPropertyVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectPropertyVersion"];
+                string ProjectPropertyVersion = AppKeyConfiguration["ProjectPropertyVersion"];
                 con.VersionNumber = ProjectPropertyVersion;
                 con.ProjectId = projectID;
                 Projects projects = new Projects(con);

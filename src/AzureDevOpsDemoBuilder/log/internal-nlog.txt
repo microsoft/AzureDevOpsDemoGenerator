@@ -51,3 +51,68 @@
 2019-11-22 10:53:08.9771 Info Found 27 configuration items
 2019-11-22 10:53:09.0047 Info Configuration initialized.
 2019-11-22 10:53:09.0047 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 11:36:17.9466 Info Message Template Auto Format enabled
+2019-11-22 11:36:17.9466 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 11:36:18.1215 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 11:36:18.1348 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 11:36:18.1601 Info Found 27 configuration items
+2019-11-22 11:36:18.1732 Info Configuration initialized.
+2019-11-22 11:36:18.1781 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 11:36:25.5558 Info AppDomain Shutting down. Logger closing...
+2019-11-22 11:36:25.5764 Info Logger has been shut down.
+2019-11-22 11:38:21.1673 Info Message Template Auto Format enabled
+2019-11-22 11:38:21.1789 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 11:38:21.2850 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 11:38:21.2978 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 11:38:21.3216 Info Found 27 configuration items
+2019-11-22 11:38:21.3376 Info Configuration initialized.
+2019-11-22 11:38:21.3376 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 11:40:44.9687 Info Message Template Auto Format enabled
+2019-11-22 11:40:44.9821 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 11:40:45.0460 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 11:40:45.0753 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 11:40:45.0995 Info Found 27 configuration items
+2019-11-22 11:40:45.1248 Info Configuration initialized.
+2019-11-22 11:40:45.1248 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 11:48:44.9922 Info Message Template Auto Format enabled
+2019-11-22 11:48:44.9922 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 11:48:45.1271 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 11:48:45.1440 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 11:48:45.1733 Info Found 27 configuration items
+2019-11-22 11:48:45.1894 Info Configuration initialized.
+2019-11-22 11:48:45.1956 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 12:17:23.2136 Info Message Template Auto Format enabled
+2019-11-22 12:17:23.2251 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 12:17:23.3941 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 12:17:23.4090 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 12:17:23.4336 Info Found 27 configuration items
+2019-11-22 12:17:23.4463 Info Configuration initialized.
+2019-11-22 12:17:23.4463 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 13:39:41.9597 Info Message Template Auto Format enabled
+2019-11-22 13:39:41.9777 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 13:39:42.1100 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 13:39:42.1451 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 13:39:42.1982 Info Found 27 configuration items
+2019-11-22 13:39:42.2206 Info Configuration initialized.
+2019-11-22 13:39:42.2281 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 13:45:55.3311 Info Message Template Auto Format enabled
+2019-11-22 13:45:55.3535 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 13:45:55.4563 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 13:45:55.4863 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 13:45:55.5338 Info Found 27 configuration items
+2019-11-22 13:45:55.5588 Info Configuration initialized.
+2019-11-22 13:45:55.5670 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 13:54:50.9564 Info Message Template Auto Format enabled
+2019-11-22 13:54:50.9763 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 13:54:51.1546 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 13:54:51.1731 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 13:54:51.2109 Info Found 27 configuration items
+2019-11-22 13:54:51.2413 Info Configuration initialized.
+2019-11-22 13:54:51.2413 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.
+2019-11-22 14:05:51.5283 Info Message Template Auto Format enabled
+2019-11-22 14:05:51.5475 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-22 14:05:51.7178 Info Adding target FileTarget(Name=ownFile-web)
+2019-11-22 14:05:51.7404 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'allfile' not found for logging rule: *.
+2019-11-22 14:05:51.7828 Info Found 27 configuration items
+2019-11-22 14:05:51.8041 Info Configuration initialized.
+2019-11-22 14:05:51.8116 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.7.10445. Product version: 4.6.7.

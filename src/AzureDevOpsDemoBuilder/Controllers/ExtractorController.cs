@@ -94,8 +94,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     }
                     if (profile.displayName != null && profile.emailAddress != null)
                     {
-                        HttpContext.Session.SetString("User", profile.displayName);
-                        HttpContext.Session.SetString("Email", profile.emailAddress.ToLower());
+                        ViewData.Add("User", profile.displayName??string.Empty);
+                        ViewData.Add("Email", profile.emailAddress ?? profile.displayName.ToLower());
                     }
                     AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, accessDetails);
                     model.accessToken = accessDetails.access_token;
@@ -266,6 +266,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         #region GetCounts
         // Start Analysis process
         [AllowAnonymous]
+        [HttpPost]
         public JsonResult AnalyzeProject(Project model)
         {
             ExtractorAnalysis analysis = new ExtractorAnalysis();
