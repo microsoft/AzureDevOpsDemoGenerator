@@ -1,20 +1,17 @@
-﻿using AzureDevOpsAPI;
-using AzureDevOpsAPI.Viewmodel.ReleaseDefinition;
-using log4net;
+﻿using AzureDevOpsAPI.Viewmodel.ReleaseDefinition;
 using Newtonsoft.Json.Linq;
+using NLog;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AzureDevOpsAPI.Release
 {
     public class ReleaseDefinition : ApiServiceBase
     {
         public ReleaseDefinition(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(ReleaseDefinition));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create Release Definition
         /// </summary>
@@ -53,7 +50,7 @@ namespace AzureDevOpsAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -84,7 +81,7 @@ namespace AzureDevOpsAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRelease" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateRelease" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -120,7 +117,7 @@ namespace AzureDevOpsAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetEnvironmentIdsByName" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetEnvironmentIdsByName" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return environmentIds;
         }

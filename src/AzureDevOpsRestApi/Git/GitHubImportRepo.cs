@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using NLog;
+using System;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 
@@ -9,18 +11,25 @@ namespace AzureDevOpsAPI.Git
         public GitHubImportRepo(IAppConfiguration configuration) : base(configuration)
         {
         }
-
+        Logger logger = LogManager.GetLogger("*");
         public HttpResponseMessage GetUserDetail()
         {
-            //https://api.github.com/user
-            using (var client = GitHubHttpClient())
+            try
             {
-                client.DefaultRequestHeaders.Add("User-Agent", "demogenapi");
-                HttpResponseMessage response = client.GetAsync("/user").Result;
-                if (response.IsSuccessStatusCode)
+                //https://api.github.com/user
+                using (var client = GitHubHttpClient())
                 {
-                    return response;
+                    client.DefaultRequestHeaders.Add("User-Agent", "demogenapi");
+                    HttpResponseMessage response = client.GetAsync("/user").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return response;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage();
         }
@@ -28,32 +37,46 @@ namespace AzureDevOpsAPI.Git
         public HttpResponseMessage ForkRepo(string repoName)
         {
             HttpResponseMessage res = new HttpResponseMessage();
-            using (var client = GitHubHttpClient())
+            try
             {
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Add("User-Agent", _configuration.userName);
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                using (var client = GitHubHttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("User-Agent", _configuration.userName);
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
-                var jsonContent = new StringContent("", Encoding.UTF8, "application/json");
-                var method = new HttpMethod("POST");
-                //repos/octocat/Hello-World/forks
-                var request = new HttpRequestMessage(method, $"repos/{repoName}/forks") { Content = jsonContent };
-                res = client.SendAsync(request).Result;
+                    var jsonContent = new StringContent("", Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
+                    //repos/octocat/Hello-World/forks
+                    var request = new HttpRequestMessage(method, $"repos/{repoName}/forks") { Content = jsonContent };
+                    res = client.SendAsync(request).Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
         }
         public HttpResponseMessage ListForks(string repoName)
         {
             HttpResponseMessage res = new HttpResponseMessage();
-            using (var client = GitHubHttpClient())
+            try
             {
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Add("User-Agent", _configuration.userName);
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-                var method = new HttpMethod("GET");
-                /// repos /:owner /:repo / forks
-                var request = $"repos/{repoName}/forks";
-                res = client.GetAsync(request).Result;
+                using (var client = GitHubHttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("User-Agent", _configuration.userName);
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                    var method = new HttpMethod("GET");
+                    /// repos /:owner /:repo / forks
+                    var request = $"repos/{repoName}/forks";
+                    res = client.GetAsync(request).Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
         }

@@ -17,15 +17,14 @@ using AzureDevOpsAPI.Service;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.GitHub;
 using Parameters = AzureDevOpsAPI.Viewmodel.Extractor.GetServiceEndpoints;
-using log4net;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace AzureDevOpsDemoBuilder.Services
 {
     public class ExtractorService : IExtractorService
     {
         #region STATIC DECLARATIONS
-        public static ILog logger = LogManager.GetLogger(typeof(ExtractorService));
         public static readonly object objLock = new object();
         public static Dictionary<string, string> statusMessages;
         public static List<string> errorMessages = new List<string>();
@@ -33,10 +32,13 @@ namespace AzureDevOpsDemoBuilder.Services
         public static string extractedTemplatePath = string.Empty;
         private ProjectProperties.Properties projectProperties = new ProjectProperties.Properties();
         private static IWebHostEnvironment HostingEnvironment;
-        //public ExtractorService(IWebHostEnvironment _host)
-        //{
-        //    HostingEnvironment = _host;
-        //}
+        private ILogger<ExtractorService> logger;
+
+        public ExtractorService(IWebHostEnvironment _host, ILogger<ExtractorService> _logger)
+        {
+            HostingEnvironment = _host;
+            logger = _logger;
+        }
         public static void AddMessage(string id, string message)
         {
             lock (objLock)
@@ -345,7 +347,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new List<RequiredExtensions.ExtensionWithLink>();
         }
@@ -422,7 +424,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
 
         }
@@ -659,7 +661,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -689,7 +691,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -847,7 +849,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return 0;
         }
@@ -862,7 +864,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="repoName"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        private static int NormalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
+        private int NormalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
         {
             try
             {
@@ -1001,7 +1003,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "Exporting normalPipeline \t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug("Exporting normalPipeline \t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return count;
         }
@@ -1015,7 +1017,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="fileName"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        private static int YmlWithGitHub(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
+        private int YmlWithGitHub(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
         {
             try
             {
@@ -1089,7 +1091,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "Exporting ymlWithGitHub \t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug("Exporting ymlWithGitHub \t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return count;
         }
@@ -1103,7 +1105,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="fileName"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        private static int YmlWithAzureRepos(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
+        private int YmlWithAzureRepos(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken type)
         {
             try
             {
@@ -1168,7 +1170,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "Exporting ymlWithAzureRepos \t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug("Exporting ymlWithAzureRepos \t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return count;
         }
@@ -1339,7 +1341,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return 0;
@@ -1511,7 +1513,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
         }
         /// <summary>

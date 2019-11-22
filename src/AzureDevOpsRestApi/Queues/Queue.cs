@@ -1,17 +1,18 @@
-﻿using log4net;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Queue;
+using NLog;
 
 namespace AzureDevOpsAPI.Queues
 {
     public class Queue : ApiServiceBase
     {
         public Queue(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(Queue));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Agent queue
         /// </summary>
@@ -49,9 +50,9 @@ namespace AzureDevOpsAPI.Queues
 
                 return dicQueues;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new Dictionary<string, int>();
         }
@@ -91,9 +92,9 @@ namespace AzureDevOpsAPI.Queues
 
                 return viewModel.id;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateQueue" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return 0;
         }

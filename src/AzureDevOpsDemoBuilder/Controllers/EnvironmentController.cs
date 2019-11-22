@@ -20,6 +20,7 @@ using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -33,14 +34,17 @@ namespace AzureDevOpsDemoBuilder.Controllers
         private ITemplateService templateService;
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
+        private ILogger<EnvironmentController> logger;
 
-        public EnvironmentController(IProjectService _ProjectService, IConfiguration configuration, IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment hostEnvironment)
+        public EnvironmentController(IProjectService _ProjectService, IConfiguration configuration,
+            IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment hostEnvironment, ILogger<EnvironmentController> _logger)
         {
             projectService = _ProjectService;
             AppKeyConfiguration = configuration;
             accountService = _accountService;
             templateService = _templateService;
             HostingEnvironment = hostEnvironment;
+            logger = _logger;
         }
 
         [HttpGet]
@@ -164,6 +168,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 string TemplateSelected = string.Empty;
                 if (HttpContext.Session.GetString("visited") != null)
                 {
+                    logger.LogInformation("visited");
                     Project model = new Project();
                     if (HttpContext.Session.GetString("EnableExtractor") != null)
                     {
@@ -182,6 +187,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                     if (HttpContext.Session.GetString("PAT") != null)
                     {
+                        logger.LogInformation("PAT is not null");
                         _accessDetails.access_token = HttpContext.Session.GetString("PAT");
                         ProfileDetails profile = accountService.GetProfile(_accessDetails);
                         if (profile.displayName != null || profile.emailAddress != null)
@@ -269,8 +275,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                ViewBag.ErrorMessage = ex.Message;
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Redirect("../Account/Verify");
             }
         }
@@ -332,7 +337,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return View();
             }
         }
@@ -399,7 +404,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     strResult[1] = "Error occurred. Error details: " + ex.Message;
                     return Json(strResult);
                 }
@@ -461,7 +466,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 Directory.Delete(extractPath, true);
                 return Json(ex.Message);
             }
@@ -499,7 +504,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return null;
             }
             return Json(mod);
@@ -539,7 +544,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return true;
         }
@@ -584,7 +589,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
                         errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
 
-                        ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+                        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
                         string logWIT = AppKeyConfiguration["LogWIT"];
                         if (logWIT == "true")
@@ -596,7 +601,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally
             {
@@ -768,7 +773,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" });
             }
         }
@@ -823,7 +828,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" });
             }
             return Json(privateTemplate);

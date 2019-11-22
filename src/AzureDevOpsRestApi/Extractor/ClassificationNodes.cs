@@ -1,17 +1,18 @@
-﻿using log4net;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using AzureDevOpsAPI.Viewmodel.Extractor;
+using NLog;
 
 namespace AzureDevOpsAPI.Extractor
 {
     public class ClassificationNodes : ApiServiceBase
     {
         public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(ClassificationNodes));
+        Logger logger = LogManager.GetLogger("*");
         // Get Iteration Count
         public GetINumIteration.Iterations GetiterationCount()
         {
@@ -36,7 +37,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + ex.StackTrace + "\n");
             }
             return new GetINumIteration.Iterations();
         }
@@ -62,7 +63,7 @@ namespace AzureDevOpsAPI.Extractor
                         TeamList teamObj = JsonConvert.DeserializeObject<TeamList>(result);
                         foreach (var team in teamObj.value)
                         {
-                            if (team.id==defaultTeamId)
+                            if (team.id == defaultTeamId)
                             {
                                 team.isDefault = "true";
                             }
@@ -77,7 +78,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new TeamList();
@@ -99,7 +100,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + ex.StackTrace + "\n");
             }
             return response;
         }
@@ -130,7 +131,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new ExportBoardRows.Rows();
@@ -162,7 +163,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new ExportTeamSetting.Setting();
@@ -234,7 +235,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + ex.StackTrace + "\n");
             }
             return new ExportedIterations.Iterations();
         }

@@ -1,18 +1,18 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
+using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class WorkItem : ApiServiceBase
     {
         public WorkItem(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(WorkItem));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Method to create the workItems
         /// </summary>
@@ -70,7 +70,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -196,7 +196,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
 
@@ -252,7 +252,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new GetWorkItemsResponse.Results();
         }

@@ -1,6 +1,6 @@
 ﻿using AzureDevOpsRestApi.Viewmodel.Build;
-using log4net;
 using Newtonsoft.Json.Linq;
+using NLog;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -9,13 +9,15 @@ namespace AzureDevOpsAPI.Build
 {
     public class BuildDefinition : ApiServiceBase
     {
-        public BuildDefinition(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(BuildDefinition));
+        Logger logger = LogManager.GetLogger("*");
+        public BuildDefinition(IAppConfiguration configuration) : base(configuration)
+        {
+        }
         /// <summary>
         /// Create Build Definition
         /// </summary>
         /// <param name="json"></param>
-        /// <param name="project"></param>
+        /// <param name="prloggeroject"></param>
         /// <param name="selectedTemplate"></param>
         /// <returns></returns>
         public string[] CreateBuildDefinition(string json, string project, string selectedTemplate)

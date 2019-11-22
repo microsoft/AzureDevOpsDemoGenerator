@@ -1,17 +1,17 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.Service;
+using NLog;
 
 namespace AzureDevOpsAPI.Service
 {
     public class ServiceEndPoint : ApiServiceBase
     {
         public ServiceEndPoint(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(ServiceEndPoint));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create service endpoints
         /// </summary>
@@ -47,7 +47,7 @@ namespace AzureDevOpsAPI.Service
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateServiceEndPoint" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateServiceEndPoint" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new ServiceEndpointModel();
         }
@@ -77,7 +77,7 @@ namespace AzureDevOpsAPI.Service
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetServiceEndPoints" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetServiceEndPoints" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetServiceEndpoints.ServiceEndPoint();
         }

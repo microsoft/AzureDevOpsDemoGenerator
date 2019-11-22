@@ -1,16 +1,16 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
+using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class Cards : ApiServiceBase
     {
         public Cards(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(Cards));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Update Card fields
         /// </summary>
@@ -45,7 +45,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("UpdateCardField" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
 
         }
@@ -87,7 +87,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("ApplyRules" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
 
@@ -123,7 +123,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("EnablingEpic" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
     }

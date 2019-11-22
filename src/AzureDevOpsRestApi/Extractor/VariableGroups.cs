@@ -1,9 +1,9 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Extractor;
+using NLog;
 
 namespace AzureDevOpsAPI.Extractor
 {
@@ -12,7 +12,7 @@ namespace AzureDevOpsAPI.Extractor
         public VariableGroups(IAppConfiguration configuration) : base(configuration)
         {
         }
-        private ILog logger = LogManager.GetLogger(typeof(VariableGroups));
+        Logger logger = LogManager.GetLogger("*");
         public GetVariableGroups.Groups GetVariableGroups()
         {
             try
@@ -31,7 +31,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new GetVariableGroups.Groups();
         }

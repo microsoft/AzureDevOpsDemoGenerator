@@ -1,5 +1,4 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
@@ -7,13 +6,14 @@ using System.Text;
 using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.QueriesAndWidgets;
+using NLog;
 
 namespace AzureDevOpsAPI.QueriesAndWidgets
 {
     public class Queries : ApiServiceBase
     {
         public Queries(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(Queries));
+        Logger logger = LogManager.GetLogger("*");
 
         /// <summary>
         /// Get Existing Dashboard by ID
@@ -48,7 +48,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -98,11 +98,11 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
             }
             catch (OperationCanceledException opr)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new QueryResponse();
         }
@@ -133,13 +133,13 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                     else
                     {
                         string msg = response.Content.ReadAsStringAsync().Result;
-                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + msg + "\n");
+                        logger.Debug(msg + "\n");
                     }
                 }
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -168,7 +168,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
 
             return new QueryResponse();
@@ -207,7 +207,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -248,7 +248,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -279,7 +279,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new GetQueries.Queries();
         }

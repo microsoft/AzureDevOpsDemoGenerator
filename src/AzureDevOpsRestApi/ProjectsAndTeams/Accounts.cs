@@ -1,14 +1,14 @@
-﻿using log4net;
-using System;
+﻿using System;
 using System.Net.Http;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
+using NLog;
 
 namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Accounts : ApiServiceBase
     {
         public Accounts(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(Accounts));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Account members
         /// </summary>
@@ -33,9 +33,9 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                     return viewModel;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new AccountMembers.Account();
         }

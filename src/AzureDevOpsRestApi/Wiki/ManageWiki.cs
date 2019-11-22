@@ -1,16 +1,16 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Wiki;
+using NLog;
 
 namespace AzureDevOpsAPI.Wiki
 {
     public class ManageWiki : ApiServiceBase
     {
         public ManageWiki(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(ManageWiki));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create wiki
         /// </summary>
@@ -45,7 +45,7 @@ namespace AzureDevOpsAPI.Wiki
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateProjectWiki" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new ProjectwikiResponse.Projectwiki();
         }
@@ -86,7 +86,7 @@ namespace AzureDevOpsAPI.Wiki
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateUpdatePages" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -118,7 +118,7 @@ namespace AzureDevOpsAPI.Wiki
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("MovePages" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -146,9 +146,9 @@ namespace AzureDevOpsAPI.Wiki
                     }
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("DeletePage" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -177,9 +177,9 @@ namespace AzureDevOpsAPI.Wiki
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateCodeWiki" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }

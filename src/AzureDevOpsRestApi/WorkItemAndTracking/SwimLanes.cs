@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -8,7 +8,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
     public class SwimLanes : ApiServiceBase
     {
         public SwimLanes(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(SwimLanes));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Update swim lanes
         /// </summary>
@@ -42,7 +42,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project template setting" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("UpdateSwimLanes" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }

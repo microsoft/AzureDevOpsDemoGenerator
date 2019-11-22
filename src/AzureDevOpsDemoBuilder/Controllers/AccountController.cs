@@ -1,18 +1,14 @@
-﻿using log4net;
+﻿using AzureDevOpsDemoBuilder.Models;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using AzureDevOpsDemoBuilder.Models;
-using AzureDevOpsDemoBuilder.ServiceInterfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -21,19 +17,17 @@ namespace AzureDevOpsDemoBuilder.Controllers
     {
         private readonly AccessDetails accessDetails = new AccessDetails();
         private TemplateSelection.Templates templates = new TemplateSelection.Templates();
-        private ILog logger = LogManager.GetLogger(typeof(AccountController));
         //private IProjectService projectService;
         private IWebHostEnvironment HostingEnvironment;
-        //private ISession Session;
+        private ILogger<AccountController> logger;
         private IAccountService _accountService;
-
         public IConfiguration AppKeyConfiguration { get; }
-
-        public AccountController(IAccountService accountService, IConfiguration configuration, IWebHostEnvironment _webHostEnvironment)
+        public AccountController(IAccountService accountService, IConfiguration configuration, IWebHostEnvironment _webHostEnvironment, ILogger<AccountController> _logger)
         {
             _accountService = accountService;
             AppKeyConfiguration = configuration;
             HostingEnvironment = _webHostEnvironment;
+            logger = _logger;
         }
 
         [HttpGet]
@@ -118,7 +112,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
+                logger.LogDebug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
             return View(model);
         }
@@ -162,7 +156,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
+                logger.LogDebug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
             return RedirectToAction("verify");
         }

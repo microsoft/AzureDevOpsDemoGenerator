@@ -1,6 +1,6 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NLog;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.TestManagement
     public class TestManagement : ApiServiceBase
     {
         public TestManagement(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(TestManagement));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create test plans
         /// </summary>
@@ -49,7 +49,7 @@ namespace AzureDevOpsAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -97,7 +97,7 @@ namespace AzureDevOpsAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreatTestSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -137,7 +137,7 @@ namespace AzureDevOpsAPI.TestManagement
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddTestCasesToSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("AddTestCasesToSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }

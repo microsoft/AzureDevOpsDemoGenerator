@@ -11,6 +11,7 @@ using System.Web;
 using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using AzureDevOpsDemoBuilder.Services;
+using Microsoft.Extensions.Logging;
 
 namespace AzureDevOpsDemoBuilder.Services
 {
@@ -18,9 +19,13 @@ namespace AzureDevOpsDemoBuilder.Services
     {
         public IConfiguration AppKeyConfiguration { get; }
 
-        public AccountService(IConfiguration configuration)
+        private ILogger<AccountService> logger;
+
+        public AccountService(IConfiguration configuration, ILogger<AccountService> _logger)
         {
             AppKeyConfiguration = configuration;
+            logger = _logger;
+
         }
         /// <summary>
         /// Formatting the request for OAuth
@@ -41,7 +46,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //ViewBag.ErrorMessage = ex.Message;
             }
             return string.Empty;
@@ -77,7 +82,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //ViewBag.ErrorMessage = ex.Message;
             }
             return new AccessDetails();
@@ -111,12 +116,12 @@ namespace AzureDevOpsDemoBuilder.Services
                     else
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
-                        ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Profile :" + errorMessage + "\n");
+                        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Profile :" + errorMessage + "\n");
                     }
                 }
                 catch (Exception ex)
                 {
-                    ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 }
                 return profile;
             }
@@ -160,7 +165,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
-                    ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     return new AccessDetails();
                 }
             }
@@ -193,12 +198,12 @@ namespace AzureDevOpsDemoBuilder.Services
                 else
                 {
                     var errorMessage = response.Content.ReadAsStringAsync();
-                    ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Accounts :" + errorMessage + "\t" + "\n");
+                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Get Accounts :" + errorMessage + "\t" + "\n");
                 }
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return accounts;
         }

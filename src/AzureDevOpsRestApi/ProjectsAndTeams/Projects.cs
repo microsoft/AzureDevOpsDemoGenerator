@@ -1,5 +1,4 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
@@ -9,15 +8,14 @@ using System.Text;
 using AzureDevOpsAPI.Extractor;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
-
-
+using NLog;
 
 namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Projects : ApiServiceBase
     {
         public Projects(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(Projects));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Check for the existance of project
         /// </summary>
@@ -53,7 +51,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
         }
@@ -93,14 +91,14 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         }
                         LastFailureMessage = error;
-                        logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + error + "\n");
+                        logger.Info(error + "\n");
                         return "-1";
                     }
                 }
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return "-1";
         }
@@ -134,7 +132,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return Guid.Empty.ToString();
         }
@@ -176,7 +174,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -232,7 +230,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new ProjectProperties.Properties();
         }

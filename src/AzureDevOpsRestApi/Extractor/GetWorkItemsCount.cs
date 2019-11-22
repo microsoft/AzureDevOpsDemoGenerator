@@ -1,9 +1,10 @@
-﻿using log4net;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Extractor;
+using NLog;
 
 namespace AzureDevOpsAPI.Extractor
 {
@@ -14,7 +15,7 @@ namespace AzureDevOpsAPI.Extractor
         {
 
         }
-        private ILog logger = LogManager.GetLogger(typeof(GetWorkItemsCount));
+        Logger logger = LogManager.GetLogger("*");
         public class WIMapData
         {
             public string oldID { get; set; }
@@ -78,7 +79,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
                 string error = ex.Message;
                 LastFailureMessage = error;
             }
@@ -111,7 +112,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
                 string error = ex.Message;
                 LastFailureMessage = error;
             }
@@ -127,7 +128,7 @@ namespace AzureDevOpsAPI.Extractor
             {
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/_apis/wit/workitemtypes?api-version={2}", _configuration.UriString, _configuration.Project ,_configuration.VersionNumber)).Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/_apis/wit/workitemtypes?api-version={2}", _configuration.UriString, _configuration.Project, _configuration.VersionNumber)).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         WorkItemNames.Names workItemNames = JsonConvert.DeserializeObject<WorkItemNames.Names>(response.Content.ReadAsStringAsync().Result);
@@ -141,7 +142,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
                 string error = ex.Message;
                 LastFailureMessage = error;
             }

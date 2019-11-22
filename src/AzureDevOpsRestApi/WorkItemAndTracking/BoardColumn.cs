@@ -1,10 +1,10 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
+using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
@@ -12,7 +12,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
     {
         public string rowFieldName;
         public BoardColumn(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(BoardColumn));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Update kanban board colums styles
         /// </summary>
@@ -86,7 +86,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("UpdateBoard" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -120,9 +120,9 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetBoardColumns" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetBoardColumnResponse.ColumnResponse();
         }
@@ -150,9 +150,9 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetBoardColumnsAgile" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetBoardColumnResponseAgile.ColumnResponse();
         }

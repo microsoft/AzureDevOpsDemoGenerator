@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.VisualStudio.Services.Gallery.WebApi;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace VstsDemoBuilder.Controllers.Apis
 {
@@ -26,12 +27,14 @@ namespace VstsDemoBuilder.Controllers.Apis
         public int usercount = 0;
         private ProjectService projectService;
         private IWebHostEnvironment HostingEnvironment;
+        private ILogger<ProjectController> logger;
         private IHttpContextAccessor HttpAccessor;
 
-        public ProjectController(IWebHostEnvironment _hosting, IHttpContextAccessor _context)
+        public ProjectController(IWebHostEnvironment _hosting, IHttpContextAccessor _context, ILogger<ProjectController> _logger)
         {
             HttpAccessor = _context;
             HostingEnvironment = _hosting;
+            logger = _logger;
         }
 
         [HttpPost]
@@ -238,7 +241,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return StatusCode(500);
             }
             returnObj.users = returnProjects;
@@ -305,7 +308,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                             errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
                             errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
 
-                            ProjectService.logger.Error(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+                            logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
                             string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
                             if (logWIT == "true")
@@ -319,7 +322,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally
             {

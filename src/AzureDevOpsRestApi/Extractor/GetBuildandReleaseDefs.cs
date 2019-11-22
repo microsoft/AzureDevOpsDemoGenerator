@@ -1,18 +1,18 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.Queue;
+using NLog;
 
 namespace AzureDevOpsAPI.Extractor
 {
     public class BuildandReleaseDefs : ApiServiceBase
     {
         public BuildandReleaseDefs(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(BuildandReleaseDefs));
+        Logger logger = LogManager.GetLogger("*");
         //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
         // Get Build Definition count
         public GetBuildDefResponse.BuildDef GetBuildDefCount()
@@ -38,7 +38,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new GetBuildDefResponse.BuildDef();
         }
@@ -69,7 +69,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
                 LastFailureMessage = ex.Message;
             }
             return new GetReleaseDefResponse.ReleaseDef();
@@ -99,7 +99,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new GetReleaseDefResponse.ReleaseDef();
         }
@@ -139,7 +139,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new List<JObject>();
         }
@@ -160,9 +160,9 @@ namespace AzureDevOpsAPI.Extractor
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new RepositoryList.Repository();
         }
@@ -217,7 +217,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new List<JObject>();
         }
@@ -257,7 +257,7 @@ namespace AzureDevOpsAPI.Extractor
             }
             catch (Exception ex)
             {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new Dictionary<string, int>();
         }

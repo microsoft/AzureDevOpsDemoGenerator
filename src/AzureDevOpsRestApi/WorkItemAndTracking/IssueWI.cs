@@ -1,14 +1,14 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using AzureDevOpsAPI.Services;
+using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class IssueWI
     {
         private AppConfiguration con = new AppConfiguration();
-        private ILog logger = LogManager.GetLogger(typeof(IssueWI));
+        Logger logger = LogManager.GetLogger("*");
 
         // Create Issue Work Items
         public void CreateIssueWI(string credential, string version, string url, string issueName, string description, string projectId, string tag)
@@ -32,7 +32,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
 
@@ -65,7 +65,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
     }

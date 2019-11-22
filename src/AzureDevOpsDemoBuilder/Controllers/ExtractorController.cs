@@ -1,5 +1,4 @@
-﻿using log4net;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,6 +18,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using AzureDevOpsAPI;
+using Microsoft.Extensions.Logging;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -31,18 +31,21 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         public IConfiguration AppKeyConfiguration { get; }
 
+        private ILogger<ExtractorController> logger;
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
-        public ExtractorController(IConfiguration configuration, IAccountService _accountService, IExtractorService _extractorService, IWebHostEnvironment hostEnvironment)
+        public ExtractorController(IConfiguration configuration, IAccountService _accountService,
+            IExtractorService _extractorService, IWebHostEnvironment hostEnvironment, ILogger<ExtractorController> _logger)
         {
             HostingEnvironment = hostEnvironment;
             accountService = _accountService;
             extractorService = _extractorService;
             AppKeyConfiguration = configuration;
+            logger = _logger;
         }
 
         [AllowAnonymous]
-        public ActionResult NotFound()
+        public ActionResult PageNotFound()
         {
             return View();
         }
@@ -115,7 +118,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return View(model);
         }
@@ -150,7 +153,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 projectResult.errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
             }
@@ -181,7 +184,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new JsonResult(string.Empty);
 
@@ -216,7 +219,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     string projectId = AppKeyConfiguration["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                     IssueWI objIssue = new IssueWI();
-                    ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Extractor_" + errorMessages + "\n");
+                    logger.LogDebug("\t Extractor_" + errorMessages + "\n");
                     string logWIT = "true"; //AppKeyConfiguration["LogWIT"];
                     if (logWIT == "true")
                     {
@@ -479,7 +482,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ExtractorService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             finally
             {

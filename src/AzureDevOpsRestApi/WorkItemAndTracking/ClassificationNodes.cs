@@ -1,18 +1,18 @@
-﻿using log4net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Sprint;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
+using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class ClassificationNodes : ApiServiceBase
     {
         public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(ClassificationNodes));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Iteration
         /// </summary>
@@ -39,7 +39,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodesResponse.Nodes();
         }
@@ -81,7 +81,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodeResponse.Node();
         }
@@ -125,7 +125,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodeResponse.Node();
         }
@@ -182,7 +182,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -244,7 +244,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodeResponse.Node();
         }
@@ -302,7 +302,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return isSuccessful;
         }
@@ -325,7 +325,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new SprintResponse.Sprints();
         }

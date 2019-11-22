@@ -8,14 +8,21 @@ using AzureDevOpsDemoBuilder.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
     public class GitHubController : Controller
     {
+        public GitHubController(ILogger<GitHubController> _logger)
+        {
+            logger = _logger;
+        }
 
         private GitHubAccessDetails accessDetails = new GitHubAccessDetails();
         public static string state = Guid.NewGuid().ToString().Split('-')[0];
+        private ILogger<GitHubController> logger;
+
         [AllowAnonymous]
         public ActionResult GitOauth()
         {
@@ -30,27 +37,34 @@ namespace AzureDevOpsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Redirect()
         {
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            // Here we get the Code in the Query String, using that we can get access token
-            var request = Request;
-            string code = HttpContext.Request.Query["code"];
-            if (!string.IsNullOrEmpty(code))
+            try
             {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                // Here we get the Code in the Query String, using that we can get access token
+                var request = Request;
+                string code = HttpContext.Request.Query["code"];
+                if (!string.IsNullOrEmpty(code))
+                {
 
-                string reqUrl = FormatRequestUrl(code);
-                // Getting access token, if access token is null, will return to Index page [relogin takes place]
-                GitHubAccessDetails _accessDetails = GetAccessToken(reqUrl);
-                if (_accessDetails.access_token != null)
-                {
-                    HttpContext.Session.SetString("GitHubToken", _accessDetails.access_token);
-                    ViewBag.Response = _accessDetails.access_token;
-                    return RedirectToAction("Status");
+                    string reqUrl = FormatRequestUrl(code);
+                    // Getting access token, if access token is null, will return to Index page [relogin takes place]
+                    GitHubAccessDetails _accessDetails = GetAccessToken(reqUrl);
+                    if (_accessDetails.access_token != null)
+                    {
+                        HttpContext.Session.SetString("GitHubToken", _accessDetails.access_token);
+                        ViewBag.Response = _accessDetails.access_token;
+                        return RedirectToAction("Status");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Issue");
+                    }
                 }
-                else
-                {
-                    return RedirectToAction("Issue");
-                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogDebug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return RedirectToAction("index", "home");
         }
@@ -86,7 +100,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
-                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.LogDebug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GitHubAccessDetails();
         }

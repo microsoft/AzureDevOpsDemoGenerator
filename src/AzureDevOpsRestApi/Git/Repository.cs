@@ -1,17 +1,17 @@
-﻿using log4net;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using AzureDevOpsAPI.Viewmodel.Repository;
+using NLog;
 
 namespace AzureDevOpsAPI.Git
 {
     public class Repository : ApiServiceBase
     {
         public Repository(IAppConfiguration configuration) : base(configuration) { }
-        private ILog logger = LogManager.GetLogger(typeof(Repository));
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Source Code from Git Hub
         /// </summary>
@@ -45,7 +45,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -79,7 +79,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetRepositoryToDelete" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetRepositoryToDelete" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
 
             return string.Empty;
@@ -119,7 +119,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -151,7 +151,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetAllRepositories" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("GetAllRepositories" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetAllRepositoriesResponse.Repositories();
         }
@@ -198,7 +198,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -225,7 +225,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "DeleteRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("DeleteRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -269,7 +269,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreatePullRequest" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreatePullRequest" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { };
         }
@@ -311,7 +311,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateCommentThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("CreateCommentThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
         }
@@ -350,7 +350,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "AddCommentToThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug("AddCommentToThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
 
