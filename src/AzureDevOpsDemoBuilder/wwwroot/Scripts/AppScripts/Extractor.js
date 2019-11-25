@@ -329,8 +329,8 @@ function getStatus() {
         url: 'GetCurrentProgress/' + uniqueId,
         type: 'GET',
         success: function (data) {
+            console.log(data);
             var isMessageShown = true;
-
             if (jQuery.inArray(data, messageList) === -1) {
                 messageList.push(data);
                 isMessageShown = false;
