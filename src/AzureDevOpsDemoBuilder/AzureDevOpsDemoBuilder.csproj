@@ -166,6 +166,7 @@
 
   <ItemGroup>
     <Folder Include="log\" />
+    <Folder Include="wwwroot\ExtractedTemplate\" />
   </ItemGroup>
 
 </Project>

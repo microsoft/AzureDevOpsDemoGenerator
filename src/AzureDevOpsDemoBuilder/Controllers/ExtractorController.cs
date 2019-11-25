@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using AzureDevOpsAPI;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -94,7 +95,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     }
                     if (profile.displayName != null && profile.emailAddress != null)
                     {
-                        ViewData.Add("User", profile.displayName??string.Empty);
+                        ViewData.Add("User", profile.displayName ?? string.Empty);
                         ViewData.Add("Email", profile.emailAddress ?? profile.displayName.ToLower());
                     }
                     AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, accessDetails);
@@ -191,20 +192,19 @@ namespace AzureDevOpsDemoBuilder.Controllers
         }
 
         // End the extraction process
-        public void EndEnvironmentSetupProcess(IAsyncResult result)
+        public void EndEnvironmentSetupProcess(IAsyncResult result, Project model)
         {
             ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
-            string[] strResult = processTask.EndInvoke(result);
-
-            ExtractorService.RemoveKey(strResult[0]);
-            if (ExtractorService.StatusMessages.Keys.Count(x => x == strResult[0] + "_Errors") == 1)
+            //string[] strResult = processTask.EndInvoke(result);
+            ExtractorService.RemoveKey(model.id);
+            if (ExtractorService.StatusMessages.Keys.Count(x => x == model.id + "_Errors") == 1)
             {
-                string errorMessages = ExtractorService.statusMessages[strResult[0] + "_Errors"];
+                string errorMessages = ExtractorService.statusMessages[model.id + "_Errors"];
                 if (errorMessages != "")
                 {
                     //also, log message to file system
                     string logPath = HostingEnvironment.WebRootPath + @"\Log";
-                    string accountName = strResult[1];
+                    string accountName = model.accountName;
                     string fileName = string.Format("{0}_{1}.txt", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                     if (!Directory.Exists(logPath))
@@ -267,8 +267,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
         // Start Analysis process
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult AnalyzeProject(Project model)
+        public JsonResult AnalyzeProject(string ProjectName, string accessToken, string accountName)
         {
+            Project model = new Project { ProjectName = ProjectName, accessToken = accessToken, accountName = accountName };
             ExtractorAnalysis analysis = new ExtractorAnalysis();
             ProjectConfigurations appConfig = extractorService.ProjectConfiguration(model);
             analysis.teamCount = extractorService.GetTeamsCount(appConfig);
@@ -286,13 +287,27 @@ namespace AzureDevOpsDemoBuilder.Controllers
         //Initiate the extraction process
         [HttpPost]
         [AllowAnonymous]
-        public bool StartEnvironmentSetupProcess(Project model)
+        public bool StartEnvironmentSetupProcess(string projectName, string SourceAcc, string key, string uniqueId, string processTemplate, string project)
         {
+            Project model = new Project
+            {
+                ProjectName = projectName,
+                accountName = SourceAcc,
+                accessToken = key,
+                id = uniqueId,
+                ProcessTemplate = processTemplate,
+                ProjectId = project
+            };
             HttpContext.Session.SetString("Project", model.ProjectName);
             ExtractorService.AddMessage(model.id, string.Empty);
             ExtractorService.AddMessage(model.id.ErrorId(), string.Empty);
             ProcessEnvironment processTask = new ProcessEnvironment(extractorService.GenerateTemplateArifacts);
-            processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+            //processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+            var workTask = Task.Run(() => processTask.Invoke(model));
+            workTask.ContinueWith((antecedent) =>
+            {
+                EndEnvironmentSetupProcess(workTask, model);
+            });
             return true;
         }
         #endregion end extract template
@@ -312,7 +327,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
-            string filePath = HostingEnvironment.WebRootPath + @"ExtractedTemplate\" + fileName;
+            string filePath = HostingEnvironment.WebRootPath + @"\\ExtractedTemplate\" + fileName;
             try
             {
                 CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();

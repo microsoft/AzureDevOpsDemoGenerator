@@ -149,7 +149,7 @@ $(document).ready(function () {
                     $('#projecctDiv').removeClass('lodergif_div');
                     //$('#projectloader').addClass('d-none');
                     $('#processtemplate').empty().val(res.value[4].value);
-                    $('#TemplateClass').empty().val(res.TypeClass);
+                    $('#TemplateClass').empty().val(res.typeClass);
                     $('#processTemplateLoader').addClass('d-none');
                     var p = res.value[4].value;
                     //if (p !== "Scrum" && p !== "Agile" && p !== "Basic") {
@@ -190,10 +190,7 @@ $(document).ready(function () {
             $("#projectSelect_Error").removeClass('d-none');
             return;
         }
-        var Project = {
-            ProjectName: projectName,
-            accountName: SourceAcc, accessToken: key
-        };
+
         $('#Analyse').removeClass('btn-primary').attr('disabled', 'disabled');
         //$('#imgLoading').removeClass('d-none');
         $('#Analyse').addClass('lodergif');
@@ -209,9 +206,7 @@ $(document).ready(function () {
         $.ajax({
             url: '../Extractor/AnalyzeProject',
             type: 'POST',
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify(Project),
+            data: { ProjectName: projectName, accessToken: key, accountName: SourceAcc },
             success: function (res) {
                 console.log(res);
                 var row = "";
@@ -294,8 +289,7 @@ $(document).ready(function () {
             return;
         }
         var projects = {
-            ProjectName: projectName,
-            accountName: SourceAcc, accessToken: key, id: uniqueId, ProcessTemplate: processTemplate, ProjectId: project
+            projectName: projectName, SourceAcc: SourceAcc, key: key, uniqueId: uniqueId, processTemplate: processTemplate, project: project
         };
         $('#ExStatus-messages').html('');
         $('#ExStatus-messages').show();
@@ -310,10 +304,9 @@ $(document).ready(function () {
         $.ajax({
             url: '../Extractor/StartEnvironmentSetupProcess',
             type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(projects),
+            data: { projectName: projectName, SourceAcc: SourceAcc, key: key, uniqueId: uniqueId, processTemplate: processTemplate, project: project },
             success: function (res) {
-                if (res === "True") {
+                if (res === true) {
                     getStatus();
                 }
             },
