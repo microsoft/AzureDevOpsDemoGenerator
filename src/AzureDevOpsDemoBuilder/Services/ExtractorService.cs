@@ -73,26 +73,26 @@ namespace AzureDevOpsDemoBuilder.Services
                 statusMessages = value;
             }
         }
-        public static string GetStatusMessage(string id)
+        public static JObject GetStatusMessage(string id)
         {
-            lock (objLock)
+            lock (ProjectService.objLock)
             {
                 string message = string.Empty;
-                if (StatusMessages.Keys.Count(x => x == id) == 1)
+                JObject obj = new JObject();
+                if (id.EndsWith("_Errors"))
                 {
-                    message = StatusMessages[id];
+                    //RemoveKey(id);
+                    obj["status"] = "Error: \t" + ProjectService.StatusMessages[id];
+                }
+                if (ProjectService.StatusMessages.Keys.Count(x => x == id) == 1)
+                {
+                    obj["status"] = ProjectService.StatusMessages[id];
                 }
                 else
                 {
-                    return "100";
+                    obj["status"] = "100";
                 }
-
-                if (id.EndsWith("_Errors"))
-                {
-                    RemoveKey(id);
-                }
-
-                return message;
+                return obj;
             }
         }
 
