@@ -56,7 +56,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     StatusMessages[id] = message;
                 }
             }
-        }   
+        }
         public static Dictionary<string, string> StatusMessages
         {
             get
@@ -351,6 +351,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.ExtensionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return new List<RequiredExtensions.ExtensionWithLink>();
         }
@@ -665,6 +666,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(con.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return false;
         }
@@ -695,77 +697,94 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.BoardConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return false;
         }
 
         public void ExportWorkItems(ProjectConfigurations appConfig)
         {
-            string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
-            if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project))
+            try
             {
-                Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project);
-            }
-
-            if (workItemtypes.Length > 0)
-            {
-                foreach (var WIT in workItemtypes)
+                string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
+                if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project))
                 {
-                    GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
-                    WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
-                    string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
-                    if (fetchedWorkItem.count > 0)
+                    Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project);
+                }
+
+                if (workItemtypes.Length > 0)
+                {
+                    foreach (var WIT in workItemtypes)
                     {
-                        workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project, "$ProjectName$");
-                        string item = WIT;
-                        if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems"))
+                        GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
+                        WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
+                        string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
+                        if (fetchedWorkItem.count > 0)
                         {
-                            Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems");
+                            workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project, "$ProjectName$");
+                            string item = WIT;
+                            if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems"))
+                            {
+                                Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems");
+                            }
+                            File.WriteAllText(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems\\" + item + ".json", workItemJson);
                         }
-                        File.WriteAllText(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems\\" + item + ".json", workItemJson);
-                    }
-                    else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
-                    {
-                        AddMessage(appConfig.WorkItemConfig.Id.ErrorId(), WorkitemsCount.LastFailureMessage);
+                        else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
+                        {
+                            AddMessage(appConfig.WorkItemConfig.Id.ErrorId(), WorkitemsCount.LastFailureMessage);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.WorkItemConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
         }
 
         public void ExportRepositoryList(ProjectConfigurations appConfig)
         {
-            BuildandReleaseDefs repolist = new BuildandReleaseDefs(appConfig.RepoConfig);
-            RepositoryList.Repository repos = repolist.GetRepoList();
-            if (repos.count > 0)
+            try
             {
-                foreach (var repo in repos.value)
+                BuildandReleaseDefs repolist = new BuildandReleaseDefs(appConfig.RepoConfig);
+                RepositoryList.Repository repos = repolist.GetRepoList();
+                if (repos.count > 0)
                 {
-                    string preSettingPath = HostingEnvironment.WebRootPath + @"\\PreSetting";
-                    string templateFolderPath = extractedTemplatePath + appConfig.RepoConfig.Project;
-                    string host = appConfig.RepoConfig.UriString + appConfig.RepoConfig.Project;
-                    string sourceCodeJson = File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
-                    sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                    string endPointJson = File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
-                    endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                    if (!Directory.Exists(templateFolderPath + "\\ImportSourceCode"))
+                    foreach (var repo in repos.value)
                     {
-                        Directory.CreateDirectory(templateFolderPath + "\\ImportSourceCode");
-                        File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
-                    }
-                    else
-                    {
-                        File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
-                    }
-                    if (!Directory.Exists(templateFolderPath + "\\ServiceEndpoints"))
-                    {
-                        Directory.CreateDirectory(templateFolderPath + "\\ServiceEndpoints");
-                        File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
-                    }
-                    else
-                    {
-                        File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                        string preSettingPath = HostingEnvironment.WebRootPath + @"\\PreSetting";
+                        string templateFolderPath = extractedTemplatePath + appConfig.RepoConfig.Project;
+                        string host = appConfig.RepoConfig.UriString + appConfig.RepoConfig.Project;
+                        string sourceCodeJson = File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
+                        sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
+                        string endPointJson = File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
+                        endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
+                        if (!Directory.Exists(templateFolderPath + "\\ImportSourceCode"))
+                        {
+                            Directory.CreateDirectory(templateFolderPath + "\\ImportSourceCode");
+                            File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                        }
+                        else
+                        {
+                            File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                        }
+                        if (!Directory.Exists(templateFolderPath + "\\ServiceEndpoints"))
+                        {
+                            Directory.CreateDirectory(templateFolderPath + "\\ServiceEndpoints");
+                            File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                        }
+                        else
+                        {
+                            File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.RepoConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -853,6 +872,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.BuildDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return 0;
         }
@@ -1007,6 +1027,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug("Exporting normalPipeline \t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return count;
         }
@@ -1095,6 +1116,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug("Exporting ymlWithGitHub \t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return count;
         }
@@ -1174,6 +1196,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug("Exporting ymlWithAzureRepos \t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
             return count;
         }
