@@ -85,7 +85,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 if (HttpContext.Session.GetString("EnableExtractor") == null || HttpContext.Session.GetString("EnableExtractor").ToLower() == "false")
                 {
                     logger.LogInformation("Extractor flag false, redirecting");
-                    return RedirectToAction("NotFound");
+                    return RedirectToAction("PageNotFound");
                 }
                 if (string.IsNullOrEmpty(pat))
                 {
