@@ -353,9 +353,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
             {
                 try
                 {
-                    if (!Directory.Exists(HostingEnvironment.WebRootPath + @"\ExtractedZipFile"))
+                    if (!Directory.Exists(HostingEnvironment.ContentRootPath + @"\ExtractedZipFile"))
                     {
-                        Directory.CreateDirectory(HostingEnvironment.WebRootPath + @"\ExtractedZipFile");
+                        Directory.CreateDirectory(HostingEnvironment.ContentRootPath + @"\ExtractedZipFile");
                     }
                     //  Get all files from Request object  
                     IFormFileCollection files = Request.Form.Files;
@@ -372,9 +372,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
                             fileName = testFiles[testFiles.Length - 1];
                             templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + ".zip";
 
-                            if (System.IO.File.Exists(Path.Combine(HostingEnvironment.WebRootPath + "/ExtractedZipFile/", templateName)))
+                            if (System.IO.File.Exists(Path.Combine(HostingEnvironment.ContentRootPath + "/ExtractedZipFile/", templateName)))
                             {
-                                System.IO.File.Delete(Path.Combine(HostingEnvironment.WebRootPath + "/ExtractedZipFile/", templateName));
+                                System.IO.File.Delete(Path.Combine(HostingEnvironment.ContentRootPath + "/ExtractedZipFile/", templateName));
                             }
                         }
                         else
@@ -382,14 +382,14 @@ namespace AzureDevOpsDemoBuilder.Controllers
                             fileName = file.FileName;
                             templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + ".zip";
 
-                            if (System.IO.File.Exists(Path.Combine(HostingEnvironment.WebRootPath + "/ExtractedZipFile/", templateName)))
+                            if (System.IO.File.Exists(Path.Combine(HostingEnvironment.ContentRootPath + "/ExtractedZipFile/", templateName)))
                             {
-                                System.IO.File.Delete(Path.Combine(HostingEnvironment.WebRootPath + ("/ExtractedZipFile/"), templateName));
+                                System.IO.File.Delete(Path.Combine(HostingEnvironment.ContentRootPath + ("/ExtractedZipFile/"), templateName));
                             }
                         }
 
                         // Get the complete folder path and store the file inside it.  
-                        fileName = Path.Combine(HostingEnvironment.WebRootPath + "~/ExtractedZipFile/", templateName);
+                        fileName = Path.Combine(HostingEnvironment.ContentRootPath + "\\ExtractedZipFile\\", templateName);
 
                         using (var stream = new FileStream(fileName, FileMode.Create))
                         {
@@ -422,16 +422,12 @@ namespace AzureDevOpsDemoBuilder.Controllers
             string extractPath = string.Empty;
             try
             {
-                if (!System.IO.Directory.Exists(HostingEnvironment.WebRootPath + @"\Logs"))
+                if (!Directory.Exists(HostingEnvironment.ContentRootPath + @"\PrivateTemplates"))
                 {
-                    Directory.CreateDirectory(HostingEnvironment.WebRootPath + @"\Logs");
-                }
-                if (!Directory.Exists(HostingEnvironment.WebRootPath + @"\PrivateTemplates"))
-                {
-                    Directory.CreateDirectory(HostingEnvironment.WebRootPath + @"\PrivateTemplates");
+                    Directory.CreateDirectory(HostingEnvironment.ContentRootPath + @"\PrivateTemplates");
                 }
                 //Deleting uploaded zip files present from last one hour
-                string extractedZipFile = HostingEnvironment.WebRootPath + @"\ExtractedZipFile\";
+                string extractedZipFile = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\";
                 if (Directory.Exists(extractedZipFile))
                 {
                     string[] subdirs = Directory.GetFiles(extractedZipFile)
@@ -445,11 +441,11 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     }
                 }
 
-                string zipPath = HostingEnvironment.WebRootPath + "/ExtractedZipFile/" + fineName;
+                string zipPath = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\" + fineName;
                 string folder = fineName.Replace(".zip", "");
                 privateTemplate.privateTemplateName = folder;
 
-                extractPath = HostingEnvironment.WebRootPath + "/PrivateTemplates/" + folder;
+                extractPath = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\" + folder;
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
                 privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
@@ -813,7 +809,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
                     if (privateTemplate.responseMessage != "SUCCESS")
                     {
-                        var templatepath = HostingEnvironment.WebRootPath + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
+                        var templatepath = HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
                         if (Directory.Exists(templatepath))
                             Directory.Delete(templatepath, true);
                     }

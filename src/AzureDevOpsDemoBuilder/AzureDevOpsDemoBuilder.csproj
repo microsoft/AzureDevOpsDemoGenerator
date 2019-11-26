@@ -166,6 +166,7 @@
 
   <ItemGroup>
     <Folder Include="ExtractedTemplate\" />
+    <Folder Include="PrivateTemplates\" />
     <Folder Include="wwwroot\ExtractedTemplate\" />
   </ItemGroup>
 
