@@ -207,7 +207,10 @@ namespace AzureDevOpsDemoBuilder.Services
         public string[] GenerateTemplateArifacts(Project model)
         {
             extractedTemplatePath = HostingEnvironment.WebRootPath + @"\ExtractedTemplate\";
-
+            if (!Directory.Exists(extractedTemplatePath))
+            {
+                Directory.CreateDirectory(extractedTemplatePath);
+            }
             if (Directory.Exists(extractedTemplatePath))
             {
                 string[] subdirs = Directory.GetDirectories(extractedTemplatePath)
