@@ -726,6 +726,20 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Run a Terraform plan in Azure Pipelines to automatically provision Azure resources. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-infrastructure-azure-pipelines ' target='_blank'>Provision infrastructure</a>"
+        },
+        {
+          "Key": "34567862",
+          "Name": "Provision databases in Azure Pipelines",
+          "TemplateFolder": "SpaceGame-web-ProvisionDB",
+          "ShortName": "provision-database-azure-pipelines",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Automatically provision Azure SQL Database in Azure Pipelines by using an Azure Resource Manager template. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines' target='_blank'>Provision Database</a>"
         }
       ]
     },
