@@ -58,6 +58,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             this.ControllerContext.HttpContext.Response.Headers.Add("cache-control", "no-cache");
             var currentProgress = ExtractorService.GetStatusMessage(id).ToString();
+            logger.LogInformation("Current progress " + currentProgress);
             return Content(currentProgress);
         }
         [AllowAnonymous]
@@ -65,31 +66,38 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             try
             {
+                logger.LogInformation("Index");
                 AccessDetails accessDetails = new AccessDetails();
                 string pat = "";
                 string email = "";
                 if (HttpContext.Session.GetString("PAT") != null)
                 {
+                    logger.LogInformation("PAT OK");
                     pat = HttpContext.Session.GetString("PAT");
                 }
                 if (HttpContext.Session.GetString("Email") != null)
                 {
+                    logger.LogInformation("EMAIL OK");
                     email = HttpContext.Session.GetString("PAT");
                 }
                 if (HttpContext.Session.GetString("EnableExtractor") == null || HttpContext.Session.GetString("EnableExtractor").ToLower() == "false")
                 {
+                    logger.LogInformation("Extractor flag false, redirecting");
                     return RedirectToAction("NotFound");
                 }
                 if (string.IsNullOrEmpty(pat))
                 {
+                    logger.LogInformation("PAT NULL.. REDIRECTING");
                     return Redirect("../Account/Verify");
                 }
                 else
                 {
+                    logger.LogInformation("Looking good so far");
                     accessDetails.access_token = pat;
                     ProfileDetails profile = accountService.GetProfile(accessDetails);
                     if (profile == null)
                     {
+                        logger.LogInformation("PROFILE IS NULL");
                         ViewBag.ErrorMessage = "Could not fetch your profile details, please try to login again";
                         return View(model);
                     }
@@ -99,6 +107,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         ViewData.Add("Email", profile.emailAddress ?? profile.displayName.ToLower());
                     }
                     AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, accessDetails);
+                    logger.LogInformation("FETCHING ACCOUNTS");
                     model.accessToken = accessDetails.access_token;
                     model.accountsForDropdown = new List<string>();
                     if (accountList.count > 0)
@@ -111,6 +120,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     }
                     else
                     {
+                        logger.LogInformation("NO ACCOUNTS FOUND");
                         model.accountsForDropdown.Add("Select Organization");
                         ViewBag.AccDDError = "Could not load your organizations. Please change the directory in profile page of Azure DevOps Organization and try again.";
                     }
