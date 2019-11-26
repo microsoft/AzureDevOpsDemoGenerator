@@ -66,6 +66,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             try
             {
+                string cPath = HostingEnvironment.ContentRootPath;
+                string wPath = HostingEnvironment.ContentRootPath;
                 logger.LogInformation("Index");
                 AccessDetails accessDetails = new AccessDetails();
                 string pat = "";
@@ -213,7 +215,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 if (errorMessages != "")
                 {
                     //also, log message to file system
-                    string logPath = HostingEnvironment.WebRootPath + @"\Log";
+                    string logPath = HostingEnvironment.ContentRootPath + @"\Log";
                     string accountName = model.accountName;
                     string fileName = string.Format("{0}_{1}.txt", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
@@ -337,7 +339,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
-            string filePath = HostingEnvironment.WebRootPath + @"\\ExtractedTemplate\" + fileName;
+            string filePath = HostingEnvironment.ContentRootPath + @"\\ExtractedTemplate\" + fileName;
             try
             {
                 CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();

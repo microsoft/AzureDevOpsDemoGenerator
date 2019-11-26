@@ -13,7 +13,6 @@ namespace AzureDevOpsAPI.Extractor
     {
         public BuildandReleaseDefs(IAppConfiguration configuration) : base(configuration) { }
         Logger logger = LogManager.GetLogger("*");
-        //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
         // Get Build Definition count
         public GetBuildDefResponse.BuildDef GetBuildDefCount()
         {
@@ -43,7 +42,6 @@ namespace AzureDevOpsAPI.Extractor
             return new GetBuildDefResponse.BuildDef();
         }
 
-        //https://d2a2v2.vsrm.visualstudio.com/selenium2/_apis/release/definitions?api-version=4.1-preview.3
         // Get Release Definition count
         public GetReleaseDefResponse.ReleaseDef GetReleaseDefCount()
         {
