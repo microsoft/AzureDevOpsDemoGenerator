@@ -148,3 +148,5 @@ UpgradeLog.htm
 .cr/
 /src/VstsDemoBuilder/Logs
 /src/VstsDemoBuilder/ExtractedTemplate/adqw
+/src/AzureDevOpsDemoBuilder/Properties/PublishProfiles
+/src/AzureDevOpsDemoBuilder/log
