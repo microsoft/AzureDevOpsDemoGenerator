@@ -25,16 +25,18 @@ namespace VstsDemoBuilder.Controllers.Apis
         private ITemplateService templateService;
         public delegate string[] ProcessEnvironment(Project model);
         public int usercount = 0;
-        private ProjectService projectService;
+        private IProjectService projectService;
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<ProjectController> logger;
         private IHttpContextAccessor HttpAccessor;
 
-        public ProjectController(IWebHostEnvironment _hosting, IHttpContextAccessor _context, ILogger<ProjectController> _logger)
+        public ProjectController(IWebHostEnvironment _hosting, IHttpContextAccessor _context, ILogger<ProjectController> _logger, IProjectService _projectService, ITemplateService _templateService)
         {
             HttpAccessor = _context;
             HostingEnvironment = _hosting;
             logger = _logger;
+            projectService = _projectService;
+            templateService = _templateService;
         }
 
         [HttpPost]
@@ -51,8 +53,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             List<RequestedProject> returnProjects = new List<RequestedProject>();
             try
             {
-
-                string ReadErrorMessages = System.IO.File.ReadAllText(string.Format(HostingEnvironment.WebRootPath + @"\JSON\" + @"{0}", "ErrorMessages.json"));
+                string ReadErrorMessages = System.IO.File.ReadAllText(string.Format(HostingEnvironment.ContentRootPath + @"\JSON\" + @"{0}", "ErrorMessages.json"));
                 var Messages = JsonConvert.DeserializeObject<Messages>(ReadErrorMessages);
                 var errormessages = Messages.ErrorMessages;
                 List<string> ListOfExistedProjects = new List<string>();
@@ -151,7 +152,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                         string privateErrorMessage = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
                                         if (privateErrorMessage != "SUCCESS")
                                         {
-                                            var templatepath = HostingEnvironment.WebRootPath + @"\PrivateTemplates\" + model.templateName;
+                                            var templatepath = HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + model.templateName;
                                             if (Directory.Exists(templatepath))
                                                 Directory.Delete(templatepath, true);
                                             return BadRequest(privateErrorMessage);//"TemplatePath should have .zip extension file name at the end of the url"
@@ -287,7 +288,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                         if (errorMessages != "")
                         {
                             //also, log message to file system
-                            string logPath = HostingEnvironment.WebRootPath + @"\Log";
+                            string logPath = HostingEnvironment.WebRootPath + @"\log";
                             string accountName = strResult[1];
                             string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
