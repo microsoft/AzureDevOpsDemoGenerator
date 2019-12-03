@@ -563,7 +563,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     if (errorMessages != "")
                     {
                         //also, log message to file system
-                        string logPath = HostingEnvironment.WebRootPath + @"\Log";
+                        string logPath = HostingEnvironment.WebRootPath + @"\log";
                         string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                         if (!Directory.Exists(logPath))

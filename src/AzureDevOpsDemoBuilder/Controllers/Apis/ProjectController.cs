@@ -16,11 +16,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.VisualStudio.Services.Gallery.WebApi;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace VstsDemoBuilder.Controllers.Apis
 {
     [Route("api/environment")]
-    public class ProjectController : Controller
+    public class ProjectController : ControllerBase
     {
         private ITemplateService templateService;
         public delegate string[] ProcessEnvironment(Project model);
@@ -28,11 +30,10 @@ namespace VstsDemoBuilder.Controllers.Apis
         private IProjectService projectService;
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<ProjectController> logger;
-        private IHttpContextAccessor HttpAccessor;
+        public IConfiguration AppKeyConfiguration { get; }
 
-        public ProjectController(IWebHostEnvironment _hosting, IHttpContextAccessor _context, ILogger<ProjectController> _logger, IProjectService _projectService, ITemplateService _templateService)
+        public ProjectController(IWebHostEnvironment _hosting, ILogger<ProjectController> _logger, IProjectService _projectService, ITemplateService _templateService)
         {
-            HttpAccessor = _context;
             HostingEnvironment = _hosting;
             logger = _logger;
             projectService = _projectService;
@@ -41,7 +42,7 @@ namespace VstsDemoBuilder.Controllers.Apis
 
         [HttpPost]
         [Route("create")]
-        public ActionResult create(MultiProjects model)
+        public ActionResult create([FromBody]MultiProjects model)
         {
             //projectService.TrackFeature("api/environment/create");
 
@@ -227,9 +228,16 @@ namespace VstsDemoBuilder.Controllers.Apis
                                     pmodel.PrivateTemplateName = model.templateName;
                                     pmodel.IsPrivatePath = true;
                                 }
+                                //ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
+                                //processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
 
                                 ProcessEnvironment processTask = new ProcessEnvironment(projectService.CreateProjectEnvironment);
-                                processTask.BeginInvoke(pmodel, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
+                                var workTask = Task.Run(() => processTask.Invoke(pmodel));
+                                workTask.ContinueWith((antecedent) =>
+                                {
+                                    EndEnvironmentSetupProcess(workTask, pmodel);
+                                });
+
                             }
                             returnProjects.Add(project);
                         }
@@ -243,7 +251,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                return StatusCode(500);
+                return StatusCode(500, ex.Message);
             }
             returnObj.users = returnProjects;
             return Ok(returnObj);
@@ -266,7 +274,7 @@ namespace VstsDemoBuilder.Controllers.Apis
         /// End the process
         /// </summary>
         /// <param name="result"></param>
-        public void EndEnvironmentSetupProcess(IAsyncResult result)
+        public void EndEnvironmentSetupProcess(IAsyncResult result, Project model)
         {
             string templateUsed = string.Empty;
             string ID = string.Empty;
@@ -274,48 +282,40 @@ namespace VstsDemoBuilder.Controllers.Apis
             try
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
-                string[] strResult = processTask.EndInvoke(result);
-                if (strResult != null && strResult.Length > 0)
+                //string[] strResult = processTask.EndInvoke(result);
+                projectService.RemoveKey(model.id);
+                if (ProjectService.StatusMessages.Keys.Count(x => x == model.id + "_Errors") == 1)
                 {
-                    ID = strResult[0];
-                    accName = strResult[1];
-                    templateUsed = strResult[2];
-                    projectService.RemoveKey(ID);
-
-                    if (ProjectService.StatusMessages.Keys.Count(x => x == ID + "_Errors") == 1)
+                    string errorMessages = ProjectService.statusMessages[model.id + "_Errors"];
+                    if (errorMessages != "")
                     {
-                        string errorMessages = ProjectService.statusMessages[ID + "_Errors"];
-                        if (errorMessages != "")
+                        //also, log message to file system
+                        string logPath = HostingEnvironment.WebRootPath + @"\log";
+                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+
+                        if (!Directory.Exists(logPath))
                         {
-                            //also, log message to file system
-                            string logPath = HostingEnvironment.WebRootPath + @"\log";
-                            string accountName = strResult[1];
-                            string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                            Directory.CreateDirectory(logPath);
+                        }
 
-                            if (!Directory.Exists(logPath))
-                            {
-                                Directory.CreateDirectory(logPath);
-                            }
+                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                            System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+                        //Create ISSUE work item with error details in VSTSProjectgenarator account
+                        string patBase64 = AppKeyConfiguration["PATBase64"];
+                        string url = AppKeyConfiguration["URL"];
+                        string projectId = AppKeyConfiguration["PROJECTID"];
+                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        IssueWI objIssue = new IssueWI();
 
-                            //Create ISSUE work item with error details in VSTSProjectgenarator account
-                            string patBase64 = System.Configuration.ConfigurationManager.AppSettings["PATBase64"];
-                            string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                            string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
-                            string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                            IssueWI objIssue = new IssueWI();
+                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
 
-                            errorMessages = errorMessages + Environment.NewLine + "TemplateUsed: " + templateUsed;
-                            errorMessages = errorMessages + Environment.NewLine + "ProjectCreated : " + ProjectService.projectName;
+                        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
-                            logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
-
-                            string logWIT = System.Configuration.ConfigurationManager.AppSettings["LogWIT"];
-                            if (logWIT == "true")
-                            {
-                                objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
-                            }
+                        string logWIT = AppKeyConfiguration["LogWIT"];
+                        if (logWIT == "true")
+                        {
+                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
                         }
                     }
                 }

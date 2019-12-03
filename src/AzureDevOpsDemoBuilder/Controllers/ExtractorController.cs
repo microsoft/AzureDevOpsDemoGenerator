@@ -215,7 +215,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 if (errorMessages != "")
                 {
                     //also, log message to file system
-                    string logPath = HostingEnvironment.ContentRootPath + @"\Log";
+                    string logPath = HostingEnvironment.ContentRootPath + @"\log";
                     string accountName = model.accountName;
                     string fileName = string.Format("{0}_{1}.txt", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 

@@ -77,53 +77,56 @@ namespace AzureDevOpsDemoBuilder.Services
             var templates = new TemplateSelection.Templates();
             var Selectedtemplates = new List<TemplateDetails>();
             char delimiter = ',';
-            string[] strComponents = Tags.Split(delimiter);
-            try
+            if (!string.IsNullOrEmpty(Tags))
             {
-                Project model = new Project();
-                string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + @"\Templates");
-                List<string> TemplateNames = new List<string>();
-                //Taking all the template folder and adding to list
-                foreach (string template in dirTemplates)
+                string[] strComponents = Tags.Split(delimiter);
+                try
                 {
-                    TemplateNames.Add(Path.GetFileName(template));
-                    // Reading Template setting file to check for private templates                   
-                }
-
-                if (System.IO.File.Exists(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json"))
-                {
-                    string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json");
-                    templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
-
-                    foreach (var groupwiseTemplates in templates.GroupwiseTemplates)
+                    Project model = new Project();
+                    string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + @"\Templates");
+                    List<string> TemplateNames = new List<string>();
+                    //Taking all the template folder and adding to list
+                    foreach (string template in dirTemplates)
                     {
-                        foreach (var tmp in groupwiseTemplates.Template)
-                        {
-                            if (tmp.Tags != null)
-                            {
-                                foreach (string str in strComponents)
-                                {
-                                    if (tmp.Tags.Contains(str))
-                                    {
-                                        TemplateDetails template = new TemplateDetails();
+                        TemplateNames.Add(Path.GetFileName(template));
+                        // Reading Template setting file to check for private templates                   
+                    }
 
-                                        template.Name = tmp.Name;
-                                        template.ShortName = tmp.ShortName;
-                                        template.Tags = tmp.Tags;
-                                        template.Description = tmp.Description;
-                                        //template.TemplateFolder = tmp.TemplateFolder;
-                                        Selectedtemplates.Add(template);
-                                        break;
+                    if (System.IO.File.Exists(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json"))
+                    {
+                        string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json");
+                        templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
+
+                        foreach (var groupwiseTemplates in templates.GroupwiseTemplates)
+                        {
+                            foreach (var tmp in groupwiseTemplates.Template)
+                            {
+                                if (tmp.Tags != null)
+                                {
+                                    foreach (string str in strComponents)
+                                    {
+                                        if (tmp.Tags.Contains(str))
+                                        {
+                                            TemplateDetails template = new TemplateDetails();
+
+                                            template.Name = tmp.Name;
+                                            template.ShortName = tmp.ShortName;
+                                            template.Tags = tmp.Tags;
+                                            template.Description = tmp.Description;
+                                            //template.TemplateFolder = tmp.TemplateFolder;
+                                            Selectedtemplates.Add(template);
+                                            break;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                }
             }
             return Selectedtemplates;
         }

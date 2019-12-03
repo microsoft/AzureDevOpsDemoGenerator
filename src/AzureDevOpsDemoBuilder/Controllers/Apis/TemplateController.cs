@@ -10,12 +10,16 @@ using static AzureDevOpsDemoBuilder.Models.TemplateSelection;
 namespace VstsDemoBuilder.Controllers.Apis
 {
     [Route("api/templates")]
-    public class TemplateController : Controller
+    public class TemplateController : ControllerBase
     {
 
         public ITemplateService templateService;
         public IProjectService projectService;
-
+        public TemplateController(ITemplateService _templateService,IProjectService _projectService)
+        {
+            templateService = _templateService;
+            projectService = _projectService;
+        }
 
         [HttpGet]
         [Route("AllTemplates")]

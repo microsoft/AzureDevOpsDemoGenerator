@@ -1,19 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsDemoBuilder.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Session;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using AzureDevOpsDemoBuilder.ServiceInterfaces;
-using AzureDevOpsDemoBuilder.Services;
+using System;
 
 namespace AzureDevOpsDemoBuilder
 {
@@ -34,7 +27,8 @@ namespace AzureDevOpsDemoBuilder
             services.AddSingleton<IAccountService, AccountService>();
             services.AddSingleton<IProjectService, ProjectService>();
             services.AddDistributedMemoryCache();
-            services.AddSession(options => {
+            services.AddSession(options =>
+            {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);//You can set Time   
             });
             services.AddSingleton<IExtractorService, ExtractorService>();
@@ -68,6 +62,7 @@ namespace AzureDevOpsDemoBuilder
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Account}/{action=Verify}/{id?}");
