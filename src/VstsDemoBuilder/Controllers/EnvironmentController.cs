@@ -572,6 +572,8 @@ namespace VstsDemoBuilder.Controllers
             string accName = string.Empty;
             try
             {
+                Session["PrivateTemplateURL"] = null;
+                Session["PrivateTemplateName"] = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"]; ;
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 string[] strResult = processTask.EndInvoke(result);
                 if (strResult != null && strResult.Length > 0)
