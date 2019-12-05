@@ -464,6 +464,7 @@
     <Content Include="Templates\TemplateImages\mslearn\manage-dependencies-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\manage-release-cadence-using-deployment-patterns.svg" />
     <Content Include="Templates\TemplateImages\mslearn\manage-security-and-compliance-in-your-build-pipeline.png" />
+    <Content Include="Templates\TemplateImages\mslearn\provision-database-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-functional-tests-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
@@ -1377,6 +1378,21 @@
     <Content Include="Templates\SpaceGame-web-Terraform\Teams\Space Game - web - Terraform Team\CardStyles.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\Teams\Teams.json" />
     <Content Include="Templates\SpaceGame-web-Terraform\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\BuildDefinitionGitHub\mslearn-tailspin-spacegame-web-automate.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\ImportSourceCode\Space Game - web - ProvisionDB.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\Iterations.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\ServiceEndpoints\GitHub_69cc250c.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\ServiceEndpoints\GitHub_7cdb389c-EndPoint.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Space Game - web - ProvisionDB Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Space Game - web - ProvisionDB Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Space Game - web - ProvisionDB Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Space Game - web - ProvisionDB Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-web-ProvisionDB\WorkItems\Issue.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

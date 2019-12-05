@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "GitHub_69cc250c",
+  "type": "GitHub",
+  "url": "https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-automate",
+  "authorization": {
+    "parameters": {
+      "username": "tpetchel",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
