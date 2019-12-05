@@ -2765,6 +2765,11 @@ namespace VstsDemoBuilder.Services
             }
         }
 
+        /// <summary>
+        /// Checkign for template existance - if template is present in private path, return true else return false
+        /// </summary>
+        /// <param name="templatName"></param>
+        /// <returns></returns>
         public bool WhereDoseTemplateBelongTo(string templatName)
         {
             string privatePath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\";

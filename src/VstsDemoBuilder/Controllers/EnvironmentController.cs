@@ -541,8 +541,8 @@ namespace VstsDemoBuilder.Controllers
                     }
                     projectService.AddMessage(model.id, string.Empty);
                     projectService.AddMessage(model.id.ErrorId(), string.Empty);
-                    bool whereIsTemplate = projectService.WhereDoseTemplateBelongTo(model.SelectedTemplate);
-                    if (!string.IsNullOrEmpty(model.PrivateTemplatePath) && whereIsTemplate)
+                    bool whereIsTemplate = projectService.WhereDoseTemplateBelongTo(model.SelectedTemplate); // checking for private template  existance
+                    if (!string.IsNullOrEmpty(model.PrivateTemplatePath) && whereIsTemplate) // if the template path exist and tempalte is present in private fodler
                     {
                         model.IsPrivatePath = true;
                     }
