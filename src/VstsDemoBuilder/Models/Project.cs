@@ -225,6 +225,7 @@ namespace VstsDemoBuilder.Models
         public string privateTemplateName { get; set; }
         public string privateTemplatePath { get; set; }
         public string responseMessage { get; set; }
+        public bool IsTemplateValid { get; set; }
     }
 
 }

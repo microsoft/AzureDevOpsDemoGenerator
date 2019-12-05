@@ -21,5 +21,8 @@ namespace VstsDemoBuilder.ServiceInterfaces
         bool CheckForInstalledExtensions(string extensionJsonFile, string token, string account);
 
         bool InstallExtensions(Project model, string accountName, string PAT);
+
+        bool WhereDoseTemplateBelongTo(string templatName);
+        
     }
 }
