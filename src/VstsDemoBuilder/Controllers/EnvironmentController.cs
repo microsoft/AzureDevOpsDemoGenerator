@@ -645,6 +645,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                bool isTemplateBelongToPrivateFolder = projectService.WhereDoseTemplateBelongTo(selectedTemplate);
                 if (!string.IsNullOrEmpty(selectedTemplate) && !string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(token))
                 {
                     string accountName = string.Empty;
@@ -654,7 +655,12 @@ namespace VstsDemoBuilder.Controllers
                     pat = token;
                     string templatesFolder = string.Empty;
                     string extensionJsonFile = string.Empty;
-                    if (string.IsNullOrEmpty(PrivatePath))
+                    if (isTemplateBelongToPrivateFolder)
+                    {
+                        templatesFolder = Session["PrivateTemplateURL"].ToString();
+                        extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
+                    }
+                    else if (string.IsNullOrEmpty(PrivatePath))
                     {
                         templatesFolder = Server.MapPath("~") + @"\Templates\";
                         extensionJsonFile = string.Format(templatesFolder + @"\{0}\Extensions.json", selectedTemplate);
