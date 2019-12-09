@@ -1576,7 +1576,7 @@ namespace VstsDemoBuilder.Services
                     string repositoryId = string.Empty;
                     if (model.SelectedTemplate == "MyHealthClinic") { repositoryId = model.Environment.repositoryIdList["MyHealthClinic"]; }
                     if (model.SelectedTemplate == "SmartHotel360") { repositoryId = model.Environment.repositoryIdList["PublicWeb"]; }
-                    else { repositoryId = model.Environment.repositoryIdList[model.SelectedTemplate]; }
+                    else { repositoryId = model.Environment.repositoryIdList.ContainsKey(model.SelectedTemplate) ? model.Environment.repositoryIdList[model.SelectedTemplate] : ""; }
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
                     pullRequestJsonPath = pullRequestJsonPath.Replace("$reviewer$", model.Environment.UserUniqueId);
