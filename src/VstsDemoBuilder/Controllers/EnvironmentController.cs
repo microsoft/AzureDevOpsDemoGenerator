@@ -538,6 +538,9 @@ namespace VstsDemoBuilder.Controllers
                     if (Session["PrivateTemplateURL"] != null && Session["PrivateTemplateName"] != null)
                     {
                         model.PrivateTemplatePath = Session["PrivateTemplateURL"].ToString();
+                        Session["PrivateTemplateURL"] = null;
+                        Session["PrivateTemplateName"] = null;
+                        Session["templateName"] = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
                     }
                     projectService.AddMessage(model.id, string.Empty);
                     projectService.AddMessage(model.id.ErrorId(), string.Empty);
@@ -572,8 +575,6 @@ namespace VstsDemoBuilder.Controllers
             string accName = string.Empty;
             try
             {
-                Session["PrivateTemplateURL"] = null;
-                Session["PrivateTemplateName"] = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"]; ;
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 string[] strResult = processTask.EndInvoke(result);
                 if (strResult != null && strResult.Length > 0)
