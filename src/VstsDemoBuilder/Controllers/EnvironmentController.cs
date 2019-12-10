@@ -540,6 +540,7 @@ namespace VstsDemoBuilder.Controllers
                         model.PrivateTemplatePath = Session["PrivateTemplateURL"].ToString();
                         Session["PrivateTemplateURL"] = null;
                         Session["PrivateTemplateName"] = null;
+                        Session["PrivateTemplateOriginalName"] = null;
                         Session["templateName"] = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
                     }
                     projectService.AddMessage(model.id, string.Empty);
