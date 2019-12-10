@@ -13,6 +13,6 @@
         public string name { get; set; }
 
         public string EnableExtractor { get; set; }
-        public string URL { get; set; }
+        public string TemplateURL { get; set; }
     }
 }

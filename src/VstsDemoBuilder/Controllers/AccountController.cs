@@ -107,15 +107,16 @@ namespace VstsDemoBuilder.Controllers
                     }
                 }
 
-                if (!string.IsNullOrEmpty(model.URL))
+                if (!string.IsNullOrEmpty(model.TemplateURL))
                 {
-                    if (model.URL.EndsWith(".zip"))
+                    if (model.TemplateURL.EndsWith(".zip"))
                     {
-                        PrivateTemplate _privateTemplate = UploadPrivateTempalteFromHome(model.URL);
+                        PrivateTemplate _privateTemplate = UploadPrivateTempalteFromHome(model.TemplateURL);
                         if (_privateTemplate.IsTemplateValid)
                         {
                             Session["PrivateTemplateURL"] = _privateTemplate.privateTemplatePath;
                             Session["PrivateTemplateName"] = _privateTemplate.privateTemplateName;
+                            Session["PrivateTemplateOriginalName"] = _privateTemplate.privateTemplateOriginalName;
                         }
                         else
                         {
@@ -206,6 +207,7 @@ namespace VstsDemoBuilder.Controllers
                 string templateName = "";
                 string fileName = Path.GetFileName(TemplateURL);
                 string extension = Path.GetExtension(TemplateURL);
+                privateTemplate.privateTemplateOriginalName = fileName.ToLower().Replace(".zip", "").Trim();
                 templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
                 privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
                 privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, "", "", "");

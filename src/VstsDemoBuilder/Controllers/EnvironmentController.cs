@@ -258,10 +258,10 @@ namespace VstsDemoBuilder.Controllers
                                 }
                                 else
                                 {
-                                    model.SelectedTemplate = Session["PrivateTemplateName"].ToString();
+                                    model.SelectedTemplate = Session["PrivateTemplateOriginalName"].ToString();
                                     model.Templates.Add(model.SelectedTemplate);
                                     model.selectedTemplateDescription = "";
-                                    model.selectedTemplateFolder = model.SelectedTemplate;
+                                    model.selectedTemplateFolder = Session["PrivateTemplateName"].ToString();
                                     model.ForkGitHubRepo = "false";
                                     model.templateImage = "/Templates/TemplateImages/CodeFile.png";
                                 }
