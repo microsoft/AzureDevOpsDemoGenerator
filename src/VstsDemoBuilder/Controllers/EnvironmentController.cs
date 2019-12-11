@@ -260,7 +260,7 @@ namespace VstsDemoBuilder.Controllers
                                 {
                                     model.SelectedTemplate = Session["PrivateTemplateOriginalName"].ToString();
                                     model.Templates.Add(model.SelectedTemplate);
-                                    model.selectedTemplateDescription = "";
+                                    model.selectedTemplateDescription = "<p style='color:red;fontsize:10px'><b>Note</b>: Template will be discarded once the process completes. Please refersh the page to select other templates </p>";
                                     model.selectedTemplateFolder = Session["PrivateTemplateName"].ToString();
                                     model.ForkGitHubRepo = "false";
                                     model.templateImage = "/Templates/TemplateImages/CodeFile.png";
