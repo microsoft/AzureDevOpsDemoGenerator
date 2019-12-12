@@ -202,11 +202,11 @@ namespace AzureDevOpsDemoBuilder.Services
             string filePath = string.Empty;
             if (IsPrivate && !string.IsNullOrEmpty(TemplateFolder))
             {
-                filePath = string.Format(TemplateFolder + @"\{0}", FileName);
+                filePath = string.Format(TemplateFolder + "/{0}", FileName);
             }
             else
             {
-                filePath = string.Format(HostingEnvironment.WebRootPath + @"\Templates\" + @"{0}\{1}", TemplateName, FileName);
+                filePath = string.Format(HostingEnvironment.WebRootPath + "/Templates/" + "{0}/{1}", TemplateName, FileName);
             }
             return filePath;
         }
@@ -392,7 +392,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             //create team project
-            string jsonProject = model.ReadJsonFile(HostingEnvironment.WebRootPath + @"\Templates\" + "CreateProject.json");
+            string jsonProject = model.ReadJsonFile(HostingEnvironment.WebRootPath + "/Templates/" + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
 
             Projects proj = new Projects(_projectCreationVersion);
@@ -607,7 +607,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             _teamName = jteam["name"].ToString();
                         }
-                        string teamFolderPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"Teams\" + jteam["name"].ToString());
+                        string teamFolderPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/Teams/" + jteam["name"].ToString());
                         // Path.Combine(templatesFolder + templateUsed, "Teams", jteam["name"].ToString());
                         if (Directory.Exists(teamFolderPath))
                         {
@@ -750,7 +750,7 @@ namespace AzureDevOpsDemoBuilder.Services
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
 
             //Create WIKI
-            CreateProjetWiki(HostingEnvironment.WebRootPath + @"\Templates\", model, _wikiVersion);
+            CreateProjetWiki(HostingEnvironment.WebRootPath + "/Templates/", model, _wikiVersion);
             CreateCodeWiki(model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
@@ -2661,10 +2661,10 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 string groupDetails = "";
                 TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                string templatesPath = ""; templatesPath = HostingEnvironment.WebRootPath + @"\Templates\";
+                string templatesPath = ""; templatesPath = HostingEnvironment.WebRootPath + "/Templates/";
                 if (File.Exists(templatesPath + "TemplateSetting.json"))
                 {
-                    groupDetails = File.ReadAllText(templatesPath + @"\TemplateSetting.json");
+                    groupDetails = File.ReadAllText(templatesPath + "/TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
                     foreach (var template in templates.GroupwiseTemplates.FirstOrDefault().Template)
                     {

@@ -206,7 +206,7 @@ namespace AzureDevOpsDemoBuilder.Services
         #region GENERATE ARTIFACTS
         public string[] GenerateTemplateArifacts(Project model)
         {
-            extractedTemplatePath = HostingEnvironment.ContentRootPath + @"\ExtractedTemplate\";
+            extractedTemplatePath = HostingEnvironment.ContentRootPath + "/ExtractedTemplate/";
             if (!Directory.Exists(extractedTemplatePath))
             {
                 Directory.CreateDirectory(extractedTemplatePath);
@@ -237,23 +237,23 @@ namespace AzureDevOpsDemoBuilder.Services
                 AddMessage(model.id, "Iterations Definition");
             }
             string extractedFolderName = extractedTemplatePath + model.ProjectName;
-            string filePathToRead = HostingEnvironment.ContentRootPath + @"\\PreSetting";
+            string filePathToRead = HostingEnvironment.ContentRootPath + "/PreSetting";
 
             string projectSetting = "";
-            projectSetting = filePathToRead + "\\ProjectSettings.json";
+            projectSetting = filePathToRead + "/ProjectSettings.json";
             projectSetting = File.ReadAllText(projectSetting);
             projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault().value);
-            File.WriteAllText(extractedFolderName + "\\ProjectSettings.json", projectSetting);
+            File.WriteAllText(extractedFolderName + "/ProjectSettings.json", projectSetting);
 
             string projectTemplate = "";
-            projectTemplate = filePathToRead + "\\ProjectTemplate.json";
+            projectTemplate = filePathToRead + "/ProjectTemplate.json";
             projectTemplate = File.ReadAllText(projectTemplate);
-            File.WriteAllText(extractedFolderName + "\\ProjectTemplate.json", projectTemplate);
+            File.WriteAllText(extractedFolderName + "/ProjectTemplate.json", projectTemplate);
 
             string teamArea = "";
-            teamArea = filePathToRead + "\\TeamArea.json";
+            teamArea = filePathToRead + "/TeamArea.json";
             teamArea = File.ReadAllText(teamArea);
-            File.WriteAllText(extractedFolderName + "\\TeamArea.json", teamArea);
+            File.WriteAllText(extractedFolderName + "/TeamArea.json", teamArea);
             AddMessage(model.id, "Team Areas");
 
             ExportWorkItems(appConfig);
@@ -756,30 +756,30 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     foreach (var repo in repos.value)
                     {
-                        string preSettingPath = HostingEnvironment.ContentRootPath + @"\\PreSetting";
+                        string preSettingPath = HostingEnvironment.ContentRootPath + "/PreSetting";
                         string templateFolderPath = extractedTemplatePath + appConfig.RepoConfig.Project;
                         string host = appConfig.RepoConfig.UriString + appConfig.RepoConfig.Project;
-                        string sourceCodeJson = File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
+                        string sourceCodeJson = File.ReadAllText(preSettingPath + "/ImportSourceCode.json");
                         sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                        string endPointJson = File.ReadAllText(preSettingPath + "\\ServiceEndPoint.json");
+                        string endPointJson = File.ReadAllText(preSettingPath + "/ServiceEndPoint.json");
                         endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
-                        if (!Directory.Exists(templateFolderPath + "\\ImportSourceCode"))
+                        if (!Directory.Exists(templateFolderPath + "/ImportSourceCode"))
                         {
-                            Directory.CreateDirectory(templateFolderPath + "\\ImportSourceCode");
-                            File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                            Directory.CreateDirectory(templateFolderPath + "/ImportSourceCode");
+                            File.WriteAllText(templateFolderPath + "/ImportSourceCode/" + repo.name + ".json", sourceCodeJson);
                         }
                         else
                         {
-                            File.WriteAllText(templateFolderPath + "\\ImportSourceCode\\" + repo.name + ".json", sourceCodeJson);
+                            File.WriteAllText(templateFolderPath + "/ImportSourceCode/" + repo.name + ".json", sourceCodeJson);
                         }
-                        if (!Directory.Exists(templateFolderPath + "\\ServiceEndpoints"))
+                        if (!Directory.Exists(templateFolderPath + "/ServiceEndpoints"))
                         {
-                            Directory.CreateDirectory(templateFolderPath + "\\ServiceEndpoints");
-                            File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                            Directory.CreateDirectory(templateFolderPath + "/ServiceEndpoints");
+                            File.WriteAllText(templateFolderPath + "/ServiceEndpoints/" + repo.name + "-code.json", endPointJson);
                         }
                         else
                         {
-                            File.WriteAllText(templateFolderPath + "\\ServiceEndpoints\\" + repo.name + "-code.json", endPointJson);
+                            File.WriteAllText(templateFolderPath + "/ServiceEndpoints/" + repo.name + "-code.json", endPointJson);
                         }
                     }
                 }
@@ -915,7 +915,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             {
                                 foreach (var step in steps)
                                 {
-                                    string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + @"\\Templates\EndpointKeyConfig.json");
+                                    string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
                                     KeyConfig.Keys keyC = new KeyConfig.Keys();
                                     keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                     foreach (var key in keyC.keys)
@@ -952,17 +952,17 @@ namespace AzureDevOpsDemoBuilder.Services
                     string url = def["repository"]["url"].ToString();
                     if (url != "")
                     {
-                        string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + @"\\PreSetting\\GitHubEndPoint.json");
+                        string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + "/PreSetting/GitHubEndPoint.json");
                         endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
 
-                        if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
+                        if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints"))
                         {
-                            Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub" + randStr + "-EndPoint.json", endPointString);
+                            Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints");
+                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints/GitHub" + randStr + "-EndPoint.json", endPointString);
                         }
                         else
                         {
-                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub" + randStr + "-EndPoint.json", endPointString);
+                            File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints/GitHub" + randStr + "-EndPoint.json", endPointString);
                         }
                     }
                 }
@@ -971,17 +971,17 @@ namespace AzureDevOpsDemoBuilder.Services
                     Guid g = Guid.NewGuid();
                     string randStr = g.ToString().Substring(0, 8);
                     string url = def["repository"]["url"].ToString();
-                    string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + @"\\PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + "/PreSetting/GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
 
-                    if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
+                    if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints"))
                     {
-                        Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints");
-                        File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                        Directory.CreateDirectory(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints");
+                        File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints/GitHub_" + randStr + "-EndPoint.json", endPointString);
                     }
                     else
                     {
-                        File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                        File.WriteAllText(extractedTemplatePath + appConfig.RepoConfig.Project + "/ServiceEndpoints/GitHub_" + randStr + "-EndPoint.json", endPointString);
                     }
                     def["repository"]["properties"]["connectedServiceId"] = "$GitHub_" + randStr + "$";
                 }
@@ -1090,28 +1090,28 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 if (ymlRepoUrl != "")
                 {
-                    string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + @"\\PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + "/PreSetting/GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
 
-                    if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
+                    if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints"))
                     {
-                        Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
-                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                        Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints");
+                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints/GitHub_" + randStr + "-EndPoint.json", endPointString);
                     }
                     else
                     {
-                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub_" + randStr + "-EndPoint.json", endPointString);
+                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints/GitHub_" + randStr + "-EndPoint.json", endPointString);
                     }
                 }
                 count = count + 1;
-                if (!Directory.Exists(templatePath + "\\BuildDefinitionGitHub"))
+                if (!Directory.Exists(templatePath + "/BuildDefinitionGitHub"))
                 {
-                    Directory.CreateDirectory(templatePath + "\\BuildDefinitionGitHub");
-                    File.WriteAllText(templatePath + "\\BuildDefinitionGitHub\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    Directory.CreateDirectory(templatePath + "/BuildDefinitionGitHub");
+                    File.WriteAllText(templatePath + "/BuildDefinitionGitHub/" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
                 else
                 {
-                    File.WriteAllText(templatePath + "\\BuildDefinitionGitHub\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    File.WriteAllText(templatePath + "/BuildDefinitionGitHub/" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
 
                 return count;
@@ -1149,16 +1149,16 @@ namespace AzureDevOpsDemoBuilder.Services
                 var ymlRepoUrl = def["repository"]["url"].ToString();
                 if (ymlRepoUrl != "")
                 {
-                    string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + @"\\PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.ContentRootPath + "/PreSetting/GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
-                    if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))
+                    if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints"))
                     {
-                        Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints");
-                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                        Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints");
+                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints/GitHub-" + randStr + "-EndPoint.json", endPointString);
                     }
                     else
                     {
-                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints\\GitHub-" + randStr + "-EndPoint.json", endPointString);
+                        File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ServiceEndpoints/GitHub-" + randStr + "-EndPoint.json", endPointString);
                     }
                 }
                 string[] splitYmlRepoUrl = ymlRepoUrl.Split('/');
@@ -1184,14 +1184,14 @@ namespace AzureDevOpsDemoBuilder.Services
                     def["queue"]["url"] = string.Join("/", splitQhref);
                 }
                 count = count + 1;
-                if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                if (!Directory.Exists(templatePath + "/BuildDefinitions"))
                 {
-                    Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    Directory.CreateDirectory(templatePath + "/BuildDefinitions");
+                    File.WriteAllText(templatePath + "/BuildDefinitions/" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
                 else
                 {
-                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    File.WriteAllText(templatePath + "/BuildDefinitions/" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
 
                 return count;
@@ -1309,7 +1309,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                         foreach (var flow in workflow)
                                         {
                                             var input = flow["inputs"];
-                                            string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + @"\\Templates\EndpointKeyConfig.json");
+                                            string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
                                             KeyConfig.Keys keyC = new KeyConfig.Keys();
                                             keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                             foreach (var key in keyC.keys)

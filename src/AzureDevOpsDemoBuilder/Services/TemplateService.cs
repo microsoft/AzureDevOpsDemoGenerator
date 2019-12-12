@@ -34,7 +34,7 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 Project model = new Project();
-                string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + @"\Templates");
+                string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + "/Templates");
                 List<string> TemplateNames = new List<string>();
                 //Taking all the template folder and adding to list
                 foreach (string template in dirTemplates)
@@ -43,9 +43,9 @@ namespace AzureDevOpsDemoBuilder.Services
                     // Reading Template setting file to check for private templates                   
                 }
 
-                if (System.IO.File.Exists(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json"))
+                if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))
                 {
-                    string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json");
+                    string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json");
                     templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
 
                     foreach (var templateList in templates.GroupwiseTemplates)
@@ -83,7 +83,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 try
                 {
                     Project model = new Project();
-                    string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + @"\Templates");
+                    string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + "/Templates");
                     List<string> TemplateNames = new List<string>();
                     //Taking all the template folder and adding to list
                     foreach (string template in dirTemplates)
@@ -92,9 +92,9 @@ namespace AzureDevOpsDemoBuilder.Services
                         // Reading Template setting file to check for private templates                   
                     }
 
-                    if (System.IO.File.Exists(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json"))
+                    if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))
                     {
-                        string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json");
+                        string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json");
                         templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
 
                         foreach (var groupwiseTemplates in templates.GroupwiseTemplates)
@@ -136,12 +136,12 @@ namespace AzureDevOpsDemoBuilder.Services
             string template = string.Empty;
             try
             {
-                string templatesPath = HostingEnvironment.WebRootPath + @"\Templates\";
+                string templatesPath = HostingEnvironment.WebRootPath + "/Templates/";
 
-                if (System.IO.File.Exists(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json"))
+                if (System.IO.File.Exists(templatesPath + Path.GetFileName(TemplateName) + "/ProjectTemplate.json"))
                 {
                     Project objP = new Project();
-                    template = objP.ReadJsonFile(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json");
+                    template = objP.ReadJsonFile(templatesPath + Path.GetFileName(TemplateName) + "/ProjectTemplate.json");
                 }
                 else
                 {
@@ -169,11 +169,11 @@ namespace AzureDevOpsDemoBuilder.Services
                 string fileName = Path.GetFileName(TemplateUrl);
                 string extension = Path.GetExtension(fileName);
                 string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                if (!Directory.Exists(HostingEnvironment.ContentRootPath + @"\ExtractedZipFile"))
+                if (!Directory.Exists(HostingEnvironment.ContentRootPath + "/ExtractedZipFile"))
                 {
-                    Directory.CreateDirectory(HostingEnvironment.ContentRootPath + @"\ExtractedZipFile");
+                    Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/ExtractedZipFile");
                 }
-                var path = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\" + ExtractedTemplate;
+                var path = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/" + ExtractedTemplate;
 
                 //Downloading template from source of type github
                 if (uri.Host == "raw.githubusercontent.com")
@@ -209,7 +209,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             finally
             {
-                var zippath = HostingEnvironment.WebRootPath + @"\ExtractedZipFile\" + ExtractedTemplate;
+                var zippath = HostingEnvironment.WebRootPath + "/ExtractedZipFile/" + ExtractedTemplate;
                 if (File.Exists(zippath))
                     File.Delete(zippath);
             }
@@ -224,11 +224,11 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 if (File.Exists(path))
                 {
-                    if (!Directory.Exists(HostingEnvironment.ContentRootPath + @"\PrivateTemplates"))
+                    if (!Directory.Exists(HostingEnvironment.ContentRootPath + "/PrivateTemplates"))
                     {
-                        Directory.CreateDirectory(HostingEnvironment.ContentRootPath + @"\PrivateTemplates");
+                        Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/PrivateTemplates");
                     }
-                    var Extractedpath = HostingEnvironment.WebRootPath + @"\PrivateTemplates\" + templateName;
+                    var Extractedpath = HostingEnvironment.WebRootPath + "/PrivateTemplates/" + templateName;
                     System.IO.Compression.ZipFile.ExtractToDirectory(path, Extractedpath);
 
                     isExtracted = checkTemplateDirectory(Extractedpath);
@@ -294,7 +294,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 else
                 {
                     string[] subdirs = Directory.GetDirectories(privateTemplatePath);
-                    templatePath = FindPrivateTemplatePath(subdirs[0] + @"\");
+                    templatePath = FindPrivateTemplatePath(subdirs[0] + "/");
                 }
 
             }
@@ -378,19 +378,19 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 if (!string.IsNullOrEmpty(Template))
                 {
-                    var templatepath = HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + Template;
+                    var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + Template;
                     if (Directory.Exists(templatepath))
                     {
                         Directory.Delete(templatepath, true);
                     }
-                    string[] subdirs = Directory.GetDirectories(HostingEnvironment.ContentRootPath + @"\PrivateTemplates\")
+                    string[] subdirs = Directory.GetDirectories(HostingEnvironment.ContentRootPath + "/PrivateTemplates/")
                             .Select(Path.GetFileName)
                             .ToArray();
                     foreach (string folderName in subdirs)
                     {
-                        DirectoryInfo d = new DirectoryInfo(HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + folderName);
+                        DirectoryInfo d = new DirectoryInfo(HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + folderName);
                         if (d.CreationTime < DateTime.Now.AddHours(-1))
-                            Directory.Delete(HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + folderName, true);
+                            Directory.Delete(HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + folderName, true);
                     }
                 }
             }

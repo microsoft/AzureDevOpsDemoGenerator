@@ -93,13 +93,13 @@ namespace AzureDevOpsDemoBuilder.Controllers
         [AllowAnonymous]
         public ContentResult GetTemplate(string TemplateName)
         {
-            string templatesPath = HostingEnvironment.WebRootPath + @"\Templates\";
+            string templatesPath = HostingEnvironment.WebRootPath + "/Templates/";
             string template = string.Empty;
 
-            if (System.IO.File.Exists(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json"))
+            if (System.IO.File.Exists(templatesPath + Path.GetFileName(TemplateName) + "/ProjectTemplate.json"))
             {
                 Project objP = new Project();
-                template = objP.ReadJsonFile(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json");
+                template = objP.ReadJsonFile(templatesPath + Path.GetFileName(TemplateName) + "/ProjectTemplate.json");
             }
             return Content(template);
         }
@@ -114,11 +114,11 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             string groupDetails = "";
             TemplateSelection.Templates templates = new TemplateSelection.Templates();
-            string templatesPath = ""; templatesPath = HostingEnvironment.WebRootPath + @"\Templates\";
+            string templatesPath = ""; templatesPath = HostingEnvironment.WebRootPath + "/Templates/";
             string email = HttpContext.Session.GetString("Email");
             if (System.IO.File.Exists(templatesPath + "TemplateSetting.json"))
             {
-                groupDetails = System.IO.File.ReadAllText(templatesPath + @"\TemplateSetting.json");
+                groupDetails = System.IO.File.ReadAllText(templatesPath + "/TemplateSetting.json");
                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(groupDetails);
                 foreach (var Group in templates.GroupwiseTemplates)
                 {
@@ -223,7 +223,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                             model.Templates = new List<string>();
                             model.accountUsersForDdl = new List<SelectListItem>();
                             TemplateSelection.Templates templates = new TemplateSelection.Templates();
-                            string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + @"\Templates");
+                            string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + "/Templates");
 
                             //Taking all the template folder and adding to list
                             foreach (string template in dirTemplates)
@@ -231,9 +231,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                 model.Templates.Add(Path.GetFileName(template));
                             }
                             // Reading Template setting file to check for private templates
-                            if (System.IO.File.Exists(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json"))
+                            if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))
                             {
-                                string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json");
+                                string templateSetting = model.ReadJsonFile(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json");
                                 templates = JsonConvert.DeserializeObject<TemplateSelection.Templates>(templateSetting);
                             }
                             //[for direct URLs] if the incoming template name is not null, checking for Template name in Template setting file. 
@@ -353,9 +353,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
             {
                 try
                 {
-                    if (!Directory.Exists(HostingEnvironment.ContentRootPath + @"\ExtractedZipFile"))
+                    if (!Directory.Exists(HostingEnvironment.ContentRootPath + "/ExtractedZipFile"))
                     {
-                        Directory.CreateDirectory(HostingEnvironment.ContentRootPath + @"\ExtractedZipFile");
+                        Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/ExtractedZipFile");
                     }
                     //  Get all files from Request object  
                     IFormFileCollection files = Request.Form.Files;
@@ -389,7 +389,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         }
 
                         // Get the complete folder path and store the file inside it.  
-                        fileName = Path.Combine(HostingEnvironment.ContentRootPath + "\\ExtractedZipFile\\", templateName);
+                        fileName = Path.Combine(HostingEnvironment.ContentRootPath + "/ExtractedZipFile/", templateName);
 
                         using (var stream = new FileStream(fileName, FileMode.Create))
                         {
@@ -422,12 +422,12 @@ namespace AzureDevOpsDemoBuilder.Controllers
             string extractPath = string.Empty;
             try
             {
-                if (!Directory.Exists(HostingEnvironment.ContentRootPath + @"\PrivateTemplates"))
+                if (!Directory.Exists(HostingEnvironment.ContentRootPath + "/PrivateTemplates"))
                 {
-                    Directory.CreateDirectory(HostingEnvironment.ContentRootPath + @"\PrivateTemplates");
+                    Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/PrivateTemplates");
                 }
                 //Deleting uploaded zip files present from last one hour
-                string extractedZipFile = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\";
+                string extractedZipFile = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/";
                 if (Directory.Exists(extractedZipFile))
                 {
                     string[] subdirs = Directory.GetFiles(extractedZipFile)
@@ -441,11 +441,11 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     }
                 }
 
-                string zipPath = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\" + fineName;
+                string zipPath = HostingEnvironment.ContentRootPath + "/ExtractedZipFile" + fineName;
                 string folder = fineName.Replace(".zip", "");
                 privateTemplate.privateTemplateName = folder;
 
-                extractPath = HostingEnvironment.ContentRootPath + @"\ExtractedZipFile\" + folder;
+                extractPath = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/" + folder;
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
                 privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
@@ -563,7 +563,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     if (errorMessages != "")
                     {
                         //also, log message to file system
-                        string logPath = HostingEnvironment.WebRootPath + @"\log";
+                        string logPath = HostingEnvironment.WebRootPath + "/log";
                         string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                         if (!Directory.Exists(logPath))
@@ -628,13 +628,13 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     string extensionJsonFile = string.Empty;
                     if (string.IsNullOrEmpty(PrivatePath))
                     {
-                        templatesFolder = HostingEnvironment.WebRootPath + @"\Templates\";
-                        extensionJsonFile = string.Format(templatesFolder + @"\{0}\Extensions.json", selectedTemplate);
+                        templatesFolder = HostingEnvironment.WebRootPath + "/Templates/";
+                        extensionJsonFile = string.Format(templatesFolder + "/{0}/Extensions.json", selectedTemplate);
                     }
                     else
                     {
                         templatesFolder = PrivatePath;
-                        extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
+                        extensionJsonFile = string.Format(templatesFolder + "/Extensions.json");
                     }
 
 
@@ -809,7 +809,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
                     if (privateTemplate.responseMessage != "SUCCESS")
                     {
-                        var templatepath = HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
+                        var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
                         if (Directory.Exists(templatepath))
                             Directory.Delete(templatepath, true);
                     }

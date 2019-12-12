@@ -54,7 +54,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             List<RequestedProject> returnProjects = new List<RequestedProject>();
             try
             {
-                string ReadErrorMessages = System.IO.File.ReadAllText(string.Format(HostingEnvironment.ContentRootPath + @"\JSON\" + @"{0}", "ErrorMessages.json"));
+                string ReadErrorMessages = System.IO.File.ReadAllText(string.Format(HostingEnvironment.ContentRootPath + "/JSON/" + "{0}", "ErrorMessages.json"));
                 var Messages = JsonConvert.DeserializeObject<Messages>(ReadErrorMessages);
                 var errormessages = Messages.ErrorMessages;
                 List<string> ListOfExistedProjects = new List<string>();
@@ -153,7 +153,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                         string privateErrorMessage = templateService.checkSelectedTemplateIsPrivate(PrivateTemplatePath);
                                         if (privateErrorMessage != "SUCCESS")
                                         {
-                                            var templatepath = HostingEnvironment.ContentRootPath + @"\PrivateTemplates\" + model.templateName;
+                                            var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + model.templateName;
                                             if (Directory.Exists(templatepath))
                                                 Directory.Delete(templatepath, true);
                                             return BadRequest(privateErrorMessage);//"TemplatePath should have .zip extension file name at the end of the url"
@@ -290,7 +290,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                     if (errorMessages != "")
                     {
                         //also, log message to file system
-                        string logPath = HostingEnvironment.WebRootPath + @"\log";
+                        string logPath = HostingEnvironment.WebRootPath + "/log";
                         string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                         if (!Directory.Exists(logPath))

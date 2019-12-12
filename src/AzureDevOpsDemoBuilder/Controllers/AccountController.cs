@@ -66,9 +66,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
             {
                 if (!string.IsNullOrEmpty(model.name))
                 {
-                    if (System.IO.File.Exists(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json"))
+                    if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))
                     {
-                        string privateTemplatesJson = System.IO.File.ReadAllText(HostingEnvironment.WebRootPath + @"\Templates\TemplateSetting.json");
+                        string privateTemplatesJson = System.IO.File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json");
                         templates = Newtonsoft.Json.JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
                         if (templates != null)
                         {
@@ -94,7 +94,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                 if (!string.IsNullOrEmpty(model.Event))
                 {
-                    string eventsTemplate = HostingEnvironment.WebRootPath + @"\Templates\Events.json";
+                    string eventsTemplate = HostingEnvironment.WebRootPath + "/Templates/Events.json";
                     if (System.IO.File.Exists(eventsTemplate))
                     {
                         string eventContent = System.IO.File.ReadAllText(eventsTemplate);
