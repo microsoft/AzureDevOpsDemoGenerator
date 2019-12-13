@@ -530,7 +530,6 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     string team = model.ProjectName + " Team";
                     string json = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, template.SetEpic);
-                    //string.Format(templatesFolder + @"{0}\{1}", templateUsed, template.SetEpic);
                     if (File.Exists(json))
                     {
                         json = model.ReadJsonFile(json);
@@ -542,7 +541,6 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     string team = model.ProjectName + " Team";
                     string json = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, template.BoardColumns);
-                    //string.Format(templatesFolder + @"{0}\{1}", templateUsed, template.BoardColumns);
                     if (File.Exists(json))
                     {
                         json = model.ReadJsonFile(json);
@@ -553,7 +551,6 @@ namespace AzureDevOpsDemoBuilder.Services
                             if (template.CardField != null)
                             {
                                 string cardFieldJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, template.CardField);
-                                //string.Format(templatesFolder + @"{0}\{1}", templateUsed, template.CardField);
                                 if (File.Exists(cardFieldJson))
                                 {
                                     cardFieldJson = model.ReadJsonFile(cardFieldJson);
@@ -564,7 +561,6 @@ namespace AzureDevOpsDemoBuilder.Services
                             if (template.CardStyle != null)
                             {
                                 string cardStyleJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, template.CardStyle);
-                                //string.Format(templatesFolder + @"{0}\{1}", templateUsed, template.CardStyle);
                                 if (File.Exists(cardStyleJson))
                                 {
                                     cardStyleJson = model.ReadJsonFile(cardStyleJson);
@@ -697,7 +693,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
             //create service endpoint
             List<string> listEndPointsJsonPath = new List<string>();
-            string serviceEndPointsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"ServiceEndpoints");
+            string serviceEndPointsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/ServiceEndpoints");
             if (Directory.Exists(serviceEndPointsPath))
             {
                 Directory.GetFiles(serviceEndPointsPath).ToList().ForEach(i => listEndPointsJsonPath.Add(i));
@@ -725,14 +721,13 @@ namespace AzureDevOpsDemoBuilder.Services
 
             //import source code from GitHub
             List<string> listImportSourceCodeJsonPaths = new List<string>();
-            string importSourceCodePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\ImportSourceCode");
-            //templatesFolder + templateUsed + @"\ImportSourceCode";
+            string importSourceCodePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/ImportSourceCode");
             if (Directory.Exists(importSourceCodePath))
             {
                 Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
-                if (listImportSourceCodeJsonPaths.Contains(importSourceCodePath + "\\GitRepository.json"))
+                if (listImportSourceCodeJsonPaths.Contains(importSourceCodePath + "//GitRepository.json"))
                 {
-                    listImportSourceCodeJsonPaths.Remove(importSourceCodePath + "\\GitRepository.json");
+                    listImportSourceCodeJsonPaths.Remove(importSourceCodePath + "//GitRepository.json");
                 }
             }
             foreach (string importSourceCode in listImportSourceCodeJsonPaths)
@@ -754,8 +749,7 @@ namespace AzureDevOpsDemoBuilder.Services
             CreateCodeWiki(model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
-            string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\PullRequests");
-            //templatesFolder + templateUsed + @"\PullRequests";
+            string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/PullRequests");
             if (Directory.Exists(pullRequestFolder))
             {
                 Directory.GetFiles(pullRequestFolder).ToList().ForEach(i => listPullRequestJsonPaths.Add(i));
@@ -867,7 +861,7 @@ namespace AzureDevOpsDemoBuilder.Services
             //// Modified Work Item import logic
             else
             {
-                string _WitPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\WorkItems");
+                string _WitPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItems");
                 //Path.Combine(templatesFolder + templateUsed + "\\WorkItems");
                 if (Directory.Exists(_WitPath))
                 {
@@ -898,8 +892,7 @@ namespace AzureDevOpsDemoBuilder.Services
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (File.Exists(projectSettingsFile))
             {
-                string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\WorkItemAttachments");
-                //string.Format(templatesFolder + @"{0}\WorkItemAttachments", templateUsed);
+                string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItemAttachments");
                 if (listPullRequestJsonPaths.Count > 0)
                 {
                     if (templateUsed == "MyHealthClinic")
@@ -923,8 +916,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             //Creat TestPlans and TestSuites
             List<string> listTestPlansJsonPaths = new List<string>();
-            string testPlansFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\TestPlans");
-            //templatesFolder + templateUsed + @"\TestPlans";
+            string testPlansFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/TestPlans");
             if (Directory.Exists(testPlansFolder))
             {
                 Directory.GetFiles(testPlansFolder).ToList().ForEach(i => listTestPlansJsonPaths.Add(i));
@@ -947,12 +939,12 @@ namespace AzureDevOpsDemoBuilder.Services
             // if the template is private && agreed to GitHubFork && GitHub Token is not null
             if (setting.IsPrivate == "true" && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BuildDefinitions");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
                 }
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BuildDefinitionGitHub");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitionGitHub");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -961,7 +953,7 @@ namespace AzureDevOpsDemoBuilder.Services
             // if the template is private && not agreed to GitHubFork && GitHub Token is null
             else if (setting.IsPrivate == "true" && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BuildDefinitions");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -970,7 +962,7 @@ namespace AzureDevOpsDemoBuilder.Services
             // if the template is not private && agreed to GitHubFork && GitHub Token is not null
             else if (string.IsNullOrEmpty(setting.IsPrivate) && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BuildDefinitionGitHub");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitionGitHub");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -979,7 +971,7 @@ namespace AzureDevOpsDemoBuilder.Services
             // if the template is not private && not agreed to GitHubFork && GitHub Token is null
             else if (string.IsNullOrEmpty(setting.IsPrivate) && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
-                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BuildDefinitions");
+                buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
                 {
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
@@ -993,15 +985,13 @@ namespace AzureDevOpsDemoBuilder.Services
 
             //Queue a Build
             string buildJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "QueueBuild.json");
-            //string.Format(templatesFolder + @"{0}\QueueBuild.json", templateUsed);
             if (File.Exists(buildJson))
             {
                 QueueABuild(model, buildJson, _buildVersion);
             }
 
             //create release Definition
-            string releaseDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\ReleaseDefinitions");
-            //templatesFolder + templateUsed + @"\ReleaseDefinitions";
+            string releaseDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/ReleaseDefinitions");
             model.ReleaseDefinitions = new List<ReleaseDef>();
             if (Directory.Exists(releaseDefinitionsPath))
             {
@@ -1015,10 +1005,8 @@ namespace AzureDevOpsDemoBuilder.Services
 
             //Create query and widgets
             List<string> listDashboardQueriesPath = new List<string>();
-            string dashboardQueriesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\Dashboard\Queries");
-            //templatesFolder + templateUsed + @"\Dashboard\Queries";
-            string dashboardPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\Dashboard");
-            //templatesFolder + templateUsed + @"\Dashboard";
+            string dashboardQueriesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/Dashboard/Queries");
+            string dashboardPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/Dashboard");
 
             if (Directory.Exists(dashboardQueriesPath))
             {
@@ -1037,7 +1025,7 @@ namespace AzureDevOpsDemoBuilder.Services
         private void ForkGitHubRepository(Project model, AppConfiguration _gitHubConfig)
         {
             List<string> listRepoFiles = new List<string>();
-            string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+            string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/ImportSourceCode/GitRepository.json");
             if (File.Exists(repoFilePath))
             {
                 string readRepoFile = model.ReadJsonFile(repoFilePath);
@@ -1108,9 +1096,6 @@ namespace AzureDevOpsDemoBuilder.Services
                                 string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
                                 string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
 
-                                //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
-
-
                                 if (File.Exists(updateAreaJSON))
                                 {
                                     updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
@@ -1139,7 +1124,6 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "UpdateTeamArea.json");
 
-                            //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
                             if (File.Exists(updateAreaJSON))
                             {
                                 updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
@@ -1201,7 +1185,6 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 string jsonWorkItems = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, workItemJSON);
-                //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, workItemJSON);
                 if (File.Exists(jsonWorkItems))
                 {
                     WorkItem objWorkItem = new WorkItem(_defaultConfiguration);
@@ -1359,9 +1342,7 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 string jsonWorkItemsUpdate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, workItemUpdateJSON);
-                //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, workItemUpdateJSON);
                 string jsonProjectSettings = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, projectSettingsJSON);
-                //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, projectSettingsJSON);
                 if (File.Exists(jsonWorkItemsUpdate))
                 {
                     WorkItem objWorkItem = new WorkItem(_defaultConfiguration);
@@ -1395,7 +1376,6 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 string jsonIterations = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, iterationsJSON);
-                //string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, iterationsJSON);
                 if (File.Exists(jsonIterations))
                 {
                     iterationsJSON = model.ReadJsonFile(jsonIterations);
@@ -1641,8 +1621,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
                         {
                             model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
-                            commentFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\PullRequests\Comments\" + commentFile);
-                            //string.Format(templatesFolder + @"{0}\PullRequests\Comments\{1}", model.SelectedTemplate, commentFile);
+                            commentFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/PullRequests/Comments/" + commentFile);
                             if (File.Exists(commentFile))
                             {
                                 commentFile = model.ReadJsonFile(commentFile);
@@ -1823,8 +1802,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     if (testPlanResponse.Length > 0)
                     {
-                        string testSuiteJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\TestPlans\TestSuites\" + fileName);
-                        //string.Format(templateFolder + @"{0}\TestPlans\TestSuites\{1}", model.SelectedTemplate, fileName);
+                        string testSuiteJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/TestPlans/TestSuites/" + fileName);
                         if (File.Exists(testSuiteJson))
                         {
                             testSuiteJson = model.ReadJsonFile(testSuiteJson);
@@ -2115,8 +2093,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                 }
                 //Create DashBoards
-                string dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Dashboard.json");
-                //string.Format(templatesFolder + @"{0}\Dashboard\Dashboard.json", model.SelectedTemplate);
+                string dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/Dashboard/Dashboard.json");
                 if (File.Exists(dashBoardTemplate))
                 {
                     dynamic dashBoard = new System.Dynamic.ExpandoObject();
@@ -2431,9 +2408,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                //string templatesFolder = HostingEnvironment.WebRootPath + @"\Templates\";
                 string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "Extensions.json");
-                //string.Format(templatesFolder + @"{0}\Extensions.json", model.SelectedTemplate);
                 if (!(File.Exists(projTemplateFile)))
                 {
                     return false;
@@ -2519,11 +2494,10 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 ManageWiki manageWiki = new ManageWiki(_wikiConfiguration);
-                string projectWikiFolderPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Wiki\ProjectWiki");
-                //templatesFolder + model.SelectedTemplate + "\\Wiki\\ProjectWiki";
+                string projectWikiFolderPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/Wiki/ProjectWiki");
                 if (Directory.Exists(projectWikiFolderPath))
                 {
-                    string createWiki = string.Format(templatesFolder + "\\CreateWiki.json"); // check is path
+                    string createWiki = string.Format(templatesFolder + "/CreateWiki.json"); // check is path
                     if (File.Exists(createWiki))
                     {
                         string jsonString = File.ReadAllText(createWiki);
@@ -2536,7 +2510,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             //dirName==parentName//
                             string[] dirSplit = dir.Split('\\');
                             string dirName = dirSplit[dirSplit.Length - 1];
-                            string sampleContent = File.ReadAllText(templatesFolder + "\\SampleContent.json");
+                            string sampleContent = File.ReadAllText(templatesFolder + "//SampleContent.json");
                             sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
                             bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
 
@@ -2575,7 +2549,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                         {
                                             if (child != dirName)
                                             {
-                                                string movePages = File.ReadAllText(templatesFolder + @"\MovePages.json");
+                                                string movePages = File.ReadAllText(templatesFolder + "/MovePages.json");
                                                 if (!string.IsNullOrEmpty(movePages))
                                                 {
                                                     movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
@@ -2599,7 +2573,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                string wikiFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Wiki");
+                string wikiFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/Wiki");
                 //templatesFolder + model.SelectedTemplate + "\\Wiki";
                 if (Directory.Exists(wikiFolder))
                 {
@@ -2640,7 +2614,7 @@ namespace AzureDevOpsDemoBuilder.Services
         }
         public void CreateDeploymentGroup(string templateFolder, Project model, AppConfiguration _deploymentGroup)
         {
-            string path = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\DeploymentGroups\CreateDeploymentGroup.json");
+            string path = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/DeploymentGroups/CreateDeploymentGroup.json");
             //templateFolder + model.SelectedTemplate + "\\DeploymentGroups\\CreateDeploymentGroup.json";
             if (File.Exists(path))
             {
@@ -2798,7 +2772,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             VariableGroups variableGroups = new VariableGroups(_variableGroups);
             model.Environment.VariableGroups = new Dictionary<int, string>();
-            string filePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\VariableGroups\VariableGroup.json");
+            string filePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/VariableGroups/VariableGroup.json");
             if (File.Exists(filePath))
             {
                 string jsonString = model.ReadJsonFile(filePath);
