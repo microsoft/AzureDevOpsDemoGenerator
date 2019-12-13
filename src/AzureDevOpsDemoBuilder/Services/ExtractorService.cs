@@ -342,7 +342,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
                         string fetchedJson = JsonConvert.SerializeObject(listExtension, Formatting.Indented);
 
-                        File.WriteAllText(extractedTemplatePath + appConfig.ExtensionConfig.Project + "\\Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
+                        File.WriteAllText(extractedTemplatePath + appConfig.ExtensionConfig.Project + "//Extensions.json", JsonConvert.SerializeObject(listExtension, Formatting.Indented));
                     }
                 }
                 else if (!string.IsNullOrEmpty(listExtenison.LastFailureMessage))
@@ -381,19 +381,19 @@ namespace AzureDevOpsDemoBuilder.Services
                                         JObject jobj = new JObject();
                                         jobj["name"] = query.name;
                                         jobj["wiql"] = query.wiql;
-                                        if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries"))
+                                        if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries"))
                                         {
-                                            Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard");
-                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
+                                            Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard");
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Dashboard.json", JsonConvert.SerializeObject("text", Formatting.Indented));
                                         }
-                                        if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries"))
+                                        if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries"))
                                         {
-                                            Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries");
-                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries");
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                         else
                                         {
-                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                     }
                                 }
@@ -407,15 +407,15 @@ namespace AzureDevOpsDemoBuilder.Services
                                             JObject jobj = new JObject();
                                             jobj["name"] = child1.name;
                                             jobj["wiql"] = child1.wiql;
-                                            if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries"))
+                                            if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries"))
                                             {
-                                                Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries");
+                                                Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries");
 
-                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                             }
                                             else
                                             {
-                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "\\Dashboard\\Queries\\" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                             }
                                         }
                                     }
@@ -460,11 +460,11 @@ namespace AzureDevOpsDemoBuilder.Services
                     string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
                     if (fetchedJson != "")
                     {
-                        if (!Directory.Exists(extractedTemplatePath + con.Project + "\\Teams"))
+                        if (!Directory.Exists(extractedTemplatePath + con.Project + "/Teams"))
                         {
-                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "\\Teams");
+                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "/Teams");
                         }
-                        File.WriteAllText(extractedTemplatePath + con.Project + "\\Teams\\Teams.json", fetchedJson);
+                        File.WriteAllText(extractedTemplatePath + con.Project + "/Teams/Teams.json", fetchedJson);
 
                         List<string> boardTypes = new List<string>();
                         boardTypes.Add("Epics");
@@ -494,7 +494,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                             List<JObject> jObjCardFieldList = new List<JObject>();
                             List<JObject> jObjcardStyleList = new List<JObject>();
-                            string teamFolderPath = extractedTemplatePath + con.Project + "\\Teams\\" + team.name;
+                            string teamFolderPath = extractedTemplatePath + con.Project + "/Teams/" + team.name;
                             if (!Directory.Exists(teamFolderPath))
                             {
                                 Directory.CreateDirectory(teamFolderPath);
@@ -619,31 +619,31 @@ namespace AzureDevOpsDemoBuilder.Services
 
                             if (columnResponsesAgile.Count > 0)
                             {
-                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (columnResponsesScrum.Count > 0)
                             {
-                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (columnResponsesBasic.Count > 0)
                             {
-                                File.WriteAllText(teamFolderPath + "\\BoardColumns.json", JsonConvert.SerializeObject(columnResponsesBasic, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                                File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesBasic, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                             }
                             if (boardRows.Count > 0)
                             {
-                                File.WriteAllText(teamFolderPath + "\\BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "/BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                             }
                             if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
                             {
-                                File.WriteAllText(teamFolderPath + "\\TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "/TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
                             }
                             if (jObjCardFieldList.Count > 0)
                             {
-                                File.WriteAllText(teamFolderPath + "\\CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "/CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
                             }
                             if (jObjcardStyleList.Count > 0)
                             {
-                                File.WriteAllText(teamFolderPath + "\\CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                                File.WriteAllText(teamFolderPath + "/CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
                             }
                         }
 
@@ -687,7 +687,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         Directory.CreateDirectory(extractedTemplatePath + appConfig.BoardConfig.Project);
                     }
-                    File.WriteAllText(extractedTemplatePath + appConfig.BoardConfig.Project + "\\Iterations.json", fetchedJson);
+                    File.WriteAllText(extractedTemplatePath + appConfig.BoardConfig.Project + "/Iterations.json", fetchedJson);
                     return true;
                 }
                 else
@@ -726,11 +726,11 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project, "$ProjectName$");
                             string item = WIT;
-                            if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems"))
+                            if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "/WorkItems"))
                             {
-                                Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems");
+                                Directory.CreateDirectory(extractedTemplatePath + appConfig.WorkItemConfig.Project + "/WorkItems");
                             }
-                            File.WriteAllText(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems\\" + item + ".json", workItemJson);
+                            File.WriteAllText(extractedTemplatePath + appConfig.WorkItemConfig.Project + "/WorkItems/" + item + ".json", workItemJson);
                         }
                         else if (!string.IsNullOrEmpty(WorkitemsCount.LastFailureMessage))
                         {
@@ -1015,14 +1015,14 @@ namespace AzureDevOpsDemoBuilder.Services
                     }
                 }
                 count++;
-                if (!Directory.Exists(templatePath + "\\BuildDefinitions"))
+                if (!Directory.Exists(templatePath + "/BuildDefinitions"))
                 {
-                    Directory.CreateDirectory(templatePath + "\\BuildDefinitions");
-                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    Directory.CreateDirectory(templatePath + "/BuildDefinitions");
+                    File.WriteAllText(templatePath + "/BuildDefinitions/" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
                 else
                 {
-                    File.WriteAllText(templatePath + "\\BuildDefinitions\\" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
+                    File.WriteAllText(templatePath + "/BuildDefinitions/" + fileName, JsonConvert.SerializeObject(def, Formatting.Indented));
                 }
 
                 return count;
@@ -1051,9 +1051,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 Guid g = Guid.NewGuid();
                 string randStr = g.ToString().Substring(0, 8);
                 var ymlRepoUrl = def["repository"]["url"].ToString();
-                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode"))
+                if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode"))
                 {
-                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode");
+                    Directory.CreateDirectory(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode");
                 }
                 if (type.ToString().ToLower() == "github")
                 {
@@ -1064,9 +1064,9 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     ForkRepos.Fork gitHubRepoList = new ForkRepos.Fork();
                     gitHubRepoList.repositories = new List<ForkRepos.Repository>();
-                    if (File.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode\\GitRepository.json"))
+                    if (File.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json"))
                     {
-                        string readrepo = File.ReadAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode\\GitRepository.json");
+                        string readrepo = File.ReadAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json");
                         gitHubRepoList = JsonConvert.DeserializeObject<ForkRepos.Fork>(readrepo);
                     }
                     ForkRepos.Repository repoName = new ForkRepos.Repository
@@ -1076,7 +1076,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     };
                     gitHubRepoList.repositories.Add(repoName);
 
-                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ImportSourceCode\\GitRepository.json", JsonConvert.SerializeObject(gitHubRepoList, Formatting.Indented));
+                    File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json", JsonConvert.SerializeObject(gitHubRepoList, Formatting.Indented));
 
                     def["repository"]["properties"]["apiUrl"] = "https://api.github.com/repos/" + gitHubRepo;
                     def["repository"]["properties"]["branchesUrl"] = "https://api.github.com/repos/" + gitHubRepo + "/branches";
@@ -1354,14 +1354,14 @@ namespace AzureDevOpsDemoBuilder.Services
                                 }
                             }
                         }
-                        if (!(Directory.Exists(templatePath + "\\ReleaseDefinitions")))
+                        if (!(Directory.Exists(templatePath + "/ReleaseDefinitions")))
                         {
-                            Directory.CreateDirectory(templatePath + "\\ReleaseDefinitions");
-                            File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            Directory.CreateDirectory(templatePath + "/ReleaseDefinitions");
+                            File.WriteAllText(templatePath + "/ReleaseDefinitions/" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         else
                         {
-                            File.WriteAllText(templatePath + "\\ReleaseDefinitions\\" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
+                            File.WriteAllText(templatePath + "/ReleaseDefinitions/" + name + ".json", JsonConvert.SerializeObject(rel, Formatting.Indented));
                         }
                         releasecount++;
                     }
@@ -1524,14 +1524,14 @@ namespace AzureDevOpsDemoBuilder.Services
 
                         }
                         string endpointString = JsonConvert.SerializeObject(endpoint);
-                        if (!Directory.Exists(extractedTemplatePath + appConfig.EndpointConfig.Project + "\\ServiceEndpoints"))
+                        if (!Directory.Exists(extractedTemplatePath + appConfig.EndpointConfig.Project + "/ServiceEndpoints"))
                         {
-                            Directory.CreateDirectory(extractedTemplatePath + appConfig.EndpointConfig.Project + "\\ServiceEndpoints");
-                            File.WriteAllText(extractedTemplatePath + appConfig.EndpointConfig.Project + "\\ServiceEndpoints\\", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            Directory.CreateDirectory(extractedTemplatePath + appConfig.EndpointConfig.Project + "/ServiceEndpoints");
+                            File.WriteAllText(extractedTemplatePath + appConfig.EndpointConfig.Project + "/ServiceEndpoints/", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                         }
                         else
                         {
-                            File.WriteAllText(extractedTemplatePath + appConfig.EndpointConfig.Project + "\\ServiceEndpoints\\" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            File.WriteAllText(extractedTemplatePath + appConfig.EndpointConfig.Project + "/ServiceEndpoints/" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                         }
                     }
                 }
@@ -1573,14 +1573,14 @@ namespace AzureDevOpsDemoBuilder.Services
             string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
             if (groups.count > 0)
             {
-                if (!(Directory.Exists(templatePath + "\\VariableGroups")))
+                if (!(Directory.Exists(templatePath + "/VariableGroups")))
                 {
-                    Directory.CreateDirectory(templatePath + "\\VariableGroups");
-                    File.WriteAllText(templatePath + "\\VariableGroups\\VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
+                    Directory.CreateDirectory(templatePath + "/VariableGroups");
+                    File.WriteAllText(templatePath + "/VariableGroups/VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
                 }
                 else
                 {
-                    File.WriteAllText(templatePath + "\\VariableGroups\\VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
+                    File.WriteAllText(templatePath + "/VariableGroups/VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
                 }
                 foreach (var vg in groups.value)
                 {
