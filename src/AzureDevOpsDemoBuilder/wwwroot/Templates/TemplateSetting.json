@@ -29,8 +29,7 @@
             "/Templates/Tailwind Traders/Images/Website.png"
           ],
           "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/TailwindTraders.png",
-          "ForkGitHubRepo": true
+          "Image": "/Templates/TemplateImages/TailwindTraders.png"
         },
         {
           "Key": "77383",
@@ -49,8 +48,7 @@
             "/Templates/SmartHotel360/Images/Diagram.png",
             "/Templates/SmartHotel360/Images/Screens.png"
           ],
-          "Author": "Microsoft",
-          "ForkGitHubRepo": true
+          "Author": "Microsoft"
         },
         {
           "Key": "77380",
