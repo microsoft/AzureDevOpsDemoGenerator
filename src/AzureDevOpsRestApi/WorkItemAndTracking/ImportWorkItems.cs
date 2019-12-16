@@ -177,8 +177,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 
                             if (newWI.fields.SystemIterationPath.Contains("\\"))
                             {
-                                iterationPath = string.Format("{0}/{1}", projectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
-
+                                iterationPath = string.Format("{0}\\{1}", projectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
                             }
 
                             if (!string.IsNullOrWhiteSpace(boardRowFieldName))
