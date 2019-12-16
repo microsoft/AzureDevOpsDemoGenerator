@@ -7,7 +7,7 @@ Once you generate the custom tempalte using [Azure  DevOps Demo Generator - Temp
 Using private template URL you can provisoin the project. You have multiple options here
 
 
-1. Using the template URL from public GitHub repository [Provisioning the project from your custom template](./Using-The-Template-Extractor.md)
+1. Using the template URL from public GitHub repository, refer [Provisioning the project from your custom template](./Using-The-Template-Extractor.md)
 
 1. Use the template URL in the home page of [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net/) with querystring parameter **?templateurl**. This supports only the public URL
  
