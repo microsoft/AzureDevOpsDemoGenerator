@@ -9,28 +9,33 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
     public class GitHubController : Controller
     {
-        public GitHubController(ILogger<GitHubController> _logger)
+        public GitHubController(ILogger<GitHubController> _logger, IConfiguration appKeyConfiguration)
         {
+            AppKeyConfiguration = appKeyConfiguration;
             logger = _logger;
         }
 
         private GitHubAccessDetails accessDetails = new GitHubAccessDetails();
         public static string state = Guid.NewGuid().ToString().Split('-')[0];
+
+        public IConfiguration AppKeyConfiguration { get; }
+
         private ILogger<GitHubController> logger;
 
         [AllowAnonymous]
         public ActionResult GitOauth()
         {
             //Request User GitHub Identity
-            string ClientID = System.Configuration.ConfigurationManager.AppSettings["GitHubClientId"];
-            string ClientSecret = System.Configuration.ConfigurationManager.AppSettings["GitHubClientSecret"];
-            string RedirectUrl = System.Configuration.ConfigurationManager.AppSettings["GitHubRedirectUrl"];
-            string Scope = System.Configuration.ConfigurationManager.AppSettings["GitHubScope"];
+            string ClientID = AppKeyConfiguration["GitHubClientId"];
+            string ClientSecret = AppKeyConfiguration["GitHubClientSecret"];
+            string RedirectUrl = AppKeyConfiguration["GitHubRedirectUrl"];
+            string Scope = AppKeyConfiguration["GitHubScope"];
             string url = string.Format("https://github.com/login/oauth/authorize?client_id={0}&scope={1}&redirect_uri={2}&state={3}", ClientID, Scope, RedirectUrl, state);
             return Redirect(url);
         }
@@ -71,10 +76,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         public string FormatRequestUrl(string code)
         {
-            string ClientID = System.Configuration.ConfigurationManager.AppSettings["GitHubClientId"];
-            string ClientSecret = System.Configuration.ConfigurationManager.AppSettings["GitHubClientSecret"];
-            string RedirectUrl = System.Configuration.ConfigurationManager.AppSettings["GitHubRedirectUrl"];
-            string Scope = System.Configuration.ConfigurationManager.AppSettings["GitHubScope"];
+            string ClientID = AppKeyConfiguration["GitHubClientId"];
+            string ClientSecret = AppKeyConfiguration["GitHubClientSecret"];
+            string RedirectUrl = AppKeyConfiguration["GitHubRedirectUrl"];
+            string Scope = AppKeyConfiguration["GitHubScope"];
             string requestUrl = string.Format("?client_id={0}&client_secret={1}&code={2}&redirect_uri={3}&state={4}", ClientID, ClientSecret, code, RedirectUrl, state);
             return requestUrl;
         }

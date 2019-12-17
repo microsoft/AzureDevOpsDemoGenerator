@@ -276,8 +276,8 @@ namespace AzureDevOpsDemoBuilder.Services
             if (logWIT == "true")
             {
                 string patBase64 = AppKeyConfiguration["PATBase64"];
-                string url = System.Configuration.ConfigurationManager.AppSettings["URL"];
-                string projectId = System.Configuration.ConfigurationManager.AppSettings["PROJECTID"];
+                string url = AppKeyConfiguration["URL"];
+                string projectId = AppKeyConfiguration["PROJECTID"];
                 string reportName = string.Format("{0}", "AzureDevOps_Analytics-DemoGenerator");
                 IssueWI objIssue = new IssueWI();
                 objIssue.CreateReportWI(patBase64, "4.1", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
@@ -1672,15 +1672,15 @@ namespace AzureDevOpsDemoBuilder.Services
                     string jsonCreateService = jsonPath;
                     if (File.Exists(jsonCreateService))
                     {
-                        string username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
-                        string password = System.Configuration.ConfigurationManager.AppSettings["Password"];
+                        string username = AppKeyConfiguration["UserID"];
+                        string password = AppKeyConfiguration["Password"];
                         //string extractPath = HostingEnvironment.MapPath("~/Templates/" + model.SelectedTemplate);
                         string projectFileData = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
                         ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
                         ServiceEndPoint objService = new ServiceEndPoint(_endpointConfig);
 
-                        string gitUserName = System.Configuration.ConfigurationManager.AppSettings["GitUserName"];
-                        string gitUserPassword = System.Configuration.ConfigurationManager.AppSettings["GitUserPassword"];
+                        string gitUserName = AppKeyConfiguration["GitUserName"];
+                        string gitUserPassword = AppKeyConfiguration["GitUserPassword"];
 
                         jsonCreateService = model.ReadJsonFile(jsonCreateService);
 
@@ -1729,14 +1729,14 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
                         if (model.SelectedTemplate.ToLower() == "bikesharing360")
                         {
-                            string bikeSharing360username = System.Configuration.ConfigurationManager.AppSettings["UserID"];
-                            string bikeSharing360password = System.Configuration.ConfigurationManager.AppSettings["BikeSharing360Password"];
+                            string bikeSharing360username = AppKeyConfiguration["UserID"];
+                            string bikeSharing360password = AppKeyConfiguration["BikeSharing360Password"];
                             jsonCreateService = jsonCreateService.Replace("$BikeSharing360username$", bikeSharing360username).Replace("$BikeSharing360password$", bikeSharing360password);
                         }
                         else if (model.SelectedTemplate.ToLower() == "contososhuttle" || model.SelectedTemplate.ToLower() == "contososhuttle2")
                         {
-                            string contosousername = System.Configuration.ConfigurationManager.AppSettings["ContosoUserID"];
-                            string contosopassword = System.Configuration.ConfigurationManager.AppSettings["ContosoPassword"];
+                            string contosousername = AppKeyConfiguration["ContosoUserID"];
+                            string contosopassword = AppKeyConfiguration["ContosoPassword"];
                             jsonCreateService = jsonCreateService.Replace("$ContosoUserID$", contosousername).Replace("$ContosoPassword$", contosopassword);
                         }
                         else if (model.SelectedTemplate.ToLower() == "sonarqube")
