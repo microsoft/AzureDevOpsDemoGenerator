@@ -721,13 +721,13 @@ namespace AzureDevOpsDemoBuilder.Services
 
             //import source code from GitHub
             List<string> listImportSourceCodeJsonPaths = new List<string>();
-            string importSourceCodePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/ImportSourceCode");
+            string importSourceCodePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/ImportSourceCode/");
             if (Directory.Exists(importSourceCodePath))
             {
                 Directory.GetFiles(importSourceCodePath).ToList().ForEach(i => listImportSourceCodeJsonPaths.Add(i));
-                if (listImportSourceCodeJsonPaths.Contains(importSourceCodePath + "//GitRepository.json"))
+                if (listImportSourceCodeJsonPaths.Contains(importSourceCodePath + "GitRepository.json"))
                 {
-                    listImportSourceCodeJsonPaths.Remove(importSourceCodePath + "//GitRepository.json");
+                    listImportSourceCodeJsonPaths.Remove(importSourceCodePath + "GitRepository.json");
                 }
             }
             foreach (string importSourceCode in listImportSourceCodeJsonPaths)
