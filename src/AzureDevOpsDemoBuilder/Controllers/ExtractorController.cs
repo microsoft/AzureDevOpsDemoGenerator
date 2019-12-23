@@ -340,59 +340,64 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
             string filePath = HostingEnvironment.ContentRootPath + "/ExtractedTemplate/" + fileName;
+            filePath = filePath.Replace('\\', '/');
             try
             {
                 CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
                 if (System.IO.Directory.Exists(filePath))
                 {
-                    string[] files = Directory.GetFiles(filePath);
-                    string[] subDirs = Directory.GetDirectories(filePath);
+                    string[] files = Directory.GetFiles(filePath); // Getting all files from the selected directory
+                    string[] subDirs = Directory.GetDirectories(filePath); // Getting all the sub-directories
                     if (files.Length > 0)
                     {
-                        sfiles.Files = new List<CreateZips.FileInfo>();
+                        sfiles.Files = new List<CreateZips.FileInfo>(); // initializing the file prop to add all available files
 
-                        foreach (var f in files)
+                        foreach (string file in files)
                         {
                             CreateZips.FileInfo fileInfo = new CreateZips.FileInfo();
-
-                            string[] fSplit = f.Split('\\');
+                            string f = file.Replace('\\', '/');
+                            // taking the filename by splitting the file path -  taking value of the last index
+                            string[] fSplit = f.Split('/');
                             string splitLength = fSplit[fSplit.Length - 1];
                             fSplit = splitLength.Split('.');
 
-                            fileInfo.Name = fSplit[0];
-                            fileInfo.Extension = fSplit[1];
-                            fileInfo.FileBytes = System.IO.File.ReadAllBytes(f);
-                            sfiles.Files.Add(fileInfo);
+                            // File info
+                            fileInfo.Name = fSplit[0]; // File name
+                            fileInfo.Extension = fSplit[1]; // File extension
+                            fileInfo.FileBytes = System.IO.File.ReadAllBytes(f); // File content in bytes
+                            sfiles.Files.Add(fileInfo); // Adding the file info to files object
                         }
                     }
 
                     if (subDirs.Length > 0)
                     {
-                        sfiles.Folder = new List<CreateZips.Folder>();
+                        sfiles.Folder = new List<CreateZips.Folder>(); // Initializing the folder prop to add all available folders
 
-                        foreach (var dir in subDirs)
+                        foreach (string dir in subDirs)
                         {
-                            string[] subDirFiles = System.IO.Directory.GetFiles(dir);
-                            string[] subDirsLevel2 = Directory.GetDirectories(dir);
+                            string _p = dir.Replace('\\', '/');
+                            string[] subDirFiles = System.IO.Directory.GetFiles(_p); // Getting all files from the selected sub directory
+                            string[] subDirsLevel2 = Directory.GetDirectories(_p); // Getting all the sub-directories
 
                             if (subDirFiles.Length > 0)
                             {
-                                CreateZips.Folder folder = new CreateZips.Folder();
-                                string[] getFolderName = dir.Split('\\');
-                                string subFolderName = getFolderName[getFolderName.Length - 1];
-                                folder.FolderName = subFolderName;
-                                folder.FolderItems = new List<CreateZips.FolderItem>();
+                                CreateZips.Folder folder = new CreateZips.Folder(); // Initializing the zip folder
+                                string[] getFolderName = _p.Split('/'); // split the path to get the folder name
+                                string subFolderName = getFolderName[getFolderName.Length - 1]; // Copy the folder name
+                                folder.FolderName = subFolderName; // Assigning the folder name to the prop
+                                folder.FolderItems = new List<CreateZips.FolderItem>(); // Initialize the folder items
 
-                                foreach (var sdf in subDirFiles)
+                                foreach (string sdf in subDirFiles)
                                 {
+                                    string _sp = sdf.Replace('\\', '/');
                                     CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
-                                    string[] fSplit = sdf.Split('\\');
+                                    string[] fSplit = _sp.Split('/');
                                     string splitLength = fSplit[fSplit.Length - 1];
                                     fSplit = splitLength.Split('.');
 
                                     folderItem.Name = fSplit[0];
                                     folderItem.Extension = fSplit[1];
-                                    folderItem.FileBytes = System.IO.File.ReadAllBytes(sdf);
+                                    folderItem.FileBytes = System.IO.File.ReadAllBytes(_sp);
                                     folder.FolderItems.Add(folderItem);
                                 }
                                 if (subDirsLevel2.Length > 0)
@@ -404,21 +409,23 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                         if (subDirFilesL2.Length > 0)
                                         {
                                             CreateZips.FolderL2 folderFL2 = new CreateZips.FolderL2();
-                                            string[] getFolderNameL2 = dirL2.Split('\\');
+                                            string[] getFolderNameL2 = dirL2.Split('/');
                                             string subFolderNameL2 = getFolderNameL2[getFolderNameL2.Length - 1];
                                             folderFL2.FolderName = subFolderNameL2;
                                             folderFL2.FolderItems = new List<CreateZips.FolderItem>();
 
                                             foreach (var sdfL2 in subDirFilesL2)
                                             {
+                                                string _sp2 = sdfL2.Replace('\\', '/');
+
                                                 CreateZips.FolderItem folderItem = new CreateZips.FolderItem();
-                                                string[] fSplit = sdfL2.Split('\\');
+                                                string[] fSplit = _sp2.Split('/');
                                                 string splitLength = fSplit[fSplit.Length - 1];
                                                 fSplit = splitLength.Split('.');
 
                                                 folderItem.Name = fSplit[0];
                                                 folderItem.Extension = fSplit[1];
-                                                folderItem.FileBytes = System.IO.File.ReadAllBytes(sdfL2);
+                                                folderItem.FileBytes = System.IO.File.ReadAllBytes(_sp2);
                                                 folderFL2.FolderItems.Add(folderItem);
                                             }
                                             folder.FolderL2.Add(folderFL2);
