@@ -1576,7 +1576,7 @@ namespace VstsDemoBuilder.Services
                     string repositoryId = string.Empty;
                     if (model.SelectedTemplate == "MyHealthClinic") { repositoryId = model.Environment.repositoryIdList["MyHealthClinic"]; }
                     if (model.SelectedTemplate == "SmartHotel360") { repositoryId = model.Environment.repositoryIdList["PublicWeb"]; }
-                    else { repositoryId = model.Environment.repositoryIdList[model.SelectedTemplate]; }
+                    else { repositoryId = model.Environment.repositoryIdList.ContainsKey(model.SelectedTemplate) ? model.Environment.repositoryIdList[model.SelectedTemplate] : ""; }
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
                     pullRequestJsonPath = pullRequestJsonPath.Replace("$reviewer$", model.Environment.UserUniqueId);
@@ -2763,6 +2763,25 @@ namespace VstsDemoBuilder.Services
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Checkign for template existance - if template is present in private path, return true else return false
+        /// </summary>
+        /// <param name="templatName"></param>
+        /// <returns></returns>
+        public bool WhereDoseTemplateBelongTo(string templatName)
+        {
+            string privatePath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\";
+            string privateTemplate = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templatName;
+            //string publicPath = HostingEnvironment.MapPath("~") + @"\Templates\";
+            string[] privatedirs = Directory.GetDirectories(privatePath);
+            //string[] publicdirs = Directory.GetDirectories(privatePath);
+            if (privatedirs.Contains(privateTemplate))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

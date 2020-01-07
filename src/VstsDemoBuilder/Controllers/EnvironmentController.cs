@@ -168,11 +168,16 @@ namespace VstsDemoBuilder.Controllers
                         model.TemplateName = Session["templateName"].ToString();
                         TemplateSelected = model.TemplateName;
                     }
+                    else if (Session["PrivateTemplateName"] != null)
+                    {
+                        model.TemplateName = Session["PrivateTemplateName"].ToString();
+                        TemplateSelected = model.TemplateName;
+                    }
                     else
                     {
                         TemplateSelected = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
+                        model.TemplateName = TemplateSelected;
                     }
-
                     if (Session["PAT"] != null)
                     {
                         _accessDetails.access_token = Session["PAT"].ToString();
@@ -229,24 +234,36 @@ namespace VstsDemoBuilder.Controllers
                             //if exist, will append the template name to Selected template textbox, else will append the SmartHotel360 template
                             if (!string.IsNullOrEmpty(TemplateSelected))
                             {
-                                foreach (var grpTemplate in templates.GroupwiseTemplates)
+                                if (Session["PrivateTemplateName"] == null)
                                 {
-                                    foreach (var template in grpTemplate.Template)
+                                    foreach (var grpTemplate in templates.GroupwiseTemplates)
                                     {
-                                        if (template.Name != null)
+                                        foreach (var template in grpTemplate.Template)
                                         {
-                                            if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                            if (template.Name != null)
                                             {
-                                                model.SelectedTemplate = template.Name;
-                                                model.Templates.Add(template.Name);
-                                                model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
-                                                model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
-                                                model.Message = template.Message == null ? string.Empty : template.Message;
-                                                model.ForkGitHubRepo = template.ForkGitHubRepo.ToString();
-                                                model.templateImage = template.Image ?? "/Templates/TemplateImages/CodeFile.png";
+                                                if (template.Name.ToLower() == TemplateSelected.ToLower())
+                                                {
+                                                    model.SelectedTemplate = template.Name;
+                                                    model.Templates.Add(template.Name);
+                                                    model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                                    model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                                    model.Message = template.Message == null ? string.Empty : template.Message;
+                                                    model.ForkGitHubRepo = template.ForkGitHubRepo.ToString();
+                                                    model.templateImage = template.Image ?? "/Templates/TemplateImages/CodeFile.png";
+                                                }
                                             }
                                         }
                                     }
+                                }
+                                else
+                                {
+                                    model.SelectedTemplate = Session["PrivateTemplateOriginalName"].ToString();
+                                    model.Templates.Add(model.SelectedTemplate);
+                                    model.selectedTemplateDescription = "<p style='color:red;fontsize:10px'><b>Note</b>: Template will be discarded once the process completes. Please refersh the page to select other templates </p>";
+                                    model.selectedTemplateFolder = Session["PrivateTemplateName"].ToString();
+                                    model.ForkGitHubRepo = "false";
+                                    model.templateImage = "/Templates/TemplateImages/CodeFile.png";
                                 }
                             }
                             return View(model);
@@ -518,9 +535,18 @@ namespace VstsDemoBuilder.Controllers
                     {
                         model.GitHubToken = Session["GitHubToken"].ToString();
                     }
+                    if (Session["PrivateTemplateURL"] != null && Session["PrivateTemplateName"] != null)
+                    {
+                        model.PrivateTemplatePath = Session["PrivateTemplateURL"].ToString();
+                        Session["PrivateTemplateURL"] = null;
+                        Session["PrivateTemplateName"] = null;
+                        Session["PrivateTemplateOriginalName"] = null;
+                        Session["templateName"] = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
+                    }
                     projectService.AddMessage(model.id, string.Empty);
                     projectService.AddMessage(model.id.ErrorId(), string.Empty);
-                    if (!string.IsNullOrEmpty(model.PrivateTemplatePath))
+                    bool whereIsTemplate = projectService.WhereDoseTemplateBelongTo(model.SelectedTemplate); // checking for private template  existance
+                    if (!string.IsNullOrEmpty(model.PrivateTemplatePath) && whereIsTemplate) // if the template path exist and tempalte is present in private fodler
                     {
                         model.IsPrivatePath = true;
                     }
@@ -620,6 +646,7 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                bool isTemplateBelongToPrivateFolder = projectService.WhereDoseTemplateBelongTo(selectedTemplate);
                 if (!string.IsNullOrEmpty(selectedTemplate) && !string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(token))
                 {
                     string accountName = string.Empty;
@@ -629,7 +656,12 @@ namespace VstsDemoBuilder.Controllers
                     pat = token;
                     string templatesFolder = string.Empty;
                     string extensionJsonFile = string.Empty;
-                    if (string.IsNullOrEmpty(PrivatePath))
+                    if (isTemplateBelongToPrivateFolder)
+                    {
+                        templatesFolder = Session["PrivateTemplateURL"].ToString();
+                        extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
+                    }
+                    else if (string.IsNullOrEmpty(PrivatePath))
                     {
                         templatesFolder = Server.MapPath("~") + @"\Templates\";
                         extensionJsonFile = string.Format(templatesFolder + @"\{0}\Extensions.json", selectedTemplate);
@@ -639,8 +671,6 @@ namespace VstsDemoBuilder.Controllers
                         templatesFolder = PrivatePath;
                         extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
                     }
-
-
 
                     if (!(System.IO.File.Exists(extensionJsonFile)))
                     {

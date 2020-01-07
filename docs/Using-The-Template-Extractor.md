@@ -44,10 +44,20 @@ Setup an Azure DevOps project and make sure it is ready to be extracted. The ext
 
 1. You will see a new tab labelled **Private**. Select the tab.
 
-1. Select **Browse** and select the zip file you downloaded zip file.
+    Here you have three option
 
-1. Click **OK** to close the dialog. Choose **Create Project** to start provisioning a project
+    1. Select **Browse** and select the zip file you downloaded zip file.
+
+    1. Use the radio button **GitHub** to consume the private template from a github raw URL
+
+    1. Use the radio button **URL** to consume the private template from other sources
+
+1. Once you point the right template, click **Submit** to validate and pick the template for provisoning the project
+
+1.  Choose **Create Project** to start provisioning a project
 
 -------------
 
 Previous: [Using the Generator](./Using-The-Generator.md)
+
+Next: [Using Private template URL](./Using-Private-template-URL.md)
