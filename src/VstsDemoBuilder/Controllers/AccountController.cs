@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.IO;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
@@ -16,10 +18,12 @@ namespace VstsDemoBuilder.Controllers
         private TemplateSelection.Templates templates = new TemplateSelection.Templates();
         private ILog logger = LogManager.GetLogger("ErrorLog");
         private IProjectService projectService;
+        private ITemplateService templateService;
 
-        public AccountController(IProjectService _projectService)
+        public AccountController(IProjectService _projectService, ITemplateService _templateService)
         {
             projectService = _projectService;
+            templateService = _templateService;
         }
 
         [HttpGet]
@@ -49,6 +53,7 @@ namespace VstsDemoBuilder.Controllers
             {
                 Session["EnableExtractor"] = model.EnableExtractor;
             }
+
             var browser = Request.Browser.Type;
             if (browser.Contains("InternetExplorer"))
             {
@@ -98,6 +103,25 @@ namespace VstsDemoBuilder.Controllers
                         else
                         {
                             model.Event = string.Empty;
+                        }
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(model.TemplateURL))
+                {
+                    if (model.TemplateURL.EndsWith(".zip"))
+                    {
+                        PrivateTemplate _privateTemplate = UploadPrivateTempalteFromHome(model.TemplateURL);
+                        if (_privateTemplate.IsTemplateValid)
+                        {
+                            Session["PrivateTemplateURL"] = _privateTemplate.privateTemplatePath;
+                            Session["PrivateTemplateName"] = _privateTemplate.privateTemplateName;
+                            Session["PrivateTemplateOriginalName"] = _privateTemplate.privateTemplateOriginalName;
+                        }
+                        else
+                        {
+                            ViewBag.resMessage = _privateTemplate.responseMessage;
+                            return View(new LoginModel());
                         }
                     }
                 }
@@ -171,6 +195,49 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult SessionOutReturn()
         {
             return View();
+        }
+
+        public PrivateTemplate UploadPrivateTempalteFromHome(string TemplateURL)
+        {
+            PrivateTemplate privateTemplate = new PrivateTemplate();
+            string templatePath = string.Empty;
+            try
+            {
+                privateTemplate.IsTemplateValid = false;
+                string templateName = "";
+                string fileName = Path.GetFileName(TemplateURL);
+                string extension = Path.GetExtension(TemplateURL);
+                privateTemplate.privateTemplateOriginalName = fileName.ToLower().Replace(".zip", "").Trim();
+                templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
+                privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, "", "", "");
+
+                if (privateTemplate.privateTemplatePath != "")
+                {
+                    privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                    if (privateTemplate.responseMessage != "SUCCESS")
+                    {
+                        var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templateName.ToLower().Replace(".zip", "").Trim();
+                        if (Directory.Exists(templatepath))
+                            Directory.Delete(templatepath, true);
+                    }
+                    if (privateTemplate.responseMessage == "SUCCESS")
+                    {
+                        privateTemplate.IsTemplateValid = true;
+                    }
+                }
+                else
+                {
+                    privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
+                    privateTemplate.IsTemplateValid = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            return privateTemplate;
         }
     }
 }

@@ -187,7 +187,6 @@ namespace VstsDemoBuilder.Services
                     webClient.DownloadFile(TemplateUrl, path);
                     webClient.Dispose();
                 }
-
                 templatePath = ExtractZipFile(path, templateName);
 
             }

@@ -48,6 +48,10 @@
                         <img src="~/Images/next.png" style="width:10px" />
                     </a>
                 </div>
+                @if (!string.IsNullOrEmpty(ViewBag.resMessage))
+                {
+                    <p style="text-align:center; color:red;">@ViewBag.resMessage</p>
+                }
                 <!--div class="demo-generator-feedback mt-auto text-center text-sm-left">
                     <p>
                         <ul>

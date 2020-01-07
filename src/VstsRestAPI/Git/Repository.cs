@@ -240,30 +240,33 @@ namespace VstsRestAPI.Git
         {
             try
             {
-                string[] pullRequest = new string[2];
-
-                using (var client = GetHttpClient())
+                if (!string.IsNullOrEmpty(repositoryId))
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    string[] pullRequest = new string[2];
 
-                    var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseDetails = response.Content.ReadAsStringAsync().Result;
-                        JObject objResponse = JObject.Parse(responseDetails);
-                        pullRequest[0] = objResponse["pullRequestId"].ToString();
-                        pullRequest[1] = objResponse["title"].ToString();
-                        return pullRequest;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return pullRequest;
+                        var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseDetails = response.Content.ReadAsStringAsync().Result;
+                            JObject objResponse = JObject.Parse(responseDetails);
+                            pullRequest[0] = objResponse["pullRequestId"].ToString();
+                            pullRequest[1] = objResponse["title"].ToString();
+                            return pullRequest;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            return pullRequest;
+                        }
                     }
                 }
             }

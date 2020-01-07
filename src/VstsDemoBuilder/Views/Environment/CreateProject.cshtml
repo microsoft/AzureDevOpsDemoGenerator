@@ -215,13 +215,15 @@
                             <input type="hidden" id="PrivateTemplateName" />
                             <input type="hidden" id="PrivateTemplatePath" />
                             <div class="alert alert-danger d-none" role="alert" id="ddlTemplates_Error">
-
                             </div>
                         </div>
                         <div class="template-invoke mb-3 mt-1 col-lg-3">
-                            <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
-                                Choose template
-                            </button>
+                            @if (Session["PrivateTemplateOriginalName"] == null)
+                            {
+                                <button type="button" class="btn btn-primary" id="templateselection" style="padding-left:5px; padding-right:5px; width: 100%">
+                                    Choose template
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
