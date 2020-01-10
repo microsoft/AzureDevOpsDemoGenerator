@@ -34,8 +34,7 @@
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 1
+            "isNotificationOn": false
           }
         ],
         "approvalOptions": {
