@@ -7,44 +7,44 @@ namespace AzureDevOpsAPI
     public abstract class ApiServiceBase
     {
         public string LastFailureMessage { get; set; }
-        protected readonly IAppConfiguration _configuration;
-        protected readonly string _credentials;
+        protected readonly IAppConfiguration Configuration;
+        protected readonly string Credentials;
         protected readonly string Project;
         protected readonly string ProjectId;
         protected readonly string Account;
         protected readonly string Team;
-        protected readonly string _baseAddress;
-        protected readonly string _mediaType;
-        protected readonly string _scheme;
-        protected readonly string _Gitcredential;
-        protected readonly string userName;
+        protected readonly string BaseAddress;
+        protected readonly string MediaType;
+        protected readonly string Scheme;
+        protected readonly string GitCredential;
+        protected readonly string UserName;
 
 
         public ApiServiceBase(IAppConfiguration configuration)
         {
-            _configuration = configuration;
-            _credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));//configuration.PersonalAccessToken;
+            Configuration = configuration;
+            Credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", Configuration.PersonalAccessToken)));//configuration.PersonalAccessToken;
             Project = configuration.Project;
             Account = configuration.AccountName;
             Team = configuration.Team;
             ProjectId = configuration.ProjectId;
 
-            _baseAddress = configuration._gitbaseAddress;
-            _mediaType = configuration._mediaType;
-            _scheme = configuration._scheme;
-            _Gitcredential = configuration._gitcredential;
-            userName = configuration.userName;
+            BaseAddress = configuration.GitBaseAddress;
+            MediaType = configuration.MediaType;
+            Scheme = configuration.Scheme;
+            GitCredential = configuration.GitCredential;
+            UserName = configuration.UserName;
         }
 
         protected HttpClient GetHttpClient()
         {
             var client = new HttpClient
             {
-                BaseAddress = new Uri(_configuration.UriString)
+                BaseAddress = new Uri(Configuration.UriString)
             };
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", _credentials);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Credentials);
 
             return client;
         }
@@ -52,11 +52,11 @@ namespace AzureDevOpsAPI
         {
             var client = new HttpClient
             {
-                BaseAddress = new Uri(_baseAddress)
+                BaseAddress = new Uri(BaseAddress)
             };
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(_mediaType));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(_scheme, _Gitcredential);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MediaType));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Scheme, GitCredential);
             return client;
         }
     }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -7,15 +8,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
-using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class ImportWorkItems : ApiServiceBase
     {
         public string boardRowFieldName;
-        private List<WIMapData> wiData = new List<WIMapData>();
+        private List<WiMapData> wiData = new List<WiMapData>();
         private List<string> listAssignToUsers = new List<string>();
         private string[] relTypes = { "Microsoft.VSTS.Common.TestedBy-Reverse", "System.LinkTypes.Hierarchy-Forward", "System.LinkTypes.Related", "System.LinkTypes.Dependency-Reverse", "System.LinkTypes.Dependency-Forward" };
         private string attachmentFolder = string.Empty;
@@ -43,7 +44,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <param name="accountUsers"></param>
         /// <returns></returns>
 
-        public List<WIMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string selectedTemplate)
+        public List<WiMapData> ImportWorkitems(Dictionary<string, string> dicWITypes, string projectName, string uniqueUser, string projectSettingsJson, string attachmentFolderPath, string repositoryID, string projectID, Dictionary<string, string> dictPullRequests, string userMethod, List<string> accountUsers, string selectedTemplate)
         {
             try
             {
@@ -113,15 +114,15 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 workImport = workImport.Replace("$ProjectName$", projectName);
                 ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
 
-                if (fetchedWIs.count > 0)
+                if (fetchedWIs.Count > 0)
                 {
                     if (workItemType.ToLower() == "epic" || workItemType.ToLower() == "feature")
                     {
-                        fetchedWIs.value = fetchedWIs.value.OrderBy(x => x.id).ToArray();
+                        fetchedWIs.Value = fetchedWIs.Value.OrderBy(x => x.Id).ToArray();
                     }
-                    foreach (ImportWorkItemModel.Value newWI in fetchedWIs.value)
+                    foreach (ImportWorkItemModel.Value newWI in fetchedWIs.Value)
                     {
-                        newWI.fields.SystemCreatedDate = DateTime.Now.AddDays(-3);
+                        newWI.Fields.SystemCreatedDate = DateTime.Now.AddDays(-3);
                         Dictionary<string, object> dicWIFields = new Dictionary<string, object>();
                         string assignToUser = string.Empty;
                         if (listAssignToUsers.Count > 0)
@@ -133,41 +134,41 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                         if ((workItemType == "Test Case"))
                         {
                             //replacing null values with Empty strngs; creation fails if the fields are null
-                            if (newWI.fields.MicrosoftVSTSTCMParameters == null)
+                            if (newWI.Fields.MicrosoftVststcmParameters == null)
                             {
-                                newWI.fields.MicrosoftVSTSTCMParameters = string.Empty;
+                                newWI.Fields.MicrosoftVststcmParameters = string.Empty;
                             }
 
-                            if (newWI.fields.MicrosoftVSTSTCMSteps == null)
+                            if (newWI.Fields.MicrosoftVststcmSteps == null)
                             {
-                                newWI.fields.MicrosoftVSTSTCMSteps = string.Empty;
+                                newWI.Fields.MicrosoftVststcmSteps = string.Empty;
                             }
 
-                            if (newWI.fields.MicrosoftVSTSTCMLocalDataSource == null)
+                            if (newWI.Fields.MicrosoftVststcmLocalDataSource == null)
                             {
-                                newWI.fields.MicrosoftVSTSTCMLocalDataSource = string.Empty;
+                                newWI.Fields.MicrosoftVststcmLocalDataSource = string.Empty;
                             }
 
-                            dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
-                            dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
-                            dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.LocalDataSource", newWI.fields.MicrosoftVSTSTCMLocalDataSource);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.AutomationStatus", newWI.fields.MicrosoftVSTSTCMAutomationStatus);
+                            dicWIFields.Add("/fields/System.Title", newWI.Fields.SystemTitle);
+                            dicWIFields.Add("/fields/System.State", newWI.Fields.SystemState);
+                            dicWIFields.Add("/fields/System.Reason", newWI.Fields.SystemReason);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.Fields.MicrosoftVstsCommonPriority);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.Fields.MicrosoftVststcmSteps);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.Fields.MicrosoftVststcmParameters);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.LocalDataSource", newWI.Fields.MicrosoftVststcmLocalDataSource);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.TCM.AutomationStatus", newWI.Fields.MicrosoftVststcmAutomationStatus);
 
-                            if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
+                            if (newWI.Fields.MicrosoftVstsCommonAcceptanceCriteria != null)
                             {
-                                dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
+                                dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.Fields.MicrosoftVstsCommonAcceptanceCriteria);
                             }
 
-                            if (newWI.fields.SystemTags != null)
+                            if (newWI.Fields.SystemTags != null)
                             {
-                                dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                                dicWIFields.Add("/fields/System.Tags", newWI.Fields.SystemTags);
                             }
 
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.Fields.MicrosoftVstsSchedulingRemainingWork);
 
                         }
                         else
@@ -175,9 +176,9 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             string iterationPath = projectName;
                             string boardRowField = string.Empty;
 
-                            if (newWI.fields.SystemIterationPath.Contains("\\"))
+                            if (newWI.Fields.SystemIterationPath.Contains("\\"))
                             {
-                                iterationPath = string.Format("{0}\\{1}", projectName, newWI.fields.SystemIterationPath.Split('\\')[1]);
+                                iterationPath = string.Format("{0}\\{1}", projectName, newWI.Fields.SystemIterationPath.Split('\\')[1]);
                             }
 
                             if (!string.IsNullOrWhiteSpace(boardRowFieldName))
@@ -185,20 +186,20 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                 boardRowField = string.Format("/fields/{0}", boardRowFieldName);
                             }
 
-                            if (newWI.fields.SystemDescription == null)
+                            if (newWI.Fields.SystemDescription == null)
                             {
-                                newWI.fields.SystemDescription = newWI.fields.SystemTitle;
+                                newWI.Fields.SystemDescription = newWI.Fields.SystemTitle;
                             }
 
-                            if (string.IsNullOrEmpty(newWI.fields.SystemBoardLane))
+                            if (string.IsNullOrEmpty(newWI.Fields.SystemBoardLane))
                             {
-                                newWI.fields.SystemBoardLane = string.Empty;
+                                newWI.Fields.SystemBoardLane = string.Empty;
                             }
 
-                            dicWIFields.Add("/fields/System.Title", newWI.fields.SystemTitle);
+                            dicWIFields.Add("/fields/System.Title", newWI.Fields.SystemTitle);
                             if (userAssignment.ToLower() != "any")
                             {
-                                if (newWI.fields.SystemState == "Done")
+                                if (newWI.Fields.SystemState == "Done")
                                 {
                                     dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                                 }
@@ -207,42 +208,42 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             {
                                 dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                             }
-                            //string areaPath = newWI.fields.SystemAreaPath ?? projectName;
+                            //string areaPath = newWI.Fields.SystemAreaPath ?? projectName;
                             //dicWIFields.Add("/fields/System.AreaPath", areaPath);
-                            dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
-                            dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
-                            dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
+                            dicWIFields.Add("/fields/System.Description", newWI.Fields.SystemDescription);
+                            dicWIFields.Add("/fields/System.State", newWI.Fields.SystemState);
+                            dicWIFields.Add("/fields/System.Reason", newWI.Fields.SystemReason);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.Fields.MicrosoftVstsCommonPriority);
                             dicWIFields.Add("/fields/System.IterationPath", iterationPath);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.fields.MicrosoftVSTSSchedulingRemainingWork);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.Effort", newWI.fields.MicrosoftVSTSSchedulingEffort);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.Fields.MicrosoftVstsSchedulingRemainingWork);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.Effort", newWI.Fields.MicrosoftVstsSchedulingEffort);
 
-                            if (newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria != null)
+                            if (newWI.Fields.MicrosoftVstsCommonAcceptanceCriteria != null)
                             {
-                                dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.fields.MicrosoftVSTSCommonAcceptanceCriteria);
+                                dicWIFields.Add("/fields/Microsoft.VSTS.Common.AcceptanceCriteria", newWI.Fields.MicrosoftVstsCommonAcceptanceCriteria);
                             }
 
-                            if (newWI.fields.SystemTags != null)
+                            if (newWI.Fields.SystemTags != null)
                             {
-                                dicWIFields.Add("/fields/System.Tags", newWI.fields.SystemTags);
+                                dicWIFields.Add("/fields/System.Tags", newWI.Fields.SystemTags);
                             }
 
-                            if (newWI.fields.MicrosoftVSTSTCMParameters != null)
+                            if (newWI.Fields.MicrosoftVststcmParameters != null)
                             {
-                                dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.fields.MicrosoftVSTSTCMParameters);
+                                dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Parameters", newWI.Fields.MicrosoftVststcmParameters);
                             }
 
-                            if (newWI.fields.MicrosoftVSTSTCMSteps != null)
+                            if (newWI.Fields.MicrosoftVststcmSteps != null)
                             {
-                                dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.fields.MicrosoftVSTSTCMSteps);
+                                dicWIFields.Add("/fields/Microsoft.VSTS.TCM.Steps", newWI.Fields.MicrosoftVststcmSteps);
                             }
 
                             if (!string.IsNullOrWhiteSpace(boardRowField))
                             {
-                                dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
+                                dicWIFields.Add(boardRowField, newWI.Fields.SystemBoardLane);
                             }
                         }
-                        UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), projectName, dicWIFields);
+                        UpdateWorkIteminTarget(workItemType, newWI.Id.ToString(), projectName, dicWIFields);
                     }
 
                     return true;
@@ -272,7 +273,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 // change some values on a few fields
                 foreach (string key in dictionaryWIFields.Keys)
                 {
-                    listFields.Add(new WorkItemPatch.Field() { op = "add", path = key, value = dictionaryWIFields[key] });
+                    listFields.Add(new WorkItemPatch.Field() { Op = "add", Path = key, Value = dictionaryWIFields[key] });
                 }
                 WorkItemPatch.Field[] fields = listFields.ToArray();
                 using (var client = GetHttpClient())
@@ -282,12 +283,12 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     var method = new HttpMethod("PATCH");
 
                     // send the request               
-                    var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = postValue };
+                    var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + Configuration.VersionNumber) { Content = postValue };
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
-                        wiData.Add(new WIMapData() { OldID = old_wi_ID, NewID = viewModel.id.ToString(), WIType = workItemType });
+                        wiData.Add(new WiMapData() { OldId = old_wi_ID, NewId = viewModel.Id.ToString(), WiType = workItemType });
                     }
                     else
                     {
@@ -320,35 +321,35 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             {
                 ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
                 string wiToUpdate = "";
-                WIMapData findIDforUpdate;
-                if (fetchedPBIs.count > 0)
+                WiMapData findIDforUpdate;
+                if (fetchedPBIs.Count > 0)
                 {
 
-                    foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.value)
+                    foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.Value)
                     {
                         //continue next iteration if there is no relation
-                        if (newWI.relations == null)
+                        if (newWI.Relations == null)
                         {
                             continue;
                         }
 
-                        int relCount = newWI.relations.Length;
-                        string oldWIID = newWI.id.ToString();
+                        int relCount = newWI.Relations.Length;
+                        string oldWIID = newWI.Id.ToString();
 
-                        findIDforUpdate = wiData.Find(t => t.OldID == oldWIID);
+                        findIDforUpdate = wiData.Find(t => t.OldId == oldWIID);
                         if (findIDforUpdate != null)
                         {
-                            wiToUpdate = findIDforUpdate.NewID;
-                            foreach (ImportWorkItemModel.Relations rel in newWI.relations)
+                            wiToUpdate = findIDforUpdate.NewId;
+                            foreach (ImportWorkItemModel.Relations rel in newWI.Relations)
                             {
-                                if (relTypes.Contains(rel.rel.Trim()))
+                                if (relTypes.Contains(rel.Rel.Trim()))
                                 {
-                                    oldWIID = rel.url.Substring(rel.url.LastIndexOf("/") + 1);
-                                    WIMapData findIDforlink = wiData.Find(t => t.OldID == oldWIID);
+                                    oldWIID = rel.Url.Substring(rel.Url.LastIndexOf("/") + 1);
+                                    WiMapData findIDforlink = wiData.Find(t => t.OldId == oldWIID);
 
                                     if (findIDforlink != null)
                                     {
-                                        string newWIID = findIDforlink.NewID;
+                                        string newWIID = findIDforlink.NewId;
                                         Object[] patchWorkItem = new Object[1];
                                         // change some values on a few fields
                                         patchWorkItem[0] = new
@@ -357,8 +358,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                             path = "/relations/-",
                                             value = new
                                             {
-                                                rel = rel.rel,
-                                                url = _configuration.UriString + "/_apis/wit/workitems/" + newWIID,
+                                                rel = rel.Rel,
+                                                url = Configuration.UriString + "/_apis/wit/workitems/" + newWIID,
                                                 attributes = new
                                                 {
                                                     comment = "Making a new link for the dependency"
@@ -370,7 +371,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                         }
                                     }
                                 }
-                                if (rel.rel == "Hyperlink")
+                                if (rel.Rel == "Hyperlink")
                                 {
                                     Object[] patchWorkItem = new Object[1];
                                     patchWorkItem[0] = new
@@ -380,16 +381,16 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                         value = new
                                         {
                                             rel = "Hyperlink",
-                                            url = rel.url
+                                            url = rel.Url
                                         }
                                     };
                                     bool isHyperLinkCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
                                 }
-                                if (rel.rel == "AttachedFile")
+                                if (rel.Rel == "AttachedFile")
                                 {
                                     Object[] patchWorkItem = new Object[1];
-                                    string filPath = string.Format(attachmentFolder + @"\{0}{1}", rel.attributes["id"], rel.attributes["name"]);
-                                    string fileName = rel.attributes["name"];
+                                    string filPath = string.Format(attachmentFolder + @"\{0}{1}", rel.Attributes["id"], rel.Attributes["name"]);
+                                    string fileName = rel.Attributes["name"];
                                     string attchmentURl = UploadAttchment(filPath, fileName);
                                     if (!string.IsNullOrEmpty(attchmentURl))
                                     {
@@ -406,13 +407,13 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                         bool isAttachmemntCreated = UpdateLink(string.Empty, wiToUpdate, patchWorkItem);
                                     }
                                 }
-                                if (rel.rel == "ArtifactLink")
+                                if (rel.Rel == "ArtifactLink")
                                 {
-                                    rel.url = rel.url.Replace("$projectId$", projectId).Replace("$RepositoryId$", repositoryId);
+                                    rel.Url = rel.Url.Replace("$projectId$", projectId).Replace("$RepositoryId$", repositoryId);
                                     foreach (var pullReqest in pullRequests)
                                     {
                                         string key = string.Format("${0}$", pullReqest.Key);
-                                        rel.url = rel.url.Replace(key, pullReqest.Value);
+                                        rel.Url = rel.Url.Replace(key, pullReqest.Value);
                                     }
                                     Object[] patchWorkItem = new Object[1];
                                     patchWorkItem[0] = new
@@ -422,10 +423,10 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                         value = new
                                         {
                                             rel = "ArtifactLink",
-                                            url = rel.url,
+                                            url = rel.Url,
                                             attributes = new
                                             {
-                                                name = rel.attributes["name"]
+                                                name = rel.Attributes["name"]
                                             }
                                         }
 
@@ -461,7 +462,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     var patchValue = new StringContent(JsonConvert.SerializeObject(patchWorkItem), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
 
                     var method = new HttpMethod("PATCH");
-                    var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + witoUpdate + "?bypassRules=true&api-version=" + _configuration.VersionNumber) { Content = patchValue };
+                    var request = new HttpRequestMessage(method, Project + "/_apis/wit/workitems/" + witoUpdate + "?bypassRules=true&api-version=" + Configuration.VersionNumber) { Content = patchValue };
                     var response = client.SendAsync(request).Result;
 
                     if (response.IsSuccessStatusCode)
@@ -499,7 +500,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     {
                         ByteArrayContent content = new ByteArrayContent(bytes);
                         content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                        HttpResponseMessage uploadResponse = client.PostAsync("_apis/wit/attachments?fileName=" + _fileName + "&api-version=" + _configuration.VersionNumber, content).Result;
+                        HttpResponseMessage uploadResponse = client.PostAsync("_apis/wit/attachments?fileName=" + _fileName + "&api-version=" + Configuration.VersionNumber, content).Result;
 
                         if (uploadResponse.IsSuccessStatusCode)
                         {
@@ -519,10 +520,10 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         }
     }
 
-    public class WIMapData
+    public class WiMapData
     {
-        public string OldID { get; set; }
-        public string NewID { get; set; }
-        public string WIType { get; set; }
+        public string OldId { get; set; }
+        public string NewId { get; set; }
+        public string WiType { get; set; }
     }
 }

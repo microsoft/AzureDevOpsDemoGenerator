@@ -1,58 +1,71 @@
-﻿
+﻿using NLog;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Queue;
-using NLog;
 
 namespace AzureDevOpsAPI.Queues
 {
     public class Queue : ApiServiceBase
     {
         public Queue(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Agent queue
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, int> GetQueues()
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                Dictionary<string, int> dicQueues = new Dictionary<string, int>();
-                QueueModel viewModel = new QueueModel();
-
-                using (var client = GetHttpClient())
+                try
                 {
-                    string req = _configuration.UriString + _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber;
-                    HttpResponseMessage response = client.GetAsync(req).Result;
+                    Dictionary<string, int> dicQueues = new Dictionary<string, int>();
+                    QueueModel viewModel = new QueueModel();
 
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
-                        if (viewModel != null && viewModel.value != null)
+                        string req = Configuration.UriString + Configuration.Project + "/_apis/distributedtask/queues?api-version=" + Configuration.VersionNumber;
+                        HttpResponseMessage response = client.GetAsync(req).Result;
+
+                        if (response.IsSuccessStatusCode)
                         {
-                            foreach (AgentQueueModel aq in viewModel.value)
+                            viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
+                            if (viewModel != null && viewModel.Value != null)
                             {
-                                dicQueues[aq.name] = aq.id;
+                                foreach (AgentQueueModel aq in viewModel.Value)
+                                {
+                                    dicQueues[aq.Name] = aq.Id;
+                                }
                             }
                         }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                    }
-                }
 
-                return dicQueues;
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    return dicQueues;
+                }
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new Dictionary<string, int>(); 
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new Dictionary<string, int>();
         }
@@ -63,38 +76,51 @@ namespace AzureDevOpsAPI.Queues
         /// <returns></returns>
         public int CreateQueue(string name)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                AgentQueueModel viewModel = new AgentQueueModel
+                try
                 {
-                    name = name
-                };
-
-                using (var client = GetHttpClient())
-                {
-                    var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, _configuration.Project + "/_apis/distributedtask/queues?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    AgentQueueModel viewModel = new AgentQueueModel
                     {
-                        viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;
-                    }
-                    else
+                        Name = name
+                    };
+
+                    using (var client = GetHttpClient())
                     {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        var jsonContent = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, Configuration.Project + "/_apis/distributedtask/queues?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
+
+                    return viewModel.Id;
                 }
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateQueue" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
 
-                return viewModel.id;
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateQueue" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    if (retryCount > 4)
+                    {
+                        return 0;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return 0;
         }

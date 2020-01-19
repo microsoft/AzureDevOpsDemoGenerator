@@ -1,18 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Sprint;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
-using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class ClassificationNodes : ApiServiceBase
     {
         public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Iteration
         /// </summary>
@@ -20,26 +21,39 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public GetNodesResponse.Nodes GetIterations(string projectName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                GetNodesResponse.Nodes viewModel = new GetNodesResponse.Nodes();
-                using (HttpClient client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + _configuration.VersionNumber, projectName)).Result;
-                    if (response.IsSuccessStatusCode)
+                    GetNodesResponse.Nodes viewModel = new GetNodesResponse.Nodes();
+                    using (HttpClient client = GetHttpClient())
                     {
+                        HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/wit/classificationNodes/iterations?$depth=5&api-version=" + Configuration.VersionNumber, projectName)).Result;
                         if (response.IsSuccessStatusCode)
                         {
-                            viewModel = response.Content.ReadAsAsync<GetNodesResponse.Nodes>().Result;
-                            return viewModel;
+                            if (response.IsSuccessStatusCode)
+                            {
+                                viewModel = response.Content.ReadAsAsync<GetNodesResponse.Nodes>().Result;
+                                return viewModel;
+                            }
+                            viewModel.HttpStatusCode = response.StatusCode;
                         }
-                        viewModel.HttpStatusCode = response.StatusCode;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetNodesResponse.Nodes();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetNodesResponse.Nodes();
         }
@@ -52,36 +66,49 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public GetNodeResponse.Node CreateIteration(string projectName, string path)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
+                try
                 {
-                    name = path
-                };
-                GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
-                using (HttpClient client = GetHttpClient())
-                {
-                    var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/_apis/wit/classificationNodes/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
                     {
-                        viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
-                        return viewModel;
-                    }
-                    else
+                        Name = path
+                    };
+                    GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
+                    using (HttpClient client = GetHttpClient())
                     {
-                        var errorMessage = response.Content.ReadAsStringAsync();
+                        var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, Configuration.UriString + "/" + projectName + "/_apis/wit/classificationNodes/iterations?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
+                            return viewModel;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                        }
+                        viewModel.HttpStatusCode = response.StatusCode;
                     }
-                    viewModel.HttpStatusCode = response.StatusCode;
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetNodeResponse.Node();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetNodeResponse.Node();
         }
@@ -95,37 +122,51 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public GetNodeResponse.Node MoveIteration(string projectName, string targetIteration, int sourceIterationId)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
+                try
                 {
-                    id = sourceIterationId
-                };
-                GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
-
-                using (var client = GetHttpClient())
-                {
-                    var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=" + _configuration.VersionNumber, projectName, targetIteration)) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
                     {
-                        viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                    }
+                        Id = sourceIterationId
+                    };
+                    GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
 
-                    viewModel.HttpStatusCode = response.StatusCode;
+                    using (var client = GetHttpClient())
+                    {
+                        var jsonContent = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, string.Format("/{0}/_apis/wit/classificationNodes/iterations/{1}?api-version=" + Configuration.VersionNumber, projectName, targetIteration)) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;                            
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                        }
+
+                        viewModel.HttpStatusCode = response.StatusCode;
+                        return viewModel;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetNodeResponse.Node();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetNodeResponse.Node();
         }
@@ -138,51 +179,73 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateIterationDates(string projectName, string templateType)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string project = projectName;
-                DateTime startDate = DateTime.Today.AddDays(-22);
-                DateTime endDate = DateTime.Today.AddDays(-1);
+                try
+                {
+                    string project = projectName;
+                    DateTime startDate = DateTime.Today.AddDays(-22);
+                    DateTime endDate = DateTime.Today.AddDays(-1);
 
-                Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
+                    Dictionary<string, string[]> sprintDictionary = new Dictionary<string, string[]>();
 
-                if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
-                {
-                    for (int i = 1; i <= 6; i++)
+                    if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
                     {
-                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        for (int i = 1; i <= 6; i++)
+                        {
+                            sprintDictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
                     }
-                }
-                else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
-                {
-                    for (int i = 1; i <= 1; i++)
+                    else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
                     {
-                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        for (int i = 1; i <= 1; i++)
+                        {
+                            sprintDictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
                     }
-                }
-                else
-                {
-                    for (int i = 1; i <= 3; i++)
+                    else
                     {
-                        sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        for (int i = 1; i <= 3; i++)
+                        {
+                            sprintDictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
                     }
-                }
 
-                foreach (var key in sprint_dictionary.Keys)
-                {
-                    UpdateIterationDates(project, key, startDate, endDate);
-                    startDate = endDate.AddDays(1);
-                    endDate = startDate.AddDays(21);
+                    foreach (var key in sprintDictionary.Keys)
+                    {
+                        UpdateIterationDates(project, key, startDate, endDate);
+                        startDate = endDate.AddDays(1);
+                        endDate = startDate.AddDays(21);
+                    }
+                    return true;
                 }
-                return true;
-            }
-            catch (OperationCanceledException opr)
-            {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (OperationCanceledException opr)
+                {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
+                    LastFailureMessage = opr.Message + " ," + opr.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -197,54 +260,67 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public GetNodeResponse.Node UpdateIterationDates(string project, string path, DateTime startDate, DateTime finishDate)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
+                try
                 {
-                    //name = path,
-                    attributes = new CreateUpdateNodeViewModel.Attributes()
+                    CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
                     {
-                        startDate = startDate,
-                        finishDate = finishDate
-                    }
-                };
+                        //name = path,
+                        Attributes = new CreateUpdateNodeViewModel.Attributes()
+                        {
+                            StartDate = startDate,
+                            FinishDate = finishDate
+                        }
+                    };
 
-                GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
+                    GetNodeResponse.Node viewModel = new GetNodeResponse.Node();
 
-                using (var client = GetHttpClient())
-                {
-                    // serialize the fields array into a json string          
-                    var patchValue = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("PATCH");
-
-                    // send the request
-                    var request = new HttpRequestMessage(method, project + "/_apis/wit/classificationNodes/iterations/" + path + "?api-version=" + _configuration.VersionNumber) { Content = patchValue };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
-                        viewModel.Message = "success";
+                        // serialize the fields array into a json string          
+                        var patchValue = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("PATCH");
+
+                        // send the request
+                        var request = new HttpRequestMessage(method, project + "/_apis/wit/classificationNodes/iterations/" + path + "?api-version=" + Configuration.VersionNumber) { Content = patchValue };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
+                            viewModel.Message = "success";
+                        }
+                        else
+                        {
+                            dynamic responseForInvalidStatusCode = response.Content.ReadAsAsync<dynamic>();
+                            Newtonsoft.Json.Linq.JContainer msg = responseForInvalidStatusCode.Result;
+                            viewModel.Message = msg.ToString();
+
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
+
+                        viewModel.HttpStatusCode = response.StatusCode;
+
+                        return viewModel;
                     }
-                    else
-                    {
-                        dynamic responseForInvalidStatusCode = response.Content.ReadAsAsync<dynamic>();
-                        Newtonsoft.Json.Linq.JContainer msg = responseForInvalidStatusCode.Result;
-                        viewModel.Message = msg.ToString();
-
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                    }
-
-                    viewModel.HttpStatusCode = response.StatusCode;
-
-                    return viewModel;
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetNodeResponse.Node();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetNodeResponse.Node();
         }
@@ -258,74 +334,101 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         public bool RenameIteration(string projectName, Dictionary<string, string> iterationToUpdate)
         {
             bool isSuccessful = false;
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                foreach (var key in iterationToUpdate.Keys)
+                try
                 {
-                    CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
+                    foreach (var key in iterationToUpdate.Keys)
                     {
-                        name = iterationToUpdate[key]
-                    };
-
-                    using (var client = GetHttpClient())
-                    {
-                        // serialize the fields array into a json string          
-                        var patchValue = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
-                        var method = new HttpMethod("PATCH");
-
-                        // send the request
-                        var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/Iterations/" + key + "?api-version=" + _configuration.VersionNumber) { Content = patchValue };
-                        var response = client.SendAsync(request).Result;
-
-                        if (response.IsSuccessStatusCode)
+                        CreateUpdateNodeViewModel.Node node = new CreateUpdateNodeViewModel.Node()
                         {
-                            isSuccessful = true;
+                            Name = iterationToUpdate[key]
+                        };
+
+                        using (var client = GetHttpClient())
+                        {
+                            // serialize the fields array into a json string          
+                            var patchValue = new StringContent(JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
+                            var method = new HttpMethod("PATCH");
+
+                            // send the request
+                            var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/Iterations/" + key + "?api-version=" + Configuration.VersionNumber) { Content = patchValue };
+                            var response = client.SendAsync(request).Result;
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                isSuccessful = true;
+                            }
                         }
                     }
-                }
-                string project = projectName;
-                DateTime StartDate = DateTime.Today.AddDays(-22);
-                DateTime EndDate = DateTime.Today.AddDays(-1);
+                    string project = projectName;
+                    DateTime startDate = DateTime.Today.AddDays(-22);
+                    DateTime endDate = DateTime.Today.AddDays(-1);
 
-                Dictionary<string, string[]> sprint_dic = new Dictionary<string, string[]>();
-                for (int i = 1; i <= iterationToUpdate.Count; i++)
-                {
-                    sprint_dic.Add("Sprint " + i, new string[] { StartDate.ToShortDateString(), EndDate.ToShortDateString() });
-                }
-                foreach (var key in sprint_dic.Keys)
-                {
-                    UpdateIterationDates(project, key, StartDate, EndDate);
-                    StartDate = EndDate.AddDays(1);
-                    EndDate = StartDate.AddDays(21);
-                }
+                    Dictionary<string, string[]> sprintDic = new Dictionary<string, string[]>();
+                    for (int i = 1; i <= iterationToUpdate.Count; i++)
+                    {
+                        sprintDic.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                    }
+                    foreach (var key in sprintDic.Keys)
+                    {
+                        UpdateIterationDates(project, key, startDate, endDate);
+                        startDate = endDate.AddDays(1);
+                        endDate = startDate.AddDays(21);
+                    }
 
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    return isSuccessful;
+                }
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return isSuccessful;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return isSuccessful;
         }
 
         public SprintResponse.Sprints GetSprints(string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                SprintResponse.Sprints sprints = new SprintResponse.Sprints();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(project + "/" + project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    SprintResponse.Sprints sprints = new SprintResponse.Sprints();
+                    using (var client = GetHttpClient())
                     {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(result);
-                        return sprints;
+                        HttpResponseMessage response = client.GetAsync(project + "/" + project + "%20Team/_apis/work/teamsettings/iterations?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(result);
+                            return sprints;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new SprintResponse.Sprints();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new SprintResponse.Sprints();
         }
