@@ -199,19 +199,19 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                             //New Feature Enabling
                             model.accessToken = HttpContext.Session.GetString("PAT");
-                            model.refreshToken = _accessDetails.refresh_token;
+                            model.RefreshToken = _accessDetails.refresh_token;
                             HttpContext.Session.SetString("PAT", _accessDetails.access_token);
                             model.MemberID = profile.id;
                             List<string> accList = new List<string>();
-                            if (accountList.count > 0)
+                            if (accountList.Count > 0)
                             {
-                                foreach (var account in accountList.value)
+                                foreach (var account in accountList.Value)
                                 {
-                                    accList.Add(account.accountName);
+                                    accList.Add(account.AccountName);
                                 }
                                 accList.Sort();
                                 model.accountsForDropdown = accList;
-                                model.hasAccount = true;
+                                model.HasAccount = true;
                             }
                             else
                             {
@@ -517,14 +517,14 @@ namespace AzureDevOpsDemoBuilder.Controllers
             {
                 HttpContext.Session.SetString("PAT", model.accessToken);
                 HttpContext.Session.SetString("AccountName", model.accountName);
-                HttpContext.Session.SetString("trackId", model.id);
+                HttpContext.Session.SetString("trackId", model.Id);
                 HttpContext.Session.SetString("template", model.SelectedTemplate);
                 if (HttpContext.Session.GetString("GitHubToken") != null && HttpContext.Session.GetString("GitHubToken") != "" && model.GitHubFork)
                 {
                     model.GitHubToken = HttpContext.Session.GetString("GitHubToken");
                 }
-                projectService.AddMessage(model.id, string.Empty);
-                projectService.AddMessage(model.id.ErrorId(), string.Empty);
+                projectService.AddMessage(model.Id, string.Empty);
+                projectService.AddMessage(model.Id.ErrorId(), string.Empty);
                 if (!string.IsNullOrEmpty(model.PrivateTemplatePath))
                 {
                     model.IsPrivatePath = true;
@@ -556,10 +556,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
             {
                 ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
                 //string[] strResult = processTask.EndInvoke(result);
-                projectService.RemoveKey(model.id);
-                if (ProjectService.StatusMessages.Keys.Count(x => x == model.id + "_Errors") == 1)
+                projectService.RemoveKey(model.Id);
+                if (ProjectService.StatusMessages.Keys.Count(x => x == model.Id + "_Errors") == 1)
                 {
-                    string errorMessages = ProjectService.statusMessages[model.id + "_Errors"];
+                    string errorMessages = ProjectService.statusMessages[model.Id + "_Errors"];
                     if (errorMessages != "")
                     {
                         //also, log message to file system

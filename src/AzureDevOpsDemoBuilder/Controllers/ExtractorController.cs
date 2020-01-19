@@ -112,11 +112,11 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     logger.LogInformation("FETCHING ACCOUNTS");
                     model.accessToken = accessDetails.access_token;
                     model.accountsForDropdown = new List<string>();
-                    if (accountList.count > 0)
+                    if (accountList.Count > 0)
                     {
-                        foreach (var account in accountList.value)
+                        foreach (var account in accountList.Value)
                         {
-                            model.accountsForDropdown.Add(account.accountName);
+                            model.accountsForDropdown.Add(account.AccountName);
                         }
                         model.accountsForDropdown.Sort();
                     }
@@ -151,15 +151,15 @@ namespace AzureDevOpsDemoBuilder.Controllers
             {
                 // set the viewmodel from the content in the response
                 projectResult = response.Content.ReadAsAsync<ProjectsResponse.ProjectResult>().Result;
-                projectResult.value = projectResult.value.OrderBy(x => x.name).ToList();
+                projectResult.Value = projectResult.Value.OrderBy(x => x.Name).ToList();
             }
             try
             {
-                if (string.IsNullOrEmpty(projectResult.errmsg))
+                if (string.IsNullOrEmpty(projectResult.Errmsg))
                 {
-                    if (projectResult.count == 0)
+                    if (projectResult.Count == 0)
                     {
-                        projectResult.errmsg = "No projects found!";
+                        projectResult.Errmsg = "No projects found!";
                     }
                     return Json(projectResult);
                 }
@@ -167,7 +167,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             catch (Exception ex)
             {
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
-                projectResult.errmsg = ex.Message.ToString();
+                projectResult.Errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
             }
             return Json(projectResult);
@@ -187,7 +187,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 ProjectProperties.Properties load = new ProjectProperties.Properties();
                 Projects projects = new Projects(config);
                 load = projects.GetProjectProperties();
-                if (load.count > 0)
+                if (load.Count > 0)
                 {
                     if (load.TypeClass != null)
                     {
@@ -208,15 +208,15 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
             //string[] strResult = processTask.EndInvoke(result);
-            ExtractorService.RemoveKey(model.id);
-            if (ExtractorService.StatusMessages.Keys.Count(x => x == model.id + "_Errors") == 1)
+            ExtractorService.RemoveKey(model.Id);
+            if (ExtractorService.StatusMessages.Keys.Count(x => x == model.Id + "_Errors") == 1)
             {
-                string errorMessages = ExtractorService.statusMessages[model.id + "_Errors"];
+                string errorMessages = ExtractorService.statusMessages[model.Id + "_Errors"];
                 if (errorMessages != "")
                 {
                     //also, log message to file system
                     string logPath = HostingEnvironment.ContentRootPath + "/log";
-                    string accountName = model.accountName;
+                    string accountName = model.AccountName;
                     string fileName = string.Format("{0}_{1}.txt", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                     if (!Directory.Exists(logPath))
@@ -230,12 +230,12 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     string url = AppKeyConfiguration["URL"];
                     string projectId = AppKeyConfiguration["PROJECTID"];
                     string issueName = string.Format("{0}_{1}", "Extractor_", DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                    IssueWI objIssue = new IssueWI();
+                    IssueWi objIssue = new IssueWi();
                     logger.LogDebug("\t Extractor_" + errorMessages + "\n");
                     string logWIT = "true"; //AppKeyConfiguration["LogWIT"];
                     if (logWIT == "true")
                     {
-                        objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Extractor");
+                        objIssue.CreateIssueWi(patBase64, "4.1", url, issueName, errorMessages, projectId, "Extractor");
                     }
                 }
             }
@@ -260,17 +260,17 @@ namespace AzureDevOpsDemoBuilder.Controllers
             string queriesVersion = AppKeyConfiguration["QueriesVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
-            projectConfig.AgentQueueConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.WorkItemConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.BuildDefinitionConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
-            projectConfig.ReleaseDefinitionConfig = new AppConfiguration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
-            projectConfig.RepoConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
-            projectConfig.BoardConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
-            projectConfig.Config = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            projectConfig.GetReleaseConfig = new AppConfiguration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
-            projectConfig.ExtensionConfig = new AppConfiguration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
-            projectConfig.EndpointConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
-            projectConfig.QueriesConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
+            projectConfig.AgentQueueConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = wikiVersion };
+            projectConfig.WorkItemConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = wikiVersion };
+            projectConfig.BuildDefinitionConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = buildVersion };
+            projectConfig.ReleaseDefinitionConfig = new AppConfiguration() { UriString = releaseHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = releaseVersion };
+            projectConfig.RepoConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = repoVersion };
+            projectConfig.BoardConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = boardVersion };
+            projectConfig.Config = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id };
+            projectConfig.GetReleaseConfig = new AppConfiguration() { UriString = releaseHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = getReleaseVersion };
+            projectConfig.ExtensionConfig = new AppConfiguration() { UriString = extensionHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = extensionVersion };
+            projectConfig.EndpointConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = endpointVersion };
+            projectConfig.QueriesConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = queriesVersion };
 
             return projectConfig;
         }
@@ -281,7 +281,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         [HttpPost]
         public JsonResult AnalyzeProject(string ProjectName, string accessToken, string accountName)
         {
-            Project model = new Project { ProjectName = ProjectName, accessToken = accessToken, accountName = accountName };
+            Project model = new Project { ProjectName = ProjectName, AccessToken = accessToken, AccountName = accountName };
             ExtractorAnalysis analysis = new ExtractorAnalysis();
             ProjectConfigurations appConfig = extractorService.ProjectConfiguration(model);
             analysis.teamCount = extractorService.GetTeamsCount(appConfig);
@@ -304,15 +304,15 @@ namespace AzureDevOpsDemoBuilder.Controllers
             Project model = new Project
             {
                 ProjectName = projectName,
-                accountName = SourceAcc,
-                accessToken = key,
-                id = uniqueId,
+                AccountName = SourceAcc,
+                AccessToken = key,
+                Id = uniqueId,
                 ProcessTemplate = processTemplate,
                 ProjectId = project
             };
             HttpContext.Session.SetString("Project", model.ProjectName);
-            ExtractorService.AddMessage(model.id, string.Empty);
-            ExtractorService.AddMessage(model.id.ErrorId(), string.Empty);
+            ExtractorService.AddMessage(model.Id, string.Empty);
+            ExtractorService.AddMessage(model.Id.ErrorId(), string.Empty);
             ProcessEnvironment processTask = new ProcessEnvironment(extractorService.GenerateTemplateArifacts);
             //processTask.BeginInvoke(model, new AsyncCallback(EndEnvironmentSetupProcess), processTask);
             var workTask = Task.Run(() => processTask.Invoke(model));
