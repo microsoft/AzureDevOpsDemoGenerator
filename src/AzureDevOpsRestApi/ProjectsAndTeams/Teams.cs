@@ -1,17 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
-using NLog;
 
 namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Teams : ApiServiceBase
     {
         public Teams(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create teams
         /// </summary>
@@ -20,35 +21,48 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public GetTeamResponse.Team CreateNewTeam(string json, string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (HttpClient client = GetHttpClient())
+                try
                 {
-                    // serialize the fields array into a json string  
-                    //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    using (HttpClient client = GetHttpClient())
+                    {
+                        // serialize the fields array into a json string  
+                        //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                    var request = new HttpRequestMessage(method, client.BaseAddress + "/_apis/projects/" + project + "/teams?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        GetTeamResponse.Team viewModel = new GetTeamResponse.Team();
-                        viewModel = response.Content.ReadAsAsync<GetTeamResponse.Team>().Result;
-                        return viewModel;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateNewTeam \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var request = new HttpRequestMessage(method, client.BaseAddress + "/_apis/projects/" + project + "/teams?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            GetTeamResponse.Team viewModel = new GetTeamResponse.Team();
+                            viewModel = response.Content.ReadAsAsync<GetTeamResponse.Team>().Result;
+                            return viewModel;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateNewTeam \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetTeamResponse.Team();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetTeamResponse.Team();
         }
@@ -61,29 +75,42 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamaName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (HttpClient client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "/members/?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (HttpClient client = GetHttpClient())
                     {
-                        TeamMemberResponse.TeamMembers viewModel = new TeamMemberResponse.TeamMembers();
-                        viewModel = response.Content.ReadAsAsync<TeamMemberResponse.TeamMembers>().Result;
-                        return viewModel;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "/members/?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            TeamMemberResponse.TeamMembers viewModel = new TeamMemberResponse.TeamMembers();
+                            viewModel = response.Content.ReadAsAsync<TeamMemberResponse.TeamMembers>().Result;
+                            return viewModel;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new TeamMemberResponse.TeamMembers();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new TeamMemberResponse.TeamMembers();
         }
@@ -96,39 +123,52 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public string CreateArea(string projectName, string areaName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                object node = new { name = areaName };
-                using (HttpClient client = GetHttpClient())
+                try
                 {
-                    // serialize the fields array into a json string  
-                    //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
-                    var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/areas?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    object node = new { name = areaName };
+                    using (HttpClient client = GetHttpClient())
                     {
-                        string createdAreaName = string.Empty;
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        JObject jobj = JObject.Parse(result);
-                        createdAreaName = jobj["name"].ToString();
-                        return createdAreaName;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        // serialize the fields array into a json string  
+                        //var patchValue = new StringContent(JsonConvert.SerializeObject(team), Encoding.UTF8, "application/json");
+                        var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(node), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, projectName + "/_apis/wit/classificationNodes/areas?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string createdAreaName = string.Empty;
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            JObject jobj = JObject.Parse(result);
+                            createdAreaName = jobj["name"].ToString();
+                            return createdAreaName;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return string.Empty; 
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return string.Empty;
         }
@@ -142,32 +182,45 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public bool SetAreaForTeams(string projectName, string teamName, string json)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
-
-                    var method = new HttpMethod("PATCH");
-
-                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/teamfieldvalues?api-version=" + _configuration.VersionNumber) { Content = patchValue };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        var method = new HttpMethod("PATCH");
+
+                        var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings/teamfieldvalues?api-version=" + Configuration.VersionNumber) { Content = patchValue };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -179,26 +232,39 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetTeamSetting(string projectName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        TeamSettingResponse.TeamSetting viewModel = new TeamSettingResponse.TeamSetting();
-                        viewModel = response.Content.ReadAsAsync<TeamSettingResponse.TeamSetting>().Result;
-                        return viewModel.backlogIteration.id;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + response.Content.ReadAsStringAsync().Result);
+                        HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            TeamSettingResponse.TeamSetting viewModel = new TeamSettingResponse.TeamSetting();
+                            viewModel = response.Content.ReadAsAsync<TeamSettingResponse.TeamSetting>().Result;
+                            return viewModel.BacklogIteration.Id;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + response.Content.ReadAsStringAsync().Result);
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return string.Empty; 
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return string.Empty;
         }
@@ -212,31 +278,44 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public bool SetBackLogIterationForTeam(string iterationId, string projectName, string teamName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                object objJSON = new { Backlogiteration = iterationId };
-                using (var client = GetHttpClient())
+                try
                 {
-                    var postValue = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("PATCH");
-                    var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings?api-version=" + _configuration.VersionNumber) { Content = postValue };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
+                    object objJson = new { Backlogiteration = iterationId };
+                    using (var client = GetHttpClient())
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var postValue = new StringContent(JsonConvert.SerializeObject(objJson), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("PATCH");
+                        var request = new HttpRequestMessage(method, projectName + "/" + teamName + "/_apis/work/teamsettings?api-version=" + Configuration.VersionNumber) { Content = postValue };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -248,26 +327,39 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public TeamIterationsResponse.Iterations GetAllIterations(string projectName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                TeamIterationsResponse.Iterations viewModel = new TeamIterationsResponse.Iterations();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    TeamIterationsResponse.Iterations viewModel = new TeamIterationsResponse.Iterations();
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<TeamIterationsResponse.Iterations>().Result;
-                        return viewModel;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + response.Content.ReadAsStringAsync().Result);
+                        HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<TeamIterationsResponse.Iterations>().Result;
+                            return viewModel;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + response.Content.ReadAsStringAsync().Result);
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new TeamIterationsResponse.Iterations();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new TeamIterationsResponse.Iterations();
         }
@@ -275,39 +367,52 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <summary>
         /// Set Iteration for team
         /// </summary>
-        /// <param name="IterationId"></param>
+        /// <param name="iterationId"></param>
         /// <param name="teamName"></param>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public bool SetIterationsForTeam(string IterationId, string teamName, string projectName)
+        public bool SetIterationsForTeam(string iterationId, string teamName, string projectName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                object objJSON = new { id = IterationId };
-
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(JsonConvert.SerializeObject(objJSON), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    object objJson = new { id = iterationId };
 
-                    var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        var jsonContent = new StringContent(JsonConvert.SerializeObject(objJson), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        var request = new HttpRequestMessage(method, Configuration.UriString + projectName + "/" + teamName + "/_apis/work/teamsettings/iterations?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetIterationsForTeam \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetIterationsForTeam \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -320,29 +425,42 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public TeamResponse GetTeamByName(string projectName, string teamaName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                TeamResponse viewModel = new TeamResponse();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    TeamResponse viewModel = new TeamResponse();
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<TeamResponse>().Result;
-                        return viewModel;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "/teams/" + teamaName + "?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<TeamResponse>().Result;
+                            return viewModel;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new TeamResponse();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new TeamResponse();
         }
@@ -354,32 +472,45 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public bool UpdateTeamsAreas(string projectName, string json)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
-
-                    var method = new HttpMethod("PATCH");
-
-                    var request = new HttpRequestMessage(method, _configuration.UriString + projectName + "/" + projectName + "%20Team/_apis/work/teamsettings/teamfieldvalues?api-version=" + _configuration.VersionNumber) { Content = patchValue };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + response.Content.ReadAsStringAsync().Result);
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var patchValue = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        var method = new HttpMethod("PATCH");
+
+                        var request = new HttpRequestMessage(method, Configuration.UriString + projectName + "/" + projectName + "%20Team/_apis/work/teamsettings/teamfieldvalues?api-version=" + Configuration.VersionNumber) { Content = patchValue };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + response.Content.ReadAsStringAsync().Result);
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }

@@ -1,35 +1,55 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Extractor;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
-using NLog;
 
 namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Projects : ApiServiceBase
     {
         public Projects(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Check for the existance of project
         /// </summary>
         /// <returns></returns>
         public bool IsAccountHasProjects()
         {
-            using (var client = GetHttpClient())
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                // connect to the REST endpoint            
-                HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=" + _configuration.VersionNumber).Result;
-                // check to see if we have a succesfull respond
-                return response.StatusCode == System.Net.HttpStatusCode.OK;
+                try
+                {
+                    using (var client = GetHttpClient())
+                    {
+                        // connect to the REST endpoint            
+                        HttpResponseMessage response = client.GetAsync("_apis/projects?stateFilter=All&api-version=" + Configuration.VersionNumber).Result;
+                        // check to see if we have a succesfull respond
+                        return response.StatusCode == System.Net.HttpStatusCode.OK;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
-            // return false;
+            return false;
         }
 
         /// <summary>
@@ -38,20 +58,33 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public HttpResponseMessage GetListOfProjects()
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
-                using (var client = GetHttpClient())
+                try
                 {
-                    // connect to the REST endpoint            
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects?stateFilter=wellFormed&$top=1000&api-version=" + _configuration.VersionNumber).Result;
-                    // check to see if we have a succesfull respond
-                    return response;
+                    ProjectsResponse.ProjectResult viewModel = new ProjectsResponse.ProjectResult();
+                    using (var client = GetHttpClient())
+                    {
+                        // connect to the REST endpoint            
+                        HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/_apis/projects?stateFilter=wellFormed&$top=1000&api-version=" + Configuration.VersionNumber).Result;
+                        // check to see if we have a succesfull respond
+                        return response;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new HttpResponseMessage(HttpStatusCode.InternalServerError); 
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
         }
@@ -63,42 +96,55 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public string CreateTeamProject(string json)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    using (var client = GetHttpClient())
+                    {
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                    var request = new HttpRequestMessage(method, "_apis/projects?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.Accepted)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        string projectId = JObject.Parse(result)["id"].ToString();
-                        return projectId;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = string.Empty;
-                        if (response.StatusCode.ToString() == "Unauthorized")
+                        var request = new HttpRequestMessage(method, "_apis/projects?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.Accepted)
                         {
-                            error = errorMessage.Result;
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            string projectId = JObject.Parse(result)["id"].ToString();
+                            return projectId;
                         }
                         else
                         {
-                            error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = string.Empty;
+                            if (response.StatusCode.ToString() == "Unauthorized")
+                            {
+                                error = errorMessage.Result;
+                            }
+                            else
+                            {
+                                error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            }
+                            LastFailureMessage = error;
+                            logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + error + "\n");
+                            return "-1";
                         }
-                        LastFailureMessage = error;
-                        logger.Info(error + "\n");
-                        return "-1";
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return "-1";
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return "-1";
         }
@@ -110,29 +156,42 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetProjectIdByName(string projectName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "?includeCapabilities=false&api-version=" + _configuration.VersionNumber).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        HttpResponseMessage response = client.GetAsync("_apis/projects/" + projectName + "?includeCapabilities=false&api-version=" + Configuration.VersionNumber).Result;
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        string projectId = JObject.Parse(result)["id"].ToString();
-                        return projectId;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            string projectId = JObject.Parse(result)["id"].ToString();
+                            return projectId;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return Guid.Empty.ToString();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return Guid.Empty.ToString();
         }
@@ -144,97 +203,139 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
         /// <returns></returns>
         public string GetProjectStateByName(string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync("_apis/projects/" + project + "?includeCapabilities=true&api-version=" + _configuration.VersionNumber).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        HttpResponseMessage response = client.GetAsync("_apis/projects/" + project + "?includeCapabilities=true&api-version=" + Configuration.VersionNumber).Result;
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        string projectStatus = JObject.Parse(result)["state"].ToString();
-                        return projectStatus;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            string projectStatus = JObject.Parse(result)["state"].ToString();
+                            return projectStatus;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (TimeoutException timeout)
-            {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Time out: " + timeout.Message + "\t" + "\n" + timeout.StackTrace + "\n");
-            }
-            catch (OperationCanceledException opcan)
-            {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Operation Cancelled: " + opcan.Message + "\t" + "\n" + opcan.StackTrace + "\n");
-            }
-            catch (Exception ex)
-            {
-                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (TimeoutException timeout)
+                {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Time out: " + timeout.Message + "\t" + "\n" + timeout.StackTrace + "\n");
+                    LastFailureMessage = timeout.Message + " ," + timeout.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return string.Empty;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
+                catch (OperationCanceledException opcan)
+                {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t Operation Cancelled: " + opcan.Message + "\t" + "\n" + opcan.StackTrace + "\n");
+                    LastFailureMessage = opcan.Message + " ," + opcan.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return string.Empty;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
+                catch (Exception ex)
+                {
+                    logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return string.Empty;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return string.Empty;
         }
 
         public ProjectProperties.Properties GetProjectProperties()
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                ProjectProperties.Properties load = new ProjectProperties.Properties();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/projects/" + ProjectId + "/properties?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                    ProjectProperties.Properties load = new ProjectProperties.Properties();
+                    using (var client = GetHttpClient())
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        load = JsonConvert.DeserializeObject<ProjectProperties.Properties>(res);
-                        GetProcessTemplate.PTemplate template = new GetProcessTemplate.PTemplate();
-
-                        string processTypeId = string.Empty;
-                        var processTypeID = load.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault();
-                        if (processTypeID != null)
+                        HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/_apis/projects/" + ProjectId + "/properties?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                         {
-                            processTypeId = processTypeID.value;
-                        }
-                        using (var client1 = GetHttpClient())
-                        {
-                            HttpResponseMessage response1 = client1.GetAsync(_configuration.UriString + "/_apis/work/processes/" + processTypeId + "?api-version=" + _configuration.VersionNumber).Result;
-                            if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
-                            {
-                                string templateData = response1.Content.ReadAsStringAsync().Result;
-                                template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
-                                load.TypeClass = template.properties.Class;
-                                load.value.Where(x => x.name == "System.Process Template").FirstOrDefault().value = template.name;
-                                return load;
-                            }
-                            else
-                            {
-                                var errorMessage = response1.Content.ReadAsStringAsync();
-                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                this.LastFailureMessage = error;
-                                return new ProjectProperties.Properties();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                    }
+                            string res = response.Content.ReadAsStringAsync().Result;
+                            load = JsonConvert.DeserializeObject<ProjectProperties.Properties>(res);
+                            GetProcessTemplate.PTemplate template = new GetProcessTemplate.PTemplate();
 
+                            string processTypeId = string.Empty;
+                            var processType = load.Value.Where(x => x.Name == "System.ProcessTemplateType").FirstOrDefault();
+                            if (processType != null)
+                            {
+                                processTypeId = processType.RefValue;
+                            }
+                            using (var client1 = GetHttpClient())
+                            {
+                                HttpResponseMessage response1 = client1.GetAsync(Configuration.UriString + "/_apis/work/processes/" + processTypeId + "?api-version=" + Configuration.VersionNumber).Result;
+                                if (response1.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
+                                {
+                                    string templateData = response1.Content.ReadAsStringAsync().Result;
+                                    template = JsonConvert.DeserializeObject<GetProcessTemplate.PTemplate>(templateData);
+                                    load.TypeClass = template.Properties.Class;
+                                    load.Value.Where(x => x.Name == "System.Process Template").FirstOrDefault().RefValue = template.Name;
+                                    return load;
+                                }
+                                else
+                                {
+                                    var errorMessage = response1.Content.ReadAsStringAsync();
+                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                    this.LastFailureMessage = error;
+                                    return new ProjectProperties.Properties();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                        }
+
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Info(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new ProjectProperties.Properties();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new ProjectProperties.Properties();
         }
-
-
     }
 }

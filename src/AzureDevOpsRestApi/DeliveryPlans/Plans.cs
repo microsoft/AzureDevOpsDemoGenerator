@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AzureDevOpsAPI.DeliveryPlans
@@ -20,34 +21,46 @@ namespace AzureDevOpsAPI.DeliveryPlans
         /// <returns></returns>
 		public bool AddDeliveryPlan(string json, string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, project + "_apis/work/plans?api-version=3.0-preview.1") { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                        return true;
+                        var request = new HttpRequestMessage(method, project + "_apis/work/plans?api-version=3.0-preview.1") { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            return false;
+                        }
                     }
-                    else
+
+                }
+                catch (Exception ex)
+                {
+                    this.LastFailureMessage = ex.Message + " ,"+ ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
                     {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
                         return false;
                     }
-                }
 
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
-            catch (Exception)
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

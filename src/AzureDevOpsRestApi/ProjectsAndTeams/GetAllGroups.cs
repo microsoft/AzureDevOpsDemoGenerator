@@ -10,20 +10,20 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
     {
         public class Value
         {
-            public string subjectKind { get; set; }
-            public string description { get; set; }
-            public string domain { get; set; }
-            public string principalName { get; set; }
-            public object mailAddress { get; set; }
-            public string displayName { get; set; }
-            public string url { get; set; }
-            public string descriptor { get; set; }
+            public string SubjectKind { get; set; }
+            public string Description { get; set; }
+            public string Domain { get; set; }
+            public string PrincipalName { get; set; }
+            public object MailAddress { get; set; }
+            public string DisplayName { get; set; }
+            public string Url { get; set; }
+            public string Descriptor { get; set; }
         }
 
         public class GroupList
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

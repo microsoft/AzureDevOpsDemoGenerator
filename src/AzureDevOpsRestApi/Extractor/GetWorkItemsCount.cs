@@ -1,10 +1,10 @@
-﻿
+﻿using NLog;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Extractor;
-using NLog;
 
 namespace AzureDevOpsAPI.Extractor
 {
@@ -15,12 +15,12 @@ namespace AzureDevOpsAPI.Extractor
         {
 
         }
-        Logger logger = LogManager.GetLogger("*");
-        public class WIMapData
+         Logger logger = LogManager.GetLogger("*");
+        public class WiMapData
         {
-            public string oldID { get; set; }
-            public string newID { get; set; }
-            public string WIType { get; set; }
+            public string OldId { get; set; }
+            public string NewId { get; set; }
+            public string WiType { get; set; }
         }
 
         /// <summary>
@@ -32,56 +32,67 @@ namespace AzureDevOpsAPI.Extractor
         {
             GetWorkItemsResponse.Results viewModel = new GetWorkItemsResponse.Results();
             WorkItemFetchResponse.WorkItems fetchedWIs;
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                // create wiql object
-                Object wiql = new
+                try
                 {
-                    query = "Select [State], [Title] ,[Effort]" +
-                            "From WorkItems " +
-                            "Where [Work Item Type] = '" + workItemType + "'" +
-                            "And [System.TeamProject] = '" + Project + "' " +
-                            "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
-                };
-                using (var client = GetHttpClient())
-                {
-                    var postValue = new StringContent(JsonConvert.SerializeObject(wiql), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
-
-                    // set the httpmethod to Patch
-                    var method = new HttpMethod("POST");
-
-                    // send the request               
-                    var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/wit/wiql?api-version=" + _configuration.VersionNumber) { Content = postValue };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                    // create wiql object
+                    Object wiql = new
                     {
-                        viewModel = response.Content.ReadAsAsync<GetWorkItemsResponse.Results>().Result;
-                    }
-                    else
+                        query = "Select [State], [Title] ,[Effort]" +
+                                "From WorkItems " +
+                                "Where [Work Item Type] = '" + workItemType + "'" +
+                                "And [System.TeamProject] = '" + Project + "' " +
+                                "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
+                    };
+                    using (var client = GetHttpClient())
                     {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
+                        var postValue = new StringContent(JsonConvert.SerializeObject(wiql), Encoding.UTF8, "application/json"); // mediaType needs to be application/json-patch+json for a patch call
 
-                    viewModel.HttpStatusCode = response.StatusCode;
-                    string workitemIDstoFetch = ""; int WICtr = 0;
-                    foreach (GetWorkItemsResponse.Workitem WI in viewModel.workItems)
-                    {
-                        workitemIDstoFetch = WI.id + "," + workitemIDstoFetch;
-                        WICtr++;
+                        // set the httpmethod to Patch
+                        var method = new HttpMethod("POST");
+
+                        // send the request               
+                        var request = new HttpRequestMessage(method, Configuration.UriString + "/_apis/wit/wiql?api-version=" + Configuration.VersionNumber) { Content = postValue };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetWorkItemsResponse.Results>().Result;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
+
+                        viewModel.HttpStatusCode = response.StatusCode;
+                        string workitemIDstoFetch = ""; int wiCtr = 0;
+                        foreach (GetWorkItemsResponse.Workitem wi in viewModel.WorkItems)
+                        {
+                            workitemIDstoFetch = wi.Id + "," + workitemIDstoFetch;
+                            wiCtr++;
+                        }
+                        workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
+                        fetchedWIs = GetWorkItemsDetailInBatch(workitemIDstoFetch);
+                        return fetchedWIs;
                     }
-                    workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
-                    fetchedWIs = GetWorkItemsDetailInBatch(workitemIDstoFetch);
-                    return fetchedWIs;
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                string error = ex.Message;
-                LastFailureMessage = error;
+                catch (Exception ex)
+                {
+                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new WorkItemFetchResponse.WorkItems();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new WorkItemFetchResponse.WorkItems();
         }
@@ -93,28 +104,41 @@ namespace AzureDevOpsAPI.Extractor
         public WorkItemFetchResponse.WorkItems GetWorkItemsDetailInBatch(string workitemstoFetch)
         {
             WorkItemFetchResponse.WorkItems viewModel = new WorkItemFetchResponse.WorkItems();
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/wit/workitems?api-version=" + _configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/_apis/wit/workitems?api-version=" + Configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
+                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                string error = ex.Message;
-                LastFailureMessage = error;
+                catch (Exception ex)
+                {
+                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                    string error = ex.Message;
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return viewModel;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return viewModel;
         }
@@ -124,27 +148,38 @@ namespace AzureDevOpsAPI.Extractor
         /// <returns></returns>
         public WorkItemNames.Names GetAllWorkItemNames()
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/_apis/wit/workitemtypes?api-version={2}", _configuration.UriString, _configuration.Project, _configuration.VersionNumber)).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        WorkItemNames.Names workItemNames = JsonConvert.DeserializeObject<WorkItemNames.Names>(response.Content.ReadAsStringAsync().Result);
-                        return workItemNames;
-                    }
-                    else
-                    {
-                        return new WorkItemNames.Names();
+                        HttpResponseMessage response = client.GetAsync(string.Format("{0}/{1}/_apis/wit/workitemtypes?api-version={2}", Configuration.UriString, Configuration.Project, Configuration.VersionNumber)).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            WorkItemNames.Names workItemNames = JsonConvert.DeserializeObject<WorkItemNames.Names>(response.Content.ReadAsStringAsync().Result);
+                            return workItemNames;
+                        }
+                        else
+                        {
+                            return new WorkItemNames.Names();
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                string error = ex.Message;
-                LastFailureMessage = error;
+                catch (Exception ex)
+                {
+                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new WorkItemNames.Names(); ;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new WorkItemNames.Names();
         }
