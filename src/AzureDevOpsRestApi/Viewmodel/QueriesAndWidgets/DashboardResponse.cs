@@ -10,12 +10,12 @@ namespace AzureDevOpsAPI.Viewmodel.QueriesAndWidgets
     {
         public class Dashboard : BaseViewModel
         {
-            public Value[] dashboardEntries { get; set; }
+            public Value[] DashboardEntries { get; set; }
         }
         public class Value
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
     }
 }

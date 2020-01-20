@@ -12,12 +12,12 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
 
         public class WorkItem : BaseViewModel
         {
-            public int id { get; set; }
-            public int rev { get; set; }
-            public Fields fields { get; set; }
-            public Relation[] relations { get; set; }
-            public _Links _links { get; set; }
-            public string url { get; set; }
+            public int Id { get; set; }
+            public int Rev { get; set; }
+            public Fields Fields { get; set; }
+            public Relation[] Relations { get; set; }
+            public Links Links { get; set; }
+            public string Url { get; set; }
         }
 
         public class Fields
@@ -62,13 +62,13 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
             public bool SystemBoardColumnDone { get; set; }
 
             [JsonProperty(PropertyName = "Microsoft.VSTS.Common.Priority")]
-            public int MicrosoftVSTSCommonPriority { get; set; }
+            public int MicrosoftVstsCommonPriority { get; set; }
 
             [JsonProperty(PropertyName = "Microsoft.VSTS.Common.BusinessValue")]
-            public int MicrosoftVSTSCommonBusinessValue { get; set; }
+            public int MicrosoftVstsCommonBusinessValue { get; set; }
 
             [JsonProperty(PropertyName = "Microsoft.VSTS.Common.ValueArea")]
-            public string MicrosoftVSTSCommonValueArea { get; set; }
+            public string MicrosoftVstsCommonValueArea { get; set; }
 
             [JsonProperty(PropertyName = "System.Description")]
             public string SystemDescription { get; set; }
@@ -77,62 +77,62 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
             public string SystemHistory { get; set; }
         }
 
-        public class _Links
+        public class Links
         {
-            public Self self { get; set; }
-            public Workitemupdates workItemUpdates { get; set; }
-            public Workitemrevisions workItemRevisions { get; set; }
-            public Workitemhistory workItemHistory { get; set; }
-            public Html html { get; set; }
-            public Workitemtype workItemType { get; set; }
-            public Fields1 fields { get; set; }
+            public Self Self { get; set; }
+            public Workitemupdates WorkItemUpdates { get; set; }
+            public Workitemrevisions WorkItemRevisions { get; set; }
+            public Workitemhistory WorkItemHistory { get; set; }
+            public Html Html { get; set; }
+            public Workitemtype WorkItemType { get; set; }
+            public Fields1 Fields { get; set; }
         }
 
         public class Self
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Workitemupdates
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Workitemrevisions
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Workitemhistory
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Html
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Workitemtype
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Fields1
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Relation
         {
-            public string rel { get; set; }
-            public string url { get; set; }
-            public Attributes attributes { get; set; }
+            public string Rel { get; set; }
+            public string Url { get; set; }
+            public Attributes Attributes { get; set; }
         }
 
         public class Attributes
         {
-            public bool isLocked { get; set; }
+            public bool IsLocked { get; set; }
         }
     }
 }

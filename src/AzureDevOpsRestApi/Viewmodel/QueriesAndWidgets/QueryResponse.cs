@@ -8,7 +8,7 @@ namespace AzureDevOpsAPI.Viewmodel.QueriesAndWidgets
 {
     public class QueryResponse
     {
-        public string id { get; set; }
-        public string name { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

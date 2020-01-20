@@ -26,18 +26,18 @@ namespace AzureDevOpsAPI.Viewmodel.Importer
 
         public class Value
         {
-            public string name { get; set; }
-            public int itemLimit { get; set; }
-            public StateMappings stateMappings { get; set; }
-            public string columnType { get; set; }
-            public bool? isSplit { get; set; }
-            public string description { get; set; }
+            public string Name { get; set; }
+            public int ItemLimit { get; set; }
+            public StateMappings StateMappings { get; set; }
+            public string ColumnType { get; set; }
+            public bool? IsSplit { get; set; }
+            public string Description { get; set; }
         }
 
         public class ImportBoardCols
         {
             public string BoardName { get; set; }
-            public IList<Value> value { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }
