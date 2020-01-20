@@ -7,13 +7,13 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Value
         {
-            public string name { get; set; }
+            public string Name { get; set; }
         }
 
         public class Iterations
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 
@@ -21,17 +21,17 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Child
         {
-            public string name { get; set; }
-            public string structureType { get; set; }
-            public bool hasChildren { get; set; }
+            public string Name { get; set; }
+            public string StructureType { get; set; }
+            public bool HasChildren { get; set; }
         }
 
         public class Iterations
         {
-            public List<Child> children { get; set; }
-            public string name { get; set; }
-            public string structureType { get; set; }
-            public bool hasChildren { get; set; }
+            public List<Child> Children { get; set; }
+            public string Name { get; set; }
+            public string StructureType { get; set; }
+            public bool HasChildren { get; set; }
         }
 
 

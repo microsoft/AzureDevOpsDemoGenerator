@@ -16,8 +16,8 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
         }
         public class Setting
         {
-            public string bugsBehavior { get; set; }
-            public BacklogVisibilities backlogVisibilities { get; set; }
+            public string BugsBehavior { get; set; }
+            public BacklogVisibilities BacklogVisibilities { get; set; }
         }
     }
 }

@@ -7,39 +7,39 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Child1
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public string wiql { get; set; }
-            public bool isPublic { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public string Wiql { get; set; }
+            public bool IsPublic { get; set; }
         }
 
         public class Child
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public string wiql { get; set; }
-            public string queryType { get; set; }
-            public bool hasChildren { get; set; }
-            public List<Child1> children { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public string Wiql { get; set; }
+            public string QueryType { get; set; }
+            public bool HasChildren { get; set; }
+            public List<Child1> Children { get; set; }
         }
 
         public class Value
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public bool isFolder { get; set; }
-            public bool hasChildren { get; set; }
-            public List<Child> children { get; set; }
-            public bool isPublic { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public bool IsFolder { get; set; }
+            public bool HasChildren { get; set; }
+            public List<Child> Children { get; set; }
+            public bool IsPublic { get; set; }
         }
 
         public class Queries
         {
-            public int count { get; set; }
-            public List<Value> value { get; set; }
+            public int Count { get; set; }
+            public List<Value> Value { get; set; }
         }
     }
 }

@@ -10,17 +10,17 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Value
         {
-            public string extensionId { get; set; }
-            public string extensionName { get; set; }
-            public string publisherId { get; set; }
-            public string publisherName { get; set; }
-            public string flags { get; set; }
+            public string ExtensionId { get; set; }
+            public string ExtensionName { get; set; }
+            public string PublisherId { get; set; }
+            public string PublisherName { get; set; }
+            public string Flags { get; set; }
         }
 
         public class ExtensionsList
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

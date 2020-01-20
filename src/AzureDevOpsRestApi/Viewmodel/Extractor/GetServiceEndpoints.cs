@@ -6,72 +6,72 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Data
         {
-            public string environment { get; set; }
-            public string subscriptionId { get; set; }
-            public string subscriptionName { get; set; }
-            public string scopeLevel { get; set; }
-            public string serviceBusQueueName { get; set; }
-            public string registrytype { get; set; }
-            public string accessExternalGitServer { get; set; }
-            public string host { get; set; }
-            public string port { get; set; }
-            public string privateKey { get; set; }
-            public string realmName { get; set; }
-            public string acceptUntrustedCerts { get; set; }
-            public string authorizationType { get; set; }
+            public string Environment { get; set; }
+            public string SubscriptionId { get; set; }
+            public string SubscriptionName { get; set; }
+            public string ScopeLevel { get; set; }
+            public string ServiceBusQueueName { get; set; }
+            public string Registrytype { get; set; }
+            public string AccessExternalGitServer { get; set; }
+            public string Host { get; set; }
+            public string Port { get; set; }
+            public string PrivateKey { get; set; }
+            public string RealmName { get; set; }
+            public string AcceptUntrustedCerts { get; set; }
+            public string AuthorizationType { get; set; }
         }
 
         public class Parameters
         {
-            public string username { get; set; }
-            public string certificate { get; set; }
-            public string apitoken { get; set; }            
-            public string password { get; set; }
-            public string email { get; set; }
-            public string registry { get; set; }
-            public string url { get; set; }
-            public string tenantId { get; set; }
-            public string servicePrincipalId { get; set; }
-            public string authenticationType { get; set; }
-            public string serviceBusConnectionString { get; set; }
-            public string servicePrincipalKey { get; set; }
-            public string nugetkey { get; set; }
-            public string cacert { get; set; }
-            public string cert { get; set; }
-            public string key { get; set; }
+            public string Username { get; set; }
+            public string Certificate { get; set; }
+            public string Apitoken { get; set; }            
+            public string Password { get; set; }
+            public string Email { get; set; }
+            public string Registry { get; set; }
+            public string Url { get; set; }
+            public string TenantId { get; set; }
+            public string ServicePrincipalId { get; set; }
+            public string AuthenticationType { get; set; }
+            public string ServiceBusConnectionString { get; set; }
+            public string ServicePrincipalKey { get; set; }
+            public string Nugetkey { get; set; }
+            public string Cacert { get; set; }
+            public string Cert { get; set; }
+            public string Key { get; set; }
             public string AccessToken { get; set; }
-            public string azureTenantId { get; set; }
-            public string azureEnvironment { get; set; }
-            public string roleBindingName { get; set; }
-            public string secretName { get; set; }
-            public string serviceAccountName { get; set; }
-            public string azureAccessToken { get; set; }
-            public string serviceAccountCertificate { get; set; }
+            public string AzureTenantId { get; set; }
+            public string AzureEnvironment { get; set; }
+            public string RoleBindingName { get; set; }
+            public string SecretName { get; set; }
+            public string ServiceAccountName { get; set; }
+            public string AzureAccessToken { get; set; }
+            public string ServiceAccountCertificate { get; set; }
 
         }
 
         public class Authorization
         {
-            public Parameters parameters { get; set; }
-            public string scheme { get; set; }
+            public Parameters Parameters { get; set; }
+            public string Scheme { get; set; }
         }
 
         public class Value
         {
-            public Data data { get; set; }
-            public string name { get; set; }
-            public string type { get; set; }
-            public string url { get; set; }
-            public Authorization authorization { get; set; }
-            public bool isShared { get; set; }
-            public bool isReady { get; set; }
-            public string owner { get; set; }
+            public Data Data { get; set; }
+            public string Name { get; set; }
+            public string Type { get; set; }
+            public string Url { get; set; }
+            public Authorization Authorization { get; set; }
+            public bool IsShared { get; set; }
+            public bool IsReady { get; set; }
+            public string Owner { get; set; }
         }
 
         public class ServiceEndPoint
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

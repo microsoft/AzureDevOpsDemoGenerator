@@ -6,15 +6,15 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Value
         {
-            public string name { get; set; }
-            public string referenceName { get; set; }
-            public string description { get; set; }
+            public string Name { get; set; }
+            public string ReferenceName { get; set; }
+            public string Description { get; set; }
         }
 
         public class Names
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

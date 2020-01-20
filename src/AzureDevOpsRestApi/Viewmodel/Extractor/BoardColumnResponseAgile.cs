@@ -9,27 +9,27 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
             [JsonProperty(PropertyName = "Bug")]
-            public string bug { get; set; }
+            public string Bug { get; set; }
             [JsonProperty(PropertyName = "Feature")]
-            public string feature { get; set; }
+            public string Feature { get; set; }
             [JsonProperty(PropertyName = "Epic")]
-            public string epic { get; set; }
+            public string Epic { get; set; }
         }
 
         public class Value
         {
-            public string name { get; set; }
-            public int itemLimit { get; set; }
-            public StateMappings stateMappings { get; set; }
-            public string columnType { get; set; }
-            public bool? isSplit { get; set; }
-            public string description { get; set; }
+            public string Name { get; set; }
+            public int ItemLimit { get; set; }
+            public StateMappings StateMappings { get; set; }
+            public string ColumnType { get; set; }
+            public bool? IsSplit { get; set; }
+            public string Description { get; set; }
         }
 
         public class ColumnResponse
         {
             public string BoardName { get; set; }
-            public List<Value> value { get; set; }
+            public List<Value> Value { get; set; }
         }
     }
 }
