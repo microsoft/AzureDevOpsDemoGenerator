@@ -7,7 +7,6 @@
   "variableGroups": [],
   "environments": [
     {
-      "id": 1,
       "name": "Azure-Dev",
       "rank": 1,
       "owner": {
@@ -22,8 +21,7 @@
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 1
+            "isNotificationOn": false
           }
         ],
         "approvalOptions": {
@@ -344,7 +342,6 @@
       "$value": "ReleaseNew"
     }
   },
-  "id": 1,
   "name": "MyShuttleRelease",
   "path": "\\",
   "projectReference": null
