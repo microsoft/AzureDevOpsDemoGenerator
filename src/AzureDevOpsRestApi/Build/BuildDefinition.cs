@@ -106,6 +106,7 @@ namespace AzureDevOpsAPI.Build
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

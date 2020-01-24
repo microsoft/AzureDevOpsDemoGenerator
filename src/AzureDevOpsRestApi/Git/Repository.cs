@@ -44,6 +44,7 @@ namespace AzureDevOpsAPI.Git
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -143,6 +144,7 @@ namespace AzureDevOpsAPI.Git
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -188,6 +190,7 @@ namespace AzureDevOpsAPI.Git
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -248,6 +251,7 @@ namespace AzureDevOpsAPI.Git
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -343,7 +347,7 @@ namespace AzureDevOpsAPI.Git
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return pullRequest;
+                            retryCount++;
                         }
                     }
                 }
@@ -398,7 +402,7 @@ namespace AzureDevOpsAPI.Git
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return string.Empty;
+                            retryCount++;
                         }
                     }
                 }
@@ -450,7 +454,8 @@ namespace AzureDevOpsAPI.Git
                         {
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            this.LastFailureMessage = error;                            
+                            this.LastFailureMessage = error;
+                            retryCount++;
                         }
 
                         return;

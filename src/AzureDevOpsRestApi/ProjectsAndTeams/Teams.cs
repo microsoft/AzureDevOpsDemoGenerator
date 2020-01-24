@@ -47,6 +47,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -95,6 +96,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -153,6 +155,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -205,6 +208,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -249,6 +253,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                         else
                         {
                             logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + response.Content.ReadAsStringAsync().Result);
+                            retryCount++;
                         }
                     }
                 }
@@ -300,6 +305,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -344,6 +350,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                         else
                         {
                             logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + response.Content.ReadAsStringAsync().Result);
+                            retryCount++;
                         }
                     }
                 }
@@ -397,6 +404,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -445,6 +453,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -495,6 +504,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

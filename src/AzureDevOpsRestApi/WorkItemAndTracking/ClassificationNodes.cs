@@ -37,6 +37,13 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                 viewModel = response.Content.ReadAsAsync<GetNodesResponse.Nodes>().Result;
                                 return viewModel;
                             }
+                            else
+                            {
+                                var errorMessage = response.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                this.LastFailureMessage = error;
+                                retryCount++;
+                            }
                             viewModel.HttpStatusCode = response.StatusCode;
                         }
                     }
@@ -92,6 +99,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                         else
                         {
                             var errorMessage = response.Content.ReadAsStringAsync();
+                            retryCount++;
                         }
                         viewModel.HttpStatusCode = response.StatusCode;
                     }
@@ -143,15 +151,16 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 
                         if (response.IsSuccessStatusCode)
                         {
-                            viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;                            
+                            viewModel = response.Content.ReadAsAsync<GetNodeResponse.Node>().Result;
+                            return viewModel;
                         }
                         else
                         {
                             var errorMessage = response.Content.ReadAsStringAsync();
+                            retryCount++;
                         }
 
-                        viewModel.HttpStatusCode = response.StatusCode;
-                        return viewModel;
+                        viewModel.HttpStatusCode = response.StatusCode;                       
                     }
                 }
                 catch (Exception ex)
@@ -301,6 +310,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
 
                         viewModel.HttpStatusCode = response.StatusCode;
@@ -360,6 +370,13 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             {
                                 isSuccessful = true;
                             }
+                            else
+                            {
+                                var errorMessage = response.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                this.LastFailureMessage = error;
+                                retryCount++;
+                            }
                         }
                     }
                     string project = projectName;
@@ -413,6 +430,13 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             string result = response.Content.ReadAsStringAsync().Result;
                             sprints = JsonConvert.DeserializeObject<SprintResponse.Sprints>(result);
                             return sprints;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

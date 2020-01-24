@@ -44,6 +44,7 @@ namespace AzureDevOpsAPI.Wiki
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -97,7 +98,7 @@ namespace AzureDevOpsAPI.Wiki
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return false;
+                            retryCount++;
                         }
                     }
                 }
@@ -142,7 +143,7 @@ namespace AzureDevOpsAPI.Wiki
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return false;
+                            retryCount++;
                         }
                     }
                 }
@@ -185,7 +186,7 @@ namespace AzureDevOpsAPI.Wiki
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return false;
+                            retryCount++;
                         }
                     }
                 }
@@ -229,7 +230,7 @@ namespace AzureDevOpsAPI.Wiki
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return false;
+                            retryCount++;
                         }
                     }
                 }

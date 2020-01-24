@@ -122,6 +122,7 @@ namespace AzureDevOpsAPI.Extractor
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -163,7 +164,10 @@ namespace AzureDevOpsAPI.Extractor
                         }
                         else
                         {
-                            return new WorkItemNames.Names();
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

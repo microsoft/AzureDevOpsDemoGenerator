@@ -45,7 +45,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return dashBoardId;
+                            retryCount++;
                         }
                     }
                 }
@@ -105,7 +105,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                                     var errorMessage = response.Content.ReadAsStringAsync();
                                     string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                                     this.LastFailureMessage = error;
-                                    return new QueryResponse();
+                                    retryCount++;
                                 }
                             }
                         }
@@ -172,6 +172,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                         {
                             string msg = response.Content.ReadAsStringAsync().Result;
                             logger.Debug(msg + "\n");
+                            retryCount++;
                         }
                     }
                 }
@@ -214,6 +215,13 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                         {
                             QueryResponse query = response.Content.ReadAsAsync<QueryResponse>().Result;
                             return query;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -263,7 +271,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                             {
                                 dynamic responseForInvalidStatusCode = response.Content.ReadAsAsync<dynamic>();
                                 Newtonsoft.Json.Linq.JContainer msg = responseForInvalidStatusCode.Result;
-                                return false;
+                                retryCount++;
                             }
                         }
                     }
@@ -318,7 +326,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return string.Empty;
+                            retryCount++;
                         }
                     }
                 }
@@ -362,7 +370,7 @@ namespace AzureDevOpsAPI.QueriesAndWidgets
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
-                            return new GetQueries.Queries();
+                            retryCount++;
                         }
                     }
                 }

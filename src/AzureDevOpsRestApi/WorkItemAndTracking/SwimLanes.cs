@@ -40,7 +40,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return false;
+                            retryCount++;
                         }
                     }
                 }

@@ -45,7 +45,7 @@ namespace AzureDevOpsAPI.Release
                             var errorMessage = response.Content.ReadAsStringAsync();
                             error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                            return ("eror", error);
+                            retryCount++;
                         }
                     }
                 }
@@ -86,8 +86,7 @@ namespace AzureDevOpsAPI.Release
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return false;
+                        this.LastFailureMessage = error;                         
                     }
                 }
             }
@@ -122,6 +121,12 @@ namespace AzureDevOpsAPI.Release
                                 environmentIds[0] = DefinitionResult.Environments.Where(x => x.Name == environment1).FirstOrDefault().Id;
                                 environmentIds[1] = DefinitionResult.Environments.Where(x => x.Name == environment2).FirstOrDefault().Id;
                                 return environmentIds;
+                            }
+                            else
+                            {
+                                var errorMessage = response.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                this.LastFailureMessage = error;
                             }
                         }
                     }

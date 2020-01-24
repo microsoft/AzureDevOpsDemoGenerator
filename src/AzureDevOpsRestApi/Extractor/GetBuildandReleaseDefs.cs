@@ -36,7 +36,7 @@ namespace AzureDevOpsAPI.Extractor
                         {
                             string errorMessage = response.Content.ReadAsStringAsync().Result;
                             LastFailureMessage = errorMessage;
-                            return new GetBuildDefResponse.BuildDef();
+                            retryCount++;
                         }
                     }
                 }
@@ -80,7 +80,7 @@ namespace AzureDevOpsAPI.Extractor
                         {
                             string errorMessage = response.Content.ReadAsStringAsync().Result;
                             LastFailureMessage = errorMessage;
-                            return new GetReleaseDefResponse.ReleaseDef();
+                            retryCount++;
                         }
                     }
                 }
@@ -122,7 +122,7 @@ namespace AzureDevOpsAPI.Extractor
                         {
                             string errorMessage = response.Content.ReadAsStringAsync().Result;
                             LastFailureMessage = errorMessage;
-                            return new GetReleaseDefResponse.ReleaseDef();
+                            retryCount++;
                         }
                     }
                 }
@@ -213,6 +213,13 @@ namespace AzureDevOpsAPI.Extractor
                             RepositoryList.Repository repository = JsonConvert.DeserializeObject<RepositoryList.Repository>(result);
                             return repository;
                         }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -279,8 +286,8 @@ namespace AzureDevOpsAPI.Extractor
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
-                        }
-                        return new List<JObject>();
+                            retryCount++;
+                        }                        
                     }
                 }
                 catch (Exception ex)

@@ -48,6 +48,7 @@ namespace AzureDevOpsAPI.TestManagement
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -108,6 +109,7 @@ namespace AzureDevOpsAPI.TestManagement
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                     return testSuite;
@@ -162,6 +164,7 @@ namespace AzureDevOpsAPI.TestManagement
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

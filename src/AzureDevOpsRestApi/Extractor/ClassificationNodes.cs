@@ -34,7 +34,7 @@ namespace AzureDevOpsAPI.Extractor
                         {
                             string errorMessage = response.Content.ReadAsStringAsync().Result;
                             LastFailureMessage = errorMessage;
-                            return new GetINumIteration.Iterations();
+                            retryCount++;
                         }
                     }
                 }
@@ -73,6 +73,7 @@ namespace AzureDevOpsAPI.Extractor
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                         else
                         {
@@ -168,6 +169,7 @@ namespace AzureDevOpsAPI.Extractor
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -212,6 +214,7 @@ namespace AzureDevOpsAPI.Extractor
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -339,6 +342,7 @@ namespace AzureDevOpsAPI.Extractor
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

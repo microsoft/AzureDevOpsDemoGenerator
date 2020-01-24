@@ -46,6 +46,7 @@ namespace AzureDevOpsAPI.Service
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                         return viewModel;
                     }
@@ -90,6 +91,7 @@ namespace AzureDevOpsAPI.Service
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }

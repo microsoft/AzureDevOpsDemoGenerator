@@ -40,17 +40,17 @@
 </head>
 <body class="pb-3">
     <input type="hidden" id="hidnUID" />
-    @if (!string.IsNullOrEmpty(Model.accessToken))
+    @if (!string.IsNullOrEmpty(Model.AccessToken))
     {
-        <input type="hidden" value="@Model.accessToken" id="hiddenAccessToken" />
+        <input type="hidden" value="@Model.AccessToken" id="hiddenAccessToken" />
     }
-    @if (!string.IsNullOrEmpty(Model.selectedTemplateDescription))
+    @if (!string.IsNullOrEmpty(Model.SelectedTemplateDescription))
     {
-        <input type="hidden" value="@Model.selectedTemplateDescription" id="selectedTemplateDescription" />
+        <input type="hidden" value="@Model.SelectedTemplateDescription" id="selectedTemplateDescription" />
     }
-    @if (!string.IsNullOrEmpty(Model.selectedTemplateFolder))
+    @if (!string.IsNullOrEmpty(Model.SelectedTemplateFolder))
     {
-        <input type="hidden" value="@Model.selectedTemplateFolder" id="selectedTemplateFolder" />
+        <input type="hidden" value="@Model.SelectedTemplateFolder" id="selectedTemplateFolder" />
     }
     @if (!string.IsNullOrEmpty(Model.Message))
     {
@@ -59,9 +59,9 @@
     @if (!string.IsNullOrEmpty(Model.SelectedTemplate))
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
-    }@if (!string.IsNullOrEmpty(Model.templateImage))
+    }@if (!string.IsNullOrEmpty(Model.TemplateImage))
     {
-        <input type="hidden" value="@Model.templateImage" id="selectedTemplateImage" />
+        <input type="hidden" value="@Model.TemplateImage" id="selectedTemplateImage" />
     }
     <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
@@ -194,7 +194,7 @@
                         <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
                         <div class="col-lg-8">
 
-                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                            @Html.DropDownListFor(model => model.AccountName, new SelectList(Model.AccountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
                             <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
                             </div>
                             <div style="color:red">

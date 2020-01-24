@@ -128,7 +128,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             }
                             LastFailureMessage = error;
                             logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + error + "\n");
-                            return "-1";
+                            retryCount++;
                         }
                     }
                 }
@@ -176,6 +176,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -223,6 +224,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -317,6 +319,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
 
                     }

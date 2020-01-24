@@ -48,6 +48,7 @@ namespace AzureDevOpsAPI.Queues
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
 
@@ -97,16 +98,16 @@ namespace AzureDevOpsAPI.Queues
                         if (response.IsSuccessStatusCode)
                         {
                             viewModel = response.Content.ReadAsAsync<AgentQueueModel>().Result;
+                            return viewModel.Id;
                         }
                         else
                         {
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
-                    }
-
-                    return viewModel.Id;
+                    }                    
                 }
                 catch (Exception ex)
                 {

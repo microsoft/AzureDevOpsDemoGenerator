@@ -41,6 +41,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
 
                         return;
@@ -98,6 +99,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -115,6 +117,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     Thread.Sleep(retryCount * 1000);
                 }
             }
+
+            return;
         }
 
         /// <summary>
@@ -147,6 +151,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             var errorMessage = response.Content.ReadAsStringAsync();
                             string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                             this.LastFailureMessage = error;
+                            retryCount++;
                         }
                     }
                 }
@@ -164,6 +169,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     Thread.Sleep(retryCount * 1000);
                 }
             }
+
+            return;
         }
     }
 }
