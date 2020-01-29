@@ -198,7 +198,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                             AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, _accessDetails);
 
                             //New Feature Enabling
-                            model.accessToken = HttpContext.Session.GetString("PAT");
+                            model.AccessToken = HttpContext.Session.GetString("PAT");
                             model.RefreshToken = _accessDetails.refresh_token;
                             HttpContext.Session.SetString("PAT", _accessDetails.access_token);
                             model.MemberID = profile.id;
@@ -210,18 +210,18 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                     accList.Add(account.AccountName);
                                 }
                                 accList.Sort();
-                                model.accountsForDropdown = accList;
+                                model.AccountsForDropdown = accList;
                                 model.HasAccount = true;
                             }
                             else
                             {
                                 accList.Add("Select Organization");
-                                model.accountsForDropdown = accList;
+                                model.AccountsForDropdown = accList;
                                 ViewBag.AccDDError = "Could not load your organizations. Please check if the logged in Id contains the Azure DevOps Organizations or change the directory in profile page and try again.";
                             }
 
                             model.Templates = new List<string>();
-                            model.accountUsersForDdl = new List<SelectListItem>();
+                            model.AccountUsersForDdl = new List<SelectListItem>();
                             TemplateSelection.Templates templates = new TemplateSelection.Templates();
                             string[] dirTemplates = Directory.GetDirectories(HostingEnvironment.WebRootPath + "/Templates");
 
@@ -250,11 +250,11 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                             {
                                                 model.SelectedTemplate = template.Name;
                                                 model.Templates.Add(template.Name);
-                                                model.selectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
-                                                model.selectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
+                                                model.SelectedTemplateDescription = template.Description == null ? string.Empty : template.Description;
+                                                model.SelectedTemplateFolder = template.TemplateFolder == null ? string.Empty : template.TemplateFolder;
                                                 model.Message = template.Message == null ? string.Empty : template.Message;
                                                 model.ForkGitHubRepo = template.ForkGitHubRepo.ToString();
-                                                model.templateImage = template.Image ?? "/Templates/TemplateImages/CodeFile.png";
+                                                model.TemplateImage = template.Image ?? "/Templates/TemplateImages/CodeFile.png";
                                             }
                                         }
                                     }
@@ -322,7 +322,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     if (!string.IsNullOrEmpty(_accessDetails.access_token))
                     {
                         // add your access token here for local debugging                 
-                        model.accessToken = _accessDetails.access_token;
+                        model.AccessToken = _accessDetails.access_token;
                         HttpContext.Session.SetString("PAT", _accessDetails.access_token);
                     }
                     return RedirectToAction("createproject", "Environment");
@@ -443,16 +443,16 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                 string zipPath = HostingEnvironment.ContentRootPath + "/ExtractedZipFile" + fineName;
                 string folder = fineName.Replace(".zip", "");
-                privateTemplate.privateTemplateName = folder;
+                privateTemplate.PrivateTemplateName = folder;
 
                 extractPath = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/" + folder;
                 System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, extractPath);
                 System.IO.File.Delete(zipPath);
-                privateTemplate.privateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
+                privateTemplate.PrivateTemplatePath = templateService.FindPrivateTemplatePath(extractPath);
 
-                privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                privateTemplate.ResponseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.PrivateTemplatePath);
 
-                bool isExtracted = templateService.checkTemplateDirectory(privateTemplate.privateTemplatePath);
+                bool isExtracted = templateService.checkTemplateDirectory(privateTemplate.PrivateTemplatePath);
                 if (!isExtracted)
                 {
                     Directory.Delete(extractPath, true);
@@ -484,14 +484,14 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 AzureDevOpsAPI.AppConfiguration _defaultConfiguration = new AzureDevOpsAPI.AppConfiguration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = accessToken };
                 AzureDevOpsAPI.ProjectsAndTeams.Accounts objAccount = new AzureDevOpsAPI.ProjectsAndTeams.Accounts(_defaultConfiguration);
                 accountMembers = objAccount.GetAccountMembers(accountName, accessToken);
-                if (accountMembers.count > 0)
+                if (accountMembers.Count > 0)
                 {
-                    foreach (var user in accountMembers.value)
+                    foreach (var user in accountMembers.Value)
                     {
-                        mod.accountUsersForDdl.Add(new SelectListItem
+                        mod.AccountUsersForDdl.Add(new SelectListItem
                         {
-                            Text = user.member.displayName,
-                            Value = user.member.mailAddress
+                            Text = user.Member.DisplayName,
+                            Value = user.Member.MailAddress
                         });
                     }
                 }
@@ -515,8 +515,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             try
             {
-                HttpContext.Session.SetString("PAT", model.accessToken);
-                HttpContext.Session.SetString("AccountName", model.accountName);
+                HttpContext.Session.SetString("PAT", model.AccessToken);
+                HttpContext.Session.SetString("AccountName", model.AccountName);
                 HttpContext.Session.SetString("trackId", model.Id);
                 HttpContext.Session.SetString("template", model.SelectedTemplate);
                 if (HttpContext.Session.GetString("GitHubToken") != null && HttpContext.Session.GetString("GitHubToken") != "" && model.GitHubFork)
@@ -578,7 +578,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         string url = AppKeyConfiguration["URL"];
                         string projectId = AppKeyConfiguration["PROJECTID"];
                         string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                        IssueWI objIssue = new IssueWI();
+                        IssueWi objIssue = new IssueWi();
 
                         errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
                         errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
@@ -588,7 +588,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         string logWIT = AppKeyConfiguration["LogWIT"];
                         if (logWIT == "true")
                         {
-                            objIssue.CreateIssueWI(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                            objIssue.CreateIssueWi(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
                         }
                     }
                 }
@@ -647,8 +647,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
                     var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
 
-                    template.Extensions.RemoveAll(x => x.extensionName.ToLower() == "analytics");
-                    template.Extensions = template.Extensions.OrderBy(y => y.extensionName).ToList();
+                    template.Extensions.RemoveAll(x => x.ExtensionName.ToLower() == "analytics");
+                    template.Extensions = template.Extensions.OrderBy(y => y.ExtensionName).ToList();
                     string requiresExtensionNames = string.Empty;
                     string requiredMicrosoftExt = string.Empty;
                     string requiredThirdPartyExt = string.Empty;
@@ -660,9 +660,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         Dictionary<string, bool> dict = new Dictionary<string, bool>();
                         foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                         {
-                            if (!dict.ContainsKey(ext.extensionName))
+                            if (!dict.ContainsKey(ext.ExtensionName))
                             {
-                                dict.Add(ext.extensionName, false);
+                                dict.Add(ext.ExtensionName, false);
                             }
                         }
 
@@ -682,9 +682,9 @@ namespace AzureDevOpsDemoBuilder.Controllers
                         {
                             foreach (var extension in template.Extensions)
                             {
-                                if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.extensionId.ToLower() == ext.ExtensionName.ToLower())
+                                if (extension.ExtensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.ExtensionId.ToLower() == ext.ExtensionName.ToLower())
                                 {
-                                    dict[extension.extensionName] = true;
+                                    dict[extension.ExtensionName] = true;
                                 }
                             }
                         }
@@ -698,32 +698,32 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                 foreach (var ins in installedExtensions)
                                 {
 
-                                    string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
+                                    string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.ExtensionName == ins.Key).FirstOrDefault().Link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/><br/>";
                                 }
                             }
                             foreach (var req in required)
                             {
-                                string publisher = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().publisherName;
+                                string publisher = template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().PublisherName;
                                 if (publisher == "Microsoft")
                                 {
-                                    string link = "<i class='fa fa-times-circle'></i> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
+                                    string link = "<i class='fa fa-times-circle'></i> " + template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().Link;
 
                                     string lincense = "";
-                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License))
+                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().License))
                                     {
-                                        lincense = " - " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License;
+                                        lincense = " - " + template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().License;
                                     }
                                     requiredMicrosoftExt = requiredMicrosoftExt + link + lincense + "<br/>";
                                 }
                                 else
                                 {
-                                    string link = "<i class='fa fa-times-circle'></i> " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().link;
+                                    string link = "<i class='fa fa-times-circle'></i> " + template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().Link;
                                     string lincense = "";
-                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License))
+                                    if (!string.IsNullOrEmpty(template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().License))
                                     {
-                                        lincense = " - " + template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().License;
+                                        lincense = " - " + template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().License;
                                     }
                                     requiredThirdPartyExt = requiredThirdPartyExt + link + lincense + "<br/>";
                                 }
@@ -747,7 +747,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                 requiresExtensionNames = "All required extensions are installed/enabled in your Azure DevOps Organization.<br/><br/><b>";
                                 foreach (var ins in installedExtensions)
                                 {
-                                    string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.extensionName == ins.Key).FirstOrDefault().link;
+                                    string link = "<i class='fas fa-check-circle'></i> " + template.Extensions.Where(x => x.ExtensionName == ins.Key).FirstOrDefault().Link;
                                     string lincense = "";
                                     requiresExtensionNames = requiresExtensionNames + link + lincense + "<br/>";
                                 }
@@ -801,13 +801,13 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 string fileName = Path.GetFileName(TemplateURL);
                 string extension = Path.GetExtension(TemplateURL);
                 templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
-                privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
-                privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
+                privateTemplate.PrivateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
+                privateTemplate.PrivateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
 
-                if (privateTemplate.privateTemplatePath != "")
+                if (privateTemplate.PrivateTemplatePath != "")
                 {
-                    privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
-                    if (privateTemplate.responseMessage != "SUCCESS")
+                    privateTemplate.ResponseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.PrivateTemplatePath);
+                    if (privateTemplate.ResponseMessage != "SUCCESS")
                     {
                         var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
                         if (Directory.Exists(templatepath))
@@ -816,7 +816,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 }
                 else
                 {
-                    privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
+                    privateTemplate.ResponseMessage = "Unable to download file, please check the provided URL";
                 }
 
             }
