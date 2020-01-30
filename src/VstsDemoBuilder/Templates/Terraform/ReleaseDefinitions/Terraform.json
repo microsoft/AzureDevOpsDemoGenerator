@@ -138,7 +138,7 @@
                 "ConnectedServiceNameARM": "",
                 "ScriptType": "InlineScript",
                 "ScriptPath": "",
-                "Inline": "# Using this script we will fetch storage key which is required in terraform file to authenticate backend stoarge account\n\n$key=(Get-AzureRmStorageAccountKey -ResourceGroupName $(terraformstoragerg) -AccountName $(terraformstorageaccount)).Value[0]\n\nWrite-Host \"##vso[task.setvariable variable=storagekey]$key\"",
+                "Inline": "# Using this script we will fetch storage key which is required in terraform file to authenticate backend storage account\n\n$key=(Get-AzureRmStorageAccountKey -ResourceGroupName $(terraformstoragerg) -AccountName $(terraformstorageaccount)).Value[0]\n\nWrite-Host \"##vso[task.setvariable variable=storagekey]$key\"",
                 "ScriptArguments": "",
                 "errorActionPreference": "stop",
                 "FailOnStandardError": "false",
