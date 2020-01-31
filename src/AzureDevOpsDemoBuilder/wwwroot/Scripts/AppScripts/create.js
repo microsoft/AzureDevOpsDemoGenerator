@@ -123,12 +123,12 @@ $(document).ready(function(event) {
         //If the template enabled for GitHub fork
         var forkGitHub = $(".template.selected").data('gitfork');
         if (forkGitHub === true) {
-            $('#gitHubCheckboxDiv').removeClass('d-none');
+            //$('#gitHubCheckboxDiv').removeClass('d-none');
             $('#gitHubLabelDiv').removeClass('d-none');
             $('input[id="gitHubCheckbox"]').prop('checked', false);
         }
         else {
-            $('#gitHubCheckboxDiv').addClass('d-none');
+            //$('#gitHubCheckboxDiv').addClass('d-none');
             $('#gitHubLabelDiv').addClass('d-none');
 
         }
