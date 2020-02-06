@@ -596,8 +596,6 @@ $('#btnSubmit').click(function() {
         "ProjectName": projectName, "SelectedTemplate": selectedTemplate, "id": uniqueId, "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod, "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms, "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token, "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName, "PrivateTemplatePath": privateTemplatePath
     };
     $.post("StartEnvironmentSetupProcess", projData, function(data) {
-        console.log(data);
-        debugger;
         if (data !== true) {
             //var queryTemplate = '@Request.QueryString["queryTemplate"]';
             //window.location.href = "~/Account/Verify?template=" + queryTemplate;

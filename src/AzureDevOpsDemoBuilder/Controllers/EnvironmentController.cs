@@ -47,9 +47,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        [SessonTimeout]
         public ContentResult GetCurrentProgress(string id)
-         {
+        {
             this.ControllerContext.HttpContext.Response.Headers.Add("cache-control", "no-cache");
             var currentProgress = GetStatusMessage(id).ToString();
             return Content(currentProgress);
@@ -62,7 +61,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        [SessonTimeout]
         public string GetStatusMessage(string id)
         {
             lock (ProjectService.objLock)
@@ -93,7 +91,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        [SessonTimeout]
         public ContentResult GetTemplate(string TemplateName)
         {
             string templatesPath = HostingEnvironment.WebRootPath + "/Templates/";
@@ -113,7 +110,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [AllowAnonymous]
-        [SessonTimeout]
         public JsonResult GetGroups()
         {
             string groupDetails = "";
@@ -282,7 +278,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
         }
         [AllowAnonymous]
-        [SessonTimeout]
         public ActionResult PrivateTemplate()
         {
             if (HttpContext.Session.GetString("visited") != null)
@@ -347,7 +342,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [SessonTimeout]
         public ActionResult UploadFiles()
         {
             string[] strResult = new string[2];
@@ -422,7 +416,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [SessonTimeout]
         public ActionResult UnzipFile(string fineName)
         {
             PrivateTemplate privateTemplate = new PrivateTemplate();
@@ -482,7 +475,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
-        [SessonTimeout]
         public JsonResult GetMembers(string accountName, string accessToken)
         {
             Project mod = new Project();
@@ -519,7 +511,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
-        [SessonTimeout]
         public bool StartEnvironmentSetupProcess(Project model)
         {
             try
@@ -622,7 +613,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        [SessonTimeout]
         public JsonResult CheckForInstalledExtensions(string selectedTemplate, string token, string account, string PrivatePath = "")
         {
             try
@@ -783,7 +773,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         }
 
         [AllowAnonymous]
-        [SessonTimeout]
         public string CheckSession()
         {
             if (HttpContext.Session.GetString("GitHubToken") != null && HttpContext.Session.GetString("GitHubToken") != "")
@@ -798,16 +787,15 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        [SessonTimeout]
         public JsonResult UploadPrivateTemplateFromURL(string TemplateURL, string token, string userId, string password, string OldPrivateTemplate = "")
         {
-            if (Session["visited"] != null)
+            PrivateTemplate privateTemplate = new PrivateTemplate();
+            if (HttpContext.Session.GetString("visited") != null)
             {
                 if (!string.IsNullOrEmpty(OldPrivateTemplate))
                 {
                     templateService.deletePrivateTemplate(OldPrivateTemplate);
                 }
-                PrivateTemplate privateTemplate = new PrivateTemplate();
                 string templatePath = string.Empty;
                 try
                 {
@@ -818,33 +806,34 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     privateTemplate.privateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
                     privateTemplate.privateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
 
-                if (privateTemplate.privateTemplatePath != "")
-                {
-                    privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
-                    if (privateTemplate.responseMessage != "SUCCESS")
+                    if (privateTemplate.privateTemplatePath != "")
                     {
-                        var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
-                        if (Directory.Exists(templatepath))
-                            Directory.Delete(templatepath, true);
+                        privateTemplate.responseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.privateTemplatePath);
+                        if (privateTemplate.responseMessage != "SUCCESS")
+                        {
+                            var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
+                            if (Directory.Exists(templatepath))
+                                Directory.Delete(templatepath, true);
+                        }
                     }
+                    else
+                    {
+                        privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    privateTemplate.responseMessage = "Unable to download file, please check the provided URL";
+                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    return Json(new { message = "Error", status = "false" });
                 }
 
-            }
-            catch (Exception ex)
-            {
-                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                return Json(new { message = "Error", status = "false" });
             }
             return Json(privateTemplate);
         }
 
         [HttpPost]
         [AllowAnonymous]
-        [SessonTimeout]
         public void DeletePrivateTemplate(string TemplateName)
         {
             templateService.deletePrivateTemplate(TemplateName);
