@@ -42,6 +42,7 @@
             "aspnetcore",
             "azureappservice"
           ],
+          "ForkGitHubRepo": true,
           "Image": "/Templates/TemplateImages/SmartHotel.png",
           "PreviewImages": [
             "/Templates/SmartHotel360/Images/dashboard.png",
