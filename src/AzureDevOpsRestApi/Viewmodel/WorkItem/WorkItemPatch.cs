@@ -10,22 +10,22 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
     {
         public class Field
         {
-            public string op { get; set; }
-            public string path { get; set; }
-            public object value { get; set; }
+            public string Op { get; set; }
+            public string Path { get; set; }
+            public object Value { get; set; }
         }
 
         public class Value
         {
-            public string rel { get; set; }
-            public string url { get; set; }
-            public Attributes attributes { get; set; }
+            public string Rel { get; set; }
+            public string Url { get; set; }
+            public Attributes Attributes { get; set; }
         }
 
         public class Attributes
         {
-            public string comment { get; set; }
-            public string name { get; set; }
+            public string Comment { get; set; }
+            public string Name { get; set; }
         }
     }
 }

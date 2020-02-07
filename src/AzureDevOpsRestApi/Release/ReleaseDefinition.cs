@@ -1,10 +1,11 @@
-﻿using AzureDevOpsAPI.Viewmodel.ReleaseDefinition;
-using Newtonsoft.Json.Linq;
 using NLog;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
+using AzureDevOpsAPI.Viewmodel.ReleaseDefinition;
 
 namespace AzureDevOpsAPI.Release
 {
@@ -18,41 +19,52 @@ namespace AzureDevOpsAPI.Release
         /// <param name="json"></param>
         /// <param name="project"></param>
         /// <returns></returns>
-        public string[] CreateReleaseDefinition(string json, string project)
+        public (string releaseDefId, string releaseDefName) CreateReleaseDefinition(string json, string project)
         {
-            try
+            string error = "";
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string[] releaseDef = new string[2];
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        releaseDef[0] = JObject.Parse(result)["id"].ToString();
-                        releaseDef[1] = JObject.Parse(result)["name"].ToString();
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                        return releaseDef;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return releaseDef;
+                        var request = new HttpRequestMessage(method, project + "/_apis/release/definitions?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            return (JObject.Parse(result)["id"].ToString(), JObject.Parse(result)["name"].ToString());
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    error = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n";
+                    logger.Debug(error);
+
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return ("eror", error);
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateReleaseDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-            }
-            return new string[] { };
+            return ("eror", error);
         }
         public bool CreateRelease(string json, string project)
         {
@@ -63,7 +75,7 @@ namespace AzureDevOpsAPI.Release
                     var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                     var method = new HttpMethod("POST");
 
-                    var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var request = new HttpRequestMessage(method, project + "_apis/release/releases?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
                     var response = client.SendAsync(request).Result;
 
                     if (response.IsSuccessStatusCode)
@@ -74,14 +86,13 @@ namespace AzureDevOpsAPI.Release
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return false;
+                        this.LastFailureMessage = error;                         
                     }
                 }
             }
             catch (Exception ex)
             {
-                logger.Debug("CreateRelease" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateRelease" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -93,23 +104,29 @@ namespace AzureDevOpsAPI.Release
                 string requestURL = string.Empty;
                 using (var client = GetHttpClient())
                 {
-                    requestURL = string.Format("{0}/_apis/release/definitions?api-version=" + _configuration.VersionNumber, project);
+                    requestURL = string.Format("{0}/_apis/release/definitions?api-version=" + Configuration.VersionNumber, project);
                     HttpResponseMessage response = client.GetAsync(requestURL).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         ReleaseDefinitionsResponse.Release Definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<ReleaseDefinitionsResponse.Release>(response.Content.ReadAsStringAsync().Result.ToString());
 
-                        int requiredDefinitionId = Definitions.value.Where(x => x.name == definitionName).FirstOrDefault().id;
+                        int requiredDefinitionId = Definitions.Value.Where(x => x.Name == definitionName).FirstOrDefault().Id;
                         using (var client1 = GetHttpClient())
                         {
-                            requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=" + _configuration.VersionNumber, project, requiredDefinitionId);
+                            requestURL = string.Format("{0}/_apis/release/definitions/{1}?api-version=" + Configuration.VersionNumber, project, requiredDefinitionId);
                             HttpResponseMessage ResponseDef = client1.GetAsync(requestURL).Result;
                             if (response.IsSuccessStatusCode)
                             {
                                 ReleaseDefinitions.ReleaseDefinition DefinitionResult = Newtonsoft.Json.JsonConvert.DeserializeObject<ReleaseDefinitions.ReleaseDefinition>(ResponseDef.Content.ReadAsStringAsync().Result.ToString());
-                                environmentIds[0] = DefinitionResult.environments.Where(x => x.name == environment1).FirstOrDefault().id;
-                                environmentIds[1] = DefinitionResult.environments.Where(x => x.name == environment2).FirstOrDefault().id;
+                                environmentIds[0] = DefinitionResult.Environments.Where(x => x.Name == environment1).FirstOrDefault().Id;
+                                environmentIds[1] = DefinitionResult.Environments.Where(x => x.Name == environment2).FirstOrDefault().Id;
                                 return environmentIds;
+                            }
+                            else
+                            {
+                                var errorMessage = response.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                this.LastFailureMessage = error;
                             }
                         }
                     }
@@ -117,10 +134,9 @@ namespace AzureDevOpsAPI.Release
             }
             catch (Exception ex)
             {
-                logger.Debug("GetEnvironmentIdsByName" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetEnvironmentIdsByName" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return environmentIds;
         }
     }
-
 }

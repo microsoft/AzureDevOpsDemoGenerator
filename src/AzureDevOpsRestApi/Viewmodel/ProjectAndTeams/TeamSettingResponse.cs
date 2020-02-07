@@ -10,26 +10,26 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
     {
         public class BacklogIteration
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public string url { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public string Url { get; set; }
         }
         public class DefaultIteration
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public string url { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public string Url { get; set; }
         }
         public class Project
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
         public class TeamSetting
         {
-            public BacklogIteration backlogIteration { get; set; }
-            public DefaultIteration defaultIteration { get; set; }
+            public BacklogIteration BacklogIteration { get; set; }
+            public DefaultIteration DefaultIteration { get; set; }
         }
     }
 }

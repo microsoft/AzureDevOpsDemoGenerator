@@ -10,14 +10,14 @@ namespace AzureDevOpsAPI.Extractor
     {
         public class Value
         {
-            public string name { get; set; }
-            public string value { get; set; }
+            public string Name { get; set; }
+            public string RefValue { get; set; }
         }
 
         public class Properties
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
 
             public string TypeClass { get; set; }
         }

@@ -9,12 +9,12 @@ namespace AzureDevOpsAPI
 {
     public class Utility
     {
-        public static string GeterroMessage(string Exception)
+        public static string GeterroMessage(string exception)
         {
             string message = string.Empty;
             try
             {
-                JObject jItems = JObject.Parse(Exception); 
+                JObject jItems = JObject.Parse(exception); 
                 message = jItems["message"].ToString();
 
                 return message;

@@ -12,17 +12,17 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class HostingPlan
         {
-            public string value { get; set; }
+            public string Value { get; set; }
         }
 
         public class ResourceGroupName
         {
-            public string value { get; set; }
+            public string Value { get; set; }
         }
 
         public class ServerName
         {
-            public string value { get; set; }
+            public string Value { get; set; }
         }
 
         public class Variables
@@ -34,21 +34,21 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 
         public class Owner
         {
-            public string id { get; set; }
-            public string displayName { get; set; }
-            public string uniqueName { get; set; }
+            public string Id { get; set; }
+            public string DisplayName { get; set; }
+            public string UniqueName { get; set; }
         }
 
         public class PreApproval
         {
-            public int rank { get; set; }
-            public bool isAutomated { get; set; }
-            public bool isNotificationOn { get; set; }
+            public int Rank { get; set; }
+            public bool IsAutomated { get; set; }
+            public bool IsNotificationOn { get; set; }
         }
 
         public class PreDeployApprovals
         {
-            public IList<PreApproval> approvals { get; set; }
+            public IList<PreApproval> Approvals { get; set; }
         }
 
         public class DeployStep
@@ -57,24 +57,24 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 
         public class PostApproval
         {
-            public int rank { get; set; }
-            public bool isAutomated { get; set; }
-            public bool isNotificationOn { get; set; }
+            public int Rank { get; set; }
+            public bool IsAutomated { get; set; }
+            public bool IsNotificationOn { get; set; }
         }
 
         public class PostDeployApprovals
         {
-            public IList<PostApproval> approvals { get; set; }
+            public IList<PostApproval> Approvals { get; set; }
         }
 
         public class ParallelExecution
         {
-            public string parallelExecutionType { get; set; }
+            public string ParallelExecutionType { get; set; }
         }
 
         public class ArtifactsDownloadInput
         {
-            public IList<object> downloadInputs { get; set; }
+            public IList<object> DownloadInputs { get; set; }
         }
 
         public class OverrideInputs
@@ -83,16 +83,16 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 
         public class DeploymentInput
         {
-            public ParallelExecution parallelExecution { get; set; }
-            public bool skipArtifactsDownload { get; set; }
-            public ArtifactsDownloadInput artifactsDownloadInput { get; set; }
-            public string queueId { get; set; }
-            public IList<object> demands { get; set; }
-            public bool enableAccessToken { get; set; }
-            public int timeoutInMinutes { get; set; }
-            public int jobCancelTimeoutInMinutes { get; set; }
-            public string condition { get; set; }
-            public OverrideInputs overrideInputs { get; set; }
+            public ParallelExecution ParallelExecution { get; set; }
+            public bool SkipArtifactsDownload { get; set; }
+            public ArtifactsDownloadInput ArtifactsDownloadInput { get; set; }
+            public string QueueId { get; set; }
+            public IList<object> Demands { get; set; }
+            public bool EnableAccessToken { get; set; }
+            public int TimeoutInMinutes { get; set; }
+            public int JobCancelTimeoutInMinutes { get; set; }
+            public string Condition { get; set; }
+            public OverrideInputs OverrideInputs { get; set; }
         }
 
         public class Inputs
@@ -100,52 +100,52 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public string ConnectedServiceName { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public string ConnectedServiceNameARM { get; set; }
+            public string ConnectedServiceNameArm { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public string action { get; set; }
+            public string Action { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public string resourceGroupName { get; set; }
+            public string ResourceGroupName { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public string location { get; set; }
-            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-
-            public string templateLocation { get; set; }
+            public string Location { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string csmFileLink { get; set; }
+            public string TemplateLocation { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string csmParametersFileLink { get; set; }
+            public string CsmFileLink { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string csmFile { get; set; }
+            public string CsmParametersFileLink { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string csmParametersFile { get; set; }
+            public string CsmFile { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string overrideParameters { get; set; }
+            public string CsmParametersFile { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string deploymentMode { get; set; }
+            public string OverrideParameters { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string enableDeploymentPrerequisites { get; set; }
+            public string DeploymentMode { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string deploymentGroupEndpoint { get; set; }
+            public string EnableDeploymentPrerequisites { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string project { get; set; }
+            public string DeploymentGroupEndpoint { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string deploymentGroupName { get; set; }
+            public string Project { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string copyAzureVMTags { get; set; }
+            public string DeploymentGroupName { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
-            public string outputVariable { get; set; }
+            public string CopyAzureVmTags { get; set; }
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+
+            public string OutputVariable { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
             public string WebAppName { get; set; }
@@ -158,9 +158,7 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
             public string ImageSource { get; set; }
-            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-
-            public string ResourceGroupName { get; set; }
+          
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 
             public string SlotName { get; set; }
@@ -229,62 +227,62 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public string XmlVariableSubstitution { get; set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public string JSONFiles { get; set; }
+            public string JsonFiles { get; set; }
         }
 
         public class WorkflowTask
         {
-            public string taskId { get; set; }
-            public string version { get; set; }
-            public string name { get; set; }
-            public string refName { get; set; }
-            public bool enabled { get; set; }
-            public bool alwaysRun { get; set; }
-            public bool continueOnError { get; set; }
-            public int timeoutInMinutes { get; set; }
-            public string definitionType { get; set; }
-            public OverrideInputs overrideInputs { get; set; }
-            public string condition { get; set; }
-            public Inputs inputs { get; set; }
+            public string TaskId { get; set; }
+            public string Version { get; set; }
+            public string Name { get; set; }
+            public string RefName { get; set; }
+            public bool Enabled { get; set; }
+            public bool AlwaysRun { get; set; }
+            public bool ContinueOnError { get; set; }
+            public int TimeoutInMinutes { get; set; }
+            public string DefinitionType { get; set; }
+            public OverrideInputs OverrideInputs { get; set; }
+            public string Condition { get; set; }
+            public Inputs Inputs { get; set; }
         }
 
         public class DeployPhas
         {
-            public DeploymentInput deploymentInput { get; set; }
-            public int rank { get; set; }
-            public string phaseType { get; set; }
-            public string name { get; set; }
-            public IList<WorkflowTask> workflowTasks { get; set; }
+            public DeploymentInput DeploymentInput { get; set; }
+            public int Rank { get; set; }
+            public string PhaseType { get; set; }
+            public string Name { get; set; }
+            public IList<WorkflowTask> WorkflowTasks { get; set; }
         }
 
         public class EnvironmentOptions
         {
-            public string emailNotificationType { get; set; }
-            public string emailRecipients { get; set; }
-            public bool skipArtifactsDownload { get; set; }
-            public int timeoutInMinutes { get; set; }
-            public bool enableAccessToken { get; set; }
-            public bool publishDeploymentStatus { get; set; }
+            public string EmailNotificationType { get; set; }
+            public string EmailRecipients { get; set; }
+            public bool SkipArtifactsDownload { get; set; }
+            public int TimeoutInMinutes { get; set; }
+            public bool EnableAccessToken { get; set; }
+            public bool PublishDeploymentStatus { get; set; }
         }
 
         public class Condition
         {
-            public string name { get; set; }
-            public string conditionType { get; set; }
-            public string value { get; set; }
+            public string Name { get; set; }
+            public string ConditionType { get; set; }
+            public string Value { get; set; }
         }
 
         public class ExecutionPolicy
         {
-            public int concurrencyCount { get; set; }
-            public int queueDepthCount { get; set; }
+            public int ConcurrencyCount { get; set; }
+            public int QueueDepthCount { get; set; }
         }
 
         public class RetentionPolicy
         {
-            public int daysToKeep { get; set; }
-            public int releasesToKeep { get; set; }
-            public bool retainBuild { get; set; }
+            public int DaysToKeep { get; set; }
+            public int ReleasesToKeep { get; set; }
+            public bool RetainBuild { get; set; }
         }
 
         public class ProcessParameters
@@ -297,121 +295,121 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 
         public class PreDeploymentGates
         {
-            public object gatesOptions { get; set; }
-            public IList<object> gates { get; set; }
+            public object GatesOptions { get; set; }
+            public IList<object> Gates { get; set; }
         }
 
         public class PostDeploymentGates
         {
-            public object gatesOptions { get; set; }
-            public IList<object> gates { get; set; }
+            public object GatesOptions { get; set; }
+            public IList<object> Gates { get; set; }
         }
 
         public class Environment
         {
-            public string name { get; set; }
-            public int rank { get; set; }
-            public Owner owner { get; set; }
-            public Variables variables { get; set; }
-            public IList<object> variableGroups { get; set; }
-            public PreDeployApprovals preDeployApprovals { get; set; }
-            public DeployStep deployStep { get; set; }
-            public PostDeployApprovals postDeployApprovals { get; set; }
-            public IList<DeployPhas> deployPhases { get; set; }
-            public EnvironmentOptions environmentOptions { get; set; }
-            public IList<object> demands { get; set; }
-            public IList<Condition> conditions { get; set; }
-            public ExecutionPolicy executionPolicy { get; set; }
-            public IList<object> schedules { get; set; }
-            public RetentionPolicy retentionPolicy { get; set; }
-            public ProcessParameters processParameters { get; set; }
-            public Properties properties { get; set; }
-            public PreDeploymentGates preDeploymentGates { get; set; }
-            public PostDeploymentGates postDeploymentGates { get; set; }
+            public string Name { get; set; }
+            public int Rank { get; set; }
+            public Owner Owner { get; set; }
+            public Variables Variables { get; set; }
+            public IList<object> VariableGroups { get; set; }
+            public PreDeployApprovals PreDeployApprovals { get; set; }
+            public DeployStep DeployStep { get; set; }
+            public PostDeployApprovals PostDeployApprovals { get; set; }
+            public IList<DeployPhas> DeployPhases { get; set; }
+            public EnvironmentOptions EnvironmentOptions { get; set; }
+            public IList<object> Demands { get; set; }
+            public IList<Condition> Conditions { get; set; }
+            public ExecutionPolicy ExecutionPolicy { get; set; }
+            public IList<object> Schedules { get; set; }
+            public RetentionPolicy RetentionPolicy { get; set; }
+            public ProcessParameters ProcessParameters { get; set; }
+            public Properties Properties { get; set; }
+            public PreDeploymentGates PreDeploymentGates { get; set; }
+            public PostDeploymentGates PostDeploymentGates { get; set; }
         }
 
         public class DefaultVersionBranch
         {
-            public string name { get; set; }
+            public string Name { get; set; }
         }
 
         public class DefaultVersionSpecific
         {
-            public string name { get; set; }
+            public string Name { get; set; }
         }
 
         public class DefaultVersionTags
         {
-            public string name { get; set; }
+            public string Name { get; set; }
         }
 
         public class DefaultVersionType
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
 
         public class Definition
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
         public class Project
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
         public class DefinitionReference
         {
-            public DefaultVersionBranch defaultVersionBranch { get; set; }
-            public DefaultVersionSpecific defaultVersionSpecific { get; set; }
-            public DefaultVersionTags defaultVersionTags { get; set; }
-            public DefaultVersionType defaultVersionType { get; set; }
-            public Definition definition { get; set; }
-            public Project project { get; set; }
+            public DefaultVersionBranch DefaultVersionBranch { get; set; }
+            public DefaultVersionSpecific DefaultVersionSpecific { get; set; }
+            public DefaultVersionTags DefaultVersionTags { get; set; }
+            public DefaultVersionType DefaultVersionType { get; set; }
+            public Definition Definition { get; set; }
+            public Project Project { get; set; }
         }
 
         public class Artifact
         {
-            public string sourceId { get; set; }
-            public string type { get; set; }
-            public string alias { get; set; }
-            public DefinitionReference definitionReference { get; set; }
-            public bool isPrimary { get; set; }
+            public string SourceId { get; set; }
+            public string Type { get; set; }
+            public string Alias { get; set; }
+            public DefinitionReference DefinitionReference { get; set; }
+            public bool IsPrimary { get; set; }
         }
 
         public class TriggerCondition
         {
-            public string sourceBranch { get; set; }
-            public IList<object> tags { get; set; }
-            public bool useBuildDefinitionBranch { get; set; }
+            public string SourceBranch { get; set; }
+            public IList<object> Tags { get; set; }
+            public bool UseBuildDefinitionBranch { get; set; }
         }
 
         public class Trigger
         {
-            public string artifactAlias { get; set; }
-            public IList<TriggerCondition> triggerConditions { get; set; }
-            public string triggerType { get; set; }
+            public string ArtifactAlias { get; set; }
+            public IList<TriggerCondition> TriggerConditions { get; set; }
+            public string TriggerType { get; set; }
         }
         public class Web
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
         public class Response
         {
-            public string source { get; set; }
-            public string name { get; set; }
-            public object description { get; set; }
-            public bool isDeleted { get; set; }
-            public string path { get; set; }
-            public Variables variables { get; set; }
-            public IList<object> variableGroups { get; set; }
-            public IList<Environment> environments { get; set; }
-            public IList<Artifact> artifacts { get; set; }
-            public IList<Trigger> triggers { get; set; }
-            public string releaseNameFormat { get; set; }
-            public IList<object> tags { get; set; }
-            public Properties properties { get; set; }
+            public string Source { get; set; }
+            public string Name { get; set; }
+            public object Description { get; set; }
+            public bool IsDeleted { get; set; }
+            public string Path { get; set; }
+            public Variables Variables { get; set; }
+            public IList<object> VariableGroups { get; set; }
+            public IList<Environment> Environments { get; set; }
+            public IList<Artifact> Artifacts { get; set; }
+            public IList<Trigger> Triggers { get; set; }
+            public string ReleaseNameFormat { get; set; }
+            public IList<object> Tags { get; set; }
+            public Properties Properties { get; set; }
         }
     }
 }

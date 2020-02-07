@@ -10,12 +10,12 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Build
         {
-            public int count { get; set; }
-            public Value[] value { get; set; }
+            public int Count { get; set; }
+            public Value[] Value { get; set; }
         }
         public class Value
         {
-            public int id { get; set; }
+            public int Id { get; set; }
         }
     }
 }

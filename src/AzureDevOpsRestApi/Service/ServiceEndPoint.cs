@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using AzureDevOpsAPI.Viewmodel.Service;
-using NLog;
 
 namespace AzureDevOpsAPI.Service
 {
@@ -20,64 +21,93 @@ namespace AzureDevOpsAPI.Service
         /// <returns></returns>
         public ServiceEndpointModel CreateServiceEndPoint(string json, string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                ServiceEndpointModel viewModel = new ServiceEndpointModel();
-
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    ServiceEndpointModel viewModel = new ServiceEndpointModel();
 
-                    var request = new HttpRequestMessage(method, project + "/_apis/distributedtask/serviceendpoints?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<ServiceEndpointModel>().Result;
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, project + "/_apis/distributedtask/serviceendpoints?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<ServiceEndpointModel>().Result;
+
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                         return viewModel;
                     }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateServiceEndPoint" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateServiceEndPoint" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new ServiceEndpointModel();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new ServiceEndpointModel();
         }
 
         public GetServiceEndpoints.ServiceEndPoint GetServiceEndPoints()
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                //https://dev.azure.com/exakshay/endpoint/_apis/serviceendpoint/endpoints?api-version=4.1-preview.1
-                using (var client = GetHttpClient())
+                try
                 {
-                    var request = string.Format("{0}{1}/_apis/serviceendpoint/endpoints?api-version={2}", _configuration.UriString, Project, _configuration.VersionNumber);
-                    HttpResponseMessage response = client.GetAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
+                    //https://dev.azure.com/exakshay/endpoint/_apis/serviceendpoint/endpoints?api-version=4.1-preview.1
+                    using (var client = GetHttpClient())
                     {
-                        string res = response.Content.ReadAsStringAsync().Result;
-                        GetServiceEndpoints.ServiceEndPoint serviceEndPoint = JsonConvert.DeserializeObject<GetServiceEndpoints.ServiceEndPoint>(res);
-                        return serviceEndPoint;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var request = string.Format("{0}{1}/_apis/serviceendpoint/endpoints?api-version={2}", Configuration.UriString, Project, Configuration.VersionNumber);
+                        HttpResponseMessage response = client.GetAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string res = response.Content.ReadAsStringAsync().Result;
+                            GetServiceEndpoints.ServiceEndPoint serviceEndPoint = JsonConvert.DeserializeObject<GetServiceEndpoints.ServiceEndPoint>(res);
+                            return serviceEndPoint;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetServiceEndPoints" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("GetServiceEndPoints" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetServiceEndpoints.ServiceEndPoint();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetServiceEndpoints.ServiceEndPoint();
         }

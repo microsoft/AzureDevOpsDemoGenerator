@@ -12,16 +12,16 @@ namespace AzureDevOpsDemoBuilder.Models
         }
         public class Value
         {
-            public string accountId { get; set; }
-            public string accountUri { get; set; }
-            public string accountName { get; set; }
-            public Properties properties { get; set; }
+            public string AccountId { get; set; }
+            public string AccountUri { get; set; }
+            public string AccountName { get; set; }
+            public Properties Properties { get; set; }
         }
 
         public class AccountList
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

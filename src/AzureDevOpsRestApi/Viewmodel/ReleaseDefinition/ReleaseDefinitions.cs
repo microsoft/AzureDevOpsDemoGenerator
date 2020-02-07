@@ -11,15 +11,15 @@ namespace AzureDevOpsAPI.Viewmodel.ReleaseDefinition
     {
         public class ReleaseDefinition
         {
-            public string name { get; set; }
-            public object lastRelease { get; set; }
-            public string path { get; set; }
-            public Variables variables { get; set; }
-            public IList<object> variableGroups { get; set; }
-            public IList<Environment> environments { get; set; }
-            public IList<Artifact> artifacts { get; set; }
-            public IList<Trigger> triggers { get; set; }
-            public string releaseNameFormat { get; set; }
+            public string Name { get; set; }
+            public object LastRelease { get; set; }
+            public string Path { get; set; }
+            public Variables Variables { get; set; }
+            public IList<object> VariableGroups { get; set; }
+            public IList<Environment> Environments { get; set; }
+            public IList<Artifact> Artifacts { get; set; }
+            public IList<Trigger> Triggers { get; set; }
+            public string ReleaseNameFormat { get; set; }
         }
         public class Variables
         {
@@ -27,130 +27,130 @@ namespace AzureDevOpsAPI.Viewmodel.ReleaseDefinition
 
         public class Owner
         {
-            public string id { get; set; }
-            public string displayName { get; set; }
-            public string uniqueName { get; set; }
+            public string Id { get; set; }
+            public string DisplayName { get; set; }
+            public string UniqueName { get; set; }
         }
         public class Approver
         {
-            public string id { get; set; }
-            public string displayName { get; set; }
-            public string uniqueName { get; set; }
+            public string Id { get; set; }
+            public string DisplayName { get; set; }
+            public string UniqueName { get; set; }
         }
         public class Approval
         {
-            public int rank { get; set; }
-            public bool isAutomated { get; set; }
-            public bool isNotificationOn { get; set; }
-            public Approver approver { get; set; }
+            public int Rank { get; set; }
+            public bool IsAutomated { get; set; }
+            public bool IsNotificationOn { get; set; }
+            public Approver Approver { get; set; }
         }
         public class PreDeployApprovals
         {
-            public IList<Approval> approvals { get; set; }
+            public IList<Approval> Approvals { get; set; }
         }
 
         public class Environment
         {
-            public int id { get; set; }
-            public string name { get; set; }
-            public int rank { get; set; }
-            public Owner owner { get; set; }
-            public Variables variables { get; set; }
-            public PreDeployApprovals preDeployApprovals { get; set; }
-            public DeployStep deployStep { get; set; }
-            public PostDeployApprovals postDeployApprovals { get; set; }
-            public IList<DeployPhas> deployPhases { get; set; }
-            public EnvironmentOptions environmentOptions { get; set; }
-            public IList<object> demands { get; set; }
-            public string queueId { get; set; }
-            public IList<Condition> conditions { get; set; }
-            public ExecutionPolicy executionPolicy { get; set; }
-            public IList<object> schedules { get; set; }
-            public RetentionPolicy retentionPolicy { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public int Rank { get; set; }
+            public Owner Owner { get; set; }
+            public Variables Variables { get; set; }
+            public PreDeployApprovals PreDeployApprovals { get; set; }
+            public DeployStep DeployStep { get; set; }
+            public PostDeployApprovals PostDeployApprovals { get; set; }
+            public IList<DeployPhas> DeployPhases { get; set; }
+            public EnvironmentOptions EnvironmentOptions { get; set; }
+            public IList<object> Demands { get; set; }
+            public string QueueId { get; set; }
+            public IList<Condition> Conditions { get; set; }
+            public ExecutionPolicy ExecutionPolicy { get; set; }
+            public IList<object> Schedules { get; set; }
+            public RetentionPolicy RetentionPolicy { get; set; }
         }
         public class DeployStep
         {
-            public IList<Task> tasks { get; set; }
+            public IList<Task> Tasks { get; set; }
         }
 
         public class DeploymentInput
         {
-            public ParallelExecution parallelExecution { get; set; }
-            public bool skipArtifactsDownload { get; set; }
-            public int timeoutInMinutes { get; set; }
-            public string queueId { get; set; }
-            public IList<object> demands { get; set; }
-            public bool enableAccessToken { get; set; }
-            public bool clean { get; set; }
-            public string cleanOptions { get; set; }
+            public ParallelExecution ParallelExecution { get; set; }
+            public bool SkipArtifactsDownload { get; set; }
+            public int TimeoutInMinutes { get; set; }
+            public string QueueId { get; set; }
+            public IList<object> Demands { get; set; }
+            public bool EnableAccessToken { get; set; }
+            public bool Clean { get; set; }
+            public string CleanOptions { get; set; }
         }
         public class DeployPhas
         {
-            public DeploymentInput deploymentInput { get; set; }
-            public int rank { get; set; }
-            public string phaseType { get; set; }
-            public string name { get; set; }
-            public IList<object> workflowTasks { get; set; }
+            public DeploymentInput DeploymentInput { get; set; }
+            public int Rank { get; set; }
+            public string PhaseType { get; set; }
+            public string Name { get; set; }
+            public IList<object> WorkflowTasks { get; set; }
         }
 
         public class EnvironmentOptions
         {
-            public string emailNotificationType { get; set; }
-            public string emailRecipients { get; set; }
-            public bool skipArtifactsDownload { get; set; }
-            public int timeoutInMinutes { get; set; }
-            public bool enableAccessToken { get; set; }
+            public string EmailNotificationType { get; set; }
+            public string EmailRecipients { get; set; }
+            public bool SkipArtifactsDownload { get; set; }
+            public int TimeoutInMinutes { get; set; }
+            public bool EnableAccessToken { get; set; }
         }
 
         public class Condition
         {
-            public string name { get; set; }
-            public string conditionType { get; set; }
-            public string value { get; set; }
+            public string Name { get; set; }
+            public string ConditionType { get; set; }
+            public string Value { get; set; }
         }
 
         public class ExecutionPolicy
         {
-            public int concurrencyCount { get; set; }
-            public int queueDepthCount { get; set; }
+            public int ConcurrencyCount { get; set; }
+            public int QueueDepthCount { get; set; }
         }
 
         public class RetentionPolicy
         {
-            public int daysToKeep { get; set; }
-            public int releasesToKeep { get; set; }
-            public bool retainBuild { get; set; }
+            public int DaysToKeep { get; set; }
+            public int ReleasesToKeep { get; set; }
+            public bool RetainBuild { get; set; }
         }
         public class PostDeployApprovals
         {
-            public IList<Approval> approvals { get; set; }
+            public IList<Approval> Approvals { get; set; }
         }
 
         public class ParallelExecution
         {
-            public string parallelExecutionType { get; set; }
+            public string ParallelExecutionType { get; set; }
         }
 
 
         public class Task
         {
-            public string taskId { get; set; }
-            public string version { get; set; }
-            public string name { get; set; }
-            public bool enabled { get; set; }
-            public bool alwaysRun { get; set; }
-            public bool continueOnError { get; set; }
-            public int timeoutInMinutes { get; set; }
-            public string definitionType { get; set; }
-            public Inputs inputs { get; set; }
+            public string TaskId { get; set; }
+            public string Version { get; set; }
+            public string Name { get; set; }
+            public bool Enabled { get; set; }
+            public bool AlwaysRun { get; set; }
+            public bool ContinueOnError { get; set; }
+            public int TimeoutInMinutes { get; set; }
+            public string DefinitionType { get; set; }
+            public Inputs Inputs { get; set; }
         }
         public class Artifact
         {
-            public string sourceId { get; set; }
-            public string type { get; set; }
-            public string alias { get; set; }
-            public DefinitionReference definitionReference { get; set; }
-            public bool isPrimary { get; set; }
+            public string SourceId { get; set; }
+            public string Type { get; set; }
+            public string Alias { get; set; }
+            public DefinitionReference DefinitionReference { get; set; }
+            public bool IsPrimary { get; set; }
         }
         public class Inputs
         {
@@ -169,7 +169,7 @@ namespace AzureDevOpsAPI.Viewmodel.ReleaseDefinition
             public string AdditionalArguments { get; set; }
             public string WebAppUri { get; set; }
             public string ConnectedServiceNameSelector { get; set; }
-            public string ConnectedServiceNameARM { get; set; }
+            public string ConnectedServiceNameArm { get; set; }
             public string ServerName { get; set; }
             public string DatabaseName { get; set; }
             public string SqlUsername { get; set; }
@@ -185,117 +185,115 @@ namespace AzureDevOpsAPI.Viewmodel.ReleaseDefinition
             public string StartIpAddress { get; set; }
             public string EndIpAddress { get; set; }
             public string DeleteFirewallRule { get; set; }
-            public string appID { get; set; }
-            public string binaryPath { get; set; }
-            public string symbolsPath { get; set; }
-            public string nativeLibraryPath { get; set; }
-            public string notesPath { get; set; }
-            public string notes { get; set; }
-            public string publish { get; set; }
-            public string mandatory { get; set; }
-            public string notify { get; set; }
-            public string tags { get; set; }
-            public string teams { get; set; }
-            public string users { get; set; }
-            public string authType { get; set; }
-            public string serviceEndpoint { get; set; }
-            public string serviceAccountKey { get; set; }
-            public string apkFile { get; set; }
-            public string track { get; set; }
-            public string userFraction { get; set; }
-            public string changeLogFile { get; set; }
-            public string shouldAttachMetadata { get; set; }
-            public string metadataRootPath { get; set; }
-            public string additionalApks { get; set; }
-            public string minDelta { get; set; }
+            public string AppId { get; set; }
+            public string BinaryPath { get; set; }
+            public string SymbolsPath { get; set; }
+            public string NativeLibraryPath { get; set; }
+            public string NotesPath { get; set; }
+            public string Notes { get; set; }
+            public string Publish { get; set; }
+            public string Mandatory { get; set; }
+            public string Notify { get; set; }
+            public string Tags { get; set; }
+            public string Teams { get; set; }
+            public string Users { get; set; }
+            public string AuthType { get; set; }
+            public string ServiceEndpoint { get; set; }
+            public string ServiceAccountKey { get; set; }
+            public string ApkFile { get; set; }
+            public string Track { get; set; }
+            public string UserFraction { get; set; }
+            public string ChangeLogFile { get; set; }
+            public string ShouldAttachMetadata { get; set; }
+            public string MetadataRootPath { get; set; }
+            public string AdditionalApks { get; set; }
+            public string MinDelta { get; set; }
             public string Operator { get; set; }
-            public string username { get; set; }
-            public string password { get; set; }
-            public string filename { get; set; }
-            public string arguments { get; set; }
-            public string modifyEnvironment { get; set; }
-            public string workingFolder { get; set; }
-            public string failOnStandardError { get; set; }
-            public string testMachineGroup { get; set; }
-            public string dropLocation { get; set; }
-            public string testSelection { get; set; }
-            public string testPlan { get; set; }
-            public string testSuite { get; set; }
-            public string testConfiguration { get; set; }
-            public string sourcefilters { get; set; }
-            public string testFilterCriteria { get; set; }
-            public string runSettingsFile { get; set; }
-            public string overrideRunParams { get; set; }
-            public string codeCoverageEnabled { get; set; }
-            public string customSlicingEnabled { get; set; }
-            public string testRunTitle { get; set; }
-            public string platform { get; set; }
-            public string configuration { get; set; }
-            public string testConfigurations { get; set; }
-            public string autMachineGroup { get; set; }
-            public string connectedServiceName { get; set; }
-            public string websiteUrl { get; set; }
-            public string testName { get; set; }
-            public string vuLoad { get; set; }
-            public string runDuration { get; set; }
-            public string geoLocation { get; set; }
-            public string machineType { get; set; }
-            public string avgResponseTimeThreshold { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public string Filename { get; set; }
+            public string Arguments { get; set; }
+            public string ModifyEnvironment { get; set; }
+            public string WorkingFolder { get; set; }
+            public string FailOnStandardError { get; set; }
+            public string TestMachineGroup { get; set; }
+            public string DropLocation { get; set; }
+            public string TestSelection { get; set; }
+            public string TestPlan { get; set; }
+            public string TestSuite { get; set; }
+            public string TestConfiguration { get; set; }
+            public string Sourcefilters { get; set; }
+            public string TestFilterCriteria { get; set; }
+            public string RunSettingsFile { get; set; }
+            public string OverrideRunParams { get; set; }
+            public string CodeCoverageEnabled { get; set; }
+            public string CustomSlicingEnabled { get; set; }
+            public string TestRunTitle { get; set; }
+            public string Platform { get; set; }
+            public string Configuration { get; set; }
+            public string TestConfigurations { get; set; }
+            public string AutMachineGroup { get; set; }
+            public string WebsiteUrl { get; set; }
+            public string TestName { get; set; }
+            public string VuLoad { get; set; }
+            public string RunDuration { get; set; }
+            public string GeoLocation { get; set; }
+            public string MachineType { get; set; }
+            public string AvgResponseTimeThreshold { get; set; }
             public string ConnectedServiceNameClassic { get; set; }
-            public string action { get; set; }
-            public string actionClassic { get; set; }
-            public string resourceGroupName { get; set; }
-            public string cloudService { get; set; }
-            public string location { get; set; }
-            public string csmFile { get; set; }
-            public string csmParametersFile { get; set; }
-            public string overrideParameters { get; set; }
+            public string Action { get; set; }
+            public string ActionClassic { get; set; }
+            public string CloudService { get; set; }
+            public string Location { get; set; }
+            public string CsmFile { get; set; }
+            public string CsmParametersFile { get; set; }
+            public string OverrideParameters { get; set; }
             [JsonProperty(PropertyName = "Deployment Mode")]
-            public string deploymentMode { get; set; }
-            public string enableDeploymentPrerequisitesForCreate { get; set; }
-            public string enableDeploymentPrerequisitesForSelect { get; set; }
-            public string outputVariable { get; set; }
+            public string DeploymentMode { get; set; }
+            public string EnableDeploymentPrerequisitesForCreate { get; set; }
+            public string EnableDeploymentPrerequisitesForSelect { get; set; }
+            public string OutputVariable { get; set; }
             public string WebSiteLocation { get; set; }
             public string WebSiteName { get; set; }
             public string Slot { get; set; }
-            public string doNotDelete { get; set; }
-            public string appIdentifier { get; set; }
-            public string ipaPath { get; set; }
-            public string releaseTrack { get; set; }
-            public string skipBinaryUpload { get; set; }
-            public string uploadMetadata { get; set; }
-            public string metadataPath { get; set; }
-            public string uploadScreenshots { get; set; }
-            public string screenshotsPath { get; set; }
-            public string shouldSubmitForReview { get; set; }
-            public string shouldAutoRelease { get; set; }
-            public string releaseNotes { get; set; }
-            public string shouldSkipWaitingForProcessing { get; set; }
-            public string shouldSkipSubmission { get; set; }
-            public string teamId { get; set; }
-            public string teamName { get; set; }
+            public string DoNotDelete { get; set; }
+            public string AppIdentifier { get; set; }
+            public string IpaPath { get; set; }
+            public string ReleaseTrack { get; set; }
+            public string SkipBinaryUpload { get; set; }
+            public string UploadMetadata { get; set; }
+            public string MetadataPath { get; set; }
+            public string UploadScreenshots { get; set; }
+            public string ScreenshotsPath { get; set; }
+            public string ShouldSubmitForReview { get; set; }
+            public string ShouldAutoRelease { get; set; }
+            public string ReleaseNotes { get; set; }
+            public string ShouldSkipWaitingForProcessing { get; set; }
+            public string ShouldSkipSubmission { get; set; }
+            public string TeamId { get; set; }
+            public string TeamName { get; set; }
 
         }
         public class DefinitionReference
         {
-            public Definition definition { get; set; }
-            public Project project { get; set; }
+            public Definition Definition { get; set; }
+            public Project Project { get; set; }
         }
         public class Definition
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
 
         public class Project
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
         public class Trigger
         {
-            public string artifactAlias { get; set; }
-            public string triggerType { get; set; }
+            public string ArtifactAlias { get; set; }
+            public string TriggerType { get; set; }
         }
     }
 }

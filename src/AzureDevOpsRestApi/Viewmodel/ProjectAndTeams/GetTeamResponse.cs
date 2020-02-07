@@ -10,11 +10,11 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
     {
         public class Team : BaseViewModel
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string url { get; set; }
-            public string description { get; set; }
-            public string identityUrl { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Url { get; set; }
+            public string Description { get; set; }
+            public string IdentityUrl { get; set; }
         }
     }
 }

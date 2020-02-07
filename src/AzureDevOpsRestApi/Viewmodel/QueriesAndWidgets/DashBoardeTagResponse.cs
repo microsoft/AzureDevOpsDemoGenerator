@@ -10,10 +10,10 @@ namespace AzureDevOpsAPI.Viewmodel.QueriesAndWidgets
     {
         public class Dashboard
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public int position { get; set; }
-            public string eTag { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public int Position { get; set; }
+            public string ETag { get; set; }
         }
     }
 }

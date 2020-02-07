@@ -13,26 +13,26 @@ namespace AzureDevOpsAPI.Viewmodel.Service
 
     public class CreatedBy
     {
-        public string id { get; set; }
-        public string displayName { get; set; }
-        public string uniqueName { get; set; }
+        public string Id { get; set; }
+        public string DisplayName { get; set; }
+        public string UniqueName { get; set; }
     }
 
     public class Authorization
     {
-        public string scheme { get; set; }
+        public string Scheme { get; set; }
     }
 
     public class ServiceEndpointModel
     {
-        public Data data { get; set; }
-        public string id { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
-        public string url { get; set; }
-        public CreatedBy createdBy { get; set; }
-        public Authorization authorization { get; set; }
-        public bool isReady { get; set; }
+        public Data Data { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Url { get; set; }
+        public CreatedBy CreatedBy { get; set; }
+        public Authorization Authorization { get; set; }
+        public bool IsReady { get; set; }
     }
 
 }

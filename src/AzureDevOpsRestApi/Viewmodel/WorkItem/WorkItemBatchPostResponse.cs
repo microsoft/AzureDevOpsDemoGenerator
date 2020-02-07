@@ -9,15 +9,15 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
 {
     public class WorkItemBatchPostResponse
     {
-        public int count { get; set; }
+        public int Count { get; set; }
         [JsonProperty("value")]
-        public List<Value> values { get; set; }
+        public List<Value> Values { get; set; }
 
         public class Value
         {
-            public int code { get; set; }
-            public Dictionary<string, string> headers { get; set; }
-            public string body { get; set; }
+            public int Code { get; set; }
+            public Dictionary<string, string> Headers { get; set; }
+            public string Body { get; set; }
         }
     }
 }

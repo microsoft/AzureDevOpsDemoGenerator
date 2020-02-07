@@ -9,7 +9,7 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
 {
     public class TeamResponse
     {
-        public string id { get; set; }
-        public string name { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

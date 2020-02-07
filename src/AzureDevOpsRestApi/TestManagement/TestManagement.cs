@@ -1,16 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NLog;
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 
 namespace AzureDevOpsAPI.TestManagement
 {
     public class TestManagement : ApiServiceBase
     {
         public TestManagement(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create test plans
         /// </summary>
@@ -20,36 +21,50 @@ namespace AzureDevOpsAPI.TestManagement
 
         public string[] CreateTestPlan(string json, string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string[] testPlan = new string[2];
-
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    string[] testPlan = new string[2];
 
-                    var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/test/plans?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        testPlan[0] = JObject.Parse(result)["id"].ToString();
-                        testPlan[1] = JObject.Parse(result)["name"].ToString();
-                        return testPlan;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var request = new HttpRequestMessage(method, Configuration.UriString + project + "/_apis/test/plans?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            testPlan[0] = JObject.Parse(result)["id"].ToString();
+                            testPlan[1] = JObject.Parse(result)["name"].ToString();
+                            return testPlan;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateTestPlan" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new string[] { };
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new string[] { };
         }
@@ -62,42 +77,56 @@ namespace AzureDevOpsAPI.TestManagement
         /// <returns></returns>
         public string[] CreatTestSuite(string json, string testPlan, string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string[] testSuite = new string[2];
-                int parentTestSuite = Convert.ToInt32(testPlan);
-                parentTestSuite = parentTestSuite + 1;
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + parentTestSuite + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    string[] testSuite = new string[2];
+                    int parentTestSuite = Convert.ToInt32(testPlan);
+                    parentTestSuite = parentTestSuite + 1;
+                    using (var client = GetHttpClient())
                     {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        dynamic resSerialize = JsonConvert.DeserializeObject<dynamic>(result);
-                        if (resSerialize.count > 0)
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + parentTestSuite + "?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
                         {
-                            testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
-                            testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            dynamic resSerialize = JsonConvert.DeserializeObject<dynamic>(result);
+                            if (resSerialize.count > 0)
+                            {
+                                testSuite[0] = JObject.Parse(result)["value"].First["id"].ToString();
+                                testSuite[1] = JObject.Parse(result)["value"].First["name"].ToString();
+                            }
+                            return testSuite;
                         }
-                        return testSuite;
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
-                    }
+                    return testSuite;
                 }
-                return testSuite;
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreatTestSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreatTestSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new string[] { };
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new string[] { };
         }
@@ -111,33 +140,47 @@ namespace AzureDevOpsAPI.TestManagement
         /// <returns></returns>
         public bool AddTestCasesToSuite(string testCases, string testPlan, string testSuite, string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                object json = new { };
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + testSuite + "/testcases/" + testCases + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    object json = new { };
+                    using (var client = GetHttpClient())
                     {
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        return true;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var jsonContent = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, project + "/_apis/test/plans/" + testPlan + "/suites/" + testSuite + "/testcases/" + testCases + "?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string result = response.Content.ReadAsStringAsync().Result;
+                            return true;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("AddTestCasesToSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("AddTestCasesToSuite" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }

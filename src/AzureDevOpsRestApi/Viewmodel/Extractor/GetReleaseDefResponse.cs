@@ -10,33 +10,33 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Avatar
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Links
         {
-            public Avatar avatar { get; set; }
+            public Avatar Avatar { get; set; }
         }
 
         public class CreatedBy
         {
-            public string displayName { get; set; }
-            public string url { get; set; }
-            public Links _links { get; set; }
-            public string id { get; set; }
-            public string uniqueName { get; set; }
-            public string imageUrl { get; set; }
-            public string descriptor { get; set; }
+            public string DisplayName { get; set; }
+            public string Url { get; set; }
+            public Links Links { get; set; }
+            public string Id { get; set; }
+            public string UniqueName { get; set; }
+            public string ImageUrl { get; set; }
+            public string Descriptor { get; set; }
         }
 
         public class ModifiedBy
         {
-            public string displayName { get; set; }
-            public string url { get; set; }
-            public string id { get; set; }
-            public string uniqueName { get; set; }
-            public string imageUrl { get; set; }
-            public string descriptor { get; set; }
+            public string DisplayName { get; set; }
+            public string Url { get; set; }
+            public string Id { get; set; }
+            public string UniqueName { get; set; }
+            public string ImageUrl { get; set; }
+            public string Descriptor { get; set; }
         }
 
         public class Properties
@@ -45,26 +45,26 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 
         public class Value
         {
-            public string source { get; set; }
-            public int revision { get; set; }
-            public object description { get; set; }
-            public DateTime createdOn { get; set; }
-            public DateTime modifiedOn { get; set; }
-            public bool isDeleted { get; set; }
-            public object variableGroups { get; set; }
-            public string releaseNameFormat { get; set; }
-            public Properties properties { get; set; }
-            public int id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public object projectReference { get; set; }
-            public string url { get; set; }
+            public string Source { get; set; }
+            public int Revision { get; set; }
+            public object Description { get; set; }
+            public DateTime CreatedOn { get; set; }
+            public DateTime ModifiedOn { get; set; }
+            public bool IsDeleted { get; set; }
+            public object VariableGroups { get; set; }
+            public string ReleaseNameFormat { get; set; }
+            public Properties Properties { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public object ProjectReference { get; set; }
+            public string Url { get; set; }
         }
 
         public class ReleaseDef
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

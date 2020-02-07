@@ -10,21 +10,21 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class ReleaseDefinition
         {
-            public int id { get; set; }
+            public int Id { get; set; }
         }
 
         public class Value
         {
-            public string source { get; set; }
-            public int id { get; set; }
-            public string name { get; set; }
-            public object variableGroups { get; set; }
+            public string Source { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public object VariableGroups { get; set; }
         }
 
         public class Release
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

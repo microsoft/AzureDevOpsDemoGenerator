@@ -10,59 +10,59 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
     {
         public class Self
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Memberships
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Links
         {
-            public Self self { get; set; }
-            public Memberships memberships { get; set; }
+            public Self Self { get; set; }
+            public Memberships Memberships { get; set; }
         }
 
         public class Member
         {
-            public string subjectKind { get; set; }
-            public string domain { get; set; }
-            public string principalName { get; set; }
-            public string mailAddress { get; set; }
-            public int metaTypeId { get; set; }
-            public string origin { get; set; }
-            public string originId { get; set; }
-            public string id { get; set; }
-            public string displayName { get; set; }
-            public Links _links { get; set; }
-            public string url { get; set; }
-            public string descriptor { get; set; }
+            public string SubjectKind { get; set; }
+            public string Domain { get; set; }
+            public string PrincipalName { get; set; }
+            public string MailAddress { get; set; }
+            public int MetaTypeId { get; set; }
+            public string Origin { get; set; }
+            public string OriginId { get; set; }
+            public string Id { get; set; }
+            public string DisplayName { get; set; }
+            public Links Links { get; set; }
+            public string Url { get; set; }
+            public string Descriptor { get; set; }
         }
 
         public class AccessLevel
         {
-            public string licensingSource { get; set; }
-            public string accountLicenseType { get; set; }
-            public string licenseDisplayName { get; set; }
-            public string status { get; set; }
-            public string statusMessage { get; set; }
+            public string LicensingSource { get; set; }
+            public string AccountLicenseType { get; set; }
+            public string LicenseDisplayName { get; set; }
+            public string Status { get; set; }
+            public string StatusMessage { get; set; }
         }
 
         public class Value
         {
-            public string id { get; set; }
-            public Member member { get; set; }
-            public AccessLevel accessLevel { get; set; }
-            public DateTime lastAccessedDate { get; set; }
-            public object projectEntitlements { get; set; }
-            public object extensions { get; set; }
+            public string Id { get; set; }
+            public Member Member { get; set; }
+            public AccessLevel AccessLevel { get; set; }
+            public DateTime LastAccessedDate { get; set; }
+            public object ProjectEntitlements { get; set; }
+            public object Extensions { get; set; }
         }
 
         public class Account
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

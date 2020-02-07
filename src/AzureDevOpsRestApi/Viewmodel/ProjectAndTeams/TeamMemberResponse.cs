@@ -10,23 +10,23 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
     {
         public class Identity
         {
-            public string displayName { get; set; }
-            public string url { get; set; }
-            public string id { get; set; }
-            public string uniqueName { get; set; }
-            public string imageUrl { get; set; }
-            public string descriptor { get; set; }
+            public string DisplayName { get; set; }
+            public string Url { get; set; }
+            public string Id { get; set; }
+            public string UniqueName { get; set; }
+            public string ImageUrl { get; set; }
+            public string Descriptor { get; set; }
         }
 
         public class Value
         {
-            public Identity identity { get; set; }
+            public Identity Identity { get; set; }
         }
 
         public class TeamMembers
         {
-            public IList<Value> value { get; set; }
-            public int count { get; set; }
+            public IList<Value> Value { get; set; }
+            public int Count { get; set; }
         }
 
 

@@ -8,10 +8,11 @@ namespace AzureDevOpsAPI.Git
 {
     public class GitHubImportRepo : ApiServiceBase
     {
+        Logger logger = LogManager.GetLogger("*");
         public GitHubImportRepo(IAppConfiguration configuration) : base(configuration)
         {
         }
-        Logger logger = LogManager.GetLogger("*");
+
         public HttpResponseMessage GetUserDetail()
         {
             try
@@ -36,13 +37,13 @@ namespace AzureDevOpsAPI.Git
 
         public HttpResponseMessage ForkRepo(string repoName)
         {
-            HttpResponseMessage res = new HttpResponseMessage();
+            HttpResponseMessage res = new HttpResponseMessage();            
             try
             {
                 using (var client = GitHubHttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Add("User-Agent", _configuration.userName);
+                    client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
                     var jsonContent = new StringContent("", Encoding.UTF8, "application/json");
@@ -66,7 +67,7 @@ namespace AzureDevOpsAPI.Git
                 using (var client = GitHubHttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Add("User-Agent", _configuration.userName);
+                    client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                     var method = new HttpMethod("GET");
                     /// repos /:owner /:repo / forks
