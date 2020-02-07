@@ -12,14 +12,14 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
         public class ListofCards
         {
             [JsonProperty("cards")]
-            public Cards cards { get; set; }
+            public Cards Cards { get; set; }
         }
         public class Cards : BaseViewModel
         {
             [JsonProperty("Bug")]
-            public Dictionary<string, string>[] bugs { get; set; }
+            public Dictionary<string, string>[] Bugs { get; set; }
             [JsonProperty("Product Backlog Item")]
-            public Dictionary<string, string>[] pbis { get; set; }
+            public Dictionary<string, string>[] Pbis { get; set; }
         }
     }
     public class GetCardFieldResponseAgile
@@ -27,12 +27,12 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
         public class ListofCards
         {
             [JsonProperty("cards")]
-            public Cards cards { get; set; }
+            public Cards Cards { get; set; }
         }
         public class Cards : BaseViewModel
         {
             [JsonProperty("Bug")]
-            public Dictionary<string, string>[] bugs { get; set; }
+            public Dictionary<string, string>[] Bugs { get; set; }
             [JsonProperty("User Story")]
             public Dictionary<string, string>[] UserStory { get; set; }
         }

@@ -6,13 +6,13 @@ namespace AzureDevOpsAPI.Viewmodel.GitHub
     {
         public class Repository
         {
-            public string fullName { get; set; }
-            public string endPointName { get; set; }
+            public string FullName { get; set; }
+            public string EndPointName { get; set; }
         }
 
         public class Fork
         {
-            public List<Repository> repositories { get; set; }
+            public List<Repository> Repositories { get; set; }
         }
     }
 }

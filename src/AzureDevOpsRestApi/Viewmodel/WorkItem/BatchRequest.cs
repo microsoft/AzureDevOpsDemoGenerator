@@ -4,22 +4,22 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
 {
     public class BatchRequest
     {
-        public string method { get; set; }
-        public Dictionary<string, string> headers { get; set; }
-        public object[] body { get; set; }
-        public string uri { get; set; }
+        public string Method { get; set; }
+        public Dictionary<string, string> Headers { get; set; }
+        public object[] Body { get; set; }
+        public string Uri { get; set; }
 
 
         public class Value
         {
-            public string rel { get; set; }
-            public string url { get; set; }
-            public Attributes attributes { get; set; }
+            public string Rel { get; set; }
+            public string Url { get; set; }
+            public Attributes Attributes { get; set; }
         }
 
         public class Attributes
         {
-            public string comment { get; set; }
+            public string Comment { get; set; }
         }
     }
 

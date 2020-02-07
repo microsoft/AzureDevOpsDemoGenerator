@@ -1,51 +1,66 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using NLog;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Repository;
-using NLog;
 
 namespace AzureDevOpsAPI.Git
 {
     public class Repository : ApiServiceBase
     {
         public Repository(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Source Code from Git Hub
         /// </summary>
         /// <param name="json"></param>
         /// <param name="project"></param>
-        /// <param name="repositoryID"></param>
+        /// <param name="repositoryId"></param>
         /// <returns></returns>
-        public bool GetSourceCodeFromGitHub(string json, string project, string repositoryID)
+        public bool GetSourceCodeFromGitHub(string json, string project, string repositoryId)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, _configuration.UriString + project + "/_apis/git/repositories/" + repositoryID + "/importRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        return response.IsSuccessStatusCode;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, Configuration.UriString + project + "/_apis/git/repositories/" + repositoryId + "/importRequests?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return response.IsSuccessStatusCode;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -57,69 +72,95 @@ namespace AzureDevOpsAPI.Git
         /// <returns></returns>
         public string GetRepositoryToDelete(string project)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(project + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
-                        string repository = viewModel.value.Where(x => x.name == project).FirstOrDefault().id;
-                        return repository;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        HttpResponseMessage response = client.GetAsync(project + "/_apis/git/repositories?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
+                            string repository = viewModel.Value.Where(x => x.Name == project).FirstOrDefault().Id;
+                            return repository;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetRepositoryToDelete" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-            }
+                catch (Exception ex)
+                {
+                    logger.Debug("GetRepositoryToDelete" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
 
+                    if (retryCount > 4)
+                    {
+                        return string.Empty;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
+            }
             return string.Empty;
         }
 
         /// <summary>
         ///Get Default repository to delete 
         /// </summary>
-        /// <param name="RepoName"></param>
+        /// <param name="repoName"></param>
         /// <returns></returns>
-        public string[] GetDefaultRepository(string RepoName)
+        public string[] GetDefaultRepository(string repoName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string[] repo = new string[2];
-                GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(RepoName + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    string[] repo = new string[2];
+                    GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
-                        if (viewModel.count > 0)
+                        HttpResponseMessage response = client.GetAsync(repoName + "/_apis/git/repositories?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
                         {
-                            repo[0] = viewModel.value.FirstOrDefault().id;
-                            repo[1] = viewModel.value.FirstOrDefault().name;
+                            viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
+                            if (viewModel.Count > 0)
+                            {
+                                repo[0] = viewModel.Value.FirstOrDefault().Id;
+                                repo[1] = viewModel.Value.FirstOrDefault().Name;
+                            }
+                            return repo;
                         }
-                        return repo;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n"); logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new string[] { };
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new string[] { };
         }
@@ -130,28 +171,42 @@ namespace AzureDevOpsAPI.Git
         /// <returns></returns>
         public GetAllRepositoriesResponse.Repositories GetAllRepositories()
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
-                using (var client = GetHttpClient())
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync("/_apis/git/repositories?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    GetAllRepositoriesResponse.Repositories viewModel = new GetAllRepositoriesResponse.Repositories();
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
-                        return viewModel;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        HttpResponseMessage response = client.GetAsync("/_apis/git/repositories?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
+                            return viewModel;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetAllRepositories" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("GetAllRepositories" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetAllRepositoriesResponse.Repositories();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetAllRepositoriesResponse.Repositories();
         }
@@ -164,41 +219,56 @@ namespace AzureDevOpsAPI.Git
         /// <returns></returns>
         public string[] CreateRepository(string name, string projectId)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string[] repository = new string[2];
-                dynamic objJson = new System.Dynamic.ExpandoObject();
-                objJson.name = name;
-                objJson.project = new System.Dynamic.ExpandoObject();
-                objJson.project.id = projectId;
-                string json = Newtonsoft.Json.JsonConvert.SerializeObject(objJson);
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, _configuration.UriString + "/_apis/git/repositories?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    string[] repository = new string[2];
+                    dynamic objJson = new System.Dynamic.ExpandoObject();
+                    objJson.name = name;
+                    objJson.project = new System.Dynamic.ExpandoObject();
+                    objJson.project.id = projectId;
+                    string json = Newtonsoft.Json.JsonConvert.SerializeObject(objJson);
+                    using (var client = GetHttpClient())
                     {
-                        var responseDetails = response.Content.ReadAsStringAsync().Result;
-                        JObject objResponse = JObject.Parse(responseDetails);
-                        repository[0] = objResponse["id"].ToString();
-                        repository[1] = objResponse["name"].ToString();
-                        return repository;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, Configuration.UriString + "/_apis/git/repositories?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseDetails = response.Content.ReadAsStringAsync().Result;
+                            JObject objResponse = JObject.Parse(responseDetails);
+                            repository[0] = objResponse["id"].ToString();
+                            repository[1] = objResponse["name"].ToString();
+                            return repository;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new string[] { };
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new string[] { };
         }
@@ -210,22 +280,33 @@ namespace AzureDevOpsAPI.Git
         /// <returns></returns>
         public bool DeleteRepository(string repositoryId)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var method = new HttpMethod("DELETE");
-                    var request = new HttpRequestMessage(method, _configuration.UriString + Project + "/_apis/git/repositories/" + repositoryId + "?api-version=" + _configuration.VersionNumber);
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        return true;
+                        var method = new HttpMethod("DELETE");
+                        var request = new HttpRequestMessage(method, Configuration.UriString + Project + "/_apis/git/repositories/" + repositoryId + "?api-version=" + Configuration.VersionNumber);
+                        var response = client.SendAsync(request).Result;
+
+                        return response.IsSuccessStatusCode;                        
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("DeleteRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("DeleteRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -238,38 +319,51 @@ namespace AzureDevOpsAPI.Git
         /// <returns></returns>
         public string[] CreatePullRequest(string json, string repositoryId)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                string[] pullRequest = new string[2];
-
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
+                    string[] pullRequest = new string[2];
 
-                    var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
+                    using (var client = GetHttpClient())
+                    {
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseDetails = response.Content.ReadAsStringAsync().Result;
-                        JObject objResponse = JObject.Parse(responseDetails);
-                        pullRequest[0] = objResponse["pullRequestId"].ToString();
-                        pullRequest[1] = objResponse["title"].ToString();
-                        return pullRequest;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return pullRequest;
+                        var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositoryId + "/pullRequests?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseDetails = response.Content.ReadAsStringAsync().Result;
+                            JObject objResponse = JObject.Parse(responseDetails);
+                            pullRequest[0] = objResponse["pullRequestId"].ToString();
+                            pullRequest[1] = objResponse["title"].ToString();
+                            return pullRequest;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreatePullRequest" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreatePullRequest" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new string[] { };
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new string[] { };
         }
@@ -283,35 +377,48 @@ namespace AzureDevOpsAPI.Git
         /// <returns></returns>
         public string CreateCommentThread(string repositorId, string pullRequestId, string json)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        var responseDetails = response.Content.ReadAsStringAsync().Result;
-                        JObject objResponse = JObject.Parse(responseDetails);
-                        string id = objResponse["id"].ToString();
-                        return id;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return string.Empty;
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseDetails = response.Content.ReadAsStringAsync().Result;
+                            JObject objResponse = JObject.Parse(responseDetails);
+                            string id = objResponse["id"].ToString();
+                            return id;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("CreateCommentThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("CreateCommentThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return string.Empty;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return string.Empty;
         }
@@ -325,34 +432,49 @@ namespace AzureDevOpsAPI.Git
         /// <param name="json"></param>
         public void AddCommentToThread(string repositorId, string pullRequestId, string threadId, string json)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                using (var client = GetHttpClient())
+                try
                 {
-                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var method = new HttpMethod("POST");
-
-                    var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads/" + threadId + "/comments?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                    var response = client.SendAsync(request).Result;
-
-                    if (response.IsSuccessStatusCode)
+                    using (var client = GetHttpClient())
                     {
-                        var responseDetails = response.Content.ReadAsStringAsync().Result;
-                        JObject objResponse = JObject.Parse(responseDetails);
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
+                        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                        var method = new HttpMethod("POST");
+
+                        var request = new HttpRequestMessage(method, Project + "/_apis/git/repositories/" + repositorId + "/pullRequests/" + pullRequestId + "/threads/" + threadId + "/comments?api-version=" + Configuration.VersionNumber) { Content = jsonContent };
+                        var response = client.SendAsync(request).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseDetails = response.Content.ReadAsStringAsync().Result;
+                            JObject objResponse = JObject.Parse(responseDetails);                            
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
+
+                        return;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("AddCommentToThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("AddCommentToThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
         }
-
     }
 }

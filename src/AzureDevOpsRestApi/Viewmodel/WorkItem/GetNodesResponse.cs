@@ -7,49 +7,49 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
     {
         public class Nodes : BaseViewModel
         {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string structureType { get; set; }
-            public bool hasChildren { get; set; }
-            public Child[] children { get; set; }
-            public _Links _links { get; set; }
-            public string url { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string StructureType { get; set; }
+            public bool HasChildren { get; set; }
+            public Child[] Children { get; set; }
+            public Links Links { get; set; }
+            public string Url { get; set; }
         }
 
-        public class _Links
+        public class Links
         {
-            public Self self { get; set; }
+            public Self Self { get; set; }
         }
 
         public class Self
         {
-            public string href { get; set; }
+            public string Href { get; set; }
         }
 
         public class Child
         {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string structureType { get; set; }
-            public bool hasChildren { get; set; }
-            public string url { get; set; }
-            public Child[] children { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string StructureType { get; set; }
+            public bool HasChildren { get; set; }
+            public string Url { get; set; }
+            public Child[] Children { get; set; }
         }
 
         public class Child1
         {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string structureType { get; set; }
-            public bool hasChildren { get; set; }
-            public string url { get; set; }
-            public Attributes attributes { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string StructureType { get; set; }
+            public bool HasChildren { get; set; }
+            public string Url { get; set; }
+            public Attributes Attributes { get; set; }
         }
 
         public class Attributes
         {
-            public DateTime? startDate { get; set; }
-            public DateTime? finishDate { get; set; }
+            public DateTime? StartDate { get; set; }
+            public DateTime? FinishDate { get; set; }
         }
     }
 }

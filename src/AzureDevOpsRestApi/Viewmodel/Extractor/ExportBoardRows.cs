@@ -6,14 +6,14 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Value
         {
-            public string id { get; set; }
-            public string name { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
         }
 
         public class Rows
         {
             public string BoardName { get; set; }
-            public List<Value> value { get; set; }
+            public List<Value> Value { get; set; }
         }
     }
 }
