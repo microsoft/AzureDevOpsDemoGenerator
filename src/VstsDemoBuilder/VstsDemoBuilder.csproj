@@ -1393,6 +1393,8 @@
     <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Space Game - web - ProvisionDB Team\CardStyles.json" />
     <Content Include="Templates\SpaceGame-web-ProvisionDB\Teams\Teams.json" />
     <Content Include="Templates\SpaceGame-web-ProvisionDB\WorkItems\Issue.json" />
+    <Content Include="Templates\MyHealthClinic\TeamIterationMap.json" />
+    <Content Include="Templates\MyHealthClinic\Iterations.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

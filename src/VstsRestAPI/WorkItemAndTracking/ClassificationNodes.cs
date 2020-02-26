@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using VstsRestAPI.ProjectsAndTeams;
 using VstsRestAPI.Viewmodel.Sprint;
 using VstsRestAPI.Viewmodel.WorkItem;
 
@@ -39,7 +40,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodesResponse.Nodes();
         }
@@ -81,7 +82,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodeResponse.Node();
         }
@@ -125,7 +126,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodeResponse.Node();
         }
@@ -136,43 +137,80 @@ namespace VstsRestAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="templateType"></param>
         /// <returns></returns>
-        public bool UpdateIterationDates(string projectName, string templateType)
+        public bool UpdateIterationDates(string projectName, string templateType, string selectedTemplateName, string teamIterationMapJson)
         {
             try
             {
-                string project = projectName;
-                DateTime startDate = DateTime.Today.AddDays(-22);
-                DateTime endDate = DateTime.Today.AddDays(-1);
-
-                Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
-
-                if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                if (selectedTemplateName.ToLower() == "myhealthclinic")
                 {
-                    for (int i = 1; i <= 6; i++)
+                    string project = projectName;
+                    DateTime startDate = DateTime.Today;
+                    DateTime endDate = DateTime.Today.AddDays(6);
+
+                    TeamIterations.Map iterationMaps = new TeamIterations.Map();
+                    iterationMaps = JsonConvert.DeserializeObject<TeamIterations.Map>(teamIterationMapJson);
+                    if (iterationMaps.TeamIterationMap.Count > 0)
                     {
-                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
-                    }
-                }
-                else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
-                {
-                    for (int i = 1; i <= 1; i++)
-                    {
-                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        int i = 0;
+                        foreach (var iterationTeam in iterationMaps.TeamIterationMap)
+                        {
+                            if (i % 2 == 1)
+                            {
+                                startDate = DateTime.Today.AddDays(-7);
+                                endDate = DateTime.Today.AddDays(-1);
+                            }
+                            foreach (var iteration in iterationTeam.Iterations)
+                            {
+                                
+                                Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
+                                sprint_dictionary.Add(iteration, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                                foreach (var key in sprint_dictionary.Keys)
+                                {
+                                    UpdateIterationDates(project, key, startDate, endDate);
+                                    startDate = endDate.AddDays(1);
+                                    endDate = startDate.AddDays(6);
+                                }                                
+                            }
+                            i++;
+                        }
                     }
                 }
                 else
                 {
-                    for (int i = 1; i <= 3; i++)
-                    {
-                        sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
-                    }
-                }
+                    string project = projectName;
+                    DateTime startDate = DateTime.Today.AddDays(-22);
+                    DateTime endDate = DateTime.Today.AddDays(-1);
 
-                foreach (var key in sprint_dictionary.Keys)
-                {
-                    UpdateIterationDates(project, key, startDate, endDate);
-                    startDate = endDate.AddDays(1);
-                    endDate = startDate.AddDays(21);
+                    Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
+
+                    if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                    {
+                        for (int i = 1; i <= 6; i++)
+                        {
+                            sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
+                    {
+                        for (int i = 1; i <= 1; i++)
+                        {
+                            sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 1; i <= 3; i++)
+                        {
+                            sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
+                    }
+
+                    foreach (var key in sprint_dictionary.Keys)
+                    {
+                        UpdateIterationDates(project, key, startDate, endDate);
+                        startDate = endDate.AddDays(1);
+                        endDate = startDate.AddDays(21);
+                    }
                 }
                 return true;
             }
@@ -182,7 +220,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -244,7 +282,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetNodeResponse.Node();
         }
@@ -302,7 +340,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return isSuccessful;
         }
@@ -325,7 +363,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t"   + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new SprintResponse.Sprints();
         }
