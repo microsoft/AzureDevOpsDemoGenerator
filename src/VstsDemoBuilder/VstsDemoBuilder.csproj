@@ -1395,6 +1395,29 @@
     <Content Include="Templates\SpaceGame-web-ProvisionDB\WorkItems\Issue.json" />
     <Content Include="Templates\MyHealthClinic\TeamIterationMap.json" />
     <Content Include="Templates\MyHealthClinic\Iterations.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Extensions.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\ImportSourceCode\Space Game - web.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Iterations.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\ProjectSettings.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\ProjectTemplate.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\ServiceEndpoints\Space Game - web-code.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\ServiceEndpoints\spacegame-web.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\TeamArea.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Web Team\BoardColumns.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Web Team\BoardRows.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Web Team\CardFields.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Web Team\CardStyles.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Teams.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\WorkItems\Issue.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\TeamIterationMap.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

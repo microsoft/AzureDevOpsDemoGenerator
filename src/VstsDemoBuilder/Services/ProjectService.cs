@@ -1058,7 +1058,7 @@ namespace VstsDemoBuilder.Services
 
                     foreach (var jTeam in jTeams)
                     {
-                        if (model.SelectedTemplate.ToLower() == "myhealthclinic")
+                        if (model.SelectedTemplate.ToLower() == "spacegame-deliveryplans")
                         {
                             //BEGIN - Mapping only given iterations for team in Team Iteration Mapping file
                             string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
@@ -1461,6 +1461,11 @@ namespace VstsDemoBuilder.Services
                 if (nd != null)
                 {
                     child.id = nd.id;
+                }
+                else
+                {
+                    var node = objClassification.CreateIteration(model.ProjectName, child.name);
+                    child.id = node.id;
                 }
             }
             else

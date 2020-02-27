@@ -1,0 +1,12 @@
+{
+  "Extensions": [
+    {
+      "extensionName": "Delivery Plans",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-plans' target='_blank'><b>Delivery Plans</b></a>",
+      "publisherId": "ms",
+      "extensionId": "vss-plans",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms.vss-plans' target='_blank'>License Terms</a>"
+    }
+  ]
+}

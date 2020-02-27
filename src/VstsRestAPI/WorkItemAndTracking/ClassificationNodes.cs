@@ -142,11 +142,11 @@ namespace VstsRestAPI.WorkItemAndTracking
             try
             {
                 // team iteration changes
-                if (selectedTemplateName.ToLower() == "myhealthclinic")
+                if (selectedTemplateName.ToLower() == "spacegame-deliveryplans")
                 {
                     string project = projectName;
                     DateTime startDate = DateTime.Today;
-                    DateTime endDate = DateTime.Today.AddDays(6);
+                    DateTime endDate = DateTime.Today.AddDays(12);
 
                     TeamIterations.Map iterationMaps = new TeamIterations.Map();
                     iterationMaps = JsonConvert.DeserializeObject<TeamIterations.Map>(teamIterationMapJson);
@@ -157,8 +157,8 @@ namespace VstsRestAPI.WorkItemAndTracking
                         {
                             if (i % 2 == 1)
                             {
-                                startDate = DateTime.Today.AddDays(-7);
-                                endDate = DateTime.Today.AddDays(-1);
+                                startDate = DateTime.Today;
+                                endDate = DateTime.Today.AddDays(18);
                             }
                             foreach (var iteration in iterationTeam.Iterations)
                             {
@@ -168,8 +168,13 @@ namespace VstsRestAPI.WorkItemAndTracking
                                 foreach (var key in sprint_dictionary.Keys)
                                 {
                                     UpdateIterationDates(project, key, startDate, endDate);
+                                    if (i % 2 == 1)
+                                    {
+                                        startDate = endDate.AddDays(1);
+                                        endDate = startDate.AddDays(18);
+                                    }
                                     startDate = endDate.AddDays(1);
-                                    endDate = startDate.AddDays(6);
+                                    endDate = startDate.AddDays(12);
                                 }                                
                             }
                             i++;
