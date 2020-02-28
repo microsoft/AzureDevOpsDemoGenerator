@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using VstsRestAPI.ProjectsAndTeams;
@@ -142,42 +143,46 @@ namespace VstsRestAPI.WorkItemAndTracking
             try
             {
                 // team iteration changes
-                if (System.IO.File.Exists(teamIterationMapJson))
+                if (File.Exists(teamIterationMapJson))
                 {
-                    string project = projectName;
-                    DateTime startDate = DateTime.Today;
-                    DateTime endDate = DateTime.Today.AddDays(12);
-
-                    TeamIterations.Map iterationMaps = new TeamIterations.Map();
-                    iterationMaps = JsonConvert.DeserializeObject<TeamIterations.Map>(teamIterationMapJson);
-                    if (iterationMaps.TeamIterationMap.Count > 0)
+                    teamIterationMapJson = File.ReadAllText(teamIterationMapJson);
+                    if (!string.IsNullOrEmpty(teamIterationMapJson))
                     {
-                        int i = 0;
-                        foreach (var iterationTeam in iterationMaps.TeamIterationMap)
-                        {
-                            if (i % 2 == 1)
-                            {
-                                startDate = DateTime.Today;
-                                endDate = DateTime.Today.AddDays(18);
-                            }
-                            foreach (var iteration in iterationTeam.Iterations)
-                            {
+                        string project = projectName;
+                        DateTime startDate = DateTime.Today;
+                        DateTime endDate = DateTime.Today.AddDays(12);
 
-                                Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
-                                sprint_dictionary.Add(iteration, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
-                                foreach (var key in sprint_dictionary.Keys)
+                        TeamIterations.Map iterationMaps = new TeamIterations.Map();
+                        iterationMaps = JsonConvert.DeserializeObject<TeamIterations.Map>(teamIterationMapJson);
+                        if (iterationMaps.TeamIterationMap.Count > 0)
+                        {
+                            int i = 0;
+                            foreach (var iterationTeam in iterationMaps.TeamIterationMap)
+                            {
+                                if (i % 2 == 1)
                                 {
-                                    UpdateIterationDates(project, key, startDate, endDate);
-                                    if (i % 2 == 1)
-                                    {
-                                        startDate = endDate.AddDays(1);
-                                        endDate = startDate.AddDays(18);
-                                    }
-                                    startDate = endDate.AddDays(1);
-                                    endDate = startDate.AddDays(12);
+                                    startDate = DateTime.Today;
+                                    endDate = DateTime.Today.AddDays(18);
                                 }
+                                foreach (var iteration in iterationTeam.Iterations)
+                                {
+
+                                    Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
+                                    sprint_dictionary.Add(iteration, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                                    foreach (var key in sprint_dictionary.Keys)
+                                    {
+                                        UpdateIterationDates(project, key, startDate, endDate);
+                                        if (i % 2 == 1)
+                                        {
+                                            startDate = endDate.AddDays(1);
+                                            endDate = startDate.AddDays(18);
+                                        }
+                                        startDate = endDate.AddDays(1);
+                                        endDate = startDate.AddDays(12);
+                                    }
+                                }
+                                i++;
                             }
-                            i++;
                         }
                     }
                 }

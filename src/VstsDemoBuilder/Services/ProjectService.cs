@@ -1520,13 +1520,7 @@ namespace VstsDemoBuilder.Services
                 if (settings.type.ToLower() == "scrum" || settings.type.ToLower() == "agile" || settings.type.ToLower() == "basic")
                 {
                     string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
-                    if (File.Exists(teamIterationMap))
-                    {
-                        if (!string.IsNullOrEmpty(teamIterationMap))
-                        {
-                            teamIterationMap = model.ReadJsonFile(teamIterationMap);
-                        }
-                    }
+                   
                     ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
                     bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type, model.SelectedTemplate, teamIterationMap);
 
