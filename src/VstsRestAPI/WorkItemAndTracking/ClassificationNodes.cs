@@ -142,7 +142,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             try
             {
                 // team iteration changes
-                if (selectedTemplateName.ToLower() == "spacegame-deliveryplans")
+                if (System.IO.File.Exists(teamIterationMapJson))
                 {
                     string project = projectName;
                     DateTime startDate = DateTime.Today;
@@ -162,7 +162,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                             }
                             foreach (var iteration in iterationTeam.Iterations)
                             {
-                                
+
                                 Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
                                 sprint_dictionary.Add(iteration, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
                                 foreach (var key in sprint_dictionary.Keys)
@@ -175,7 +175,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                     }
                                     startDate = endDate.AddDays(1);
                                     endDate = startDate.AddDays(12);
-                                }                                
+                                }
                             }
                             i++;
                         }

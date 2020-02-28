@@ -1058,10 +1058,10 @@ namespace VstsDemoBuilder.Services
 
                     foreach (var jTeam in jTeams)
                     {
-                        if (model.SelectedTemplate.ToLower() == "spacegame-deliveryplans")
+                        string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
+                        if (File.Exists(teamIterationMap))
                         {
                             //BEGIN - Mapping only given iterations for team in Team Iteration Mapping file
-                            string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
                             if (!string.IsNullOrEmpty(teamIterationMap))
                             {
                                 string data = model.ReadJsonFile(teamIterationMap);
