@@ -177,8 +177,11 @@ namespace VstsRestAPI.WorkItemAndTracking
                                             startDate = endDate.AddDays(1);
                                             endDate = startDate.AddDays(18);
                                         }
-                                        startDate = endDate.AddDays(1);
-                                        endDate = startDate.AddDays(12);
+                                        else
+                                        {
+                                            startDate = endDate.AddDays(1);
+                                            endDate = startDate.AddDays(12);
+                                        }
                                     }
                                 }
                                 i++;

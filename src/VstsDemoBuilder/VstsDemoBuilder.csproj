@@ -1416,8 +1416,8 @@
     <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Web Team\CardFields.json" />
     <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Space Game Web Team\CardStyles.json" />
     <Content Include="Templates\SpaceGame-DeliveryPlans\Teams\Teams.json" />
-    <Content Include="Templates\SpaceGame-DeliveryPlans\WorkItems\Issue.json" />
     <Content Include="Templates\SpaceGame-DeliveryPlans\TeamIterationMap.json" />
+    <Content Include="Templates\SpaceGame-DeliveryPlans\WorkItems\Product Backlog Item.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -208,11 +208,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                             {
                                 dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                             }
-                            if (workItemType.ToLower() == "issue")
-                            {
-                                string areaPath = newWI.fields.SystemAreaPath ?? projectName;
-                                dicWIFields.Add("/fields/System.AreaPath", areaPath);
-                            }
+
+                            string areaPath = newWI.fields.SystemAreaPath ?? projectName;
+                            dicWIFields.Add("/fields/System.AreaPath", areaPath);
                             dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
                             dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
                             dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);

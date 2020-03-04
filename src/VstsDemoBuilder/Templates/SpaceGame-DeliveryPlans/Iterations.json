@@ -6,7 +6,7 @@
       "hasChildren": false
     },
     {
-      "name": "Sprint A",
+      "name": "Sprint 5",
       "structureType": "iteration",
       "hasChildren": false
     },
@@ -16,7 +16,7 @@
       "hasChildren": false
     },
     {
-      "name": "Sprint B",
+      "name": "Sprint 6",
       "structureType": "iteration",
       "hasChildren": false
     },
@@ -29,14 +29,9 @@
       "name": "Sprint 4",
       "structureType": "iteration",
       "hasChildren": false
-    },
-    {
-      "name": "Sprint C",
-      "structureType": "iteration",
-      "hasChildren": false
     }
   ],
-  "name": "Space Game",
+  "name": "Space Game Delivery Plans",
   "structureType": "iteration",
   "hasChildren": true
 }
