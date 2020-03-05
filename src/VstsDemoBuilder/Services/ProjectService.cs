@@ -647,7 +647,7 @@ namespace VstsDemoBuilder.Services
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
                     UpdateSprintItems(model, _boardVersion, settings);
-                   
+
                     RenameIterations(model, _boardVersion, settings.renameIterations);
                 }
             }
@@ -1094,9 +1094,15 @@ namespace VstsDemoBuilder.Services
                                                 {
                                                     foreach (var iteration in iterations.value)
                                                     {
-                                                        if (teamMap.Iterations.Contains(iteration.name))
+                                                        if (iteration.structureType == "iteration")
                                                         {
-                                                            bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                                            foreach (var child in iteration.children)
+                                                            {
+                                                                if (teamMap.Iterations.Contains(child.name))
+                                                                {
+                                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.name, model.ProjectName);
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -1134,7 +1140,13 @@ namespace VstsDemoBuilder.Services
                                     {
                                         foreach (var iteration in iterations.value)
                                         {
-                                            bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                            if (iteration.structureType == "iteration")
+                                            {
+                                                foreach (var child in iteration.children)
+                                                {
+                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.name, model.ProjectName);
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -1520,7 +1532,7 @@ namespace VstsDemoBuilder.Services
                 if (settings.type.ToLower() == "scrum" || settings.type.ToLower() == "agile" || settings.type.ToLower() == "basic")
                 {
                     string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
-                   
+
                     ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
                     bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type, model.SelectedTemplate, teamIterationMap);
 

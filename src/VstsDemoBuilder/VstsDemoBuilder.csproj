@@ -1395,7 +1395,6 @@
     <Content Include="Templates\SpaceGame-web-ProvisionDB\WorkItems\Issue.json" />
     <Content Include="Templates\MyHealthClinic\TeamIterationMap.json" />
     <Content Include="Templates\MyHealthClinic\Iterations.json" />
-    <Content Include="Templates\SpaceGame-DeliveryPlans\Extensions.json" />
     <Content Include="Templates\SpaceGame-DeliveryPlans\ImportSourceCode\Space Game - web.json" />
     <Content Include="Templates\SpaceGame-DeliveryPlans\Iterations.json" />
     <Content Include="Templates\SpaceGame-DeliveryPlans\ProjectSettings.json" />
