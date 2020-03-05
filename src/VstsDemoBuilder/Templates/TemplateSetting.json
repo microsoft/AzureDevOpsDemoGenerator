@@ -730,7 +730,6 @@
         {
           "Key": "34567862",
           "Name": "Provision databases in Azure Pipelines",
-          "SpaceGame-DeliveryPlans": null,
           "TemplateFolder": "SpaceGame-web-ProvisionDB",
           "ShortName": "provision-database-azure-pipelines",
           "Tags": [
@@ -744,8 +743,7 @@
         },
         {
           "Key": "345678643",
-          "Name": "Delivery Plans",
-          "SpaceGame-DeliveryPlans": null,
+          "Name": "Manage Agile software delivery plans across teams",
           "TemplateFolder": "SpaceGame-DeliveryPlans",
           "ShortName": "DeliveryPlans",
           "Tags": [
@@ -753,9 +751,9 @@
             "Azure Pipelines"
           ],
           "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
-          "ForkGitHubRepo": true,
+          "ForkGitHubRepo": false,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Automatically provision Azure SQL Database in Azure Pipelines by using an Azure Resource Manager template. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines' target='_blank'>Provision Database</a>"
+          "Description": "Manage Agile software delivery plans across teams <br /><br />Lab URL: <a href='https://docs.microsoft.com/en-us/learn/modules/manage-delivery-plans' target='_blank'>Manage delivery plans</a>"
         }
       ]
     },
