@@ -577,7 +577,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                 //update sprint dates
                 UpdateSprintItems(model, _boardVersion, settings);
-                RenameIterations(model, _boardVersion, settings.renameIterations);
+                RenameIterations(model, _boardVersion, settings.RenameIterations);
             }
             else
             {
@@ -686,7 +686,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         AddMessage(model.Id, "Board-Column, Swimlanes, Styles updated");
                     }
                     UpdateSprintItems(model, _boardVersion, settings);
-                    RenameIterations(model, _boardVersion, settings.renameIterations);
+                    RenameIterations(model, _boardVersion, settings.RenameIterations);
                 }
             }
             //Create Deployment Group
@@ -1114,9 +1114,9 @@ namespace AzureDevOpsDemoBuilder.Services
                                             // AS IS
 
                                             GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
-                                            if (!(string.IsNullOrEmpty(teamResponse.id)))
+                                            if (!(string.IsNullOrEmpty(teamResponse.Id)))
                                             {
-                                                string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
+                                                string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.Name);
                                                 string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
 
                                                 //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
@@ -1125,12 +1125,12 @@ namespace AzureDevOpsDemoBuilder.Services
                                                 {
                                                     updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
                                                     updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
-                                                    bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
+                                                    bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.Name, updateAreaJSON);
                                                 }
-                                                bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
-                                                if (iterations.count > 0)
+                                                bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.Name);
+                                                if (iterations.Count > 0)
                                                 {
-                                                    foreach (var iteration in iterations.value)
+                                                    foreach (var iteration in iterations.Value)
                                                     {
                                                         if (iteration.structureType == "iteration")
                                                         {
@@ -1138,7 +1138,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                                             {
                                                                 if (teamMap.Iterations.Contains(child.name))
                                                                 {
-                                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.name, model.ProjectName);
+                                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.Name, model.ProjectName);
                                                                 }
                                                             }
                                                         }
@@ -1160,27 +1160,27 @@ namespace AzureDevOpsDemoBuilder.Services
                             if (isDefault == "false" || isDefault == "")
                             {
                                 GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
-                                if (!(string.IsNullOrEmpty(teamResponse.id)))
+                                if (!(string.IsNullOrEmpty(teamResponse.Id)))
                                 {
-                                    string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
+                                    string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.Name);
                                     string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
 
                                     if (File.Exists(updateAreaJSON))
                                     {
                                         updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
                                         updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
-                                        bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
+                                        bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.Name, updateAreaJSON);
                                     }
-                                    bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
-                                    if (iterations.count > 0)
+                                    bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.Name);
+                                    if (iterations.Count > 0)
                                     {
-                                        foreach (var iteration in iterations.value)
+                                        foreach (var iteration in iterations.Value)
                                         {
                                             if (iteration.structureType == "iteration")
                                             {
                                                 foreach (var child in iteration.children)
                                                 {
-                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.name, model.ProjectName);
+                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.Name, model.ProjectName);
                                                 }
                                             }
                                         }
@@ -1571,7 +1571,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
 
                     ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
-                    bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type, model.SelectedTemplate, teamIterationMap);
+                    bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.Type, model.SelectedTemplate, teamIterationMap);
 
                     if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
                     {

@@ -208,12 +208,12 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                             {
                                 dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                             }
-                            string areaPath = newWI.fields.SystemAreaPath ?? projectName;
+                            string areaPath = newWI.Fields.SystemAreaPath ?? projectName;
                             dicWIFields.Add("/fields/System.AreaPath", areaPath);
-                            dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
-                            dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
-                            dicWIFields.Add("/fields/System.Reason", newWI.fields.SystemReason);
-                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.fields.MicrosoftVSTSCommonPriority);
+                            dicWIFields.Add("/fields/System.Description", newWI.Fields.SystemDescription);
+                            dicWIFields.Add("/fields/System.State", newWI.Fields.SystemState);
+                            dicWIFields.Add("/fields/System.Reason", newWI.Fields.SystemReason);
+                            dicWIFields.Add("/fields/Microsoft.VSTS.Common.Priority", newWI.Fields.MicrosoftVstsCommonPriority);
                             dicWIFields.Add("/fields/System.IterationPath", iterationPath);
                             dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.RemainingWork", newWI.Fields.MicrosoftVstsSchedulingRemainingWork);
                             dicWIFields.Add("/fields/Microsoft.VSTS.Scheduling.Effort", newWI.Fields.MicrosoftVstsSchedulingEffort);
