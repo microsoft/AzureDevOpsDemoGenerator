@@ -10,24 +10,24 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Attributes
         {
-            public DateTime? startDate { get; set; }
-            public DateTime? finishDate { get; set; }
-            public string timeFrame { get; set; }
+            public DateTime? StartDate { get; set; }
+            public DateTime? FinishDate { get; set; }
+            public string TimeFrame { get; set; }
         }
 
         public class Value
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string path { get; set; }
-            public Attributes attributes { get; set; }
-            public string url { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Path { get; set; }
+            public Attributes Attributes { get; set; }
+            public string Url { get; set; }
         }
 
         public class Iterations
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
 
 

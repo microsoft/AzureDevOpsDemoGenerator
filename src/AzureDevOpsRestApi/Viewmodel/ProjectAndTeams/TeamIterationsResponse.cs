@@ -30,8 +30,8 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
 
         public class Iterations
         {
-            public int count { get; set; }
-            public IList<Value> value { get; set; }
+            public int Count { get; set; }
+            public IList<Value> Value { get; set; }
         }
     }
 }

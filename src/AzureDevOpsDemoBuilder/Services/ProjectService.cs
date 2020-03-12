@@ -223,7 +223,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <returns></returns>
         public string[] CreateProjectEnvironment(Project model)
         {
-            string accountName = model.accountName;
+            string accountName = model.AccountName;
             //if (model.IsPrivatePath)
             //{
             //    templateUsed = model.PrivateTemplateName;
@@ -233,7 +233,7 @@ namespace AzureDevOpsDemoBuilder.Services
             templateUsed = model.SelectedTemplate;
             //}
             logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
-            string pat = model.accessToken;
+            string pat = model.AccessToken;
             //define versions to be use
             string projectCreationVersion = AppKeyConfiguration["ProjectCreationVersion"];
             string repoVersion = AppKeyConfiguration["RepoVersion"];
@@ -260,17 +260,17 @@ namespace AzureDevOpsDemoBuilder.Services
             string processTemplateId = Default.SCRUM;
             model.Environment = new EnvironmentValues
             {
-                serviceEndpoints = new Dictionary<string, string>(),
-                repositoryIdList = new Dictionary<string, string>(),
-                pullRequests = new Dictionary<string, string>(),
+                ServiceEndpoints = new Dictionary<string, string>(),
+                RepositoryIdList = new Dictionary<string, string>(),
+                PullRequests = new Dictionary<string, string>(),
                 GitHubRepos = new Dictionary<string, string>()
             };
             ProjectTemplate template = null;
             ProjectSettings settings = null;
-            List<WIMapData> wiMapping = new List<WIMapData>();
+            List<WiMapData> wiMapping = new List<WiMapData>();
             AccountMembers.Account accountMembers = new AccountMembers.Account();
-            model.accountUsersForWi = new List<string>();
-            websiteUrl = model.websiteUrl;
+            model.AccountUsersForWi = new List<string>();
+            websiteUrl = model.WebsiteUrl;
             projectName = model.ProjectName;
 
             string logWIT = AppKeyConfiguration["LogWIT"];
@@ -280,11 +280,11 @@ namespace AzureDevOpsDemoBuilder.Services
                 string url = AppKeyConfiguration["URL"];
                 string projectId = AppKeyConfiguration["PROJECTID"];
                 string reportName = string.Format("{0}", "AzureDevOps_Analytics-DemoGenerator");
-                IssueWI objIssue = new IssueWI();
-                objIssue.CreateReportWI(patBase64, "4.1", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
+                IssueWi objIssue = new IssueWi();
+                objIssue.CreateReportWi(patBase64, "4.1", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
             }
 
-            AppConfiguration _gitHubConfig = new AppConfiguration() { _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken, _mediaType = "application/json", _scheme = "Bearer" };
+            AppConfiguration _gitHubConfig = new AppConfiguration() { GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken, MediaType = "application/json", Scheme = "Bearer" };
 
             if (model.GitHubFork && model.GitHubToken != null)
             {
@@ -294,25 +294,25 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (userResponse.IsSuccessStatusCode)
                 {
                     userDetail = JsonConvert.DeserializeObject<GitHubUserDetail>(userResponse.Content.ReadAsStringAsync().Result);
-                    _gitHubConfig.userName = userDetail.login;
+                    _gitHubConfig.UserName = userDetail.login;
                     model.GitHubUserName = userDetail.login;
                 }
             }
             //configuration setup
-            string _credentials = model.accessToken;
+            string _credentials = model.AccessToken;
             AppConfiguration _projectCreationVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _releaseVersion = new AppConfiguration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            AppConfiguration _buildVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _buildVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken };
             AppConfiguration _workItemsVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _queriesVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _boardVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _wikiVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            AppConfiguration _endPointVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _endPointVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken };
             AppConfiguration _extensionVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _dashboardVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            AppConfiguration _repoVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _repoVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken };
 
-            AppConfiguration _getSourceCodeVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            AppConfiguration _getSourceCodeVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken };
             AppConfiguration _agentQueueVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _testPlanVersion = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
             AppConfiguration _deploymentGroup = new AppConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
@@ -345,47 +345,47 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         settings = JsonConvert.DeserializeObject<ProjectSettings>(model.ReadJsonFile(projectSettingsFile));
 
-                        if (!string.IsNullOrWhiteSpace(settings.type))
+                        if (!string.IsNullOrWhiteSpace(settings.Type))
                         {
-                            if (settings.type.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                            if (settings.Type.ToLower() == TemplateType.Scrum.ToString().ToLower())
                             {
                                 processTemplateId = Default.SCRUM;
                             }
-                            else if (settings.type.ToLower() == TemplateType.Agile.ToString().ToLower())
+                            else if (settings.Type.ToLower() == TemplateType.Agile.ToString().ToLower())
                             {
                                 processTemplateId = Default.Agile;
                             }
-                            else if (settings.type.ToLower() == TemplateType.CMMI.ToString().ToLower())
+                            else if (settings.Type.ToLower() == TemplateType.CMMI.ToString().ToLower())
                             {
                                 processTemplateId = Default.CMMI;
                             }
-                            else if (settings.type.ToLower() == TemplateType.Basic.ToString().ToLower())
+                            else if (settings.Type.ToLower() == TemplateType.Basic.ToString().ToLower())
                             {
                                 processTemplateId = Default.BASIC;
                             }
-                            else if (!string.IsNullOrEmpty(settings.id))
+                            else if (!string.IsNullOrEmpty(settings.Id))
                             {
-                                processTemplateId = settings.id;
+                                processTemplateId = settings.Id;
                             }
                             else
                             {
-                                AddMessage(model.id.ErrorId(), "Could not recognize process template. Make sure that the exported project template is belog to standard process template or project setting file has valid process template id.");
-                                StatusMessages[model.id] = "100";
-                                return new string[] { model.id, accountName, templateUsed };
+                                AddMessage(model.Id.ErrorId(), "Could not recognize process template. Make sure that the exported project template is belog to standard process template or project setting file has valid process template id.");
+                                StatusMessages[model.Id] = "100";
+                                return new string[] { model.Id, accountName, templateUsed };
                             }
                         }
                         else
                         {
-                            settings.type = "scrum";
+                            settings.Type = "scrum";
                             processTemplateId = Default.SCRUM;
                         }
                     }
                 }
                 else
                 {
-                    AddMessage(model.id.ErrorId(), "Project Template not found");
-                    StatusMessages[model.id] = "100";
-                    return new string[] { model.id, accountName, templateUsed };
+                    AddMessage(model.Id.ErrorId(), "Project Template not found");
+                    StatusMessages[model.Id] = "100";
+                    return new string[] { model.Id, accountName, templateUsed };
                 }
             }
             catch (Exception ex)
@@ -405,23 +405,23 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     if (proj.LastFailureMessage.Contains("TF400813"))
                     {
-                        AddMessage(model.id, "OAUTHACCESSDENIED");
+                        AddMessage(model.Id, "OAUTHACCESSDENIED");
                     }
                     else if (proj.LastFailureMessage.Contains("TF50309"))
                     {
-                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
+                        AddMessage(model.Id.ErrorId(), proj.LastFailureMessage);
                     }
                     else
                     {
-                        AddMessage(model.id.ErrorId(), proj.LastFailureMessage);
+                        AddMessage(model.Id.ErrorId(), proj.LastFailureMessage);
                     }
                 }
                 Thread.Sleep(2000); // Adding Delay to Get Error message
-                return new string[] { model.id, accountName, templateUsed };
+                return new string[] { model.Id, accountName, templateUsed };
             }
             else
             {
-                AddMessage(model.id, string.Format("Project {0} created", model.ProjectName));
+                AddMessage(model.Id, string.Format("Project {0} created", model.ProjectName));
             }
             // waiting to add first message
             Thread.Sleep(2000);
@@ -436,7 +436,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 projectStatus = objProject.GetProjectStateByName(model.ProjectName);
                 if (watch.Elapsed.Minutes >= 5)
                 {
-                    return new string[] { model.id, accountName, templateUsed };
+                    return new string[] { model.Id, accountName, templateUsed };
                 }
             }
             watch.Stop();
@@ -455,32 +455,32 @@ namespace AzureDevOpsDemoBuilder.Services
             bool isAdded = AddUserToProject(_graphApiVersion, model);
             if (isAdded)
             {
-                AddMessage(model.id, string.Format("Added user {0} as project admin ", model.Email));
+                AddMessage(model.Id, string.Format("Added user {0} as project admin ", model.Email));
             }
 
             //Install required extensions
-            if (!model.IsApi && model.isExtensionNeeded && model.isAgreeTerms)
+            if (!model.IsApi && model.IsExtensionNeeded && model.IsAgreeTerms)
             {
-                bool isInstalled = InstallExtensions(model, model.accountName, model.accessToken);
-                if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
+                bool isInstalled = InstallExtensions(model, model.AccountName, model.AccessToken);
+                if (isInstalled) { AddMessage(model.Id, "Required extensions are installed"); }
             }
 
             //current user Details
             string teamName = model.ProjectName + " team";
-            TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.id);
+            TeamMemberResponse.TeamMembers teamMembers = GetTeamMembers(model.ProjectName, teamName, _projectCreationVersion, model.Id);
 
-            var teamMember = teamMembers.value != null ? teamMembers.value.FirstOrDefault() : new TeamMemberResponse.Value();
+            var teamMember = teamMembers.Value != null ? teamMembers.Value.FirstOrDefault() : new TeamMemberResponse.Value();
 
             if (teamMember != null)
             {
-                model.Environment.UserUniquename = model.Environment.UserUniquename ?? teamMember.identity.uniqueName;
+                model.Environment.UserUniqueName = model.Environment.UserUniqueName ?? teamMember.Identity.UniqueName;
             }
             if (teamMember != null)
             {
-                model.Environment.UserUniqueId = model.Environment.UserUniqueId ?? teamMember.identity.id;
+                model.Environment.UserUniqueId = model.Environment.UserUniqueId ?? teamMember.Identity.Id;
             }
             //model.Environment.UserUniqueId = model.Email;
-            //model.Environment.UserUniquename = model.Email;
+            //model.Environment.UserUniqueName = model.Email;
             //update board columns and rows
             // Checking for template version
             string projectTemplate = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "ProjectTemplate.json"));
@@ -494,7 +494,7 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 UpdateIterations(model, _boardVersion, "Iterations.json");
                 //create teams
-                CreateTeams(model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+                CreateTeams(model, template.Teams, _projectCreationVersion, model.Id, template.TeamArea);
 
                 // for older templates
                 string projectSetting = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "ProjectSettings.json"));
@@ -535,7 +535,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     if (File.Exists(json))
                     {
                         json = model.ReadJsonFile(json);
-                        EnableEpic(model, json, _boardVersion, model.id, team);
+                        EnableEpic(model, json, _boardVersion, model.Id, team);
                     }
                 }
 
@@ -546,7 +546,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     if (File.Exists(json))
                     {
                         json = model.ReadJsonFile(json);
-                        bool success = UpdateBoardColumn(model, json, _boardVersion, model.id, boardType, team);
+                        bool success = UpdateBoardColumn(model, json, _boardVersion, model.Id, boardType, team);
                         if (success)
                         {
                             //update Card Fields
@@ -556,7 +556,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 if (File.Exists(cardFieldJson))
                                 {
                                     cardFieldJson = model.ReadJsonFile(cardFieldJson);
-                                    UpdateCardFields(model, cardFieldJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                    UpdateCardFields(model, cardFieldJson, _boardVersion, model.Id, boardType, model.ProjectName + " Team");
                                 }
                             }
                             //Update card styles
@@ -566,11 +566,11 @@ namespace AzureDevOpsDemoBuilder.Services
                                 if (File.Exists(cardStyleJson))
                                 {
                                     cardStyleJson = model.ReadJsonFile(cardStyleJson);
-                                    UpdateCardStyles(model, cardStyleJson, _boardVersion, model.id, boardType, model.ProjectName + " Team");
+                                    UpdateCardStyles(model, cardStyleJson, _boardVersion, model.Id, boardType, model.ProjectName + " Team");
                                 }
                             }
                             //Enable Epic Backlog
-                            AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                            AddMessage(model.Id, "Board-Column, Swimlanes, Styles updated");
                         }
                     }
                 }
@@ -589,7 +589,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     template.Teams = "Teams\\Teams.json";
                     template.TeamArea = "TeamArea.json";
-                    CreateTeams(model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
+                    CreateTeams(model, template.Teams, _projectCreationVersion, model.Id, template.TeamArea);
                     string jsonTeams = model.ReadJsonFile(teamsJsonPath);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
@@ -622,7 +622,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 List<ImportBoardRows.Rows> importRows = JsonConvert.DeserializeObject<List<ImportBoardRows.Rows>>(updateSwimLanesJSON);
                                 foreach (var board in importRows)
                                 {
-                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.value), model.ProjectName, board.BoardName, _teamName);
+                                    bool isUpdated = objSwimLanes.UpdateSwimLanes(JsonConvert.SerializeObject(board.Value), model.ProjectName, board.BoardName, _teamName);
                                 }
                             }
 
@@ -633,7 +633,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             if (File.Exists(teamSettingJson))
                             {
                                 teamSettingJson = File.ReadAllText(teamSettingJson);
-                                EnableEpic(model, teamSettingJson, _boardVersion, model.id, _teamName);
+                                EnableEpic(model, teamSettingJson, _boardVersion, model.Id, _teamName);
                             }
 
                             // updating board columns for each teams each board
@@ -646,7 +646,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 List<ImportBoardColumns.ImportBoardCols> importBoardCols = JsonConvert.DeserializeObject<List<ImportBoardColumns.ImportBoardCols>>(teamBoardColumns);
                                 foreach (var board in importBoardCols)
                                 {
-                                    bool success = UpdateBoardColumn(model, JsonConvert.SerializeObject(board.value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, board.BoardName, _teamName);
+                                    bool success = UpdateBoardColumn(model, JsonConvert.SerializeObject(board.Value, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.Id, board.BoardName, _teamName);
                                 }
                             }
 
@@ -661,7 +661,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
                                 foreach (var card in cardFields)
                                 {
-                                    UpdateCardFields(model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
+                                    UpdateCardFields(model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.Id, card.BoardName, _teamName);
                                 }
                             }
 
@@ -676,14 +676,14 @@ namespace AzureDevOpsDemoBuilder.Services
                                 cardStyles = JsonConvert.DeserializeObject<List<CardStyle.Style>>(teamCardStyle);
                                 foreach (var cardStyle in cardStyles)
                                 {
-                                    if (cardStyle.rules.fill != null)
+                                    if (cardStyle.Rules.Fill != null)
                                     {
-                                        UpdateCardStyles(model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, _teamName);
+                                        UpdateCardStyles(model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.Id, cardStyle.BoardName, _teamName);
                                     }
                                 }
                             }
                         }
-                        AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
+                        AddMessage(model.Id, "Board-Column, Swimlanes, Styles updated");
                     }
                     UpdateSprintItems(model, _boardVersion, settings);
                     RenameIterations(model, _boardVersion, settings.renameIterations);
@@ -703,9 +703,9 @@ namespace AzureDevOpsDemoBuilder.Services
             //create agent queues on demand
             Queue queue = new Queue(_agentQueueVersion);
             model.Environment.AgentQueues = queue.GetQueues();
-            if (settings.queues != null && settings.queues.Count > 0)
+            if (settings.Queues != null && settings.Queues.Count > 0)
             {
-                foreach (string aq in settings.queues)
+                foreach (string aq in settings.Queues)
                 {
                     if (model.Environment.AgentQueues.ContainsKey(aq))
                     {
@@ -733,7 +733,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             foreach (string importSourceCode in listImportSourceCodeJsonPaths)
             {
-                ImportSourceCode(model, importSourceCode, _repoVersion, model.id, _getSourceCodeVersion);
+                ImportSourceCode(model, importSourceCode, _repoVersion, model.Id, _getSourceCodeVersion);
             }
             if (isDefaultRepoTodetele)
             {
@@ -763,17 +763,17 @@ namespace AzureDevOpsDemoBuilder.Services
             //Configure account users
             if (model.UserMethod == "Select")
             {
-                model.selectedUsers = model.selectedUsers.TrimEnd(',');
-                model.accountUsersForWi = model.selectedUsers.Split(',').ToList();
+                model.SelectedUsers = model.SelectedUsers.TrimEnd(',');
+                model.AccountUsersForWi = model.SelectedUsers.Split(',').ToList();
             }
             else if (model.UserMethod == "Random")
             {
                 //GetAccount Members
                 AzureDevOpsAPI.ProjectsAndTeams.Accounts objAccount = new AzureDevOpsAPI.ProjectsAndTeams.Accounts(_projectCreationVersion);
                 //accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
-                foreach (var member in accountMembers.value)
+                foreach (var member in accountMembers.Value)
                 {
-                    model.accountUsersForWi.Add(member.member.mailAddress);
+                    model.AccountUsersForWi.Add(member.Member.MailAddress);
                 }
             }
             Dictionary<string, string> workItems = new Dictionary<string, string>();
@@ -898,22 +898,22 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     if (templateUsed == "MyHealthClinic")
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("MyHealthClinic") ? model.Environment.repositoryIdList["MyHealthClinic"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, templateUsed);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniqueName, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.RepositoryIdList.ContainsKey("MyHealthClinic") ? model.Environment.RepositoryIdList["MyHealthClinic"] : string.Empty, model.Environment.ProjectId, model.Environment.PullRequests, model.UserMethod, model.AccountUsersForWi, templateUsed);
                     }
                     else if (templateUsed == "SmartHotel360")
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey("PublicWeb") ? model.Environment.repositoryIdList["PublicWeb"] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, templateUsed);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniqueName, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.RepositoryIdList.ContainsKey("PublicWeb") ? model.Environment.RepositoryIdList["PublicWeb"] : string.Empty, model.Environment.ProjectId, model.Environment.PullRequests, model.UserMethod, model.AccountUsersForWi, templateUsed);
                     }
                     else
                     {
-                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.repositoryIdList.ContainsKey(templateUsed) ? model.Environment.repositoryIdList[templateUsed] : string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, templateUsed);
+                        wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniqueName, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, model.Environment.RepositoryIdList.ContainsKey(templateUsed) ? model.Environment.RepositoryIdList[templateUsed] : string.Empty, model.Environment.ProjectId, model.Environment.PullRequests, model.UserMethod, model.AccountUsersForWi, templateUsed);
                     }
                 }
                 else
                 {
-                    wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniquename, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, string.Empty, model.Environment.ProjectId, model.Environment.pullRequests, model.UserMethod, model.accountUsersForWi, templateUsed);
+                    wiMapping = import.ImportWorkitems(workItems, model.ProjectName, model.Environment.UserUniqueName, model.ReadJsonFile(projectSettingsFile), attchmentFilesFolder, string.Empty, model.Environment.ProjectId, model.Environment.PullRequests, model.UserMethod, model.AccountUsersForWi, templateUsed);
                 }
-                AddMessage(model.id, "Work Items created");
+                AddMessage(model.Id, "Work Items created");
             }
             //Creat TestPlans and TestSuites
             List<string> listTestPlansJsonPaths = new List<string>();
@@ -928,7 +928,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             if (listTestPlansJsonPaths.Count > 0)
             {
-                //AddMessage(model.id, "TestPlans, TestSuites and TestCases created");
+                //AddMessage(model.Id, "TestPlans, TestSuites and TestCases created");
             }
             // create varibale groups
 
@@ -978,10 +978,10 @@ namespace AzureDevOpsDemoBuilder.Services
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
                 }
             }
-            bool isBuild = CreateBuildDefinition(model, _buildVersion, model.id);
+            bool isBuild = CreateBuildDefinition(model, _buildVersion, model.Id);
             if (isBuild)
             {
-                AddMessage(model.id, "Build definition created");
+                AddMessage(model.Id, "Build definition created");
             }
 
             //Queue a Build
@@ -998,10 +998,10 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 Directory.GetFiles(releaseDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.ReleaseDefinitions.Add(new ReleaseDef() { FilePath = i }));
             }
-            bool isReleased = CreateReleaseDefinition(model, _releaseVersion, model.id, teamMembers);
+            bool isReleased = CreateReleaseDefinition(model, _releaseVersion, model.Id, teamMembers);
             if (isReleased)
             {
-                AddMessage(model.id, "Release definition created");
+                AddMessage(model.Id, "Release definition created");
             }
 
             //Create query and widgets
@@ -1016,11 +1016,11 @@ namespace AzureDevOpsDemoBuilder.Services
             if (Directory.Exists(dashboardPath))
             {
                 CreateQueryAndWidgets(model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
-                AddMessage(model.id, "Queries, Widgets and Charts created");
+                AddMessage(model.Id, "Queries, Widgets and Charts created");
             }
 
-            StatusMessages[model.id] = "100";
-            return new string[] { model.id, accountName, templateUsed };
+            StatusMessages[model.Id] = "100";
+            return new string[] { model.Id, accountName, templateUsed };
         }
 
         private void ForkGitHubRepository(Project model, AppConfiguration _gitHubConfig)
@@ -1036,15 +1036,15 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         ForkRepos.Fork forkRepos = new ForkRepos.Fork();
                         forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                        if (forkRepos.repositories != null && forkRepos.repositories.Count > 0)
+                        if (forkRepos.Repositories != null && forkRepos.Repositories.Count > 0)
                         {
-                            foreach (var repo in forkRepos.repositories)
+                            foreach (var repo in forkRepos.Repositories)
                             {
                                 GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
                                 GitHubUserDetail userDetail = new GitHubUserDetail();
                                 GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
                                 //HttpResponseMessage listForks = user.ListForks(repo.fullName);
-                                HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
+                                HttpResponseMessage forkResponse = user.ForkRepo(repo.FullName);
                                 if (forkResponse.IsSuccessStatusCode)
                                 {
                                     string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
@@ -1055,7 +1055,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                     {
                                         model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
                                     }
-                                    AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
+                                    AddMessage(model.Id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.UserName));
                                 }
                             }
                         }
@@ -1065,7 +1065,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while forking repo: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while forking repo: " + ex.Message);
             }
         }
 
@@ -1305,7 +1305,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 bool boardColumnResult = objBoard.UpdateBoard(model.ProjectName, BoardColumnsJSON, BoardType, team);
                 if (boardColumnResult)
                 {
-                    model.Environment.BoardRowFieldName = objBoard.rowFieldName;
+                    model.Environment.BoardRowFieldName = objBoard.RowFieldName;
                     result = true;
                 }
                 else if (!(string.IsNullOrEmpty(objBoard.LastFailureMessage)))
@@ -1462,17 +1462,17 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     GetNodesResponse.Nodes projectNode = JsonConvert.DeserializeObject<GetNodesResponse.Nodes>(iterationsJSON);
 
-                    if (projectNode.hasChildren)
+                    if (projectNode.HasChildren)
                     {
-                        foreach (var child in projectNode.children)
+                        foreach (var child in projectNode.Children)
                         {
                             CreateIterationNode(model, objClassification, child, nodes);
                         }
                     }
 
-                    if (projectNode.hasChildren)
+                    if (projectNode.HasChildren)
                     {
-                        foreach (var child in projectNode.children)
+                        foreach (var child in projectNode.Children)
                         {
                             path = string.Empty;
                             MoveIterationNode(model, objClassification, child);
@@ -1485,7 +1485,7 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
-                AddMessage(model.id.ErrorId(), "Error while updating iteration: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while updating iteration: " + ex.Message);
             }
         }
 
@@ -1499,23 +1499,23 @@ namespace AzureDevOpsDemoBuilder.Services
         private void CreateIterationNode(Project model, AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objClassification, GetNodesResponse.Child child, GetNodesResponse.Nodes currentIterations)
         {
             string[] defaultSprints = new string[] { "Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4", "Sprint 5", "Sprint 6", };
-            if (defaultSprints.Contains(child.name))
+            if (defaultSprints.Contains(child.Name))
             {
-                var nd = (currentIterations.hasChildren) ? currentIterations.children.FirstOrDefault(i => i.name == child.name) : null;
+                var nd = (currentIterations.HasChildren) ? currentIterations.Children.FirstOrDefault(i => i.Name == child.Name) : null;
                 if (nd != null)
                 {
-                    child.id = nd.id;
+                    child.Id = nd.Id;
                 }
             }
             else
             {
-                var node = objClassification.CreateIteration(model.ProjectName, child.name);
-                child.id = node.id;
+                var node = objClassification.CreateIteration(model.ProjectName, child.Name);
+                child.Id = node.Id;
             }
 
-            if (child.hasChildren && child.children != null)
+            if (child.HasChildren && child.Children != null)
             {
-                foreach (var c in child.children)
+                foreach (var c in child.Children)
                 {
                     CreateIterationNode(model, objClassification, c, currentIterations);
                 }
@@ -1541,14 +1541,14 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="child"></param>
         private void MoveIterationNode(Project model, AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objClassification, GetNodesResponse.Child child)
         {
-            if (child.hasChildren && child.children != null)
+            if (child.HasChildren && child.Children != null)
             {
-                foreach (var c in child.children)
+                foreach (var c in child.Children)
                 {
-                    path += child.name + "\\";
-                    var nd = objClassification.MoveIteration(model.ProjectName, path, c.id);
+                    path += child.Name + "\\";
+                    var nd = objClassification.MoveIteration(model.ProjectName, path, c.Id);
 
-                    if (c.hasChildren)
+                    if (c.HasChildren)
                     {
                         MoveIterationNode(model, objClassification, c);
                     }
@@ -1566,7 +1566,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                if (settings.type.ToLower() == "scrum" || settings.type.ToLower() == "agile" || settings.type.ToLower() == "basic")
+                if (settings.Type.ToLower() == "scrum" || settings.Type.ToLower() == "agile" || settings.Type.ToLower() == "basic")
                 {
                     string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
 
@@ -1575,14 +1575,14 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + objClassification.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.Id.ErrorId(), "Error while updating sprint items: " + objClassification.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while updating sprint items: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while updating sprint items: " + ex.Message);
 
             }
         }
@@ -1606,7 +1606,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while renaming iterations: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while renaming iterations: " + ex.Message);
             }
         }
 
@@ -1642,16 +1642,16 @@ namespace AzureDevOpsDemoBuilder.Services
                     }
                     if (repositoryDetail.Length > 0)
                     {
-                        model.Environment.repositoryIdList[repositoryDetail[1]] = repositoryDetail[0];
+                        model.Environment.RepositoryIdList[repositoryDetail[1]] = repositoryDetail[0];
                     }
 
                     string jsonSourceCode = model.ReadJsonFile(sourceCodeJSON);
 
                     //update endpoint ids
-                    foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
+                    foreach (string endpoint in model.Environment.ServiceEndpoints.Keys)
                     {
                         string placeHolder = string.Format("${0}$", endpoint);
-                        jsonSourceCode = jsonSourceCode.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
+                        jsonSourceCode = jsonSourceCode.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                     }
 
                     Repository objRepositorySourceCode = new Repository(_retSourceCodeVersion);
@@ -1685,9 +1685,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     string commentFile = Path.GetFileName(pullRequestJsonPath);
                     string repositoryId = string.Empty;
-                    if (model.SelectedTemplate == "MyHealthClinic") { repositoryId = model.Environment.repositoryIdList["MyHealthClinic"]; }
-                    if (model.SelectedTemplate == "SmartHotel360") { repositoryId = model.Environment.repositoryIdList["PublicWeb"]; }
-                    else { repositoryId = model.Environment.repositoryIdList[model.SelectedTemplate]; }
+                    if (model.SelectedTemplate == "MyHealthClinic") { repositoryId = model.Environment.RepositoryIdList["MyHealthClinic"]; }
+                    if (model.SelectedTemplate == "SmartHotel360") { repositoryId = model.Environment.RepositoryIdList["PublicWeb"]; }
+                    else { repositoryId = model.Environment.RepositoryIdList[model.SelectedTemplate]; }
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
                     pullRequestJsonPath = pullRequestJsonPath.Replace("$reviewer$", model.Environment.UserUniqueId);
@@ -1699,15 +1699,15 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
                         {
-                            model.Environment.pullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
+                            model.Environment.PullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
                             commentFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/PullRequests/Comments/" + commentFile);
                             if (File.Exists(commentFile))
                             {
                                 commentFile = model.ReadJsonFile(commentFile);
                                 PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
-                                if (commentsList.count > 0)
+                                if (commentsList.Count > 0)
                                 {
-                                    foreach (PullRequestComments.Value thread in commentsList.value)
+                                    foreach (PullRequestComments.Value thread in commentsList.Value)
                                     {
                                         string threadID = objRepository.CreateCommentThread(repositoryId, pullReqResponse[0], JsonConvert.SerializeObject(thread));
                                         if (!string.IsNullOrEmpty(threadID))
@@ -1730,7 +1730,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating pull Requests: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while creating pull Requests: " + ex.Message);
             }
         }
 
@@ -1766,7 +1766,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         if (!string.IsNullOrEmpty(settings.IsPrivate))
                         {
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
-                            jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.accessToken);
+                            jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.AccessToken);
                         }
                         // File contains "GitHub_" means - it contains GitHub URL, user wanted to fork repo to his github
                         if (fileName.Contains("GitHub_") && model.GitHubFork && model.GitHubToken != null)
@@ -1839,11 +1839,11 @@ namespace AzureDevOpsDemoBuilder.Services
 
                         if (!(string.IsNullOrEmpty(objService.LastFailureMessage)))
                         {
-                            AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + objService.LastFailureMessage + Environment.NewLine);
+                            AddMessage(model.Id.ErrorId(), "Error while creating service endpoint: " + objService.LastFailureMessage + Environment.NewLine);
                         }
                         else
                         {
-                            model.Environment.serviceEndpoints[endpoint.name] = endpoint.id;
+                            model.Environment.ServiceEndpoints[endpoint.Name] = endpoint.Id;
                         }
                     }
                 }
@@ -1851,7 +1851,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating service endpoint: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while creating service endpoint: " + ex.Message);
             }
         }
 
@@ -1862,14 +1862,14 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="testPlanJson"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateTestManagement(List<WIMapData> wiMapping, Project model, string testPlanJson, AzureDevOpsAPI.AppConfiguration _testPlanVersion)
+        private void CreateTestManagement(List<WiMapData> wiMapping, Project model, string testPlanJson, AzureDevOpsAPI.AppConfiguration _testPlanVersion)
         {
             try
             {
                 if (File.Exists(testPlanJson))
                 {
-                    List<WIMapData> testCaseMap = new List<WIMapData>();
-                    testCaseMap = wiMapping.Where(x => x.WIType == "Test Case").ToList();
+                    List<WiMapData> testCaseMap = new List<WiMapData>();
+                    testCaseMap = wiMapping.Where(x => x.WiType == "Test Case").ToList();
 
                     string fileName = Path.GetFileName(testPlanJson);
                     testPlanJson = model.ReadJsonFile(testPlanJson);
@@ -1888,13 +1888,13 @@ namespace AzureDevOpsDemoBuilder.Services
                             testSuiteJson = testSuiteJson.Replace("$planID$", testPlanResponse[0]).Replace("$planName$", testPlanResponse[1]);
                             foreach (var wi in wiMapping)
                             {
-                                string placeHolder = string.Format("${0}$", wi.OldID);
-                                testSuiteJson = testSuiteJson.Replace(placeHolder, wi.NewID);
+                                string placeHolder = string.Format("${0}$", wi.OldId);
+                                testSuiteJson = testSuiteJson.Replace(placeHolder, wi.NewId);
                             }
                             TestSuite.TestSuites listTestSuites = JsonConvert.DeserializeObject<TestSuite.TestSuites>(testSuiteJson);
-                            if (listTestSuites.count > 0)
+                            if (listTestSuites.Count > 0)
                             {
-                                foreach (var TS in listTestSuites.value)
+                                foreach (var TS in listTestSuites.Value)
                                 {
                                     string[] testSuiteResponse = new string[2];
                                     string testSuiteJSON = JsonConvert.SerializeObject(TS);
@@ -1906,9 +1906,9 @@ namespace AzureDevOpsDemoBuilder.Services
                                         {
                                             foreach (var wiMap in testCaseMap)
                                             {
-                                                if (wiMap.OldID == id)
+                                                if (wiMap.OldId == id)
                                                 {
-                                                    testCasesToAdd = testCasesToAdd + wiMap.NewID + ",";
+                                                    testCasesToAdd = testCasesToAdd + wiMap.NewId + ",";
                                                 }
                                             }
                                         }
@@ -1924,7 +1924,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message);
             }
         }
 
@@ -1960,28 +1960,28 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
 
                         //update repositoryId 
-                        foreach (string repository in model.Environment.repositoryIdList.Keys)
+                        foreach (string repository in model.Environment.RepositoryIdList.Keys)
                         {
                             string placeHolder = string.Format("${0}$", repository);
-                            jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
+                            jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.RepositoryIdList[repository]);
                         }
                         //update endpoint ids
-                        foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
+                        foreach (string endpoint in model.Environment.ServiceEndpoints.Keys)
                         {
                             string placeHolder = string.Format("${0}$", endpoint);
-                            jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
+                            jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                         }
 
-                        string[] buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
+                        (string buildId, string buildName) buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
 
                         if (!(string.IsNullOrEmpty(objBuild.LastFailureMessage)))
                         {
                             AddMessage(id.ErrorId(), "Error while creating build definition: " + objBuild.LastFailureMessage + Environment.NewLine);
                         }
-                        if (buildResult.Length > 0)
+                        if (!string.IsNullOrEmpty(buildResult.buildId))
                         {
-                            buildDef.Id = buildResult[0];
-                            buildDef.Name = buildResult[1];
+                            buildDef.Id = buildResult.buildId;
+                            buildDef.Name = buildResult.buildName;
                         }
                     }
                     flag = true;
@@ -2019,14 +2019,14 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     if (!string.IsNullOrEmpty(objBuild.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while Queueing build: " + objBuild.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.Id.ErrorId(), "Error while Queueing build: " + objBuild.LastFailureMessage + Environment.NewLine);
                     }
                 }
             }
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while Queueing Build: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while Queueing Build: " + ex.Message);
             }
         }
 
@@ -2044,7 +2044,7 @@ namespace AzureDevOpsDemoBuilder.Services
             bool flag = false;
             try
             {
-                var teamMember = teamMembers.value.FirstOrDefault();
+                var teamMember = teamMembers.Value.FirstOrDefault();
                 foreach (ReleaseDef relDef in model.ReleaseDefinitions)
                 {
                     if (File.Exists(relDef.FilePath))
@@ -2053,9 +2053,9 @@ namespace AzureDevOpsDemoBuilder.Services
                         string jsonReleaseDefinition = model.ReadJsonFile(relDef.FilePath);
                         jsonReleaseDefinition = jsonReleaseDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
-                                             .Replace("$OwnerUniqueName$", teamMember.identity.uniqueName)
-                                             .Replace("$OwnerId$", teamMember.identity.id)
-                                  .Replace("$OwnerDisplayName$", teamMember.identity.displayName);
+                                             .Replace("$OwnerUniqueName$", teamMember.Identity.UniqueName)
+                                             .Replace("$OwnerId$", teamMember.Identity.Id)
+                                  .Replace("$OwnerDisplayName$", teamMember.Identity.DisplayName);
 
                         if (model.Environment.VariableGroups.Count > 0)
                         {
@@ -2068,7 +2068,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         //Adding randon UUID to website name
                         string uuid = Guid.NewGuid().ToString();
                         uuid = uuid.Substring(0, 8);
-                        jsonReleaseDefinition = jsonReleaseDefinition.Replace("$UUID$", uuid).Replace("$RandomNumber$", uuid).Replace("$AccountName$", model.accountName); ;
+                        jsonReleaseDefinition = jsonReleaseDefinition.Replace("$UUID$", uuid).Replace("$RandomNumber$", uuid).Replace("$AccountName$", model.AccountName); ;
 
                         //update agent queue ids
                         foreach (string queue in model.Environment.AgentQueues.Keys)
@@ -2078,10 +2078,10 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
 
                         //update endpoint ids
-                        foreach (string endpoint in model.Environment.serviceEndpoints.Keys)
+                        foreach (string endpoint in model.Environment.ServiceEndpoints.Keys)
                         {
                             string placeHolder = string.Format("${0}$", endpoint);
-                            jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
+                            jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                         }
 
                         foreach (BuildDef objBuildDef in model.BuildDefinitions)
@@ -2090,17 +2090,18 @@ namespace AzureDevOpsDemoBuilder.Services
                             string placeHolder = string.Format("${0}-id$", objBuildDef.Name);
                             jsonReleaseDefinition = jsonReleaseDefinition.Replace(placeHolder, objBuildDef.Id);
                         }
-                        string[] releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
+
+                        (string releaseDefId, string releaseDefName) releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
                         if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
                         {
                             if (objRelease.LastFailureMessage.TrimEnd() == "Tasks with versions 'ARM Outputs:3.*' are not valid for deploy job 'Function' in stage Azure-Dev.")
                             {
                                 jsonReleaseDefinition = jsonReleaseDefinition.Replace("3.*", "4.*");
                                 releaseDef = objRelease.CreateReleaseDefinition(jsonReleaseDefinition, model.ProjectName);
-                                if (releaseDef.Length > 0)
+                                if (!string.IsNullOrWhiteSpace(releaseDef.releaseDefId))
                                 {
-                                    relDef.Id = releaseDef[0];
-                                    relDef.Name = releaseDef[1];
+                                    relDef.Id = releaseDef.releaseDefId;
+                                    relDef.Name = releaseDef.releaseDefName;
                                 }
                                 if (!string.IsNullOrEmpty(relDef.Name))
                                 {
@@ -2108,8 +2109,8 @@ namespace AzureDevOpsDemoBuilder.Services
                                 }
                             }
                         }
-                        relDef.Id = releaseDef[0];
-                        relDef.Name = releaseDef[1];
+                        relDef.Id = releaseDef.releaseDefId;
+                        relDef.Name = releaseDef.releaseDefName;
 
                         if (!(string.IsNullOrEmpty(objRelease.LastFailureMessage)))
                         {
@@ -2152,7 +2153,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                 if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                 {
-                    AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
+                    AddMessage(model.Id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
                 }
 
                 foreach (string query in listQueries)
@@ -2167,7 +2168,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     if (!string.IsNullOrEmpty(_newobjQuery.LastFailureMessage))
                     {
-                        AddMessage(model.id.ErrorId(), "Error while creating query: " + _newobjQuery.LastFailureMessage + Environment.NewLine);
+                        AddMessage(model.Id.ErrorId(), "Error while creating query: " + _newobjQuery.LastFailureMessage + Environment.NewLine);
                     }
 
                 }
@@ -2176,7 +2177,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (File.Exists(dashBoardTemplate))
                 {
                     dynamic dashBoard = new System.Dynamic.ExpandoObject();
-                    dashBoard.name = "Working";
+                    dashBoard.Name = "Working";
                     dashBoard.position = 4;
 
                     string jsonDashBoard = Newtonsoft.Json.JsonConvert.SerializeObject(dashBoard);
@@ -2208,12 +2209,12 @@ namespace AzureDevOpsDemoBuilder.Services
 
                             dashBoardTemplate = dashBoardTemplate.Replace("$RidesAPIReleaseId$", ridesApireleaseDefId)
                             .Replace("$RidesAPIBuildId$", ridesApiBuild)
-                            .Replace("$repositoryId$", model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Value)
+                            .Replace("$repositoryId$", model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Value)
                             .Replace("$IOSBuildId$", iosBuildDefId).Replace("$IOSReleaseId$", iosReleaseDefId).Replace("$IOSEnv1$", iosEnvironmentIds[0].ToString()).Replace("$IOSEnv2$", iosEnvironmentIds[1].ToString())
                             .Replace("$Xamarin.iOS$", xamarin_IOSBuild)
                             .Replace("$Xamarin.Droid$", xamarin_DroidBuild)
                             .Replace("$AndroidBuildId$", androidbuildDefId).Replace("$AndroidreleaseDefId$", androidreleaseDefId).Replace("$AndroidEnv1$", androidEnvironmentIds[0].ToString()).Replace("$AndroidEnv2$", androidEnvironmentIds[1].ToString())
-                            .Replace("$OpenUserStoriesId$", openUserStories.id)
+                            .Replace("$OpenUserStoriesId$", openUserStories.Id)
                             .Replace("$projectId$", model.Environment.ProjectId);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2230,14 +2231,14 @@ namespace AzureDevOpsDemoBuilder.Services
                             QueryResponse unfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work_WI", "Shared%20Queries");
 
 
-                            dashBoardTemplate = dashBoardTemplate.Replace("$Feedback$", feedBack.id).
-                                         Replace("$AllItems$", queryResults.Where(x => x.name == "All Items_WI").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Items_WI").FirstOrDefault().id : string.Empty).
-                                         Replace("$UserStories$", queryResults.Where(x => x.name == "User Stories").FirstOrDefault() != null ? queryResults.Where(x => x.name == "User Stories").FirstOrDefault().id : string.Empty).
-                                         Replace("$TestCase$", queryResults.Where(x => x.name == "Test Case-Readiness").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Case-Readiness").FirstOrDefault().id : string.Empty).
+                            dashBoardTemplate = dashBoardTemplate.Replace("$Feedback$", feedBack.Id).
+                                         Replace("$AllItems$", queryResults.Where(x => x.Name == "All Items_WI").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "All Items_WI").FirstOrDefault().Id : string.Empty).
+                                         Replace("$UserStories$", queryResults.Where(x => x.Name == "User Stories").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "User Stories").FirstOrDefault().Id : string.Empty).
+                                         Replace("$TestCase$", queryResults.Where(x => x.Name == "Test Case-Readiness").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Test Case-Readiness").FirstOrDefault().Id : string.Empty).
                                          Replace("$teamID$", "").
                                          Replace("$teamName$", model.ProjectName + " Team").
                                          Replace("$projectID$", model.Environment.ProjectId).
-                                         Replace("$Unfinished Work$", unfinishedWork.id).
+                                         Replace("$Unfinished Work$", unfinishedWork.Id).
                                          Replace("$projectId$", model.Environment.ProjectId).
                                          Replace("$projectName$", model.ProjectName);
 
@@ -2245,19 +2246,19 @@ namespace AzureDevOpsDemoBuilder.Services
                             if (model.SelectedTemplate == "MyHealthClinic")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$ReleaseDefId$", model.ReleaseDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault().Id : string.Empty).
-                                             Replace("$ActiveBugs$", queryResults.Where(x => x.name == "Active Bugs_WI").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Active Bugs_WI").FirstOrDefault().id : string.Empty).
+                                             Replace("$ActiveBugs$", queryResults.Where(x => x.Name == "Active Bugs_WI").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Active Bugs_WI").FirstOrDefault().Id : string.Empty).
                                              Replace("$MyHealthClinicE2E$", model.BuildDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault().Id : string.Empty).
-                                                 Replace("$RepositoryId$", model.Environment.repositoryIdList.Any(i => i.Key.ToLower().Contains("myhealthclinic")) ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myhealthclinic").FirstOrDefault().Value : string.Empty);
+                                                 Replace("$RepositoryId$", model.Environment.RepositoryIdList.Any(i => i.Key.ToLower().Contains("myhealthclinic")) ? model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "myhealthclinic").FirstOrDefault().Value : string.Empty);
                             }
                             if (model.SelectedTemplate == "PartsUnlimited" || model.SelectedTemplate == "PartsUnlimited-agile")
                             {
                                 QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress_WI", "Shared%20Queries");
 
                                 dashBoardTemplate = dashBoardTemplate.Replace("$ReleaseDefId$", model.ReleaseDefinitions.Where(x => x.Name == "PartsUnlimitedE2E").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PartsUnlimitedE2E").FirstOrDefault().Id : string.Empty).
-                                          Replace("$ActiveBugs$", queryResults.Where(x => x.name == "Critical Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Critical Bugs").FirstOrDefault().id : string.Empty).
+                                          Replace("$ActiveBugs$", queryResults.Where(x => x.Name == "Critical Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Critical Bugs").FirstOrDefault().Id : string.Empty).
                                           Replace("$PartsUnlimitedE2E$", model.BuildDefinitions.Where(x => x.Name == "PartsUnlimitedE2E").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "PartsUnlimitedE2E").FirstOrDefault().Id : string.Empty)
-                                          .Replace("$WorkinProgress$", workInProgress.id)
-                                .Replace("$RepositoryId$", model.Environment.repositoryIdList.Any(i => i.Key.ToLower().Contains("partsunlimited")) ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "partsunlimited").FirstOrDefault().Value : string.Empty);
+                                          .Replace("$WorkinProgress$", workInProgress.Id)
+                                .Replace("$RepositoryId$", model.Environment.RepositoryIdList.Any(i => i.Key.ToLower().Contains("partsunlimited")) ? model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "partsunlimited").FirstOrDefault().Value : string.Empty);
 
                             }
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2271,14 +2272,14 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             QueryResponse unfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work_WI", "Shared%20Queries");
-                            string allItems = queryResults.Where(x => x.name == "All Items_WI").FirstOrDefault().id;
-                            string repositoryId = model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Key;
+                            string allItems = queryResults.Where(x => x.Name == "All Items_WI").FirstOrDefault().Id;
+                            string repositoryId = model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "bikesharing360").FirstOrDefault().Key;
                             string bikeSharing360_PublicWeb = model.BuildDefinitions.Where(x => x.Name == "BikeSharing360-PublicWeb").FirstOrDefault().Id;
 
                             dashBoardTemplate = dashBoardTemplate.Replace("$BikeSharing360-PublicWeb$", bikeSharing360_PublicWeb)
                                          .Replace("$All Items$", allItems)
                                          .Replace("$repositoryId$", repositoryId)
-                                         .Replace("$Unfinished Work$", unfinishedWork.id)
+                                         .Replace("$Unfinished Work$", unfinishedWork.Id)
                                          .Replace("$projectId$", model.Environment.ProjectId);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2293,14 +2294,14 @@ namespace AzureDevOpsDemoBuilder.Services
                             var buildDefId = model.BuildDefinitions.FirstOrDefault();
                             dashBoardTemplate = dashBoardTemplate.Replace("$BuildDefId$", buildDefId.Id)
                                   .Replace("$projectId$", model.Environment.ProjectId)
-                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
-                                  .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Test Plan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Feature$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
-                                         .Replace("$RepoMyShuttleDocker$", model.Environment.repositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().ToString() != "" ? model.Environment.repositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().Value : string.Empty);
+                                  .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty)
+                                  .Replace("$Bugs$", queryResults.Where(x => x.Name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Bugs").FirstOrDefault().Id : string.Empty)
+                                  .Replace("$AllWorkItems$", queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault().Id : string.Empty)
+                                  .Replace("$Test Plan$", queryResults.Where(x => x.Name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Test Plans").FirstOrDefault().Id : string.Empty)
+                                  .Replace("$Test Cases$", queryResults.Where(x => x.Name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Test Cases").FirstOrDefault().Id : string.Empty)
+                                  .Replace("$Feature$", queryResults.Where(x => x.Name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Feature").FirstOrDefault().Id : string.Empty)
+                                  .Replace("$Tasks$", queryResults.Where(x => x.Name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Tasks").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$RepoMyShuttleDocker$", model.Environment.RepositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().ToString() != "" ? model.Environment.RepositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().Value : string.Empty);
 
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2313,14 +2314,14 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             dashBoardTemplate = dashBoardTemplate
-                            .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
-                            .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
-                            .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                            .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
-                            .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
-                            .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
-                            .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
-                            .Replace("$TestSuite$", queryResults.Where(x => x.name == "Test Suites").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Suites").FirstOrDefault().id : string.Empty);
+                            .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty)
+                            .Replace("$Bugs$", queryResults.Where(x => x.Name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Bugs").FirstOrDefault().Id : string.Empty)
+                            .Replace("$AllWorkItems$", queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault().Id : string.Empty)
+                            .Replace("$TestPlan$", queryResults.Where(x => x.Name == "Test Plans").FirstOrDefault().Id != null ? queryResults.Where(x => x.Name == "Test Plans").FirstOrDefault().Id : string.Empty)
+                            .Replace("$Test Cases$", queryResults.Where(x => x.Name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Test Cases").FirstOrDefault().Id : string.Empty)
+                            .Replace("$Features$", queryResults.Where(x => x.Name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Feature").FirstOrDefault().Id : string.Empty)
+                            .Replace("$Tasks$", queryResults.Where(x => x.Name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Tasks").FirstOrDefault().Id : string.Empty)
+                            .Replace("$TestSuite$", queryResults.Where(x => x.Name == "Test Suites").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Test Suites").FirstOrDefault().Id : string.Empty);
 
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2333,15 +2334,15 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
 
-                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
-                                         .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                                         .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
-                                         .Replace("$RepoMyShuttleCalc$", model.Environment.repositoryIdList["MyShuttleCalc"] != null ? model.Environment.repositoryIdList["MyShuttleCalc"] : string.Empty)
-                                         .Replace("$TestPlan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
-                                         .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
-                                         .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
-                                         .Replace("$Features$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
-                                         .Replace("$RepoMyShuttle2$", model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().ToString() != "" ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().Value : string.Empty);
+                            dashBoardTemplate = dashBoardTemplate.Replace("$TestCases$", queryResults.Where(x => x.Name == "Test Cases").FirstOrDefault().Id != null ? queryResults.Where(x => x.Name == "Test Cases").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$AllWorkItems$", queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$RepoMyShuttleCalc$", model.Environment.RepositoryIdList["MyShuttleCalc"] != null ? model.Environment.RepositoryIdList["MyShuttleCalc"] : string.Empty)
+                                         .Replace("$TestPlan$", queryResults.Where(x => x.Name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Test Plans").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$Tasks$", queryResults.Where(x => x.Name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Tasks").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$Bugs$", queryResults.Where(x => x.Name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Bugs").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$Features$", queryResults.Where(x => x.Name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Feature").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$RepoMyShuttle2$", model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().ToString() != "" ? model.Environment.RepositoryIdList.Where(x => x.Key.ToLower() == "myshuttle2").FirstOrDefault().Value : string.Empty);
 
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2353,33 +2354,33 @@ namespace AzureDevOpsDemoBuilder.Services
                         if (isDashboardDeleted)
                         {
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
-                            dashBoardTemplate = dashBoardTemplate.Replace("$Task$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
-                                         .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                                         .Replace("$Feature$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
+                            dashBoardTemplate = dashBoardTemplate.Replace("$Task$", queryResults.Where(x => x.Name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Tasks").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$AllWorkItems$", queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "All Work Items").FirstOrDefault().Id : string.Empty)
+                                         .Replace("$Feature$", queryResults.Where(x => x.Name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Feature").FirstOrDefault().Id : string.Empty)
                                          .Replace("$Projectid$", model.Environment.ProjectId)
-                                         .Replace("$Epic$", queryResults.Where(x => x.name == "Epics").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Epics").FirstOrDefault().id : string.Empty);
+                                         .Replace("$Epic$", queryResults.Where(x => x.Name == "Epics").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Epics").FirstOrDefault().Id : string.Empty);
 
                             if (model.SelectedTemplate.ToLower() == "docker")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$BuildDocker$", model.BuildDefinitions.Where(x => x.Name == "MHCDocker.build").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "MHCDocker.build").FirstOrDefault().Id : string.Empty)
                                 .Replace("$ReleaseDocker$", model.ReleaseDefinitions.Where(x => x.Name == "MHCDocker.release").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "MHCDocker.release").FirstOrDefault().Id : string.Empty)
-                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
+                                  .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty);
                             }
                             else if (model.SelectedTemplate.ToLower() == "php")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$buildPHP$", model.BuildDefinitions.Where(x => x.Name == "PHP").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "PHP").FirstOrDefault().Id : string.Empty)
                         .Replace("$releasePHP$", model.ReleaseDefinitions.Where(x => x.Name == "PHP").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PHP").FirstOrDefault().Id : string.Empty)
-                                 .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
+                                 .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty);
                             }
                             else if (model.SelectedTemplate.ToLower() == "sonarqube")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$BuildSonarQube$", model.BuildDefinitions.Where(x => x.Name == "SonarQube").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "SonarQube").FirstOrDefault().Id : string.Empty)
-                                .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
+                                .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty);
 
                             }
                             else if (model.SelectedTemplate.ToLower() == "github")
                             {
-                                dashBoardTemplate = dashBoardTemplate.Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
+                                dashBoardTemplate = dashBoardTemplate.Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty)
                                              .Replace("$buildGitHub$", model.BuildDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault().Id : string.Empty)
                                              .Replace("$Hosted$", model.Environment.AgentQueues["Hosted"].ToString())
                                              .Replace("$releaseGitHub$", model.ReleaseDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault().Id : string.Empty);
@@ -2387,14 +2388,14 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             else if (model.SelectedTemplate.ToLower() == "whitesource bolt")
                             {
-                                dashBoardTemplate = dashBoardTemplate.Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
+                                dashBoardTemplate = dashBoardTemplate.Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty)
                                           .Replace("$buildWhiteSource$", model.BuildDefinitions.Where(x => x.Name == "WhiteSourceBolt").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "WhiteSourceBolt").FirstOrDefault().Id : string.Empty);
                             }
 
                             else if (model.SelectedTemplate == "DeploymentGroups")
                             {
                                 QueryResponse WorkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress_WI", "Shared%20Queries");
-                                dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WorkInProgress.id);
+                                dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WorkInProgress.Id);
                             }
 
                             else if (model.SelectedTemplate == "Octopus")
@@ -2403,7 +2404,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 if (BuildDefId != null)
                                 {
                                     dashBoardTemplate = dashBoardTemplate.Replace("$BuildDefId$", BuildDefId.Id)
-                                            .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
+                                            .Replace("$PBI$", queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.Name == "Product Backlog Items").FirstOrDefault().Id : string.Empty);
                                 }
                             }
 
@@ -2435,21 +2436,21 @@ namespace AzureDevOpsDemoBuilder.Services
                             QueryResponse unfinishedWork = objQuery.GetQueryByPathAndName(model.ProjectName, "Unfinished Work_WI", "Shared%20Queries");
                             QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress_WI", "Shared%20Queries");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
-                            dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.id)
+                            dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.Id)
                                 .Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty)
                                 .Replace("$PublicWebBuild$", model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "SmartHotel_Petchecker-Web").FirstOrDefault().Id : string.Empty)
-                                .Replace("$DefaultTeamId$", defaultTeam.id != null ? defaultTeam.id : string.Empty).Replace("$AllItems$", allItems.id != null ? allItems.id : string.Empty)
-                                .Replace("$BacklogBoardWI$", backlogBoardWI.id != null ? backlogBoardWI.id : string.Empty)
-                                .Replace("$StateofTestCases$", stateofTestCase.id != null ? stateofTestCase.id : string.Empty)
-                                .Replace("$Feedback$", feedback.id != null ? feedback.id : string.Empty)
-                                .Replace("$RepoPublicWeb$", model.Environment.repositoryIdList.ContainsKey("PublicWeb") ? model.Environment.repositoryIdList["PublicWeb"] : string.Empty)
-                                .Replace("$MobileTeamWork$", mobileTeamWork.id != null ? mobileTeamWork.id : string.Empty).Replace("$WebTeamWork$", webTeamWork.id != null ? webTeamWork.id : string.Empty)
-                                .Replace("$Bugs$", bugs.id != null ? bugs.id : string.Empty)
-                                .Replace("$sprint2$", sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 2").FirstOrDefault().id : string.Empty)
-                                .Replace("$sprint3$", sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault() != null ? sprints.value.Where(x => x.name == "Sprint 3").FirstOrDefault().id : string.Empty)
+                                .Replace("$DefaultTeamId$", defaultTeam.Id != null ? defaultTeam.Id : string.Empty).Replace("$AllItems$", allItems.Id != null ? allItems.Id : string.Empty)
+                                .Replace("$BacklogBoardWI$", backlogBoardWI.Id != null ? backlogBoardWI.Id : string.Empty)
+                                .Replace("$StateofTestCases$", stateofTestCase.Id != null ? stateofTestCase.Id : string.Empty)
+                                .Replace("$Feedback$", feedback.Id != null ? feedback.Id : string.Empty)
+                                .Replace("$RepoPublicWeb$", model.Environment.RepositoryIdList.ContainsKey("PublicWeb") ? model.Environment.RepositoryIdList["PublicWeb"] : string.Empty)
+                                .Replace("$MobileTeamWork$", mobileTeamWork.Id != null ? mobileTeamWork.Id : string.Empty).Replace("$WebTeamWork$", webTeamWork.Id != null ? webTeamWork.Id : string.Empty)
+                                .Replace("$Bugs$", bugs.Id != null ? bugs.Id : string.Empty)
+                                .Replace("$sprint2$", sprints.Value.Where(x => x.Name == "Sprint 2").FirstOrDefault() != null ? sprints.Value.Where(x => x.Name == "Sprint 2").FirstOrDefault().Id : string.Empty)
+                                .Replace("$sprint3$", sprints.Value.Where(x => x.Name == "Sprint 3").FirstOrDefault() != null ? sprints.Value.Where(x => x.Name == "Sprint 3").FirstOrDefault().Id : string.Empty)
                                 .Replace("$startDate$", startdate)
-                                .Replace("$BugswithoutRepro$", bugsWithoutReproSteps.id != null ? bugsWithoutReproSteps.id : string.Empty).Replace("$UnfinishedWork$", unfinishedWork.id != null ? unfinishedWork.id : string.Empty)
-                                .Replace("$RepoSmartHotel360$", model.Environment.repositoryIdList.ContainsKey("SmartHotel360") ? model.Environment.repositoryIdList["SmartHotel360"] : string.Empty)
+                                .Replace("$BugswithoutRepro$", bugsWithoutReproSteps.Id != null ? bugsWithoutReproSteps.Id : string.Empty).Replace("$UnfinishedWork$", unfinishedWork.Id != null ? unfinishedWork.Id : string.Empty)
+                                .Replace("$RepoSmartHotel360$", model.Environment.RepositoryIdList.ContainsKey("SmartHotel360") ? model.Environment.RepositoryIdList["SmartHotel360"] : string.Empty)
                                 .Replace("$PublicWebSiteCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault().Id : string.Empty);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
@@ -2463,7 +2464,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress_WI", "Shared%20Queries");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
-                            dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.id);
+                            dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", workInProgress.Id);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
@@ -2474,12 +2475,12 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (OperationCanceledException oce)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n");
+                AddMessage(model.Id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n");
             }
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message);
             }
         }
 
@@ -2502,9 +2503,9 @@ namespace AzureDevOpsDemoBuilder.Services
                     Dictionary<string, bool> dict = new Dictionary<string, bool>();
                     foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                     {
-                        if (!dict.ContainsKey(ext.extensionName))
+                        if (!dict.ContainsKey(ext.ExtensionName))
                         {
-                            dict.Add(ext.extensionName, false);
+                            dict.Add(ext.ExtensionName, false);
                         }
                     }
                     //var connection = new VssConnection(new Uri(string.Format("https://{0}.visualstudio.com", accountName)), new Microsoft.VisualStudio.Services.OAuth.VssOAuthAccessTokenCredential(PAT));// VssOAuthCredential(PAT));
@@ -2523,9 +2524,9 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         foreach (var extension in template.Extensions)
                         {
-                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.extensionId.ToLower() == ext.ExtensionName.ToLower())
+                            if (extension.ExtensionName.ToLower() == ext.ExtensionDisplayName.ToLower() && extension.ExtensionId.ToLower() == ext.ExtensionName.ToLower())
                             {
-                                dict[extension.extensionName] = true;
+                                dict[extension.ExtensionName] = true;
                             }
                         }
                     }
@@ -2535,8 +2536,8 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         Parallel.ForEach(required, async req =>
                         {
-                            string publisherName = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().publisherId;
-                            string extensionName = template.Extensions.Where(x => x.extensionName == req.Key).FirstOrDefault().extensionId;
+                            string publisherName = template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().PublisherId;
+                            string extensionName = template.Extensions.Where(x => x.ExtensionName == req.Key).FirstOrDefault().ExtensionId;
                             try
                             {
                                 InstalledExtension extension = null;
@@ -2544,11 +2545,11 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             catch (OperationCanceledException cancelException)
                             {
-                                AddMessage(model.id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + Environment.NewLine);
+                                AddMessage(model.Id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + Environment.NewLine);
                             }
                             catch (Exception exc)
                             {
-                                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + exc.Message);
+                                AddMessage(model.Id.ErrorId(), "Error while Installing extensions: " + exc.Message);
                             }
                         });
                     }
@@ -2558,7 +2559,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while Installing extensions: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while Installing extensions: " + ex.Message);
                 return false;
             }
         }
@@ -2591,7 +2592,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             string dirName = dirSplit[dirSplit.Length - 1];
                             string sampleContent = File.ReadAllText(templatesFolder + "//SampleContent.json");
                             sampleContent = sampleContent.Replace("$Content$", "Sample wiki content");
-                            bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.id, dirName);//check is created
+                            bool isPage = manageWiki.CreateUpdatePages(sampleContent, model.Environment.ProjectName, projectWikiResponse.Id, dirName);//check is created
 
                             if (isPage)
                             {
@@ -2610,12 +2611,12 @@ namespace AzureDevOpsDemoBuilder.Services
                                         string newContent = JsonConvert.SerializeObject(dic);
                                         if (fileName == dirName)
                                         {
-                                            manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.id, fileName);
-                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                            manageWiki.DeletePage(model.Environment.ProjectName, projectWikiResponse.Id, fileName);
+                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.Id, fileName);
                                         }
                                         else
                                         {
-                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.id, fileName);
+                                            isCreated = manageWiki.CreateUpdatePages(newContent, model.Environment.ProjectName, projectWikiResponse.Id, fileName);
                                         }
                                         if (isCreated)
                                         {
@@ -2632,7 +2633,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                                 if (!string.IsNullOrEmpty(movePages))
                                                 {
                                                     movePages = movePages.Replace("$ParentFile$", dirName).Replace("$ChildFile$", child);
-                                                    manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.id);
+                                                    manageWiki.MovePages(movePages, model.Environment.ProjectId, projectWikiResponse.Id);
                                                 }
                                             }
                                         }
@@ -2666,20 +2667,20 @@ namespace AzureDevOpsDemoBuilder.Services
                             string[] nameExtension = wiki.Split('\\');
                             string name = (nameExtension[nameExtension.Length - 1]).Split('.')[0];
                             string json = model.ReadJsonFile(wiki);
-                            foreach (string repository in model.Environment.repositoryIdList.Keys)
+                            foreach (string repository in model.Environment.RepositoryIdList.Keys)
                             {
                                 string placeHolder = string.Format("${0}$", repository);
-                                json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
+                                json = json.Replace(placeHolder, model.Environment.RepositoryIdList[repository])
                                     .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
                             }
                             bool isWiki = manageWiki.CreateCodeWiki(json);
                             if (isWiki)
                             {
-                                AddMessage(model.id, "Created Wiki");
+                                AddMessage(model.Id, "Created Wiki");
                             }
                             else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
                             {
-                                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                                AddMessage(model.Id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
                             }
                         }
                     }
@@ -2688,7 +2689,7 @@ namespace AzureDevOpsDemoBuilder.Services
             catch (Exception ex)
             {
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
+                AddMessage(model.Id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
         public void CreateDeploymentGroup(string templateFolder, Project model, AppConfiguration _deploymentGroup)
@@ -2702,7 +2703,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     DeploymentGroup deploymentGroup = new DeploymentGroup(_deploymentGroup);
                     bool isCreated = deploymentGroup.CreateDeploymentGroup(json);
-                    if (isCreated) { } else if (!string.IsNullOrEmpty(deploymentGroup.LastFailureMessage)) { AddMessage(model.id.ErrorId(), "Error while creating deployment group: " + deploymentGroup.LastFailureMessage); }
+                    if (isCreated) { } else if (!string.IsNullOrEmpty(deploymentGroup.LastFailureMessage)) { AddMessage(model.Id.ErrorId(), "Error while creating deployment group: " + deploymentGroup.LastFailureMessage); }
                 }
             }
         }
@@ -2747,22 +2748,22 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (groups.IsSuccessStatusCode)
                 {
                     dynamic obj = JsonConvert.DeserializeObject<dynamic>(groups.Content.ReadAsStringAsync().Result);
-                    string getGroupDescriptor = string.Format("_apis/graph/groups?scopeDescriptor={0}&api-version={1}", Convert.ToString(obj.value), con.VersionNumber);
+                    string getGroupDescriptor = string.Format("_apis/graph/groups?scopeDescriptor={0}&api-version={1}", Convert.ToString(obj.Value), con.VersionNumber);
                     var getAllGroups = httpService.Get(getGroupDescriptor);
                     if (getAllGroups.IsSuccessStatusCode)
                     {
                         GetAllGroups.GroupList allGroups = JsonConvert.DeserializeObject<GetAllGroups.GroupList>(getAllGroups.Content.ReadAsStringAsync().Result);
-                        foreach (var group in allGroups.value)
+                        foreach (var group in allGroups.Value)
                         {
-                            if (group.displayName.ToLower() == "project administrators")
+                            if (group.DisplayName.ToLower() == "project administrators")
                             {
-                                string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.descriptor), con.VersionNumber);
+                                string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.Descriptor), con.VersionNumber);
                                 var json = CreatePrincipalReqBody(model.Email);
                                 var response = httpService.Post(json, urpParams);
                             }
-                            if (group.displayName.ToLower() == model.ProjectName.ToLower() + " team")
+                            if (group.DisplayName.ToLower() == model.ProjectName.ToLower() + " team")
                             {
-                                string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.descriptor), con.VersionNumber);
+                                string urpParams = string.Format("_apis/graph/users?groupDescriptors={0}&api-version={1}", Convert.ToString(group.Descriptor), con.VersionNumber);
                                 var json = CreatePrincipalReqBody(model.Email);
                                 var response = httpService.Post(json, urpParams);
                             }
@@ -2804,7 +2805,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     Dictionary<string, bool> dict = new Dictionary<string, bool>();
                     foreach (RequiredExtensions.ExtensionWithLink ext in template.Extensions)
                     {
-                        dict.Add(ext.extensionName, false);
+                        dict.Add(ext.ExtensionName, false);
                     }
                     //pat = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "", pat)));//configuration.PersonalAccessToken;
 
@@ -2825,9 +2826,9 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         foreach (var extension in template.Extensions)
                         {
-                            if (extension.extensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
+                            if (extension.ExtensionName.ToLower() == ext.ExtensionDisplayName.ToLower())
                             {
-                                dict[extension.extensionName] = true;
+                                dict[extension.ExtensionName] = true;
                             }
                         }
                     }
@@ -2856,14 +2857,14 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 string jsonString = model.ReadJsonFile(filePath);
                 GetVariableGroups.Groups groups = JsonConvert.DeserializeObject<GetVariableGroups.Groups>(jsonString);
-                if (groups.count > 0)
+                if (groups.Count > 0)
                 {
-                    foreach (var group in groups.value)
+                    foreach (var group in groups.Value)
                     {
                         GetVariableGroups.VariableGroupsCreateResponse response = variableGroups.PostVariableGroups(JsonConvert.SerializeObject(group));
-                        if (!string.IsNullOrEmpty(response.name))
+                        if (!string.IsNullOrEmpty(response.Name))
                         {
-                            model.Environment.VariableGroups.Add(response.id, response.name);
+                            model.Environment.VariableGroups.Add(response.Id, response.Name);
                         }
                     }
                 }

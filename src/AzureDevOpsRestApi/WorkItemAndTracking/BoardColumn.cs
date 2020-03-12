@@ -1,18 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using NLog;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
-using NLog;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class BoardColumn : ApiServiceBase
     {
-        public string rowFieldName;
+        public string RowFieldName;
         public BoardColumn(IAppConfiguration configuration) : base(configuration) { }
-        Logger logger = LogManager.GetLogger("*");
+         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Update kanban board colums styles
         /// </summary>
@@ -21,72 +22,85 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public bool UpdateBoard(string projectName, string json, string boardType, string teamName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                List<Scrum.Columns> scrumColumns = new List<Scrum.Columns>();
-
-                string newColID = "";
-                string doneColID = "";
-                GetBoardColumnResponse.ColumnResponse currColumns = new GetBoardColumnResponse.ColumnResponse();
-
-                scrumColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(json);
-
-                currColumns = GetBoardColumns(projectName, teamName, boardType);
-                if (currColumns.columns != null)
+                try
                 {
-                    foreach (GetBoardColumnResponse.Value col in currColumns.columns)
+                    List<Scrum.Columns> scrumColumns = new List<Scrum.Columns>();
+
+                    string newColId = "";
+                    string doneColId = "";
+                    GetBoardColumnResponse.ColumnResponse currColumns = new GetBoardColumnResponse.ColumnResponse();
+
+                    scrumColumns = JsonConvert.DeserializeObject<List<Scrum.Columns>>(json);
+
+                    currColumns = GetBoardColumns(projectName, teamName, boardType);
+                    if (currColumns.Columns != null)
                     {
-                        if (col.columnType.ToLower() == "incoming")
+                        foreach (GetBoardColumnResponse.Value col in currColumns.Columns)
                         {
-                            newColID = col.id;
+                            if (col.ColumnType.ToLower() == "incoming")
+                            {
+                                newColId = col.Id;
+                            }
+                            else if (col.ColumnType.ToLower() == "outgoing")
+                            {
+                                doneColId = col.Id;
+                            }
                         }
-                        else if (col.columnType.ToLower() == "outgoing")
+                        foreach (Scrum.Columns col in scrumColumns)
                         {
-                            doneColID = col.id;
+                            if (col.ColumnType.ToLower() == "incoming")
+                            {
+                                col.Id = newColId;
+                            }
+                            else if (col.ColumnType.ToLower() == "outgoing")
+                            {
+                                col.Id = doneColId;
+                            }
                         }
                     }
-                    foreach (Scrum.Columns col in scrumColumns)
+                    if (currColumns.Columns == null)
                     {
-                        if (col.columnType.ToLower() == "incoming")
-                        {
-                            col.id = newColID;
-                        }
-                        else if (col.columnType.ToLower() == "outgoing")
-                        {
-                            col.id = doneColID;
-                        }
-                    }
-                }
-                if (currColumns.columns == null)
-                {
-                    return false;
-                }
-                using (var client = GetHttpClient())
-                {
-                    StringContent patchValue = new StringContent("");
-                    string stringSerialize = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-                    patchValue = new StringContent(stringSerialize, Encoding.UTF8, "application/json");
-                    // mediaType needs to be application/json-patch+json for a patch call
-                    var method = new HttpMethod("PUT");
-                    //PUT https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/columns?api-version=4.1
-                    var request = new HttpRequestMessage(method, _configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/columns?api-version=" + _configuration.VersionNumber) { Content = patchValue };
-                    var response = client.SendAsync(request).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
                         return false;
                     }
+                    using (var client = GetHttpClient())
+                    {
+                        StringContent patchValue = new StringContent("");
+                        string stringSerialize = JsonConvert.SerializeObject(scrumColumns, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                        patchValue = new StringContent(stringSerialize, Encoding.UTF8, "application/json");
+                        // mediaType needs to be application/json-patch+json for a patch call
+                        var method = new HttpMethod("PUT");
+                        //PUT https://dev.azure.com/{organization}/{project}/{team}/_apis/work/boards/{board}/columns?api-version=4.1
+                        var request = new HttpRequestMessage(method, Configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "/columns?api-version=" + Configuration.VersionNumber) { Content = patchValue };
+                        var response = client.SendAsync(request).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("UpdateBoard" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("UpdateBoard" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return false;
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return false;
         }
@@ -99,60 +113,87 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <returns></returns>
         public GetBoardColumnResponse.ColumnResponse GetBoardColumns(string projectName, string teamName, string boardType)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
-                using (var client = GetHttpClient())
+                try
                 {
-                    var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
+                    GetBoardColumnResponse.ColumnResponse columns = new GetBoardColumnResponse.ColumnResponse();
+                    using (var client = GetHttpClient())
                     {
-                        columns = response.Content.ReadAsAsync<GetBoardColumnResponse.ColumnResponse>().Result;
-                        this.rowFieldName = columns.fields.rowField.referenceName;
-                        return columns;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return new GetBoardColumnResponse.ColumnResponse();
+                        var response = client.GetAsync(Configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/" + boardType + "?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            columns = response.Content.ReadAsAsync<GetBoardColumnResponse.ColumnResponse>().Result;
+                            this.RowFieldName = columns.Fields.RowField.ReferenceName;
+                            return columns;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetBoardColumns" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("GetBoardColumns" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetBoardColumnResponse.ColumnResponse();
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetBoardColumnResponse.ColumnResponse();
         }
+
         public GetBoardColumnResponseAgile.ColumnResponse GetBoardColumnsAgile(string projectName, string teamName)
         {
-            try
+            int retryCount = 0;
+            while (retryCount < 5)
             {
-                GetBoardColumnResponseAgile.ColumnResponse columns = new GetBoardColumnResponseAgile.ColumnResponse();
-                using (var client = GetHttpClient())
+                try
                 {
+                    GetBoardColumnResponseAgile.ColumnResponse columns = new GetBoardColumnResponseAgile.ColumnResponse();
+                    using (var client = GetHttpClient())
+                    {
 
-                    var response = client.GetAsync(_configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Stories?api-version=" + _configuration.VersionNumber).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        columns = response.Content.ReadAsAsync<GetBoardColumnResponseAgile.ColumnResponse>().Result;
-                        this.rowFieldName = columns.fields.rowField.referenceName;
-                        return columns;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        this.LastFailureMessage = error;
-                        return new GetBoardColumnResponseAgile.ColumnResponse();
+                        var response = client.GetAsync(Configuration.UriString + "/" + projectName + "/" + teamName + "/_apis/work/boards/Stories?api-version=" + Configuration.VersionNumber).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            columns = response.Content.ReadAsAsync<GetBoardColumnResponseAgile.ColumnResponse>().Result;
+                            this.RowFieldName = columns.Fields.RowField.ReferenceName;
+                            return columns;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            this.LastFailureMessage = error;
+                            retryCount++;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug("GetBoardColumnsAgile" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                catch (Exception ex)
+                {
+                    logger.Debug("GetBoardColumnsAgile" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                    retryCount++;
+
+                    if (retryCount > 4)
+                    {
+                        return new GetBoardColumnResponseAgile.ColumnResponse(); 
+                    }
+
+                    Thread.Sleep(retryCount * 1000);
+                }
             }
             return new GetBoardColumnResponseAgile.ColumnResponse();
         }

@@ -12,33 +12,33 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
         public class ListofCardStyles
         {
             [JsonProperty("rules")]
-            public Rules rules { get; set; }
+            public Rules Rules { get; set; }
         }
 
         public class Rules : BaseViewModel
         {
             [JsonProperty("fill")]
-            public Fill[] fill { get; set; }
+            public Fill[] Fill { get; set; }
             [JsonProperty("tagStyle")]
-            public TagStyle[] tagstyle { get; set; }
+            public TagStyle[] Tagstyle { get; set; }
         }
 
         public class Fill
         {
-            public string name { get; set; }
-            public string isEnabled { get; set; }
-            public string filter { get; set; }
+            public string Name { get; set; }
+            public string IsEnabled { get; set; }
+            public string Filter { get; set; }
 
-            public Dictionary<string, string> settings { get; set; }
+            public Dictionary<string, string> Settings { get; set; }
 
         }
         public class TagStyle
         {
-            public string name { get; set; }
-            public string isEnabled { get; set; }
+            public string Name { get; set; }
+            public string IsEnabled { get; set; }
 
 
-            public Dictionary<string, string> settings { get; set; }
+            public Dictionary<string, string> Settings { get; set; }
 
         }
     }

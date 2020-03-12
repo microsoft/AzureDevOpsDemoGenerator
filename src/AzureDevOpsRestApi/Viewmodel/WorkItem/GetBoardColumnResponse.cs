@@ -12,45 +12,45 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
         public class ColumnResponse : BaseViewModel
         {
 
-            public int count { get; set; }
-            public Value[] columns { get; set; }
-            public Fields fields { get; set; }
+            public int Count { get; set; }
+            public Value[] Columns { get; set; }
+            public Fields Fields { get; set; }
         }
 
         public class Value
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string itemLimit { get; set; }
-            public string isSplit { get; set; }
-            public string description { get; set; }
-            public string columnType { get; set; }
-            public StateMappings stateMappings { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string ItemLimit { get; set; }
+            public string IsSplit { get; set; }
+            public string Description { get; set; }
+            public string ColumnType { get; set; }
+            public StateMappings StateMappings { get; set; }
         }
 
         public class Fields
         {
-            public Field columnField { get; set; }
-            public Field rowField { get; set; }
-            public Field doneField { get; set; }
+            public Field ColumnField { get; set; }
+            public Field RowField { get; set; }
+            public Field DoneField { get; set; }
         }
 
         public class Field
         {
-            public string referenceName { get; set; }
-            public string url { get; set; }
+            public string ReferenceName { get; set; }
+            public string Url { get; set; }
         }
 
         public class StateMappings
         {
             [JsonProperty(PropertyName = "Product Backlog Item")]
-            public string PBI { get; set; }
+            public string Pbi { get; set; }
             [JsonProperty(PropertyName ="Bug")]
-            public string bug { get; set; }
+            public string Bug { get; set; }
             [JsonProperty(PropertyName = "Epic")]
-            public string epic { get; set; }
+            public string Epic { get; set; }
             [JsonProperty(PropertyName = "Feature")]
-            public string feature { get; set; }
+            public string Feature { get; set; }
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
         }

@@ -1,9 +1,9 @@
-﻿using AzureDevOpsAPI.Viewmodel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AzureDevOpsAPI.Viewmodel;
 
 namespace AzureDevOpsRestApi.Viewmodel.Build
 {
@@ -12,54 +12,54 @@ namespace AzureDevOpsRestApi.Viewmodel.Build
 
         public class Definitions : BaseViewModel
         {
-            public int count { get; set; }
-            public Value[] value { get; set; }
+            public int Count { get; set; }
+            public Value[] Value { get; set; }
         }
 
         public class Value
         {
-            public string quality { get; set; }
-            public Authoredby authoredBy { get; set; }
-            public Queue queue { get; set; }
-            public string uri { get; set; }
-            public string type { get; set; }
-            public int revision { get; set; }
-            public DateTime createdDate { get; set; }
-            public int id { get; set; }
-            public string name { get; set; }
-            public string url { get; set; }
-            public Project project { get; set; }
+            public string Quality { get; set; }
+            public Authoredby AuthoredBy { get; set; }
+            public Queue Queue { get; set; }
+            public string Uri { get; set; }
+            public string Type { get; set; }
+            public int Revision { get; set; }
+            public DateTime CreatedDate { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Url { get; set; }
+            public Project Project { get; set; }
         }
 
         public class Authoredby
         {
-            public string id { get; set; }
-            public string displayName { get; set; }
-            public string uniqueName { get; set; }
-            public string url { get; set; }
-            public string imageUrl { get; set; }
+            public string Id { get; set; }
+            public string DisplayName { get; set; }
+            public string UniqueName { get; set; }
+            public string Url { get; set; }
+            public string ImageUrl { get; set; }
         }
 
         public class Queue
         {
-            public Pool pool { get; set; }
-            public int id { get; set; }
-            public string name { get; set; }
+            public Pool Pool { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
         }
 
         public class Pool
         {
-            public int id { get; set; }
-            public string name { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
         }
 
         public class Project
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string url { get; set; }
-            public string state { get; set; }
-            public int revision { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string Url { get; set; }
+            public string State { get; set; }
+            public int Revision { get; set; }
         }
     }
 }

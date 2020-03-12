@@ -11,18 +11,18 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class WorkItems : BaseViewModel
         {
-            public int count { get; set; }
-            public Value[] value { get; set; }
+            public int Count { get; set; }
+            public Value[] Value { get; set; }
 
         }
 
         public class Value
         {
-            public int id { get; set; }
-            public int rev { get; set; }
-            public Fields fields { get; set; }
-            public Relations[] relations { get; set; }
-            public string url { get; set; }
+            public int Id { get; set; }
+            public int Rev { get; set; }
+            public Fields Fields { get; set; }
+            public Relations[] Relations { get; set; }
+            public string Url { get; set; }
 
 
         }
@@ -63,7 +63,7 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             public string SystemTitle { get; set; }
 
             [JsonProperty(PropertyName = "Microsoft.VSTS.Scheduling.Effort")]
-            public float MicrosoftVSTSSchedulingEffort { get; set; }
+            public float MicrosoftVstsSchedulingEffort { get; set; }
 
             [JsonProperty(PropertyName = "System.Description")]
             public string SystemDescription { get; set; }
@@ -72,10 +72,10 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             public string SystemAssignedTo { get; set; }
 
             [JsonProperty(PropertyName = "Microsoft.VSTS.Scheduling.RemainingWork")]
-            public float MicrosoftVSTSSchedulingRemainingWork { get; set; }
+            public float MicrosoftVstsSchedulingRemainingWork { get; set; }
 
             [JsonProperty(PropertyName = "Microsoft.VSTS.Common.Priority")]
-            public float MicrosoftVSTSCommonPriority { get; set; }
+            public float MicrosoftVstsCommonPriority { get; set; }
 
             [JsonProperty(PropertyName = "System.BoardLane")]
             public string SystemBoardLane { get; set; }
@@ -83,13 +83,13 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             [JsonProperty(PropertyName = "System.Tags")]
             public string SystemTags { get; set; }
             [JsonProperty(PropertyName = "Microsoft.VSTS.TCM.Steps")]
-            public string MicrosoftVSTSTCMSteps { get; set; }
+            public string MicrosoftVststcmSteps { get; set; }
             [JsonProperty(PropertyName = "Microsoft.VSTS.TCM.Parameters")]
-            public string MicrosoftVSTSTCMParameters { get; set; }
+            public string MicrosoftVststcmParameters { get; set; }
             [JsonProperty(PropertyName = "Microsoft.VSTS.TCM.LocalDataSource")]
-            public string MicrosoftVSTSTCMLocalDataSource { get; set; }
+            public string MicrosoftVststcmLocalDataSource { get; set; }
             [JsonProperty(PropertyName = "Microsoft.VSTS.TCM.AutomationStatus")]
-            public string MicrosoftVSTSTCMAutomationStatus { get; set; }
+            public string MicrosoftVststcmAutomationStatus { get; set; }
 
             [JsonProperty(PropertyName = "System.History")]
             public string SystemHistory { get; set; }
@@ -97,15 +97,15 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 
         public class Relations
         {
-            public string rel { get; set; }
-            public string url { get; set; }
-            public Dictionary<string, string> attributes { get; set; }
+            public string Rel { get; set; }
+            public string Url { get; set; }
+            public Dictionary<string, string> Attributes { get; set; }
         }
 
         public class Attributes
         {
-            public string isLocked { get; set; }
-            public string comment { get; set; }
+            public string IsLocked { get; set; }
+            public string Comment { get; set; }
         }
     }
 

@@ -6,26 +6,26 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
     {
         public class Columns
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string itemLimit { get; set; }
-            public string isSplit { get; set; }
-            public string description { get; set; }
-            public string columnType { get; set; }
-            public StateMappings stateMappings { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public string ItemLimit { get; set; }
+            public string IsSplit { get; set; }
+            public string Description { get; set; }
+            public string ColumnType { get; set; }
+            public StateMappings StateMappings { get; set; }
         }
 
         public class StateMappings
         {
             [JsonProperty(PropertyName = "Product Backlog Item")]
-            public string PBI { get; set; }
+            public string Pbi { get; set; }
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public string Bug { get; set; }
             [JsonProperty(PropertyName = "Epic")]
-            public string epic { get; set; }
+            public string Epic { get; set; }
             [JsonProperty(PropertyName = "Feature")]
-            public string feature { get; set; }
+            public string Feature { get; set; }
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
             [JsonProperty(PropertyName = "Issue")]
@@ -39,18 +39,18 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
             [JsonProperty(PropertyName = "User Story")]
             public string UserStory { get; set; }
             [JsonProperty(PropertyName ="Bug")] 
-            public string bug { get; set; }
+            public string Bug { get; set; }
         }
 
         public class Columns
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public int itemLimit { get; set; }
-            public StateMappings stateMappings { get; set; }
-            public string columnType { get; set; }
-            public bool? isSplit { get; set; }
-            public string description { get; set; }
+            public string Id { get; set; }
+            public string Name { get; set; }
+            public int ItemLimit { get; set; }
+            public StateMappings StateMappings { get; set; }
+            public string ColumnType { get; set; }
+            public bool? IsSplit { get; set; }
+            public string Description { get; set; }
         }
 
 

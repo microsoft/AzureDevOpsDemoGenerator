@@ -13,19 +13,19 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
         {
             [JsonProperty(PropertyName = "class")]
             public string Class { get; set; }
-            public string parentProcessTypeId { get; set; }
-            public bool isEnabled { get; set; }
-            public string version { get; set; }
-            public bool isDefault { get; set; }
+            public string ParentProcessTypeId { get; set; }
+            public bool IsEnabled { get; set; }
+            public string Version { get; set; }
+            public bool IsDefault { get; set; }
         }
 
         public class PTemplate
         {
-            public string typeId { get; set; }
-            public object referenceName { get; set; }
-            public string name { get; set; }
-            public string description { get; set; }
-            public Properties properties { get; set; }
+            public string TypeId { get; set; }
+            public object ReferenceName { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public Properties Properties { get; set; }
         }
     }
 }

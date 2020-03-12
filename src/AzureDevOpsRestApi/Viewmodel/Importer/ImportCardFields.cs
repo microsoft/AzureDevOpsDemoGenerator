@@ -7,35 +7,35 @@ namespace AzureDevOpsAPI.Viewmodel.Importer
     {
         public class Epic
         {
-            public string fieldIdentifier { get; set; }
-            public string displayFormat { get; set; }
+            public string FieldIdentifier { get; set; }
+            public string DisplayFormat { get; set; }
         }
 
         public class Feature
         {
-            public string fieldIdentifier { get; set; }
-            public string displayFormat { get; set; }
+            public string FieldIdentifier { get; set; }
+            public string DisplayFormat { get; set; }
         }
 
         public class ProductBacklogItem
         {
-            public string fieldIdentifier { get; set; }
-            public string displayFormat { get; set; }
+            public string FieldIdentifier { get; set; }
+            public string DisplayFormat { get; set; }
         }
         public class Issue
         {
-            public string fieldIdentifier { get; set; }
-            public string displayFormat { get; set; }
+            public string FieldIdentifier { get; set; }
+            public string DisplayFormat { get; set; }
         }
         public class Bug
         {
-            public string fieldIdentifier { get; set; }
-            public string displayFormat { get; set; }
+            public string FieldIdentifier { get; set; }
+            public string DisplayFormat { get; set; }
         }
         public class UserStory
         {
-            public string fieldIdentifier { get; set; }
-            public string displayFormat { get; set; }
+            public string FieldIdentifier { get; set; }
+            public string DisplayFormat { get; set; }
         }
 
         public class Cards
@@ -59,7 +59,7 @@ namespace AzureDevOpsAPI.Viewmodel.Importer
 
         public class CardFields
         {
-            public Cards cards { get; set; }
+            public Cards Cards { get; set; }
             public string BoardName { get; set; }
         }
     }

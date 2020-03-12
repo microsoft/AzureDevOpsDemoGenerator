@@ -125,18 +125,18 @@ namespace AzureDevOpsDemoBuilder.Services
             string variableGroupsApiVersion = AppKeyConfiguration["VariableGroupsApiVersion"];
             ProjectConfigurations projectConfig = new ProjectConfigurations();
 
-            projectConfig.AgentQueueConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.WorkItemConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = wikiVersion };
-            projectConfig.BuildDefinitionConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = buildVersion };
-            projectConfig.ReleaseDefinitionConfig = new AppConfiguration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = releaseVersion };
-            projectConfig.RepoConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = repoVersion };
-            projectConfig.BoardConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = boardVersion };
-            projectConfig.Config = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id };
-            projectConfig.GetReleaseConfig = new AppConfiguration() { UriString = releaseHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = getReleaseVersion };
-            projectConfig.ExtensionConfig = new AppConfiguration() { UriString = extensionHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = extensionVersion };
-            projectConfig.EndpointConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = endpointVersion };
-            projectConfig.QueriesConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = queriesVersion };
-            projectConfig.VariableGroupConfig = new AppConfiguration() { UriString = defaultHost + model.accountName + "/", PersonalAccessToken = model.accessToken, Project = model.ProjectName, AccountName = model.accountName, Id = model.id, VersionNumber = variableGroupsApiVersion };
+            projectConfig.AgentQueueConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = wikiVersion };
+            projectConfig.WorkItemConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = wikiVersion };
+            projectConfig.BuildDefinitionConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = buildVersion };
+            projectConfig.ReleaseDefinitionConfig = new AppConfiguration() { UriString = releaseHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = releaseVersion };
+            projectConfig.RepoConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = repoVersion };
+            projectConfig.BoardConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = boardVersion };
+            projectConfig.Config = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id };
+            projectConfig.GetReleaseConfig = new AppConfiguration() { UriString = releaseHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = getReleaseVersion };
+            projectConfig.ExtensionConfig = new AppConfiguration() { UriString = extensionHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = extensionVersion };
+            projectConfig.EndpointConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = endpointVersion };
+            projectConfig.QueriesConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = queriesVersion };
+            projectConfig.VariableGroupConfig = new AppConfiguration() { UriString = defaultHost + model.AccountName + "/", PersonalAccessToken = model.AccessToken, Project = model.ProjectName, AccountName = model.AccountName, Id = model.Id, VersionNumber = variableGroupsApiVersion };
 
             return projectConfig;
         }
@@ -145,9 +145,9 @@ namespace AzureDevOpsDemoBuilder.Services
             AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig);
             TeamList teamList = nodes.ExportTeamList("");
             int count = 0;
-            if (teamList.value != null)
+            if (teamList.Value != null)
             {
-                count = teamList.value.Count;
+                count = teamList.Value.Count;
             }
             return count;
         }
@@ -156,9 +156,9 @@ namespace AzureDevOpsDemoBuilder.Services
             AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig);
             GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
             iterations = nodes.GetiterationCount();
-            if (iterations.count > 0)
+            if (iterations.Count > 0)
             {
-                return iterations.count;
+                return iterations.Count;
             }
             else
             {
@@ -175,9 +175,9 @@ namespace AzureDevOpsDemoBuilder.Services
             BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig);
             GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
             buildDef = buildandReleaseDefs.GetBuildDefCount();
-            if (buildDef.count > 0)
+            if (buildDef.Count > 0)
             {
-                BuildDefCount = buildDef.count;
+                BuildDefCount = buildDef.Count;
             }
             else if (!string.IsNullOrEmpty(buildandReleaseDefs.LastFailureMessage))
             {
@@ -191,9 +191,9 @@ namespace AzureDevOpsDemoBuilder.Services
             BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
             GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
             releaseDef = buildandReleaseDefs.GetReleaseDefCount();
-            if (releaseDef.count > 0)
+            if (releaseDef.Count > 0)
             {
-                ReleaseDefCount = releaseDef.count;
+                ReleaseDefCount = releaseDef.Count;
             }
             else if (!string.IsNullOrEmpty(buildandReleaseDefs.LastFailureMessage))
             {
@@ -224,7 +224,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
 
-            AddMessage(model.id, "");
+            AddMessage(model.Id, "");
             ProjectConfigurations appConfig = ProjectConfiguration(model);
 
             GetInstalledExtensions(appConfig);
@@ -234,7 +234,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
             if (ExportIterations(appConfig))
             {
-                AddMessage(model.id, "Iterations Definition");
+                AddMessage(model.Id, "Iterations Definition");
             }
             string extractedFolderName = extractedTemplatePath + model.ProjectName;
             string filePathToRead = HostingEnvironment.ContentRootPath + "/PreSetting";
@@ -242,7 +242,7 @@ namespace AzureDevOpsDemoBuilder.Services
             string projectSetting = "";
             projectSetting = filePathToRead + "/ProjectSettings.json";
             projectSetting = File.ReadAllText(projectSetting);
-            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.value.Where(x => x.name == "System.ProcessTemplateType").FirstOrDefault().value);
+            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.Value.Where(x => x.Name == "System.ProcessTemplateType").FirstOrDefault().RefValue);
             File.WriteAllText(extractedFolderName + "/ProjectSettings.json", projectSetting);
 
             string projectTemplate = "";
@@ -254,30 +254,30 @@ namespace AzureDevOpsDemoBuilder.Services
             teamArea = filePathToRead + "/TeamArea.json";
             teamArea = File.ReadAllText(teamArea);
             File.WriteAllText(extractedFolderName + "/TeamArea.json", teamArea);
-            AddMessage(model.id, "Team Areas");
+            AddMessage(model.Id, "Team Areas");
 
             ExportWorkItems(appConfig);
-            AddMessage(model.id, "Work Items");
+            AddMessage(model.Id, "Work Items");
 
             ExportRepositoryList(appConfig);
-            AddMessage(model.id, "Repository and Service Endpoint");
+            AddMessage(model.Id, "Repository and Service Endpoint");
 
             GetServiceEndpoints(appConfig);
 
             int count = GetBuildDefinitions(appConfig);
             if (count >= 1)
             {
-                AddMessage(model.id, "Build Definition");
+                AddMessage(model.Id, "Build Definition");
             }
 
             int relCount = GeneralizingGetReleaseDefinitions(appConfig);
             if (relCount >= 1)
             {
-                AddMessage(model.id, "Release Definition");
+                AddMessage(model.Id, "Release Definition");
             }
 
-            StatusMessages[model.id] = "100";
-            return new string[] { model.id, "" };
+            StatusMessages[model.Id] = "100";
+            return new string[] { model.Id, "" };
         }
 
         public Dictionary<string, int> GetWorkItemsCount(ProjectConfigurations appConfig)
@@ -290,9 +290,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 foreach (var workItem in workItemtypes)
                 {
                     WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
-                    if (WITCount.count > 0)
+                    if (WITCount.Count > 0)
                     {
-                        fetchedWorkItemsCount.Add(workItem, WITCount.count);
+                        fetchedWorkItemsCount.Add(workItem, WITCount.Count);
                     }
                     else if (!string.IsNullOrEmpty(itemsCount.LastFailureMessage))
                     {
@@ -311,28 +311,28 @@ namespace AzureDevOpsDemoBuilder.Services
                 GetListExtenison listExtenison = new GetListExtenison(appConfig.ExtensionConfig);
                 List<RequiredExtensions.ExtensionWithLink> extensionList = new List<RequiredExtensions.ExtensionWithLink>();
                 GetExtensions.ExtensionsList returnExtensionsList = listExtenison.GetInstalledExtensions();
-                if (returnExtensionsList != null && returnExtensionsList.count > 0)
+                if (returnExtensionsList != null && returnExtensionsList.Count > 0)
                 {
-                    List<GetExtensions.Value> builtInExtensions = returnExtensionsList.value.Where(x => x.flags == null).ToList();
-                    List<GetExtensions.Value> trustedExtensions = returnExtensionsList.value.Where(x => x.flags != null && x.flags.ToString() == "trusted").ToList();
+                    List<GetExtensions.Value> builtInExtensions = returnExtensionsList.Value.Where(x => x.Flags == null).ToList();
+                    List<GetExtensions.Value> trustedExtensions = returnExtensionsList.Value.Where(x => x.Flags != null && x.Flags.ToString() == "trusted").ToList();
                     builtInExtensions.AddRange(trustedExtensions);
-                    returnExtensionsList.value = builtInExtensions;
+                    returnExtensionsList.Value = builtInExtensions;
 
-                    foreach (GetExtensions.Value data in returnExtensionsList.value)
+                    foreach (GetExtensions.Value data in returnExtensionsList.Value)
                     {
                         RequiredExtensions.ExtensionWithLink extension = new RequiredExtensions.ExtensionWithLink();
-                        if (data.extensionName.ToLower() != "analytics")
+                        if (data.ExtensionName.ToLower() != "analytics")
                         {
-                            extension.extensionId = data.extensionId;
-                            extension.extensionName = data.extensionName;
-                            extension.publisherId = data.publisherId;
-                            extension.publisherName = data.publisherName;
-                            extension.link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'><b>" + data.extensionName + "</b></a>";
-                            extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.publisherId, data.extensionId) + "' target='_blank'>License Terms</a>";
+                            extension.ExtensionId = data.ExtensionId;
+                            extension.ExtensionName = data.ExtensionName;
+                            extension.PublisherId = data.PublisherId;
+                            extension.PublisherName = data.PublisherName;
+                            extension.Link = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.PublisherId, data.ExtensionId) + "' target='_blank'><b>" + data.ExtensionName + "</b></a>";
+                            extension.License = "<a href='" + string.Format("https://marketplace.visualstudio.com/items?itemName={0}.{1}", data.PublisherId, data.ExtensionId) + "' target='_blank'>License Terms</a>";
                             extensionList.Add(extension);
                         }
                     }
-                    RequiredExtensions.listExtension listExtension = new RequiredExtensions.listExtension();
+                    RequiredExtensions.ListExtension listExtension = new RequiredExtensions.ListExtension();
                     if (extensionList.Count > 0)
                     {
                         listExtension.Extensions = extensionList;
@@ -365,22 +365,22 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 Queries queries = new Queries(appConfig.QueriesConfig);
                 GetQueries.Queries listQueries = queries.GetQueriesWiql();
-                if (listQueries.count > 0)
+                if (listQueries.Count > 0)
                 {
-                    foreach (var _queries in listQueries.value)
+                    foreach (var _queries in listQueries.Value)
                     {
-                        if (_queries.hasChildren)
+                        if (_queries.HasChildren)
                         {
-                            foreach (var query in _queries.children)
+                            foreach (var query in _queries.Children)
                             {
-                                if (!query.hasChildren)
+                                if (!query.HasChildren)
                                 {
-                                    if (query.wiql != null)
+                                    if (query.Wiql != null)
                                     {
-                                        query.wiql = query.wiql.Replace(appConfig.QueriesConfig.Project, "$projectId$");
+                                        query.Wiql = query.Wiql.Replace(appConfig.QueriesConfig.Project, "$projectId$");
                                         JObject jobj = new JObject();
-                                        jobj["name"] = query.name;
-                                        jobj["wiql"] = query.wiql;
+                                        jobj["name"] = query.Name;
+                                        jobj["wiql"] = query.Wiql;
                                         if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries"))
                                         {
                                             Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard");
@@ -389,33 +389,33 @@ namespace AzureDevOpsDemoBuilder.Services
                                         if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries"))
                                         {
                                             Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries");
-                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + query.Name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                         else
                                         {
-                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + query.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                            File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + query.Name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    foreach (var child1 in query.children)
+                                    foreach (var child1 in query.Children)
                                     {
-                                        if (child1.wiql != null)
+                                        if (child1.Wiql != null)
                                         {
-                                            child1.wiql = child1.wiql.Replace(appConfig.QueriesConfig.Project, "$projectId$");
+                                            child1.Wiql = child1.Wiql.Replace(appConfig.QueriesConfig.Project, "$projectId$");
                                             JObject jobj = new JObject();
-                                            jobj["name"] = child1.name;
-                                            jobj["wiql"] = child1.wiql;
+                                            jobj["name"] = child1.Name;
+                                            jobj["wiql"] = child1.Wiql;
                                             if (!Directory.Exists(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries"))
                                             {
                                                 Directory.CreateDirectory(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries");
 
-                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + child1.Name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                             }
                                             else
                                             {
-                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + child1.name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
+                                                File.WriteAllText(extractedTemplatePath + appConfig.QueriesConfig.Project + "/Dashboard/Queries/" + child1.Name + ".json", JsonConvert.SerializeObject(jobj, Formatting.Indented));
                                             }
                                         }
                                     }
@@ -448,16 +448,16 @@ namespace AzureDevOpsDemoBuilder.Services
                 con.ProjectId = projectID;
                 Projects projects = new Projects(con);
                 projectProperties = projects.GetProjectProperties();
-                if (projectProperties.count > 0)
+                if (projectProperties.Count > 0)
                 {
-                    defaultTeamID = projectProperties.value.Where(x => x.name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().value;
+                    defaultTeamID = projectProperties.Value.Where(x => x.Name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().RefValue;
                 }
                 _team = nodes.ExportTeamList(defaultTeamID);
-                if (_team.value != null)
+                if (_team.Value != null)
                 {
                     AddMessage(con.Id, "Teams");
 
-                    string fetchedJson = JsonConvert.SerializeObject(_team.value, Formatting.Indented);
+                    string fetchedJson = JsonConvert.SerializeObject(_team.Value, Formatting.Indented);
                     if (fetchedJson != "")
                     {
                         if (!Directory.Exists(extractedTemplatePath + con.Project + "/Teams"))
@@ -483,7 +483,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             boardTypes.Add("Backlog Items");
                         }
 
-                        foreach (var team in _team.value)
+                        foreach (var team in _team.Value)
                         {
                             List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
                             List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
@@ -494,13 +494,13 @@ namespace AzureDevOpsDemoBuilder.Services
 
                             List<JObject> jObjCardFieldList = new List<JObject>();
                             List<JObject> jObjcardStyleList = new List<JObject>();
-                            string teamFolderPath = extractedTemplatePath + con.Project + "/Teams/" + team.name;
+                            string teamFolderPath = extractedTemplatePath + con.Project + "/Teams/" + team.Name;
                             if (!Directory.Exists(teamFolderPath))
                             {
                                 Directory.CreateDirectory(teamFolderPath);
                             }
                             //Export Board Colums for each team
-                            con.Team = team.name;
+                            con.Team = team.Name;
 
                             ClassificationNodes teamNodes = new ClassificationNodes(con);
                             foreach (var boardType in boardTypes)
@@ -542,7 +542,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                                 //Export board rows for each team
                                 ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
-                                if (rows.value != null && rows.value.Count > 0)
+                                if (rows.Value != null && rows.Value.Count > 0)
                                 {
                                     rows.BoardName = boardType;
                                     boardRows.Add(rows);
@@ -606,7 +606,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             if (processTemplate.ToLower() != "basic")
                             {
                                 ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
-                                if (teamSetting.backlogVisibilities != null)
+                                if (teamSetting.BacklogVisibilities != null)
                                 {
                                     listTeamSetting = teamSetting;
                                     AddMessage(con.Id, "Team Settings Definition");
@@ -633,7 +633,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             {
                                 File.WriteAllText(teamFolderPath + "/BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                             }
-                            if (!string.IsNullOrEmpty(listTeamSetting.bugsBehavior))
+                            if (!string.IsNullOrEmpty(listTeamSetting.BugsBehavior))
                             {
                                 File.WriteAllText(teamFolderPath + "/TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
                             }
@@ -722,7 +722,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
                         WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
                         string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
-                        if (fetchedWorkItem.count > 0)
+                        if (fetchedWorkItem.Count > 0)
                         {
                             workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project + "\\", "$ProjectName$\\");
                             string item = WIT;
@@ -752,34 +752,34 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 BuildandReleaseDefs repolist = new BuildandReleaseDefs(appConfig.RepoConfig);
                 RepositoryList.Repository repos = repolist.GetRepoList();
-                if (repos.count > 0)
+                if (repos.Count > 0)
                 {
-                    foreach (var repo in repos.value)
+                    foreach (var repo in repos.Value)
                     {
                         string preSettingPath = HostingEnvironment.ContentRootPath + "/PreSetting";
                         string templateFolderPath = extractedTemplatePath + appConfig.RepoConfig.Project;
                         string host = appConfig.RepoConfig.UriString + appConfig.RepoConfig.Project;
                         string sourceCodeJson = File.ReadAllText(preSettingPath + "/ImportSourceCode.json");
-                        sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
+                        sourceCodeJson = sourceCodeJson.Replace("$Host$", host).Replace("$Repo$", repo.Name);
                         string endPointJson = File.ReadAllText(preSettingPath + "/ServiceEndPoint.json");
-                        endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.name);
+                        endPointJson = endPointJson.Replace("$Host$", host).Replace("$Repo$", repo.Name);
                         if (!Directory.Exists(templateFolderPath + "/ImportSourceCode"))
                         {
                             Directory.CreateDirectory(templateFolderPath + "/ImportSourceCode");
-                            File.WriteAllText(templateFolderPath + "/ImportSourceCode/" + repo.name + ".json", sourceCodeJson);
+                            File.WriteAllText(templateFolderPath + "/ImportSourceCode/" + repo.Name + ".json", sourceCodeJson);
                         }
                         else
                         {
-                            File.WriteAllText(templateFolderPath + "/ImportSourceCode/" + repo.name + ".json", sourceCodeJson);
+                            File.WriteAllText(templateFolderPath + "/ImportSourceCode/" + repo.Name + ".json", sourceCodeJson);
                         }
                         if (!Directory.Exists(templateFolderPath + "/ServiceEndpoints"))
                         {
                             Directory.CreateDirectory(templateFolderPath + "/ServiceEndpoints");
-                            File.WriteAllText(templateFolderPath + "/ServiceEndpoints/" + repo.name + "-code.json", endPointJson);
+                            File.WriteAllText(templateFolderPath + "/ServiceEndpoints/" + repo.Name + "-code.json", endPointJson);
                         }
                         else
                         {
-                            File.WriteAllText(templateFolderPath + "/ServiceEndpoints/" + repo.name + "-code.json", endPointJson);
+                            File.WriteAllText(templateFolderPath + "/ServiceEndpoints/" + repo.Name + "-code.json", endPointJson);
                         }
                     }
                 }
@@ -817,11 +817,11 @@ namespace AzureDevOpsDemoBuilder.Services
                         string fileName = buildName.ToString().Replace(".", "") + ".json";
                         var repoName = def["repository"]["name"];
                         var type = def["repository"]["type"];
-                        foreach (var re in repo.value)
+                        foreach (var re in repo.Value)
                         {
-                            if (re.name == repoName.ToString())
+                            if (re.Name == repoName.ToString())
                             {
-                                repoID = re.id;
+                                repoID = re.Id;
                             }
                         }
                         def["authoredBy"] = "{}";
@@ -918,7 +918,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                     string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
                                     KeyConfig.Keys keyC = new KeyConfig.Keys();
                                     keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                    foreach (var key in keyC.keys)
+                                    foreach (var key in keyC.KeysValue)
                                     {
                                         string keyVal = step[key] != null ? step[key].ToString() : "";
                                         if (!string.IsNullOrEmpty(keyVal))
@@ -926,7 +926,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                             step[key] = "";
                                         }
                                     }
-                                    foreach (var key in keyC.keys)
+                                    foreach (var key in keyC.KeysValue)
                                     {
                                         string keyVal = step["inputs"][key] != null ? step["inputs"][key].ToString() : "";
                                         if (!string.IsNullOrEmpty(keyVal))
@@ -1063,7 +1063,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     gitHubRepo = string.Join("/", gitHubIdSplit);
 
                     ForkRepos.Fork gitHubRepoList = new ForkRepos.Fork();
-                    gitHubRepoList.repositories = new List<ForkRepos.Repository>();
+                    gitHubRepoList.Repositories = new List<ForkRepos.Repository>();
                     if (File.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json"))
                     {
                         string readrepo = File.ReadAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json");
@@ -1071,10 +1071,10 @@ namespace AzureDevOpsDemoBuilder.Services
                     }
                     ForkRepos.Repository repoName = new ForkRepos.Repository
                     {
-                        fullName = def["repository"]["id"].ToString(),
-                        endPointName = "GitHub_" + randStr
+                        FullName = def["repository"]["id"].ToString(),
+                        EndPointName = "GitHub_" + randStr
                     };
-                    gitHubRepoList.repositories.Add(repoName);
+                    gitHubRepoList.Repositories.Add(repoName);
 
                     File.WriteAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json", JsonConvert.SerializeObject(gitHubRepoList, Formatting.Indented));
 
@@ -1312,7 +1312,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                             string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
                                             KeyConfig.Keys keyC = new KeyConfig.Keys();
                                             keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                            foreach (var key in keyC.keys)
+                                            foreach (var key in keyC.KeysValue)
                                             {
                                                 string keyVal = input[key] != null ? input[key].ToString() : "";
                                                 if (!string.IsNullOrEmpty(keyVal))
@@ -1385,138 +1385,138 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 ServiceEndPoint serviceEndPoint = new ServiceEndPoint(appConfig.EndpointConfig);
                 Parameters.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
-                if (getServiceEndPoint.count > 0)
+                if (getServiceEndPoint.Count > 0)
                 {
-                    foreach (Parameters.Value endpoint in getServiceEndPoint.value)
+                    foreach (Parameters.Value endpoint in getServiceEndPoint.Value)
                     {
-                        switch (endpoint.authorization.scheme)
+                        switch (endpoint.Authorization.Scheme)
                         {
                             case "OAuth":
                             case "InstallationToken":
-                                switch (endpoint.type)
+                                switch (endpoint.Type)
                                 {
                                     case "github":
                                     case "GitHub":
-                                        if (endpoint.authorization.parameters == null)
+                                        if (endpoint.Authorization.Parameters == null)
                                         {
-                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            endpoint.Authorization.Parameters = new Parameters.Parameters
                                             {
                                                 AccessToken = "AccessToken"
                                             };
                                         }
                                         else
                                         {
-                                            endpoint.authorization.parameters.AccessToken = endpoint.authorization.parameters.AccessToken ?? "AccessToken";
+                                            endpoint.Authorization.Parameters.AccessToken = endpoint.Authorization.Parameters.AccessToken ?? "AccessToken";
                                         }
                                         break;
                                 }
                                 break;
                             case "UsernamePassword":
-                                endpoint.authorization.parameters.username = endpoint.authorization.parameters.username ?? "username";
-                                endpoint.authorization.parameters.password = endpoint.authorization.parameters.password ?? "password";
+                                endpoint.Authorization.Parameters.Username = endpoint.Authorization.Parameters.Username ?? "username";
+                                endpoint.Authorization.Parameters.Password = endpoint.Authorization.Parameters.Password ?? "password";
                                 break;
                             case "ManagedServiceIdentity":
-                                if (endpoint.authorization.parameters == null)
+                                if (endpoint.Authorization.Parameters == null)
                                 {
-                                    endpoint.authorization.parameters = new Parameters.Parameters
+                                    endpoint.Authorization.Parameters = new Parameters.Parameters
                                     {
-                                        tenantId = Guid.NewGuid().ToString()
+                                        TenantId = Guid.NewGuid().ToString()
                                     };
                                 }
                                 else
                                 {
-                                    endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
+                                    endpoint.Authorization.Parameters.TenantId = endpoint.Authorization.Parameters.TenantId ?? Guid.NewGuid().ToString();
                                 }
                                 break;
                             case "ServicePrincipal":
-                                switch (endpoint.type)
+                                switch (endpoint.Type)
                                 {
                                     case "devCenter":
-                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "P2ssw0rd@123";
+                                        endpoint.Authorization.Parameters.ServicePrincipalKey = endpoint.Authorization.Parameters.ServicePrincipalKey ?? "P2ssw0rd@123";
                                         break;
                                     case "azurerm":
-                                        endpoint.authorization.parameters.url = null;
-                                        endpoint.authorization.parameters.servicePrincipalId = endpoint.authorization.parameters.servicePrincipalId ?? Guid.NewGuid().ToString();
-                                        endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
-                                        endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
-                                        endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                        endpoint.Authorization.Parameters.Url = null;
+                                        endpoint.Authorization.Parameters.ServicePrincipalId = endpoint.Authorization.Parameters.ServicePrincipalId ?? Guid.NewGuid().ToString();
+                                        endpoint.Authorization.Parameters.AuthenticationType = endpoint.Authorization.Parameters.AuthenticationType ?? "spnKey";
+                                        endpoint.Authorization.Parameters.TenantId = endpoint.Authorization.Parameters.TenantId ?? Guid.NewGuid().ToString();
+                                        endpoint.Authorization.Parameters.ServicePrincipalKey = endpoint.Authorization.Parameters.ServicePrincipalKey ?? "spnKey";
                                         break;
                                 }
                                 break;
                             case "Certificate":
-                                switch (endpoint.type)
+                                switch (endpoint.Type)
                                 {
                                     case "dockerhost":
-                                        if (endpoint.authorization.parameters == null)
+                                        if (endpoint.Authorization.Parameters == null)
                                         {
-                                            endpoint.authorization.parameters = new Parameters.Parameters();
-                                            endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                            endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                            endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                            endpoint.Authorization.Parameters = new Parameters.Parameters();
+                                            endpoint.Authorization.Parameters.Cacert = endpoint.Authorization.Parameters.Cacert ?? "cacert";
+                                            endpoint.Authorization.Parameters.Cert = endpoint.Authorization.Parameters.Cert ?? "cert";
+                                            endpoint.Authorization.Parameters.Key = endpoint.Authorization.Parameters.Key ?? "key";
                                         }
                                         else
                                         {
-                                            endpoint.authorization.parameters.cacert = endpoint.authorization.parameters.cacert ?? "cacert";
-                                            endpoint.authorization.parameters.cert = endpoint.authorization.parameters.cert ?? "cert";
-                                            endpoint.authorization.parameters.key = endpoint.authorization.parameters.key ?? "key";
+                                            endpoint.Authorization.Parameters.Cacert = endpoint.Authorization.Parameters.Cacert ?? "cacert";
+                                            endpoint.Authorization.Parameters.Cert = endpoint.Authorization.Parameters.Cert ?? "cert";
+                                            endpoint.Authorization.Parameters.Key = endpoint.Authorization.Parameters.Key ?? "key";
                                         }
                                         break;
 
                                     case "azure":
-                                        if (endpoint.authorization.parameters == null)
+                                        if (endpoint.Authorization.Parameters == null)
                                         {
-                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            endpoint.Authorization.Parameters = new Parameters.Parameters
                                             {
-                                                certificate = "certificate"
+                                                Certificate = "certificate"
                                             };
                                         }
                                         else
                                         {
-                                            endpoint.authorization.parameters.certificate = endpoint.authorization.parameters.certificate ?? "certificate";
+                                            endpoint.Authorization.Parameters.Certificate = endpoint.Authorization.Parameters.Certificate ?? "certificate";
                                         }
                                         break;
                                 }
                                 break;
                             case "Token":
-                                if (endpoint.authorization.parameters == null)
+                                if (endpoint.Authorization.Parameters == null)
                                 {
-                                    endpoint.authorization.parameters = new Parameters.Parameters
+                                    endpoint.Authorization.Parameters = new Parameters.Parameters
                                     {
-                                        apitoken = "apitoken"
+                                        Apitoken = "apitoken"
                                     };
                                 }
                                 else
                                 {
-                                    endpoint.authorization.parameters.apitoken = endpoint.authorization.parameters.apitoken ?? "apitoken";
+                                    endpoint.Authorization.Parameters.Apitoken = endpoint.Authorization.Parameters.Apitoken ?? "apitoken";
                                 }
                                 break;
                             case "None":
-                                switch (endpoint.type)
+                                switch (endpoint.Type)
                                 {
                                     case "AzureServiceBus":
-                                        if (endpoint.authorization.parameters == null)
+                                        if (endpoint.Authorization.Parameters == null)
                                         {
-                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            endpoint.Authorization.Parameters = new Parameters.Parameters
                                             {
-                                                serviceBusConnectionString = "connectionstring"
+                                                ServiceBusConnectionString = "connectionstring"
                                             };
                                         }
                                         else
                                         {
-                                            endpoint.authorization.parameters.serviceBusConnectionString = endpoint.authorization.parameters.serviceBusConnectionString ?? "connectionstring";
+                                            endpoint.Authorization.Parameters.ServiceBusConnectionString = endpoint.Authorization.Parameters.ServiceBusConnectionString ?? "connectionstring";
                                         }
                                         break;
                                     case "externalnugetfeed":
-                                        if (endpoint.authorization.parameters == null)
+                                        if (endpoint.Authorization.Parameters == null)
                                         {
-                                            endpoint.authorization.parameters = new Parameters.Parameters
+                                            endpoint.Authorization.Parameters = new Parameters.Parameters
                                             {
-                                                nugetkey = "nugetkey"
+                                                Nugetkey = "nugetkey"
                                             };
                                         }
                                         else
                                         {
-                                            endpoint.authorization.parameters.nugetkey = endpoint.authorization.parameters.nugetkey ?? "nugetkey";
+                                            endpoint.Authorization.Parameters.Nugetkey = endpoint.Authorization.Parameters.Nugetkey ?? "nugetkey";
                                         }
                                         break;
                                 }
@@ -1531,7 +1531,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
                         else
                         {
-                            File.WriteAllText(extractedTemplatePath + appConfig.EndpointConfig.Project + "/ServiceEndpoints/" + endpoint.name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+                            File.WriteAllText(extractedTemplatePath + appConfig.EndpointConfig.Project + "/ServiceEndpoints/" + endpoint.Name + ".json", JsonConvert.SerializeObject(endpoint, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                         }
                     }
                 }
@@ -1555,11 +1555,11 @@ namespace AzureDevOpsDemoBuilder.Services
             GetWorkItemsCount getWorkItems = new GetWorkItemsCount(appConfig.WorkItemConfig);
             WorkItemNames.Names workItems = getWorkItems.GetAllWorkItemNames();
             List<string> workItemNames = new List<string>();
-            if (workItems.count > 0)
+            if (workItems.Count > 0)
             {
-                foreach (var workItem in workItems.value)
+                foreach (var workItem in workItems.Value)
                 {
-                    workItemNames.Add(workItem.name);
+                    workItemNames.Add(workItem.Name);
                 }
             }
             return workItemNames.ToArray();
@@ -1571,7 +1571,7 @@ namespace AzureDevOpsDemoBuilder.Services
             GetVariableGroups.Groups groups = variableGroups.GetVariableGroups();
             Dictionary<string, string> varibaleGroupDictionary = new Dictionary<string, string>();
             string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
-            if (groups.count > 0)
+            if (groups.Count > 0)
             {
                 if (!(Directory.Exists(templatePath + "/VariableGroups")))
                 {
@@ -1582,11 +1582,11 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     File.WriteAllText(templatePath + "/VariableGroups/VariableGroup.json", JsonConvert.SerializeObject(groups, Formatting.Indented));
                 }
-                foreach (var vg in groups.value)
+                foreach (var vg in groups.Value)
                 {
-                    if (!varibaleGroupDictionary.ContainsKey(vg.id))
+                    if (!varibaleGroupDictionary.ContainsKey(vg.Id))
                     {
-                        varibaleGroupDictionary.Add(vg.id, vg.name);
+                        varibaleGroupDictionary.Add(vg.Id, vg.Name);
                     }
                 }
             }

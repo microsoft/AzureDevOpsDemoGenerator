@@ -7,26 +7,26 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Value
         {
-            public JObject variables { get; set; }
-            public string id { get; set; }
-            public string type { get; set; }
-            public string name { get; set; }
-            public bool isShared { get; set; }
+            public JObject Variables { get; set; }
+            public string Id { get; set; }
+            public string Type { get; set; }
+            public string Name { get; set; }
+            public bool IsShared { get; set; }
         }
 
         public class Groups
         {
-            public int count { get; set; }
-            public List<Value> value { get; set; }
+            public int Count { get; set; }
+            public List<Value> Value { get; set; }
         }
 
         public class VariableGroupsCreateResponse
         {
-            public JObject variables { get; set; }
-            public int id { get; set; }
-            public string type { get; set; }
-            public string name { get; set; }
-            public bool isShared { get; set; }
+            public JObject Variables { get; set; }
+            public int Id { get; set; }
+            public string Type { get; set; }
+            public string Name { get; set; }
+            public bool IsShared { get; set; }
         }
     }
 }

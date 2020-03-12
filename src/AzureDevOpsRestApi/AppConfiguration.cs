@@ -13,11 +13,11 @@ namespace AzureDevOpsAPI
         public string VersionNumber { get; set; }
         public string Id { get; set; }
         public string Team { get; set; }
-        public string _gitcredential { get; set; }
-        public string _gitbaseAddress { get; set; }
-        public string _mediaType { get; set; }
-        public string _scheme { get; set; }
-        public string userName { get; set; }
+        public string GitCredential { get; set; }
+        public string GitBaseAddress { get; set; }
+        public string MediaType { get; set; }
+        public string Scheme { get; set; }
+        public string UserName { get; set; }
     }
     public class ProjectConfigurations
     {

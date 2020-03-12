@@ -8,29 +8,29 @@ namespace AzureDevOpsAPI.Viewmodel.Queue
 {
     public class QueueModel : BaseViewModel
     {
-        public int count { get; set; }
-        public AgentQueueModel[] value { get; set; }
+        public int Count { get; set; }
+        public AgentQueueModel[] Value { get; set; }
     }
 
     public class Value
     {
-        public int id { get; set; }
-        public string projectId { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string ProjectId { get; set; }
+        public string Name { get; set; }
     }
 
     public class Pool
     {
-        public int id { get; set; }
-        public string poolType { get; set; }
+        public int Id { get; set; }
+        public string PoolType { get; set; }
     }
 
     public class AgentQueueModel
     {
-        public int id { get; set; }
-        public string projectId { get; set; }
-        public string name { get; set; }
-        public string groupScopeId { get; set; }
-        public Pool pool { get; set; }
+        public int Id { get; set; }
+        public string ProjectId { get; set; }
+        public string Name { get; set; }
+        public string GroupScopeId { get; set; }
+        public Pool Pool { get; set; }
     }
 }

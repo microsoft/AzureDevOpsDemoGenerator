@@ -10,15 +10,15 @@ namespace AzureDevOpsAPI.Viewmodel.WorkItem
     {
         public class Node : BaseViewModel
         {
-            public int id { get; set; }
-            public string name { get; set; }
-            public Attributes attributes { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public Attributes Attributes { get; set; }
         }
 
         public class Attributes
         {
-            public DateTime startDate { get; set; }
-            public DateTime finishDate { get; set; }
+            public DateTime StartDate { get; set; }
+            public DateTime FinishDate { get; set; }
         }
     }
 }
