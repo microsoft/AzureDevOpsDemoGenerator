@@ -1,0 +1,12 @@
+{
+  "TeamIterationMap": [
+    {
+      "TeamName": "Space Game Web Team",
+      "Iterations": [ "Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4" ]
+    },
+    {
+      "TeamName": "Space Game Engine Team",
+      "Iterations": [ "Sprint 5", "Sprint 6" ]
+    }
+  ]
+}

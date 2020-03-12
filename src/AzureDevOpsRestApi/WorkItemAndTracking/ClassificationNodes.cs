@@ -6,6 +6,8 @@ using System.Text;
 using AzureDevOpsAPI.Viewmodel.Sprint;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
 using NLog;
+using System.IO;
+using AzureDevOpsRestApi.Viewmodel.ProjectAndTeams;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
@@ -136,43 +138,93 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         /// <param name="projectName"></param>
         /// <param name="templateType"></param>
         /// <returns></returns>
-        public bool UpdateIterationDates(string projectName, string templateType)
+        public bool UpdateIterationDates(string projectName, string templateType, string selectedTemplateName, string teamIterationMapJson)
         {
             try
             {
-                string project = projectName;
-                DateTime startDate = DateTime.Today.AddDays(-22);
-                DateTime endDate = DateTime.Today.AddDays(-1);
-
-                Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
-
-                if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                // team iteration changes
+                if (File.Exists(teamIterationMapJson))
                 {
-                    for (int i = 1; i <= 6; i++)
+                    teamIterationMapJson = File.ReadAllText(teamIterationMapJson);
+                    if (!string.IsNullOrEmpty(teamIterationMapJson))
                     {
-                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
-                    }
-                }
-                else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
-                {
-                    for (int i = 1; i <= 1; i++)
-                    {
-                        sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        string project = projectName;
+                        DateTime startDate = DateTime.Today;
+                        DateTime endDate = DateTime.Today.AddDays(12);
+
+                        TeamIterations.Map iterationMaps = new TeamIterations.Map();
+                        iterationMaps = JsonConvert.DeserializeObject<TeamIterations.Map>(teamIterationMapJson);
+                        if (iterationMaps.TeamIterationMap.Count > 0)
+                        {
+                            int i = 0;
+                            foreach (var iterationTeam in iterationMaps.TeamIterationMap)
+                            {
+                                if (i % 2 == 1)
+                                {
+                                    startDate = DateTime.Today;
+                                    endDate = DateTime.Today.AddDays(18);
+                                }
+                                foreach (var iteration in iterationTeam.Iterations)
+                                {
+
+                                    Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
+                                    sprint_dictionary.Add(iteration, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                                    foreach (var key in sprint_dictionary.Keys)
+                                    {
+                                        UpdateIterationDates(project, key, startDate, endDate);
+                                        if (i % 2 == 1)
+                                        {
+                                            startDate = endDate.AddDays(1);
+                                            endDate = startDate.AddDays(18);
+                                        }
+                                        else
+                                        {
+                                            startDate = endDate.AddDays(1);
+                                            endDate = startDate.AddDays(12);
+                                        }
+                                    }
+                                }
+                                i++;
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    for (int i = 1; i <= 3; i++)
-                    {
-                        sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
-                    }
-                }
+                    string project = projectName;
+                    DateTime startDate = DateTime.Today.AddDays(-22);
+                    DateTime endDate = DateTime.Today.AddDays(-1);
 
-                foreach (var key in sprint_dictionary.Keys)
-                {
-                    UpdateIterationDates(project, key, startDate, endDate);
-                    startDate = endDate.AddDays(1);
-                    endDate = startDate.AddDays(21);
+                    Dictionary<string, string[]> sprint_dictionary = new Dictionary<string, string[]>();
+
+                    if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Scrum.ToString().ToLower())
+                    {
+                        for (int i = 1; i <= 6; i++)
+                        {
+                            sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(templateType) || templateType.ToLower() == TemplateType.Basic.ToString().ToLower())
+                    {
+                        for (int i = 1; i <= 1; i++)
+                        {
+                            sprint_dictionary.Add("Sprint " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 1; i <= 3; i++)
+                        {
+                            sprint_dictionary.Add("Iteration " + i, new string[] { startDate.ToShortDateString(), endDate.ToShortDateString() });
+                        }
+                    }
+
+                    foreach (var key in sprint_dictionary.Keys)
+                    {
+                        UpdateIterationDates(project, key, startDate, endDate);
+                        startDate = endDate.AddDays(1);
+                        endDate = startDate.AddDays(21);
+                    }
                 }
                 return true;
             }
@@ -186,7 +238,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             }
             return false;
         }
-
+        
         /// <summary>
         /// Update Iteration Dates
         /// </summary>

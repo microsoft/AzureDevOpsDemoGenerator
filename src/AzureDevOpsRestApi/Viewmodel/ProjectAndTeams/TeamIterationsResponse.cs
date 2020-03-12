@@ -8,11 +8,24 @@ namespace AzureDevOpsAPI.Viewmodel.ProjectAndTeams
 {
     public class TeamIterationsResponse
     {
-        public class Value
+        public class Child
         {
             public string id { get; set; }
+            public string identifier { get; set; }
             public string name { get; set; }
+            public string structureType { get; set; }
+            public bool hasChildren { get; set; }
+            public string path { get; set; }
+        }
 
+        public class Value
+        {
+            public string identifier { get; set; }
+            public string name { get; set; }
+            public string structureType { get; set; }
+            public bool hasChildren { get; set; }
+            public string path { get; set; }
+            public List<Child> children { get; set; }
         }
 
         public class Iterations
