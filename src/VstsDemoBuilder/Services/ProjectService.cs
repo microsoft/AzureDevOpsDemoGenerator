@@ -449,6 +449,7 @@ namespace VstsDemoBuilder.Services
             }
             if (templateVersion != "2.0")
             {
+                UpdateIterations(model, _boardVersion, "Iterations.json");
                 //create teams
                 CreateTeams(model, template.Teams, _projectCreationVersion, model.id, template.TeamArea);
 
@@ -537,11 +538,11 @@ namespace VstsDemoBuilder.Services
 
                 //update sprint dates
                 UpdateSprintItems(model, _boardVersion, settings);
-                UpdateIterations(model, _boardVersion, "Iterations.json");
                 RenameIterations(model, _boardVersion, settings.renameIterations);
             }
             else
             {
+                UpdateIterations(model, _boardVersion, "Iterations.json");
                 // for newer version of templates
                 string teamsJsonPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "Teams\\Teams.json");
                 // Path.Combine(templatesFolder + templateUsed, "Teams\\Teams.json");
@@ -646,7 +647,7 @@ namespace VstsDemoBuilder.Services
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
                     }
                     UpdateSprintItems(model, _boardVersion, settings);
-                    UpdateIterations(model, _boardVersion, "Iterations.json");
+
                     RenameIterations(model, _boardVersion, settings.renameIterations);
                 }
             }
@@ -1057,52 +1058,118 @@ namespace VstsDemoBuilder.Services
 
                     foreach (var jTeam in jTeams)
                     {
-                        string isDefault = jTeam["isDefault"] != null ? jTeam["isDefault"].ToString() : string.Empty;
-                        if (isDefault == "false" || isDefault == "")
+                        string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
+                        if (File.Exists(teamIterationMap))
                         {
-                            GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
-                            if (!(string.IsNullOrEmpty(teamResponse.id)))
+                            //BEGIN - Mapping only given iterations for team in Team Iteration Mapping file
+                            if (!string.IsNullOrEmpty(teamIterationMap))
                             {
-                                string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
-                                string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
-
-                                //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
-
-
-                                if (File.Exists(updateAreaJSON))
+                                string data = model.ReadJsonFile(teamIterationMap);
+                                TeamIterations.Map iterationMap = new TeamIterations.Map();
+                                iterationMap = JsonConvert.DeserializeObject<TeamIterations.Map>(data);
+                                if (iterationMap.TeamIterationMap.Count > 0)
                                 {
-                                    updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
-                                    updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
-                                    bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
-                                }
-                                bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
-                                if (iterations.count > 0)
-                                {
-                                    foreach (var iteration in iterations.value)
+                                    foreach (var teamMap in iterationMap.TeamIterationMap)
                                     {
-                                        bool isIterationUpdated = objTeam.SetIterationsForTeam(iteration.id, teamResponse.name, model.ProjectName);
+                                        if (teamMap.TeamName.ToLower() == jTeam["name"].ToString().ToLower())
+                                        {
+                                            // AS IS
+
+                                            GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
+                                            if (!(string.IsNullOrEmpty(teamResponse.id)))
+                                            {
+                                                string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
+                                                string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
+
+                                                //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
+
+                                                if (File.Exists(updateAreaJSON))
+                                                {
+                                                    updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                                    updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
+                                                    bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
+                                                }
+                                                bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
+                                                if (iterations.count > 0)
+                                                {
+                                                    foreach (var iteration in iterations.value)
+                                                    {
+                                                        if (iteration.structureType == "iteration")
+                                                        {
+                                                            foreach (var child in iteration.children)
+                                                            {
+                                                                if (teamMap.Iterations.Contains(child.name))
+                                                                {
+                                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.name, model.ProjectName);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // TILL HERE
+                                        }
                                     }
+
                                 }
                             }
-                        }
-                        if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
-                        {
-                            AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
+                            // END
                         }
                         else
                         {
-                            AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
-                        }
-                        if (model.SelectedTemplate.ToLower() == "smarthotel360")
-                        {
-                            string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "UpdateTeamArea.json");
-
-                            //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
-                            if (File.Exists(updateAreaJSON))
+                            string isDefault = jTeam["isDefault"] != null ? jTeam["isDefault"].ToString() : string.Empty;
+                            if (isDefault == "false" || isDefault == "")
                             {
-                                updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
-                                updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
-                                bool isUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                                GetTeamResponse.Team teamResponse = objTeam.CreateNewTeam(jTeam.ToString(), model.ProjectName);
+                                if (!(string.IsNullOrEmpty(teamResponse.id)))
+                                {
+                                    string areaName = objTeam.CreateArea(model.ProjectName, teamResponse.name);
+                                    string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamAreaJSON);
+
+                                    //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, teamAreaJSON);
+
+                                    if (File.Exists(updateAreaJSON))
+                                    {
+                                        updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                        updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName).Replace("$AreaName$", areaName);
+                                        bool isUpdated = objTeam.SetAreaForTeams(model.ProjectName, teamResponse.name, updateAreaJSON);
+                                    }
+                                    bool isBackLogIterationUpdated = objTeam.SetBackLogIterationForTeam(backlogIteration, model.ProjectName, teamResponse.name);
+                                    if (iterations.count > 0)
+                                    {
+                                        foreach (var iteration in iterations.value)
+                                        {
+                                            if (iteration.structureType == "iteration")
+                                            {
+                                                foreach (var child in iteration.children)
+                                                {
+                                                    bool isIterationUpdated = objTeam.SetIterationsForTeam(child.identifier, teamResponse.name, model.ProjectName);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
+                            {
+                                AddMessage(id.ErrorId(), "Error while creating teams: " + objTeam.LastFailureMessage + Environment.NewLine);
+                            }
+                            else
+                            {
+                                AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
+                            }
+                            if (model.SelectedTemplate.ToLower() == "smarthotel360")
+                            {
+                                string updateAreaJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "UpdateTeamArea.json");
+
+                                //updateAreaJSON = string.Format(templatesFolder + @"{0}\{1}", model.SelectedTemplate, "UpdateTeamArea.json");
+                                if (File.Exists(updateAreaJSON))
+                                {
+                                    updateAreaJSON = model.ReadJsonFile(updateAreaJSON);
+                                    updateAreaJSON = updateAreaJSON.Replace("$ProjectName$", model.ProjectName);
+                                    bool isUpdated = objTeam.UpdateTeamsAreas(model.ProjectName, updateAreaJSON);
+                                }
                             }
                         }
                     }
@@ -1407,6 +1474,11 @@ namespace VstsDemoBuilder.Services
                 {
                     child.id = nd.id;
                 }
+                else
+                {
+                    var node = objClassification.CreateIteration(model.ProjectName, child.name);
+                    child.id = node.id;
+                }
             }
             else
             {
@@ -1459,8 +1531,10 @@ namespace VstsDemoBuilder.Services
             {
                 if (settings.type.ToLower() == "scrum" || settings.type.ToLower() == "agile" || settings.type.ToLower() == "basic")
                 {
+                    string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
+
                     ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
-                    bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type);
+                    bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.type, model.SelectedTemplate, teamIterationMap);
 
                     if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
                     {

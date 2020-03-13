@@ -706,7 +706,7 @@ namespace VstsDemoBuilder.Services
                     string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
                     if (fetchedWorkItem.count > 0)
                     {
-                        workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project, "$ProjectName$");
+                        workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project+"\\", "$ProjectName$\\");
                         string item = WIT;
                         if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems"))
                         {

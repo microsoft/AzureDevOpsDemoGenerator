@@ -253,7 +253,9 @@ namespace VstsRestAPI.ProjectsAndTeams
                 TeamIterationsResponse.Iterations viewModel = new TeamIterationsResponse.Iterations();
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
+                    //https://dev.azure.com/abcdcentralus/dp-05/_apis/wit/classificationnodes?$depth=1&api-version=5.0-preview.2
+                    //HttpResponseMessage response = client.GetAsync(projectName + "/_apis/work/teamsettings/iterations?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = client.GetAsync(projectName + "/_apis/wit/classificationnodes?$depth=1&api-version=5.0-preview.2").Result;
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<TeamIterationsResponse.Iterations>().Result;

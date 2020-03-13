@@ -740,6 +740,34 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Automatically provision Azure SQL Database in Azure Pipelines by using an Azure Resource Manager template. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines' target='_blank'>Provision Database</a>"
+        },
+        {
+          "Key": "345678643",
+          "Name": "Manage Agile software delivery plans across teams",
+          "TemplateFolder": "SpaceGame-DeliveryPlans",
+          "ShortName": "DeliveryPlans",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "ForkGitHubRepo": false,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Manage Agile software delivery plans across teams <br /><br />Lab URL: <a href='https://docs.microsoft.com/en-us/learn/modules/manage-delivery-plans' target='_blank'>Manage delivery plans</a>"
+        },
+        {
+          "Key": "345678644",
+          "Name": "Automate Azure Function deployments with Azure Pipelines",
+          "TemplateFolder": "SpaceGame-AzureFunctions",
+          "ShortName": "DeployAzureFunction",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions' target='_blank'>Deploy Azure Functions</a>"
         }
       ]
     },

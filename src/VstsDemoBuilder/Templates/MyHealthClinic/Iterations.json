@@ -1,0 +1,37 @@
+{
+  "children": [
+    {
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint A",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint B",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint C",
+      "structureType": "iteration",
+      "hasChildren": false
+    }
+  ],
+  "name": "web",
+  "structureType": "iteration",
+  "hasChildren": true
+}
