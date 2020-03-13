@@ -76,6 +76,7 @@
     <Compile Include="Extractor\VariableGroups.cs" />
     <Compile Include="Git\GitHubImportRepo.cs" />
     <Compile Include="ProjectsAndTeams\GetAllGroups.cs" />
+    <Compile Include="ProjectsAndTeams\TeamIteration.cs" />
     <Compile Include="Services\HttpServices.cs" />
     <Compile Include="Service\ServiceEndPoint.cs" />
     <Compile Include="Viewmodel\Extractor\BoardColumnResponseAgile.cs" />

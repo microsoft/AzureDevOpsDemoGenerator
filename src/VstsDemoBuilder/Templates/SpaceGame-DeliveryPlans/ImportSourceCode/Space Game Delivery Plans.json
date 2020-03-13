@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/sharplogic/Space Game Delivery Plans/_git/Space Game Delivery Plans"
+    },
+    "serviceEndpointId": "$Space Game Delivery Plans-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
