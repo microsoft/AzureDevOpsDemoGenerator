@@ -160,6 +160,11 @@
         "jobCancelTimeoutInMinutes": 1
       }
     ],
+    "target": {
+      "agentSpecification": {
+        "identifier": "windows-2019"
+      }
+    },
     "type": 1
   },
   "repository": {
@@ -201,9 +206,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "name": "Hosted VS2017",
+    "name": "Azure Pipelines",
     "pool": {
-      "name": "Hosted VS2017",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },
