@@ -7,7 +7,8 @@
   "path": "\\",
   "variables": {
     "DefaultConnectionString": {
-      "value": "Server=localhost;Database=PartsUnlimited-Prod;User ID=vmadmin;Password=P2ssw0rd@123;"
+      "value": "Server=localhost;Database=PartsUnlimited-Prod;User ID=vmadmin;Password=P2ssw0rd@123;",
+      "isSecret": true
     },
     "username": {
       "value": "vmadmin",
