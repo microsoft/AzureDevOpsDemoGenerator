@@ -28,7 +28,6 @@
     "variableGroups": [],
     "environments": [
         {
-            "id": 3,
             "name": "Dev",
             "rank": 1,
             "owner": {
@@ -400,7 +399,6 @@
             "$value": "Other"
         }
     },
-    "id": 3,
     "name": "Python-CD",
     "path": "\\",
     "projectReference": null

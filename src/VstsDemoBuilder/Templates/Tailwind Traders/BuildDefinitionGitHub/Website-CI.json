@@ -35,7 +35,7 @@
     "system.debug": {
       "value": "false",
       "allowOverride": true
-    }   
+    }
   },
   "retentionRules": [
     {
@@ -227,6 +227,11 @@
         "jobCancelTimeoutInMinutes": 1
       }
     ],
+    "target": {
+      "agentSpecification": {
+        "identifier": "ubuntu-16.04"
+      }
+    },
     "type": 1
   },
   "repository": {
@@ -252,9 +257,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "name": "Hosted Ubuntu 1604",
+    "name": "Azure Pipelines",
     "pool": {
-      "name": "Hosted Ubuntu 1604",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },

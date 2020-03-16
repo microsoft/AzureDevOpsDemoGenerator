@@ -55,10 +55,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "id": 8,
-    "name": "Hosted Ubuntu 1604",
+    "name": "Azure Pipelines",
     "pool": {
-      "name": "Hosted Ubuntu 1604",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },

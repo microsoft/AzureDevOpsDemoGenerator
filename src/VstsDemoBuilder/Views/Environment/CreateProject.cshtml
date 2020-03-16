@@ -140,15 +140,9 @@
         <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
             Create New Project
         </div>
-        @{
-            if (!string.IsNullOrEmpty(Model.EnableExtractor) && Model.EnableExtractor.ToLower() == "true")
-            {
-                <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
-                    <a href="../extractor/index" target="_blank" class="text-white icon2" style="font-size: 18px; float: right;" id="buildYourTemplate">Build your template *</a>
-                </div>
-            }
-        }
-
+        <div class="text-center display-4 p-3" id="greeting" style="line-height: 1.2;">
+            <a href="../extractor/index" target="_blank" class="text-white" style="font-size: 18px; float: right;" id="buildYourTemplate">Build your template</a>
+        </div>
     </div>
     @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
     {
@@ -189,6 +183,14 @@
             <div class="col-md-6 order-1 order-md-2">
                 <div style="border:1px solid #ccc; padding:15px;">
                     <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
                         <div class="col-lg-8">
 
@@ -197,14 +199,6 @@
                             </div>
                             <div style="color:red">
                                 @ViewBag.AccDDError
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
-                        <div class="col-lg-8">
-                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
                             </div>
                         </div>
                     </div>
