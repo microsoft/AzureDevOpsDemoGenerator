@@ -216,6 +216,11 @@
         "jobCancelTimeoutInMinutes": 1
       }
     ],
+    "target": {
+      "agentSpecification": {
+        "identifier": "vs2017-win2016"
+      }
+    },
     "type": 1
   },
   "repository": {
@@ -257,13 +262,9 @@
   "authoredBy": "{}",
   "drafts": [],
   "queue": {
-    "_links": "{}",
-    "id": "",
-    "name": "Hosted VS2017",
-    "url": "",
+    "name": "Azure Pipelines",
     "pool": {
-      "id": "",
-      "name": "Hosted VS2017",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },

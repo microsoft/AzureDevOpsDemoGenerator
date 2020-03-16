@@ -59,125 +59,130 @@
     "jobTimeoutInMinutes": 60,
     "jobCancelTimeoutInMinutes": 5,
     "process": {
-        "phases": [
+      "phases": [
+        {
+          "steps": [
             {
-                "steps": [
-                    {
-                        "environment": {},
-                        "enabled": true,
-                        "continueOnError": false,
-                        "alwaysRun": false,
-                        "displayName": "Restore",
-                        "timeoutInMinutes": 0,
-                        "task": {
-                            "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
-                            "versionSpec": "1.*",
-                            "definitionType": "task"
-                        },
-                        "inputs": {
-                            "command": "restore",
-                            "publishWebProjects": "true",
-                            "projects": "src/PartsUnlimited.Models/PartsUnlimited.Models.csproj\nsrc/PartsUnlimitedWebsite/PartsUnlimitedWebsite.csproj\ntest/PartsUnlimited.UnitTests/PartsUnlimited.UnitTests.csproj",
-                            "arguments": "",
-                            "zipAfterPublish": "true"
-                        }
-                    },
-                    {
-                        "environment": {},
-                        "enabled": true,
-                        "continueOnError": false,
-                        "alwaysRun": false,
-                        "displayName": "Build",
-                        "timeoutInMinutes": 0,
-                        "task": {
-                            "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
-                            "versionSpec": "1.*",
-                            "definitionType": "task"
-                        },
-                        "inputs": {
-                            "command": "build",
-                            "publishWebProjects": "true",
-                            "projects": "src/PartsUnlimited.Models/PartsUnlimited.Models.csproj\nsrc/PartsUnlimitedWebsite/PartsUnlimitedWebsite.csproj\ntest/PartsUnlimited.UnitTests/PartsUnlimited.UnitTests.csproj",
-                            "arguments": "--configuration $(BuildConfiguration)",
-                            "zipAfterPublish": "true"
-                        }
-                    },
-                    {
-                        "environment": {},
-                        "enabled": true,
-                        "continueOnError": false,
-                        "alwaysRun": false,
-                        "displayName": "Test",
-                        "timeoutInMinutes": 0,
-                        "task": {
-                            "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
-                            "versionSpec": "1.*",
-                            "definitionType": "task"
-                        },
-                        "inputs": {
-                            "command": "test",
-                            "publishWebProjects": "true",
-                            "projects": "$(Parameters.TestProjects)",
-                            "arguments": "--configuration $(BuildConfiguration)",
-                            "zipAfterPublish": "true"
-                        }
-                    },
-                    {
-                        "environment": {},
-                        "enabled": true,
-                        "continueOnError": false,
-                        "alwaysRun": false,
-                        "displayName": "Publish",
-                        "timeoutInMinutes": 0,
-                        "task": {
-                            "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
-                            "versionSpec": "1.*",
-                            "definitionType": "task"
-                        },
-                        "inputs": {
-                            "command": "publish",
-                            "publishWebProjects": "True",
-                            "projects": "",
-                            "arguments": "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)",
-                            "zipAfterPublish": "True"
-                        }
-                    },
-                    {
-                        "environment": {},
-                        "enabled": true,
-                        "continueOnError": false,
-                        "alwaysRun": false,
-                        "displayName": "Publish Artifact",
-                        "timeoutInMinutes": 0,
-                        "task": {
-                            "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
-                            "versionSpec": "1.*",
-                            "definitionType": "task"
-                        },
-                        "inputs": {
-                            "PathtoPublish": "$(build.artifactstagingdirectory)",
-                            "ArtifactName": "drop",
-                            "ArtifactType": "Container",
-                            "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
-                            "Parallel": "false",
-                            "ParallelCount": "8"
-                        }
-                    }
-                ],
-                "name": "Phase 1",
-                "refName": "Phase_1",
-                "condition": "succeeded()",
-                "target": {
-                    "executionOptions": {
-                        "type": 0
-                    },
-                    "allowScriptsAuthAccessOption": false,
-                    "type": 1
-                },
-                "jobAuthorizationScope": "projectCollection",
-                "jobCancelTimeoutInMinutes": 1
+              "environment": {},
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "displayName": "Restore",
+              "timeoutInMinutes": 0,
+              "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+              },
+              "inputs": {
+                "command": "restore",
+                "publishWebProjects": "true",
+                "projects": "src/PartsUnlimited.Models/PartsUnlimited.Models.csproj\nsrc/PartsUnlimitedWebsite/PartsUnlimitedWebsite.csproj\ntest/PartsUnlimited.UnitTests/PartsUnlimited.UnitTests.csproj",
+                "arguments": "",
+                "zipAfterPublish": "true"
+              }
+            },
+            {
+              "environment": {},
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "displayName": "Build",
+              "timeoutInMinutes": 0,
+              "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+              },
+              "inputs": {
+                "command": "build",
+                "publishWebProjects": "true",
+                "projects": "src/PartsUnlimited.Models/PartsUnlimited.Models.csproj\nsrc/PartsUnlimitedWebsite/PartsUnlimitedWebsite.csproj\ntest/PartsUnlimited.UnitTests/PartsUnlimited.UnitTests.csproj",
+                "arguments": "--configuration $(BuildConfiguration)",
+                "zipAfterPublish": "true"
+              }
+            },
+            {
+              "environment": {},
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "displayName": "Test",
+              "timeoutInMinutes": 0,
+              "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+              },
+              "inputs": {
+                "command": "test",
+                "publishWebProjects": "true",
+                "projects": "$(Parameters.TestProjects)",
+                "arguments": "--configuration $(BuildConfiguration)",
+                "zipAfterPublish": "true"
+              }
+            },
+            {
+              "environment": {},
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "displayName": "Publish",
+              "timeoutInMinutes": 0,
+              "task": {
+                "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+              },
+              "inputs": {
+                "command": "publish",
+                "publishWebProjects": "True",
+                "projects": "",
+                "arguments": "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)",
+                "zipAfterPublish": "True"
+              }
+            },
+            {
+              "environment": {},
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "displayName": "Publish Artifact",
+              "timeoutInMinutes": 0,
+              "task": {
+                "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+              },
+              "inputs": {
+                "PathtoPublish": "$(build.artifactstagingdirectory)",
+                "ArtifactName": "drop",
+                "ArtifactType": "Container",
+                "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+                "Parallel": "false",
+                "ParallelCount": "8"
+              }
             }
-        ],
+          ],
+          "name": "Phase 1",
+          "refName": "Phase_1",
+          "condition": "succeeded()",
+          "target": {
+            "executionOptions": {
+              "type": 0
+            },
+            "allowScriptsAuthAccessOption": false,
+            "type": 1
+          },
+          "jobAuthorizationScope": "projectCollection",
+          "jobCancelTimeoutInMinutes": 1
+        }
+      ],
+      "target": {
+            "agentSpecification": {
+                "identifier": "vs2017-win2016"
+            }
+        },
         "type": 1
     },
     "repository": {
@@ -217,9 +222,9 @@
     "quality": "definition",
     "drafts": [],
     "queue": {
-        "name": "Hosted VS2017",
+        "name": "Azure Pipelines",
         "pool": {
-            "name": "Hosted VS2017",
+            "name": "Azure Pipelines",
             "isHosted": true
         }
     },
