@@ -4,6 +4,17 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="PrivateTemplates\**" />
+    <Content Remove="PrivateTemplates\**" />
+    <EmbeddedResource Remove="PrivateTemplates\**" />
+    <None Remove="PrivateTemplates\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Apis\TestController.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <None Include="wwwroot\Scripts\AppScripts\create.js" />
@@ -149,6 +160,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="16.153.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.ExtensionManagement.WebApi" Version="16.153.0" />
     <PackageReference Include="Microsoft.VisualStudio.Services.Gallery.WebApi" Version="16.153.0" />
@@ -167,7 +179,6 @@
 
   <ItemGroup>
     <Folder Include="ExtractedTemplate\" />
-    <Folder Include="PrivateTemplates\" />
     <Folder Include="wwwroot\ExtractedTemplate\" />
   </ItemGroup>
 

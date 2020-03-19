@@ -428,6 +428,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 }
                 //Deleting uploaded zip files present from last one hour
                 string extractedZipFile = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/";
+                if (!Directory.Exists(extractedZipFile))
+                {
+                    Directory.CreateDirectory(extractedZipFile);
+                }
                 if (Directory.Exists(extractedZipFile))
                 {
                     string[] subdirs = Directory.GetFiles(extractedZipFile)
@@ -808,7 +812,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                     if (privateTemplate.PrivateTemplatePath != "")
                     {
-                        privateTemplate.ResponseMessage  = templateService.checkSelectedTemplateIsPrivate(privateTemplate.PrivateTemplatePath);
+                        privateTemplate.ResponseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.PrivateTemplatePath);
                         if (privateTemplate.ResponseMessage != "SUCCESS")
                         {
                             var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
