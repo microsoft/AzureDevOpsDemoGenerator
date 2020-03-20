@@ -158,8 +158,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 StatusMessages.Remove(id);
             }
         }
-        public JObject GetStatusMessage(string id)
+        public string GetStatusMessage(string id)
         {
+            string status = string.Empty;
             lock (ProjectService.objLock)
             {
                 string message = string.Empty;
@@ -167,18 +168,18 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (id.EndsWith("_Errors"))
                 {
                     //RemoveKey(id);
-                    obj["status"] = "Error: \t" + ProjectService.StatusMessages[id];
+                    status = "Error: \t" + ProjectService.StatusMessages[id];
                 }
                 if (ProjectService.StatusMessages.Keys.Count(x => x == id) == 1)
                 {
-                    obj["status"] = ProjectService.StatusMessages[id];
+                    status = ProjectService.StatusMessages[id];
                 }
                 else
                 {
-                    obj["status"] = "Successfully Created";
+                    status = "Successfully Created";
 
                 }
-                return obj;
+                return status;
             }
         }
 

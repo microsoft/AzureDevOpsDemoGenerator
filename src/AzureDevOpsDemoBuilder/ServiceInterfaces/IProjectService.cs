@@ -12,7 +12,7 @@ namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 
         void AddMessage(string id, string message);
 
-        JObject GetStatusMessage(string id);
+        string GetStatusMessage(string id);
 
         HttpResponseMessage GetprojectList(string accname, string pat);
      

@@ -267,7 +267,7 @@ namespace VstsDemoBuilder.Controllers.Apis
             // Use SecurityProtocolType.Ssl3 if needed for compatibility reasons
 
             var currentProgress = projectService.GetStatusMessage(TrackId);
-            return Ok(currentProgress["status"]);
+            return Ok(currentProgress);
         }
 
         ///// <summary>
