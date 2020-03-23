@@ -76,7 +76,6 @@
         "href": "https://dev.azure.com/sharplogic/_apis/build/Queues/8"
       }
     },
-    "id": 8,
     "url": "https://dev.azure.com/sharplogic/_apis/build/Queues/8",
     "pool": null
   },
