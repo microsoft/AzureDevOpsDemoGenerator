@@ -9,10 +9,12 @@
   "isDeleted": false,
   "variables": {
     "resourcegroup": {
-      "value": "Dojo-Coupon-Dev-WUS2"
+      "value": "Dojo-Coupon-Dev-WUS2",
+      "isSecret": true
     },
     "webapp": {
-      "value": "dojo-coupons-app-dev"
+      "value": "dojo-coupons-app-dev",
+      "isSecret": true
     }
   },
   "variableGroups": [],

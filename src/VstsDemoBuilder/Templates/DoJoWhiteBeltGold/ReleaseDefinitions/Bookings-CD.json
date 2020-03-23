@@ -9,10 +9,12 @@
   "isDeleted": false,
   "variables": {
     "resourcegroup": {
-      "value": "Dojo-Booking-Dev-WUS2"
+      "value": "Dojo-Booking-Dev-WUS2",
+      "isSecret": true
     },
     "webapp": {
-      "value": "dojo-bookings-app-dev"
+      "value": "dojo-bookings-app-dev",
+      "isSecret": true
     }
   },
   "variableGroups": [],
