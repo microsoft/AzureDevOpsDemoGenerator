@@ -9,16 +9,20 @@
       "value": "YOUR_ACR.azurecr.io"
     },
     "DatabaseName": {
-      "value": "mhcdb"
+      "value": "mhcdb",
+      "isSecret": true
     },
     "Password": {
-      "value": "P2ssw0rd1234"
+      "value": "P2ssw0rd1234",
+      "isSecret": true
     },
     "SQLadmin": {
-      "value": "sqladmin"
+      "value": "sqladmin",
+      "isSecret": true
     },
     "SQLserver": {
-      "value": "YOUR_DBSERVER.database.windows.net"
+      "value": "YOUR_DBSERVER.database.windows.net",
+      "isSecret": true
     }
   },
   "variableGroups": [],
