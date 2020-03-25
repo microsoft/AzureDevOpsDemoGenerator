@@ -210,6 +210,9 @@ namespace VstsRestAPI.WorkItemAndTracking
                             }
 
                             string areaPath = newWI.fields.SystemAreaPath ?? projectName;
+                            string[] areaPathSlpit = areaPath.Split('/');
+                            areaPathSlpit[0] = projectName;
+                            areaPath = string.Join("//", areaPathSlpit);
                             dicWIFields.Add("/fields/System.AreaPath", areaPath);
                             dicWIFields.Add("/fields/System.Description", newWI.fields.SystemDescription);
                             dicWIFields.Add("/fields/System.State", newWI.fields.SystemState);
