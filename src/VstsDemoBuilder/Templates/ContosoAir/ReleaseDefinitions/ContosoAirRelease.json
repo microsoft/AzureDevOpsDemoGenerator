@@ -8,10 +8,12 @@
       "value": "westus2"
     },
     "resourcegroup": {
-      "value": "contosoair"
+      "value": "contosoair",
+      "isSecret": true
     },
     "web": {
-      "value": "contosoair$UUID$"
+      "value": "contosoair$UUID$",
+      "isSecret": true
     }
   },
   "variableGroups": [
