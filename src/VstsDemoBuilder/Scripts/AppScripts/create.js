@@ -813,7 +813,7 @@ function getStatus() {
                             $('input[id="gitHubCheckbox"]').prop('disabled', false);
                             if (ErrorData !== '') {
                                 $("#projCreateMsg").hide(); $("#errorDescription").html("");
-                                $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can email us the log  to <a id="EmailPopup" href="mailto:AzureDevOpsDemoGenerator@service.microsoft.com"><i>AzureDevOpsDemoGenerator@service.microsoft.com</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
+                                $('<b style="display: block;">We ran into some issues and we are sorry about that!</b><p> The log below will provide you insights into why the provisioning failed. You can raise and issue with the logs <a id="EmailPopup" href="https://github.com/microsoft/AzureDevOpsDemoGenerator/issues/new" target="_blank"><i>here</i></a> and we will try to help you.</p><p>Click on View Diagnostics button to share logs with us.</p>').appendTo("#errorDescription");
                                 $("#errorMail").empty().append(ErrorData);
                                 $("#errorNotify").show();
                                 $("#errorNotify").removeClass("d-none").addClass("d-block");
