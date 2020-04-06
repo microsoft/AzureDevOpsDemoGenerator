@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using AzureDevOpsDemoBuilder.Models;
+using System;
 
 namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 {
@@ -11,7 +12,7 @@ namespace AzureDevOpsDemoBuilder.ServiceInterfaces
 
         void AddMessage(string id, string message);
 
-        JObject GetStatusMessage(string id);
+        string GetStatusMessage(string id);
 
         HttpResponseMessage GetprojectList(string accname, string pat);
      
@@ -22,6 +23,8 @@ namespace AzureDevOpsDemoBuilder.ServiceInterfaces
         bool CheckForInstalledExtensions(string extensionJsonFile, string token, string account);
 
         bool InstallExtensions(Project model, string accountName, string PAT);
+
+        void EndEnvironmentSetupProcess(IAsyncResult result, Project model, int usercount);
 
     }
 }

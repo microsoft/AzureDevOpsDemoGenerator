@@ -47,6 +47,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using AzureDevOpsRestApi.Viewmodel.ProjectAndTeams;
+using static VstsDemoBuilder.Controllers.Apis.ProjectController;
 
 namespace AzureDevOpsDemoBuilder.Services
 {
@@ -157,8 +158,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 StatusMessages.Remove(id);
             }
         }
-        public JObject GetStatusMessage(string id)
+        public string GetStatusMessage(string id)
         {
+            string status = string.Empty;
             lock (ProjectService.objLock)
             {
                 string message = string.Empty;
@@ -166,18 +168,18 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (id.EndsWith("_Errors"))
                 {
                     //RemoveKey(id);
-                    obj["status"] = "Error: \t" + ProjectService.StatusMessages[id];
+                    status = "Error: \t" + ProjectService.StatusMessages[id];
                 }
                 if (ProjectService.StatusMessages.Keys.Count(x => x == id) == 1)
                 {
-                    obj["status"] = ProjectService.StatusMessages[id];
+                    status = ProjectService.StatusMessages[id];
                 }
                 else
                 {
-                    obj["status"] = "Successfully Created";
+                    status = "Successfully Created";
 
                 }
-                return obj;
+                return status;
             }
         }
 
@@ -2868,6 +2870,70 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// End the process
+        /// </summary>
+        /// <param name="result"></param>
+        public void EndEnvironmentSetupProcess(IAsyncResult result, Project model,int usercount)
+        {
+            string templateUsed = string.Empty;
+            string ID = string.Empty;
+            string accName = string.Empty;
+            try
+            {
+                ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
+                //string[] strResult = processTask.EndInvoke(result);
+                RemoveKey(model.Id);
+                if (ProjectService.StatusMessages.Keys.Count(x => x == model.Id + "_Errors") == 1)
+                {
+                    string errorMessages = ProjectService.StatusMessages[model.Id + "_Errors"];
+                    if (errorMessages != "")
+                    {
+                        //also, log message to file system
+                        string logPath = HostingEnvironment.WebRootPath + "/log";
+                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+
+                        if (!Directory.Exists(logPath))
+                        {
+                            Directory.CreateDirectory(logPath);
+                        }
+
+                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+
+                        //Create ISSUE work item with error details in VSTSProjectgenarator account
+                        string patBase64 = AppKeyConfiguration["PATBase64"];
+                        string url = AppKeyConfiguration["URL"];
+                        string projectId = AppKeyConfiguration["PROJECTID"];
+                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        IssueWi objIssue = new IssueWi();
+
+                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
+
+                        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+
+                        string logWIT = AppKeyConfiguration["LogWIT"];
+                        if (logWIT == "true")
+                        {
+                            objIssue.CreateIssueWi(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+                        }
+                    }
+                }
+                //usercount--;
+            }
+            catch (Exception ex)
+            {
+                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            finally
+            {
+                //if (usercount == 0 && !string.IsNullOrEmpty(templateUsed))
+                //{
+                //    templateService.deletePrivateTemplate(templateUsed);
+                //}
             }
         }
     }

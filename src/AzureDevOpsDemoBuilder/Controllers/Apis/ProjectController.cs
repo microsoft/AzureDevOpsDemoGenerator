@@ -235,7 +235,7 @@ namespace VstsDemoBuilder.Controllers.Apis
                                 var workTask = Task.Run(() => processTask.Invoke(pmodel));
                                 workTask.ContinueWith((antecedent) =>
                                 {
-                                    EndEnvironmentSetupProcess(workTask, pmodel);
+                                   projectService.EndEnvironmentSetupProcess(workTask, pmodel, usercount);
                                 });
 
                             }
@@ -267,72 +267,72 @@ namespace VstsDemoBuilder.Controllers.Apis
             // Use SecurityProtocolType.Ssl3 if needed for compatibility reasons
 
             var currentProgress = projectService.GetStatusMessage(TrackId);
-            return Ok(currentProgress["status"]);
+            return Ok(currentProgress);
         }
 
-        /// <summary>
-        /// End the process
-        /// </summary>
-        /// <param name="result"></param>
-        public void EndEnvironmentSetupProcess(IAsyncResult result, Project model)
-        {
-            string templateUsed = string.Empty;
-            string ID = string.Empty;
-            string accName = string.Empty;
-            try
-            {
-                ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
-                //string[] strResult = processTask.EndInvoke(result);
-                projectService.RemoveKey(model.Id);
-                if (ProjectService.StatusMessages.Keys.Count(x => x == model.Id + "_Errors") == 1)
-                {
-                    string errorMessages = ProjectService.StatusMessages[model.Id + "_Errors"];
-                    if (errorMessages != "")
-                    {
-                        //also, log message to file system
-                        string logPath = HostingEnvironment.WebRootPath + "/log";
-                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+        ///// <summary>
+        ///// End the process
+        ///// </summary>
+        ///// <param name="result"></param>
+        //public void EndEnvironmentSetupProcess(IAsyncResult result, Project model)
+        //{
+        //    string templateUsed = string.Empty;
+        //    string ID = string.Empty;
+        //    string accName = string.Empty;
+        //    try
+        //    {
+        //        ProcessEnvironment processTask = (ProcessEnvironment)result.AsyncState;
+        //        //string[] strResult = processTask.EndInvoke(result);
+        //        projectService.RemoveKey(model.Id);
+        //        if (ProjectService.StatusMessages.Keys.Count(x => x == model.Id + "_Errors") == 1)
+        //        {
+        //            string errorMessages = ProjectService.StatusMessages[model.Id + "_Errors"];
+        //            if (errorMessages != "")
+        //            {
+        //                //also, log message to file system
+        //                string logPath = HostingEnvironment.WebRootPath + "/log";
+        //                string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
-                        if (!Directory.Exists(logPath))
-                        {
-                            Directory.CreateDirectory(logPath);
-                        }
+        //                if (!Directory.Exists(logPath))
+        //                {
+        //                    Directory.CreateDirectory(logPath);
+        //                }
 
-                        System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
+        //                System.IO.File.AppendAllText(Path.Combine(logPath, fileName), errorMessages);
 
-                        //Create ISSUE work item with error details in VSTSProjectgenarator account
-                        string patBase64 = AppKeyConfiguration["PATBase64"];
-                        string url = AppKeyConfiguration["URL"];
-                        string projectId = AppKeyConfiguration["PROJECTID"];
-                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
-                        IssueWi objIssue = new IssueWi();
+        //                //Create ISSUE work item with error details in VSTSProjectgenarator account
+        //                string patBase64 = AppKeyConfiguration["PATBase64"];
+        //                string url = AppKeyConfiguration["URL"];
+        //                string projectId = AppKeyConfiguration["PROJECTID"];
+        //                string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+        //                IssueWi objIssue = new IssueWi();
 
-                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
-                        errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
+        //                errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+        //                errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
 
-                        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
+        //                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);
 
-                        string logWIT = AppKeyConfiguration["LogWIT"];
-                        if (logWIT == "true")
-                        {
-                            objIssue.CreateIssueWi(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
-                        }
-                    }
-                }
-                usercount--;
-            }
-            catch (Exception ex)
-            {
-                logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-            }
-            finally
-            {
-                if (usercount == 0 && !string.IsNullOrEmpty(templateUsed))
-                {
-                    templateService.deletePrivateTemplate(templateUsed);
-                }
-            }
-        }
+        //                string logWIT = AppKeyConfiguration["LogWIT"];
+        //                if (logWIT == "true")
+        //                {
+        //                    objIssue.CreateIssueWi(patBase64, "4.1", url, issueName, errorMessages, projectId, "Demo Generator");
+        //                }
+        //            }
+        //        }
+        //        usercount--;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+        //    }
+        //    finally
+        //    {
+        //        if (usercount == 0 && !string.IsNullOrEmpty(templateUsed))
+        //        {
+        //            templateService.deletePrivateTemplate(templateUsed);
+        //        }
+        //    }
+        //}
     }
 }
 
