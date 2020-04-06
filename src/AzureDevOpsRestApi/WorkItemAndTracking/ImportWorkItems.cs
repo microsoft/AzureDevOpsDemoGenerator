@@ -209,6 +209,9 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                                 dicWIFields.Add("/fields/System.AssignedTo", assignToUser);
                             }
                             string areaPath = newWI.Fields.SystemAreaPath ?? projectName;
+                            string[] areaPathSlpit = areaPath.Split('/');
+                            areaPathSlpit[0] = projectName;
+                            areaPath = string.Join("//", areaPathSlpit);
                             dicWIFields.Add("/fields/System.AreaPath", areaPath);
                             dicWIFields.Add("/fields/System.Description", newWI.Fields.SystemDescription);
                             dicWIFields.Add("/fields/System.State", newWI.Fields.SystemState);
