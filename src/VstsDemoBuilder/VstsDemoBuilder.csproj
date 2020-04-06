@@ -1416,6 +1416,36 @@
     <Content Include="Templates\SpaceGame-AzureFunctions\Teams\Space Game Azure Functions Team\CardStyles.json" />
     <Content Include="Templates\SpaceGame-AzureFunctions\Teams\Teams.json" />
     <Content Include="Templates\SpaceGame-AzureFunctions\WorkItems\Issue.json" />
+    <Content Include="Templates\deploy-docker-template\BuildDefinitionGitHub\mslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\deploy-docker-template\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\deploy-docker-template\ImportSourceCode\Space Game - web - Release workflow.json" />
+    <Content Include="Templates\deploy-docker-template\Iterations.json" />
+    <Content Include="Templates\deploy-docker-template\ProjectSettings.json" />
+    <Content Include="Templates\deploy-docker-template\ProjectTemplate.json" />
+    <Content Include="Templates\deploy-docker-template\ServiceEndpoints\GitHub_51da3d38-EndPoint.json" />
+    <Content Include="Templates\deploy-docker-template\ServiceEndpoints\Space Game - web - Release workflow-code.json" />
+    <Content Include="Templates\deploy-docker-template\TeamArea.json" />
+    <Content Include="Templates\deploy-docker-template\Teams\Space Game - web - Docker Team\BoardColumns.json" />
+    <Content Include="Templates\deploy-docker-template\Teams\Space Game - web - Docker Team\BoardRows.json" />
+    <Content Include="Templates\deploy-docker-template\Teams\Space Game - web - Docker Team\CardFields.json" />
+    <Content Include="Templates\deploy-docker-template\Teams\Space Game - web - Docker Team\CardStyles.json" />
+    <Content Include="Templates\deploy-docker-template\Teams\Teams.json" />
+    <Content Include="Templates\deploy-docker-template\WorkItems\Issue.json" />
+    <Content Include="Templates\deploy-kubernetes-template\BuildDefinitionGitHub\mslearn-tailspin-spacegame-web-deploy.json" />
+    <Content Include="Templates\deploy-kubernetes-template\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\deploy-kubernetes-template\ImportSourceCode\Space Game - web - Release workflow.json" />
+    <Content Include="Templates\deploy-kubernetes-template\Iterations.json" />
+    <Content Include="Templates\deploy-kubernetes-template\ProjectSettings.json" />
+    <Content Include="Templates\deploy-kubernetes-template\ProjectTemplate.json" />
+    <Content Include="Templates\deploy-kubernetes-template\ServiceEndpoints\GitHub_9a905ff5-EndPoint.json" />
+    <Content Include="Templates\deploy-kubernetes-template\ServiceEndpoints\Space Game - web - Release workflow-code.json" />
+    <Content Include="Templates\deploy-kubernetes-template\TeamArea.json" />
+    <Content Include="Templates\deploy-kubernetes-template\Teams\Space Game - web - Docker Team\BoardColumns.json" />
+    <Content Include="Templates\deploy-kubernetes-template\Teams\Space Game - web - Docker Team\BoardRows.json" />
+    <Content Include="Templates\deploy-kubernetes-template\Teams\Space Game - web - Docker Team\CardFields.json" />
+    <Content Include="Templates\deploy-kubernetes-template\Teams\Space Game - web - Docker Team\CardStyles.json" />
+    <Content Include="Templates\deploy-kubernetes-template\Teams\Teams.json" />
+    <Content Include="Templates\deploy-kubernetes-template\WorkItems\Issue.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
