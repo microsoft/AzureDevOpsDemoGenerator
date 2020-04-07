@@ -87,7 +87,10 @@ namespace AzureDevOpsDemoBuilder
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                //endpoints.MapControllers();
+                endpoints.MapControllerRoute(name: "account",
+                    pattern: "account/{*verify}",
+                    defaults: new { controller = "account", action = "verify" });
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Account}/{action=Verify}/{id?}");
