@@ -1694,32 +1694,28 @@ namespace AzureDevOpsDemoBuilder.Services
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
                     pullRequestJsonPath = pullRequestJsonPath.Replace("$reviewer$", model.Environment.UserUniqueId);
                     Repository objRepository = new Repository(_workItemConfig);
-                    string[] pullReqResponse = new string[2];
 
-                    pullReqResponse = objRepository.CreatePullRequest(pullRequestJsonPath, repositoryId);
-                    if (pullReqResponse.Length > 0)
+                    (string pullRequestId, string title) = objRepository.CreatePullRequest(pullRequestJsonPath, repositoryId);
+                    if (!string.IsNullOrEmpty(pullRequestId) && !string.IsNullOrEmpty(title))
                     {
-                        if (!string.IsNullOrEmpty(pullReqResponse[0]) && !string.IsNullOrEmpty(pullReqResponse[1]))
+                        model.Environment.PullRequests.Add(pullRequestId, title);
+                        commentFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/PullRequests/Comments/" + commentFile);
+                        if (File.Exists(commentFile))
                         {
-                            model.Environment.PullRequests.Add(pullReqResponse[1], pullReqResponse[0]);
-                            commentFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/PullRequests/Comments/" + commentFile);
-                            if (File.Exists(commentFile))
+                            commentFile = model.ReadJsonFile(commentFile);
+                            PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
+                            if (commentsList.Count > 0)
                             {
-                                commentFile = model.ReadJsonFile(commentFile);
-                                PullRequestComments.Comments commentsList = JsonConvert.DeserializeObject<PullRequestComments.Comments>(commentFile);
-                                if (commentsList.Count > 0)
+                                foreach (PullRequestComments.Value thread in commentsList.Value)
                                 {
-                                    foreach (PullRequestComments.Value thread in commentsList.Value)
+                                    string threadID = objRepository.CreateCommentThread(repositoryId, title, JsonConvert.SerializeObject(thread));
+                                    if (!string.IsNullOrEmpty(threadID))
                                     {
-                                        string threadID = objRepository.CreateCommentThread(repositoryId, pullReqResponse[0], JsonConvert.SerializeObject(thread));
-                                        if (!string.IsNullOrEmpty(threadID))
+                                        if (thread.Replies != null && thread.Replies.Count > 0)
                                         {
-                                            if (thread.Replies != null && thread.Replies.Count > 0)
+                                            foreach (var reply in thread.Replies)
                                             {
-                                                foreach (var reply in thread.Replies)
-                                                {
-                                                    objRepository.AddCommentToThread(repositoryId, pullReqResponse[0], threadID, JsonConvert.SerializeObject(reply));
-                                                }
+                                                objRepository.AddCommentToThread(repositoryId, title, threadID, JsonConvert.SerializeObject(reply));
                                             }
                                         }
                                     }
@@ -2877,7 +2873,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// End the process
         /// </summary>
         /// <param name="result"></param>
-        public void EndEnvironmentSetupProcess(IAsyncResult result, Project model,int usercount)
+        public void EndEnvironmentSetupProcess(IAsyncResult result, Project model, int usercount)
         {
             string templateUsed = string.Empty;
             string ID = string.Empty;

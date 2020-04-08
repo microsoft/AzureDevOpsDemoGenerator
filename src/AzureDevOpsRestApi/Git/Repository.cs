@@ -12,7 +12,7 @@ namespace AzureDevOpsAPI.Git
     public class Repository : ApiServiceBase
     {
         public Repository(IAppConfiguration configuration) : base(configuration) { }
-         Logger logger = LogManager.GetLogger("*");
+        Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Source Code from Git Hub
         /// </summary>
@@ -291,7 +291,7 @@ namespace AzureDevOpsAPI.Git
                         var request = new HttpRequestMessage(method, Configuration.UriString + Project + "/_apis/git/repositories/" + repositoryId + "?api-version=" + Configuration.VersionNumber);
                         var response = client.SendAsync(request).Result;
 
-                        return response.IsSuccessStatusCode;                        
+                        return response.IsSuccessStatusCode;
                     }
                 }
                 catch (Exception ex)
@@ -317,7 +317,7 @@ namespace AzureDevOpsAPI.Git
         /// <param name="json"></param>
         /// <param name="repositoryId"></param>
         /// <returns></returns>
-        public string[] CreatePullRequest(string json, string repositoryId)
+        public (string pullRequestId, string title) CreatePullRequest(string json, string repositoryId)
         {
             int retryCount = 0;
             while (retryCount < 5)
@@ -338,9 +338,9 @@ namespace AzureDevOpsAPI.Git
                         {
                             var responseDetails = response.Content.ReadAsStringAsync().Result;
                             JObject objResponse = JObject.Parse(responseDetails);
-                            pullRequest[0] = objResponse["pullRequestId"].ToString();
-                            pullRequest[1] = objResponse["title"].ToString();
-                            return pullRequest;
+                            string pullRequestId = objResponse["pullRequestId"].ToString();
+                            string title = objResponse["title"].ToString();
+                            return (pullRequestId, title);
                         }
                         else
                         {
@@ -359,13 +359,13 @@ namespace AzureDevOpsAPI.Git
 
                     if (retryCount > 4)
                     {
-                        return new string[] { };
+                        return ("", "");
                     }
 
                     Thread.Sleep(retryCount * 1000);
                 }
             }
-            return new string[] { };
+            return ("", "");
         }
 
         /// <summary>
@@ -448,7 +448,7 @@ namespace AzureDevOpsAPI.Git
                         if (response.IsSuccessStatusCode)
                         {
                             var responseDetails = response.Content.ReadAsStringAsync().Result;
-                            JObject objResponse = JObject.Parse(responseDetails);                            
+                            JObject objResponse = JObject.Parse(responseDetails);
                         }
                         else
                         {
