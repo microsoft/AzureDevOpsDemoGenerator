@@ -24,16 +24,20 @@
   ],
   "variables": {
     "ACR": {
-      "value": "YOURACR.azurecr.io"
+      "value": "YOURACR.azurecr.io",
+      "isSecret": true
     },
     "SQLpassword": {
-      "value": "P2ssw0rd1234"
+      "value": "P2ssw0rd1234",
+      "isSecret": true
     },
     "SQLserver": {
-      "value": "YOURSQLSERVER.database.windows.net"
+      "value": "YOURSQLSERVER.database.windows.net",
+      "isSecret": true
     },
     "SQLuser": {
-      "value": "sqladmin"
+      "value": "sqladmin",
+      "isSecret": true
     },
     "system.debug": {
       "value": "false",
@@ -381,6 +385,11 @@
         "jobCancelTimeoutInMinutes": 1
       }
     ],
+    "target": {
+      "agentSpecification": {
+        "identifier": "ubuntu-16.04"
+      }
+    },
     "type": 1
   },
   "repository": {
@@ -405,9 +414,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "name": "Hosted Ubuntu 1604",
+    "name": "Azure Pipelines",
     "pool": {
-      "name": "Hosted Ubuntu 1604",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },

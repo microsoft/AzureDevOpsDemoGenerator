@@ -156,6 +156,11 @@
         "jobAuthorizationScope": "projectCollection"
       }
     ],
+    "target": {
+      "agentSpecification": {
+        "identifier": "ubuntu-16.04"
+      }
+    },
     "type": 1
   },
   "repository": {
@@ -219,13 +224,9 @@
   "authoredBy": "{}",
   "drafts": [],
   "queue": {
-    "_links": "{}",
-    "id": "",
-    "name": "Hosted Ubuntu 1604",
-    "url": "",
+    "name": "Azure Pipelines",
     "pool": {
-      "id": "",
-      "name": "Hosted Ubuntu 1604",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },

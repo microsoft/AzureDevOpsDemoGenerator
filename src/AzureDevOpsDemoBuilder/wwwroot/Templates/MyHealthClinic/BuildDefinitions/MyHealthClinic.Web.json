@@ -9,7 +9,7 @@
         "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
       },
       "inputs": {
-        "workItemType": "181267",
+        "workItemType": "Task",
         "assignToRequestor": "true",
         "additionalFields": "{}"
       }
@@ -84,6 +84,7 @@
             "alwaysRun": false,
             "displayName": "Restore",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "DotNetCoreCLI_1",
             "task": {
               "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
@@ -103,8 +104,36 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
+            "displayName": "npm install bower",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "command": "custom",
+              "workingDir": "src/MyHealth.Web",
+              "verbose": "false",
+              "customCommand": "install -g bower",
+              "customRegistry": "useNpmrc",
+              "customFeed": "",
+              "customEndpoint": "",
+              "publishRegistry": "useExternalRegistry",
+              "publishFeed": "",
+              "publishPackageMetadata": "true",
+              "publishEndpoint": ""
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
             "displayName": "npm install",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "Npm_2",
             "task": {
               "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
@@ -121,6 +150,7 @@
               "customEndpoint": "",
               "publishRegistry": "useExternalRegistry",
               "publishFeed": "",
+              "publishPackageMetadata": "true",
               "publishEndpoint": ""
             }
           },
@@ -131,10 +161,11 @@
             "alwaysRun": false,
             "displayName": "bower install",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "Bower_3",
             "task": {
               "id": "4fa3aac0-0020-4832-9089-9979c9dd3e69",
-              "versionSpec": "",
+              "versionSpec": "0.*",
               "definitionType": "task"
             },
             "inputs": {
@@ -142,34 +173,6 @@
               "bowerjson": "src/MyHealth.Web/bower.json",
               "arguments": "",
               "bowerRuntime": "node_modules/bower/bin/bower"
-            }
-          },
-          {
-            "environment": {},
-            "enabled": true,
-            "continueOnError": false,
-            "alwaysRun": false,
-            "displayName": "gulp ",
-            "timeoutInMinutes": 0,
-            "refName": "Gulp_4",
-            "task": {
-              "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
-              "versionSpec": "0.*",
-              "definitionType": "task"
-            },
-            "inputs": {
-              "gulpFile": "src/MyHealth.Web/gulpfile.js",
-              "targets": "",
-              "arguments": "",
-              "cwd": "",
-              "gulpjs": "node_modules/gulp/bin/gulp.js",
-              "publishJUnitResults": "false",
-              "testResultsFiles": "**/TEST-*.xml",
-              "testRunTitle": "",
-              "enableCodeCoverage": "false",
-              "testFramework": "Mocha",
-              "srcFiles": "",
-              "testFiles": "test/*.js"
             }
           },
           {
@@ -200,6 +203,7 @@
             "alwaysRun": false,
             "displayName": "Test",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "DotNetCoreCLI_6",
             "task": {
               "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
@@ -221,6 +225,7 @@
             "alwaysRun": false,
             "displayName": "Publish",
             "timeoutInMinutes": 0,
+            "condition": "succeeded()",
             "refName": "DotNetCoreCLI_7",
             "task": {
               "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
@@ -274,7 +279,7 @@
             },
             "inputs": {
               "SourceFolder": "$(build.sourcesdirectory)",
-              "Contents": "**/*.json",
+              "Contents": "**/*.json\n**/custom/**",
               "TargetFolder": "$(build.artifactstagingdirectory)",
               "CleanTargetFolder": "false",
               "OverWrite": "false",
@@ -318,6 +323,11 @@
         "jobCancelTimeoutInMinutes": 1
       }
     ],
+    "target": {
+      "agentSpecification": {
+        "identifier": "vs2017-win2016"
+      }
+    },
     "type": 1
   },
   "repository": {
@@ -342,9 +352,9 @@
   "quality": "definition",
   "drafts": [],
   "queue": {
-    "name": "Hosted VS2017",
+    "name": "Azure Pipelines",
     "pool": {
-      "name": "Hosted VS2017",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   }

@@ -7,16 +7,20 @@
   "path": "\\",
   "variables": {
     "HostingPlan": {
-      "value": "githubplan"
+      "value": "githubplan",
+      "isSecret": true
     },
     "ResourceGroup": {
-      "value": "Github"
+      "value": "Github",
+      "isSecret": true
     },
     "ServerName": {
-      "value": "githubserver$UUID$"
+      "value": "githubserver$UUID$",
+      "isSecret": true
     },
     "WebsiteName": {
-      "value": "Githubwebapp$UUID$"
+      "value": "Githubwebapp$UUID$",
+      "isSecret": true
     }
   },
   "variableGroups": [],

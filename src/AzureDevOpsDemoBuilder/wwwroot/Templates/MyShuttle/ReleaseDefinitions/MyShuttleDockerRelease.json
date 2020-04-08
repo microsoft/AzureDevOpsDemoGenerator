@@ -8,7 +8,8 @@
       "isSecret": true
     },
     "DBUSER": {
-      "value": "dbadmin@myshuttle-db"
+      "value": "dbadmin@myshuttle-db",
+      "isSecret": true
     }
   },
   "variableGroups": [
@@ -34,8 +35,7 @@
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 1
+            "isNotificationOn": false
           }
         ],
         "approvalOptions": {

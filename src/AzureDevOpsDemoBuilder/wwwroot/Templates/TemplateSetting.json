@@ -29,7 +29,8 @@
             "/Templates/Tailwind Traders/Images/Website.png"
           ],
           "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/TailwindTraders.png"
+          "Image": "/Templates/TemplateImages/TailwindTraders.png",
+          "ForkGitHubRepo": true
         },
         {
           "Key": "77383",
@@ -42,14 +43,14 @@
             "aspnetcore",
             "azureappservice"
           ],
-          "ForkGitHubRepo": true,
           "Image": "/Templates/TemplateImages/SmartHotel.png",
           "PreviewImages": [
             "/Templates/SmartHotel360/Images/dashboard.png",
             "/Templates/SmartHotel360/Images/Diagram.png",
             "/Templates/SmartHotel360/Images/Screens.png"
           ],
-          "Author": "Microsoft"
+          "Author": "Microsoft",
+          "ForkGitHubRepo": true
         },
         {
           "Key": "77380",
@@ -747,12 +748,12 @@
           "ShortName": "DeliveryPlans",
           "Tags": [
             "Microsoft Learn",
-            "Azure Pipelines"
+            "Azure Boards"
           ],
-          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "Image": "/Templates/TemplateImages/mslearn/manage-agile-software-delivery-plans-across-teams.svg",
           "ForkGitHubRepo": false,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Manage Agile software delivery plans across teams <br /><br />Lab URL: <a href='https://docs.microsoft.com/en-us/learn/modules/manage-delivery-plans' target='_blank'>Manage delivery plans</a>"
+          "Description": "Learn to optimize delivery efficiency by improving work plan visibility across teams <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-delivery-plans' target='_blank'>Manage delivery plans</a>"
         },
         {
           "Key": "345678644",
@@ -767,6 +768,36 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions' target='_blank'>Deploy Azure Functions</a>"
+        },
+
+
+        {
+          "Key": "345678645",
+          "Name": "Automate Docker container deployments with Azure Pipelines",
+          "TemplateFolder": "deploy-docker-template",
+          "ShortName": "DeployDockercontainers",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Learn to implement a CI/CD pipeline for Docker containers<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-docker' target='_blank'>Deploy Docker containers</a>"
+        },
+        {
+          "Key": "345678646",
+          "Name": "Automate multi-container deployments to Azure Kubernetes Services with Azure Pipelines",
+          "TemplateFolder": "deploy-kubernetes-template",
+          "ShortName": "Deploymulti-containersolutionstoKubernetes",
+          "Tags": [
+            "Microsoft Learn",
+            "Azure Pipelines"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Description": "Learn to implement a CI/CD pipeline for multi-container solutions orchestrated with Kubernetes<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes' target='_blank'>Deploymulti-container solutions to Kubernetes</a>"
         }
       ]
     },

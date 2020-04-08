@@ -8,10 +8,12 @@
       "value": "westus2"
     },
     "resourcegroup": {
-      "value": "contosoair"
+      "value": "contosoair",
+      "isSecret": true
     },
     "web": {
-      "value": "contosoair$UUID$"
+      "value": "contosoair$UUID$",
+      "isSecret": true
     }
   },
   "variableGroups": [
@@ -186,7 +188,7 @@
               },
               "condition": "succeeded()",
               "inputs": {
-                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "ConnectedServiceName": "",
                 "WebAppKind": "$(Parameters.WebAppKind)",
                 "WebAppName": "$(Parameters.WebAppName)",
                 "DeployToSlotFlag": "false",

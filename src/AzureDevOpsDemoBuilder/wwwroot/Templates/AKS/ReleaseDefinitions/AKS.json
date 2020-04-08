@@ -5,19 +5,24 @@
   "isDeleted": false,
   "variables": {
     "ACR": {
-      "value": "YOURACR.azurecr.io"
+      "value": "YOURACR.azurecr.io",
+      "isSecret": true
     },
     "DatabaseName": {
-      "value": "mhcdb"
+      "value": "mhcdb",
+      "isSecret": true
     },
     "SQLpassword": {
-      "value": "P2ssw0rd1234"
+      "value": "P2ssw0rd1234",
+      "isSecret": true
     },
     "SQLuser": {
-      "value": "sqladmin"
+      "value": "sqladmin",
+      "isSecret": true
     },
     "SQLserver": {
-      "value": "YOURSQLSERVER.database.windows.net"
+      "value": "YOURSQLSERVER.database.windows.net",
+      "isSecret": true
     }
   },
   "variableGroups": [],

@@ -4,27 +4,34 @@
     "description": null,
     "isDeleted": false,
     "variables": {
-        "location": {
-            "value": "South India"
-        },
-        "mysqlAdmin": {
-            "value": "vmadmin"
-        },
-        "mysqlAdminSecret": {
-            "value": "P2ssw0rd@123"
-        },
-        "mysqlDbName": {
-            "value": "hotel_coupon"
-        },
-        "mysqlServerName": {
-            "value": "smh360mysql$UUID$"
-        },
-        "resourceGroupName": {
-            "value": "ansible"
-        },
-        "webappName": {
-            "value": "smh360web$UUID$"
-        }
+      "location": {
+        "value": "South India",
+        "isSecret": true
+      },
+      "mysqlAdmin": {
+        "value": "vmadmin",
+        "isSecret": true
+      },
+      "mysqlAdminSecret": {
+        "value": "P2ssw0rd@123",
+        "isSecret": true
+      },
+      "mysqlDbName": {
+        "value": "hotel_coupon",
+        "isSecret": true
+      },
+      "mysqlServerName": {
+        "value": "smh360mysql$UUID$",
+        "isSecret": true
+      },
+      "resourceGroupName": {
+        "value": "ansible",
+        "isSecret": true
+      },
+      "webappName": {
+        "value": "smh360web$UUID$",
+        "isSecret": true
+      }
     },
     "variableGroups": [],
     "environments": [

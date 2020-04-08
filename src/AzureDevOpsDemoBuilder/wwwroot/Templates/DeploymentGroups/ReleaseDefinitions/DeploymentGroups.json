@@ -4,11 +4,26 @@
   "isDeleted": false,
   "path": "\\",
   "variables": {
-    "DatabaseName": { "value": "PartsUnlimited-Dev" },
-    "DBPassword": { "value": "P2ssw0rd@123" },
-    "DBUserName": { "value": "sqladmin" },
-    "DefaultConnectionString": { "value": "Data Source=YOUR_DNS_NAME.cloudapp.azure.com;Initial Catalog=PartsUnlimited-Dev;User ID=sqladmin;Password=P2ssw0rd@123;MultipleActiveResultSets=False;Connection Timeout=30;" },
-    "ServerName": { "value": "localhost" }
+    "DatabaseName": {
+      "value": "PartsUnlimited-Dev",
+      "isSecret": true
+    },
+    "DBPassword": {
+      "value": "P2ssw0rd@123",
+      "isSecret": true
+    },
+    "DBUserName": {
+      "value": "sqladmin",
+      "isSecret": true
+    },
+    "DefaultConnectionString": {
+      "value": "Data Source=YOUR_DNS_NAME.cloudapp.azure.com;Initial Catalog=PartsUnlimited-Dev;User ID=sqladmin;Password=P2ssw0rd@123;MultipleActiveResultSets=False;Connection Timeout=30;",
+      "isSecret": true
+    },
+    "ServerName": {
+      "value": "localhost",
+      "isSecret": true
+    }
   },
   "variableGroups": [],
   "environments": [
