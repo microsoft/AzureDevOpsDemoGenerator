@@ -35,6 +35,18 @@
         ga('create', '__GAKEY__', 'auto');
         ga('send', 'pageview');
     </script>
+    <style type="text/css">
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #167bdd;
+            color: white;
+            text-align: center;
+            padding:4px;
+        }
+    </style>
     <title>Create Project</title>
 
 </head>
@@ -171,7 +183,7 @@
                     <div class="demo-generator-feedback VSTS-create-page-feedback mt-3 text-center text-sm-left">
                         <h6>Feedback&colon;</h6>
                         <p class="mb-0">
-                            To provide feedback, you can raise an issue 
+                            To provide feedback, you can raise an issue
                             <a class="text-primary" href="https://github.com/microsoft/AzureDevOpsDemoGenerator/issues/new" target="_blank">here </a>.
                         <p>Like our tool? We would appreciate if you share feedback on social</p>
 
@@ -191,6 +203,14 @@
             <div class="col-md-6 order-1 order-md-2">
                 <div style="border:1px solid #ccc; padding:15px;">
                     <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
                         <div class="col-lg-8">
 
@@ -199,14 +219,6 @@
                             </div>
                             <div style="color:red">
                                 @ViewBag.AccDDError
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
-                        <div class="col-lg-8">
-                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
                             </div>
                         </div>
                     </div>
@@ -335,6 +347,9 @@
                 <!-- /Description card -->
             </div>
         </div>
+    </div>
+    <div class="footer">
+        We are moving to .Net Core 3.0, you are using preview version
     </div>
     <script src="~/Scripts/jquery-1.12.4.min.js"></script>
 
