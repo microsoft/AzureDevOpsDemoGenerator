@@ -440,230 +440,237 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                string defaultTeamID = string.Empty;
-                AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(con);
-                TeamList _team = new TeamList();
-                string ProjectPropertyVersion = AppKeyConfiguration["ProjectPropertyVersion"];
-                con.VersionNumber = ProjectPropertyVersion;
-                con.ProjectId = projectID;
-                Projects projects = new Projects(con);
-                projectProperties = projects.GetProjectProperties();
-                if (projectProperties.Count > 0)
+                if (!string.IsNullOrEmpty(processTemplate))
                 {
-                    defaultTeamID = projectProperties.Value.Where(x => x.Name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().RefValue;
-                }
-                _team = nodes.ExportTeamList(defaultTeamID);
-                if (_team.Value != null)
-                {
-                    AddMessage(con.Id, "Teams");
-
-                    string fetchedJson = JsonConvert.SerializeObject(_team.Value, Formatting.Indented);
-                    if (fetchedJson != "")
+                    string defaultTeamID = string.Empty;
+                    AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(con);
+                    TeamList _team = new TeamList();
+                    string ProjectPropertyVersion = AppKeyConfiguration["ProjectPropertyVersion"];
+                    con.VersionNumber = ProjectPropertyVersion;
+                    con.ProjectId = projectID;
+                    Projects projects = new Projects(con);
+                    projectProperties = projects.GetProjectProperties();
+                    if (projectProperties.Count > 0)
                     {
-                        if (!Directory.Exists(extractedTemplatePath + con.Project + "/Teams"))
-                        {
-                            Directory.CreateDirectory(extractedTemplatePath + con.Project + "/Teams");
-                        }
-                        File.WriteAllText(extractedTemplatePath + con.Project + "/Teams/Teams.json", fetchedJson);
+                        defaultTeamID = projectProperties.Value.Where(x => x.Name == "System.Microsoft.TeamFoundation.Team.Default").FirstOrDefault().RefValue;
+                    }
+                    _team = nodes.ExportTeamList(defaultTeamID);
+                    if (_team.Value != null)
+                    {
+                        AddMessage(con.Id, "Teams");
 
-                        List<string> boardTypes = new List<string>();
-                        boardTypes.Add("Epics");
-                        if (processTemplate.ToLower() == "agile")
+                        string fetchedJson = JsonConvert.SerializeObject(_team.Value, Formatting.Indented);
+                        if (fetchedJson != "")
                         {
-                            boardTypes.Add("Features");
-                            boardTypes.Add("Stories");
-                        }
-                        else if (processTemplate.ToLower() == "basic")
-                        {
-                            boardTypes.Add("Issues");
-                        }
-                        else if (processTemplate.ToLower() == "scrum")
-                        {
-                            boardTypes.Add("Features");
-                            boardTypes.Add("Backlog Items");
-                        }
-
-                        foreach (var team in _team.Value)
-                        {
-                            List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
-                            List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
-                            List<BoardColumnResponseBasic.ColumnResponse> columnResponsesBasic = new List<BoardColumnResponseBasic.ColumnResponse>();
-                            List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
-
-                            ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
-
-                            List<JObject> jObjCardFieldList = new List<JObject>();
-                            List<JObject> jObjcardStyleList = new List<JObject>();
-                            string teamFolderPath = extractedTemplatePath + con.Project + "/Teams/" + team.Name;
-                            if (!Directory.Exists(teamFolderPath))
+                            if (!Directory.Exists(extractedTemplatePath + con.Project + "/Teams"))
                             {
-                                Directory.CreateDirectory(teamFolderPath);
+                                Directory.CreateDirectory(extractedTemplatePath + con.Project + "/Teams");
                             }
-                            //Export Board Colums for each team
-                            con.Team = team.Name;
+                            File.WriteAllText(extractedTemplatePath + con.Project + "/Teams/Teams.json", fetchedJson);
 
-                            ClassificationNodes teamNodes = new ClassificationNodes(con);
-                            foreach (var boardType in boardTypes)
+                            List<string> boardTypes = new List<string>();
+                            boardTypes.Add("Epics");
+                            if (processTemplate.ToLower() == "agile")
                             {
-                                var response = teamNodes.ExportBoardColums(boardType);
-                                if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                                {
-                                    if (processTemplate.ToLower() == "scrum")
-                                    {
-                                        string res = response.Content.ReadAsStringAsync().Result;
-                                        BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
-                                        scrumColumns.BoardName = boardType;
-                                        columnResponsesScrum.Add(scrumColumns);
-                                    }
-                                    else if (processTemplate.ToLower() == "agile")
-                                    {
-                                        string res = response.Content.ReadAsStringAsync().Result;
-                                        BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
-                                        agileColumns.BoardName = boardType;
-                                        columnResponsesAgile.Add(agileColumns);
-                                    }
-                                    else if (processTemplate.ToLower() == "basic")
-                                    {
-                                        string res = response.Content.ReadAsStringAsync().Result;
-                                        BoardColumnResponseBasic.ColumnResponse basicColumns = JsonConvert.DeserializeObject<BoardColumnResponseBasic.ColumnResponse>(res);
-                                        basicColumns.BoardName = boardType;
-                                        columnResponsesBasic.Add(basicColumns);
-                                    }
-                                    AddMessage(con.Id, "Board Columns");
-                                    Thread.Sleep(2000);
-                                }
-                                else
-                                {
-                                    var errorMessage = response.Content.ReadAsStringAsync();
-                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                    teamNodes.LastFailureMessage = error;
-                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Columns: " + teamNodes.LastFailureMessage);
-                                }
+                                boardTypes.Add("Features");
+                                boardTypes.Add("Stories");
+                            }
+                            else if (processTemplate.ToLower() == "basic")
+                            {
+                                boardTypes.Add("Issues");
+                            }
+                            else if (processTemplate.ToLower() == "scrum")
+                            {
+                                boardTypes.Add("Features");
+                                boardTypes.Add("Backlog Items");
+                            }
 
-                                //Export board rows for each team
-                                ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
-                                if (rows.Value != null && rows.Value.Count > 0)
+                            foreach (var team in _team.Value)
+                            {
+                                List<BoardColumnResponseScrum.ColumnResponse> columnResponsesScrum = new List<BoardColumnResponseScrum.ColumnResponse>();
+                                List<BoardColumnResponseAgile.ColumnResponse> columnResponsesAgile = new List<BoardColumnResponseAgile.ColumnResponse>();
+                                List<BoardColumnResponseBasic.ColumnResponse> columnResponsesBasic = new List<BoardColumnResponseBasic.ColumnResponse>();
+                                List<ExportBoardRows.Rows> boardRows = new List<ExportBoardRows.Rows>();
+
+                                ExportTeamSetting.Setting listTeamSetting = new ExportTeamSetting.Setting();
+
+                                List<JObject> jObjCardFieldList = new List<JObject>();
+                                List<JObject> jObjcardStyleList = new List<JObject>();
+                                string teamFolderPath = extractedTemplatePath + con.Project + "/Teams/" + team.Name;
+                                if (!Directory.Exists(teamFolderPath))
                                 {
-                                    rows.BoardName = boardType;
-                                    boardRows.Add(rows);
-                                    AddMessage(con.Id, "Board Rows");
-                                    Thread.Sleep(2000);
+                                    Directory.CreateDirectory(teamFolderPath);
+                                }
+                                //Export Board Colums for each team
+                                con.Team = team.Name;
+
+                                ClassificationNodes teamNodes = new ClassificationNodes(con);
+                                foreach (var boardType in boardTypes)
+                                {
+                                    var response = teamNodes.ExportBoardColums(boardType);
+                                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {
+                                        if (processTemplate.ToLower() == "scrum")
+                                        {
+                                            string res = response.Content.ReadAsStringAsync().Result;
+                                            BoardColumnResponseScrum.ColumnResponse scrumColumns = JsonConvert.DeserializeObject<BoardColumnResponseScrum.ColumnResponse>(res);
+                                            scrumColumns.BoardName = boardType;
+                                            columnResponsesScrum.Add(scrumColumns);
+                                        }
+                                        else if (processTemplate.ToLower() == "agile")
+                                        {
+                                            string res = response.Content.ReadAsStringAsync().Result;
+                                            BoardColumnResponseAgile.ColumnResponse agileColumns = JsonConvert.DeserializeObject<BoardColumnResponseAgile.ColumnResponse>(res);
+                                            agileColumns.BoardName = boardType;
+                                            columnResponsesAgile.Add(agileColumns);
+                                        }
+                                        else if (processTemplate.ToLower() == "basic")
+                                        {
+                                            string res = response.Content.ReadAsStringAsync().Result;
+                                            BoardColumnResponseBasic.ColumnResponse basicColumns = JsonConvert.DeserializeObject<BoardColumnResponseBasic.ColumnResponse>(res);
+                                            basicColumns.BoardName = boardType;
+                                            columnResponsesBasic.Add(basicColumns);
+                                        }
+                                        AddMessage(con.Id, "Board Columns");
+                                        Thread.Sleep(2000);
+                                    }
+                                    else
+                                    {
+                                        var errorMessage = response.Content.ReadAsStringAsync();
+                                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                        teamNodes.LastFailureMessage = error;
+                                        AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Columns: " + teamNodes.LastFailureMessage);
+                                    }
+
+                                    //Export board rows for each team
+                                    ExportBoardRows.Rows rows = teamNodes.ExportBoardRows(boardType);
+                                    if (rows.Value != null && rows.Value.Count > 0)
+                                    {
+                                        rows.BoardName = boardType;
+                                        boardRows.Add(rows);
+                                        AddMessage(con.Id, "Board Rows");
+                                        Thread.Sleep(2000);
+                                    }
+                                    else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
+                                    {
+                                        AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
+                                    }
+
+
+                                    //Export Card Fields for each team
+                                    var cardFieldResponse = teamNodes.ExportCardFields(boardType);
+                                    if (cardFieldResponse.IsSuccessStatusCode && cardFieldResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {
+                                        string res = cardFieldResponse.Content.ReadAsStringAsync().Result;
+                                        JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                                        jObj["BoardName"] = boardType;
+                                        jObjCardFieldList.Add(jObj);
+                                        AddMessage(con.Id, "Card fields Definition");
+
+                                    }
+                                    else
+                                    {
+                                        var errorMessage = cardFieldResponse.Content.ReadAsStringAsync();
+                                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                        teamNodes.LastFailureMessage = error;
+                                        AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
+                                    }
+
+                                    //// Export card styles for each team
+                                    var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
+                                    if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {
+                                        string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
+                                        res = res.Replace(con.Project, "$ProjectName$");
+                                        JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
+                                        jObj["BoardName"] = boardType;
+                                        var style = jObj;
+                                        style["url"] = "";
+                                        style["_links"] = "{}";
+                                        var tagStyle = style["rules"]["tagStyle"];
+                                        if (tagStyle == null)
+                                        {
+                                            style["rules"]["tagStyle"] = new JArray();
+                                        }
+                                        jObjcardStyleList.Add(jObj);
+                                        AddMessage(con.Id, "Card style");
+
+                                    }
+                                    else
+                                    {
+                                        var errorMessage = cardStyleResponse.Content.ReadAsStringAsync();
+                                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                        teamNodes.LastFailureMessage = error;
+                                        AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
+                                    }
+                                }
+                                //Export Team Setting for each team
+                                if (processTemplate.ToLower() != "basic")
+                                {
+                                    ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
+                                    if (teamSetting.BacklogVisibilities != null)
+                                    {
+                                        listTeamSetting = teamSetting;
+                                        AddMessage(con.Id, "Team Settings Definition");
+                                    }
                                 }
                                 else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
                                 {
-                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Board Rows: " + teamNodes.LastFailureMessage);
+                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
                                 }
 
-
-                                //Export Card Fields for each team
-                                var cardFieldResponse = teamNodes.ExportCardFields(boardType);
-                                if (cardFieldResponse.IsSuccessStatusCode && cardFieldResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                                if (columnResponsesAgile.Count > 0)
                                 {
-                                    string res = cardFieldResponse.Content.ReadAsStringAsync().Result;
-                                    JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
-                                    jObj["BoardName"] = boardType;
-                                    jObjCardFieldList.Add(jObj);
-                                    AddMessage(con.Id, "Card fields Definition");
-
+                                    File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                                 }
-                                else
+                                if (columnResponsesScrum.Count > 0)
                                 {
-                                    var errorMessage = cardFieldResponse.Content.ReadAsStringAsync();
-                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                    teamNodes.LastFailureMessage = error;
-                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Fields: " + teamNodes.LastFailureMessage);
+                                    File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                                 }
-
-                                //// Export card styles for each team
-                                var cardStyleResponse = teamNodes.ExportCardStyle(boardType);
-                                if (cardStyleResponse.IsSuccessStatusCode && cardStyleResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                                if (columnResponsesBasic.Count > 0)
                                 {
-                                    string res = cardStyleResponse.Content.ReadAsStringAsync().Result;
-                                    res = res.Replace(con.Project, "$ProjectName$");
-                                    JObject jObj = JsonConvert.DeserializeObject<JObject>(res);
-                                    jObj["BoardName"] = boardType;
-                                    var style = jObj;
-                                    style["url"] = "";
-                                    style["_links"] = "{}";
-                                    var tagStyle = style["rules"]["tagStyle"];
-                                    if (tagStyle == null)
-                                    {
-                                        style["rules"]["tagStyle"] = new JArray();
-                                    }
-                                    jObjcardStyleList.Add(jObj);
-                                    AddMessage(con.Id, "Card style");
-
+                                    File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesBasic, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
                                 }
-                                else
+                                if (boardRows.Count > 0)
                                 {
-                                    var errorMessage = cardStyleResponse.Content.ReadAsStringAsync();
-                                    string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                    teamNodes.LastFailureMessage = error;
-                                    AddMessage(con.Id.ErrorId(), "Error occured while exporting Card Styles: " + teamNodes.LastFailureMessage);
+                                    File.WriteAllText(teamFolderPath + "/BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
                                 }
-                            }
-                            //Export Team Setting for each team
-                            if (processTemplate.ToLower() != "basic")
-                            {
-                                ExportTeamSetting.Setting teamSetting = teamNodes.ExportTeamSetting();
-                                if (teamSetting.BacklogVisibilities != null)
+                                if (!string.IsNullOrEmpty(listTeamSetting.BugsBehavior))
                                 {
-                                    listTeamSetting = teamSetting;
-                                    AddMessage(con.Id, "Team Settings Definition");
+                                    File.WriteAllText(teamFolderPath + "/TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
                                 }
-                            }
-                            else if (!string.IsNullOrEmpty(teamNodes.LastFailureMessage))
-                            {
-                                AddMessage(con.Id.ErrorId(), "Error occured while exporting Team Setting: " + teamNodes.LastFailureMessage);
+                                if (jObjCardFieldList.Count > 0)
+                                {
+                                    File.WriteAllText(teamFolderPath + "/CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
+                                }
+                                if (jObjcardStyleList.Count > 0)
+                                {
+                                    File.WriteAllText(teamFolderPath + "/CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
+                                }
                             }
 
-                            if (columnResponsesAgile.Count > 0)
-                            {
-                                File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesAgile, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                            }
-                            if (columnResponsesScrum.Count > 0)
-                            {
-                                File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesScrum, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                            }
-                            if (columnResponsesBasic.Count > 0)
-                            {
-                                File.WriteAllText(teamFolderPath + "/BoardColumns.json", JsonConvert.SerializeObject(columnResponsesBasic, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
-                            }
-                            if (boardRows.Count > 0)
-                            {
-                                File.WriteAllText(teamFolderPath + "/BoardRows.json", JsonConvert.SerializeObject(boardRows, Formatting.Indented));
-                            }
-                            if (!string.IsNullOrEmpty(listTeamSetting.BugsBehavior))
-                            {
-                                File.WriteAllText(teamFolderPath + "/TeamSetting.json", JsonConvert.SerializeObject(listTeamSetting, Formatting.Indented));
-                            }
-                            if (jObjCardFieldList.Count > 0)
-                            {
-                                File.WriteAllText(teamFolderPath + "/CardFields.json", JsonConvert.SerializeObject(jObjCardFieldList, Formatting.Indented));
-                            }
-                            if (jObjcardStyleList.Count > 0)
-                            {
-                                File.WriteAllText(teamFolderPath + "/CardStyles.json", JsonConvert.SerializeObject(jObjcardStyleList, Formatting.Indented));
-                            }
+                            return true;
                         }
-
-                        return true;
-                    }
-                    else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
-                    {
-                        AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
-                        string error = nodes.LastFailureMessage;
-                        return false;
+                        else if (!string.IsNullOrEmpty(nodes.LastFailureMessage))
+                        {
+                            AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
+                            string error = nodes.LastFailureMessage;
+                            return false;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                     else
                     {
+                        AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
                         return false;
                     }
                 }
                 else
                 {
-                    AddMessage(con.Id.ErrorId(), nodes.LastFailureMessage);
-                    return false;
+                    logger.LogDebug("Could not fetch teams and board details since one of the param is null");
                 }
             }
             catch (Exception ex)
@@ -1177,7 +1184,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     if (splitQhref.Length > 0)
                     {
                         splitQhref[3] = "$Organization$";
-                        splitQhref[splitQhref.Length - 1] = "$" + def["queue"]["name"].ToString() + "$";
+                        //splitQhref[splitQhref.Length - 1] = "$" + def["queue"]["name"] == null ? "" : def["queue"]["name"].ToString() + "$";
                         def["queue"]["_links"]["self"]["href"] = string.Join("/", splitQhref);
                     }
                     def["queue"]["id"] = "$" + def["queue"]["name"] + "$";

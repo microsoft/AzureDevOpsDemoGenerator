@@ -1,3 +1,3 @@
 {
-  "keys": [ "ConnectedServiceName", "kubernetesServiceEndpoint", "dockerRegistryEndpoint", "azureSubscriptionEndpoint", "OctoConnectedServiceName", "ConnectedServiceNameARM", "deploymentGroupEndpoint", "defaultValue", "azureContainerRegistry", "connectionOverSsh", "connectedServiceNameARM" ]
+  "KeysValue": [ "ConnectedServiceName", "kubernetesServiceEndpoint", "dockerRegistryEndpoint", "azureSubscriptionEndpoint", "OctoConnectedServiceName", "ConnectedServiceNameARM", "deploymentGroupEndpoint", "defaultValue", "azureContainerRegistry", "connectionOverSsh", "connectedServiceNameARM" ]
 }

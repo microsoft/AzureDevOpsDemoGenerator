@@ -6,7 +6,7 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
     {
         public class Keys
         {
-            public IList<string> KeysValue { get; set; }
+            public List<string> KeysValue { get; set; }
         }
     }
 }
