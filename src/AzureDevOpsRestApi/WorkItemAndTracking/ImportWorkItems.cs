@@ -48,7 +48,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
-                logger.Info("ImportWorkitems");
+                logger.Info("ImportWorkitems " + uniqueUser);
 
                 attachmentFolder = attachmentFolderPath;
                 repositoryId = repositoryID;
@@ -294,6 +294,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                     // send the request               
                     var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + Configuration.VersionNumber) { Content = postValue };
                     var response = client.SendAsync(request).Result;
+                    logger.Info(response.Content.ReadAsStringAsync().Result);
+
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
