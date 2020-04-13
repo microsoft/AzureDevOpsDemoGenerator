@@ -20,21 +20,10 @@ namespace AzureDevOpsAPI.Extractor
         {
             public int Count { get; set; }
             public IList<Value> Value { get; set; }
+
             public string TypeClass { get; set; }
         }
-        //
-        //public class Value
-        //{
-        //    public string name { get; set; }
-        //    public object value { get; set; }
-        //}
-
-        //public class Properties
-        //{
-        //    public int count { get; set; }
-        //    public List<Value> value { get; set; }
-        //}
-
+        
 
     }
 }

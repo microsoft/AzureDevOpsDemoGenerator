@@ -146,7 +146,6 @@ $(document).ready(function () {
                 type: 'GET',
                 data: { accname: accSelected, project: project, _credentials: key },
                 success: function (res) {
-                    debugger;
                     $('#projecctDiv').removeClass('lodergif_div');
                     //$('#projectloader').addClass('d-none');
                     $('#processtemplate').empty().val(res.value[4].refValue);
@@ -271,7 +270,6 @@ $(document).ready(function () {
     });
 
     $('#GenerateArtifacts').click(function () {
-        debugger;
         ga('send', 'event', 'Generate Artifact', 'clicked');
         $('.accorDetails').removeClass('show');
         var SourceAcc = $("#ddlAcccountName").val();
