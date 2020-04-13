@@ -48,6 +48,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
+                logger.Info("ImportWorkitems");
+
                 attachmentFolder = attachmentFolderPath;
                 repositoryId = repositoryID;
                 projectId = projectID;
@@ -111,6 +113,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
+                logger.Info("PrepareAndUpdateTarget");
+
                 workImport = workImport.Replace("$ProjectName$", projectName);
                 ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
 
@@ -271,6 +275,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
+                logger.Info("UpdateWorkIteminTarget");
+
                 List<WorkItemPatch.Field> listFields = new List<WorkItemPatch.Field>();
                 WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
                 // change some values on a few fields
@@ -298,6 +304,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         this.LastFailureMessage = error;
+                        logger.Info(error);
                     }
 
                     return response.IsSuccessStatusCode;
@@ -322,6 +329,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
+                logger.Info("UpdateWorkItemLinks");
+
                 ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
                 string wiToUpdate = "";
                 WiMapData findIDforUpdate;

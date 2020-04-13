@@ -895,6 +895,7 @@ namespace AzureDevOpsDemoBuilder.Services
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (File.Exists(projectSettingsFile))
             {
+                logger.LogInformation("Workitem section");
                 string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItemAttachments");
                 if (listPullRequestJsonPaths.Count > 0)
                 {
