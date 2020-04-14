@@ -865,7 +865,6 @@ namespace AzureDevOpsDemoBuilder.Services
             else
             {
                 string _WitPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItems");
-                logger.LogInformation("_WitPath: " + _WitPath);
                 //Path.Combine(templatesFolder + templateUsed + "\\WorkItems");
                 if (Directory.Exists(_WitPath))
                 {
@@ -874,23 +873,13 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         foreach (var workItem in workItemFilePaths)
                         {
-                            logger.LogInformation("workItem: " + workItem);
                             string workItemName = Path.GetFileName(workItem);
-                            //string[] workItemPatSplit = workItem.Split('/');
-                            //if (workItemPatSplit.Length > 0)
-                            //{
-                            //    string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
-                            //    if (!string.IsNullOrEmpty(workItemName))
-                            //    {
                             string[] nameExtension = workItemName.Split('.');
                             string name = nameExtension[0];
                             if (!workItems.ContainsKey(name))
                             {
-                                logger.LogInformation(name);
                                 workItems.Add(name, model.ReadJsonFile(workItem));
                             }
-                            //    }
-                            //}
                         }
                     }
                 }
@@ -899,7 +888,6 @@ namespace AzureDevOpsDemoBuilder.Services
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (File.Exists(projectSettingsFile))
             {
-                logger.LogInformation("Workitem section");
                 string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItemAttachments");
                 if (listPullRequestJsonPaths.Count > 0)
                 {

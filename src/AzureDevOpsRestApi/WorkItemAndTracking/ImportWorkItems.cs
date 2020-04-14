@@ -48,9 +48,6 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
-                logger.Info("ImportWorkitems " + uniqueUser);
-                logger.Info("ImportWorkitems " + JsonConvert.SerializeObject(dicWITypes));
-
                 attachmentFolder = attachmentFolderPath;
                 repositoryId = repositoryID;
                 projectId = projectID;
@@ -114,8 +111,6 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
-                logger.Info("PrepareAndUpdateTarget");
-
                 workImport = workImport.Replace("$ProjectName$", projectName);
                 ImportWorkItemModel.WorkItems fetchedWIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workImport);
 
@@ -276,8 +271,6 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
-                logger.Info("UpdateWorkIteminTarget");
-
                 List<WorkItemPatch.Field> listFields = new List<WorkItemPatch.Field>();
                 WorkItemPatchResponse.WorkItem viewModel = new WorkItemPatchResponse.WorkItem();
                 // change some values on a few fields
@@ -289,19 +282,10 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 using (var client = GetHttpClient())
                 {
                     var postValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-                    //logger.Info(JsonConvert.SerializeObject(fields));                                                                                                       // set the httpmethod to Patch
                     var method = new HttpMethod("PATCH");
-                    logger.Info(workItemType);
-                    string witUrl = "https://dev.azure.com/" + projectName + "/_apis/wit/workitems/$" + workItemType + "?pypassRules=true&api-version=" + Configuration.VersionNumber;
-                    logger.Info("witUrl: " + witUrl);
-
                     // send the request               
                     var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + Configuration.VersionNumber) { Content = postValue };
-                    logger.Info(request);
                     var response = client.SendAsync(request).Result;
-                    logger.Info(JsonConvert.SerializeObject(response));
-                    logger.Info(response.Content.ReadAsStringAsync().Result);
-
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<WorkItemPatchResponse.WorkItem>().Result;
@@ -337,14 +321,11 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
         {
             try
             {
-                logger.Info("UpdateWorkItemLinks");
-
                 ImportWorkItemModel.WorkItems fetchedPBIs = JsonConvert.DeserializeObject<ImportWorkItemModel.WorkItems>(workItemTemplateJson);
                 string wiToUpdate = "";
                 WiMapData findIDforUpdate;
                 if (fetchedPBIs.Count > 0)
                 {
-
                     foreach (ImportWorkItemModel.Value newWI in fetchedPBIs.Value)
                     {
                         //continue next iteration if there is no relation
