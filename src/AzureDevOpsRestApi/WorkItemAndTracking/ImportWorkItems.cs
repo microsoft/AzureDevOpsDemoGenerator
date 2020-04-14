@@ -288,8 +288,11 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 using (var client = GetHttpClient())
                 {
                     var postValue = new StringContent(JsonConvert.SerializeObject(fields), Encoding.UTF8, "application/json-patch+json"); // mediaType needs to be application/json-patch+json for a patch call
-                    logger.Info(JsonConvert.SerializeObject(fields));                                                                                                       // set the httpmethod to Patch
+                    //logger.Info(JsonConvert.SerializeObject(fields));                                                                                                       // set the httpmethod to Patch
                     var method = new HttpMethod("PATCH");
+                    logger.Info(workItemType);
+                    string witUrl = "https://dev.azure.com/" + projectName + "/_apis/wit/workitems/$" + workItemType + "?pypassRules=true&api-version=" + Configuration.VersionNumber;
+                    logger.Info("witUrl: " + witUrl);
 
                     // send the request               
                     var request = new HttpRequestMessage(method, projectName + "/_apis/wit/workitems/$" + workItemType + "?bypassRules=true&api-version=" + Configuration.VersionNumber) { Content = postValue };
