@@ -865,6 +865,7 @@ namespace AzureDevOpsDemoBuilder.Services
             else
             {
                 string _WitPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItems");
+                logger.LogInformation("_WitPath: " + _WitPath);
                 //Path.Combine(templatesFolder + templateUsed + "\\WorkItems");
                 if (Directory.Exists(_WitPath))
                 {
@@ -873,6 +874,8 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         foreach (var workItem in workItemFilePaths)
                         {
+                            logger.LogInformation("workItem: " + workItem);
+
                             string[] workItemPatSplit = workItem.Split('\\');
                             if (workItemPatSplit.Length > 0)
                             {
@@ -883,6 +886,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                     string name = nameExtension[0];
                                     if (!workItems.ContainsKey(name))
                                     {
+                                        logger.LogInformation()
                                         workItems.Add(name, model.ReadJsonFile(workItem));
                                     }
                                 }

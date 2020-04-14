@@ -49,6 +49,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
             try
             {
                 logger.Info("ImportWorkitems " + uniqueUser);
+                logger.Info("ImportWorkitems " + JsonConvert.SerializeObject(dicWITypes));
 
                 attachmentFolder = attachmentFolderPath;
                 repositoryId = repositoryID;
