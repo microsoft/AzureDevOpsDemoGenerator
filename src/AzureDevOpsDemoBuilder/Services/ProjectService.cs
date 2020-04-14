@@ -886,7 +886,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                     string name = nameExtension[0];
                                     if (!workItems.ContainsKey(name))
                                     {
-                                        logger.LogInformation()
+                                        logger.LogInformation(name);
                                         workItems.Add(name, model.ReadJsonFile(workItem));
                                     }
                                 }
