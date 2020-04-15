@@ -148,7 +148,7 @@ $(document).ready(function () {
                 success: function (res) {
                     $('#projecctDiv').removeClass('lodergif_div');
                     //$('#projectloader').addClass('d-none');
-                    $('#processtemplate').empty().val(res.value[4].value);
+                    $('#processtemplate').empty().val(res.value[4].refValue);
                     $('#TemplateClass').empty().val(res.typeClass);
                     $('#processTemplateLoader').addClass('d-none');
                     var p = res.value[4].value;

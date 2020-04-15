@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace AzureDevOpsAPI.Extractor
         public class Value
         {
             public string Name { get; set; }
+            [JsonProperty(PropertyName = "value")]
             public string RefValue { get; set; }
         }
 
@@ -21,7 +23,7 @@ namespace AzureDevOpsAPI.Extractor
 
             public string TypeClass { get; set; }
         }
-
+        
 
     }
 }

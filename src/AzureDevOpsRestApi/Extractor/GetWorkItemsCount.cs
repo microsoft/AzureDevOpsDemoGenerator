@@ -105,43 +105,47 @@ namespace AzureDevOpsAPI.Extractor
         {
             WorkItemFetchResponse.WorkItems viewModel = new WorkItemFetchResponse.WorkItems();
             int retryCount = 0;
-            while (retryCount < 5)
+            if (!string.IsNullOrEmpty(workitemstoFetch))
             {
-
-                try
+                while (retryCount < 5)
                 {
-                    using (var client = GetHttpClient())
-                    {
-                        HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/_apis/wit/workitems?api-version=" + Configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
-                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
-                            viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
-                        }
-                        else
-                        {
-                            var errorMessage = response.Content.ReadAsStringAsync();
-                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            LastFailureMessage = error;
-                            retryCount++;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                    string error = ex.Message;
-                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
-                    retryCount++;
 
-                    if (retryCount > 4)
+                    try
                     {
+                        using (var client = GetHttpClient())
+                        {
+                            HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/_apis/wit/workitems?api-version=" + Configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
+                            if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                            {
+                                viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
+                            }
+                            else
+                            {
+                                var errorMessage = response.Content.ReadAsStringAsync();
+                                string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                LastFailureMessage = error;
+                                retryCount++;
+                            }
+                        }
                         return viewModel;
                     }
+                    catch (Exception ex)
+                    {
+                        logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                        string error = ex.Message;
+                        this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
+                        retryCount++;
 
-                    Thread.Sleep(retryCount * 1000);
+                        if (retryCount > 4)
+                        {
+                            return viewModel;
+                        }
+
+                        Thread.Sleep(retryCount * 1000);
+                    }
                 }
             }
-            return viewModel;
+            return new WorkItemFetchResponse.WorkItems();
         }
         /// <summary>
         /// Get All work item names

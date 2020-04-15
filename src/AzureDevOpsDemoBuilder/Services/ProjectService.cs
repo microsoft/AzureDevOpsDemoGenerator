@@ -873,19 +873,12 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         foreach (var workItem in workItemFilePaths)
                         {
-                            string[] workItemPatSplit = workItem.Split('\\');
-                            if (workItemPatSplit.Length > 0)
+                            string workItemName = Path.GetFileName(workItem);
+                            string[] nameExtension = workItemName.Split('.');
+                            string name = nameExtension[0];
+                            if (!workItems.ContainsKey(name))
                             {
-                                string workItemName = workItemPatSplit[workItemPatSplit.Length - 1];
-                                if (!string.IsNullOrEmpty(workItemName))
-                                {
-                                    string[] nameExtension = workItemName.Split('.');
-                                    string name = nameExtension[0];
-                                    if (!workItems.ContainsKey(name))
-                                    {
-                                        workItems.Add(name, model.ReadJsonFile(workItem));
-                                    }
-                                }
+                                workItems.Add(name, model.ReadJsonFile(workItem));
                             }
                         }
                     }
