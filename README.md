@@ -1,6 +1,10 @@
 # Azure DevOps Demo Generator
 
    [![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
+   [![Release status](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/16)](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/16)
+
+[![Release status](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/17)](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/17)
+
 
 ## About
 
