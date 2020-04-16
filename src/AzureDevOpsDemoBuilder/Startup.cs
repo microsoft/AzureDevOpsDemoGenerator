@@ -87,26 +87,16 @@ namespace AzureDevOpsDemoBuilder
             app.UseSession();
 
             app.UseAuthorization();
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    //endpoints.MapControllers();
-            //    endpoints.MapControllerRoute(name: "account",
-            //        pattern: "account/{*verify}",
-            //        defaults: new { controller = "account", action = "verify" });
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Account}/{action=Verify}/{id?}");
-            //});
-            using (StreamReader iisUrlRewriteStreamReader =
-                File.OpenText("UrlRewrite.xml"))
+            app.UseEndpoints(endpoints =>
             {
-                var options = new RewriteOptions()
-                .AddRedirect("(.*)", "https://azuredevopsdemogenerator.azurewebsites.net")
-                .AddIISUrlRewrite(iisUrlRewriteStreamReader);
-                //.AddRedirect("/*.azurewebsites.net", "https://azuredevopsdemogenerator.azurewebsites.net");
-                app.UseRewriter(options);
-            }
-
+                //endpoints.MapControllers();
+                endpoints.MapControllerRoute(name: "account",
+                    pattern: "account/{*verify}",
+                    defaults: new { controller = "account", action = "verify" });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Account}/{action=Verify}/{id?}");
+            });
         }
     }
 }
