@@ -3,6 +3,7 @@ using AzureDevOpsDemoBuilder.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.IO;
 
 namespace AzureDevOpsDemoBuilder
 {
@@ -85,16 +87,26 @@ namespace AzureDevOpsDemoBuilder
             app.UseSession();
 
             app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    //endpoints.MapControllers();
+            //    endpoints.MapControllerRoute(name: "account",
+            //        pattern: "account/{*verify}",
+            //        defaults: new { controller = "account", action = "verify" });
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Account}/{action=Verify}/{id?}");
+            //});
+            using (StreamReader iisUrlRewriteStreamReader =
+                File.OpenText("UrlRewrite.xml"))
             {
-                //endpoints.MapControllers();
-                endpoints.MapControllerRoute(name: "account",
-                    pattern: "account/{*verify}",
-                    defaults: new { controller = "account", action = "verify" });
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Account}/{action=Verify}/{id?}");
-            });
+                var options = new RewriteOptions()
+                .AddRedirect("(.*)", "https://azuredevopsdemogenerator.azurewebsites.net")
+                .AddIISUrlRewrite(iisUrlRewriteStreamReader);
+                //.AddRedirect("/*.azurewebsites.net", "https://azuredevopsdemogenerator.azurewebsites.net");
+                app.UseRewriter(options);
+            }
+
         }
     }
 }

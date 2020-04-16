@@ -1,0 +1,8 @@
+﻿<rewrite>
+  <rules>
+    <rule name="Rewrite segment to id querystring" stopProcessing="true">
+      <match url="^(.*)$" />
+      <action type="Rewrite" url="https://azuredevopsdemogenerator.azurewebsites.net/{R:1}" appendQueryString="true"/>
+    </rule>
+  </rules>
+</rewrite>

@@ -15,6 +15,10 @@
     <Compile Remove="Controllers\Apis\TestController.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="UrlRewrite.xml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <None Include="wwwroot\Scripts\AppScripts\create.js" />
