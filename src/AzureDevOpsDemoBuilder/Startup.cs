@@ -44,11 +44,11 @@ namespace AzureDevOpsDemoBuilder
             services.AddSingleton<IExtractorService, ExtractorService>();
             services.AddSingleton<ITemplateService, TemplateService>();
 
-            //services.AddHttpsRedirection(options =>
-            //{
-            //    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-            //    options.HttpsPort = 444;
-            //});
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                options.HttpsPort = 443;
+            });
 
             JsonConvert.DefaultSettings = () => new JsonSerializerSettings
             {
