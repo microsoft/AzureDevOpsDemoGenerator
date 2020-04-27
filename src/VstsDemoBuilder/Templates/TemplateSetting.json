@@ -764,7 +764,7 @@
             "Microsoft Learn",
             "Azure Pipelines"
           ],
-          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "Image": "/Templates/TemplateImages/mslearn/deploy-azure-functions.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions' target='_blank'>Deploy Azure Functions</a>"
