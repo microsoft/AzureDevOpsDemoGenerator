@@ -802,7 +802,7 @@
       ]
     },
     {
-      "Groups": "Microsoft Cloud Adoption Framework",
+      "Groups": "Azure Community",
       "Template": [
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
@@ -822,6 +822,32 @@
           ],
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
+          "Name": "Azure Sentinel",
+          "TemplateFolder": "AzureSentinel",
+          "ShortName": "AzureSentinel",
+          "Description": "Helping customers to quickly deploy Azure Sentinel following the best practices using Azure DevOps board with agile practices.",
+          "Tags": [
+            "Agile",
+            "Azure"
+          ],
+          "Author": "Microsoft",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
+          "Name": "Azure NIST 800-171 Rev2",
+          "TemplateFolder": "NIST800171Rev2",
+          "ShortName": "AzureNIST",
+          "Description": "Implementing NIST 800-171 compliance across your Azure environments involves a set of customer responsibilities as well as actions taken by the cloud provider.",
+          "Tags": [
+            "Agile",
+            "Azure"
+          ],
+          "Author": "Microsoft",
           "ForkGitHubRepo": false
         }
       ]
