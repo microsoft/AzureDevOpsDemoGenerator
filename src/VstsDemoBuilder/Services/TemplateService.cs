@@ -162,7 +162,13 @@ namespace VstsDemoBuilder.Services
                     Directory.CreateDirectory(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile");
                 }
                 var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
-
+                if (uri.Host == "github.com")
+                {
+                    string gUri = uri.ToString();
+                    gUri = gUri.Replace("github.com", "raw.githubusercontent.com").Replace("/blob/", "/");
+                    uri = new Uri(gUri);
+                    TemplateUrl = uri.ToString();
+                }
                 //Downloading template from source of type github
                 if (uri.Host == "raw.githubusercontent.com")
                 {

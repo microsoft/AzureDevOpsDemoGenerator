@@ -131,7 +131,7 @@ namespace VstsDemoBuilder.Controllers
                     _templates.Groups = new List<string>();
                     foreach (var group in templates.Groups)
                     {
-                        if (group.ToLower() != "private")
+                        //if (group.ToLower() != "private")
                         {
                             _templates.Groups.Add(group);
                         }

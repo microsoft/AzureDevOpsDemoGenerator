@@ -110,8 +110,8 @@
         }
         if (controlID === 'btnGitHubUpload') {
 
-            if (fileurlSplit[2].toLowerCase() !== "raw.githubusercontent.com") {
-                $("#urlerror").empty().append('Please provide GitHub raw URL, which should starts with domain name raw.githubusercontent.com '); isUrlValid = false;
+            if (fileurlSplit[2].toLowerCase() !== "raw.githubusercontent.com" && fileurlSplit[2].toLowerCase() !== "github.com") {
+                $("#urlerror").empty().append('Please provide GitHub URL, which should starts with domain name raw.githubusercontent.com or github.com '); isUrlValid = false;
             }
             else if ($('#privateGitHubRepo').prop("checked") === true && GitHubtoken === '') {
                 $("#urlerror").empty().append('Please provide GitHub access token for authentication'); isUrlValid = false;
