@@ -826,10 +826,10 @@
         },
         {
           "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
-          "Name": "Azure Sentinel",
+          "Name": "Azure Sentinel DevOps",
           "TemplateFolder": "AzureSentinel",
           "ShortName": "AzureSentinel",
-          "Description": "Helping customers to quickly deploy Azure Sentinel following the best practices using Azure DevOps board with agile practices.",
+          "Description": "The objective is helping customers to quickly deploy Azure Sentinel following the best practices using Azure DevOps board with agile practices.",
           "Tags": [
             "Agile",
             "Azure"
@@ -838,11 +838,11 @@
           "ForkGitHubRepo": false
         },
         {
-          "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
-          "Name": "Azure NIST 800-171 Rev2",
-          "TemplateFolder": "NIST800171Rev2",
+          "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E95",
+          "Name": "NIST 800-171",
+          "TemplateFolder": "NIST800171",
           "ShortName": "AzureNIST",
-          "Description": "Implementing NIST 800-171 compliance across your Azure environments involves a set of customer responsibilities as well as actions taken by the cloud provider.",
+          "Description": "By importing the NIST 800-171 DevOps template, you will be able to complete actionable Work Items that correspond to customer responsibilities in order to implement compliance.",
           "Tags": [
             "Agile",
             "Azure"
