@@ -1,26 +1,22 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
     branches: [ master, dmckinstry/actions ]
   pull_request:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: windows-latest
+    strategy: 
+      fail-fast: false 
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+
+    # Initializes the CodeQL tools for scanning. 
+    - name: Initialize CodeQL 
+      uses: github/codeql-action/init@v1 
 
     - name: Setup MSBuild Path
       uses: warrenbuckley/Setup-MSBuild@v1
@@ -33,4 +29,7 @@ jobs:
  
     - name: Build and Publish Web App
       run: msbuild src/VSTSDemoGeneratorV2.sln /p:Configuration=Release /p:DeployOnBuild=true
-      
+
+    # Perform CodeQL analysis
+    - name: Perform CodeQL Analysis 
+      uses: github/codeql-action/analyze@v1
