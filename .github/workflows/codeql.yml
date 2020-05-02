@@ -7,8 +7,12 @@ on:
 
 jobs:
   CodeQL-Build:
+
     strategy:
       fail-fast: false
+
+
+    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
     runs-on: windows-latest
 
     steps:
@@ -20,7 +24,7 @@ jobs:
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
-      
+
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
@@ -48,7 +52,6 @@ jobs:
       run: |
         nuget restore src/VSTSDemoGeneratorV2.sln
         msbuild src/VSTSDemoGeneratorV2.sln /p:UseSharedCompilation=false /t:rebuild /p:Platform="Any CPU" /p:Configuration="Debug" /p:MvcBuildViews=true
- 
-    # Perform CodeQL analysis
-    - name: Perform CodeQL Analysis 
+
+    - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
