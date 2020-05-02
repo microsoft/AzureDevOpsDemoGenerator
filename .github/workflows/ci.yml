@@ -16,17 +16,17 @@ jobs:
     - name: Initialize CodeQL 
       uses: github/codeql-action/init@v1 
 
-    - name: Setup MSBuild Path
-      uses: warrenbuckley/Setup-MSBuild@v1
+#    - name: Setup MSBuild Path
+#      uses: warrenbuckley/Setup-MSBuild@v1
        
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+#    - name: Setup NuGet
+#      uses: NuGet/setup-nuget@v1.0.2
      
     - name: Restore NuGet Packages
       run: nuget restore src/VSTSDemoGeneratorV2.sln
  
     - name: Build and Publish Web App
-      run: msbuild src/VSTSDemoGeneratorV2.sln /p:Configuration=Release /p:DeployOnBuild=true
+      run: msbuild src/VSTSDemoGeneratorV2.sln /p:UseSharedCompilation=false /t:rebuild /p:Platform="Any CPU" /p:Configuration="Debug" /p:MvcBuildViews=true
 
     # Perform CodeQL analysis
     - name: Perform CodeQL Analysis 
