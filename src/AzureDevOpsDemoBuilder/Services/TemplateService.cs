@@ -174,7 +174,12 @@ namespace AzureDevOpsDemoBuilder.Services
                     Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/ExtractedZipFile");
                 }
                 var path = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/" + ExtractedTemplate;
-
+                if (uri.Host == "github.com")
+                {
+                    string gUri = uri.ToString();
+                    gUri = gUri.Replace("github.com", "raw.githubusercontent.com").Replace("/blob/", "/");
+                    TemplateUrl = uri.ToString();
+                }
                 //Downloading template from source of type github
                 if (uri.Host == "raw.githubusercontent.com")
                 {
