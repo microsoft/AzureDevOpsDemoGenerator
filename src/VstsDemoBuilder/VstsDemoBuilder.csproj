@@ -1449,7 +1449,6 @@
     <Content Include="Templates\deploy-kubernetes-template\Teams\Space Game - web - Docker Team\CardStyles.json" />
     <Content Include="Templates\deploy-kubernetes-template\Teams\Teams.json" />
     <Content Include="Templates\deploy-kubernetes-template\WorkItems\Issue.json" />
-    <Content Include="Templates\AzureSentinel\Extensions.json" />
     <Content Include="Templates\AzureSentinel\ImportSourceCode\Azure Sentinel Template.json" />
     <Content Include="Templates\AzureSentinel\Iterations.json" />
     <Content Include="Templates\AzureSentinel\ProjectSettings.json" />
@@ -1468,7 +1467,6 @@
     <Content Include="Templates\NIST800171Rev2\Dashboard\Queries\Assigned to me.json" />
     <Content Include="Templates\NIST800171Rev2\Dashboard\Queries\Followed work items.json" />
     <Content Include="Templates\NIST800171Rev2\Dashboard\Queries\Workload Template.json" />
-    <Content Include="Templates\NIST800171Rev2\Extensions.json" />
     <Content Include="Templates\NIST800171Rev2\ImportSourceCode\Cloud Adoption Plan Master.json" />
     <Content Include="Templates\NIST800171Rev2\Iterations.json" />
     <Content Include="Templates\NIST800171Rev2\ProjectSettings.json" />
