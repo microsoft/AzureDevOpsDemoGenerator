@@ -3,7 +3,7 @@
     "General",
     "DevOps Labs",
     "Microsoft Learn",
-    "Microsoft Cloud Adoption Framework",
+    "Azure Community",
     "Private"
   ],
   "PrivateGroups": [
@@ -802,7 +802,7 @@
       ]
     },
     {
-      "Groups": "Microsoft Cloud Adoption Framework",
+      "Groups": "Azure Community",
       "Template": [
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
@@ -823,6 +823,34 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
           "ForkGitHubRepo": false
+        },
+        {
+          "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
+          "Name": "Azure Sentinel DevOps",
+          "TemplateFolder": "AzureSentinel",
+          "ShortName": "AzureSentinel",
+          "Description": "The objective is helping customers to quickly deploy Azure Sentinel following the best practices using Azure DevOps board with agile practices.",
+          "Tags": [
+            "Agile",
+            "Azure"
+          ],
+          "Author": "Microsoft",
+          "ForkGitHubRepo": false,
+          "Image": "/Templates/TemplateImages/AzureCommunity/Azure Sentinel DevOps.jpg"
+        },
+        {
+          "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E95",
+          "Name": "NIST 800-171",
+          "TemplateFolder": "NIST800171",
+          "ShortName": "AzureNIST",
+          "Description": "By importing the NIST 800-171 DevOps template, you will be able to complete actionable Work Items that correspond to customer responsibilities in order to implement compliance.",
+          "Tags": [
+            "Agile",
+            "Azure"
+          ],
+          "Author": "Microsoft",
+          "ForkGitHubRepo": false,
+          "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
         }
       ]
     },

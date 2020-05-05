@@ -1,0 +1,1065 @@
+{
+  "count": 14,
+  "value": [
+    {
+      "id": 635,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:33.217Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T12:22:37.05Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "First Workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Migrate the first workload to learn and refine your migration process.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/634",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/692",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/651",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/663",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/674",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/683",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635"
+    },
+    {
+      "id": 636,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:33.643Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T12:22:37.05Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "First Host",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Migrate your first VMWare Host</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/710",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/634",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/636"
+    },
+    {
+      "id": 637,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:33.817Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T12:22:37.05Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Workload Template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Using Excel's Team add-on, copy all work items with the tag &quot;Workload Template&quot;. Past those tags in the excel table &amp; change the Tags &amp; the name of the feature to match your workload's name.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/634",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/705",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/699",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/704",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/707",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637"
+    },
+    {
+      "id": 638,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:34.113Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T12:22:37.05Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Landing zone creation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Landing zone creation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/713",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/939",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/901",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/874",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/941",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/880",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/711",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/712",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/632",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638"
+    },
+    {
+      "id": 639,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:34.287Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T12:22:37.05Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Define the Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Define the Cloud Adoption Plan",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/717",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/716",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/715",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/631",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/639"
+    },
+    {
+      "id": 640,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:34.463Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T17:05:58.82Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Define Adoption Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">The exercises in this section can help you document your business strategy efficiently. By using this approach, you can drive adoption efforts that capture targeted business value in a cross-functional model. You can then map your cloud adoption strategy to specific cloud capabilities and business strategies to reach your desired state of transformation.</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/722",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/721",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/630",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/719",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/720",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/640"
+    },
+    {
+      "id": 909,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:01:05.3Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T13:49:31.077Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Identify",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The Identify Function assists in developing an organizational understanding of managing cybersecurity risk to systems, people, assets, data, and capabilities.</div><div><br></div><div><span>Example Outcomes:<br></span><div><ul><li>Identifying physical and software assets to establish an Asset Management program</li><li><span style=\"\">Identifying cybersecurity policies to define a Governance program</span></li><li><span style=\"\">Identifying a Risk Management Strategy for the organization</span></li></ul><div>Category</div></div></div><div><ul><li>Asset Management</li><li>Business Environment</li><li>Governance</li><li>Risk Assessment</li><li>Risk Management Strategy</li><li>Supply Chain Risk Management</li></ul></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/912",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/910",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/914",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/908",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/913",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/911",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909"
+    },
+    {
+      "id": 919,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:05:04.877Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T13:51:24.337Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Protect",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">The Protect Function supports the ability to limit or contain the impact of potential cybersecurity events and outlines safeguards for delivery of critical services.</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Example Outcomes:<br style=\"box-sizing:border-box;\"></span><div style=\"box-sizing:border-box;\"><ul><li><span style=\"box-sizing:border-box;\"><div style=\"box-sizing:border-box;\">Establishing Data Security protection to protect the confidentiality, integrity, and availability</div></span></li><li><span style=\"box-sizing:border-box;\"><div style=\"box-sizing:border-box;\"><span style=\"\">Managing Protective Technology to ensure the security and resilience of systems and assists</span></div></span></li><li><span style=\"box-sizing:border-box;\"><div style=\"box-sizing:border-box;\"><span style=\"\">Empowering staff within the organization through Awareness and Training</span></div></span></li></ul></div><span style=\"box-sizing:border-box;\"></span></span></div><br>Category</div><div><ul><li>Identity Management and Access Control</li><li>Awareness and Training</li><li>Data Security</li><li>Information Protection Process and Procedures</li><li>Maintenance</li><li>Proactive Technologies</li></ul></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/926",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/908",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/923",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/928",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/929",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/920",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/924",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/922",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/927",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/921",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/925",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/930",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919"
+    },
+    {
+      "id": 915,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:04:02.84Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T13:52:19.737Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Detect",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The Detect Function defines the appropriate activities to identify the occurrence of a cybersecurity event in a timely manner.<br></div><div><br></div><div><span>Example Outcomes:<br></span><div><ul><li>Implementing Security Continuous Monitoring capabilities to monitor cybersecurity events</li><li><span style=\"\">Ensuring Anomalies and Events are detected, and their potential impact is understood</span></li><li><span style=\"\">Verifying the effectiveness of protective measures</span></li></ul><div>Category</div></div></div><div><ul><li>Anomalies and Events</li><li>Security Continuous Monitoring</li><li>Detection Process</li></ul></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/918",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/908",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/916",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/917",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/915"
+    },
+    {
+      "id": 931,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:08:38.943Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T13:53:11.247Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Respond",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The Respond Function includes appropriate activities to take action regarding a detected cybersecurity incident to minimize impact.<br></div><div><br></div><div><span>Example Outcomes:<br></span><div><ul><li>Ensuring Response Planning processes are executed during and after an incident</li><li><span>Managing Communications during and after an event</span></li><li><span>Analyzing effectiveness of response activities</span></li></ul><div>Category</div></div></div><div><ul><li>Response Planning</li><li>Communications</li><li>Analysis</li><li>Mitigation</li><li>Improvements</li></ul></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/908",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/932",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/931"
+    },
+    {
+      "id": 933,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:09:34.187Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T13:53:49.563Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Recover",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The Recover Function identifies appropriate activities to maintain plans for resilience and to restore services impaired during cybersecurity incidents.<br></div><div><br></div><div><span>Example Outcomes:<br></span><div><ul><li>Ensuring the organization implements Recovery Planning processes and procedures</li><li><span style=\"\">Implementing improvements based on lessons learned</span></li><li><span style=\"\">Coordinating communications during recovery activities</span></li></ul><div>Category</div></div></div><div><ul><li>Recovery Planning</li><li>Improvements</li><li>Communications</li></ul></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/934",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/935",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/908",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/933"
+    },
+    {
+      "id": 938,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T14:39:56.85Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:58:57.113Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "NIST Readiness",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<ul><li>Gather data to understand an organization’s\ncurrent security posture. </li><li>Evaluating data to measure the effectiveness\nof security controls and identify gaps in the\nperformance of these controls with respect to a\nsecurity framework (in this case, NIST SP 800-171).</li><li>Developing recommendations to create the required\nreporting documentation for the DoD CIO and the\nroadmap and action plan to address shortcomings.</li></ul>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/864",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/938"
+    },
+    {
+      "id": 937,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T13:57:01.76Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T21:23:47.83Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Customer Responsibility Control Matrix",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"color:rgb(68, 68, 68);font-family:Calibri, sans-serif, &quot;Mongolian Baiti&quot;, &quot;Microsoft Yi Baiti&quot;, &quot;Javanese Text&quot;, &quot;Yu Gothic&quot;;font-size:14.6667px;text-align:left;\">This Excel Spreadsheet enumerates each control and provides an implementation matrix that lists all security controls required by NIST SP 800-171. <br><br>The matrix denotes, for each control that is designated, a customer-responsibility in the NIST SP 800-171 Customer Responsibility Matrix, 1) if the Azure Security and Compliance Blueprint - Data Analytics for NIST SP 800-171 reference architecture demonstrates implementation of the control, and 2) a description of how the implementation aligns with the control requirement(s). </div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/864",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/937"
+    },
+    {
+      "id": 936,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:33:35.897Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T12:33:54.62Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "NIST 800-171 Handbook Self Assessment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\">NIST 800-171 Hanbook 162</div><div style=\"box-sizing:border-box;\"><a href=\"https://nvlpubs.nist.gov/nistpubs/hb/2017/nist.hb.162.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://nvlpubs.nist.gov/nistpubs/hb/2017/nist.hb.162.pdf</a></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/864",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/936"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
