@@ -841,7 +841,7 @@
         {
           "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E95",
           "Name": "NIST 800-171",
-          "TemplateFolder": "NIST800171",
+          "TemplateFolder": "NIST800171Rev2",
           "ShortName": "AzureNIST",
           "Description": "By importing the NIST 800-171 DevOps template, you will be able to complete actionable Work Items that correspond to customer responsibilities in order to implement compliance.",
           "Tags": [
