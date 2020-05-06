@@ -178,7 +178,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     string gUri = uri.ToString();
                     gUri = gUri.Replace("github.com", "raw.githubusercontent.com").Replace("/blob/", "/");
-                    TemplateUrl = uri.ToString();
+                    TemplateUrl = gUri.ToString();
                 }
                 //Downloading template from source of type github
                 if (uri.Host == "raw.githubusercontent.com")
