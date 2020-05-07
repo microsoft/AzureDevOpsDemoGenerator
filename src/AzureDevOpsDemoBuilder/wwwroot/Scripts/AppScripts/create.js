@@ -91,7 +91,6 @@ $(document).ready(function (event) {
 
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
-        debugger;
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
 
         var privateTemplate = $('#PrivateTemplatePath', parent.document).val();
@@ -643,7 +642,6 @@ $('#btnSubmit').click(function () {
 // if the user uploading his exported template (zip file), we will take that template name as folder name
 //$('#myiFrame body').on('click', '#btnUpload', function () {
 //    alert();
-//    debugger;
 //    var fileUpload = $("#FileUpload1").get(0);
 //    var files = fileUpload.files;
 //    $('#InfoMessage').removeClass('d-block').addClass('d-none');
@@ -1181,7 +1179,6 @@ function getGroups(grpSelected) {
                             }
                             else {
                                 for (var i = 0; i < MatchedGroup.template.length; i++) {
-                                    debugger;
                                     if (i === 0) {
                                         var templateImg = MatchedGroup.template[i].image;
                                         if (templateImg === "" || templateImg === null) {

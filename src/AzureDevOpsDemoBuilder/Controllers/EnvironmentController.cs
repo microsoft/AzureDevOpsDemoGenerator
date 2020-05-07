@@ -140,10 +140,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     _templates.Groups = new List<string>();
                     foreach (var group in templates.Groups)
                     {
-                        if (group.ToLower() != "private")
-                        {
-                            _templates.Groups.Add(group);
-                        }
+                        _templates.Groups.Add(group);
                     }
                     templates.Groups = _templates.Groups;
                 }
