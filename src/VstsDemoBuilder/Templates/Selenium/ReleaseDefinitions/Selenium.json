@@ -1,9 +1,5 @@
 {
-  "source": "userInterface",
-  "revision": 17,
   "name": "Selenium",
-  "description": null,
-  "isDeleted": false,
   "path": "\\",
   "variables": {
     "DefaultConnectionString": {
@@ -22,6 +18,7 @@
   "variableGroups": [],
   "environments": [
     {
+      "id": 3,
       "name": "Dev",
       "rank": 1,
       "owner": {
@@ -38,10 +35,17 @@
             "isAutomated": true,
             "isNotificationOn": false
           }
-        ]
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 1
+        }
       },
-      "deployStep": {
-      },
+      "deployStep": {},
       "postDeployApprovals": {
         "approvals": [
           {
@@ -49,21 +53,28 @@
             "isAutomated": true,
             "isNotificationOn": false
           }
-        ]
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 2
+        }
       },
       "deployPhases": [
         {
           "deploymentInput": {
-            "healthPercent": 0,
-            "deploymentHealthOption": "Custom",
-            "tags": [
-              "web"
-            ],
+            "parallelExecution": {
+              "parallelExecutionType": 0
+            },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "",
+            "queueId": "$Default$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -72,14 +83,16 @@
             "overrideInputs": {}
           },
           "rank": 1,
-          "phaseType": "machineGroupBasedDeployment",
+          "phaseType": 1,
           "name": "IIS Deployment",
+          "refName": null,
           "workflowTasks": [
             {
+              "environment": {},
               "taskId": "1b2aec60-dc49-11e6-9b76-63056e018cac",
               "version": "0.*",
               "name": "IIS Web App Manage",
-              "refName": "IISWebAppManagementOnMachineGroup1",
+              "refName": "",
               "enabled": true,
               "alwaysRun": false,
               "continueOnError": false,
@@ -149,10 +162,11 @@
               }
             },
             {
+              "environment": {},
               "taskId": "1b467810-6725-4b6d-accd-886174c09bba",
               "version": "0.*",
-              "name": "IIS Web App Deploy",
-              "refName": "IISWebAppDeploymentOnMachineGroup2",
+              "name": "Deploy IIS Website/App: ",
+              "refName": "",
               "enabled": true,
               "alwaysRun": false,
               "continueOnError": false,
@@ -178,16 +192,15 @@
         },
         {
           "deploymentInput": {
-            "healthPercent": 0,
-            "deploymentHealthOption": "Custom",
-            "tags": [
-              "db"
-            ],
+            "parallelExecution": {
+              "parallelExecutionType": 0
+            },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "",
+            "queueId": "$Default$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -196,14 +209,16 @@
             "overrideInputs": {}
           },
           "rank": 2,
-          "phaseType": "machineGroupBasedDeployment",
+          "phaseType": 1,
           "name": "SQL Deployment",
+          "refName": null,
           "workflowTasks": [
             {
+              "environment": {},
               "taskId": "4b506f7f-720f-47bb-bf21-029bac6a690d",
               "version": "0.*",
-              "name": "SQL DB Deploy",
-              "refName": "SqlDacpacDeploymentOnMachineGroup1",
+              "name": "Deploy using : dacpac",
+              "refName": "",
               "enabled": true,
               "alwaysRun": false,
               "continueOnError": false,
@@ -236,8 +251,9 @@
         {
           "deploymentInput": {
             "parallelExecution": {
-              "parallelExecutionType": "none"
+              "parallelExecutionType": 0
             },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
@@ -251,8 +267,9 @@
             "overrideInputs": {}
           },
           "rank": 3,
-          "phaseType": "agentBasedDeployment",
+          "phaseType": 1,
           "name": "Selenium tests execution",
+          "refName": null,
           "workflowTasks": [
             {
               "environment": {},
@@ -297,7 +314,8 @@
                 "testSuite": "",
                 "testConfiguration": "",
                 "tcmTestRun": "$(test.RunId)",
-                "searchFolder": "$(System.DefaultWorkingDirectory)/Selenium/drop/TestAssemblies",
+                "searchFolder": "$(System.DefaultWorkingDirectory)/_Selenium/drop/TestAssemblies",
+                "resultsFolder": "$(Agent.TempDirectory)\\TestResults",
                 "testFiltercriteria": "",
                 "runOnlyImpactedTests": "False",
                 "runAllTestsAfterXBuilds": "50",
@@ -322,6 +340,8 @@
                 "platform": "",
                 "configuration": "",
                 "publishRunAttachments": "true",
+                "failOnMinTestsNotRun": "False",
+                "minimumExpectedTests": "1",
                 "diagnosticsEnabled": "True",
                 "collectDumpOn": "onAbortOnly",
                 "rerunFailedTests": "False",
@@ -340,13 +360,16 @@
         "skipArtifactsDownload": false,
         "timeoutInMinutes": 0,
         "enableAccessToken": false,
-        "publishDeploymentStatus": true
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
       },
       "demands": [],
       "conditions": [
         {
           "name": "ReleaseStarted",
-          "conditionType": "event",
+          "conditionType": 1,
           "value": ""
         }
       ],
@@ -361,22 +384,30 @@
         "retainBuild": true
       },
       "processParameters": {},
-      "properties": {},
+      "properties": {
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
       "preDeploymentGates": {
+        "id": 0,
         "gatesOptions": null,
         "gates": []
       },
       "postDeploymentGates": {
+        "id": 0,
         "gatesOptions": null,
         "gates": []
-      }
+      },
+      "environmentTriggers": []
     }
   ],
   "artifacts": [
     {
       "sourceId": "$ProjectId$:$Selenium-id$",
       "type": "Build",
-      "alias": "Selenium",
+      "alias": "_Selenium",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -395,22 +426,35 @@
           "name": "Latest"
         },
         "definition": {
+          "id": "258",
+          "name": "Selenium"
+        },
+        "definition": {
           "id": "$Selenium-id$",
           "name": "$Selenium$"
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
         },
         "project": {
           "id": "$ProjectId$",
           "name": "$ProjectName$"
+        },
+        "repository": {
+          "id": "",
+          "name": ""
         }
       },
-      "isPrimary": true
+      "isPrimary": true,
+      "isRetained": false
     }
   ],
   "triggers": [
     {
-      "artifactAlias": "Selenium",
+      "artifactAlias": "_Selenium",
       "triggerConditions": [],
-      "triggerType": "artifactSource"
+      "triggerType": 1
     }
   ],
   "releaseNameFormat": "Release-$(rev:r)",
@@ -418,7 +462,15 @@
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
-      "$value": "ReleaseNew"
+      "$value": "ReleaseClone"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
     }
   }
 }
