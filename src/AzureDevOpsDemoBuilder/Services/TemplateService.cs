@@ -259,20 +259,22 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                string[] filepaths = Directory.GetFiles(dir);
-                foreach (var file in filepaths)
+                if (Directory.Exists(dir))
                 {
-                    if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                    string[] filepaths = Directory.GetFiles(dir);
+                    foreach (var file in filepaths)
                     {
-                        return false;
+                        if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                        {
+                            return false;
+                        }
+                    }
+                    string[] subdirectoryEntries = Directory.GetDirectories(dir);
+                    foreach (string subdirectory in subdirectoryEntries)
+                    {
+                        checkTemplateDirectory(subdirectory);
                     }
                 }
-                string[] subdirectoryEntries = Directory.GetDirectories(dir);
-                foreach (string subdirectory in subdirectoryEntries)
-                {
-                    checkTemplateDirectory(subdirectory);
-                }
-
             }
             catch (Exception ex)
             {
