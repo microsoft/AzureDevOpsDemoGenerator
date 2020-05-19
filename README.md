@@ -5,7 +5,6 @@
 
 [![Release status](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/17)](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/17)
 
-
 ## About
 
 The Azure DevOps Demo Generator can create projects in your Azure DevOps organization, prepopulated with template-based content including source code, work items, iterations, service endpoints, build and release definitions, and more!
