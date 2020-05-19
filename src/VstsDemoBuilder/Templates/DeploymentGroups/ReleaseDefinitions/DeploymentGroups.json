@@ -5,24 +5,19 @@
   "path": "\\",
   "variables": {
     "DatabaseName": {
-      "value": "PartsUnlimited-Dev",
-      "isSecret": true
+      "value": ""
     },
     "DBPassword": {
-      "value": "P2ssw0rd@123",
-      "isSecret": true
+      "value": ""
     },
     "DBUserName": {
-      "value": "sqladmin",
-      "isSecret": true
+      "value": ""
     },
     "DefaultConnectionString": {
-      "value": "Data Source=YOUR_DNS_NAME.cloudapp.azure.com;Initial Catalog=PartsUnlimited-Dev;User ID=sqladmin;Password=P2ssw0rd@123;MultipleActiveResultSets=False;Connection Timeout=30;",
-      "isSecret": true
+      "value": ""
     },
     "ServerName": {
-      "value": "localhost",
-      "isSecret": true
+      "value": ""
     }
   },
   "variableGroups": [],
@@ -83,7 +78,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted$",
+            "queueId": "$vs2017-win2016$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
