@@ -656,7 +656,7 @@ namespace VstsDemoBuilder.Controllers
                     if (isTemplateBelongToPrivateFolder)
                     {
                         templatesFolder = PrivatePath;//Session["PrivateTemplateURL"].ToString();
-                        extensionJsonFile = string.Format("{0}\\{1}", templatesFolder, Extensions.json);
+                        extensionJsonFile = string.Format("{0}\\{1}", templatesFolder, "Extensions.json");
                     }
                     else if (string.IsNullOrEmpty(PrivatePath))
                     {
