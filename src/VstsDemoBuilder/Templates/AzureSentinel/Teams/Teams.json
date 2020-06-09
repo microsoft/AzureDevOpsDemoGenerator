@@ -4,5 +4,15 @@
     "name": "Azure Sentinel Template Team",
     "description": "The default project team.",
     "isDefault": "true"
+  },
+  {
+    "name": "Cloud Architects",
+    "description": "Cloud Architects Team",
+    "isDefault": "false"
+  },
+  {
+    "name": "SecOps",
+    "description": "SecOps Team",
+    "isDefault": "false"
   }
 ]
