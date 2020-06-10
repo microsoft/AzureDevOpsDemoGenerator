@@ -1483,6 +1483,16 @@
     <Content Include="Templates\NIST800171Rev2\WorkItems\Feature.json" />
     <Content Include="Templates\NIST800171Rev2\WorkItems\Task.json" />
     <Content Include="Templates\NIST800171Rev2\WorkItems\User Story.json" />
+    <Content Include="Templates\AzureSentinel\Teams\Cloud Architects\BoardColumns.json" />
+    <Content Include="Templates\AzureSentinel\Teams\Cloud Architects\BoardRows.json" />
+    <Content Include="Templates\AzureSentinel\Teams\Cloud Architects\CardFields.json" />
+    <Content Include="Templates\AzureSentinel\Teams\Cloud Architects\CardStyles.json" />
+    <Content Include="Templates\AzureSentinel\Teams\Cloud Architects\TeamSetting.json" />
+    <Content Include="Templates\AzureSentinel\Teams\SecOps\BoardColumns.json" />
+    <Content Include="Templates\AzureSentinel\Teams\SecOps\BoardRows.json" />
+    <Content Include="Templates\AzureSentinel\Teams\SecOps\CardFields.json" />
+    <Content Include="Templates\AzureSentinel\Teams\SecOps\CardStyles.json" />
+    <Content Include="Templates\AzureSentinel\Teams\SecOps\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
