@@ -16,7 +16,7 @@
       "hasChildren": false
     }
   ],
-  "name": "Azure Sentinel Template",
+  "name": "AzureSentinelDeployment",
   "structureType": "iteration",
   "hasChildren": true
 }
