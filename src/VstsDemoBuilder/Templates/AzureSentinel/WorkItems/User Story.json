@@ -1,381 +1,21 @@
 {
-  "count": 28,
+  "count": 21,
   "value": [
     {
-      "id": 357,
-      "rev": 10,
+      "id": 53,
+      "rev": 13,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "User Story",
         "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:21:39.96Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:22.867Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Connect data sources",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Azure Sentinel creates the connection to services and apps by connecting to the service and forwarding the events and logs to Azure Sentinel. For machines and virtual machines, you can install the Azure Sentinel agent that collects the logs and forwards them to Azure Sentinel. For Firewalls and proxies, Azure Sentinel utilizes a Linux Syslog server. The agent is installed on it and from which the agent collects the log files and forwards them to Azure Sentinel.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources\">https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/271",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/357"
-    },
-    {
-      "id": 358,
-      "rev": 7,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:23:52.42Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:29.06Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Connect service to service",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Some services are connected natively, such as AWS and Microsoft services, these services leverage the Azure foundation for out-of-the box integration, the following solutions can be connected in a few clicks.<br></div><div><br></div><div><div>Amazon Web Services - CloudTrail<br></div><div>Azure Activity<br></div><div>Azure AD audit logs and sign-ins<br></div><div>Azure AD Identity Protection<br></div><div>Azure Advanced Threat Protection<br></div><div>Azure Information Protection<br></div><div>Azure Security Center<br></div><div>Cloud App Security<br></div><div>Domain name server<br></div><div>Office 365<br></div><div>Microsoft Defender ATP<br></div><div>Microsoft web application firewall<br></div><div>Windows firewall<br></div><span>Windows security events</span><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources#data-connection-methods\">https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources#data-connection-methods</a><br></div><div><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/271",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/358"
-    },
-    {
-      "id": 359,
-      "rev": 7,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:24:32.737Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:53.453Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Connect external solutions",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>External solutions via API: Some data sources are connected using APIs that are provided by the connected data source. Typically, most security technologies provide a set of APIs through which event logs can be retrieved.The APIs connect to Azure Sentinel and gather specific data types and send them to Azure Log Analytics. Appliances connected via API include:<br></span><div><br></div><div>Barracuda<br></div><div>Barracuda CloudGen Firewall<br></div><div>Citrix Analytics (Security)<br></div><div>F5 BIG-IP<br></div><div>Forcepoint DLP<br></div><div>Squadra Technologies secRMM<br></div><div>Symantec ICDX<br></div><span>Zimperium</span><br></div><div><br></div><div><span>External solutions via agent: Azure Sentinel can be connected to all other data sources that can perform real-time log streaming using the Syslog protocol, via an agent.<br></span><div>Most appliances use the Syslog protocol to send event messages that include the log itself and data about the log. The format of the logs varies, but most appliances support the Common Event Format (CEF) based formatting for logs data.<br></div><div>The Azure Sentinel agent, which is based on the Log Analytics agent, converts CEF formatted logs into a format that can be ingested by Log Analytics. Depending on the appliance type, the agent is installed either directly on the appliance, or on a dedicated Linux server. The agent for Linux receives events from the Syslog daemon over UDP, but if a Linux machine is expected to collect a high volume of Syslog events, they are sent over TCP from the Syslog daemon to the agent and from there to Log Analytics.<br></div><div><br></div><div>Firewalls, proxies, and endpoints:<br></div><div>Check Point<br></div><div>Cisco ASA<br></div><div>ExtraHop Reveal(x)<br></div><div>F5<br></div><div>Forcepoint products<br></div><div>Fortinet<br></div><div>Palo Alto Networks<br></div><div>One Identity Safeguard<br></div><div>Other CEF appliances<br></div><div>Other Syslog appliances<br></div><div>Trend Micro Deep Security<br></div><span style=\"\">Zscaler</span><br></div><div><span style=\"\"><br></span></div><div><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources#data-connection-methods\">https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources#data-connection-methods</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/271",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/359"
-    },
-    {
-      "id": 496,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T16:06:16.71Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:42.76Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Events & Alerts",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Events and alerts over time: Lists the number of events and how many alerts were created from those events. If you see a spike that's unusual, you should see alerts for it - if there's something unusual where there is a spike in events but you don't see alerts, it might be cause for concern.<br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/489",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/496"
-    },
-    {
-      "id": 360,
-      "rev": 7,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:35:20.04Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:47.977Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Workbooks",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>After you connected your data sources to Azure Sentinel, you can visualize and monitor the data using the Azure Sentinel adoption of Azure Monitor Workbooks, which provides versatility in creating custom dashboards. While the Workbooks are displayed differently in Azure Sentinel, it may be useful for you to see how to Create interactive reports with Azure Monitor Workbooks. Azure Sentinel allows you to create custom workbooks across your data, and also comes with built-in workbook templates to allow you to quickly gain insights across your data as soon as you connect a data source<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-monitor-your-data\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-monitor-your-data</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/489",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/360"
-    },
-    {
-      "id": 361,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:37:25.303Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:18:16.143Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Kusto Language - Tutorial / Training",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><div style=\"box-sizing:border-box;\">A Kusto query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model designed to make the syntax easy to read, author, and automate. The query uses schema entities that are organized in a hierarchy similar to SQL's: databases, tables, and columns.<br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/kusto/query/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://docs.microsoft.com/en-us/azure/kusto/query/</a></div><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/272",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/361"
-    },
-    {
-      "id": 365,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:46:06.547Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:08.047Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "MITRE ATT&CK® Matrix for Enterprise",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span style=\"color:rgb(57, 67, 76);font-family:Roboto-Regular, sans-serif;font-size:16px;text-align:left;display:inline !important;\">MITRE ATT&amp;CK</span><sup style=\"box-sizing:border-box;font-size:12px;top:-0.5em;color:rgb(57, 67, 76);font-family:Roboto-Regular, sans-serif;text-align:left;\">®</sup><span style=\"color:rgb(57, 67, 76);font-family:Roboto-Regular, sans-serif;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. The ATT&amp;CK knowledge base is used as a foundation for the development of specific threat models and methodologies in the private sector, in government, and in the cybersecurity product and service community.</span><br></div><div><a href=\"https://attack.mitre.org/matrices/enterprise/\">https://attack.mitre.org/matrices/enterprise/</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/273",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/365"
-    },
-    {
-      "id": 362,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:40:53.23Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:02Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Detect threats out-of-the-box - built-in templates",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>The following template types are available:<br></span><div><br></div><div>Microsoft security - Microsoft security templates automatically create Azure Sentinel incidents from the alerts generated in other Microsoft security solutions, in real time. You can use Microsoft security rules as a template to create new rules with similar logic. For more information about security rules, see Automatically create incidents from Microsoft security alerts.<br></div><div><br></div><div>Fusion - Based on Fusion technology, advanced multistage attack detection in Azure Sentinel uses scalable machine learning algorithms that can correlate many low-fidelity alerts and events across multiple products into high-fidelity and actionable incidents. Fusion is enabled by default. Because the logic is hidden, you cannot use this as a template to create more than one rule.<br></div><div><br></div><div>Machine learning behavioral analytics - These templates are based on proprietary Microsoft machine learning algorithms, so you cannot see the internal logic of how they work and when they run. Because the logic is hidden, you cannot use this as a template to create more than one rule.<br></div><span>Scheduled – Scheduled analytic rules are scheduled queries written by Microsoft security experts. You can see the query logic and make changes to it. You can use scheduled rules as a template to create new rules with similar logic.</span><br></div><div><span><br></span></div><div><span><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-built-in\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-built-in</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/490",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/362"
-    },
-    {
-      "id": 363,
-      "rev": 4,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:41:28.83Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:16:56.66Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": " Create custom analytic rules to detect suspicious threats",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>After you connected your data sources to Azure Sentinel, you can create custom rules that can search for specific criteria across your environment and generate incidents when the criteria are matched so that you can investigate them. This tutorial helps you create custom rules to detect threats with Azure Sentinel.<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-custom\" style=\"\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-custom</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/490",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/363"
-    },
-    {
-      "id": 364,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-25T20:44:16.447Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:22:29.933Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Use the investigation graph to deep dive",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2020-05-19T15:06:39.81Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:50:35.117Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Connect Microsoft Sources",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": null,
         "System.AssignedTo": null,
@@ -391,33 +31,388 @@
       },
       "relations": [
         {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/73",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/57",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/72",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/41",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/45",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/44",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/275",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/1",
           "attributes": {
             "isLocked": "false",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/364"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/53"
     },
     {
-      "id": 488,
+      "id": 58,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-19T15:58:58.073Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-05-19T18:40:28.59Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "[BLOG] Collecting logs from Microsoft Services and Applications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-collecting-logs-from-microsoft-services-and/ba-p/792669\">https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-collecting-logs-from-microsoft-services-and/ba-p/792669</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/1",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/58"
+    },
+    {
+      "id": 55,
+      "rev": 12,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2020-05-19T15:30:20.497Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-04T18:44:08.087Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Connect 3rd Party Data Sources ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div style=\"box-sizing:border-box;outline:none;\"><span style=\"box-sizing:border-box;outline:none;\">In this section, we are providing a few preloaded tasks to 3rd party data sources. This is not the complete list of the 3rd party data sources available in Azure Sentinel. Please reference the &quot;Azure Sentinel&nbsp;<b>Data Connectors&quot; </b>gallery to view the list of all data connectors. Additionally, reference the&nbsp;following documentation to understand the supported data connection methods:</span></div><div style=\"box-sizing:border-box;outline:none;\"><span style=\"box-sizing:border-box;outline:none;\"><br></span></div><div style=\"box-sizing:border-box;outline:none;\"><span style=\"box-sizing:border-box;outline:none;\"><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources#data-connection-methods\">https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources#data-connection-methods</a></span></div><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/1",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/64",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/62",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/61",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/63",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/59",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/attachments/e1fbae30-8b9e-4b39-b1d7-9ef48d413d95",
+          "attributes": {
+            "authorizedDate": "2020-05-20T23:32:25.393Z",
+            "id": "2813896",
+            "resourceCreatedDate": "2020-05-20T23:32:21.417Z",
+            "resourceModifiedDate": "2020-05-20T20:23:47.013Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "3239090",
+            "name": "syslogcef.gif"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/55"
+    },
+    {
+      "id": 62,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-19T19:08:20.367Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-04T18:46:16.257Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": " Connect Common Event Format Based solutions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"color:#171717;background:white;\">Azure Sentinel can be connected to\nall other data sources that can perform real-time log streaming using the\nSyslog protocol, via an agent.</span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"color:#171717;\"><span style=\"background:white;\"><span style=\"box-sizing:border-box;\">Most appliances use the Syslog protocol to send event messages that\ninclude the log itself and data about the log. The format of the logs varies,\nbut most appliances support the Common Event Format (CEF) based formatting for\nlogs data.</span></span></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"color:#171717;\"><span style=\"background:white;\"><span style=\"box-sizing:border-box;\">The Azure Sentinel agent, which is based on the Log Analytics agent,\nconverts CEF formatted logs into a format that can be ingested by Log\nAnalytics. Depending on the appliance type, the agent is installed either\ndirectly on the appliance, or on a dedicated Linux server. The agent for Linux\nreceives events from the Syslog daemon over UDP, but if a Linux machine is\nexpected to collect a high volume of Syslog events, they are sent over TCP from\nthe Syslog daemon to the agent and from there to Log Analytics.</span></span></span><span style=\"\"></span></p></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-common-event-format\">https://docs.microsoft.com/en-us/azure/sentinel/connect-common-event-format</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/79",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/80",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/76",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/55",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/attachments/f79a9c38-f489-4947-a416-3d6340173db5",
+          "attributes": {
+            "authorizedDate": "2020-05-20T23:32:48.713Z",
+            "id": "2813897",
+            "resourceCreatedDate": "2020-05-20T23:32:43.93Z",
+            "resourceModifiedDate": "2020-05-20T20:23:47.013Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "3239090",
+            "name": "syslogcef.gif"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/62"
+    },
+    {
+      "id": 17,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-11T19:08:59.32Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:22.07Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Workbooks",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>After you connected your data sources to Azure Sentinel, you can visualize and monitor the data using the Azure Sentinel adoption of Azure Monitor Workbooks, which provides versatility in creating custom dashboards. While the Workbooks are displayed differently in Azure Sentinel, it may be useful for you to see how to Create interactive reports with Azure Monitor Workbooks. Azure Sentinel allows you to create custom workbooks across your data, and also comes with built-in workbook templates to allow you to quickly gain insights across your data as soon as you connect a data source.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-monitor-your-data\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-monitor-your-data</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/66",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/65",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/67",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/60",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/9",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/17"
+    },
+    {
+      "id": 20,
       "rev": 7,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T15:12:04.493Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:18:55.227Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Prerequisites to deploy Azure Sentinel",
+        "System.CreatedDate": "2020-05-11T19:08:59.85Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:24.897Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Detect threats with built in analytic templates",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard\">https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard</a><br></span></div><div><span>Active Azure Subscription, if you don't have one, create a free account before you begin.<br></span><div><br></div><div>Log Analytics workspace. Learn how to create a Log Analytics workspace. For more information about Log Analytics workspaces, see Designing your Azure Monitor Logs deployment.<br></div><div><br></div><div>To enable Azure Sentinel, you need contributor permissions to the subscription in which the Azure Sentinel workspace resides.<br></div><div><br></div><div>To use Azure Sentinel, you need either contributor or reader permissions on the resource group that the workspace belongs to.<br></div><div><br></div><div>Additional permissions may be needed to connect specific data sources.<br></div><div><br></div><span>Azure Sentinel is a paid service. For pricing information see About Azure Sentinel.</span><br></div>",
+        "System.Description": "<div><span>The following analytic template types are available:<br></span><div><br></div><div>Microsoft security - Microsoft security templates automatically create Azure Sentinel incidents from the alerts generated in other Microsoft security solutions, in real time. You can use Microsoft security rules as a template to create new rules with similar logic. For more information about security rules, see Automatically create incidents from Microsoft security alerts.<br></div><div><br></div><div>Fusion - Based on Fusion technology, advanced multistage attack detection in Azure Sentinel uses scalable machine learning algorithms that can correlate many low-fidelity alerts and events across multiple products into high-fidelity and actionable incidents. Fusion is enabled by default. Because the logic is hidden, you cannot use this as a template to create more than one rule.<br></div><div><br></div><div>Machine learning behavioral analytics - These templates are based on proprietary Microsoft machine learning algorithms, so you cannot see the internal logic of how they work and when they run. Because the logic is hidden, you cannot use this as a template to create more than one rule.<br></div><div><br></div><span>Scheduled – Scheduled analytic rules are scheduled queries written by Microsoft security experts. You can see the query logic and make changes to it. You can use scheduled rules as a template to create new rules with similar logic.</span><br></div><div><span><br></span></div><div><span><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-built-in\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-built-in</a><br></span></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -431,33 +426,55 @@
       },
       "relations": [
         {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/487",
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/75",
           "attributes": {
             "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/10",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/attachments/f195c9fe-42e3-45fd-94be-872a1413a215",
+          "attributes": {
+            "authorizedDate": "2020-05-20T23:21:32.397Z",
+            "id": "2813893",
+            "resourceCreatedDate": "2020-05-20T23:21:27.903Z",
+            "resourceModifiedDate": "2020-05-20T20:34:09.877Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "3384158",
+            "name": "Scheduled Rule.gif"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/488"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/20"
     },
     {
-      "id": 500,
+      "id": 21,
       "rev": 5,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T17:17:04.463Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:22:35.897Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Incident Management",
+        "System.CreatedDate": "2020-05-11T19:08:59.99Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:50:39.753Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": " Create custom analytic rules to detect suspicious threats",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Log Analytics has an incident management process that all Microsoft services adhere to.<br></span><div><br></div><div>Use a shared responsibility model where a portion of security responsibility belongs to Microsoft and a portion belongs to the customer<br></div><div>Manage Azure security incidents<br></div><div>Notify customers of security incidents<br></div><span>Conduct team readiness and training</span><br></div><div><br></div><div><a href=\"https://gallery.technet.microsoft.com/Azure-Security-Response-in-dd18c678\">https://gallery.technet.microsoft.com/Azure-Security-Response-in-dd18c678</a><br></div>",
+        "System.Description": "<div>After you connected your data sources to Azure Sentinel, you can create custom rules that can search for specific criteria across your environment and generate incidents when the criteria are matched so that you can investigate them. This tutorial helps you create custom rules to detect threats with Azure Sentinel.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-custom\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-detect-threats-custom</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -472,32 +489,77 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/276",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/10",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/attachments/6e464fc6-e49f-4c19-8f2d-687689b38d49",
+          "attributes": {
+            "authorizedDate": "2020-05-20T23:21:45.5Z",
+            "id": "2813894",
+            "resourceCreatedDate": "2020-05-20T23:21:42.523Z",
+            "resourceModifiedDate": "2020-05-20T20:43:43.483Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "2254216",
+            "name": "Custom rule.gif"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/500"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/21"
     },
     {
-      "id": 501,
+      "id": 22,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-11T19:09:00.227Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:50:42.433Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Use the investigation graph to deep dive",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Use the investigation graph to deep dive",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/22"
+    },
+    {
+      "id": 23,
       "rev": 5,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T17:18:28.86Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:28:57.183Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Integrated with existing case management systems",
+        "System.CreatedDate": "2020-05-11T19:09:00.48Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:27.937Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Prerequisites to Deploy Azure Sentinel",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Azure Sentinel Side-by-Side with Splunk<br></span><div>This blog is intent to describe how Azure Sentinel can be used as Side-by-Side approach with Splunk.<br></div><div><br></div><div><span style=\"\">As most of the enterprises consume more and more cloud services, there is a huge requirement for Cloud-Native SIEM where Azure Sentinel comes in play and has following advantages.</span><br></div><div><br></div><div><span style=\"\">Easy collection from cloud sources</span><br></div><div>Effortless infinite scale<br></div><div>Integrated automation capabilities<br></div><div>Continually maintained cloud and onprem use cases enhanced with Microsoft TI and ML<br></div><div>Github community<br></div><div>Microsoft research and ML capabilities<br></div><div>Avoid sending cloud telemetry downstream<br></div><span>There are several best practice integration options available how to operate Azure Sentinel in Side-by-Side.</span><br></div><div><span><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-side-by-side-with-splunk/ba-p/1211266\">https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-side-by-side-with-splunk/ba-p/1211266</a><br></span></div>",
+        "System.Description": "<div><span><br><span style=\"color:rgb(0, 90, 158);text-decoration:underline;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard\">https://docs.microsoft.com/azure/sentinel/quickstart-onboard</a></span><br></span></div><div><span><br></span></div><div><ul><li>Active Azure Subscription, if you don't have one, create a free account before you begin.</li><li>Log Analytics workspace.<a href=\"https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-create-workspace\"> Learn how to create a Log Analytics workspace.</a> For more information about Log Analytics workspaces, see<a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment\"> Designing your Azure Monitor Logs deployment.</a></li><li>To enable Azure Sentinel, you need <b>contributor permissions to the subscription </b>in which the Azure Sentinel workspace resides.</li><li>To use Azure Sentinel, you need either contributor or reader permissions on the resource group that the workspace belongs to.</li><li>Additional permissions may be needed to connect specific data sources.</li></ul><div><br></div>Azure Sentinel is a paid service. For pricing information see <a href=\"https://go.microsoft.com/fwlink/?linkid=2104058\">About Azure Sentinel.</a><br></div><div><br></div><div><span><a href=\"https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/\">https://azure.microsoft.com/pricing/details/azure-sentinel/</a><br></span></div><div><span><a href=\"https://azure.microsoft.com/en-us/pricing/details/monitor/\">https://azure.microsoft.com/pricing/details/monitor/</a><br></span></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -512,72 +574,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/276",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/8",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/501"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/23"
     },
     {
-      "id": 491,
-      "rev": 3,
+      "id": 27,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "Azure Sentinel Template",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T15:58:56.52Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:29:42.82Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Create a security playbook",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Use security playbooks in Azure Sentinel to set automated threat responses to security-related issues detected by Azure Sentinel.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/276",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/491"
-    },
-    {
-      "id": 492,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T15:59:43.333Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:30:56.827Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.CreatedDate": "2020-05-11T19:09:01.07Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:31.48Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
         "System.Title": "Automate threat response",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Automate threat responses<br></span><div>SIEM/SOC teams can be inundated with security alerts on a regular basis. The volume of alerts generated is so huge, that available security admins are overwhelmed. This results all too often in situations where many alerts can't be investigated, leaving the organization vulnerable to attacks that go unnoticed.<br></div><div><br></div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook</a><br></div>",
+        "System.Description": "<div><span><b>Automate threat responses</b></span></div><div><span><b><br></b></span><div>SIEM/SOC teams can be inundated with security alerts on a regular basis. The volume of alerts generated from a SIEM can cause alert fatigue and increase friction across your security analysts. This results all too often in situations where many alerts can't be investigated, leaving the organization vulnerable to attacks that go unnoticed.<br></div><div><br></div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -592,30 +615,57 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/276",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/5",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/attachments/86c6c421-2dde-4231-a065-01af434c9650",
+          "attributes": {
+            "authorizedDate": "2020-05-20T23:33:32.25Z",
+            "id": "2813899",
+            "resourceCreatedDate": "2020-05-20T23:33:29.853Z",
+            "resourceModifiedDate": "2020-05-18T00:59:44.567Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "792502",
+            "name": "Actions.gif"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/attachments/37746e22-c517-4a95-b557-8522d6a21faf",
+          "attributes": {
+            "authorizedDate": "2020-05-20T23:33:32.25Z",
+            "id": "2813898",
+            "resourceCreatedDate": "2020-05-20T23:33:24.853Z",
+            "resourceModifiedDate": "2020-05-18T01:07:15.293Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "337682",
+            "name": "Triggers.gif"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/492"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/27"
     },
     {
-      "id": 493,
-      "rev": 5,
+      "id": 28,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T16:01:21.647Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:37:22.603Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Built-in queries",
+        "System.CreatedDate": "2020-05-11T19:09:01.217Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:35.01Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Built-in Hunting Queries",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "<div>Built-in queries: To get you started, a starting page provides preloaded query examples designed to get you started and get you familiar with the tables and the query language. These built-in hunting queries are developed by Microsoft security researchers on a continuous basis, adding new queries, and fine-tuning existing queries to provide you with an entry point to look for new detections and figure out where to start hunting for the beginnings of new attacks.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/hunting\">https://docs.microsoft.com/en-us/azure/sentinel/hunting</a><br></div><div><br></div><div>Public hunting query GitHub repository<br></div><div><a href=\"https://github.com/Azure/Azure-Sentinel\">https://github.com/Azure/Azure-Sentinel</a><br></div>",
         "System.AssignedTo": null,
@@ -632,29 +682,30 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/277",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/6",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/493"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/28"
     },
     {
-      "id": 494,
-      "rev": 6,
+      "id": 29,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T16:01:37.017Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:37:17.3Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.CreatedDate": "2020-05-11T19:09:01.4Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:37.913Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
         "System.Title": "Bookmarks",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "<div><span>Threat hunting typically requires reviewing mountains of log data looking for evidence of malicious behavior. During this process, investigators find events that they want to remember, revisit, and analyze as part of validating potential hypotheses and understanding the full story of a compromise.<br></span><div><br></div><span>Hunting bookmarks in Azure Sentinel help you do this, by preserving the queries you ran in Azure Sentinel - Logs, along with the query results that you deem relevant. You can also record your contextual observations and reference your findings by adding notes and tags. Bookmarked data is visible to you and your teammates for easy collaboration.</span><br></div><div><span><br></span></div><div><span><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/bookmarks\">https://docs.microsoft.com/en-us/azure/sentinel/bookmarks</a><br></span></div>",
@@ -672,32 +723,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/277",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/6",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/494"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/29"
     },
     {
-      "id": 495,
+      "id": 30,
       "rev": 4,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T16:01:41.43Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:37:12.777Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.CreatedDate": "2020-05-11T19:09:01.57Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:40.683Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
         "System.Title": "Notebooks",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>The foundation of Azure Sentinel is the data store; it combines high performance querying, dynamic schema, and scales to massive data volumes. The Azure portal and all Azure Sentinel tools use a common API to access this data store. The same API is also available for external tools such as Jupyter notebooks and Python. While many common tasks can be carried out in the portal, Jupyter extends the scope of what you can do with this data. It combines full programmability with a huge collection of libraries for machine learning, visualization, and data analysis. These attributes make Jupyter a compelling tool for security investigation and hunting.<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/notebooks\">https://docs.microsoft.com/en-us/azure/sentinel/notebooks</a><br></div>",
+        "System.Description": "<div>The foundation of Azure Sentinel is the data store; it combines high performance querying, dynamic schema, and scales to massive data volumes. The Azure portal and all Azure Sentinel tools use a common API to access this data store. The same API is also available for external tools such as Jupyter notebooks and Python. While many common tasks can be carried out in the portal, Jupyter extends the scope of what you can do with this data. It combines full programmability with a huge collection of libraries for machine learning, visualization, and data analysis. These attributes make Jupyter a compelling tool for security investigation and hunting.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/notebooks\">https://docs.microsoft.com/en-us/azure/sentinel/notebooks</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -712,229 +764,71 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/277",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/6",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/495"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/30"
     },
     {
-      "id": 498,
-      "rev": 6,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T17:10:06.387Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:17:58.277Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Review existing data collection streamings",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<span>Azure Sentinel Side-by-Side with Splunk<br></span><div>This blog is intent to describe how Azure Sentinel can be used as Side-by-Side approach with Splunk.<br></div><div><br></div><div><span style=\"\">As most of the enterprises consume more and more cloud services, there is a huge requirement for Cloud-Native SIEM where Azure Sentinel comes in play and has following advantages.</span><br></div><div>&nbsp;<br></div><div><br></div><div>Easy collection from cloud sources<br></div><div>Effortless infinite scale<br></div><div>Integrated automation capabilities<br></div><div>Continually maintained cloud and on-prem use cases enhanced with Microsoft TI and ML<br></div><div>Github community<br></div><div>Microsoft research and ML capabilities<br></div><div>Avoid sending cloud telemetry downstream<br></div><span>There are several best practice integration options available how to operate Azure Sentinel in Side-by-Side.</span><br><div><span><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-side-by-side-with-splunk/ba-p/1211266#\">https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-side-by-side-with-splunk/ba-p/1211266#</a><br></span></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/271",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/498"
-    },
-    {
-      "id": 499,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T17:14:35.513Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:16:49.033Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Review existing alert feed metrics",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>We’re frequently asked how we operate our Security Operations Center (SOC) at Microsoft (particularly as organizations are integrating cloud into their enterprise estate). This is the first in a three part blog series designed to share our approach and experience, so you can use what we learned to improve your SOC.<br></span><div><br></div><span>In Part 1: Organization, we start with the critical organizational aspects (organizational purpose, culture, and metrics). In Part 2: People (Part 2a and 2b), we cover how we manage our most valuable resource—human talent. And finally Part 3: Technology, covers the technology that enables these people to accomplish their mission.</span><br></div><div><span><br></span></div><div><span><a href=\"https://www.microsoft.com/security/blog/2019/02/21/lessons-learned-from-the-microsoft-soc-part-1-organization/\">https://www.microsoft.com/security/blog/2019/02/21/lessons-learned-from-the-microsoft-soc-part-1-organization/</a><br></span></div><div><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/490",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/499"
-    },
-    {
-      "id": 502,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\SecOps",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T17:19:45.093Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:37:08.097Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Livestream",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Use hunting livestream to create interactive sessions that let you test newly created queries as events occur, get notifications from the sessions when a match is found, and launch investigations if necessary. You can quickly create a livestream session using any Log Analytics query.<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/livestream\">https://docs.microsoft.com/en-us/azure/sentinel/livestream</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/277",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/502"
-    },
-    {
-      "id": 536,
-      "rev": 6,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T18:46:32.207Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T20:18:46.437Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Define Azure Sentinel RBAC Roles",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Azure Sentinel RBAC Roles</div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/roles\">https://docs.microsoft.com/en-us/azure/sentinel/roles</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/278",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/536"
-    },
-    {
-      "id": 537,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T19:42:43.83Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T19:43:57.673Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Designing your Azure Monitor Logs deployment",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Azure Monitor stores log data in a Log Analytics workspace, which is an Azure resource and a container where data is collected, aggregated, and serves as an administrative boundary. While you can deploy one or more workspaces in your Azure subscription, there are several considerations you should understand in order to ensure your initial deployment is following our guidelines to provide you with a cost effective, manageable, and scalable deployment meeting your organizations needs.<br><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment\">https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/497",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/537"
-    },
-    {
-      "id": 572,
+      "id": 33,
       "rev": 4,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T21:11:47.027Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T21:14:06.97Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.CreatedDate": "2020-05-11T19:09:02.227Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:43.353Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Livestream",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Use hunting livestream to create interactive sessions that let you test newly created queries as events occur, get notifications from the sessions when a match is found, and launch investigations if necessary. You can quickly create a livestream session using any Log Analytics query.<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/livestream\">https://docs.microsoft.com/en-us/azure/sentinel/livestream</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/33"
+    },
+    {
+      "id": 36,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-11T19:09:02.917Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:46.677Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
         "System.Title": "Deploying and Managing Azure Sentinel as Code",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "<div style=\"box-sizing:border-box;margin:0px;font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(51, 51, 51);font-size:16px;font-weight:300;text-align:left;\"><span>Deploying and Managing Azure Sentinel as Code<br></span></div><div style=\"box-sizing:border-box;margin:0px;font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(51, 51, 51);font-size:16px;font-weight:300;text-align:left;\"><span><br></span></div><div style=\"box-sizing:border-box;margin:0px;font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(51, 51, 51);font-size:16px;font-weight:300;text-align:left;\">How can I programmatically configure connectors? As a partner, how do I push to my new customer all the custom analytics rules/workbooks/playbooks that I have created for other customers?<br></div><div style=\"box-sizing:border-box;margin:0px;font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(51, 51, 51);font-size:16px;font-weight:300;text-align:left;\"><br></div><div style=\"box-sizing:border-box;margin:0px;font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(51, 51, 51);font-size:16px;font-weight:300;text-align:left;\"><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/deploying-and-managing-azure-sentinel-as-code/ba-p/1131928\">https://techcommunity.microsoft.com/t5/azure-sentinel/deploying-and-managing-azure-sentinel-as-code/ba-p/1131928</a><br></div>",
@@ -952,72 +846,73 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/497",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/43",
           "attributes": {
             "isLocked": "false",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/572"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/36"
     },
     {
-      "id": 573,
+      "id": 37,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-11T19:09:03.177Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:49.243Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "[BLOG] Best practices for designing an Azure Sentinel or Azure Security Center Log Analytics workspace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\">This blog provides the top 8 best practices for an optimal\nLog Analytics workspace design in Azure Sentinel, make sure to review.</p></div><div><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/best-practices-for-designing-an-azure-sentinel-or-azure-security/ba-p/832574\">https://techcommunity.microsoft.com/t5/azure-sentinel/best-practices-for-designing-an-azure-sentinel-or-azure-security/ba-p/832574</a><br></div><div><br></div><div>For additional blogs, please visit:</div><div><a href=\"https://techcommunity.microsoft.com/t5/Azure-Sentinel/\">https://techcommunity.microsoft.com/t5/Azure-Sentinel/</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/37"
+    },
+    {
+      "id": 38,
       "rev": 4,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T22:18:16.797Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T22:24:17.387Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Best Practices",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Best practices for designing an Azure Sentinel or Azure Security Center Log Analytics workspace<br></div><div><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/best-practices-for-designing-an-azure-sentinel-or-azure-security/ba-p/832574\">https://techcommunity.microsoft.com/t5/azure-sentinel/best-practices-for-designing-an-azure-sentinel-or-azure-security/ba-p/832574</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/497",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/573"
-    },
-    {
-      "id": 574,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T22:23:23.05Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-27T15:23:28.87Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.CreatedDate": "2020-05-11T19:09:03.31Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:51:53.19Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
         "System.Title": "Azure Sentinel - Cost estimation",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span style=\"color:rgb(76, 76, 81);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Sentinel provides intelligent security analytics across your enterprise. The data for this analysis is stored in an Azure Monitor Log Analytics workspace. Azure Sentinel is billed based on the volume of data ingested for analysis in Azure Sentinel and stored in the Azure Monitor Log Analytics workspace. Azure Sentinel offers a flexible and predictable pricing model. There are two ways to pay for the Azure Sentinel service: Capacity Reservations and Pay-As-You-Go.</span><br></div><div><span style=\"color:rgb(76, 76, 81);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><a href=\"https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/\">https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/</a><br></span></div>",
+        "System.Description": "<div><span style=\"color:rgb(76, 76, 81);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Sentinel provides intelligent security analytics across your enterprise. The data for this analysis is stored in an Azure Monitor Log Analytics workspace. Azure Sentinel is billed based on the volume of data ingested for analysis in Azure Sentinel and stored in the Azure Monitor Log Analytics workspace. Azure Sentinel offers a flexible and predictable pricing model. There are two ways to pay for the Azure Sentinel service: Capacity Reservations and Pay-As-You-Go.</span><br></div><div><span style=\"color:rgb(76, 76, 81);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(76, 76, 81);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><a href=\"https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/\">https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/</a><br></span></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1032,69 +927,30 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/497",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/11",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/574"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/38"
     },
     {
-      "id": 575,
-      "rev": 3,
+      "id": 40,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "$ProjectName$\\Cloud Architects",
-        "System.TeamProject": "Azure Sentinel Template",
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-03-26T22:25:50.953Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-03-26T22:26:48.157Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.Title": "Manage usage and costs - Azure Monitor Logs",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Azure Monitor Logs is designed to scale and support collecting, indexing, and storing massive amounts of data per day from any source in your enterprise or deployed in Azure. While this may be a primary driver for your organization, cost-efficiency is ultimately the underlying driver. To that end, it's important to understand that the cost of a Log Analytics workspace isn't based only on the volume of data collected, it is also dependent on the plan selected, and how long you chose to store data generated from your connected sources.<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage\">https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/497",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/575"
-    },
-    {
-      "id": 983,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "Azure Sentinel Template",
-        "System.TeamProject": "Azure Sentinel Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-04-13T16:12:48.257Z",
-        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
-        "System.ChangedDate": "2020-04-13T16:12:48.257Z",
-        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.CreatedDate": "2020-05-11T19:09:03.623Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:52:05.953Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
         "System.Title": "Become an Azure Sentinel Ninja: The complete level 400 training",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "<div><span style=\"color:rgb(51, 51, 51);font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;font-weight:300;text-align:left;display:inline !important;\">Become an Azure Sentinel Ninja: The complete level 400 training<br></span></div><div><span style=\"color:rgb(51, 51, 51);font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;font-weight:300;text-align:left;display:inline !important;\">This training program includes 16 modules. For each module, the post includes a presentation, preferably recorder (when still not, we are working on the recording) as well as supporting information: relevant product documentation, blog posts, and other resources.</span><br></div><div><br></div><div><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/become-an-azure-sentinel-ninja-the-complete-level-400-training/ba-p/1246310#.XpRjWP8Xb1Q.linkedin\">https://techcommunity.microsoft.com/t5/azure-sentinel/become-an-azure-sentinel-ninja-the-complete-level-400-training/ba-p/1246310#.XpRjWP8Xb1Q.linkedin</a><br></div>",
@@ -1112,14 +968,143 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/982",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/42",
           "attributes": {
             "isLocked": "false",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/983"
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/40"
+    },
+    {
+      "id": 18,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-11T19:08:59.47Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-06-03T16:52:09.37Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Kusto Query Language - Tutorial / Training",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;font-family:SegoeUI, Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(51, 51, 51);font-size:16px;font-weight:300;text-align:left;\"></span></div><div style=\"box-sizing:border-box;\"><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span style=\"color:black;\">Most Azure Sentinel capabilities use&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/kusto/query/\" target=_blank><span>KQL</span></a>&nbsp;or Kusto Query\nLanguage. When you search in your logs, write rules, creating hunting queries\nor create workbooks, you use KQL.&nbsp;</span><span></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span style=\"color:black;\"><br></span><span>A Kusto query is a read-only request to process data\nand return results. The request is stated in plain text, using a data-flow\nmodel designed to make the syntax easy to read, author, and automate. The query\nuses schema entities that are organized in a hierarchy similar to SQL's:\ndatabases, tables, and columns.</span><span style=\"color:black;\"><br></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span>&nbsp;</span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span style=\"color:black;\"><a href=\"https://docs.microsoft.com/en-us/azure/kusto/query/\"><span>https://docs.microsoft.com/en-us/azure/kusto/query/</span></a></span><span></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span>&nbsp;</span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span style=\"color:black;\">Additional Resources:</span><span></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span>&nbsp;</span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span style=\"color:black;\">KQL Cheat Sheet -&nbsp;<span><a href=\"https://github.com/marcusbakker/KQL/blob/master/kql_cheat_sheet.pdf\">https://github.com/marcusbakker/KQL/blob/master/kql_cheat_sheet.pdf</a></span></span><span></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\"><span style=\"color:black;\">Pluralsight KQL Course -&nbsp;<a href=\"https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch\">https://www.pluralsight.com/courses/kusto-query-language-kql-from-scratch</a><br></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;background:white;\">[WEBINAR] Learn the KQL you need&nbsp;<a href=\"https://www.youtube.com/watch?v=EDCBLULjtCM\">https://www.youtube.com/watch?v=EDCBLULjtCM</a></p></div><div style=\"box-sizing:border-box;\"><br></div><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/18"
+    },
+    {
+      "id": 240,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "AzureSentinelDeployment",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-27T20:18:18.5Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-05-28T13:07:31.357Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Explore Github Content in Azure Sentinel Repo",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://github.com/Azure/Azure-Sentinel/tree/master/Playbooks\">https://github.com/Azure/Azure-Sentinel/tree/master/Playbooks</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/5",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/240"
+    },
+    {
+      "id": 25,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "AzureSentinelDeployment",
+        "System.TeamProject": "AzureSentinelDeployment",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-11T19:09:00.803Z",
+        "System.CreatedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.ChangedDate": "2020-05-27T20:18:29.913Z",
+        "System.ChangedBy": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "System.Title": "Integrate with existing Case Management Systems ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Azure Sentinel Side-by-Side with Splunk<br></span><div>This blog is intent to describe how Azure Sentinel can be used as Side-by-Side approach with Splunk.<br></div><div><br></div><div><span style=\"\">As most of the enterprises consume more and more cloud services, there is a huge requirement for Cloud-Native SIEM where Azure Sentinel comes in play and has following advantages.</span><br></div><div><br></div><div><span style=\"\">Easy collection from cloud sources</span><br></div><div>Effortless infinite scale<br></div><div>Integrated automation capabilities<br></div><div>Continually maintained cloud and onprem use cases enhanced with Microsoft TI and ML<br></div><div>Github community<br></div><div>Microsoft research and ML capabilities<br></div><div>Avoid sending cloud telemetry downstream<br></div><span>There are several best practice integration options available how to operate Azure Sentinel in Side-by-Side.</span><br></div><div><span><a href=\"https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-side-by-side-with-splunk/ba-p/1211266\">https://techcommunity.microsoft.com/t5/azure-sentinel/azure-sentinel-side-by-side-with-splunk/ba-p/1211266</a><br></span></div>",
+        "System.AssignedTo": "Cristhofer Munoz <crmuno@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/78",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/5",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/crmuno/_apis/wit/workItems/25"
     }
   ],
   "HttpStatusCode": 0,

@@ -1,5 +1,5 @@
 {
-  "Description": "Azure Sentinel Template",
+  "Description": "Azure Sentinel DevOps Template",
   "Teams": "Teams.json",
   "BoardColumns": "BoardColumns.json",
   "ProjectSettings": "ProjectSettings.json",
