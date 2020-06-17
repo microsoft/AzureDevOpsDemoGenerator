@@ -460,6 +460,8 @@
     <Content Include="Templates\TemplateImages\mslearn\create-a-release-pipeline-with-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\create-multi-stage-pipeline.svg" />
     <Content Include="Templates\TemplateImages\mslearn\deploy-azure-functions.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\deploy-docker.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\deploy-kubernetes.svg" />
     <Content Include="Templates\TemplateImages\mslearn\generic-badge.svg" />
     <Content Include="Templates\TemplateImages\mslearn\host-your-own-build-server-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\implement-a-code-workflow-in-your-build-pipeline.png" />
