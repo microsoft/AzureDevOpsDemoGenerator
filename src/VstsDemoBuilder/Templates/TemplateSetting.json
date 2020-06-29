@@ -780,7 +780,7 @@
             "Microsoft Learn",
             "Azure Pipelines"
           ],
-          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "Image": "/Templates/TemplateImages/mslearn/deploy-docker.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Learn to implement a CI/CD pipeline for Docker containers<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-docker' target='_blank'>Deploy Docker containers</a>"
@@ -794,7 +794,7 @@
             "Microsoft Learn",
             "Azure Pipelines"
           ],
-          "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
+          "Image": "/Templates/TemplateImages/mslearn/deploy-kubernetes.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Learn to implement a CI/CD pipeline for multi-container solutions orchestrated with Kubernetes<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes' target='_blank'>Deploymulti-container solutions to Kubernetes</a>"
@@ -861,7 +861,7 @@
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
           "Name": "Community T1",
           "TemplateFolder": "https://raw.githubusercontent.com/aksh-h/PUL_YML/master/PHP.zip",
-          "ShortName": "CloudAdoptionPlan",
+          "ShortName": "CloudAdoptionPlan121",
           "Description": "<a href='https://raw.githubusercontent.com/aksh-h/PUL_YML/master/PHP.zip'>Template</a> The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
           "Tags": [
             "Agile",
