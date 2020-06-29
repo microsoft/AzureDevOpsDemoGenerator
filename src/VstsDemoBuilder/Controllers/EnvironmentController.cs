@@ -83,13 +83,15 @@ namespace VstsDemoBuilder.Controllers
         [SessonTimeout]
         public ContentResult GetTemplate(string TemplateName)
         {
-            string templatesPath = Server.MapPath("~") + @"\Templates\";
             string template = string.Empty;
-
-            if (System.IO.File.Exists(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json"))
+            if (!TemplateName.Contains("."))
             {
-                Project objP = new Project();
-                template = objP.ReadJsonFile(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json");
+                string templatesPath = Server.MapPath("~") + @"\Templates\";
+                if (System.IO.File.Exists(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json"))
+                {
+                    Project objP = new Project();
+                    template = objP.ReadJsonFile(templatesPath + Path.GetFileName(TemplateName) + @"\ProjectTemplate.json");
+                }
             }
             return Content(template);
         }
@@ -661,12 +663,14 @@ namespace VstsDemoBuilder.Controllers
                     else if (string.IsNullOrEmpty(PrivatePath))
                     {
                         templatesFolder = Server.MapPath("~") + @"\Templates\";
-                        extensionJsonFile = string.Format(templatesFolder + @"\{0}\Extensions.json", selectedTemplate);
+                        extensionJsonFile = string.Format("{0}\\{1}\\{2}", templatesFolder, selectedTemplate, "Extensions.json");
+                        //extensionJsonFile = string.Format(templatesFolder + @"\{0}\Extensions.json", selectedTemplate);
                     }
                     else
                     {
                         templatesFolder = PrivatePath;
-                        extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
+                        extensionJsonFile = string.Format("{0}\\{1}", templatesFolder, "Extensions.json");
+                        //extensionJsonFile = string.Format(templatesFolder + @"\Extensions.json");
                     }
 
                     if (!(System.IO.File.Exists(extensionJsonFile)))

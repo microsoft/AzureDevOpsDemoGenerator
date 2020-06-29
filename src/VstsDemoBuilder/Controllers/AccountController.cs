@@ -197,7 +197,7 @@ namespace VstsDemoBuilder.Controllers
             return View();
         }
 
-        public PrivateTemplate UploadPrivateTempalteFromHome(string TemplateURL)
+        private PrivateTemplate UploadPrivateTempalteFromHome(string TemplateURL)
         {
             PrivateTemplate privateTemplate = new PrivateTemplate();
             string templatePath = string.Empty;

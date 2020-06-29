@@ -153,47 +153,50 @@ namespace VstsDemoBuilder.Services
             string templatePath = string.Empty;
             try
             {
-                Uri uri = new Uri(TemplateUrl);
-                string fileName = Path.GetFileName(TemplateUrl);
-                string extension = Path.GetExtension(fileName);
-                string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
-                if (!Directory.Exists(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile"))
+                if (!ExtractedTemplate.Contains("..") && !ExtractedTemplate.Contains("../"))
                 {
-                    Directory.CreateDirectory(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile");
-                }
-                var path = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\" + ExtractedTemplate;
-                if (uri.Host == "github.com")
-                {
-                    string gUri = uri.ToString();
-                    gUri = gUri.Replace("github.com", "raw.githubusercontent.com").Replace("/blob/", "/");
-                    uri = new Uri(gUri);
-                    TemplateUrl = uri.ToString();
-                }
-                //Downloading template from source of type github
-                if (uri.Host == "raw.githubusercontent.com")
-                {
-                    var githubToken = GithubToken;
-                    //var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
-
-                    using (var client = new System.Net.Http.HttpClient())
+                    Uri uri = new Uri(TemplateUrl);
+                    string fileName = Path.GetFileName(TemplateUrl);
+                    string extension = Path.GetExtension(fileName);
+                    string templateName = ExtractedTemplate.ToLower().Replace(".zip", "").Trim();
+                    if (!Directory.Exists(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile"))
                     {
-                        var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
-                        credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
-                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
-                        var contents = client.GetByteArrayAsync(TemplateUrl).Result;
-                        System.IO.File.WriteAllBytes(path, contents);
+                        Directory.CreateDirectory(HostingEnvironment.MapPath("~") + @"\ExtractedZipFile");
                     }
+                    var path = HostingEnvironment.MapPath("~") + @"/ExtractedZipFile/" + ExtractedTemplate;
+                    if (uri.Host == "github.com")
+                    {
+                        string gUri = uri.ToString();
+                        gUri = gUri.Replace("github.com", "raw.githubusercontent.com").Replace("/blob/", "/");
+                        uri = new Uri(gUri);
+                        TemplateUrl = uri.ToString();
+                    }
+                    //Downloading template from source of type github
+                    if (uri.Host == "raw.githubusercontent.com")
+                    {
+                        var githubToken = GithubToken;
+                        //var url = TemplateUrl.Replace("github.com/", "raw.githubusercontent.com/").Replace("/blob/master/", "/master/");
+
+                        using (var client = new System.Net.Http.HttpClient())
+                        {
+                            var credentials = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}:", githubToken);
+                            credentials = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(credentials));
+                            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
+                            var contents = client.GetByteArrayAsync(TemplateUrl).Result;
+                            System.IO.File.WriteAllBytes(path, contents);
+                        }
+                    }
+                    //Downloading file from other source type (ftp or https)
+                    else
+                    {
+                        WebClient webClient = new WebClient();
+                        if (UserID != null && Password != null)
+                            webClient.Credentials = new NetworkCredential(UserID, Password);
+                        webClient.DownloadFile(TemplateUrl, path);
+                        webClient.Dispose();
+                    }
+                    templatePath = ExtractZipFile(path, templateName);
                 }
-                //Downloading file from other source type (ftp or https)
-                else
-                {
-                    WebClient webClient = new WebClient();
-                    if (UserID != null && Password != null)
-                        webClient.Credentials = new NetworkCredential(UserID, Password);
-                    webClient.DownloadFile(TemplateUrl, path);
-                    webClient.Dispose();
-                }
-                templatePath = ExtractZipFile(path, templateName);
 
             }
             catch (Exception ex)
@@ -247,18 +250,21 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                string[] filepaths = Directory.GetFiles(dir);
-                foreach (var file in filepaths)
+                if (!dir.Contains("."))
                 {
-                    if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                    string[] filepaths = Directory.GetFiles(dir);
+                    foreach (var file in filepaths)
                     {
-                        return false;
+                        if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                        {
+                            return false;
+                        }
                     }
-                }
-                string[] subdirectoryEntries = Directory.GetDirectories(dir);
-                foreach (string subdirectory in subdirectoryEntries)
-                {
-                    checkTemplateDirectory(subdirectory);
+                    string[] subdirectoryEntries = Directory.GetDirectories(dir);
+                    foreach (string subdirectory in subdirectoryEntries)
+                    {
+                        checkTemplateDirectory(subdirectory);
+                    }
                 }
 
             }
@@ -369,7 +375,7 @@ namespace VstsDemoBuilder.Services
         {
             try
             {
-                if (!string.IsNullOrEmpty(Template))
+                if (!string.IsNullOrEmpty(Template) && !Template.Contains("."))
                 {
                     var templatepath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + Template;
                     if (Directory.Exists(templatepath))
