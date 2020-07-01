@@ -11,7 +11,6 @@ jobs:
     strategy:
       fail-fast: false
 
-
     # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
     runs-on: windows-latest
 
@@ -22,9 +21,8 @@ jobs:
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
-      # Override language selection by uncommenting this and choosing your languages
-      # with:
-      #   languages: go, javascript, csharp, python, cpp, java
+      with:
+        languages: javascript, csharp
         
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
