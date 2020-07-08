@@ -117,7 +117,8 @@ namespace VstsRestAPI.WorkItemAndTracking
                 {
                     if (workItemType.ToLower() == "epic" || workItemType.ToLower() == "feature")
                     {
-                        fetchedWIs.value = fetchedWIs.value.OrderBy(x => x.id).ToArray();
+                        // commenting this to fix the work item ordering issue with Azure Sentinel template - if affecting other templates, undo the same 
+                        // fetchedWIs.value = fetchedWIs.value.OrderBy(x => x.id).ToArray();
                     }
                     foreach (ImportWorkItemModel.Value newWI in fetchedWIs.value)
                     {
