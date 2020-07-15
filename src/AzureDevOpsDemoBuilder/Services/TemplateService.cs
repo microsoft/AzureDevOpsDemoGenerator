@@ -172,7 +172,12 @@ namespace AzureDevOpsDemoBuilder.Services
                     Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/ExtractedZipFile");
                 }
                 var path = HostingEnvironment.ContentRootPath + "/ExtractedZipFile/" + ExtractedTemplate;
-
+                if (uri.Host == "github.com")
+                {
+                    string gUri = uri.ToString();
+                    gUri = gUri.Replace("github.com", "raw.githubusercontent.com").Replace("/blob/", "/");
+                    TemplateUrl = gUri.ToString();
+                }
                 //Downloading template from source of type github
                 if (uri.Host == "raw.githubusercontent.com")
                 {
@@ -252,20 +257,22 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                string[] filepaths = Directory.GetFiles(dir);
-                foreach (var file in filepaths)
+                if (Directory.Exists(dir))
                 {
-                    if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                    string[] filepaths = Directory.GetFiles(dir);
+                    foreach (var file in filepaths)
                     {
-                        return false;
+                        if (Path.GetExtension(Path.GetFileName(file)) != ".json")
+                        {
+                            return false;
+                        }
+                    }
+                    string[] subdirectoryEntries = Directory.GetDirectories(dir);
+                    foreach (string subdirectory in subdirectoryEntries)
+                    {
+                        checkTemplateDirectory(subdirectory);
                     }
                 }
-                string[] subdirectoryEntries = Directory.GetDirectories(dir);
-                foreach (string subdirectory in subdirectoryEntries)
-                {
-                    checkTemplateDirectory(subdirectory);
-                }
-
             }
             catch (Exception ex)
             {
