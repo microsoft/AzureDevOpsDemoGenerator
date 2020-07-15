@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-Here area the few frequetly asked questions or the knows issues
+Here are the few frequetly asked questions or the knows issues
 
 1. **Q: What are pre-requisites to use Azure DevOps Demo Generator?**<br>
 **A:** You just need to have an organization with all the permissions required to create or manage the project.
