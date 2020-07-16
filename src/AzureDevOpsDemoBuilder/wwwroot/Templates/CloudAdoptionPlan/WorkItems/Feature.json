@@ -2,7 +2,7 @@
   "count": 6,
   "value": [
     {
-      "id": 23772,
+      "id": 23767,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -11,18 +11,18 @@
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-03T07:10:32.3Z",
+        "System.CreatedDate": "2019-07-03T07:10:30.203Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-03T07:10:32.3Z",
+        "System.ChangedDate": "2019-07-03T07:10:30.203Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Define Adoption Strategy",
+        "System.Title": "First Workload",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Define Adoption Strategy",
+        "System.Description": "<div>Migrate the first workload to learn and refine your migration process.</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Strategy",
+        "System.Tags": "First Workload",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -31,26 +31,8 @@
       },
       "relations": [
         {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23854",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23853",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23762",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23766",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -59,7 +41,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23851",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23797",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -68,7 +50,34 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23852",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23793",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23796",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23794",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23795",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -76,10 +85,10 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23772"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767"
     },
     {
-      "id": 23771,
+      "id": 23768,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -88,18 +97,18 @@
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-03T07:10:31.947Z",
+        "System.CreatedDate": "2019-07-03T07:10:30.817Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-03T07:10:31.947Z",
+        "System.ChangedDate": "2019-07-03T07:10:30.817Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Define the Cloud Adoption Plan",
+        "System.Title": "First Host",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Define the Cloud Adoption Plan",
+        "System.Description": "<div><span>Migrate your first VMWare Host</span></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Plan",
+        "System.Tags": "First Host",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -109,7 +118,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23848",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23842",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -118,7 +127,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23850",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -127,7 +136,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23849",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23840",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -136,101 +145,15 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23763",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23766",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23847",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23771"
-    },
-    {
-      "id": 23770,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "$ProjectName$",
-        "System.TeamProject": "$ProjectName$",
-        "System.IterationPath": "$ProjectName$",
-        "System.WorkItemType": "Feature",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2019-07-03T07:10:31.6Z",
-        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-03T07:10:31.6Z",
-        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "Landing zone creation",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Landing zone creation",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Ready",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23764",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23846",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23844",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23843",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23845",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23770"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23768"
     },
     {
       "id": 23769,
@@ -355,7 +278,7 @@
       "url": "https://dev.azure.com/culater/_apis/wit/workItems/23769"
     },
     {
-      "id": 23768,
+      "id": 23770,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -364,18 +287,18 @@
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-03T07:10:30.817Z",
+        "System.CreatedDate": "2019-07-03T07:10:31.6Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-03T07:10:30.817Z",
+        "System.ChangedDate": "2019-07-03T07:10:31.6Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "First Host",
+        "System.Title": "Landing zone creation",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span>Migrate your first VMWare Host</span></div>",
+        "System.Description": "Landing zone creation",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "First Host",
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -384,46 +307,55 @@
       },
       "relations": [
         {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23842",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23841",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23840",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23766",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23764",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23846",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23844",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23843",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23845",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23768"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23770"
     },
     {
-      "id": 23767,
+      "id": 23771,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$",
@@ -432,18 +364,18 @@
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2019-07-03T07:10:30.203Z",
+        "System.CreatedDate": "2019-07-03T07:10:31.947Z",
         "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.ChangedDate": "2019-07-03T07:10:30.203Z",
+        "System.ChangedDate": "2019-07-03T07:10:31.947Z",
         "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
-        "System.Title": "First Workload",
+        "System.Title": "Define the Cloud Adoption Plan",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Migrate the first workload to learn and refine your migration process.</div>",
+        "System.Description": "Define the Cloud Adoption Plan",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "First Workload",
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -452,8 +384,35 @@
       },
       "relations": [
         {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23848",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23850",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23849",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23766",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23763",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -462,43 +421,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23797",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23793",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23796",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23794",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23795",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23847",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -506,7 +429,84 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23767"
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23771"
+    },
+    {
+      "id": 23772,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-07-03T07:10:32.3Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-07-03T07:10:32.3Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Define Adoption Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Define Adoption Strategy",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23854",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23853",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23762",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23851",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/culater/_apis/wit/workItems/23852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/culater/_apis/wit/workItems/23772"
     }
   ],
   "HttpStatusCode": 0,

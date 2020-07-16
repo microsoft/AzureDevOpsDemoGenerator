@@ -1,0 +1,460 @@
+{
+  "count": 7,
+  "value": [
+    {
+      "id": 908,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:59:49.11Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T15:28:06.517Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Security Stack vs NIST CSF",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin-top:0pt;margin-bottom:0pt;margin-left:0in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">The\nfive Functions included in the Framework Core are:</span></p><p style=\"margin-top:0pt;margin-bottom:0pt;margin-left:0in;text-align:left;unicode-bidi:embed;\"></p><div style=\"margin-top:0pt;margin-bottom:0pt;margin-left:.19in;text-indent:-.19in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;\"><span style=\"font-family:Arial;\">•</span></span><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">Identify</span></div><div style=\"margin-top:0pt;margin-bottom:0pt;margin-left:.19in;text-indent:-.19in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;\"><span style=\"font-family:Arial;\">•</span></span><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">Protect</span></div><div style=\"margin-top:0pt;margin-bottom:0pt;margin-left:.19in;text-indent:-.19in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;\"><span style=\"font-family:Arial;\">•</span></span><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">Detect</span></div><div style=\"margin-top:0pt;margin-bottom:0pt;margin-left:.19in;text-indent:-.19in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;\"><span style=\"font-family:Arial;\">•</span></span><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">Respond</span></div><div style=\"margin-top:0pt;margin-bottom:0pt;margin-left:.19in;text-indent:-.19in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;\"><span style=\"font-family:Arial;\">•</span></span><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">Recover</span></div><div style=\"margin-top:0pt;margin-bottom:0pt;margin-left:.19in;text-indent:-.19in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\"><br></span></div><p style=\"margin-top:0pt;margin-bottom:0pt;margin-left:0in;text-align:left;unicode-bidi:embed;\"></p><p style=\"margin-top:0pt;margin-bottom:0pt;margin-left:0in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">The\nFunctions are the highest level of abstraction included in the Framework. They\nact as the backbone of the Framework Core that all other elements are organized\naround.</span></p><p style=\"margin-top:0pt;margin-bottom:0pt;margin-left:0in;text-align:left;unicode-bidi:embed;\"></p><p style=\"margin-top:0pt;margin-bottom:0pt;margin-left:0in;text-align:left;unicode-bidi:embed;\"><span style=\"font-size:12.0pt;font-family:Calibri;color:black;font-weight:normal;\">These\nfive Functions were included in the Core because they represent the\nfive&nbsp;primary pillars for a successful and holistic cybersecurity program.\nThey aid organizations in easily expressing their management of cybersecurity\nrisk at a high level and enabling risk management decisions.</span></p><br></div><div><br></div><div>NIST CSF V 1.1</div><div><a href=\"https://www.nist.gov/cyberframework/framework\">https://www.nist.gov/cyberframework/framework</a><br></div><div><br></div><div><div style=\"box-sizing:border-box;\">Azure Security Stack vs NIST CSF</div><div style=\"box-sizing:border-box;\"><a href=\"https://www.managedsentinel.com/2019/06/18/azure-vs-nist/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://www.managedsentinel.com/2019/06/18/azure-vs-nist/</a></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "NIST",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/931",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/933",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/915",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/908"
+    },
+    {
+      "id": 631,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2020-04-01T18:05:32.147Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-10T15:23:34.317Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Adoption Plan",
+        "System.AssignedTo": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/639",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/631"
+    },
+    {
+      "id": 864,
+      "rev": 15,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2020-04-02T15:17:59.643Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-10T15:23:32.547Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "NIST 800-171 Control Family",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations<br></div><div><a href=\"https://csrc.nist.gov/publications/detail/sp/800-171/rev-2/final\">https://csrc.nist.gov/publications/detail/sp/800-171/rev-2/final</a><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "NIST",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/936",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/937",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/816",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/818",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/815",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/817",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/826",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/827",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/824",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/822",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/823",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/938",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/820",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/825",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/828",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/864"
+    },
+    {
+      "id": 630,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:31.583Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T17:05:45.56Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Cloud Adoption Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">The cloud delivers fundamental technology benefits that can help your enterprise execute multiple business strategies. By using cloud-based approaches, you can improve business agility, reduce costs, accelerate time to market, and enable expansion into new markets. To take advantage of this great potential, start by documenting your business strategy in a way that's both understandable to cloud technicians and palatable to your business stakeholders.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/640",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/630"
+    },
+    {
+      "id": 632,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:32.463Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:59:52.1Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Ready",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Ready",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/632"
+    },
+    {
+      "id": 633,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2020-04-01T18:05:32.7Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:59:52.1Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Innovation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Innovation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Innovation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/633"
+    },
+    {
+      "id": 634,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:32.873Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:59:52.1Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Migration",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migration",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/636",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/634"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

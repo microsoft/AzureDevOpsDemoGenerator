@@ -122,10 +122,12 @@
     <None Include="wwwroot\Templates\TemplateImages\mslearn\generic-badge.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\host-your-own-build-server-in-your-build-pipeline.png" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\implement-a-code-workflow-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-agile-software-delivery-plans-across-teams.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-database-changes-with-azure-pipelines.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-dependencies-in-your-build-pipeline.png" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-release-cadence-using-deployment-patterns.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-security-and-compliance-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\provision-database-azure-pipelines.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\run-functional-tests-azure-pipelines.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
     <None Include="wwwroot\Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
