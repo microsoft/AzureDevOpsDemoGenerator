@@ -748,8 +748,8 @@ namespace AzureDevOpsDemoBuilder.Services
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
 
             //Create WIKI
-            CreateProjetWiki(HostingEnvironment.WebRootPath + "/Templates/", model, _wikiVersion);
-            CreateCodeWiki(model, _wikiVersion);
+            //CreateProjetWiki(HostingEnvironment.WebRootPath + "/Templates/", model, _wikiVersion);
+            //CreateCodeWiki(model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/PullRequests");
