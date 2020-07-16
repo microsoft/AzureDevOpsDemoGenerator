@@ -118,7 +118,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 {
                     if (workItemType.ToLower() == "epic" || workItemType.ToLower() == "feature")
                     {
-                        fetchedWIs.Value = fetchedWIs.Value.OrderBy(x => x.Id).ToArray();
+                        //fetchedWIs.Value = fetchedWIs.Value.OrderBy(x => x.Id).ToArray();
                     }
                     foreach (ImportWorkItemModel.Value newWI in fetchedWIs.Value)
                     {
