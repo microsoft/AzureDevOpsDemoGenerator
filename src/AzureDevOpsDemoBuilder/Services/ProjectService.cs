@@ -58,7 +58,6 @@ namespace AzureDevOpsDemoBuilder.Services
 
         public bool isDefaultRepoTodetele = true;
         public string websiteUrl = string.Empty;
-        public string templateUsed = string.Empty;
         public static string projectName = string.Empty;
         public static AccessDetails AccessDetails = new AccessDetails();
 
@@ -232,7 +231,7 @@ namespace AzureDevOpsDemoBuilder.Services
             //}
             //else
             //{
-            templateUsed = model.SelectedTemplate;
+            string templateUsed = model.SelectedTemplate;
             //}
             logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "Project Name: " + model.ProjectName + "\t Template Selected: " + templateUsed + "\t Organization Selected: " + accountName);
             string pat = model.AccessToken;
@@ -748,8 +747,8 @@ namespace AzureDevOpsDemoBuilder.Services
             Thread.Sleep(10000); //Adding delay to wait for the repository to create and import from the source
 
             //Create WIKI
-            CreateProjetWiki(HostingEnvironment.WebRootPath + "/Templates/", model, _wikiVersion);
-            CreateCodeWiki(model, _wikiVersion);
+            //CreateProjetWiki(HostingEnvironment.WebRootPath + "/Templates/", model, _wikiVersion);
+            //CreateCodeWiki(model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/PullRequests");
@@ -2868,7 +2867,6 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="result"></param>
         public void EndEnvironmentSetupProcess(IAsyncResult result, Project model, int usercount)
         {
-            string templateUsed = string.Empty;
             string ID = string.Empty;
             string accName = string.Empty;
             try
@@ -2883,7 +2881,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     {
                         //also, log message to file system
                         string logPath = HostingEnvironment.WebRootPath + "/log";
-                        string fileName = string.Format("{0}_{1}.txt", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        string fileName = string.Format("{0}_{1}.txt", model.SelectedTemplate, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
 
                         if (!Directory.Exists(logPath))
                         {
@@ -2896,10 +2894,10 @@ namespace AzureDevOpsDemoBuilder.Services
                         string patBase64 = AppKeyConfiguration["PATBase64"];
                         string url = AppKeyConfiguration["URL"];
                         string projectId = AppKeyConfiguration["PROJECTID"];
-                        string issueName = string.Format("{0}_{1}", templateUsed, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
+                        string issueName = string.Format("{0}_{1}", model.SelectedTemplate, DateTime.Now.ToString("ddMMMyyyy_HHmmss"));
                         IssueWi objIssue = new IssueWi();
 
-                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + templateUsed;
+                        errorMessages = errorMessages + "\t" + "TemplateUsed: " + model.SelectedTemplate;
                         errorMessages = errorMessages + "\t" + "ProjectCreated : " + ProjectService.projectName;
 
                         logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t  Error: " + errorMessages);

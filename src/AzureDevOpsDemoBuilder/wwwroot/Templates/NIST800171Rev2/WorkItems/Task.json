@@ -1,0 +1,3425 @@
+{
+  "count": 84,
+  "value": [
+    {
+      "id": 881,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:39:38.98Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:32:14.163Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cost Management and Billing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/881"
+    },
+    {
+      "id": 892,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:53:49.323Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:32:18.43Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Services Due Diligent Checklist",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Cloud Services Due Diligence Checklist</span><br></div><div><span style=\"display:inline !important;\"><a href=\"https://www.microsoft.com/en-us/trust-center/compliance/due-diligence-checklist\">https://www.microsoft.com/en-us/trust-center/compliance/due-diligence-checklist</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/892"
+    },
+    {
+      "id": 905,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:31:20.133Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:31:27.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Corporate Policy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Cloud Governance Corporate Policy</div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/policy-definition\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/policy-definition</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/905"
+    },
+    {
+      "id": 882,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:40:23.457Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:29:14.6Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Security Readiness",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>CISO Cloud readiness guide</div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/cloud-security-readiness\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/cloud-security-readiness</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/882"
+    },
+    {
+      "id": 883,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:40:59.013Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:30:15.557Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Regulatory Compliance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Regulatory Compliance</div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/regulatory-compliance\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/regulatory-compliance</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/883"
+    },
+    {
+      "id": 904,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:18:24.503Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:18:33.107Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Manage Remote Access",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/904"
+    },
+    {
+      "id": 875,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:27:11.907Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:37:58.877Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Regions - Production and DR",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/874",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/875"
+    },
+    {
+      "id": 877,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:31:44.487Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:32:04.09Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Organize Resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Set up a management hierarchy to consistently apply access control, policy, and compliance to groups of resources and use tagging to track related resources.<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/874",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/877"
+    },
+    {
+      "id": 876,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:28:19.13Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:28:54.677Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Naming Convention",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Microsoft recommendations:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/874",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/876"
+    },
+    {
+      "id": 940,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T15:19:12.813Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T15:19:36.04Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Security Pillar",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Overview of the security pillar<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/framework/security/overview\">https://docs.microsoft.com/en-us/azure/architecture/framework/security/overview</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/940"
+    },
+    {
+      "id": 902,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:11:39.103Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:11:39.103Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Automation Tools",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/901",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/902"
+    },
+    {
+      "id": 900,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:03:39.173Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:03:39.173Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Security Information Event Management - SIEM",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/900"
+    },
+    {
+      "id": 899,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:03:13.23Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:03:54.8Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Security Posture Management - CSPM",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/899"
+    },
+    {
+      "id": 898,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:59:14.57Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:59:14.57Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Usage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/898"
+    },
+    {
+      "id": 897,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:58:44.403Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:58:44.403Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/897"
+    },
+    {
+      "id": 896,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:58:26.347Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:58:26.347Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Recover",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/896"
+    },
+    {
+      "id": 895,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:58:10.91Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:58:10.91Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Performance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/895"
+    },
+    {
+      "id": 894,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:58:00.223Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:21:11.163Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Configuration Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/894"
+    },
+    {
+      "id": 893,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:57:43.217Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:57:43.217Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Inventory",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/893"
+    },
+    {
+      "id": 891,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:47:25.743Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:47:25.743Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "DMZ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/891"
+    },
+    {
+      "id": 890,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:47:16.04Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:16:07.073Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Internal and External Routing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/890"
+    },
+    {
+      "id": 889,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:46:20.32Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:46:20.32Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Inspection",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/889"
+    },
+    {
+      "id": 888,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:46:10.71Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:46:10.71Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Data Isolation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/888"
+    },
+    {
+      "id": 887,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:45:51.317Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:48:50.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "VPN and ER",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/887"
+    },
+    {
+      "id": 886,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:45:39.24Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:45:39.24Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "DNS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/886"
+    },
+    {
+      "id": 885,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:44:23.393Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:44:23.393Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "IAM - Map Roles",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/880",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/885"
+    },
+    {
+      "id": 698,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:47.343Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:47.343Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate VMs using backup and disaster recovery tools",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-backup-and-disaster-recovery-tools\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-backup-and-disaster-recovery-tools</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/698"
+    },
+    {
+      "id": 697,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:47.183Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:47.183Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Update the migration tooling decision tree to reflect VMWare migration options",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Download and modify the migration tool decision tree to align to your expanded migration processes&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/710",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/697"
+    },
+    {
+      "id": 696,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:47Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:47Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Configure workload DNS and DHCP setup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/dns-dhcp-setup/\">https://docs.azure.cloudsimple.com/dns-dhcp-setup/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/696"
+    },
+    {
+      "id": 695,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:46.83Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:46.83Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/695"
+    },
+    {
+      "id": 694,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:46.667Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:46.667Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/694"
+    },
+    {
+      "id": 693,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:46.49Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:46.49Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Change approval process",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Approve proposed changes with necessary change control mechanisms:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/approve</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/693"
+    },
+    {
+      "id": 692,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:46.327Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:46.327Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Update the adoption plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Update the migration plan with any process or task changes based on the first workload<br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/692"
+    },
+    {
+      "id": 691,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:46.167Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:46.167Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Promotion",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Re-route production traffic to deployed assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/691"
+    },
+    {
+      "id": 690,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:45.77Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:45.77Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Document change",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Record the change in sizing in the parent feature, along with the reason for change",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/705",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/690"
+    },
+    {
+      "id": 689,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:45.607Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:45.607Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Scale Test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Execute the test at scale to test asset performance under load.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/704",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/689"
+    },
+    {
+      "id": 688,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:45.447Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:45.447Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Document configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Document Configuration of the VM in the User Story",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/688"
+    },
+    {
+      "id": 687,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:45.3Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:45.3Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Decommission",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Terminate or resuse the allocated resources&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/707",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/687"
+    },
+    {
+      "id": 686,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:45.157Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:45.157Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Environment readiness (Landing Zone)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Has the cloud migration target been established? Are the necessary migration tools in place? Has a resource organization and naming standard been set for this workload's assets?&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/planning-checklist</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/699",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/686"
+    },
+    {
+      "id": 685,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:44.9Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:44.9Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.</div><div>Guide: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/685"
+    },
+    {
+      "id": 684,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:44.743Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:44.743Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Final test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate availability of all assets before production",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/684"
+    },
+    {
+      "id": 683,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:44.597Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:44.597Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Review Best Practices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Review migration best practices to identify additional technical requirements that would aid in the success of your migration effort:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-best-practices/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-best-practices/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/683"
+    },
+    {
+      "id": 682,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:44.443Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:44.443Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migration tool choice(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Evaluate the approach to migrate the workload based on future state architecture decisions&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/682"
+    },
+    {
+      "id": 681,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:44.143Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:44.143Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/681"
+    },
+    {
+      "id": 680,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:43.97Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:43.97Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Secure and Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ideally governance, security, and operations have each been factored into the operating model for your cloud environments. If they have not, take a moment to validate security and management constraints for this asset.\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/secure-and-manage\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/secure-and-manage/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/680"
+    },
+    {
+      "id": 679,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:43.817Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:43.817Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate VMs using NSX Layer 2 VPN",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-nsx-layer-2-vpn\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-nsx-layer-2-vpn</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/679"
+    },
+    {
+      "id": 678,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:43.667Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:43.667Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate VMs using PowerCLI",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-powercli\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-vms-using-powercli</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/678"
+    },
+    {
+      "id": 677,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:43.507Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:43.507Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/677"
+    },
+    {
+      "id": 676,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:43.213Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:43.213Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Test, measure performance, and optimize workloads. When ready promote the workload to production\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/676"
+    },
+    {
+      "id": 675,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:43.047Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:43.047Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Estimate Cloud Costs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Estimate cost of the proposed workload. Update the business justification and budget accordingly.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/estimate</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/675"
+    },
+    {
+      "id": 674,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:42.893Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:42.893Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Review Expanded Scope Checklist",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Review the expanded scope checklist to identify any scope requirements which would cause significant deviations from the Azure Migration Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/expanded-scope/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/expanded-scope/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/674"
+    },
+    {
+      "id": 673,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:42.733Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:42.733Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Governance Review",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate adherence to governance or compliance requirements&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/673"
+    },
+    {
+      "id": 672,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:42.583Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:42.583Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Optimize workload(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Test, measure performance, and optimize workloads. When ready promote the workload to production</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/optimize-and-transform</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/672"
+    },
+    {
+      "id": 671,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:42.423Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:42.423Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Create/select automated test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Use an existing test or create a test script based on power user testing.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/704",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/671"
+    },
+    {
+      "id": 670,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:42.08Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:42.08Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Adjust sizing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Change the size of the deployed asset&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/705",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/670"
+    },
+    {
+      "id": 669,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:41.917Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:41.917Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Decide on optimization timing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Decide if testing is sufficient to optimize (Or if optimization should happen after promotion)&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/705",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/669"
+    },
+    {
+      "id": 668,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:41.76Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:41.76Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Manual test with power users",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Observe power users from the business performing manual validation of the workload&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/business-test</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/704",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/668"
+    },
+    {
+      "id": 667,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:41.61Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:41.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.</div><div>Guide&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate</a></div><div>Considerations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/667"
+    },
+    {
+      "id": 666,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:41.247Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:41.247Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Roles and Responsibilities",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The various functions required during this migration are represented by one or more members of the team.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity?branch=pr-en-us-47\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/culture-complexity</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/699",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/666"
+    },
+    {
+      "id": 665,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:41.067Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:41.067Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Workload monitoring period",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Monitor application performance for a period of time to validate that the application is free of unplanned dependencies on decommissioned assets&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/707",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/665"
+    },
+    {
+      "id": 664,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:40.757Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:40.757Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Security Review",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate adherence to security baseline&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/664"
+    },
+    {
+      "id": 663,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:40.603Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:40.603Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Select the first workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Select a first workload that is suitable as a trial run or pilot of your migration process.&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/digital-estate/rationalize#selecting-the-first-workload\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/digital-estate/rationalize#selecting-the-first-workload</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/663"
+    },
+    {
+      "id": 662,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:40.44Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:40.44Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Architect workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Define future state architecture for the workload:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/architect</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/662"
+    },
+    {
+      "id": 661,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:40.277Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:40.277Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/661"
+    },
+    {
+      "id": 660,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:39.943Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:39.943Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Leverage the define migration solution to automate migration of the asset to the cloud. This step may be best executed as a single task for all assets associated with this workload.\n<br>Guide https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/migrate\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/migrate/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/660"
+    },
+    {
+      "id": 659,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:39.78Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:39.78Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate ISOs and Templates",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-isos-and-templates\">https://docs.azure.cloudsimple.com/migrate-workloads/#migrate-isos-and-templates</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/659"
+    },
+    {
+      "id": 658,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:39.603Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:39.603Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Configure on-premises DNS for private cloud",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/on-premises-dns-setup/\">https://docs.azure.cloudsimple.com/on-premises-dns-setup/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/658"
+    },
+    {
+      "id": 657,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:39.45Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:39.45Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Escalate private cloud privileges",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/escalate-privileges/\">https://docs.azure.cloudsimple.com/escalate-privileges/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/708",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/657"
+    },
+    {
+      "id": 656,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:39.28Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:39.28Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Evaluate migration options used to migrate the first host",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Determine which approaches are to be supported during iterative migration processes</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/710",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/656"
+    },
+    {
+      "id": 655,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:39.117Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:39.117Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Prerequisites",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.azure.cloudsimple.com/migrate-workloads/#prerequisites\">https://docs.azure.cloudsimple.com/migrate-workloads/#prerequisites</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/655"
+    },
+    {
+      "id": 654,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:38.893Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:38.893Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/654"
+    },
+    {
+      "id": 653,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:38.43Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:38.43Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate readiness, architecture, cost, and appropriate migration tooling\n<br>Guide: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\n<br>Considerations: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\n<br>Decision Tree: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/653"
+    },
+    {
+      "id": 652,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:38.26Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:38.26Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Evaluate workload and asset readiness",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/evaluate</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/652"
+    },
+    {
+      "id": 651,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:38.11Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:38.11Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Migration Guide",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Follow the Azure Migration Guide to deploy the first workload in the cloud adoption plan. <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/?tabs=Overview\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/?tabs=Overview</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Workload",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/651"
+    },
+    {
+      "id": 650,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:37.943Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:37.943Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Network dependencies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate network traffic based on scale test to identify unplanned dependencies&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/promote</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/650"
+    },
+    {
+      "id": 649,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:37.653Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:37.653Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Power down assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Turn off existing VMs&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/decommission</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/707",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/649"
+    },
+    {
+      "id": 648,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:37.477Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:37.477Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Decisions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Evaluate decisions that impact migration efforts:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/prerequisites/decisions</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/699",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/648"
+    },
+    {
+      "id": 647,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:37.263Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:37.263Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Assess",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Evaluate readiness, architecture, cost, and appropriate migration tooling</div><div>Guide:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/azure-migration-guide/assess</a></div><div>Considerations: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/</a></div><div>Decision Tree:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/decision-guides/migrate-decision-guide/</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/647"
+    },
+    {
+      "id": 646,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:36.87Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:36.87Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Set up Azure Monitor to track performance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement Azure monitor to track CPU, Memory, and other performance metrics on VMs",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/704",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/646"
+    },
+    {
+      "id": 645,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:36.697Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:36.697Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Review test results",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review results of the workload test to evaluate data and proper sizing&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/optimize/optimize</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/705",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/645"
+    },
+    {
+      "id": 644,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:35.43Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:35.43Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Create timelines",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/timelines\">Create timelines</a> to align expectations across the business and IT teams.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/644"
+    },
+    {
+      "id": 643,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:35.25Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:35.25Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Define iterations and releases",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/iteration-paths\">Update the iteration path</a> of each workload to define iterations of work and iterations of production workload releases.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/643"
+    },
+    {
+      "id": 642,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:34.91Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:34.91Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Align assets to workloads",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Ensure that all <a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/assets\">assets are aligned</a> to at least one workload</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/642"
+    },
+    {
+      "id": 641,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:34.73Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-01T18:05:34.73Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Prioritize workloads",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/workloads\">Define and prioritize workloads</a> in the backlog</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/718",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/641"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
