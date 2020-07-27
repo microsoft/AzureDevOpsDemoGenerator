@@ -1187,6 +1187,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             else
                             {
+                                Thread.Sleep(5000);
                                 AddMessage(id, string.Format("{0} team(s) created", teamsParsed.Count));
                             }
                             if (model.SelectedTemplate.ToLower() == "smarthotel360")
