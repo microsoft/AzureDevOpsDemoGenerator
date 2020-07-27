@@ -4,6 +4,7 @@
     "DevOps Labs",
     "Microsoft Learn",
     "Azure Community",
+    "Cloud Adoption Framework",
     "Private"
   ],
   "PrivateGroups": [
@@ -851,6 +852,91 @@
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
           "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
+        }
+      ]
+    },
+    {
+      "Groups": "Cloud Adoption Framework",
+      "Template": [
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37F6",
+          "Name": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
+          "TemplateFolder": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
+          "ShortName": "ServerMigration",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FJH",
+          "Name": "AKS_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "AKS_CAF_DevOps_Project_TaskList",
+          "ShortName": "AksProjectTaskList",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
+          "Name": "SQL_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
+          "ShortName": "SQLProjectTaskList",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
+          "Name": "WVD_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
+          "ShortName": "WVDProjectTaskList",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
         }
       ]
     },

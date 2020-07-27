@@ -1,0 +1,1114 @@
+{
+  "count": 27,
+  "value": [
+    {
+      "id": 44,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:53.107Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Azure Bastion Configuration to access azure virtual machine",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Bastion Configuration to access azure virtual machine",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/44"
+    },
+    {
+      "id": 43,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:52.837Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure Virtual Network",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Virtual Network",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/43"
+    },
+    {
+      "id": 42,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:52.567Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure VPN Gateway (Site-to-Site VPN)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure VPN Gateway (Site-to-Site VPN)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/42"
+    },
+    {
+      "id": 41,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:52.287Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Site2Site VPN between Azure and on-premises network / firewall",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Configure Site2Site VPN between Azure and on-premises network / firewall",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/41"
+    },
+    {
+      "id": 40,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:51.963Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Extend on-premises AD Forest to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Extend on-premises AD Forest to Azure",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/40"
+    },
+    {
+      "id": 39,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:51.683Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Create 2x Domain Controllers in Azure (one in each geo redundant data center region)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create 2x Domain Controllers in Azure (one in each geo redundant data center region)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/39"
+    },
+    {
+      "id": 38,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:51.41Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Add to on-premises forest",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add to on-premises forest",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/38"
+    },
+    {
+      "id": 37,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:51.13Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Azure Bastion Configuration to access azure virtual machine",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Bastion Configuration to access azure virtual machine",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/56",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/37"
+    },
+    {
+      "id": 36,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:50.853Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Validate custom images",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate custom images",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/57",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/36"
+    },
+    {
+      "id": 35,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:50.557Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Validate pre-requirements Fs logix container have been completed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate pre-requirements Fs logix container have been completed",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/61",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/35"
+    },
+    {
+      "id": 34,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:50.277Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Deploy and Configure FS-Logix container",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Deploy and Configure FS-Logix container",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/61",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/34"
+    },
+    {
+      "id": 33,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:49.997Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Migration to Personal/Pooled Desktops",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Migration to Personal/Pooled Desktops",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/62",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/33"
+    },
+    {
+      "id": 32,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:49.697Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Migrate existing user profiles to FS-Logix Profile Containers",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Migrate existing user profiles to FS-Logix Profile Containers",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/62",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/32"
+    },
+    {
+      "id": 31,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:49.423Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Create and manage policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:6.0pt;text-align:justify;line-height:115%;\"><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Business\nhas their own “Policies” to protect data and workloads in their\ninfrastructures. Most of the time end goal of these policies is to make sure if\n“IT department” done their part to support business compliance\nrequirements.<span style=\"\">&nbsp; </span>There are two great tools\navailable from Microsoft to make it easier for enterprises to reach their\ncorporate compliance requirements within Azure environments.</span></p><ul style=\"margin-bottom:0in;\"><li><b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Compliance Manager: </span></b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">This\nservice can scan your azure environment and provide report of your compliance\nlevel against most common industry standard such as GDPR, ISO 27000 etc.</span></li><li><b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Azure Policy:</span></b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">\nThis is more to review continues compliance in corporate infrastructure\npolicies. As an example, a corporate need to make sure all their Azure\nresources are deployed under west us region. With help of Azure policy, we can\ncontinuously monitor resources and make sure it does stay compliance with that\npolicy. in event of breach it will flag it up as well.</span></li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/63",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/31"
+    },
+    {
+      "id": 30,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:49.137Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure Backup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Configure Azure Backup",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/68",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/30"
+    },
+    {
+      "id": 29,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:48.843Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review the marketplace images like predefined Azure Gallery OS Images",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Review the marketplace images like predefined Azure Gallery OS Images",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/66",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/29"
+    },
+    {
+      "id": 28,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:48.487Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review the custom OS images requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Review the custom OS images requirements",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/66",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/28"
+    },
+    {
+      "id": 27,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:47.587Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Confirm licensing requirements have been met",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Confirm licensing requirements have been met",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/27"
+    },
+    {
+      "id": 26,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:47.303Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Create a custom image in Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create a custom image in Azure",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/57",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/26"
+    },
+    {
+      "id": 21,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:45.85Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review Microsoft applications requirements like office apps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Microsoft applications",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/21"
+    },
+    {
+      "id": 20,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:45.57Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Confirm in-scope application(s) that require GPU acceleration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Confirm in-scope application(s) that require GPU acceleration",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/20"
+    },
+    {
+      "id": 19,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:44.667Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review requirements for custom applications like customer business apps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Custom applications",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/19"
+    },
+    {
+      "id": 18,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:44.34Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review requirements for third party commercial applications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Third party commercial applications",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/18"
+    },
+    {
+      "id": 17,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:44.06Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review Azure Active Directory requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Review Azure Active Directory requirements",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/17"
+    },
+    {
+      "id": 16,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:43.78Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Confirm Operating Systems to deploy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Confirm Operating Systems to deploy",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/16"
+    },
+    {
+      "id": 15,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:43.497Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review supported Operation Systems and licensing requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Review supported Operation Systems and licensing requirements",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/15"
+    },
+    {
+      "id": 14,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:43.22Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Align assets to cloud offerings to calculate pricing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Align assets to cloud offerings to calculate pricing",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/14"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

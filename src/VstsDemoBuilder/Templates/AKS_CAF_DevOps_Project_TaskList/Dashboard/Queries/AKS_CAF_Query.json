@@ -1,0 +1,4 @@
+{
+  "name": "AKS_CAF_Query",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.Description], [System.AssignedTo], [System.State], [System.AreaPath], [System.Tags], [System.CommentCount] from WorkItemLinks where (Source.[System.TeamProject] = @project) and ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward') and (Target.[System.TeamProject] = @project and Target.[System.WorkItemType] <> '') order by [System.ChangedDate] desc mode (Recursive)"
+}
