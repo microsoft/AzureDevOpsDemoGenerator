@@ -493,6 +493,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             if (templateVersion != "2.0")
             {
+                AddMessage(model.Id, "");
                 UpdateIterations(model, _boardVersion, "Iterations.json");
                 //create teams
                 CreateTeams(model, template.Teams, _projectCreationVersion, model.Id, template.TeamArea);
@@ -582,6 +583,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             else
             {
+                AddMessage(model.Id, "");
                 UpdateIterations(model, _boardVersion, "Iterations.json");
                 // for newer version of templates
                 string teamsJsonPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "Teams\\Teams.json");
