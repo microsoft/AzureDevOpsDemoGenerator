@@ -890,6 +890,7 @@ namespace AzureDevOpsDemoBuilder.Services
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (File.Exists(projectSettingsFile))
             {
+                AddMessage(model.Id, "Creating work items");
                 string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItemAttachments");
                 if (listPullRequestJsonPaths.Count > 0)
                 {
@@ -958,7 +959,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
             // if the template is not private && agreed to GitHubFork && GitHub Token is not null
-            else if (string.IsNullOrEmpty(setting.IsPrivate) && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
+            else if (setting.IsPrivate == "false" && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
                 buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitionGitHub");
                 if (Directory.Exists(buildDefinitionsPath))
@@ -967,7 +968,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
             // if the template is not private && not agreed to GitHubFork && GitHub Token is null
-            else if (string.IsNullOrEmpty(setting.IsPrivate) && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
+            else if (setting.IsPrivate == "false" && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
                 buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
@@ -975,11 +976,15 @@ namespace AzureDevOpsDemoBuilder.Services
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
                 }
             }
-            bool isBuild = CreateBuildDefinition(model, _buildVersion, model.Id);
-            if (isBuild)
+            if (model.BuildDefinitions.Count > 0)
             {
-                AddMessage(model.Id, "Build definition created");
+                bool isBuild = CreateBuildDefinition(model, _buildVersion, model.Id);
+                if (isBuild)
+                {
+                    AddMessage(model.Id, "Build definition created");
+                }
             }
+            
 
             //Queue a Build
             string buildJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "QueueBuild.json");
