@@ -6,7 +6,7 @@ Azure DevOps Demo Generator is to create a demo set up with predefined templates
 
 ||Description|
 |------|-----|
-|Custom process template| Templates with Custom Process doesn't supports for Kanban board setting or the style. To use the project template generated from Custom Process, organization must have the same process and  template Id|
+|Custom process template| Templates with Custom Process doesn't supports exporting Kanban board setting or the style. To use the project template generated from Custom Process or Inherited template, the target organization must have the same process and  template Id|
 | Areas and Iterations| Not all the areas and iterations can be exported by the Template Builder with hierarchy. |
 |Iteration dates| It has predefined logic to align the dates, this can't be changed based on the requirement |
 | Work Items | Not all the work items will be exported. This count is limited to 200 work items of each type, if there are more than 200 work items |
