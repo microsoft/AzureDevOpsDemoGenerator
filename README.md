@@ -19,6 +19,7 @@ The following docs provide additional information:
 * [Running the Azure DevOps Demo Generator on your local machine](./docs/Local-Development.md)
 * [Creating custom templates](./docs/Using-The-Template-Extractor.md)
 * [Using the REST APIs](./docs/Azure-DevOps-Demo-Generator-REST-API-Reference.md)
+* [Limitations](./docs/Limitations.md)
 * [Contributing to this project](./CONTRIBUTING.md)
 
 ## Contributions
