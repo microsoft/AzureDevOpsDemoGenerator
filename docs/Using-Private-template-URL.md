@@ -1,6 +1,6 @@
 # Using Private template URL
 
-Once you generate the custom tempalte using [Azure  DevOps Demo Generator - Tempalte Builder](https://azuredevopsdemogenerator.azurewebsites.net/), you can use the same template as a master copy to provision the sample projects.
+Once you generate the custom tempalte using [Azure  DevOps Demo Generator - Template Builder](https://azuredevopsdemogenerator.azurewebsites.net/), you can use the same template as a master copy to provision the sample projects.
 
 ## Provisioning your project from your custom template using public URL
 
