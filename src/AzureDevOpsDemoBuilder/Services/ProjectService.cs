@@ -24,6 +24,7 @@ using AzureDevOpsAPI.WorkItemAndTracking;
 using AzureDevOpsDemoBuilder.Extensions;
 using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using AzureDevOpsRestApi.Git;
 using AzureDevOpsRestApi.Viewmodel.ProjectAndTeams;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -447,9 +448,10 @@ namespace AzureDevOpsDemoBuilder.Services
             model.Environment.ProjectName = model.ProjectName;
 
             // Fork Repo
-            if (model.GitHubFork && model.GitHubToken != null)
+            if (model.GitHubFork && model.GitHubToken != null && !string.IsNullOrEmpty(model.GitHubRepoName))
             {
-                ForkGitHubRepository(model, _gitHubConfig);
+                ImportGitRepository(model, _gitHubConfig);
+                //ForkGitHubRepository(model, _gitHubConfig);
             }
 
             //Add user as project admin
@@ -1016,6 +1018,58 @@ namespace AzureDevOpsDemoBuilder.Services
             StatusMessages[model.Id] = "100";
             return new string[] { model.Id, accountName, templateUsed };
         }
+        private void ImportGitRepository(Project model, AppConfiguration _gitHubConfig)
+        {
+            List<string> listRepoFiles = new List<string>();
+            string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/ImportSourceCode/GitRepository.json");
+            string createRepo = string.Format("{0}/{1}/{2}", HostingEnvironment.WebRootPath, "Templates", "CreateGitHubRepo.json");
+            string readRepoFile = model.ReadJsonFile(repoFilePath);
+            string repoName = model.GitHubRepoName + "-" + Guid.NewGuid().ToString().Split('-')[0];
+            string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
+            if (!string.IsNullOrEmpty(readRepoFile))
+            {
+                GitHubRepos.Fork forkRepos = new GitHubRepos.Fork();
+                forkRepos = JsonConvert.DeserializeObject<GitHubRepos.Fork>(readRepoFile);
+                if (forkRepos.Repositories != null && forkRepos.Repositories.Count > 0)
+                {
+                    foreach (var repo in forkRepos.Repositories)
+                    {
+                        GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig);
+                        GitHubUserDetail userDetail = new GitHubUserDetail();
+                        GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
+                        var createRepoRes = importRepo.CreateRepo(readCreateRepoFile);
+                        if (createRepoRes.IsSuccessStatusCode)
+                        {
+                            var importRepoRes = importRepo.ImportRepo(repoName, repo);
+                            bool flag = false;
+                            if (importRepoRes.IsSuccessStatusCode)
+                            {
+                                importStat:
+                                var importStatusRes = importRepo.GetImportStatus(repoName);
+                                var res = importStatusRes.Content.ReadAsStringAsync().Result;
+                                ImportRepoResponse.Import importStatus = JsonConvert.DeserializeObject<ImportRepoResponse.Import>(res);
+                                if (!flag)
+                                {
+                                    AddMessage(model.Id, "Importing repository, this may take some time. View status <a href='" + importStatus.html_url + "' target='_blank'>here</a>"); flag = true;
+                                }
+                                while (importStatus.status != "complete")
+                                {
+                                    goto importStat;
+                                }
+                                model.GitRepoURL = importStatus.html_url;
+                                
+                            }
+                            model.GitRepoName = repoName;
+                            if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                            {
+                                model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                            }
+                            AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName, _gitHubConfig.UserName));
+                        }
+                    }
+                }
+            }
+        }
 
         private void ForkGitHubRepository(Project model, AppConfiguration _gitHubConfig)
         {
@@ -1028,8 +1082,8 @@ namespace AzureDevOpsDemoBuilder.Services
                     string readRepoFile = model.ReadJsonFile(repoFilePath);
                     if (!string.IsNullOrEmpty(readRepoFile))
                     {
-                        ForkRepos.Fork forkRepos = new ForkRepos.Fork();
-                        forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
+                        GitHubRepos.Fork forkRepos = new GitHubRepos.Fork();
+                        forkRepos = JsonConvert.DeserializeObject<GitHubRepos.Fork>(readRepoFile);
                         if (forkRepos.Repositories != null && forkRepos.Repositories.Count > 0)
                         {
                             foreach (var repo in forkRepos.Repositories)

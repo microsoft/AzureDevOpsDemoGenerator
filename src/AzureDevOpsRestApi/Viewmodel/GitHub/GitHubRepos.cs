@@ -2,12 +2,14 @@
 
 namespace AzureDevOpsAPI.Viewmodel.GitHub
 {
-    public class ForkRepos
+    public class GitHubRepos
     {
         public class Repository
         {
             public string FullName { get; set; }
             public string EndPointName { get; set; }
+            public string vcs { get; set; }
+            public string vcs_url { get; set; }
         }
 
         public class Fork
