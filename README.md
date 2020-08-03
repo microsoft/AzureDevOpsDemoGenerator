@@ -21,6 +21,7 @@ The following docs provide additional information:
 * [Using the REST APIs](./docs/Azure-DevOps-Demo-Generator-REST-API-Reference.md)
 * [Limitations](./docs/Limitations.md)
 * [Contributing to this project](./CONTRIBUTING.md)
+* [FAQ](./docs/FAQ.md)
 
 ## Contributions
 
