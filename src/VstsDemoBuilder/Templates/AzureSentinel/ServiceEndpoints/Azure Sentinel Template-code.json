@@ -1,7 +1,5 @@
 {
-  "data": {
-
-  },
+  "data": {},
   "name": "Azure Sentinel Template-code",
   "type": "git",
   "url": "https://dev.azure.com/vandyr/Azure Sentinel Template/_git/Azure Sentinel Template",
@@ -9,8 +7,10 @@
     "scheme": "UsernamePassword",
     "parameters": {
       "username": "$username$",
-      "password": "$password$"
+      "password": "$username$"
     }
   },
-  "isReady": true
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
 }
