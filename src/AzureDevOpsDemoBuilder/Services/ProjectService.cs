@@ -449,6 +449,7 @@ namespace AzureDevOpsDemoBuilder.Services
             // Fork Repo
             if (model.GitHubFork && model.GitHubToken != null)
             {
+                AddMessage(model.Id, "Forking GitHub Repository");
                 ForkGitHubRepository(model, _gitHubConfig);
             }
 
@@ -493,6 +494,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             if (templateVersion != "2.0")
             {
+                AddMessage(model.Id, "Updated Iteration Dates");
                 UpdateIterations(model, _boardVersion, "Iterations.json");
                 //create teams
                 CreateTeams(model, template.Teams, _projectCreationVersion, model.Id, template.TeamArea);
@@ -582,6 +584,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             else
             {
+                AddMessage(model.Id, "Updated Iteration Dates");
                 UpdateIterations(model, _boardVersion, "Iterations.json");
                 // for newer version of templates
                 string teamsJsonPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "Teams\\Teams.json");
@@ -887,6 +890,7 @@ namespace AzureDevOpsDemoBuilder.Services
             ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
             if (File.Exists(projectSettingsFile))
             {
+                AddMessage(model.Id, "Validating work item(s) definitions");
                 string attchmentFilesFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/WorkItemAttachments");
                 if (listPullRequestJsonPaths.Count > 0)
                 {
@@ -955,7 +959,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
             // if the template is not private && agreed to GitHubFork && GitHub Token is not null
-            else if (string.IsNullOrEmpty(setting.IsPrivate) && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
+            else if (setting.IsPrivate == "false" && model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
             {
                 buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitionGitHub");
                 if (Directory.Exists(buildDefinitionsPath))
@@ -964,7 +968,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
             // if the template is not private && not agreed to GitHubFork && GitHub Token is null
-            else if (string.IsNullOrEmpty(setting.IsPrivate) && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
+            else if (setting.IsPrivate == "false" && !model.GitHubFork && string.IsNullOrEmpty(model.GitHubToken))
             {
                 buildDefinitionsPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/BuildDefinitions");
                 if (Directory.Exists(buildDefinitionsPath))
@@ -972,11 +976,15 @@ namespace AzureDevOpsDemoBuilder.Services
                     Directory.GetFiles(buildDefinitionsPath, "*.json", SearchOption.AllDirectories).ToList().ForEach(i => model.BuildDefinitions.Add(new BuildDef() { FilePath = i }));
                 }
             }
-            bool isBuild = CreateBuildDefinition(model, _buildVersion, model.Id);
-            if (isBuild)
+            if (model.BuildDefinitions.Count > 0)
             {
-                AddMessage(model.Id, "Build definition created");
+                bool isBuild = CreateBuildDefinition(model, _buildVersion, model.Id);
+                if (isBuild)
+                {
+                    AddMessage(model.Id, "Build definition created");
+                }
             }
+            
 
             //Queue a Build
             string buildJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "QueueBuild.json");
