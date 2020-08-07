@@ -107,28 +107,6 @@
                             }
                         },
                         {
-                            "taskId": "1d876d40-9aa7-11e7-905d-f541cc882994",
-                            "version": "0.*",
-                            "name": "Configure Application Insights Alerts",
-                            "refName": "",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": null,
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
-                                "ResourceGroupName": "$(Parameters.AppInsightsResourceGroupName)",
-                                "ResourceType": "Microsoft.Insights/components",
-                                "ResourceName": "$(Parameters.ApplicationInsightsResourceName)",
-                                "AlertRules": "{\"resourceId\":\"/subscriptions/73815547-622d-4307-9796-4ec16a79cfbc/resourceGroups/RGCanary/providers/microsoft.insights/components/CanaryRelease\",\"rules\":[{\"alertName\":\"Availability_$(Release.DefinitionName)\",\"metric\":{\"value\":\"availability.availabilityMetric.value\",\"displayValue\":\"Availability\",\"unit\":\"Percent\"},\"thresholdCondition\":\"<\",\"thresholdValue\":\"99\",\"timePeriod\":\"over the last 5 minutes\"},{\"alertName\":\"FailedRequests_$(Release.DefinitionName)\",\"metric\":{\"value\":\"requestFailed.count\",\"displayValue\":\"Failed requests\",\"unit\":\"Count\"},\"thresholdCondition\":\">\",\"thresholdValue\":\"0\",\"timePeriod\":\"over the last 30 minutes\"},{\"alertName\":\"ServerResponseTime_$(Release.DefinitionName)\",\"metric\":{\"value\":\"request.duration\",\"displayValue\":\"Server response time\",\"unit\":\"Seconds\"},\"thresholdCondition\":\">\",\"thresholdValue\":\"5\",\"timePeriod\":\"over the last 5 minutes\"},{\"alertName\":\"ServerExceptions_$(Release.DefinitionName)\",\"metric\":{\"value\":\"basicExceptionServer.count\",\"displayValue\":\"Server exceptions\",\"unit\":\"Count\"},\"thresholdCondition\":\">\",\"thresholdValue\":\"0\",\"timePeriod\":\"over the last 30 minutes\"}]}",
-                                "NotifyServiceOwners": "false",
-                                "NotifyEmails": ""
-                            }
-                        },
-                        {
                             "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
                             "version": "3.*",
                             "name": "Azure App Service Deploy",
