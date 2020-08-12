@@ -8,6 +8,10 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 {
     public class ProjectSetting
     {
+        public ProjectSetting()
+        {
+            this.IsPrivate = "false";
+        }
         public string Description { get; set; }
         public string Teams { get; set; }
         public string SourceCode { get; set; }
