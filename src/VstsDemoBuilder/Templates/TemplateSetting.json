@@ -31,7 +31,7 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/TailwindTraders.png",
           "ForkGitHubRepo": true,
-          "Message": "Note: This template erquires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
         },
         {
           "Key": "77383",
@@ -52,7 +52,7 @@
           ],
           "Author": "Microsoft",
           "ForkGitHubRepo": true,
-          "Message": "Note: This template erquires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
         },
         {
           "Key": "77380",
