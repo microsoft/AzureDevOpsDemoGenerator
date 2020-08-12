@@ -18,7 +18,7 @@
           "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders",
           "ShortName": "TailwindTraders",
-          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
+          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App.",
           "Tags": [
             "Agile",
             "Data and AI",
@@ -30,7 +30,8 @@
           ],
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/TailwindTraders.png",
-          "ForkGitHubRepo": true
+          "ForkGitHubRepo": true,
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
         },
         {
           "Key": "77383",
@@ -50,7 +51,8 @@
             "/Templates/SmartHotel360/Images/Screens.png"
           ],
           "Author": "Microsoft",
-          "ForkGitHubRepo": true
+          "ForkGitHubRepo": true,
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
         },
         {
           "Key": "77380",
