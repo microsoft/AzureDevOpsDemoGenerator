@@ -11,11 +11,13 @@ $(document).ready(function () {
         if ($(this).prop("checked") === true) {
             $('#btnSubmit').prop('disabled', true).removeClass('btn-primary');
             //$('#gitHubAuthDiv').removeClass('d-none');
+            $('#txtRepoNamediv').removeClass('d-none');
             $('#githubAuth').addClass('btn-primary').prop('disabled', false);
         }
         if ($(this).prop("checked") === false) {
             $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
             //$('#gitHubAuthDiv').addClass('d-none');
+            $('#txtRepoNamediv').addClass('d-none');
             $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
         }
     });

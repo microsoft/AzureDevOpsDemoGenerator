@@ -1069,14 +1069,14 @@ namespace AzureDevOpsDemoBuilder.Services
                     gitHubIdSplit[0] = "$username$";
                     gitHubRepo = string.Join("/", gitHubIdSplit);
 
-                    ForkRepos.Fork gitHubRepoList = new ForkRepos.Fork();
-                    gitHubRepoList.Repositories = new List<ForkRepos.Repository>();
+                    GitHubRepos.Fork gitHubRepoList = new GitHubRepos.Fork();
+                    gitHubRepoList.Repositories = new List<GitHubRepos.Repository>();
                     if (File.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json"))
                     {
                         string readrepo = File.ReadAllText(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "/ImportSourceCode/GitRepository.json");
-                        gitHubRepoList = JsonConvert.DeserializeObject<ForkRepos.Fork>(readrepo);
+                        gitHubRepoList = JsonConvert.DeserializeObject<GitHubRepos.Fork>(readrepo);
                     }
-                    ForkRepos.Repository repoName = new ForkRepos.Repository
+                    GitHubRepos.Repository repoName = new GitHubRepos.Repository
                     {
                         FullName = def["repository"]["id"].ToString(),
                         EndPointName = "GitHub_" + randStr

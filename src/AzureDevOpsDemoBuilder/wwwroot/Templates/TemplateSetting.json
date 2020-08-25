@@ -531,6 +531,7 @@
           "Key": "77738738",
           "Name": "Create a build pipeline with Azure Pipelines",
           "TemplateFolder": "create-build-pipeline",
+          "ForkGitHubRepo": true,
           "ShortName": "create-build-pipeline",
           "Tags": [
             "Microsoft Learn",
