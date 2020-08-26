@@ -1031,8 +1031,7 @@ namespace AzureDevOpsDemoBuilder.Services
             string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/ImportSourceCode/GitRepository.json");
             string createRepo = string.Format("{0}/{1}/{2}", HostingEnvironment.WebRootPath, "Templates", "CreateGitHubRepo.json");
             string readRepoFile = model.ReadJsonFile(repoFilePath);
-            string repoName = model.GitHubRepoName + "-" + Guid.NewGuid().ToString().Split('-')[0];
-            string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
+            
             if (!string.IsNullOrEmpty(readRepoFile))
             {
                 GitHubRepos.Fork forkRepos = new GitHubRepos.Fork();
@@ -1041,6 +1040,8 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     foreach (var repo in forkRepos.Repositories)
                     {
+                        string repoName = model.GitHubRepoName + "-" + Guid.NewGuid().ToString().Split('-')[0];
+                        string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
                         GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig);
                         GitHubUserDetail userDetail = new GitHubUserDetail();
                         GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
