@@ -34,20 +34,19 @@
   },
   "repository": {
     "properties": {
-      "apiUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web",
-      "branchesUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web/branches",
-      "cloneUrl": "https://github.com/$username$/mslearn-tailspin-spacegame-web.git",
+      "apiUrl": "https://api.github.com/repos/$username$/$reponame$",
+      "branchesUrl": "https://api.github.com/repos/$username$/$reponame$/branches",
+      "cloneUrl": "https://github.com/$username$/$reponame$.git",
       "connectedServiceId": "$spacegame-web$",
       "defaultBranch": "master",
-      "id": "$username$/mslearn-tailspin-spacegame-web",
+      "id": "$username$/$reponame$",
       "isPrivate": "False",
-      "manageUrl": "https://github.com/$username$/mslearn-tailspin-spacegame-web",
-      "refsUrl": "https://api.github.com/repos/aksh-h/mslearn-tailspin-spacegame-web/git/refs"
+      "manageUrl": "https://github.com/$username$/$reponame$"
     },
-    "id": "$username$/mslearn-tailspin-spacegame-web",
+    "id": "$username$/$reponame$",
     "type": "GitHub",
-    "name": "$username$/mslearn-tailspin-spacegame-web",
-    "url": "https://github.com/$username$/mslearn-tailspin-spacegame-web.git",
+    "name": "$username$/$reponame$",
+    "url": "https://github.com/$username$/$reponame$",
     "defaultBranch": "master",
     "clean": "false",
     "checkoutSubmodules": false

@@ -1,7 +1,8 @@
 {
   "repositories": [
     {
-      "fullName": "Microsoft/SmartHotel360-Website"
+      "vcs": "git",
+      "vcs_url": "https://github.com/Microsoft/SmartHotel360-Website"
     }
   ]
 }

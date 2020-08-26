@@ -439,17 +439,17 @@
   "repository": {
     "properties": {
       "apiUrl": "$username$/SmartHotel360-Website",
-      "branchesUrl": "https://api.github.com/repos/$username$/SmartHotel360-Website/branches",
-      "cloneUrl": "https://github.com/$username$/SmartHotel360-Website.git",
+      "branchesUrl": "https://api.github.com/repos/$username$/$reponame$/branches",
+      "cloneUrl": "https://github.com/$username$/$reponame$.git",
       "connectedServiceId": "$GitHubSmartHotel360-web$",
       "defaultBranch": "master",
-      "fullName": "$username$/SmartHotel360-Website",
-      "manageUrl": "https://github.com/$username$/SmartHotel360-Website",
+      "fullName": "$username$/$reponame$",
+      "manageUrl": "https://github.com/$username$/$reponame$",
       "safeRepository": "SmartHotel360-Website"
     },
-    "id": "$username$/SmartHotel360-Website",
+    "id": "$username$/$reponame$",
     "type": "GitHub",
-    "name": "$username$/SmartHotel360-Website",
+    "name": "$username$/$reponame$",
     "url": "https://github.com/$username$/SmartHotel360-Website",
     "defaultBranch": "master",
     "clean": "false",

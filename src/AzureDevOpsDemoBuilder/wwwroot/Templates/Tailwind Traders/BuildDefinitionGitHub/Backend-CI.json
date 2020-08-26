@@ -304,18 +304,18 @@
   "repository": {
     "properties": {
       "apiUrl": "$username$/TailwindTraders-Backend",
-      "branchesUrl": "https://api.github.com/repos/$username$/TailwindTraders-Backend/branches",
-      "cloneUrl": "https://github.com/$username$/TailwindTraders-Backend.git",
+      "branchesUrl": "https://api.github.com/repos/$username$/$reponame$/branches",
+      "cloneUrl": "https://github.com/$username$/$reponame$.git",
       "connectedServiceId": "$Backend$",
       "defaultBranch": "master",
-      "fullName": "$username$/TailwindTraders-Backend",
-      "manageUrl": "https://github.com/$username$/TailwindTraders-Backend",
+      "fullName": "$username$/$reponame$",
+      "manageUrl": "https://github.com/$username$/$reponame$",
       "safeRepository": "TailwindTraders-Backend"
     },
-    "id": "$username$/TailwindTraders-Backend",
+    "id": "$username$/$reponame$",
     "type": "GitHub",
-    "name": "$username$/TailwindTraders-Backend",
-    "url": "https://github.com/$username$/TailwindTraders-Backend",
+    "name": "$username$/$reponame$",
+    "url": "https://github.com/$username$/$reponame$",
     "defaultBranch": "master",
     "clean": "false",
     "checkoutSubmodules": false

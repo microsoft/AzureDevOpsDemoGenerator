@@ -1,8 +1,8 @@
 {
   "repositories": [
     {
-      "fullName": "MicrosoftDocs/mslearn-tailspin-spacegame-web-azure-functions",
-      "endPointName": "GitHub_210c1c54"
+      "vcs": "git",
+      "vcs_url": "https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-azure-functions"
     }
   ]
 }

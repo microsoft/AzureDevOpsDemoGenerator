@@ -985,7 +985,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     AddMessage(model.Id, "Build definition created");
                 }
             }
-            
+
 
             //Queue a Build
             string buildJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "QueueBuild.json");
@@ -1063,8 +1063,9 @@ namespace AzureDevOpsDemoBuilder.Services
                                 {
                                     goto importStat;
                                 }
-                                model.GitRepoURL = importStatus.html_url;
-                                
+                                model.GitRepoURL = importStatus.repository_url;
+                                model.GitRepoURL = model.GitRepoURL.Replace("api.", "");
+
                             }
                             model.GitRepoName = repoName;
                             if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
@@ -1824,7 +1825,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             JObject jsonToCreate = JObject.Parse(jsonCreateService);
                             string type = jsonToCreate["type"].ToString();
-                            string url = jsonToCreate["url"].ToString();
+                            string url = model.GitRepoURL;
                             string repoNameInUrl = Path.GetFileName(url);
                             // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
                             foreach (var repo in model.Environment.GitHubRepos.Keys)
@@ -1999,7 +2000,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
-                                             .Replace("$username$", model.GitHubUserName);
+                                             .Replace("$username$", model.GitHubUserName).Replace("$reponame$", model.GitRepoName);
 
                         if (model.Environment.VariableGroups.Count > 0)
                         {
