@@ -552,7 +552,6 @@
             "GitHub"
           ],
           "Image": "/Templates/TemplateImages/mslearn/host-your-own-build-server-in-your-build-pipeline.png",
-          "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
           "Description": "Collaborate with others and merge only the highest quality code. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/implement-code-workflow/' target='_blank'>Implement code workflow</a>"
         },
