@@ -1247,8 +1247,8 @@ namespace VstsDemoBuilder.Services
                                     {
                                         if (queue.Count > 0)
                                         {
-                                            var xj = queue.ContainsValue(Convert.ToInt32(queueID));
-                                            if (xj)
+                                            var q = queue.ContainsValue(Convert.ToInt32(queueID));
+                                            if (q)
                                             {
                                                 var agenetName = queue.Where(x => x.Value.ToString() == queueID.ToString()).FirstOrDefault();
                                                 if (agenetName.Key != null)
