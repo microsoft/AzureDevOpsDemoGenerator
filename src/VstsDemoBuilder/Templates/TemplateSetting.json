@@ -863,7 +863,7 @@
           "Name": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
           "TemplateFolder": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
           "ShortName": "ServerMigration",
-          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Description": "Server migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete Server migration and management.",
           "Tags": [
             "Agile",
             "Cloud Adoption",
@@ -882,12 +882,13 @@
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJH",
           "Name": "AKS_CAF_DevOps_Project_TaskList",
           "TemplateFolder": "AKS_CAF_DevOps_Project_TaskList",
-          "ShortName": "AksProjectTaskList",
-          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "ShortName": "CAFAKS",
+          "Description": "AKS deployment has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete AKS deployment and management.",
           "Tags": [
             "Agile",
             "Cloud Adoption",
             "Migration",
+            "AKS",
             "Microsoft Cloud Adoption Framework"
           ],
           "PreviewImages": [
@@ -902,12 +903,13 @@
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
           "Name": "SQL_CAF_DevOps_Project_TaskList",
           "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
-          "ShortName": "SQLProjectTaskList",
-          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "ShortName": "SQLMIGRATION",
+          "Description": "SQL migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete SQL migration and management.",
           "Tags": [
             "Agile",
             "Cloud Adoption",
             "Migration",
+            "SQL",
             "Microsoft Cloud Adoption Framework"
           ],
           "PreviewImages": [
@@ -922,12 +924,13 @@
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
           "Name": "WVD_CAF_DevOps_Project_TaskList",
           "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
-          "ShortName": "WVDProjectTaskList",
-          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "ShortName": "WVDMigration",
+          "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management.",
           "Tags": [
             "Agile",
             "Cloud Adoption",
             "Migration",
+            "WVD",
             "Microsoft Cloud Adoption Framework"
           ],
           "PreviewImages": [
