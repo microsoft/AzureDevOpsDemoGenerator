@@ -1486,6 +1486,22 @@
     <Content Include="Templates\AzureSentinel\WorkItems\Feature.json" />
     <Content Include="Templates\AzureSentinel\WorkItems\Task.json" />
     <Content Include="Templates\AzureSentinel\WorkItems\User Story.json" />
+    <Content Include="Templates\AzureGovernance\Extensions.json" />
+    <Content Include="Templates\AzureGovernance\ImportSourceCode\Azure Setup Guide.json" />
+    <Content Include="Templates\AzureGovernance\Iterations.json" />
+    <Content Include="Templates\AzureGovernance\ProjectSettings.json" />
+    <Content Include="Templates\AzureGovernance\ProjectTemplate.json" />
+    <Content Include="Templates\AzureGovernance\ServiceEndpoints\Azure Setup Guide-code.json" />
+    <Content Include="Templates\AzureGovernance\TeamArea.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\BoardColumns.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\BoardRows.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\CardFields.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\CardStyles.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\TeamSetting.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Teams.json" />
+    <Content Include="Templates\AzureGovernance\WorkItems\Feature.json" />
+    <Content Include="Templates\AzureGovernance\WorkItems\Task.json" />
+    <Content Include="Templates\AzureGovernance\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
