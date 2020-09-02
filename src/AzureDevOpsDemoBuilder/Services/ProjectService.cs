@@ -1839,7 +1839,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             JObject jsonToCreate = JObject.Parse(jsonCreateService);
                             string type = jsonToCreate["type"].ToString();
-                            string url = model.GitRepoURL;
+                            string url = jsonToCreate["url"].ToString();
                             string repoNameInUrl = Path.GetFileName(url);
                             // Endpoint type is Git(External Git), so we should point Build def to his repo by creating endpoint of Type GitHub(Public)
                             foreach (var repo in model.Environment.GitHubRepos.Keys)

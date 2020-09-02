@@ -489,11 +489,11 @@ $('#btnSubmit').click(function () {
     if (gitHubFork === true) {
         forkGitHub = true;
         gitRepoName = $('#txtRepoName').val();
-        if (gitRepoName === "") {
-            $('#txtRepoName_Error').text("Please provide repository name");
-            $("#txtRepoName_Error").removeClass("d-none").addClass("d-block");
-            return false;
-        }
+        //if (gitRepoName === "") {
+        //    $('#txtRepoName_Error').text("Please provide repository name");
+        //    $("#txtRepoName_Error").removeClass("d-none").addClass("d-block");
+        //    return false;
+        //}
     }
     statusCount = 0;
     $("#txtALertContainer").hide();
