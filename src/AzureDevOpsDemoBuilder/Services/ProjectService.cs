@@ -448,7 +448,7 @@ namespace AzureDevOpsDemoBuilder.Services
             model.Environment.ProjectName = model.ProjectName;
 
             // Fork Repo
-            if (model.GitHubFork && model.GitHubToken != null && !string.IsNullOrEmpty(model.GitHubRepoName))
+            if (model.GitHubFork && model.GitHubToken != null)
             {
                 ImportGitRepository(model, _gitHubConfig);
                 //ForkGitHubRepository(model, _gitHubConfig);
