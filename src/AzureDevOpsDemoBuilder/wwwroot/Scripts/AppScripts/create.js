@@ -488,12 +488,6 @@ $('#btnSubmit').click(function () {
     var gitHubFork = $('input[id="gitHubCheckbox"]').prop('checked');
     if (gitHubFork === true) {
         forkGitHub = true;
-        gitRepoName = $('#txtRepoName').val();
-        //if (gitRepoName === "") {
-        //    $('#txtRepoName_Error').text("Please provide repository name");
-        //    $("#txtRepoName_Error").removeClass("d-none").addClass("d-block");
-        //    return false;
-        //}
     }
     statusCount = 0;
     $("#txtALertContainer").hide();
@@ -604,7 +598,7 @@ $('#btnSubmit').click(function () {
         "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms,
         "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token,
         "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName,
-        "PrivateTemplatePath": privateTemplatePath, "GitHubRepoName":gitRepoName
+        "PrivateTemplatePath": privateTemplatePath
     };
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
         if (data !== true) {
