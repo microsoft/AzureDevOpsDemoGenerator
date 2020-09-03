@@ -853,6 +853,28 @@
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
           "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
+        },
+        {
+          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
+          "Name": "Azure Governance Readiness",
+          "TemplateFolder": "AzureGovernance",
+          "ShortName": "Governance",
+          "Description": "A guide to start from scratch with Azure Governance",
+          "Tags": [
+            "Azure",
+            "Governance",
+            "Advisor",
+            "Cost Management",
+            "Resource Graph",
+            "Blueprints",
+            "Resource Locks",
+            "RBAC",
+            "AAD",
+            "MFA",
+            "Subscriptions",
+            "Service Health"
+          ],
+          "Image": "/Templates/TemplateImages/AzureGov.png"
         }
       ]
     },
