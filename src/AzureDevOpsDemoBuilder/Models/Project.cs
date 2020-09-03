@@ -55,7 +55,6 @@ namespace AzureDevOpsDemoBuilder.Models
         public string PrivateTemplateName { get; set; }
         public string PrivateTemplatePath { get; set; }
         public string TemplateImage { get; set; }
-        public string GitHubRepoName { get; set; }
     }
     public class EnvironmentValues
     {

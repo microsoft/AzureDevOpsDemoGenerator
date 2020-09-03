@@ -448,7 +448,7 @@ namespace AzureDevOpsDemoBuilder.Services
             model.Environment.ProjectName = model.ProjectName;
 
             // Fork Repo
-            if (model.GitHubFork && model.GitHubToken != null && !string.IsNullOrEmpty(model.GitHubRepoName))
+            if (model.GitHubFork && model.GitHubToken != null)
             {
                 ImportGitRepository(model, _gitHubConfig);
                 //ForkGitHubRepository(model, _gitHubConfig);
@@ -985,7 +985,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     AddMessage(model.Id, "Build definition created");
                 }
             }
-            
+
 
             //Queue a Build
             string buildJson = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "QueueBuild.json");
@@ -1031,8 +1031,7 @@ namespace AzureDevOpsDemoBuilder.Services
             string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/ImportSourceCode/GitRepository.json");
             string createRepo = string.Format("{0}/{1}/{2}", HostingEnvironment.WebRootPath, "Templates", "CreateGitHubRepo.json");
             string readRepoFile = model.ReadJsonFile(repoFilePath);
-            string repoName = model.GitHubRepoName + "-" + Guid.NewGuid().ToString().Split('-')[0];
-            string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
+
             if (!string.IsNullOrEmpty(readRepoFile))
             {
                 GitHubRepos.Fork forkRepos = new GitHubRepos.Fork();
@@ -1041,6 +1040,8 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     foreach (var repo in forkRepos.Repositories)
                     {
+                        string repoName = Path.GetFileName(repo.vcs_url);
+                        string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
                         GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig);
                         GitHubUserDetail userDetail = new GitHubUserDetail();
                         GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
@@ -1063,15 +1064,29 @@ namespace AzureDevOpsDemoBuilder.Services
                                 {
                                     goto importStat;
                                 }
-                                model.GitRepoURL = importStatus.html_url;
-                                
+                                model.GitRepoURL = importStatus.repository_url;
+                                model.GitRepoURL = model.GitRepoURL.Replace("api.", "").Replace("/repos", "/");
+
+                                model.GitRepoName = repoName;
+                                if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                                {
+                                    model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                                }
+                                AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName, _gitHubConfig.UserName));
                             }
-                            model.GitRepoName = repoName;
-                            if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                            else if (importRepoRes.StatusCode == System.Net.HttpStatusCode.Conflict)
                             {
-                                model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                                AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName = repoName, _gitHubConfig.UserName));
+                                if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                                {
+                                    model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL = string.Format("https://github.com/{0}/{1}", _gitHubConfig.UserName, model.GitRepoName));
+                                }
                             }
-                            AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName, _gitHubConfig.UserName));
+                            else
+                            {
+                                var res = importRepoRes.Content.ReadAsStringAsync().Result;
+                                AddMessage(model.Id.ErrorId(), res.ToString());
+                            }
                         }
                     }
                 }
@@ -1999,7 +2014,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
-                                             .Replace("$username$", model.GitHubUserName);
+                                             .Replace("$username$", model.GitHubUserName).Replace("$reponame$", model.GitRepoName);
 
                         if (model.Environment.VariableGroups.Count > 0)
                         {
