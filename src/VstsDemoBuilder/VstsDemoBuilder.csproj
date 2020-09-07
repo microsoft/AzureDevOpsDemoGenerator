@@ -445,6 +445,7 @@
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
     <Content Include="Templates\TemplateImages\AzureCommunity\NIST 800-171.png" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
+    <Content Include="Templates\TemplateImages\AzureGov.png" />
     <Content Include="Templates\TemplateImages\CloudAdoptionFramework.jpg" />
     <Content Include="Templates\TemplateImages\CodeFile.png" />
     <Content Include="Templates\TemplateImages\ContosAir.png" />
@@ -1486,7 +1487,6 @@
     <Content Include="Templates\AzureSentinel\WorkItems\Feature.json" />
     <Content Include="Templates\AzureSentinel\WorkItems\Task.json" />
     <Content Include="Templates\AzureSentinel\WorkItems\User Story.json" />
-    <Content Include="Templates\AzureGovernance\Extensions.json" />
     <Content Include="Templates\AzureGovernance\ImportSourceCode\Azure Setup Guide.json" />
     <Content Include="Templates\AzureGovernance\Iterations.json" />
     <Content Include="Templates\AzureGovernance\ProjectSettings.json" />
