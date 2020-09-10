@@ -61,8 +61,10 @@ namespace VstsDemoBuilder.Controllers
             }
             try
             {
+                logger.Debug("Try Block \n");
                 if (!string.IsNullOrEmpty(model.name))
                 {
+                    logger.Debug("Checking for template setting \n");
                     if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                     {
                         string privateTemplatesJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
@@ -128,9 +130,9 @@ namespace VstsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                logger.Debug("Entered catch block \n");
                 logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
-            //return RedirectToAction("../account/verify");
             return View(model);
         }
 

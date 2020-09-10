@@ -149,11 +149,14 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
+                ProjectService.logger.Info("Entered Create Project Page \n");
                 AccessDetails _accessDetails = new AccessDetails();
                 //AccessDetails _accessDetails = ProjectService.AccessDetails;
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {
+                    ProjectService.logger.Info("Visited \n");
+
                     Project model = new Project();
                     if (Session["EnableExtractor"] != null)
                     {
@@ -177,6 +180,8 @@ namespace VstsDemoBuilder.Controllers
                     }
                     if (Session["PAT"] != null)
                     {
+                        ProjectService.logger.Info("Token check - valid \n");
+
                         _accessDetails.access_token = Session["PAT"].ToString();
                         ProfileDetails profile = accountService.GetProfile(_accessDetails);
                         if (profile.displayName != null || profile.emailAddress != null)
@@ -186,6 +191,7 @@ namespace VstsDemoBuilder.Controllers
                         }
                         if (profile.id != null)
                         {
+                            ProjectService.logger.Info("Profile check - valid \n");
                             AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, _accessDetails);
 
                             //New Feature Enabling
@@ -206,6 +212,7 @@ namespace VstsDemoBuilder.Controllers
                             }
                             else
                             {
+                                ProjectService.logger.Info("No Orgs found \n");
                                 accList.Add("Select Organization");
                                 model.accountsForDropdown = accList;
                                 ViewBag.AccDDError = "Could not load your organizations. Please check if the logged in Id contains the Azure DevOps Organizations or change the directory in profile page and try again.";
@@ -266,16 +273,19 @@ namespace VstsDemoBuilder.Controllers
                             return View(model);
                         }
                     }
+                    ProjectService.logger.Info("Token is null - invalid \n");
                     return Redirect("../Account/Verify");
                 }
                 else
                 {
+                    ProjectService.logger.Info("Visited is null - invalid \n");
                     Session.Clear();
                     return Redirect("../Account/Verify");
                 }
             }
             catch (Exception ex)
             {
+                ProjectService.logger.Info("Entered catch block \n");
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 ViewBag.ErrorMessage = ex.Message;
                 return Redirect("../Account/Verify");
