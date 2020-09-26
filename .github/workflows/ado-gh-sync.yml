@@ -18,5 +18,5 @@ jobs:
           ado_wit: "Product Backlog Item"
           ado_new_state: "New"
           ado_active_state: "Active"
-          ado_close_state: "Closed"
+          ado_close_state: "Done"
           ado_bypassrules: true
