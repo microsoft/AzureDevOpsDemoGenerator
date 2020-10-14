@@ -1,0 +1,138 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 1536,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Governance Readiness",
+        "System.TeamProject": "Azure Governance Readiness",
+        "System.IterationPath": "Azure Governance Readiness",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-08-26T17:28:41.46Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-08-26T17:28:41.46Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "Azure Governance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Fundamentals &amp; Governance",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1679",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1678",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1676",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1682",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1684",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1686",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1681",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1677",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1683",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1685",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1680",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1536"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

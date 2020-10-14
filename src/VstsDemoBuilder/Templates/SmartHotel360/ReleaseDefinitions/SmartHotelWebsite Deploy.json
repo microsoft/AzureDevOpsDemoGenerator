@@ -126,7 +126,7 @@
             {
               "environment": {},
               "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
-              "version": "5.*",
+              "version": "6.*",
               "name": "ARM Outputs",
               "refName": "",
               "enabled": true,
