@@ -1564,6 +1564,28 @@
     <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\WorkItems\Feature.json" />
     <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\WorkItems\Task.json" />
     <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\WorkItems\User Story.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Dashboard\Queries\All items, all states.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Dashboard\Queries\All Tasks.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Dashboard\Queries\Assigned to me.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Dashboard\Queries\Followed work items.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Dashboard\Queries\Workload Template.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\ImportSourceCode\Cloud Adoption Plan Master.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Iterations.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\ProjectSettings.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\ProjectTemplate.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\ServiceEndpoints\Cloud Adoption Plan Master-code.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\TeamArea.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Teams\CAF ADO Strategy-Plan-Ready-Gov Team\BoardColumns.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Teams\CAF ADO Strategy-Plan-Ready-Gov Team\BoardRows.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Teams\CAF ADO Strategy-Plan-Ready-Gov Team\CardFields.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Teams\CAF ADO Strategy-Plan-Ready-Gov Team\CardStyles.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Teams\CAF ADO Strategy-Plan-Ready-Gov Team\TeamSetting.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\Teams\Teams.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\WorkItems\Epic.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\WorkItems\Feature.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\WorkItems\Task.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\WorkItems\Test Plan.json" />
+    <Content Include="Templates\CAF-ADO-Strategy-Plan-Ready-Gov\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
