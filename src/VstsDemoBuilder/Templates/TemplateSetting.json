@@ -834,6 +834,28 @@
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
           "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
+        },
+        {
+          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
+          "Name": "Azure Governance Readiness",
+          "TemplateFolder": "AzureGovernance",
+          "ShortName": "Governance",
+          "Description": "A guide to start from scratch with Azure Governance",
+          "Tags": [
+            "Azure",
+            "Governance",
+            "Advisor",
+            "Cost Management",
+            "Resource Graph",
+            "Blueprints",
+            "Resource Locks",
+            "RBAC",
+            "AAD",
+            "MFA",
+            "Subscriptions",
+            "Service Health"
+          ],
+          "Image": "/Templates/TemplateImages/AzureGov.png"
         }
       ]
     },
@@ -927,7 +949,7 @@
           "Name": "WVD_CAF_DevOps_Project_TaskList",
           "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
           "ShortName": "WVDMigration",
-          "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management.",
+          "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management",
           "Tags": [
             "Agile",
             "Cloud Adoption",
@@ -945,16 +967,20 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
-          "Name": "CAF ADO Strategy-Plan-Ready-Gov",
+          "Name": "CAF Strategy-Plan-Ready-Gov",
           "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
           "ShortName": "StrategyPlan",
-          "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management.",
+          "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
           "Tags": [
             "Agile",
             "Cloud Adoption",
-            "Migration",
-            "WVD",
-            "Microsoft Cloud Adoption Framework"
+            "Cloud Adoption Plan",
+            "Strategy",
+            "Plan",
+            "Ready",
+            "Landing Zone",
+            "Governance",
+            "Readiness"
           ],
           "PreviewImages": [
             "/Templates/CloudAdoptionPlan/Images/Overview.png",
@@ -962,29 +988,7 @@
           ],
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
-          "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
-        },
-        {
-          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
-          "Name": "Azure Governance Readiness",
-          "TemplateFolder": "AzureGovernance",
-          "ShortName": "Governance",
-          "Description": "A guide to start from scratch with Azure Governance",
-          "Tags": [
-            "Azure",
-            "Governance",
-            "Advisor",
-            "Cost Management",
-            "Resource Graph",
-            "Blueprints",
-            "Resource Locks",
-            "RBAC",
-            "AAD",
-            "MFA",
-            "Subscriptions",
-            "Service Health"
-          ],
-          "Image": "/Templates/TemplateImages/AzureGov.png"
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg"
         }
       ]
     },
