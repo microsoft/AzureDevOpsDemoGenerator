@@ -706,7 +706,7 @@ namespace VstsDemoBuilder.Services
                     string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
                     if (fetchedWorkItem.count > 0)
                     {
-                        workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project+"\\", "$ProjectName$\\");
+                        workItemJson = workItemJson.Replace(appConfig.WorkItemConfig.Project + "\\", "$ProjectName$\\");
                         string item = WIT;
                         if (!Directory.Exists(extractedTemplatePath + appConfig.WorkItemConfig.Project + "\\WorkItems"))
                         {
@@ -1247,14 +1247,18 @@ namespace VstsDemoBuilder.Services
                                     {
                                         if (queue.Count > 0)
                                         {
-                                            var agenetName = queue.Where(x => x.Value.ToString() == queueID.ToString()).FirstOrDefault();
-                                            if (agenetName.Key != null)
+                                            var q = queue.ContainsValue(Convert.ToInt32(queueID));
+                                            if (q)
                                             {
-                                                queueName = agenetName.Key.ToString();
-                                            }
-                                            else
-                                            {
-                                                queueName = "";
+                                                var agenetName = queue.Where(x => x.Value.ToString() == queueID.ToString()).FirstOrDefault();
+                                                if (agenetName.Key != null)
+                                                {
+                                                    queueName = agenetName.Key.ToString();
+                                                }
+                                                else
+                                                {
+                                                    queueName = "";
+                                                }
                                             }
                                         }
                                     }

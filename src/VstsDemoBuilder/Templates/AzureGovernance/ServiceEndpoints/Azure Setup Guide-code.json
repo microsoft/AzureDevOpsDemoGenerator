@@ -1,14 +1,14 @@
 {
   "data": {},
-  "name": "Azure Sentinel Template-code",
+  "name": "Azure Setup Guide-code",
   "type": "git",
-  "url": "https://dev.azure.com/vandyr/Azure Sentinel Template/_git/Azure Sentinel Template",
+  "url": "https://dev.azure.com/ricmart/Azure Setup Guide/_git/Azure Setup Guide",
   "authorization": {
-    "scheme": "UsernamePassword",
     "parameters": {
       "username": "$username$",
       "password": "$password$"
-    }
+    },
+    "scheme": "UsernamePassword"
   },
   "isShared": false,
   "isReady": true,
