@@ -4,6 +4,7 @@
     "DevOps Labs",
     "Microsoft Learn",
     "Azure Community",
+    "Cloud Adoption Framework",
     "Private"
   ],
   "PrivateGroups": [
@@ -807,26 +808,6 @@
       "Groups": "Azure Community",
       "Template": [
         {
-          "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
-          "Name": "Cloud Adoption Plan",
-          "TemplateFolder": "CloudAdoptionPlan",
-          "ShortName": "CloudAdoptionPlan",
-          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
-          "Tags": [
-            "Agile",
-            "Cloud Adoption",
-            "Migration",
-            "Microsoft Cloud Adoption Framework"
-          ],
-          "PreviewImages": [
-            "/Templates/CloudAdoptionPlan/Images/Overview.png",
-            "/Templates/CloudAdoptionPlan/Images/Website.png"
-          ],
-          "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
-          "ForkGitHubRepo": false
-        },
-        {
           "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
           "Name": "Azure Sentinel DevOps",
           "TemplateFolder": "AzureSentinel",
@@ -875,6 +856,139 @@
             "Service Health"
           ],
           "Image": "/Templates/TemplateImages/AzureGov.png"
+        }
+      ]
+    },
+    {
+      "Groups": "Cloud Adoption Framework",
+      "Template": [
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
+          "Name": "Cloud Adoption Plan",
+          "TemplateFolder": "CloudAdoptionPlan",
+          "ShortName": "CloudAdoptionPlan",
+          "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37F6",
+          "Name": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
+          "TemplateFolder": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
+          "ShortName": "ServerMigration",
+          "Description": "Server migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete Server migration and management.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FJH",
+          "Name": "AKS_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "AKS_CAF_DevOps_Project_TaskList",
+          "ShortName": "CAFAKS",
+          "Description": "AKS deployment has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete AKS deployment and management.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "AKS",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
+          "Name": "SQL_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
+          "ShortName": "SQLMIGRATION",
+          "Description": "SQL migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete SQL migration and management.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "SQL",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
+          "Name": "WVD_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
+          "ShortName": "WVDMigration",
+          "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "WVD",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
+          "Name": "CAF Strategy-Plan-Ready-Gov",
+          "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
+          "ShortName": "StrategyPlan",
+          "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Cloud Adoption Plan",
+            "Strategy",
+            "Plan",
+            "Ready",
+            "Landing Zone",
+            "Governance",
+            "Readiness"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "ForkGitHubRepo": false,
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg"
         }
       ]
     },

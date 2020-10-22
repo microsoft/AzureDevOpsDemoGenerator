@@ -1,0 +1,79 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 932,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "CAF Project Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "CAF Project Plan - This is a tasklist to project manage an AKS deployment engagement.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/966",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/933",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/938",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/953",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/932"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

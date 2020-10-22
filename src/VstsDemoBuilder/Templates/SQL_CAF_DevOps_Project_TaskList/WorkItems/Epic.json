@@ -1,0 +1,75 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 491,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SQLProjectTemplate",
+        "System.TeamProject": "SQLProjectTemplate",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-06-25T03:12:47.417Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-06-25T03:12:47.417Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "CAF SQL Migration Project Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "CAF SQL Migration Project Plan",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/492",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/493",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/494",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/495",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/491"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

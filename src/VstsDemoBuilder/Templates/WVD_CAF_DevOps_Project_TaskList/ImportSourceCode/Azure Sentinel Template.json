@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wvdcaf/WVD-CAF-Project-Template/_git/Azure Sentinel Template"
+    },
+    "serviceEndpointId": "$Azure Sentinel Template-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

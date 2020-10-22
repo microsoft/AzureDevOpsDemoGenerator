@@ -1,0 +1,1397 @@
+{
+  "count": 28,
+  "value": [
+    {
+      "id": 72,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:43:13.71Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure AD Domain Services",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/9",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/72"
+    },
+    {
+      "id": 71,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:03.16Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Migrate files from local file shares into Azure storage using Azure File Sync",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">If your current Remote Desktop architecture uses file shares in Windows Server to access shared files, folders, and locations, you can use Azure File Sync to synchronize your on-premises file server contents into the same file share location you created for user profile virtual disks. You can also use Azure NetApp files with local NetApp technology to migrate files and properties to Azure storage.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">Azure File Sync enables seamless access for files that were initially generated in Azure or on-premises - Windows Virtual Desktop session hosts can access the files from a nearby location stored in Azure. You can also map drives using SMB 3.0 protocols (as you may have already configured if you’re migrating from on-premises Remote Desktop Services infrastructure to Windows Virtual Desktop), so users don’t experience changes in their workflow.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">If you’re already using FSLogix in your on-premises implementation of Remote Desktop Services, you can also use Azure File Sync to migrate and synchronize your user profile virtual disks into Azure storage to use with Windows Virtual Desktop.<br style=\"box-sizing:border-box;\"></p><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/71"
+    },
+    {
+      "id": 70,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:02.863Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure OneDrive in Office 365 in Windows Virtual Desktop host pools",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;\">In Windows Virtual Desktop, you can leverage Office and OneDrive Group Policy settings to direct files to Office 365 storage locations. This lets you take advantage of the 1 TB and greater storage available in OneDrive, plus collaboration capabilities like improved sharing, seamless secure access across devices, improved discovery of recently used files, and real-time coauthoring with coworkers and partners.<span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;\">You can use Active Directory Group Policy with Office 365 ProPlus and Office 2019 Volume Licensing editions. You can download administrative template files (.ADMX) from the <a style=\"box-sizing:border-box;cursor:pointer;outline-color:invert;text-decoration:underline;\" href=\"https://www.microsoft.com/download/details.aspx?id=49030\">Microsoft Download Center</a>.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;\">After you provision accounts for OneDrive, you can use policies to configure Office default save locations and implement OneDrive Known Folder Move.</p></span></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/70"
+    },
+    {
+      "id": 69,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:02.587Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Separate user profiles from virtual machines with FS-Logix profiles",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">You can use <strong style=\"box-sizing:border-box;font-weight:bolder;\">FSLogix profiles</strong> to separate user profiles from virtual machines, persist these profiles as user-assigned virtual disks in Azure storage, Azure NetApp Files, and Storage Spaces Direct, and then dynamically attach them to a user. Each time the user signs in to a remote resource, their profile is attached to the resource, and they're able to access all of their data.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">Compared to classic roaming user profiles in Windows, separating the user profiles and data enables a seamless roaming experience for apps that rely on %localappdata% locations, like Outlook and OneDrive. It's fast and stateful - as far as users can tell, their data loads as fast as locally stored data. FSLogix profiles let you use cached mailboxes for local-like access to email and OneDrive Files on Demand.</p><div style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:16px;text-align:left;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/store-fslogix-profile\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/store-fslogix-profile</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:16px;text-align:left;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/fslogix-containers-azure-files\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/fslogix-containers-azure-files</a></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/69"
+    },
+    {
+      "id": 68,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:02.3Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Backup & Recovery (BUR)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><font color=\"#171717\" face=\"Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif\"><span style=\"font-size:16px;\"><b><br></b></span></font></div><div><font color=\"#171717\" face=\"Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif\"><span style=\"font-size:16px;\"><b>Azure backup options:<br></b></span></font><ul style=\"font-weight:400;margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">On-premises</strong><span>&nbsp;</span>- Back up files, folders, system state using the<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-support-matrix-mars-agent\" style=\"cursor:pointer;\">Microsoft Azure Recovery Services (MARS) agent</a>. Or use the DPM or Azure Backup Server (MABS) agent to protect on-premises VMs (<a href=\"https://docs.microsoft.com/en-us/azure/backup/back-up-hyper-v-virtual-machines-mabs\" style=\"cursor:pointer;\">Hyper-V</a><span>&nbsp;</span>and<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-azure-backup-server-vmware\" style=\"cursor:pointer;\">VMWare</a>) and other<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-mabs-protection-matrix\" style=\"cursor:pointer;\">on-premises workloads</a></li><li style=\"margin:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">Azure VMs</strong><span>&nbsp;</span>-<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction\" style=\"cursor:pointer;\">Back up entire Windows</a><span>&nbsp;</span>(using backup extensions) or back up files, folders, and system state using the<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-azure-manage-mars\" style=\"cursor:pointer;\">MARS agent</a>.</li><li style=\"margin:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">Azure Files shares</strong><span>&nbsp;</span>-<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-afs\" style=\"cursor:pointer;\">Back up Azure File shares to a storage account</a></li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/30",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/68"
+    },
+    {
+      "id": 67,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:02.02Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review document in-scope Users and their Application requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review document in-scope Users and their Application requirements:<br></div><div><ol><li>Review Microsoft applications requirements like office apps</li><li>Review requirements for third party commercial applications<br></li><li>Review requirements for custom applications like customer business apps<br></li><li>Confirm in-scope application(s) that require GPU acceleration<br></li></ol></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/20",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/21",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/19",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/18",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67"
+    },
+    {
+      "id": 66,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:01.737Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review and confirm OS images to deploy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review and confirm OS images to deploy:<br></div><div><ol><li>Review the marketplace images like predefined Azure Gallery OS Images<br></li><li><span>Review the custom OS images requirements</span></li><li><span>Align assets to cloud offerings to calculate pricing</span><br></li></ol></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/29",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/28",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/66"
+    },
+    {
+      "id": 65,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:01.463Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Review and document Windows Virtual Desktop session hosts and host pool requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Review and document Windows Virtual Desktop session hosts and host pool requirements",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/65"
+    },
+    {
+      "id": 64,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:01.193Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Automate depth and breadth scaling for Windows Virtual Desktop host pools",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\">The Windows Virtual Desktop scaling scripts include logic to periodically determine activity levels in VMs before draining underutilized user session hosts and shutting them down. During off-peak usage (usually after hours) the script can reduce the number of running VMs; during peak usage, the script can dynamically provision additional VMs when user density exceeds defined thresholds that trigger scaling.&nbsp;</span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-scaling-script\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-scaling-script</a><br style=\"box-sizing:border-box;\"></span></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/64"
+    },
+    {
+      "id": 63,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:00.85Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Azure Security Center for policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Security Center is a unified infrastructure security management system that strengthens the security posture of your data centers, and provides advanced threat protection across your hybrid workloads in the cloud - whether they're in Azure or not - as well as on premises.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/31",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/12",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/63"
+    },
+    {
+      "id": 62,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:00.57Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Migrate RDS Workloads to WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:0in 0in 12pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:6.0pt;text-align:justify;line-height:115%;\"><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Whether it is migrating\nRemote Desktop Services (RDS) or Virtual Desktop Infrastructure (VDI)\nenvironments to Windows Virtual Desktop, Azure enables to migrate existing\nvirtual desktop workloads to Microsoft Azure as part of Windows Virtual Desktop\neven if you are working with a greenfield scenario (i.e. building a new\nenvironment from the ground up) or a brownfield scenario (i.e. transforming\nexisting RDS resources and Windows 10 single-session virtual machines). These\nmigration processes are described below in this section.</span></p></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/32",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/33",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/62"
+    },
+    {
+      "id": 61,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:11:00.273Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure FS Logix container  to store user profiles",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">The Windows Virtual Desktop service offers FSLogix profile containers as the recommended user profile solution.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">FSLogix profile configuration for WVD options:</span></div><div><font color=\"#171717\" face=\"Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif\"><span style=\"font-size:16px;\"><ol start=1 type=1 style=\"margin-bottom:0in;\">\n <li style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;color:black;background:white;\"><span style=\"font-size:12.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-user-profile\">VM\n     based file share</a></span><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;\"></span></li>\n <li style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;color:black;background:white;\"><span style=\"font-size:12.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-fslogix-profile-container\">NetApp\n     Files</a></span><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;\"></span></li>\n <li style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;color:black;background:white;\"><span style=\"font-size:12.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-profile-container-adds\">Azure\n     Files and Azure AD</a></span><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;\"></span></li>\n <li style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;color:black;background:white;\"><span style=\"font-size:12.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-file-share\">Azure\n     Files and ADDS</a></span><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;\"></span></li></ol><br></span></font></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/34",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/35",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/61"
+    },
+    {
+      "id": 60,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:59.36Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure apps and desktops for users",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">Windows Virtual Desktop uses app groups to share RemoteApps with users. When you share an app, the user sees and can use only the application window, not the entire desktop.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">Use PowerShell cmdlets to create an app group.&nbsp;</p><div style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:16px;text-align:left;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups</a></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/60"
+    },
+    {
+      "id": 59,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:59.073Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Provision a Windows Virtual Desktop host pool",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">You can use your host pool to provision full desktops and remote apps for users.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">There's a Resource Manager template in the Azure marketplace that helps you build out Windows Virtual Desktop environments in repeatable way. The template includes the basic steps that you need to go through. Start by finding the template:</p><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\"><br style=\"box-sizing:border-box;\"></p><div style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:16px;text-align:left;\"><ol style=\"box-sizing:border-box;margin-bottom:16px;margin-left:38px;margin-top:16px;padding-left:40px;\"><li style=\"box-sizing:border-box;list-style-type:decimal;margin-bottom:0px;margin-top:0px;outline-color:invert;\">Sign in to the <a style=\"box-sizing:border-box;cursor:pointer;outline-color:invert;text-decoration:underline;\" href=\"https://portal.azure.com/\">Azure portal</a>.</li><li style=\"box-sizing:border-box;list-style-type:decimal;margin-bottom:0px;margin-top:0px;outline-color:invert;\">In the upper-left corner, select <strong style=\"box-sizing:border-box;font-weight:bolder;\">Create a Resource.</strong></li><li style=\"box-sizing:border-box;list-style-type:decimal;margin-bottom:0px;margin-top:0px;outline-color:invert;\">In <strong style=\"box-sizing:border-box;font-weight:bolder;\">Search the Marketplace</strong>, search for &quot;Windows Virtual Desktop.&quot;</li><li style=\"box-sizing:border-box;list-style-type:decimal;margin-bottom:0px;margin-top:0px;outline-color:invert;\">In the search results, select <strong style=\"box-sizing:border-box;font-weight:bolder;\">Windows Virtual Desktop – Provision a host pool</strong>.</li></ol><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-powershell\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-powershell</a><br style=\"box-sizing:border-box;\"></div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace</a><br style=\"box-sizing:border-box;\"></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/59"
+    },
+    {
+      "id": 58,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:58.8Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Windows Virtual Desktop host pool",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;\">Additional configuration</span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;\"><a style=\"box-sizing:border-box;cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-decoration:underline;\" href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-load-balancing\">https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-load-balancing</a></span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/customize-rdp-properties\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/customize-rdp-properties</a></span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type</a></span></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/58"
+    },
+    {
+      "id": 57,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:58.46Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Create custom images with business line apps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create a managed image of a generalized VM in Azure:<br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">A managed image resource can be created from a generalized virtual machine (VM) that is stored as either a managed disk or an unmanaged disk in a storage account. The image can then be used to create multiple VMs.<span>&nbsp;</span></span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span><br></span></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource\">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource</a><br></span></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/36",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/26",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/10",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/57"
+    },
+    {
+      "id": 56,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:58.173Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Network configuration for WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Provision the Azure Bastion service in your virtual network, the seamless RDP/SSH experience is available to all of the VMs in the same virtual network. Azure Bastion deployment is per virtual network, not per subscription/account or virtual machine.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><a href=\"https://docs.microsoft.com/en-us/azure/bastion/bastion-create-host-portal\">Create\nan Azure Bastion host using the portal</a></p></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/37",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/9",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/56"
+    },
+    {
+      "id": 55,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:57.903Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Integrate Azure AD with Active Directory Domain Services",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Active Directory Domain Services (Azure AD DS) provides managed domain services such as domain join, group policy, lightweight directory access protocol (LDAP), and Kerberos / NTLM authentication. You use these domain services without the need to deploy, manage, and patch domain controllers (DCs) in the cloud.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;background:white;\"><a href=\"https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance\">Create\nand configure an Azure Active Directory Domain Services managed domain</a></span></p></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/55"
+    },
+    {
+      "id": 54,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:57.603Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Resilient Identity Pattern (RIP)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Identity synchronization and duplicate attribute resiliency:</div><div><span>Duplicate Attribute Resiliency is a feature in Azure Active Directory that will eliminate friction caused by UserPrincipalName and SMTP ProxyAddress conflicts when running one of Microsoft’s synchronization tools.<br></span><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-syncservice-duplicate-attribute-resiliency\">https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-syncservice-duplicate-attribute-resiliency</a><br></div><div><br></div><span>These two attributes are generally required to be unique across all User, Group, or Contact objects in a given Azure Active Directory tenant.</span><br></div><div><span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/39",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/40",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/38",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54"
+    },
+    {
+      "id": 53,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:57.317Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Network configuration for WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>To join the hosts(Azure VMs) to on premise domain controller you need setup Network configuration.</div><div><br></div><div>Site to Site VPN configurations options:</div><div><ul style=\"margin-bottom:0in;\"><li><a href=\"https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal\">Create\na Site-to-Site connection</a></li><li><a href=\"https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal\">Add\na Site-to-Site connection to a VNet with an existing VPN gateway connection</a></li><li><a href=\"https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps\">Connect\nAzure VPN gateways to multiple on-premises policy-based VPN devices</a></li><li><a href=\"https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-coexist-resource-manager?toc=/azure/vpn-gateway/toc.json\">Configure\nExpressRoute and Site-to-Site coexisting connections</a></li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/43",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/8",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/41",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/42",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/44",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53"
+    },
+    {
+      "id": 52,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:57.017Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Set up the Windows Virtual Desktop tenant",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\">Create a Windows Virtual Desktop tenant. The tenant is used to group your host pools and to identify your resources in later provisioning and customization steps.</span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/tenant-setup-azure-active-directory\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/tenant-setup-azure-active-directory</a><br style=\"box-sizing:border-box;\"></span></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/7",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/52"
+    },
+    {
+      "id": 51,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:56.12Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Provision the required administrator roles in Azure AD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">After you establish your network and directory connections, you can provision the Microsoft Azure services required for your Windows Virtual Desktop VMs.</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">Configure the following resources in Microsoft Azure:</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><ul style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:none;margin-bottom:16px;margin-left:38px;margin-top:16px;padding-left:40px;text-align:left;\"><li style=\"box-sizing:border-box;list-style-type:disc;margin-bottom:0px;margin-top:0px;outline-color:invert;\">One or more resource groups as a foundation to group services in Azure.</li><li style=\"box-sizing:border-box;list-style-type:disc;margin-bottom:0px;margin-top:0px;outline-color:invert;\">A storage account in Azure to store virtual disk files used with FSLogix profiles and to synchronize or provision file share services for Windows Virtual Desktop session hosts. You can also use <a style=\"box-sizing:border-box;cursor:pointer;outline-color:invert;text-decoration:underline;\" href=\"https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-introduction\">Azure NetApp Files</a> and <a style=\"box-sizing:border-box;cursor:pointer;outline-color:invert;text-decoration:underline;\" href=\"https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview\">Storage Spaces Direct</a>.</li><li style=\"box-sizing:border-box;list-style-type:disc;margin-bottom:0px;margin-top:0px;outline-color:invert;\">Administrator, user, and system accounts required to manage services.</li></ul><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">In large organizations, it's a good idea to assign administrator roles to different people and establish multiple people per role. If you’re just starting out or you have a small IT department, these can be the same person if needed.</p><div style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:16px;text-align:left;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-service-principal-role-powershell\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-service-principal-role-powershell</a></div><div style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:16px;text-align:left;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/delegated-access-virtual-desktop\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/delegated-access-virtual-desktop</a><br style=\"box-sizing:border-box;\"></div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\"><br style=\"box-sizing:border-box;\"></p><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/7",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/51"
+    },
+    {
+      "id": 50,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:55.433Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Provision an Azure tenant and set up Azure Active Directory",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\">Once you've got your Azure tenant, you need to populate Azure Active Directory (Azure AD) with administrators and users. Azure AD is used for multiple identity and access management aspects for Windows Virtual Desktop, including access to remote sessions, administration elements, and user provisioning.</span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/tenant-setup-azure-active-directory\" style=\"box-sizing:border-box;cursor:pointer;text-decoration:underline;\">https://docs.microsoft.com/en-us/azure/virtual-desktop/tenant-setup-azure-active-directory</a><br style=\"box-sizing:border-box;\"></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/7",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/50"
+    },
+    {
+      "id": 49,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:55.143Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Extend to Azure vs Connect to on-premises",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Extend to Azure vs Connect to on-premises: Partner should analyze and gather requirement from customer want to extend their environment to Azure or connect to on-premises</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/49"
+    },
+    {
+      "id": 48,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:54.88Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Present SMB File Share: Prerequisites and requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>SMB File Share: Prerequisites and requirements</div><div><a href=\"https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Azure Files</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>supports identity-based authentication over Server Message Block (SMB) through<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">on-premises Active Directory Domain Services (AD DS)</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>and<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Azure Active Directory Domain Services (Azure AD DS)</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">.<span>&nbsp;</span></span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span><br></span></span></div><div>Collect the SMB File share requirements from customer.</div><div><a href=\"https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-domain-service-enable#prerequisites\">https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-domain-service-enable#prerequisites</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/48"
+    },
+    {
+      "id": 47,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:54.597Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Present FSLogix Prerequisites and requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>FSLogix Prerequisites and requirements:</div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">The Windows Virtual Desktop service recommends FSLogix profile containers as a user profile solution. FSLogix is designed to roam profiles in remote computing environments, such as Windows Virtual Desktop. It stores a complete user profile in a single container. At sign in, this container is dynamically attached to the computing environment using natively supported Virtual Hard Disk (VHD) and Hyper-V Virtual Hard disk (VHDX). The user profile is immediately available and appears in the system exactly like a native user profile.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/47"
+    },
+    {
+      "id": 46,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:54.31Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Present Windows Virtual Desktop: Prerequisites and requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Present Windows Virtual Desktop: Prerequisites and requirements",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/27",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/17",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/16",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/15",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/14",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46"
+    },
+    {
+      "id": 45,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:54.003Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Identify and document contacts for this project",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Get customer contact details like phone number, email id and document these details.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/45"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
