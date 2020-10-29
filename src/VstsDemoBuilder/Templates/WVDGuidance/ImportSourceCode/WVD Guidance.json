@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/ricmart/WVD Guidance/_git/WVD Guidance"
+    },
+    "serviceEndpointId": "$WVD Guidance-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

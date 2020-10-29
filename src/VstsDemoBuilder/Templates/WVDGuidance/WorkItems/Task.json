@@ -1,0 +1,1247 @@
+{
+  "count": 31,
+  "value": [
+    {
+      "id": 2296,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:30:19.613Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:30:19.613Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "01 - What is WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>What\nis WVD: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/overview\">https://docs.microsoft.com/en-us/azure/virtual-desktop/overview</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2296"
+    },
+    {
+      "id": 2297,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:30:48.403Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:30:48.403Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "02 - WVD Requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>WVD\nRequirements: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/overview#requirements\">https://docs.microsoft.com/en-us/azure/virtual-desktop/overview#requirements</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2297"
+    },
+    {
+      "id": 2298,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:31:10.01Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:31:10.01Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "03 - Supported OS images",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Supported\nOS images: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/overview#supported-virtual-machine-os-images\">https://docs.microsoft.com/en-us/azure/virtual-desktop/overview#supported-virtual-machine-os-images</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2298"
+    },
+    {
+      "id": 2299,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:31:32.167Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:31:32.167Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "04 - Network guidelines",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Network\nguidelines: <a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/network-guidance?context=/azure/virtual-desktop/context/context\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/network-guidance?context=/azure/virtual-desktop/context/context</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2299"
+    },
+    {
+      "id": 2300,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:31:54.197Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:31:54.197Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "05 - Windows Virtual Desktop experience estimator",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Windows\nVirtual Desktop experience estimator: <a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/network-guidance?context=/azure/virtual-desktop/context/context#windows-virtual-desktop-experience-estimator\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/network-guidance?context=/azure/virtual-desktop/context/context#windows-virtual-desktop-experience-estimator</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2300"
+    },
+    {
+      "id": 2301,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:33:28.58Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:33:28.58Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "06 - Virtual Machine Guidance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Virtual\nmachine sizing guidelines: <a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context</a><div><br></div><div>Multi-session\nrecommendations: <a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs#multi-session-recommendations\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs#multi-session-recommendations</a><br></div><div><br></div><div>Single-session\nrecommendations: <a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context#single-session-recommendations\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context#single-session-recommendations</a><br></div><div><br></div><div>General\nvirtual machine recommendations: <a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context#general-virtual-machine-recommendations\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context#general-virtual-machine-recommendations</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2301"
+    },
+    {
+      "id": 2302,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:33:51.353Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:34:13.667Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "07 - WVD Architecture Sample",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div>WVD\nArchitecture sample: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop#architecture\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop#architecture</a><br></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2302"
+    },
+    {
+      "id": 2303,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:35:13.16Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:35:13.16Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "08 - FSLogix",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>FSLogix\nfor enterprise: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix</a><br></div><div><br></div><div>Storage\noptions for FSLogix profile containers: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#storage-options-for-fslogix-profile-containers\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#storage-options-for-fslogix-profile-containers</a><br></div><div><br></div><div>Azure\nFiles Best practices: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#azure-files-best-practices\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#azure-files-best-practices</a><br></div><div><br></div><div>Azure\nNetApp Files Best Practices: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#azure-netapp-files-best-practices\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#azure-netapp-files-best-practices</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2303"
+    },
+    {
+      "id": 2304,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:36:11.433Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:36:11.433Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "09 - Best Practices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Best\npractices for WVD: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/fslogix-containers-azure-files#best-practices-for-windows-virtual-desktop\">https://docs.microsoft.com/en-us/azure/virtual-desktop/fslogix-containers-azure-files#best-practices-for-windows-virtual-desktop</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2304"
+    },
+    {
+      "id": 2305,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:38:13.257Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:38:13.257Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "01 - Deploy an Azure AD Tenant",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Deploy\nan Azure AD Tenant: <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant\">https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2305"
+    },
+    {
+      "id": 2306,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:38:37.393Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:38:37.393Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "02 - Deploy an Azure Subscription",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Deploy\nan Azure Subscription: <a href=\"https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription\">https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2306"
+    },
+    {
+      "id": 2307,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:41:04.653Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:41:04.653Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "03 - Deploy Azure infrastructure and AD DS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal\">Virtual\nNetwork</a><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet\">Subnet</a><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview\">NSG</a>&nbsp;(Permits\nAD Traffic, RDP incoming traffic, restricts DMZ access)<br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/manage-virtual-network#change-dns-servers\">DNS\nconfigured to point to the domain controller</a><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal\">Virtual\nMachine</a>:</div><div><span style=\"\"></span></div><div><ul><li><span style=\"\">Active\n     Directory Domain Services installed and configured</span></li><li>Azure\nAD Connect installed and ready for configuration<br></li></ul></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2307"
+    },
+    {
+      "id": 2308,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:41:53.813Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:41:53.813Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "04 - Configure Azure AD Connect with AD DS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">What is Azure AD Connect: </span><a href=\"https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-azure-ad-connect\" style=\"\">https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-azure-ad-connect</a><br>Azure\nAD connect and Azure AD Connect Health installation: <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-roadmap\">https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-roadmap</a><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2308"
+    },
+    {
+      "id": 2309,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:43:00.45Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:43:00.45Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "05 - Windows Virtual Desktop environment concepts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Windows Virtual Desktop\n     environment concepts:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/environment-setup\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/environment-setup</a><br><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2309"
+    },
+    {
+      "id": 2310,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:43:31.36Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:43:31.36Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "06 - Create Azure AD Security Groups for WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Create Azure AD Security\n     Groups for WVD:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal\" style=\"\">https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal</a><br><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2310"
+    },
+    {
+      "id": 2311,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:44:01.553Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:44:01.553Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "07 - Assign users to Groups",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Assign users to Groups:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-members-azure-portal\" style=\"\">https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-members-azure-portal</a><span style=\"\"><br></span><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2311"
+    },
+    {
+      "id": 2312,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:46:47.337Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:46:47.337Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "08 - Create a Master Image for WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Create a Master Image for WVD:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource</a><div><span style=\"\"><br></span><span style=\"\">Install Office on a master\n     VHD image:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/install-office-on-wvd-master-image\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/install-office-on-wvd-master-image<br></a><span style=\"\">Install Microsoft Teams on a\n     WVD:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/teams-on-wvd\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/teams-on-wvd<br></a><span style=\"\"><a href=\"https://www.youtube.com/watch?v=RfbolIgPcBY&amp;t=661s\">Azure Academy - Teams AV Redirect</a></span></div><div><span style=\"\">Download and install FSLogix:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/install-ht\" style=\"\">https://docs.microsoft.com/en-us/fslogix/install-ht</a></div><div><span style=\"\">OS Settings | P</span><span style=\"\">repare and\n      customize a master VHD image:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image<br></a><span style=\"\">OS Settings | Prepare a Windows VHD or VHDX\n     to upload to Azure:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image<br></a><span style=\"\">OS Settings | Run Disk Cleanup:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr\" style=\"\">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr</a><p style=\"margin:0in;margin-left:1.125in;\" lang=pt-BR>&nbsp;</p><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2312"
+    },
+    {
+      "id": 2313,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T17:47:55.233Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T17:47:55.233Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "09 - Image Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://www.youtube.com/watch?v=PCWJEoG8X-I\">Azure Academy - Image Management</a></div><div><a href=\"https://www.youtube.com/watch?v=2LxvwR9LGWQ\">Azure Academy - Shared Image Galley</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2313"
+    },
+    {
+      "id": 2314,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T21:48:11.983Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T21:48:11.983Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "10 - Define a strategy to store FSLogix profiles containers",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Storage\noptions for FSLogix Profile containers: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/store-fslogix-profile\">https://docs.microsoft.com/en-us/azure/virtual-desktop/store-fslogix-profile</a><br></div><div><ol><li>Azure\nFiles and Active Directory Domain Services:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-file-share\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-file-share</a><br></li><li>Azure NetApp Files:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-fslogix-profile-container\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-fslogix-profile-container</a></li><li>Windows File Server:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-user-profile\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-user-profile</a></li><li>Azure Files and Azure Active Directory Domain Services:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-profile-container-adds\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-profile-container-adds</a></li></ol></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2314"
+    },
+    {
+      "id": 2315,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T21:55:56.383Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T21:57:43.247Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "11 - FSLogix General Configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span>Use\nFSLogix Group Policy Template Files:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/use-group-policy-templates-ht\">https://docs.microsoft.com/en-us/fslogix/use-group-policy-templates-ht</a><br><span><br></span><div><span>Profile\nContainer registry configuration reference:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-referenc</a><br><span><br></span></div><div><span>Antivirus\n     exclusions: </span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#antivirus-exclusions\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#antivirus-exclusions</a></div><div><br></div><div>FSLogix Reference Links:</div><div><ul><li><a href=\"https://www.youtube.com/watch?v=9S5A1IJqfOQ&amp;t=647s\">Azure Academy - FSLogix with Azure Fileshare</a></li><li><a href=\"https://www.youtube.com/watch?v=bswIbTB62mY\">Azure Academy - NetApp</a></li></ul></div><div><div><b style=\"\">GPO Recommendations:</b><br></div><div><ul><li><span>Enabled\n*** - Mandatory:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/configure-profile-container-tutorial#configure-profile-container-registry-settings\">https://docs.microsoft.com/en-us/fslogix/configure-profile-container-tutorial#configure-profile-container-registry-settings</a></li><li><span>VHD\nLocation *** - Mandatory:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/configure-profile-container-tutorial#configure-profile-container-registry-settings\">https://docs.microsoft.com/en-us/fslogix/configure-profile-container-tutorial#configure-profile-container-registry-settings</a><br></li><li><span>Initiate\ndefinition update on start up:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-microsoft-defender-antivirus#use-group-policy-to-download-updates-when-microsoft-defender-antivirus-is-not-present\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-</a><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-microsoft-defender-antivirus#use-group-policy-to-download-updates-when-microsoft-defender-antivirus-is-not-present\">microsoft-defender-antivirus#use-group-policy-to-download-updates-when-microsoft-defender-antivirus-is-not-present</a></li><li><span>Specify\ninterval to check for definition updates:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-protection-update-schedule-microsoft-defender-antivirus#use-group-policy-to-schedule-protection-updates\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-protection-update-schedule-microsoft-defender-antivirus#use-group-policy-to-schedule-protection-updates</a><br></li><li><span>Define\nnumber of days before virus definitions are considered out of date:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-outdated-endpoints-microsoft-defender-antivirus#use-group-policy-to-specify-the-number-of-days-before-protection-is-considered-out-of-date\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-outdated-endpoints-microsoft-defender-antivirus#use-group-policy-to-specify-the-number-of-days-before-protection-is-considered-out-of-date</a><br></li><li><span>Define\nthe number of days before spyware definitions are considered out of date:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-outdated-endpoints-microsoft-defender-antivirus#use-group-policy-to-specify-the-number-of-days-before-protection-is-considered-out-of-date\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-outdated-endpoints-microsoft-defender-antivirus#use-group-policy-to-specify-the-number-of-days-before-protection-is-considered-out-of-date</a><br></li><li><span>Define\nthe number of days before a catchup day is required:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-outdated-endpoints-microsoft-defender-antivirus#use-group-policy-to-enable-and-configure-the-catch-up-update-feature\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-outdated-endpoints-microsoft-defender-antivirus#use-group-policy-to-enable-and-configure-the-catch-up-update-feature</a><br></li><li><span>Check\nfor latest virus and spyware definitions on startup:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-microsoft-defender-antivirus#check-for-protection-updates-on-startup\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-microsoft-defender-antivirus#check-for-protection-updates-on-startup</a><br></li><li><span>Allow\nreal time definition updates on report to microsoft MAPS:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-microsoft-defender-antivirus#use-group-policy-to-automatically-download-recent-updates-based-on-cloud-delivered-protection\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-event-based-updates-microsoft-defender-antivirus#use-group-policy-to-automatically-download-recent-updates-based-on-cloud-delivered-protection</a><br></li><li><span>Allow\ndefinition updates from microsoft update:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-updates-mobile-devices-vms-microsoft-defender-antivirus#use-group-policy-to-opt-in-to-microsoft-update\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/manage-updates-mobile-devices-vms-microsoft-defender-antivirus#use-group-policy-to-opt-in-to-microsoft-update</a><br></li><li><span>Dynamic\nVHDX allocation:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#isdynamic\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#isdynamic</a><br></li><li><span>Extension\nExclusions:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-extension-file-exclusions-microsoft-defender-antivirus#use-group-policy-to-configure-folder-or-file-extension-exclusions\">https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-extension-file-exclusions-microsoft-defender-antivirus#use-group-policy-to-configure-folder-or-file-extension-exclusions</a><br></li><li><span>SID\ndirectory name matching string:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#siddirnamematch\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#siddirnamematch</a><br></li><li><span>SID\ndirectory name pattern string:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#siddirnamepattern\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#siddirnamepattern</a><br></li><li><span>Swap\ndirectory name components:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#flipflopprofiledirectoryname\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#flipflopprofiledirectoryname</a><br></li><li><span>Virtual\ndisk type should be VHDX:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#volumetype\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#volumetype</a><br></li><li><span>Size\nin Mbs:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#sizeinmbs\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#sizeinmbs</a><br></li><li><span>Delete\nlocal profile when FsLogix Profile should apply - Optional*:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#deletelocalprofilewhenvhdshouldapply\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#deletelocalprofilewhenvhdshouldapply</a><br></li><li><span>Prevent\nLogin with failure - Optional*:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#preventloginwithfailure\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#preventloginwithfailure</a><br></li><li><span>Prevent\nlogin with temp profile -Optional:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#preventloginwithtempprofile\">https://docs.microsoft.com/en-us/fslogix/profile-container-configuration-reference#preventloginwithtempprofile</a><br></li></ul></div><div><br></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2315"
+    },
+    {
+      "id": 2316,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T21:58:33.437Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T21:58:33.437Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "12 - Using MSIX app attach ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">What is MSIX app attach:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/what-is-app-attach\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/what-is-app-attach<br></a><span style=\"\">Set up MSIX app attach:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/app-attach\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/app-attach<br></a><span style=\"\">MSIX app attach FAQ:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/app-attach-faq\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/app-attach-faq</a><span style=\"\"><br></span><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2316"
+    },
+    {
+      "id": 2317,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T21:59:07.06Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T21:59:07.06Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "13 - Create a Host Pool for Pooled of Personal Desktops:",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Create a Host Pool for Pooled\n     of Personal Desktops:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace</a><span style=\"\"><br></span><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2317"
+    },
+    {
+      "id": 2318,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:00:49.97Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:00:49.97Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "14 - Create a Host Pool for Pooled Remote Apps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Publish built-in apps in Windows Virtual Desktop: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/publish-apps\">https://docs.microsoft.com/en-us/azure/virtual-desktop/publish-apps</a><br></div><div>Manage app groups with the Azure portal:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups\">https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2318"
+    },
+    {
+      "id": 2319,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:21:41.223Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:21:41.223Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "15 - Configure host pool settings",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">RDP Properties:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/customize-rdp-properties\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/customize-rdp-properties</a><br><span style=\"\">Configure device redirections\n     (Mic, Speaker, Camera, Printer, Clipboard, USB, Local Drive, Plug and Play\n     Devices):&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-device-redirections\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-device-redirections</a><br><span style=\"\">Host pool load-balancing methods:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/host-pool-load-balancing\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/host-pool-load-balancing</a><br><div>Configure the Windows Virtual Desktop load-balancing method: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-load-balancing\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-load-balancing</a><br></div><span style=\"\">Personal desktop assignment\n     type:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type</a><br><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2319"
+    },
+    {
+      "id": 2320,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:22:40.56Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:22:40.56Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "16 - Connect WVD with clients",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Windows Desktop Client:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-10\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-10</a><br><span style=\"\">HTML5 Web Client:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-web\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-web</a><br><span style=\"\">Android Client:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-android\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-android</a><br><span style=\"\">macOS Client:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos</a><br><span style=\"\">iOS Client:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-ios\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-ios</a><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2320"
+    },
+    {
+      "id": 2321,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:23:33.04Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:23:33.04Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "17 - Setup e-mail discovery to RDS feed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Setup\ne-mail discovery to RDS feed:&nbsp;<a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-email-discovery\">https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-email-discovery</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2321"
+    },
+    {
+      "id": 2322,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:25:12.74Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:25:12.74Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "18 - Setup Monitoring for WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure\nLog Analytics and Azure Monitor:&nbsp;<a href=\"https://techcommunity.microsoft.com/t5/windows-it-pro-blog/proactively-monitor-arm-based-windows-virtual-desktop-with-azure/ba-p/1508735\">https://techcommunity.microsoft.com/t5/windows-it-pro-blog/proactively-monitor-arm-based-windows-virtual-desktop-with-azure/ba-p/1508735</a><br></div><div>Sepago\nSolution:&nbsp;<a href=\"https://github.com/MarcelMeurer/LogAnalytics-for-Citrix-and-RDS\">https://github.com/MarcelMeurer/LogAnalytics-for-Citrix-and-RDS</a><br></div><div>Azure Academy - Monitoring Workbook:&nbsp;<a href=\"https://www.youtube.com/watch?v=ERftVHEy5A4\">https://www.youtube.com/watch?v=ERftVHEy5A4</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2322"
+    },
+    {
+      "id": 2323,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:29:34.887Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:29:34.887Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "19 - Setup the WVD Scaling Tool",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure Automation:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-scaling-script\">https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-scaling-script</a><br></div><div>Azure Academy - Scaling Automation:&nbsp;<a href=\"https://www.youtube.com/watch?v=4zDazJsa2Zk&amp;t=604s\">https://www.youtube.com/watch?v=4zDazJsa2Zk&amp;t=604s</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2323"
+    },
+    {
+      "id": 2324,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:31:49.07Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:31:49.07Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "20 - WVD Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"\">Enabling MFA to WVD:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-mfa\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-mfa</a><div><span style=\"font-size:10.5pt;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">Azure Academy - Session Host Security:&nbsp;<a href=\"https://www.youtube.com/watch?v=5aK6BoXcZnU&amp;t=328s\">https://www.youtube.com/watch?v=5aK6BoXcZnU&amp;t=328s</a><br></span><div><span style=\"\">Security Best practices for\n     WVD:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/security-guide\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/security-guide</a><br><span style=\"\">Safe URL List:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/safe-url-list\" style=\"\">https://docs.microsoft.com/en-us/azure/virtual-desktop/safe-url-list</a><br><span style=\"\">Use\nAzure Firewall to protect WVD:&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/firewall/protect-windows-virtual-desktop\" style=\"\">https://docs.microsoft.com/en-us/azure/firewall/protect-windows-virtual-desktop</a><br></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2324"
+    },
+    {
+      "id": 2325,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:32:34.647Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:32:34.647Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "21 - Configuring automatic updates using Endpoint Configuration Manager",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Configuring\nautomatic updates using Endpoint Configuration Manager:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-automatic-updates\">https://docs.microsoft.com/en-us/azure/virtual-desktop/configure-automatic-updates</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2325"
+    },
+    {
+      "id": 2326,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-21T22:33:51.923Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-21T22:33:51.923Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "22 - WVD BCDR",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Setup\nBCDR Plan: <a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/disaster-recovery\">https://docs.microsoft.com/en-us/azure/virtual-desktop/disaster-recovery</a><br></div><div>Disaster\nrecovery considerations: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#disaster-recovery\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#disaster-recovery</a><br></div><div>Backup\nand restore considerations: <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#backup-and-restore\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#backup-and-restore</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2326"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
