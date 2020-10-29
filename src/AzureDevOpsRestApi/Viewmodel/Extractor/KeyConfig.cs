@@ -5,7 +5,7 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
 {
     public class KeyConfig
     {
-        public class keys
+        public class Keys
         {
             [JsonProperty(PropertyName = "keys")]
             public List<string> KeysValue { get; set; }

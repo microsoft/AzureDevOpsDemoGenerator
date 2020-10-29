@@ -923,8 +923,8 @@ namespace AzureDevOpsDemoBuilder.Services
                                 foreach (var step in steps)
                                 {
                                     string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
-                                    KeyConfig.keys keyC = new KeyConfig.keys();
-                                    keyC = JsonConvert.DeserializeObject<KeyConfig.keys>(keyConfig);
+                                    KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                    keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                     if (keyC != null)
                                     {
                                         foreach (var key in keyC.KeysValue)
@@ -1320,8 +1320,8 @@ namespace AzureDevOpsDemoBuilder.Services
                                         {
                                             var input = flow["inputs"];
                                             string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
-                                            KeyConfig.keys keyC = new KeyConfig.keys();
-                                            keyC = JsonConvert.DeserializeObject<KeyConfig.keys>(keyConfig);
+                                            KeyConfig.Keys keyC = new KeyConfig.Keys();
+                                            keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
                                             if (keyC != null)
                                             {
                                                 foreach (var key in keyC.KeysValue)
