@@ -855,7 +855,21 @@
             "Subscriptions",
             "Service Health"
           ],
-          "Image": "/Templates/TemplateImages/AzureGov.png"
+          "Image": "/Templates/TemplateImages/AzureCommunity/AzureGov.png"
+        },
+        {
+          "Key": "532B15D2-C4E2-4427-897B-3FBD3D5516672",
+          "Name": "WVD Guidance",
+          "TemplateFolder": "WVDGuidance",
+          "ShortName": "WVD",
+          "Description": "A guide to describe the main topics on Windows Virtual Desktop from architecture design through implementation",
+          "Tags": [
+            "Azure",
+            "WVD",
+            "Architecture",
+            "Deployment"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/windows-virtual-desktop.svg"
         }
       ]
     },
@@ -883,9 +897,34 @@
           "ForkGitHubRepo": false
         },
         {
+          "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
+          "Name": "CAF Strategy-Plan-Ready-Gov",
+          "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
+          "ShortName": "StrategyPlan",
+          "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Cloud Adoption Plan",
+            "Strategy",
+            "Plan",
+            "Ready",
+            "Landing Zone",
+            "Governance",
+            "Readiness"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "ForkGitHubRepo": false,
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg"
+        },
+        {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F6",
-          "Name": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
-          "TemplateFolder": "3_ServerMigration_CAF_DevOps_ProjectTaskList",
+          "Name": "ServerMigration_CAF_DevOps_ProjectTaskList",
+          "TemplateFolder": "ServerMigration_CAF_DevOps_ProjectTaskList",
           "ShortName": "ServerMigration",
           "Description": "Server migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete Server migration and management.",
           "Tags": [
@@ -964,31 +1003,6 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
           "ForkGitHubRepo": false
-        },
-        {
-          "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
-          "Name": "CAF Strategy-Plan-Ready-Gov",
-          "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
-          "ShortName": "StrategyPlan",
-          "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
-          "Tags": [
-            "Agile",
-            "Cloud Adoption",
-            "Cloud Adoption Plan",
-            "Strategy",
-            "Plan",
-            "Ready",
-            "Landing Zone",
-            "Governance",
-            "Readiness"
-          ],
-          "PreviewImages": [
-            "/Templates/CloudAdoptionPlan/Images/Overview.png",
-            "/Templates/CloudAdoptionPlan/Images/Website.png"
-          ],
-          "Author": "Microsoft",
-          "ForkGitHubRepo": false,
-          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg"
         }
       ]
     },
