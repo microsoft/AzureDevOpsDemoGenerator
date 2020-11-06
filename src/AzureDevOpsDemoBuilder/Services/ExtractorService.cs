@@ -872,7 +872,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         #region OTHER
                         else if (yamalfilename == null)
                         {
-                            count = NormalPipeline(appConfig, count, templatePath, def, fileName, repoName, type);
+                            count = ClassicPipeline(appConfig, count, templatePath, def, fileName, repoName, type);
                         }
                         #endregion
                     }
@@ -897,7 +897,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <param name="repoName"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        private int NormalPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
+        private int ClassicPipeline(ProjectConfigurations appConfig, int count, string templatePath, JObject def, string fileName, JToken repoName, JToken type)
         {
             try
             {
@@ -925,20 +925,23 @@ namespace AzureDevOpsDemoBuilder.Services
                                     string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
                                     KeyConfig.Keys keyC = new KeyConfig.Keys();
                                     keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                    foreach (var key in keyC.KeysValue)
+                                    if (keyC != null)
                                     {
-                                        string keyVal = step[key] != null ? step[key].ToString() : "";
-                                        if (!string.IsNullOrEmpty(keyVal))
+                                        foreach (var key in keyC.KeysValue)
                                         {
-                                            step[key] = "";
+                                            string keyVal = step[key] != null ? step[key].ToString() : "";
+                                            if (!string.IsNullOrEmpty(keyVal))
+                                            {
+                                                step[key] = "";
+                                            }
                                         }
-                                    }
-                                    foreach (var key in keyC.KeysValue)
-                                    {
-                                        string keyVal = step["inputs"][key] != null ? step["inputs"][key].ToString() : "";
-                                        if (!string.IsNullOrEmpty(keyVal))
+                                        foreach (var key in keyC.KeysValue)
                                         {
-                                            step["inputs"][key] = "";
+                                            string keyVal = step["inputs"][key] != null ? step["inputs"][key].ToString() : "";
+                                            if (!string.IsNullOrEmpty(keyVal))
+                                            {
+                                                step["inputs"][key] = "";
+                                            }
                                         }
                                     }
                                 }
@@ -1319,12 +1322,15 @@ namespace AzureDevOpsDemoBuilder.Services
                                             string keyConfig = File.ReadAllText(HostingEnvironment.WebRootPath + "/Templates/EndpointKeyConfig.json");
                                             KeyConfig.Keys keyC = new KeyConfig.Keys();
                                             keyC = JsonConvert.DeserializeObject<KeyConfig.Keys>(keyConfig);
-                                            foreach (var key in keyC.KeysValue)
+                                            if (keyC != null)
                                             {
-                                                string keyVal = input[key] != null ? input[key].ToString() : "";
-                                                if (!string.IsNullOrEmpty(keyVal))
+                                                foreach (var key in keyC.KeysValue)
                                                 {
-                                                    input[key] = "";
+                                                    string keyVal = input[key] != null ? input[key].ToString() : "";
+                                                    if (!string.IsNullOrEmpty(keyVal))
+                                                    {
+                                                        input[key] = "";
+                                                    }
                                                 }
                                             }
                                         }
