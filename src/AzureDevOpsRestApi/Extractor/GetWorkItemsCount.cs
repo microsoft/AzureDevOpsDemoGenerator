@@ -42,7 +42,7 @@ namespace AzureDevOpsAPI.Extractor
                     {
                         query = "Select [State], [Title] ,[Effort]" +
                                 "From WorkItems " +
-                                "Where [Work Item Type] = '" + workItemType + "'" +
+                                "Where [Work Item Type] = '" + workItemType + "' " +
                                 "And [System.TeamProject] = '" + Project + "' " +
                                 "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
                     };

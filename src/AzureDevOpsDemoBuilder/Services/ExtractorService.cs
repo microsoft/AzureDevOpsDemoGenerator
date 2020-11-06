@@ -1082,7 +1082,9 @@ namespace AzureDevOpsDemoBuilder.Services
                     GitHubRepos.Repository repoName = new GitHubRepos.Repository
                     {
                         FullName = def["repository"]["id"].ToString(),
-                        EndPointName = "GitHub_" + randStr
+                        EndPointName = "GitHub_" + randStr,
+                        vcs = "git",
+                        vcs_url = "https://github.com/" + def["repository"]["id"].ToString()
                     };
                     gitHubRepoList.Repositories.Add(repoName);
 
