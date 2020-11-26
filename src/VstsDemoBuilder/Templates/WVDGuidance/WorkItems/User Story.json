@@ -144,6 +144,14 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2779",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
           "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2324",
           "attributes": {
             "isLocked": "false",
