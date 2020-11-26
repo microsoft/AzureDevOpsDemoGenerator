@@ -1,5 +1,5 @@
 {
-  "count": 31,
+  "count": 32,
   "value": [
     {
       "id": 2296,
@@ -1240,6 +1240,46 @@
         }
       ],
       "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2326"
+    },
+    {
+      "id": 2779,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WVD Guidance",
+        "System.TeamProject": "WVD Guidance",
+        "System.IterationPath": "WVD Guidance",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-29T16:23:23.907Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-10-29T16:23:23.907Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "23 - GPO Suggestions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><b>Computer Configuration &gt; Policies &gt; Administrative Templates &gt; Windows Components &gt; Remote Desktop Services &gt; Remote Desktop Session Host &gt; Session Time Limits:</b><br></span><div><br></div><div><ul><li>Set time limit for active but idle Remote Desktop Services sessions: <b>Enabled </b>(e.g., 6 hours)</li><li>Set time limit for disconnected sessions: <b>Enabled </b>(e.g., 8 hours)</li><li>Set time limit for logoff of RemoteApp sessions: <b>Enabled </b>(e.g., 6 hours)</li></ul></div><div><br></div><div><span style=\"\"><b>User Configuration &gt; Policies &gt; Administrative Templates &gt; Control Panel &gt; Personalization:</b></span><br></div><div><br></div><div><ul><li>Force specific screen saver: <b>Enabled</b>&nbsp;(e.g., %winDir%\\System32\\ssText3d.scr)</li><li><span style=\"\">Password protect the screen saver: <b>Enabled</b></span></li><li>Prevent changing screen saver: <b>Enabled</b></li><li>Screen saver timeout: <b>Enabled </b>(e.g.,&nbsp;80s)</li></ul></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2295",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2779"
     }
   ],
   "HttpStatusCode": 0,
