@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "WVD Guidance-code",
+  "type": "git",
+  "url": "https://dev.azure.com/ricmart/WVD Guidance/_git/WVD Guidance",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

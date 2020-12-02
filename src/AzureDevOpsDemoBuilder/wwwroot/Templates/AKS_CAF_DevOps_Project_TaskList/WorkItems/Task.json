@@ -1,0 +1,1247 @@
+{
+  "count": 31,
+  "value": [
+    {
+      "id": 976,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Establishing Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Once the business out come is defined, establish the strategy to execute the migrate the application.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/974",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/976"
+    },
+    {
+      "id": 975,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Outlining & Justifying of Business Outcomes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is to outline on the onsite the justification for migrating application to AKS and specifically what business outcomes are to be achieved as part of the migration.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/974",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/975"
+    },
+    {
+      "id": 973,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Assessing the Digital Estate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is to evaluate the larger IT state as part of the migration. Are there other possible aspects of the IT state that can be moved while executing the migration of the containerized application to AKS.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/973"
+    },
+    {
+      "id": 972,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Application Assessment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is to ensure an application assessment is conducted before migration the container application to AKS",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/972"
+    },
+    {
+      "id": 971,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "AKS Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is define the adoption plan for executing a migration to AKS.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/971"
+    },
+    {
+      "id": 970,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Defining and Checking the Prerequisites",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is to define and check for prerequisites required before migration can begin.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/970"
+    },
+    {
+      "id": 969,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Other Factors Affecting Deployment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Some special considerations when migration a workload to AKS can be found on the following documentation:\n<br>https://docs.microsoft.com/en-us/azure/aks/aks-migration",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/969"
+    },
+    {
+      "id": 968,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Establishing AKS Adoption Steps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Establish a set up adoption steps based on the application assessment.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/968"
+    },
+    {
+      "id": 965,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "AKS Setup Guide",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Setup the AKS cluster deployment guide before migration the containerized application.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/962",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/965"
+    },
+    {
+      "id": 964,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Best Practices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Assess best practices and see which ones are appropriate to adopt as part of the migration.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/962",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/964"
+    },
+    {
+      "id": 963,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Creating Sandbox",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Deploy the application into a sandbox environment.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/962",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/963"
+    },
+    {
+      "id": 961,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Migrate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Execute the migration.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/961"
+    },
+    {
+      "id": 960,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Migration Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Define the migration strategy before executing the migration.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/960"
+    },
+    {
+      "id": 959,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Innovate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Refactor and innovate as and when appropriate during the migration.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/959"
+    },
+    {
+      "id": 958,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Prerequisite Configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure the the prerequisite configurations for the application are accounted for.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/958"
+    },
+    {
+      "id": 957,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Deployment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure the appropriate deployment mechanism is adopted. One way to deploy AKS applications is via helm (https://docs.microsoft.com/en-us/azure/aks/quickstart-helm)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/957"
+    },
+    {
+      "id": 956,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Infrastructure Integration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is to ensure the appropriate infrastructure integrations are accounted for.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/956"
+    },
+    {
+      "id": 955,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Application Integration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This task is to ensure the application is containerized and ready to be migrated.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/955"
+    },
+    {
+      "id": 952,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Governance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate the best practices around security and governance. Apply as and when appropriate (https://docs.microsoft.com/en-us/azure/aks/concepts-security)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/949",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/952"
+    },
+    {
+      "id": 951,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Security Policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Evaluate all AKS build-in policies and apply as appropriate (https://docs.microsoft.com/en-us/azure/aks/policy-samples)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/949",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/951"
+    },
+    {
+      "id": 950,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Automation Needs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Automate as much of the process as possible",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/949",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/950"
+    },
+    {
+      "id": 948,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Developer Managing the Cluster",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure developer management best practices are reviewed and applied where appropriate (https://docs.microsoft.com/en-us/azure/aks/best-practices#developer-best-practices)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/943",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/948"
+    },
+    {
+      "id": 947,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Operator Managing the Cluster",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Look the the provided guides for operating the cluster. (https://docs.microsoft.com/en-us/azure/aks/best-practices#cluster-operator-best-practices)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/943",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/947"
+    },
+    {
+      "id": 946,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Organize",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure the organizational structure is reflected within the AKS deployed resources.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/943",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/946"
+    },
+    {
+      "id": 945,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Establishing Various Organizational Structures",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure the appropriate RBAC security posture is adopted as part of the migration.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/943",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/945"
+    },
+    {
+      "id": 944,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Organizing the Resources Required",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure the AKS cluster is appropriately scaled.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/943",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/944"
+    },
+    {
+      "id": 941,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Defining And Following the Best Practices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Follow the defined best practices as needed (https://docs.microsoft.com/en-us/azure/aks/best-practices)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/939",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/941"
+    },
+    {
+      "id": 940,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Outlining the Business Continuing and Defining the Disaster Recovery",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "task to evaluate and define the HA/DR strategy based on the documentation. (https://docs.microsoft.com/en-us/azure/aks/operator-best-practices-multi-region)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/939",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/940"
+    },
+    {
+      "id": 937,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "SOW Checklist",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure the statement of work is fully delivered.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/934",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/937"
+    },
+    {
+      "id": 936,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Supporting Documents",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure all supporting documents are delivered.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/934",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/936"
+    },
+    {
+      "id": 935,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Sign Off Project Delivery",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ensure appropriate deliverables are communicated and the sign off is attained before the project is closed out.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/934",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/935"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
