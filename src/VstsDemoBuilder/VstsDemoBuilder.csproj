@@ -1618,6 +1618,12 @@
     <Content Include="Templates\WVDGuidance\Teams\WVD Guidance Team\TeamSetting.json" />
     <Content Include="Templates\WVDGuidance\WorkItems\Task.json" />
     <Content Include="Templates\WVDGuidance\WorkItems\User Story.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Dashboard\Queries\All Workitems.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\BoardColumns.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\BoardRows.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\CardFields.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\CardStyles.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
