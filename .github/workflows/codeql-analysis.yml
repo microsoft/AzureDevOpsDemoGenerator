@@ -13,12 +13,12 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ master, dotnetcore ]
+    branches: [ dotnetcore ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ master, dotnetcore ]
-  schedule:
-    - cron: '43 18 * * 1'
+    branches: [ dotnetcore ]
+#   schedule:
+#     - cron: '43 18 * * 1'
 
 jobs:
   analyze:
