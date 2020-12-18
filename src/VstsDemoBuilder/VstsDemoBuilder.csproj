@@ -1618,6 +1618,29 @@
     <Content Include="Templates\WVDGuidance\Teams\WVD Guidance Team\TeamSetting.json" />
     <Content Include="Templates\WVDGuidance\WorkItems\Task.json" />
     <Content Include="Templates\WVDGuidance\WorkItems\User Story.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Dashboard\Queries\All Workitems.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\BoardColumns.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\BoardRows.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\CardFields.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\CardStyles.json" />
+    <Content Include="Templates\WVD_CAF_DevOps_Project_TaskList\Teams\Windows Virtual Desktop Team\TeamSetting.json" />
+    <Content Include="Templates\KnowledgeMining\Extensions.json" />
+    <Content Include="Templates\KnowledgeMining\ImportSourceCode\Knowledge Mining Solution on Azure.json" />
+    <Content Include="Templates\KnowledgeMining\Iterations.json" />
+    <Content Include="Templates\KnowledgeMining\ProjectSettings.json" />
+    <Content Include="Templates\KnowledgeMining\ProjectTemplate.json" />
+    <Content Include="Templates\KnowledgeMining\ServiceEndpoints\Knowledge Mining Solution on Azure-code.json" />
+    <Content Include="Templates\KnowledgeMining\TeamArea.json" />
+    <Content Include="Templates\KnowledgeMining\Teams\Knowledge Mining Team\BoardColumns.json" />
+    <Content Include="Templates\KnowledgeMining\Teams\Knowledge Mining Team\BoardRows.json" />
+    <Content Include="Templates\KnowledgeMining\Teams\Knowledge Mining Team\CardFields.json" />
+    <Content Include="Templates\KnowledgeMining\Teams\Knowledge Mining Team\CardStyles.json" />
+    <Content Include="Templates\KnowledgeMining\Teams\Knowledge Mining Team\TeamSetting.json" />
+    <Content Include="Templates\KnowledgeMining\Teams\Teams.json" />
+    <Content Include="Templates\KnowledgeMining\WorkItems\Epic.json" />
+    <Content Include="Templates\KnowledgeMining\WorkItems\Feature.json" />
+    <Content Include="Templates\KnowledgeMining\WorkItems\Task.json" />
+    <Content Include="Templates\KnowledgeMining\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

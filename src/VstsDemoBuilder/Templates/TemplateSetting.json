@@ -985,7 +985,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
-          "Name": "WVD_CAF_DevOps_Project_TaskList",
+          "Name": "Windows Virtual Desktop",
           "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
           "ShortName": "WVDMigration",
           "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management",
@@ -1003,7 +1003,30 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
           "ForkGitHubRepo": false
+        },
+        {
+          "Key": "3197C45A-9440-4272-99A7-164C89DFA778",
+          "Name": "Knowledge Mining",
+          "TemplateFolder": "KnowledgeMining",
+          "ShortName": "kmine",
+          "Description": "Knowledge project simplifies the process of accessing the latent insights contained within structured and unstructured data. Use this project to help you address all the steps.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Innovate",
+            "Knowledge Mining",
+            "AI",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
         }
+
       ]
     },
     {
