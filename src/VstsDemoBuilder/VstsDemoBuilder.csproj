@@ -1641,6 +1641,11 @@
     <Content Include="Templates\KnowledgeMining\WorkItems\Feature.json" />
     <Content Include="Templates\KnowledgeMining\WorkItems\Task.json" />
     <Content Include="Templates\KnowledgeMining\WorkItems\User Story.json" />
+    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\BoardColumns.json" />
+    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\BoardRows.json" />
+    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\CardFields.json" />
+    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\CardStyles.json" />
+    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
