@@ -964,7 +964,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
-          "Name": "SQL_CAF_DevOps_Project_TaskList",
+          "Name": "SQL Migration",
           "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
           "ShortName": "SQLMIGRATION",
           "Description": "SQL migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete SQL migration and management.",

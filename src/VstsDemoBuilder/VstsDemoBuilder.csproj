@@ -1641,6 +1641,16 @@
     <Content Include="Templates\KnowledgeMining\WorkItems\Feature.json" />
     <Content Include="Templates\KnowledgeMining\WorkItems\Task.json" />
     <Content Include="Templates\KnowledgeMining\WorkItems\User Story.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\Server_Migration_Project Team\BoardColumns.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\Server_Migration_Project Team\BoardRows.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\Server_Migration_Project Team\CardFields.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\Server_Migration_Project Team\CardStyles.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\Server_Migration_Project Team\TeamSetting.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\BoardColumns.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\BoardRows.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\CardFields.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\CardStyles.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
