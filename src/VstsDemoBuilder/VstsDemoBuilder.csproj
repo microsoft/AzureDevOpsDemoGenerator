@@ -1494,11 +1494,6 @@
     <Content Include="Templates\AzureGovernance\ProjectTemplate.json" />
     <Content Include="Templates\AzureGovernance\ServiceEndpoints\Azure Setup Guide-code.json" />
     <Content Include="Templates\AzureGovernance\TeamArea.json" />
-    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\BoardColumns.json" />
-    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\BoardRows.json" />
-    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\CardFields.json" />
-    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\CardStyles.json" />
-    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Readiness Team\TeamSetting.json" />
     <Content Include="Templates\AzureGovernance\Teams\Teams.json" />
     <Content Include="Templates\AzureGovernance\WorkItems\Feature.json" />
     <Content Include="Templates\AzureGovernance\WorkItems\Task.json" />
@@ -1551,11 +1546,6 @@
     <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\ProjectTemplate.json" />
     <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\ServiceEndpoints\Azure Sentinel Template-code.json" />
     <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\TeamArea.json" />
-    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQLProjectTemplate Team\BoardColumns.json" />
-    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQLProjectTemplate Team\BoardRows.json" />
-    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQLProjectTemplate Team\CardFields.json" />
-    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQLProjectTemplate Team\CardStyles.json" />
-    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQLProjectTemplate Team\TeamSetting.json" />
     <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\Teams.json" />
     <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\WorkItems\Epic.json" />
     <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\WorkItems\Feature.json" />
@@ -1641,11 +1631,17 @@
     <Content Include="Templates\KnowledgeMining\WorkItems\Feature.json" />
     <Content Include="Templates\KnowledgeMining\WorkItems\Task.json" />
     <Content Include="Templates\KnowledgeMining\WorkItems\User Story.json" />
-    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\BoardColumns.json" />
-    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\BoardRows.json" />
-    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\CardFields.json" />
-    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\CardStyles.json" />
-    <Content Include="Templates\ServerMigration_CAF_DevOps_ProjectTaskList\Teams\SQL Proj - Azure BG Test Team\TeamSetting.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\BoardColumns.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\BoardRows.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\CardFields.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\CardStyles.json" />
+    <Content Include="Templates\SQL_CAF_DevOps_Project_TaskList\Teams\SQL Proj - Azure BG Test Team\TeamSetting.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\BoardColumns.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\BoardRows.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\CardFields.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\CardStyles.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\TeamSetting.json" />
+    <Content Include="Templates\AzureGovernance\WorkItems\Epic.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
