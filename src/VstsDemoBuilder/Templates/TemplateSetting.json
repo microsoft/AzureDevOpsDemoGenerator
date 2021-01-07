@@ -834,29 +834,7 @@
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
           "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
-        },
-        {
-          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
-          "Name": "Azure Governance Readiness",
-          "TemplateFolder": "AzureGovernance",
-          "ShortName": "Governance",
-          "Description": "A guide to start from scratch with Azure Governance",
-          "Tags": [
-            "Azure",
-            "Governance",
-            "Advisor",
-            "Cost Management",
-            "Resource Graph",
-            "Blueprints",
-            "Resource Locks",
-            "RBAC",
-            "AAD",
-            "MFA",
-            "Subscriptions",
-            "Service Health"
-          ],
-          "Image": "/Templates/TemplateImages/AzureCommunity/AzureGov.png"
-        },
+        },        
         {
           "Key": "532B15D2-C4E2-4427-897B-3FBD3D5516672",
           "Name": "WVD Guidance",
@@ -964,7 +942,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
-          "Name": "SQL_CAF_DevOps_Project_TaskList",
+          "Name": "SQL Migration",
           "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
           "ShortName": "SQLMIGRATION",
           "Description": "SQL migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete SQL migration and management.",
@@ -1025,6 +1003,24 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
           "ForkGitHubRepo": false
+        },
+        {
+          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
+          "Name": "Azure Governance Readiness",
+          "TemplateFolder": "AzureGovernance",
+          "ShortName": "gov",
+          "Description": "The standalone Azure governance project provides guidance and tools on how to ensure that your Azure environment is governed in the correct way.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Govern",
+            "Azure Policy",
+            "Azure Blueprints",
+            "Azure Security Center",
+            "Enterprise-Scale Landing Zone",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/AzureGov.png"
         }
 
       ]

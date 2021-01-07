@@ -1,20 +1,20 @@
 {
-  "count": 4,
+  "count": 3,
   "value": [
     {
-      "id": 492,
-      "rev": 1,
+      "id": 3374,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:48.023Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:48.023Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-04T21:18:19.493Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:27:50.143Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Strategy, Plan, Readiness",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Strategy, Plan, Readiness",
@@ -22,7 +22,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -32,7 +32,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/543",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -41,16 +41,15 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/491",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3627",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/545",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3413",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -59,7 +58,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/544",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -67,90 +66,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/492"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3374"
     },
     {
-      "id": 493,
-      "rev": 1,
+      "id": 3376,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:48.32Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:48.32Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "CAF SQL Migration",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "CAF SQL Migration",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/541",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/491",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/542",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/540",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/493"
-    },
-    {
-      "id": 494,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Feature",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:48.65Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:48.65Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-04T21:18:19.877Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:28:31.313Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "CAF SQL Migration - Governance and Manage",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "CAF SQL Migration - Governance and Manage",
@@ -158,7 +89,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Govern",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -167,48 +98,48 @@
       },
       "relations": [
         {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/491",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3373",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/494"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3376"
     },
     {
-      "id": 495,
-      "rev": 1,
+      "id": 3375,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Feature",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:48.933Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:48.933Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "STAKEHOLDER SIGN OFF AND CLOSURE",
+        "System.CreatedDate": "2020-12-04T21:18:19.713Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:32:23.167Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "SQL Migration Scenarios and paths",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "STAKEHOLDER SIGN OFF AND CLOSURE",
+        "System.Description": "CAF SQL Migration",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -217,8 +148,17 @@
       },
       "relations": [
         {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/491",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3373",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -227,7 +167,16 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/538",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3417",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -235,7 +184,7 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/495"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3375"
     }
   ],
   "HttpStatusCode": 0,
