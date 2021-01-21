@@ -14,8 +14,9 @@ namespace VstsRestAPI
             string message = string.Empty;
             try
             {
-                JObject jItems = JObject.Parse(Exception); 
-                message = jItems["message"].ToString();
+                JObject jItems = JObject.Parse(Exception);
+
+                message = jItems["message"] == null ? "" : jItems["message"].ToString();
 
                 return message;
             }
