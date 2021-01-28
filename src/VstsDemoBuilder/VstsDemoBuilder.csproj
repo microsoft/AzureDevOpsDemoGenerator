@@ -1642,6 +1642,7 @@
     <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\CardStyles.json" />
     <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\TeamSetting.json" />
     <Content Include="Templates\AzureGovernance\WorkItems\Epic.json" />
+    <Content Include="Templates\SmartHotel360\BoardRowsFromTemplate.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
