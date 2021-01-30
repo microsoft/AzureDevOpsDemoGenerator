@@ -1642,6 +1642,22 @@
     <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\CardStyles.json" />
     <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\TeamSetting.json" />
     <Content Include="Templates\AzureGovernance\WorkItems\Epic.json" />
+    <Content Include="Templates\ModernDataWarehouse\ImportSourceCode\Modern Data Warehouse.json" />
+    <Content Include="Templates\ModernDataWarehouse\Iterations.json" />
+    <Content Include="Templates\ModernDataWarehouse\ProjectSettings.json" />
+    <Content Include="Templates\ModernDataWarehouse\ProjectTemplate.json" />
+    <Content Include="Templates\ModernDataWarehouse\ServiceEndpoints\Modern Data Warehouse-code.json" />
+    <Content Include="Templates\ModernDataWarehouse\TeamArea.json" />
+    <Content Include="Templates\ModernDataWarehouse\Teams\Modern Data Warehouse Team\BoardColumns.json" />
+    <Content Include="Templates\ModernDataWarehouse\Teams\Modern Data Warehouse Team\BoardRows.json" />
+    <Content Include="Templates\ModernDataWarehouse\Teams\Modern Data Warehouse Team\CardFields.json" />
+    <Content Include="Templates\ModernDataWarehouse\Teams\Modern Data Warehouse Team\CardStyles.json" />
+    <Content Include="Templates\ModernDataWarehouse\Teams\Modern Data Warehouse Team\TeamSetting.json" />
+    <Content Include="Templates\ModernDataWarehouse\Teams\Teams.json" />
+    <Content Include="Templates\ModernDataWarehouse\WorkItems\Epic.json" />
+    <Content Include="Templates\ModernDataWarehouse\WorkItems\Feature.json" />
+    <Content Include="Templates\ModernDataWarehouse\WorkItems\Task.json" />
+    <Content Include="Templates\ModernDataWarehouse\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
