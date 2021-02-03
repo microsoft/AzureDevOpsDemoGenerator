@@ -1021,6 +1021,24 @@
             "Microsoft Cloud Adoption Framework"
           ],
           "Image": "/Templates/TemplateImages/AzureCommunity/AzureGov.png"
+        },
+        {
+          "Key": "A7691C19-7D13-4694-A585-85304FB2D147",
+          "Name": "Modern Data Warehouse",
+          "TemplateFolder": "ModernDataWarehouse",
+          "ShortName": "moddw",
+          "Description": "Build your modern data warehouse using this ADO checklist of items, in this checklist we have links to assets, code and learning material.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "“Synapse",
+            "“Modern",
+            "Data",
+            "Warehouse",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/ModernDataWarehouse.png"
         }
 
       ]

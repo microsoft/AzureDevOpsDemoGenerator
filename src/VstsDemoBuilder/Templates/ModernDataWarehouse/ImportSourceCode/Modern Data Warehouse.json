@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Modern Data Warehouse/_git/Modern Data Warehouse"
+    },
+    "serviceEndpointId": "$Modern Data Warehouse-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
