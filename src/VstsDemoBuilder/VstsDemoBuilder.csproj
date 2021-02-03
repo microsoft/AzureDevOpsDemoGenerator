@@ -1643,6 +1643,7 @@
     <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\CardStyles.json" />
     <Content Include="Templates\AzureGovernance\Teams\Azure Governance Team\TeamSetting.json" />
     <Content Include="Templates\AzureGovernance\WorkItems\Epic.json" />
+    <Content Include="Templates\SmartHotel360\BoardRowsFromTemplate.json" />
     <Content Include="Templates\ModernDataWarehouse\ImportSourceCode\Modern Data Warehouse.json" />
     <Content Include="Templates\ModernDataWarehouse\Iterations.json" />
     <Content Include="Templates\ModernDataWarehouse\ProjectSettings.json" />

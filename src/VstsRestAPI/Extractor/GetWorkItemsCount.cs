@@ -91,31 +91,35 @@ namespace VstsRestAPI.Extractor
         /// <returns></returns>
         public WorkItemFetchResponse.WorkItems GetWorkItemsDetailInBatch(string workitemstoFetch)
         {
-            WorkItemFetchResponse.WorkItems viewModel = new WorkItemFetchResponse.WorkItems();
-            try
+            if (!string.IsNullOrEmpty(workitemstoFetch))
             {
-                using (var client = GetHttpClient())
+                WorkItemFetchResponse.WorkItems viewModel = new WorkItemFetchResponse.WorkItems();
+                try
                 {
-                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/wit/workitems?api-version=" + _configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
-                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                    using (var client = GetHttpClient())
                     {
-                        viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
-                    }
-                    else
-                    {
-                        var errorMessage = response.Content.ReadAsStringAsync();
-                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/_apis/wit/workitems?api-version=" + _configuration.VersionNumber + "&ids=" + workitemstoFetch + "&$expand=relations").Result;
+                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            viewModel = response.Content.ReadAsAsync<WorkItemFetchResponse.WorkItems>().Result;
+                        }
+                        else
+                        {
+                            var errorMessage = response.Content.ReadAsStringAsync();
+                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                            LastFailureMessage = error;
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+                    string error = ex.Message;
+                    LastFailureMessage = error;
+                }
+                return viewModel;
             }
-            catch (Exception ex)
-            {
-                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
-                string error = ex.Message;
-                LastFailureMessage = error;
-            }
-            return viewModel;
+            return new WorkItemFetchResponse.WorkItems();
         }
         /// <summary>
         /// Get All work item names
