@@ -173,7 +173,7 @@
         "rowSpan": 1,
         "columnSpan": 2
       },
-      "settings": "{\"definitionId\":\"$PublicWebSiteCD$\",\"showRejectedAsFailed\":true}",
+      "settings": "{\"definitionId\":\"$SmartHotel360_Website-Deploy$\",\"showRejectedAsFailed\":true}",
       "settingsVersion": {
         "major": 1,
         "minor": 0,
