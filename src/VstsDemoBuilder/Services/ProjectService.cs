@@ -2416,7 +2416,7 @@ namespace VstsDemoBuilder.Services
                                 .Replace("$startDate$", startdate)
                                 .Replace("$BugswithoutRepro$", bugsWithoutReproSteps.id != null ? bugsWithoutReproSteps.id : string.Empty).Replace("$UnfinishedWork$", unfinishedWork.id != null ? unfinishedWork.id : string.Empty)
                                 .Replace("$RepoSmartHotel360$", model.Environment.repositoryIdList.ContainsKey("SmartHotel360") ? model.Environment.repositoryIdList["SmartHotel360"] : string.Empty)
-                                .Replace("$PublicWebSiteCD$", model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PublicWebSiteCD").FirstOrDefault().Id : string.Empty);
+                                .Replace("$SmartHotel360_Website-Deploy$", model.ReleaseDefinitions.Where(x => x.Name == "SmartHotel360_Website-Deploy").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "SmartHotel360_Website-Deploy").FirstOrDefault().Id : string.Empty);
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
