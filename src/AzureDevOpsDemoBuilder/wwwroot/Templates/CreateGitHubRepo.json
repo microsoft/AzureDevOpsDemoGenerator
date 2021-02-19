@@ -1,0 +1,9 @@
+{
+  "name": "$NAME$",
+  "description": "Imported from Azure DevOps Demo Generator",
+  "private": false,
+  "visibility": "public",
+  "has_issues": true,
+  "has_projects": true,
+  "has_wiki": true
+}

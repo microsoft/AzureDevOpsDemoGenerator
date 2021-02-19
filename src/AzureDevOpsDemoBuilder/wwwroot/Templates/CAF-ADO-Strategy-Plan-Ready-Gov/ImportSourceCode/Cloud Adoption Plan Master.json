@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/CAF ADO Strategy-Plan-Ready-Gov/_git/Cloud Adoption Plan Master"
+    },
+    "serviceEndpointId": "$Cloud Adoption Plan Master-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

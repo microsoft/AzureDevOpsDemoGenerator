@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/thpetche-lp4-04/Space Game - web - ProvisionDB/_git/Space Game - web - ProvisionDB"
+    },
+    "serviceEndpointId": "$Space Game - web - ProvisionDB-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

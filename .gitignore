@@ -148,3 +148,8 @@ UpgradeLog.htm
 .cr/
 /src/VstsDemoBuilder/Logs
 /src/VstsDemoBuilder/ExtractedTemplate/adqw
+/src/AzureDevOpsDemoBuilder/Properties/PublishProfiles
+/src/AzureDevOpsDemoBuilder/log
+/src/AzureDevOpsDemoBuilder/ExtractedTemplate/faSmartHotel360asdsd
+/src/AzureDevOpsDemoBuilder/ExtractedZipFile
+/src/AzureDevOpsDemoBuilder/wwwroot/Log

@@ -1,0 +1,187 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PrivateTemplates\**" />
+    <Content Remove="PrivateTemplates\**" />
+    <EmbeddedResource Remove="PrivateTemplates\**" />
+    <None Remove="PrivateTemplates\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Apis\TestController.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\Scripts\AppScripts\create.js" />
+    <None Include="wwwroot\Scripts\AppScripts\Extractor.js" />
+    <None Include="wwwroot\Scripts\AppScripts\FileUpload.js" />
+    <None Include="wwwroot\Scripts\AppScripts\GitHubAuth.js" />
+    <None Include="wwwroot\Scripts\bootstrap.js" />
+    <None Include="wwwroot\Scripts\bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.intellisense.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.min.js" />
+    <None Include="wwwroot\Scripts\jquery-1.12.4.min.map" />
+    <None Include="wwwroot\Scripts\knockout-2.2.0.debug.js" />
+    <None Include="wwwroot\Scripts\knockout-2.2.0.js" />
+    <None Include="wwwroot\Scripts\modernizr-2.6.2.js" />
+    <None Include="wwwroot\Scripts\npm.js" />
+    <None Include="wwwroot\Scripts\tooltip.js" />
+    <None Include="wwwroot\Scripts\_references.js" />
+    <None Include="wwwroot\Templates\AKS\Images\AKS.png" />
+    <None Include="wwwroot\Templates\AKS\Images\aksdashboard.png" />
+    <None Include="wwwroot\Templates\AKS\Images\finalresult.png" />
+    <None Include="wwwroot\Templates\AKS\Images\updateprocessbd.png" />
+    <None Include="wwwroot\Templates\AKS\Images\update_CD3.png" />
+    <None Include="wwwroot\Templates\Ansible\Images\browseweb.png" />
+    <None Include="wwwroot\Templates\Ansible\Images\cd-queue.gif" />
+    <None Include="wwwroot\Templates\Ansible\Images\ci-queue.gif" />
+    <None Include="wwwroot\Templates\Ansible\Images\logintosite.png" />
+    <None Include="wwwroot\Templates\Ansible\Images\playbook.png" />
+    <None Include="wwwroot\Templates\AzureFunctions\Images\createfunctionapp.png" />
+    <None Include="wwwroot\Templates\AzureFunctions\Images\deploysite.png" />
+    <None Include="wwwroot\Templates\AzureFunctions\Images\projectcreation.png" />
+    <None Include="wwwroot\Templates\AzureFunctions\Images\pulwebsite.png" />
+    <None Include="wwwroot\Templates\CloudAdoptionPlan\Images\Overview.png" />
+    <None Include="wwwroot\Templates\CloudAdoptionPlan\Images\Website.PNG" />
+    <None Include="wwwroot\Templates\DeploymentGroups\Images\application.png" />
+    <None Include="wwwroot\Templates\DeploymentGroups\Images\dgscript.png" />
+    <None Include="wwwroot\Templates\DeploymentGroups\Images\differentphases.png" />
+    <None Include="wwwroot\Templates\Docker\Images\buildresult.png" />
+    <None Include="wwwroot\Templates\Docker\Images\buildtasks.png" />
+    <None Include="wwwroot\Templates\Docker\Images\finalresult.png" />
+    <None Include="wwwroot\Templates\Docker\Images\release.png" />
+    <None Include="wwwroot\Templates\LaunchDarkly\Images\browseapp.png" />
+    <None Include="wwwroot\Templates\LaunchDarkly\Images\buildandrelease.gif" />
+    <None Include="wwwroot\Templates\LaunchDarkly\Images\CD.png" />
+    <None Include="wwwroot\Templates\MachineLearning\Images\aml.png" />
+    <None Include="wwwroot\Templates\MachineLearning\Images\CI.png" />
+    <None Include="wwwroot\Templates\MachineLearning\Images\Items.png" />
+    <None Include="wwwroot\Templates\MachineLearning\Images\workflow.png" />
+    <None Include="wwwroot\Templates\MyHealthClinic\Images\boards.png" />
+    <None Include="wwwroot\Templates\MyHealthClinic\Images\CI.png" />
+    <None Include="wwwroot\Templates\MyHealthClinic\Images\dashboard.png" />
+    <None Include="wwwroot\Templates\MyHealthClinic\Images\site.png" />
+    <None Include="wwwroot\Templates\MyShuttle\Images\boards.png" />
+    <None Include="wwwroot\Templates\MyShuttle\Images\dashboard.png" />
+    <None Include="wwwroot\Templates\MyShuttle\Images\loginpage.png" />
+    <None Include="wwwroot\Templates\Octopus\Images\AccountOctopusDeploy.png" />
+    <None Include="wwwroot\Templates\Octopus\Images\BuildAzureDevOpsServices1.png" />
+    <None Include="wwwroot\Templates\Octopus\Images\OctopusDeploy.png" />
+    <None Include="wwwroot\Templates\Octopus\Images\PartsUnlimited.png" />
+    <None Include="wwwroot\Templates\PartsUnlimited\Images\boards.png" />
+    <None Include="wwwroot\Templates\PartsUnlimited\Images\dashboard.png" />
+    <None Include="wwwroot\Templates\PartsUnlimited\Images\pulwebsite.png" />
+    <None Include="wwwroot\Templates\PartsUnlimited\WorkItemAttachments\217227appInsights.png" />
+    <None Include="wwwroot\Templates\PHP\Images\authorize.png" />
+    <None Include="wwwroot\Templates\PHP\Images\builddef.png" />
+    <None Include="wwwroot\Templates\PHP\Images\php.png" />
+    <None Include="wwwroot\Templates\Python\Images\build-progress.gif" />
+    <None Include="wwwroot\Templates\Python\Images\cd-tasks.png" />
+    <None Include="wwwroot\Templates\Python\Images\ci-pipeline.png" />
+    <None Include="wwwroot\Templates\Python\Images\release-output.gif" />
+    <None Include="wwwroot\Templates\Python\Images\release-progress.gif" />
+    <None Include="wwwroot\Templates\ReleaseGates\Images\qam.png" />
+    <None Include="wwwroot\Templates\ReleaseGates\Images\querywi.png" />
+    <None Include="wwwroot\Templates\ReleaseGates\Images\timeout.png" />
+    <None Include="wwwroot\Templates\Selenium\Images\Buildsuccess.png" />
+    <None Include="wwwroot\Templates\Selenium\Images\dev.png" />
+    <None Include="wwwroot\Templates\Selenium\Images\seleniumtest.png" />
+    <None Include="wwwroot\Templates\Selenium\Images\testsuccess.png" />
+    <None Include="wwwroot\Templates\SmartHotel360\Images\dashboard.png" />
+    <None Include="wwwroot\Templates\SmartHotel360\Images\Diagram.png" />
+    <None Include="wwwroot\Templates\SmartHotel360\Images\Screens.png" />
+    <None Include="wwwroot\Templates\SonarQube\Images\analysis_report.png" />
+    <None Include="wwwroot\Templates\SonarQube\Images\bug_details.png" />
+    <None Include="wwwroot\Templates\SonarQube\Images\build_configure.png" />
+    <None Include="wwwroot\Templates\SonarQube\Images\build_summary.png" />
+    <None Include="wwwroot\Templates\Tailwind Traders\Images\Architecture.png" />
+    <None Include="wwwroot\Templates\Tailwind Traders\Images\Website.png" />
+    <None Include="wwwroot\Templates\TemplateImages\Ansible.png" />
+    <None Include="wwwroot\Templates\TemplateImages\AzureDevOps.png" />
+    <None Include="wwwroot\Templates\TemplateImages\AzureFunction.png" />
+    <None Include="wwwroot\Templates\TemplateImages\CloudAdoptionFramework.jpg" />
+    <None Include="wwwroot\Templates\TemplateImages\CodeFile.png" />
+    <None Include="wwwroot\Templates\TemplateImages\ContosAir.png" />
+    <None Include="wwwroot\Templates\TemplateImages\devopsdojo.png" />
+    <None Include="wwwroot\Templates\TemplateImages\Docker.png" />
+    <None Include="wwwroot\Templates\TemplateImages\Dynatrace.png" />
+    <None Include="wwwroot\Templates\TemplateImages\GitHub.png" />
+    <None Include="wwwroot\Templates\TemplateImages\key-vault.png" />
+    <None Include="wwwroot\Templates\TemplateImages\kubernetes.png" />
+    <None Include="wwwroot\Templates\TemplateImages\launchdarkly.png" />
+    <None Include="wwwroot\Templates\TemplateImages\MachineLearning.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\create-a-build-pipeline-azure-pipelines.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\create-a-release-pipeline-with-azure-pipelines.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\create-multi-stage-pipeline.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\generic-badge.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\host-your-own-build-server-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\implement-a-code-workflow-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-agile-software-delivery-plans-across-teams.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-database-changes-with-azure-pipelines.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-dependencies-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-release-cadence-using-deployment-patterns.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\manage-security-and-compliance-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\provision-database-azure-pipelines.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\run-functional-tests-azure-pipelines.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
+    <None Include="wwwroot\Templates\TemplateImages\mslearn\scan-code-for-vulnerabilities-in-your-build-pipeline.png" />
+    <None Include="wwwroot\Templates\TemplateImages\MyHealthClinic.png" />
+    <None Include="wwwroot\Templates\TemplateImages\MyShuttle.png" />
+    <None Include="wwwroot\Templates\TemplateImages\octopus.png" />
+    <None Include="wwwroot\Templates\TemplateImages\Partunlimited.png" />
+    <None Include="wwwroot\Templates\TemplateImages\PHP.png" />
+    <None Include="wwwroot\Templates\TemplateImages\Python.png" />
+    <None Include="wwwroot\Templates\TemplateImages\selenium.png" />
+    <None Include="wwwroot\Templates\TemplateImages\SmartHotel.png" />
+    <None Include="wwwroot\Templates\TemplateImages\SonarQube.png" />
+    <None Include="wwwroot\Templates\TemplateImages\TailwindTraders.png" />
+    <None Include="wwwroot\Templates\TemplateImages\Terraform.png" />
+    <None Include="wwwroot\Templates\TemplateImages\WhiteSourceBolt.png" />
+    <None Include="wwwroot\Templates\Terraform\Images\queuebuild.gif" />
+    <None Include="wwwroot\Templates\Terraform\Images\releasetasks.png" />
+    <None Include="wwwroot\Templates\Terraform\Images\releasetrigger.gif" />
+    <None Include="wwwroot\Templates\Terraform\Images\Terraform.png" />
+    <None Include="wwwroot\Templates\Terraform\Images\webapp.png" />
+    <None Include="wwwroot\Templates\WhiteSource-Bolt\Images\CI.png" />
+    <None Include="wwwroot\Templates\WhiteSource-Bolt\Images\WhiteSourceBolt13.png" />
+    <None Include="wwwroot\Templates\WhiteSource-Bolt\Images\WhiteSourceBolt30.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.ExtensionManagement.WebApi" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.Gallery.WebApi" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.InteractiveClient" Version="16.153.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzureDevOpsRestApi\AzureDevOpsRestApi.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="ExtractedTemplate\" />
+    <Folder Include="wwwroot\ExtractedTemplate\" />
+  </ItemGroup>
+
+</Project>
