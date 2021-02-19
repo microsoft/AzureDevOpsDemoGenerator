@@ -1,0 +1,586 @@
+{
+  "count": 8,
+  "value": [
+    {
+      "id": 13,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:42.827Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Optimize Windows Virtual Desktop in Microsoft Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\">When you move from Remote Desktop Services to Windows Virtual Desktop, you no longer have to manage basic infrastructure components like RDSH servers and gateways. Windows Virtual Desktop includes new ways to componentize compute environments, enabling you to separate the operating system layer from the user profile layer. You can then take advantage of Microsoft 365 and Microsoft Azure services for file management options at the user and file share level.</span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><span style=\"box-sizing:border-box;display:inline;\">There are post-deployment steps to optimize Windows Virtual Desktop:&nbsp;</span></span></div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\"><span style=\"box-sizing:border-box;display:inline;\">using dynamic FSLogix profiles, enabling and configuring OneDrive for Business and OneDrive Files on Demand, and synchronizing on-premises or hosted file shares with Azure using Azure File Sync.&nbsp;</span></span></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/69",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/68",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/70",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/5",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/71",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/64",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13"
+    },
+    {
+      "id": 12,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:42.53Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure governance policies for WVD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Governance creates guardrails that keep the company on a safe path throughout the journey. Governance guides that describe the experiences of fictional companies that are based on the experiences of real customers. Governance is an iterative process. For organizations with existing policies that govern on-premises IT environments, governance should complement those policies. The level of corporate policy integration between on-premises and the cloud varies depending on governance maturity and a digital estate in the cloud. <br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/63",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/4",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/12"
+    },
+    {
+      "id": 11,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:42.253Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Deploy Windows Virtual Desktop in Microsoft Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;margin-bottom:0px;margin-top:1rem;text-align:left;\">Review your options for:</p><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);display:inline;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\"></span><ul style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:none;margin-bottom:16px;margin-left:38px;margin-top:16px;padding-left:40px;text-align:left;\"><li style=\"box-sizing:border-box;list-style-type:disc;margin-bottom:0px;margin-top:0px;outline-color:invert;\">Creating pooled or personal virtual machines</li><li style=\"box-sizing:border-box;list-style-type:disc;margin-bottom:0px;margin-top:0px;outline-color:invert;\">Choosing images, including the Windows images available in the Azure gallery</li><li style=\"box-sizing:border-box;list-style-type:disc;margin-bottom:0px;margin-top:0px;outline-color:invert;\">Using domain-joined user accounts versus service identities.</li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/60",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/61",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/3",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/59",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/62",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/58",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11"
+    },
+    {
+      "id": 10,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:41.927Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Windows 10 Image Customization and Deployment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<p style=\"margin:0in 0in 12pt;font-size:11pt;font-family:Calibri, sans-serif;\">create a custom image. In Azure, we create VM to install our\nbusiness apps. With the help of custom image, we can create multiple session\nhosts. Below are some of the approaches to create custom images:</p><div style=\"margin:0px 0in 16px;font-size:11pt;font-family:Calibri, sans-serif;\"><ul><li><span>Managed image</span></li><li>Shared Image Gallery</li><li>VHD in a storage account</li></ul><span></span><br></div><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/57",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/2",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/10"
+    },
+    {
+      "id": 9,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:41.647Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure landing zone for domain (Greenfield)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Configure Azure landing zone for domain (Greenfield)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/2",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/56",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/72",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/9"
+    },
+    {
+      "id": 8,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:41.357Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure landing zone for domain (Hybrid)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Hosts(Azure VMs) will be created on azure portal and these hosts will be joined to on premises domain controller. So AD users in that domain can access these hosts.</div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/55",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/2",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/8"
+    },
+    {
+      "id": 7,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:41.023Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Configure Azure landing zone for Azure Tenant",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;background-color:rgba(255, 255, 255, 1);color:rgb(23, 23, 23);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;text-align:left;\">Windows Virtual Desktop is an elastically scalable service to deliver remote desktop and remote app experiences - without having to manage the underlying server infrastructure. Review the prerequisites and tools provided by Microsoft to get ready to provision your first Windows Virtual Desktop host pool.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/51",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/50",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/52",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/2",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/7"
+    },
+    {
+      "id": 6,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "WVD-CAF-Project-Template",
+        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-01T12:10:40.087Z",
+        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.ChangedDate": "2020-07-01T13:04:09.593Z",
+        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.Title": "Assess the Digital landscape for current infrastructure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "During this phase partner will work with customer to assess the environment readiness",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/66",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/48",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/1",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/65",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/49",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/45",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/47",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

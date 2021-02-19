@@ -1,0 +1,329 @@
+﻿@using Microsoft.AspNetCore.Http
+@model AzureDevOpsDemoBuilder.Models.ProjectList.ProjectDetails
+@{
+    ViewBag.Title = "Azure DevOps Demo Generator - Template Builder";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/content/assets/css/custom.min.css">
+    <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+        }({
+            instrumentationKey: "__AIKEY__"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', '__GAKEY__', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <title>Template Builder</title>
+    <style type="text/css">
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #167bdd;
+            color: white;
+            text-align: center;
+            padding:4px;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+            color: rgb(34, 121, 195);
+            background-color: white;
+            border-bottom: 2px solid rgb(34, 121, 195);
+        }
+
+        .fas {
+            color: #8DC63F;
+            padding: 5px;
+        }
+
+        .bl {
+            color: #2279C3;
+            padding: 5px;
+        }
+
+        body {
+            background: url('../../../Images/bg_new.png'),#fff;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            background-position: top right;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            opacity: 1;
+        }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 150%;
+                left: 50%;
+                margin-left: -60px;
+            }
+
+                .tooltip .tooltiptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: black transparent transparent transparent;
+                }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+    </style>
+</head>
+<body class="pb-3">
+    <input type="hidden" id="hidnUID" />
+    @Html.HiddenFor(model => model.accessToken, new { id = "key" })
+    <!--TEMPLATE GROUPING-->
+    <!--/TEMPLATEgROUPING-->
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Copy Diagnostic Log</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="errorMail" style="text-align:justify;word-wrap: break-word;height: 150px;overflow: auto;">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /MODAL -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
+        <a class="navbar-brand p-0 mr-auto" href="#">
+            <img src="~/content/assets/images/VS_logo.png" alt="">
+            <span class="navbar-brand-text ml-1">
+                Azure DevOps Demo Generator - Template Builder
+            </span>
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="AzureDevOpsDemogenerator">
+                    @if (ViewData["User"] != null)
+                    {
+                        <span class="VSTS-username ml-1" style="font-size:16px">@ViewData["User"]</span>
+                    }
+                    <span class="sr-only">(current)</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="jumbotron mb-0" style="padding-bottom: 25px; padding-top: 25px;">
+        <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
+            Create New Template
+        </div>
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="row VSTS-mh-100">
+            <!--
+                  COL 1
+                  Image and Feedback section
+            -->
+            <div class="col-md-3 order-2 order-md-1 VSTS-mh-100">
+                <div class="d-flex flex-column VSTS-mh-100">
+                    <img class="img-fluid" src="~/Images/theme_img_3.png" alt="side" />
+                </div>
+            </div>
+            <!--
+                COL 2
+                Create section
+            -->
+            <div class="col-md-6 order-1 order-md-2 listDivs1 ">
+                <div class="center_portion">
+                    <div class="form-group row listDivs1">
+                        <label for="ddlAcccountName" class="col-lg-4 col-form-label" style="font-weight: 400;">Select Organization :</label>
+                        <div class="col-lg-7 mt-1">
+                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "Organization" })
+                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                            </div>
+                            <div style="color:red">
+                                @ViewBag.AccDDError
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <label for="inputPassword" class="col-lg-4 col-form-label" style="font-weight: 400;">
+                            Select Project :  <i class="fas fa-info-circle bl" id="info"></i>
+                            <span class="d-none" id="infoData" style="font-weight:500">
+                                Please select a project that uses the standard Scrum or Agile process template
+                            </span>
+                        </label>
+                        <div class="col-lg-7 mt-1">
+                            <select class="form-control rmverror" id="projectSelect">
+                                <option value="0">Select Project</option>
+                            </select>
+                            <div class="alert alert-danger d-none pl-0" role="alert" id="projectSelect_Error">
+                            </div>
+                        </div>
+                        <div class="template-invoke mt-1 col-lg-1" id="projecctDiv">
+                            @*<img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="projectloader" />*@
+                        </div>
+                    </div>
+
+                    <div class="form-group row listDivs1" id="">
+                        <div class="col-sm-6" style="width:70%;">
+                            <input type="hidden" id="processtemplate" />
+                            <input type="hidden" id="TemplateClass" />
+
+                        </div>
+                    </div>
+                    <div class="mr-3 text-right listDivs1 btn_analyz" style="padding:0px">
+                        <button class="btn btn-primary submitBtn btnUpdate" id="Analyse">
+                            Analyze
+                        </button>
+                        <img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="imgLoading" />
+                    </div>
+
+                    <div class="form-group d-none listDivs1 col-lg-11 artifact" id="analyseDiv">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card rounded">
+                                <div class="card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne" style="padding:0px; background-color:white; cursor:pointer;">
+                                    <h5 class="mb-0">
+                                        <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>
+                                        <button class="btn" type="button">
+                                            <b>Artifacts Analysis</b>
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show accorDetails" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div id="analytics">
+                                        </div>
+                                        <p id="templateError"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-right mt-3 mr-3 d-none btn_analyz" style="padding:0px" id="genArtDiv">
+                        <button class="btn btn-primary " id="GenerateArtifacts" disabled>
+                            Generate Artifacts
+                        </button>
+                        @*<img src="~/Images/loading.gif" alt="loading" class="img-circle d-none" id="ExdvProgress" />*@
+                    </div>
+
+                    <!--EXTENSIONS -->
+                    <!--/EXTENSIONS -->
+                    <div class="order-md-2 d-none col-lg-11 artifact" id="GenerateArtifact">
+                        <!-- PROGRESS BAR -->
+                        <div class="accordion">
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="headingTwo" style="padding:0px; background-color:white; cursor:pointer;">
+                                    <h5 class="mb-0">
+                                        <i class="fas fa-chevron-down" style="float: right;padding: 8px; color:black;"></i>
+                                        <button class="btn" type="button">
+                                            <b>Artifact Summary</b>
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse show genArtifacts" aria-labelledby="headingTwo" data-parent="#GenerateArtifact">
+                                    <div class="card-body">
+                                        <div id="artifactProgress" class="d-none">
+                                        </div>
+                                        <div id="ExStatus-messages" class="mt-3" style="display:none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3 d-none" id="finalLink" style="border: 0px">
+                            <div class="card-body" id="accountLink" style="color: green;font-weight: 300;box-shadow: 0px 3px 10px #e0e0e0;">
+                                <form action="~/Extractor/ZipAndDownloadFiles" method="post">
+                                    <input type="hidden" name="fileName" id="hdnProjecName">
+                                    Click <button type="submit" class="btn btn-link" id="fileDownload" style="padding:0px; vertical-align: baseline;">here</button>to download your file
+                                    <p style="font-weight:600">Note: Folder will be deleted from the server once you click on download button.</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-primary mb-3 mt-auto d-none" id="errorNotify">
+                        <div class="card-header" style="color:white">Sorry….We ran into an issue!</div>
+                        <div class="card-body" style="background-color:white">
+                            <p class="card-text" id="errorDescription">
+                            </p>
+                        </div>
+                        <div class="card-footer" style="background-color:white">
+                            <button class="btn btn-block btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                View Diagnostics
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+               COL 3
+               Notification section
+            -->
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3 listDivs2">
+        <div class="row VSTS-mh-100">
+
+        </div>
+    </div>
+    <!--Reusable footer for announcement-->
+    <!-- <div class="footer">
+         We are moving to .Net Core 3.0, you are using preview version, log your issues <a class="text-white" href="https://github.com/microsoft/AzureDevOpsDemoGenerator/issues/new" target="_blank">here. We'll be return to main site after couple of hours</a>.
+     </div>-->
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="~/Scripts/tooltip.js"></script>
+    <script src="~/Scripts/AppScripts/Extractor.js"></script>
+</body>
+</html>

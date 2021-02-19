@@ -1,0 +1,3408 @@
+{
+  "count": 38,
+  "value": [
+    {
+      "id": 920,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:15.37Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:13:18.013Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Architectural Decision Guide",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Update Cloud Adoption Framework Ready and Adopt doc.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/834",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/824",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/829",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/825",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/831",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/823",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2984",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/830",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/828",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/822",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/832",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/920"
+    },
+    {
+      "id": 921,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:15.493Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:13:31.82Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Landing zone considerations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Review </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/ready/considerations/index\">landing zone considerations</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to understand the alternative decisions which could impact your landing zone design.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3226",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3224",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3225",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3223",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/921"
+    },
+    {
+      "id": 922,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:15.72Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:13:38.79Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Create Azure Subscriptions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Start your Azure adoption by creating an initial set of subscriptions. Learn what <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/initial-subscriptions\">subscriptions </a>you should begin with based on your initial requirements.<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3229",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3218",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3221",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2972",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2971",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2969",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3227",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2968",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3228",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2970",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/922"
+    },
+    {
+      "id": 923,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:15.85Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:13:46.343Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Establish your Network",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/hub-spoke-network-topology\">Hub and spoke</a> is a networking model for more efficient management of common communication or security requirements. It also helps avoid Azure subscription limitations.<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3048",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/837",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3191",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3041",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/839",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3045",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3044",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3047",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3046",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/840",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3050",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3051",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3042",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/836",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3049",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3043",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3052",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3053",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/835",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/838",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3033",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/923"
+    },
+    {
+      "id": 924,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:15.977Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:13:54.09Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Identity and Access Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/role-based-access-control/overview?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - What is RBAC</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 3.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2966",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2974",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2964",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/826",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/827",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2963",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2962",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2965",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/924"
+    },
+    {
+      "id": 930,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:16.987Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:18:28.967Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Initial organizational alignment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Establish a plan for </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/organization/index\">organizational alignment</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">, included defined </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/organization/raci-alignment\">RACI diagrams</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/969",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/820",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3204",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3217",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/f62ceba5-ef78-4dfa-bf09-90e8ffd3fa84",
+          "attributes": {
+            "authorizedDate": "2020-05-14T02:15:49.61Z",
+            "id": "741522",
+            "resourceCreatedDate": "2020-05-14T02:15:41.083Z",
+            "resourceModifiedDate": "2020-05-14T02:15:40.607Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "82277",
+            "name": "raci-template[1].xlsx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/930"
+    },
+    {
+      "id": 929,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:16.763Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:18:35.607Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Digital Estate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Inventory digital estate and align outcomes. https://docs.microsoft.com/azure/cloud-adoption-framework/digital-estate/inventory?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3220",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/820",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3205",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2238",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/929"
+    },
+    {
+      "id": 932,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:17.287Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:18:42.48Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Update the Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Plan template&nbsp;</span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/plan-intro\">cloud adoption plan</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to manage effort and change.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/940",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/904",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/939",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/820",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/06c2d14f-ae89-4fcd-b729-1c341755f8db",
+          "attributes": {
+            "authorizedDate": "2020-05-14T02:07:42.057Z",
+            "id": "741512",
+            "resourceCreatedDate": "2020-05-14T02:07:26.973Z",
+            "resourceModifiedDate": "2020-05-14T02:07:26.52Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "232876",
+            "name": "Microsoft-Cloud-Adoption-Framework-Strategy-and-Plan-Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/932"
+    },
+    {
+      "id": 933,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:17.46Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:17:47.03Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Motivations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;background-color:rgb(255, 255, 255);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;\">Meet with key stakeholders and executives to d</span><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">ocument the </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/business-strategy/motivations-why-are-we-moving-to-the-cloud\">motivations</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> which are driving an interest in cloud adoption.</span><br></span></div><div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Consider classifying your priorities by horizon 1, 2 and 3.</span></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/933"
+    },
+    {
+      "id": 934,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:17.74Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:17:55.45Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Business Outcomes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Engage motivated stakeholders and executives to document specific </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/business-strategy/business-outcomes/index\">business outcomes</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2305",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2306",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/934"
+    },
+    {
+      "id": 935,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:17.917Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:18:02.243Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Business Case",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Develop a </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/business-strategy/cloud-migration-business-case\">business case</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to validate the financial model supporting the motivations and outcomes.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3230",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/935"
+    },
+    {
+      "id": 936,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:18.07Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:18:08.817Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Adoption Project(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Identify all the workloads / projects and update the Cloud Adoption Plan",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/964",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/936"
+    },
+    {
+      "id": 938,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:39:45.32Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:18:15.277Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Who will deploy your environment. Self-build, Microsoft Services or Partner",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Check out the Cloud Adoption Framework partner offers: http://aka.ms/adopt/partneroffers?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/938"
+    },
+    {
+      "id": 943,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:11:07.603Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-09-28T23:40:26.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Cloud Adoption Framework Governance Benchmark tool",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Leverage the governance benchmark tool to determine current governance requirements and gap.&nbsp;</div><div><br></div><div>Tool can be <a href=\"http://aka.ms/adopt/gov/assess\">found here</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3057",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2911",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/943"
+    },
+    {
+      "id": 944,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:13:26.087Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-09-28T23:40:50.963Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Identify business risks across apps, data and infrastructure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Identify risks and convert risks into policies and compliance statements</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/951",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/950",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/16c38ddd-eb0f-40e6-a2f6-58d24542693f",
+          "attributes": {
+            "authorizedDate": "2020-05-13T20:16:15.257Z",
+            "id": "741167",
+            "resourceCreatedDate": "2020-05-13T20:15:47.497Z",
+            "resourceModifiedDate": "2020-05-13T20:15:47.123Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "119069",
+            "name": "Governance%20Discipline%20Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/944"
+    },
+    {
+      "id": 945,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:18:01.627Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:10:18.703Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Cost Management Discipline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/cost-management/policy-statements\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/cost-management/policy-statements</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/952",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/957",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/967",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/966",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/946369ec-3631-46e5-a37f-868783f4ec37",
+          "attributes": {
+            "authorizedDate": "2020-05-13T20:20:52.643Z",
+            "id": "741182",
+            "resourceCreatedDate": "2020-05-13T20:20:49.11Z",
+            "resourceModifiedDate": "2020-05-13T20:20:48.703Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "116090",
+            "name": "Cost%20Management%20Discipline%20Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/945"
+    },
+    {
+      "id": 946,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:18:24.343Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:10:07.98Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Resource Consistency Discipline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/resource-consistency/policy-statements\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/resource-consistency/policy-statements</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/953",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/958",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/33fcf962-31a5-49a1-be89-16a8b9b0b46f",
+          "attributes": {
+            "authorizedDate": "2020-05-13T20:22:33.93Z",
+            "id": "741191",
+            "resourceCreatedDate": "2020-05-13T20:22:29.243Z",
+            "resourceModifiedDate": "2020-05-13T20:22:28.843Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "118365",
+            "name": "Resource%20Consistency%20Discipline%20Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/946"
+    },
+    {
+      "id": 947,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:18:38.553Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:09:58.657Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Security Baseline Discipline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/security-baseline/policy-statements\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/security-baseline/policy-statements</a><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/959",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2227",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/249cad07-9a87-4593-96dc-f4fe7d18d61f",
+          "attributes": {
+            "authorizedDate": "2020-05-13T20:23:08.61Z",
+            "id": "741193",
+            "resourceCreatedDate": "2020-05-13T20:23:05.06Z",
+            "resourceModifiedDate": "2020-05-13T20:23:04.723Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "117909",
+            "name": "Security%20Baseline%20Discipline%20Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/947"
+    },
+    {
+      "id": 948,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:18:59.2Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:09:46.793Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Identity Baseline Discipline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/identity-baseline/policy-statements\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/identity-baseline/policy-statements</a><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/960",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/955",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/258ec6d1-bf5a-478a-986c-69e6d4b1f21a",
+          "attributes": {
+            "authorizedDate": "2020-05-13T20:37:17.073Z",
+            "id": "741235",
+            "resourceCreatedDate": "2020-05-13T20:37:12.61Z",
+            "resourceModifiedDate": "2020-05-13T20:37:12.34Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "118725",
+            "name": "Identity%20Baseline%20Discipline%20Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/948"
+    },
+    {
+      "id": 949,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:19:21.567Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:09:34.837Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7 - Deployment Acceleration Discipline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/deployment-acceleration/policy-statements\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/deployment-acceleration/policy-statements</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/956",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/961",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/074f0693-90fd-44ba-a6a8-1cc03c291f2e",
+          "attributes": {
+            "authorizedDate": "2020-05-13T20:24:36.447Z",
+            "id": "741194",
+            "resourceCreatedDate": "2020-05-13T20:24:28.883Z",
+            "resourceModifiedDate": "2020-05-13T20:24:28.573Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "117444",
+            "name": "Deployment%20Acceleration%20Discipline%20Template[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/949"
+    },
+    {
+      "id": 2913,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-19T00:15:04.207Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T21:38:50.6Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Azure Fundamentals",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure Fundamentals:&nbsp;<span style=\"box-sizing:border-box;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;list-style-type:decimal;display:inline !important;\">Review the<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/ready/azure-readiness-guide/index\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;\">Azure Readiness Guide</a><span style=\"box-sizing:border-box;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;list-style-type:decimal;display:inline !important;\"><span>&nbsp;</span>to become familiar with the tools and approaches needed in landing zone creation.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2982",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2987",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/843",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2985",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3203",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/844",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2986",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2910",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2983",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/846",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3216",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/842",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3219",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/845",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2913"
+    },
+    {
+      "id": 931,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:07:17.13Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T21:42:50.09Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Skills readiness plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Create a plan for addressing </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-in/azure/cloud-adoption-framework/ready/suggested-skills\">skills readiness gaps</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">.</span><br></span></div><div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"><br></span></span></div><br><div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"><br></span></span></div><div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Azure quickstart ARM templates:&nbsp;<a href=\"https://github.com/Azure/azure-quickstart-templates\">https://github.com/Azure/azure-quickstart-templates</a></span></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3206",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3208",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3207",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3203",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/931"
+    },
+    {
+      "id": 2898,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:24.587Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T19:34:03.483Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Azure Active Directory Basics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Active Directory Basics",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2973",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2979",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2978",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2975",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3233",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2976",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2980",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2977",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2898"
+    },
+    {
+      "id": 2901,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.09Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Azure Policy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/governance/policy/overview?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - What is Azure Policy</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2957",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2960",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2959",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2956",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2958",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2901"
+    },
+    {
+      "id": 2902,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.217Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Resource Locks",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - Lock resources to preventunexpected changes</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2953",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2954",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2902"
+    },
+    {
+      "id": 2903,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.36Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Azure Blueprints",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/governance/blueprints/overview?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - What is Azure Blueprints?</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2811",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2798",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2949",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2893",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2950",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2951",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3231",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3232",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2802",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2903"
+    },
+    {
+      "id": 2904,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.493Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Azure Service Health",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/service-health/overview?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - What is Azure Service Health?</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2946",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2947",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2894",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2808",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2805",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2904"
+    },
+    {
+      "id": 2905,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.627Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Azure Advisor",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/advisor/advisor-overview?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - Introduction to Azure Advisor</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2943",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2801",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2812",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2799",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2892",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2905"
+    },
+    {
+      "id": 2906,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.76Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7 - Azure Cost Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Azure Cost Management",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2937",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2940",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2796",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2786",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2793",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2935",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2941",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2813",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2779",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2806",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2785",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2891",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2939",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2934",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2936",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2906"
+    },
+    {
+      "id": 2907,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-18T19:09:25.973Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8 - Azure Resource Graph",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"display:inline !important;\">https://docs.microsoft.com/azure/governance/resource-graph/overview?WT.mc_id=devops_userstory_service_sprg-inproduct-devopsportal - What is Azure Resource Graph?</span>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2929",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3074",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2927",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2928",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3075",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2774",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2932",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2776",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2781",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2772",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2773",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2775",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2777",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2931",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2925",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2926",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2930",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2907"
+    },
+    {
+      "id": 3234,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T19:52:44.25Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "9 - Azure Monitor",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">https://docs.microsoft.com/en-gb/azure/cloud-adoption-framework/manage/monitor/&nbsp;</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2998",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2990",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2991",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3008",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3031",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2989",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3014",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3012",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2992",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2996",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3013",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3011",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3009",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3007",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2997",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3234"
+    },
+    {
+      "id": 3235,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T19:53:40.293Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "10 - Application Insights",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview\">https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2994",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3235"
+    },
+    {
+      "id": 3236,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T20:05:27.973Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "11 - Log Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview\">https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3000",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3002",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3001",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3004",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3005",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3006",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3010",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/2999",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3236"
+    },
+    {
+      "id": 3237,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T20:06:54.467Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "12 - Express Route",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Express Route</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3035",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3039",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3036",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3038",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3037",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3237"
+    },
+    {
+      "id": 3239,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T20:08:51.617Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "14 - Network Watcher",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/network-watcher/\">https://docs.microsoft.com/en-us/azure/network-watcher/</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3020",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3017",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3018",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3016",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3019",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3239"
+    },
+    {
+      "id": 3238,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T20:07:54.483Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "13 - Visualizing your data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Visualizations</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3024",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3025",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3022",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3023",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3238"
+    },
+    {
+      "id": 3240,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T20:12:32.117Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:16:41.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "15 - Alerting",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview\">https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview</a></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3032",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3029",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3028",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3030",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3027",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3240"
+    },
+    {
+      "id": 3241,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-10-08T23:33:59.303Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T23:34:38.853Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8 - Data Governance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/data-classification\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/policy-compliance/data-classification</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3243",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3242",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3241"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

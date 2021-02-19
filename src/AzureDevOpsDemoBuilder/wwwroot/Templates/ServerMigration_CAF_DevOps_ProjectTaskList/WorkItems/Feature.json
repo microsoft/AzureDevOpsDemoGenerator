@@ -1,0 +1,311 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 461,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:13:38.007Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T06:21:24.437Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "01 Plan, Assessment & Designing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/465",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/470",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/460",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/462",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/461"
+    },
+    {
+      "id": 476,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T06:21:24.437Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "02 CAF Server Pre-Config & Migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/477",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/495",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/489",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/460",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/500",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/505",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/476"
+    },
+    {
+      "id": 511,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T06:21:24.437Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "03 CAF Server Migration Govern and Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/460",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/516",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/512",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/511"
+    },
+    {
+      "id": 520,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T06:21:24.437Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "04 CAF Migration Operation and Support",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/460",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/526",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/521",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/520"
+    },
+    {
+      "id": 531,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T06:21:24.437Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "05 STAKEHOLDER SIGN OFF AND CLOSURE",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/460",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/532",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/531"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

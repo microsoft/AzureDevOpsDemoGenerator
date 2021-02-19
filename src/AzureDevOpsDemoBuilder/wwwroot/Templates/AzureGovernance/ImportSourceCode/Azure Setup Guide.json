@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/ricmart/Azure Governance Readiness/_git/Azure Setup Guide"
+    },
+    "serviceEndpointId": "$Azure Setup Guide-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

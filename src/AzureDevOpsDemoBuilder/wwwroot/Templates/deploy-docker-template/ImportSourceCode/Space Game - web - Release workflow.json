@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/sharplogic/Space Game - web - Docker/_git/Space Game - web - Release workflow"
+    },
+    "serviceEndpointId": "$Space Game - web - Release workflow-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

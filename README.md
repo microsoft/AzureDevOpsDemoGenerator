@@ -1,6 +1,9 @@
 # Azure DevOps Demo Generator
 
    [![Build status](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_apis/build/status/VSTSDemoGenerator-Prod)](https://vstsdemodata.visualstudio.com/VSTSDemoGenerator/_build/latest?definitionId=76)
+   [![Release status](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/16)](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/16)
+
+[![Release status](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/17)](https://vsrm.dev.azure.com/vstsdemodata/_apis/public/Release/badge/89b9b739-9a1c-4739-8aae-6a8a1eb67ee7/10/17)
 
 ## About
 
@@ -26,3 +29,5 @@ This project welcomes contributions and suggestions.  Most contributions require
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 For more information on contributing, please visit the [contributor guide](./CONTRIBUTING.md).
+
+## Test

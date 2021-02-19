@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "Space Game - web - Release workflow-code",
+  "type": "git",
+  "url": "https://dev.azure.com/sharplogic/Space Game - web - Docker/_git/Space Game - web - Release workflow",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

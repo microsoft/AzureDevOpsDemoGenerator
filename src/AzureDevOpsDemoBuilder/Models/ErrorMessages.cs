@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace AzureDevOpsDemoBuilder.Models
+{
+    public class Messages
+    {
+        public ErrorMessages ErrorMessages { get; set; }
+    }
+
+    public class ErrorMessages
+    {
+        public AccountMessages AccountMessages { get; set; }
+        public ProjectMessages ProjectMessages { get; set; }
+        public TemplateMessages TemplateMessages { get; set; }
+    }
+
+
+    public class AccountMessages
+    {
+        public string InvalidAccountName { get; set; }
+        public string InvalidAccessToken { get; set; }
+
+        public string CheckaccountDetails { get; set; }
+    }
+
+    public class ProjectMessages
+    {
+        public string InvalidProjectName { get; set; }
+        public string ProjectNameWithReservedKeyword { get; set; }
+        public string ProjectNameOrEmailID { get; set; }
+        public string DuplicateProject { get; set; }
+        public string ExtensionNotInstalled { get; set; }
+    }
+
+    public class TemplateMessages
+    {
+        public string TemplateNameOrTemplatePath { get; set; }
+        public string TemplateNotFound { get; set; }
+        public string FailedTemplate { get; set; }
+        public string PrivateTemplateFileExtension { get; set; }
+    }
+
+}

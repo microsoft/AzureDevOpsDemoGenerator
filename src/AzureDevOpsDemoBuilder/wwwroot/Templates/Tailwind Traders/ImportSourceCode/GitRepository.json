@@ -1,0 +1,12 @@
+{
+  "repositories": [
+    {
+      "vcs": "git",
+      "vcs_url": "https://github.com/Microsoft/TailwindTraders-Backend"
+    },
+    {
+      "vcs": "git",
+      "vcs_url": "https://github.com/Microsoft/TailwindTraders-Website"
+    }
+  ]
+}

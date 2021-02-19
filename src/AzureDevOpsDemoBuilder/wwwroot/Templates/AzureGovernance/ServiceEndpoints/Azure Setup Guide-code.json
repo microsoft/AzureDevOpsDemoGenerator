@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "Azure Setup Guide-code",
+  "type": "git",
+  "url": "https://dev.azure.com/ricmart/Azure Setup Guide/_git/Azure Setup Guide",
+  "authorization": {
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

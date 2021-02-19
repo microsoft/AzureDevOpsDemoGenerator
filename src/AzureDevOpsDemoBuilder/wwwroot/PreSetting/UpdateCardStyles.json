@@ -1,0 +1,52 @@
+{
+  "rules": {
+    "fill": [
+      {
+        "name": "Priority 1",
+        "isEnabled": "True",
+        "filter": "[Microsoft.VSTS.Common.Priority] = '1'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#fdeadb"
+        }
+      },
+      {
+        "name": "High Effort",
+        "isEnabled": "True",
+        "filter": "[Microsoft.VSTS.Scheduling.Effort] >= '10'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#c5d6fd"
+        }
+      },
+      {
+        "name": "Blocked",
+        "isEnabled": "True",
+        "filter": "[System.Tags] contains 'Blocked'",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#dffdff"
+        }
+      },
+      {
+        "name": "Assigned To Empty",
+        "isEnabled": "True",
+        "filter": "[System.AssignedTo] = ''",
+        "settings": {
+          "title-color": "#000000",
+          "background-color": "#b0b0b0"
+        }
+      }
+    ],
+    "tagStyle": [
+      {
+        "name": "Blocked",
+        "isEnabled": "True",
+        "settings": {
+          "title-color": "",
+          "background-color": "#FBFD52"
+        }
+      }
+    ]
+  }
+}
