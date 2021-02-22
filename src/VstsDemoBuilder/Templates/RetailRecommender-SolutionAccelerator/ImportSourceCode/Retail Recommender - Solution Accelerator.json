@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Retail Recommender - Solution Accelerator/_git/Retail Recommender - Solution Accelerator"
+    },
+    "serviceEndpointId": "$Retail Recommender - Solution Accelerator-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
