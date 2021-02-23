@@ -445,6 +445,7 @@
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
     <Content Include="Templates\TemplateImages\AzureCommunity\ModernDataWarehouse.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\NIST 800-171.png" />
+    <Content Include="Templates\TemplateImages\AzureCommunity\RecommederIcon.PNG" />
     <Content Include="Templates\TemplateImages\AzureCommunity\windows-virtual-desktop.svg" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\AzureGov.png" />
@@ -1660,6 +1661,22 @@
     <Content Include="Templates\ModernDataWarehouse\WorkItems\Feature.json" />
     <Content Include="Templates\ModernDataWarehouse\WorkItems\Task.json" />
     <Content Include="Templates\ModernDataWarehouse\WorkItems\User Story.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\ImportSourceCode\Retail Recommender - Solution Accelerator.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Iterations.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\ProjectSettings.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\ProjectTemplate.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\ServiceEndpoints\Retail Recommender - Solution Accelerator-code.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\TeamArea.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Teams\Retail Recommender - Solution Accelerator Team\BoardColumns.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Teams\Retail Recommender - Solution Accelerator Team\BoardRows.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Teams\Retail Recommender - Solution Accelerator Team\CardFields.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Teams\Retail Recommender - Solution Accelerator Team\CardStyles.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Teams\Retail Recommender - Solution Accelerator Team\TeamSetting.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\Teams\Teams.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\Epic.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\Feature.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\Task.json" />
+    <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

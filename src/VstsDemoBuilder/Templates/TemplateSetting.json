@@ -1039,6 +1039,24 @@
             "Microsoft Cloud Adoption Framework"
           ],
           "Image": "/Templates/TemplateImages/AzureCommunity/ModernDataWarehouse.png"
+        },
+        {
+          "Key": "F518D392-31BB-45F5-A1E2-E2EA1B25DF57",
+          "Name": "Retail Recommender with Azure Synapse",
+          "TemplateFolder": "RetailRecommender-SolutionAccelerator",
+          "ShortName": "retailai",
+          "Description": "This Solution Accelerator is an end-to-end example on how to enable personalized customer experiences for retail scenarios by leveraging Azure Synapse Analytics, Azure Machine Learning Services, and other Azure Big Data services. This project can be found in the following GitHub repo <a href='https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator' target='_blank'>Retail Recommender with Azure Synapse</a>",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Azure Synapse",
+            "“Machine",
+            "Learning",
+            "“Retail",
+            "solution",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/RecommederIcon.PNG"
         }
 
       ]
