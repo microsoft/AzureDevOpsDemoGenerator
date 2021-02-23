@@ -1045,7 +1045,7 @@
           "Name": "Retail Recommender with Azure Synapse",
           "TemplateFolder": "RetailRecommender-SolutionAccelerator",
           "ShortName": "retailai",
-          "Description": "This Solution Accelerator is an end-to-end example on how to enable personalized customer experiences for retail scenarios by leveraging Azure Synapse Analytics, Azure Machine Learning Services, and other Azure Big Data services. This project can be found in the following GitHub repo <a href='https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender' target='_blank'>Retail Recommender with Azure Synapse</a>",
+          "Description": "This Solution Accelerator is an end-to-end example on how to enable personalized customer experiences for retail scenarios by leveraging Azure Synapse Analytics, Azure Machine Learning Services, and other Azure Big Data services. This project can be found in the following GitHub repo <a href='https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator' target='_blank'>Retail Recommender with Azure Synapse</a>",
           "Tags": [
             "Agile",
             "Cloud Adoption",
