@@ -276,6 +276,7 @@ namespace VstsDemoBuilder.Services
             {
                 foreach (var workItem in workItemtypes)
                 {
+                    itemsCount.LastFailureMessage = "";
                     WorkItemFetchResponse.WorkItems WITCount = itemsCount.GetWorkItemsfromSource(workItem);
                     if (WITCount.count > 0)
                     {
@@ -283,7 +284,7 @@ namespace VstsDemoBuilder.Services
                     }
                     else if (!string.IsNullOrEmpty(itemsCount.LastFailureMessage))
                     {
-                        errorMessages.Add("Error while querying work items: " + itemsCount.LastFailureMessage);
+                        errorMessages.Add(string.Format("Error while querying work item - {0}: {1}", workItem, itemsCount.LastFailureMessage));
                     }
                 }
             }
