@@ -232,31 +232,30 @@ namespace AzureDevOpsAPI.Git
             return res;
         }
 
-        public HttpResponseMessage SetBranchProtectionRule(string rule, string repoName)
+        public HttpResponseMessage SetBranchProtectionRule(dynamic _pRule, string repoName)
         {
             HttpResponseMessage res = new HttpResponseMessage();
-            ProtectionRule protectionRule = JsonConvert.DeserializeObject<ProtectionRule>(rule);
+
             try
             {
-                using(var client = GitHubHttpClient())
+                using (var client = GitHubHttpClient())
                 {
                     var httpMethod = new HttpMethod("PUT");
                     client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.luke-cage-preview+json"));
-                    var jsonContent = new StringContent(protectionRule.rule.ToString(), Encoding.UTF8, "application/vnd.github.v3+json");
-                    HttpRequestMessage request = new HttpRequestMessage(httpMethod, string.Format("/repos/{0}/{1}/branches/{2}/protection", Configuration.UserName, repoName, protectionRule.branch)) { Content = jsonContent };
+                    var jsonContent = new StringContent(_pRule.rule.ToString(), Encoding.UTF8, "application/vnd.github.v3+json");
+                    HttpRequestMessage request = new HttpRequestMessage(httpMethod, string.Format("/repos/{0}/{1}/branches/{2}/protection", Configuration.UserName, repoName, _pRule.branch)) { Content = jsonContent };
 
                     res = client.SendAsync(request).Result;
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
-
         }
     }
 }

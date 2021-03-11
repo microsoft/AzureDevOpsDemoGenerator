@@ -1130,11 +1130,21 @@ namespace AzureDevOpsDemoBuilder.Services
                                 string protectionRule = File.ReadAllText(branchProtectionFilePath);
                                 if (!string.IsNullOrEmpty(protectionRule))
                                 {
-                                    var protectionRes = importRepo.SetBranchProtectionRule(protectionRule, model.GitRepoName);
-                                    if (protectionRes.IsSuccessStatusCode)
+                                    HttpResponseMessage res = new HttpResponseMessage();
+                                    ProtectionRule _rules = JsonConvert.DeserializeObject<ProtectionRule>(protectionRule);
+                                    foreach (var _pRule in _rules.rules)
                                     {
-                                        AddMessage(model.Id, string.Format("Added branch protection rule to {0} repository", model.GitRepoName));
+                                        var protectionRes = importRepo.SetBranchProtectionRule(_pRule, model.GitRepoName);
+                                        if (protectionRes.IsSuccessStatusCode)
+                                        {
+                                            AddMessage(model.Id, string.Format("Added branch protection rule to {0} repository", model.GitRepoName));
+                                        }
+                                        else
+                                        {
+                                            AddMessage(model.Id.ErrorId(), protectionRes.ToString());
+                                        }
                                     }
+                                     
                                 }
                             }
                         }
