@@ -2,19 +2,19 @@
   "count": 5,
   "value": [
     {
-      "id": 1,
-      "rev": 2,
+      "id": 3544,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Epic",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:38.007Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:51:58.02Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:21:27.177Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Strategy/Plan",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Milestone 1: Assess and Review",
@@ -22,7 +22,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -32,7 +32,15 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/6",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3612",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3556",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -40,30 +48,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/1"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3544"
     },
     {
-      "id": 2,
-      "rev": 2,
+      "id": 3545,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Epic",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:38.337Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:51:58.16Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:51.16Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Ready - Landing zone",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Ready - Landing zone",
+        "System.Description": "<div>Milestone 2: Ready - Landing zone</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -73,7 +81,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/8",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3555",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -82,7 +90,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/7",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3554",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -91,7 +99,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/9",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3553",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -100,7 +108,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/10",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3552",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -108,30 +116,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/2"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3545"
     },
     {
-      "id": 3,
-      "rev": 2,
+      "id": 3546,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Epic",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:39.237Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:51:58.307Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T18:20:07.853Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Adopt - Windows Virtual Desktop",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Adopt - Windows Virtual Desktop",
+        "System.Description": "<div>Milestone 3: Adopt - Windows Virtual Desktop&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a>&nbsp;</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Adopt",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -141,7 +149,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/11",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3551",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -149,30 +157,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/3"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3546"
     },
     {
-      "id": 4,
-      "rev": 2,
+      "id": 3547,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
         "System.WorkItemType": "Epic",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:39.52Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:51:58.593Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:21:58.447Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Govern - Windows Virtual Desktop",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Govern - Windows Virtual Desktop",
+        "System.Description": "<div>Milestone 4: Govern - Windows Virtual Desktop</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Govern",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -182,7 +190,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/12",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3550",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -190,30 +198,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/4"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3547"
     },
     {
-      "id": 5,
-      "rev": 2,
+      "id": 3548,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
         "System.WorkItemType": "Epic",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:39.803Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:51:58.723Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:21:58.447Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Manage - Windows Virtual Desktop",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><p style=\"margin:0in 0in 12pt;font-size:11pt;font-family:Calibri, sans-serif;text-align:justify;\"><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;background:white;\">Managing&nbsp;the ongoing\noperation of the digital assets that deliver business outcomes is a key to this\nprocess. Unless, we have a plan to manage the operations, the efforts put in\nplanning, readiness and adoption will yield little value. The following details\nwill help develop the business approach to provide cloud management.</span></p></div></div>",
+        "System.Description": "<div><div style=\"box-sizing:border-box;color:rgba(0, 0, 0, 1);text-align:left;\"><p style=\"margin:0in 0in 12pt;font-size:11pt;font-family:Calibri, sans-serif;text-align:justify;\"><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;background:white;\">Milestone 5: Managing&nbsp;the ongoing\noperation of the digital assets that deliver business outcomes is a key to this\nprocess. Unless, we have a plan to manage the operations, the efforts put in\nplanning, readiness and adoption will yield little value. The following details\nwill help develop the business approach to provide cloud management.</span></p></div></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Manage",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -223,7 +231,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/13",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3549",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -231,7 +239,7 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/5"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3548"
     }
   ],
   "HttpStatusCode": 0,

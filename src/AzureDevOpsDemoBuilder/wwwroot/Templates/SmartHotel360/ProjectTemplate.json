@@ -17,7 +17,7 @@
   "FeaturefromTemplate": "FeaturefromTemplate.json",
   "UserStoriesFromTemplate": "UerStoriesfromTemplate.json",
   "SetEpic": "EnableEpic.json",
-  "BoardRows": "",
+  "BoardRows": "BoardRowsFromTemplate.json",
   "Widget": "WidgetQuery.json",
   "Chart": "WidgetChart.json",
   "TeamArea": "TeamArea.json"

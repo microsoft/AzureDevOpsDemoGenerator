@@ -16,7 +16,7 @@
       "hasChildren": false
     }
   ],
-  "name": "Azure Governance Readiness",
+  "name": "Azure Governance",
   "structureType": "iteration",
   "hasChildren": true
 }
