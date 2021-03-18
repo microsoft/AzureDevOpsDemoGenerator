@@ -3,7 +3,7 @@
   "value": [
     {
       "id": 4679,
-      "rev": 1,
+      "rev": 2,
       "fields": {
         "System.AreaPath": "Modern IOT",
         "System.TeamProject": "Modern IOT",
@@ -13,9 +13,9 @@
         "System.Reason": "New",
         "System.CreatedDate": "2021-03-16T14:04:54.827Z",
         "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-03-16T14:04:54.827Z",
+        "System.ChangedDate": "2021-03-18T14:49:57.13Z",
         "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Post Implementation",
+        "System.Title": "3 - Post Implementation",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Post Implementation",
         "System.AssignedTo": null,
@@ -479,7 +479,7 @@
     },
     {
       "id": 4672,
-      "rev": 1,
+      "rev": 2,
       "fields": {
         "System.AreaPath": "Modern IOT",
         "System.TeamProject": "Modern IOT",
@@ -489,9 +489,9 @@
         "System.Reason": "New",
         "System.CreatedDate": "2021-03-16T14:04:52.637Z",
         "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-03-16T14:04:52.637Z",
+        "System.ChangedDate": "2021-03-18T14:49:40.503Z",
         "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Review IOT Patterns",
+        "System.Title": "2 - Review IOT Patterns",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "<div><b>Study Reference <a href=\"https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/iot?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Architecture</a></b></div><div><br></div><div><b>Complete conceptual understanding</b></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/iot/measure-control-loop?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\"><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">measure and control loop</span><em style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">,&nbsp;</em></a><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/iot/monitor-manage-loop?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\" style=\"font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">monitor and manage loop</a><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/iot/event-routing?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">event routing</a></div><div><br></div><div><br></div><div><br></div>",
         "System.AssignedTo": null,
@@ -520,7 +520,7 @@
     },
     {
       "id": 4671,
-      "rev": 1,
+      "rev": 2,
       "fields": {
         "System.AreaPath": "Modern IOT",
         "System.TeamProject": "Modern IOT",
@@ -530,9 +530,9 @@
         "System.Reason": "New",
         "System.CreatedDate": "2021-03-16T14:04:52.157Z",
         "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-03-16T14:04:52.157Z",
+        "System.ChangedDate": "2021-03-18T14:48:48.597Z",
         "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Design Considerations",
+        "System.Title": "1 - Design Considerations",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Design Considerations",
         "System.AssignedTo": null,
