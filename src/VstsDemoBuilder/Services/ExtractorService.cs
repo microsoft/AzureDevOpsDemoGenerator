@@ -1409,6 +1409,13 @@ namespace VstsDemoBuilder.Services
                                         endpoint.authorization.parameters.authenticationType = endpoint.authorization.parameters.authenticationType ?? "spnKey";
                                         endpoint.authorization.parameters.tenantId = endpoint.authorization.parameters.tenantId ?? Guid.NewGuid().ToString();
                                         endpoint.authorization.parameters.servicePrincipalKey = endpoint.authorization.parameters.servicePrincipalKey ?? "spnKey";
+                                        switch (endpoint.data.scopeLevel)
+                                        {
+                                            case "ManagementGroup":
+                                                endpoint.data.managementGroupId = endpoint.data.managementGroupId ?? "managedgroup";
+                                                endpoint.data.managementGroupName = endpoint.data.managementGroupName ?? "groupname";
+                                                break;
+                                        }
                                         break;
                                 }
                                 break;

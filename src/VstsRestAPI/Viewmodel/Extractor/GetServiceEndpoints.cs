@@ -19,6 +19,8 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string realmName { get; set; }
             public string acceptUntrustedCerts { get; set; }
             public string authorizationType { get; set; }
+            public string managementGroupName { get; set; }
+            public string managementGroupId { get; set; }
         }
 
         public class Parameters
