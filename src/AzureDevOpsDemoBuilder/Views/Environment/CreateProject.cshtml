@@ -75,6 +75,10 @@
     {
         <input type="hidden" value="@Model.TemplateImage" id="selectedTemplateImage" />
     }
+    @if (!string.IsNullOrEmpty(Model.Document))
+    {
+        <input type="hidden" value="@Model.Document" id="refDocument" />
+    }
     <input type="hidden" value="@Model.ForkGitHubRepo" id="forkGitRepo" />
     <input type="hidden" id="hdnMessage" />
     <input type="hidden" id="hdnGToken" />
