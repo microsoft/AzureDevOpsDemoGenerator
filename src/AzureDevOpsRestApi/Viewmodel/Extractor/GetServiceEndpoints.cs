@@ -19,6 +19,8 @@ namespace AzureDevOpsAPI.Viewmodel.Extractor
             public string RealmName { get; set; }
             public string AcceptUntrustedCerts { get; set; }
             public string AuthorizationType { get; set; }
+            public string managementGroupId { get; set; }
+            public string managementGroupName { get; set; }
         }
 
         public class Parameters
