@@ -51,7 +51,8 @@
             "/Templates/SmartHotel360/Images/Screens.png"
           ],
           "Author": "Microsoft",
-          "ForkGitHubRepo": true
+          "ForkGitHubRepo": true,
+          "Document": "https://github.com/Microsoft/SmartHotel360"
         },
         {
           "Key": "77380",

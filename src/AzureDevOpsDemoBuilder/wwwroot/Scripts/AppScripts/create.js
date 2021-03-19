@@ -773,7 +773,12 @@ function getStatus() {
                                     social += "<script>function fbs_click() { u = 'https://azuredevopsdemogenerator.azurewebsites.net/'; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>";
                                     var twitter = "<a href='https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator' target='_blank'><img src='/Images/twitter.png' style='width:20px;'></a>&nbsp;&nbsp;";
                                     social += twitter;
-                                    $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + social).appendTo("#accountLink");
+                                    var doc = $('#refDocument').val();
+                                    var docLink = "";
+                                    if (doc !== "" || doc !== null) {
+                                        docLink = '<br /><a href=' + doc + ' target="_blank">Next Steps</a>'
+                                    }
+                                    $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + docLink + social).appendTo("#accountLink");
                                     $('#dvProgress').removeClass("d-block").addClass("d-none");
                                     $('#textMuted').removeClass("d-block").addClass("d-none");
                                     currentPercentage = 0;

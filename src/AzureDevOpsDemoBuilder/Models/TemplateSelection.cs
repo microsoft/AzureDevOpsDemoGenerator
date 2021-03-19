@@ -18,6 +18,7 @@ namespace AzureDevOpsDemoBuilder.Models
             public string Author { get; set; }
             public string LastUpdatedDate { get; set; }
             public bool ForkGitHubRepo { get; set; }
+            public string Document { get; set; }
         }
 
         public class GroupwiseTemplate
