@@ -1057,6 +1057,22 @@
             "Microsoft Cloud Adoption Framework"
           ],
           "Image": "/Templates/TemplateImages/AzureCommunity/RecommederIcon.PNG"
+        },
+        {
+          "Key": "50428F01-0FC9-47C5-B8B0-3DC6295213C7",
+          "Name": "Modern IOT",
+          "TemplateFolder": "ModernIOT",
+          "ShortName": "modiot",
+          "Description": " Connected sensors, devices, and intelligent operations can transform businesses and enable new growth opportunities. In this project you will get the work items needed to plan and implement your IOT solution using the <a href='https://azure.microsoft.com/en-us/overview/iot/?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal' targer='_blank'> Azure IoT Platform </a>",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Innovate",
+            "IOT",
+            "Microsoft Cloud Adoption Framework"
+
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/modiot.png"
         }
 
       ]
