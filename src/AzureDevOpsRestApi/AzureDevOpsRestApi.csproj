@@ -10,6 +10,7 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+    <PackageReference Include="Sodium.Core" Version="1.2.3" />
   </ItemGroup>
 
   <ItemGroup>
