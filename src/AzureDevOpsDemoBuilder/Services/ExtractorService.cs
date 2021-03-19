@@ -1455,6 +1455,13 @@ namespace AzureDevOpsDemoBuilder.Services
                                         endpoint.Authorization.Parameters.AuthenticationType = endpoint.Authorization.Parameters.AuthenticationType ?? "spnKey";
                                         endpoint.Authorization.Parameters.TenantId = endpoint.Authorization.Parameters.TenantId ?? Guid.NewGuid().ToString();
                                         endpoint.Authorization.Parameters.ServicePrincipalKey = endpoint.Authorization.Parameters.ServicePrincipalKey ?? "spnKey";
+                                        switch (endpoint.Data.ScopeLevel)
+                                        {
+                                            case "ManagementGroup":
+                                                endpoint.Data.managementGroupId = endpoint.Data.managementGroupId ?? "managedgroup";
+                                                endpoint.Data.managementGroupName = endpoint.Data.managementGroupName ?? "groupname";
+                                                break;
+                                        }
                                         break;
                                 }
                                 break;
