@@ -13,13 +13,6 @@ namespace AzureDevOpsDemoBuilder
 {
     public class Program
     {
-        //public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
-        //.SetBasePath(Directory.GetCurrentDirectory())
-        //.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-        //.AddJsonFile("appsettings.Development.json", optional: false)
-        //.AddEnvironmentVariables()
-        //.Build();
-
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
@@ -27,7 +20,6 @@ namespace AzureDevOpsDemoBuilder
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                //.ConfigureAppConfiguration(x => x.AddConfiguration(Configuration))
                 .ConfigureLogging((hostingContext, logging) =>
                 {
                     logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
