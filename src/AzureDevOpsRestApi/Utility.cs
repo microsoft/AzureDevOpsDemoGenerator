@@ -14,9 +14,11 @@ namespace AzureDevOpsAPI
             string message = string.Empty;
             try
             {
-                JObject jItems = JObject.Parse(exception); 
-                message = jItems["message"].ToString();
-
+                if (!string.IsNullOrEmpty(exception))
+                {
+                    JObject jItems = JObject.Parse(exception);
+                    message = jItems["message"] == null ? "" : jItems["message"].ToString();
+                }
                 return message;
             }
             catch (Exception)

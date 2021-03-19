@@ -25,6 +25,7 @@ using AzureDevOpsDemoBuilder.Extensions;
 using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using AzureDevOpsRestApi.Git;
+using AzureDevOpsRestApi.Viewmodel.GitHub;
 using AzureDevOpsRestApi.Viewmodel.ProjectAndTeams;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -286,7 +287,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 objIssue.CreateReportWi(patBase64, "4.1", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
             }
 
-            AppConfiguration _gitHubConfig = new AppConfiguration() { GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken, MediaType = "application/json", Scheme = "Bearer" };
+            AppConfiguration _gitHubConfig = new AppConfiguration() { GitBaseAddress = gitHubBaseAddress, GitCredential = model.GitHubToken, MediaType = "application/vnd.github.v3+json", Scheme = "Bearer" };
 
             if (model.GitHubFork && model.GitHubToken != null)
             {
@@ -1034,12 +1035,12 @@ namespace AzureDevOpsDemoBuilder.Services
 
             if (!string.IsNullOrEmpty(readRepoFile))
             {
-                GitHubRepos.Fork forkRepos = new GitHubRepos.Fork();
-                forkRepos = JsonConvert.DeserializeObject<GitHubRepos.Fork>(readRepoFile);
+                GitHubRepos.Fork forkRepos = JsonConvert.DeserializeObject<GitHubRepos.Fork>(readRepoFile);
                 if (forkRepos.Repositories != null && forkRepos.Repositories.Count > 0)
                 {
                     foreach (var repo in forkRepos.Repositories)
                     {
+                        bool isImported = false;
                         string repoName = Path.GetFileName(repo.vcs_url);
                         string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
                         GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig);
@@ -1066,7 +1067,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 }
                                 model.GitRepoURL = importStatus.repository_url;
                                 model.GitRepoURL = model.GitRepoURL.Replace("api.", "").Replace("/repos", "/");
-
+                                isImported = true;
                                 model.GitRepoName = repoName;
                                 if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
                                 {
@@ -1076,6 +1077,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             else if (importRepoRes.StatusCode == System.Net.HttpStatusCode.Conflict)
                             {
+                                isImported = true;
                                 AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName = repoName, _gitHubConfig.UserName));
                                 if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
                                 {
@@ -1086,6 +1088,64 @@ namespace AzureDevOpsDemoBuilder.Services
                             {
                                 var res = importRepoRes.Content.ReadAsStringAsync().Result;
                                 AddMessage(model.Id.ErrorId(), res.ToString());
+                            }
+                        }
+                        if (isImported)
+                        {
+                            HttpResponseMessage response = importRepo.GetRepositoryPublicKey(model.GitRepoName);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                string res = response.Content.ReadAsStringAsync().Result;
+                                GitHubPublicKey publicKey = JsonConvert.DeserializeObject<GitHubPublicKey>(res);
+                                string secretFilePath = string.Format("{0}/{1}/{2}/{3}/{4}", HostingEnvironment.WebRootPath, "Templates", model.SelectedTemplate, "Secrets", model.GitRepoName + ".json");
+                                if (File.Exists(secretFilePath))
+                                {
+                                    string secrets = File.ReadAllText(secretFilePath);
+                                    if (!string.IsNullOrEmpty(secrets))
+                                    {
+                                        GitHubSecrets.GitHubSecret secrets1 = JsonConvert.DeserializeObject<GitHubSecrets.GitHubSecret>(secrets);
+                                        foreach(var secret in secrets1.secrets)
+                                        {
+                                            var secretResponse = importRepo.EncryptAndAddSecret(publicKey, secret, model.GitRepoName);
+                                            if (secretResponse.IsSuccessStatusCode)
+                                            {
+                                                AddMessage(model.Id, string.Format("Added Secret {0} to {1}/{2} repository", secret.secretName, model.GitHubUserName, model.GitRepoName));
+                                            }
+                                            else
+                                            {
+                                                AddMessage(model.Id.ErrorId(), secretResponse.ToString());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                AddMessage(model.Id.ErrorId(), response.ToString());
+                            }
+
+                            string branchProtectionFilePath = string.Format("{0}/{1}/{2}/{3}/{4}", HostingEnvironment.WebRootPath, "Templates", model.SelectedTemplate, "BranchProtection", model.GitRepoName + ".json");
+                            if (File.Exists(branchProtectionFilePath))
+                            {
+                                string protectionRule = File.ReadAllText(branchProtectionFilePath);
+                                if (!string.IsNullOrEmpty(protectionRule))
+                                {
+                                    HttpResponseMessage res = new HttpResponseMessage();
+                                    ProtectionRule _rules = JsonConvert.DeserializeObject<ProtectionRule>(protectionRule);
+                                    foreach (var _pRule in _rules.rules)
+                                    {
+                                        var protectionRes = importRepo.SetBranchProtectionRule(_pRule, model.GitRepoName);
+                                        if (protectionRes.IsSuccessStatusCode)
+                                        {
+                                            AddMessage(model.Id, string.Format("Added branch protection rule to {0} repository", model.GitRepoName));
+                                        }
+                                        else
+                                        {
+                                            AddMessage(model.Id.ErrorId(), protectionRes.ToString());
+                                        }
+                                    }
+                                     
+                                }
                             }
                         }
                     }
