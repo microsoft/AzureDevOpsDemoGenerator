@@ -444,6 +444,7 @@
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
     <Content Include="Templates\TemplateImages\AzureCommunity\ModernDataWarehouse.png" />
+    <Content Include="Templates\TemplateImages\AzureCommunity\modiot.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\NIST 800-171.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\RecommederIcon.PNG" />
     <Content Include="Templates\TemplateImages\AzureCommunity\windows-virtual-desktop.svg" />
@@ -1677,6 +1678,22 @@
     <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\Feature.json" />
     <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\Task.json" />
     <Content Include="Templates\RetailRecommender-SolutionAccelerator\WorkItems\User Story.json" />
+    <Content Include="Templates\ModernIOT\ImportSourceCode\Modern IOT.json" />
+    <Content Include="Templates\ModernIOT\Iterations.json" />
+    <Content Include="Templates\ModernIOT\ProjectSettings.json" />
+    <Content Include="Templates\ModernIOT\ProjectTemplate.json" />
+    <Content Include="Templates\ModernIOT\ServiceEndpoints\Modern IOT-code.json" />
+    <Content Include="Templates\ModernIOT\TeamArea.json" />
+    <Content Include="Templates\ModernIOT\Teams\Modern IOT Team\BoardColumns.json" />
+    <Content Include="Templates\ModernIOT\Teams\Modern IOT Team\BoardRows.json" />
+    <Content Include="Templates\ModernIOT\Teams\Modern IOT Team\CardFields.json" />
+    <Content Include="Templates\ModernIOT\Teams\Modern IOT Team\CardStyles.json" />
+    <Content Include="Templates\ModernIOT\Teams\Modern IOT Team\TeamSetting.json" />
+    <Content Include="Templates\ModernIOT\Teams\Teams.json" />
+    <Content Include="Templates\ModernIOT\WorkItems\Epic.json" />
+    <Content Include="Templates\ModernIOT\WorkItems\Feature.json" />
+    <Content Include="Templates\ModernIOT\WorkItems\Task.json" />
+    <Content Include="Templates\ModernIOT\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
