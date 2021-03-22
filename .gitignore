@@ -153,3 +153,5 @@ UpgradeLog.htm
 /src/AzureDevOpsDemoBuilder/ExtractedTemplate/faSmartHotel360asdsd
 /src/AzureDevOpsDemoBuilder/ExtractedZipFile
 /src/AzureDevOpsDemoBuilder/wwwroot/Log
+/src/AzureDevOpsDemoBuilder/appsettings.Development.json
+/src/AzureDevOpsDemoBuilder/appsettings.json
