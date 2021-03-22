@@ -1,28 +1,28 @@
 {
-  "count": 35,
+  "count": 43,
   "value": [
     {
-      "id": 549,
-      "rev": 1,
+      "id": 3391,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:41:01.873Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:41:01.873Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Sign off on Project delivery",
+        "System.CreatedDate": "2020-12-04T21:18:22.543Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Azure Setup Guide",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "<div>Validate that you have covered all areas specified in the Azure Setup Guide</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -32,229 +32,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/538",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/549"
-    },
-    {
-      "id": 548,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:40:00.547Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:40:00.547Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Manage Governance (Inventory / Operational Compliance)",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/548"
-    },
-    {
-      "id": 547,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:38:50.967Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:38:50.967Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "OnPrem to Azure Virtual Machine Overview",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/542",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/547"
-    },
-    {
-      "id": 546,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:35:27.423Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:35:27.423Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Decide and Create Landing Zone",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/543",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/546"
-    },
-    {
-      "id": 535,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "SQLProjectTemplate",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:05.643Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:05.643Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Azure Backup",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Backup",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": null,
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/535"
-    },
-    {
-      "id": 531,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "SQLProjectTemplate",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:03.017Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:03.017Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Marketplace images",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Marketplace images",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": null,
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/531"
-    },
-    {
-      "id": 528,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:02.15Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:02.15Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Define Strategy CAF Plan Template",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Define Strategy CAF Plan Template",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/545",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -262,30 +40,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/528"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3391"
     },
     {
-      "id": 527,
-      "rev": 1,
+      "id": 3381,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:01.86Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:01.86Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Define Business Motivations, Security, Cost and Innovation strategies",
+        "System.CreatedDate": "2020-12-04T21:18:21.01Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Create and/or Verify Landing Zone",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Define Business Motivations, Security, Cost and Innovation strategies",
+        "System.Description": "<div>Decide and Create Landing Zone, this is where the assets will reside and how they will be managed and governed.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/implementation-options?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/implementation-options?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -295,7 +73,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/545",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -303,30 +81,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/527"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3381"
     },
     {
-      "id": 526,
-      "rev": 1,
+      "id": 3392,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:01.183Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:01.183Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Digital Estate: Collect Current Inventory",
+        "System.CreatedDate": "2020-12-04T21:18:22.677Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Pros and Cons of Landing Zones and Migration Tools Decision Guide",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Digital Estate: Collect Current Inventory",
+        "System.Description": "<div>Migration Tools Decision Guide</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/migrate-decision-guide/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/migrate-decision-guide/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -336,7 +114,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/544",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -344,30 +122,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/526"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3392"
     },
     {
-      "id": 525,
-      "rev": 1,
+      "id": 3393,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:00.903Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:00.903Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Align assets to cloud offerings to calculate pricing",
+        "System.CreatedDate": "2020-12-04T21:18:22.81Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Guide: Migrate SSIS, SSAS and SSRS to Azure",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Align assets to cloud offerings to calculate pricing",
+        "System.Description": "<div>Migrate SSIS, SSAS and SSRS to Azure</div><div><br></div><div>SSIS:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/data-factory/scenario-ssis-migration-overview?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/data-factory/scenario-ssis-migration-overview?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div>SSRS:&nbsp;<a href=\"https://docs.microsoft.com/en-us/sql/reporting-services/report-data/sql-azure-connection-type-ssrs?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/sql/reporting-services/report-data/sql-azure-connection-type-ssrs?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a>&nbsp;</div><div><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -377,7 +155,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/544",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -385,30 +163,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/525"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3393"
     },
     {
-      "id": 524,
-      "rev": 1,
+      "id": 3400,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:00.613Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:00.613Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Initial Organization Alignment",
+        "System.CreatedDate": "2020-12-04T21:18:23.92Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:35:56.807Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Assessment",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Initial Organization Alignment",
+        "System.Description": "<div>Assessment</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/sql/dma/dma-migrateonpremsqltosqldb?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/sql/dma/dma-migrateonpremsqltosqldb?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/sql/dma/dma-consolidatereports?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/sql/dma/dma-consolidatereports?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -418,7 +196,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/544",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3417",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -426,30 +204,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/524"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3400"
     },
     {
-      "id": 523,
-      "rev": 1,
+      "id": 4062,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:13:00.327Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:13:00.327Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Skills Readiness Plan",
+        "System.CreatedDate": "2020-12-16T19:00:04.783Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Reference Architectures",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Skills Readiness Plan",
+        "System.Description": "<div>Windows N-Tier application on Azure</div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/n-tier-sql-server?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/n-tier-sql-server?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div>Loan Credit Risk with SQL Server</div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/loan-credit-risk-with-sql-server?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/loan-credit-risk-with-sql-server?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div>Scalable Sitecore marketing website</div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/digital-marketing-sitecore?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/digital-marketing-sitecore?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -459,38 +237,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/544",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/523"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4062"
     },
     {
-      "id": 522,
-      "rev": 1,
+      "id": 4066,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:59.647Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:59.647Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Develop Cloud Adoption plan",
+        "System.CreatedDate": "2020-12-16T21:28:20.223Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:42:51.63Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Tutorial: Azure SQL Fundamentals",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Develop Cloud Adoption plan",
+        "System.Description": "<div>Azure SQL Fundamentals</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -500,38 +277,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/544",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/522"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4066"
     },
     {
-      "id": 521,
-      "rev": 1,
+      "id": 3399,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:58.913Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:58.913Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Azure Setup Guide",
+        "System.CreatedDate": "2020-12-04T21:18:23.79Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:02.557Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Deployment and Migration Testing",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Setup Guide",
+        "System.Description": "<div>Deployment and Migration Testing - Data Migration Assistannt</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/sql/dma/dma-overview?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/sql/dma/dma-overview?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -541,7 +317,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/543",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3417",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -549,30 +325,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/521"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3399"
     },
     {
-      "id": 520,
-      "rev": 1,
+      "id": 3398,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:58.633Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:58.633Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Pros and Cons of Landing Zones and Migration Tools Decision Guide",
+        "System.CreatedDate": "2020-12-04T21:18:23.647Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:09.117Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Release and Additional Resources",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Pros and Cons of Landing Zones and Migration Tools Decision Guide",
+        "System.Description": "<div>Release and Additional Resources<br><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-sql-server-db-to-azure?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-sql-server-db-to-azure?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a></div><div><br></div><div><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -582,7 +358,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/543",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3417",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -590,30 +366,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/520"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3398"
     },
     {
-      "id": 519,
-      "rev": 1,
+      "id": 4063,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:58.333Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:58.333Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Migrate SSIS, SSAS and SSRS to Azure",
+        "System.CreatedDate": "2020-12-16T21:11:02.677Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7 - Tutorial: Database migration to Azure",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Migrate SSIS, SSAS and SSRS to Azure",
+        "System.Description": "<div>Microsoft Mechanics video, Database migration to Azure</div><div><br></div><div><a href=\"https://azure.microsoft.com/en-us/resources/videos/database-migration-to-azure/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://azure.microsoft.com/en-us/resources/videos/database-migration-to-azure/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -623,38 +399,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/543",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/519"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4063"
     },
     {
-      "id": 518,
-      "rev": 1,
+      "id": 4064,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:58.04Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:58.04Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Examples of Selecting Landing Zone",
+        "System.CreatedDate": "2020-12-16T21:14:14.733Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:28:26.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8 - Tutorial: Migrate your relational data stored in SQL to Azure SQL DB",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Examples of Selecting Landing Zone",
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Plan and implement the migration of relational data from SQL Server to Azure SQL Database</span><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/modules/migrate-sql-server-relational-data/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/migrate-sql-server-relational-data/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -664,38 +439,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/543",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/518"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4064"
     },
     {
-      "id": 517,
-      "rev": 1,
+      "id": 4065,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:57.147Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:57.147Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Assessment",
+        "System.CreatedDate": "2020-12-16T21:19:18.7Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:19:32.457Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Review Database Compatibility",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Assessment",
+        "System.Description": "<div>Read the compatibility certification article.</div><div><br></div><div><a href=\"http://aka.ms/dbcompat?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">http://aka.ms/dbcompat?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -705,38 +479,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/542",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/517"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4065"
     },
     {
-      "id": 516,
-      "rev": 1,
+      "id": 4061,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:56.24Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:56.24Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Deployment and Migration Testing",
+        "System.CreatedDate": "2020-12-16T18:53:10.42Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T18:54:44.64Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7 - Additional Resources for Governance",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Deployment and Migration Testing",
+        "System.Description": "<div>Governance assets and materials:</div><div><br></div><div><a href=\"https://github.com/microsoft/azuredevopsgenerator/tree/master/azuregovernance/docs\">azuredevopsgenerator/azuregovernance/docs at master · microsoft/azuredevopsgenerator (github.com)</a><br></div><div><br></div><div>Also review the Governance ADO project in the Generator.</div><div><br></div><div><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Govern",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -746,38 +519,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/542",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/516"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4061"
     },
     {
-      "id": 515,
-      "rev": 1,
+      "id": 4060,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:55.97Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:55.97Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Release and Additional Resources",
+        "System.CreatedDate": "2020-12-16T18:00:46.717Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T18:01:10.87Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Azure Quickstart SQL Managed Instance",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Release and Additional Resources",
+        "System.Description": "<div>Azure Quickstart for SQL Managed Instance</div><div><br></div><div><a href=\"https://azure.microsoft.com/en-us/resources/templates/?term=Azure+SQL+managed+instance\">Azure Quickstart Templates (microsoft.com)</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -787,38 +559,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/542",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/515"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4060"
     },
     {
-      "id": 513,
-      "rev": 1,
+      "id": 4059,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:55.4Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:55.4Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Release and Additional Resources",
+        "System.CreatedDate": "2020-12-16T17:59:20.687Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T18:01:28.673Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Azure Quickstart SQL Database",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Release and Additional Resources",
+        "System.Description": "<div>Azure Quickstart code for Azure SQL Database</div><div><br></div><div><a href=\"https://azure.microsoft.com/en-us/resources/templates/?term=Azure+SQL+Database\">Azure Quickstart Templates (microsoft.com)</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -828,38 +599,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/541",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3417",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/513"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4059"
     },
     {
-      "id": 512,
-      "rev": 1,
+      "id": 4058,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:55.12Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:55.12Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Deployment and Migration Testing",
+        "System.CreatedDate": "2020-12-16T17:58:29.927Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T18:01:28.673Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Azure Quickstart for SQL VMs",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Deployment and Migration Testing",
+        "System.Description": "<div>Azure Quickstarts for SQL VMs</div><div><br></div><div><a href=\"https://azure.microsoft.com/en-us/resources/templates/?term=SQL+Virtual+machine\">Azure Quickstart Templates (microsoft.com)</a><br></div><div><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Migrate",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -869,38 +639,37 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/541",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/512"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4058"
     },
     {
-      "id": 511,
-      "rev": 1,
+      "id": 3626,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:54.84Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:54.84Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Assessment",
+        "System.CreatedDate": "2020-12-10T21:23:19.12Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:38:41.773Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Define Objectives and Key Results",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Assessment",
+        "System.Description": "<div>A key part of driving alignment in the organization is to have a core set of objectives and key results which teams can snap to.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/business-outcomes/okr?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/business-outcomes/okr?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -910,481 +679,29 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/541",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3413",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/511"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3626"
     },
     {
-      "id": 509,
+      "id": 3412,
       "rev": 1,
       "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
         "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:54.253Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:54.253Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "OnPrem to Azure Virtual Machine Overview",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "OnPrem to Azure Virtual Machine Overview",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/541",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/509"
-    },
-    {
-      "id": 507,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:53.283Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:53.283Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "OnPrem to Azure Virtual Machine Overview",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "OnPrem to Azure Virtual Machine Overview",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/540",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/507"
-    },
-    {
-      "id": 506,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:52.99Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:52.99Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Assessment",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Assessment",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/540",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/506"
-    },
-    {
-      "id": 505,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:52.713Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:52.713Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Deployment and Migration Testing",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Deployment and Migration Testing",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/540",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/505"
-    },
-    {
-      "id": 504,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:52.42Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:52.42Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Release and Additional Resources",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Release and Additional Resources",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/540",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/504"
-    },
-    {
-      "id": 503,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:51.517Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:51.517Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Organize reqources",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Organize reqources",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/503"
-    },
-    {
-      "id": 502,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:51.123Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:51.123Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Manage Access",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Manage Access",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/502"
-    },
-    {
-      "id": 501,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:50.797Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:50.797Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Manage Costs",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Manage Costs",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/501"
-    },
-    {
-      "id": 500,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:50.473Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:50.473Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Governance, Security and Compliance",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Governance, Security and Compliance",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/500"
-    },
-    {
-      "id": 499,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:50.19Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:50.19Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Monitoring and Reporting",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Monitoring and Reporting",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/539",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/499"
-    },
-    {
-      "id": 497,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:49.637Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:49.637Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "SQL Data Migration Project review meeting",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "SQL Data Migration Project review meeting",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/538",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/497"
-    },
-    {
-      "id": 496,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "SQLProjectTemplate",
-        "System.TeamProject": "SQLProjectTemplate",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-06-25T03:12:49.27Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-06-25T03:12:49.27Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-04T21:18:25.53Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-04T21:18:25.53Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "SQL Data Migration documents review",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "SQL Data Migration documents review",
@@ -1402,7 +719,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/538",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3420",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1410,7 +727,1012 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/kvnshp10/_apis/wit/workItems/496"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3412"
+    },
+    {
+      "id": 3411,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:25.407Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-04T21:18:25.407Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "SQL Data Migration Project review meeting",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "SQL Data Migration Project review meeting",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3420",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3411"
+    },
+    {
+      "id": 3410,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:25.277Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:37:59.28Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Monitoring and Reporting",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Cloud Monitoring guide:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/manage/monitor/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/manage/monitor/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3410"
+    },
+    {
+      "id": 3409,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:25.117Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:37:53.497Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Governance, Security and Compliance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review how you govern data to ensure compliance and security:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/data-guide/scenarios/securing-data-solutions?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/data-guide/scenarios/securing-data-solutions?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/governance-or-compliance?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/governance-or-compliance?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3409"
+    },
+    {
+      "id": 3408,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.987Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:37:48.017Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Manage Costs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Cost management is an effective way to understand usage as well as potential optimization paths.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/manage-costs?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/manage-costs?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3408"
+    },
+    {
+      "id": 3407,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.85Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:37:09.607Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Manage Access",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Do the correct individuals have the right access to assets:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/manage-access?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/manage-access?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3407"
+    },
+    {
+      "id": 3406,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.72Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:37:00.407Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Organize resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Well organized resources ensure security, simplified management and enables you to track costs and operational issues related to workloads:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div><div><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3406"
+    },
+    {
+      "id": 3405,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.583Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:44.97Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Release and Additional Resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Release and Additional How To Resources:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/how-to-content-reference-guide?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/how-to-content-reference-guide?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3405"
+    },
+    {
+      "id": 3404,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.443Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:38.077Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Deployment and Migration Testing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Deployment and Migration Guide</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-guide?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-guide?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3404"
+    },
+    {
+      "id": 3403,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.313Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:29.603Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Assessment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Assess SQL Managed Instance Compatibility</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/migrate-to-instance-from-sql-server#assess-sql-managed-instance-compatibility?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/migrate-to-instance-from-sql-server#assess-sql-managed-instance-compatibility?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3403"
+    },
+    {
+      "id": 3402,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:24.18Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:15.833Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - OnPrem to Azure SQL Managed Instance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>OnPrem to Azure SQL Managed Instance</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-rehost-vm-sql-managed-instance?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-rehost-vm-sql-managed-instance?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3402"
+    },
+    {
+      "id": 3397,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:23.51Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:33:51.19Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Release and Additional Resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Release and Additional Resources</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/optimize-and-transform?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/optimize-and-transform?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3397"
+    },
+    {
+      "id": 3396,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:23.257Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:33:45.44Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Deployment and Migration Testing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Deployment and Migration Testing</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/migrate?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/migrate?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3396"
+    },
+    {
+      "id": 3395,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:23.12Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:33:38.857Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Assessment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Assessment</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/assess?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/assess?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3395"
+    },
+    {
+      "id": 3380,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:20.7Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:33:32.14Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - OnPrem to Azure Virtual Machine Overview",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>OnPrem to Azure Virtual Machine Overview</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-rehost-vm?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">Rehost an application on Azure VMs by using Azure Migrate - Cloud Adoption Framework | Microsoft Docs</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Migrate",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3380"
+    },
+    {
+      "id": 3379,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:20.47Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:36:54.073Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Manage Governance (Inventory / Operational Compliance)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review Governance policies for the platform as well as determine the data governance needs</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3379"
+    },
+    {
+      "id": 3378,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:20.27Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-04T21:18:20.27Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Sign off on Project delivery",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Sign off on Project delivery",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3420",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3378"
+    },
+    {
+      "id": 3390,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:22.417Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:39:36.35Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Cloud Adoption plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Develop / Update Cloud Adoption plan,&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/plan/plan-intro?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/plan/plan-intro?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3390"
+    },
+    {
+      "id": 3389,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:22.283Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:39:22.15Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Skills Readiness Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Skills Readiness Plan - Leverage Learn portal to help define learning path for data teams</div><div><br></div><div><a href=\"http://docs.microsoft.com/learn?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">http://docs.microsoft.com/learn?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3389"
+    },
+    {
+      "id": 3388,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:22.067Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:39:15.93Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Initial Organization Alignment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Initial Organization Alignment - what are the cloud data functions needed</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-data?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-data?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3388"
+    },
+    {
+      "id": 3387,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:21.933Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:39:08.31Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Align assets to cloud offerings to calculate pricing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Align assets to cloud offerings to calculate pricing</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/sql/dma/dma-sku-recommend-sql-db?view=sql-server-ver15?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/sql/dma/dma-sku-recommend-sql-db?view=sql-server-ver15?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3387"
+    },
+    {
+      "id": 3386,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:21.767Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T21:16:23.043Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Digital Estate: Collect Current Inventory with DMA",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Digital Estate: Collect Current Inventory using Database Migrate Assistant</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-ver15?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/sql/dma/dma-overview?view=sql-server-ver15?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3386"
+    },
+    {
+      "id": 3385,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:21.613Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:38:36.593Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Align SQL Migration project to business motivations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Define Business Motivations, Security, Cost and Innovation strategies</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/motivations?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/motivations?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3413",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3385"
+    },
+    {
+      "id": 3384,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:21.48Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-16T17:38:30.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Review Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review Cloud Adoption Plan for principles and motivations.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/?WT.mc_id=devops_userstory_service_sql-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3413",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3384"
+    },
+    {
+      "id": 3383,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "SQL Proj - Azure BG Test",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:21.35Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-04T21:18:21.35Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Marketplace images",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Marketplace images",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3383"
+    },
+    {
+      "id": 3382,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "SQL Proj - Azure BG Test",
+        "System.TeamProject": "SQL Proj - Azure BG Test",
+        "System.IterationPath": "SQL Proj - Azure BG Test",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-04T21:18:21.173Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-04T21:18:21.173Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Azure Backup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Backup",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3382"
     }
   ],
   "HttpStatusCode": 0,

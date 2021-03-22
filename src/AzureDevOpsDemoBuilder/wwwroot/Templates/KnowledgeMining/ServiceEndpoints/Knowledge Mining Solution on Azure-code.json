@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "Knowledge Mining Solution on Azure-code",
+  "type": "git",
+  "url": "https://dev.azure.com/lpcs/Knowledge Mining Solution on Azure/_git/Knowledge Mining Solution on Azure",
+  "authorization": {
+    "parameters": {
+      "username": "",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
