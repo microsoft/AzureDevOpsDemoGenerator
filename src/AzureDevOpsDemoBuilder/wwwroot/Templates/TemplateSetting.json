@@ -53,7 +53,9 @@
           ],
           "Author": "Microsoft",
           "ForkGitHubRepo": true,
-          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version.",
+          "Document": "https://github.com/Microsoft/SmartHotel360"
+
         },
         {
           "Key": "77380",

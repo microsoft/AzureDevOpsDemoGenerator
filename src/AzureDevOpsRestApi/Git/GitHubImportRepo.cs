@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using AzureDevOpsRestApi.Viewmodel.GitHub;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NLog;
 using System;
 using System.Net;
@@ -150,7 +152,7 @@ namespace AzureDevOpsAPI.Git
                         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                         client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
                         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-                        var request = $"{Configuration.GitBaseAddress}/repos/{Configuration.UserName}/{repoName }/import";
+                        var request = $"/repos/{Configuration.UserName}/{repoName }/import";
                         var response = client.GetAsync(request).Result;
                         return response;
                     }
@@ -166,6 +168,94 @@ namespace AzureDevOpsAPI.Git
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
 
+        }
+
+        public HttpResponseMessage GetRepositoryPublicKey(string repoName)
+        {
+            HttpResponseMessage res = new HttpResponseMessage();
+            try
+            {
+                if (!string.IsNullOrEmpty(repoName))
+                {
+                    using (var client = GitHubHttpClient())
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
+                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                        var request = $"/repos/{Configuration.UserName}/{repoName}/actions/secrets/public-key";
+                        res = client.GetAsync(request).Result;
+                        return res;
+                    }
+                }
+                else
+                {
+                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return res;
+
+        }
+        public HttpResponseMessage EncryptAndAddSecret(GitHubPublicKey _publicKey, GitHubSecrets.Secrets secret, string repoName)
+        {
+            HttpResponseMessage res = new HttpResponseMessage();
+            try
+            {
+                var secretValue = System.Text.Encoding.UTF8.GetBytes(secret.secretValue);
+                var publicKey = Convert.FromBase64String(_publicKey.key);
+                var sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, publicKey);
+                var encryptedSecret = Convert.ToBase64String(sealedPublicKeyBox);
+
+                using (var client = GitHubHttpClient())
+                {
+                    var httpMethod = new HttpMethod("PUT");
+
+                    dynamic obj = new JObject();
+                    obj.encrypted_value = encryptedSecret;
+                    obj.key_id = _publicKey.key_id;
+                    var json = obj.ToString();
+
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/vnd.github.v3+json");
+                    client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
+                    HttpRequestMessage request = new HttpRequestMessage(httpMethod, string.Format("/repos/{0}/{1}/actions/secrets/{2}", Configuration.UserName, repoName, secret.secretName)) { Content = jsonContent };
+                    res = client.SendAsync(request).Result;
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return res;
+        }
+
+        public HttpResponseMessage SetBranchProtectionRule(dynamic _pRule, string repoName)
+        {
+            HttpResponseMessage res = new HttpResponseMessage();
+
+            try
+            {
+                using (var client = GitHubHttpClient())
+                {
+                    var httpMethod = new HttpMethod("PUT");
+                    client.DefaultRequestHeaders.Add("User-Agent", Configuration.UserName);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.luke-cage-preview+json"));
+                    var jsonContent = new StringContent(_pRule.rule.ToString(), Encoding.UTF8, "application/vnd.github.v3+json");
+                    HttpRequestMessage request = new HttpRequestMessage(httpMethod, string.Format("/repos/{0}/{1}/branches/{2}/protection", Configuration.UserName, repoName, _pRule.branch)) { Content = jsonContent };
+
+                    res = client.SendAsync(request).Result;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return res;
         }
     }
 }

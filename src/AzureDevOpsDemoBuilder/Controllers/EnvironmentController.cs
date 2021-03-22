@@ -252,6 +252,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                                                 model.Message = template.Message == null ? string.Empty : template.Message;
                                                 model.ForkGitHubRepo = template.ForkGitHubRepo.ToString();
                                                 model.TemplateImage = template.Image ?? "/Templates/TemplateImages/CodeFile.png";
+                                                model.Document = template.Document ?? "";
                                             }
                                         }
                                     }
