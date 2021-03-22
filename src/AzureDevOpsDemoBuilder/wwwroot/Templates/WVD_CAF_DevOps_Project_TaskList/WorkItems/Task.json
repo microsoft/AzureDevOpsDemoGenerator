@@ -1,28 +1,28 @@
 {
-  "count": 27,
+  "count": 36,
   "value": [
     {
-      "id": 44,
-      "rev": 2,
+      "id": 3615,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:53.107Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Azure Bastion Configuration to access azure virtual machine",
+        "System.CreatedDate": "2020-12-09T18:01:27.31Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Create a host pool with the Azure portal",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Bastion Configuration to access azure virtual machine",
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a>&nbsp;<br></div><div><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -32,7 +32,367 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3614",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3615"
+    },
+    {
+      "id": 3616,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:02:11.073Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Manage app groups with the Azure portal",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3614",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3616"
+    },
+    {
+      "id": 3617,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:02:46.217Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Create a host pool to validate service updates",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3614",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3617"
+    },
+    {
+      "id": 3618,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:03:43.753Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Set up service alerts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-service-alerts?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-desktop/set-up-service-alerts?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3614",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3618"
+    },
+    {
+      "id": 3619,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:05:30.437Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Deliver remote desktops and apps from Azure with Windows Virtual Desktop",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/paths/m365-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/paths/m365-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3613",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3619"
+    },
+    {
+      "id": 3620,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:06:17.04Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Prepare for Windows Virtual Desktop in Microsoft Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/m365-prepare-for-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/m365-prepare-for-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3613",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3620"
+    },
+    {
+      "id": 3621,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:07:00.313Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Introduction to Windows Virtual Desktop in Microsoft Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/m365-wvd-intro/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/m365-wvd-intro/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3613",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3621"
+    },
+    {
+      "id": 3622,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:07:46.457Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Optimize Windows Virtual Desktop in Microsoft Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/m365-optimize-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/m365-optimize-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3613",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3622"
+    },
+    {
+      "id": 3623,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-09T18:09:15.513Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Deploy Windows Virtual Desktop in Microsoft Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/m365-deploy-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/m365-deploy-wvd/?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3613",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3623"
+    },
+    {
+      "id": 3557,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-08T23:52:00.3Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:05.08Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Azure Bastion Configuration to access azure virtual machine",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Bastion Configuration to access azure virtual machine",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3603",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -40,22 +400,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/44"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3557"
     },
     {
-      "id": 43,
-      "rev": 3,
+      "id": 3558,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:52.837Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:00.51Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:05.08Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Configure Azure Virtual Network",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Azure Virtual Network",
@@ -63,7 +423,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -73,7 +433,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3603",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -81,22 +441,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/43"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3558"
     },
     {
-      "id": 42,
-      "rev": 3,
+      "id": 3559,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:52.567Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:00.653Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:05.08Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Configure Azure VPN Gateway (Site-to-Site VPN)",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Azure VPN Gateway (Site-to-Site VPN)",
@@ -104,7 +464,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -114,7 +474,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3603",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -122,22 +482,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/42"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3559"
     },
     {
-      "id": 41,
+      "id": 3560,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:52.287Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:00.79Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:05.08Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Configure Site2Site VPN between Azure and on-premises network / firewall",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Configure Site2Site VPN between Azure and on-premises network / firewall",
@@ -145,7 +505,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -155,7 +515,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/53",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3603",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -163,30 +523,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/41"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3560"
     },
     {
-      "id": 40,
-      "rev": 2,
+      "id": 3561,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:51.963Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:00.92Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T18:41:29.74Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Extend on-premises AD Forest to Azure",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Extend on-premises AD Forest to Azure",
+        "System.Description": "<div>Extend on-premises AD Forest to Azure&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/multi-forest-azure-managed?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/multi-forest-azure-managed?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a>&nbsp;</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -196,7 +556,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3602",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -204,30 +564,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/40"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3561"
     },
     {
-      "id": 39,
-      "rev": 2,
+      "id": 3562,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:51.683Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.047Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T18:41:40.86Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Create 2x Domain Controllers in Azure (one in each geo redundant data center region)",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Create 2x Domain Controllers in Azure (one in each geo redundant data center region)",
+        "System.Description": "<div>Create 2x Domain Controllers in Azure (one in each geo redundant data center region)&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/multi-forest?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/multi-forest?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a>&nbsp;</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -237,7 +597,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3602",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -245,22 +605,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/39"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3562"
     },
     {
-      "id": 38,
+      "id": 3563,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:51.41Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.177Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:05.08Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Add to on-premises forest",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Add to on-premises forest",
@@ -268,7 +628,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -278,7 +638,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/54",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3602",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -286,22 +646,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/38"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3563"
     },
     {
-      "id": 37,
+      "id": 3564,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:51.13Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.3Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:05.08Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Azure Bastion Configuration to access azure virtual machine",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Azure Bastion Configuration to access azure virtual machine",
@@ -309,7 +669,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -319,7 +679,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/56",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3600",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -327,22 +687,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/37"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3564"
     },
     {
-      "id": 36,
+      "id": 3565,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:50.853Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.443Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:18.423Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Validate custom images",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Validate custom images",
@@ -350,7 +710,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -360,7 +720,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/57",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3599",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -368,22 +728,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/36"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3565"
     },
     {
-      "id": 35,
+      "id": 3566,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:50.557Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.577Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:42.89Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Validate pre-requirements Fs logix container have been completed",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Validate pre-requirements Fs logix container have been completed",
@@ -391,7 +751,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Adopt",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -401,7 +761,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/61",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3595",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -409,30 +769,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/35"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3566"
     },
     {
-      "id": 34,
-      "rev": 2,
+      "id": 3567,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:50.277Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.717Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T18:22:14.197Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Deploy and Configure FS-Logix container",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Deploy and Configure FS-Logix container",
+        "System.Description": "<div>Deploy and Configure FS-Logix container</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/fslogix/install-ht?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/fslogix/install-ht?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Adopt",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -442,7 +802,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/61",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3595",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -450,30 +810,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/34"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3567"
     },
     {
-      "id": 33,
-      "rev": 2,
+      "id": 3568,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:49.997Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.847Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:42.89Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Migration to Personal/Pooled Desktops",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Migration to Personal/Pooled Desktops",
+        "System.Description": "Migration to Personal/Pooled Desktops\nhttps://docs.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Adopt",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -483,7 +843,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/62",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3594",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -491,22 +851,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/33"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3568"
     },
     {
-      "id": 32,
+      "id": 3569,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:49.697Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:01.973Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:42.89Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Migrate existing user profiles to FS-Logix Profile Containers",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Migrate existing user profiles to FS-Logix Profile Containers",
@@ -514,7 +874,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Adopt",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -524,7 +884,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/62",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3594",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -532,30 +892,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/32"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3569"
     },
     {
-      "id": 31,
-      "rev": 2,
+      "id": 3570,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:49.423Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:02.113Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:23:14.38Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Create and manage policies",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:6.0pt;text-align:justify;line-height:115%;\"><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Business\nhas their own “Policies” to protect data and workloads in their\ninfrastructures. Most of the time end goal of these policies is to make sure if\n“IT department” done their part to support business compliance\nrequirements.<span style=\"\">&nbsp; </span>There are two great tools\navailable from Microsoft to make it easier for enterprises to reach their\ncorporate compliance requirements within Azure environments.</span></p><ul style=\"margin-bottom:0in;\"><li><b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Compliance Manager: </span></b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">This\nservice can scan your azure environment and provide report of your compliance\nlevel against most common industry standard such as GDPR, ISO 27000 etc.</span></li><li><b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">Azure Policy:</span></b><span style=\"font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;\">\nThis is more to review continues compliance in corporate infrastructure\npolicies. As an example, a corporate need to make sure all their Azure\nresources are deployed under west us region. With help of Azure policy, we can\ncontinuously monitor resources and make sure it does stay compliance with that\npolicy. in event of breach it will flag it up as well.</span></li></ul><br></div>",
+        "System.Description": "<div>Business has their own “Policies” to protect data and workloads in their infrastructures. Most of the time end goal of these policies is to make sure if“ IT department” done their part to support business compliance requirements.  There are two great tools available from Microsoft to make it easier for enterprises to reach their corporate compliance requirements within Azure environments. *  Compliance Manager: This service can scan your azure environment and provide report of your compliance level against most common industry standard such as GDPR, ISO 27000 etc.&nbsp;</div><div>*  Azure Policy: This is more to review continues compliance in corporate infrastructure policies. As an example, a corporate need to make sure all their Azure resources are deployed under west us region. With help of Azure policy, we can continuously monitor resources and make sure it does stay compliance with that policy. in event of breach it will flag it up as well.</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Govern",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -565,7 +925,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/63",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3593",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -573,30 +933,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/31"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3570"
     },
     {
-      "id": 30,
-      "rev": 2,
+      "id": 3571,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:49.137Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.Title": "Configure Azure Backup",
+        "System.CreatedDate": "2020-12-08T23:52:02.247Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:23:14.38Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Disaster recovery plan",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Configure Azure Backup",
+        "System.Description": "<div>Setup a disaster recovery plan.&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/disaster-recovery?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-desktop/disaster-recovery?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a>&nbsp;</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Manage",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -606,7 +966,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/68",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3588",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -614,22 +974,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/30"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3571"
     },
     {
-      "id": 29,
-      "rev": 2,
+      "id": 3572,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:48.843Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:02.377Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review the marketplace images like predefined Azure Gallery OS Images",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Review the marketplace images like predefined Azure Gallery OS Images",
@@ -637,7 +997,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -647,7 +1007,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/66",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3590",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -655,30 +1015,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/29"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3572"
     },
     {
-      "id": 28,
-      "rev": 2,
+      "id": 3573,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:48.487Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:02.517Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review the custom OS images requirements",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Review the custom OS images requirements",
+        "System.Description": "<div>Review the custom OS images requirements&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a>&nbsp;</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -688,7 +1048,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/66",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3590",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -696,30 +1056,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/28"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3573"
     },
     {
-      "id": 27,
-      "rev": 2,
+      "id": 3574,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:47.587Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:02.653Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Confirm licensing requirements have been met",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Confirm licensing requirements have been met",
+        "System.Description": "<div>Confirm licensing requirements have been met.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-desktop/apply-windows-license?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-desktop/apply-windows-license?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal</a><br></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -729,7 +1089,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3610",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -737,22 +1097,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/27"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3574"
     },
     {
-      "id": 26,
+      "id": 3575,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
         "System.IterationPath": "$ProjectName$\\Iteration 2",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:47.303Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:02.78Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T17:51:18.423Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Create a custom image in Azure",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Create a custom image in Azure",
@@ -760,7 +1120,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Ready",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -770,7 +1130,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/57",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3599",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -778,22 +1138,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/26"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3575"
     },
     {
-      "id": 21,
-      "rev": 2,
+      "id": 3576,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:45.85Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:02.983Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review Microsoft applications requirements like office apps",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Microsoft applications",
@@ -801,7 +1161,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -811,7 +1171,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3589",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -819,30 +1179,30 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/21"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3576"
     },
     {
-      "id": 20,
-      "rev": 2,
+      "id": 3577,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:45.57Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.13Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Confirm in-scope application(s) that require GPU acceleration",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Confirm in-scope application(s) that require GPU acceleration",
+        "System.Description": "Confirm in-scope application(s) that require GPU acceleration\nhttps://docs.microsoft.com/en-us/azure/virtual-desktop/configure-vm-gpu?WT.mc_id=devops_userstory_service_wvd-inproduct-devopsportal",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -852,7 +1212,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3589",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -860,22 +1220,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/20"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3577"
     },
     {
-      "id": 19,
-      "rev": 2,
+      "id": 3578,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:44.667Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.267Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review requirements for custom applications like customer business apps",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Custom applications",
@@ -883,7 +1243,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -893,7 +1253,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3589",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -901,22 +1261,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/19"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3578"
     },
     {
-      "id": 18,
-      "rev": 2,
+      "id": 3579,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:44.34Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.4Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review requirements for third party commercial applications",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Third party commercial applications",
@@ -924,7 +1284,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -934,7 +1294,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/67",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3589",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -942,22 +1302,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/18"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3579"
     },
     {
-      "id": 17,
-      "rev": 2,
+      "id": 3580,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:44.06Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.52Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review Azure Active Directory requirements",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Review Azure Active Directory requirements",
@@ -965,7 +1325,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -975,7 +1335,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3610",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -983,22 +1343,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/17"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3580"
     },
     {
-      "id": 16,
-      "rev": 2,
+      "id": 3581,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:43.78Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.69Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Confirm Operating Systems to deploy",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Confirm Operating Systems to deploy",
@@ -1006,7 +1366,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -1016,7 +1376,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3610",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1024,22 +1384,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/16"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3581"
     },
     {
-      "id": 15,
-      "rev": 2,
+      "id": 3582,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:43.497Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.827Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Review supported Operation Systems and licensing requirements",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Review supported Operation Systems and licensing requirements",
@@ -1047,7 +1407,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -1057,7 +1417,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3610",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1065,22 +1425,22 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/15"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3582"
     },
     {
-      "id": 14,
-      "rev": 2,
+      "id": 3583,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "WVD-CAF-Project-Template",
-        "System.TeamProject": "WVD-CAF-Project-Template",
-        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.AreaPath": "Windows Virtual Desktop",
+        "System.TeamProject": "Windows Virtual Desktop",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-07-01T12:10:43.22Z",
-        "System.CreatedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
-        "System.ChangedDate": "2020-07-01T13:04:12.153Z",
-        "System.ChangedBy": "viswanadham kvn <kvn.shp10@outlook.com>",
+        "System.CreatedDate": "2020-12-08T23:52:03.953Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-09T19:22:29.2Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
         "System.Title": "Align assets to cloud offerings to calculate pricing",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Align assets to cloud offerings to calculate pricing",
@@ -1088,7 +1448,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": null,
+        "System.Tags": "Plan",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -1098,7 +1458,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/46",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3610",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1106,7 +1466,7 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wvdcaf/_apis/wit/workItems/14"
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3583"
     }
   ],
   "HttpStatusCode": 0,

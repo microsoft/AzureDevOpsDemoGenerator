@@ -11,7 +11,7 @@
     "isSplit": null
   },
   {
-    "description": "",
+    "description": "Defintion of Done for the In Progress column:\n\nFor App Dev Team\n-------------------\n      1. Prototype approved by stakeholders\n      2. User stories submitted\n      3. Time and effort estimation completed\n\nPlease be sure that all of these are **complete** before moving something into the *Done* section of the In Progress column. Please refer to the [Team Wiki](http://devopsconferences.visualstudio.com/wiki) site for more details",
     "name": "Approved",
     "itemLimit": 5,
     "stateMappings": {
@@ -22,7 +22,7 @@
     "isSplit": false
   },
   {
-    "description": "",
+    "description": "Defintion of Done for the In Progress column:\n             1. All unit test written\n             2. Tested by someone other than yourself\n             3. Upgrade scripts written and tested\nPlease be sure that all of these are **complete** before moving something into the *Done* section of the In Progress column. Please refer to the [Team Wiki](http://devopsconferences.visualstudio.com/wiki) site for more details",
     "name": "Build and Test",
     "itemLimit": 5,
     "stateMappings": {

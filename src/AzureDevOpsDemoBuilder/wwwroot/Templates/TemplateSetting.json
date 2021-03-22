@@ -4,8 +4,8 @@
     "DevOps Labs",
     "Microsoft Learn",
     "Azure Community",
-    "Private",
-    "Cloud Adoption Framework"
+    "Cloud Adoption Framework",
+    "Private"
   ],
   "PrivateGroups": [
     "PrivateTemplates"
@@ -19,7 +19,7 @@
           "Name": "Tailwind Traders",
           "TemplateFolder": "Tailwind Traders",
           "ShortName": "TailwindTraders",
-          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App",
+          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App.",
           "Tags": [
             "Agile",
             "Data and AI",
@@ -31,7 +31,8 @@
           ],
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/TailwindTraders.png",
-          "ForkGitHubRepo": true
+          "ForkGitHubRepo": true,
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
         },
         {
           "Key": "77383",
@@ -52,7 +53,9 @@
           ],
           "Author": "Microsoft",
           "ForkGitHubRepo": true,
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version.",
           "Document": "https://github.com/Microsoft/SmartHotel360"
+
         },
         {
           "Key": "77380",
@@ -539,7 +542,7 @@
             "Azure Pipelines"
           ],
           "Image": "/Templates/TemplateImages/mslearn/create-a-build-pipeline-azure-pipelines.png",
-          "Description": "Set up a continuous integration (CI) pipeline that automates the process of building your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-a-build-pipeline/' target='_blank'>Create a build pipeline</a>"
+          "Description": "Set up a continuous integration (CI) pipeline that automates the process of building your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-a-build-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a build pipeline</a>"
         },
         {
           "Key": "77738739",
@@ -555,7 +558,7 @@
           "Image": "/Templates/TemplateImages/mslearn/host-your-own-build-server-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Collaborate with others and merge only the highest quality code. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/implement-code-workflow/' target='_blank'>Implement code workflow</a>"
+          "Description": "Collaborate with others and merge only the highest quality code. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/implement-code-workflow/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Implement code workflow</a>"
         },
         {
           "Key": "77738740",
@@ -569,7 +572,7 @@
           "Image": "/Templates/TemplateImages/mslearn/implement-a-code-workflow-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Set up automated testing in your pipeline to improve code quality. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-quality-tests-build-pipeline/' target='_blank'>Run quality tests build pipeline</a>"
+          "Description": "Set up automated testing in your pipeline to improve code quality. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-quality-tests-build-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run quality tests build pipeline</a>"
         },
         {
           "Key": "77738741",
@@ -584,7 +587,7 @@
           "Image": "/Templates/TemplateImages/mslearn/manage-dependencies-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": " Scan for potential vulnerabilities in your source code during the build process. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-for-vulnerabilities/' target='_blank'>Scan for vulnerabilities</a>"
+          "Description": " Scan for potential vulnerabilities in your source code during the build process. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-for-vulnerabilities/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan for vulnerabilities</a>"
         },
         {
           "Key": "77738742",
@@ -599,7 +602,7 @@
           "Image": "/Templates/TemplateImages/mslearn/manage-security-and-compliance-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Scan open-source components for security vulnerabilities and assess their license ratings when your application builds. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-open-source/' target='_blank'>Scan open source</a>"
+          "Description": "Scan open-source components for security vulnerabilities and assess their license ratings when your application builds. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-open-source/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan open source</a>"
         },
         {
           "Key": "77738743",
@@ -614,7 +617,7 @@
           "Image": "/Templates/TemplateImages/mslearn/run-quality-tests-when-your-application-builds.png",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Manage your application and the packages it uses across build pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-build-dependencies/' target='_blank'>Manage build dependencies</a>"
+          "Description": "Manage your application and the packages it uses across build pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-build-dependencies/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage build dependencies</a>"
         },
         {
           "Key": "77738744",
@@ -628,7 +631,7 @@
           "Image": "/Templates/TemplateImages/mslearn/scan-code-for-vulnerabilities-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/host-build-agent/' target='_blank'>Host build agent</a>"
+          "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/host-build-agent/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Host build agent</a>"
         },
         {
           "Key": "3456781",
@@ -642,7 +645,7 @@
           "Image": "/Templates/TemplateImages/mslearn/create-a-release-pipeline-with-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Set up a continuous delivery (CD) pipeline that automates the process of deploying your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-release-pipeline' target='_blank'>Create a release pipeline</a>"
+          "Description": "Set up a continuous delivery (CD) pipeline that automates the process of deploying your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-release-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a release pipeline</a>"
         },
         {
           "Key": "3456782",
@@ -656,7 +659,7 @@
           "Image": "/Templates/TemplateImages/mslearn/create-multi-stage-pipeline.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Build a pipeline that deploys an app to multiple development and testing stages. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-multi-stage-pipeline/' target='_blank'>Create a multi-stage pipeline</a>"
+          "Description": "Build a pipeline that deploys an app to multiple development and testing stages. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-multi-stage-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a multi-stage pipeline</a>"
         },
         {
           "Key": "3456783",
@@ -670,7 +673,7 @@
           "Image": "/Templates/TemplateImages/mslearn/manage-database-changes-with-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Connect your webapp to an Azure SQL Database and manage database schema changes by using a release approval. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-database-changes-in-azure-pipelines' target='_blank'>Manage database changes</a>"
+          "Description": "Connect your webapp to an Azure SQL Database and manage database schema changes by using a release approval. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-database-changes-in-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage database changes</a>"
         },
         {
           "Key": "3456784",
@@ -684,7 +687,7 @@
           "Image": "/Templates/TemplateImages/mslearn/run-functional-tests-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Run Selenium UI tests, a form of functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-functional-tests-azure-pipelines' target='_blank'>Run functional tests</a>"
+          "Description": "Run Selenium UI tests, a form of functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-functional-tests-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run functional tests</a>"
         },
         {
           "Key": "3456785",
@@ -698,7 +701,7 @@
           "Image": "/Templates/TemplateImages/mslearn/run-non-functional-tests-in-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Run load tests with Apache JMeter, a form of non-functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-non-functional-tests-azure-pipelines' target='_blank'>Run non-functional tests</a>"
+          "Description": "Run load tests with Apache JMeter, a form of non-functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-non-functional-tests-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run non-functional tests</a>"
         },
         {
           "Key": "3456786",
@@ -712,7 +715,7 @@
           "Image": "/Templates/TemplateImages/mslearn/manage-release-cadence-using-deployment-patterns.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Choose an appropriate  deployment pattern for your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence' target='_blank'>Manage release cadence</a>"
+          "Description": "Choose an appropriate  deployment pattern for your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage release cadence</a>"
         },
         {
           "Key": "34567862",
@@ -727,7 +730,7 @@
           "Image": "/Templates/TemplateImages/mslearn/manage-release-cadence-using-deployment-patterns.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Run a Terraform plan in Azure Pipelines to automatically provision Azure resources. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-infrastructure-azure-pipelines ' target='_blank'>Provision infrastructure</a>"
+          "Description": "Run a Terraform plan in Azure Pipelines to automatically provision Azure resources. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-infrastructure-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady ' target='_blank'>Provision infrastructure</a>"
         },
         {
           "Key": "34567862",
@@ -741,7 +744,7 @@
           "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Automatically provision Azure SQL Database in Azure Pipelines by using an Azure Resource Manager template. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines' target='_blank'>Provision Database</a>"
+          "Description": "Automatically provision Azure SQL Database in Azure Pipelines by using an Azure Resource Manager template. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Provision Database</a>"
         },
         {
           "Key": "345678643",
@@ -755,7 +758,7 @@
           "Image": "/Templates/TemplateImages/mslearn/manage-agile-software-delivery-plans-across-teams.svg",
           "ForkGitHubRepo": false,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Learn to optimize delivery efficiency by improving work plan visibility across teams <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-delivery-plans' target='_blank'>Manage delivery plans</a>"
+          "Description": "Learn to optimize delivery efficiency by improving work plan visibility across teams <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-delivery-plans/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage delivery plans</a>"
         },
         {
           "Key": "345678644",
@@ -769,7 +772,7 @@
           "Image": "/Templates/TemplateImages/mslearn/deploy-azure-functions.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions' target='_blank'>Deploy Azure Functions</a>"
+          "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Azure Functions</a>"
         },
 
 
@@ -785,7 +788,7 @@
           "Image": "/Templates/TemplateImages/mslearn/deploy-docker.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Learn to implement a CI/CD pipeline for Docker containers<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-docker' target='_blank'>Deploy Docker containers</a>"
+          "Description": "Learn to implement a CI/CD pipeline for Docker containers<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-docker/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Docker containers</a>"
         },
         {
           "Key": "345678646",
@@ -799,7 +802,7 @@
           "Image": "/Templates/TemplateImages/mslearn/deploy-kubernetes.svg",
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
-          "Description": "Learn to implement a CI/CD pipeline for multi-container solutions orchestrated with Kubernetes<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes' target='_blank'>Deploymulti-container solutions to Kubernetes</a>"
+          "Description": "Learn to implement a CI/CD pipeline for multi-container solutions orchestrated with Kubernetes<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploymulti-container solutions to Kubernetes</a>"
         }
       ]
     },
@@ -833,29 +836,7 @@
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
           "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
-        },
-        {
-          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
-          "Name": "Azure Governance Readiness",
-          "TemplateFolder": "AzureGovernance",
-          "ShortName": "Governance",
-          "Description": "A guide to start from scratch with Azure Governance",
-          "Tags": [
-            "Azure",
-            "Governance",
-            "Advisor",
-            "Cost Management",
-            "Resource Graph",
-            "Blueprints",
-            "Resource Locks",
-            "RBAC",
-            "AAD",
-            "MFA",
-            "Subscriptions",
-            "Service Health"
-          ],
-          "Image": "/Templates/TemplateImages/AzureCommunity/AzureGov.png"
-        },
+        },        
         {
           "Key": "532B15D2-C4E2-4427-897B-3FBD3D5516672",
           "Name": "WVD Guidance",
@@ -963,7 +944,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
-          "Name": "SQL_CAF_DevOps_Project_TaskList",
+          "Name": "SQL Migration",
           "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
           "ShortName": "SQLMIGRATION",
           "Description": "SQL migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete SQL migration and management.",
@@ -984,7 +965,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
-          "Name": "WVD_CAF_DevOps_Project_TaskList",
+          "Name": "Windows Virtual Desktop",
           "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
           "ShortName": "WVDMigration",
           "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management",
@@ -1002,7 +983,84 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
           "ForkGitHubRepo": false
+        },
+        {
+          "Key": "3197C45A-9440-4272-99A7-164C89DFA778",
+          "Name": "Knowledge Mining",
+          "TemplateFolder": "KnowledgeMining",
+          "ShortName": "kmine",
+          "Description": "Knowledge project simplifies the process of accessing the latent insights contained within structured and unstructured data. Use this project to help you address all the steps.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Innovate",
+            "Knowledge Mining",
+            "AI",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "PreviewImages": [
+            "/Templates/CloudAdoptionPlan/Images/Overview.png",
+            "/Templates/CloudAdoptionPlan/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/CloudAdoptionFramework.jpg",
+          "ForkGitHubRepo": false
+        },
+        {
+          "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
+          "Name": "Azure Governance Readiness",
+          "TemplateFolder": "AzureGovernance",
+          "ShortName": "gov",
+          "Description": "The standalone Azure governance project provides guidance and tools on how to ensure that your Azure environment is governed in the correct way.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Govern",
+            "Azure Policy",
+            "Azure Blueprints",
+            "Azure Security Center",
+            "Enterprise-Scale Landing Zone",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/AzureGov.png"
+        },
+        {
+          "Key": "A7691C19-7D13-4694-A585-85304FB2D147",
+          "Name": "Modern Data Warehouse",
+          "TemplateFolder": "ModernDataWarehouse",
+          "ShortName": "moddw",
+          "Description": "Build your modern data warehouse using this ADO checklist of items, in this checklist we have links to assets, code and learning material.",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Migration",
+            "“Synapse",
+            "“Modern",
+            "Data",
+            "Warehouse",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/ModernDataWarehouse.png"
+        },
+        {
+          "Key": "F518D392-31BB-45F5-A1E2-E2EA1B25DF57",
+          "Name": "Retail Recommender with Azure Synapse",
+          "TemplateFolder": "RetailRecommender-SolutionAccelerator",
+          "ShortName": "retailai",
+          "Description": "This Solution Accelerator is an end-to-end example on how to enable personalized customer experiences for retail scenarios by leveraging Azure Synapse Analytics, Azure Machine Learning Services, and other Azure Big Data services. This project can be found in the following GitHub repo <a href='https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator' target='_blank'>Retail Recommender with Azure Synapse</a>",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Azure Synapse",
+            "“Machine",
+            "Learning",
+            "“Retail",
+            "solution",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/RecommederIcon.PNG"
         }
+
       ]
     },
     {
