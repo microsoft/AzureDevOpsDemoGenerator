@@ -339,7 +339,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
             string filePath = HostingEnvironment.ContentRootPath + "/ExtractedTemplate/" + fileName;
-            if (!Directory.Exists(HostingEnvironment.ContentRootPath + "/ExtractedTemplate/")) { Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/ExtractedTemplate/"); }
             filePath = filePath.Replace('\\', '/');
             try
             {
@@ -511,7 +510,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
                     fileBytes = memoryStream.ToArray();
                 }
                 // download the constructed zip
-                Directory.Delete(filePath, true);
+                if (Directory.Exists(filePath))
+                {
+                    Directory.Delete(filePath, true);
+                }
                 HttpContext.Response.Headers.Add("Content-Disposition", "attachment; filename=" + fileName + ".zip");
                 return File(fileBytes, "application/zip");
             }

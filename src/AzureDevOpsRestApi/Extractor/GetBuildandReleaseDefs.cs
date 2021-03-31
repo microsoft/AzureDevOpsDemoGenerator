@@ -13,7 +13,7 @@ namespace AzureDevOpsAPI.Extractor
     public class BuildandReleaseDefs : ApiServiceBase
     {
         public BuildandReleaseDefs(IAppConfiguration configuration) : base(configuration) { }
-         Logger logger = LogManager.GetLogger("*");
+        Logger logger = LogManager.GetLogger("*");
         //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
         // Get Build Definition count
         public GetBuildDefResponse.BuildDef GetBuildDefCount()
@@ -128,7 +128,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                   logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -146,52 +146,40 @@ namespace AzureDevOpsAPI.Extractor
         //Export build definitions to write file
         public List<JObject> ExportBuildDefinitions()
         {
-            int retryCount = 0;
-            while (retryCount < 5)
+            try
             {
-                try
+                List<JObject> resultList = new List<JObject>();
+                using (var client = GetHttpClient())
                 {
-                    List<JObject> resultList = new List<JObject>();
-                    using (var client = GetHttpClient())
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/build/definitions?api-version=" + Configuration.VersionNumber, Project)).Result;
+                    if (response.IsSuccessStatusCode)
                     {
-                        HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/build/definitions?api-version=" + Configuration.VersionNumber, Project)).Result;
-                        if (response.IsSuccessStatusCode)
+                        BuildDefinitionResponse.Build definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<BuildDefinitionResponse.Build>(response.Content.ReadAsStringAsync().Result.ToString());
+                        if (definitions.Count > 0)
                         {
-                            BuildDefinitionResponse.Build definitions = Newtonsoft.Json.JsonConvert.DeserializeObject<BuildDefinitionResponse.Build>(response.Content.ReadAsStringAsync().Result.ToString());
-                            if (definitions.Count > 0)
+                            foreach (BuildDefinitionResponse.Value value in definitions.Value)
                             {
-                                foreach (BuildDefinitionResponse.Value value in definitions.Value)
+                                BuildDefinitions.BuildDefinition definitionResult = new BuildDefinitions.BuildDefinition();
+                                using (var client1 = GetHttpClient())
                                 {
-                                    BuildDefinitions.BuildDefinition definitionResult = new BuildDefinitions.BuildDefinition();
-                                    using (var client1 = GetHttpClient())
+                                    HttpResponseMessage responseDef = client1.GetAsync(string.Format("{0}/_apis/build/definitions/{1}?api-version=" + Configuration.VersionNumber, Project, value.Id)).Result;
+                                    if (response.IsSuccessStatusCode)
                                     {
-                                        HttpResponseMessage responseDef = client1.GetAsync(string.Format("{0}/_apis/build/definitions/{1}?api-version=" + Configuration.VersionNumber, Project, value.Id)).Result;
-                                        if (response.IsSuccessStatusCode)
-                                        {
-                                            string result = responseDef.Content.ReadAsStringAsync().Result;
-                                            JObject o = JObject.Parse(result);
-                                            resultList.Add(o);
-                                        }
+                                        string result = responseDef.Content.ReadAsStringAsync().Result;
+                                        JObject o = JObject.Parse(result);
+                                        resultList.Add(o);
                                     }
                                 }
-                                return resultList;
                             }
+                            return resultList;
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
-                    retryCount++;
-
-                    if (retryCount > 4)
-                    {
-                        return new List<JObject>();
-                    }
-
-                    Thread.Sleep(retryCount * 1000);
-                }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
             }
             return new List<JObject>();
         }
@@ -199,42 +187,29 @@ namespace AzureDevOpsAPI.Extractor
         // Get Repository list to create service end point json and import source code json
         public RepositoryList.Repository GetRepoList()
         {
-            int retryCount = 0;
-            while (retryCount < 5)
+            try
             {
-                try
+                using (var client = GetHttpClient())
                 {
-                    using (var client = GetHttpClient())
+                    HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/" + Project + "/_apis/git/repositories?api-version=" + Configuration.VersionNumber).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/" + Project + "/_apis/git/repositories?api-version=" + Configuration.VersionNumber).Result;
-                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
-                            string result = response.Content.ReadAsStringAsync().Result;
-                            RepositoryList.Repository repository = JsonConvert.DeserializeObject<RepositoryList.Repository>(result);
-                            return repository;
-                        }
-                        else
-                        {
-                            var errorMessage = response.Content.ReadAsStringAsync();
-                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            LastFailureMessage = error;
-                            retryCount++;
-                        }
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        RepositoryList.Repository repository = JsonConvert.DeserializeObject<RepositoryList.Repository>(result);
+                        return repository;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        LastFailureMessage = error;
                     }
                 }
-                catch (Exception ex)
-                {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
-                    retryCount++;
-
-                    if (retryCount > 4)
-                    {
-                        return new RepositoryList.Repository();
-                    }
-
-                    Thread.Sleep(retryCount * 1000);
-                }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
             }
             return new RepositoryList.Repository();
         }
@@ -242,67 +217,54 @@ namespace AzureDevOpsAPI.Extractor
         // Get Release Definition to write file - Generalizing
         public List<JObject> GetReleaseDefs()
         {
-            int retryCount = 0;
-            while (retryCount < 5)
+            try
             {
-                try
+                List<JObject> jobj = new List<JObject>();
+                using (var client = GetHttpClient())
                 {
-                    List<JObject> jobj = new List<JObject>();
-                    using (var client = GetHttpClient())
+                    HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/" + Project + "/_apis/release/definitions?api-version=" + Configuration.VersionNumber).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        HttpResponseMessage response = client.GetAsync(Configuration.UriString + "/" + Project + "/_apis/release/definitions?api-version=" + Configuration.VersionNumber).Result;
-                        if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                        ReleaseDefCountResponse.Release release = new ReleaseDefCountResponse.Release();
+                        string res = response.Content.ReadAsStringAsync().Result;
+                        release = JsonConvert.DeserializeObject<ReleaseDefCountResponse.Release>(res);
+                        if (release.Count > 0)
                         {
-                            ReleaseDefCountResponse.Release release = new ReleaseDefCountResponse.Release();
-                            string res = response.Content.ReadAsStringAsync().Result;
-                            release = JsonConvert.DeserializeObject<ReleaseDefCountResponse.Release>(res);
-                            if (release.Count > 0)
+                            foreach (var rel in release.Value)
                             {
-                                foreach (var rel in release.Value)
+                                using (var clients = GetHttpClient())
                                 {
-                                    using (var clients = GetHttpClient())
+                                    HttpResponseMessage resp = client.GetAsync(Configuration.UriString + "/" + Project + "/_apis/release/definitions/" + rel.Id).Result;
+                                    if (resp.IsSuccessStatusCode && resp.StatusCode == System.Net.HttpStatusCode.OK)
                                     {
-                                        HttpResponseMessage resp = client.GetAsync(Configuration.UriString + "/" + Project + "/_apis/release/definitions/" + rel.Id).Result;
-                                        if (resp.IsSuccessStatusCode && resp.StatusCode == System.Net.HttpStatusCode.OK)
-                                        {
-                                            JObject obj = new JObject();
-                                            string relRes = resp.Content.ReadAsStringAsync().Result;
-                                            obj = JsonConvert.DeserializeObject<JObject>(relRes);
-                                            jobj.Add(obj);
-                                        }
-                                        else
-                                        {
-                                            var errorMessage = response.Content.ReadAsStringAsync();
-                                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                                            this.LastFailureMessage = error;
-                                        }
+                                        JObject obj = new JObject();
+                                        string relRes = resp.Content.ReadAsStringAsync().Result;
+                                        obj = JsonConvert.DeserializeObject<JObject>(relRes);
+                                        jobj.Add(obj);
+                                    }
+                                    else
+                                    {
+                                        var errorMessage = response.Content.ReadAsStringAsync();
+                                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                                        this.LastFailureMessage = error;
                                     }
                                 }
-                                return jobj;
                             }
+                            return jobj;
                         }
-                        else
-                        {
-                            var errorMessage = response.Content.ReadAsStringAsync();
-                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            this.LastFailureMessage = error;
-                            retryCount++;
-                        }                        
                     }
-                }
-                catch (Exception ex)
-                {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
-                    retryCount++;
-
-                    if (retryCount > 4)
+                    else
                     {
-                        return new List<JObject>(); ;
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
                     }
-
-                    Thread.Sleep(retryCount * 1000);
                 }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
             }
             return new List<JObject>();
         }
@@ -310,52 +272,40 @@ namespace AzureDevOpsAPI.Extractor
         // Get Agent Queue to Replace the Queue name in the build definition
         public Dictionary<string, int> GetQueues()
         {
-            int retryCount = 0;
-            while (retryCount < 5)
+            try
             {
-                try
+                Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
+                QueueModel viewModel = new QueueModel();
+
+                using (var client = GetHttpClient())
                 {
-                    Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
-                    QueueModel viewModel = new QueueModel();
+                    HttpResponseMessage response = client.GetAsync(Configuration.Project + "/_apis/distributedtask/queues?api-version=2.0-preview.1").Result;
 
-                    using (var client = GetHttpClient())
+                    if (response.IsSuccessStatusCode)
                     {
-                        HttpResponseMessage response = client.GetAsync(Configuration.Project + "/_apis/distributedtask/queues?api-version=2.0-preview.1").Result;
-
-                        if (response.IsSuccessStatusCode)
+                        viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
+                        if (viewModel != null && viewModel.Value != null)
                         {
-                            viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
-                            if (viewModel != null && viewModel.Value != null)
+                            foreach (AgentQueueModel aq in viewModel.Value)
                             {
-                                foreach (AgentQueueModel aq in viewModel.Value)
-                                {
-                                    dictionaryQueues[aq.Name] = aq.Id;
-                                }
+                                dictionaryQueues[aq.Name] = aq.Id;
                             }
                         }
-                        else
-                        {
-                            var errorMessage = response.Content.ReadAsStringAsync();
-                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            this.LastFailureMessage = error;
-                        }
                     }
-
-                    return dictionaryQueues;
-                }
-                catch (Exception ex)
-                {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
-                    retryCount++;
-
-                    if (retryCount > 4)
+                    else
                     {
-                        return new Dictionary<string, int>();
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
                     }
-
-                    Thread.Sleep(retryCount * 1000);
                 }
+
+                return dictionaryQueues;
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
             }
             return new Dictionary<string, int>();
         }
