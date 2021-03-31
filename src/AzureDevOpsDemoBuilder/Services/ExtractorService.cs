@@ -1231,9 +1231,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
-                int releasecount = 1;
                 if (releases.Count > 0)
                 {
+                    int releasecount = 1;
                     foreach (JObject rel in releases)
                     {
                         var name = rel["name"];
@@ -1380,8 +1380,8 @@ namespace AzureDevOpsDemoBuilder.Services
                         }
                         releasecount++;
                     }
+                    return releasecount;
                 }
-                return releasecount;
             }
             catch (Exception ex)
             {
