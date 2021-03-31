@@ -224,7 +224,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
 
-            AddMessage(model.Id, "Teams");
+            AddMessage(model.Id, "");
             ProjectConfigurations appConfig = ProjectConfiguration(model);
 
             GetInstalledExtensions(appConfig);
