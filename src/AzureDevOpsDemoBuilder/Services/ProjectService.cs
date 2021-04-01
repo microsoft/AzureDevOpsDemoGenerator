@@ -1889,7 +1889,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                         jsonCreateService = model.ReadJsonFile(jsonCreateService);
 
-                        if (!string.IsNullOrEmpty(settings.IsPrivate))
+                        if (settings.IsPrivate.ToLower() == "true")
                         {
                             jsonCreateService = jsonCreateService.Replace("$ProjectName$", model.ProjectName);
                             jsonCreateService = jsonCreateService.Replace("$username$", model.Email).Replace("$password$", model.AccessToken);
