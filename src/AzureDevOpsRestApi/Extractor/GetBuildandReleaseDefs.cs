@@ -176,6 +176,10 @@ namespace AzureDevOpsAPI.Extractor
                                 }
                                 return resultList;
                             }
+                            else
+                            {
+                                return new List<JObject>();
+                            }
                         }
                     }
                 }
@@ -280,6 +284,10 @@ namespace AzureDevOpsAPI.Extractor
                                 }
                                 return jobj;
                             }
+                            else
+                            {
+                                return new List<JObject>();
+                            }
                         }
                         else
                         {
@@ -310,52 +318,40 @@ namespace AzureDevOpsAPI.Extractor
         // Get Agent Queue to Replace the Queue name in the build definition
         public Dictionary<string, int> GetQueues()
         {
-            int retryCount = 0;
-            while (retryCount < 5)
+            try
             {
-                try
+                Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
+                QueueModel viewModel = new QueueModel();
+
+                using (var client = GetHttpClient())
                 {
-                    Dictionary<string, int> dictionaryQueues = new Dictionary<string, int>();
-                    QueueModel viewModel = new QueueModel();
+                    HttpResponseMessage response = client.GetAsync(Configuration.Project + "/_apis/distributedtask/queues?api-version=2.0-preview.1").Result;
 
-                    using (var client = GetHttpClient())
+                    if (response.IsSuccessStatusCode)
                     {
-                        HttpResponseMessage response = client.GetAsync(Configuration.Project + "/_apis/distributedtask/queues?api-version=2.0-preview.1").Result;
-
-                        if (response.IsSuccessStatusCode)
+                        viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
+                        if (viewModel != null && viewModel.Value != null)
                         {
-                            viewModel = response.Content.ReadAsAsync<QueueModel>().Result;
-                            if (viewModel != null && viewModel.Value != null)
+                            foreach (AgentQueueModel aq in viewModel.Value)
                             {
-                                foreach (AgentQueueModel aq in viewModel.Value)
-                                {
-                                    dictionaryQueues[aq.Name] = aq.Id;
-                                }
+                                dictionaryQueues[aq.Name] = aq.Id;
                             }
                         }
-                        else
-                        {
-                            var errorMessage = response.Content.ReadAsStringAsync();
-                            string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                            this.LastFailureMessage = error;
-                        }
                     }
-
-                    return dictionaryQueues;
-                }
-                catch (Exception ex)
-                {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
-                    this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
-                    retryCount++;
-
-                    if (retryCount > 4)
+                    else
                     {
-                        return new Dictionary<string, int>();
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
                     }
-
-                    Thread.Sleep(retryCount * 1000);
                 }
+
+                return dictionaryQueues;
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
             }
             return new Dictionary<string, int>();
         }

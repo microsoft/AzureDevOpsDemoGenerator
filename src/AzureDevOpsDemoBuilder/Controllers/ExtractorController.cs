@@ -339,6 +339,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
             string filePath = HostingEnvironment.ContentRootPath + "/ExtractedTemplate/" + fileName;
+            if (!Directory.Exists(HostingEnvironment.ContentRootPath + "/ExtractedTemplate/")) { Directory.CreateDirectory(HostingEnvironment.ContentRootPath + "/ExtractedTemplate/"); }
             filePath = filePath.Replace('\\', '/');
             try
             {
