@@ -1694,6 +1694,11 @@
     <Content Include="Templates\ModernIOT\WorkItems\Feature.json" />
     <Content Include="Templates\ModernIOT\WorkItems\Task.json" />
     <Content Include="Templates\ModernIOT\WorkItems\User Story.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance - CAF Team\BoardColumns.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance - CAF Team\BoardRows.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance - CAF Team\CardFields.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance - CAF Team\CardStyles.json" />
+    <Content Include="Templates\AzureGovernance\Teams\Azure Governance - CAF Team\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
