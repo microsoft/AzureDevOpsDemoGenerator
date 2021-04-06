@@ -206,77 +206,84 @@ namespace AzureDevOpsDemoBuilder.Services
         #region GENERATE ARTIFACTS
         public string[] GenerateTemplateArifacts(Project model)
         {
-            extractedTemplatePath = HostingEnvironment.ContentRootPath + "/ExtractedTemplate/";
-            if (!Directory.Exists(extractedTemplatePath))
+            try
             {
-                Directory.CreateDirectory(extractedTemplatePath);
-            }
-            if (Directory.Exists(extractedTemplatePath))
-            {
-                string[] subdirs = Directory.GetDirectories(extractedTemplatePath)
-                               .Select(Path.GetFileName)
-                               .ToArray();
-                foreach (string folderName in subdirs)
+                extractedTemplatePath = HostingEnvironment.ContentRootPath + "/ExtractedTemplate/";
+                if (!Directory.Exists(extractedTemplatePath))
                 {
-                    DirectoryInfo d = new DirectoryInfo(extractedTemplatePath + folderName);
-                    if (d.CreationTime < DateTime.Now.AddHours(-1))
-                        Directory.Delete(extractedTemplatePath + folderName, true);
+                    Directory.CreateDirectory(extractedTemplatePath);
                 }
+                if (Directory.Exists(extractedTemplatePath))
+                {
+                    string[] subdirs = Directory.GetDirectories(extractedTemplatePath)
+                                   .Select(Path.GetFileName)
+                                   .ToArray();
+                    foreach (string folderName in subdirs)
+                    {
+                        DirectoryInfo d = new DirectoryInfo(extractedTemplatePath + folderName);
+                        if (d.CreationTime < DateTime.Now.AddHours(-1))
+                            Directory.Delete(extractedTemplatePath + folderName, true);
+                    }
+                }
+
+                AddMessage(model.Id, "");
+                ProjectConfigurations appConfig = ProjectConfiguration(model);
+
+                GetInstalledExtensions(appConfig);
+
+                ExportQuries(appConfig);
+                ExportTeams(appConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
+
+                if (ExportIterations(appConfig))
+                {
+                    AddMessage(model.Id, "Iterations Definition");
+                }
+                string extractedFolderName = extractedTemplatePath + model.ProjectName;
+                string filePathToRead = HostingEnvironment.ContentRootPath + "/PreSetting";
+
+                string projectSetting = "";
+                projectSetting = filePathToRead + "/ProjectSettings.json";
+                projectSetting = File.ReadAllText(projectSetting);
+                projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.Value.Where(x => x.Name == "System.ProcessTemplateType").FirstOrDefault().RefValue);
+                File.WriteAllText(extractedFolderName + "/ProjectSettings.json", projectSetting);
+
+                string projectTemplate = "";
+                projectTemplate = filePathToRead + "/ProjectTemplate.json";
+                projectTemplate = File.ReadAllText(projectTemplate);
+                File.WriteAllText(extractedFolderName + "/ProjectTemplate.json", projectTemplate);
+
+                string teamArea = "";
+                teamArea = filePathToRead + "/TeamArea.json";
+                teamArea = File.ReadAllText(teamArea);
+                File.WriteAllText(extractedFolderName + "/TeamArea.json", teamArea);
+                AddMessage(model.Id, "Team Areas");
+
+                ExportWorkItems(appConfig);
+                AddMessage(model.Id, "Work Items");
+
+                ExportRepositoryList(appConfig);
+                AddMessage(model.Id, "Repository and Service Endpoint");
+
+                GetServiceEndpoints(appConfig);
+
+                int count = GetBuildDefinitions(appConfig);
+                if (count >= 1)
+                {
+                    AddMessage(model.Id, "Build Definition");
+                }
+
+                int relCount = GeneralizingGetReleaseDefinitions(appConfig);
+                if (relCount >= 1)
+                {
+                    AddMessage(model.Id, "Release Definition");
+                }
+
+                StatusMessages[model.Id] = "100";
             }
-
-            AddMessage(model.Id, "");
-            ProjectConfigurations appConfig = ProjectConfiguration(model);
-
-            GetInstalledExtensions(appConfig);
-
-            ExportQuries(appConfig);
-            ExportTeams(appConfig.BoardConfig, model.ProcessTemplate, model.ProjectId);
-
-            if (ExportIterations(appConfig))
+            catch(Exception ex)
             {
-                AddMessage(model.Id, "Iterations Definition");
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
-            string extractedFolderName = extractedTemplatePath + model.ProjectName;
-            string filePathToRead = HostingEnvironment.ContentRootPath + "/PreSetting";
-
-            string projectSetting = "";
-            projectSetting = filePathToRead + "/ProjectSettings.json";
-            projectSetting = File.ReadAllText(projectSetting);
-            projectSetting = projectSetting.Replace("$type$", model.ProcessTemplate).Replace("$id$", projectProperties.Value.Where(x => x.Name == "System.ProcessTemplateType").FirstOrDefault().RefValue);
-            File.WriteAllText(extractedFolderName + "/ProjectSettings.json", projectSetting);
-
-            string projectTemplate = "";
-            projectTemplate = filePathToRead + "/ProjectTemplate.json";
-            projectTemplate = File.ReadAllText(projectTemplate);
-            File.WriteAllText(extractedFolderName + "/ProjectTemplate.json", projectTemplate);
-
-            string teamArea = "";
-            teamArea = filePathToRead + "/TeamArea.json";
-            teamArea = File.ReadAllText(teamArea);
-            File.WriteAllText(extractedFolderName + "/TeamArea.json", teamArea);
-            AddMessage(model.Id, "Team Areas");
-
-            ExportWorkItems(appConfig);
-            AddMessage(model.Id, "Work Items");
-
-            ExportRepositoryList(appConfig);
-            AddMessage(model.Id, "Repository and Service Endpoint");
-
-            GetServiceEndpoints(appConfig);
-
-            int count = GetBuildDefinitions(appConfig);
-            if (count >= 1)
-            {
-                AddMessage(model.Id, "Build Definition");
-            }
-
-            int relCount = GeneralizingGetReleaseDefinitions(appConfig);
-            if (relCount >= 1)
-            {
-                AddMessage(model.Id, "Release Definition");
-            }
-
-            StatusMessages[model.Id] = "100";
             return new string[] { model.Id, "" };
         }
 
