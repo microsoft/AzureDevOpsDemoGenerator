@@ -1,1043 +1,23 @@
 {
-  "count": 14,
+  "count": 12,
   "value": [
     {
-      "id": 3837,
-      "rev": 4,
+      "id": 2129,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:12.93Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T17:59:29.237Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.CreatedDate": "2020-09-01T13:55:18.16Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
         "System.Title": "1 - Azure Fundamentals",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Azure Fundamentals",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Fundamentals",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3722",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3731",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3711",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3713",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3686",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3715",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3718",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3719",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3720",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3837"
-    },
-    {
-      "id": 3838,
-      "rev": 4,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:13.087Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T17:59:29.237Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "2 - Azure Active Directory Basics",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Active Directory Basics",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Fundamentals",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3689",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3686",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3697",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3699",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3700",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3691",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3694",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3687",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3693",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3838"
-    },
-    {
-      "id": 3839,
-      "rev": 4,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:13.36Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T17:59:29.237Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "3 - Resources Organization",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Resources Organization",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Fundamentals",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3721",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3686",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3714",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3726",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3738",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3725",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3839"
-    },
-    {
-      "id": 3840,
-      "rev": 4,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:13.523Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T17:59:29.237Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "4 - Role Based Access Control",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | RBAC",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Fundamentals",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3688",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3698",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3695",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3690",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3696",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3692",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3686",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3840"
-    },
-    {
-      "id": 3841,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:13.683Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:49:35.94Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "6 - Azure Policy",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Azure Policy",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3734",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3741",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3723",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3836",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3709",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3728",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3841"
-    },
-    {
-      "id": 3842,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:13.82Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:49:43.053Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "7 - Resource Locks",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Resource Locks",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3835",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3735",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3740",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3842"
-    },
-    {
-      "id": 3843,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:13.947Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:49:49.543Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "8 - Azure Blueprints",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Azure Blueprints",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3729",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3833",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3742",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3733",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3843"
-    },
-    {
-      "id": 3844,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:14.07Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:49:56.91Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "9 - Azure Service Health",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Azure Service Health",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3834",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3739",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3736",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3844"
-    },
-    {
-      "id": 3845,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:14.213Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:50:03.88Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "10 - Azure Advisor",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Azure Advisor",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3732",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3743",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3832",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3730",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3845"
-    },
-    {
-      "id": 3846,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:14.503Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:50:10.563Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "11 - Azure Cost Management",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Azure Governance | Azure Cost Management",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3727",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3744",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3716",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3724",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3717",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3737",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3710",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3831",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3846"
-    },
-    {
-      "id": 3847,
-      "rev": 5,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:14.7Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:50:16.287Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "12 - Azure Resource Graph",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "11 - Azure Resource Graph",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Tools",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3705",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3708",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3706",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3703",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3701",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3702",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3707",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3704",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3712",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3847"
-    },
-    {
-      "id": 3848,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:32:14.83Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T15:38:09.76Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "12 - Tools and Additional Documents",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "12 - Tools and Additional Documents",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1052,7 +32,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3746",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2009",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1061,7 +41,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3755",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2033",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1070,7 +50,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3753",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2023",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1079,7 +59,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3752",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2031",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1088,7 +68,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3747",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2027",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1097,7 +77,25 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3751",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2011",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1990",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1106,43 +104,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3749",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3745",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3748",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3754",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3750",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2028",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1150,30 +112,944 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3848"
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2129"
     },
     {
-      "id": 4022,
+      "id": 2130,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:18.603Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "2 - Azure Active Directory Basics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Active Directory Basics",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1993",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2021",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2001",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2026",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2012",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2035",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2036",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2046",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2130"
+    },
+    {
+      "id": 2131,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:19.013Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "3 - Resources Organization",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Resources Organization",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2018",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2032",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2000",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1991",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2017",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2131"
+    },
+    {
+      "id": 2132,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:19.407Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "4 - Role Based Access Control",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | RBAC",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2047",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2010",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2022",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2034",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2002",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1992",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2132"
+    },
+    {
+      "id": 2133,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:19.793Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "5 - Azure Policy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Azure Policy",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2015",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2020",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2006",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2048",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1997",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2025",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2133"
+    },
+    {
+      "id": 2134,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:20.193Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "6 - Resource Locks",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Resource Locks",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1998",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2049",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2005",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2134"
+    },
+    {
+      "id": 2135,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:20.613Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "7 - Azure Blueprints",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Azure Blueprints",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1996",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2014",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2051",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2007",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2135"
+    },
+    {
+      "id": 2136,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:21Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "8 - Azure Service Health",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Azure Service Health",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1999",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2050",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2004",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2136"
+    },
+    {
+      "id": 2137,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:21.96Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "9 - Azure Advisor",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Azure Advisor",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2013",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2052",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1995",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2008",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2137"
+    },
+    {
+      "id": 2138,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:22.34Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "10 - Azure Cost Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Governance | Azure Cost Management",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2030",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2053",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2016",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1994",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2029",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2003",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2019",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2024",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2138"
+    },
+    {
+      "id": 2139,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-09-01T13:55:22.78Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-09-10T12:51:57.087Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "11 - Azure Resource Graph",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "11 - Azure Resource Graph",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2043",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2039",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2045",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2042",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2037",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2041",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2044",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2038",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2040",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2139"
+    },
+    {
+      "id": 2291,
       "rev": 5,
       "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
+        "System.AreaPath": "Azure Governance - CAF",
+        "System.TeamProject": "Azure Governance - CAF",
+        "System.IterationPath": "Azure Governance - CAF",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T21:35:36.38Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T21:50:22.003Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "13 - Tools and Additional Documents",
+        "System.CreatedDate": "2020-09-10T12:51:55.7Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:48:36.57Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "12 - Tools and Additional Documents",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "12 - Tools and Additional Documents",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Tools",
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -1183,154 +1059,39 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3923",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3275",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3920",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2292",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3922",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3281",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3921",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3278",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3925",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3924",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3927",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3926",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3929",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3928",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3919",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3851",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3859",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4022"
-    },
-    {
-      "id": 3852,
-      "rev": 4,
-      "fields": {
-        "System.AreaPath": "Azure Governance",
-        "System.TeamProject": "Azure Governance",
-        "System.IterationPath": "Azure Governance",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-15T15:51:18.92Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-15T17:59:29.237Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "5 - Enterprise-scale Landing Zone",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/?WT.mc_id=devops_userstory_service_gov-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/?WT.mc_id=devops_userstory_service_gov-inproduct-devopsportal</a><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": "Fundamentals",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3853",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2293",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -1338,7 +1099,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3686",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/1989",
           "attributes": {
             "isLocked": "false",
             "name": "Parent"
@@ -1346,7 +1107,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3855",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3277",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -1354,14 +1115,46 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3854",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3273",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3276",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3279",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3274",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/3280",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3852"
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/2291"
     }
   ],
   "HttpStatusCode": 0,
