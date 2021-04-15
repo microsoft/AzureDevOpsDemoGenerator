@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Modern IOT/_git/Modern IOT"
+    },
+    "serviceEndpointId": "$Modern IOT-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
