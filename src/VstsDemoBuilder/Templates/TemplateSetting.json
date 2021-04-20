@@ -834,7 +834,7 @@
           "Author": "Microsoft",
           "ForkGitHubRepo": false,
           "Image": "/Templates/TemplateImages/AzureCommunity/NIST 800-171.png"
-        },        
+        },
         {
           "Key": "532B15D2-C4E2-4427-897B-3FBD3D5516672",
           "Name": "WVD Guidance",
@@ -848,6 +848,21 @@
             "Deployment"
           ],
           "Image": "/Templates/TemplateImages/AzureCommunity/windows-virtual-desktop.svg"
+        },
+        {
+          "Key": "79692C2C-845B-4E3E-8DD6-1AB78B5FD171",
+          "Name": "SAP on Azure",
+          "TemplateFolder": "SapOnAzure",
+          "ShortName": "sapazure",
+          "Description": "Main topics for successful SAP on Azure deployment, organized in task lists linking both Azure and SAP documentation. <a href='https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/get-started' target='_blank'>Reference Document</a>",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "SAP",
+            "Enterprise-Scale Landing Zone",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/SapOnAzureLogo.png"
         }
       ]
     },
