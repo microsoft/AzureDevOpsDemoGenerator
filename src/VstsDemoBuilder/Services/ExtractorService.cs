@@ -1135,7 +1135,10 @@ namespace VstsDemoBuilder.Services
                     splitYmlRepoUrl[4] = "$ProjectName$";
                     ymlRepoUrl = string.Join("/", splitYmlRepoUrl);
                     def["repository"]["url"] = ymlRepoUrl;
+                    def["repository"]["properties"]["cloneUrl"] = ymlRepoUrl;
                 }
+                def["repository"]["properties"]["safeRepository"] = string.Format("${0}$", def["repository"]["name"].ToString());
+                def["repository"]["id"] = string.Format("${0}$", def["repository"]["name"].ToString());
                 var queueHref = def["queue"]["_links"]["self"]["href"].ToString();
                 if (queueHref != "")
                 {
