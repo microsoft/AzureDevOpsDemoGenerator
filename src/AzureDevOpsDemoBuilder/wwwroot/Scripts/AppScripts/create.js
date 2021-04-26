@@ -604,6 +604,9 @@ $('#btnSubmit').click(function () {
         "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName,
         "PrivateTemplatePath": privateTemplatePath
     };
+    appInsights.trackEvent("Create button clicked");
+    appInsights.trackEvent({ name: selectedTemplate });
+
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
         if (data !== true) {
             //var queryTemplate = '@Request.QueryString["queryTemplate"]';
@@ -625,11 +628,10 @@ $('#btnSubmit').click(function () {
             }
         }
         $('input[id="gitHubCheckbox"]').prop('disabled', true);
-        appInsights.trackEvent("Create button clicked");
+        
         appInsights.trackMetric("Created project using", selectedTemplate);
         ga('send', 'event', selectedTemplate, 'selected');
-        appInsights.trackEvent({ name: selectedTemplate });
-
+        
         $('#ddlGroups').attr("disabled", "disabled");
 
         $("#ddlAcccountName").attr("disabled", "disabled");

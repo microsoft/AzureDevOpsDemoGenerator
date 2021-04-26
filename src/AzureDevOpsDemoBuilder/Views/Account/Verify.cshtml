@@ -96,10 +96,12 @@
         $('#signInWithVSTS').click(function () {
             appInsights.trackEvent("Sign in button clicked");
             ga('send', 'event', 'Sign In', 'Clicked');
+            appInsights.trackEvent({ name: "Sign In" });
             window.location.href="../Account/index";
         });
 
         ga('send', 'event', 'Verify page', 'visited');
+        appInsights.trackEvent({ name: "Verify Page" });
     });
 
 	$("input").on("keypress", function (e) {
