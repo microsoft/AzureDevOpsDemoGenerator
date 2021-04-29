@@ -1,0 +1,839 @@
+{
+  "count": 11,
+  "value": [
+    {
+      "id": 302,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-30T11:59:28.737Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T12:51:05.483Z",
+        "System.ChangedBy": "Al Morrison <almorris@microsoft.com>",
+        "System.Title": "1 - Foundations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Foundations for a working SAP landscape in Azure.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/352",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/304",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/328",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/363",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/371",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/332",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/437",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/302"
+    },
+    {
+      "id": 303,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-02T09:23:09.327Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T19:36:28.083Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "2 - Networking architecture for SAP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General; Networking",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/325",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/347",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/345",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/303"
+    },
+    {
+      "id": 305,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-02T09:48:46.733Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T19:39:00.033Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "3 - Compute (VM) for SAP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/322",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/331",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/305"
+    },
+    {
+      "id": 306,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2021-02-02T09:48:56.817Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T19:42:38.397Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "4 - Storage for SAP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/311",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/318",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/316",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/317",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/315",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/321",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/319",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/312",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/313",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/320",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/310",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/314",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/306"
+    },
+    {
+      "id": 307,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-02T09:50:26.09Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:02:23.54Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "5 - High-availability for SAP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "High Availability",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/365",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/368",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/342",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/327",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/340",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/341",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/339",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/307"
+    },
+    {
+      "id": 308,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2021-02-02T09:50:31.913Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:03:42.01Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "6 - Disaster Recovery for SAP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "BCDR",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/348",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/367",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/308"
+    },
+    {
+      "id": 309,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-02T09:51:10.35Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:04:12.293Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "7 - Backup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "BCDR",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/338",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/508",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/509",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/329",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/506",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/330",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/309"
+    },
+    {
+      "id": 333,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-09T09:16:17.04Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:04:56.09Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "8 - Monitoring",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/335",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/334",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/333"
+    },
+    {
+      "id": 336,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-09T09:17:45.883Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:05:36.087Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "9 - Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/337",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/364",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/336"
+    },
+    {
+      "id": 343,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "Moved to the backlog",
+        "System.CreatedDate": "2021-03-09T17:25:02.36Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:07:33.38Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "10 - SAP with Azure surround services",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/436",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/356",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/359",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/361",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/346",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/344",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/343"
+    },
+    {
+      "id": 366,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "SAP on Azure quick-start guide",
+        "System.TeamProject": "SAP on Azure quick-start guide",
+        "System.IterationPath": "SAP on Azure quick-start guide",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-23T09:22:05.51Z",
+        "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-03-30T20:08:54.3Z",
+        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.Title": "11 - Community articles and further reading",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "General",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/350",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/370",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/353",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/357",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/349",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/355",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/351",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/358",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/354",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/369",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/366"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
