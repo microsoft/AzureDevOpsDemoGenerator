@@ -1913,7 +1913,8 @@ namespace VstsDemoBuilder.Services
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
-                                             .Replace("$username$", model.GitHubUserName);
+                                             .Replace("$username$", model.GitHubUserName)
+                                             .Replace("$Organization$", model.accountName);
 
                         if (model.Environment.VariableGroups.Count > 0)
                         {
@@ -2637,9 +2638,12 @@ namespace VstsDemoBuilder.Services
                             string json = model.ReadJsonFile(wiki);
                             foreach (string repository in model.Environment.repositoryIdList.Keys)
                             {
-                                string placeHolder = string.Format("${0}$", repository);
-                                json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
-                                    .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                                if (model.Environment.repositoryIdList.ContainsKey(repository) && !string.IsNullOrEmpty(model.Environment.repositoryIdList[repository]))
+                                {
+                                    string placeHolder = string.Format("${0}$", repository);
+                                    json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
+                                        .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                                }
                             }
                             bool isWiki = manageWiki.CreateCodeWiki(json);
                             if (isWiki)
