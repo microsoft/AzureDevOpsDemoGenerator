@@ -32,7 +32,7 @@ namespace AzureDevOpsDemoBuilder
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Azure DevOps Demo Generator APIS", Version = "v1" });
             });
             // Add framework services.
-            services.AddApplicationInsightsTelemetry();
+            services.AddApplicationInsightsTelemetry(Configuration);
             services.AddMvc();
             //services.AddControllersWithViews();
             services.AddSingleton<IAccountService, AccountService>();

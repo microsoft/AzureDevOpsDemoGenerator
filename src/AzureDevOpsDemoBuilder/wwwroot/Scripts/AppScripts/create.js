@@ -5,6 +5,7 @@ $(document).ready(function () {
 
     $('#buildYourTemplate').click(function () {
         ga('send', 'event', 'Build Your Template', 'visited');
+        appInsights.trackEvent({ name: "Build Your Template" });
     });
 
     $(window).scroll(function () {
@@ -22,6 +23,7 @@ $(document).ready(function () {
     $("#btnUserShow").attr('disabled', true);
 
     ga('send', 'event', 'Create page', 'visited');
+    appInsights.trackEvent({ name: "Create page" });
 });
 var messageList = [];
 /**/
@@ -64,6 +66,7 @@ $(document).ready(function (event) {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
         ga('send', 'event', 'Choose Template Button', 'Clicked');
+        appInsights.trackEvent({ name: "Choose Template Button" });
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -92,7 +95,7 @@ $(document).ready(function (event) {
     //ON CHANGE OF TEMPLATE- VALIDATE EXTENSION
     $('#selecttmplate').click(function () {
         $('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-
+        appInsights.trackEvent({ name: "Select Template" });
         var privateTemplate = $('#PrivateTemplatePath', parent.document).val();
         var priTemplate = privateTemplate.split("\\");
         if (privateTemplate !== "") {
@@ -229,6 +232,7 @@ $(document).ready(function (event) {
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
         ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
+
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "--select organiaztion--") {
             return false;
         }
@@ -600,6 +604,9 @@ $('#btnSubmit').click(function () {
         "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName,
         "PrivateTemplatePath": privateTemplatePath
     };
+    appInsights.trackEvent("Create button clicked");
+    appInsights.trackEvent({ name: selectedTemplate });
+
     $.post("StartEnvironmentSetupProcess", projData, function (data) {
         if (data !== true) {
             //var queryTemplate = '@Request.QueryString["queryTemplate"]';
@@ -621,11 +628,10 @@ $('#btnSubmit').click(function () {
             }
         }
         $('input[id="gitHubCheckbox"]').prop('disabled', true);
-        appInsights.trackEvent("Create button clicked");
-        appInsights.trackEvent("Created project using" + selectedTemplate + " template");
+        
+        appInsights.trackMetric("Created project using", selectedTemplate);
         ga('send', 'event', selectedTemplate, 'selected');
-        appInsights.trackEvent("User method" + userMethod);
-
+        
         $('#ddlGroups').attr("disabled", "disabled");
 
         $("#ddlAcccountName").attr("disabled", "disabled");
