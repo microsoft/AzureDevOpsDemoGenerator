@@ -37,6 +37,7 @@
 
                     if (result[0] !== "") {
                         console.log("succesfully uploaded file: " + result[0]);
+                        appInsights.trackEvent({ name: result[0] });
                         $.post("UnzipFile", { "fineName": result[0] }, function (Data) {
                             if (Data.responseMessage === "SUCCESS") {
                                 console.log("succesfully unzipped file: " + files[0].name);
