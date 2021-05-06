@@ -220,7 +220,9 @@ namespace VstsDemoBuilder.Services
                 serviceEndpoints = new Dictionary<string, string>(),
                 repositoryIdList = new Dictionary<string, string>(),
                 pullRequests = new Dictionary<string, string>(),
-                GitHubRepos = new Dictionary<string, string>()
+                GitHubRepos = new Dictionary<string, string>(),
+                VariableGroups = new Dictionary<int, string>(),
+                ReposImported = new Dictionary<string, bool>()
             };
             ProjectTemplate template = null;
             ProjectSettings settings = null;
@@ -1619,6 +1621,10 @@ namespace VstsDemoBuilder.Services
 
                     Repository objRepositorySourceCode = new Repository(_retSourceCodeVersion);
                     bool copySourceCode = objRepositorySourceCode.GetSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
+                    if (!model.Environment.ReposImported.ContainsKey(repositoryDetail[0]))
+                    {
+                        model.Environment.ReposImported.Add(repositoryDetail[0], copySourceCode);
+                    }
 
                     if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
                     {
@@ -2636,23 +2642,36 @@ namespace VstsDemoBuilder.Services
                             string[] nameExtension = wiki.Split('\\');
                             string name = (nameExtension[nameExtension.Length - 1]).Split('.')[0];
                             string json = model.ReadJsonFile(wiki);
+                            bool isImported = false;
                             foreach (string repository in model.Environment.repositoryIdList.Keys)
                             {
                                 if (model.Environment.repositoryIdList.ContainsKey(repository) && !string.IsNullOrEmpty(model.Environment.repositoryIdList[repository]))
                                 {
+                                    if (model.Environment.ReposImported.ContainsKey(model.Environment.repositoryIdList[repository]))
+                                    {
+                                        isImported = model.Environment.ReposImported[model.Environment.repositoryIdList[repository]];
+                                    }
+                                    
                                     string placeHolder = string.Format("${0}$", repository);
-                                    json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
-                                        .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                                    if(json.Contains(placeHolder))
+                                    {
+                                        json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
+                                            .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                                        break;
+                                    }
                                 }
                             }
-                            bool isWiki = manageWiki.CreateCodeWiki(json);
-                            if (isWiki)
+                            if(isImported)
                             {
-                                AddMessage(model.id, "Created Wiki");
-                            }
-                            else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
-                            {
-                                AddMessage(model.id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                                bool isWiki = manageWiki.CreateCodeWiki(json);
+                                if (isWiki)
+                                {
+                                    AddMessage(model.id, "Created Wiki");
+                                }
+                                else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
+                                {
+                                    AddMessage(model.id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                                }
                             }
                         }
                     }
