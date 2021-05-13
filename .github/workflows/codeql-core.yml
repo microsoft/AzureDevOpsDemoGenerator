@@ -1,0 +1,59 @@
+name: "Code Scanning - Action - Core"
+
+on:
+  push:
+    branches: [dotnetcore3.0]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [dotnetcore3.0]
+  schedule:
+    - cron: '0 0  * * 0'
+
+jobs:
+  CodeQL-Build:
+
+    strategy:
+      fail-fast: false
+
+
+    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        # We must fetch at least the immediate parents so that if this is
+        # a pull request then we can checkout the head.
+        fetch-depth: 2
+
+    # If this run was triggered by a pull request event, then checkout
+    # the head of the pull request instead of the merge commit.
+    - run: git checkout HEAD^2
+      if: ${{ github.event_name == 'pull_request' }}
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      # Override language selection by uncommenting this and choosing your languages
+      # with:
+      #   languages: go, javascript, csharp, python, cpp, java
+     - name: Setup dotnet    
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+         
+    - name: Restore Dependencies
+      run: dotnet restore
+      working-directory: ./src/AzureDevOpsDemoBuilder/*.csproj
+      
+    - name: Dotnet Build
+      run: dotnet build ./src/AzureDevOpsDemoBuilder/*.csproj --configuration release
+    
+    - name: Build .NET with CodeQL 
+      run: | 
+        dotnet restore ./src/AzureDevOpsDemoBuilder/*.csproj
+        dotnet build ./src/AzureDevOpsDemoBuilder/*.csproj --configuration debug
+    
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
