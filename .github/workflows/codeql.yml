@@ -2,10 +2,10 @@ name: "Code Scanning - Action"
 
 on:
   push:
-    branches: [master, dotnetcore]
+    branches: [master]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [master, dotnetcore]
+    branches: [master]
   schedule:
     - cron: '0 0 * * 0'
 
