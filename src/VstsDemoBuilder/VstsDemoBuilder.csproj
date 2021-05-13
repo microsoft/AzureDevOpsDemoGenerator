@@ -1717,6 +1717,12 @@
     <Content Include="Templates\SapOnAzure\Teams\Teams.json" />
     <Content Include="Templates\SapOnAzure\WorkItems\Task.json" />
     <Content Include="Templates\SapOnAzure\WorkItems\User Story.json" />
+    <Content Include="Templates\SapOnAzure\Dashboard\Dashboard.json" />
+    <Content Include="Templates\SapOnAzure\Dashboard\Queries\SAP Integration and Data.json" />
+    <Content Include="Templates\SapOnAzure\Dashboard\Queries\SAP on HANA.json" />
+    <Content Include="Templates\SapOnAzure\Dashboard\Queries\SAP on MaxDB.json" />
+    <Content Include="Templates\SapOnAzure\Dashboard\Queries\SAP on Oracle.json" />
+    <Content Include="Templates\SapOnAzure\Dashboard\Queries\SAP on SAP ASE.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
