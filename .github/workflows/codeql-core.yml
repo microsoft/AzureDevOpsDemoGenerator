@@ -38,9 +38,10 @@ jobs:
       # Override language selection by uncommenting this and choosing your languages
       # with:
       #   languages: go, javascript, csharp, python, cpp, java
-     - name: Setup dotnet    
-        uses: actions/setup-dotnet@v1
-        with:
+      
+    - name: Setup dotnet    
+      uses: actions/setup-dotnet@v1
+      with:
           dotnet-version: 3.1.x
          
     - name: Restore Dependencies
