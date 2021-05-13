@@ -266,7 +266,9 @@ namespace AzureDevOpsDemoBuilder.Services
                 ServiceEndpoints = new Dictionary<string, string>(),
                 RepositoryIdList = new Dictionary<string, string>(),
                 PullRequests = new Dictionary<string, string>(),
-                GitHubRepos = new Dictionary<string, string>()
+                GitHubRepos = new Dictionary<string, string>(),
+                VariableGroups = new Dictionary<int, string>(),
+                ReposImported = new Dictionary<string, bool>()
             };
             ProjectTemplate template = null;
             ProjectSettings settings = null;
@@ -753,7 +755,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
             //Create WIKI
             //CreateProjetWiki(HostingEnvironment.WebRootPath + "/Templates/", model, _wikiVersion);
-            //CreateCodeWiki(model, _wikiVersion);
+            CreateCodeWiki(model, _wikiVersion);
 
             List<string> listPullRequestJsonPaths = new List<string>();
             string pullRequestFolder = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "/PullRequests");
@@ -1786,7 +1788,10 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     Repository objRepositorySourceCode = new Repository(_retSourceCodeVersion);
                     bool copySourceCode = objRepositorySourceCode.GetSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
-
+                    if (!model.Environment.ReposImported.ContainsKey(repositoryDetail[0]))
+                    {
+                        model.Environment.ReposImported.Add(repositoryDetail[0], copySourceCode);
+                    }
                     if (!(string.IsNullOrEmpty(objRepository.LastFailureMessage)))
                     {
                         AddMessage(id.ErrorId(), "Error while importing source code: " + objRepository.LastFailureMessage + Environment.NewLine);
@@ -2793,20 +2798,33 @@ namespace AzureDevOpsDemoBuilder.Services
                             string[] nameExtension = wiki.Split('\\');
                             string name = (nameExtension[nameExtension.Length - 1]).Split('.')[0];
                             string json = model.ReadJsonFile(wiki);
+                            bool isImported = false;
                             foreach (string repository in model.Environment.RepositoryIdList.Keys)
                             {
-                                string placeHolder = string.Format("${0}$", repository);
-                                json = json.Replace(placeHolder, model.Environment.RepositoryIdList[repository])
-                                    .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                                if (model.Environment.RepositoryIdList.ContainsKey(repository) && !string.IsNullOrEmpty(model.Environment.RepositoryIdList[repository]))
+                                {
+                                    if (model.Environment.ReposImported.ContainsKey(model.Environment.RepositoryIdList[repository]))
+                                    {
+                                        isImported = model.Environment.ReposImported[model.Environment.RepositoryIdList[repository]];
+                                    }
+                                    string placeHolder = string.Format("${0}$", repository);
+                                    if (json.Contains(placeHolder))
+                                        json = json.Replace(placeHolder, model.Environment.RepositoryIdList[repository])
+                                        .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
+                                    break;
+                                }
                             }
-                            bool isWiki = manageWiki.CreateCodeWiki(json);
-                            if (isWiki)
+                            if (isImported)
                             {
-                                AddMessage(model.Id, "Created Wiki");
-                            }
-                            else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
-                            {
-                                AddMessage(model.Id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                                bool isWiki = manageWiki.CreateCodeWiki(json);
+                                if (isWiki)
+                                {
+                                    AddMessage(model.Id, "Created Wiki");
+                                }
+                                else if (!string.IsNullOrEmpty(manageWiki.LastFailureMessage))
+                                {
+                                    AddMessage(model.Id.ErrorId(), "Error while creating wiki: " + manageWiki.LastFailureMessage);
+                                }
                             }
                         }
                     }
