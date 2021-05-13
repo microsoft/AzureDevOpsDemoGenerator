@@ -45,15 +45,15 @@ jobs:
          
     - name: Restore Dependencies
       run: dotnet restore
-      working-directory: ./src/AzureDevOpsDemoBuilder/*.csproj
+      working-directory: src/AzureDevOpsDemoBuilder/*.csproj
       
     - name: Dotnet Build
-      run: dotnet build ./src/AzureDevOpsDemoBuilder/*.csproj --configuration release
+      run: dotnet build src/AzureDevOpsDemoBuilder/*.csproj --configuration release
     
     - name: Build .NET with CodeQL 
       run: | 
-        dotnet restore ./src/AzureDevOpsDemoBuilder/*.csproj
-        dotnet build ./src/AzureDevOpsDemoBuilder/*.csproj --configuration debug
+        dotnet restore src/AzureDevOpsDemoBuilder/*.csproj
+        dotnet build src/AzureDevOpsDemoBuilder/*.csproj --configuration debug
     
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
