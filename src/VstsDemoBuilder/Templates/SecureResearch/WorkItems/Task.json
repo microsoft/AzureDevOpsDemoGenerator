@@ -1,0 +1,2783 @@
+{
+  "count": 69,
+  "value": [
+    {
+      "id": 4283,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T18:29:04.693Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Create VNETs for Data Science Virtual Machines",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Secure VNet with subnets for DSVMs and private endpoints for PaaS services (AML, Storage etc)</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/network-level-segmentation?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/network-level-segmentation?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4283"
+    },
+    {
+      "id": 5202,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T21:48:26.32Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Privileged Identity Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Once you have deployed your landing zone, identity is a key element to be addressed:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/identity-and-access-management?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/identity-and-access-management?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5201",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5202"
+    },
+    {
+      "id": 5219,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:39:01.783Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Configure network peering",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5219"
+    },
+    {
+      "id": 5193,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:12:08.307Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Data Movement",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Define data movement into the environment and specifically around who has access to data in each stage</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4286",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5193"
+    },
+    {
+      "id": 5173,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-15T14:30:15.173Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Build Landing Zone Storage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Build storage for data owners to upload data to Azure in less secure area via https</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/framework/security/storage-data-encryption?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/framework/security/storage-data-encryption?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5172",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5173"
+    },
+    {
+      "id": 5246,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T03:04:04.697Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Azure Key Vault",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5246"
+    },
+    {
+      "id": 5203,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T21:58:49.867Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Multi-factor Authentication",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>A key component in securing your identity and environment is with the use of multi-factor authentication. Regulatory compliance such as CIS and NIST both have controls for multi-factor auth.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworkshttps://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/identity-and-access-management?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworkshttps://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/identity-and-access-management?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5201",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5203"
+    },
+    {
+      "id": 4291,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T21:13:30.037Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Configure SRE Storage Account",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Add storage account.&nbsp; Only accessible via private endpoint - no public access</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/private-link/tutorial-private-endpoint-storage-portal#:~:text=Create%20storage%20account%20with%20a%20private%20endpoint%201%2cSelect%20copy%20on%20the%20Connection%20string%20for%20key1.?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/private-link/tutorial-private-endpoint-storage-portal#:~:text=Create%20storage%20account%20with%20a%20private%20endpoint%201,Select%20copy%20on%20the%20Connection%20string%20for%20key1.?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4291"
+    },
+    {
+      "id": 4292,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T21:13:46.02Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Configure ADF",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Configure ADF to pick up data from less secure storage and move into the SRE and delete the original copy on the less secure storage</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-portal?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-portal?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4292"
+    },
+    {
+      "id": 5200,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T21:00:43.79Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Define Roles for RBAC",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/identity-and-access-management?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/identity-and-access-management?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5201",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5200"
+    },
+    {
+      "id": 5502,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-28T17:03:42.38Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Data Governance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Refer to the Cloud Adoption Framework governance methodology:&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/methodology?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/methodology?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Deep dive on Data classification, security and data annotation:</div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/data-classificationhttps://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/methodology?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/data-classificationhttps://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/methodology?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4286",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5502"
+    },
+    {
+      "id": 5183,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T19:18:21.727Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Data Science Virtual Machine (DSVM)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Configure DSVM (Windows or Linux) - Preferable to add AAD or AD integration when possible for authentication so logins can be individually attributable and logged without local computer accounts.&nbsp; Add all libraries required prior to closing down network to internet.&nbsp; Provide access to Secure Storage Account (mount drive - blobfuse etc.)</div><div><br></div><div>Windows:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/provision-vm?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/provision-vm?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Linux:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Using an ARM template:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5183"
+    },
+    {
+      "id": 5223,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:48:35.98Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Validate Azure Security Center",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Tutorial: investigate the health of the resources:</div><div><a href=\"https://docs.microsoft.com/en-us/azure/security-center/investigate-resource-health?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/security-center/investigate-resource-health?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5220",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5223"
+    },
+    {
+      "id": 5745,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-05-10T16:29:31.917Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Deploy Enterprise-scale landing zone",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Microsoft has built recommended best practice for landing zones. Leverage the model to rapidly define your operating environment:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5204",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5745"
+    },
+    {
+      "id": 5222,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:48:14.28Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Validate Sentinel",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Tutorial:&nbsp;</div><div>Monitor your Data:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-monitor-your-data?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-monitor-your-data?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Investigate incidents:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-investigate-cases?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-investigate-cases?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Use automation to respond:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/tutorial-respond-threats-playbook?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5220",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5222"
+    },
+    {
+      "id": 5221,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:47:43.057Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Validate Logging",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Tutorial: Log Analytics</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5220",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5221"
+    },
+    {
+      "id": 5500,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-27T21:20:05.117Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. VPN/Express Route",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Connectivity to Azure</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/connectivity-to-azure?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/connectivity-to-azure?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5500"
+    },
+    {
+      "id": 5499,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-27T21:19:39.82Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Hub Network",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review your network design</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/define-an-azure-network-topology?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/define-an-azure-network-topology?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5499"
+    },
+    {
+      "id": 5368,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-22T20:45:25.333Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Azure DevOps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Each customer should have at least 1 individual who are strong in the skills measured in the AZ-400 track training</span><br></div><div><span style=\"display:inline !important;\"><br></span></div><div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure%2csql-server%2cwindows-server&amp;terms=devops?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/browse/?products=azure%2Csql-server%2Cwindows-server&amp;terms=devops?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></span></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/certifications/exams/az-400?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/certifications/exams/az-400?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5365",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5368"
+    },
+    {
+      "id": 5367,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-22T20:45:13.64Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Azure Security training",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Each customer should have at least 1 individuals who are strong in the skills measured in the AZ-500 track</span><br></div><div><span style=\"display:inline !important;\"><br></span></div><div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure&amp;terms=azure%20security?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/browse/?products=azure&amp;terms=azure%20security?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></span></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/certifications/exams/az-500?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/certifications/exams/az-500?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5365",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5367"
+    },
+    {
+      "id": 5366,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-22T20:44:58.803Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Azure Administrator Training",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Each customer should have at least 2 individuals who are strong in the skills measured in the AZ-104 track</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure&amp;terms=az-104?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/browse/?products=azure&amp;terms=az-104?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5365",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5366"
+    },
+    {
+      "id": 5364,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-22T20:38:15.98Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Documented Processes for communication",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Establish a process for driving documentation and project updates.</div><div><br></div><div>Possible tools:</div><div><ul><li>Teams and or SharePoint</li><li>Azure DevOps or GitHub wikis</li><li>Microsoft Sway for online publications</li></ul><div><br></div></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4275",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5364"
+    },
+    {
+      "id": 5248,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T03:10:44.903Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define data connectors for log ingestion",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/watchlists?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/watchlists?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5247",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5248"
+    },
+    {
+      "id": 5245,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T03:03:39.11Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Connect KeyVault",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-azure-key-vault?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/connect-azure-key-vault?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5177",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5245"
+    },
+    {
+      "id": 5244,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T03:03:13.627Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Connect Azure AD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-azure-active-directory?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/connect-azure-active-directory?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5177",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5244"
+    },
+    {
+      "id": 5243,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:58:43.463Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Act on compliance remediation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Generate tasks as needed to work through policy/compliance issues.</div><div><br></div><div>Review and remediate your security recommendations:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/security-center/security-center-recommendations?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/security-center/security-center-recommendations?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div><div>Compliance Blog:&nbsp;<a href=\"https://azure.microsoft.com/en-us/blog/regulatory-compliance-dashboard-in-azure-security-center-now-available?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://azure.microsoft.com/en-us/blog/regulatory-compliance-dashboard-in-azure-security-center-now-available?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5241",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5243"
+    },
+    {
+      "id": 5242,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:57:47.687Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Review compliance status",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review security posture and compliance status</div><div><br></div><div>Azure Policy:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/governance/policy/how-to/get-compliance-data?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/governance/policy/how-to/get-compliance-data?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div><div>Azure Security Center:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/security-center/security-center-compliance-dashboard?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/security-center/security-center-compliance-dashboard?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5241",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5242"
+    },
+    {
+      "id": 5240,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:51:43Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Create remediation tasks",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Remediate non-compliant resources:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5236",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5240"
+    },
+    {
+      "id": 5239,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:51:15.03Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Assign institutional policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Additional policies such as SKU limits, regions, operational policies and controls.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5236",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5239"
+    },
+    {
+      "id": 5238,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:50:42.93Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Tutorial: Assign regulatory initiative",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>HIPPA/800-171/800-53:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/security-center/security-center-compliance-dashboard?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/security-center/security-center-compliance-dashboard?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5236",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5238"
+    },
+    {
+      "id": 5237,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:49:32.65Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Define acceptance criteria",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4285",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5237"
+    },
+    {
+      "id": 5235,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:40:16.057Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Azure Data Factory",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>What is Azure Data Factory:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/data-factory/introduction?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/data-factory/introduction?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Azure Data Factory Tutorials:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/data-factory/data-factory-tutorials?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/data-factory/data-factory-tutorials?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5230",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5235"
+    },
+    {
+      "id": 5234,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:38:18.41Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. VNet/Subnet design",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Plan your network:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/network-topology-and-connectivity?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/network-topology-and-connectivity?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5230",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5234"
+    },
+    {
+      "id": 5233,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:37:55.24Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Review Azure Data Science Virtual Machine (DSVM)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5230",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5233"
+    },
+    {
+      "id": 5232,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:37:34.62Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Azure Machine Learning - Optional",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure Machine Learning -&nbsp; optional</div><div><br></div><div>Machine Learning Intro:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-ml?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-ml?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Train your first machine learning model:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-1st-experiment-sdk-train?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-1st-experiment-sdk-train?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5230",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5232"
+    },
+    {
+      "id": 5231,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-21T02:37:02.34Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. NVA or Azure Firewall",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Placeholder for firewall if needed</div><div><br></div><div>Introduction to Azure Firewall - MS Learn:&nbsp;<a href=\"https://docs.microsoft.com/en-us/learn/modules/introduction-azure-firewall?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/introduction-azure-firewall?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Deploy &amp; Configure Azure Firewall:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5230",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5231"
+    },
+    {
+      "id": 5228,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:51:21.58Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Validate Performance - Customer",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Validate performance:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/test-checklist?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/test-checklist?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5226",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5228"
+    },
+    {
+      "id": 5227,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:50:58.237Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. End to End Testing - customer",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Testing your application with Well-Architected:</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/framework/devops/release-engineering-testing?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/architecture/framework/devops/release-engineering-testing?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5226",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5227"
+    },
+    {
+      "id": 5224,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:49:00.69Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Validate Performance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Tutorial:</div><div><br></div><div>Create metric charts with Azure monitor:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/tutorial-metrics-explorer?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/tutorial-metrics-explorer?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div><div><br></div><div>Autoscale based on performance:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/tutorial-autoscale-performance-schedule?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/tutorial-autoscale-performance-schedule?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5220",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5224"
+    },
+    {
+      "id": 5218,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:30:53.063Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Assess platform security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Zero Trust model</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/security?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/security?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a>&nbsp;<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5218"
+    },
+    {
+      "id": 5217,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:30:07.747Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Define Policy Requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>These will be a mix of regulatory and institutional policies required.&nbsp; This will be where we initially agree on exemptions (Duo for MFA etc)</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5217"
+    },
+    {
+      "id": 5216,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:28:50.063Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define encryption and key management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<ul><li><span>Ensure data privacy, compliance, and data residency in Azure</span></li><li><span>Leverage Azure Key Vault for encryption key, secret, and certificate management and establish an automated process for key and certificate rotation</span></li></ul><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/security-governance-and-compliance?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/security-governance-and-compliance?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5216"
+    },
+    {
+      "id": 5214,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:26:20.86Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Establish Metrics for monitoring",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/data-platform-metrics?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/data-platform-metrics?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5212",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5214"
+    },
+    {
+      "id": 5213,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:26:01.16Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Configure Log Analytics workspace ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Note Log Analytics Workspace ID - this could be used as a parameter when policies are assigned as well as a Sentinel enabled workspace.</div><div>Enterprise-scale enables central logging</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5212",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5213"
+    },
+    {
+      "id": 5211,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:14:06.417Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Plan for your networking, IP and DNS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>allocate IP ranges for SRE VNET and peering strategies with hub and other spokes (WVD, AD DS, etc.)</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/plan-for-ip-addressing?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/plan-for-ip-addressing?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5211"
+    },
+    {
+      "id": 5209,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:10:57.047Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Establish Cost Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Cost Management is a core discipline of the govern methodology. Ensure that objectives and outcomes are defined.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/guides/complex/cost-management-improvement?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/govern/guides/complex/cost-management-improvement?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5204",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5209"
+    },
+    {
+      "id": 5206,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:04:28.673Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Subscription Organization and Governance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Read through subscription democratization.&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5204",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5206"
+    },
+    {
+      "id": 5205,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T22:03:47.607Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Review management group hierarchy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Will policy and RBAC be centralized via management groups and subscription hierarchy or will it be decentralized with minimal inheritance.&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5204",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5205"
+    },
+    {
+      "id": 5199,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:51:21.773Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7. Secure SRE VNet",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Use NSGs or firewalls to limit internet traffic from SRE to only essential services/ports<br><br>Log Analytics Agent</div><div>Guest Config</div><div>WVD</div><div>Qualys</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5171",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5199"
+    },
+    {
+      "id": 5198,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "Work halted",
+        "System.CreatedDate": "2021-04-20T20:44:47.79Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-04-23T00:42:22.407Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Monitor/Logging",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>This should be done before application of policies - Log Analytics Workspace will need to be configured and identified prior to policy deployment.</div>",
+        "System.AssignedTo": "Clayton Barlow <clbarlow@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5142",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5198"
+    },
+    {
+      "id": 5196,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:15:56.067Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Data/Model Exportation Requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>What should be allowed out of the SRE?&nbsp; Manual approval?&nbsp; Automated?</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4286",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5196"
+    },
+    {
+      "id": 5195,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:13:49.063Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Define Logging/Monitoring Environment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Will we use Azure Monitor/Log Analytics or on prem.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4287",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5195"
+    },
+    {
+      "id": 5194,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:12:41.767Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. ETL Requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Enrichment?&nbsp; Cleaning of data?</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4286",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5194"
+    },
+    {
+      "id": 5181,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "Work halted",
+        "System.CreatedDate": "2021-04-15T22:53:44.627Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Provide Institutional Security Policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Here you can find built-in sample policies:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies\">https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4276",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5181"
+    },
+    {
+      "id": 5180,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-15T19:20:56.06Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Connect Azure Security Center to Sentinel",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-azure-security-center?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/connect-azure-security-center?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5177",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Related",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5179",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Related"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5180"
+    },
+    {
+      "id": 5179,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-15T19:20:34.39Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:31.81Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Connect Azure Activity to Sentinel",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/sentinel/connect-data-sources?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5177",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Related",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5180",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Related"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5179"
+    },
+    {
+      "id": 5175,
+      "rev": 11,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "Work halted",
+        "System.CreatedDate": "2021-04-15T19:16:59.63Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define SIEM Solution",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure Sentinel Microsoft's native SIEM solution:&nbsp;<a href=\"https://azure.microsoft.com/en-us/resources/quick-start-guide-to-azure-sentinel/\">https://azure.microsoft.com/en-us/resources/quick-start-guide-to-azure-sentinel/</a></div><div><br></div><div>The following Azure DevOps project will step you through deploying Sentinel:&nbsp;<a href=\"https://azuredevopsdemogenerator.azurewebsites.net/?name=azuresentinel\">https://azuredevopsdemogenerator.azurewebsites.net/?name=azuresentinel</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4276",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5175"
+    },
+    {
+      "id": 5192,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:08:27.943Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define SRE Research Team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Key stakeholder who will speak to usability, who will be the data owners and users.</div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4288",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5192"
+    },
+    {
+      "id": 5191,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "Work halted",
+        "System.CreatedDate": "2021-04-20T20:07:40.74Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Define SRE Security Team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Resources dedicated to project - accountable for security decisions for the institution.&nbsp;&nbsp;</span><br></div><div><span style=\"display:inline !important;\"><br></span></div><div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-security?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-security?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4276",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5191"
+    },
+    {
+      "id": 5190,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "Work halted",
+        "System.CreatedDate": "2021-04-20T20:07:17.367Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define Secure Research Environment (SRE) and Governance Risk & Compliance Team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Resources dedicated to project - accountable for risk decisions for the institution.&nbsp;&nbsp;</div><div><br></div><div>Guidance for cloud functions:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-governance?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-governance?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a>&nbsp;</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4275",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5190"
+    },
+    {
+      "id": 5189,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:06:26.35Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Define SRE IT Team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Resources dedicated to project - accountable for implementation of SRE in customer's Azure environment</span><br></div><div><span style=\"display:inline !important;\"><br></span></div><div><span style=\"display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-platform?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-platform?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4287",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5189"
+    },
+    {
+      "id": 5188,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T20:05:12.663Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:35:49.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define Existing Environment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Networking, AD, AAD etc.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4287",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5188"
+    },
+    {
+      "id": 5186,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T19:23:42.55Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Define required libraries - packages",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The customer should enumerate the packages and libraries they want installed on the DSVM or configured in the SRE</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4285",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5186"
+    },
+    {
+      "id": 5185,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T19:22:42.85Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define preferred work environment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Linux vs Windows Data Science Virtual Machine (DSVM).&nbsp; Agree on OS and style (Linux DSVM is a specific distro - customer should be encouraged to use Azure DSVM images).</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4285",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5185"
+    },
+    {
+      "id": 5184,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-04-20T19:20:30.697Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-05-12T15:36:11.667Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Enable Azure Defender",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Enable Azure Defender (Security Center Standard) to enable vulnerability management, compliance dashboard.</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/security-center/azure-defender?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/security-center/azure-defender?WT.mc_id=devops_userstory_service_secureresearch-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5178",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5184"
+    },
+    {
+      "id": 5143,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "Work halted",
+        "System.CreatedDate": "2021-03-25T15:10:56.507Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-04-23T00:42:19.087Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "1 - Reference Architecture ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Clayton Barlow <clbarlow@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5142",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5143"
+    },
+    {
+      "id": 4282,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T15:18:58.563Z",
+        "System.CreatedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.ChangedDate": "2021-02-10T15:18:58.563Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "NIST 800-53",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4278",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4282"
+    },
+    {
+      "id": 4280,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T15:09:52.857Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-10T15:18:16.02Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "NIST 800-171",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4278",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4280"
+    },
+    {
+      "id": 4279,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Secure Research",
+        "System.TeamProject": "Secure Research",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T15:09:45.847Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-04-20T19:20:46.05Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "HIPAA",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4278",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4279"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
