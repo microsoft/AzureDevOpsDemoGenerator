@@ -643,7 +643,7 @@
     },
     {
       "id": 343,
-      "rev": 8,
+      "rev": 9,
       "fields": {
         "System.AreaPath": "SAP on Azure quick-start guide",
         "System.TeamProject": "SAP on Azure quick-start guide",
@@ -653,8 +653,8 @@
         "System.Reason": "Moved to the backlog",
         "System.CreatedDate": "2021-03-09T17:25:02.36Z",
         "System.CreatedBy": "Robert Biro <robiro@microsoft.com>",
-        "System.ChangedDate": "2021-03-30T20:07:33.38Z",
-        "System.ChangedBy": "Robert Biro <robiro@microsoft.com>",
+        "System.ChangedDate": "2021-04-22T13:10:15.037Z",
+        "System.ChangedBy": "Al Morrison <almorris@microsoft.com>",
         "System.Title": "10 - SAP with Azure surround services",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": null,
@@ -662,7 +662,7 @@
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "General",
+        "System.Tags": "Integration",
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -673,14 +673,6 @@
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
           "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/436",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/356",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -752,7 +744,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/350",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/370",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -760,7 +752,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/370",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/356",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -800,7 +792,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/351",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/350",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -825,6 +817,14 @@
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
           "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/369",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/bobsmess/_apis/wit/workItems/351",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
