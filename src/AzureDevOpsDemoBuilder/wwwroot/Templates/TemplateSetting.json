@@ -151,6 +151,22 @@
           ],
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/ContosAir.png"
+        },
+        {
+          "Key": "5A403972-C5A0-4AC4-BE4A-D77C6F7F0CD1",
+          "Name": "GitHub Actions Demo",
+          "TemplateFolder": "GitHub-MHC",
+          "ShortName": "actiondemo",
+          "Description": "GitHub Actions Demo",
+          "Message": "Note that the code for the MHC Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/aksh-h/MHC' target='_blank'>MHC</a>",
+          "Tags": [
+            ".net core",
+            " node.js",
+            "bower"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/GitHub.png",
+          "ForkGitHubRepo": true
         }
       ]
     },
