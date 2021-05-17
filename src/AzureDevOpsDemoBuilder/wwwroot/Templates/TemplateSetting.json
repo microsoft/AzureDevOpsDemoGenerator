@@ -1090,6 +1090,22 @@
 
           ],
           "Image": "/Templates/TemplateImages/AzureCommunity/modiot.png"
+        },
+        {
+          "Key": "3EDBAE1D-F776-44E4-ADB5-B356D60CF1DF",
+          "Name": "Secure Research",
+          "TemplateFolder": "SecureResearch",
+          "ShortName": "secresearch",
+          "Description": " Microsoft has developed a secure research enclave architecture designed for existing and emerging standards. The solution enables a centralized and scalable approach that allows institutions to accelerate research efforts without placing added administrative overhead on researchers. <a href='https://info.microsoft.com/en-us-ondemand-SimplifyandautomateresearchcomplianceresponsibilitieswithAzure-none.html' target='_blank'> On-demand Webinar</a>",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Innovate",
+            "Secure Research",
+            "Education",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/Secureresearch.png"
         }
 
       ]
