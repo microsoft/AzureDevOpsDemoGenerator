@@ -784,7 +784,7 @@ function getStatus() {
                                     //if (doc !== "" || doc !== null) {
                                     //    docLink = '<br /><a href=' + doc + ' target="_blank">Next Steps</a>'
                                     //}
-                                    $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + docLink + social).appendTo("#accountLink");
+                                    $('<b style="display: block;">Congratulations! Your project is successfully provisioned.</b>' + proceedOrg + social).appendTo("#accountLink");
                                     $('#dvProgress').removeClass("d-block").addClass("d-none");
                                     $('#textMuted').removeClass("d-block").addClass("d-none");
                                     currentPercentage = 0;
