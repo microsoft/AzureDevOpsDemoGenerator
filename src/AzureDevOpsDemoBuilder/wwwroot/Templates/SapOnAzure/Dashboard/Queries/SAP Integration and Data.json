@@ -1,0 +1,4 @@
+{
+  "name": "SAP Integration and Data",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from WorkItemLinks where (Source.[System.TeamProject] = @project and (Source.[System.WorkItemType] <> '' and Source.[System.Tags] contains 'General' or Source.[System.Tags] contains 'BCDR' or Source.[System.Tags] contains 'High Availability')) and ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward') and (Target.[System.TeamProject] = @project and (Target.[System.Tags] contains 'Integration' or Target.[System.Tags] contains 'General' or Target.[System.Tags] contains 'BCDR')) order by [System.Id] mode (MustContain)"
+}
