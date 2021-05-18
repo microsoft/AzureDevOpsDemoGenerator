@@ -1,64 +1,46 @@
 [
   {
-    "BoardName": "Epics",
-    "value": [
-      {
-        "name": "To Do",
-        "itemLimit": 0,
-        "stateMappings": {
-          "Epic": "To Do"
-        },
-        "columnType": "incoming"
-      },
-      {
-        "name": "Doing",
-        "itemLimit": 5,
-        "stateMappings": {
-          "Epic": "Doing"
-        },
-        "columnType": "inProgress",
-        "isSplit": false,
-        "description": ""
-      },
-      {
-        "name": "Done",
-        "itemLimit": 0,
-        "stateMappings": {
-          "Epic": "Done"
-        },
-        "columnType": "outgoing"
-      }
-    ]
+    "description": "",
+    "name": "New",
+    "itemLimit": 0,
+    "stateMappings": {
+      "Product Backlog Item": "New",
+      "Bug": "New"
+    },
+    "columnType": "incoming",
+    "isSplit": null
   },
   {
-    "BoardName": "Issues",
-    "value": [
-      {
-        "name": "To Do",
-        "itemLimit": 0,
-        "stateMappings": {
-          "Issue": "To Do"
-        },
-        "columnType": "incoming"
-      },
-      {
-        "name": "Doing",
-        "itemLimit": 5,
-        "stateMappings": {
-          "Issue": "Doing"
-        },
-        "columnType": "inProgress",
-        "isSplit": false,
-        "description": ""
-      },
-      {
-        "name": "Done",
-        "itemLimit": 0,
-        "stateMappings": {
-          "Issue": "Done"
-        },
-        "columnType": "outgoing"
-      }
-    ]
+    "description": "",
+    "name": "Approved",
+    "itemLimit": 5,
+    "stateMappings": {
+      "Product Backlog Item": "Approved",
+      "Bug": "Approved"
+    },
+    "columnType": "inProgress",
+    "isSplit": false
+  },
+  {
+    "description": "",
+    "name": "Committed",
+    "itemLimit": 5,
+    "stateMappings": {
+      "Product Backlog Item": "Committed",
+      "Bug": "Committed"
+    },
+    "columnType": "inProgress",
+    "isSplit": false
+  },
+  {
+    "description": "",
+    "name": "Done",
+    "itemLimit": 0,
+    "stateMappings": {
+      "Product Backlog Item": "Done",
+      "Bug": "Done"
+    },
+    "columnType": "outgoing",
+    "isSplit": null
   }
 ]

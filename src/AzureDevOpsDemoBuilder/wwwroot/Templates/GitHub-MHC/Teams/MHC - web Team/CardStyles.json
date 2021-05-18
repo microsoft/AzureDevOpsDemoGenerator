@@ -6,13 +6,5 @@
     },
     "_links": "{}",
     "BoardName": "Epics"
-  },
-  {
-    "url": "",
-    "rules": {
-      "tagStyle": []
-    },
-    "_links": "{}",
-    "BoardName": "Issues"
   }
 ]
