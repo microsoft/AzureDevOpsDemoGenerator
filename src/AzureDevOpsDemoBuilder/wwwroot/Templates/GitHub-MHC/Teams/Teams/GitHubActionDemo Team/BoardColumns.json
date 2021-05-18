@@ -1,0 +1,125 @@
+[
+  {
+    "boardName": "Epics",
+    "value": [
+      {
+        "name": "New",
+        "itemLimit": 0,
+        "stateMappings": {
+          "epic": "New"
+        },
+        "columnType": "incoming"
+      },
+      {
+        "name": "Active",
+        "itemLimit": 5,
+        "stateMappings": {
+          "epic": "Active"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Resolved",
+        "itemLimit": 5,
+        "stateMappings": {
+          "epic": "Resolved"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Closed",
+        "itemLimit": 0,
+        "stateMappings": {
+          "epic": "Closed"
+        },
+        "columnType": "outgoing"
+      }
+    ]
+  },
+  {
+    "boardName": "Features",
+    "value": [
+      {
+        "name": "New",
+        "itemLimit": 0,
+        "stateMappings": {
+          "feature": "New"
+        },
+        "columnType": "incoming"
+      },
+      {
+        "name": "Active",
+        "itemLimit": 5,
+        "stateMappings": {
+          "feature": "Active"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Resolved",
+        "itemLimit": 5,
+        "stateMappings": {
+          "feature": "Resolved"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Closed",
+        "itemLimit": 0,
+        "stateMappings": {
+          "feature": "Closed"
+        },
+        "columnType": "outgoing"
+      }
+    ]
+  },
+  {
+    "boardName": "Stories",
+    "value": [
+      {
+        "name": "New",
+        "itemLimit": 0,
+        "stateMappings": {
+          "user Story": "New"
+        },
+        "columnType": "incoming"
+      },
+      {
+        "name": "Active",
+        "itemLimit": 5,
+        "stateMappings": {
+          "user Story": "Active"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Resolved",
+        "itemLimit": 5,
+        "stateMappings": {
+          "user Story": "Resolved"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Closed",
+        "itemLimit": 0,
+        "stateMappings": {
+          "user Story": "Closed"
+        },
+        "columnType": "outgoing"
+      }
+    ]
+  }
+]
