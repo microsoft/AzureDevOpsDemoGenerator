@@ -7,15 +7,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure DevOps Demo Generator</title>
+    <meta property="og:title" content="Azure DevOps Demo Generator">
+    <meta property="og:image" content="https://azuredevopsdemogenerator.azurewebsites.net/assets/images/VSTS_cover_image.png">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:description" content="Azure DevOps Demo Generator helps you create projects on your Azure DevOps organization with pre-populated  sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose.">
+    <meta property="og:url" content="https://azuredevopsdemogenerator.azurewebsites.net">
     <link rel="stylesheet" href="~/assets/css/custom.min.css">
     <title>Verify</title>
     <script type="text/javascript">
         !function (T, l, y) { var S = T.location, k = "script", D = "instrumentationKey", C = "ingestionendpoint", I = "disableExceptionTracking", E = "ai.device.", b = "toLowerCase", w = "crossOrigin", N = "POST", e = "appInsightsSDK", t = y.name || "appInsights"; (y.name || T[e]) && (T[e] = t); var n = T[t] || function (d) { var g = !1, f = !1, m = { initialize: !0, queue: [], sv: "5", version: 2, config: d }; function v(e, t) { var n = {}, a = "Browser"; return n[E + "id"] = a[b](), n[E + "type"] = a, n["ai.operation.name"] = S && S.pathname || "_unknown_", n["ai.internal.sdkVersion"] = "javascript:snippet_" + (m.sv || m.version), { time: function () { var e = new Date; function t(e) { var t = "" + e; return 1 === t.length && (t = "0" + t), t } return e.getUTCFullYear() + "-" + t(1 + e.getUTCMonth()) + "-" + t(e.getUTCDate()) + "T" + t(e.getUTCHours()) + ":" + t(e.getUTCMinutes()) + ":" + t(e.getUTCSeconds()) + "." + ((e.getUTCMilliseconds() / 1e3).toFixed(3) + "").slice(2, 5) + "Z" }(), iKey: e, name: "Microsoft.ApplicationInsights." + e.replace(/-/g, "") + "." + t, sampleRate: 100, tags: n, data: { baseData: { ver: 2 } } } } var h = d.url || y.src; if (h) { function a(e) { var t, n, a, i, r, o, s, c, u, p, l; g = !0, m.queue = [], f || (f = !0, t = h, s = function () { var e = {}, t = d.connectionString; if (t) for (var n = t.split(";"), a = 0; a < n.length; a++) { var i = n[a].split("="); 2 === i.length && (e[i[0][b]()] = i[1]) } if (!e[C]) { var r = e.endpointsuffix, o = r ? e.location : null; e[C] = "https://" + (o ? o + "." : "") + "dc." + (r || "services.visualstudio.com") } return e }(), c = s[D] || d[D] || "", u = s[C], p = u ? u + "/v2/track" : d.endpointUrl, (l = []).push((n = "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)", a = t, i = p, (o = (r = v(c, "Exception")).data).baseType = "ExceptionData", o.baseData.exceptions = [{ typeName: "SDKLoadFailed", message: n.replace(/\./g, "-"), hasFullStack: !1, stack: n + "\nSnippet failed to load [" + a + "] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: " + (S && S.pathname || "_unknown_") + "\nEndpoint: " + i, parsedStack: [] }], r)), l.push(function (e, t, n, a) { var i = v(c, "Message"), r = i.data; r.baseType = "MessageData"; var o = r.baseData; return o.message = 'AI (Internal): 99 message:"' + ("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) (" + n + ")").replace(/\"/g, "") + '"', o.properties = { endpoint: a }, i }(0, 0, t, p)), function (e, t) { if (JSON) { var n = T.fetch; if (n && !y.useXhr) n(t, { method: N, body: JSON.stringify(e), mode: "cors" }); else if (XMLHttpRequest) { var a = new XMLHttpRequest; a.open(N, t), a.setRequestHeader("Content-type", "application/json"), a.send(JSON.stringify(e)) } } }(l, p)) } function i(e, t) { f || setTimeout(function () { !t && m.core || a() }, 500) } var e = function () { var n = l.createElement(k); n.src = h; var e = y[w]; return !e && "" !== e || "undefined" == n[w] || (n[w] = e), n.onload = i, n.onerror = a, n.onreadystatechange = function (e, t) { "loaded" !== n.readyState && "complete" !== n.readyState || i(0, t) }, n }(); y.ld < 0 ? l.getElementsByTagName("head")[0].appendChild(e) : setTimeout(function () { l.getElementsByTagName(k)[0].parentNode.appendChild(e) }, y.ld || 0) } try { m.cookie = l.cookie } catch (p) { } function t(e) { for (; e.length;)!function (t) { m[t] = function () { var e = arguments; g || m.queue.push(function () { m[t].apply(m, e) }) } }(e.pop()) } var n = "track", r = "TrackPage", o = "TrackEvent"; t([n + "Event", n + "PageView", n + "Exception", n + "Trace", n + "DependencyData", n + "Metric", n + "PageViewPerformance", "start" + r, "stop" + r, "start" + o, "stop" + o, "addTelemetryInitializer", "setAuthenticatedUserContext", "clearAuthenticatedUserContext", "flush"]), m.SeverityLevel = { Verbose: 0, Information: 1, Warning: 2, Error: 3, Critical: 4 }; var s = (d.extensionConfig || {}).ApplicationInsightsAnalytics || {}; if (!0 !== d[I] && !0 !== s[I]) { var c = "onerror"; t(["_" + c]); var u = T[c]; T[c] = function (e, t, n, a, i) { var r = u && u(e, t, n, a, i); return !0 !== r && m["_" + c]({ message: e, url: t, lineNumber: n, columnNumber: a, error: i }), r }, d.autoExceptionInstrumented = !0 } return m }(y.cfg); function a() { y.onInit && y.onInit(n) } (T[t] = n).queue && 0 === n.queue.length ? (n.queue.push(a), n.trackPageView({})) : a() }(window, document, {
             src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js",
             crossOrigin: "anonymous",
-            cfg: { 
+            cfg: {
                 connectionString: "InstrumentationKey=__INSTRUMENTATION_KEY__;"
             }
         });
@@ -25,70 +31,48 @@
 
 </head>
 <body>
-    <section class="section-1 d-flex flex-column">
-        <main class="d-flex">
-            <div class="VSTS-hero-image d-none d-sm-flex flex-column" style="position:relative;">
-                <div class="VSTS-hero p-4">
-                    <div class="display-4 ml-5 text-white text-center" style="font-weight: 400;">
-                        <img src="~/Content/assets/images/VS_logo.png" alt="" width="60px" class="p-2">
-                        Azure DevOps Demo Generator
+    <div class="homeContent">
+        <div class="container-fluid">
+            <div class="row">
+                <dv class="col-md-6 col-lg-4" style="min-height: 100px;">
+                    <div class="contents">
+                        <div class="logo">
+                            <img src="~/assets/images/VS_logoBlue.png"> <span> Azure DevOps Demo Generator</span>
+                        </div>
+                        <dv class="textDetails">
+                            <p class="text-left"> <strong>Azure DevOps Demo Generator </strong>helps you create projects on your Azure DevOps Organization with pre-populated sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose. <a href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-vsts-demo-generator-v2?view=vsts" target="_blank"><strong>Read more</strong></a></p>
+                            <p>The purpose of this system is to simplify working with the <a href="https://www.azuredevopslabs.com" target="_blank"> <strong>Azure Devops hands-on-labs</strong></a> demos and other education material provided by the Microsoft Azure Marketing team.</p>
+                            <button class="btn btn-primary homebutton" id="signInWithVSTS">Sign In</button>
+                            <p class="mb-0 mt-4">Don’t have an Azure DevOps Organization?</p>
+                            <a target="_blank" aria-label="Get started with Azure DevOps for free" class="btn btn-primary mt-2 homebutton" href="https://app.vsaex.visualstudio.com">
+                                <span class="">Get started for free</span>
+                            </a>
+                        </dv>
+                    </div>
+                </dv>
+                <div class="col-md-6 col-lg-8 pr-0">
+                    <div class="imgContainer">
                     </div>
                 </div>
-
-                <div class="VSTS-hero-text text-primary p-5" style="position: absolute; bottom: 0;width: 100%;">
-                </div>
             </div>
-            <div class="VSTS-details p-3 d-flex flex-column">
-                <img class="d-block mx-auto demo-generator-details-logo mt-2 mt-md-5" src="~/assets/images/VSTS_full_logo.png" alt="">
-                <h6 class="h6 text-primary mt-3 text-uppercase text-center"><a href="https://docs.microsoft.com/azure/devops/demo-gen/?view=vsts" target="_blank">Azure DevOps Demo Generator</a></h6>
-                <p class="text-center">
-                    Azure DevOps Demo Generator helps you create projects on your Azure DevOps Organization with pre-populated  sample content that includes source code, work items, iterations, service endpoints, build and release definitions based on a template you choose. <a href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-vsts-demo-generator-v2?view=vsts" target="_blank">Read more</a>
-                </p>
-                <p class="text-center mb-0">
-                    The purpose of this system is to simplify working with the <a href="https://www.azuredevopslabs.com" target="_blank"> Azure Devops hands-on-labs</a>, demos and other education material provided by the Microsoft Azure Marketing team.
-                </p>
-                <div class="text-center mt-4">
-                    <button class="btn btn-primary" id="signInWithVSTS">Sign In</button>
-                </div>
-                <p class="text-center mt-3 mb-0">Don’t have an Azure DevOps Organization?</p>
-                <div class="text-center">
-                    <a target="_blank" aria-label="Get started with Azure DevOps for free" class="btn btn-primary mt-2" href="https://app.vsaex.visualstudio.com">
-                        <span class="">Get started for free</span>
-                        <img src="~/Images/next.png" style="width:10px" />
-                    </a>
-                </div>
-                <!--div class="demo-generator-feedback mt-auto text-center text-sm-left">
-                    <p>
-                        <ul>
-                            <li>
-                                Looking to populate your TFS projects? Checkout the
-                                <a href="https://github.com/Microsoft/TFSDemoGenerator" target="_blank">TFS Demo Generator</a>
-                            </li>
-                            <li>
-                                Looking for Mobile DevOps projects? Checkout the
-                                <a href="https://appcenterdemobuilder.azurewebsites.net/" target="_blank">App Center Demo Builder</a>
-                            </li>
-
-                        </ul>
-                    </p>
-                </div-->
-            </div>
-        </main>
-        <footer class="footer bg-light text-sm p-2 text-center d-flex flex-column flex-sm-row text-sm-left">
-            <a href="https://www.ecanarys.com" class="text-primary mr-sm-auto" target="_blank">Developed by Canarys Automations Pvt Ltd</a>
+        </div>
+        <footer class="footer footer_ bg-light text-sm p-2 text-center d-flex flex-column flex-sm-row text-sm-left">
+            <a href="https://www.ecanarys.com" class="text-gray mr-sm-auto" target="_blank">Developed by Canarys Automations Pvt Ltd</a>
             <div class="link">
-                <script>function fbs_click() { u = "https://azuredevopsdemogenerator.azurewebsites.net/"; t = +Azure + DevOps + Demo + Generator & window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false; }</script>
-                <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+DevOps+Demo+Generator" target="_blank"><img src="~/Images/facebook.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&t=Azure+DevOps+Demo+Generator" target="_blank"><img src="~/Images/linkedin.png" style="width:20px;" /></a>&nbsp;&nbsp;
-                <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="~/Images/twitter.png" style="width:20px;" /></a>&nbsp;&nbsp;
-
-                <a href="https://www.visualstudio.com/support/support-overview-vs" target="_blank" class="text-primary ml-3">Contact Us</a>
-                <a href="https://go.microsoft.com/fwlink/?LinkID=264782" target="_blank" class="text-primary ml-3">Privacy</a>
-                <a href="https://go.microsoft.com/fwlink/?LinkID=266231" target="_blank" class="text-primary ml-3">Terms of Use</a>
-                <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" target="_blank" class="text-primary ml-3">Trademarks</a>
+                <div class="socialmedia">
+                    <a href="http://www.facebook.com/sharer.php?u=https://azuredevopsdemogenerator.azurewebsites.net/&amp;t=Azure+DevOps+Demo+Generator" target="_blank"><img src="images/facebook.png"></a>&nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;t=Azure+DevOps+Demo+Generator" target="_blank"><img src="images/linkedin.png"></a>&nbsp;&nbsp;
+                    <a href="https://twitter.com/intent/tweet?url=https://azuredevopsdemogenerator.azurewebsites.net/&amp;text=Azure+DevOps+Demo+Generator&amp;hashtags=azuredevopsdemogenerator" target="_blank"><img src="images/twitter.png"></a>&nbsp;&nbsp;
+                </div>
+                <div class="navlink">
+                    <a href="https://www.visualstudio.com/support/support-overview-vs" target="_blank" class=" ml-3">Contact Us</a>
+                    <a href="https://go.microsoft.com/fwlink/?LinkID=264782" target="_blank" class=" ml-3">Privacy</a>
+                    <a href="https://go.microsoft.com/fwlink/?LinkID=266231" target="_blank" class=" ml-3">Terms of Use</a>
+                    <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" target="_blank" class="ml-3">Trademarks</a>
+                </div>
             </div>
         </footer>
-    </section>
+    </div>
 </body>
 </html>
 <script type="text/javascript">

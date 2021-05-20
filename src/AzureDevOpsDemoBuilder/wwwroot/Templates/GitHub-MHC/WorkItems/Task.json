@@ -1,0 +1,166 @@
+{
+  "count": 5,
+  "value": [
+    {
+      "id": 3697,
+      "rev": 2,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "Task",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T05:03:10.61Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:06:00.48Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "4. Update secret with your azure credentials - Run the following command",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "system.Description": "<div><a href=\"https://github.com/marketplace/actions/azure-login#configure-deployment-credentials\">https://github.com/marketplace/actions/azure-login#configure-deployment-credentials</a><br></div><div><pre lang=azurecli style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:16px;padding:16px;overflow:auto;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\"><code style=\"box-sizing:border-box;margin:0px;border-radius:6px;display:inline;\">az ad sp create-for-rbac --name &quot;{sp-name}&quot; --sdk-auth --role contributor</code></pre></div><div><br></div>",
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3691",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3697"
+    },
+    {
+      "id": 3696,
+      "rev": 4,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "Task",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:58:29.17Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:05:53.227Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "3. Update Environment variables",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "system.Description": "<div>RESOURCE_GROUP_NAME - name of the resource group</div><div>RESOURCE_GROUP_LOCATION - location of the resource group where all the resources will be deployed</div><div><br></div>",
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3691",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3696"
+    },
+    {
+      "id": 3695,
+      "rev": 3,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "Task",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:57:45.093Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:06:08.793Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "1. Use secrets to deploy azure app service",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "system.Description": "<div>WEBSITE_NAME</div>",
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3694",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3695"
+    },
+    {
+      "id": 3693,
+      "rev": 2,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "Task",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:56:28.563Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:03:56.473Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "2. Use GitHub Secrets",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "system.Description": "<div>WEBSITE_NAME</div><div>AZURE_CREDENTIALS</div><div>AZURE_SQL_SERVER_NAME</div>",
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3691",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3693"
+    },
+    {
+      "id": 3692,
+      "rev": 2,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "Task",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:55:33.08Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:03:48.753Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "1. Use Environment variables",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "system.Description": "<div>RESOURCE_GROUP_NAME</div><div>RESOURCE_GROUP_LOCATION</div>",
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3691",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3692"
+    }
+  ],
+  "httpStatusCode": 0
+}

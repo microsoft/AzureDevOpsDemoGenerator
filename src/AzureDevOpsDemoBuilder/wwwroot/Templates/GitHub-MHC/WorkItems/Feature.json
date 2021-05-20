@@ -1,0 +1,53 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 3689,
+      "rev": 3,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "Feature",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:52:18.353Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:07:34.12Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "Create a GitHub Action",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3691",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3694",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3690",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3689"
+    }
+  ],
+  "httpStatusCode": 0
+}

@@ -1,0 +1,139 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 3694,
+      "rev": 3,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "User Story",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:57:23.203Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:07:39.34Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "3. Run a job to deploy application to app service",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3689",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3695",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3694"
+    },
+    {
+      "id": 3691,
+      "rev": 3,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "User Story",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:54:28.9Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:07:39.34Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "2. Run a job to deploy Azure Resources using Azure Resource Manager Template",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3689",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3693",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3697",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3692",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3696",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3691"
+    },
+    {
+      "id": 3690,
+      "rev": 4,
+      "fields": {
+        "system.AreaPath": "GitHubActionDemo",
+        "system.TeamProject": "GitHubActionDemo",
+        "system.IterationPath": "$ProjectName$\\Iteration 1",
+        "system.WorkItemType": "User Story",
+        "system.State": "New",
+        "system.Reason": "New",
+        "system.CreatedDate": "2021-05-18T04:53:34.147Z",
+        "system.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.ChangedDate": "2021-05-18T05:07:39.34Z",
+        "system.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "system.Title": "1. Run a job to build .net core application",
+        "microsoft.VSTS.Scheduling.Effort": 0.0,
+        "microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "microsoft.VSTS.Common.Priority": 2.0
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3689",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3690"
+    }
+  ],
+  "httpStatusCode": 0
+}

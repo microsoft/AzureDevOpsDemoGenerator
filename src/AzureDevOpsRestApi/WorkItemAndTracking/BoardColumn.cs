@@ -125,7 +125,6 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                         if (response.IsSuccessStatusCode)
                         {
                             columns = response.Content.ReadAsAsync<GetBoardColumnResponse.ColumnResponse>().Result;
-                            this.RowFieldName = columns.Fields.RowField.ReferenceName;
                             return columns;
                         }
                         else
@@ -169,7 +168,6 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                         if (response.IsSuccessStatusCode)
                         {
                             columns = response.Content.ReadAsAsync<GetBoardColumnResponseAgile.ColumnResponse>().Result;
-                            this.RowFieldName = columns.Fields.RowField.ReferenceName;
                             return columns;
                         }
                         else
