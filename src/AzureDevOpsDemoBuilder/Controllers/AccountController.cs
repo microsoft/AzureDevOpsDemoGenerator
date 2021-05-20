@@ -33,7 +33,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             ai = _ai;
         }
 
-    [HttpGet]
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult Unsupported_browser()
         {
@@ -51,7 +51,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public ActionResult Verify(LoginModel model, string id)
         {
             HttpContext.Session.Clear();
-            
+
             // check to enable extractor
             if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
             {
@@ -68,8 +68,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             try
             {
-                int i = 0;
-                int b = 1 / i;
+
                 if (!string.IsNullOrEmpty(model.name))
                 {
                     if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))

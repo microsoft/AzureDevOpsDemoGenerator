@@ -150,7 +150,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             return Json(templates);
         }
-
+       
         /// <summary>
         /// View ProjectSetUp
         /// </summary>
@@ -161,8 +161,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             try
             {
-                int i = 0;
-                int j = 1 / i;
                 AccessDetails _accessDetails = new AccessDetails();
                 //AccessDetails _accessDetails = ProjectService.AccessDetails;
                 string TemplateSelected = string.Empty;
