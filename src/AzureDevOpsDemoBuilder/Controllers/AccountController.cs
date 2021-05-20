@@ -1,5 +1,6 @@
 ﻿using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,16 +22,18 @@ namespace AzureDevOpsDemoBuilder.Controllers
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<AccountController> logger;
         private IAccountService _accountService;
+        private TelemetryClient ai;
         public IConfiguration AppKeyConfiguration { get; }
-        public AccountController(IAccountService accountService, IConfiguration configuration, IWebHostEnvironment _webHostEnvironment, ILogger<AccountController> _logger)
+        public AccountController(IAccountService accountService, IConfiguration configuration, IWebHostEnvironment _webHostEnvironment, ILogger<AccountController> _logger, TelemetryClient _ai)
         {
             _accountService = accountService;
             AppKeyConfiguration = configuration;
             HostingEnvironment = _webHostEnvironment;
             logger = _logger;
+            ai = _ai;
         }
 
-        [HttpGet]
+    [HttpGet]
         [AllowAnonymous]
         public ActionResult Unsupported_browser()
         {
@@ -48,6 +51,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public ActionResult Verify(LoginModel model, string id)
         {
             HttpContext.Session.Clear();
+            
             // check to enable extractor
             if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
             {
@@ -64,6 +68,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             try
             {
+                int i = 0;
+                int b = 1 / i;
                 if (!string.IsNullOrEmpty(model.name))
                 {
                     if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))
@@ -112,6 +118,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
             //return RedirectToAction("../account/verify");
@@ -157,6 +164,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
             return RedirectToAction("verify");

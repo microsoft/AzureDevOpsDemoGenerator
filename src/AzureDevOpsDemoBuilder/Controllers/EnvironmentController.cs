@@ -19,6 +19,7 @@ using Microsoft.VisualStudio.Services.ExtensionManagement.WebApi;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -33,9 +34,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<EnvironmentController> logger;
+        private TelemetryClient ai;
 
         public EnvironmentController(IProjectService _ProjectService, IConfiguration configuration,
-            IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment hostEnvironment, ILogger<EnvironmentController> _logger)
+            IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment hostEnvironment, ILogger<EnvironmentController> _logger, TelemetryClient _ai)
         {
             projectService = _ProjectService;
             AppKeyConfiguration = configuration;
@@ -43,6 +45,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             templateService = _templateService;
             HostingEnvironment = hostEnvironment;
             logger = _logger;
+            ai = _ai;
         }
 
         [HttpGet]
@@ -158,6 +161,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             try
             {
+                int i = 0;
+                int j = 1 / i;
                 AccessDetails _accessDetails = new AccessDetails();
                 //AccessDetails _accessDetails = ProjectService.AccessDetails;
                 string TemplateSelected = string.Empty;
@@ -271,6 +276,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Redirect("../Account/Verify");
             }
