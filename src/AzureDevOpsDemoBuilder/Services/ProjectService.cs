@@ -1105,6 +1105,8 @@ namespace AzureDevOpsDemoBuilder.Services
                                     string secrets = File.ReadAllText(secretFilePath);
                                     if (!string.IsNullOrEmpty(secrets))
                                     {
+                                        string uid = Guid.NewGuid().ToString().Split('-')[0];
+                                        secrets = secrets.Replace("$GUID$", uid);
                                         GitHubSecrets.GitHubSecret secrets1 = JsonConvert.DeserializeObject<GitHubSecrets.GitHubSecret>(secrets);
                                         foreach(var secret in secrets1.secrets)
                                         {
