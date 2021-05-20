@@ -70,58 +70,8 @@ namespace AzureDevOpsDemoBuilder.Services
         public IConfiguration AppKeyConfiguration { get; }
         public IWebHostEnvironment HostingEnvironment;
         public ILogger<ProjectService> logger;
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
-        /*  public void TrackFeature(string API)
-            {
-                SimpleTrackerEnvironment simpleTrackerEnvironment = new SimpleTrackerEnvironment(Environment.OSVersion.Platform.ToString(),
-                                                                            Environment.OSVersion.Version.ToString(),
-                                                                            Environment.OSVersion.VersionString);
-                string GAKey = AppKeyConfiguration["AnalyticsKey"];
-                if (!string.IsNullOrEmpty(GAKey))
-                {
-                    using (Tracker tracker = new Tracker(GAKey, simpleTrackerEnvironment))
-                    {
-                        var request = _httpContextAccessor.HttpContext.Request;
-
-                        var requestMessage = new HttpRequestMessage();
-                        var requestMethod = request.Method;
-                        if (!HttpMethods.IsGet(requestMethod) &&
-                            !HttpMethods.IsHead(requestMethod) &&
-                            !HttpMethods.IsDelete(requestMethod) &&
-                            !HttpMethods.IsTrace(requestMethod))
-                        {
-                            var streamContent = new StreamContent(request.Body);
-                            requestMessage.Content = streamContent;
-                        }
-
-                        // Copy the request headers
-                        foreach (var header in request.Headers)
-                        {
-                            if (!requestMessage.Headers.TryAddWithoutValidation(header.Key, header.Value.ToArray()) && requestMessage.Content != null)
-                            {
-                                requestMessage.Content?.Headers.TryAddWithoutValidation(header.Key, header.Value.ToArray());
-                            }
-                        }
-
-
-                        UriBuilder uriBuilder = new UriBuilder();
-                        uriBuilder.Scheme = request.Scheme;
-                        uriBuilder.Host = request.Host.Host;
-                        uriBuilder.Path = request.Path.ToString();
-                        uriBuilder.Query = request.QueryString.ToString();
-
-                        var uri = uriBuilder.Uri;
-
-                        requestMessage.Headers.Host = uri.Authority;
-                        requestMessage.RequestUri = uri;
-                        requestMessage.Method = new HttpMethod(request.Method);
-
-                        var response = tracker.TrackPageViewAsync(requestMessage, API).Result;
-                        bool issuccess = response.Success;
-                    }
-                }
-
-            }  */
         public static Dictionary<string, string> StatusMessages
         {
             get
@@ -395,6 +345,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             //create team project
@@ -1198,6 +1149,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while forking repo: " + ex.Message);
             }
@@ -1347,6 +1299,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message);
 
@@ -1377,6 +1330,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message);
             }
@@ -1416,6 +1370,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message);
 
@@ -1449,6 +1404,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message);
             }
@@ -1477,6 +1433,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message);
 
@@ -1505,6 +1462,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message);
             }
@@ -1533,6 +1491,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message);
             }
@@ -1569,6 +1528,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
                 AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message);
@@ -1617,6 +1577,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
                 AddMessage(model.Id.ErrorId(), "Error while updating iteration: " + ex.Message);
@@ -1715,6 +1676,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while updating sprint items: " + ex.Message);
 
@@ -1739,6 +1701,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while renaming iterations: " + ex.Message);
             }
@@ -1803,6 +1766,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message);
             }
@@ -1862,6 +1826,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating pull Requests: " + ex.Message);
             }
@@ -1983,6 +1948,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating service endpoint: " + ex.Message);
             }
@@ -2056,6 +2022,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message);
             }
@@ -2124,6 +2091,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message);
             }
@@ -2158,6 +2126,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while Queueing Build: " + ex.Message);
             }
@@ -2256,6 +2225,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message);
             }
@@ -2607,11 +2577,13 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (OperationCanceledException oce)
             {
+                Logger.Trace(oce);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n");
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message);
             }
@@ -2678,10 +2650,12 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             catch (OperationCanceledException cancelException)
                             {
+                                Logger.Trace(cancelException);
                                 AddMessage(model.Id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + Environment.NewLine);
                             }
                             catch (Exception exc)
                             {
+                                Logger.Trace(exc);
                                 AddMessage(model.Id.ErrorId(), "Error while Installing extensions: " + exc.Message);
                             }
                         });
@@ -2691,6 +2665,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while Installing extensions: " + ex.Message);
                 return false;
@@ -2779,6 +2754,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
@@ -2834,6 +2810,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
@@ -2877,6 +2854,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
@@ -2920,6 +2898,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
@@ -2987,6 +2966,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
                 ExtensionRequired = false;
@@ -3069,6 +3049,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally

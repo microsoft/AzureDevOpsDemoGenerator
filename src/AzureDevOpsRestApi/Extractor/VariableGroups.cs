@@ -10,7 +10,7 @@ namespace AzureDevOpsAPI.Extractor
 {
     public class VariableGroups : ApiServiceBase
     {
-        Logger logger = LogManager.GetLogger("*");
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public VariableGroups(IAppConfiguration configuration) : base(configuration)
         {
@@ -37,7 +37,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -79,7 +79,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 

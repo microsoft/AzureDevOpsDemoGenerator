@@ -33,6 +33,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<EnvironmentController> logger;
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public EnvironmentController(IProjectService _ProjectService, IConfiguration configuration,
             IAccountService _accountService, ITemplateService _templateService, IWebHostEnvironment hostEnvironment, ILogger<EnvironmentController> _logger)
@@ -271,6 +272,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Redirect("../Account/Verify");
             }
@@ -333,6 +335,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return View();
             }
@@ -400,6 +403,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     strResult[1] = "Error occurred. Error details: " + ex.Message;
                     return Json(strResult);
@@ -462,6 +466,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 Directory.Delete(extractPath, true);
                 return Json(ex.Message);
@@ -500,6 +505,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return null;
             }
@@ -540,6 +546,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return true;
@@ -597,6 +604,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally
@@ -769,6 +777,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 return Json(new { message = "Error", status = "false" });
             }
@@ -792,44 +801,50 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public JsonResult UploadPrivateTemplateFromURL(string TemplateURL, string token, string userId, string password, string OldPrivateTemplate = "")
         {
             PrivateTemplate privateTemplate = new PrivateTemplate();
-            if (HttpContext.Session.GetString("visited") != null)
+            try
             {
-                if (!string.IsNullOrEmpty(OldPrivateTemplate))
+                if (HttpContext.Session.GetString("visited") != null)
                 {
-                    templateService.deletePrivateTemplate(OldPrivateTemplate);
-                }
-                string templatePath = string.Empty;
-                try
-                {
-                    string templateName = "";
-                    string fileName = Path.GetFileName(TemplateURL);
-                    string extension = Path.GetExtension(TemplateURL);
-                    templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
-                    privateTemplate.PrivateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
-                    privateTemplate.PrivateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
-
-                    if (privateTemplate.PrivateTemplatePath != "")
+                    if (!string.IsNullOrEmpty(OldPrivateTemplate))
                     {
-                        privateTemplate.ResponseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.PrivateTemplatePath);
-                        if (privateTemplate.ResponseMessage != "SUCCESS")
+                        templateService.deletePrivateTemplate(OldPrivateTemplate);
+                    }
+                    string templatePath = string.Empty;
+                    try
+                    {
+                        string templateName = "";
+                        string fileName = Path.GetFileName(TemplateURL);
+                        string extension = Path.GetExtension(TemplateURL);
+                        templateName = fileName.ToLower().Replace(".zip", "").Trim() + "-" + Guid.NewGuid().ToString().Substring(0, 6) + extension.ToLower();
+                        privateTemplate.PrivateTemplateName = templateName.ToLower().Replace(".zip", "").Trim();
+                        privateTemplate.PrivateTemplatePath = templateService.GetTemplateFromPath(TemplateURL, templateName, token, userId, password);
+
+                        if (privateTemplate.PrivateTemplatePath != "")
                         {
-                            var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
-                            if (Directory.Exists(templatepath))
-                                Directory.Delete(templatepath, true);
+                            privateTemplate.ResponseMessage = templateService.checkSelectedTemplateIsPrivate(privateTemplate.PrivateTemplatePath);
+                            if (privateTemplate.ResponseMessage != "SUCCESS")
+                            {
+                                var templatepath = HostingEnvironment.ContentRootPath + "/PrivateTemplates/" + templateName.ToLower().Replace(".zip", "").Trim();
+                                if (Directory.Exists(templatepath))
+                                    Directory.Delete(templatepath, true);
+                            }
                         }
+                        else
+                        {
+                            privateTemplate.ResponseMessage = "Unable to download file, please check the provided URL";
+                        }
+
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        privateTemplate.ResponseMessage = "Unable to download file, please check the provided URL";
+                        logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                        return Json(new { message = "Error", status = "false" });
                     }
 
                 }
-                catch (Exception ex)
-                {
-                    logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                    return Json(new { message = "Error", status = "false" });
-                }
-
+            }catch(Exception ex)
+            {
+                Logger.Trace(ex);
             }
             return Json(privateTemplate);
         }

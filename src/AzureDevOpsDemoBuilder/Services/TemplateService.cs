@@ -18,6 +18,7 @@ namespace AzureDevOpsDemoBuilder.Services
     {
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<TemplateService> logger;
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public TemplateService(IWebHostEnvironment _host, ILogger<TemplateService> _logger)
         {
@@ -65,6 +66,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return TemplateDetails;
@@ -123,6 +125,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 }
             }
@@ -148,6 +151,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return template;
@@ -208,6 +212,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally
@@ -243,6 +248,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return templatePath;
@@ -276,6 +282,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return true;
@@ -305,6 +312,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return templatePath;
@@ -372,6 +380,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return response;
@@ -401,6 +410,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }

@@ -16,6 +16,7 @@ namespace AzureDevOpsAPI.Git
         public GitHubImportRepo(IAppConfiguration configuration) : base(configuration)
         {
         }
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public HttpResponseMessage GetUserDetail()
         {
@@ -34,6 +35,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage();
@@ -59,6 +61,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -80,6 +83,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -104,6 +108,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -135,6 +140,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
@@ -164,6 +170,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
@@ -194,6 +201,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -227,6 +235,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -253,6 +262,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;

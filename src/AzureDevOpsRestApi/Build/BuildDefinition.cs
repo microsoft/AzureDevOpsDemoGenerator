@@ -11,7 +11,7 @@ namespace AzureDevOpsAPI.Build
     public class BuildDefinition : ApiServiceBase
     {
         public BuildDefinition(IAppConfiguration configuration) : base(configuration) { }
-         Logger logger = LogManager.GetLogger("*");
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         /// <summary>
         /// Create Build Definition
         /// </summary>
@@ -59,7 +59,7 @@ namespace AzureDevOpsAPI.Build
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateBuildDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
 
                     retryCount++;
 
@@ -112,8 +112,8 @@ namespace AzureDevOpsAPI.Build
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "QueueBuild" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                    
+                    Logger.Trace(ex);
+
                     retryCount++;
 
                     if (retryCount > 4)

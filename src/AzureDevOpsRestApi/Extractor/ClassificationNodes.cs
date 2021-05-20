@@ -12,7 +12,7 @@ namespace AzureDevOpsAPI.Extractor
     public class ClassificationNodes : ApiServiceBase
     {
         public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
-         Logger logger = LogManager.GetLogger("*");
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         // Get Iteration Count
         public GetINumIteration.Iterations GetiterationCount()
         {
@@ -40,7 +40,8 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
+                    
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -96,7 +97,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -130,7 +131,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -175,7 +176,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -220,7 +221,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -253,7 +254,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -285,7 +286,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 
@@ -348,7 +349,7 @@ namespace AzureDevOpsAPI.Extractor
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace + "\n");
+                    Logger.Trace(ex);
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 

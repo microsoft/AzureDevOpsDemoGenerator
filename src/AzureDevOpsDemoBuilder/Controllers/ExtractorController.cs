@@ -35,6 +35,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         private ILogger<ExtractorController> logger;
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ExtractorController(IConfiguration configuration, IAccountService _accountService,
             IExtractorService _extractorService, IWebHostEnvironment hostEnvironment, ILogger<ExtractorController> _logger)
         {
@@ -130,6 +131,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return View(model);
@@ -165,6 +167,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 projectResult.Errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
@@ -196,6 +199,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new JsonResult(string.Empty);
@@ -517,6 +521,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             finally

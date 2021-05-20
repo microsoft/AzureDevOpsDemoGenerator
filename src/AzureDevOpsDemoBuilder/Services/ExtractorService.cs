@@ -36,6 +36,7 @@ namespace AzureDevOpsDemoBuilder.Services
         private ILogger<ExtractorService> logger;
 
         public IConfiguration AppKeyConfiguration { get; }
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public ExtractorService(IWebHostEnvironment _host, ILogger<ExtractorService> _logger, IConfiguration configuration)
         {
@@ -282,6 +283,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch(Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { model.Id, "" };
@@ -360,6 +362,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ExtensionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -438,6 +441,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
 
@@ -682,6 +686,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(con.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -713,6 +718,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.BoardConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -755,6 +761,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.WorkItemConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -800,6 +807,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.RepoConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -888,6 +896,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.BuildDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1046,6 +1055,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug("Exporting normalPipeline \t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1137,6 +1147,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug("Exporting ymlWithGitHub \t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1217,6 +1228,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug("Exporting ymlWithAzureRepos \t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1392,6 +1404,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1571,6 +1584,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
         }

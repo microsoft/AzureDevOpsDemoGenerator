@@ -9,7 +9,7 @@ namespace AzureDevOpsAPI.ExtensionManagement
 {
     public class GetListExtenison : ApiServiceBase
     {
-        Logger logger = LogManager.GetLogger("*");
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public GetListExtenison(IAppConfiguration configuration) : base(configuration)
         {
         }
@@ -43,7 +43,7 @@ namespace AzureDevOpsAPI.ExtensionManagement
                 }
                 catch (Exception ex)
                 {
-                    logger.Debug(ex.Message + ex.StackTrace);
+                    Logger.Trace(ex);
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
 

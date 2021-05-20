@@ -26,6 +26,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
         public IConfiguration AppKeyConfiguration { get; }
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private ILogger<GitHubController> logger;
 
         [AllowAnonymous]
@@ -69,6 +70,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return RedirectToAction("index", "home");
@@ -105,6 +107,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GitHubAccessDetails();

@@ -13,6 +13,7 @@ namespace AzureDevOpsAPI.Git
     {
         public Repository(IAppConfiguration configuration) : base(configuration) { }
         Logger logger = LogManager.GetLogger("*");
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         /// <summary>
         /// Get Source Code from Git Hub
         /// </summary>
@@ -50,6 +51,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("GetSourceCodeFromGitHub" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -97,6 +99,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("GetRepositoryToDelete" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -150,6 +153,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n"); logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetDefaultRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -196,6 +200,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("GetAllRepositories" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -257,6 +262,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("CreateRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
@@ -296,6 +302,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("DeleteRepository" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -353,6 +360,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("CreatePullRequest" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -408,6 +416,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("CreateCommentThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -463,6 +472,7 @@ namespace AzureDevOpsAPI.Git
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.Debug("AddCommentToThread" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;

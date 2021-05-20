@@ -17,6 +17,7 @@ namespace AzureDevOpsDemoBuilder.Services
         public IConfiguration AppKeyConfiguration { get; }
 
         private ILogger<AccountService> logger;
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public AccountService(IConfiguration configuration, ILogger<AccountService> _logger)
         {
@@ -43,6 +44,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //ViewBag.ErrorMessage = ex.Message;
             }
@@ -79,6 +81,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //ViewBag.ErrorMessage = ex.Message;
             }
@@ -118,6 +121,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 }
                 return profile;
@@ -162,6 +166,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
+                    Logger.Trace(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     return new AccessDetails();
                 }
@@ -200,6 +205,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return accounts;
