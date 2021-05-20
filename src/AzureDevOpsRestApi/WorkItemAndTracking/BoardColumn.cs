@@ -6,13 +6,15 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class BoardColumn : ApiServiceBase
     {
         public string RowFieldName;
-        public BoardColumn(IAppConfiguration configuration) : base(configuration) { }
+        private TelemetryClient ai;
+        public BoardColumn(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration) { ai = _ai; }
          Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Update kanban board colums styles
@@ -90,6 +92,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("UpdateBoard" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -138,6 +141,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("GetBoardColumns" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -181,6 +185,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("GetBoardColumnsAgile" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;

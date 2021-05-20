@@ -27,6 +27,7 @@ using AzureDevOpsDemoBuilder.ServiceInterfaces;
 using AzureDevOpsRestApi.Git;
 using AzureDevOpsRestApi.Viewmodel.GitHub;
 using AzureDevOpsRestApi.Viewmodel.ProjectAndTeams;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 //using GoogleAnalyticsTracker.Simple;
@@ -70,58 +71,8 @@ namespace AzureDevOpsDemoBuilder.Services
         public IConfiguration AppKeyConfiguration { get; }
         public IWebHostEnvironment HostingEnvironment;
         public ILogger<ProjectService> logger;
+        private TelemetryClient ai;
 
-        /*  public void TrackFeature(string API)
-            {
-                SimpleTrackerEnvironment simpleTrackerEnvironment = new SimpleTrackerEnvironment(Environment.OSVersion.Platform.ToString(),
-                                                                            Environment.OSVersion.Version.ToString(),
-                                                                            Environment.OSVersion.VersionString);
-                string GAKey = AppKeyConfiguration["AnalyticsKey"];
-                if (!string.IsNullOrEmpty(GAKey))
-                {
-                    using (Tracker tracker = new Tracker(GAKey, simpleTrackerEnvironment))
-                    {
-                        var request = _httpContextAccessor.HttpContext.Request;
-
-                        var requestMessage = new HttpRequestMessage();
-                        var requestMethod = request.Method;
-                        if (!HttpMethods.IsGet(requestMethod) &&
-                            !HttpMethods.IsHead(requestMethod) &&
-                            !HttpMethods.IsDelete(requestMethod) &&
-                            !HttpMethods.IsTrace(requestMethod))
-                        {
-                            var streamContent = new StreamContent(request.Body);
-                            requestMessage.Content = streamContent;
-                        }
-
-                        // Copy the request headers
-                        foreach (var header in request.Headers)
-                        {
-                            if (!requestMessage.Headers.TryAddWithoutValidation(header.Key, header.Value.ToArray()) && requestMessage.Content != null)
-                            {
-                                requestMessage.Content?.Headers.TryAddWithoutValidation(header.Key, header.Value.ToArray());
-                            }
-                        }
-
-
-                        UriBuilder uriBuilder = new UriBuilder();
-                        uriBuilder.Scheme = request.Scheme;
-                        uriBuilder.Host = request.Host.Host;
-                        uriBuilder.Path = request.Path.ToString();
-                        uriBuilder.Query = request.QueryString.ToString();
-
-                        var uri = uriBuilder.Uri;
-
-                        requestMessage.Headers.Host = uri.Authority;
-                        requestMessage.RequestUri = uri;
-                        requestMessage.Method = new HttpMethod(request.Method);
-
-                        var response = tracker.TrackPageViewAsync(requestMessage, API).Result;
-                        bool issuccess = response.Success;
-                    }
-                }
-
-            }  */
         public static Dictionary<string, string> StatusMessages
         {
             get
@@ -190,7 +141,7 @@ namespace AzureDevOpsDemoBuilder.Services
             string ProjectCreationVersion = AppKeyConfiguration["ProjectCreationVersion"];
 
             AppConfiguration config = new AppConfiguration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
-            Projects projects = new Projects(config);
+            Projects projects = new Projects(config, ai);
             HttpResponseMessage response = projects.GetListOfProjects();
             return response;
         }
@@ -293,7 +244,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
             if (model.GitHubFork && model.GitHubToken != null)
             {
-                GitHubImportRepo gitHubImport = new GitHubImportRepo(_gitHubConfig);
+                GitHubImportRepo gitHubImport = new GitHubImportRepo(_gitHubConfig, ai);
                 HttpResponseMessage userResponse = gitHubImport.GetUserDetail();
                 GitHubUserDetail userDetail = new GitHubUserDetail();
                 if (userResponse.IsSuccessStatusCode)
@@ -395,13 +346,14 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             //create team project
             string jsonProject = model.ReadJsonFile(HostingEnvironment.WebRootPath + "/Templates/" + "CreateProject.json");
             jsonProject = jsonProject.Replace("$projectName$", model.ProjectName).Replace("$processTemplateId$", processTemplateId);
 
-            Projects proj = new Projects(_projectCreationVersion);
+            Projects proj = new Projects(_projectCreationVersion, ai);
             string projectID = proj.CreateTeamProject(jsonProject);
 
             if (projectID == "-1")
@@ -435,7 +387,7 @@ namespace AzureDevOpsDemoBuilder.Services
             Stopwatch watch = new Stopwatch();
             watch.Start();
             string projectStatus = string.Empty;
-            Projects objProject = new Projects(_projectCreationVersion);
+            Projects objProject = new Projects(_projectCreationVersion, ai);
             while (projectStatus.ToLower() != "wellformed")
             {
                 projectStatus = objProject.GetProjectStateByName(model.ProjectName);
@@ -522,13 +474,13 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     boardType = "Stories";
                 }
-                BoardColumn objBoard = new BoardColumn(_boardVersion);
+                BoardColumn objBoard = new BoardColumn(_boardVersion, ai);
                 string updateSwimLanesJSON = "";
                 if (template.BoardRows != null)
                 {
                     updateSwimLanesJSON = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, template.BoardRows);
                     // Path.Combine(templatesFolder + templateUsed, template.BoardRows);
-                    SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                    SwimLanes objSwimLanes = new SwimLanes(_boardVersion, ai);
                     if (File.Exists(updateSwimLanesJSON))
                     {
                         updateSwimLanesJSON = File.ReadAllText(updateSwimLanesJSON);
@@ -617,11 +569,11 @@ namespace AzureDevOpsDemoBuilder.Services
                         // Path.Combine(templatesFolder + templateUsed, "Teams", jteam["name"].ToString());
                         if (Directory.Exists(teamFolderPath))
                         {
-                            BoardColumn objBoard = new BoardColumn(_boardVersion);
+                            BoardColumn objBoard = new BoardColumn(_boardVersion, ai);
 
                             // updating swimlanes for each teams each board(epic, feature, PBI, Stories) 
                             string updateSwimLanesJSON = "";
-                            SwimLanes objSwimLanes = new SwimLanes(_boardVersion);
+                            SwimLanes objSwimLanes = new SwimLanes(_boardVersion, ai);
                             template.BoardRows = "BoardRows.json";
                             updateSwimLanesJSON = Path.Combine(teamFolderPath, template.BoardRows);
                             if (File.Exists(updateSwimLanesJSON))
@@ -709,7 +661,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             CreateServiceEndPoint(model, listEndPointsJsonPath, _endPointVersion);
             //create agent queues on demand
-            Queue queue = new Queue(_agentQueueVersion);
+            Queue queue = new Queue(_agentQueueVersion, ai);
             model.Environment.AgentQueues = queue.GetQueues();
             if (settings.Queues != null && settings.Queues.Count > 0)
             {
@@ -745,7 +697,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             if (isDefaultRepoTodetele)
             {
-                Repository objRepository = new Repository(_repoVersion);
+                Repository objRepository = new Repository(_repoVersion, ai);
                 string repositoryToDelete = objRepository.GetRepositoryToDelete(model.ProjectName);
                 bool isDeleted = objRepository.DeleteRepository(repositoryToDelete);
             }
@@ -777,7 +729,7 @@ namespace AzureDevOpsDemoBuilder.Services
             else if (model.UserMethod == "Random")
             {
                 //GetAccount Members
-                AzureDevOpsAPI.ProjectsAndTeams.Accounts objAccount = new AzureDevOpsAPI.ProjectsAndTeams.Accounts(_projectCreationVersion);
+                AzureDevOpsAPI.ProjectsAndTeams.Accounts objAccount = new AzureDevOpsAPI.ProjectsAndTeams.Accounts(_projectCreationVersion, ai);
                 //accountMembers = objAccount.GetAccountMembers(accountName, AccessToken);
                 foreach (var member in accountMembers.Value)
                 {
@@ -891,7 +843,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
             }
 
-            ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName);
+            ImportWorkItems import = new ImportWorkItems(_workItemsVersion, model.Environment.BoardRowFieldName, ai);
             if (File.Exists(projectSettingsFile))
             {
                 AddMessage(model.Id, "Validating work item(s) definitions");
@@ -1045,7 +997,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         bool isImported = false;
                         string repoName = Path.GetFileName(repo.vcs_url);
                         string readCreateRepoFile = model.ReadJsonFile(createRepo).Replace("$NAME$", repoName);
-                        GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig);
+                        GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig, ai);
                         GitHubUserDetail userDetail = new GitHubUserDetail();
                         GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
                         var createRepoRes = importRepo.CreateRepo(readCreateRepoFile);
@@ -1174,7 +1126,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         {
                             foreach (var repo in forkRepos.Repositories)
                             {
-                                GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
+                                GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig, ai);
                                 GitHubUserDetail userDetail = new GitHubUserDetail();
                                 GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
                                 //HttpResponseMessage listForks = user.ListForks(repo.fullName);
@@ -1198,6 +1150,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while forking repo: " + ex.Message);
             }
@@ -1218,7 +1171,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 string jsonTeams = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, teamsJSON);
                 if (File.Exists(jsonTeams))
                 {
-                    Teams objTeam = new Teams(_projectConfig);
+                    Teams objTeam = new Teams(_projectConfig, ai);
                     jsonTeams = model.ReadJsonFile(jsonTeams);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
@@ -1347,6 +1300,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating teams: " + ex.Message);
 
@@ -1366,7 +1320,7 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 TeamMemberResponse.TeamMembers viewModel = new TeamMemberResponse.TeamMembers();
-                AzureDevOpsAPI.ProjectsAndTeams.Teams objTeam = new AzureDevOpsAPI.ProjectsAndTeams.Teams(_configuration);
+                AzureDevOpsAPI.ProjectsAndTeams.Teams objTeam = new AzureDevOpsAPI.ProjectsAndTeams.Teams(_configuration, ai);
                 viewModel = objTeam.GetTeamMembers(projectName, teamName);
 
                 if (!(string.IsNullOrEmpty(objTeam.LastFailureMessage)))
@@ -1377,6 +1331,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while getting team members: " + ex.Message);
             }
@@ -1398,7 +1353,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 string jsonWorkItems = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, workItemJSON);
                 if (File.Exists(jsonWorkItems))
                 {
-                    WorkItem objWorkItem = new WorkItem(_defaultConfiguration);
+                    WorkItem objWorkItem = new WorkItem(_defaultConfiguration, ai);
                     jsonWorkItems = model.ReadJsonFile(jsonWorkItems);
                     JContainer workItemsParsed = JsonConvert.DeserializeObject<JContainer>(jsonWorkItems);
 
@@ -1416,6 +1371,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating workitems: " + ex.Message);
 
@@ -1435,7 +1391,7 @@ namespace AzureDevOpsDemoBuilder.Services
             bool result = false;
             try
             {
-                BoardColumn objBoard = new BoardColumn(_BoardConfig);
+                BoardColumn objBoard = new BoardColumn(_BoardConfig, ai);
                 bool boardColumnResult = objBoard.UpdateBoard(model.ProjectName, BoardColumnsJSON, BoardType, team);
                 if (boardColumnResult)
                 {
@@ -1449,6 +1405,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating board column " + ex.Message);
             }
@@ -1467,7 +1424,7 @@ namespace AzureDevOpsDemoBuilder.Services
             try
             {
                 json = json.Replace("null", "\"\"");
-                Cards objCards = new Cards(_configuration);
+                Cards objCards = new Cards(_configuration, ai);
                 objCards.UpdateCardField(model.ProjectName, json, boardType, team);
 
                 if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
@@ -1477,6 +1434,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card fields: " + ex.Message);
 
@@ -1495,7 +1453,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                Cards objCards = new Cards(_configuration);
+                Cards objCards = new Cards(_configuration, ai);
                 objCards.ApplyRules(model.ProjectName, json, boardType, team);
 
                 if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
@@ -1505,6 +1463,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while updating card styles: " + ex.Message);
             }
@@ -1522,8 +1481,8 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                Cards objCards = new Cards(_boardVersion);
-                Projects project = new Projects(_boardVersion);
+                Cards objCards = new Cards(_boardVersion, ai);
+                Projects project = new Projects(_boardVersion, ai);
                 objCards.EnablingEpic(model.ProjectName, json, model.ProjectName, team);
 
                 if (!string.IsNullOrEmpty(objCards.LastFailureMessage))
@@ -1533,6 +1492,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while Setting Epic Settings: " + ex.Message);
             }
@@ -1556,7 +1516,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 string jsonProjectSettings = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, projectSettingsJSON);
                 if (File.Exists(jsonWorkItemsUpdate))
                 {
-                    WorkItem objWorkItem = new WorkItem(_defaultConfiguration);
+                    WorkItem objWorkItem = new WorkItem(_defaultConfiguration, ai);
                     jsonWorkItemsUpdate = model.ReadJsonFile(jsonWorkItemsUpdate);
                     jsonProjectSettings = model.ReadJsonFile(jsonProjectSettings);
 
@@ -1569,6 +1529,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
                 AddMessage(id.ErrorId(), "Error while updating work items: " + ex.Message);
@@ -1590,7 +1551,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (File.Exists(jsonIterations))
                 {
                     iterationsJSON = model.ReadJsonFile(jsonIterations);
-                    AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objClassification = new AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig);
+                    AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objClassification = new AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig, ai);
 
                     GetNodesResponse.Nodes nodes = objClassification.GetIterations(model.ProjectName);
 
@@ -1617,6 +1578,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
                 AddMessage(model.Id.ErrorId(), "Error while updating iteration: " + ex.Message);
@@ -1658,11 +1620,12 @@ namespace AzureDevOpsDemoBuilder.Services
 
         private string path = string.Empty;
 
-        public ProjectService(IConfiguration appKeyConfiguration, IWebHostEnvironment hostEnvironment, ILogger<ProjectService> _logger)
+        public ProjectService(IConfiguration appKeyConfiguration, IWebHostEnvironment hostEnvironment, ILogger<ProjectService> _logger, TelemetryClient _ai)
         {
             AppKeyConfiguration = appKeyConfiguration;
             HostingEnvironment = hostEnvironment;
             logger = _logger;
+            ai = _ai;
         }
 
 
@@ -1704,7 +1667,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     string teamIterationMap = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "TeamIterationMap.json");
 
-                    ClassificationNodes objClassification = new ClassificationNodes(_boardConfig);
+                    ClassificationNodes objClassification = new ClassificationNodes(_boardConfig, ai);
                     bool classificationNodesResult = objClassification.UpdateIterationDates(model.ProjectName, settings.Type, model.SelectedTemplate, teamIterationMap);
 
                     if (!(string.IsNullOrEmpty(objClassification.LastFailureMessage)))
@@ -1715,6 +1678,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while updating sprint items: " + ex.Message);
 
@@ -1733,12 +1697,13 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 if (renameIterations != null && renameIterations.Count > 0)
                 {
-                    AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objClassification = new AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes(_defaultConfiguration);
+                    AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objClassification = new AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes(_defaultConfiguration, ai);
                     bool IsRenamed = objClassification.RenameIteration(model.ProjectName, renameIterations);
                 }
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while renaming iterations: " + ex.Message);
             }
@@ -1764,7 +1729,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 if (File.Exists(sourceCodeJSON))
                 {
-                    Repository objRepository = new Repository(_repo);
+                    Repository objRepository = new Repository(_repo, ai);
                     string repositoryName = Path.GetFileName(sourceCodeJSON).Replace(".json", "");
                     if (model.ProjectName.ToLower() == repositoryName.ToLower())
                     {
@@ -1788,7 +1753,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         jsonSourceCode = jsonSourceCode.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                     }
 
-                    Repository objRepositorySourceCode = new Repository(_retSourceCodeVersion);
+                    Repository objRepositorySourceCode = new Repository(_retSourceCodeVersion, ai);
                     bool copySourceCode = objRepositorySourceCode.GetSourceCodeFromGitHub(jsonSourceCode, model.ProjectName, repositoryDetail[0]);
                     if (!model.Environment.ReposImported.ContainsKey(repositoryDetail[0]))
                     {
@@ -1803,6 +1768,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while importing source code: " + ex.Message);
             }
@@ -1828,7 +1794,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     pullRequestJsonPath = model.ReadJsonFile(pullRequestJsonPath);
                     pullRequestJsonPath = pullRequestJsonPath.Replace("$reviewer$", model.Environment.UserUniqueId);
-                    Repository objRepository = new Repository(_workItemConfig);
+                    Repository objRepository = new Repository(_workItemConfig, ai);
 
                     (string pullRequestId, string title) = objRepository.CreatePullRequest(pullRequestJsonPath, repositoryId);
                     if (!string.IsNullOrEmpty(pullRequestId) && !string.IsNullOrEmpty(title))
@@ -1862,6 +1828,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating pull Requests: " + ex.Message);
             }
@@ -1889,7 +1856,7 @@ namespace AzureDevOpsDemoBuilder.Services
                         //string extractPath = HostingEnvironment.MapPath("~/Templates/" + model.SelectedTemplate);
                         string projectFileData = File.ReadAllText(GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "ProjectTemplate.json"));
                         ProjectSetting settings = JsonConvert.DeserializeObject<ProjectSetting>(projectFileData);
-                        ServiceEndPoint objService = new ServiceEndPoint(_endpointConfig);
+                        ServiceEndPoint objService = new ServiceEndPoint(_endpointConfig, ai);
 
                         string gitUserName = AppKeyConfiguration["GitUserName"];
                         string gitUserPassword = AppKeyConfiguration["GitUserPassword"];
@@ -1983,6 +1950,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating service endpoint: " + ex.Message);
             }
@@ -2008,7 +1976,7 @@ namespace AzureDevOpsDemoBuilder.Services
                     testPlanJson = model.ReadJsonFile(testPlanJson);
 
                     testPlanJson = testPlanJson.Replace("$project$", model.ProjectName);
-                    TestManagement objTest = new TestManagement(_testPlanVersion);
+                    TestManagement objTest = new TestManagement(_testPlanVersion, ai);
                     string[] testPlanResponse = new string[2];
                     testPlanResponse = objTest.CreateTestPlan(testPlanJson, model.ProjectName);
 
@@ -2056,6 +2024,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating test plan and test suites: " + ex.Message);
             }
@@ -2077,7 +2046,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     if (File.Exists(buildDef.FilePath))
                     {
-                        BuildDefinition objBuild = new BuildDefinition(_buildConfig);
+                        BuildDefinition objBuild = new BuildDefinition(_buildConfig, ai);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
@@ -2124,6 +2093,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating build definition: " + ex.Message);
             }
@@ -2147,7 +2117,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                     jsonQueueABuild = model.ReadJsonFile(jsonQueueABuild);
                     jsonQueueABuild = jsonQueueABuild.Replace("$buildId$", buildId.ToString());
-                    BuildDefinition objBuild = new BuildDefinition(_buildConfig);
+                    BuildDefinition objBuild = new BuildDefinition(_buildConfig, ai);
                     int queueId = objBuild.QueueBuild(jsonQueueABuild, model.ProjectName);
 
                     if (!string.IsNullOrEmpty(objBuild.LastFailureMessage))
@@ -2158,6 +2128,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while Queueing Build: " + ex.Message);
             }
@@ -2182,7 +2153,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     if (File.Exists(relDef.FilePath))
                     {
-                        ReleaseDefinition objRelease = new ReleaseDefinition(_releaseConfiguration);
+                        ReleaseDefinition objRelease = new ReleaseDefinition(_releaseConfiguration, ai);
                         string jsonReleaseDefinition = model.ReadJsonFile(relDef.FilePath);
                         jsonReleaseDefinition = jsonReleaseDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
@@ -2256,6 +2227,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(id.ErrorId(), "Error while creating release definition: " + ex.Message);
             }
@@ -2276,8 +2248,8 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                Queries objWidget = new Queries(_dashboardVersion);
-                Queries objQuery = new Queries(_queriesVersion);
+                Queries objWidget = new Queries(_dashboardVersion, ai);
+                Queries objQuery = new Queries(_queriesVersion, ai);
                 List<QueryResponse> queryResults = new List<QueryResponse>();
 
                 //GetDashBoardDetails
@@ -2291,7 +2263,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
                 foreach (string query in listQueries)
                 {
-                    Queries _newobjQuery = new Queries(_queriesVersion);
+                    Queries _newobjQuery = new Queries(_queriesVersion, ai);
 
                     //create query
                     string json = model.ReadJsonFile(query);
@@ -2328,7 +2300,7 @@ namespace AzureDevOpsDemoBuilder.Services
                             string xamarin_IOSBuild = model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.iOS").FirstOrDefault().Id : string.Empty;
                             string ridesApiBuild = model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "RidesApi").FirstOrDefault().Id : string.Empty;
 
-                            ReleaseDefinition objrelease = new ReleaseDefinition(_releaseConfig);
+                            ReleaseDefinition objrelease = new ReleaseDefinition(_releaseConfig, ai);
                             int[] androidEnvironmentIds = objrelease.GetEnvironmentIdsByName(model.ProjectName, "Xamarin.Android", "Test in HockeyApp", "Publish to store");
                             string androidbuildDefId = model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "Xamarin.Droid").FirstOrDefault().Id : string.Empty;
                             string androidreleaseDefId = model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "Xamarin.Android").FirstOrDefault().Id : string.Empty;
@@ -2552,9 +2524,9 @@ namespace AzureDevOpsDemoBuilder.Services
                         if (isDashboardDeleted)
                         {
                             string startdate = DateTime.Now.ToString("yyyy-MM-dd");
-                            AzureDevOpsAPI.ProjectsAndTeams.Teams objTeam = new AzureDevOpsAPI.ProjectsAndTeams.Teams(_projectConfig);
+                            AzureDevOpsAPI.ProjectsAndTeams.Teams objTeam = new AzureDevOpsAPI.ProjectsAndTeams.Teams(_projectConfig, ai);
                             TeamResponse defaultTeam = objTeam.GetTeamByName(model.ProjectName, model.ProjectName + " team");
-                            AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objnodes = new AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig);
+                            AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes objnodes = new AzureDevOpsAPI.WorkItemAndTracking.ClassificationNodes(_boardConfig, ai);
                             SprintResponse.Sprints sprints = objnodes.GetSprints(model.ProjectName);
                             QueryResponse allItems = objQuery.GetQueryByPathAndName(model.ProjectName, "All Items_WI", "Shared%20Queries");
                             QueryResponse backlogBoardWI = objQuery.GetQueryByPathAndName(model.ProjectName, "BacklogBoard WI", "Shared%20Queries");
@@ -2607,11 +2579,13 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (OperationCanceledException oce)
             {
+                ai.TrackException(oce);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + oce.Message + "\t" + oce.InnerException.Message + "\n" + oce.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating Queries and Widgets: Operation cancelled exception " + oce.Message + "\r\n");
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating Queries and Widgets: " + ex.Message);
             }
@@ -2678,10 +2652,12 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             catch (OperationCanceledException cancelException)
                             {
+                                ai.TrackException(cancelException);
                                 AddMessage(model.Id.ErrorId(), "Error while Installing extensions - operation cancelled: " + cancelException.Message + Environment.NewLine);
                             }
                             catch (Exception exc)
                             {
+                                ai.TrackException(exc);
                                 AddMessage(model.Id.ErrorId(), "Error while Installing extensions: " + exc.Message);
                             }
                         });
@@ -2691,6 +2667,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while Installing extensions: " + ex.Message);
                 return false;
@@ -2779,6 +2756,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
@@ -2834,6 +2812,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.Id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
@@ -2877,6 +2856,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return string.Empty;
@@ -2920,6 +2900,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
@@ -2987,6 +2968,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //return Json(new { message = "Error", status = "false" }, JsonRequestBehavior.AllowGet);
                 ExtensionRequired = false;
@@ -2996,7 +2978,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
         private void CreateVaribaleGroups(Project model, AppConfiguration _variableGroups)
         {
-            VariableGroups variableGroups = new VariableGroups(_variableGroups);
+            VariableGroups variableGroups = new VariableGroups(_variableGroups, ai);
             model.Environment.VariableGroups = new Dictionary<int, string>();
             string filePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, "/VariableGroups/VariableGroup.json");
             if (File.Exists(filePath))
@@ -3069,6 +3051,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally

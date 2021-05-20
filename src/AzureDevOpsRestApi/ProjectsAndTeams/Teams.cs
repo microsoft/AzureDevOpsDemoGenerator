@@ -6,12 +6,14 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using AzureDevOpsAPI.Viewmodel.ProjectAndTeams;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsAPI.ProjectsAndTeams
 {
     public class Teams : ApiServiceBase
     {
-        public Teams(IAppConfiguration configuration) : base(configuration) { }
+        private TelemetryClient ai;
+        public Teams(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration) { ai = _ai; }
         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Create teams
@@ -53,6 +55,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -102,6 +105,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamMembers \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -161,6 +165,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t CreateArea \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -214,6 +219,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -259,6 +265,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetAreaForTeams \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -311,6 +318,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetBackLogIterationForTeam \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -357,6 +365,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetAllIterations \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -411,6 +420,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t SetIterationsForTeam \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -460,6 +470,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -511,6 +522,7 @@ namespace AzureDevOpsAPI.ProjectsAndTeams
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t GetTeamByName \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;

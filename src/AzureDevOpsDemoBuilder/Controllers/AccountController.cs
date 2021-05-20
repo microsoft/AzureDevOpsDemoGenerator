@@ -68,7 +68,6 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             try
             {
-
                 if (!string.IsNullOrEmpty(model.name))
                 {
                     if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))

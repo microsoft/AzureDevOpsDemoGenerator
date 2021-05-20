@@ -5,13 +5,16 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using AzureDevOpsRestApi.Viewmodel.Build;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsAPI.Build
 {
     public class BuildDefinition : ApiServiceBase
     {
-        public BuildDefinition(IAppConfiguration configuration) : base(configuration) { }
-         Logger logger = LogManager.GetLogger("*");
+        public BuildDefinition(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration) { ai = _ai; }
+        Logger logger = LogManager.GetLogger("*");
+        private TelemetryClient ai;
+
         /// <summary>
         /// Create Build Definition
         /// </summary>
@@ -59,6 +62,7 @@ namespace AzureDevOpsAPI.Build
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateBuildDefinition" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
 
                     retryCount++;
@@ -112,6 +116,7 @@ namespace AzureDevOpsAPI.Build
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "QueueBuild" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     
                     retryCount++;
