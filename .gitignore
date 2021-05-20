@@ -155,3 +155,6 @@ UpgradeLog.htm
 /src/AzureDevOpsDemoBuilder/wwwroot/Log
 /src/AzureDevOpsDemoBuilder/appsettings.Development.json
 /src/AzureDevOpsDemoBuilder/appsettings.json
+/src/AzureDevOpsDemoBuilder/Properties/ServiceDependencies/local
+/src/AzureDevOpsDemoBuilder/Properties/serviceDependencies.local.json
+/src/AzureDevOpsDemoBuilder/Properties/serviceDependencies.json

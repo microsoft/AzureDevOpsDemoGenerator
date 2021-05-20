@@ -22,6 +22,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         private ILogger<AccountController> logger;
         private IAccountService _accountService;
         public IConfiguration AppKeyConfiguration { get; }
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public AccountController(IAccountService accountService, IConfiguration configuration, IWebHostEnvironment _webHostEnvironment, ILogger<AccountController> _logger)
         {
             _accountService = accountService;
@@ -49,6 +50,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
         {
             HttpContext.Session.Clear();
             // check to enable extractor
+            Logger.Trace("This should go to App insight");
+
             if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
             {
                 model.EnableExtractor = AppKeyConfiguration["EnableExtractor"];
@@ -64,6 +67,8 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             try
             {
+                int i = 0;
+                int b = 1 / i;
                 if (!string.IsNullOrEmpty(model.name))
                 {
                     if (System.IO.File.Exists(HostingEnvironment.WebRootPath + "/Templates/TemplateSetting.json"))
@@ -112,6 +117,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Trace(ex);
                 logger.LogDebug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
             //return RedirectToAction("../account/verify");

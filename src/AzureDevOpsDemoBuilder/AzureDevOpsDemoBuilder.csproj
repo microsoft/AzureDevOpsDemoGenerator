@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>162a2876-ad77-4e7c-abfb-f68d1ad8745e</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/3bcd5b05-8d6e-44ff-890b-9de15b72ca13/resourceGroups/azuredevopsdemogenerator-production-group/providers/microsoft.insights/components/azuredevopsdemogenerator-core202103151212</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -170,7 +172,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Services.InteractiveClient" Version="16.153.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+    <PackageReference Include="NLog.Config" Version="4.7.10" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.12.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
   </ItemGroup>
 
