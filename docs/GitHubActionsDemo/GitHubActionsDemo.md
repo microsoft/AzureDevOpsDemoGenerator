@@ -3,7 +3,7 @@
 In this lab, you will learn about how to configure GitHub Action, Environment Variables and Secrets. This helps you to configure your staging and production environemnt using Azure Resource Manager Template and deploye the application.
 
 # Prerequisites
-1. Need a GitHub account
+1. GitHub account
 1. Azure DevOps Organization
 1. Azure Subscription to deploy resources
 
