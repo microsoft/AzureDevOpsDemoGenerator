@@ -9,7 +9,7 @@ In this lab, you will learn about how to configure GitHub Action, Environment Va
 
 # Exercise
 
-1. Create a project in your azure DevOps Organization using [Azuer DevOps Demo Generator](http://azuredevopsdemogenerator-core.azurewebsites.net/?name=actiondemo)
+1. Create a project in your Azure DevOps Organization using [Azuer DevOps Demo Generator](http://azuredevopsdemogenerator-core.azurewebsites.net/?name=actiondemo)
 
 2. Authenticate GitHub to import the repository into your GitHub user account.
 
@@ -26,7 +26,7 @@ In this lab, you will learn about how to configure GitHub Action, Environment Va
     ![secrets](Images/Secrets.png)
 
 6. Generate Azure Credentials using RBAC commands. Please refer the document [here](https://github.com/marketplace/actions/azure-login#configure-deployment-credentials) 
-7. ```AZURE_SQL_SERVER_NAME``` and ```WEBSITE_NAME``` will be having preconfigured value, update the Azure Credentials in ```AZURE_CREDENTIALS``` secret
+7. ```AZURE_SQL_SERVER_NAME``` and ```WEBSITE_NAME``` will have preconfigured values, update the Azure Credentials in ```AZURE_CREDENTIALS``` secret
 
 8. Run the action by clicking on Run workflow button.
 
