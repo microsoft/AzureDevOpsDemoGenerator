@@ -9,12 +9,14 @@ using AzureDevOpsAPI.Viewmodel.Sprint;
 using AzureDevOpsAPI.Viewmodel.WorkItem;
 using System.IO;
 using AzureDevOpsRestApi.Viewmodel.ProjectAndTeams;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public partial class ClassificationNodes : ApiServiceBase
     {
-        public ClassificationNodes(IAppConfiguration configuration) : base(configuration) { }
+        private TelemetryClient ai;
+        public ClassificationNodes(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration) { ai = _ai; }
         Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Get Iteration
@@ -52,6 +54,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -108,6 +111,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -167,6 +171,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -283,6 +288,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (OperationCanceledException opr)
                 {
+                    ai.TrackException(opr);
                     logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t OperationCanceledException: " + opr.Message + "\n" + opr.StackTrace + "\n");
                     LastFailureMessage = opr.Message + " ," + opr.StackTrace;
                     retryCount++;
@@ -296,6 +302,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -372,6 +379,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -451,6 +459,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;
@@ -494,6 +503,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug("\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;

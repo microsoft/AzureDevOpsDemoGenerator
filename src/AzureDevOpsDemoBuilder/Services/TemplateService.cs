@@ -2,6 +2,7 @@
 using AzureDevOpsDemoBuilder.Extensions;
 using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -18,11 +19,12 @@ namespace AzureDevOpsDemoBuilder.Services
     {
         private IWebHostEnvironment HostingEnvironment;
         private ILogger<TemplateService> logger;
-
-        public TemplateService(IWebHostEnvironment _host, ILogger<TemplateService> _logger)
+        private TelemetryClient ai;
+        public TemplateService(IWebHostEnvironment _host, ILogger<TemplateService> _logger, TelemetryClient _ai)
         {
             HostingEnvironment = _host;
             logger = _logger;
+            ai = _ai;
         }
 
         public List<TemplateDetails> GetAllTemplates()
@@ -65,6 +67,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return TemplateDetails;
@@ -123,6 +126,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t BulkProject \t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 }
             }
@@ -148,6 +152,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return template;
@@ -208,6 +213,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             finally
@@ -243,6 +249,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return templatePath;
@@ -276,6 +283,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return true;
@@ -305,6 +313,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return templatePath;
@@ -372,6 +381,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return response;
@@ -401,6 +411,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
