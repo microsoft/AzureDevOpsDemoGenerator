@@ -20,6 +20,7 @@ using Microsoft.Extensions.Configuration;
 using AzureDevOpsAPI;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -33,16 +34,19 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public IConfiguration AppKeyConfiguration { get; }
 
         private ILogger<ExtractorController> logger;
+        private TelemetryClient ai;
         private IAccountService accountService;
         private IWebHostEnvironment HostingEnvironment;
         public ExtractorController(IConfiguration configuration, IAccountService _accountService,
-            IExtractorService _extractorService, IWebHostEnvironment hostEnvironment, ILogger<ExtractorController> _logger)
+            IExtractorService _extractorService, IWebHostEnvironment hostEnvironment, 
+            ILogger<ExtractorController> _logger, TelemetryClient _ai)
         {
             HostingEnvironment = hostEnvironment;
             accountService = _accountService;
             extractorService = _extractorService;
             AppKeyConfiguration = configuration;
             logger = _logger;
+            ai = _ai;
         }
 
         [AllowAnonymous]
@@ -130,6 +134,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return View(model);
@@ -143,7 +148,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             string ProjectCreationVersion = AppKeyConfiguration["ProjectCreationVersion"];
 
             AppConfiguration config = new AppConfiguration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
-            Projects projects = new Projects(config);
+            Projects projects = new Projects(config, ai);
             HttpResponseMessage response = projects.GetListOfProjects();
             ProjectsResponse.ProjectResult projectResult = new ProjectsResponse.ProjectResult();
             if (response.IsSuccessStatusCode)
@@ -165,6 +170,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 projectResult.Errmsg = ex.Message.ToString();
                 string message = ex.Message.ToString();
@@ -184,7 +190,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
                 AppConfiguration config = new AppConfiguration() { AccountName = accname, PersonalAccessToken = _credentials, UriString = defaultHost + accname, VersionNumber = ProjectPropertyVersion, ProjectId = project };
 
                 ProjectProperties.Properties load = new ProjectProperties.Properties();
-                Projects projects = new Projects(config);
+                Projects projects = new Projects(config, ai);
                 load = projects.GetProjectProperties();
                 if (load.Count > 0)
                 {
@@ -196,6 +202,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new JsonResult(string.Empty);
@@ -517,6 +524,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             finally

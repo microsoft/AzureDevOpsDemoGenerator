@@ -4,14 +4,17 @@ using System.Net.Http;
 using System.Threading;
 using AzureDevOpsAPI.Viewmodel.Extractor;
 using NLog;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsAPI.ExtensionManagement
 {
     public class GetListExtenison : ApiServiceBase
     {
         Logger logger = LogManager.GetLogger("*");
-        public GetListExtenison(IAppConfiguration configuration) : base(configuration)
+        private TelemetryClient ai;
+        public GetListExtenison(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration)
         {
+            ai = _ai;
         }
 
         //GET https://extmgmt.dev.azure.com/{organization}/_apis/extensionmanagement/installedextensions?api-version=4.1-preview.1
@@ -43,6 +46,7 @@ namespace AzureDevOpsAPI.ExtensionManagement
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(ex.Message + ex.StackTrace);
                     this.LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;

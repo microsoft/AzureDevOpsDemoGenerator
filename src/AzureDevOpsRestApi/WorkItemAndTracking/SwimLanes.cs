@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using Microsoft.ApplicationInsights;
+using NLog;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -8,7 +9,8 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
 {
     public class SwimLanes : ApiServiceBase
     {
-        public SwimLanes(IAppConfiguration configuration) : base(configuration) { }
+        private TelemetryClient ai;
+        public SwimLanes(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration) { ai = _ai; }
          Logger logger = LogManager.GetLogger("*");
         /// <summary>
         /// Update swim lanes
@@ -46,6 +48,7 @@ namespace AzureDevOpsAPI.WorkItemAndTracking
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
                     LastFailureMessage = ex.Message + " ," + ex.StackTrace;
                     retryCount++;

@@ -1,4 +1,5 @@
 ﻿using AzureDevOpsRestApi.Viewmodel.GitHub;
+using Microsoft.ApplicationInsights;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NLog;
@@ -13,8 +14,10 @@ namespace AzureDevOpsAPI.Git
     public class GitHubImportRepo : ApiServiceBase
     {
         Logger logger = LogManager.GetLogger("*");
-        public GitHubImportRepo(IAppConfiguration configuration) : base(configuration)
+        private TelemetryClient ai;
+        public GitHubImportRepo(IAppConfiguration configuration, TelemetryClient _ai) : base(configuration)
         {
+            ai = _ai;
         }
 
         public HttpResponseMessage GetUserDetail()
@@ -34,6 +37,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage();
@@ -59,6 +63,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -80,6 +85,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -104,6 +110,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -135,6 +142,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
@@ -164,6 +172,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Debug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new HttpResponseMessage(HttpStatusCode.InternalServerError);
@@ -194,6 +203,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -227,6 +237,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
@@ -253,6 +264,7 @@ namespace AzureDevOpsAPI.Git
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return res;
