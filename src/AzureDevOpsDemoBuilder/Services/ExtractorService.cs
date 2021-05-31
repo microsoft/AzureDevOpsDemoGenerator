@@ -20,6 +20,7 @@ using Parameters = AzureDevOpsAPI.Viewmodel.Extractor.GetServiceEndpoints;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsDemoBuilder.Services
 {
@@ -37,11 +38,15 @@ namespace AzureDevOpsDemoBuilder.Services
 
         public IConfiguration AppKeyConfiguration { get; }
 
-        public ExtractorService(IWebHostEnvironment _host, ILogger<ExtractorService> _logger, IConfiguration configuration)
+        private TelemetryClient ai;
+
+        public ExtractorService(IWebHostEnvironment _host, ILogger<ExtractorService> _logger, 
+            IConfiguration configuration, TelemetryClient _ai)
         {
             HostingEnvironment = _host;
             logger = _logger;
             AppKeyConfiguration = configuration;
+            ai = _ai;
         }
         public static void AddMessage(string id, string message)
         {
@@ -142,7 +147,7 @@ namespace AzureDevOpsDemoBuilder.Services
         }
         public int GetTeamsCount(ProjectConfigurations appConfig)
         {
-            AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig);
+            AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig, ai);
             TeamList teamList = nodes.ExportTeamList("");
             int count = 0;
             if (teamList.Value != null)
@@ -153,7 +158,7 @@ namespace AzureDevOpsDemoBuilder.Services
         }
         public int GetIterationsCount(ProjectConfigurations appConfig)
         {
-            AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig);
+            AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig, ai);
             GetINumIteration.Iterations iterations = new GetINumIteration.Iterations();
             iterations = nodes.GetiterationCount();
             if (iterations.Count > 0)
@@ -172,7 +177,7 @@ namespace AzureDevOpsDemoBuilder.Services
         public int GetBuildDefinitionCount(ProjectConfigurations appConfig)
         {
             int BuildDefCount = 0;
-            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig, ai);
             GetBuildDefResponse.BuildDef buildDef = new GetBuildDefResponse.BuildDef();
             buildDef = buildandReleaseDefs.GetBuildDefCount();
             if (buildDef.Count > 0)
@@ -188,7 +193,7 @@ namespace AzureDevOpsDemoBuilder.Services
         public int GetReleaseDefinitionCount(ProjectConfigurations appConfig)
         {
             int ReleaseDefCount = 0;
-            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
+            BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig, ai);
             GetReleaseDefResponse.ReleaseDef releaseDef = new GetReleaseDefResponse.ReleaseDef();
             releaseDef = buildandReleaseDefs.GetReleaseDefCount();
             if (releaseDef.Count > 0)
@@ -282,6 +287,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch(Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new string[] { model.Id, "" };
@@ -290,7 +296,7 @@ namespace AzureDevOpsDemoBuilder.Services
         public Dictionary<string, int> GetWorkItemsCount(ProjectConfigurations appConfig)
         {
             string[] workItemtypes = GetAllWorkItemsName(appConfig);//{ "Epic", "Feature", "Product Backlog Item", "Task", "Test Case", "Bug", "User Story", "Test Suite", "Test Plan", "Issue" };
-            GetWorkItemsCount itemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
+            GetWorkItemsCount itemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig, ai);
             Dictionary<string, int> fetchedWorkItemsCount = new Dictionary<string, int>();
             if (workItemtypes.Length > 0)
             {
@@ -315,7 +321,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                GetListExtenison listExtenison = new GetListExtenison(appConfig.ExtensionConfig);
+                GetListExtenison listExtenison = new GetListExtenison(appConfig.ExtensionConfig, ai);
                 List<RequiredExtensions.ExtensionWithLink> extensionList = new List<RequiredExtensions.ExtensionWithLink>();
                 GetExtensions.ExtensionsList returnExtensionsList = listExtenison.GetInstalledExtensions();
                 if (returnExtensionsList != null && returnExtensionsList.Count > 0)
@@ -360,6 +366,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ExtensionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -370,7 +377,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                Queries queries = new Queries(appConfig.QueriesConfig);
+                Queries queries = new Queries(appConfig.QueriesConfig, ai);
                 GetQueries.Queries listQueries = queries.GetQueriesWiql();
                 if (listQueries.Count > 0)
                 {
@@ -438,6 +445,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
 
@@ -450,12 +458,12 @@ namespace AzureDevOpsDemoBuilder.Services
                 if (!string.IsNullOrEmpty(processTemplate))
                 {
                     string defaultTeamID = string.Empty;
-                    AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(con);
+                    AzureDevOpsAPI.Extractor.ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(con, ai);
                     TeamList _team = new TeamList();
                     string ProjectPropertyVersion = AppKeyConfiguration["ProjectPropertyVersion"];
                     con.VersionNumber = ProjectPropertyVersion;
                     con.ProjectId = projectID;
-                    Projects projects = new Projects(con);
+                    Projects projects = new Projects(con, ai);
                     projectProperties = projects.GetProjectProperties();
                     if (projectProperties.Count > 0)
                     {
@@ -511,7 +519,7 @@ namespace AzureDevOpsDemoBuilder.Services
                                 //Export Board Colums for each team
                                 con.Team = team.Name;
 
-                                ClassificationNodes teamNodes = new ClassificationNodes(con);
+                                ClassificationNodes teamNodes = new ClassificationNodes(con, ai);
                                 foreach (var boardType in boardTypes)
                                 {
                                     var response = teamNodes.ExportBoardColums(boardType);
@@ -682,6 +690,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(con.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -692,7 +701,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig);
+                ClassificationNodes nodes = new AzureDevOpsAPI.Extractor.ClassificationNodes(appConfig.BoardConfig, ai);
                 ExportedIterations.Iterations viewModel = nodes.ExportIterationsToSave();
                 string fetchedJson = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
                 if (fetchedJson != "")
@@ -713,6 +722,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.BoardConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -733,7 +743,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 {
                     foreach (var WIT in workItemtypes)
                     {
-                        GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig);
+                        GetWorkItemsCount WorkitemsCount = new GetWorkItemsCount(appConfig.WorkItemConfig, ai);
                         WorkItemFetchResponse.WorkItems fetchedWorkItem = WorkitemsCount.GetWorkItemsfromSource(WIT);
                         string workItemJson = JsonConvert.SerializeObject(fetchedWorkItem, Formatting.Indented);
                         if (fetchedWorkItem.Count > 0)
@@ -755,6 +765,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.WorkItemConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -764,7 +775,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                BuildandReleaseDefs repolist = new BuildandReleaseDefs(appConfig.RepoConfig);
+                BuildandReleaseDefs repolist = new BuildandReleaseDefs(appConfig.RepoConfig, ai);
                 RepositoryList.Repository repos = repolist.GetRepoList();
                 if (repos.Count > 0)
                 {
@@ -800,6 +811,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.RepoConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -814,9 +826,9 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig);
+                BuildandReleaseDefs buildandReleaseDefs = new BuildandReleaseDefs(appConfig.BuildDefinitionConfig, ai);
                 List<JObject> builds = buildandReleaseDefs.ExportBuildDefinitions();
-                BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(appConfig.RepoConfig);
+                BuildandReleaseDefs repoDefs = new BuildandReleaseDefs(appConfig.RepoConfig, ai);
                 Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 RepositoryList.Repository repo = repoDefs.GetRepoList();
                 if (builds.Count > 0)
@@ -888,6 +900,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.BuildDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1046,6 +1059,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug("Exporting normalPipeline \t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1137,6 +1151,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug("Exporting ymlWithGitHub \t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1217,6 +1232,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug("Exporting ymlWithAzureRepos \t" + ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1231,10 +1247,10 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig);
+                BuildandReleaseDefs releaseDefs = new BuildandReleaseDefs(appConfig.ReleaseDefinitionConfig, ai);
                 List<JObject> releases = releaseDefs.GetReleaseDefs();
                 string rells = JsonConvert.SerializeObject(releases);
-                BuildandReleaseDefs agent = new BuildandReleaseDefs(appConfig.AgentQueueConfig);
+                BuildandReleaseDefs agent = new BuildandReleaseDefs(appConfig.AgentQueueConfig, ai);
                 Dictionary<string, string> variableGroupNameId = GetVariableGroups(appConfig);
                 Dictionary<string, int> queue = agent.GetQueues();
                 string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;
@@ -1392,6 +1408,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
                 AddMessage(appConfig.ReleaseDefinitionConfig.Id.ErrorId(), ex.Message + Environment.NewLine + ex.StackTrace);
             }
@@ -1405,7 +1422,7 @@ namespace AzureDevOpsDemoBuilder.Services
         {
             try
             {
-                ServiceEndPoint serviceEndPoint = new ServiceEndPoint(appConfig.EndpointConfig);
+                ServiceEndPoint serviceEndPoint = new ServiceEndPoint(appConfig.EndpointConfig, ai);
                 Parameters.ServiceEndPoint getServiceEndPoint = serviceEndPoint.GetServiceEndPoints();
                 if (getServiceEndPoint.Count > 0)
                 {
@@ -1571,6 +1588,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
             }
         }
@@ -1581,7 +1599,7 @@ namespace AzureDevOpsDemoBuilder.Services
         /// <returns></returns>
         private string[] GetAllWorkItemsName(ProjectConfigurations appConfig)
         {
-            GetWorkItemsCount getWorkItems = new GetWorkItemsCount(appConfig.WorkItemConfig);
+            GetWorkItemsCount getWorkItems = new GetWorkItemsCount(appConfig.WorkItemConfig, ai);
             WorkItemNames.Names workItems = getWorkItems.GetAllWorkItemNames();
             List<string> workItemNames = new List<string>();
             if (workItems.Count > 0)
@@ -1596,7 +1614,7 @@ namespace AzureDevOpsDemoBuilder.Services
 
         private Dictionary<string, string> GetVariableGroups(ProjectConfigurations appConfig)
         {
-            VariableGroups variableGroups = new VariableGroups(appConfig.VariableGroupConfig);
+            VariableGroups variableGroups = new VariableGroups(appConfig.VariableGroupConfig, ai);
             GetVariableGroups.Groups groups = variableGroups.GetVariableGroups();
             Dictionary<string, string> varibaleGroupDictionary = new Dictionary<string, string>();
             string templatePath = extractedTemplatePath + appConfig.ReleaseDefinitionConfig.Project;

@@ -1,5 +1,6 @@
 ﻿using AzureDevOpsDemoBuilder.Models;
 using AzureDevOpsDemoBuilder.ServiceInterfaces;
+using Microsoft.ApplicationInsights;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -17,12 +18,13 @@ namespace AzureDevOpsDemoBuilder.Services
         public IConfiguration AppKeyConfiguration { get; }
 
         private ILogger<AccountService> logger;
+        private TelemetryClient ai;
 
-        public AccountService(IConfiguration configuration, ILogger<AccountService> _logger)
+        public AccountService(IConfiguration configuration, ILogger<AccountService> _logger, TelemetryClient _ai)
         {
             AppKeyConfiguration = configuration;
             logger = _logger;
-
+            ai = _ai;
         }
         /// <summary>
         /// Formatting the request for OAuth
@@ -43,6 +45,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //ViewBag.ErrorMessage = ex.Message;
             }
@@ -79,6 +82,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 //ViewBag.ErrorMessage = ex.Message;
             }
@@ -118,6 +122,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 }
                 return profile;
@@ -162,6 +167,7 @@ namespace AzureDevOpsDemoBuilder.Services
                 }
                 catch (Exception ex)
                 {
+                    ai.TrackException(ex);
                     logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                     return new AccessDetails();
                 }
@@ -200,6 +206,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return accounts;

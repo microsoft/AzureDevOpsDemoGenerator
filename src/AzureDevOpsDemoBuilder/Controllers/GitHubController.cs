@@ -10,15 +10,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.ApplicationInsights;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
     public class GitHubController : Controller
     {
-        public GitHubController(ILogger<GitHubController> _logger, IConfiguration appKeyConfiguration)
+        public GitHubController(ILogger<GitHubController> _logger, IConfiguration appKeyConfiguration, TelemetryClient _ai)
         {
             AppKeyConfiguration = appKeyConfiguration;
             logger = _logger;
+            ai = _ai;
         }
 
         private GitHubAccessDetails accessDetails = new GitHubAccessDetails();
@@ -27,6 +29,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public IConfiguration AppKeyConfiguration { get; }
 
         private ILogger<GitHubController> logger;
+        private TelemetryClient ai;
 
         [AllowAnonymous]
         public ActionResult GitOauth()
@@ -69,6 +72,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return RedirectToAction("index", "home");
@@ -105,6 +109,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             catch (Exception ex)
             {
+                ai.TrackException(ex);
                 logger.LogDebug(ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GitHubAccessDetails();
