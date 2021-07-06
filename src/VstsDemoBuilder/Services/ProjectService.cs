@@ -2870,10 +2870,14 @@ namespace VstsDemoBuilder.Services
         public bool WhereDoseTemplateBelongTo(string templatName)
         {
             string privatePath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\";
-            string privateTemplate = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templatName;
-            //string publicPath = HostingEnvironment.MapPath("~") + @"\Templates\";
+            string privateTemplate = Path.Combine(privatePath, templatName);
+
+            if (!Directory.Exists(privatePath))
+            {
+                Directory.CreateDirectory(privatePath);
+            }
             string[] privatedirs = Directory.GetDirectories(privatePath);
-            //string[] publicdirs = Directory.GetDirectories(privatePath);
+            
             if (privatedirs.Contains(privateTemplate))
             {
                 return true;
