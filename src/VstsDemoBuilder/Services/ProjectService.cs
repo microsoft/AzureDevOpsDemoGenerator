@@ -997,39 +997,52 @@ namespace VstsDemoBuilder.Services
 
         private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)
         {
-            List<string> listRepoFiles = new List<string>();
-            string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
-            if (File.Exists(repoFilePath))
+            try
             {
-                string readRepoFile = model.ReadJsonFile(repoFilePath);
-                if (!string.IsNullOrEmpty(readRepoFile))
+                List<string> listRepoFiles = new List<string>();
+                string repoFilePath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\ImportSourceCode\GitRepository.json");
+                if (File.Exists(repoFilePath))
                 {
-                    ForkRepos.Fork forkRepos = new ForkRepos.Fork();
-                    forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
-                    if (forkRepos.repositories != null && forkRepos.repositories.Count > 0)
+                    string readRepoFile = model.ReadJsonFile(repoFilePath);
+                    if (!string.IsNullOrEmpty(readRepoFile))
                     {
-                        foreach (var repo in forkRepos.repositories)
+                        ForkRepos.Fork forkRepos = new ForkRepos.Fork();
+                        forkRepos = JsonConvert.DeserializeObject<ForkRepos.Fork>(readRepoFile);
+                        if (forkRepos.repositories != null && forkRepos.repositories.Count > 0)
                         {
-                            GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
-                            GitHubUserDetail userDetail = new GitHubUserDetail();
-                            GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
-                            //HttpResponseMessage listForks = user.ListForks(repo.fullName);
-                            HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
-                            if (forkResponse.IsSuccessStatusCode)
+                            foreach (var repo in forkRepos.repositories)
                             {
-                                string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
-                                dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
-                                model.GitRepoName = fr.name;
-                                model.GitRepoURL = fr.html_url;
-                                if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                                GitHubImportRepo user = new GitHubImportRepo(_gitHubConfig);
+                                GitHubUserDetail userDetail = new GitHubUserDetail();
+                                GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
+                                //HttpResponseMessage listForks = user.ListForks(repo.fullName);
+                                HttpResponseMessage forkResponse = user.ForkRepo(repo.fullName);
+                                if (forkResponse.IsSuccessStatusCode)
                                 {
-                                    model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                                    string forkedRepo = forkResponse.Content.ReadAsStringAsync().Result;
+                                    dynamic fr = JsonConvert.DeserializeObject<dynamic>(forkedRepo);
+                                    model.GitRepoName = fr.name;
+                                    model.GitRepoURL = fr.html_url;
+                                    if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
+                                    {
+                                        model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
+                                    }
+                                    AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
                                 }
-                                AddMessage(model.id, string.Format("Forked {0} repository to {1} user", model.GitRepoName, _gitHubConfig.userName));
+                                else
+                                {
+                                    AddMessage(model.id.ErrorId(), "Error while forking the repository: " + forkResponse.Content.ReadAsStringAsync().Result);
+                                    logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + "Error while forking the repository: " + forkResponse.Content.ReadAsStringAsync().Result + "\n");
+                                }
                             }
                         }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                AddMessage(model.id.ErrorId(), "Error while forking repository :" + ex.Message);
             }
         }
 
@@ -2870,10 +2883,14 @@ namespace VstsDemoBuilder.Services
         public bool WhereDoseTemplateBelongTo(string templatName)
         {
             string privatePath = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\";
-            string privateTemplate = HostingEnvironment.MapPath("~") + @"\PrivateTemplates\" + templatName;
-            //string publicPath = HostingEnvironment.MapPath("~") + @"\Templates\";
+            string privateTemplate = Path.Combine(privatePath, templatName);
+
+            if (!Directory.Exists(privatePath))
+            {
+                Directory.CreateDirectory(privatePath);
+            }
             string[] privatedirs = Directory.GetDirectories(privatePath);
-            //string[] publicdirs = Directory.GetDirectories(privatePath);
+            
             if (privatedirs.Contains(privateTemplate))
             {
                 return true;

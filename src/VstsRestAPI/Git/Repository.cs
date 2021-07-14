@@ -66,8 +66,11 @@ namespace VstsRestAPI.Git
                     if (response.IsSuccessStatusCode)
                     {
                         viewModel = response.Content.ReadAsAsync<GetAllRepositoriesResponse.Repositories>().Result;
-                        string repository = viewModel.value.Where(x => x.name == project).FirstOrDefault().id;
-                        return repository;
+                        if (viewModel.value != null)
+                        {
+                            string repository = viewModel.value.Where(x => x.name == project).FirstOrDefault().id;
+                            return repository;
+                        }
                     }
                     else
                     {
