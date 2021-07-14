@@ -32,7 +32,7 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/TailwindTraders.png",
           "ForkGitHubRepo": true,
-          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version. <br> Fork <a href='https://github.com/microsoft/tailwindtraders-website' target='_blank'> Tailwind Traders Website </a> and <a href='https://github.com/microsoft/tailwindTraders-Backend' target='_blank'> Tailwind Traders Backend </a> repository and follow the steps given in the document to set up your resources on Azure and deployment pipelines."
         },
         {
           "Key": "77383",
@@ -555,7 +555,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/host-your-own-build-server-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/implement-code-workflow/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Implement code workflow</a>",
           "Description": "Collaborate with others and merge only the highest quality code. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/implement-code-workflow/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Implement code workflow</a>"
         },
         {
@@ -599,7 +599,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-security-and-compliance-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action.",
           "Description": "Scan open-source components for security vulnerabilities and assess their license ratings when your application builds. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-open-source/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan open source</a>"
         },
         {
