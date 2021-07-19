@@ -196,7 +196,7 @@ namespace VstsDemoBuilder.Services
         #region GENERATE ARTIFACTS
         public string[] GenerateTemplateArifacts(Project model)
         {
-            extractedTemplatePath = HostingEnvironment.MapPath("~") + @"ExtractedTemplate\";
+            extractedTemplatePath = HostingEnvironment.MapPath("~") + @"\ExtractedTemplate\";
 
             if (Directory.Exists(extractedTemplatePath))
             {
@@ -731,7 +731,7 @@ namespace VstsDemoBuilder.Services
             {
                 foreach (var repo in repos.value)
                 {
-                    string preSettingPath = HostingEnvironment.MapPath("~") + @"PreSetting";
+                    string preSettingPath = HostingEnvironment.MapPath("~") + @"\PreSetting";
                     string templateFolderPath = extractedTemplatePath + appConfig.RepoConfig.Project;
                     string host = appConfig.RepoConfig.UriString + appConfig.RepoConfig.Project;
                     string sourceCodeJson = File.ReadAllText(preSettingPath + "\\ImportSourceCode.json");
@@ -920,7 +920,7 @@ namespace VstsDemoBuilder.Services
                     string url = def["repository"]["url"].ToString();
                     if (url != "")
                     {
-                        string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                        string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"\PreSetting\\GitHubEndPoint.json");
                         endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
 
                         if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
@@ -939,7 +939,7 @@ namespace VstsDemoBuilder.Services
                     Guid g = Guid.NewGuid();
                     string randStr = g.ToString().Substring(0, 8);
                     string url = def["repository"]["url"].ToString();
-                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"\PreSetting\\GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", url).Replace("$Name$", "GitHub_" + randStr);
 
                     if (!Directory.Exists(extractedTemplatePath + appConfig.RepoConfig.Project + "\\ServiceEndpoints"))
@@ -1057,7 +1057,7 @@ namespace VstsDemoBuilder.Services
                 }
                 if (ymlRepoUrl != "")
                 {
-                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\GitHubEndPoint.json");
+                    string endPointString = File.ReadAllText(HostingEnvironment.MapPath("~") + @"\PreSetting\\GitHubEndPoint.json");
                     endPointString = endPointString.Replace("$GitHubURL$", ymlRepoUrl).Replace("$Name$", "GitHub_" + randStr);
 
                     if (!Directory.Exists(extractedTemplatePath + appConfig.BuildDefinitionConfig.Project + "\\ServiceEndpoints"))

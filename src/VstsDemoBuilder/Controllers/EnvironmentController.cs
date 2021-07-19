@@ -434,7 +434,7 @@ namespace VstsDemoBuilder.Controllers
                     Directory.CreateDirectory(Server.MapPath("~") + @"\PrivateTemplates");
                 }
                 //Deleting uploaded zip files present from last one hour
-                string extractedZipFile = HostingEnvironment.MapPath("~") + @"ExtractedZipFile\";
+                string extractedZipFile = HostingEnvironment.MapPath("~") + @"\ExtractedZipFile\";
                 if (Directory.Exists(extractedZipFile))
                 {
                     string[] subdirs = Directory.GetFiles(extractedZipFile)

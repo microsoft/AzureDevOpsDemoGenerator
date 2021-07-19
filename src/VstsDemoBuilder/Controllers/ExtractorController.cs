@@ -294,7 +294,7 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult ZipAndDownloadFiles(string fileName)
         {
-            string filePath = Server.MapPath("~") + @"ExtractedTemplate\" + fileName;
+            string filePath = Server.MapPath("~") + @"\ExtractedTemplate\" + fileName;
             try
             {
                 CreateZips.SourceDirectoriesFiles sfiles = new CreateZips.SourceDirectoriesFiles();
