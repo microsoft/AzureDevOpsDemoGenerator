@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "SAP on Azure-code",
+  "type": "git",
+  "url": "https://dev.azure.com/lpcs/Unified Data Governance/_git/SAP on Azure",
+  "authorization": {
+    "parameters": {
+      "username": "",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
